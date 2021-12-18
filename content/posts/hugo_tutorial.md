@@ -19,7 +19,7 @@ This is for people like me.
 
 1. Fork [my repository](https://github.com/elibroftw/elibroftw.github.io) into `/USERNAME.github.io`
 2. Delete the `content` folder and use the command `hugo new posts/POST.md` to create your posts
-3. The `pre-commit` hook will build the site using `hugo -d docs` before commiting
+3. The `pre-commit` hook will auto-update themes and build the site using `hugo -d docs` before commiting
 4. You may need to set the serve folder to `docs` instead of `/` under `https://github.com/USERNAME/USERNAME.github.io/settings/pages`
 
 ## From Scratch
@@ -37,6 +37,7 @@ This is if you don't share my stylistic views.
 9. Use `hugo -d docs` when you are ready to push your website
 10. You can use precommit hooks to automate the step above
 11. Commit and push to origin (GitHub)
+12. To update a theme, use `cd themes/THEME && git pull`
 
 ## Other Resources
 
