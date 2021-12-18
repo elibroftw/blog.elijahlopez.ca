@@ -130,10 +130,8 @@ Prerequisties  Hugo Make sure hugo is available in the PATH environment variable
     
 
     
-        
-        
         <li>
-            <a href="https://www.youtube.com/c/UCIrKT6IOvPo_oT4zSUm6uhQ" title="Youtube" rel="me">
+            <a href="https://youtube.com/channel/UCIrKT6IOvPo_oT4zSUm6uhQ" title="Youtube" rel="me">
             <span class="inline-svg" >
 
 
@@ -207,7 +205,7 @@ It&rsquo;s also how I created this blog. I&rsquo;m creating this tutorial becaus
 <ol>
 <li>Fork <a href="https://github.com/elibroftw/elibroftw.github.io">my repository</a> into <code>/USERNAME.github.io</code></li>
 <li>Delete the <code>content</code> folder and use the command <code>hugo new posts/POST.md</code> to create your posts</li>
-<li>The <code>pre-commit</code> hook will build the site using <code>hugo -d docs</code> before commiting</li>
+<li>The <code>pre-commit</code> hook will auto-update themes and build the site using <code>hugo -d docs</code> before commiting</li>
 <li>You may need to set the serve folder to <code>docs</code> instead of <code>/</code> under <code>https://github.com/USERNAME/USERNAME.github.io/settings/pages</code></li>
 </ol>
 <h2 id="from-scratch">From Scratch</h2>
@@ -224,6 +222,7 @@ It&rsquo;s also how I created this blog. I&rsquo;m creating this tutorial becaus
 <li>Use <code>hugo -d docs</code> when you are ready to push your website</li>
 <li>You can use precommit hooks to automate the step above</li>
 <li>Commit and push to origin (GitHub)</li>
+<li>To update a theme, use <code>cd themes/THEME &amp;&amp; git pull</code></li>
 </ol>
 <h2 id="other-resources">Other Resources</h2>
 <ul>
