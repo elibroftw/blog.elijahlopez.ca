@@ -14,7 +14,8 @@
 
 <title>Creating a Blog With GitHub Pages and Hugo - ELL Blog</title>
 
-<meta name="description" content="This tutorial will teach you how to create your own blog hosted on GitHub pages. If you are like me, I&rsquo;d suggest just forking my repo into /${YOUR_USERNAME}.github.io, deleting the content folder and using hugo new posts/${post_name}.md to create your posts. Before commiting">
+<meta name="description" content="This tutorial will teach you how to create your own blog hosted on GitHub pages using Hugo. It&rsquo;s also how I created this blog. I&rsquo;m creating this tutorial because it was not easy for me and I&rsquo;d like to make the process easier for everyone else.
+Prerequisties  Hugo Make sure hugo is available in the PATH environment variable Have git installed and available globally (in PATH)  Forking My Site This is for people like me.">
 
 <link rel="icon" type="image/x-icon" href="https://elibroftw.github.io/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://elibroftw.github.io/favicon.png">
@@ -43,7 +44,8 @@
 
 
 <meta property="og:title" content="Creating a Blog With GitHub Pages and Hugo" />
-<meta property="og:description" content="This tutorial will teach you how to create your own blog hosted on GitHub pages. If you are like me, I&rsquo;d suggest just forking my repo into /${YOUR_USERNAME}.github.io, deleting the content folder and using hugo new posts/${post_name}.md to create your posts. Before commiting" />
+<meta property="og:description" content="This tutorial will teach you how to create your own blog hosted on GitHub pages using Hugo. It&rsquo;s also how I created this blog. I&rsquo;m creating this tutorial because it was not easy for me and I&rsquo;d like to make the process easier for everyone else.
+Prerequisties  Hugo Make sure hugo is available in the PATH environment variable Have git installed and available globally (in PATH)  Forking My Site This is for people like me." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://elibroftw.github.io/posts/hugo_tutorial/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-12-17T22:18:47-05:00" />
@@ -52,7 +54,8 @@
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Creating a Blog With GitHub Pages and Hugo"/>
-<meta name="twitter:description" content="This tutorial will teach you how to create your own blog hosted on GitHub pages. If you are like me, I&rsquo;d suggest just forking my repo into /${YOUR_USERNAME}.github.io, deleting the content folder and using hugo new posts/${post_name}.md to create your posts. Before commiting"/>
+<meta name="twitter:description" content="This tutorial will teach you how to create your own blog hosted on GitHub pages using Hugo. It&rsquo;s also how I created this blog. I&rsquo;m creating this tutorial because it was not easy for me and I&rsquo;d like to make the process easier for everyone else.
+Prerequisties  Hugo Make sure hugo is available in the PATH environment variable Have git installed and available globally (in PATH)  Forking My Site This is for people like me."/>
 
 
 
@@ -186,14 +189,48 @@
 
     <article class="post h-entry">
         <header class="post-header">
-            <h1 class="p-name post-title draft">Creating a Blog With GitHub Pages and Hugo</h1>
+            <h1 class="p-name post-title">Creating a Blog With GitHub Pages and Hugo</h1>
 
             
         </header>
         <div class="content e-content">
-            <p>This tutorial will teach you how to create your own blog hosted on GitHub pages.
-If you are like me, I&rsquo;d suggest just forking <a href="https://github.com/elibroftw/elibroftw.github.io">my repo</a> into /${YOUR_USERNAME}.github.io,
-deleting the <code>content</code> folder and using <code>hugo new posts/${post_name}.md</code> to create your posts. Before commiting</p>
+            <p>This tutorial will teach you how to create your own blog hosted on GitHub pages using Hugo.
+It&rsquo;s also how I created this blog. I&rsquo;m creating this tutorial because it was not easy for me and I&rsquo;d like to make the process easier for everyone else.</p>
+<h2 id="prerequisties">Prerequisties</h2>
+<ol>
+<li><a href="https://gohugo.io/getting-started/installing#binary-cross-platform">Hugo</a></li>
+<li>Make sure <code>hugo</code> is available in the PATH environment variable</li>
+<li>Have <code>git</code> installed and available globally (in PATH)</li>
+</ol>
+<h2 id="forking-my-site">Forking My Site</h2>
+<p>This is for people like me.</p>
+<ol>
+<li>Fork <a href="https://github.com/elibroftw/elibroftw.github.io">my repository</a> into <code>/${YOUR_USERNAME}.github.io</code></li>
+<li>Delete the <code>content</code> folder and use <code>hugo new posts/${post_name}.md</code> to create your posts</li>
+<li>The <code>pre-commit</code> hook will build the site using <code>hugo -d docs</code> before commiting</li>
+<li>You may need to set the serve folder to <code>docs</code> instead of <code>/</code> under <code>https://github.com/USER/USER.github.io/settings/pages</code></li>
+</ol>
+<h2 id="from-scratch">From Scratch</h2>
+<p>This is if you don&rsquo;t share my stylistic views.</p>
+<ol>
+<li>Create a <code>username.github.io</code> repository in GitHub</li>
+<li>Clone the repository</li>
+<li>Get the GitHub link for a theme from <a href="https://themes.gohugo.io/">https://themes.gohugo.io/</a></li>
+<li>Add the theme using <code>git submodule add {gitHubURL}.git themes/{themeName}</code></li>
+<li>Read the theme instructions for basic configuration</li>
+<li>Use <code>hugo new content/posts/post.md</code> to create a new post</li>
+<li>Set <code>draft: false</code> after you are done drafting a post</li>
+<li>Use <code>hugo serve -D</code> when drafting the post</li>
+<li>Use <code>hugo -d docs</code> when you are ready to push your website</li>
+<li>You can use precommit hooks to automate the step above</li>
+<li>Commit and push to origin (GitHub)</li>
+</ol>
+<h2 id="other-resources">Other Resources</h2>
+<ul>
+<li><a href="https://gohugo.io/getting-started/quick-start/">https://gohugo.io/getting-started/quick-start/</a></li>
+<li><a href="https://retrolog.io/blog/creating-a-hugo-theme-from-scratch/">https://retrolog.io/blog/creating-a-hugo-theme-from-scratch/</a></li>
+<li><a href="https://levelup.gitconnected.com/build-a-personal-website-with-github-pages-and-hugo-6c68592204c7">https://levelup.gitconnected.com/build-a-personal-website-with-github-pages-and-hugo-6c68592204c7</a></li>
+</ul>
 
         </div>
         
