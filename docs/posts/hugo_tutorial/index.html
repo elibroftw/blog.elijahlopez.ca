@@ -35,7 +35,7 @@ Prerequisties  Hugo Make sure hugo is available in the PATH environment variable
     
 
     
-        <link rel="stylesheet" href="https://elibroftw.github.io/css/style.min.798757f0b80b500722d83a137616540c77fe576f2b80ed7ae8f9f2bacdd05e8d.css" integrity="sha256-eYdX8LgLUAci2DoTdhZUDHf&#43;V28rgO166Pnyus3QXo0=">
+        <link rel="stylesheet" href="https://elibroftw.github.io/css/style.min.cd7c28bb7d73ee5e5e723056c57a6de3705eb0af3b6b3d328c47a1f51f111dc8.css" integrity="sha256-zXwou31z7l5ecjBWxXpt43BesK87az0yjEeh9R8RHcg=">
     
 
 
@@ -205,20 +205,20 @@ It&rsquo;s also how I created this blog. I&rsquo;m creating this tutorial becaus
 <h2 id="forking-my-site">Forking My Site</h2>
 <p>This is for people like me.</p>
 <ol>
-<li>Fork <a href="https://github.com/elibroftw/elibroftw.github.io">my repository</a> into <code>/${YOUR_USERNAME}.github.io</code></li>
-<li>Delete the <code>content</code> folder and use <code>hugo new posts/${post_name}.md</code> to create your posts</li>
+<li>Fork <a href="https://github.com/elibroftw/elibroftw.github.io">my repository</a> into <code>/USERNAME.github.io</code></li>
+<li>Delete the <code>content</code> folder and use the command <code>hugo new posts/POST.md</code> to create your posts</li>
 <li>The <code>pre-commit</code> hook will build the site using <code>hugo -d docs</code> before commiting</li>
-<li>You may need to set the serve folder to <code>docs</code> instead of <code>/</code> under <code>https://github.com/USER/USER.github.io/settings/pages</code></li>
+<li>You may need to set the serve folder to <code>docs</code> instead of <code>/</code> under <code>https://github.com/USERNAME/USERNAME.github.io/settings/pages</code></li>
 </ol>
 <h2 id="from-scratch">From Scratch</h2>
 <p>This is if you don&rsquo;t share my stylistic views.</p>
 <ol>
-<li>Create a <code>username.github.io</code> repository in GitHub</li>
+<li>Create a <code>USERNAME.github.io</code> repository in GitHub</li>
 <li>Clone the repository</li>
 <li>Get the GitHub link for a theme from <a href="https://themes.gohugo.io/">https://themes.gohugo.io/</a></li>
-<li>Add the theme using <code>git submodule add {gitHubURL}.git themes/{themeName}</code></li>
+<li>Add the theme using <code>git submodule add GitHubURL.git themes/themeName</code></li>
 <li>Read the theme instructions for basic configuration</li>
-<li>Use <code>hugo new content/posts/post.md</code> to create a new post</li>
+<li>Use <code>hugo new content/posts/POST.md</code> to create a new post</li>
 <li>Set <code>draft: false</code> after you are done drafting a post</li>
 <li>Use <code>hugo serve -D</code> when drafting the post</li>
 <li>Use <code>hugo -d docs</code> when you are ready to push your website</li>

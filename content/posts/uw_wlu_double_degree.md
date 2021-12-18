@@ -10,7 +10,7 @@ Here are some things you should know about the program plus the environment.
 
 ### Scholarships
 
-WLU has higher scholarship values than UW. The amount changes each year. For example in my year, WLU provided C$5,000 for first year but in 2021, that value was less than or equal to $4,000. I'm not entirely sure because I forgot what my friend said they received.
+WLU has higher scholarship values than UW. The amount changes each year. For example in my year, WLU provided C$5,000 for first year but in 2021, that value was less than or equal to C$4,000. I'm not entirely sure because I forgot what my friend said they received.
 
 ### Tuition
 

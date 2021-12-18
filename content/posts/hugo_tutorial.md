@@ -17,21 +17,21 @@ It's also how I created this blog. I'm creating this tutorial because it was not
 
 This is for people like me.
 
-1. Fork [my repository](https://github.com/elibroftw/elibroftw.github.io) into `/${YOUR_USERNAME}.github.io`
-2. Delete the `content` folder and use `hugo new posts/${post_name}.md` to create your posts
+1. Fork [my repository](https://github.com/elibroftw/elibroftw.github.io) into `/USERNAME.github.io`
+2. Delete the `content` folder and use the command `hugo new posts/POST.md` to create your posts
 3. The `pre-commit` hook will build the site using `hugo -d docs` before commiting
-4. You may need to set the serve folder to `docs` instead of `/` under `https://github.com/USER/USER.github.io/settings/pages`
+4. You may need to set the serve folder to `docs` instead of `/` under `https://github.com/USERNAME/USERNAME.github.io/settings/pages`
 
 ## From Scratch
 
 This is if you don't share my stylistic views.
 
-1. Create a `username.github.io` repository in GitHub
+1. Create a `USERNAME.github.io` repository in GitHub
 2. Clone the repository
 3. Get the GitHub link for a theme from https://themes.gohugo.io/
-4. Add the theme using `git submodule add {gitHubURL}.git themes/{themeName}`
+4. Add the theme using `git submodule add GitHubURL.git themes/themeName`
 5. Read the theme instructions for basic configuration
-6. Use `hugo new content/posts/post.md` to create a new post
+6. Use `hugo new content/posts/POST.md` to create a new post
 7. Set `draft: false` after you are done drafting a post
 8. Use `hugo serve -D` when drafting the post
 9. Use `hugo -d docs` when you are ready to push your website
