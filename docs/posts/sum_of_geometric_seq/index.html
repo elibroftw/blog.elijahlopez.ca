@@ -12,10 +12,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="referrer" content="no-referrer-when-downgrade">
 
-<title>Creating a Blog With GitHub Pages and Hugo - ELL Blog</title>
+<title>Sum of Geometric Sequences - ELL Blog</title>
 
-<meta name="description" content="This tutorial will teach you how to create your own blog hosted on GitHub pages using Hugo. It&rsquo;s also how I created this blog. I&rsquo;m creating this tutorial because it was not easy for me and I&rsquo;d like to make the process easier for everyone else.
-Prerequisties  Hugo Make sure hugo is available in the PATH environment variable Have git installed and available globally (in PATH)  Forking My Site This is for people like me.">
+<meta name="description" content="Here are two useful formulas that are presented in a pretty way. Thank you GitHub for the math LaTeX rendering.
+Sum of a Finite Geometric Series Sum of an Infinite Geometric Series ">
 
 <link rel="icon" type="image/x-icon" href="https://elibroftw.github.io/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://elibroftw.github.io/favicon.png">
@@ -43,19 +43,19 @@ Prerequisties  Hugo Make sure hugo is available in the PATH environment variable
 
 
 
-<meta property="og:title" content="Creating a Blog With GitHub Pages and Hugo" />
-<meta property="og:description" content="This tutorial will teach you how to create your own blog hosted on GitHub pages using Hugo. It&rsquo;s also how I created this blog. I&rsquo;m creating this tutorial because it was not easy for me and I&rsquo;d like to make the process easier for everyone else.
-Prerequisties  Hugo Make sure hugo is available in the PATH environment variable Have git installed and available globally (in PATH)  Forking My Site This is for people like me." />
+<meta property="og:title" content="Sum of Geometric Sequences" />
+<meta property="og:description" content="Here are two useful formulas that are presented in a pretty way. Thank you GitHub for the math LaTeX rendering.
+Sum of a Finite Geometric Series Sum of an Infinite Geometric Series " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://elibroftw.github.io/posts/hugo_tutorial/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2021-12-17T22:18:47-05:00" />
-<meta property="article:modified_time" content="2021-12-17T22:18:47-05:00" />
+<meta property="og:url" content="https://elibroftw.github.io/posts/sum_of_geometric_seq/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-12-18T23:28:15-05:00" />
+<meta property="article:modified_time" content="2021-12-18T23:28:15-05:00" />
 
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Creating a Blog With GitHub Pages and Hugo"/>
-<meta name="twitter:description" content="This tutorial will teach you how to create your own blog hosted on GitHub pages using Hugo. It&rsquo;s also how I created this blog. I&rsquo;m creating this tutorial because it was not easy for me and I&rsquo;d like to make the process easier for everyone else.
-Prerequisties  Hugo Make sure hugo is available in the PATH environment variable Have git installed and available globally (in PATH)  Forking My Site This is for people like me."/>
+<meta name="twitter:title" content="Sum of Geometric Sequences"/>
+<meta name="twitter:description" content="Here are two useful formulas that are presented in a pretty way. Thank you GitHub for the math LaTeX rendering.
+Sum of a Finite Geometric Series Sum of an Infinite Geometric Series "/>
 
 
 
@@ -187,49 +187,18 @@ Prerequisties  Hugo Make sure hugo is available in the PATH environment variable
 
     <article class="post h-entry">
         <header class="post-header">
-            <h1 class="p-name post-title">Creating a Blog With GitHub Pages and Hugo</h1>
+            <h1 class="p-name post-title">Sum of Geometric Sequences</h1>
 
             
         </header>
         <div class="content e-content">
-            <p>This tutorial will teach you how to create your own blog hosted on GitHub pages using Hugo.
-It&rsquo;s also how I created this blog. I&rsquo;m creating this tutorial because it was not easy for me and I&rsquo;d like to make the process easier for everyone else.</p>
-<h2 id="prerequisties">Prerequisties</h2>
-<ol>
-<li><a href="https://gohugo.io/getting-started/installing#binary-cross-platform">Hugo</a></li>
-<li>Make sure <code>hugo</code> is available in the PATH environment variable</li>
-<li>Have <code>git</code> installed and available globally (in PATH)</li>
-</ol>
-<h2 id="forking-my-site">Forking My Site</h2>
-<p>This is for people like me.</p>
-<ol>
-<li>Fork <a href="https://github.com/elibroftw/elibroftw.github.io">my repository</a> into <code>/USERNAME.github.io</code></li>
-<li>Delete the <code>content</code> folder and use the command <code>hugo new posts/POST.md</code> to create your posts</li>
-<li>The <code>pre-commit</code> hook will auto-update themes and build the site using <code>hugo -d docs</code> before commiting</li>
-<li>You may need to set the serve folder to <code>docs</code> instead of <code>/</code> under <code>https://github.com/USERNAME/USERNAME.github.io/settings/pages</code></li>
-</ol>
-<h2 id="from-scratch">From Scratch</h2>
-<p>This is if you don&rsquo;t share my stylistic views.</p>
-<ol>
-<li>Create a <code>USERNAME.github.io</code> repository in GitHub</li>
-<li>Clone the repository</li>
-<li>Get the GitHub link for a theme from <a href="https://themes.gohugo.io/">https://themes.gohugo.io/</a></li>
-<li>Add the theme using <code>git submodule add GitHubURL.git themes/themeName</code></li>
-<li>Read the theme instructions for basic configuration</li>
-<li>Use <code>hugo new content/posts/POST.md</code> to create a new post</li>
-<li>Set <code>draft: false</code> after you are done drafting a post</li>
-<li>Use <code>hugo serve -D</code> when drafting the post</li>
-<li>Use <code>hugo -d docs</code> when you are ready to push your website</li>
-<li>You can use precommit hooks to automate the step above</li>
-<li>Commit and push to origin (GitHub)</li>
-<li>To update a theme, use <code>cd themes/THEME &amp;&amp; git pull</code></li>
-</ol>
-<h2 id="other-resources">Other Resources</h2>
-<ul>
-<li><a href="https://gohugo.io/getting-started/quick-start/">https://gohugo.io/getting-started/quick-start/</a></li>
-<li><a href="https://retrolog.io/blog/creating-a-hugo-theme-from-scratch/">https://retrolog.io/blog/creating-a-hugo-theme-from-scratch/</a></li>
-<li><a href="https://levelup.gitconnected.com/build-a-personal-website-with-github-pages-and-hugo-6c68592204c7">https://levelup.gitconnected.com/build-a-personal-website-with-github-pages-and-hugo-6c68592204c7</a></li>
-</ul>
+            <!-- markdownlint-disable-file MD033 -->
+<p>Here are two useful formulas that are presented in a pretty way.
+Thank you GitHub for the math LaTeX rendering.</p>
+<h2 id="sum-of-a-finite-geometric-series">Sum of a Finite Geometric Series</h2>
+<img class=equation src="https://render.githubusercontent.com/render/math?math=S_n=\sum_{i=1}^{n}a_ir^{i-1}=a_1\frac{r^n-1}{r-1}=\sum_{i=1}^{n}a_ir^{i-1}=a_1\frac{1-r^n}{1-r}">
+<h2 id="sum-of-an-infinite-geometric-series">Sum of an Infinite Geometric Series</h2>
+<img class=equation src="https://render.githubusercontent.com/render/math?math=S=\sum_{i=0}^{\infty}a_ir^i=\frac{a_1}{1-r}">
 
         </div>
         
@@ -239,10 +208,10 @@ It&rsquo;s also how I created this blog. I&rsquo;m creating this tutorial becaus
 
 <div class="post-info">
     
-        <div class="post-date dt-published">2021-12-17</div>
+        <div class="post-date dt-published">2021-12-18</div>
     
 
-    <a class="post-hidden-url u-url" href="https://elibroftw.github.io/posts/hugo_tutorial/">https://elibroftw.github.io/posts/hugo_tutorial/</a>
+    <a class="post-hidden-url u-url" href="https://elibroftw.github.io/posts/sum_of_geometric_seq/">https://elibroftw.github.io/posts/sum_of_geometric_seq/</a>
     <a href="https://elibroftw.github.io/" class="p-name p-author post-hidden-author h-card" rel="me">Elijah Lopez</a>
 
 
@@ -257,14 +226,12 @@ It&rsquo;s also how I created this blog. I&rsquo;m creating this tutorial becaus
     
         
     <div class="pagination post-pagination">
-        <div class="left pagination-item ">
-            
-                <a href="/posts/sum_of_geometric_seq/">Sum of Geometric Sequences</a>
+        <div class="left pagination-item disabled">
             
         </div>
         <div class="right pagination-item ">
             
-                <a href="/posts/uw_wlu_double_degree/">UW WLU Double Degree</a>
+                <a href="/posts/hugo_tutorial/">Creating a Blog With GitHub Pages and Hugo</a>
             
         </div>
     </div>
