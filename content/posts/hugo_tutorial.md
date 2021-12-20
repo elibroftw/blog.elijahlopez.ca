@@ -17,7 +17,7 @@ categories: [
 This tutorial will teach you how to create your own blog hosted on GitHub pages using Hugo.
 It's also how I created this blog. I'm creating this tutorial because it was not easy for me and I'd like to make the process easier for everyone else.
 
-## Prerequisties
+## Prerequisites
 
 1. [Hugo](https://gohugo.io/getting-started/installing#binary-cross-platform)
 2. Make sure `hugo` is available in the PATH environment variable
