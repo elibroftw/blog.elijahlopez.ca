@@ -2,6 +2,9 @@
 title: "UW WLU Double Degree"
 date: 2021-12-17T21:36:13-05:00
 draft: false
+tags: [
+    "experiences",
+]
 ---
 I started my double degree BCS and BBA journey in Fall 2019.
 Here are some things you should know about the program plus the environment.
