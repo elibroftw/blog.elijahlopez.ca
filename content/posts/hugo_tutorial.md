@@ -15,8 +15,8 @@ categories: [
 ---
 
 I created this blog using Hugo and host it on GitHub Pages. In this tutorial, I'll teach you to do the same.
-The resources I used left out some important details that I won't leave out.
-I've also done the brunt of the work to get the theme and workflow correctly for my blog.
+The resources I had used to create a working blog left out some important details that I will include in my tutorial.
+I've also done the brunt of the work to perfect the theme and workflow.
 If you are like me, you can follow the tutorial that [forks my site](#forking-my-site) rather than making a blog site [from scratch](#from-scratch).
 
 ## Prerequisites
