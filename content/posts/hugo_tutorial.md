@@ -14,8 +14,10 @@ categories: [
 ]
 ---
 
-This tutorial will teach you how to create your own blog hosted on GitHub pages using Hugo.
-It's also how I created this blog. I'm creating this tutorial because it was not easy for me and I'd like to make the process easier for everyone else.
+I created this blog using Hugo and host it on GitHub Pages. In this tutorial, I'll teach you to do the same.
+The resources I used left out some important details that I won't leave out.
+I've also done the brunt of the work to get the theme and workflow correctly for my blog.
+If you are like me, you can follow the tutorial that [forks my site](#forking-my-site) rather than making a blog site [from scratch](#from-scratch).
 
 ## Prerequisites
 
@@ -25,17 +27,14 @@ It's also how I created this blog. I'm creating this tutorial because it was not
 
 ## Forking My Site
 
-This is for people like me.
-
 1. Fork [my repository](https://github.com/elibroftw/elibroftw.github.io) into `/USERNAME.github.io`
 2. Edit `config.yaml` and replace my information with yours
-3. Delete the `content` folder and use the command `hugo new posts/POST.md` to create your posts
-4. The `pre-commit` hook (if it is even included in the git repo) will auto-update the themes and build the site using `hugo -d docs` before commiting
-5. You may need to set the serve folder to `docs` instead of `/` under `https://github.com/USERNAME/USERNAME.github.io/settings/pages`
+3. Use the command `hugo new posts/POST.md` to create your posts
+4. Take a look at my posts in `content/posts` before deleting them because they use tags, categories, and make use of \<img /> tags
+5. The `pre-commit` hook (if it is even included in the git repo) will auto-update the themes and build the site using `hugo -d docs` before commiting
+6. You may need to set the serve folder to `docs` instead of `/` under `https://github.com/USERNAME/USERNAME.github.io/settings/pages`
 
 ## From Scratch
-
-This is if you don't share my stylistic views.
 
 1. Create a `USERNAME.github.io` repository in GitHub
 2. Clone the repository
