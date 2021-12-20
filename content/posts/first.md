@@ -6,10 +6,8 @@ draft: false
 
 This post tests if Hugo with the anubis theme works.
 I'm thinking of self publishing articles rather than posting on Medium.
-Medium's UI is slower than YouTube's and its a website that's text based!
+Medium's UI is slower than YouTube's even though Medium is completely text-based.
 
-The following command is how to make a new post with `hugo`.
+### Edit
 
-```bash
-hugo new content/posts/filename.md
-```
+It's currently December 19th 2021, and I've even added a comment section. There's absolutely no reason to use Medium anymore especially after making my own [Hugo GitHub Pages Tutorial](/posts/hugo_tutorial)

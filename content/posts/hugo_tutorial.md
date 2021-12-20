@@ -18,9 +18,10 @@ It's also how I created this blog. I'm creating this tutorial because it was not
 This is for people like me.
 
 1. Fork [my repository](https://github.com/elibroftw/elibroftw.github.io) into `/USERNAME.github.io`
-2. Delete the `content` folder and use the command `hugo new posts/POST.md` to create your posts
-3. The `pre-commit` hook will auto-update themes and build the site using `hugo -d docs` before commiting
-4. You may need to set the serve folder to `docs` instead of `/` under `https://github.com/USERNAME/USERNAME.github.io/settings/pages`
+2. Edit `config.yaml` and replace my information with yours
+3. Delete the `content` folder and use the command `hugo new posts/POST.md` to create your posts
+4. The `pre-commit` hook will auto-update themes and build the site using `hugo -d docs` before commiting
+5. You may need to set the serve folder to `docs` instead of `/` under `https://github.com/USERNAME/USERNAME.github.io/settings/pages`
 
 ## From Scratch
 
@@ -30,14 +31,15 @@ This is if you don't share my stylistic views.
 2. Clone the repository
 3. Get the GitHub link for a theme from https://themes.gohugo.io/
 4. Add the theme using `git submodule add GitHubURL.git themes/themeName`
-5. Read the theme instructions for basic configuration
-6. Use `hugo new content/posts/POST.md` to create a new post
-7. Set `draft: false` after you are done drafting a post
-8. Use `hugo serve -D` when drafting the post
-9. Use `hugo -d docs` when you are ready to push your website
-10. You can use precommit hooks to automate the step above
-11. Commit and push to origin (GitHub)
-12. To update a theme, use `cd themes/THEME && git pull`
+5. Read the theme instructions for basic configuration (i.e. `config.yaml` or `config.toml`)
+6. Edit `config.yaml` or `config.toml`
+7. Use `hugo new content/posts/POST.md` to create a new post
+8. Set `draft: false` after you are done drafting a post
+9. Use `hugo serve -D` when drafting the post
+10. Use `hugo -d docs` when you are ready to push your website
+11. You can use precommit hooks to automate the step above
+12. Commit and push to origin (GitHub)
+13. To update a theme, use `cd themes/THEME && git pull`
 
 ## Other Resources
 
