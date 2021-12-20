@@ -30,9 +30,10 @@ If you are like me, you can follow the tutorial that [forks my site](#forking-my
 1. Fork [my repository](https://github.com/elibroftw/elibroftw.github.io) into `/USERNAME.github.io`
 2. Edit `config.yaml` and replace my information with yours
 3. Use the command `hugo new posts/POST.md` to create your posts
-4. Take a look at my posts in `content/posts` before deleting them because they use tags, categories, and make use of \<img /> tags
-5. The `pre-commit` hook (if it is even included in the git repo) will auto-update the themes and build the site using `hugo -d docs` before commiting
-6. You may need to set the serve folder to `docs` instead of `/` under `https://github.com/USERNAME/USERNAME.github.io/settings/pages`
+4. Take a look at my posts in `content/posts` and `unlisted/test` before deleting them because they use tags, categories, aliases, allow unlisted posts, and make use of \<img /> tags
+5. To enable the `pre-commit` hook, use the command `git config core.hookspath .githooks`
+6. The `pre-commit` hook will auto-update themes and build the site using `hugo -d docs` before commiting
+7. You may need to set the serve folder to `docs` instead of `/` under `https://github.com/USERNAME/USERNAME.github.io/settings/pages`
 
 ## From Scratch
 
@@ -43,12 +44,12 @@ If you are like me, you can follow the tutorial that [forks my site](#forking-my
 5. Read the theme instructions for basic configuration (i.e. `config.yaml` or `config.toml`)
 6. Edit `config.yaml` or `config.toml`
 7. Use `hugo new content/posts/POST.md` to create a new post
-8. Set `draft: false` after you are done drafting a post
-9. Use `hugo serve -D` when drafting the post
+8. Use `hugo serve -D` when drafting the post
+9. Set `draft: false` after you are done drafting a post
 10. Use `hugo -d docs` when you are ready to push your website
-11. You can use precommit hooks to automate the step above
-12. Commit and push to origin (GitHub)
-13. To update a theme, use `cd themes/THEME && git pull`
+11. Commit and push to origin (GitHub)
+12. To update themes, use `git submodule update --remote --merge`
+13. You can use pre-commit hooks to automate steps 10 and 12 before every commit
 
 ## Other Resources
 

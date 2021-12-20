@@ -6,6 +6,8 @@ paginate: 10
 disqusShortname: ""
 googleAnalytics: ""
 enableRobotsTXT: true
+publishDir: docs
+contentDir: ["posts"]
 
 menu:
   main:
@@ -36,7 +38,7 @@ params:
   customCSS:
     - css/custom.css # relative path to "assets" directory (don't use main.css filename)
   # customJS:
-  #   - js/main.js # relative path to "assets" directory
+  #   - js/ .js # relative path to "assets" directory
   dateFormat: "2006-Jan-02"
   paginationSinglePost: true
   style: dark-without-switcher
@@ -52,6 +54,8 @@ params:
     login: hugo-theme-anubis
     pingback: true
   social:
+  - id: rss
+    url: index.xml
   - id: github
     name: elibroftw
   - id: twitter
@@ -60,6 +64,7 @@ params:
     url: https://youtube.com/channel/UCIrKT6IOvPo_oT4zSUm6uhQ
   - id: email
     name: elijahllopezz@gmail.com
+
 #  - id: hugo
 #    url: "https://gohugo.io/"
 #    icon: "hugo"

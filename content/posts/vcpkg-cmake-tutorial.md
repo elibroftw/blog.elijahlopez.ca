@@ -13,7 +13,7 @@ categories: [
 ]
 ---
 
-[A video tutorial.](https://youtu.be/FeBzSYiWkEU)
+{{< youtube FeBzSYiWkEU >}}
 
 ## Prerequisties
 

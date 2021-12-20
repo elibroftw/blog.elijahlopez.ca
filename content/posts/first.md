@@ -2,6 +2,9 @@
 title: "First Post"
 date: 2021-12-15T00:16:00-05:00
 draft: false
+# Use aliases if unlisted posts were ever shared with people
+# Make sure /unlisted/first.* does not exist, since existence has priority over aliases
+aliases: ["/unlisted/first/"]
 ---
 
 This post tests if Hugo with the anubis theme works.

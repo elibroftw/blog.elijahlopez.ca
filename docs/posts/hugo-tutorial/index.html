@@ -12,11 +12,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="referrer" content="no-referrer-when-downgrade">
 
-<title>Categories - ELL Blog</title>
+<title>Creating a Blog With GitHub Pages and Hugo - ELL Blog</title>
 
-<meta name="description" content="">
+<meta name="description" content="I created this blog using Hugo and host it on GitHub Pages. In this tutorial, I&rsquo;ll teach you to do the same. The resources I had used to create a working blog left out some important details that I will include in my tutorial. I&rsquo;ve also done the brunt of the work to perfect the theme and workflow. If you are like me, you can follow the tutorial that forks my site rather than making a blog site from scratch.">
 
-<link rel="alternate" type="application/rss+xml" href="https://elibroftw.github.io/categories/index.xml" title="ELL Blog" />
 <link rel="icon" type="image/x-icon" href="https://elibroftw.github.io/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://elibroftw.github.io/favicon.png">
 
@@ -43,15 +42,17 @@
 
 
 
-<meta property="og:title" content="Categories" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://elibroftw.github.io/categories/" />
+<meta property="og:title" content="Creating a Blog With GitHub Pages and Hugo" />
+<meta property="og:description" content="I created this blog using Hugo and host it on GitHub Pages. In this tutorial, I&rsquo;ll teach you to do the same. The resources I had used to create a working blog left out some important details that I will include in my tutorial. I&rsquo;ve also done the brunt of the work to perfect the theme and workflow. If you are like me, you can follow the tutorial that forks my site rather than making a blog site from scratch." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://elibroftw.github.io/posts/hugo-tutorial/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-12-17T22:18:47-05:00" />
+<meta property="article:modified_time" content="2021-12-17T22:18:47-05:00" />
 
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Categories"/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:title" content="Creating a Blog With GitHub Pages and Hugo"/>
+<meta name="twitter:description" content="I created this blog using Hugo and host it on GitHub Pages. In this tutorial, I&rsquo;ll teach you to do the same. The resources I had used to create a working blog left out some important details that I will include in my tutorial. I&rsquo;ve also done the brunt of the work to perfect the theme and workflow. If you are like me, you can follow the tutorial that forks my site rather than making a blog site from scratch."/>
 
 
 
@@ -201,22 +202,138 @@
         </header>
         <main id="main" tabindex="-1"> 
             
-    <div class="index-content">
+    
+
+    <article class="post h-entry">
+        <div class="post-header">
+            <header>
+                <h1 class="p-name post-title">Creating a Blog With GitHub Pages and Hugo</h1>
+
+                
+            </header>
+        </div>
+        <div class="content e-content">
+            <p>I created this blog using Hugo and host it on GitHub Pages. In this tutorial, I&rsquo;ll teach you to do the same.
+The resources I had used to create a working blog left out some important details that I will include in my tutorial.
+I&rsquo;ve also done the brunt of the work to perfect the theme and workflow.
+If you are like me, you can follow the tutorial that <a href="#forking-my-site">forks my site</a> rather than making a blog site <a href="#from-scratch">from scratch</a>.</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<ol>
+<li><a href="https://gohugo.io/getting-started/installing#binary-cross-platform">Hugo</a></li>
+<li>Make sure <code>hugo</code> is available in the PATH environment variable</li>
+<li>Have <code>git</code> installed and available globally (in PATH)</li>
+</ol>
+<h2 id="forking-my-site">Forking My Site</h2>
+<ol>
+<li>Fork <a href="https://github.com/elibroftw/elibroftw.github.io">my repository</a> into <code>/USERNAME.github.io</code></li>
+<li>Edit <code>config.yaml</code> and replace my information with yours</li>
+<li>Use the command <code>hugo new posts/POST.md</code> to create your posts</li>
+<li>Take a look at my posts in <code>content/posts</code> and <code>unlisted/test</code> before deleting them because they use tags, categories, aliases, allow unlisted posts, and make use of &lt;img /&gt; tags</li>
+<li>To enable the <code>pre-commit</code> hook, use the command <code>git config core.hookspath .githooks</code></li>
+<li>The <code>pre-commit</code> hook will auto-update themes and build the site using <code>hugo -d docs</code> before commiting</li>
+<li>You may need to set the serve folder to <code>docs</code> instead of <code>/</code> under <code>https://github.com/USERNAME/USERNAME.github.io/settings/pages</code></li>
+</ol>
+<h2 id="from-scratch">From Scratch</h2>
+<ol>
+<li>Create a <code>USERNAME.github.io</code> repository in GitHub</li>
+<li>Clone the repository</li>
+<li>Get the GitHub link for a theme from <a href="https://themes.gohugo.io/">https://themes.gohugo.io/</a></li>
+<li>Add the theme using <code>git submodule add GitHubURL.git themes/themeName</code></li>
+<li>Read the theme instructions for basic configuration (i.e. <code>config.yaml</code> or <code>config.toml</code>)</li>
+<li>Edit <code>config.yaml</code> or <code>config.toml</code></li>
+<li>Use <code>hugo new content/posts/POST.md</code> to create a new post</li>
+<li>Use <code>hugo serve -D</code> when drafting the post</li>
+<li>Set <code>draft: false</code> after you are done drafting a post</li>
+<li>Use <code>hugo -d docs</code> when you are ready to push your website</li>
+<li>Commit and push to origin (GitHub)</li>
+<li>To update themes, use <code>git submodule update --remote --merge</code></li>
+<li>You can use pre-commit hooks to automate steps 10 and 12 before every commit</li>
+</ol>
+<h2 id="other-resources">Other Resources</h2>
+<ul>
+<li><a href="https://gohugo.io/getting-started/quick-start/">https://gohugo.io/getting-started/quick-start/</a></li>
+<li><a href="https://retrolog.io/blog/creating-a-hugo-theme-from-scratch/">https://retrolog.io/blog/creating-a-hugo-theme-from-scratch/</a></li>
+<li><a href="https://levelup.gitconnected.com/build-a-personal-website-with-github-pages-and-hugo-6c68592204c7">https://levelup.gitconnected.com/build-a-personal-website-with-github-pages-and-hugo-6c68592204c7</a></li>
+</ul>
+
+        </div>
+        
+
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date dt-published">2021-Dec-17</div>
+    
+
+    <a class="post-hidden-url u-url" href="https://elibroftw.github.io/posts/hugo-tutorial/">https://elibroftw.github.io/posts/hugo-tutorial/</a>
+    <a href="https://elibroftw.github.io/" class="p-name p-author post-hidden-author h-card" rel="me">Elijah Lopez</a>
+
+
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://elibroftw.github.io/categories/programming">programming</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://elibroftw.github.io/tags/hugo">#hugo</a></li>
+                    
+                        <li><a href="https://elibroftw.github.io/tags/tutorial">#tutorial</a></li>
+                    
+                        <li><a href="https://elibroftw.github.io/tags/markdown">#markdown</a></li>
+                    
+                        <li><a href="https://elibroftw.github.io/tags/github-pages">#github-pages</a></li>
+                    
+                        <li><a href="https://elibroftw.github.io/tags/git">#git</a></li>
+                    
+                </ul>
         
     </div>
+</div>
 
-    <h1>Categories</h1>
+    </article>
 
-    <ul class="terms">
+    
         
-        <li>
-            <a href="https://elibroftw.github.io/categories/programming">
-            programming
-            </a>
-            (2)
-        </li>
+    <div class="pagination post-pagination">
+        <div class="left pagination-item ">
+            
+                <a href="/posts/sum-of-geometric-seq/">Sum of Geometric Sequences</a>
+            
+        </div>
+        <div class="right pagination-item ">
+            
+                <a href="/posts/uw-wlu-double-degree/">UW WLU Double Degree</a>
+            
+        </div>
+    </div>
+
+
+
+
+    
+
+    
+
+    
         
-    </ul>
+
+
+<script src="https://utteranc.es/client.js"
+        repo="elibroftw/elibroftw.github.io"
+        theme="github-dark"
+        label=""
+        issue-term="url"
+        crossorigin="anonymous"
+        async>
+</script>
+    
 
 
         </main>
