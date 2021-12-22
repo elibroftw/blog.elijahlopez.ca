@@ -42,7 +42,7 @@ In VSCode, you will need to install the "C/C++ Extension" and the "CMake Tools" 
    - For me, that would be `C:\Users\maste\Documents\GitHub\vcpkg`
    - Use `git clone https://github.com/microsoft/vcpkg.git` or GitHub desktop
 2. Run the Vcpkg bootstrap script
-   - Windows: `./bootstrap-vcpkg -disableMetrics`
+   - Windows: `"./bootstrap-vcpkg" -disableMetrics`
    - Unix: `./bootstrap-vcpkg.sh -disableMetrics`
 3. Modify environment variables
    - Add the vcpkg cloned directory to PATH
