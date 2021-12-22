@@ -38,7 +38,7 @@ In VSCode, you will need to install the "C/C++ Extension" and the "CMake Tools" 
 
 ### Installing Vcpkg
 
-1. Clone [`vcpkg`](https://github.com/microsoft/vcpkg) into a directory that won't bother you in your day to day life
+1. Clone [vcpkg](https://github.com/microsoft/vcpkg) into a directory that won't bother you in your day to day life
    - For me, that would be `C:\Users\maste\Documents\GitHub\vcpkg`
    - Use `git clone https://github.com/microsoft/vcpkg.git` or GitHub desktop
 2. Run the Vcpkg bootstrap script
