@@ -99,12 +99,12 @@ In the next section, we&amp;rsquo;ll be integrating &lt;code&gt;vcpkg&lt;/code&g
 &lt;ul&gt;
 &lt;li&gt;In &lt;code&gt;CMakeLists.txt&lt;/code&gt;, add the following helper target &amp;ldquo;run&amp;rdquo;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cmake&#34; data-lang=&#34;cmake&#34;&gt;  add_custom_target(&lt;span style=&#34;color:#e6db74&#34;&gt;run&lt;/span&gt;
-      &lt;span style=&#34;color:#e6db74&#34;&gt;COMMAND&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;${&lt;/span&gt;PROJECT_NAME&lt;span style=&#34;color:#f92672&#34;&gt;}&lt;/span&gt;
-      &lt;span style=&#34;color:#e6db74&#34;&gt;DEPENDS&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;${&lt;/span&gt;PROJECT_NAME&lt;span style=&#34;color:#f92672&#34;&gt;}&lt;/span&gt;
-      &lt;span style=&#34;color:#e6db74&#34;&gt;WORKING_DIRECTORY&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;${&lt;/span&gt;CMAKE_PROJECT_DIR&lt;span style=&#34;color:#f92672&#34;&gt;}&lt;/span&gt;
-  )&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cmake&#34; data-lang=&#34;cmake&#34;&gt;  add_custom_target(&lt;span style=&#34;color:#87ceeb&#34;&gt;run&lt;/span&gt;
+      &lt;span style=&#34;color:#87ceeb&#34;&gt;COMMAND&lt;/span&gt; ${&lt;span style=&#34;color:#eedd82&#34;&gt;PROJECT_NAME&lt;/span&gt;}
+      &lt;span style=&#34;color:#87ceeb&#34;&gt;DEPENDS&lt;/span&gt; ${&lt;span style=&#34;color:#eedd82&#34;&gt;PROJECT_NAME&lt;/span&gt;}
+      &lt;span style=&#34;color:#87ceeb&#34;&gt;WORKING_DIRECTORY&lt;/span&gt; ${&lt;span style=&#34;color:#eedd82&#34;&gt;CMAKE_PROJECT_DIR&lt;/span&gt;}
+  )
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;
@@ -115,8 +115,8 @@ In the next section, we&amp;rsquo;ll be integrating &lt;code&gt;vcpkg&lt;/code&g
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Visual Studio Code: Add the following to your &lt;code&gt;settings.json&lt;/code&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;cmake.configureSettings&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;:&lt;/span&gt; {
-    &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;CMAKE_TOOLCHAIN_FILE&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;...vcpkg.cmake&amp;#34;&lt;/span&gt;,
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;cmake.configureSettings&amp;#34;&lt;/span&gt;: {
+    &amp;#34;CMAKE_TOOLCHAIN_FILE&amp;#34;: &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;...vcpkg.cmake&amp;#34;&lt;/span&gt;,
 }
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
 &lt;li&gt;
@@ -129,7 +129,7 @@ In the next section, we&amp;rsquo;ll be integrating &lt;code&gt;vcpkg&lt;/code&g
 &lt;ul&gt;
 &lt;li&gt;Create &lt;code&gt;vcpkg_rf.txt&lt;/code&gt; in the root directory with the contents:&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;install
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;install
 cpr
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
 &lt;li&gt;
@@ -140,27 +140,27 @@ cpr
 &lt;ul&gt;
 &lt;li&gt;For &lt;code&gt;cpr&lt;/code&gt;, that would be&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cmake&#34; data-lang=&#34;cmake&#34;&gt; find_package(&lt;span style=&#34;color:#e6db74&#34;&gt;cpr&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;CONFIG&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;REQUIRED&lt;/span&gt;)&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;
-&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&lt;/span&gt; target_link_libraries(&lt;span style=&#34;color:#e6db74&#34;&gt;PROJECT_NAME&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;PRIVATE&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;cpr::cpr&lt;/span&gt;)&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cmake&#34; data-lang=&#34;cmake&#34;&gt; find_package(&lt;span style=&#34;color:#87ceeb&#34;&gt;cpr&lt;/span&gt; &lt;span style=&#34;color:#87ceeb&#34;&gt;CONFIG&lt;/span&gt; &lt;span style=&#34;color:#87ceeb&#34;&gt;REQUIRED&lt;/span&gt;)
+ target_link_libraries(&lt;span style=&#34;color:#87ceeb&#34;&gt;PROJECT_NAME&lt;/span&gt; &lt;span style=&#34;color:#87ceeb&#34;&gt;PRIVATE&lt;/span&gt; &lt;span style=&#34;color:#87ceeb&#34;&gt;cpr::cpr&lt;/span&gt;)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
 &lt;li&gt;For more than one library, you only need one &lt;code&gt;target_link_libraries&lt;/code&gt; rather than one for each additional library&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Now let&amp;rsquo;s code. In the main C++ file, type the following:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;cpr/cpr.h&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;
-&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;iostream&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;
-&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;
-&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;main&lt;/span&gt;()
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span style=&#34;color:#e5e5e5&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#e5e5e5&#34;&gt;&amp;lt;cpr/cpr.h&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#e5e5e5&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#e5e5e5&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#e5e5e5&#34;&gt;&amp;lt;iostream&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#e5e5e5&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#e5e5e5&#34;&gt;&lt;/span&gt;
+&lt;span style=&#34;color:#ee82ee&#34;&gt;int&lt;/span&gt; &lt;span style=&#34;color:#ff0&#34;&gt;main&lt;/span&gt;()
 {
-    cpr&lt;span style=&#34;color:#f92672&#34;&gt;::&lt;/span&gt;Response r &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; cpr&lt;span style=&#34;color:#f92672&#34;&gt;::&lt;/span&gt;Get(cpr&lt;span style=&#34;color:#f92672&#34;&gt;::&lt;/span&gt;Url{ &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;https://api.github.com/repos/whoshuu/cpr/contributors&amp;#34;&lt;/span&gt; },
-        cpr&lt;span style=&#34;color:#f92672&#34;&gt;::&lt;/span&gt;Authentication{ &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;user&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;pass&amp;#34;&lt;/span&gt; },
-        cpr&lt;span style=&#34;color:#f92672&#34;&gt;::&lt;/span&gt;Parameters{ {&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;anon&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;true&amp;#34;&lt;/span&gt;}, {&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;key&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;value&amp;#34;&lt;/span&gt;} });
-    r.status_code;                  &lt;span style=&#34;color:#75715e&#34;&gt;// 200
-&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    r.header[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;content-type&amp;#34;&lt;/span&gt;];       &lt;span style=&#34;color:#75715e&#34;&gt;// application/json; charset=utf-8
-&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    r.text;                         &lt;span style=&#34;color:#75715e&#34;&gt;// JSON text string
-&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    std&lt;span style=&#34;color:#f92672&#34;&gt;::&lt;/span&gt;cout &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; r.text &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; std&lt;span style=&#34;color:#f92672&#34;&gt;::&lt;/span&gt;endl;
-    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;;
+    cpr::Response r = cpr::Get(cpr::Url{ &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;https://api.github.com/repos/whoshuu/cpr/contributors&amp;#34;&lt;/span&gt; },
+        cpr::Authentication{ &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;user&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;pass&amp;#34;&lt;/span&gt; },
+        cpr::Parameters{ {&lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;anon&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;true&amp;#34;&lt;/span&gt;}, {&lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;key&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;value&amp;#34;&lt;/span&gt;} });
+    r.status_code;                  &lt;span style=&#34;color:#0f0&#34;&gt;// 200
+&lt;/span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;&lt;/span&gt;    r.header[&lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;content-type&amp;#34;&lt;/span&gt;];       &lt;span style=&#34;color:#0f0&#34;&gt;// application/json; charset=utf-8
+&lt;/span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;&lt;/span&gt;    r.text;                         &lt;span style=&#34;color:#0f0&#34;&gt;// JSON text string
+&lt;/span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;&lt;/span&gt;    std::cout &amp;lt;&amp;lt; r.text &amp;lt;&amp;lt; std::endl;
+    &lt;span style=&#34;color:#f00&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#f60&#34;&gt;0&lt;/span&gt;;
 }
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
 &lt;li&gt;

@@ -7,6 +7,7 @@ tags: [
     "tutorial",
     "vcpkg",
     "cmake",
+    "vscode",
 ]
 categories: [
   "programming",

@@ -33,12 +33,12 @@ params:
   avatar: "/images/me.png" # used for microformats
   description: ""
   # Uncomment if you need this
-  # images:
-  #   - images/og-featured.png # relative path to "static" directory
+  images:
+    - images          # path relative to "static" directory
   customCSS:
-    - css/custom.css # relative path to "assets" directory (don't use main.css filename)
+    - css/custom.css  # path relative to "assets" directory (don't use main.css filename)
   # customJS:
-  #   - js/ .js # relative path to "assets" directory
+  #   - js/ .js       # path relative path to "assets" directory
   dateFormat: "2006-Jan-02"
   paginationSinglePost: true
   style: dark-without-switcher
@@ -70,6 +70,8 @@ params:
 #    icon: "hugo"
 
 markup:
+  highlight:
+    style: rrt
   goldmark:
     renderer:
       unsafe: true # enable raw HTML in Markdown
