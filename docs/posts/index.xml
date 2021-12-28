@@ -6,10 +6,71 @@
     <description>ELL Blog (Posts)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 22 Dec 2021 18:23:50 -0500</lastBuildDate>
+    <lastBuildDate>Sat, 25 Dec 2021 10:30:44 -0600</lastBuildDate>
     
     <atom:link href="https://elibroftw.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Why 64-bit programs are Better Than 32-bit</title>
+      <link>https://elibroftw.github.io/posts/64bit-is-better-than-32bit/</link>
+      <pubDate>Sat, 25 Dec 2021 10:30:44 -0600</pubDate>
+      
+      <guid>https://elibroftw.github.io/posts/64bit-is-better-than-32bit/</guid>
+      <description>&lt;p&gt;This article is from a developer point of view, not a user point of view.
+The audience of this article are beginner to intermediate developers and is introductory, not argumenatiative.
+Do not expect to be convinced if you are pro 32-bit software because Windows decided to support 32-bit software.
+From a user point of view, 64-bit computers and software is better because then you can have 100 browser tabs open&lt;/p&gt;
+&lt;h3 id=&#34;1-no-4gib-memory-limit&#34;&gt;1. No 4GiB Memory Limit
+&lt;span&gt;&lt;a href=&#34;#1-no-4gib-memory-limit&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;If your application needs more than 4GiB memory, then you definitely need a 32-bit application.
+And if you don&amp;rsquo;t need more than 4GiB of memory, you might not want to develop 32-bit development habits because if you do need 4GB in the future, its better for your habits to already work out, that it is to keep in the back of your mind that you need to switch to targetting 64-bit.&lt;/p&gt;
+&lt;h3 id=&#34;2-64-bit-users-get-64-bit-applications&#34;&gt;2. 64-bit Users get 64-bit Applications
+&lt;span&gt;&lt;a href=&#34;#2-64-bit-users-get-64-bit-applications&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;By shipping only 64-bit distrubtions, and only one legacy 32-bit application, most users won&amp;rsquo;t be recommended the wrong architecture.
+For example, VLC recommended their 32-bit distribution on my 64-bit computer! Some of my video files are around 20GB so of course 64-bit would be best.&lt;/p&gt;
+&lt;h3 id=&#34;3-linux-seamless-installation-for-users&#34;&gt;3. Linux: Seamless Installation for Users
+&lt;span&gt;&lt;a href=&#34;#3-linux-seamless-installation-for-users&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;If you ship 32-bit Linux applications, chances are that your users will now need to install the necessary 32-bit libraries.
+Most systems are 64-bit and 32-bit users can continue using legacy software with their package manager.&lt;/p&gt;
+&lt;h3 id=&#34;4-64-bit-is-the-default&#34;&gt;4. 64-bit is the Default
+&lt;span&gt;&lt;a href=&#34;#4-64-bit-is-the-default&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;In Visual Studio 2022, the default target architecture is 64-bit. It used to be 32-bit.
+Most users run 64-bit systems, so the default compiler or intrepetor you install, like Python, will also be 64-bit in 2021.&lt;/p&gt;
+&lt;h3 id=&#34;5-future-proof--32-bit-compilers&#34;&gt;5. Future Proof &amp;amp; 32-bit Compilers
+&lt;span&gt;&lt;a href=&#34;#5-future-proof--32-bit-compilers&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;64-bit is objectively more future proof than 32-bit. Rust already has a 128-bit primitive, so 32-bit will definitely be left in the dust if things shift even further. We&amp;rsquo;ve already seen Windows 10 go from &amp;ldquo;last Windows&amp;rdquo; to out of support in 2024. When starting new projects, why sacrifice the stability of your applicaiton in the future, just to support the past?&lt;/p&gt;
+&lt;p&gt;My personal grife is a Python project. Over two years ago, I made a music player for Windows, &lt;a href=&#34;https://github.com/elibroftw/music-caster/&#34;&gt;Music Caster&lt;/a&gt;. The relevant details are Python 3.7 64-bit, PyInstaller, and a fork of portaudio that only compiled for 64-bit.
+After some time, a user asked me to support 32-bit. Me being naive at the time agreed because I fell prey to the 32-bit supports more users reasoning.&lt;/p&gt;
+&lt;p&gt;To support 32-bit applications, I had to uninsatll my existing instllation and then install the 32-bit version of Python. I went with Python 3.8 since Python 3.9 hadn&amp;rsquo;t come out yet. I wish it was that simple, but there&amp;rsquo;s more. I had to figure out how to compile the 32-bit version of the portaudio library. Then another year later, I&amp;rsquo;ve decided to future proof my application, so the journey back from 32-bit Python was just as hard.&lt;/p&gt;
+&lt;p&gt;Lesson of the day is to never use a 3.X.0 Python distribution or learn Rust while you are using Python.&lt;/p&gt;
+&lt;h3 id=&#34;6-no-emulation&#34;&gt;6. No Emulation
+&lt;span&gt;&lt;a href=&#34;#6-no-emulation&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;The most common pro 32-bit software argument is also the most ironic. The entire reason emulation exists, that is 32-bit software running on 64-bit Windows,
+is Windows supporting legacy software. Creating 32-bit software when 64-bit is possible, is simply ignorant as to why 64-bit exits.&lt;/p&gt;
+&lt;p&gt;At the cost of not supporting at most 2% of Windows users, your application won&amp;rsquo;t have to be emulated.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;WOW64 is the x86 emulator that allows 32-bit Windows-based applications to run seamlessly on 64-bit Windows. &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;64-bit operations are native in 64-bit systems and don&amp;rsquo;t require multiple 32-bit calls
+In the end, performance is largely based on optimization, and not so much architecture target, so that&amp;rsquo;s why this is the last section.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;conclusion&#34;&gt;Conclusion
+&lt;span&gt;&lt;a href=&#34;#conclusion&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;I know this article is not a 100% high quality article, but this article isn&amp;rsquo;t argumentative, it&amp;rsquo;s just a run through.&lt;/p&gt;
+&lt;p&gt;In conclusion, it&amp;rsquo;s better to distribute 32-bit and 64-bit applications than just 32-bit applications.
+But don&amp;rsquo;t be like VLC, and recommend 64-bit computers to install the 32-bit version!&lt;/p&gt;
+&lt;section class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://docs.microsoft.com/en-us/windows/win32/winprog64/running-32-bit-applications&#34;&gt;https://docs.microsoft.com/en-us/windows/win32/winprog64/running-32-bit-applications&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/section&gt;
+</description>
+    </item>
     
     <item>
       <title>VS Code Remote SSH Tutorial</title>
@@ -18,25 +79,30 @@
       
       <guid>https://elibroftw.github.io/posts/vs-code-remote-ssh/</guid>
       <description>&lt;p&gt;In this tutorial we&amp;rsquo;ll integrate SSH into VS Code in a way that won&amp;rsquo;t require entering a password every time.&lt;/p&gt;
-&lt;h2 id=&#34;generating-an-ssh-key&#34;&gt;Generating an SSH key&lt;/h2&gt;
-&lt;p&gt;If you&amp;rsquo;re on Windows, you will need to install the OpenSSH feature from Settings or you can use WSL to be able to use &lt;code&gt;ssh-keygen&lt;/code&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;generating-an-ssh-key&#34;&gt;Generating an SSH key
+&lt;span&gt;&lt;a href=&#34;#generating-an-ssh-key&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;If you&amp;rsquo;re on Windows, you will need to install the OpenSSH feature from Settings or you can use WSL to be able to use &lt;code&gt;ssh-keygen&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;You can generate an SSH key using &lt;code&gt;ssh-keygen -t ed25519 -a 100&lt;/code&gt;. If the ed25519 algorithm is unavailable, you can use the rsa algorithm: &lt;code&gt;ssh-keygen -t rsa -b 4096 -o -a 100&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;Keep track of where the key is stored. For me this would be &lt;code&gt;C:\Users\maste\.ssh\id_ed25519&lt;/code&gt;, or even &lt;code&gt;C:\Users\maste\.ssh\id_rsa&lt;/code&gt;.
 This will be useful when configuring the Remote-SSH VSCode extension.&lt;/p&gt;
-&lt;h2 id=&#34;adding-ssh-key-to-authorized-keys&#34;&gt;Adding SSH key to Authorized Keys&lt;/h2&gt;
-&lt;p&gt;During the process of adding our keys, we&amp;rsquo;ll have to enter our passwords.&lt;/p&gt;
-&lt;h3 id=&#34;linux--wsl&#34;&gt;Linux / WSL&lt;/h3&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;ssh-copy-id -i path/to/file/if/not/default user@host
+&lt;h2 id=&#34;adding-ssh-key-to-authorized-keys&#34;&gt;Adding SSH key to Authorized Keys
+&lt;span&gt;&lt;a href=&#34;#adding-ssh-key-to-authorized-keys&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;During the process of adding our keys, we&amp;rsquo;ll have to enter our passwords.&lt;/p&gt;
+&lt;h3 id=&#34;linux--wsl&#34;&gt;Linux / WSL
+&lt;span&gt;&lt;a href=&#34;#linux--wsl&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;ssh-copy-id -i path/to/file/if/not/default user@host
 &lt;span style=&#34;color:#0f0&#34;&gt;# Examples&lt;/span&gt;
 ssh-copy-id -i .ssh/id_ed25519.pub user@host
 ssh-copy-id -i /mnt/c/Users/maste/.ssh/id_ed25519.pub user@host
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;If you&amp;rsquo;re having trouble with this, just &lt;code&gt;cd&lt;/code&gt; into the &lt;code&gt;.ssh&lt;/code&gt; folder and use &lt;code&gt;-i id_ed25519.pub&lt;/code&gt;&lt;/p&gt;
-&lt;h3 id=&#34;windows-no-wsl&#34;&gt;Windows no WSL&lt;/h3&gt;
-&lt;p&gt;If you&amp;rsquo;re on Windows, you won&amp;rsquo;t have access to &lt;code&gt;ssh-copy-id&lt;/code&gt;. Instead you can use either of these PowerShell command.&lt;/p&gt;
+&lt;h3 id=&#34;windows-no-wsl&#34;&gt;Windows no WSL
+&lt;span&gt;&lt;a href=&#34;#windows-no-wsl&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;If you&amp;rsquo;re on Windows, you won&amp;rsquo;t have access to &lt;code&gt;ssh-copy-id&lt;/code&gt;. Instead you can use either of these PowerShell command.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-powershell&#34; data-lang=&#34;powershell&#34;&gt;type path\to\id_algo.pub | ssh user&lt;span style=&#34;color:#eedd82&#34;&gt;@host&lt;/span&gt; &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;cat &amp;gt;&amp;gt; .ssh/authorized_keys&amp;#34;&lt;/span&gt;
 &lt;span style=&#34;color:#0f0&#34;&gt;# helper: type $env:USERPROFILE\.ssh\id_ed25519.pub | ssh user@host &amp;#34;cat &amp;gt;&amp;gt; .ssh/authorized_keys&amp;#34;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;setting-up-vs-code&#34;&gt;Setting up VS Code&lt;/h2&gt;
-&lt;ol&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;setting-up-vs-code&#34;&gt;Setting up VS Code
+&lt;span&gt;&lt;a href=&#34;#setting-up-vs-code&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
+&lt;/h2&gt;&lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;Install the &lt;a href=&#34;https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh&#34;&gt;Remote - SSH extension&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
@@ -82,8 +148,9 @@ ssh-copy-id -i /mnt/c/Users/maste/.ssh/id_ed25519.pub user@host
   &lt;iframe src=&#34;https://www.youtube.com/embed/FeBzSYiWkEU&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
 &lt;/div&gt;
 
-&lt;h2 id=&#34;prerequisties&#34;&gt;Prerequisties&lt;/h2&gt;
-&lt;ul&gt;
+&lt;h2 id=&#34;prerequisties&#34;&gt;Prerequisties
+&lt;span&gt;&lt;a href=&#34;#prerequisties&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
+&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;An IDE
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://code.visualstudio.com/download&#34;&gt;Visual Studio Code&lt;/a&gt;&lt;/li&gt;
@@ -102,12 +169,14 @@ ssh-copy-id -i /mnt/c/Users/maste/.ssh/id_ed25519.pub user@host
 &lt;/li&gt;
 &lt;li&gt;&lt;code&gt;git&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;installing-cmake&#34;&gt;Installing CMake&lt;/h2&gt;
-&lt;p&gt;You will need &lt;a href=&#34;https://cmake.org/download/&#34;&gt;CMake 3.22+&lt;/a&gt; in order to use the Visual Studio 2022 compiler through VSCode.
+&lt;h2 id=&#34;installing-cmake&#34;&gt;Installing CMake
+&lt;span&gt;&lt;a href=&#34;#installing-cmake&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;You will need &lt;a href=&#34;https://cmake.org/download/&#34;&gt;CMake 3.22+&lt;/a&gt; in order to use the Visual Studio 2022 compiler through VSCode.
 The installer does most of the work, so you won&amp;rsquo;t have to manually add &lt;code&gt;cmake&lt;/code&gt; to PATH.&lt;/p&gt;
 &lt;p&gt;In VSCode, you will need to install the &amp;ldquo;C/C++ Extension&amp;rdquo; and the &amp;ldquo;CMake Tools&amp;rdquo; extensions.&lt;/p&gt;
-&lt;h3 id=&#34;installing-vcpkg&#34;&gt;Installing Vcpkg&lt;/h3&gt;
-&lt;ol&gt;
+&lt;h3 id=&#34;installing-vcpkg&#34;&gt;Installing Vcpkg
+&lt;span&gt;&lt;a href=&#34;#installing-vcpkg&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
+&lt;/h3&gt;&lt;ol&gt;
 &lt;li&gt;Clone &lt;a href=&#34;https://github.com/microsoft/vcpkg&#34;&gt;vcpkg&lt;/a&gt; into a directory that won&amp;rsquo;t bother you in your day to day life
 &lt;ul&gt;
 &lt;li&gt;For me, that would be &lt;code&gt;C:\Users\maste\Documents\GitHub\vcpkg&lt;/code&gt;&lt;/li&gt;
@@ -145,8 +214,9 @@ The installer does most of the work, so you won&amp;rsquo;t have to manually add
 &lt;/ol&gt;
 &lt;p&gt;You can now install packages using &lt;code&gt;vcpkg install &amp;lt;lib&amp;gt;&lt;/code&gt; and search for them using &lt;code&gt;vcpkg search &amp;lt;lib&amp;gt;&lt;/code&gt;.
 In the next section, we&amp;rsquo;ll be integrating &lt;code&gt;vcpkg&lt;/code&gt; within a CMake project.&lt;/p&gt;
-&lt;h2 id=&#34;integrating-vcpkg-into-a-new-cmake-project&#34;&gt;Integrating Vcpkg into a new CMake Project&lt;/h2&gt;
-&lt;p&gt;In this section we&amp;rsquo;ll be creating a CMake C++ project that will make an HTTP request using the &lt;code&gt;cpr&lt;/code&gt; library.&lt;/p&gt;
+&lt;h2 id=&#34;integrating-vcpkg-into-a-new-cmake-project&#34;&gt;Integrating Vcpkg into a new CMake Project
+&lt;span&gt;&lt;a href=&#34;#integrating-vcpkg-into-a-new-cmake-project&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;In this section we&amp;rsquo;ll be creating a CMake C++ project that will make an HTTP request using the &lt;code&gt;cpr&lt;/code&gt; library.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;Create a CMake project in Visual Studio or VSCode&lt;/p&gt;
@@ -246,11 +316,13 @@ The video has an example of opening a project in VSCode that was made in Visual 
       <description>&lt;!-- markdownlint-disable-file MD033 --&gt;
 &lt;p&gt;Here are two useful formulas that are presented in a pretty way.
 Thank you GitHub for the math LaTeX rendering.&lt;/p&gt;
-&lt;h2 id=&#34;sum-of-a-finite-geometric-series&#34;&gt;Sum of a Finite Geometric Series&lt;/h2&gt;
-&lt;img class=equation src=&#34;https://render.githubusercontent.com/render/math?math=S_n=\sum_{i=1}^{n}a_ir^{i-1}=a_1\frac{r^n-1}{r-1}&#34;&gt;
+&lt;h2 id=&#34;sum-of-a-finite-geometric-series&#34;&gt;Sum of a Finite Geometric Series
+&lt;span&gt;&lt;a href=&#34;#sum-of-a-finite-geometric-series&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
+&lt;/h2&gt;&lt;img class=equation src=&#34;https://render.githubusercontent.com/render/math?math=S_n=\sum_{i=1}^{n}a_ir^{i-1}=a_1\frac{r^n-1}{r-1}&#34;&gt;
 &lt;img class=equation src=&#34;https://render.githubusercontent.com/render/math?math=S_n=a_1\frac{r^n-1}{r-1}=a_1\frac{1-r^n}{1-r}&#34;&gt;
-&lt;h2 id=&#34;sum-of-an-infinite-geometric-series&#34;&gt;Sum of an Infinite Geometric Series&lt;/h2&gt;
-&lt;img class=equation src=&#34;https://render.githubusercontent.com/render/math?math=S=\sum_{i=0}^{\infty}a_ir^i=\frac{a_1}{1-r}&#34;&gt;
+&lt;h2 id=&#34;sum-of-an-infinite-geometric-series&#34;&gt;Sum of an Infinite Geometric Series
+&lt;span&gt;&lt;a href=&#34;#sum-of-an-infinite-geometric-series&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
+&lt;/h2&gt;&lt;img class=equation src=&#34;https://render.githubusercontent.com/render/math?math=S=\sum_{i=0}^{\infty}a_ir^i=\frac{a_1}{1-r}&#34;&gt;
 </description>
     </item>
     
@@ -264,14 +336,16 @@ Thank you GitHub for the math LaTeX rendering.&lt;/p&gt;
 The resources I had used to create a working blog left out some important details that I will include in my tutorial.
 I&amp;rsquo;ve also done the brunt of the work to perfect the theme and workflow.
 If you are like me, you can follow the tutorial that &lt;a href=&#34;#forking-my-site&#34;&gt;forks my site&lt;/a&gt; rather than making a blog site &lt;a href=&#34;#from-scratch&#34;&gt;from scratch&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h2&gt;
-&lt;ol&gt;
+&lt;h2 id=&#34;prerequisites&#34;&gt;Prerequisites
+&lt;span&gt;&lt;a href=&#34;#prerequisites&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
+&lt;/h2&gt;&lt;ol&gt;
 &lt;li&gt;&lt;a href=&#34;https://gohugo.io/getting-started/installing#binary-cross-platform&#34;&gt;Hugo&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Make sure &lt;code&gt;hugo&lt;/code&gt; is available in the PATH environment variable&lt;/li&gt;
 &lt;li&gt;Have &lt;code&gt;git&lt;/code&gt; installed and available globally (in PATH)&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h2 id=&#34;forking-my-site&#34;&gt;Forking My Site&lt;/h2&gt;
-&lt;ol&gt;
+&lt;h2 id=&#34;forking-my-site&#34;&gt;Forking My Site
+&lt;span&gt;&lt;a href=&#34;#forking-my-site&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
+&lt;/h2&gt;&lt;ol&gt;
 &lt;li&gt;Fork &lt;a href=&#34;https://github.com/elibroftw/elibroftw.github.io&#34;&gt;my repository&lt;/a&gt; into &lt;code&gt;/USERNAME.github.io&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;Edit &lt;code&gt;config.yaml&lt;/code&gt; and replace my information with yours&lt;/li&gt;
 &lt;li&gt;Use the command &lt;code&gt;hugo new posts/POST.md&lt;/code&gt; to create your posts&lt;/li&gt;
@@ -280,8 +354,9 @@ If you are like me, you can follow the tutorial that &lt;a href=&#34;#forking-my
 &lt;li&gt;The &lt;code&gt;pre-commit&lt;/code&gt; hook will auto-update themes and build the site using &lt;code&gt;hugo -d docs&lt;/code&gt; before commiting&lt;/li&gt;
 &lt;li&gt;You may need to set the serve folder to &lt;code&gt;docs&lt;/code&gt; instead of &lt;code&gt;/&lt;/code&gt; under &lt;code&gt;https://github.com/USERNAME/USERNAME.github.io/settings/pages&lt;/code&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h2 id=&#34;from-scratch&#34;&gt;From Scratch&lt;/h2&gt;
-&lt;ol&gt;
+&lt;h2 id=&#34;from-scratch&#34;&gt;From Scratch
+&lt;span&gt;&lt;a href=&#34;#from-scratch&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
+&lt;/h2&gt;&lt;ol&gt;
 &lt;li&gt;Create a &lt;code&gt;USERNAME.github.io&lt;/code&gt; repository in GitHub&lt;/li&gt;
 &lt;li&gt;Clone the repository&lt;/li&gt;
 &lt;li&gt;Get the GitHub link for a theme from &lt;a href=&#34;https://themes.gohugo.io/&#34;&gt;https://themes.gohugo.io/&lt;/a&gt;&lt;/li&gt;
@@ -296,8 +371,9 @@ If you are like me, you can follow the tutorial that &lt;a href=&#34;#forking-my
 &lt;li&gt;To update themes, use &lt;code&gt;git submodule update --remote --merge&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;You can use pre-commit hooks to automate steps 10 and 12 before every commit&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h2 id=&#34;other-resources&#34;&gt;Other Resources&lt;/h2&gt;
-&lt;ul&gt;
+&lt;h2 id=&#34;other-resources&#34;&gt;Other Resources
+&lt;span&gt;&lt;a href=&#34;#other-resources&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
+&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://gohugo.io/getting-started/quick-start/&#34;&gt;https://gohugo.io/getting-started/quick-start/&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://retrolog.io/blog/creating-a-hugo-theme-from-scratch/&#34;&gt;https://retrolog.io/blog/creating-a-hugo-theme-from-scratch/&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://levelup.gitconnected.com/build-a-personal-website-with-github-pages-and-hugo-6c68592204c7&#34;&gt;https://levelup.gitconnected.com/build-a-personal-website-with-github-pages-and-hugo-6c68592204c7&lt;/a&gt;&lt;/li&gt;
@@ -313,17 +389,21 @@ If you are like me, you can follow the tutorial that &lt;a href=&#34;#forking-my
       <guid>https://elibroftw.github.io/posts/uw-wlu-double-degree/</guid>
       <description>&lt;p&gt;I started my double degree BCS and BBA journey in Fall 2019.
 Here are some things you should know about the program plus the environment.&lt;/p&gt;
-&lt;h2 id=&#34;homeschool-differences&#34;&gt;Homeschool Differences&lt;/h2&gt;
-&lt;h3 id=&#34;scholarships&#34;&gt;Scholarships&lt;/h3&gt;
-&lt;p&gt;WLU has higher scholarship values than UW. The amount changes each year. For example in my year, WLU provided C$5,000 for first year but in 2021, that value was less than or equal to C$4,000. I&amp;rsquo;m not entirely sure because I forgot what my friend said they received.&lt;/p&gt;
-&lt;h3 id=&#34;tuition&#34;&gt;Tuition&lt;/h3&gt;
-&lt;ul&gt;
+&lt;h2 id=&#34;homeschool-differences&#34;&gt;Homeschool Differences
+&lt;span&gt;&lt;a href=&#34;#homeschool-differences&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
+&lt;/h2&gt;&lt;h3 id=&#34;scholarships&#34;&gt;Scholarships
+&lt;span&gt;&lt;a href=&#34;#scholarships&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;WLU has higher scholarship values than UW. The amount changes each year. For example in my year, WLU provided C$5,000 for first year but in 2021, that value was less than or equal to C$4,000. I&amp;rsquo;m not entirely sure because I forgot what my friend said they received.&lt;/p&gt;
+&lt;h3 id=&#34;tuition&#34;&gt;Tuition
+&lt;span&gt;&lt;a href=&#34;#tuition&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
+&lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;Quest and Loris are both accessible but,&lt;/li&gt;
 &lt;li&gt;UW-based students will need to use Quest to pay &amp;amp; view their tuition bill&lt;/li&gt;
 &lt;li&gt;WLU-based students will need to use Loris to pay &amp;amp; view their tuition bill&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;first-year-residences&#34;&gt;First Year Residences&lt;/h3&gt;
-&lt;ul&gt;
+&lt;h3 id=&#34;first-year-residences&#34;&gt;First Year Residences
+&lt;span&gt;&lt;a href=&#34;#first-year-residences&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
+&lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;You go through your home school to get a residence&lt;/li&gt;
 &lt;li&gt;Both typically have dorm style or apartment style&lt;/li&gt;
 &lt;li&gt;Dorm = food plan ($$$) and apartment = food stamps (flex dollars)
@@ -366,8 +446,9 @@ Here are some things you should know about the program plus the environment.&lt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;preparing-for-university&#34;&gt;Preparing for University?&lt;/h3&gt;
-&lt;p&gt;I did not prepare at all. I spent my time lifeguarding as well as working on my &lt;a href=&#34;https://github.com/elibroftw/music-caster&#34;&gt;music player, Music Caster&lt;/a&gt;.
+&lt;h3 id=&#34;preparing-for-university&#34;&gt;Preparing for University?
+&lt;span&gt;&lt;a href=&#34;#preparing-for-university&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;I did not prepare at all. I spent my time lifeguarding as well as working on my &lt;a href=&#34;https://github.com/elibroftw/music-caster&#34;&gt;music player, Music Caster&lt;/a&gt;.
 I will share some advice.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;The first two weeks do not represent the semester at all&lt;/li&gt;
@@ -394,8 +475,9 @@ I will share some advice.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;Enjoy your summer, seriously&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;moving-to-campus&#34;&gt;Moving to Campus&lt;/h3&gt;
-&lt;ul&gt;
+&lt;h3 id=&#34;moving-to-campus&#34;&gt;Moving to Campus
+&lt;span&gt;&lt;a href=&#34;#moving-to-campus&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
+&lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;If WLU based, you&amp;rsquo;ll first be at Lazaridus Hall.
 &lt;ul&gt;
 &lt;li&gt;Pick up residence keys/pass&lt;/li&gt;
@@ -408,8 +490,9 @@ I will share some advice.&lt;/p&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;uw-advanced-courses&#34;&gt;UW Advanced Courses&lt;/h3&gt;
-&lt;ul&gt;
+&lt;h3 id=&#34;uw-advanced-courses&#34;&gt;UW Advanced Courses
+&lt;span&gt;&lt;a href=&#34;#uw-advanced-courses&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
+&lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;The default first year math courses (MATH 137, MATH 135, MATH 136, MATH 138) are already harder than most Canadian Universities&#39; first year math courses&lt;/li&gt;
 &lt;li&gt;Computer Science students can take 12X math courses to have an easier time, but it only hurts them in the long run (easy = less stimulating)&lt;/li&gt;
 &lt;li&gt;Advanced courses are for the highest academic achievers who are ready to put in the time and effort
@@ -433,8 +516,9 @@ I will share some advice.&lt;/p&gt;
       <description>&lt;p&gt;This post tests if Hugo with the anubis theme works.
 I&amp;rsquo;m thinking of self publishing articles rather than posting on Medium.
 Medium&amp;rsquo;s UI is slower than YouTube&amp;rsquo;s even though Medium is completely text-based.&lt;/p&gt;
-&lt;h3 id=&#34;edit&#34;&gt;Edit&lt;/h3&gt;
-&lt;p&gt;It&amp;rsquo;s currently December 19th 2021, and I&amp;rsquo;ve even added a comment section. There&amp;rsquo;s absolutely no reason to use Medium anymore especially after making my own &lt;a href=&#34;https://elibroftw.github.io/posts/hugo_tutorial&#34;&gt;Hugo GitHub Pages Tutorial&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;edit&#34;&gt;Edit
+&lt;span&gt;&lt;a href=&#34;#edit&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;It&amp;rsquo;s currently December 19th 2021, and I&amp;rsquo;ve even added a comment section. There&amp;rsquo;s absolutely no reason to use Medium anymore especially after making my own &lt;a href=&#34;https://elibroftw.github.io/posts/hugo_tutorial&#34;&gt;Hugo GitHub Pages Tutorial&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     

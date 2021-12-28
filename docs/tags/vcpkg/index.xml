@@ -22,8 +22,9 @@
   &lt;iframe src=&#34;https://www.youtube.com/embed/FeBzSYiWkEU&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
 &lt;/div&gt;
 
-&lt;h2 id=&#34;prerequisties&#34;&gt;Prerequisties&lt;/h2&gt;
-&lt;ul&gt;
+&lt;h2 id=&#34;prerequisties&#34;&gt;Prerequisties
+&lt;span&gt;&lt;a href=&#34;#prerequisties&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
+&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;An IDE
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://code.visualstudio.com/download&#34;&gt;Visual Studio Code&lt;/a&gt;&lt;/li&gt;
@@ -42,12 +43,14 @@
 &lt;/li&gt;
 &lt;li&gt;&lt;code&gt;git&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;installing-cmake&#34;&gt;Installing CMake&lt;/h2&gt;
-&lt;p&gt;You will need &lt;a href=&#34;https://cmake.org/download/&#34;&gt;CMake 3.22+&lt;/a&gt; in order to use the Visual Studio 2022 compiler through VSCode.
+&lt;h2 id=&#34;installing-cmake&#34;&gt;Installing CMake
+&lt;span&gt;&lt;a href=&#34;#installing-cmake&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;You will need &lt;a href=&#34;https://cmake.org/download/&#34;&gt;CMake 3.22+&lt;/a&gt; in order to use the Visual Studio 2022 compiler through VSCode.
 The installer does most of the work, so you won&amp;rsquo;t have to manually add &lt;code&gt;cmake&lt;/code&gt; to PATH.&lt;/p&gt;
 &lt;p&gt;In VSCode, you will need to install the &amp;ldquo;C/C++ Extension&amp;rdquo; and the &amp;ldquo;CMake Tools&amp;rdquo; extensions.&lt;/p&gt;
-&lt;h3 id=&#34;installing-vcpkg&#34;&gt;Installing Vcpkg&lt;/h3&gt;
-&lt;ol&gt;
+&lt;h3 id=&#34;installing-vcpkg&#34;&gt;Installing Vcpkg
+&lt;span&gt;&lt;a href=&#34;#installing-vcpkg&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
+&lt;/h3&gt;&lt;ol&gt;
 &lt;li&gt;Clone &lt;a href=&#34;https://github.com/microsoft/vcpkg&#34;&gt;vcpkg&lt;/a&gt; into a directory that won&amp;rsquo;t bother you in your day to day life
 &lt;ul&gt;
 &lt;li&gt;For me, that would be &lt;code&gt;C:\Users\maste\Documents\GitHub\vcpkg&lt;/code&gt;&lt;/li&gt;
@@ -85,8 +88,9 @@ The installer does most of the work, so you won&amp;rsquo;t have to manually add
 &lt;/ol&gt;
 &lt;p&gt;You can now install packages using &lt;code&gt;vcpkg install &amp;lt;lib&amp;gt;&lt;/code&gt; and search for them using &lt;code&gt;vcpkg search &amp;lt;lib&amp;gt;&lt;/code&gt;.
 In the next section, we&amp;rsquo;ll be integrating &lt;code&gt;vcpkg&lt;/code&gt; within a CMake project.&lt;/p&gt;
-&lt;h2 id=&#34;integrating-vcpkg-into-a-new-cmake-project&#34;&gt;Integrating Vcpkg into a new CMake Project&lt;/h2&gt;
-&lt;p&gt;In this section we&amp;rsquo;ll be creating a CMake C++ project that will make an HTTP request using the &lt;code&gt;cpr&lt;/code&gt; library.&lt;/p&gt;
+&lt;h2 id=&#34;integrating-vcpkg-into-a-new-cmake-project&#34;&gt;Integrating Vcpkg into a new CMake Project
+&lt;span&gt;&lt;a href=&#34;#integrating-vcpkg-into-a-new-cmake-project&#34;&gt;#&lt;/a&gt;&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;In this section we&amp;rsquo;ll be creating a CMake C++ project that will make an HTTP request using the &lt;code&gt;cpr&lt;/code&gt; library.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;Create a CMake project in Visual Studio or VSCode&lt;/p&gt;

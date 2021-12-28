@@ -1,7 +1,7 @@
 ---
 title: "Why 64-bit programs are Better Than 32-bit"
 date: 2021-12-25T10:30:44-06:00
-draft: true
+draft: false
 tags: [
     "c++",
     "tutorial",
