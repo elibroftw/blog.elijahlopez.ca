@@ -14,7 +14,7 @@
 
 <title>Installing Libraries for C&#43;&#43; with Vcpkg and CMake - ELL Blog</title>
 
-<meta name="description" content="Prerequisties# An IDE  Visual Studio Code Visual Studio 2022 if on Windows for the compiler Any IDE that has pretty good CMake integration Otherwise, you will need to use cmake yourself   A Compiler  Visual Studio 2022 if on Windows gcc (Linux) MSYS2/Mingw gcc (Windows) clang (MacOS?)   git  Installing CMake#You will need CMake 3.22&#43; in order to use the Visual Studio 2022 compiler through VSCode.">
+<meta name="description" content="Prerequisties An IDE  Visual Studio Code Visual Studio 2022 if on Windows for the compiler Any IDE that has pretty good CMake integration Otherwise, you will need to use cmake yourself   A Compiler  Visual Studio 2022 if on Windows gcc (Linux) MSYS2/Mingw gcc (Windows) clang (MacOS?)   git  Installing CMakeYou will need CMake 3.">
 
 
 
@@ -36,7 +36,7 @@
     
 
     
-        <link rel="stylesheet" href="https://elibroftw.github.io/css/style.min.de3bc82db3a95e4f2e9141323e4605a3c33e1273b4085f24eb6b06844be33468.css" integrity="sha256-3jvILbOpXk8ukUEyPkYFo8M&#43;EnO0CF8k62sGhEvjNGg=">
+        <link rel="stylesheet" href="https://elibroftw.github.io/css/style.min.81e7635522f01aff2df4c9644db491b22d315d37b9d536ef8470ff938c27b474.css" integrity="sha256-gedjVSLwGv8t9MlkTbSRsi0xXTe51TbvhHD/k4wntHQ=">
     
 
 
@@ -44,8 +44,27 @@
 
 
 
+    
+
+
+
+
+
+    
+    
+        
+    
+    
+
+    
+        <script src="https://elibroftw.github.io/js/script.min.25b575f0d58af8d1fea2390032c57c9fc338f35c569919ab60fb86dba3c45f3b.js" type="text/javascript" charset="utf-8" integrity="sha256-JbV18NWK&#43;NH&#43;ojkAMsV8n8M481xWmRmrYPuG26PEXzs="></script>
+    
+
+
+
+
 <meta property="og:title" content="Installing Libraries for C&#43;&#43; with Vcpkg and CMake" />
-<meta property="og:description" content="Prerequisties# An IDE  Visual Studio Code Visual Studio 2022 if on Windows for the compiler Any IDE that has pretty good CMake integration Otherwise, you will need to use cmake yourself   A Compiler  Visual Studio 2022 if on Windows gcc (Linux) MSYS2/Mingw gcc (Windows) clang (MacOS?)   git  Installing CMake#You will need CMake 3.22&#43; in order to use the Visual Studio 2022 compiler through VSCode." />
+<meta property="og:description" content="Prerequisties An IDE  Visual Studio Code Visual Studio 2022 if on Windows for the compiler Any IDE that has pretty good CMake integration Otherwise, you will need to use cmake yourself   A Compiler  Visual Studio 2022 if on Windows gcc (Linux) MSYS2/Mingw gcc (Windows) clang (MacOS?)   git  Installing CMakeYou will need CMake 3." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://elibroftw.github.io/posts/vcpkg-cmake-tutorial/" /><meta property="og:image" content="https://elibroftw.github.io/images"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-12-19T19:51:55-05:00" />
@@ -56,7 +75,7 @@
 <meta name="twitter:image" content="https://elibroftw.github.io/images"/>
 
 <meta name="twitter:title" content="Installing Libraries for C&#43;&#43; with Vcpkg and CMake"/>
-<meta name="twitter:description" content="Prerequisties# An IDE  Visual Studio Code Visual Studio 2022 if on Windows for the compiler Any IDE that has pretty good CMake integration Otherwise, you will need to use cmake yourself   A Compiler  Visual Studio 2022 if on Windows gcc (Linux) MSYS2/Mingw gcc (Windows) clang (MacOS?)   git  Installing CMake#You will need CMake 3.22&#43; in order to use the Visual Studio 2022 compiler through VSCode."/>
+<meta name="twitter:description" content="Prerequisties An IDE  Visual Studio Code Visual Studio 2022 if on Windows for the compiler Any IDE that has pretty good CMake integration Otherwise, you will need to use cmake yourself   A Compiler  Visual Studio 2022 if on Windows gcc (Linux) MSYS2/Mingw gcc (Windows) clang (MacOS?)   git  Installing CMakeYou will need CMake 3."/>
 
 
 
@@ -222,7 +241,11 @@
 </div>
 
 <h2 id="prerequisties">Prerequisties
-<span><a href="#prerequisties">#</a></span>
+<span>
+    <a href="#prerequisties">
+        <svg viewBox="0 0 28 23" height="100%" width="19    " xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
 </h2><ul>
 <li>An IDE
 <ul>
@@ -243,12 +266,20 @@
 <li><code>git</code></li>
 </ul>
 <h2 id="installing-cmake">Installing CMake
-<span><a href="#installing-cmake">#</a></span>
+<span>
+    <a href="#installing-cmake">
+        <svg viewBox="0 0 28 23" height="100%" width="19    " xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
 </h2><p>You will need <a href="https://cmake.org/download/">CMake 3.22+</a> in order to use the Visual Studio 2022 compiler through VSCode.
 The installer does most of the work, so you won&rsquo;t have to manually add <code>cmake</code> to PATH.</p>
 <p>In VSCode, you will need to install the &ldquo;C/C++ Extension&rdquo; and the &ldquo;CMake Tools&rdquo; extensions.</p>
 <h3 id="installing-vcpkg">Installing Vcpkg
-<span><a href="#installing-vcpkg">#</a></span>
+<span>
+    <a href="#installing-vcpkg">
+        <svg viewBox="0 0 28 23" height="100%" width="19    " xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
 </h3><ol>
 <li>Clone <a href="https://github.com/microsoft/vcpkg">vcpkg</a> into a directory that won&rsquo;t bother you in your day to day life
 <ul>
@@ -288,7 +319,11 @@ The installer does most of the work, so you won&rsquo;t have to manually add <co
 <p>You can now install packages using <code>vcpkg install &lt;lib&gt;</code> and search for them using <code>vcpkg search &lt;lib&gt;</code>.
 In the next section, we&rsquo;ll be integrating <code>vcpkg</code> within a CMake project.</p>
 <h2 id="integrating-vcpkg-into-a-new-cmake-project">Integrating Vcpkg into a new CMake Project
-<span><a href="#integrating-vcpkg-into-a-new-cmake-project">#</a></span>
+<span>
+    <a href="#integrating-vcpkg-into-a-new-cmake-project">
+        <svg viewBox="0 0 28 23" height="100%" width="19    " xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
 </h2><p>In this section we&rsquo;ll be creating a CMake C++ project that will make an HTTP request using the <code>cpr</code> library.</p>
 <ol>
 <li>

@@ -15,7 +15,7 @@
 <title>VS Code Remote SSH Tutorial - ELL Blog</title>
 
 <meta name="description" content="In this tutorial we&rsquo;ll integrate SSH into VS Code in a way that won&rsquo;t require entering a password every time.
-Generating an SSH key#If you&rsquo;re on Windows, you will need to install the OpenSSH feature from Settings or you can use WSL to be able to use ssh-keygen.
+Generating an SSH keyIf you&rsquo;re on Windows, you will need to install the OpenSSH feature from Settings or you can use WSL to be able to use ssh-keygen.
 You can generate an SSH key using ssh-keygen -t ed25519 -a 100. If the ed25519 algorithm is unavailable, you can use the rsa algorithm: ssh-keygen -t rsa -b 4096 -o -a 100.">
 
 
@@ -38,7 +38,7 @@ You can generate an SSH key using ssh-keygen -t ed25519 -a 100. If the ed25519 a
     
 
     
-        <link rel="stylesheet" href="https://elibroftw.github.io/css/style.min.de3bc82db3a95e4f2e9141323e4605a3c33e1273b4085f24eb6b06844be33468.css" integrity="sha256-3jvILbOpXk8ukUEyPkYFo8M&#43;EnO0CF8k62sGhEvjNGg=">
+        <link rel="stylesheet" href="https://elibroftw.github.io/css/style.min.81e7635522f01aff2df4c9644db491b22d315d37b9d536ef8470ff938c27b474.css" integrity="sha256-gedjVSLwGv8t9MlkTbSRsi0xXTe51TbvhHD/k4wntHQ=">
     
 
 
@@ -46,9 +46,28 @@ You can generate an SSH key using ssh-keygen -t ed25519 -a 100. If the ed25519 a
 
 
 
+    
+
+
+
+
+
+    
+    
+        
+    
+    
+
+    
+        <script src="https://elibroftw.github.io/js/script.min.25b575f0d58af8d1fea2390032c57c9fc338f35c569919ab60fb86dba3c45f3b.js" type="text/javascript" charset="utf-8" integrity="sha256-JbV18NWK&#43;NH&#43;ojkAMsV8n8M481xWmRmrYPuG26PEXzs="></script>
+    
+
+
+
+
 <meta property="og:title" content="VS Code Remote SSH Tutorial" />
 <meta property="og:description" content="In this tutorial we&rsquo;ll integrate SSH into VS Code in a way that won&rsquo;t require entering a password every time.
-Generating an SSH key#If you&rsquo;re on Windows, you will need to install the OpenSSH feature from Settings or you can use WSL to be able to use ssh-keygen.
+Generating an SSH keyIf you&rsquo;re on Windows, you will need to install the OpenSSH feature from Settings or you can use WSL to be able to use ssh-keygen.
 You can generate an SSH key using ssh-keygen -t ed25519 -a 100. If the ed25519 algorithm is unavailable, you can use the rsa algorithm: ssh-keygen -t rsa -b 4096 -o -a 100." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://elibroftw.github.io/posts/vs-code-remote-ssh/" /><meta property="og:image" content="https://elibroftw.github.io/images"/><meta property="article:section" content="posts" />
@@ -61,7 +80,7 @@ You can generate an SSH key using ssh-keygen -t ed25519 -a 100. If the ed25519 a
 
 <meta name="twitter:title" content="VS Code Remote SSH Tutorial"/>
 <meta name="twitter:description" content="In this tutorial we&rsquo;ll integrate SSH into VS Code in a way that won&rsquo;t require entering a password every time.
-Generating an SSH key#If you&rsquo;re on Windows, you will need to install the OpenSSH feature from Settings or you can use WSL to be able to use ssh-keygen.
+Generating an SSH keyIf you&rsquo;re on Windows, you will need to install the OpenSSH feature from Settings or you can use WSL to be able to use ssh-keygen.
 You can generate an SSH key using ssh-keygen -t ed25519 -a 100. If the ed25519 algorithm is unavailable, you can use the rsa algorithm: ssh-keygen -t rsa -b 4096 -o -a 100."/>
 
 
@@ -224,28 +243,48 @@ You can generate an SSH key using ssh-keygen -t ed25519 -a 100. If the ed25519 a
         <div class="content e-content">
             <p>In this tutorial we&rsquo;ll integrate SSH into VS Code in a way that won&rsquo;t require entering a password every time.</p>
 <h2 id="generating-an-ssh-key">Generating an SSH key
-<span><a href="#generating-an-ssh-key">#</a></span>
+<span>
+    <a href="#generating-an-ssh-key">
+        <svg viewBox="0 0 28 23" height="100%" width="19    " xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
 </h2><p>If you&rsquo;re on Windows, you will need to install the OpenSSH feature from Settings or you can use WSL to be able to use <code>ssh-keygen</code>.</p>
 <p>You can generate an SSH key using <code>ssh-keygen -t ed25519 -a 100</code>. If the ed25519 algorithm is unavailable, you can use the rsa algorithm: <code>ssh-keygen -t rsa -b 4096 -o -a 100</code>.</p>
 <p>Keep track of where the key is stored. For me this would be <code>C:\Users\maste\.ssh\id_ed25519</code>, or even <code>C:\Users\maste\.ssh\id_rsa</code>.
 This will be useful when configuring the Remote-SSH VSCode extension.</p>
 <h2 id="adding-ssh-key-to-authorized-keys">Adding SSH key to Authorized Keys
-<span><a href="#adding-ssh-key-to-authorized-keys">#</a></span>
+<span>
+    <a href="#adding-ssh-key-to-authorized-keys">
+        <svg viewBox="0 0 28 23" height="100%" width="19    " xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
 </h2><p>During the process of adding our keys, we&rsquo;ll have to enter our passwords.</p>
 <h3 id="linux--wsl">Linux / WSL
-<span><a href="#linux--wsl">#</a></span>
+<span>
+    <a href="#linux--wsl">
+        <svg viewBox="0 0 28 23" height="100%" width="19    " xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
 </h3><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">ssh-copy-id -i path/to/file/if/not/default user@host
 <span style="color:#0f0"># Examples</span>
 ssh-copy-id -i .ssh/id_ed25519.pub user@host
 ssh-copy-id -i /mnt/c/Users/maste/.ssh/id_ed25519.pub user@host
 </code></pre></div><p>If you&rsquo;re having trouble with this, just <code>cd</code> into the <code>.ssh</code> folder and use <code>-i id_ed25519.pub</code></p>
 <h3 id="windows-no-wsl">Windows no WSL
-<span><a href="#windows-no-wsl">#</a></span>
+<span>
+    <a href="#windows-no-wsl">
+        <svg viewBox="0 0 28 23" height="100%" width="19    " xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
 </h3><p>If you&rsquo;re on Windows, you won&rsquo;t have access to <code>ssh-copy-id</code>. Instead you can use either of these PowerShell command.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">type path\to\id_algo.pub | ssh user<span style="color:#eedd82">@host</span> <span style="color:#87ceeb">&#34;cat &gt;&gt; .ssh/authorized_keys&#34;</span>
 <span style="color:#0f0"># helper: type $env:USERPROFILE\.ssh\id_ed25519.pub | ssh user@host &#34;cat &gt;&gt; .ssh/authorized_keys&#34;</span>
 </code></pre></div><h2 id="setting-up-vs-code">Setting up VS Code
-<span><a href="#setting-up-vs-code">#</a></span>
+<span>
+    <a href="#setting-up-vs-code">
+        <svg viewBox="0 0 28 23" height="100%" width="19    " xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
 </h2><ol>
 <li>
 <p>Install the <a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh">Remote - SSH extension</a></p>
