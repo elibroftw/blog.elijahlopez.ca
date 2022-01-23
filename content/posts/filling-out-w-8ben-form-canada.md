@@ -1,8 +1,10 @@
 ---
-title: "How to Fill out W-8BEN Form in Canada"
+title: "How to Fill out W-8 BEN Form in Canada"
 date: 2022-01-04T13:37:18-05:00
 draft: false
 ---
+
+[Download the form.](https://www.irs.gov/pub/irs-pdf/fw8ben.pdf)
 
 ## Blank Lines
 
