@@ -12,11 +12,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="referrer" content="no-referrer-when-downgrade">
 
-<title>VS Code Remote SSH Tutorial - ELL Blog</title>
+<title>How to Generate a CSR Using openssl - ELL Blog</title>
 
-<meta name="description" content="In this tutorial we&rsquo;ll integrate SSH into VS Code in a way that won&rsquo;t require entering a password every time.
-Generating an SSH keyIf you&rsquo;re on Windows, you will need to install the OpenSSH feature from Settings or you can use WSL to be able to use ssh-keygen.
-You can generate an SSH key using ssh-keygen -t ed25519 -a 100. If the ed25519 algorithm is unavailable, you can use the rsa algorithm: ssh-keygen -t rsa -b 4096 -o -a 100.">
+<meta name="description" content="Here is a pretty and succint guide on creating a Certificate Signing Request (CSR). I used the ed25519 algorithm because RSA is less secure, slower, and results in a longer public-key. I didn&rsquo;t get a chance to test this, but just comment down below if something didn&rsquo;t work.
+For the tutorial, replace all { Sample value } with your values.
+InstructionsGenerating a KeyThis avoids entering passphrases when generating the CSR.">
 
 
 
@@ -69,23 +69,23 @@ You can generate an SSH key using ssh-keygen -t ed25519 -a 100. If the ed25519 a
 
 
 
-<meta property="og:title" content="VS Code Remote SSH Tutorial" />
-<meta property="og:description" content="In this tutorial we&rsquo;ll integrate SSH into VS Code in a way that won&rsquo;t require entering a password every time.
-Generating an SSH keyIf you&rsquo;re on Windows, you will need to install the OpenSSH feature from Settings or you can use WSL to be able to use ssh-keygen.
-You can generate an SSH key using ssh-keygen -t ed25519 -a 100. If the ed25519 algorithm is unavailable, you can use the rsa algorithm: ssh-keygen -t rsa -b 4096 -o -a 100." />
+<meta property="og:title" content="How to Generate a CSR Using openssl" />
+<meta property="og:description" content="Here is a pretty and succint guide on creating a Certificate Signing Request (CSR). I used the ed25519 algorithm because RSA is less secure, slower, and results in a longer public-key. I didn&rsquo;t get a chance to test this, but just comment down below if something didn&rsquo;t work.
+For the tutorial, replace all { Sample value } with your values.
+InstructionsGenerating a KeyThis avoids entering passphrases when generating the CSR." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://elibroftw.github.io/posts/vs-code-remote-ssh/" /><meta property="og:image" content="https://elibroftw.github.io/images"/><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2021-12-22T18:23:50-05:00" />
-<meta property="article:modified_time" content="2021-12-22T18:23:50-05:00" />
+<meta property="og:url" content="https://elibroftw.github.io/posts/how-to-generate-csr/" /><meta property="og:image" content="https://elibroftw.github.io/images"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-01-25T13:14:03-05:00" />
+<meta property="article:modified_time" content="2022-01-25T13:14:03-05:00" />
 
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://elibroftw.github.io/images"/>
 
-<meta name="twitter:title" content="VS Code Remote SSH Tutorial"/>
-<meta name="twitter:description" content="In this tutorial we&rsquo;ll integrate SSH into VS Code in a way that won&rsquo;t require entering a password every time.
-Generating an SSH keyIf you&rsquo;re on Windows, you will need to install the OpenSSH feature from Settings or you can use WSL to be able to use ssh-keygen.
-You can generate an SSH key using ssh-keygen -t ed25519 -a 100. If the ed25519 algorithm is unavailable, you can use the rsa algorithm: ssh-keygen -t rsa -b 4096 -o -a 100."/>
+<meta name="twitter:title" content="How to Generate a CSR Using openssl"/>
+<meta name="twitter:description" content="Here is a pretty and succint guide on creating a Certificate Signing Request (CSR). I used the ed25519 algorithm because RSA is less secure, slower, and results in a longer public-key. I didn&rsquo;t get a chance to test this, but just comment down below if something didn&rsquo;t work.
+For the tutorial, replace all { Sample value } with your values.
+InstructionsGenerating a KeyThis avoids entering passphrases when generating the CSR."/>
 
 
 
@@ -241,88 +241,96 @@ You can generate an SSH key using ssh-keygen -t ed25519 -a 100. If the ed25519 a
     <article class="post h-entry">
         <div class="post-header">
             <header>
-                <h1 class="p-name post-title">VS Code Remote SSH Tutorial</h1>
+                <h1 class="p-name post-title">How to Generate a CSR Using openssl</h1>
 
                 
             </header>
         </div>
         <div class="content e-content">
-            <p>In this tutorial we&rsquo;ll integrate SSH into VS Code in a way that won&rsquo;t require entering a password every time.</p>
-<h2 id="generating-an-ssh-key" >Generating an SSH key
+            <p>Here is a pretty and succint guide on creating a Certificate Signing Request (CSR).
+I used the ed25519 algorithm because RSA is less secure, slower, and results in a longer public-key.
+I didn&rsquo;t get a chance to test this, but just comment down below if something didn&rsquo;t work.</p>
+<p>For the tutorial, replace all <code>{ Sample value }</code> with your values.</p>
+<h2 id="instructions" >Instructions
 <span>
-    <a href="#generating-an-ssh-key">
+    <a href="#instructions">
         <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
     </a>
 </span>
-</h2><p>If you&rsquo;re on Windows, you will need to install the OpenSSH feature from Settings or you can use WSL to be able to use <code>ssh-keygen</code>.</p>
-<p>You can generate an SSH key using <code>ssh-keygen -t ed25519 -a 100</code>. If the ed25519 algorithm is unavailable, you can use the rsa algorithm: <code>ssh-keygen -t rsa -b 4096 -o -a 100</code>.</p>
-<p>Keep track of where the key is stored. For me this would be <code>C:\Users\maste\.ssh\id_ed25519</code>, or even <code>C:\Users\maste\.ssh\id_rsa</code>.
-This will be useful when configuring the Remote-SSH VSCode extension.</p>
-<h2 id="adding-ssh-key-to-authorized-keys" >Adding SSH key to Authorized Keys
+</h2><h3 id="generating-a-key" >Generating a Key
 <span>
-    <a href="#adding-ssh-key-to-authorized-keys">
+    <a href="#generating-a-key">
         <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
     </a>
 </span>
-</h2><p>During the process of adding our keys, we&rsquo;ll have to enter our passwords.</p>
-<h3 id="linux--wsl" >Linux / WSL
+</h3><p>This avoids entering passphrases when generating the CSR.</p>
+<p><code>openssl genpkey -algorithm ed25519 &gt; { lenerva.com }.key</code></p>
+<p>The filename for me is <em><code>lenerva.com</code></em><code>.key</code>.</p>
+<h3 id="create-a-csr-config-file" >Create a CSR Config File
 <span>
-    <a href="#linux--wsl">
+    <a href="#create-a-csr-config-file">
         <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
     </a>
 </span>
-</h3><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">ssh-copy-id -i path/to/file/if/not/default user@host
-<span style="color:#0f0"># Examples</span>
-ssh-copy-id -i .ssh/id_ed25519.pub user@host
-ssh-copy-id -i /mnt/c/Users/maste/.ssh/id_ed25519.pub user@host
-</code></pre></div><p>If you&rsquo;re having trouble with this, just <code>cd</code> into the <code>.ssh</code> folder and use <code>-i id_ed25519.pub</code></p>
-<h3 id="windows-no-wsl" >Windows no WSL
+</h3><p>Filename: <code>{ lenerva.com }.csr.cnf</code></p>
+<pre tabindex="0"><code class="language-conf" data-lang="conf">[ req ]
+distinguished_name          = req_distinguised_name
+[ req_distinguised_name ]
+countryName                 = { CA }
+stateOrProvinceName         = { Ontario }
+localityName                = { Toronto }
+organizationName            = { LeNerva Inc. }
+commonName                  = { lenerva.com }
+emailAddress                = { security@lenerva.com }
+subjectAltName              = @alt_names
+[alt_names]
+DNS.1                       = { lenerva.com }
+DNS.2                       = { www.lenerva.com }
+</code></pre><h3 id="generating-the-csr" >Generating the CSR
 <span>
-    <a href="#windows-no-wsl">
+    <a href="#generating-the-csr">
         <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
     </a>
 </span>
-</h3><p>If you&rsquo;re on Windows, you won&rsquo;t have access to <code>ssh-copy-id</code>. Instead you can use either of these PowerShell command.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">type path\to\id_algo.pub | ssh user<span style="color:#eedd82">@host</span> <span style="color:#87ceeb">&#34;cat &gt;&gt; .ssh/authorized_keys&#34;</span>
-<span style="color:#0f0"># helper: type $env:USERPROFILE\.ssh\id_ed25519.pub | ssh user@host &#34;cat &gt;&gt; .ssh/authorized_keys&#34;</span>
-</code></pre></div><h2 id="setting-up-vs-code" >Setting up VS Code
+</h3><p><code>openssl req -new -out { lenerva.com }.csr -key { lenerva.com }.key -config { lenerva.com }.csr.cnf</code></p>
+<h3 id="read-csr-as-a-human" >Read CSR as a Human
 <span>
-    <a href="#setting-up-vs-code">
+    <a href="#read-csr-as-a-human">
         <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
     </a>
 </span>
-</h2><ol>
-<li>
-<p>Install the <a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh">Remote - SSH extension</a></p>
-</li>
-<li>
-<p>Use the Command Palette (Ctrl + Shift + P) and use the &ldquo;Remote-SSH: Open SSH Configuration File&hellip;&rdquo; command</p>
-</li>
-<li>
-<p>Select the first path (for me this was <code>C:\Users\maste\.ssh\config</code>)</p>
-</li>
-<li>
-<p>Enter the information for your remote server(s). Here is mine for reference. I had to comment out publickey.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">Host uWaterloo
-  User e5lopez
-  HostName linux.student.cs.uwaterloo.ca
-  IdentityFile <span style="color:#87ceeb">&#34;C:\Users\maste\.ssh\id_rsa&#34;</span>
-  <span style="color:#0f0"># PreferredAuthentications publickey</span>
-</code></pre></div></li>
-<li>
-<p>From the command palette, use &ldquo;Remote-SSH: Connect Current Window to Host&hellip;&rdquo; and select the host you just added</p>
-</li>
-<li>
-<p>A window will show up asking you to choose the platform for the remote server. For me, it&rsquo;s Linux.s</p>
-</li>
-<li>
-<p>If all goes well, you should be able to connect without having to enter a password
-<img src="/images/vs-code-remote-ssh/connected-example.png" alt="VS Code SSH"></p>
-</li>
-<li>
-<p>A tip is to add multiple folders in the remote server to a workspace</p>
-</li>
-</ol>
+</h3><p><code>openssl req -in { lenerva.com }.csr -text -nout</code></p>
+<h2 id="jargon" >Jargon
+<span>
+    <a href="#jargon">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:right">Summary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">CSR</td>
+<td style="text-align:right">Certificate Signing Request</td>
+</tr>
+<tr>
+<td style="text-align:left">SAN</td>
+<td style="text-align:right">Subject Alternative Name</td>
+</tr>
+</tbody>
+</table>
+<h2 id="resources" >Resources
+<span>
+    <a href="#resources">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><p>Pinter, Jannis. <a href="https://blog.pinterjann.is/ed25519-certificates.html">Create ED25519 certificates for TLS with OpenSSL</a></p>
 
         </div>
         
@@ -332,10 +340,10 @@ ssh-copy-id -i /mnt/c/Users/maste/.ssh/id_ed25519.pub user@host
 
 <div class="post-info">
     
-        <div class="post-date dt-published">2021-Dec-22</div>
+        <div class="post-date dt-published">2022-Jan-25</div>
     
 
-    <a class="post-hidden-url u-url" href="https://elibroftw.github.io/posts/vs-code-remote-ssh/">https://elibroftw.github.io/posts/vs-code-remote-ssh/</a>
+    <a class="post-hidden-url u-url" href="https://elibroftw.github.io/posts/how-to-generate-csr/">https://elibroftw.github.io/posts/how-to-generate-csr/</a>
     <a href="https://elibroftw.github.io/" class="p-name p-author post-hidden-author h-card" rel="me">Elijah Lopez</a>
 
 
@@ -344,24 +352,11 @@ ssh-copy-id -i /mnt/c/Users/maste/.ssh/id_ed25519.pub user@host
             <ul class="post-categories">
                 
                     
-                    <li><a href="https://elibroftw.github.io/categories/programming/">programming</a></li>
-                
-                    
                     <li><a href="https://elibroftw.github.io/categories/tutorial/">tutorial</a></li>
                 
             </ul>
             
             
-                <ul class="post-tags">
-                    
-                        
-                        <li><a href="https://elibroftw.github.io/tags/ssh/">#ssh</a></li>
-                    
-                        
-                        <li><a href="https://elibroftw.github.io/tags/vscode/">#vscode</a></li>
-                    
-                </ul>
-        
     </div>
 </div>
 
@@ -370,14 +365,12 @@ ssh-copy-id -i /mnt/c/Users/maste/.ssh/id_ed25519.pub user@host
     
         
     <div class="pagination post-pagination">
-        <div class="left pagination-item ">
-            
-                <a href="/posts/64bit-is-better-than-32bit/">Why 64-bit Programs are Better Than 32-bit</a>
+        <div class="left pagination-item disabled">
             
         </div>
         <div class="right pagination-item ">
             
-                <a href="/posts/vcpkg-cmake-tutorial/">Installing Libraries for C&#43;&#43; with Vcpkg and CMake</a>
+                <a href="/posts/filling-out-w-8ben-form-canada/">How to Fill out W-8 BEN Form in Canada</a>
             
         </div>
     </div>

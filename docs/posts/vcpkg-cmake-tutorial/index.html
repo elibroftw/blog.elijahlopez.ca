@@ -246,10 +246,10 @@
   <iframe src="https://www.youtube.com/embed/FeBzSYiWkEU" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
 
-<h2 id="prerequisties">Prerequisties
+<h2 id="prerequisties" >Prerequisties
 <span>
     <a href="#prerequisties">
-        <svg viewBox="0 0 28 23" height="100%" width="19    " xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
     </a>
 </span>
 </h2><ul>
@@ -271,19 +271,19 @@
 </li>
 <li><code>git</code></li>
 </ul>
-<h2 id="installing-cmake">Installing CMake
+<h2 id="installing-cmake" >Installing CMake
 <span>
     <a href="#installing-cmake">
-        <svg viewBox="0 0 28 23" height="100%" width="19    " xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
     </a>
 </span>
 </h2><p>You will need <a href="https://cmake.org/download/">CMake 3.22+</a> in order to use the Visual Studio 2022 compiler through VSCode.
 The installer does most of the work, so you won&rsquo;t have to manually add <code>cmake</code> to PATH.</p>
 <p>In VSCode, you will need to install the &ldquo;C/C++ Extension&rdquo; and the &ldquo;CMake Tools&rdquo; extensions.</p>
-<h3 id="installing-vcpkg">Installing Vcpkg
+<h3 id="installing-vcpkg" >Installing Vcpkg
 <span>
     <a href="#installing-vcpkg">
-        <svg viewBox="0 0 28 23" height="100%" width="19    " xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
     </a>
 </span>
 </h3><ol>
@@ -324,10 +324,10 @@ The installer does most of the work, so you won&rsquo;t have to manually add <co
 </ol>
 <p>You can now install packages using <code>vcpkg install &lt;lib&gt;</code> and search for them using <code>vcpkg search &lt;lib&gt;</code>.
 In the next section, we&rsquo;ll be integrating <code>vcpkg</code> within a CMake project.</p>
-<h2 id="integrating-vcpkg-into-a-new-cmake-project">Integrating Vcpkg into a new CMake Project
+<h2 id="integrating-vcpkg-into-a-new-cmake-project" >Integrating Vcpkg into a new CMake Project
 <span>
     <a href="#integrating-vcpkg-into-a-new-cmake-project">
-        <svg viewBox="0 0 28 23" height="100%" width="19    " xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
     </a>
 </span>
 </h2><p>In this section we&rsquo;ll be creating a CMake C++ project that will make an HTTP request using the <code>cpr</code> library.</p>
