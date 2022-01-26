@@ -1,5 +1,5 @@
 ---
-title: "Bash Helper Script (Thorough Example)"
+title: "Bash Tutorial Script"
 date: 2022-01-26T12:38:14-05:00
 draft: false
 tags: [
