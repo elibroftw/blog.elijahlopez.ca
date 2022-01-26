@@ -6,10 +6,68 @@
     <description>ELL Blog (Posts)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 25 Jan 2022 13:14:03 -0500</lastBuildDate>
+    <lastBuildDate>Wed, 26 Jan 2022 12:38:14 -0500</lastBuildDate>
     
     <atom:link href="https://elibroftw.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Bash Helper Script (Thorough Example)</title>
+      <link>https://elibroftw.github.io/posts/bash-helpers/</link>
+      <pubDate>Wed, 26 Jan 2022 12:38:14 -0500</pubDate>
+      
+      <guid>https://elibroftw.github.io/posts/bash-helpers/</guid>
+      <description>&lt;p&gt;It seems that many article tutorials on &lt;code&gt;bash&lt;/code&gt; are ugly, are unoptimal, and do not get to the point. This tutorial is about parsing flags, and using the flag later. Remember, when using variables that could have spaces, use double quotes! &lt;code&gt;&amp;quot;$could_have_spaces&amp;quot;&lt;/code&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;argument-parsing-conditionals-booleans-loops-and-adding&#34; &gt;Argument Parsing, Conditionals, &amp;ldquo;Booleans,&amp;rdquo; Loops, and Adding
+&lt;span&gt;
+    &lt;a href=&#34;#argument-parsing-conditionals-booleans-loops-and-adding&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;Conditionals include if, elif (else if), and else. They also cover -eq, -ne, &amp;amp;&amp;amp;, ||.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;color:#eedd82&#34;&gt;flag1&lt;/span&gt;=false
+&lt;span style=&#34;color:#eedd82&#34;&gt;flag_override&lt;/span&gt;=false
+&lt;span style=&#34;color:#eedd82&#34;&gt;last_arg&lt;/span&gt;=&lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;
+&lt;span style=&#34;color:#0f0&#34;&gt;# I think getopts is overkill especially if the numbers of arguments varies&lt;/span&gt;
+
+&lt;span style=&#34;color:#f00&#34;&gt;for&lt;/span&gt; arg in &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#eedd82&#34;&gt;$@&lt;/span&gt;&lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;&lt;/span&gt;; &lt;span style=&#34;color:#f00&#34;&gt;do&lt;/span&gt;  &lt;span style=&#34;color:#0f0&#34;&gt;# better to have do on the same line than a newline&lt;/span&gt;
+    &lt;span style=&#34;color:#f00&#34;&gt;if&lt;/span&gt; [ &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#eedd82&#34;&gt;$arg&lt;/span&gt;&lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;&lt;/span&gt; -eq &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;--flag1&amp;#34;&lt;/span&gt; ] || [ &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#eedd82&#34;&gt;$arg&lt;/span&gt;&lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;&lt;/span&gt; -eq &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;--flag&amp;#34;&lt;/span&gt; ]; &lt;span style=&#34;color:#f00&#34;&gt;then&lt;/span&gt;
+        &lt;span style=&#34;color:#0f0&#34;&gt;# if OR&lt;/span&gt;
+        &lt;span style=&#34;color:#eedd82&#34;&gt;flag1&lt;/span&gt;=true
+    &lt;span style=&#34;color:#f00&#34;&gt;elif&lt;/span&gt; [ &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#eedd82&#34;&gt;$arg&lt;/span&gt;&lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;&lt;/span&gt; -eq &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;--override&amp;#34;&lt;/span&gt; ] &amp;amp;&amp;amp; [ &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#eedd82&#34;&gt;$last_arg&lt;/span&gt;&lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;&lt;/span&gt; -eq &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt; ]; &lt;span style=&#34;color:#f00&#34;&gt;then&lt;/span&gt;
+        &lt;span style=&#34;color:#0f0&#34;&gt;# else if AND&lt;/span&gt;
+        &lt;span style=&#34;color:#eedd82&#34;&gt;flag_override&lt;/span&gt;=true
+    &lt;span style=&#34;color:#f00&#34;&gt;else&lt;/span&gt;
+        &lt;span style=&#34;color:#0f0&#34;&gt;# do something with normal arguments here&lt;/span&gt;
+        &lt;span style=&#34;color:#0f0&#34;&gt;# e.g. get line count of arg.&lt;/span&gt;
+        wc -l &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#eedd82&#34;&gt;$arg&lt;/span&gt;&lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;&lt;/span&gt;
+        &lt;span style=&#34;color:#eedd82&#34;&gt;last_arg&lt;/span&gt;=&lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#eedd82&#34;&gt;$arg&lt;/span&gt;&lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;&lt;/span&gt;
+    &lt;span style=&#34;color:#f00&#34;&gt;fi&lt;/span&gt;  &lt;span style=&#34;color:#0f0&#34;&gt;# end of if statement&lt;/span&gt;
+&lt;span style=&#34;color:#f00&#34;&gt;done&lt;/span&gt;  &lt;span style=&#34;color:#0f0&#34;&gt;# signify end of for or while loop&lt;/span&gt;
+
+&lt;span style=&#34;color:#f00&#34;&gt;for&lt;/span&gt; var in &lt;span style=&#34;color:#f60&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color:#f60&#34;&gt;2&lt;/span&gt; &lt;span style=&#34;color:#f60&#34;&gt;3&lt;/span&gt; str1 str2 str3 &lt;span style=&#34;color:#eedd82&#34;&gt;$flag1&lt;/span&gt; &lt;span style=&#34;color:#f60&#34;&gt;9&lt;/span&gt; 10; &lt;span style=&#34;color:#f00&#34;&gt;do&lt;/span&gt;
+    echo &lt;span style=&#34;color:#eedd82&#34;&gt;$var&lt;/span&gt;
+&lt;span style=&#34;color:#f00&#34;&gt;done&lt;/span&gt;
+
+&lt;span style=&#34;color:#0f0&#34;&gt;# less typing for loop using while&lt;/span&gt;
+&lt;span style=&#34;color:#eedd82&#34;&gt;counter&lt;/span&gt;=&lt;span style=&#34;color:#f60&#34;&gt;0&lt;/span&gt;
+&lt;span style=&#34;color:#f00&#34;&gt;while&lt;/span&gt; [ counter -ne &lt;span style=&#34;color:#f60&#34;&gt;10&lt;/span&gt; ]; &lt;span style=&#34;color:#f00&#34;&gt;do&lt;/span&gt;
+    &lt;span style=&#34;color:#0f0&#34;&gt;# conditionals for &amp;#34;booleans&amp;#34;&lt;/span&gt;
+    &lt;span style=&#34;color:#f00&#34;&gt;if&lt;/span&gt; [ &lt;span style=&#34;color:#eedd82&#34;&gt;$flag_override&lt;/span&gt; = true ]; &lt;span style=&#34;color:#f00&#34;&gt;then&lt;/span&gt;
+        &lt;span style=&#34;color:#0f0&#34;&gt;# MATH&lt;/span&gt;
+        &lt;span style=&#34;color:#0f0&#34;&gt;# this ++ will not affect the next loop&lt;/span&gt;
+        ((counter++))
+        echo &lt;span style=&#34;color:#eedd82&#34;&gt;$counter&lt;/span&gt;
+        &lt;span style=&#34;color:#eedd82&#34;&gt;str_concat&lt;/span&gt;=&lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;+&lt;/span&gt;&lt;span style=&#34;color:#eedd82&#34;&gt;$flag_override&lt;/span&gt;&lt;span style=&#34;color:#87ceeb&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#eedd82&#34;&gt;$counter&lt;/span&gt;&lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;&lt;/span&gt;
+    &lt;span style=&#34;color:#f00&#34;&gt;elif&lt;/span&gt; [ &lt;span style=&#34;color:#eedd82&#34;&gt;$flag1&lt;/span&gt; = false ]; &lt;span style=&#34;color:#f00&#34;&gt;then&lt;/span&gt;
+        &lt;span style=&#34;color:#0f0&#34;&gt;# use $ for printing math&lt;/span&gt;
+        echo &lt;span style=&#34;color:#f00&#34;&gt;$((&lt;/span&gt;++counter&lt;span style=&#34;color:#f00&#34;&gt;))&lt;/span&gt;
+    &lt;span style=&#34;color:#f00&#34;&gt;else&lt;/span&gt;
+        &lt;span style=&#34;color:#eedd82&#34;&gt;str_concat&lt;/span&gt;=&lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;+&lt;/span&gt;&lt;span style=&#34;color:#eedd82&#34;&gt;$flag_override&lt;/span&gt;&lt;span style=&#34;color:#87ceeb&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#eedd82&#34;&gt;$counter&lt;/span&gt;&lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;&lt;/span&gt;
+    &lt;span style=&#34;color:#f00&#34;&gt;fi&lt;/span&gt;
+&lt;span style=&#34;color:#f00&#34;&gt;done&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
     
     <item>
       <title>How to Generate a CSR Using openssl</title>

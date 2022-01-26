@@ -2,7 +2,7 @@
 title: "Bye Medium, Hello Hugo + GitHub Pages"
 date: 2022-01-01T12:20:08-05:00
 draft: false
-categories: [
+tags: [
   "opinion",
 ]
 ---

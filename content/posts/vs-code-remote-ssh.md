@@ -3,12 +3,10 @@ title: "VS Code Remote SSH Tutorial"
 date: 2021-12-22T18:23:50-05:00
 draft: false
 tags: [
+    "programming",
+    "tutorial",
     "ssh",
     "vscode",
-]
-categories: [
-  "programming",
-  "tutorial",
 ]
 ---
 

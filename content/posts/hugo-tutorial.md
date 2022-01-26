@@ -3,14 +3,12 @@ title: "Creating a Blog With GitHub Pages and Hugo"
 date: 2021-12-17T22:18:47-05:00
 draft: false
 tags: [
+    "programming",
+    "tutorial",
     "hugo",
     "markdown",
     "github-pages",
     "git",
-]
-categories: [
-  "programming",
-  "tutorial",
 ]
 ---
 
