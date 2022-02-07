@@ -7,6 +7,10 @@ tags: [
 ]
 ---
 
+```sh
+openssl req -newkey rsa:2048 -keyout elijahlopez.ca.key -out elijahlopez.ca.csr -config .\elijahlopez.ca.csr.conf
+```
+
 Here is a pretty and succint guide on creating a Certificate Signing Request (CSR).
 I used the ed25519 algorithm because RSA is less secure, slower, and results in a longer public-key.
 I didn't get a chance to test this, but just comment down below if something didn't work.
