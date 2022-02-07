@@ -1,7 +1,7 @@
 ---
 title: "How to Generate a CSR Using openssl"
 date: 2022-01-25T13:14:03-05:00
-draft: false
+draft: true
 tags: [
   "tutorial",
 ]
