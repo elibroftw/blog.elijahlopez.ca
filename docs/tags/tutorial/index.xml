@@ -240,8 +240,8 @@ But don&amp;rsquo;t be like VLC, and recommend 64-bit computers to install the 3
     &lt;/a&gt;
 &lt;/span&gt;
 &lt;/h2&gt;&lt;p&gt;If you&amp;rsquo;re on Windows, you will need to install the OpenSSH feature from Settings or you can use WSL to be able to use &lt;code&gt;ssh-keygen&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;You can generate an SSH key using &lt;code&gt;ssh-keygen -t ed25519 -a 100&lt;/code&gt;. If the ed25519 algorithm is unavailable, you can use the rsa algorithm: &lt;code&gt;ssh-keygen -t rsa -b 4096 -o -a 100&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;Keep track of where the key is stored. For me this would be &lt;code&gt;C:\Users\maste\.ssh\id_ed25519&lt;/code&gt;, or even &lt;code&gt;C:\Users\maste\.ssh\id_rsa&lt;/code&gt;.
+&lt;p&gt;You can generate an SSH key using &lt;code&gt;ssh-keygen -t ed25519&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Keep track of where the key is stored. For me this would be &lt;code&gt;C:\Users\maste\.ssh\id_ed25519&lt;/code&gt;.
 This will be useful when configuring the Remote-SSH VSCode extension.&lt;/p&gt;
 &lt;h2 id=&#34;adding-ssh-key-to-authorized-keys&#34; &gt;Adding SSH key to Authorized Keys
 &lt;span&gt;
@@ -291,7 +291,7 @@ ssh-copy-id -i /mnt/c/Users/maste/.ssh/id_ed25519.pub user@host
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;Host uWaterloo
   User e5lopez
   HostName linux.student.cs.uwaterloo.ca
-  IdentityFile &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;C:\Users\maste\.ssh\id_rsa&amp;#34;&lt;/span&gt;
+  IdentityFile &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;C:\Users\maste\.ssh\id_ed25519&amp;#34;&lt;/span&gt;
   &lt;span style=&#34;color:#0f0&#34;&gt;# PreferredAuthentications publickey&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
 &lt;li&gt;

@@ -16,7 +16,8 @@
 
 <meta name="description" content="In this tutorial we&rsquo;ll integrate SSH into VS Code in a way that won&rsquo;t require entering a password every time.
 Generating an SSH keyIf you&rsquo;re on Windows, you will need to install the OpenSSH feature from Settings or you can use WSL to be able to use ssh-keygen.
-You can generate an SSH key using ssh-keygen -t ed25519 -a 100. If the ed25519 algorithm is unavailable, you can use the rsa algorithm: ssh-keygen -t rsa -b 4096 -o -a 100.">
+You can generate an SSH key using ssh-keygen -t ed25519
+Keep track of where the key is stored.">
 
 
 
@@ -72,7 +73,8 @@ You can generate an SSH key using ssh-keygen -t ed25519 -a 100. If the ed25519 a
 <meta property="og:title" content="VS Code Remote SSH Tutorial" />
 <meta property="og:description" content="In this tutorial we&rsquo;ll integrate SSH into VS Code in a way that won&rsquo;t require entering a password every time.
 Generating an SSH keyIf you&rsquo;re on Windows, you will need to install the OpenSSH feature from Settings or you can use WSL to be able to use ssh-keygen.
-You can generate an SSH key using ssh-keygen -t ed25519 -a 100. If the ed25519 algorithm is unavailable, you can use the rsa algorithm: ssh-keygen -t rsa -b 4096 -o -a 100." />
+You can generate an SSH key using ssh-keygen -t ed25519
+Keep track of where the key is stored." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://elibroftw.github.io/posts/vs-code-remote-ssh/" /><meta property="og:image" content="https://elibroftw.github.io/images"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-12-22T18:23:50-05:00" />
@@ -85,7 +87,8 @@ You can generate an SSH key using ssh-keygen -t ed25519 -a 100. If the ed25519 a
 <meta name="twitter:title" content="VS Code Remote SSH Tutorial"/>
 <meta name="twitter:description" content="In this tutorial we&rsquo;ll integrate SSH into VS Code in a way that won&rsquo;t require entering a password every time.
 Generating an SSH keyIf you&rsquo;re on Windows, you will need to install the OpenSSH feature from Settings or you can use WSL to be able to use ssh-keygen.
-You can generate an SSH key using ssh-keygen -t ed25519 -a 100. If the ed25519 algorithm is unavailable, you can use the rsa algorithm: ssh-keygen -t rsa -b 4096 -o -a 100."/>
+You can generate an SSH key using ssh-keygen -t ed25519
+Keep track of where the key is stored."/>
 
 
 
@@ -255,8 +258,8 @@ You can generate an SSH key using ssh-keygen -t ed25519 -a 100. If the ed25519 a
     </a>
 </span>
 </h2><p>If you&rsquo;re on Windows, you will need to install the OpenSSH feature from Settings or you can use WSL to be able to use <code>ssh-keygen</code>.</p>
-<p>You can generate an SSH key using <code>ssh-keygen -t ed25519 -a 100</code>. If the ed25519 algorithm is unavailable, you can use the rsa algorithm: <code>ssh-keygen -t rsa -b 4096 -o -a 100</code>.</p>
-<p>Keep track of where the key is stored. For me this would be <code>C:\Users\maste\.ssh\id_ed25519</code>, or even <code>C:\Users\maste\.ssh\id_rsa</code>.
+<p>You can generate an SSH key using <code>ssh-keygen -t ed25519</code></p>
+<p>Keep track of where the key is stored. For me this would be <code>C:\Users\maste\.ssh\id_ed25519</code>.
 This will be useful when configuring the Remote-SSH VSCode extension.</p>
 <h2 id="adding-ssh-key-to-authorized-keys" >Adding SSH key to Authorized Keys
 <span>
@@ -306,7 +309,7 @@ ssh-copy-id -i /mnt/c/Users/maste/.ssh/id_ed25519.pub user@host
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">Host uWaterloo
   User e5lopez
   HostName linux.student.cs.uwaterloo.ca
-  IdentityFile <span style="color:#87ceeb">&#34;C:\Users\maste\.ssh\id_rsa&#34;</span>
+  IdentityFile <span style="color:#87ceeb">&#34;C:\Users\maste\.ssh\id_ed25519&#34;</span>
   <span style="color:#0f0"># PreferredAuthentications publickey</span>
 </code></pre></div></li>
 <li>

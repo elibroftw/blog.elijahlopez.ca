@@ -16,9 +16,9 @@ In this tutorial we'll integrate SSH into VS Code in a way that won't require en
 
 If you're on Windows, you will need to install the OpenSSH feature from Settings or you can use WSL to be able to use `ssh-keygen`.
 
-You can generate an SSH key using `ssh-keygen -t ed25519 -a 100`. If the ed25519 algorithm is unavailable, you can use the rsa algorithm: `ssh-keygen -t rsa -b 4096 -o -a 100`.
+You can generate an SSH key using `ssh-keygen -t ed25519`
 
-Keep track of where the key is stored. For me this would be `C:\Users\maste\.ssh\id_ed25519`, or even `C:\Users\maste\.ssh\id_rsa`.
+Keep track of where the key is stored. For me this would be `C:\Users\maste\.ssh\id_ed25519`.
 This will be useful when configuring the Remote-SSH VSCode extension.
 
 ## Adding SSH key to Authorized Keys
@@ -56,7 +56,7 @@ type path\to\id_algo.pub | ssh user@host "cat >> .ssh/authorized_keys"
     Host uWaterloo
       User e5lopez
       HostName linux.student.cs.uwaterloo.ca
-      IdentityFile "C:\Users\maste\.ssh\id_rsa"
+      IdentityFile "C:\Users\maste\.ssh\id_ed25519"
       # PreferredAuthentications publickey
     ```
 
