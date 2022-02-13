@@ -13,7 +13,8 @@ It seems that many article tutorials on `bash` are ugly, are unoptimal, and do n
 
 ## Argument Parsing, Conditionals, "Booleans," Loops, and Adding
 
-Conditionals include if, elif (else if), and else. They also cover -eq, -ne, &&, ||.
+Conditionals include if, elif (else if), and else.
+Use -eq and -ne for numbers, =, !=, and =~ (regex) for string.
 
 ```bash
 flag1=false
@@ -22,10 +23,10 @@ last_arg=""
 # I think getopts is overkill especially if the numbers of arguments varies
 
 for arg in "$@"; do  # better to have do on the same line than a newline
-    if [ "$arg" -eq "--flag1" ] || [ "$arg" -eq "--flag" ]; then
+    if [ "$arg" = "--flag1" ] || [ "$arg" = "--flag" ]; then
         # if OR
         flag1=true
-    elif [ "$arg" -eq "--override" ] && [ "$last_arg" -eq "" ]; then
+    elif [ "$arg" = "--override" ] && [ "$last_arg" = "" ]; then
         # else if AND
         flag_override=true
     else
