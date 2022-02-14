@@ -1,6 +1,6 @@
 ---
-title: "Bash Tutorial Script"
-date: 2022-01-26T12:38:14-05:00
+title: "Bash & Linux Helpers"
+date: 2022-02-14T14:06:30-05:00
 draft: false
 tags: [
     "tutorial",
@@ -9,53 +9,142 @@ tags: [
 ]
 ---
 
-It seems that many article tutorials on `bash` are ugly, are unoptimal, and do not get to the point. This tutorial is about parsing flags, and using the flag later. Remember, when using variables that could have spaces, use double quotes! `"$could_have_spaces"`.
+It seems that many article tutorials on `bash` are ugly, are unoptimal, and are no straight forward.
+My goal is for this file to be a reference file whenever I need to do scripting after a long time.
+One important concept in bash, is that an exit code of 0 indicates True, not False. Which seems counterintuitive if you program in
+any non-scripting language like C/C++ or Python.
 
-## Argument Parsing, Conditionals, "Booleans," Loops, and Adding
+## Bash - Argument Parsing and Flags
 
-Conditionals include if, elif (else if), and else.
-Use -eq and -ne for numbers, =, !=, and =~ (regex) for string.
+If you don't get what's going on, read my [bash quickstart article](/posts/bash-quickstart.md)
+
+### Concepts
+
+- getopts is overkill, so here is an alternative.
+- "Booleans" using string comparison
+- Conditionals (if, elif, else, AND &&, OR ||)
+- For loop
 
 ```bash
-flag1=false
-flag_override=false
-last_arg=""
-# I think getopts is overkill especially if the numbers of arguments varies
-
-for arg in "$@"; do  # better to have do on the same line than a newline
-    if [ "$arg" = "--flag1" ] || [ "$arg" = "--flag" ]; then
-        # if OR
+supplied_arg="default"
+# iterate all arguments
+for arg in "$@"; do
+    # use [[ ]] to avoid double quoting variables
+    if [[ $last_arg = "--supply" ]]; then
+        supplied_arg="$arg"
+        last_arg=""
+    # OR ||
+    elif [[ $arg = "--flag1" ]] || [[ $arg = "--flag" ]]; then
         flag1=true
-    elif [ "$arg" = "--override" ] && [ "$last_arg" = "" ]; then
-        # else if AND
+    # elif, AND &&
+    elif [[ $arg = "--override" ]] && [[ ! $supplied_arg = "default" ]]; then
+        # ignore the redundancy, this is to showcase &&
         flag_override=true
     else
-        # do something with normal arguments here
-        # e.g. get line count of arg.
-        wc -l "$arg"
+        # you can do something with these args here
+        # wc -l "$arg"
+        # or you can set last_arg in order to parse `--something ARG`
         last_arg="$arg"
-    fi  # end of if statement
-done  # signify end of for or while loop
-
-for var in 1 2 3 str1 str2 str3 $flag1 9 10; do
-    echo $var
-done
-
-# less typing for loop using while
-counter=0
-while [ counter -ne 10 ]; do
-    # conditionals for "booleans"
-    if [ $flag_override = true ]; then
-        # MATH
-        # this ++ will not affect the next loop
-        ((counter++))
-        echo $counter
-        str_concat="+$flag_override.$counter"
-    elif [ $flag1 = false ]; then
-        # use $ for printing math
-        echo $((++counter))
-    else
-        str_concat="+$flag_override.$counter"
+    # end of if statement
     fi
+# done loop (for or while)
 done
+
+# check if flag supplied
+if [ flag1 = true]; then
+    echo "got --flag1 or --flag"
+else
+    notGot="got neither --flag1 nor --flag"
+fi
+# flag not supplied (since variable was never set, we check ! = true rather than = false)
+if [ ! flag1 = true ]; then
+    echo $notGot
+fi
+```
+
+## Linux - Add to PATH
+
+- A better approach than appending a statement to `PATH="$PATH:/new/path">> ~/.bashrc`
+- TODO: add instructions
+
+## Linux - Add Cronjob
+
+- automated approach
+- adds the cronjob if not exists
+- prevents concurrent/overlap runs
+
+```bash
+add_cronjob() {
+    # crontab will not set the working directory
+    # in my case, cronjob.py will change the workind dir to the project root
+    mkdir ~/locks
+    # my sample job uses flock to prevent overlapping runs
+    # minute hour day month day_of_week
+    cronjob="*/1 * * * * flock -n ~/locks/auto_deploy_$PROJECT.lock python3 $(pwd)/cronjob.py"
+
+    # add the cronjob
+    if ! crontab -l &>/dev/null; then
+      # crontab file does not exist, so no need to echo back crontab -l
+      echo "$cronjob" | crontab -
+    elif ! crontab -l 2>/dev/null | grep -Fq "$cronjob"; then
+      # crontab exists but job not found in crontab, so echo back crontab -l + new job
+      echo $(crontab -l ; echo "$cronjob") | crontab -
+    fi
+}
+```
+
+## Linux - Add Systemd Service
+
+- I used lots of echos and tee \[-a]
+- In order to work with spaces in an argument, I created strings with `\'$VAR\'`
+- TODO: add code
+
+## Linux - Auto Setup Certbot
+
+```bash
+# Context:
+# define $DOMAIN (e.g. lenerva.com)
+install_certbot() {
+    sudo snap install core; sudo snap refresh core
+    sudo snap install --classic certbot
+    sudo ln -s /snap/bin/certbot /usr/bin/certbot
+    sudo certbot --nginx -d $DOMAIN -d www.$DOMAIN
+}
+```
+
+## Linux - Auto Configure NGINX - Gunicorn
+
+This works for me but it is possible to fail for you without editing `/etc/nginx/nginx.conf` manually server name hashes to 128
+
+```bash
+# Context:
+# define $DOMAIN beforehand (e.g. lenerva.com)
+# define $PROJECT beforehand (e.g. my-project)
+# pwd is currently the project root directory
+configure_nginx() {
+    # configure nginx
+    sudo apt install nginx -y
+
+    sudo mkdir -p /var/www/$DOMAIN/html
+    sudo chown -R "$USER":"$USER" /var/www/$DOMAIN/html
+    sudo chmod -R 755 /var/www/$DOMAIN
+
+    echo "server {" | sudo tee /etc/nginx/sites-available/$PROJECT >/dev/null
+    echo "  listen [::]:80;" | sudo tee -a /etc/nginx/sites-available/$PROJECT >/dev/null
+    echo "  listen 80;" | sudo tee -a /etc/nginx/sites-available/$PROJECT >/dev/null
+    echo "  location / {" | sudo tee -a /etc/nginx/sites-available/$PROJECT >/dev/null
+    echo "    include proxy_params;" | sudo tee -a /etc/nginx/sites-available/$PROJECT >/dev/null
+    echo "    proxy_pass http://unix:$(pwd)/gunicorn.sock;" | sudo tee -a /etc/nginx/sites-available/$PROJECT >/dev/null
+    echo "  }" | sudo tee -a /etc/nginx/sites-available/$PROJECT >/dev/null
+    echo "}" | sudo tee -a /etc/nginx/sites-available/$PROJECT >/dev/null
+
+    sudo ln -s "/etc/nginx/sites-available/$PROJECT" /etc/nginx/sites-enabled
+
+    # TODO: if publishing script, also set max server name hashes to 128 in /etc/nginx/nginx.conf
+    # uncomment below if it didn't work
+    # nano /etc/nginx/nginx.conf
+    sudo systemctl restart nginx
+    # Firewall
+    sudo ufw allow 'Nginx Full'
+}
 ```
