@@ -246,6 +246,73 @@ configure_nginx() {
     </item>
     
     <item>
+      <title>Bash Quickstart</title>
+      <link>/posts/bash-quickstart/</link>
+      <pubDate>Wed, 26 Jan 2022 12:38:14 -0500</pubDate>
+      
+      <guid>/posts/bash-quickstart/</guid>
+      <description>&lt;h2 id=&#34;strings&#34; &gt;Strings
+&lt;span&gt;
+    &lt;a href=&#34;#strings&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;color:#eedd82&#34;&gt;$text&lt;/span&gt;=&lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;hello&amp;#34;&lt;/span&gt;
+&lt;span style=&#34;color:#eedd82&#34;&gt;$ext&lt;/span&gt;=&lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;txt&amp;#34;&lt;/span&gt;
+&lt;span style=&#34;color:#eedd82&#34;&gt;str_concat&lt;/span&gt;=&lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#eedd82&#34;&gt;$text&lt;/span&gt;&lt;span style=&#34;color:#87ceeb&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#eedd82&#34;&gt;$ext&lt;/span&gt;&lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;&lt;/span&gt;
+&lt;span style=&#34;color:#eedd82&#34;&gt;str_concat2&lt;/span&gt;=&lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#eedd82&#34;&gt;$text&lt;/span&gt;&lt;span style=&#34;color:#87ceeb&#34;&gt; .&lt;/span&gt;&lt;span style=&#34;color:#eedd82&#34;&gt;$ext&lt;/span&gt;&lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;&lt;/span&gt;
+
+&lt;span style=&#34;color:#0f0&#34;&gt;# lesson: always use [[ ]] with string variables to avoid runtime errors&lt;/span&gt;
+&lt;span style=&#34;color:#f00&#34;&gt;if&lt;/span&gt; [[ &lt;span style=&#34;color:#eedd82&#34;&gt;$str_concat&lt;/span&gt; = &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;hello .txt&amp;#34;&lt;/span&gt; ]]; &lt;span style=&#34;color:#f00&#34;&gt;then&lt;/span&gt;
+    echo &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;preferred method&amp;#34;&lt;/span&gt;
+&lt;span style=&#34;color:#f00&#34;&gt;fi&lt;/span&gt;
+&lt;span style=&#34;color:#0f0&#34;&gt;# you can also use double quotes, but it&amp;#39;s not as clean imo&lt;/span&gt;
+&lt;span style=&#34;color:#f00&#34;&gt;if&lt;/span&gt; [ &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#eedd82&#34;&gt;$str_concat&lt;/span&gt;&lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;&lt;/span&gt; = &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;hello .txt&amp;#34;&lt;/span&gt; ]; &lt;span style=&#34;color:#f00&#34;&gt;then&lt;/span&gt;
+    echo &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;option B, use double quotes&amp;#34;&lt;/span&gt;
+&lt;span style=&#34;color:#f00&#34;&gt;fi&lt;/span&gt;
+
+&lt;span style=&#34;color:#0f0&#34;&gt;# this will result in too many arguments error&lt;/span&gt;
+&lt;span style=&#34;color:#0f0&#34;&gt;# if [ $str_concat2 = &amp;#34;hello .txt&amp;#34; ]; then&lt;/span&gt;
+&lt;span style=&#34;color:#0f0&#34;&gt;#     echo &amp;#34;not possible&amp;#34;&lt;/span&gt;
+&lt;span style=&#34;color:#0f0&#34;&gt;# fi&lt;/span&gt;
+
+&lt;span style=&#34;color:#0f0&#34;&gt;# this works only if the variable does not contain spaces&lt;/span&gt;
+&lt;span style=&#34;color:#f00&#34;&gt;if&lt;/span&gt; [ &lt;span style=&#34;color:#eedd82&#34;&gt;$str_concat&lt;/span&gt; = &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;hello.txt&amp;#34;&lt;/span&gt; ]; &lt;span style=&#34;color:#f00&#34;&gt;then&lt;/span&gt;
+    echo &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;works&amp;#34;&lt;/span&gt;
+&lt;span style=&#34;color:#f00&#34;&gt;fi&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;loops-and-more-conditionals&#34; &gt;Loops and More Conditionals
+&lt;span&gt;
+    &lt;a href=&#34;#loops-and-more-conditionals&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;color:#0f0&#34;&gt;# for loop examples&lt;/span&gt;
+&lt;span style=&#34;color:#f00&#34;&gt;for&lt;/span&gt; var in &lt;span style=&#34;color:#f60&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color:#f60&#34;&gt;2&lt;/span&gt; &lt;span style=&#34;color:#f60&#34;&gt;3&lt;/span&gt; str1 str2 str3 &lt;span style=&#34;color:#eedd82&#34;&gt;$flag1&lt;/span&gt; &lt;span style=&#34;color:#f60&#34;&gt;9&lt;/span&gt; 10; &lt;span style=&#34;color:#f00&#34;&gt;do&lt;/span&gt;
+    echo &lt;span style=&#34;color:#eedd82&#34;&gt;$var&lt;/span&gt;
+&lt;span style=&#34;color:#f00&#34;&gt;done&lt;/span&gt;
+
+&lt;span style=&#34;color:#0f0&#34;&gt;# range&lt;/span&gt;
+&lt;span style=&#34;color:#f00&#34;&gt;for&lt;/span&gt; var in {1..10}; &lt;span style=&#34;color:#f00&#34;&gt;do&lt;/span&gt;
+    echo &lt;span style=&#34;color:#eedd82&#34;&gt;$var&lt;/span&gt;
+&lt;span style=&#34;color:#f00&#34;&gt;done&lt;/span&gt;
+
+&lt;span style=&#34;color:#0f0&#34;&gt;# for loop as while loop&lt;/span&gt;
+&lt;span style=&#34;color:#0f0&#34;&gt;# some math here too&lt;/span&gt;
+&lt;span style=&#34;color:#eedd82&#34;&gt;counter&lt;/span&gt;=&lt;span style=&#34;color:#f60&#34;&gt;0&lt;/span&gt;
+&lt;span style=&#34;color:#f00&#34;&gt;while&lt;/span&gt; [ &lt;span style=&#34;color:#eedd82&#34;&gt;$counter&lt;/span&gt; -lt &lt;span style=&#34;color:#f60&#34;&gt;10&lt;/span&gt; ]; &lt;span style=&#34;color:#f00&#34;&gt;do&lt;/span&gt;
+    &lt;span style=&#34;color:#f00&#34;&gt;if&lt;/span&gt; [ &lt;span style=&#34;color:#eedd82&#34;&gt;$counter&lt;/span&gt; -eq &lt;span style=&#34;color:#f60&#34;&gt;0&lt;/span&gt; ]; &lt;span style=&#34;color:#f00&#34;&gt;then&lt;/span&gt;
+        ((counter++))
+        echo &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;counter+2=&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f00&#34;&gt;$((&lt;/span&gt;++counter&lt;span style=&#34;color:#f00&#34;&gt;))&lt;/span&gt;
+    &lt;span style=&#34;color:#f00&#34;&gt;elif&lt;/span&gt; [ &lt;span style=&#34;color:#eedd82&#34;&gt;$counter&lt;/span&gt; -lt &lt;span style=&#34;color:#f60&#34;&gt;5&lt;/span&gt; ]; &lt;span style=&#34;color:#f00&#34;&gt;then&lt;/span&gt;
+        echo &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;less than 5&amp;#34;&lt;/span&gt;
+    &lt;span style=&#34;color:#f00&#34;&gt;elif&lt;/span&gt; [ &lt;span style=&#34;color:#eedd82&#34;&gt;$counter&lt;/span&gt; -gt &lt;span style=&#34;color:#f60&#34;&gt;5&lt;/span&gt; ]; &lt;span style=&#34;color:#f00&#34;&gt;then&lt;/span&gt;
+        echo &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;greater than 5&amp;#34;&lt;/span&gt;
+    &lt;span style=&#34;color:#f00&#34;&gt;fi&lt;/span&gt;
+&lt;span style=&#34;color:#f00&#34;&gt;done&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+    
+    <item>
       <title>Why 64-bit Programs are Better Than 32-bit</title>
       <link>/posts/64bit-is-better-than-32bit/</link>
       <pubDate>Sat, 25 Dec 2021 10:30:44 -0600</pubDate>
