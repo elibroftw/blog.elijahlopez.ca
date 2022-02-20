@@ -2,6 +2,7 @@
 title: "List of Unethical People"
 date: 2022-02-20T15:51:08-05:00
 draft: false
+hidden: true
 ---
 
 This is a list of unethical people. The definition of unethical is acting significantly less ethical than me in a position of power. This is not a list of people whose actions cannot cause much harm. I believe in forgiveness, so anyone who authentically regrets thinking their actions were not unethical will be removed upon request. Anyone with more than 2 infractions is undeserving of forgiveness.
