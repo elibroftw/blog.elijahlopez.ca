@@ -7,7 +7,7 @@ tags: [
 ]
 ---
 
-I've officially moved from blogging on Medium to my own [GitHub page](https://elibroftw.github.io).
+I've officially moved from blogging on Medium to my own [GitHub page](https://blog.elijahlopez.ca).
 
 Some of the most frustrating things with Medium are: clunky comment UI, click-bait recommendations, no way to download my own articles, slower than YouTube interface, and to top it off, no dark theme.
 
@@ -21,4 +21,4 @@ When it came to archiving my Medium content, that's when I realized that there w
 
 I haven't ported many of the articles over to GitHub pages, mainly because I don't want to deal with the formatting, but I made this post for another reason. I made this post to inform other people that "self"-hosting is a viable option, and I've made it work well.
 
-You can read how I made this blogging site using Hugo and hosted on GitHub pages, [here](https://elibroftw.github.io/posts/hugo-tutorial/).
+You can read how I made this blogging site using Hugo and hosted on GitHub pages, [here](https://blog.elijahlopez.ca/posts/hugo-tutorial/).
