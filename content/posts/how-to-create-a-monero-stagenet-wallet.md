@@ -10,6 +10,9 @@ tags: [
 
 {{< youtube MlYorZQTmV4 >}}
 
+I'm making this tutorial because there's currently a bug in the GUI that won't let
+you make a stagenet wallet if you have already used a mainnet wallet.
+
 ## Add to PATH Environment Variable
 
 This is optional but will help you in accessing the CLI in a terminal with any working directory
@@ -31,3 +34,7 @@ monero-wallet-cli --stagenet --daemon-address=http://stagenet.xmr-tw.org:38081 -
 Enter wallet name: stagenet_one
 For the next input: y
 ```
+
+## Open Wallet from GUI
+
+Now you can open the stagenet wallet from your GUI
