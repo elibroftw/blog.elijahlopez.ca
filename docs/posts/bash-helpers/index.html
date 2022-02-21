@@ -331,19 +331,23 @@ any non-scripting language like C/C++ or Python.</p>
 </ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">add_cronjob() {
     <span style="color:#0f0"># crontab will not set the working directory</span>
-    <span style="color:#0f0"># in my case, cronjob.py will change the workind dir to the project root</span>
-    mkdir ~/locks
+    <span style="color:#0f0"># create locks directory if it does not exist</span>
+    mkdir -p ~/locks
     <span style="color:#0f0"># my sample job uses flock to prevent overlapping runs</span>
     <span style="color:#0f0"># minute hour day month day_of_week</span>
-    <span style="color:#eedd82">cronjob</span>=<span style="color:#87ceeb">&#34;*/1 * * * * flock -n ~/locks/auto_deploy_</span><span style="color:#eedd82">$PROJECT</span><span style="color:#87ceeb">.lock python3 </span><span style="color:#f00">$(</span>pwd<span style="color:#f00">)</span><span style="color:#87ceeb">/cronjob.py&#34;</span>
-
-    <span style="color:#0f0"># add the cronjob</span>
+    <span style="color:#0f0"># /X means divisible by X</span>
+    <span style="color:#eedd82">cronjob</span>=<span style="color:#87ceeb">&#34;*/1 * * * * flock -n ~/locks/auto_deploy_</span><span style="color:#eedd82">$PROJECT</span><span style="color:#87ceeb">.lock </span><span style="color:#eedd82">$PYTHON</span><span style="color:#87ceeb"> </span><span style="color:#f00">$(</span>pwd<span style="color:#f00">)</span><span style="color:#87ceeb">/cronjob.py&#34;</span>
+    <span style="color:#0f0"># cronjob.py will set the working directory</span>
     <span style="color:#f00">if</span> ! crontab -l &amp;&gt;/dev/null; <span style="color:#f00">then</span>
-      <span style="color:#0f0"># crontab file does not exist, so no need to echo back crontab -l</span>
-      echo <span style="color:#87ceeb">&#34;</span><span style="color:#eedd82">$cronjob</span><span style="color:#87ceeb">&#34;</span> | crontab -
+        <span style="color:#0f0"># crontab file does not exist</span>
+        echo <span style="color:#87ceeb">&#34;</span><span style="color:#eedd82">$cronjob</span><span style="color:#87ceeb">&#34;</span> | crontab -
+        echo <span style="color:#87ceeb">&#34;Created new crontab with job&#34;</span>
     <span style="color:#f00">elif</span> ! crontab -l 2&gt;/dev/null | grep -Fq <span style="color:#87ceeb">&#34;</span><span style="color:#eedd82">$cronjob</span><span style="color:#87ceeb">&#34;</span>; <span style="color:#f00">then</span>
-      <span style="color:#0f0"># crontab exists but job not found in crontab, so echo back crontab -l + new job</span>
-      echo <span style="color:#f00">$(</span>crontab -l ; echo <span style="color:#87ceeb">&#34;</span><span style="color:#eedd82">$cronjob</span><span style="color:#87ceeb">&#34;</span><span style="color:#f00">)</span> | crontab -
+        <span style="color:#0f0"># job not found in crontab</span>
+        echo <span style="color:#f00">$(</span>crontab -l ; echo <span style="color:#87ceeb">&#34;</span><span style="color:#eedd82">$cronjob</span><span style="color:#87ceeb">&#34;</span><span style="color:#f00">)</span> | crontab -
+        echo <span style="color:#87ceeb">&#34;Added </span><span style="color:#eedd82">$cronjob</span><span style="color:#87ceeb"> ... to existing crontab&#34;</span>
+    <span style="color:#f00">else</span>
+        echo <span style="color:#87ceeb">&#34;Job already exists in crontab&#34;</span>
     <span style="color:#f00">fi</span>
 }
 </code></pre></div><h2 id="linux---add-systemd-service" >Linux - Add Systemd Service

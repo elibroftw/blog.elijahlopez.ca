@@ -97,19 +97,23 @@ any non-scripting language like C/C++ or Python.&lt;/p&gt;
 &lt;/ul&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;add_cronjob() {
     &lt;span style=&#34;color:#0f0&#34;&gt;# crontab will not set the working directory&lt;/span&gt;
-    &lt;span style=&#34;color:#0f0&#34;&gt;# in my case, cronjob.py will change the workind dir to the project root&lt;/span&gt;
-    mkdir ~/locks
+    &lt;span style=&#34;color:#0f0&#34;&gt;# create locks directory if it does not exist&lt;/span&gt;
+    mkdir -p ~/locks
     &lt;span style=&#34;color:#0f0&#34;&gt;# my sample job uses flock to prevent overlapping runs&lt;/span&gt;
     &lt;span style=&#34;color:#0f0&#34;&gt;# minute hour day month day_of_week&lt;/span&gt;
-    &lt;span style=&#34;color:#eedd82&#34;&gt;cronjob&lt;/span&gt;=&lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;*/1 * * * * flock -n ~/locks/auto_deploy_&lt;/span&gt;&lt;span style=&#34;color:#eedd82&#34;&gt;$PROJECT&lt;/span&gt;&lt;span style=&#34;color:#87ceeb&#34;&gt;.lock python3 &lt;/span&gt;&lt;span style=&#34;color:#f00&#34;&gt;$(&lt;/span&gt;pwd&lt;span style=&#34;color:#f00&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color:#87ceeb&#34;&gt;/cronjob.py&amp;#34;&lt;/span&gt;
-
-    &lt;span style=&#34;color:#0f0&#34;&gt;# add the cronjob&lt;/span&gt;
+    &lt;span style=&#34;color:#0f0&#34;&gt;# /X means divisible by X&lt;/span&gt;
+    &lt;span style=&#34;color:#eedd82&#34;&gt;cronjob&lt;/span&gt;=&lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;*/1 * * * * flock -n ~/locks/auto_deploy_&lt;/span&gt;&lt;span style=&#34;color:#eedd82&#34;&gt;$PROJECT&lt;/span&gt;&lt;span style=&#34;color:#87ceeb&#34;&gt;.lock &lt;/span&gt;&lt;span style=&#34;color:#eedd82&#34;&gt;$PYTHON&lt;/span&gt;&lt;span style=&#34;color:#87ceeb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#f00&#34;&gt;$(&lt;/span&gt;pwd&lt;span style=&#34;color:#f00&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color:#87ceeb&#34;&gt;/cronjob.py&amp;#34;&lt;/span&gt;
+    &lt;span style=&#34;color:#0f0&#34;&gt;# cronjob.py will set the working directory&lt;/span&gt;
     &lt;span style=&#34;color:#f00&#34;&gt;if&lt;/span&gt; ! crontab -l &amp;amp;&amp;gt;/dev/null; &lt;span style=&#34;color:#f00&#34;&gt;then&lt;/span&gt;
-      &lt;span style=&#34;color:#0f0&#34;&gt;# crontab file does not exist, so no need to echo back crontab -l&lt;/span&gt;
-      echo &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#eedd82&#34;&gt;$cronjob&lt;/span&gt;&lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;&lt;/span&gt; | crontab -
+        &lt;span style=&#34;color:#0f0&#34;&gt;# crontab file does not exist&lt;/span&gt;
+        echo &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#eedd82&#34;&gt;$cronjob&lt;/span&gt;&lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;&lt;/span&gt; | crontab -
+        echo &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;Created new crontab with job&amp;#34;&lt;/span&gt;
     &lt;span style=&#34;color:#f00&#34;&gt;elif&lt;/span&gt; ! crontab -l 2&amp;gt;/dev/null | grep -Fq &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#eedd82&#34;&gt;$cronjob&lt;/span&gt;&lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;&lt;/span&gt;; &lt;span style=&#34;color:#f00&#34;&gt;then&lt;/span&gt;
-      &lt;span style=&#34;color:#0f0&#34;&gt;# crontab exists but job not found in crontab, so echo back crontab -l + new job&lt;/span&gt;
-      echo &lt;span style=&#34;color:#f00&#34;&gt;$(&lt;/span&gt;crontab -l ; echo &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#eedd82&#34;&gt;$cronjob&lt;/span&gt;&lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f00&#34;&gt;)&lt;/span&gt; | crontab -
+        &lt;span style=&#34;color:#0f0&#34;&gt;# job not found in crontab&lt;/span&gt;
+        echo &lt;span style=&#34;color:#f00&#34;&gt;$(&lt;/span&gt;crontab -l ; echo &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#eedd82&#34;&gt;$cronjob&lt;/span&gt;&lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f00&#34;&gt;)&lt;/span&gt; | crontab -
+        echo &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;Added &lt;/span&gt;&lt;span style=&#34;color:#eedd82&#34;&gt;$cronjob&lt;/span&gt;&lt;span style=&#34;color:#87ceeb&#34;&gt; ... to existing crontab&amp;#34;&lt;/span&gt;
+    &lt;span style=&#34;color:#f00&#34;&gt;else&lt;/span&gt;
+        echo &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;Job already exists in crontab&amp;#34;&lt;/span&gt;
     &lt;span style=&#34;color:#f00&#34;&gt;fi&lt;/span&gt;
 }
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;linux---add-systemd-service&#34; &gt;Linux - Add Systemd Service

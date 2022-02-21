@@ -77,19 +77,23 @@ fi
 ```bash
 add_cronjob() {
     # crontab will not set the working directory
-    # in my case, cronjob.py will change the workind dir to the project root
-    mkdir ~/locks
+    # create locks directory if it does not exist
+    mkdir -p ~/locks
     # my sample job uses flock to prevent overlapping runs
     # minute hour day month day_of_week
-    cronjob="*/1 * * * * flock -n ~/locks/auto_deploy_$PROJECT.lock python3 $(pwd)/cronjob.py"
-
-    # add the cronjob
+    # /X means divisible by X
+    cronjob="*/1 * * * * flock -n ~/locks/auto_deploy_$PROJECT.lock $PYTHON $(pwd)/cronjob.py"
+    # cronjob.py will set the working directory
     if ! crontab -l &>/dev/null; then
-      # crontab file does not exist, so no need to echo back crontab -l
-      echo "$cronjob" | crontab -
+        # crontab file does not exist
+        echo "$cronjob" | crontab -
+        echo "Created new crontab with job"
     elif ! crontab -l 2>/dev/null | grep -Fq "$cronjob"; then
-      # crontab exists but job not found in crontab, so echo back crontab -l + new job
-      echo $(crontab -l ; echo "$cronjob") | crontab -
+        # job not found in crontab
+        echo $(crontab -l ; echo "$cronjob") | crontab -
+        echo "Added $cronjob ... to existing crontab"
+    else
+        echo "Job already exists in crontab"
     fi
 }
 ```
