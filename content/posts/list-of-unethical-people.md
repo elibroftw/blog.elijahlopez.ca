@@ -12,7 +12,9 @@ on this list is linked because of a reason.
 
 Stars before a name represent total infractions. Lack of a stars does not mean the name will show up later on this page.
 
-## [These 37 Senators Voted Against Stopping the FBI seize your internet history without a warrant](https://www.privateinternetaccess.com/blog/these-are-the-37-senators-that-voted-to-let-the-fbi-seize-your-internet-history-without-a-warrant/)
+## These 37 Senators Voted Against Stopping the FBI From Seizing your Internet History Without a Warrant
+
+[Source](https://www.privateinternetaccess.com/blog/these-are-the-37-senators-that-voted-to-let-the-fbi-seize-your-internet-history-without-a-warrant/)
 
 The main culprit here is Mitch McConnell for introducing the amendment that would've allowed the FBI to spy in the first place.
 
