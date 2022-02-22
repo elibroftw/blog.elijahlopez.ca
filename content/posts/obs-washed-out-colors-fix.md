@@ -4,6 +4,8 @@ date: 2022-02-19T13:53:14-05:00
 draft: False
 ---
 
+{{< youtube 7uDn6NlqtTo >}}
+
 I don't even have HDR capabilities, so these were the optimal color settings when recording.
 
 1. Go to Settings
