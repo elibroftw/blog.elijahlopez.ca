@@ -6,10 +6,39 @@
     <description>ELL Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 21 Feb 2022 17:04:11 -0500</lastBuildDate>
+    <lastBuildDate>Thu, 24 Feb 2022 00:40:12 -0500</lastBuildDate>
     
     <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>HTML and CSS - Mobile Responsive Design</title>
+      <link>/posts/mobile-responsive-design/</link>
+      <pubDate>Thu, 24 Feb 2022 00:40:12 -0500</pubDate>
+      
+      <guid>/posts/mobile-responsive-design/</guid>
+      <description>&lt;p&gt;Tutorials nowadays just regurgitate the wrong information! Here&amp;rsquo;s the right way to do mobile responsive design. The key is to use
+a scale of 0.86 instead of 1. This way zooming in and out actually works!&lt;/p&gt;
+&lt;p&gt;From &lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag#viewport_width_and_screen_width&#34;&gt;https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag#viewport_width_and_screen_width&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&amp;lt;meta name=&lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;viewport&amp;#34;&lt;/span&gt; content=&lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;width=device-width, initial-scale=0.86, minimum-scale=0.86&amp;#34;&lt;/span&gt;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Tutorials will recommend to style mobile first, but usually when I create websites for the desktop view first.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-css&#34; data-lang=&#34;css&#34;&gt;&lt;span style=&#34;color:#0f0&#34;&gt;/* This is optional. I call it the Tablet or 16:10 ratio */&lt;/span&gt;
+@&lt;span style=&#34;color:#f00&#34;&gt;media&lt;/span&gt; screen and (max-width:1280px) {
+    #desktop-nav&amp;gt;a {
+        &lt;span style=&#34;color:#f00&#34;&gt;float&lt;/span&gt;: &lt;span style=&#34;color:#f00&#34;&gt;left&lt;/span&gt;;
+        &lt;span style=&#34;color:#f00&#34;&gt;text-align&lt;/span&gt;: &lt;span style=&#34;color:#f00&#34;&gt;center&lt;/span&gt;;
+        &lt;span style=&#34;color:#f00&#34;&gt;margin-left&lt;/span&gt;: &lt;span style=&#34;color:#f60&#34;&gt;5&lt;/span&gt;&lt;span style=&#34;color:#ee82ee&#34;&gt;%&lt;/span&gt;;
+    }
+}
+
+&lt;span style=&#34;color:#0f0&#34;&gt;/* This is the mobile view */&lt;/span&gt;
+@&lt;span style=&#34;color:#f00&#34;&gt;media&lt;/span&gt; screen and (max-width:870px) {
+    #desktop-nav {
+        &lt;span style=&#34;color:#f00&#34;&gt;display&lt;/span&gt;: &lt;span style=&#34;color:#f00&#34;&gt;none&lt;/span&gt;
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
     
     <item>
       <title>How to Create a Monero Stagenet Wallet</title>
