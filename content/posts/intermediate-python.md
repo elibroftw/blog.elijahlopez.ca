@@ -458,7 +458,7 @@ print(glob('*.py'))
 
 ### Threading
 
-{{< gist elibroftw dc61cbb99c41976c1b466ad4db6bd6d4 >}}
+[threading_example.py](https://gist.github.com/elibroftw/dc61cbb99c41976c1b466ad4db6bd6d4#file-threading_examples-py)
 
 ## Advanced Topics (future Python learning)
 
@@ -487,6 +487,4 @@ Such as itertools, threading, multiprocessing, and more.
 
 Thanks for reading and good luck to your learning journey.
 
-## Project Ideas
-
-{{< gist elibroftw 063115da075fc2203a7cf20bd8a1542e >}}
+[Project Ideas](https://gist.github.com/elibroftw/063115da075fc2203a7cf20bd8a1542e#file-intermediate-project-ideas-md)
