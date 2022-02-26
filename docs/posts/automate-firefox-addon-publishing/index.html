@@ -12,10 +12,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="referrer" content="no-referrer-when-downgrade">
 
-<title>First Post - ELL Blog</title>
+<title>Automate Firefox Addon Publishing - ELL Blog</title>
 
-<meta name="description" content="This post tests if Hugo with the anubis theme works. I&rsquo;m thinking of self publishing articles rather than posting on Medium. Medium&rsquo;s UI is slower than YouTube&rsquo;s even though Medium is completely text-based.
-EditIt&rsquo;s currently December 19th 2021, and I&rsquo;ve even added a comment section. There&rsquo;s absolutely no reason to use Medium anymore especially after making my own Hugo GitHub Pages Tutorial">
+<meta name="description" content="If you&rsquo;re like me, you always want to speed up aspects of your life especially routine tasks. I&rsquo;ll be doing this in Python but you can easily convert the code to a language of your choice.
+PrerequisitesWe&rsquo;re going to be using the Firefox Add-ons API to upload your add-on so you will need some API keys. You can get your API keys from here. Place the pair of API keys into a .">
 
 
 
@@ -87,21 +87,21 @@ EditIt&rsquo;s currently December 19th 2021, and I&rsquo;ve even added a co
 
 
 
-<meta property="og:title" content="First Post" />
-<meta property="og:description" content="This post tests if Hugo with the anubis theme works. I&rsquo;m thinking of self publishing articles rather than posting on Medium. Medium&rsquo;s UI is slower than YouTube&rsquo;s even though Medium is completely text-based.
-EditIt&rsquo;s currently December 19th 2021, and I&rsquo;ve even added a comment section. There&rsquo;s absolutely no reason to use Medium anymore especially after making my own Hugo GitHub Pages Tutorial" />
+<meta property="og:title" content="Automate Firefox Addon Publishing" />
+<meta property="og:description" content="If you&rsquo;re like me, you always want to speed up aspects of your life especially routine tasks. I&rsquo;ll be doing this in Python but you can easily convert the code to a language of your choice.
+PrerequisitesWe&rsquo;re going to be using the Firefox Add-ons API to upload your add-on so you will need some API keys. You can get your API keys from here. Place the pair of API keys into a ." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/posts/first/" /><meta property="og:image" content="images"/><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2021-12-15T00:16:00-05:00" />
-<meta property="article:modified_time" content="2021-12-15T00:16:00-05:00" />
+<meta property="og:url" content="/posts/automate-firefox-addon-publishing/" /><meta property="og:image" content="images"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-02-25T22:58:39-05:00" />
+<meta property="article:modified_time" content="2022-02-25T22:58:39-05:00" />
 
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="images"/>
 
-<meta name="twitter:title" content="First Post"/>
-<meta name="twitter:description" content="This post tests if Hugo with the anubis theme works. I&rsquo;m thinking of self publishing articles rather than posting on Medium. Medium&rsquo;s UI is slower than YouTube&rsquo;s even though Medium is completely text-based.
-EditIt&rsquo;s currently December 19th 2021, and I&rsquo;ve even added a comment section. There&rsquo;s absolutely no reason to use Medium anymore especially after making my own Hugo GitHub Pages Tutorial"/>
+<meta name="twitter:title" content="Automate Firefox Addon Publishing"/>
+<meta name="twitter:description" content="If you&rsquo;re like me, you always want to speed up aspects of your life especially routine tasks. I&rsquo;ll be doing this in Python but you can easily convert the code to a language of your choice.
+PrerequisitesWe&rsquo;re going to be using the Firefox Add-ons API to upload your add-on so you will need some API keys. You can get your API keys from here. Place the pair of API keys into a ."/>
 
 
 
@@ -247,22 +247,41 @@ EditIt&rsquo;s currently December 19th 2021, and I&rsquo;ve even added a co
     <article class="post h-entry">
         <div class="post-header">
             <header>
-                <h1 class="p-name post-title">First Post</h1>
+                <h1 class="p-name post-title">Automate Firefox Addon Publishing</h1>
 
                 
             </header>
         </div>
         <div class="content e-content">
-            <p>This post tests if Hugo with the anubis theme works.
-I&rsquo;m thinking of self publishing articles rather than posting on Medium.
-Medium&rsquo;s UI is slower than YouTube&rsquo;s even though Medium is completely text-based.</p>
-<h3 id="edit" >Edit
+            <p>If you&rsquo;re like me, you always want to speed up aspects of your life especially routine tasks. I&rsquo;ll be doing this in Python but you can easily convert the code to a language of your choice.</p>
+<h2 id="prerequisites" >Prerequisites
 <span>
-    <a href="#edit">
+    <a href="#prerequisites">
         <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
     </a>
 </span>
-</h3><p>It&rsquo;s currently December 19th 2021, and I&rsquo;ve even added a comment section. There&rsquo;s absolutely no reason to use Medium anymore especially after making my own <a href="/posts/hugo_tutorial">Hugo GitHub Pages Tutorial</a></p>
+</h2><p>We&rsquo;re going to be using the Firefox Add-ons API to upload your add-on so you will need some API keys. You can get your API keys from <a href="https://addons.mozilla.org/developers/addon/api/key/">here</a>. 
+Place the pair of API keys into a .env file like so:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">jwt-issuer=string
+jwt-secret=string
+</code></pre></div><h2 id="third-party-libraries" >Third Party Libraries
+<span>
+    <a href="#third-party-libraries">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><p>After you do that, you will need to install some necessary modules (add to <code>requirements.txt</code>): <code>pip install requests PyJWT</code>
+After installing these two modules, copy the snippet at the bottom of the article.</p>
+<h2 id="modifying-thescript" >Modifying the Script
+<span>
+    <a href="#modifying-thescript">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><p><code>GUID</code>: include the &lsquo;{&rsquo; and &lsquo;}&rsquo; into the string if applicable
+<code>addon_files</code>: a list of source files of the add-on (relative path</p>
+<script type="application/javascript" src="https://gist.github.com/elibroftw/1a94149a2f6232d062b666c4ee9ea530.js"></script>
+
 
         </div>
         
@@ -272,10 +291,10 @@ Medium&rsquo;s UI is slower than YouTube&rsquo;s even though Medium is completel
 
 <div class="post-info">
     
-        <div class="post-date dt-published">2021-Dec-15</div>
+        <div class="post-date dt-published">2022-Feb-25</div>
     
 
-    <a class="post-hidden-url u-url" href="/posts/first/">/posts/first/</a>
+    <a class="post-hidden-url u-url" href="/posts/automate-firefox-addon-publishing/">/posts/automate-firefox-addon-publishing/</a>
     <a href="" class="p-name p-author post-hidden-author h-card" rel="me">Elijah Lopez</a>
 
 
@@ -294,12 +313,12 @@ Medium&rsquo;s UI is slower than YouTube&rsquo;s even though Medium is completel
     <div class="pagination post-pagination">
         <div class="left pagination-item ">
             
-                <a href="/posts/uw-wlu-double-degree/">UW WLU Double Degree</a>
+                <a href="/posts/windows-10-favorite-cursors/">Windows 10 Favorite Cursors</a>
             
         </div>
         <div class="right pagination-item ">
             
-                <a href="/posts/move-efi-system-partition/">How to Move EFI (MSR) System Partition</a>
+                <a href="/posts/how-to-buy-monero-in-canada/">How to Buy Monero in Canada</a>
             
         </div>
     </div>

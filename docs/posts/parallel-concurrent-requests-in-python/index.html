@@ -5,7 +5,6 @@
 
 <html lang="en" data-theme="dark">
 <head>
-	<meta name="generator" content="Hugo 0.90.1" />
     
         
 <meta charset="utf-8">
@@ -13,15 +12,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="referrer" content="no-referrer-when-downgrade">
 
-<title>ELL Blog</title>
+<title>Parallel Concurrent Requests in Python - ELL Blog</title>
 
-<meta name="description" content="">
-
-
+<meta name="description" content="You’d think that the fastest way to make parallel network requests would be to use asyncio, but it’s actually concurrent.futures.ThreadPoolExecutor. I’ve known ThreadPools before as I worked with them in Java 6&#43; months ago, but I couldn’t find something similar in Python until yesterday. There is also a ProcessPoolExecutor, but I’d only suggest you use that for CPU-bound tasks. ThreadPoolExecutor is better since requests are network bound (and also because I encountered a jumbled error when I tried to use ProcessPoolExecutor.">
 
 
 
-<link rel="alternate" type="application/rss+xml" href="/index.xml" title="ELL Blog" />
+
+
 <link rel="icon" type="image/x-icon" href="favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="favicon.png">
 
@@ -88,17 +86,19 @@
 
 
 
-<meta property="og:title" content="ELL Blog" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="/" /><meta property="og:image" content="images"/>
+<meta property="og:title" content="Parallel Concurrent Requests in Python" />
+<meta property="og:description" content="You’d think that the fastest way to make parallel network requests would be to use asyncio, but it’s actually concurrent.futures.ThreadPoolExecutor. I’ve known ThreadPools before as I worked with them in Java 6&#43; months ago, but I couldn’t find something similar in Python until yesterday. There is also a ProcessPoolExecutor, but I’d only suggest you use that for CPU-bound tasks. ThreadPoolExecutor is better since requests are network bound (and also because I encountered a jumbled error when I tried to use ProcessPoolExecutor." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/parallel-concurrent-requests-in-python/" /><meta property="og:image" content="images"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-02-24T22:42:39-05:00" />
+<meta property="article:modified_time" content="2021-02-24T22:42:39-05:00" />
 
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="images"/>
 
-<meta name="twitter:title" content="ELL Blog"/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:title" content="Parallel Concurrent Requests in Python"/>
+<meta name="twitter:description" content="You’d think that the fastest way to make parallel network requests would be to use asyncio, but it’s actually concurrent.futures.ThreadPoolExecutor. I’ve known ThreadPools before as I worked with them in Java 6&#43; months ago, but I couldn’t find something similar in Python until yesterday. There is also a ProcessPoolExecutor, but I’d only suggest you use that for CPU-bound tasks. ThreadPoolExecutor is better since requests are network bound (and also because I encountered a jumbled error when I tried to use ProcessPoolExecutor."/>
 
 
 
@@ -239,35 +239,38 @@
         </header>
         <main id="main" tabindex="-1"> 
             
-    <div class="homepage-content">
-        
-    </div>
+    
 
-    <div class="articles h-feed">
-        
-        
-            <article class="post-list h-feed">
-    <div class="post-header">
-        <header>
-            <h1 class="p-name post-title"><a class="u-url" href="/posts/windows-10-favorite-cursors/">Windows 10 Favorite Cursors</a></h1>
-        </header>
-        
-    </div>
+    <article class="post h-entry">
+        <div class="post-header">
+            <header>
+                <h1 class="p-name post-title">Parallel Concurrent Requests in Python</h1>
 
-    
-    
-    
-    
+                
+            </header>
+        </div>
+        <div class="content e-content">
+            <p>You’d think that the fastest way to make parallel network requests would be to use asyncio, but it’s actually <code>concurrent.futures.ThreadPoolExecutor</code>.
+I’ve known ThreadPools before as I worked with them in Java 6+ months ago, but I couldn’t find something similar in Python until yesterday.
+There is also a <code>ProcessPoolExecutor</code>, but I’d only suggest you use that for CPU-bound tasks.
+ThreadPoolExecutor is better since requests are network bound (and also because I encountered a jumbled error when I tried to use <code>ProcessPoolExecutor</code>.
+Here is a quick proof of concept using <code>ThreadPoolExecutor</code>.</p>
+<script type="application/javascript" src="https://gist.github.com/elibroftw/fc61f40da65ad3178ea03c768c86a932.js"></script>
+
+<p>I hope that the comments in the code above were enough but if not, please let me know.</p>
+
+        </div>
+        
 
     
 
 
 <div class="post-info">
     
-        <div class="post-date dt-published">2022-Feb-25</div>
+        <div class="post-date dt-published">2021-Feb-24</div>
     
 
-    <a class="post-hidden-url u-url" href="/posts/windows-10-favorite-cursors/">/posts/windows-10-favorite-cursors/</a>
+    <a class="post-hidden-url u-url" href="/posts/parallel-concurrent-requests-in-python/">/posts/parallel-concurrent-requests-in-python/</a>
     <a href="" class="p-name p-author post-hidden-author h-card" rel="me">Elijah Lopez</a>
 
 
@@ -277,386 +280,47 @@
     </div>
 </div>
 
-</article>
+    </article>
+
+    
+
+    
         
-            <article class="post-list h-feed">
-    <div class="post-header">
-        <header>
-            <h1 class="p-name post-title"><a class="u-url" href="/posts/automate-firefox-addon-publishing/">Automate Firefox Addon Publishing</a></h1>
-        </header>
-        
-    </div>
-
-    
-    
-    
-    
-
-    
-
-
-<div class="post-info">
-    
-        <div class="post-date dt-published">2022-Feb-25</div>
-    
-
-    <a class="post-hidden-url u-url" href="/posts/automate-firefox-addon-publishing/">/posts/automate-firefox-addon-publishing/</a>
-    <a href="" class="p-name p-author post-hidden-author h-card" rel="me">Elijah Lopez</a>
-
-
-    <div class="post-taxonomies">
-        
+    <div class="pagination post-pagination">
+        <div class="left pagination-item ">
             
-    </div>
-</div>
-
-</article>
-        
-            <article class="post-list h-feed">
-    <div class="post-header">
-        <header>
-            <h1 class="p-name post-title"><a class="u-url" href="/posts/how-to-buy-monero-in-canada/">How to Buy Monero in Canada</a></h1>
-        </header>
-        
-    </div>
-
-    
-    
-    
-    
-
-    
-
-
-<div class="post-info">
-    
-        <div class="post-date dt-published">2022-Feb-25</div>
-    
-
-    <a class="post-hidden-url u-url" href="/posts/how-to-buy-monero-in-canada/">/posts/how-to-buy-monero-in-canada/</a>
-    <a href="" class="p-name p-author post-hidden-author h-card" rel="me">Elijah Lopez</a>
-
-
-    <div class="post-taxonomies">
-        
-            
-    </div>
-</div>
-
-</article>
-        
-            <article class="post-list h-feed">
-    <div class="post-header">
-        <header>
-            <h1 class="p-name post-title"><a class="u-url" href="/posts/mobile-responsive-design/">HTML and CSS - Mobile Responsive Design</a></h1>
-        </header>
-        
-    </div>
-
-    
-    
-    
-    
-
-    
-
-
-<div class="post-info">
-    
-        <div class="post-date dt-published">2022-Feb-24</div>
-    
-
-    <a class="post-hidden-url u-url" href="/posts/mobile-responsive-design/">/posts/mobile-responsive-design/</a>
-    <a href="" class="p-name p-author post-hidden-author h-card" rel="me">Elijah Lopez</a>
-
-
-    <div class="post-taxonomies">
-        
-            
-                <ul class="post-tags">
-                    
-                        
-                        <li><a href="/tags/html/">#html</a></li>
-                    
-                        
-                        <li><a href="/tags/css/">#css</a></li>
-                    
-                </ul>
-        
-    </div>
-</div>
-
-</article>
-        
-            <article class="post-list h-feed">
-    <div class="post-header">
-        <header>
-            <h1 class="p-name post-title"><a class="u-url" href="/posts/how-to-create-a-monero-stagenet-wallet/">How to Create a Monero Stagenet Wallet</a></h1>
-        </header>
-        
-    </div>
-
-    
-    
-    
-    
-
-    
-
-
-<div class="post-info">
-    
-        <div class="post-date dt-published">2022-Feb-21</div>
-    
-
-    <a class="post-hidden-url u-url" href="/posts/how-to-create-a-monero-stagenet-wallet/">/posts/how-to-create-a-monero-stagenet-wallet/</a>
-    <a href="" class="p-name p-author post-hidden-author h-card" rel="me">Elijah Lopez</a>
-
-
-    <div class="post-taxonomies">
-        
-            
-                <ul class="post-tags">
-                    
-                        
-                        <li><a href="/tags/tutorial/">#tutorial</a></li>
-                    
-                        
-                        <li><a href="/tags/monero/">#monero</a></li>
-                    
-                </ul>
-        
-    </div>
-</div>
-
-</article>
-        
-            <article class="post-list h-feed">
-    <div class="post-header">
-        <header>
-            <h1 class="p-name post-title"><a class="u-url" href="/posts/obs-washed-out-colors-fix/">OBS Washed Out Colors Fix</a></h1>
-        </header>
-        
-    </div>
-
-    
-    
-    
-    
-
-    
-
-
-<div class="post-info">
-    
-        <div class="post-date dt-published">2022-Feb-19</div>
-    
-
-    <a class="post-hidden-url u-url" href="/posts/obs-washed-out-colors-fix/">/posts/obs-washed-out-colors-fix/</a>
-    <a href="" class="p-name p-author post-hidden-author h-card" rel="me">Elijah Lopez</a>
-
-
-    <div class="post-taxonomies">
-        
-            
-    </div>
-</div>
-
-</article>
-        
-            <article class="post-list h-feed">
-    <div class="post-header">
-        <header>
-            <h1 class="p-name post-title"><a class="u-url" href="/posts/bash-helpers/">Bash &amp; Linux Helpers</a></h1>
-        </header>
-        
-    </div>
-
-    
-    
-    
-    
-
-    
-
-
-<div class="post-info">
-    
-        <div class="post-date dt-published">2022-Feb-14</div>
-    
-
-    <a class="post-hidden-url u-url" href="/posts/bash-helpers/">/posts/bash-helpers/</a>
-    <a href="" class="p-name p-author post-hidden-author h-card" rel="me">Elijah Lopez</a>
-
-
-    <div class="post-taxonomies">
-        
-            
-                <ul class="post-tags">
-                    
-                        
-                        <li><a href="/tags/tutorial/">#tutorial</a></li>
-                    
-                        
-                        <li><a href="/tags/programming/">#programming</a></li>
-                    
-                        
-                        <li><a href="/tags/devops/">#devops</a></li>
-                    
-                        
-                        <li><a href="/tags/bash/">#bash</a></li>
-                    
-                </ul>
-        
-    </div>
-</div>
-
-</article>
-        
-            <article class="post-list h-feed">
-    <div class="post-header">
-        <header>
-            <h1 class="p-name post-title"><a class="u-url" href="/posts/jenkins-snippets/">Jenkins Snippets</a></h1>
-        </header>
-        
-    </div>
-
-    
-    
-    
-    
-
-    
-
-
-<div class="post-info">
-    
-        <div class="post-date dt-published">2022-Feb-07</div>
-    
-
-    <a class="post-hidden-url u-url" href="/posts/jenkins-snippets/">/posts/jenkins-snippets/</a>
-    <a href="" class="p-name p-author post-hidden-author h-card" rel="me">Elijah Lopez</a>
-
-
-    <div class="post-taxonomies">
-        
-            
-                <ul class="post-tags">
-                    
-                        
-                        <li><a href="/tags/jenkins/">#jenkins</a></li>
-                    
-                        
-                        <li><a href="/tags/tutorial/">#tutorial</a></li>
-                    
-                        
-                        <li><a href="/tags/groovy/">#groovy</a></li>
-                    
-                </ul>
-        
-    </div>
-</div>
-
-</article>
-        
-            <article class="post-list h-feed">
-    <div class="post-header">
-        <header>
-            <h1 class="p-name post-title"><a class="u-url" href="/posts/bash-quickstart/">Bash Quickstart</a></h1>
-        </header>
-        
-    </div>
-
-    
-    
-    
-    
-
-    
-
-
-<div class="post-info">
-    
-        <div class="post-date dt-published">2022-Jan-26</div>
-    
-
-    <a class="post-hidden-url u-url" href="/posts/bash-quickstart/">/posts/bash-quickstart/</a>
-    <a href="" class="p-name p-author post-hidden-author h-card" rel="me">Elijah Lopez</a>
-
-
-    <div class="post-taxonomies">
-        
-            
-                <ul class="post-tags">
-                    
-                        
-                        <li><a href="/tags/tutorial/">#tutorial</a></li>
-                    
-                        
-                        <li><a href="/tags/programming/">#programming</a></li>
-                    
-                        
-                        <li><a href="/tags/devops/">#devops</a></li>
-                    
-                        
-                        <li><a href="/tags/bash/">#bash</a></li>
-                    
-                </ul>
-        
-    </div>
-</div>
-
-</article>
-        
-            <article class="post-list h-feed">
-    <div class="post-header">
-        <header>
-            <h1 class="p-name post-title"><a class="u-url" href="/posts/filling-out-w-8ben-form-canada/">How to Fill out W-8 BEN Form in Canada</a></h1>
-        </header>
-        
-    </div>
-
-    
-    
-    
-    
-
-    
-
-
-<div class="post-info">
-    
-        <div class="post-date dt-published">2022-Jan-04</div>
-    
-
-    <a class="post-hidden-url u-url" href="/posts/filling-out-w-8ben-form-canada/">/posts/filling-out-w-8ben-form-canada/</a>
-    <a href="" class="p-name p-author post-hidden-author h-card" rel="me">Elijah Lopez</a>
-
-
-    <div class="post-taxonomies">
-        
-            
-    </div>
-</div>
-
-</article>
-        
-        
-    
-    
-    <div class="pagination">
-        <div class="left pagination-item disabled">
+                <a href="/posts/register-default-file-handler-python/">Registering Default File Handler&#39;s in Windows with Python</a>
             
         </div>
         <div class="right pagination-item ">
             
-                <a href="/page/2/">to old posts</a>
+                <a href="/posts/convert-word-files-to-pdf/">Convert Word Files to PDF With Python</a>
             
         </div>
     </div>
 
 
-    </div>
+
+
+    
+
+    
+
+    
+        
+
+
+<script src="https://utteranc.es/client.js"
+        repo="elibroftw/blog.elijahlopez.ca"
+        theme="github-dark"
+        label=""
+        issue-term="url"
+        crossorigin="anonymous"
+        async>
+</script>
+    
+
+    
 
 
         </main>
