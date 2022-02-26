@@ -12,9 +12,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="referrer" content="no-referrer-when-downgrade">
 
-<title>Why 64-bit Programs are Better Than 32-bit - ELL Blog</title>
+<title>How to Create Menus in Pygame - ELL Blog</title>
 
-<meta name="description" content="This article is from a developer point of view, not a user point of view. The audience of this article are beginner to intermediate developers and is introductory, not argumenatiative. Do not expect to be convinced if you are pro 32-bit software because Windows decided to support 32-bit software. From a user point of view, 64-bit computers and software is better because then you can have 100 browser tabs open">
+<meta name="description" content="This article is about creating high functioning menus with an optimized workflow along with even a settings page.
+One note of warning is that each of these sections of code cannot be run independently. I have split the code on purpose so that you can use it in a plug and play manner. I will link my own pygame project at the end so that you can see that the code I&rsquo;ve shared is the code I do in fact use.">
 
 
 
@@ -86,19 +87,21 @@
 
 
 
-<meta property="og:title" content="Why 64-bit Programs are Better Than 32-bit" />
-<meta property="og:description" content="This article is from a developer point of view, not a user point of view. The audience of this article are beginner to intermediate developers and is introductory, not argumenatiative. Do not expect to be convinced if you are pro 32-bit software because Windows decided to support 32-bit software. From a user point of view, 64-bit computers and software is better because then you can have 100 browser tabs open" />
+<meta property="og:title" content="How to Create Menus in Pygame" />
+<meta property="og:description" content="This article is about creating high functioning menus with an optimized workflow along with even a settings page.
+One note of warning is that each of these sections of code cannot be run independently. I have split the code on purpose so that you can use it in a plug and play manner. I will link my own pygame project at the end so that you can see that the code I&rsquo;ve shared is the code I do in fact use." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/posts/64bit-is-better-than-32bit/" /><meta property="og:image" content="images"/><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2021-12-25T10:30:44-06:00" />
-<meta property="article:modified_time" content="2021-12-25T10:30:44-06:00" />
+<meta property="og:url" content="/posts/create-menus-in-pygame/" /><meta property="og:image" content="images"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-06-21T10:54:30-05:00" />
+<meta property="article:modified_time" content="2020-06-21T10:54:30-05:00" />
 
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="images"/>
 
-<meta name="twitter:title" content="Why 64-bit Programs are Better Than 32-bit"/>
-<meta name="twitter:description" content="This article is from a developer point of view, not a user point of view. The audience of this article are beginner to intermediate developers and is introductory, not argumenatiative. Do not expect to be convinced if you are pro 32-bit software because Windows decided to support 32-bit software. From a user point of view, 64-bit computers and software is better because then you can have 100 browser tabs open"/>
+<meta name="twitter:title" content="How to Create Menus in Pygame"/>
+<meta name="twitter:description" content="This article is about creating high functioning menus with an optimized workflow along with even a settings page.
+One note of warning is that each of these sections of code cannot be run independently. I have split the code on purpose so that you can use it in a plug and play manner. I will link my own pygame project at the end so that you can see that the code I&rsquo;ve shared is the code I do in fact use."/>
 
 
 
@@ -244,92 +247,141 @@
     <article class="post h-entry">
         <div class="post-header">
             <header>
-                <h1 class="p-name post-title">Why 64-bit Programs are Better Than 32-bit</h1>
+                <h1 class="p-name post-title">How to Create Menus in Pygame</h1>
 
                 
             </header>
         </div>
         <div class="content e-content">
-            <p>This article is from a developer point of view, not a user point of view.
-The audience of this article are beginner to intermediate developers and is introductory, not argumenatiative.
-Do not expect to be convinced if you are pro 32-bit software because Windows decided to support 32-bit software.
-From a user point of view, 64-bit computers and software is better because then you can have 100 browser tabs open</p>
-<h3 id="1-no-4gib-memory-limit" >1. No 4GiB Memory Limit
+            <p>This article is about creating high functioning menus with an optimized workflow along with even a settings page.</p>
+<p>One note of warning is that each of these sections of code cannot be run independently.
+I have split the code on purpose so that you can use it in a plug and play manner.
+I will link my own pygame project at the end so that you can see that the code I&rsquo;ve shared is the code I do in fact use.</p>
+<h2 id="boilerplate-code" >Boilerplate Code
 <span>
-    <a href="#1-no-4gib-memory-limit">
+    <a href="#boilerplate-code">
         <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
     </a>
 </span>
-</h3><p>If your application needs more than 4GiB memory, then you definitely need a 32-bit application.
-And if you don&rsquo;t need more than 4GiB of memory, you might not want to develop 32-bit development habits because if you do need 4GB in the future, its better for your habits to already work out, that it is to keep in the back of your mind that you need to switch to targetting 64-bit.</p>
-<h3 id="2-64-bit-users-get-64-bit-applications" >2. 64-bit Users get 64-bit Applications
+</h2><p>The following snippet defines constants such as button widths and text sizes.
+You should expect an undefined error since I have not shown main_menu() yet.</p>
+<p><a href="https://repl.it/@elilopez/PygameMenus#boilerplate.py">boilereplate.py</a></p>
+<p><code>gfxdraw</code> is what we will use to make anti-aliased circles for our toggle button.
+There&rsquo;s a variable called <code>button_layout_4</code> which I use as the layout for if the menu will have 4 centred buttons of the same size.
+You can make your own custom layout if you need x buttons. I actually made a local button_layout_3 in my own end game menu since it only required only 3 buttons.</p>
+<p>In this repl, there are other files as well that we will take a look at.</p>
+<h2 id="helper-functions" >Helper Functions
 <span>
-    <a href="#2-64-bit-users-get-64-bit-applications">
+    <a href="#helper-functions">
         <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
     </a>
 </span>
-</h3><p>By shipping only 64-bit distrubtions, and only one legacy 32-bit application, most users won&rsquo;t be recommended the wrong architecture.
-For example, VLC recommended their 32-bit distribution on my 64-bit computer! Some of my video files are around 20GB so of course 64-bit would be best.</p>
-<h3 id="3-linux-seamless-installation-for-users" >3. Linux: Seamless Installation for Users
+</h2><p><a href="https://repl.it/@elilopez/PygameMenus#helpers.py">helpers.py</a></p>
+<h3 id="text_objects" >text_objects(…)
 <span>
-    <a href="#3-linux-seamless-installation-for-users">
+    <a href="#text_objects">
         <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
     </a>
 </span>
-</h3><p>If you ship 32-bit Linux applications, chances are that your users will now need to install the necessary 32-bit libraries.
-Most systems are 64-bit and 32-bit users can continue using legacy software with their package manager.</p>
-<h3 id="4-64-bit-is-the-default" >4. 64-bit is the Default
+</h3><p>Returns the text surface and its dimensions</p>
+<h3 id="button" >button(…)
 <span>
-    <a href="#4-64-bit-is-the-default">
+    <a href="#button">
         <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
     </a>
 </span>
-</h3><p>In Visual Studio 2022, the default target architecture is 64-bit. It used to be 32-bit.
-Most users run 64-bit systems, so the default compiler or intrepetor you install, like Python, will also be 64-bit in 2021.</p>
-<h3 id="5-future-proof--32-bit-compilers" >5. Future Proof &amp; 32-bit Compilers
+</h3><p>Creates a visual button with a passive and hovered (active) state.
+Return value is whether or not the button was clicked.
+Note that there is a 100ms buffer time to ensure the click was not of a previous menu button.</p>
+<h3 id="draw_circle" >draw_circle(…)
 <span>
-    <a href="#5-future-proof--32-bit-compilers">
+    <a href="#draw_circle">
         <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
     </a>
 </span>
-</h3><p>64-bit is objectively more future proof than 32-bit. Rust already has a 128-bit primitive, so 32-bit will definitely be left in the dust if things shift even further. We&rsquo;ve already seen Windows 10 go from &ldquo;last Windows&rdquo; to out of support in 2024. When starting new projects, why sacrifice the stability of your applicaiton in the future, just to support the past?</p>
-<p>My personal grife is a Python project. Over two years ago, I made a music player for Windows, <a href="https://github.com/elibroftw/music-caster/">Music Caster</a>. The relevant details are Python 3.7 64-bit, PyInstaller, and a fork of portaudio that only compiled for 64-bit.
-After some time, a user asked me to support 32-bit. Me being naive at the time agreed because I fell prey to the 32-bit supports more users reasoning.</p>
-<p>To support 32-bit applications, I had to uninsatll my existing instllation and then install the 32-bit version of Python. I went with Python 3.8 since Python 3.9 hadn&rsquo;t come out yet. I wish it was that simple, but there&rsquo;s more. I had to figure out how to compile the 32-bit version of the portaudio library. Then another year later, I&rsquo;ve decided to future proof my application, so the journey back from 32-bit Python was just as hard.</p>
-<p>Lesson of the day is to never use a 3.X.0 Python distribution or learn Rust while you are using Python.</p>
-<h3 id="6-no-emulation" >6. No Emulation
+</h3><p>Draws an anti-aliased circle. First the outline is drawn and then the fill is drawn.</p>
+<h3 id="toggle_btn" >toggle_btn(…)
 <span>
-    <a href="#6-no-emulation">
+    <a href="#toggle_btn">
         <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
     </a>
 </span>
-</h3><p>The most common pro 32-bit software argument is also the most ironic. The entire reason emulation exists, that is 32-bit software running on 64-bit Windows,
-is Windows supporting legacy software. Creating 32-bit software when 64-bit is possible, is simply ignorant as to why 64-bit exits.</p>
-<p>At the cost of not supporting at most 2% of Windows users, your application won&rsquo;t have to be emulated.</p>
-<blockquote>
-<p>WOW64 is the x86 emulator that allows 32-bit Windows-based applications to run seamlessly on 64-bit Windows. <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
-</blockquote>
-<ul>
-<li>64-bit operations are native in 64-bit systems and don&rsquo;t require multiple 32-bit calls
-In the end, performance is largely based on optimization, and not so much architecture target, so that&rsquo;s why this is the last section.</li>
-</ul>
-<h3 id="conclusion" >Conclusion
+</h3><p>This function creates the text and toggle with enabled and disabled states.
+The return value is whether the toggle (including the text) was clicked.
+Since there is no hover state, <code>draw_toggle</code> and <code>blit_text</code> are available to avoid redundant blitting and drawing.</p>
+<h2 id="main-menu" >Main Menu
 <span>
-    <a href="#conclusion">
+    <a href="#main-menu">
         <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
     </a>
 </span>
-</h3><p>I know this article is not a 100% high quality article, but this article isn&rsquo;t argumentative, it&rsquo;s just a run through.</p>
-<p>In conclusion, it&rsquo;s better to distribute 32-bit and 64-bit applications than just 32-bit applications.
-But don&rsquo;t be like VLC, and recommend 64-bit computers to install the 32-bit version!</p>
-<section class="footnotes" role="doc-endnotes">
-<hr>
-<ol>
-<li id="fn:1" role="doc-endnote">
-<p><a href="https://docs.microsoft.com/en-us/windows/win32/winprog64/running-32-bit-applications">https://docs.microsoft.com/en-us/windows/win32/winprog64/running-32-bit-applications</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
-</ol>
-</section>
+</h2><p><a href="https://repl.it/@elilopez/PygameMenus#main_menu.py">main_menu.py</a></p>
+<p>Now that you have the boiler plate code we can now start with the main menu.
+The following is an overview of our game. Note that this is the order and not what each menu will contain since menus can have go back buttons.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">Main Menu
+    Game Loop
+        Pause
+            High Scores
+            QUIT
+    Settings
+    High Scores
+    QUIT
+</code></pre></div><p><code>main_menu()</code> is called exactly once to ensure there is no mutually recursive shenanigans going on.</p>
+<p>Whenever the game ends and the user is returned to the main menu, we will need to redraw the static parts of the main menu.
+This is what the <code>main_menu_setup()</code> is for.
+The event parsing is to check if &ldquo;Alt + F4&rdquo; or Esc were pressed so that the user can exit the game with standard keyboard shortcuts as well as checking if the user has left clicked.
+You can add your own custom keyboard shortcuts that associate to specific buttons like I did for viewing high scores.</p>
+<p>You should modify <code>BUTTON_WIDTH</code>, <code>button_rects</code>, the button texts, and also the button if statement logic to fit your needs.
+When experimenting you can use raw pixel values to determine the right positions, but when you are satisfied convert these pixel values to percentages of <code>SCREEN_WIDTH</code> and <code>SCREEN_HEIGHT</code>.
+Using raw pixel values will make the GUI look drastically different for devices with different resolutions from the device you develop on.</p>
+<h2 id="settings-menu" >Settings Menu
+<span>
+    <a href="#settings-menu">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><p><a href="https://repl.it/@elilopez/PygameMenus#settings_menu.py">settings_menu.py</a></p>
+<p>The logic for the settings menu is similar to the main menu except we have to deal with writing and reading settings.
+I use a variable <code>config: dict</code> to store the game settings and I have a <code>save_config()</code> function that writes the dict to a <code>config.json</code> file.
+Since toggle buttons are static, I keep track of whether or not its the first loop and if the toggles need to be redrawn (setting changed).
+Note that the back button is just a return. This is because of the game logic I talked about earlier to avoid unnecessary recursion.
+As you can see, we have modified the function of pressing the Escape key to return back to the main menu.</p>
+<h2 id="pause-menu" >Pause Menu
+<span>
+    <a href="#pause-menu">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><p><a href="https://repl.it/@elilopez/PygameMenus#pause_menu.py">pause_menu.py</a></p>
+<p>This is definitely one of the more complicated menus to create because I had to deal with game character movement + having a translucent background.
+Similar to the main menu, we will need to redraw the background every time we are returning from either the settings page or the high scores page.</p>
+<p>Note that I have updated this code after I created the gif at the bottom.</p>
+<p>My version of the pause menu required me to pass the game character because of some roadblocks I faced, but yours may not require this.
+A lot of the differences between this code and the previous menus have to do with handling character movement (whether to stop the character from moving, keep the character moving, etc).
+The most important part is how I save the translucent background so that I can use it again when returning from the high score and settings menus.</p>
+<h2 id="other-menus" >Other Menus
+<span>
+    <a href="#other-menus">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><p>Other menus include the end screen and high scores menu but I won&rsquo;t be showing the code for those since the point of this article is to help you create your own menus optimally, not to do everything for you.
+It&rsquo;s just a question of placement (modifying button_rects) since I have taught you how the game logic should be and also creating the buttons themselves.</p>
+<p>Check out my game <a href="https://github.com/elibroftw/jungle-climb">Jungle Climb</a> if you want to see how all the helper functions are put together.</p>
+<div style='position:relative;padding-bottom:calc(100% / 1.78)'><iframe src='https://gfycat.com/ifr/arcticbigheartedaddax' frameborder='0' scrolling='no' width='100%' height='100%' style='position:absolute;top:0;left:0;' allowfullscreen></iframe></div>
+<h2 id="possible-improvements" >Possible Improvements
+<span>
+    <a href="#possible-improvements">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><h3 id="2022" >2022
+<span>
+    <a href="#2022">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>I ran the game and am blinded by own menu. It&rsquo;s too white and bright. It would be better for the menu background to be black and transcluent rather than white and tranclucent.</p>
 
         </div>
         
@@ -339,26 +391,16 @@ But don&rsquo;t be like VLC, and recommend 64-bit computers to install the 32-bi
 
 <div class="post-info">
     
-        <div class="post-date dt-published">2021-Dec-25</div>
+        <div class="post-date dt-published">2020-Jun-21</div>
     
 
-    <a class="post-hidden-url u-url" href="/posts/64bit-is-better-than-32bit/">/posts/64bit-is-better-than-32bit/</a>
+    <a class="post-hidden-url u-url" href="/posts/create-menus-in-pygame/">/posts/create-menus-in-pygame/</a>
     <a href="" class="p-name p-author post-hidden-author h-card" rel="me">Elijah Lopez</a>
 
 
     <div class="post-taxonomies">
         
             
-                <ul class="post-tags">
-                    
-                        
-                        <li><a href="/tags/opinion/">#opinion</a></li>
-                    
-                        
-                        <li><a href="/tags/tutorial/">#tutorial</a></li>
-                    
-                </ul>
-        
     </div>
 </div>
 
@@ -371,12 +413,12 @@ But don&rsquo;t be like VLC, and recommend 64-bit computers to install the 32-bi
     <div class="pagination post-pagination">
         <div class="left pagination-item ">
             
-                <a href="/posts/unlisted-test/">Unlisted Test Post</a>
+                <a href="/posts/convert-word-files-to-pdf/">Convert Word Files to PDF With Python</a>
             
         </div>
         <div class="right pagination-item ">
             
-                <a href="/posts/vs-code-remote-ssh/">VS Code Remote SSH Tutorial</a>
+                <a href="/posts/intermediate-python/">Intermediate Python Tutorial Project Ideas and Tips</a>
             
         </div>
     </div>

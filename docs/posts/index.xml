@@ -1302,6 +1302,144 @@ Here is a quick proof of concept using &lt;code&gt;ThreadPoolExecutor&lt;/code&g
     </item>
     
     <item>
+      <title>How to Create Menus in Pygame</title>
+      <link>/posts/create-menus-in-pygame/</link>
+      <pubDate>Sun, 21 Jun 2020 10:54:30 -0500</pubDate>
+      
+      <guid>/posts/create-menus-in-pygame/</guid>
+      <description>&lt;p&gt;This article is about creating high functioning menus with an optimized workflow along with even a settings page.&lt;/p&gt;
+&lt;p&gt;One note of warning is that each of these sections of code cannot be run independently.
+I have split the code on purpose so that you can use it in a plug and play manner.
+I will link my own pygame project at the end so that you can see that the code I&amp;rsquo;ve shared is the code I do in fact use.&lt;/p&gt;
+&lt;h2 id=&#34;boilerplate-code&#34; &gt;Boilerplate Code
+&lt;span&gt;
+    &lt;a href=&#34;#boilerplate-code&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;The following snippet defines constants such as button widths and text sizes.
+You should expect an undefined error since I have not shown main_menu() yet.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://repl.it/@elilopez/PygameMenus#boilerplate.py&#34;&gt;boilereplate.py&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;gfxdraw&lt;/code&gt; is what we will use to make anti-aliased circles for our toggle button.
+There&amp;rsquo;s a variable called &lt;code&gt;button_layout_4&lt;/code&gt; which I use as the layout for if the menu will have 4 centred buttons of the same size.
+You can make your own custom layout if you need x buttons. I actually made a local button_layout_3 in my own end game menu since it only required only 3 buttons.&lt;/p&gt;
+&lt;p&gt;In this repl, there are other files as well that we will take a look at.&lt;/p&gt;
+&lt;h2 id=&#34;helper-functions&#34; &gt;Helper Functions
+&lt;span&gt;
+    &lt;a href=&#34;#helper-functions&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://repl.it/@elilopez/PygameMenus#helpers.py&#34;&gt;helpers.py&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;text_objects&#34; &gt;text_objects(…)
+&lt;span&gt;
+    &lt;a href=&#34;#text_objects&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;Returns the text surface and its dimensions&lt;/p&gt;
+&lt;h3 id=&#34;button&#34; &gt;button(…)
+&lt;span&gt;
+    &lt;a href=&#34;#button&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;Creates a visual button with a passive and hovered (active) state.
+Return value is whether or not the button was clicked.
+Note that there is a 100ms buffer time to ensure the click was not of a previous menu button.&lt;/p&gt;
+&lt;h3 id=&#34;draw_circle&#34; &gt;draw_circle(…)
+&lt;span&gt;
+    &lt;a href=&#34;#draw_circle&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;Draws an anti-aliased circle. First the outline is drawn and then the fill is drawn.&lt;/p&gt;
+&lt;h3 id=&#34;toggle_btn&#34; &gt;toggle_btn(…)
+&lt;span&gt;
+    &lt;a href=&#34;#toggle_btn&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;This function creates the text and toggle with enabled and disabled states.
+The return value is whether the toggle (including the text) was clicked.
+Since there is no hover state, &lt;code&gt;draw_toggle&lt;/code&gt; and &lt;code&gt;blit_text&lt;/code&gt; are available to avoid redundant blitting and drawing.&lt;/p&gt;
+&lt;h2 id=&#34;main-menu&#34; &gt;Main Menu
+&lt;span&gt;
+    &lt;a href=&#34;#main-menu&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://repl.it/@elilopez/PygameMenus#main_menu.py&#34;&gt;main_menu.py&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Now that you have the boiler plate code we can now start with the main menu.
+The following is an overview of our game. Note that this is the order and not what each menu will contain since menus can have go back buttons.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;Main Menu
+    Game Loop
+        Pause
+            High Scores
+            QUIT
+    Settings
+    High Scores
+    QUIT
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;code&gt;main_menu()&lt;/code&gt; is called exactly once to ensure there is no mutually recursive shenanigans going on.&lt;/p&gt;
+&lt;p&gt;Whenever the game ends and the user is returned to the main menu, we will need to redraw the static parts of the main menu.
+This is what the &lt;code&gt;main_menu_setup()&lt;/code&gt; is for.
+The event parsing is to check if &amp;ldquo;Alt + F4&amp;rdquo; or Esc were pressed so that the user can exit the game with standard keyboard shortcuts as well as checking if the user has left clicked.
+You can add your own custom keyboard shortcuts that associate to specific buttons like I did for viewing high scores.&lt;/p&gt;
+&lt;p&gt;You should modify &lt;code&gt;BUTTON_WIDTH&lt;/code&gt;, &lt;code&gt;button_rects&lt;/code&gt;, the button texts, and also the button if statement logic to fit your needs.
+When experimenting you can use raw pixel values to determine the right positions, but when you are satisfied convert these pixel values to percentages of &lt;code&gt;SCREEN_WIDTH&lt;/code&gt; and &lt;code&gt;SCREEN_HEIGHT&lt;/code&gt;.
+Using raw pixel values will make the GUI look drastically different for devices with different resolutions from the device you develop on.&lt;/p&gt;
+&lt;h2 id=&#34;settings-menu&#34; &gt;Settings Menu
+&lt;span&gt;
+    &lt;a href=&#34;#settings-menu&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://repl.it/@elilopez/PygameMenus#settings_menu.py&#34;&gt;settings_menu.py&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The logic for the settings menu is similar to the main menu except we have to deal with writing and reading settings.
+I use a variable &lt;code&gt;config: dict&lt;/code&gt; to store the game settings and I have a &lt;code&gt;save_config()&lt;/code&gt; function that writes the dict to a &lt;code&gt;config.json&lt;/code&gt; file.
+Since toggle buttons are static, I keep track of whether or not its the first loop and if the toggles need to be redrawn (setting changed).
+Note that the back button is just a return. This is because of the game logic I talked about earlier to avoid unnecessary recursion.
+As you can see, we have modified the function of pressing the Escape key to return back to the main menu.&lt;/p&gt;
+&lt;h2 id=&#34;pause-menu&#34; &gt;Pause Menu
+&lt;span&gt;
+    &lt;a href=&#34;#pause-menu&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://repl.it/@elilopez/PygameMenus#pause_menu.py&#34;&gt;pause_menu.py&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;This is definitely one of the more complicated menus to create because I had to deal with game character movement + having a translucent background.
+Similar to the main menu, we will need to redraw the background every time we are returning from either the settings page or the high scores page.&lt;/p&gt;
+&lt;p&gt;Note that I have updated this code after I created the gif at the bottom.&lt;/p&gt;
+&lt;p&gt;My version of the pause menu required me to pass the game character because of some roadblocks I faced, but yours may not require this.
+A lot of the differences between this code and the previous menus have to do with handling character movement (whether to stop the character from moving, keep the character moving, etc).
+The most important part is how I save the translucent background so that I can use it again when returning from the high score and settings menus.&lt;/p&gt;
+&lt;h2 id=&#34;other-menus&#34; &gt;Other Menus
+&lt;span&gt;
+    &lt;a href=&#34;#other-menus&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;Other menus include the end screen and high scores menu but I won&amp;rsquo;t be showing the code for those since the point of this article is to help you create your own menus optimally, not to do everything for you.
+It&amp;rsquo;s just a question of placement (modifying button_rects) since I have taught you how the game logic should be and also creating the buttons themselves.&lt;/p&gt;
+&lt;p&gt;Check out my game &lt;a href=&#34;https://github.com/elibroftw/jungle-climb&#34;&gt;Jungle Climb&lt;/a&gt; if you want to see how all the helper functions are put together.&lt;/p&gt;
+&lt;div style=&#39;position:relative;padding-bottom:calc(100% / 1.78)&#39;&gt;&lt;iframe src=&#39;https://gfycat.com/ifr/arcticbigheartedaddax&#39; frameborder=&#39;0&#39; scrolling=&#39;no&#39; width=&#39;100%&#39; height=&#39;100%&#39; style=&#39;position:absolute;top:0;left:0;&#39; allowfullscreen&gt;&lt;/iframe&gt;&lt;/div&gt;
+&lt;h2 id=&#34;possible-improvements&#34; &gt;Possible Improvements
+&lt;span&gt;
+    &lt;a href=&#34;#possible-improvements&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;h3 id=&#34;2022&#34; &gt;2022
+&lt;span&gt;
+    &lt;a href=&#34;#2022&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;I ran the game and am blinded by own menu. It&amp;rsquo;s too white and bright. It would be better for the menu background to be black and transcluent rather than white and tranclucent.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Intermediate Python Tutorial Project Ideas and Tips</title>
       <link>/posts/intermediate-python/</link>
       <pubDate>Fri, 24 Apr 2020 21:25:40 -0500</pubDate>
