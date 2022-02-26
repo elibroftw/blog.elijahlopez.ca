@@ -12,10 +12,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="referrer" content="no-referrer-when-downgrade">
 
-<title>Automate Firefox Addon Publishing - ELL Blog</title>
+<title>Automate Unity Building - ELL Blog</title>
 
-<meta name="description" content="If you&rsquo;re like me, you always want to speed up aspects of your life especially routine tasks. I&rsquo;ll be doing this in Python but you can easily convert the code to a language of your choice.
-PrerequisitesWe&rsquo;re going to be using the Firefox Add-ons API to upload your add-on so you will need some API keys. You can get your API keys from here. Place the pair of API keys into a .">
+<meta name="description" content="It took me hours to figure out how to create a simple build script in Unity, even after watching videos, I was really confused. So why not write an article so that other developers won&rsquo;t need to spend that much time themselves.
+Getting StartedBefore we get started make sure you have the necessary build supports needed. In Unity Hub you can see your installations.
+If not, you&rsquo;ll have to click the three dots, and then click &ldquo;Add Modules.">
 
 
 
@@ -87,21 +88,23 @@ PrerequisitesWe&rsquo;re going to be using the Firefox Add-ons API to uploa
 
 
 
-<meta property="og:title" content="Automate Firefox Addon Publishing" />
-<meta property="og:description" content="If you&rsquo;re like me, you always want to speed up aspects of your life especially routine tasks. I&rsquo;ll be doing this in Python but you can easily convert the code to a language of your choice.
-PrerequisitesWe&rsquo;re going to be using the Firefox Add-ons API to upload your add-on so you will need some API keys. You can get your API keys from here. Place the pair of API keys into a ." />
+<meta property="og:title" content="Automate Unity Building" />
+<meta property="og:description" content="It took me hours to figure out how to create a simple build script in Unity, even after watching videos, I was really confused. So why not write an article so that other developers won&rsquo;t need to spend that much time themselves.
+Getting StartedBefore we get started make sure you have the necessary build supports needed. In Unity Hub you can see your installations.
+If not, you&rsquo;ll have to click the three dots, and then click &ldquo;Add Modules." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/posts/automate-firefox-addon-publishing/" /><meta property="og:image" content="images"/><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2020-10-08T22:58:39-05:00" />
-<meta property="article:modified_time" content="2020-10-08T22:58:39-05:00" />
+<meta property="og:url" content="/posts/automate-unity-building/" /><meta property="og:image" content="images"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-06-21T11:11:24-05:00" />
+<meta property="article:modified_time" content="2020-06-21T11:11:24-05:00" />
 
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="images"/>
 
-<meta name="twitter:title" content="Automate Firefox Addon Publishing"/>
-<meta name="twitter:description" content="If you&rsquo;re like me, you always want to speed up aspects of your life especially routine tasks. I&rsquo;ll be doing this in Python but you can easily convert the code to a language of your choice.
-PrerequisitesWe&rsquo;re going to be using the Firefox Add-ons API to upload your add-on so you will need some API keys. You can get your API keys from here. Place the pair of API keys into a ."/>
+<meta name="twitter:title" content="Automate Unity Building"/>
+<meta name="twitter:description" content="It took me hours to figure out how to create a simple build script in Unity, even after watching videos, I was really confused. So why not write an article so that other developers won&rsquo;t need to spend that much time themselves.
+Getting StartedBefore we get started make sure you have the necessary build supports needed. In Unity Hub you can see your installations.
+If not, you&rsquo;ll have to click the three dots, and then click &ldquo;Add Modules."/>
 
 
 
@@ -247,41 +250,45 @@ PrerequisitesWe&rsquo;re going to be using the Firefox Add-ons API to uploa
     <article class="post h-entry">
         <div class="post-header">
             <header>
-                <h1 class="p-name post-title">Automate Firefox Addon Publishing</h1>
+                <h1 class="p-name post-title">Automate Unity Building</h1>
 
                 
             </header>
         </div>
         <div class="content e-content">
-            <p>If you&rsquo;re like me, you always want to speed up aspects of your life especially routine tasks. I&rsquo;ll be doing this in Python but you can easily convert the code to a language of your choice.</p>
-<h2 id="prerequisites" >Prerequisites
+            <p>It took me hours to figure out how to create a simple build script in Unity, even after watching videos, I was really confused.
+So why not write an article so that other developers won&rsquo;t need to spend that much time themselves.</p>
+<h2 id="getting-started" >Getting Started
 <span>
-    <a href="#prerequisites">
+    <a href="#getting-started">
         <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
     </a>
 </span>
-</h2><p>We&rsquo;re going to be using the Firefox Add-ons API to upload your add-on so you will need some API keys. You can get your API keys from <a href="https://addons.mozilla.org/developers/addon/api/key/">here</a>. 
-Place the pair of API keys into a .env file like so:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">jwt-issuer=string
-jwt-secret=string
-</code></pre></div><h2 id="third-party-libraries" >Third Party Libraries
+</h2><p>Before we get started make sure you have the necessary build supports needed. In Unity Hub you can see your installations.</p>
+<p><img src="/static/images/automate-unity-building/unity-hub.png" alt="Unity installation screenshot"></p>
+<p>If not, you&rsquo;ll have to click the three dots, and then click &ldquo;Add Modules.&rdquo;
+Next, we will need to create a script named something like <code>BuildScript.cs</code>.
+Make sure this file is placed in <code>Assets/Editor</code>.
+This file will be responsible in calling Unity BuildPlayer as well as adding menu items for you to quickly build for your platform(s) of choice.</p>
+<p><a href="https://gist.github.com/elibroftw/149c230518e3e0d9af54d9c472c2ee84#file-buildscript-cs">BuildScript.cs</a></p>
+<p>Next copy the code below. Disclaimer: this code uses the scenes from your build settings so make sure the scenes there are correct.
+You can ignore the last function if you want, I just kept it there in case you need to use Asset Bundles (I did not).
+With this script you can call the build methods from &ldquo;File &gt; Build All&rdquo; and Unity will build the players to the &ldquo;Builds&rdquo; directory in your project root.</p>
+<p><img src="/static/images/automate-unity-building/unity-hub.png" alt="Unity build menu"></p>
+<p>This takes care of building from the editor but what if you were using CI/server to build it for you?
+You will need to make a shell/batch script or you can use Python so that the OS won&rsquo;t matter.</p>
+<p><a href="https://gist.github.com/elibroftw/be1f6ad737ccde25e86f858f2f11629f#file-unitybuild-py">UnityBuild.py</a></p>
+<p>You may have to modify some variables such as <code>UNITY</code> and also the zipping process if you don&rsquo;t want to zip the builds.
+You may also pair this up with an Ino setup script like so <code>iscc setup_script.iss</code>.
+I hope you found this tutorial helpful because I sure would&rsquo;ve.</p>
+<h2 id="resources" >Resources
 <span>
-    <a href="#third-party-libraries">
+    <a href="#resources">
         <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
     </a>
 </span>
-</h2><p>After you do that, you will need to install some necessary modules (add to <code>requirements.txt</code>): <code>pip install requests PyJWT</code>
-After installing these two modules, copy the snippet at the bottom of the article.</p>
-<h2 id="modifying-thescript" >Modifying the Script
-<span>
-    <a href="#modifying-thescript">
-        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
-    </a>
-</span>
-</h2><p><code>GUID</code>: include the &lsquo;{&rsquo; and &lsquo;}&rsquo; into the string if applicable
-<code>addon_files</code>: a list of source files of the add-on (relative path</p>
-<script type="application/javascript" src="https://gist.github.com/elibroftw/1a94149a2f6232d062b666c4ee9ea530.js"></script>
-
+</h2><p><a href="https://docs.unity3d.com/Manual/BuildPlayerPipeline.html">Build Player Pipeline</a></p>
+<p><a href="https://docs.unity3d.com/Manual/CommandLineArguments.html">Unity Command line arguments</a></p>
 
         </div>
         
@@ -291,10 +298,10 @@ After installing these two modules, copy the snippet at the bottom of the articl
 
 <div class="post-info">
     
-        <div class="post-date dt-published">2020-Oct-08</div>
+        <div class="post-date dt-published">2020-Jun-21</div>
     
 
-    <a class="post-hidden-url u-url" href="/posts/automate-firefox-addon-publishing/">/posts/automate-firefox-addon-publishing/</a>
+    <a class="post-hidden-url u-url" href="/posts/automate-unity-building/">/posts/automate-unity-building/</a>
     <a href="" class="p-name p-author post-hidden-author h-card" rel="me">Elijah Lopez</a>
 
 
@@ -313,12 +320,12 @@ After installing these two modules, copy the snippet at the bottom of the articl
     <div class="pagination post-pagination">
         <div class="left pagination-item ">
             
-                <a href="/posts/parallel-concurrent-requests-in-python/">Parallel Concurrent Requests in Python</a>
+                <a href="/posts/windows-10-favorite-cursors/">Windows 10 Favorite Cursors</a>
             
         </div>
         <div class="right pagination-item ">
             
-                <a href="/posts/convert-word-files-to-pdf/">Convert Word Files to PDF With Python</a>
+                <a href="/posts/create-menus-in-pygame/">How to Create Menus in Pygame</a>
             
         </div>
     </div>

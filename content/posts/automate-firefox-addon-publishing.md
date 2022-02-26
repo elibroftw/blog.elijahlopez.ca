@@ -1,6 +1,6 @@
 ---
 title: "Automate Firefox Addon Publishing"
-date: 2022-02-25T22:58:39-05:00
+date: 2020-10-08T22:58:39-05:00
 draft: false
 ---
 

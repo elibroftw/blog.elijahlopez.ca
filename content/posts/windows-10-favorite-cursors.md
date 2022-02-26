@@ -1,6 +1,6 @@
 ---
 title: "Windows 10 Favorite Cursors"
-date: 2022-02-25T23:07:33-05:00
+date: 2020-07-18T23:07:33-05:00
 draft: false
 ---
 

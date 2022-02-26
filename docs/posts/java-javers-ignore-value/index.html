@@ -12,10 +12,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="referrer" content="no-referrer-when-downgrade">
 
-<title>Convert Word Files to PDF With Python - ELL Blog</title>
+<title>How to Ignore Value Properties in Javers - ELL Blog</title>
 
-<meta name="description" content="NOTE: Windows tutorial.
-Back when I first started University, I decided to type out all my math notes. Yes, you heard me right, I typed out my math notes (equation editor is very powerful) - or took screenshot snippets of the textbook PDF and pasted them into my notes.docx if I was lagging behind and too lazy to type it out later. I&rsquo;m always about studying efficiently so whenever I needed to read my math notes, it was always annoying having to wait a couple seconds for Word to open up my notes so I decided to start exporting them to PDF but I didn&rsquo;t want to do it manually every time for both all my course notes so I decided I would use Python to solve my problem.">
+<meta name="description" content="If you just want the solutions, look at the first and last code blocks. Read the whole article if you want some storytelling. Please comment if you have any feedback.
+At work one day, my task was to ignore certain properties of objects when they were being compared. Suppose the object, e.g. custom vertex, had properties { lastUpdated, color, x, y, z, comments }. If one was comparing objects of these properties, one might not want the fields &ldquo;lastUpdated&rdquo; and &ldquo;comments&rdquo; to be involved since they are metadata and not practical properties.">
 
 
 
@@ -87,21 +87,21 @@ Back when I first started University, I decided to type out all my math notes. Y
 
 
 
-<meta property="og:title" content="Convert Word Files to PDF With Python" />
-<meta property="og:description" content="NOTE: Windows tutorial.
-Back when I first started University, I decided to type out all my math notes. Yes, you heard me right, I typed out my math notes (equation editor is very powerful) - or took screenshot snippets of the textbook PDF and pasted them into my notes.docx if I was lagging behind and too lazy to type it out later. I&rsquo;m always about studying efficiently so whenever I needed to read my math notes, it was always annoying having to wait a couple seconds for Word to open up my notes so I decided to start exporting them to PDF but I didn&rsquo;t want to do it manually every time for both all my course notes so I decided I would use Python to solve my problem." />
+<meta property="og:title" content="How to Ignore Value Properties in Javers" />
+<meta property="og:description" content="If you just want the solutions, look at the first and last code blocks. Read the whole article if you want some storytelling. Please comment if you have any feedback.
+At work one day, my task was to ignore certain properties of objects when they were being compared. Suppose the object, e.g. custom vertex, had properties { lastUpdated, color, x, y, z, comments }. If one was comparing objects of these properties, one might not want the fields &ldquo;lastUpdated&rdquo; and &ldquo;comments&rdquo; to be involved since they are metadata and not practical properties." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/posts/convert-word-files-to-pdf/" /><meta property="og:image" content="images"/><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2020-09-02T23:04:27-05:00" />
-<meta property="article:modified_time" content="2020-09-02T23:04:27-05:00" />
+<meta property="og:url" content="/posts/java-javers-ignore-value/" /><meta property="og:image" content="images"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-02-26T11:19:04-05:00" />
+<meta property="article:modified_time" content="2022-02-26T11:19:04-05:00" />
 
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="images"/>
 
-<meta name="twitter:title" content="Convert Word Files to PDF With Python"/>
-<meta name="twitter:description" content="NOTE: Windows tutorial.
-Back when I first started University, I decided to type out all my math notes. Yes, you heard me right, I typed out my math notes (equation editor is very powerful) - or took screenshot snippets of the textbook PDF and pasted them into my notes.docx if I was lagging behind and too lazy to type it out later. I&rsquo;m always about studying efficiently so whenever I needed to read my math notes, it was always annoying having to wait a couple seconds for Word to open up my notes so I decided to start exporting them to PDF but I didn&rsquo;t want to do it manually every time for both all my course notes so I decided I would use Python to solve my problem."/>
+<meta name="twitter:title" content="How to Ignore Value Properties in Javers"/>
+<meta name="twitter:description" content="If you just want the solutions, look at the first and last code blocks. Read the whole article if you want some storytelling. Please comment if you have any feedback.
+At work one day, my task was to ignore certain properties of objects when they were being compared. Suppose the object, e.g. custom vertex, had properties { lastUpdated, color, x, y, z, comments }. If one was comparing objects of these properties, one might not want the fields &ldquo;lastUpdated&rdquo; and &ldquo;comments&rdquo; to be involved since they are metadata and not practical properties."/>
 
 
 
@@ -247,17 +247,37 @@ Back when I first started University, I decided to type out all my math notes. Y
     <article class="post h-entry">
         <div class="post-header">
             <header>
-                <h1 class="p-name post-title">Convert Word Files to PDF With Python</h1>
+                <h1 class="p-name post-title">How to Ignore Value Properties in Javers</h1>
 
                 
             </header>
         </div>
         <div class="content e-content">
-            <p>NOTE: Windows tutorial.</p>
-<p>Back when I first started University, I decided to type out all my math notes. Yes, you heard me right, I typed out my math notes (equation editor is very powerful) - or took screenshot snippets of the textbook PDF and pasted them into my notes.docx if I was lagging behind and too lazy to type it out later. I&rsquo;m always about studying efficiently so whenever I needed to read my math notes, it was always annoying having to wait a couple seconds for Word to open up my notes so I decided to start exporting them to PDF but I didn&rsquo;t want to do it manually every time for both all my course notes so I decided I would use Python to solve my problem. Here&rsquo;s what I came up with after doing some research and debugging to optimize code execution.</p>
-<p>A lot of the code is about leveraging the win32 API and I&rsquo;d be lying if I knew what everything actually did, but rest assured I did have to figure out how to get it to work as you can see with the word = comments where I was figuring out how to do the conversion using threads. I&rsquo;m sure you could even use multiprocessing here but that&rsquo;s for another time since this code was made for only 4 files. You could also use a thread pool if it turns out you have more than 4 files but don&rsquo;t want to rewrite the code to work with multiprocessing.</p>
-<script type="application/javascript" src="https://gist.github.com/elibroftw/5d048a6fededb730e3f2e95793212046.js"></script>
+            <p>If you just want the solutions, look at the first and last code blocks. Read the whole article if you want some storytelling. Please comment if you have any feedback.</p>
+<p>At work one day, my task was to ignore certain properties of objects when they were being compared. Suppose the object, e.g. custom vertex, had properties <code>{ lastUpdated, color, x, y, z, comments }</code>.
+If one was comparing objects of these properties, one might not want the fields &ldquo;lastUpdated&rdquo; and &ldquo;comments&rdquo; to be involved since they are metadata and not practical properties.
+I quickly learned that <a href="https://javers.org/">Javers</a> was being used in creating these diff objects. After reading the documentation, I came across the <code>@DiffIgnore</code> annotation that could be used in the objects implementation to specify properties to ignore.</p>
+<script type="application/javascript" src="https://gist.github.com/elibroftw/159978a1b3d2c16fbcbc3c3c6e71fb48.js"></script>
 
+<p>The only problem with this is that I did not implement the objects I was using! The object&rsquo;s I was using were imports so I hit a roadblock.
+One solution I did think of was to first get the changes with those properties I didn&rsquo;t want, and then remove them from the original changes list. Of course I&rsquo;d have to make a copy of the changes list since the return value of <code>getChanges</code> is not modifiable.</p>
+<script type="application/javascript" src="https://gist.github.com/elibroftw/02ada4d55c06fc5851225bebe3a3c997.js"></script>
+
+<p>If you always think of efficiency, you&rsquo;ll see that this solution is grossly inefficient even if it does get the work done. If only there was some way for the unwanted changes to not even exist in the first place.</p>
+<p>I did a lot of reading and came across custom entities. When you are creating a Javers object, you can add objects to it with ignored properties.
+This works for some objects but I quickly learned that what I needed was to specify a value object not an Entity object as the latter requires an IdPropertyName.
+So after going to Stack Overflow and sorting questions for Javers by new I came across a comment that told the OP use registerValueObject.
+I searched it up and sure enough, it was exactly what I needed. Here&rsquo;s how you would use it:</p>
+<script type="application/javascript" src="https://gist.github.com/elibroftw/1c266ff334d5afd81c690d3848c31e70.js"></script>
+
+<h2 id="resources" >Resources
+<span>
+    <a href="#resources">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><p><a href="https://javers.org/documentation/">Javers Documentation</a>
+<a href="https://stackoverflow.com/questions/tagged/javers">Stack Overflow Javers tag</a></p>
 
         </div>
         
@@ -267,10 +287,10 @@ Back when I first started University, I decided to type out all my math notes. Y
 
 <div class="post-info">
     
-        <div class="post-date dt-published">2020-Sep-02</div>
+        <div class="post-date dt-published">2022-Feb-26</div>
     
 
-    <a class="post-hidden-url u-url" href="/posts/convert-word-files-to-pdf/">/posts/convert-word-files-to-pdf/</a>
+    <a class="post-hidden-url u-url" href="/posts/java-javers-ignore-value/">/posts/java-javers-ignore-value/</a>
     <a href="" class="p-name p-author post-hidden-author h-card" rel="me">Elijah Lopez</a>
 
 
@@ -289,12 +309,12 @@ Back when I first started University, I decided to type out all my math notes. Y
     <div class="pagination post-pagination">
         <div class="left pagination-item ">
             
-                <a href="/posts/automate-firefox-addon-publishing/">Automate Firefox Addon Publishing</a>
+                <a href="/posts/why-monero-is-the-best-crypto-currency/">Why Monero Is the Best Crypto-Currency</a>
             
         </div>
         <div class="right pagination-item ">
             
-                <a href="/posts/windows-10-favorite-cursors/">Windows 10 Favorite Cursors</a>
+                <a href="/posts/how-to-buy-monero-in-canada/">How to Buy Monero in Canada</a>
             
         </div>
     </div>

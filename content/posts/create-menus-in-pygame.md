@@ -106,7 +106,7 @@ It's just a question of placement (modifying button_rects) since I have taught y
 
 Check out my game [Jungle Climb](https://github.com/elibroftw/jungle-climb) if you want to see how all the helper functions are put together.
 
-<div style='position:relative;padding-bottom:calc(100% / 1.78)'><iframe src='https://gfycat.com/ifr/arcticbigheartedaddax' frameborder='0' scrolling='no' width='100%' height='100%' style='position:absolute;top:0;left:0;' allowfullscreen></iframe></div>
+{{< gfycat arcticbigheartedaddax >}}
 
 ## Possible Improvements
 
