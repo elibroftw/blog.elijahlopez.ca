@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+
+
+    
+
+<html lang="en" data-theme="dark">
+<head>
+    
+        
+<meta charset="utf-8">
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer-when-downgrade">
+
+<title>Intermediate Python Tutorial Project Ideas and Tips - ELL Blog</title>
+
+<meta name="description" content="IntroductionThe purpose of this article is to teach you, the reader, intermediate level Python. I’ll assume you know the basics of Python; you are able to create a quadratic root solver. I will share what my next steps were, as well as how you can follow suit in a shorter period of time by reading 2 years of concepts in this article.
+How It All StartedI learned Python basics through CS Circles, and then proceeded to improve/test my problem solving skills.">
+
+
+
+
+
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="favicon.png">
+
+
+<style>
+  body {
+    visibility: hidden;
+    opacity: 0;
+  }
+</style>
+
+<noscript>
+  <style>
+    body {
+      visibility: visible;
+      opacity: 1;
+    }
+  </style>
+</noscript>
+
+
+
+    
+
+
+
+
+
+    
+    
+        
+    
+    
+
+    
+        <link rel="stylesheet" href="/css/style.min.5773d0329ef41ac46ca2cc13445780134df60aa298ee537c3663e2c7b2f6d70d.css" integrity="sha256-V3PQMp70GsRsoswTRFeAE032CqKY7lN8NmPix7L21w0=">
+    
+
+
+
+
+
+    
+
+    
+
+
+
+
+
+    
+    
+        
+    
+    
+
+    
+        <script src="/js/script.min.510c781c39dbb21b4c76d85c82e2bdf4689220adbb7cd61e49e9d293e442fb42.js" type="text/javascript" charset="utf-8" integrity="sha256-UQx4HDnbshtMdthcguK99GiSIK27fNYeSenSk&#43;RC&#43;0I="></script>
+    
+
+
+
+
+
+
+
+<meta property="og:title" content="Intermediate Python Tutorial Project Ideas and Tips" />
+<meta property="og:description" content="IntroductionThe purpose of this article is to teach you, the reader, intermediate level Python. I’ll assume you know the basics of Python; you are able to create a quadratic root solver. I will share what my next steps were, as well as how you can follow suit in a shorter period of time by reading 2 years of concepts in this article.
+How It All StartedI learned Python basics through CS Circles, and then proceeded to improve/test my problem solving skills." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/intermediate-python/" /><meta property="og:image" content="images"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-04-24T21:25:40-05:00" />
+<meta property="article:modified_time" content="2020-04-24T21:25:40-05:00" />
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="images"/>
+
+<meta name="twitter:title" content="Intermediate Python Tutorial Project Ideas and Tips"/>
+<meta name="twitter:description" content="IntroductionThe purpose of this article is to teach you, the reader, intermediate level Python. I’ll assume you know the basics of Python; you are able to create a quadratic root solver. I will share what my next steps were, as well as how you can follow suit in a shorter period of time by reading 2 years of concepts in this article.
+How It All StartedI learned Python basics through CS Circles, and then proceeded to improve/test my problem solving skills."/>
+
+
+
+
+
+
+
+
+
+
+
+    
+</head>
+<body>
+    <a class="skip-main" href="#main">Skip to main content</a>
+    <div class="container">
+        <header class="common-header"> 
+            
+                <div class="header-top">
+    <h1 class="site-title">
+    <a href="/">ELL Blog</a>
+</h1>
+    <ul class="social-icons">
+
+
+    
+        <li>
+            <a href="index.xml" title="Rss" rel="me">
+                <span class="inline-svg" >
+
+
+
+
+    
+<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" data-icon="rss" data-prefix="fas" focusable="false" role="img" viewBox="0 0 496 512"><path fill="currentColor" fill="currentColor" d="M128.081 415.959c0 35.369-28.672 64.041-64.041 64.041S0 451.328 0 415.959s28.672-64.041 64.041-64.041 64.04 28.673 64.04 64.041zm175.66 47.25c-8.354-154.6-132.185-278.587-286.95-286.95C7.656 175.765 0 183.105 0 192.253v48.069c0 8.415 6.49 15.472 14.887 16.018 111.832 7.284 201.473 96.702 208.772 208.772.547 8.397 7.604 14.887 16.018 14.887h48.069c9.149.001 16.489-7.655 15.995-16.79zm144.249.288C439.596 229.677 251.465 40.445 16.503 32.01 7.473 31.686 0 38.981 0 48.016v48.068c0 8.625 6.835 15.645 15.453 15.999 191.179 7.839 344.627 161.316 352.465 352.465.353 8.618 7.373 15.453 15.999 15.453h48.068c9.034-.001 16.329-7.474 16.005-16.504z"/></svg>
+
+</span>
+
+            </a>
+        </li>
+    
+
+    
+        
+        
+        <li>
+            <a href="https://github.com/elibroftw" title="Github" rel="me">
+            <span class="inline-svg" >
+
+
+
+
+    
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+
+</span>
+
+            </a>
+        </li>
+    
+
+    
+        
+        
+        <li>
+            <a href="https://twitter.com/elibroftw" title="Twitter" rel="me">
+            <span class="inline-svg" >
+
+
+
+
+    
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+
+</span>
+
+            </a>
+        </li>
+    
+
+    
+        <li>
+            <a href="https://youtube.com/channel/UCIrKT6IOvPo_oT4zSUm6uhQ" title="Youtube" rel="me">
+            <span class="inline-svg" >
+
+
+
+
+    
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg>
+
+</span>
+
+            </a>
+        </li>
+    
+
+    
+        
+        
+        <li>
+            <a href="mailto:elijahllopezz@gmail.com" title="Email" rel="me">
+            <span class="inline-svg" >
+
+
+
+
+    
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M464 64H48C21.49 64 0 85.49 0 112v288c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zm0 48v40.805c-22.422 18.259-58.168 46.651-134.587 106.49-16.841 13.247-50.201 45.072-73.413 44.701-23.208.375-56.579-31.459-73.413-44.701C106.18 199.465 70.425 171.067 48 152.805V112h416zM48 400V214.398c22.914 18.251 55.409 43.862 104.938 82.646 21.857 17.205 60.134 55.186 103.062 54.955 42.717.231 80.509-37.199 103.053-54.947 49.528-38.783 82.032-64.401 104.947-82.653V400H48z"/></svg>
+
+</span>
+
+            </a>
+        </li>
+    
+
+
+
+
+</ul>
+</div>
+
+    <nav>
+        
+        
+        <a class="" href="/" title="Home">Home</a>
+        
+        <a class="" href="/posts/" title="Archive">Archive</a>
+        
+        <a class="" href="/tags/" title="Tags">Tags</a>
+        
+    </nav>
+
+
+
+
+            
+        </header>
+        <main id="main" tabindex="-1"> 
+            
+    
+
+    <article class="post h-entry">
+        <div class="post-header">
+            <header>
+                <h1 class="p-name post-title">Intermediate Python Tutorial Project Ideas and Tips</h1>
+
+                
+            </header>
+        </div>
+        <div class="content e-content">
+            <h2 id="introduction" >Introduction
+<span>
+    <a href="#introduction">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><p>The purpose of this article is to teach you, the reader, intermediate level Python.
+I’ll assume you know the basics of Python; you are able to create a quadratic root solver.
+I will share what my next steps were, as well as how you can follow suit in a shorter period of time by reading 2 years of concepts in this article.</p>
+<h2 id="how-it-all-started" >How It All Started
+<span>
+    <a href="#how-it-all-started">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><p>I learned Python basics through <a href="https://cscircles.cemc.uwaterloo.ca/">CS Circles</a>, and then proceeded to improve/test my problem solving skills.
+I did this by doing <a href="https://cemc.uwaterloo.ca/contests/ccc-cco.html">CCC</a> questions which you can find (among other contest problems) at <a href="https://dmoj.ca/">DMOJ</a>.
+Other sites to improve your algorithmic problem solving skills include <a href="https://www.hackerrank.com/">HackerRank</a> and <a href="https://leetcode.com/">LeetCode</a>.
+Most developers on here are doing it for interview prep rather than broadening their thinking and concepts.</p>
+<p>While I was doing this, I was programming with the default IDLE!
+Four months went by before I learned about PyCharm. Due to redundancy within the IntelliJ ecosystem,
+I suggest installing <a href="https://www.jetbrains.com/idea/">IntelliJ IDEA</a> with the Python plugin. This avoids the instllation
+of more than one IntelliJ products when programming in many languages.
+IntelliJ has a slight learning curve but is has lots of productivity features.
+Nowadays, I use both IntelliJ and Visual Studio Code.</p>
+<p>I have an entire folder dedicated to snippets of code I could use in the future.
+I suggest you do the same and you could even add the snippets featured in this article to avoid needless online searching in the future.</p>
+<h2 id="general-tips" >General Tips
+<span>
+    <a href="#general-tips">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><p>These are some tips that are not bound to programming but just life and productivity in general.</p>
+<h3 id="know-your-keyboard-shortcuts" >Know your keyboard shortcuts
+<span>
+    <a href="#know-your-keyboard-shortcuts">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>Know both the program specific ones (browser, explorer, IDE of choice, etc.) and also OS specific ones (e.g. Win + R for run).</p>
+<h3 id="using-the-terminal" >Using the Terminal
+<span>
+    <a href="#using-the-terminal">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>Instead of doing a calculation by hand or opening an IDE to create and run a script, you can actually execute Python code from the command line.
+Aside from the common batch functions (e.g. ls, cd), knowing how to use Python from the command line will save you a lot of time.</p>
+<p><img src="/images/intermediate-python/python-in-terminal.png" alt="Python in the Terminal"></p>
+<h3 id="how-to-search-engine" >How to Search Engine
+<span>
+    <a href="#how-to-search-engine">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>Google (or your search engine of choice), should be your best friend. It has saved me a lot of time and so it could also save you a lot of time.
+It can’t do that if you don’t use it or don’t know how to use it.
+When you Google something, your query needs to be general enough that you can find answers, but also specific enough so that those answers are relevant.</p>
+<h3 id="problem-breakdown-strategy" >Problem Breakdown Strategy
+<span>
+    <a href="#problem-breakdown-strategy">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>This goes hand in hand with Googling. Suppose you have a problem/project. You need to break it down into smaller parts.
+You then need to analyze each of these parts and see if they are small enough for you to complete each of them.
+If not, either your missing some knowledge that you should Google or the part is too big and needs to be broken down again.
+You keep doing this recursive procedure until your project has been split into solvable parts so that you can complete them and then weave together a project.
+When I search and find answers through Google, I don’t expect them to be 100% what I need.
+I usually need to remix them into what I want and that’s what you should also expect:
+the bare minimum solution that takes you at least one step forward.</p>
+<p>With these tips stated, you can do a couple of different things next.
+You can skim the rest of the document and make notes on the snippets of code I feature (what I would do personally),
+read only the headings, skip to the project ideas section, or stop reading altogether as my tips are so useful.</p>
+<h2 id="refresher" >Refresher
+<span>
+    <a href="#refresher">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><p>In CS Circles, they talk about the print function and some of its optional parameters but it’s easy to forget about them so here they are again.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">&gt;&gt;&gt; <span style="color:#0f0"># The default parameters for print are sep=&#39; &#39;, and end=&#39;\n&#39;</span>
+&gt;&gt;&gt; print(<span style="color:#87ceeb">&#39;4&#39;</span>, <span style="color:#87ceeb">&#39;21&#39;</span>, <span style="color:#f60">2020</span>, sep=<span style="color:#87ceeb">&#39;/&#39;</span>, end=<span style="color:#87ceeb">&#39;</span><span style="color:#87ceeb">\n</span><span style="color:#87ceeb">---------</span><span style="color:#87ceeb">\n</span><span style="color:#87ceeb">&#39;</span>)
+<span style="color:#f60">4</span>/<span style="color:#f60">21</span>/<span style="color:#f60">2020</span>
+---------
+</code></pre></div><h2 id="concepts" >Concepts
+<span>
+    <a href="#concepts">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><h3 id="input-and-string-formatting" >input() and String Formatting
+<span>
+    <a href="#input-and-string-formatting">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>The input function has an optional parameter so that it can also act as a prompt and if you are using Python 3.6+, you can make use of f-strings.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">name = input(<span style="color:#87ceeb">&#39;Enter your name: &#39;</span>)
+print(<span style="color:#87ceeb">f</span><span style="color:#87ceeb">&#39;Hello </span><span style="color:#87ceeb">{</span>name<span style="color:#87ceeb">}</span><span style="color:#87ceeb">!&#39;</span>)  <span style="color:#0f0"># modern way of string formatting</span>
+<span style="color:#0f0"># if input=&#39;reader&#39;, output: Hello reader!</span>
+</code></pre></div><h3 id="for-loops" >For Loops
+<span>
+    <a href="#for-loops">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>I want to make clear to you that a for loop, is not a while loop as it is in other languages. In Python, a for loop is an iteration over an iterable object.</p>
+<p>The range function has three parameters, two of them being optional. The range has a default start value of 0, so unless you need to modify the default step value of 1, supplying a 0 is a redundant.</p>
+<p>In this example, I will show you exactly what I mean by “not a while loop” and how a for loop (specifically range) does not add to the temporary value.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#0f0"># range(start=0, stop, step=1)</span>
+<span style="color:#0f0"># range(5) == range(0, 5) == range(0, 5, 1)</span>
+
+<span style="color:#f00">for</span> i in range(<span style="color:#f60">5</span>):
+    print(i)
+    i += <span style="color:#f60">2</span>
+<span style="color:#0f0"># Guess the output. HINT: i += 2 does not impact the next loop</span>
+</code></pre></div><p>If you run this code, you’ll notice that the output is increasing by 1 each time even if we are adding 2 to i at the end of every loop.
+This is because i is set to the next value in range and isn’t a variable being increased by one each loop.
+This means that we can actually iterate over all sorts of iterable objects, like lists, without having to use range and indexing.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">some_letters = [<span style="color:#87ceeb">&#39;a&#39;</span>, <span style="color:#87ceeb">&#39;b&#39;</span>, <span style="color:#87ceeb">&#39;c&#39;</span>, <span style="color:#87ceeb">&#39;d&#39;</span>, <span style="color:#87ceeb">&#39;e&#39;</span>]
+<span style="color:#f00">for</span> letter in some_letters:
+    <span style="color:#0f0"># do something</span>
+    <span style="color:#f00">pass</span>
+</code></pre></div><p>Here I introduced the keyword <code>pass</code> to avoid the syntax error that come with empty blocks.</p>
+<p>If you want to keep track of the index as well as the item, you don’t have to use range, you can use the built-in function <code>enumerate</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#0f0"># start indicates the start number of the index, not the actual index to start enumeration at!</span>
+<span style="color:#f00">for</span> i, letter in enumerate(some_letters, start=<span style="color:#f60">0</span>):
+    print(<span style="color:#87ceeb">f</span><span style="color:#87ceeb">&#39;item at index </span><span style="color:#87ceeb">{</span>i<span style="color:#87ceeb">}</span><span style="color:#87ceeb"> is </span><span style="color:#87ceeb">{</span>letter<span style="color:#87ceeb">}</span><span style="color:#87ceeb">&#39;</span>)
+</code></pre></div><p>You can think of enumerate as turning an iterable into an iterable of pairs (index, item of iterable at index).</p>
+<p>You can also use the next function to retrieve the next value in an iterator (if there is no next item, an error will be raised). All iterators are iterable, but not all iterable objects are iterators! List for example, is iterable but not an iterator so don’t call next on it.</p>
+<h3 id="file-io" >File IO
+<span>
+    <a href="#file-io">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#0f0"># make sure there exists a test.txt with content in it</span>
+<span style="color:#f00">with</span> open(<span style="color:#87ceeb">&#39;test.txt&#39;</span>) <span style="color:#f00">as</span> f: <span style="color:#0f0"># NEW; no close() needed</span>
+   print(f.read())
+   <span style="color:#0f0"># f.read() moves the &#34;cursor&#34; to the end of the file</span>
+   <span style="color:#f00">assert</span> not f.read()
+   f.seek(<span style="color:#f60">0</span>)
+   <span style="color:#f00">assert</span> f.read()
+   <span style="color:#0f0"># f.read() returns a string now (unless test.txt is empty)</span>
+   <span style="color:#f00">with</span> open(<span style="color:#87ceeb">&#39;test.txt&#39;</span>, <span style="color:#87ceeb">&#39;w&#39;</span>) <span style="color:#f00">as</span> f:
+    <span style="color:#0f0"># f.read()  ERROR do not do this</span>
+    f.write(<span style="color:#87ceeb">&#39;this is a test</span><span style="color:#87ceeb">\n</span><span style="color:#87ceeb">&#39;</span>)  <span style="color:#0f0"># note there is no end parameter</span>
+    f.writelines([<span style="color:#87ceeb">&#39;line1</span><span style="color:#87ceeb">\n</span><span style="color:#87ceeb">&#39;</span>, <span style="color:#87ceeb">&#39;line2</span><span style="color:#87ceeb">\n</span><span style="color:#87ceeb">&#39;</span>])  <span style="color:#0f0"># note no auto newline</span>
+    <span style="color:#0f0"># other modes: a for append, rb for reading-bytes, wb for writing bytes, and r+/w+ for both reading and writing at the same time</span>
+
+<span style="color:#0f0"># OLD way</span>
+f = open(<span style="color:#87ceeb">&#39;test.txt&#39;</span>)  <span style="color:#0f0"># note default is mode=&#39;r&#39;</span>
+<span style="color:#0f0"># do something with f here</span>
+f.close()
+</code></pre></div><h3 id="error-handling" >Error Handling
+<span>
+    <a href="#error-handling">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#0f0"># handling an error</span>
+<span style="color:#f00">try</span>:
+    <span style="color:#f00">raise</span> RuntimeWarning(<span style="color:#87ceeb">&#39;Something could go wrong&#39;</span>)
+<span style="color:#f00">except</span> RuntimeWarning <span style="color:#f00">as</span> e:  <span style="color:#0f0"># as e is optional</span>
+    <span style="color:#0f0"># handle the exception here</span>
+
+<span style="color:#0f0"># ignoring an error</span>
+<span style="color:#0f0"># old</span>
+<span style="color:#f00">try</span>:
+    <span style="color:#f00">raise</span> Exception(<span style="color:#87ceeb">&#39;BOO&#39;</span>)
+<span style="color:#f00">except</span> Exception: <span style="color:#f00">pass</span>
+
+<span style="color:#0f0"># new</span>
+<span style="color:#f00">from</span> contextlib <span style="color:#f00">import</span> suppressdef ignore_error(exception: Exception):
+    <span style="color:#87ceeb">&#34;&#34;&#34;
+</span><span style="color:#87ceeb">    Use three quotes for docstrings or long strings
+</span><span style="color:#87ceeb">    &#34;&#34;&#34;</span>
+    <span style="color:#0f0"># use a colon (:) for type hinting (in a dynamic typed language!) and</span>
+    <span style="color:#0f0"># yes you can pass exceptions and functions as parameters</span>
+    <span style="color:#f00">with</span> suppress(exception):
+        <span style="color:#f00">raise</span> exception(<span style="color:#87ceeb">&#39;BOO&#39;</span>)
+        print(<span style="color:#87ceeb">&#39;not printed&#39;</span>)ignore_error(RuntimeError)
+print(<span style="color:#87ceeb">&#39;this gets printed&#39;</span>)
+</code></pre></div><p>By this point if you are following along in IntelliJ, you would have seen some squiggly lines, especially under “Exception” in the above code.
+These squiggly lines help you to avoid syntax errors, follow style guidelines, and bring attention to code that could be doing something you didn’t want it to be doing.</p>
+<h3 id="more-data-types" >More Data Types
+<span>
+    <a href="#more-data-types">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>There are dictionaries, sets and generators (not discussed here). Dictionaries are like hash tables in other languages, because they “hash” the key to store information.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">empty_dict = {}  <span style="color:#0f0"># or dict()</span>
+my_dict = {<span style="color:#87ceeb">&#39;key&#39;</span>: <span style="color:#87ceeb">&#39;value&#39;</span>}
+<span style="color:#0f0"># How to get value from dict</span>
+my_dict[<span style="color:#87ceeb">&#39;a&#39;</span>]  <span style="color:#0f0"># raises KeyError if &#39;a&#39; not in dictionary</span>
+my_dict.get(<span style="color:#87ceeb">&#39;a&#39;</span>, DEFAULT_VALUE)
+
+<span style="color:#f00">if</span> <span style="color:#87ceeb">&#39;key&#39;</span> in my_dict:
+    val = my_dict[<span style="color:#87ceeb">&#39;key&#39;</span>]
+val = my_dict.get(<span style="color:#87ceeb">&#39;key&#39;</span>, <span style="color:#f00">None</span>)
+<span style="color:#f00">if</span> val is not <span style="color:#f00">None</span>: <span style="color:#f00">pass</span>
+<span style="color:#f00">with</span> suppress(KeyError):
+    val = my_dict[<span style="color:#87ceeb">&#39;key&#39;</span>]
+
+<span style="color:#0f0"># iterations</span>
+<span style="color:#f00">for</span> k in my_dict: <span style="color:#f00">pass</span>  <span style="color:#0f0"># or for k in my_dict.keys()</span>
+<span style="color:#f00">for</span> v in my_dict.values(): <span style="color:#f00">pass</span>
+<span style="color:#f00">for</span> k, v in my_dict.items():
+    <span style="color:#0f0"># since items() generates the items as the iteration happens,</span>
+    <span style="color:#0f0">#  my_dict cannot be modified in this loop.</span>
+    <span style="color:#0f0"># For modification use tuple(my_dict.items())</span>
+    <span style="color:#f00">pass</span>
+
+<span style="color:#0f0"># remove key from dict</span>
+<span style="color:#f00">del</span> my_dict[<span style="color:#87ceeb">&#39;key&#39;</span>]  <span style="color:#0f0"># can raise KeyError</span>
+
+<span style="color:#0f0"># if you want to use the value, use .pop() and define a default</span>
+<span style="color:#0f0"># value to avoid KeyErrors</span>
+
+my_dict.pop(<span style="color:#87ceeb">&#39;key&#39;</span>, DEFAULT_VALUE)
+
+<span style="color:#0f0"># sets</span>
+empty_set = set()  <span style="color:#0f0"># {} would initialize an empty dict</span>
+my_set = {<span style="color:#f60">1</span>, <span style="color:#f60">2</span>, <span style="color:#f60">3</span>}
+<span style="color:#f00">if</span> <span style="color:#f60">1</span> in set: <span style="color:#f00">pass</span>
+<span style="color:#0f0"># there are many set methods, go check them out yourself</span>
+<span style="color:#0f0"># some include: union, intersect, difference</span>
+<span style="color:#0f0"># you can use + and - as well</span>
+</code></pre></div><h3 id="data-structure-usage-efficiency" >Data Structure Usage (Efficiency)
+<span>
+    <a href="#data-structure-usage-efficiency">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>The data structure you use is very important to writing good code.</p>
+<ul>
+<li>use dictionaries if order doesn’t matter + each key has information (value) associated with it</li>
+<li>use sets if order doesn’t matter + no values per key (e.g. keeping track of what you have ‘used’ per se)</li>
+<li>use tuples if you need ordered data but don’t need to modify the data (e.g. coordinates)</li>
+<li>use lists if you need order and mutability (most flexible)</li>
+<li>There are more data structures that are not mentioned in this article. Such as deque, heaps, custom node linked list</li>
+</ul>
+<p>You can’t use sets or dictionaries or sets if you need to keep track of duplicates.
+That’s because sets and dictionaries hash the keys so that it is super fast (O(1)) to check if a key is in a dictionary.
+This does mean that you can’t use lists, sets, and generators as keys (but you can definitely use tuples as long as lists are not nested).</p>
+<p>Dictionaries are also like JSON objects so you can actually use the json module to export them to a JSON file.
+Note that if you’re using sets as values, they are converted to lists in an exported json file.</p>
+<h3 id="miscellaneous-functions" >Miscellaneous Functions
+<span>
+    <a href="#miscellaneous-functions">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>Sometimes you will see functions like func(*args, **kwargs)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#0f0"># args = a list of arguments</span>
+<span style="color:#0f0"># kwargs = keyword arguments</span>
+<span style="color:#0f0"># (in the function it&#39;ll be a dictionary)</span>
+<span style="color:#0f0"># *args: list in the function **kwargs: dict in the function</span>
+<span style="color:#f00">def</span> <span style="color:#ff0">complex_func</span>(*args, **kwargs):
+    <span style="color:#f00">pass</span>
+
+<span style="color:#f00">def</span> <span style="color:#ff0">normal_func</span>(a, b, c, sample_param=<span style="color:#f60">5</span>):
+   <span style="color:#f00">pass</span>
+
+sample_args = {<span style="color:#87ceeb">&#39;sample_param&#39;</span>: <span style="color:#f60">3</span>}
+args = [<span style="color:#f60">0</span>, <span style="color:#f60">1</span>, <span style="color:#f60">2</span>]
+
+complex_func(<span style="color:#f60">1</span>, <span style="color:#f60">2</span>, <span style="color:#f60">3</span>, test=<span style="color:#87ceeb">&#39;true&#39;</span>)  <span style="color:#0f0"># how you&#39;d call it</span>
+complex_func(*args, **sample_args)  <span style="color:#0f0"># also works on normal functions</span>
+normal_func(*args, **sample_args)
+</code></pre></div><h3 id="list-comprehension-and-ternary" >List Comprehension and Ternary
+<span>
+    <a href="#list-comprehension-and-ternary">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>One of the most beautiful parts of Python is list comprehensions; one liners to create lists.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#0f0"># example: input is space separated integers</span>
+integers = [int(x) <span style="color:#f00">for</span> x in input.split()]
+<span style="color:#0f0"># split(sep=&#39; &#39;, maxsplit=-1), -1 means no limit</span>
+no_negatives = [x <span style="color:#f00">for</span> x in integers <span style="color:#f00">if</span> x &gt; <span style="color:#f60">0</span>]  <span style="color:#0f0"># only if</span>
+positives = [x <span style="color:#f00">if</span> x &gt; <span style="color:#f60">0</span> <span style="color:#f00">else</span> -x <span style="color:#f00">for</span> x in integers]  <span style="color:#0f0"># if and else</span>
+back_to_str = <span style="color:#87ceeb">&#39; &#39;</span>.join((str(x) <span style="color:#f00">for</span> x in integers))
+<span style="color:#0f0"># items in the list to join need to be of type str</span>
+print(integers)
+
+<span style="color:#0f0"># this next case demonstrates the ternary operator _ if _ else _</span>
+print(<span style="color:#87ceeb">&#39;list is&#39;</span>, <span style="color:#87ceeb">&#39;not empty&#39;</span> <span style="color:#f00">if</span> integers <span style="color:#f00">else</span> <span style="color:#87ceeb">&#39;empty&#39;</span>)
+</code></pre></div><p>You can also use list comprehensions to create dictionaries and sets</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">set_example = {x <span style="color:#f00">for</span> x in range(<span style="color:#f60">3</span>)}
+dict_example = {x: x <span style="color:#f00">for</span> x in range(<span style="color:#f60">3</span>)}
+<span style="color:#0f0"># use generator when only one iteration is required</span>
+generator_example = (x <span style="color:#f00">for</span> x in range(<span style="color:#f60">3</span>))
+</code></pre></div><p>The third example is a generator. There are some use cases for it, so do your research before using them as they are an advanced topic not for this article.</p>
+<h2 id="iterables-vs-primitives" >Iterables vs. Primitives
+<span>
+    <a href="#iterables-vs-primitives">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><p>There is one very important distinction between primitive variables and iterable variables. For example.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">a = <span style="color:#f60">5</span>
+b = a
+a = <span style="color:#f60">6</span>
+print(a == b)  <span style="color:#0f0"># false</span>
+<span style="color:#0f0"># vs.</span>
+a = [<span style="color:#f60">1</span>, <span style="color:#f60">2</span>, <span style="color:#f60">3</span>]
+b = a
+c = [<span style="color:#f60">1</span>, <span style="color:#f60">2</span>, <span style="color:#f60">4</span>]
+a[<span style="color:#f60">2</span>] = <span style="color:#f60">4</span>
+print(a == b == c)  <span style="color:#0f0"># true</span>
+print(a is b)  <span style="color:#0f0"># true; same refrence</span>
+print(a is c)  <span style="color:#0f0"># false</span>
+</code></pre></div><p>This is especially important when dealing with nested iterables with how you create nested iterables and also copy them. Try out these examples yourself.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">lols = [[<span style="color:#f60">0</span>] <span style="color:#f00">for</span> i in range(<span style="color:#f60">3</span>)] <span style="color:#0f0"># [0] is created 3 times</span>
+lols[<span style="color:#f60">0</span>][<span style="color:#f60">0</span>] = <span style="color:#f60">5</span>
+print(lols)  <span style="color:#0f0"># [[5], [0], [0]]</span>
+<span style="color:#0f0"># vs.</span>
+a = [[<span style="color:#f60">0</span>]]
+lols = a * <span style="color:#f60">3</span>  <span style="color:#0f0"># same as lols = [[0] * 3]</span>
+lols[<span style="color:#f60">0</span>][<span style="color:#f60">0</span>] = <span style="color:#f60">5</span>
+print(lols)  <span style="color:#0f0"># [[5], [5], [5]]</span>
+</code></pre></div><h3 id="copying-iterables" >Copying Iterables
+<span>
+    <a href="#copying-iterables">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>To make a shallow copy, use .copy(). BUT, note that for any nested iterables, only the reference is copied, not the actual nested list. That’s why it’s called a shallow copy. To deepcopy, we can use the copy module.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">new_copy = lols.copy()  <span style="color:#0f0"># I prefer this over using [:]</span>
+reversed_list = lols[::-<span style="color:#f60">1</span>]
+<span style="color:#0f0"># I do not use the above since reversed() and .reverse() are explicit</span>
+new_copy[<span style="color:#f60">0</span>][<span style="color:#f60">0</span>] = <span style="color:#f60">6</span>  <span style="color:#0f0"># lols == [[6], [6], [6]]</span>
+<span style="color:#f00">assert</span> lols == new_copy and not lols is new_copy
+
+<span style="color:#f00">from</span> copy <span style="color:#f00">import</span> deepcopynew_copy = deepcopy(list_of_lists)
+
+new_copy = list_of_lists
+new_copy[<span style="color:#f60">0</span>][<span style="color:#f60">0</span>] = <span style="color:#f60">4</span>  <span style="color:#0f0"># [[4], [4], [4]] because 3x of the same list</span>
+<span style="color:#f00">assert</span> lols != new_copy and lols is not new_copy
+</code></pre></div><h3 id="memoization-caching" >Memoization (Caching)
+<span>
+    <a href="#memoization-caching">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>Memoization is the caching of function return results in order to speed up repetitive calculations. An example would be the recursive implementation of the Fibonacci sequence.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f00">from</span> functools <span style="color:#f00">import</span> wrapsdef memo(func):  <span style="color:#0f0"># remove print statements in a practical setting</span>
+    cache = {}
+    <span style="color:#87ceeb">&#39;&#39;&#39;
+</span><span style="color:#87ceeb">    Without the use of @wraps, square.__name__ would return
+</span><span style="color:#87ceeb">    &#39;_helper&#39;, and the docstring of the original square() would
+</span><span style="color:#87ceeb">    have been lost.
+</span><span style="color:#87ceeb">    &#39;&#39;&#39;</span>
+    @wraps(func)
+    <span style="color:#f00">def</span> <span style="color:#ff0">_helper</span>(x):
+        <span style="color:#0f0"># you could have multiple params (x, y, ...) and then</span>
+        <span style="color:#0f0"># cache using a tuple as the key</span>
+        <span style="color:#f00">if</span> x not in cache:
+            print(<span style="color:#87ceeb">&#39;not in cache&#39;</span>)
+            cache[x] = func(x)
+        <span style="color:#f00">else</span>:
+            print(<span style="color:#87ceeb">&#39;in cache&#39;</span>)
+        <span style="color:#f00">return</span> cache[x]
+    <span style="color:#f00">return</span> _helper
+
+
+@memo  <span style="color:#0f0"># square = memo(square) &lt;-- what it means</span>
+<span style="color:#f00">def</span> <span style="color:#ff0">square</span>(x):
+    <span style="color:#f00">return</span> x * x
+
+<span style="color:#f00">for</span> i in range(<span style="color:#f60">3</span>):
+    square(i), square(i)  <span style="color:#0f0"># second one uses the cached result</span>
+</code></pre></div><p>An exercise is to make a memoize function that takes any number of positional arguments.</p>
+<p>Once you understand how memoization works, you can actually start using the built-in version: <code>lru_cache(maxsize=None)</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f00">from</span> functools <span style="color:#f00">import</span> lru_cache
+
+@lru_cache(maxsize=<span style="color:#f60">1</span>)
+<span style="color:#f00">def</span> <span style="color:#ff0">get_value</span>():
+   <span style="color:#87ceeb">&#34;&#34;&#34;
+</span><span style="color:#87ceeb">   Calls a function that is resource intensive.
+</span><span style="color:#87ceeb">   &#34;&#34;&#34;</span>
+   <span style="color:#f00">return</span> expensive_function()
+</code></pre></div><h3 id="lambdas" >Lambdas
+<span>
+    <a href="#lambdas">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>Usually used in place of a function parameter if the calculation is short. For example, sorting.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">[<span style="color:#87ceeb">&#39;aa&#39;</span>, <span style="color:#87ceeb">&#39;Bb&#39;</span>, <span style="color:#87ceeb">&#39;Cc&#39;</span>, <span style="color:#87ceeb">&#39;dD&#39;</span>].sort(key=<span style="color:#f00">lambda</span> string: string.upper())
+[(<span style="color:#87ceeb">&#39;a&#39;</span>, <span style="color:#f60">1</span>), (<span style="color:#87ceeb">&#39;b&#39;</span>, <span style="color:#f60">0</span>)].sort(key=<span style="color:#f00">lambda</span> pair: pair[<span style="color:#f60">1</span>])
+sorted([(<span style="color:#87ceeb">&#39;a&#39;</span>, <span style="color:#f60">1</span>), (<span style="color:#87ceeb">&#39;b&#39;</span>, <span style="color:#f60">0</span>)], key=<span style="color:#f00">lambda</span> pair: pair[<span style="color:#f60">1</span>])
+max([(<span style="color:#87ceeb">&#39;a&#39;</span>, <span style="color:#f60">1</span>), (<span style="color:#87ceeb">&#39;b&#39;</span>, <span style="color:#f60">0</span>)], key=<span style="color:#f00">lambda</span> pair: pair[<span style="color:#f60">1</span>])  <span style="color:#0f0"># and min</span>
+</code></pre></div><h2 id="modules" >Modules
+<span>
+    <a href="#modules">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><p>Modules play a big part in projects you will do. Some built-in ones are os, shutil, copy, glob, and threading.
+For third party modules, you need to use the command <code>pip install module_name</code> in your terminal.
+Some common modules are requests, beautifulsoup4, PIL, and flask.
+If you’re working on a big project, you’ll probably end up using 3rd party modules. Use a <code>requirements.txt</code> file to track
+the modules your project requires. You can install the modules from a file using <code>pip install -r requirements.txt</code>.</p>
+<h3 id="os" >os
+<span>
+    <a href="#os">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f00">import</span> os
+os.mkdir()  <span style="color:#0f0"># to make a NEW dir</span>
+os.chdir()  <span style="color:#0f0"># choose a current working dir</span>
+os.getcwd()  <span style="color:#0f0"># get current working dir</span>
+os.path.exists()
+os.rename()
+os.remove()  <span style="color:#0f0"># for existing files only</span>
+os.rmdir()
+os.getenv(<span style="color:#87ceeb">&#39;key&#39;</span>)  <span style="color:#0f0"># gets an environmental variable# use the shutil module for directories with sub directoriese</span>
+</code></pre></div><h3 id="environmental-variables" >Environmental variables
+<span>
+    <a href="#environmental-variables">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>I recommend the <code>python-dotenv</code> module to parse <code>.env</code> files</p>
+<p><code>pip install python-dotenv</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#0f0"># in .env</span>
+<span style="color:#0f0"># KEY=VALUE</span>
+
+<span style="color:#f00">from</span> dotenv <span style="color:#f00">import</span> load_dotenv
+
+load_dotenv()
+
+</code></pre></div><h3 id="glob" >glob
+<span>
+    <a href="#glob">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>Used for getting a list of files/folders</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f00">from</span> glob <span style="color:#f00">import</span> glob, iglob
+<span style="color:#0f0"># get all .py files in cwd, * is a wildcard</span>
+<span style="color:#0f0"># glob.iglob returns a generator</span>
+print([x <span style="color:#f00">for</span> x in iglob(<span style="color:#87ceeb">&#39;*.py&#39;</span>)])
+<span style="color:#0f0"># and if you want a list use glob.glob</span>
+print(glob(<span style="color:#87ceeb">&#39;*.py&#39;</span>))
+<span style="color:#0f0"># exercise: find out how to get all .py files in cwd + its subdirs</span>
+</code></pre></div><h3 id="threading" >Threading
+<span>
+    <a href="#threading">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><script type="application/javascript" src="https://gist.github.com/elibroftw/dc61cbb99c41976c1b466ad4db6bd6d4.js"></script>
+
+<h2 id="advanced-topics-future-python-learning" >Advanced Topics (future Python learning)
+<span>
+    <a href="#advanced-topics-future-python-learning">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><h3 id="classes" >Classes
+<span>
+    <a href="#classes">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>I did not cover classes because that is more about OOP than Python programming and the use cases for classes are very small. One thing you should know when you are learning classes is <strong>slots</strong> property, so do search that up on your own.</p>
+<h3 id="generators" >Generators
+<span>
+    <a href="#generators">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>Again this is an advanced topic and learning about it now will only lead to confusion, its best to learn this on your own or in a practical setting.</p>
+<h3 id="decorators" >Decorators
+<span>
+    <a href="#decorators">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>I covered the basics of decorators.
+There are decorators used by lots of other 3rd party libraries and different use cases (e.g. timing functions) so I suggest you do your own research on them as well.
+There is a wraps found in the functools module that’ll help you.</p>
+<h3 id="git-and-git-workflow" >git and git workflow
+<span>
+    <a href="#git-and-git-workflow">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>This is very important when your collaborating with others or are working for a company.
+Git is a versioning tool used so that mistakes don’t hurt you, and for letting you work on multiple features at the same time.</p>
+<h3 id="other-built-in-modules" >Other Built-in Modules
+<span>
+    <a href="#other-built-in-modules">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>Such as itertools, threading, multiprocessing, and more.</p>
+<p>Thanks for reading and good luck to your learning journey.</p>
+<h2 id="project-ideas" >Project Ideas
+<span>
+    <a href="#project-ideas">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><script type="application/javascript" src="https://gist.github.com/elibroftw/063115da075fc2203a7cf20bd8a1542e.js"></script>
+
+
+        </div>
+        
+
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date dt-published">2020-Apr-24</div>
+    
+
+    <a class="post-hidden-url u-url" href="/posts/intermediate-python/">/posts/intermediate-python/</a>
+    <a href="" class="p-name p-author post-hidden-author h-card" rel="me">Elijah Lopez</a>
+
+
+    <div class="post-taxonomies">
+        
+            
+    </div>
+</div>
+
+    </article>
+
+    
+
+    
+        
+    <div class="pagination post-pagination">
+        <div class="left pagination-item ">
+            
+                <a href="/posts/first/">First Post</a>
+            
+        </div>
+        <div class="right pagination-item disabled">
+            
+        </div>
+    </div>
+
+
+
+
+    
+
+    
+
+    
+        
+
+
+<script src="https://utteranc.es/client.js"
+        repo="elibroftw/blog.elijahlopez.ca"
+        theme="github-dark"
+        label=""
+        issue-term="url"
+        crossorigin="anonymous"
+        async>
+</script>
+    
+
+    
+
+
+        </main>
+        
+            <footer class="common-footer">
+    
+    
+
+    <div class="common-footer-bottom">
+        
+        <div class="copyright">
+            <p>© Elijah Lopez, 2022<br>
+            Powered by <a target="_blank" rel="noopener noreferrer" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" rel="noopener noreferrer" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.<br>
+            
+            </p>  
+        </div> 
+
+        
+
+    
+
+
+
+
+<script>
+const STORAGE_KEY = 'user-color-scheme'
+const defaultTheme = "dark-without-switcher"
+
+let currentTheme
+let switchButton
+let autoDefinedScheme = window.matchMedia('(prefers-color-scheme: dark)')
+
+const autoChangeScheme = e => {
+    currentTheme = e.matches ? 'dark' : 'light'
+    document.documentElement.setAttribute('data-theme', currentTheme)
+    changeButtonText()
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    switchButton = document.querySelector('.theme-switcher')
+    currentTheme = detectCurrentScheme()
+    if (currentTheme == 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark')
+    }
+    if (currentTheme == 'auto') {
+        autoChangeScheme(autoDefinedScheme);
+        autoDefinedScheme.addListener(autoChangeScheme);
+    }
+
+    if (switchButton) {
+        changeButtonText()
+        switchButton.addEventListener('click', switchTheme, false)
+    }
+  
+    showContent()
+})
+
+function detectCurrentScheme() {
+    if (localStorage.getItem(STORAGE_KEY)) {
+        return localStorage.getItem(STORAGE_KEY)
+    } 
+    if (defaultTheme) {
+        return defaultTheme
+    } 
+    if (!window.matchMedia) {
+        return 'light'
+    } 
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        return 'dark'
+    }
+    return 'light'
+}
+
+function changeButtonText(switchButton)
+{   
+    if (switchButton) {
+        switchButton.textContent = currentTheme == 'dark' ?  "Light theme" : "Dark theme"
+    }
+}
+
+function switchTheme(e) {
+    if (currentTheme == 'dark') {
+        localStorage.setItem(STORAGE_KEY, 'light')
+        document.documentElement.setAttribute('data-theme', 'light')
+        currentTheme = 'light'
+    } else {
+        localStorage.setItem(STORAGE_KEY, 'dark')
+        document.documentElement.setAttribute('data-theme', 'dark')
+        currentTheme = 'dark'
+    }
+    changeButtonText()
+}
+
+function showContent() {
+    document.body.style.visibility = 'visible';
+    document.body.style.opacity = 1;
+}
+</script>   
+    </div>
+
+    <p class="h-card vcard">
+
+    <a href= class="p-name u-url url fn" rel="me">Elijah Lopez</a> 
+
+     
+        /
+        <a class="p-email u-email email" rel="me" href="mailto:elijahllopezz@gmail.com">elijahllopezz@gmail.com</a>
+    
+
+     
+        <img class="u-photo" src="/images/me.png" />
+    
+</p> 
+</footer>
+
+        
+    </div>
+</body>
+</html>
