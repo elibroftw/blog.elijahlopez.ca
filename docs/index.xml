@@ -1639,5 +1639,39 @@ Git is a versioning tool used so that mistakes don’t hurt you, and for letting
 </description>
     </item>
     
+    <item>
+      <title>Running Python as a Scheduled Task (Windows)</title>
+      <link>/posts/python-windows-task-scheduler/</link>
+      <pubDate>Thu, 23 May 2019 22:34:21 -0500</pubDate>
+      
+      <guid>/posts/python-windows-task-scheduler/</guid>
+      <description>&lt;p&gt;To run python in the background is easy, to do it in the background and as a scheduled task is harder.&lt;/p&gt;
+&lt;p&gt;If you want to just run a script in the background, you can use&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;pythonw &amp;quot;script.py&amp;quot;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;or change your script&amp;rsquo;s extension to .pyw, and then call the script.
+Here&amp;rsquo;s how to schedule a task&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Create &lt;code&gt;run.bat&lt;/code&gt; in your project directory with the content &lt;code&gt;python &amp;quot;script.py&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Open up Task Scheduler (search from the Start menu).&lt;/li&gt;
+&lt;li&gt;On the left sidebar, click &amp;ldquo;Task Scheduler Library.&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;Click &amp;ldquo;Create Basic Task…&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;Enter the task name, description, and click next.&lt;/li&gt;
+&lt;li&gt;Select your trigger, I needed &amp;ldquo;When the computer starts.&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;Action is &amp;ldquo;Start a program.&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;Program/script will be the bat file you created in Step 1&lt;/li&gt;
+&lt;li&gt;Make sure &amp;ldquo;Start in&amp;rdquo; is your project directory.&lt;/li&gt;
+&lt;li&gt;Click next, and check &amp;ldquo;Open the Properties dialog…&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;Have &amp;ldquo;Run whether user is logged on or not&amp;rdquo; checked (if your trigger is running when the computer starts).&lt;/li&gt;
+&lt;li&gt;Have &amp;ldquo;Hidden&amp;rdquo; checked.&lt;/li&gt;
+&lt;li&gt;Change &amp;ldquo;Configure for:&amp;rdquo; to the correct option. Windows 10, in my case.&lt;/li&gt;
+&lt;li&gt;Tinker with the other options if you need to.&lt;/li&gt;
+&lt;li&gt;Click &amp;ldquo;OK.&amp;rdquo; You will need to provide your password.&lt;/li&gt;
+&lt;li&gt;Test the task by clicking &amp;ldquo;Run&amp;rdquo; on the right panel.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;If the task did not execute (or it did but not in the background) it may be that you didn&amp;rsquo;t follow the steps properly (e.g. I forgot to set the configure for).
+I hope you found this helpful. Leave a comment or email me if you have any issues.&lt;/p&gt;
+</description>
+    </item>
+    
   </channel>
 </rss>
