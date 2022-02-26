@@ -141,7 +141,13 @@ Furthermore, there is no GUI wallet.
 
 As for their community, they argue from a position of bad faith:
 
-DERO is a dead project, and anyone that mentions it is either arrogant or has malicious intent.
+https://www.reddit.com/r/CryptoCurrency/comments/8pnt1u/dero_creates_a_new_type_of_dag/e0cvb87/?utm_term=30496568983&context=3&utm_medium=comment_embed&utm_source=embed&utm_name=null
+
+https://twitter.com/Serena_Fox_CP/status/1010026987321098240?ref_src=twsrc%5Etfw%7Ctwcamp%5Etweetembed%7Ctwterm%5E1010026987321098240%7Ctwgr%5E%7Ctwcon%5Es1_&ref_url=https%3A%2F%2Fcdn.embedly.com%2Fwidgets%2Fmedia.html%3Ftype%3Dtext2Fhtmlkey%3Da19fcc184b9711e1b4764040d3dc5c07schema%3Dtwitterurl%3Dhttps3A%2F%2Ftwitter.com%2Fserena_fox_cp%2Fstatus%2F1010026987321098240image%3Dhttps3A%2F%2Fi.embed.ly%2F1%2Fimage3Furl3Dhttps253A252F252Fabs.twimg.com252Ferrors252Flogo46x38.png26key3Da19fcc184b9711e1b4764040d3dc5c07
+
+This PR lady is just as dead as the project. Anyone that mentions DERO is either arrogant or has malicious intent.
+That can be said for many of these coins: DERO, Priate Chain, Grin, SecretCoin, ZCash.
+Disingenious is the middle name of many people.
 
 ## Pirate Chain
 
