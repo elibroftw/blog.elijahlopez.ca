@@ -211,7 +211,7 @@ I'm only including this for everyone to get the idea that transaction fees are o
 
 To properly compare fees, we will normalize each cryptocurrency market cap to that of Bitcoins, to get the normalized price and thus normalized USD fee. For most cryptos, transactions correlate with fees but not with Monero; the opposite is true, one factor being dynamic block sizes that end up lowering the fees per transaction as transactions/block increases. The argument for fees is to penalize spam, which is the attack on NANO that went on for months. The only incentive to run a NANO node is to accept NANO…The entire worth is derived from the network effect and not actual technology or cost like PoW cryptos.
 
-![Transaction fees table](/static/images/crypto/transaction-fees.png)
+![Transaction fees table](/images/crypto/transaction-fees.png)
 
 [Source of calculations](https://docs.google.com/spreadsheets/d/1WfRmKKbGrSF_t95fattTJYfZXL2qk6-byNjCXh-oYA4/edit#gid=0)
 
@@ -238,7 +238,7 @@ By now if you hate Monero, you will be tempted to start throwing a temper tantru
 
 To buy Monero, just do the same as above, but the other way around.
 
-![Monero Swapping Fees](/static/images/crypto/monero-swap-fees.png)
+![Monero Swapping Fees](/images/crypto/monero-swap-fees.png)
 
 ## Recap
 

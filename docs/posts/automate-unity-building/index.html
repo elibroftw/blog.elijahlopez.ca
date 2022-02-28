@@ -265,7 +265,7 @@ So why not write an article so that other developers won&rsquo;t need to spend t
     </a>
 </span>
 </h2><p>Before we get started make sure you have the necessary build supports needed. In Unity Hub you can see your installations.</p>
-<p><img src="/static/images/automate-unity-building/unity-hub.png" alt="Unity installation screenshot"></p>
+<p><img src="/images/automate-unity-building/unity-hub.png" alt="Unity installation screenshot"></p>
 <p>If not, you&rsquo;ll have to click the three dots, and then click &ldquo;Add Modules.&rdquo;
 Next, we will need to create a script named something like <code>BuildScript.cs</code>.
 Make sure this file is placed in <code>Assets/Editor</code>.
@@ -274,7 +274,7 @@ This file will be responsible in calling Unity BuildPlayer as well as adding men
 <p>Next copy the code below. Disclaimer: this code uses the scenes from your build settings so make sure the scenes there are correct.
 You can ignore the last function if you want, I just kept it there in case you need to use Asset Bundles (I did not).
 With this script you can call the build methods from &ldquo;File &gt; Build All&rdquo; and Unity will build the players to the &ldquo;Builds&rdquo; directory in your project root.</p>
-<p><img src="/static/images/automate-unity-building/unity-hub.png" alt="Unity build menu"></p>
+<p><img src="/images/automate-unity-building/unity-hub.png" alt="Unity build menu"></p>
 <p>This takes care of building from the editor but what if you were using CI/server to build it for you?
 You will need to make a shell/batch script or you can use Python so that the OS won&rsquo;t matter.</p>
 <p><a href="https://gist.github.com/elibroftw/be1f6ad737ccde25e86f858f2f11629f#file-unitybuild-py">UnityBuild.py</a></p>

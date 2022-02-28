@@ -11,7 +11,7 @@ So why not write an article so that other developers won't need to spend that mu
 
 Before we get started make sure you have the necessary build supports needed. In Unity Hub you can see your installations.
 
-![Unity installation screenshot](/static/images/automate-unity-building/unity-hub.png)
+![Unity installation screenshot](/images/automate-unity-building/unity-hub.png)
 
 If not, you'll have to click the three dots, and then click "Add Modules."
 Next, we will need to create a script named something like `BuildScript.cs`.
@@ -24,7 +24,7 @@ Next copy the code below. Disclaimer: this code uses the scenes from your build 
 You can ignore the last function if you want, I just kept it there in case you need to use Asset Bundles (I did not).
 With this script you can call the build methods from "File > Build All" and Unity will build the players to the "Builds" directory in your project root.
 
-![Unity build menu](/static/images/automate-unity-building/unity-hub.png)
+![Unity build menu](/images/automate-unity-building/unity-hub.png)
 
 This takes care of building from the editor but what if you were using CI/server to build it for you?
 You will need to make a shell/batch script or you can use Python so that the OS won't matter.

@@ -49,17 +49,17 @@ To begin, the best privacy would be the best at being untraceable, and the best 
 
 From this picture below, how would the user know if they are sending from a shielded address? They don't know! This hurts the privayc of ZEC users. It hinders privacy without even improving UX.
 
-![ZCash Wallet 1](/static/images/crypto/zcash-wallet-1.png)
+![ZCash Wallet 1](/images/crypto/zcash-wallet-1.png)
 
 Each address is it's own account, and so no sub-addresses are possible.
 
-![ZCash Wallet 2](/static/images/crypto/zcash-wallet-2.png)
+![ZCash Wallet 2](/images/crypto/zcash-wallet-2.png)
 
 Compare this to Monero. Each account has infinitely generated subaddresses and the balance is shown on an account basis.
 
-![Monero Wallet 1](/static/images/crypto/monero-wallet-1.png)
+![Monero Wallet 1](/images/crypto/monero-wallet-1.png)
 
-![Monero Wallet 1](/static/images/crypto/monero-wallet-2.png)
+![Monero Wallet 1](/images/crypto/monero-wallet-2.png)
 
 The Zecwallet Lite also does not store the wallet encrypted. I was never asked to create a pass code to decrypt the wallet so anyone who uses ZCash on a computer can have their ZCash stolen if their laptop/computer/storage is accessed by a third party. I don't know about you, but privacy goes hand in hand with security.
 
