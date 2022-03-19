@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+
+
+    
+
+<html lang="en" data-theme="dark">
+<head>
+    
+        
+<meta charset="utf-8">
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer-when-downgrade">
+
+<title>Open-Debate Platform - ELL Blog</title>
+
+<meta name="description" content="Open-Debate Platform (OBP)Democracy cannot gauarantee truth, but it can be used to guide discussion under a set of rules. Those rules are mentioned here. This is an overview and not a implementation spec sheet.
+An open-debate platform or open-source debate would work in the following way inspired strongly by open-sourcecode platforms. An operator would create a digital platform that people can interact with digitally. The platform would have a search function or a list of questions to answer.">
+
+
+
+
+
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="favicon.png">
+
+
+<style>
+  body {
+    visibility: hidden;
+    opacity: 0;
+  }
+</style>
+
+<noscript>
+  <style>
+    body {
+      visibility: visible;
+      opacity: 1;
+    }
+  </style>
+</noscript>
+
+
+
+    
+
+
+
+
+
+    
+    
+        
+    
+    
+
+    
+        <link rel="stylesheet" href="/css/style.min.5773d0329ef41ac46ca2cc13445780134df60aa298ee537c3663e2c7b2f6d70d.css" integrity="sha256-V3PQMp70GsRsoswTRFeAE032CqKY7lN8NmPix7L21w0=">
+    
+
+
+
+
+
+    
+
+    
+
+
+
+
+
+    
+    
+        
+    
+    
+
+    
+        <script src="/js/script.min.510c781c39dbb21b4c76d85c82e2bdf4689220adbb7cd61e49e9d293e442fb42.js" type="text/javascript" charset="utf-8" integrity="sha256-UQx4HDnbshtMdthcguK99GiSIK27fNYeSenSk&#43;RC&#43;0I="></script>
+    
+
+
+
+
+
+
+
+<meta property="og:title" content="Open-Debate Platform" />
+<meta property="og:description" content="Open-Debate Platform (OBP)Democracy cannot gauarantee truth, but it can be used to guide discussion under a set of rules. Those rules are mentioned here. This is an overview and not a implementation spec sheet.
+An open-debate platform or open-source debate would work in the following way inspired strongly by open-sourcecode platforms. An operator would create a digital platform that people can interact with digitally. The platform would have a search function or a list of questions to answer." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/open-debate-platform/" /><meta property="og:image" content="images"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-03-18T22:58:03-04:00" />
+<meta property="article:modified_time" content="2022-03-18T22:58:03-04:00" />
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="images"/>
+
+<meta name="twitter:title" content="Open-Debate Platform"/>
+<meta name="twitter:description" content="Open-Debate Platform (OBP)Democracy cannot gauarantee truth, but it can be used to guide discussion under a set of rules. Those rules are mentioned here. This is an overview and not a implementation spec sheet.
+An open-debate platform or open-source debate would work in the following way inspired strongly by open-sourcecode platforms. An operator would create a digital platform that people can interact with digitally. The platform would have a search function or a list of questions to answer."/>
+
+
+
+
+
+
+
+
+
+
+
+    
+</head>
+<body>
+    <a class="skip-main" href="#main">Skip to main content</a>
+    <div class="container">
+        <header class="common-header"> 
+            
+                <div class="header-top">
+    <h1 class="site-title">
+    <a href="/">ELL Blog</a>
+</h1>
+    <ul class="social-icons">
+
+
+    
+        <li>
+            <a href="index.xml" title="Rss" rel="me">
+                <span class="inline-svg" >
+
+
+
+
+    
+<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" data-icon="rss" data-prefix="fas" focusable="false" role="img" viewBox="0 0 496 512"><path fill="currentColor" fill="currentColor" d="M128.081 415.959c0 35.369-28.672 64.041-64.041 64.041S0 451.328 0 415.959s28.672-64.041 64.041-64.041 64.04 28.673 64.04 64.041zm175.66 47.25c-8.354-154.6-132.185-278.587-286.95-286.95C7.656 175.765 0 183.105 0 192.253v48.069c0 8.415 6.49 15.472 14.887 16.018 111.832 7.284 201.473 96.702 208.772 208.772.547 8.397 7.604 14.887 16.018 14.887h48.069c9.149.001 16.489-7.655 15.995-16.79zm144.249.288C439.596 229.677 251.465 40.445 16.503 32.01 7.473 31.686 0 38.981 0 48.016v48.068c0 8.625 6.835 15.645 15.453 15.999 191.179 7.839 344.627 161.316 352.465 352.465.353 8.618 7.373 15.453 15.999 15.453h48.068c9.034-.001 16.329-7.474 16.005-16.504z"/></svg>
+
+</span>
+
+            </a>
+        </li>
+    
+
+    
+        
+        
+        <li>
+            <a href="https://github.com/elibroftw" title="Github" rel="me">
+            <span class="inline-svg" >
+
+
+
+
+    
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+
+</span>
+
+            </a>
+        </li>
+    
+
+    
+        
+        
+        <li>
+            <a href="https://twitter.com/elibroftw" title="Twitter" rel="me">
+            <span class="inline-svg" >
+
+
+
+
+    
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+
+</span>
+
+            </a>
+        </li>
+    
+
+    
+        <li>
+            <a href="https://youtube.com/channel/UCIrKT6IOvPo_oT4zSUm6uhQ" title="Youtube" rel="me">
+            <span class="inline-svg" >
+
+
+
+
+    
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg>
+
+</span>
+
+            </a>
+        </li>
+    
+
+    
+        
+        
+        <li>
+            <a href="mailto:elijahllopezz@gmail.com" title="Email" rel="me">
+            <span class="inline-svg" >
+
+
+
+
+    
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M464 64H48C21.49 64 0 85.49 0 112v288c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zm0 48v40.805c-22.422 18.259-58.168 46.651-134.587 106.49-16.841 13.247-50.201 45.072-73.413 44.701-23.208.375-56.579-31.459-73.413-44.701C106.18 199.465 70.425 171.067 48 152.805V112h416zM48 400V214.398c22.914 18.251 55.409 43.862 104.938 82.646 21.857 17.205 60.134 55.186 103.062 54.955 42.717.231 80.509-37.199 103.053-54.947 49.528-38.783 82.032-64.401 104.947-82.653V400H48z"/></svg>
+
+</span>
+
+            </a>
+        </li>
+    
+
+
+
+
+</ul>
+</div>
+
+    <nav>
+        
+        
+        <a class="" href="/" title="Home">Home</a>
+        
+        <a class="" href="/posts/" title="Archive">Archive</a>
+        
+        <a class="" href="/tags/" title="Tags">Tags</a>
+        
+    </nav>
+
+
+
+
+            
+        </header>
+        <main id="main" tabindex="-1"> 
+            
+    
+
+    <article class="post h-entry">
+        <div class="post-header">
+            <header>
+                <h1 class="p-name post-title">Open-Debate Platform</h1>
+
+                
+            </header>
+        </div>
+        <div class="content e-content">
+            <h2 id="open-debate-platform-obp" >Open-Debate Platform (OBP)
+<span>
+    <a href="#open-debate-platform-obp">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><p>Democracy cannot gauarantee truth, but it can be used to guide discussion under a set of rules.
+Those rules are mentioned here. This is an overview and not a implementation spec sheet.</p>
+<p>An open-debate platform or open-source debate would work in the following way inspired strongly by open-sourcecode platforms.
+An <a href="#operator">operator</a> would create a digital platform that people can interact with digitally. The platform would have a search function or a list of questions to answer. People can create an account with the platform to create a question. Duplicate questions should be searchable but not prioritized. A question marked as a duplicate should allow the question creator to argue that the question was incorrectly marked as a duplicate. Operators are strongly encouraged to act as unbiased as possible without community moderators.</p>
+<details>
+<summary>Censorship considerations</summary>
+Many times on Stackoverflow,
+questions are marked as duplicate incorrectly on Stackoverflow where as actual duplicates fly by the radar.
+These questions are not technical at all, only discussion prompts, so it is imperative to not censor valid questions.
+Operators are allowed to give questions priorities but priorities should not be used to prevent search result matching.
+</details>
+<h3 id="responding-to-a-question" >Responding to a Question
+<span>
+    <a href="#responding-to-a-question">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>For each question, there are responses; also called arguments. Users can create an argument or upvote a point of an argument, but not
+do both. For each question, arguments should be sorted by number of upvotes. Upvotes are not an actual indication of quality, only
+of popularity. Ultimately, users are responsible for picking an argument, the platform is just a tool to facilitate open
+debate as the name conveys.</p>
+<p>Each argument is at least a list of reasons plus rebuttals to the reasons of the next most popular argument and rebuttals to
+the reason of the next least popular argument. When users click an argument, they should be shown the list of points for that argument and rebuttals to those points by the other two projects. Arguments can also rebut other arguments that are more popular or less popular, but it does not force the other argument to reply. Replying to rebutals is required for arguments that are beside each other in popularity.</p>
+<details>
+<summary>Rebutal considerations</summary>
+Replies are to be made to at least 1 rebutal within 2 weeks or the argument risks being hidden.
+This time window feature is very important in order to force discourse. It's very easy to make 1 rebutal and never respond again. Every response to a rebutal must address the rebutal fully. Not addressing a rebutal fully makes the rebutal valid. In that way, points and rebutals can follow a thread type of structure to allow multiple replies and rebutals per point rather than batching all rebutals for a point into one. For less popular arguments, operators are allowed to be leniant about the forced rebutal rule. I'd say if there are more than 5 argument, the bottom 50% won't need to comply with the forced discussion. This is because it's more likely these projects are arguing with bad faith characters and so the operator can use their own prioritization method for rule violation reports.
+</details>
+<details>
+<summary>Bad faith considerations</summary>
+It is up to operators how to deal with arguing in circles; if people are arguing in circles it is best to close the rebutal. Arguing in circles usually indicates one party is not acting in good faith. Rebutals can be reported as irrelevant and will shadow ban
+the user. Shadow ban in this context means that the user will see the platform as if their action was valid.
+</details>
+<p>I think that&rsquo;s the overview of an open-debate platform. I will now talk about some unordered technical aspects.</p>
+<h3 id="vocbulary-and-models" >Vocbulary and Models
+<span>
+    <a href="#vocbulary-and-models">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><h3 id="merge-request" >Merge Request
+<span>
+    <a href="#merge-request">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>A merge request is a request by a user to add a point or rebutal to an argument. Merge requests can only be
+merged be maintainers and should support informal discussions.</p>
+<h3 id="argument" >Argument
+<span>
+    <a href="#argument">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>An Argument is described simply as a repository containing the following.</p>
+<p>Topic Question: What is the topic the argument is answering to?</p>
+<p>Title or Main Point: A response to the topic question</p>
+<p>(Supporting) Reasons: A list of points supporting the argument and main point</p>
+<h3 id="reason-or-point" >Reason or Point
+<span>
+    <a href="#reason-or-point">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>A single reason that supports the arguments thesis. A point can have upvotes but every
+edit or deletion resets the upvote to 0 and thus removes proponents of the argument.
+An argument&rsquo;s star count is equal to the sum of upvotes of its reasons which is also the number of propronents.</p>
+<h3 id="operator" >Operator
+<span>
+    <a href="#operator">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>An operator is the entity that hosts the platform and thus has a lot of power.</p>
+<h3 id="user" >User
+<span>
+    <a href="#user">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>A user is defined as having the ability to login and use the platform linking
+their userid to their activities on the platform. Platforms
+are not required to mandate user accounts in order to partcipate in <a href="#discussions">discussions</a>.</p>
+<p>For the article there are: operators, users, (argument) maintainers, (argument) author.</p>
+<h3 id="usercontributed" >User::Contributed
+<span>
+    <a href="#usercontributed">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>Any user that modified an argument or had their modifications merged in.</p>
+<h3 id="usermaintainer" >User::Maintainer
+<span>
+    <a href="#usermaintainer">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>A maintainer is a user who has the ability to edit. Authors are considered maintainers but
+not vice versa. To make a user a maintainer of an argument requires 75% of maintainers to vote.
+There can only be up to 10 maintainers including the author.</p>
+<h3 id="userproponent" >User::Proponent
+<span>
+    <a href="#userproponent">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>A user is considered a proponent of an argument if they&rsquo;ve upvoted a reason of the argument or are a maintainer for an argument.
+Only reasoning points of the argument can be upvoted and a user is no longer a proponent if the point they upvoted
+gets modified or deleted.</p>
+<h3 id="userauthor" >User::Author
+<span>
+    <a href="#userauthor">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>A user that started the argument. They have the power to delete the argument if there
+are less than 100 proponents of the argument. All authors are considered a maintainer.</p>
+<h3 id="discussions" >Discussions
+<span>
+    <a href="#discussions">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>Discussions are informal communication features. They should be at least included for each argument, and each arguments merge requests.
+Responses in dicussions are called comments.</p>
+<h2 id="platform-logistics" >Platform Logistics
+<span>
+    <a href="#platform-logistics">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><p>A platform would be created by an operator. The operator has to make a legally bound contract
+with all participants that stipulates that the operator will not manipulate or censor civil arguments and should laso provide
+visitors and a link to download the platform source code (any license allowed). This holds the operator accountable for abuse.
+Abuse would either be easily detectable or non-harmful to the goal of figuring out the best arguments. Platforms
+can compete with each other.</p>
+<p>If an operator deleted a comment, an argument, an arguments points, it is pretty noticeable and easy to prove using archive websites.
+Vote inflating is possible, but that is why the operator needs to show the UI in terms of rebutals. Operators that can be shown
+to not follow the specs mentioned in this article won&rsquo;t be considered an open-debate platform. If required, I can test out
+a platform and classify or declassify it as an open-debate platform.</p>
+<h2 id="remarks" >Remarks
+<span>
+    <a href="#remarks">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><p>I&rsquo;m not sure when I&rsquo;ll be able to implement this, but I&rsquo;m leaving this here for someone to pursue. My goal with this is to improve unity and reduce polarizations. We need to stop with the harassment of people that hold an opinion. An opinion is much different from
+an action and we need to make that distinction by showing our tolerance for opposing opinions.</p>
+<p>There are people who think it&rsquo;s okay to be intolerant of the intolerant but that&rsquo;s an oxymoron. The best way
+to debate against someone who promotes intolerance is to tell them they are only able to promote intolerance because of the tolerant society. If you were the other side of the coin, he wouldn&rsquo;t be able to speak.</p>
+
+        </div>
+        
+
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date dt-published">2022-Mar-18</div>
+    
+
+    <a class="post-hidden-url u-url" href="/posts/open-debate-platform/">/posts/open-debate-platform/</a>
+    <a href="" class="p-name p-author post-hidden-author h-card" rel="me">Elijah Lopez</a>
+
+
+    <div class="post-taxonomies">
+        
+            
+    </div>
+</div>
+
+    </article>
+
+    
+
+    
+        
+    <div class="pagination post-pagination">
+        <div class="left pagination-item disabled">
+            
+        </div>
+        <div class="right pagination-item ">
+            
+                <a href="/posts/the-correct-option/">Figuring Out the Most Correct Opinion</a>
+            
+        </div>
+    </div>
+
+
+
+
+    
+
+    
+
+    
+        
+
+
+<script src="https://utteranc.es/client.js"
+        repo="elibroftw/blog.elijahlopez.ca"
+        theme="github-dark"
+        label=""
+        issue-term="url"
+        crossorigin="anonymous"
+        async>
+</script>
+    
+
+    
+
+    
+
+
+        </main>
+        
+            <footer class="common-footer">
+    
+    
+
+    <div class="common-footer-bottom">
+        
+        <div class="copyright">
+            <p>© Elijah Lopez, 2022<br>
+            Powered by <a target="_blank" rel="noopener noreferrer" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" rel="noopener noreferrer" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.<br>
+            
+            </p>  
+        </div> 
+
+        
+
+    
+
+
+
+
+<script>
+const STORAGE_KEY = 'user-color-scheme'
+const defaultTheme = "dark-without-switcher"
+
+let currentTheme
+let switchButton
+let autoDefinedScheme = window.matchMedia('(prefers-color-scheme: dark)')
+
+const autoChangeScheme = e => {
+    currentTheme = e.matches ? 'dark' : 'light'
+    document.documentElement.setAttribute('data-theme', currentTheme)
+    changeButtonText()
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    switchButton = document.querySelector('.theme-switcher')
+    currentTheme = detectCurrentScheme()
+    if (currentTheme == 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark')
+    }
+    if (currentTheme == 'auto') {
+        autoChangeScheme(autoDefinedScheme);
+        autoDefinedScheme.addListener(autoChangeScheme);
+    }
+
+    if (switchButton) {
+        changeButtonText()
+        switchButton.addEventListener('click', switchTheme, false)
+    }
+  
+    showContent()
+})
+
+function detectCurrentScheme() {
+    if (localStorage.getItem(STORAGE_KEY)) {
+        return localStorage.getItem(STORAGE_KEY)
+    } 
+    if (defaultTheme) {
+        return defaultTheme
+    } 
+    if (!window.matchMedia) {
+        return 'light'
+    } 
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        return 'dark'
+    }
+    return 'light'
+}
+
+function changeButtonText(switchButton)
+{   
+    if (switchButton) {
+        switchButton.textContent = currentTheme == 'dark' ?  "Light theme" : "Dark theme"
+    }
+}
+
+function switchTheme(e) {
+    if (currentTheme == 'dark') {
+        localStorage.setItem(STORAGE_KEY, 'light')
+        document.documentElement.setAttribute('data-theme', 'light')
+        currentTheme = 'light'
+    } else {
+        localStorage.setItem(STORAGE_KEY, 'dark')
+        document.documentElement.setAttribute('data-theme', 'dark')
+        currentTheme = 'dark'
+    }
+    changeButtonText()
+}
+
+function showContent() {
+    document.body.style.visibility = 'visible';
+    document.body.style.opacity = 1;
+}
+</script>   
+    </div>
+
+    <p class="h-card vcard">
+
+    <a href= class="p-name u-url url fn" rel="me">Elijah Lopez</a> 
+
+     
+        /
+        <a class="p-email u-email email" rel="me" href="mailto:elijahllopezz@gmail.com">elijahllopezz@gmail.com</a>
+    
+
+     
+        <img class="u-photo" src="/images/me.png" />
+    
+</p> 
+</footer>
+
+        
+    </div>
+</body>
+</html>

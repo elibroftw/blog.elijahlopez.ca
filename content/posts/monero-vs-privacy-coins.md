@@ -77,9 +77,12 @@ Compare this to Monero. Each account has infinitely generated subaddresses and t
 
 The Zecwallet Lite also does not store the wallet encrypted.
 I was never asked to create a pass code to decrypt the wallet so anyone who uses ZCash on a computer can have their ZCash stolen if their laptop/computer/storage is accessed by a third party.
-I don't know about you, but privacy goes hand in hand with (operating and informational) security.
+I don't know about you, but privacy goes hand in hand with (operating and informational) security. There even is a wallet encryption option, but just like privacy, security is off by default!
+To think that these people sponsor Edward Snowden who has the spine to go against the USA but has no spine to scrutizine this project.
 
-When sending Monero, users do not have to think about if they are sending from the "right" account since each account's primary address shows up as a stealth address in the Ring-CT in the block of the blockchain. Recipients can't make judgments about your level of care to privacy if you decide to donate with a primary account or other account. Unlike ZCash, where the recipient will know whether you made a shielded transaction or not, and then make you a target (assuming an all Monero ecosystem or an all ZCash ecosystem).
+When sending Monero, users do not have to think about if they are sending from the "right" account since each account's primary address shows up as a stealth address in the Ring-CT in the block of the blockchain.
+Recipients can't make judgments about your level of care to privacy if you decide to donate with a primary account or other account.
+Unlike ZCash, where the recipient will know whether you made a shielded transaction or not, and then make you a target (assuming an all Monero ecosystem or an all ZCash ecosystem).
 
 ZCash users say ZCash is better because it uses zk-snarks to avoid large transactions sizes. We'll see what happens when we combine this with optional privacy.
 
@@ -154,10 +157,27 @@ When it comes to privacy, how privacy tools are used greatly affects the privacy
 
 A PoS fork of Monero, so it's not good money. However they are trying to innovate in terms of DApps unlike other projects listed here.
 
-## Secretcoin
+## Secret Network
 
-It's PoS. If you've seen my previous Cryptocurrency article, you'll know why PoW > PoS
-Other than that, it's Dapp ability has not been seen in practice. That's not an argument, I really do want to see its use.
+It's a PoS. If you've seen my previous Cryptocurrency article, you'll know why PoW > PoS.
+Secret Network has not demonstrated that they are private at all.
+[Here](https://explorer.secret.dev/tx/0x250f41c1b7988a57ad79503d412c99e1dfba04edb110b0237b7e9e2c31d03645/internal-transactions) is a random transaction I found on their blockchain explorer.
+
+We see the sender address, the receiver address, the value of the tranaction, the balances of both the
+[receiver](https://explorer.secret.dev/address/0xF070515d7a05ED5f7b2C50106F615E8275e1b9D2/transactions) and the [sender](https://explorer.secret.dev/address/0x53d77827bE168aB2a911B5A14D0f16D1C5657196/transactions),
+and by extension transaction history as well. I've said it before and I'll say it again;  Any transparent transactions hurt the privacy of all users.
+
+Secret Network claims to be private, but the blockchain explorer says otherwise. I have more bad news.
+
+Let's open their [website](https://scrt.network/). It looks nice, I'll give them that. However, suppose
+I'm interested in owning SCRT. I scroll down and see "Get Started." I click that, and see Store SCRT. I click it,
+and scroll down to the bottom. Then I see 4 options avaialble. Keplr is promoted, so I click the link. Guess what?
+All four option "links" take me to the top of the page! Anyways, I decided to search up Keplr. Guess what again?
+Keplr only has a Chrome wallet.
+
+So you expect people who care about privacy to use a browser to transact privately and not just that,
+a specific browser. Chrome! The bare minimum for any crypto project is a working GUI wallet that doesn't require additional dependencies.
+I thought Monero's GUI lacks some UX, but amongst the privacy competition, I now realize it ranks at the top.
 
 ## Grin
 
@@ -166,6 +186,9 @@ Other than that, it's Dapp ability has not been seen in practice. That's not an 
 
 ## Beam
 
+Someting like beam competes with Grin. At this point, I've given up having to do the homework of people for them.
+Monero is #1. The burden of proof is on all other cryptos to prove they are better than Grin, ZCash, and Secret Network.
+If they can't or don't do that, users shouldn't even pay these projects a piece of mind. Refer to the introduction of this article.
 
 ## Firo
 
@@ -219,7 +242,19 @@ Disingenious is the middle name of many people.
 
 ## Pirate Chain
 
-This is also a fork of Monero.
+This is also a fork of Monero. There's not enough information available to comment on Pirate Chain except for
+
+"This software is based on zcash and considered experimental and is continuously undergoing heavy development."
+- [source](https://github.com/PirateNetwork/pirate#tech-specification)
+
+It uses the same algorithm as ZCash which is [not ASIC-resistant](https://shop.bitmain.com/product/detail?pid=00020220215091827599V8Y4J7Ls065B).
+
+It's simply not popular enough to warrant a discussion and it should be them to argue against Monero.
+Their only argue is usually zk-snarks, but trusting zk-snarks is risky. There is no indication if Pirate
+used a trusted setup or not. In security, strong guarantees are required not probabilities.
+
+I also tried to test their sketchy wallet, but it required me to download the blockchain. Yeah no thank you.
+If Monero can be used without a local blockchain, then I shouldn't need to download the blockchain to test a coin that does not even have a tenth of Monero's usage.
 
 ## Particl (PART)
 
@@ -227,13 +262,21 @@ Privacy except at certain times
 
 ## Conclusion
 
-When it comes to privacy in cryptocurrency, people tend to forget that the effecctiveness of privacy
-is not only dependent on the tech, but also on the number of users.
-Compared to Monero, these coins are used 1000x less.
-Every redundant coin comes at the expense of collective privacy.
-Remember, there is no anonymity set if you are the only user!
+Cryptocurrency is a tool. and similar to religion, there are many of them.
+In religion, there's something called Pascal's Wager. ThereminTrees has a good video on the fallacy.
 
-The course of action is to contribute to a single one.
-A difference in ideology does fuel these different coins, but when
-has technology progressed without standards. All websites use HTTPS,
-not some custom protocol. Standards keep the world sane, and needless deviations only prolong the inevitable.
+{{< youtube fZpJ7yUPwdU >}}
+
+Essentially, there isn't enough time for you to do an unbiased research on all religions to figure out
+the best one. But we are presented with this same problem for cryptocurrency but [I have a solution](/posts/the-correct-option).
+
+Compared to Monero, these other privacy coins are used 1000x less. The burden of proof is on them to prove
+that they are better than Grin, ZCash, and Secret Network before asking to argue against Monero.
+Every redundant coin comes at the expense of collective privacy.
+
+It's unreasonable to ask Monero developers and experts to spend their time rebuttling your arguments
+when the cryptos both have the same goal. And if you can prove the coin to be better than Monero to me,
+good luck trying to do it with Bitcoin maxis. I have an open mind; why else would I even try to use ZCash and Secret Network?
+
+Lastly, I hope for people to contribute to a single digital cash project rather than start their own.
+It's sad enough that people think the upgrades to Monero are not needed.
