@@ -1,7 +1,7 @@
 ---
 title: "Figuring Out the Most Correct Opinion"
 date: 2022-03-18T21:33:17-04:00
-draft: true
+draft: false
 ---
 
 Given thousands of arguments where the most sound

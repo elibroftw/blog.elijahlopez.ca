@@ -1,10 +1,11 @@
 ---
 title: "Open-Debate Platform"
 date: 2022-03-18T22:58:03-04:00
-draft: true
+draft: false
 ---
 
-This is a draft at the moment, since it is all over the place.
+I wans't able to put all the details from my mind into this document, but hopefully
+the spirit can be conveyed even if the technical design may be incomplete.
 
 > Democracy cannot gauarantee truth, but can be used to guide discussion...under a set of rules.
 
@@ -137,8 +138,6 @@ Many times on Stackoverflow, questions are marked as duplicate incorrectly on St
 These questions are not technical at all, only discussion prompts, so it is imperative to not censor valid questions.
 </details>
 
-### Vocbulary and Models
-
 ### Merge Request
 
 A merge request is a request by a user to add a point or rebutal to an argument. Merge requests can only be
@@ -152,14 +151,13 @@ An argument's star count is equal to the sum of upvotes of its reasons which is 
 
 ### User::Contributer
 
-Any user that modified an argument or had their modifications merged in.
+A user is considered a contributer if one of their changes in in the argument even if has been overwritten
 
 ### User::Proponent
 
 A user is considered a proponent of an argument if they've upvoted a reason of the argument or are a maintainer for an argument.
 Only reasoning points of the argument can be upvoted and a user is no longer a proponent if the point they upvoted
 gets modified or deleted.
-
 
 ## Platform Logistics
 
@@ -179,5 +177,5 @@ a platform and classify or declassify it as an open-debate platform.
 I'm not sure when I'll be able to implement this, but I'm leaving this here for someone to pursue. My goal with this is to improve unity and reduce polarizations. We need to stop with the harassment of people that hold an opinion. An opinion is much different from
 an action and we need to make that distinction by showing our tolerance for opposing opinions.
 
-There are people who think it's okay to be intolerant of the intolerant but that's an oxymoron. The best way
-to debate against someone who promotes intolerance is to tell them they are only able to promote intolerance because of the tolerant society. If you were the other side of the coin, he wouldn't be able to speak.
+There are people who think it's okay for the tolerant to be intolerant of the intolerant but that's contradictory. The best way
+to debate against someone who promotes intolerance is to tell them that they are only able to promote intolerance because of the tolerant society. If society operated as it did in the past where tolerance is just the intolerance of the majority, then have have learned nothing!
