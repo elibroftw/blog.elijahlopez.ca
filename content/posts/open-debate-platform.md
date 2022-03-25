@@ -4,7 +4,7 @@ date: 2022-03-18T22:58:03-04:00
 draft: false
 ---
 
-I wans't able to put all the details from my mind into this document, but hopefully
+I wasn't able to put all the details from my mind into this document, but hopefully
 the spirit can be conveyed even if the technical design may be incomplete.
 
 > Democracy cannot gauarantee truth, but can be used to guide discussion...under a set of rules.

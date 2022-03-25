@@ -2,6 +2,7 @@
 title: "Figuring Out the Most Correct Opinion"
 date: 2022-03-18T21:33:17-04:00
 draft: false
+hidden: true
 ---
 
 Given thousands of arguments where the most sound
@@ -18,12 +19,13 @@ If you can't detect my sarcasm, I hold the opinion that democracy has a crticial
 And when I say democracy, I mean the concept of the majority changing/removing/adding
 **any** laws. Countries like the USA are republics meaning there are checks on the government.
 Checks on the government means that 51% of the population is not able to dictate the lives of the other 49%.
-In the USA, there needs to be 66% to 75% agreeability before the consitution can be changed.
+In the USA, there needs to be 66% to 75% agreeability before the constitution can be changed.
 It is important to note this distinction as governments are not run based on what is trending on Twitter.
 
 My proof for those who think this opionion is controversial is very simple;
-Before and during Galileo's time (an astronomer alive in the 16-17th century), people of modern day Italy believed the Sun revolved around the Earth and went so far as to kill a man for his opinion based on hard evidence that the Earth revolved around the Sun.
-I don't think humans have evolved to become more or less intelligent during this time, simply that we have access to more information.
+Before and during Galileo's time (an astronomer alive in the 16-17th century),
+people of modern day Italy believed the Sun revolved around the Earth and went so far as to kill a man for his opinion based on hard evidence that the Earth revolved around the Sun.
+I don't think humans have evolved to become more or less intelligent during this time, it's simply that we have access to more information.
 However, this article is precisely about having too much information. Democracy does not gurantee truth.
 
 So what is my solution? [Open-debate platform](/posts/open-debate-platform)
