@@ -14,8 +14,7 @@ the spirit can be conveyed even if the technical design may be incomplete.
 Open-debate platform (ODP) or open-source debate, strongly inspired by open-sourcecode platforms, is about like minded users cooperating informally in order to produce formal arguments in a structured and multiple opinion debate. A debate in this context is simply a question asking for answers. The purpose is to converge and display answers. It's about helping people
 finding the truth without bias. If people want to know the best language to learn, they will probably be greeted with "English"
 but if they don't agree that the reasons apply to them, they can look at the next alternative and so on. The platform
-allows for efficient analysis of all opinions and arguments. Parts of the implementation follow. I say parts, because there might be race conditions, but the purpose of this document is to communicate the spirit of ODP so that technical solutions can be used and
-created to preserve and scale this spirit.
+allows for efficient analysis of all opinions and arguments. Parts of the implementation follow. I say parts, because there might be race conditions, but the purpose of this document is to communicate the spirit of ODP so that technical solutions can be used and created to preserve and scale this spirit.
 
 <details>
 <summary>Controversy and Extremism</summary>
