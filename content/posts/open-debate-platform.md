@@ -7,7 +7,7 @@ draft: false
 I wasn't able to put all the details from my mind into this document, but hopefully
 the spirit can be conveyed even if the technical design may be incomplete.
 
-> Democracy cannot gauarantee truth, but can be used to guide discussion...under a set of rules.
+> Democracy cannot gauarantee truth, but can be used to guide discussion ... under a set of rules.
 
 ## Open-Debate Platform
 
