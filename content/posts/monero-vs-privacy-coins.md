@@ -268,7 +268,7 @@ In religion, there's something called Pascal's Wager. ThereminTrees has a good v
 {{< youtube fZpJ7yUPwdU >}}
 
 Essentially, there isn't enough time for you to do an unbiased research on all religions to figure out
-the best one. But we are presented with this same problem for cryptocurrency but [I have a solution](/posts/the-correct-option).
+the best one. But we are presented with this same problem for cryptocurrency but [I have a solution](/posts/converging-opinions).
 
 Compared to Monero, these other privacy coins are used 1000x less. The burden of proof is on them to prove
 that they are better than Grin, ZCash, and Secret Network before asking to argue against Monero.
