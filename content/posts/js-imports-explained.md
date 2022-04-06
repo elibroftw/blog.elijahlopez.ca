@@ -58,3 +58,14 @@ import { BsMoonStarsFill as MoonIcon } from 'react-icons/bs';
 ```js
 export const schedule200 = { ... };
 ```
+
+## Mass Importing and Exporting
+
+```js
+// ./Files/index.js
+export { default as file1 } from '/file1.js';
+export { default as file2 } from '/file1.js';
+// in ./App.jsx
+import * as files from './Files';
+console.log(files.file1);
+```
