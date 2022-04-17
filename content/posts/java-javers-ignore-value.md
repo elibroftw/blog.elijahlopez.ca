@@ -1,6 +1,6 @@
 ---
 title: "How to Ignore Value Properties in Javers"
-date: 2022-02-26T11:19:04-05:00
+date: 2020-07-18T11:19:04-05:00
 draft: false
 ---
 
