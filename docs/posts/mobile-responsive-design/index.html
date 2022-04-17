@@ -16,8 +16,8 @@
 
 <meta name="description" content="Tutorials nowadays just regurgitate the wrong information! Here&rsquo;s the right way to do mobile responsive design. The key is to use a scale of 0.86 instead of 1. This way zooming in and out actually works!
 From https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag#viewport_width_and_screen_width
-&lt;meta name=&#34;viewport&#34; content=&#34;width=device-width, initial-scale=0.86, minimum-scale=0.86&#34;&gt; Tutorials will recommend to style mobile first, but usually when I create websites for the desktop view first.
-/* This is optional. I call it the Tablet or 16:10 ratio */ @media screen and (max-width:1280px) { #desktop-nav&gt;a { float: left; text-align: center; margin-left: 5%; } } /* This is the mobile view */ @media screen and (max-width:870px) { #desktop-nav { display: none } } ">
+&lt;meta name=&#34;viewport&#34; content=&#34;width=device-width, initial-scale=0.86, minimum-scale=0.86&#34;&gt; Tutorials will recommend to style mobile first, but I usually create websites for the desktop view first.
+/* This is optional. I use it for Tablet or 16:10 */ @media screen and (max-width:1280px) { #desktop-nav&gt;a { float: left; text-align: center; margin-left: 5%; } } /* This is the mobile view */ @media screen and (max-width:870px) { #desktop-nav { display: none } } ">
 
 
 
@@ -58,7 +58,7 @@ From https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag#viewpor
     
 
     
-        <link rel="stylesheet" href="/css/style.min.5773d0329ef41ac46ca2cc13445780134df60aa298ee537c3663e2c7b2f6d70d.css" integrity="sha256-V3PQMp70GsRsoswTRFeAE032CqKY7lN8NmPix7L21w0=">
+        <link rel="stylesheet" href="/css/style.min.23e1504b095f6477718973f3f75ece27ca4ee82e82e2c6d6c3e695838f9c1b26.css" integrity="sha256-I&#43;FQSwlfZHdxiXPz917OJ8pO6C6C4sbWw&#43;aVg4&#43;cGyY=">
     
 
 
@@ -92,8 +92,8 @@ From https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag#viewpor
 <meta property="og:title" content="HTML and CSS - Mobile Responsive Design" />
 <meta property="og:description" content="Tutorials nowadays just regurgitate the wrong information! Here&rsquo;s the right way to do mobile responsive design. The key is to use a scale of 0.86 instead of 1. This way zooming in and out actually works!
 From https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag#viewport_width_and_screen_width
-&lt;meta name=&#34;viewport&#34; content=&#34;width=device-width, initial-scale=0.86, minimum-scale=0.86&#34;&gt; Tutorials will recommend to style mobile first, but usually when I create websites for the desktop view first.
-/* This is optional. I call it the Tablet or 16:10 ratio */ @media screen and (max-width:1280px) { #desktop-nav&gt;a { float: left; text-align: center; margin-left: 5%; } } /* This is the mobile view */ @media screen and (max-width:870px) { #desktop-nav { display: none } } " />
+&lt;meta name=&#34;viewport&#34; content=&#34;width=device-width, initial-scale=0.86, minimum-scale=0.86&#34;&gt; Tutorials will recommend to style mobile first, but I usually create websites for the desktop view first.
+/* This is optional. I use it for Tablet or 16:10 */ @media screen and (max-width:1280px) { #desktop-nav&gt;a { float: left; text-align: center; margin-left: 5%; } } /* This is the mobile view */ @media screen and (max-width:870px) { #desktop-nav { display: none } } " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/posts/mobile-responsive-design/" /><meta property="og:image" content="images"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-02-24T00:40:12-05:00" />
@@ -106,8 +106,8 @@ From https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag#viewpor
 <meta name="twitter:title" content="HTML and CSS - Mobile Responsive Design"/>
 <meta name="twitter:description" content="Tutorials nowadays just regurgitate the wrong information! Here&rsquo;s the right way to do mobile responsive design. The key is to use a scale of 0.86 instead of 1. This way zooming in and out actually works!
 From https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag#viewport_width_and_screen_width
-&lt;meta name=&#34;viewport&#34; content=&#34;width=device-width, initial-scale=0.86, minimum-scale=0.86&#34;&gt; Tutorials will recommend to style mobile first, but usually when I create websites for the desktop view first.
-/* This is optional. I call it the Tablet or 16:10 ratio */ @media screen and (max-width:1280px) { #desktop-nav&gt;a { float: left; text-align: center; margin-left: 5%; } } /* This is the mobile view */ @media screen and (max-width:870px) { #desktop-nav { display: none } } "/>
+&lt;meta name=&#34;viewport&#34; content=&#34;width=device-width, initial-scale=0.86, minimum-scale=0.86&#34;&gt; Tutorials will recommend to style mobile first, but I usually create websites for the desktop view first.
+/* This is optional. I use it for Tablet or 16:10 */ @media screen and (max-width:1280px) { #desktop-nav&gt;a { float: left; text-align: center; margin-left: 5%; } } /* This is the mobile view */ @media screen and (max-width:870px) { #desktop-nav { display: none } } "/>
 
 
 
@@ -282,8 +282,8 @@ From https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag#viewpor
 a scale of 0.86 instead of 1. This way zooming in and out actually works!</p>
 <p>From <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag#viewport_width_and_screen_width">https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag#viewport_width_and_screen_width</a></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;meta name=<span style="color:#87ceeb">&#34;viewport&#34;</span> content=<span style="color:#87ceeb">&#34;width=device-width, initial-scale=0.86, minimum-scale=0.86&#34;</span>&gt;
-</code></pre></div><p>Tutorials will recommend to style mobile first, but usually when I create websites for the desktop view first.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#0f0">/* This is optional. I call it the Tablet or 16:10 ratio */</span>
+</code></pre></div><p>Tutorials will recommend to style mobile first, but I usually create websites for the desktop view first.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#0f0">/* This is optional. I use it for Tablet or 16:10 */</span>
 @<span style="color:#f00">media</span> screen and (max-width:1280px) {
     #desktop-nav&gt;a {
         <span style="color:#f00">float</span>: <span style="color:#f00">left</span>;
@@ -355,9 +355,10 @@ a scale of 0.86 instead of 1. This way zooming in and out actually works!</p>
     
 
     
+        
+
 
     
-        
 
 
 <script src="https://utteranc.es/client.js"
@@ -368,12 +369,13 @@ a scale of 0.86 instead of 1. This way zooming in and out actually works!</p>
         crossorigin="anonymous"
         async>
 </script>
-    
+
+
+
+
+
 
     
-
-    
-
 
         </main>
         
@@ -446,7 +448,7 @@ function detectCurrentScheme() {
     return 'light'
 }
 
-function changeButtonText(switchButton)
+function changeButtonText()
 {   
     if (switchButton) {
         switchButton.textContent = currentTheme == 'dark' ?  "Light theme" : "Dark theme"

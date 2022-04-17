@@ -606,40 +606,6 @@ Thanks to Monero, I only have one wallet that has multiple addresses and I don&a
     </item>
     
     <item>
-      <title>How to Ignore Value Properties in Javers</title>
-      <link>/posts/java-javers-ignore-value/</link>
-      <pubDate>Sat, 26 Feb 2022 11:19:04 -0500</pubDate>
-      
-      <guid>/posts/java-javers-ignore-value/</guid>
-      <description>&lt;p&gt;If you just want the solutions, look at the first and last code blocks. Read the whole article if you want some storytelling. Please comment if you have any feedback.&lt;/p&gt;
-&lt;p&gt;At work one day, my task was to ignore certain properties of objects when they were being compared. Suppose the object, e.g. custom vertex, had properties &lt;code&gt;{ lastUpdated, color, x, y, z, comments }&lt;/code&gt;.
-If one was comparing objects of these properties, one might not want the fields &amp;ldquo;lastUpdated&amp;rdquo; and &amp;ldquo;comments&amp;rdquo; to be involved since they are metadata and not practical properties.
-I quickly learned that &lt;a href=&#34;https://javers.org/&#34;&gt;Javers&lt;/a&gt; was being used in creating these diff objects. After reading the documentation, I came across the &lt;code&gt;@DiffIgnore&lt;/code&gt; annotation that could be used in the objects implementation to specify properties to ignore.&lt;/p&gt;
-&lt;script type=&#34;application/javascript&#34; src=&#34;https://gist.github.com/elibroftw/159978a1b3d2c16fbcbc3c3c6e71fb48.js&#34;&gt;&lt;/script&gt;
-
-&lt;p&gt;The only problem with this is that I did not implement the objects I was using! The object&amp;rsquo;s I was using were imports so I hit a roadblock.
-One solution I did think of was to first get the changes with those properties I didn&amp;rsquo;t want, and then remove them from the original changes list. Of course I&amp;rsquo;d have to make a copy of the changes list since the return value of &lt;code&gt;getChanges&lt;/code&gt; is not modifiable.&lt;/p&gt;
-&lt;script type=&#34;application/javascript&#34; src=&#34;https://gist.github.com/elibroftw/02ada4d55c06fc5851225bebe3a3c997.js&#34;&gt;&lt;/script&gt;
-
-&lt;p&gt;If you always think of efficiency, you&amp;rsquo;ll see that this solution is grossly inefficient even if it does get the work done. If only there was some way for the unwanted changes to not even exist in the first place.&lt;/p&gt;
-&lt;p&gt;I did a lot of reading and came across custom entities. When you are creating a Javers object, you can add objects to it with ignored properties.
-This works for some objects but I quickly learned that what I needed was to specify a value object not an Entity object as the latter requires an IdPropertyName.
-So after going to Stack Overflow and sorting questions for Javers by new I came across a comment that told the OP use registerValueObject.
-I searched it up and sure enough, it was exactly what I needed. Here&amp;rsquo;s how you would use it:&lt;/p&gt;
-&lt;script type=&#34;application/javascript&#34; src=&#34;https://gist.github.com/elibroftw/1c266ff334d5afd81c690d3848c31e70.js&#34;&gt;&lt;/script&gt;
-
-&lt;h2 id=&#34;resources&#34; &gt;Resources
-&lt;span&gt;
-    &lt;a href=&#34;#resources&#34;&gt;
-        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
-    &lt;/a&gt;
-&lt;/span&gt;
-&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://javers.org/documentation/&#34;&gt;Javers Documentation&lt;/a&gt;
-&lt;a href=&#34;https://stackoverflow.com/questions/tagged/javers&#34;&gt;Stack Overflow Javers tag&lt;/a&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
       <title>How to Buy Monero in Canada</title>
       <link>/posts/how-to-buy-monero-in-canada/</link>
       <pubDate>Fri, 25 Feb 2022 22:56:02 -0500</pubDate>
@@ -661,8 +627,8 @@ It is also possible to send the XLM to a Kraken account, sell to USD, and buy XM
 a scale of 0.86 instead of 1. This way zooming in and out actually works!&lt;/p&gt;
 &lt;p&gt;From &lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag#viewport_width_and_screen_width&#34;&gt;https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag#viewport_width_and_screen_width&lt;/a&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&amp;lt;meta name=&lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;viewport&amp;#34;&lt;/span&gt; content=&lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;width=device-width, initial-scale=0.86, minimum-scale=0.86&amp;#34;&lt;/span&gt;&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Tutorials will recommend to style mobile first, but usually when I create websites for the desktop view first.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-css&#34; data-lang=&#34;css&#34;&gt;&lt;span style=&#34;color:#0f0&#34;&gt;/* This is optional. I call it the Tablet or 16:10 ratio */&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Tutorials will recommend to style mobile first, but I usually create websites for the desktop view first.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-css&#34; data-lang=&#34;css&#34;&gt;&lt;span style=&#34;color:#0f0&#34;&gt;/* This is optional. I use it for Tablet or 16:10 */&lt;/span&gt;
 @&lt;span style=&#34;color:#f00&#34;&gt;media&lt;/span&gt; screen and (max-width:1280px) {
     #desktop-nav&amp;gt;a {
         &lt;span style=&#34;color:#f00&#34;&gt;float&lt;/span&gt;: &lt;span style=&#34;color:#f00&#34;&gt;left&lt;/span&gt;;
@@ -1761,7 +1727,7 @@ Medium&amp;rsquo;s UI is slower than YouTube&amp;rsquo;s even though Medium is c
         &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
     &lt;/a&gt;
 &lt;/span&gt;
-&lt;/h3&gt;&lt;p&gt;It&amp;rsquo;s currently December 19th 2021, and I&amp;rsquo;ve even added a comment section. There&amp;rsquo;s absolutely no reason to use Medium anymore especially after making my own &lt;a href=&#34;/posts/hugo_tutorial&#34;&gt;Hugo GitHub Pages Tutorial&lt;/a&gt;&lt;/p&gt;
+&lt;/h3&gt;&lt;p&gt;It&amp;rsquo;s currently December 19th 2021, and I&amp;rsquo;ve even added a comment section. There&amp;rsquo;s absolutely no reason to use Medium anymore especially after making my own &lt;a href=&#34;/posts/hugo-tutorial&#34;&gt;Hugo GitHub Pages Tutorial&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -1926,6 +1892,40 @@ In this case it&amp;rsquo;s &amp;ldquo;hackish,&amp;rdquo; that needs to be fulf
 &lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;/images/windows-10-favorite-cursors/windows-better-black.png&#34; alt=&#34;Window Better Black&#34;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.deviantart.com/twipeep/art/Windows-10-cursor-black-version-572437583&#34;&gt;Download from deviantart&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;This cursor pack fine tunes the original Windows black cursor theme. The primary reason you&amp;rsquo;d want to use this, is to replace the white cursors without dramatically changing your cursor scheme.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>How to Ignore Value Properties in Javers</title>
+      <link>/posts/java-javers-ignore-value/</link>
+      <pubDate>Sat, 18 Jul 2020 11:19:04 -0500</pubDate>
+      
+      <guid>/posts/java-javers-ignore-value/</guid>
+      <description>&lt;p&gt;If you just want the solutions, look at the first and last code blocks. Read the whole article if you want some storytelling. Please comment if you have any feedback.&lt;/p&gt;
+&lt;p&gt;At work one day, my task was to ignore certain properties of objects when they were being compared. Suppose the object, e.g. custom vertex, had properties &lt;code&gt;{ lastUpdated, color, x, y, z, comments }&lt;/code&gt;.
+If one was comparing objects of these properties, one might not want the fields &amp;ldquo;lastUpdated&amp;rdquo; and &amp;ldquo;comments&amp;rdquo; to be involved since they are metadata and not practical properties.
+I quickly learned that &lt;a href=&#34;https://javers.org/&#34;&gt;Javers&lt;/a&gt; was being used in creating these diff objects. After reading the documentation, I came across the &lt;code&gt;@DiffIgnore&lt;/code&gt; annotation that could be used in the objects implementation to specify properties to ignore.&lt;/p&gt;
+&lt;script type=&#34;application/javascript&#34; src=&#34;https://gist.github.com/elibroftw/159978a1b3d2c16fbcbc3c3c6e71fb48.js&#34;&gt;&lt;/script&gt;
+
+&lt;p&gt;The only problem with this is that I did not implement the objects I was using! The object&amp;rsquo;s I was using were imports so I hit a roadblock.
+One solution I did think of was to first get the changes with those properties I didn&amp;rsquo;t want, and then remove them from the original changes list. Of course I&amp;rsquo;d have to make a copy of the changes list since the return value of &lt;code&gt;getChanges&lt;/code&gt; is not modifiable.&lt;/p&gt;
+&lt;script type=&#34;application/javascript&#34; src=&#34;https://gist.github.com/elibroftw/02ada4d55c06fc5851225bebe3a3c997.js&#34;&gt;&lt;/script&gt;
+
+&lt;p&gt;If you always think of efficiency, you&amp;rsquo;ll see that this solution is grossly inefficient even if it does get the work done. If only there was some way for the unwanted changes to not even exist in the first place.&lt;/p&gt;
+&lt;p&gt;I did a lot of reading and came across custom entities. When you are creating a Javers object, you can add objects to it with ignored properties.
+This works for some objects but I quickly learned that what I needed was to specify a value object not an Entity object as the latter requires an IdPropertyName.
+So after going to Stack Overflow and sorting questions for Javers by new I came across a comment that told the OP use registerValueObject.
+I searched it up and sure enough, it was exactly what I needed. Here&amp;rsquo;s how you would use it:&lt;/p&gt;
+&lt;script type=&#34;application/javascript&#34; src=&#34;https://gist.github.com/elibroftw/1c266ff334d5afd81c690d3848c31e70.js&#34;&gt;&lt;/script&gt;
+
+&lt;h2 id=&#34;resources&#34; &gt;Resources
+&lt;span&gt;
+    &lt;a href=&#34;#resources&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://javers.org/documentation/&#34;&gt;Javers Documentation&lt;/a&gt;
+&lt;a href=&#34;https://stackoverflow.com/questions/tagged/javers&#34;&gt;Stack Overflow Javers tag&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
