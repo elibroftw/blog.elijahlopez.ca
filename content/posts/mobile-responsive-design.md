@@ -20,7 +20,7 @@ From [https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag#viewpo
 Tutorials will recommend to style mobile first, but I usually create websites for the desktop view first.
 
 ```css
-/* This is optional. I call it the Tablet or 16:10 ratio */
+/* This is optional. I use it for Tablet or 16:10 */
 @media screen and (max-width:1280px) {
     #desktop-nav>a {
         float: left;
