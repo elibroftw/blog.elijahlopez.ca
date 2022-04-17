@@ -13,4 +13,4 @@ Medium's UI is slower than YouTube's even though Medium is completely text-based
 
 ### Edit
 
-It's currently December 19th 2021, and I've even added a comment section. There's absolutely no reason to use Medium anymore especially after making my own [Hugo GitHub Pages Tutorial](/posts/hugo_tutorial)
+It's currently December 19th 2021, and I've even added a comment section. There's absolutely no reason to use Medium anymore especially after making my own [Hugo GitHub Pages Tutorial](/posts/hugo-tutorial)
