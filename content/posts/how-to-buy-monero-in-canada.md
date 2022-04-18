@@ -28,7 +28,10 @@ it's not practical as like I said before, you need to have USD beforehand withou
 
 ## Local Monero
 
-[Local Monero](https://localmonero.co) is more private but costs more, requires greater level of trust, and takes a longer time excluding KYC time.
+[Local Monero](https://localmonero.co/?rc=nde2) is more private but costs more, requires greater level of trust, and takes a longer time excluding KYC time.
+
+- [Local Monero TOR](http://nehdddktmhvqklsnkjqcbpmb63htee2iznpcbs5tgzctipxykpj6yrid.onion/?rc=nde2)
+- [Local Monero I2P](http://lm.i2p/?rc=nde2)
 
 ## Conclusion
 
