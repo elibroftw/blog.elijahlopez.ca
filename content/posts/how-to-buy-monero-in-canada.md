@@ -6,7 +6,7 @@ draft: false
 
 ## Fixed Float
 
-Assuming you can purchase XLM via [Newton](https://newton.co), use [Fixed Float](https://fixedfloat.com) for 0.5% - 1% fee per trade.
+Assuming you can purchase XLM via [Newton](https://web.newton.co/r/YREHXA), use [Fixed Float](https://fixedfloat.com) for 0.5% - 1% fee per trade.
 
 ## Kraken
 
