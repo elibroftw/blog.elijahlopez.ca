@@ -21,32 +21,51 @@ These two snippets are a safe but rather unintuitive way to abort builds and get
 import hudson.model.ParametersAction
 import jenkins.model.Jenkins
 import jenkins.model.CauseOfInterruption
+import jenkins.model.Jenkins
 // type of _build in case you need it
-// import org.jenkinsci.plugins.workflow.job.WorkflowRun
+import org.jenkinsci.plugins.workflow.job.WorkflowRun
 
+// TODO: create plugin or something for custom status messages
 
 @NonCPS
-def abortOldBuilds() {
+def abortOldBuilds(String paramKey, String paramVal) {
+    // param_key and paramVal can be used for PR numbers
     def job = Jenkins.instanceOrNull.getItem(JOB_NAME)
-    def build_id = BUILD_ID
-    for (def _build: job.builds) {  // or job.getBuilds()
-        def _build_id = _build.id as INT
-        def _pr_number = _build.allActions.find(it in ParametersAction).getParameter("pr_number").value
+    def buildID = BUILD_ID
+    // highest running ID
+    def highestRID = buildID
+    // in case the current build is old
+    WorkflowRun curBuild
+
+    def build = job.getLastBuild()
+    // avoid .builds since it can cause iteration errors
+    while (build != null) {
+        def cbuildID = build.id.toInteger()
+        def curParamVal = build.allActions.find{it in ParametersAction}?.getParameter(paramKey)?.value
         // optionally filter out builds
-        if (_pr_number == pr_number) {
-            // pr_number is paramaterized and stands for `pull request number`
-            if (_build.isBuilding() && _build_id < build_id) {
-                // abort this build since it's running and outdated
-                def cause = "Aborted by build #${build_id} for being outdated (PR #${pr_number})"
-                _build.getListner().getLogger().println(cause)
-                _build.doStop()
-                echo "Aborted build #${_build_id}"
-                // Add aborted cause to _build status page (Hack)
-                //  this way keeps the build as ABORTED and prevents builds from resuming upon a Jenkins restart
-                def r = new ArrayList<>(Arrays.asList({ cause as String } as CauseOfInterruption))
-                _build.addAction(new InterruptedBuildAction(r))
+        if (curParamVal == param_val) {
+            if (cbuildID == buildID) {
+                curBuild = build
+            } else if (build.isBuilding() && cbuildID < highestRID) {
+                build.doKill()
+                echo "terminated build #${cbuildID}"
+                def cause = "Aborted by #${buildID} for being an old build" // + for paramVal
+                // add to the log of another build
+                build.getListener().getLogger().println(cause)
+                // The below will cause zombie jobs and so was abandoned
+                // def r = new ArrayList<>(Arrays.asList({ cause as String } as CauseOfInterruption))
+                // _build.addAction(new InterruptedBuildAction(r))
+            } else if (cbuildID > highestRID) {
+                // update highest running ID
+                highestRID = cbuildID
             }
         }
+        build = build.getPreviousBuild()
+    }
+    if (highestRID > buildID) {
+        println "Terminating self since newer build was found"
+        def selfAbortCause = "Aborting due to the presence of a newer build"
+        curBuild.doKill()
     }
 }
 ```

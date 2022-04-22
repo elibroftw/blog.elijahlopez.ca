@@ -34,32 +34,51 @@
 &lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-groovy&#34; data-lang=&#34;groovy&#34;&gt;&lt;span style=&#34;color:#f00&#34;&gt;import&lt;/span&gt; hudson.model.ParametersAction
 &lt;span style=&#34;color:#f00&#34;&gt;import&lt;/span&gt; jenkins.model.Jenkins
 &lt;span style=&#34;color:#f00&#34;&gt;import&lt;/span&gt; jenkins.model.CauseOfInterruption
+&lt;span style=&#34;color:#f00&#34;&gt;import&lt;/span&gt; jenkins.model.Jenkins
 &lt;span style=&#34;color:#0f0&#34;&gt;// type of _build in case you need it
-&lt;/span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;// import org.jenkinsci.plugins.workflow.job.WorkflowRun
-&lt;/span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#f00&#34;&gt;import&lt;/span&gt; org.jenkinsci.plugins.workflow.job.WorkflowRun
 
+&lt;span style=&#34;color:#0f0&#34;&gt;// TODO: create plugin or something for custom status messages
+&lt;/span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;&lt;/span&gt;
 @NonCPS
-&lt;span style=&#34;color:#ee82ee&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#ff0&#34;&gt;abortOldBuilds&lt;/span&gt;() {
-    &lt;span style=&#34;color:#ee82ee&#34;&gt;def&lt;/span&gt; job = Jenkins.instanceOrNull.getItem(JOB_NAME)
-    &lt;span style=&#34;color:#ee82ee&#34;&gt;def&lt;/span&gt; build_id = BUILD_ID
-    &lt;span style=&#34;color:#f00&#34;&gt;for&lt;/span&gt; (&lt;span style=&#34;color:#ee82ee&#34;&gt;def&lt;/span&gt; _build: job.builds) {  &lt;span style=&#34;color:#0f0&#34;&gt;// or job.getBuilds()
-&lt;/span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;&lt;/span&gt;        &lt;span style=&#34;color:#ee82ee&#34;&gt;def&lt;/span&gt; _build_id = _build.id &lt;span style=&#34;color:#f00&#34;&gt;as&lt;/span&gt; INT
-        &lt;span style=&#34;color:#ee82ee&#34;&gt;def&lt;/span&gt; _pr_number = _build.allActions.find(it &lt;span style=&#34;color:#f00&#34;&gt;in&lt;/span&gt; ParametersAction).getParameter(&lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;pr_number&amp;#34;&lt;/span&gt;).value
+&lt;span style=&#34;color:#ee82ee&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#ff0&#34;&gt;abortOldBuilds&lt;/span&gt;(String paramKey, String paramVal) {
+    &lt;span style=&#34;color:#0f0&#34;&gt;// param_key and paramVal can be used for PR numbers
+&lt;/span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#ee82ee&#34;&gt;def&lt;/span&gt; job = Jenkins.instanceOrNull.getItem(JOB_NAME)
+    &lt;span style=&#34;color:#ee82ee&#34;&gt;def&lt;/span&gt; buildID = BUILD_ID
+    &lt;span style=&#34;color:#0f0&#34;&gt;// highest running ID
+&lt;/span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#ee82ee&#34;&gt;def&lt;/span&gt; highestRID = buildID
+    &lt;span style=&#34;color:#0f0&#34;&gt;// in case the current build is old
+&lt;/span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;&lt;/span&gt;    WorkflowRun curBuild
+
+    &lt;span style=&#34;color:#ee82ee&#34;&gt;def&lt;/span&gt; build = job.getLastBuild()
+    &lt;span style=&#34;color:#0f0&#34;&gt;// avoid .builds since it can cause iteration errors
+&lt;/span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#f00&#34;&gt;while&lt;/span&gt; (build != &lt;span style=&#34;color:#f00&#34;&gt;null&lt;/span&gt;) {
+        &lt;span style=&#34;color:#ee82ee&#34;&gt;def&lt;/span&gt; cbuildID = build.id.toInteger()
+        &lt;span style=&#34;color:#ee82ee&#34;&gt;def&lt;/span&gt; curParamVal = build.allActions.find{it &lt;span style=&#34;color:#f00&#34;&gt;in&lt;/span&gt; ParametersAction}?.getParameter(paramKey)?.value
         &lt;span style=&#34;color:#0f0&#34;&gt;// optionally filter out builds
-&lt;/span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;&lt;/span&gt;        &lt;span style=&#34;color:#f00&#34;&gt;if&lt;/span&gt; (_pr_number == pr_number) {
-            &lt;span style=&#34;color:#0f0&#34;&gt;// pr_number is paramaterized and stands for `pull request number`
-&lt;/span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;&lt;/span&gt;            &lt;span style=&#34;color:#f00&#34;&gt;if&lt;/span&gt; (_build.isBuilding() &amp;amp;&amp;amp; _build_id &amp;lt; build_id) {
-                &lt;span style=&#34;color:#0f0&#34;&gt;// abort this build since it&amp;#39;s running and outdated
-&lt;/span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;&lt;/span&gt;                &lt;span style=&#34;color:#ee82ee&#34;&gt;def&lt;/span&gt; cause = &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;Aborted by build #${build_id} for being outdated (PR #${pr_number})&amp;#34;&lt;/span&gt;
-                _build.getListner().getLogger().println(cause)
-                _build.doStop()
-                echo &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;Aborted build #${_build_id}&amp;#34;&lt;/span&gt;
-                &lt;span style=&#34;color:#0f0&#34;&gt;// Add aborted cause to _build status page (Hack)
-&lt;/span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;&lt;/span&gt;                &lt;span style=&#34;color:#0f0&#34;&gt;//  this way keeps the build as ABORTED and prevents builds from resuming upon a Jenkins restart
-&lt;/span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;&lt;/span&gt;                &lt;span style=&#34;color:#ee82ee&#34;&gt;def&lt;/span&gt; r = &lt;span style=&#34;color:#f00&#34;&gt;new&lt;/span&gt; ArrayList&amp;lt;&amp;gt;(Arrays.asList({ cause &lt;span style=&#34;color:#f00&#34;&gt;as&lt;/span&gt; String } &lt;span style=&#34;color:#f00&#34;&gt;as&lt;/span&gt; CauseOfInterruption))
-                _build.addAction(&lt;span style=&#34;color:#f00&#34;&gt;new&lt;/span&gt; InterruptedBuildAction(r))
+&lt;/span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;&lt;/span&gt;        &lt;span style=&#34;color:#f00&#34;&gt;if&lt;/span&gt; (curParamVal == param_val) {
+            &lt;span style=&#34;color:#f00&#34;&gt;if&lt;/span&gt; (cbuildID == buildID) {
+                curBuild = build
+            } &lt;span style=&#34;color:#f00&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;color:#f00&#34;&gt;if&lt;/span&gt; (build.isBuilding() &amp;amp;&amp;amp; cbuildID &amp;lt; highestRID) {
+                build.doKill()
+                echo &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;terminated build #${cbuildID}&amp;#34;&lt;/span&gt;
+                &lt;span style=&#34;color:#ee82ee&#34;&gt;def&lt;/span&gt; cause = &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;Aborted by #${buildID} for being an old build&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#0f0&#34;&gt;// + for paramVal
+&lt;/span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;&lt;/span&gt;                &lt;span style=&#34;color:#0f0&#34;&gt;// add to the log of another build
+&lt;/span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;&lt;/span&gt;                build.getListener().getLogger().println(cause)
+                &lt;span style=&#34;color:#0f0&#34;&gt;// The below will cause zombie jobs and so was abandoned
+&lt;/span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;&lt;/span&gt;                &lt;span style=&#34;color:#0f0&#34;&gt;// def r = new ArrayList&amp;lt;&amp;gt;(Arrays.asList({ cause as String } as CauseOfInterruption))
+&lt;/span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;&lt;/span&gt;                &lt;span style=&#34;color:#0f0&#34;&gt;// _build.addAction(new InterruptedBuildAction(r))
+&lt;/span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;&lt;/span&gt;            } &lt;span style=&#34;color:#f00&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;color:#f00&#34;&gt;if&lt;/span&gt; (cbuildID &amp;gt; highestRID) {
+                &lt;span style=&#34;color:#0f0&#34;&gt;// update highest running ID
+&lt;/span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;&lt;/span&gt;                highestRID = cbuildID
             }
         }
+        build = build.getPreviousBuild()
+    }
+    &lt;span style=&#34;color:#f00&#34;&gt;if&lt;/span&gt; (highestRID &amp;gt; buildID) {
+        println &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;Terminating self since newer build was found&amp;#34;&lt;/span&gt;
+        &lt;span style=&#34;color:#ee82ee&#34;&gt;def&lt;/span&gt; selfAbortCause = &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;Aborting due to the presence of a newer build&amp;#34;&lt;/span&gt;
+        curBuild.doKill()
     }
 }
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;getting-build-log&#34; &gt;Getting Build Log
