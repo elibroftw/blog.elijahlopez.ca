@@ -611,7 +611,9 @@ Thanks to Monero, I only have one wallet that has multiple addresses and I don&a
       <pubDate>Fri, 25 Feb 2022 22:56:02 -0500</pubDate>
       
       <guid>/posts/how-to-buy-monero-in-canada/</guid>
-      <description>&lt;h2 id=&#34;fixed-float&#34; &gt;Fixed Float
+      <description>&lt;p&gt;I&amp;rsquo;ll be testing all of these methods except LocalMonero since the actual fee there is at least 20% as of 2022/4/21.
+Testing is done by using converting the received XMR to CAD using the currency pair rates at the start of each new pair transaction.&lt;/p&gt;
+&lt;h2 id=&#34;fixed-float&#34; &gt;Fixed Float
 &lt;span&gt;
     &lt;a href=&#34;#fixed-float&#34;&gt;
         &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
@@ -630,8 +632,18 @@ Thanks to Monero, I only have one wallet that has multiple addresses and I don&a
         &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
     &lt;/a&gt;
 &lt;/span&gt;
-&lt;/h3&gt;&lt;p&gt;A deposit fee of 0.1%, a USD conversion fee of 0.2%, and a 0.16% post limit order fee to buy XMR, and a flat network fee to withdraw.
-In total, that&amp;rsquo;s 0.46% as a maker and a 0.56% fee as a taker.&lt;/p&gt;
+&lt;/h3&gt;&lt;p&gt;A deposit fee of 0.1% for etransfer (3k limit), a USD conversion fee of 0.2%, and a 0.16% post limit order fee to buy XMR, and a flat network fee to withdraw.
+In total, that&amp;rsquo;s 0.46% as a maker and a 0.56% fee as a taker. You can use Etana to forgo the deposit fee, but I&amp;rsquo;m unsure if Etana has its
+own fees and it does require KYC. A wire transfer requires being in-persona which might have its own fees; it does for my business account!&lt;/p&gt;
+&lt;p&gt;My own results for the etransfer deposit method are:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;CAD/USD = 1.25625&lt;/li&gt;
+&lt;li&gt;XMR/USD = 285.48&lt;/li&gt;
+&lt;li&gt;a etransfer of 3,000 CAD becomes 2,970 CAD converted to 2,359.45 USD bought 8.2648521800 XMR withdrew and received 8.25152 XMR&lt;/li&gt;
+&lt;li&gt;Fee = 3,000 - 8.25152 * 285.48 * 1.25625 = 40.72&amp;hellip; = 1.3574%&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Make sure to set the limit order one cent less than market with &lt;strong&gt;post&lt;/strong&gt; selected unless you are treating it as a security.&lt;/p&gt;
+&lt;p&gt;The etransfer deposit fee took the largest chunk! I&amp;rsquo;ll have to test the other methods to compare.&lt;/p&gt;
 &lt;h3 id=&#34;xlm---usd---xmr&#34; &gt;XLM -&amp;gt; USD -&amp;gt; XMR
 &lt;span&gt;
     &lt;a href=&#34;#xlm---usd---xmr&#34;&gt;
@@ -655,7 +667,8 @@ it&amp;rsquo;s not practical as like I said before, you need to have USD beforeh
         &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
     &lt;/a&gt;
 &lt;/span&gt;
-&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://localmonero.co/?rc=nde2&#34;&gt;Local Monero&lt;/a&gt; is more private but costs more, requires greater level of trust, and takes a longer time excluding KYC time.&lt;/p&gt;
+&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://localmonero.co/?rc=nde2&#34;&gt;Local Monero&lt;/a&gt; is less private than FixedFloat and more than exchanges but costs way more (20%+ via CAD, 4.4%+ via XLM),
+requires greater level of trust, and takes a longer time than exchanges ignoring the inital KYC time.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;http://nehdddktmhvqklsnkjqcbpmb63htee2iznpcbs5tgzctipxykpj6yrid.onion/?rc=nde2&#34;&gt;Local Monero TOR&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://lm.i2p/?rc=nde2&#34;&gt;Local Monero I2P&lt;/a&gt;&lt;/li&gt;
