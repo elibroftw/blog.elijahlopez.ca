@@ -2,7 +2,7 @@
 title: "Monero vs \"Privacy Coins\""
 date: 2022-02-26T12:48:07-05:00
 hidden: true
-draft: true
+draft: false
 ---
 
 ## PreFace
