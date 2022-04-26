@@ -10,6 +10,6 @@ I don't even have HDR capabilities, so these were the optimal color settings whe
 
 1. Go to Settings
 2. Go to Advanced
-3. Change Color Format to **1444**
+3. Change Color Format to **I444**
 4. Change Color Space to **sRGB**
 5. Change Color Range to **Full**
