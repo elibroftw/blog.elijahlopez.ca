@@ -5,6 +5,7 @@ draft: false
 tags: [
     "tutorial",
     "monero",
+    "cryptocurrency",
 ]
 ---
 

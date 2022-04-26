@@ -2,6 +2,10 @@
 title: "Why Monero Is the Best Crypto-Currency"
 date: 2022-02-26T11:37:57-05:00
 draft: false
+tags: [
+  "monero",
+  "cryptocurrency",
+]
 ---
 
 ## Arguments
