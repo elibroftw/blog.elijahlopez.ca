@@ -13,3 +13,9 @@ I don't even have HDR capabilities, so these were the optimal color settings whe
 3. Change Color Format to **I444**
 4. Change Color Space to **sRGB**
 5. Change Color Range to **Full**
+
+After a recording test and a computer restart, you can try NV12 again as below.
+
+Color Format: **NV12**
+Color Range: **Partial**
+Color Space: **sRGB**
