@@ -11,44 +11,40 @@ tags: [
 
 ## PreFace
 
-Unlike my last article about why Monero is the best crypto as a currency because of its privacy vs. layer 2 solutions, this article is a deep dive on why I continue to choose Monero and not other privacy competitors.
+Unlike my last article about why Monero is the best crypto as a currency because of its privacy vs. layer 2 solutions, this article is a deep dive on why I continue to choose Monero and not its privacy-related competitors.
 
-I've had enough of hearing FUD about Monero from other privacy coin "enthusiasts" (aka biased investors) who coincidentally never state they are
-in privacy coins for the tech. Their usually almost talking about the potential price increase if their coin reaches the market cap of Monero, which is the most suppressed and censored coin by exchanges to date.
-Just go on any of these subreddits and there are posts about the price of the coin and how it will go to the moon any second now.
-Go to Monero and you'll find people allowed to criticize and question Monero's technology, without recourse.
+There is a cultural noticable difference in culture and attitude amongst Monero and other coins. In r/monero, there is always a discussion going on.
+In these other privacy coin subreddits however, there is so many posts about price and going to the moon.
 
-If I make any mistakes, let me know and I will correct them.
-I have multiple reasons, so even if one or two are technically incorrect, my argument will nonetheless be valid.
+I value quality, so if I make any argumentative mistakes in the article, I will correct them if I am notified.
+I have multiple reasons, so if one or two are technically incorrect, my argument will hold.
 
 1. Monero is the FIRST privacy coin that was NOT PRE-MINED.
-2. **Most used** *privacy* crypto
-3. Monero is actively improved upon
+2. Monero is the **most used** *privacy* crypto
+3. Monero is actively improved/developed
 4. Monero Changes for the Better
     - non-premined ByteCoin fork, and after that: introduction of Stealth addresses, Ring-CT, Bulletproofs(+)
     - RandomX (innovation) ASIC resistance mining algorithm avoids using hard forks
     - Monero is superior today than Monero 5 years ago, and Monero in 5 years will be superior to Monero today
     - Atomic swaps (infrastructure)
 5. Monero's researchers actively create / think of attacks on Monero's privacy so that the protocol can be improved to defend against these attacks.
-6. Censorship free, there is even a post called Sketicism Sunday!
+6. Censorship free, there is even a post called Sketicism Sunday on r/monero!
 
 ## ZCash
 
-I start with ZCash because by proving Monero > ZCash, all other coins should make a case
-that they are better than ZCash before trying to spread Monero FUD.
-It's only fair that the lesser used and known privacy cryptos, figure out who the runner up to Monero is.
+I start with ZCash since it is made to seem as the runner up to Monero. By comparing Monero to ZCash,
+all other coins should make a case that they are better than ZCash before trying to spread Monero FUD.
+It's only fair that the lesser used and known privacy cryptos figure out who the runner up to Monero is.
 Otherwise, it'll be impossibe to do an unbiased comparison of them all to Monero in the future when thousands of people think
-they are the next Satoshi. A similar argument can be made for political ideologies, economic policies, etc.
+they are the next Satoshi. A similar scheme can be used for political ideologies, economic policies, etc.
 
-Although I doubt anyone ever thought about applying a gaming concept to real world issues.
-
-We won't use trusted setup as an argument for this section, even though as of today,
-the Halo Arc update that was supposed to remove trusted setup is 28 days overdue.
+We won't use trusted setup as an argument for this section, even though as of 2022/2/26,
+the Halo Arc update that was supposed to remove trusted setup is 28+ days overdue.
 What is unavailable is the technical aspects of how the trusted setup will be removed or what replaces it to ensure privacy.
 
 ### A Privacy Coin without Privacy Users
 
-The best privacy would be the best at being untraceable and at protecting our holdings and linking identities.
+The best privacy would be the best at being untraceable and at protecting users' holdings and their multiple identities.
 In 2020, a [team of researchers (PDF)](https://eprint.iacr.org/2020/593.pdf) concluded that 99.9% of ZCash transactions are Traceable.
 In the abstract, researchers say "strict security and anonymity requirements, … makes the coin effectively untraceable, as shown by *Monero*."
 What does this mean? Optional privacy is junk. If you decide to use shielded transactions on ZCash,
@@ -104,10 +100,14 @@ Thirdly, because I have WSL, their `zcash-cli` says it requires a `zcash.conf` e
 I was trying to test out ZCash because to confirm that creating sheilded transactions are incredibly slow.
 There are no demos online showing the time it takes to generate a simple shielded transaction.
 
-I will admit, there aren't videos showing Monero transaction creations, but I'm planning to make that video myself since
-the time to generate a transaction is max 30 seconds for one receiver, and the majority of this time comes from
-fee estimation. In my opinion, this is a UX problem, since transaction generations speed up exponentially after one has been generated.
-Searching online yields in some guy using two webapps and a CLI to send ZEC to many receivers, but he cut the waiting process.
+For Monero, below is a video I made demoing a Monero transaction with one receiving address.
+The relevant portions took only 10 seconds! Most of the time was spent entering an address, an amount,
+entering my password, moving the GUI, and me talking.
+
+{{< youtube _Sqn7aaR1oM >}}
+
+Searching online for Zcash demos yields some guy using two webapps and a CLI to send ZEC to many receivers.
+He cut the waiting process.
 
 ## Leadership? Of a cryptocurrency?
 
