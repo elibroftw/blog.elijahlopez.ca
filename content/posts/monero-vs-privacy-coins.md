@@ -9,7 +9,7 @@ tags: [
 ]
 ---
 
-## PreFace
+## Preface
 
 Unlike my last article about why Monero is the best crypto as a currency because of its privacy vs. layer 2 solutions, this article is a deep dive on why I continue to choose Monero and not its privacy-related competitors.
 
