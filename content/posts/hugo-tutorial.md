@@ -21,7 +21,7 @@ If you are like me, you can follow the tutorial that [forks my site](#forking-my
 
 1. [Hugo](https://gohugo.io/getting-started/installing#binary-cross-platform)
 2. Make sure `hugo` is available in the PATH environment variable
-3. Have `git` installed and available globally (in PATH)
+3. Have [git](https://git-scm.com/downloads) installed and available through the command line (in PATH)
 
 ## Forking My Site
 
