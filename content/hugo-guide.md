@@ -20,10 +20,13 @@ DISCLAIMER: If you aren't from my hugo tutorial, please read my [Hugo tutorial](
 
 ## New Machine Setup
 
+In case you want to blog on a new device, here are the commands to set yourself up.
+
 ```bash
-git clone --recurse-submodules -j8 https://github.com/USERNAME/USERNAME.github.io.git
+# replace USERNAME/blog with your username and blog repo name
+git clone --recurse-submodules -j8 https://github.com/USERNAME/blog.git
 # choose cloned directory
-cd USERNAME.github.io.git
+cd blog
 # Enable the pre-commit hook
 git config core.hookspath .githooks
 ```
