@@ -25,7 +25,7 @@ If you are like me, you can follow the tutorial that [forks my site](#forking-my
 
 ## Forking My Blog
 
-1. Web UI fork [blog.elijahlopez.ca](https://github.com/elibroftw/blog.elijahlopez.ca) with repository name `blog`, and use your own description
+1. Web UI fork [blog.elijahlopez.ca](https://github.com/elibroftw/blog.elijahlopez.ca) with repository name `blog` and use your own description
 2. Go to https://github.com/USERNAME/blog/settings/pages
 3. Select the source as your defalt branch name (e.g. master, main)
 4. For folder select "/docs"
