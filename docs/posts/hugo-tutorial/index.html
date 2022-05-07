@@ -282,33 +282,34 @@ If you are like me, you can follow the tutorial that <a href="#forking-my-site">
     </a>
 </span>
 </h2><ol>
-<li><a href="https://gohugo.io/getting-started/installing#binary-cross-platform">Hugo</a></li>
-<li>Make sure <code>hugo</code> is available in the PATH environment variable</li>
-<li>Have <a href="https://git-scm.com/downloads">git</a> installed and available through the command line (in PATH)</li>
+<li><a href="https://gohugo.io/getting-started/installing#binary-cross-platform">Hugo</a> is &ldquo;installed&rdquo; and can be used (test <code>hugo version</code>)</li>
+<li><a href="https://git-scm.com/downloads">git</a> is installed and can be used (test <code>git version</code>)</li>
+<li>If either test fails (i.e. not on PATH), learn from <a href="https://duckduckgo.com/?t=ffab&amp;q=how+to+add+to+path&amp;ia=web">how to add to PATH</a></li>
 </ol>
-<h2 id="forking-my-template" >Forking My Template
+<h2 id="forking-my-blog" >Forking My Blog
 <span>
-    <a href="#forking-my-template">
+    <a href="#forking-my-blog">
         <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
     </a>
 </span>
 </h2><ol>
-<li>Create a GitHub repo <code>USERNAME.github.io</code></li>
-<li>Go to <a href="https://github.com/USERNAME/USERNAME.github.io/settings/pages">https://github.com/USERNAME/USERNAME.github.io/settings/pages</a></li>
+<li>Web UI fork <a href="https://github.com/elibroftw/blog.elijahlopez.ca">blog.elijahlopez.ca</a> with repository name <code>blog</code>, and use your own description</li>
+<li>Go to <a href="https://github.com/USERNAME/blog/settings/pages">https://github.com/USERNAME/blog/settings/pages</a></li>
 <li>Select the source as your defalt branch name (e.g. master, main)</li>
 <li>For folder select &ldquo;/docs&rdquo;</li>
 <li>Click save</li>
-<li>Clone your repo using <code>git clone https://github.com/USERNAME/USERNAME.github.io.git</code> or GitHub desktop</li>
-<li>Download my <a href="https://github.com/elibroftw/hugo-blog-template">blog template</a> as a zip and move everything into your <code>USERNAME.github.io</code> local folder</li>
+<li>Add a custom domain if you want later since it takes 5+ minutes</li>
+<li>Edit the About section in <a href="https://github.com/USERNAME/blog/">https://github.com/USERNAME/blog/</a> and change the website to <code>https://USERNAME.github.io</code> or a domain</li>
+<li>Clone your repo using <code>git clone --recurse-submodules -j8 https://github.com/USERNAME/blog.git</code> or GitHub desktop</li>
 <li>To enable the <code>pre-commit</code> hook, use the command <code>git config core.hookspath .githooks</code> in your repo directory
 <ul>
 <li>The <code>pre-commit</code> hook will auto-update themes and build the site using <code>hugo -d docs</code> before commiting</li>
 </ul>
 </li>
+<li>Delete <code>content/posts</code> and <code>static/images</code></li>
 <li>Edit <code>config.yaml</code> and replace my information with yours</li>
-<li>You can enable the about section by removing the # but make sure to edit the about.md file and optionally remove
-about-subpage.md</li>
-<li>There&rsquo;s a <code>content/posts/guide.md</code> in your repo to help you write, edit, and publish posts</li>
+<li>You can remove # to enable certain features (the about section requires uses <code>content/about.md</code> and <code>content/about-subpage.md</code>)</li>
+<li>Read <code>content/hugo-guide.md</code> in your new repo to help you write, edit, and publish posts</li>
 </ol>
 <h2 id="from-scratch-outdated" >From Scratch (Outdated)
 <span>

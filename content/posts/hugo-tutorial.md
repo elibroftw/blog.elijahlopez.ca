@@ -19,25 +19,26 @@ If you are like me, you can follow the tutorial that [forks my site](#forking-my
 
 ## Prerequisites
 
-1. [Hugo](https://gohugo.io/getting-started/installing#binary-cross-platform)
-2. Make sure `hugo` is available in the PATH environment variable
-3. Have [git](https://git-scm.com/downloads) installed and available through the command line (in PATH)
+1. [Hugo](https://gohugo.io/getting-started/installing#binary-cross-platform) is "installed" and can be used (test `hugo version`)
+2. [git](https://git-scm.com/downloads) is installed and can be used (test `git version`)
+3. If either test fails (i.e. not on PATH), learn from [how to add to PATH](https://duckduckgo.com/?t=ffab&q=how+to+add+to+path&ia=web)
 
-## Forking My Template
+## Forking My Blog
 
-1. Create a GitHub repo `USERNAME.github.io`
-2. Go to https://github.com/USERNAME/USERNAME.github.io/settings/pages
+1. Web UI fork [blog.elijahlopez.ca](https://github.com/elibroftw/blog.elijahlopez.ca) with repository name `blog`, and use your own description
+2. Go to https://github.com/USERNAME/blog/settings/pages
 3. Select the source as your defalt branch name (e.g. master, main)
 4. For folder select "/docs"
 5. Click save
-6. Clone your repo using `git clone https://github.com/USERNAME/USERNAME.github.io.git` or GitHub desktop
-7. Download my [blog template](https://github.com/elibroftw/hugo-blog-template) as a zip and move everything into your `USERNAME.github.io` local folder
-8. To enable the `pre-commit` hook, use the command `git config core.hookspath .githooks` in your repo directory
+6. Add a custom domain if you want later since it takes 5+ minutes
+7. Edit the About section in https://github.com/USERNAME/blog/ and change the website to `https://USERNAME.github.io` or a domain
+8. Clone your repo using `git clone --recurse-submodules -j8 https://github.com/USERNAME/blog.git` or GitHub desktop
+9. To enable the `pre-commit` hook, use the command `git config core.hookspath .githooks` in your repo directory
    - The `pre-commit` hook will auto-update themes and build the site using `hugo -d docs` before commiting
-9. Edit `config.yaml` and replace my information with yours
-10. You can enable the about section by removing the \# but make sure to edit the about.md file and optionally remove
- about-subpage.md
-11. There's a `content/posts/guide.md` in your repo to help you write, edit, and publish posts
+10. Delete `content/posts` and `static/images`
+11. Edit `config.yaml` and replace my information with yours
+12. You can remove \# to enable certain features (the about section requires uses `content/about.md` and `content/about-subpage.md`)
+13. Read `content/hugo-guide.md` in your new repo to help you write, edit, and publish posts
 
 ## From Scratch (Outdated)
 

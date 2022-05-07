@@ -6,10 +6,176 @@
     <description>ELL Blog (markdown)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 17 Dec 2021 22:18:47 -0500</lastBuildDate>
+    <lastBuildDate>Sat, 07 May 2022 17:57:32 -0400</lastBuildDate>
     
     <atom:link href="/tags/markdown/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Hugo Guide</title>
+      <link>/hugo-guide/</link>
+      <pubDate>Sat, 07 May 2022 17:57:32 -0400</pubDate>
+      
+      <guid>/hugo-guide/</guid>
+      <description>&lt;p&gt;DISCLAIMER: If you aren&amp;rsquo;t from my hugo tutorial, please read my &lt;a href=&#34;https://blog.elijahlopez.ca/posts/hugo-tutorial/#prerequisites&#34;&gt;Hugo tutorial&lt;/a&gt;&lt;/p&gt;
+&lt;!-- table of contents --&gt;
+&lt;div&gt;
+    &lt;h2&gt;Table Of Contents&lt;/h2&gt;
+    &lt;nav id=&#34;TableOfContents&#34;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&#34;#new-machine-setup&#34;&gt;New Machine Setup&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#creating-content-eg-a-post&#34;&gt;Creating Content (e.g. a Post)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#images&#34;&gt;Images&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#custom-pages&#34;&gt;Custom Pages&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#link-embeds--shortcodes&#34;&gt;Link Embeds &amp;amp; Shortcodes&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#twitter&#34;&gt;Twitter&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#youtube&#34;&gt;YouTube&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#gfycat&#34;&gt;Gfycat&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#github-gist&#34;&gt;GitHub Gist&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;new-machine-setup&#34; &gt;New Machine Setup
+&lt;span&gt;
+    &lt;a href=&#34;#new-machine-setup&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git clone --recurse-submodules -j8 https://github.com/USERNAME/USERNAME.github.io.git
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;# choose cloned directory&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cd USERNAME.github.io.git
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;# Enable the pre-commit hook&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git config core.hookspath .githooks
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;creating-content-eg-a-post&#34; &gt;Creating Content (e.g. a Post)
+&lt;span&gt;
+    &lt;a href=&#34;#creating-content-eg-a-post&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;In a terminal working in your repo directory, use the command &lt;code&gt;hugo new posts/POST.md&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;&amp;ldquo;POST&amp;rdquo; name is arbitrary&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Open &lt;code&gt;content/posts/POST.md&lt;/code&gt; in a text editor (e.g. VS Code)&lt;/li&gt;
+&lt;li&gt;Edit the metadata fields present and optionally add others found in this file (e.g. tags, hidden)
+&lt;ul&gt;
+&lt;li&gt;I use tags, but categories is also a thing&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;hidden&lt;/code&gt; makes posts unlisted (similar to youtube&amp;rsquo;s unlisted)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;draft&lt;/code&gt; makes posts viewable only if &lt;code&gt;hugo&lt;/code&gt; server/build was told to build drafts&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Here is a &lt;a href=&#34;https://www.markdownguide.org/basic-syntax/&#34;&gt;Markdown Guide&lt;/a&gt; for writing your posts&lt;/li&gt;
+&lt;li&gt;To see your changes locally, run &lt;code&gt;hugo serve -D&lt;/code&gt; and go to &lt;a href=&#34;http://localhost:1313/&#34;&gt;http://localhost:1313/&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;Run once, it will auto-serve any new changes&lt;/li&gt;
+&lt;li&gt;To view this specific guide, go to &lt;a href=&#34;http://localhost:1313/hugo-guide&#34;&gt;http://localhost:1313/hugo-guide&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;To deploy your edits, if you have my pre-commit hook enabled, run &lt;code&gt;git add . &amp;amp;&amp;amp; git commit -m &amp;quot;Created/Edited POST&amp;quot; &amp;amp;&amp;amp; git push&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;I suggest using a GUI like VS Code or GitHub Desktop as there is less typing involved&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;TECHNICAL: The pre-commit hook updates the theme and builds your posts before committing
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git submodule update --remote --merge
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;hugo -d docs
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;images&#34; &gt;Images
+&lt;span&gt;
+    &lt;a href=&#34;#images&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;To embed an image, make sure the image is under the &lt;code&gt;static/images&lt;/code&gt; directory. I organize images based on the post or tag they
+are related to, so I suggest putting the image in &lt;code&gt;static/images/crypto/monero.png&lt;/code&gt; or &lt;code&gt;static/images/about/headshot.png&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;To embed this image, add something like the below.&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-.&#34; data-lang=&#34;.&#34;&gt;![Unity installation screenshot](/images/automate-unity-building/unity-hub.png)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;For aligning images, you can check out &lt;a href=&#34;https://davidwells.io/snippets/how-to-align-images-in-markdown&#34;&gt;https://davidwells.io/snippets/how-to-align-images-in-markdown&lt;/a&gt; and &lt;a href=&#34;https://stackoverflow.com/questions/255170/markdown-and-image-alignment&#34;&gt;https://stackoverflow.com/questions/255170/markdown-and-image-alignment&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;custom-pages&#34; &gt;Custom Pages
+&lt;span&gt;
+    &lt;a href=&#34;#custom-pages&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;Pages such as &lt;a href=&#34;/about&#34;&gt;/about&lt;/a&gt; can be added by editing your config.yaml like below and using &lt;code&gt;hugo new page.md&lt;/code&gt;&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-.&#34; data-lang=&#34;.&#34;&gt;menu:
+  main:
+  ...
+  - identifier: about
+    name: About
+    title: About
+    url: /about/
+    weight: 0
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;link-embeds--shortcodes&#34; &gt;Link Embeds &amp;amp; Shortcodes
+&lt;span&gt;
+    &lt;a href=&#34;#link-embeds--shortcodes&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;For those times where embedding links makes a better point than simply posting them, we can do use hugo shortcodes.
+Here are some common ones I use. For more, you can search google or something &amp;ldquo;Hugo SERVICE shortcode.&amp;rdquo;&lt;/p&gt;
+&lt;h3 id=&#34;twitter&#34; &gt;Twitter
+&lt;span&gt;
+    &lt;a href=&#34;#twitter&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;From &lt;a href=&#34;https://twitter.com/MPelletierCIO/status/1522704947556483073&#34;&gt;https://twitter.com/MPelletierCIO/status/1522704947556483073&lt;/a&gt;.
+We need the username and the status id:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-.&#34; data-lang=&#34;.&#34;&gt;&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;To American followers, you absolutely have to see this. &lt;a href=&#34;https://t.co/JvJELoDHAy&#34;&gt;pic.twitter.com/JvJELoDHAy&lt;/a&gt;&lt;/p&gt;&amp;mdash; Martin Pelletier (@MPelletierCIO) &lt;a href=&#34;https://twitter.com/MPelletierCIO/status/1522704947556483073?ref_src=twsrc%5Etfw&#34;&gt;May 6, 2022&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;To American followers, you absolutely have to see this. &lt;a href=&#34;https://t.co/JvJELoDHAy&#34;&gt;pic.twitter.com/JvJELoDHAy&lt;/a&gt;&lt;/p&gt;&amp;mdash; Martin Pelletier (@MPelletierCIO) &lt;a href=&#34;https://twitter.com/MPelletierCIO/status/1522704947556483073?ref_src=twsrc%5Etfw&#34;&gt;May 6, 2022&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+
+&lt;h3 id=&#34;youtube&#34; &gt;YouTube
+&lt;span&gt;
+    &lt;a href=&#34;#youtube&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;An old video of mine &lt;a href=&#34;https://www.youtube.com/watch?v=rtSR9ySQ5h4&#34;&gt;https://www.youtube.com/watch?v=rtSR9ySQ5h4&lt;/a&gt; or &lt;a href=&#34;https://youtu.be/rtSR9ySQ5h4&#34;&gt;https://youtu.be/rtSR9ySQ5h4&lt;/a&gt;.
+We just need the video id.&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-.&#34; data-lang=&#34;.&#34;&gt;
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/rtSR9ySQ5h4&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/rtSR9ySQ5h4&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&#34;gfycat&#34; &gt;Gfycat
+&lt;span&gt;
+    &lt;a href=&#34;#gfycat&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;This one is a custom shortcode, but we just need the id of the gfycat link.&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-.&#34; data-lang=&#34;.&#34;&gt;&lt;div style=&#39;position:relative;padding-bottom:calc(100% / 1.78)&#39;&gt;&lt;iframe src=&#39;https://gfycat.com/ifr/arcticbigheartedaddax&#39; frameborder=&#39;0&#39; scrolling=&#39;no&#39; width=&#39;100%&#39; height=&#39;100%&#39; style=&#39;position:absolute;top:0;left:0;&#39; allowfullscreen&gt;&lt;/iframe&gt;&lt;/div&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;div style=&#39;position:relative;padding-bottom:calc(100% / 1.78)&#39;&gt;&lt;iframe src=&#39;https://gfycat.com/ifr/arcticbigheartedaddax&#39; frameborder=&#39;0&#39; scrolling=&#39;no&#39; width=&#39;100%&#39; height=&#39;100%&#39; style=&#39;position:absolute;top:0;left:0;&#39; allowfullscreen&gt;&lt;/iframe&gt;&lt;/div&gt;
+
+&lt;h3 id=&#34;github-gist&#34; &gt;GitHub Gist
+&lt;span&gt;
+    &lt;a href=&#34;#github-gist&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-.&#34; data-lang=&#34;.&#34;&gt;&lt;script type=&#34;application/javascript&#34; src=&#34;https://gist.github.com/elibroftw/1a94149a2f6232d062b666c4ee9ea530.js&#34;&gt;&lt;/script&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;script type=&#34;application/javascript&#34; src=&#34;https://gist.github.com/elibroftw/1a94149a2f6232d062b666c4ee9ea530.js&#34;&gt;&lt;/script&gt;
+
+</description>
+    </item>
     
     <item>
       <title>Creating a Blog With GitHub Pages and Hugo</title>
@@ -28,33 +194,34 @@ If you are like me, you can follow the tutorial that &lt;a href=&#34;#forking-my
     &lt;/a&gt;
 &lt;/span&gt;
 &lt;/h2&gt;&lt;ol&gt;
-&lt;li&gt;&lt;a href=&#34;https://gohugo.io/getting-started/installing#binary-cross-platform&#34;&gt;Hugo&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Make sure &lt;code&gt;hugo&lt;/code&gt; is available in the PATH environment variable&lt;/li&gt;
-&lt;li&gt;Have &lt;a href=&#34;https://git-scm.com/downloads&#34;&gt;git&lt;/a&gt; installed and available through the command line (in PATH)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://gohugo.io/getting-started/installing#binary-cross-platform&#34;&gt;Hugo&lt;/a&gt; is &amp;ldquo;installed&amp;rdquo; and can be used (test &lt;code&gt;hugo version&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://git-scm.com/downloads&#34;&gt;git&lt;/a&gt; is installed and can be used (test &lt;code&gt;git version&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;If either test fails (i.e. not on PATH), learn from &lt;a href=&#34;https://duckduckgo.com/?t=ffab&amp;amp;q=how+to+add+to+path&amp;amp;ia=web&#34;&gt;how to add to PATH&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h2 id=&#34;forking-my-template&#34; &gt;Forking My Template
+&lt;h2 id=&#34;forking-my-blog&#34; &gt;Forking My Blog
 &lt;span&gt;
-    &lt;a href=&#34;#forking-my-template&#34;&gt;
+    &lt;a href=&#34;#forking-my-blog&#34;&gt;
         &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
     &lt;/a&gt;
 &lt;/span&gt;
 &lt;/h2&gt;&lt;ol&gt;
-&lt;li&gt;Create a GitHub repo &lt;code&gt;USERNAME.github.io&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Go to &lt;a href=&#34;https://github.com/USERNAME/USERNAME.github.io/settings/pages&#34;&gt;https://github.com/USERNAME/USERNAME.github.io/settings/pages&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Web UI fork &lt;a href=&#34;https://github.com/elibroftw/blog.elijahlopez.ca&#34;&gt;blog.elijahlopez.ca&lt;/a&gt; with repository name &lt;code&gt;blog&lt;/code&gt;, and use your own description&lt;/li&gt;
+&lt;li&gt;Go to &lt;a href=&#34;https://github.com/USERNAME/blog/settings/pages&#34;&gt;https://github.com/USERNAME/blog/settings/pages&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Select the source as your defalt branch name (e.g. master, main)&lt;/li&gt;
 &lt;li&gt;For folder select &amp;ldquo;/docs&amp;rdquo;&lt;/li&gt;
 &lt;li&gt;Click save&lt;/li&gt;
-&lt;li&gt;Clone your repo using &lt;code&gt;git clone https://github.com/USERNAME/USERNAME.github.io.git&lt;/code&gt; or GitHub desktop&lt;/li&gt;
-&lt;li&gt;Download my &lt;a href=&#34;https://github.com/elibroftw/hugo-blog-template&#34;&gt;blog template&lt;/a&gt; as a zip and move everything into your &lt;code&gt;USERNAME.github.io&lt;/code&gt; local folder&lt;/li&gt;
+&lt;li&gt;Add a custom domain if you want later since it takes 5+ minutes&lt;/li&gt;
+&lt;li&gt;Edit the About section in &lt;a href=&#34;https://github.com/USERNAME/blog/&#34;&gt;https://github.com/USERNAME/blog/&lt;/a&gt; and change the website to &lt;code&gt;https://USERNAME.github.io&lt;/code&gt; or a domain&lt;/li&gt;
+&lt;li&gt;Clone your repo using &lt;code&gt;git clone --recurse-submodules -j8 https://github.com/USERNAME/blog.git&lt;/code&gt; or GitHub desktop&lt;/li&gt;
 &lt;li&gt;To enable the &lt;code&gt;pre-commit&lt;/code&gt; hook, use the command &lt;code&gt;git config core.hookspath .githooks&lt;/code&gt; in your repo directory
 &lt;ul&gt;
 &lt;li&gt;The &lt;code&gt;pre-commit&lt;/code&gt; hook will auto-update themes and build the site using &lt;code&gt;hugo -d docs&lt;/code&gt; before commiting&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
+&lt;li&gt;Delete &lt;code&gt;content/posts&lt;/code&gt; and &lt;code&gt;static/images&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;Edit &lt;code&gt;config.yaml&lt;/code&gt; and replace my information with yours&lt;/li&gt;
-&lt;li&gt;You can enable the about section by removing the # but make sure to edit the about.md file and optionally remove
-about-subpage.md&lt;/li&gt;
-&lt;li&gt;There&amp;rsquo;s a &lt;code&gt;content/posts/guide.md&lt;/code&gt; in your repo to help you write, edit, and publish posts&lt;/li&gt;
+&lt;li&gt;You can remove # to enable certain features (the about section requires uses &lt;code&gt;content/about.md&lt;/code&gt; and &lt;code&gt;content/about-subpage.md&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;Read &lt;code&gt;content/hugo-guide.md&lt;/code&gt; in your new repo to help you write, edit, and publish posts&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id=&#34;from-scratch-outdated&#34; &gt;From Scratch (Outdated)
 &lt;span&gt;

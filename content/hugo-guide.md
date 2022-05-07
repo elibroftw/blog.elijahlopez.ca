@@ -1,7 +1,7 @@
 ---
 title: "Hugo Guide"
 date: 2022-05-07T17:57:32-04:00
-draft: true
+draft: false
 tags: [
     "tutorial",
     "hugo",
@@ -11,6 +11,22 @@ tags: [
 ]
 hidden: false
 ---
+
+DISCLAIMER: If you aren't from my hugo tutorial, please read my [Hugo tutorial](https://blog.elijahlopez.ca/posts/hugo-tutorial/#prerequisites)
+
+<!-- table of contents -->
+
+{{< toc >}}
+
+## New Machine Setup
+
+```bash
+git clone --recurse-submodules -j8 https://github.com/USERNAME/USERNAME.github.io.git
+# choose cloned directory
+cd USERNAME.github.io.git
+# Enable the pre-commit hook
+git config core.hookspath .githooks
+```
 
 ## Creating Content (e.g. a Post)
 
@@ -24,6 +40,7 @@ hidden: false
 4. Here is a [Markdown Guide](https://www.markdownguide.org/basic-syntax/) for writing your posts
 5. To see your changes locally, run `hugo serve -D` and go to [http://localhost:1313/](http://localhost:1313/)
     - Run once, it will auto-serve any new changes
+    - To view this specific guide, go to [http://localhost:1313/hugo-guide](http://localhost:1313/hugo-guide)
 6. To deploy your edits, if you have my pre-commit hook enabled, run `git add . && git commit -m "Created/Edited POST" && git push`
     - I suggest using a GUI like VS Code or GitHub Desktop as there is less typing involved
 7. TECHNICAL: The pre-commit hook updates the theme and builds your posts before committing
@@ -44,6 +61,21 @@ To embed this image, add something like the below.
 ```
 
 For aligning images, you can check out https://davidwells.io/snippets/how-to-align-images-in-markdown and https://stackoverflow.com/questions/255170/markdown-and-image-alignment.
+
+## Custom Pages
+
+Pages such as [/about](/about) can be added by editing your config.yaml like below and using `hugo new page.md`
+
+```.
+menu:
+  main:
+  ...
+  - identifier: about
+    name: About
+    title: About
+    url: /about/
+    weight: 0
+```
 
 ## Link Embeds & Shortcodes
 

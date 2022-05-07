@@ -1593,33 +1593,34 @@ If you are like me, you can follow the tutorial that &lt;a href=&#34;#forking-my
     &lt;/a&gt;
 &lt;/span&gt;
 &lt;/h2&gt;&lt;ol&gt;
-&lt;li&gt;&lt;a href=&#34;https://gohugo.io/getting-started/installing#binary-cross-platform&#34;&gt;Hugo&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Make sure &lt;code&gt;hugo&lt;/code&gt; is available in the PATH environment variable&lt;/li&gt;
-&lt;li&gt;Have &lt;a href=&#34;https://git-scm.com/downloads&#34;&gt;git&lt;/a&gt; installed and available through the command line (in PATH)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://gohugo.io/getting-started/installing#binary-cross-platform&#34;&gt;Hugo&lt;/a&gt; is &amp;ldquo;installed&amp;rdquo; and can be used (test &lt;code&gt;hugo version&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://git-scm.com/downloads&#34;&gt;git&lt;/a&gt; is installed and can be used (test &lt;code&gt;git version&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;If either test fails (i.e. not on PATH), learn from &lt;a href=&#34;https://duckduckgo.com/?t=ffab&amp;amp;q=how+to+add+to+path&amp;amp;ia=web&#34;&gt;how to add to PATH&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h2 id=&#34;forking-my-template&#34; &gt;Forking My Template
+&lt;h2 id=&#34;forking-my-blog&#34; &gt;Forking My Blog
 &lt;span&gt;
-    &lt;a href=&#34;#forking-my-template&#34;&gt;
+    &lt;a href=&#34;#forking-my-blog&#34;&gt;
         &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
     &lt;/a&gt;
 &lt;/span&gt;
 &lt;/h2&gt;&lt;ol&gt;
-&lt;li&gt;Create a GitHub repo &lt;code&gt;USERNAME.github.io&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Go to &lt;a href=&#34;https://github.com/USERNAME/USERNAME.github.io/settings/pages&#34;&gt;https://github.com/USERNAME/USERNAME.github.io/settings/pages&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Web UI fork &lt;a href=&#34;https://github.com/elibroftw/blog.elijahlopez.ca&#34;&gt;blog.elijahlopez.ca&lt;/a&gt; with repository name &lt;code&gt;blog&lt;/code&gt;, and use your own description&lt;/li&gt;
+&lt;li&gt;Go to &lt;a href=&#34;https://github.com/USERNAME/blog/settings/pages&#34;&gt;https://github.com/USERNAME/blog/settings/pages&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Select the source as your defalt branch name (e.g. master, main)&lt;/li&gt;
 &lt;li&gt;For folder select &amp;ldquo;/docs&amp;rdquo;&lt;/li&gt;
 &lt;li&gt;Click save&lt;/li&gt;
-&lt;li&gt;Clone your repo using &lt;code&gt;git clone https://github.com/USERNAME/USERNAME.github.io.git&lt;/code&gt; or GitHub desktop&lt;/li&gt;
-&lt;li&gt;Download my &lt;a href=&#34;https://github.com/elibroftw/hugo-blog-template&#34;&gt;blog template&lt;/a&gt; as a zip and move everything into your &lt;code&gt;USERNAME.github.io&lt;/code&gt; local folder&lt;/li&gt;
+&lt;li&gt;Add a custom domain if you want later since it takes 5+ minutes&lt;/li&gt;
+&lt;li&gt;Edit the About section in &lt;a href=&#34;https://github.com/USERNAME/blog/&#34;&gt;https://github.com/USERNAME/blog/&lt;/a&gt; and change the website to &lt;code&gt;https://USERNAME.github.io&lt;/code&gt; or a domain&lt;/li&gt;
+&lt;li&gt;Clone your repo using &lt;code&gt;git clone --recurse-submodules -j8 https://github.com/USERNAME/blog.git&lt;/code&gt; or GitHub desktop&lt;/li&gt;
 &lt;li&gt;To enable the &lt;code&gt;pre-commit&lt;/code&gt; hook, use the command &lt;code&gt;git config core.hookspath .githooks&lt;/code&gt; in your repo directory
 &lt;ul&gt;
 &lt;li&gt;The &lt;code&gt;pre-commit&lt;/code&gt; hook will auto-update themes and build the site using &lt;code&gt;hugo -d docs&lt;/code&gt; before commiting&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
+&lt;li&gt;Delete &lt;code&gt;content/posts&lt;/code&gt; and &lt;code&gt;static/images&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;Edit &lt;code&gt;config.yaml&lt;/code&gt; and replace my information with yours&lt;/li&gt;
-&lt;li&gt;You can enable the about section by removing the # but make sure to edit the about.md file and optionally remove
-about-subpage.md&lt;/li&gt;
-&lt;li&gt;There&amp;rsquo;s a &lt;code&gt;content/posts/guide.md&lt;/code&gt; in your repo to help you write, edit, and publish posts&lt;/li&gt;
+&lt;li&gt;You can remove # to enable certain features (the about section requires uses &lt;code&gt;content/about.md&lt;/code&gt; and &lt;code&gt;content/about-subpage.md&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;Read &lt;code&gt;content/hugo-guide.md&lt;/code&gt; in your new repo to help you write, edit, and publish posts&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id=&#34;from-scratch-outdated&#34; &gt;From Scratch (Outdated)
 &lt;span&gt;
