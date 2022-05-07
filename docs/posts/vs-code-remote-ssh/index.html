@@ -80,7 +80,7 @@ Keep track of where the key is stored.">
     
 
     
-        <script src="/js/script.min.510c781c39dbb21b4c76d85c82e2bdf4689220adbb7cd61e49e9d293e442fb42.js" type="text/javascript" charset="utf-8" integrity="sha256-UQx4HDnbshtMdthcguK99GiSIK27fNYeSenSk&#43;RC&#43;0I="></script>
+        <script src="/js/script.min.a65afe903825231554d9b55b073eb144da4ccf2d2823b216dcbc6cc656c9de76.js" type="text/javascript" charset="utf-8" integrity="sha256-plr&#43;kDglIxVU2bVbBz6xRNpMzy0oI7IW3LxsxlbJ3nY="></script>
     
 
 
@@ -254,6 +254,8 @@ Keep track of where the key is stored."/>
         
         <a class="" href="/" title="Home">Home</a>
         
+        <a class="" href="/about/" title="About">About</a>
+        
         <a class="" href="/posts/" title="Archive">Archive</a>
         
         <a class="" href="/tags/" title="Tags">Tags</a>
@@ -302,11 +304,11 @@ This will be useful when configuring the Remote-SSH VSCode extension.</p>
         <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
     </a>
 </span>
-</h3><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">ssh-copy-id -i path/to/file/if/not/default user@host
-<span style="color:#0f0"># Examples</span>
-ssh-copy-id -i .ssh/id_ed25519.pub user@host
-ssh-copy-id -i /mnt/c/Users/maste/.ssh/id_ed25519.pub user@host
-</code></pre></div><p>If you&rsquo;re having trouble with this, just <code>cd</code> into the <code>.ssh</code> folder and use <code>-i id_ed25519.pub</code></p>
+</h3><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>ssh-copy-id -i path/to/file/if/not/default user@host
+</span></span><span style="display:flex;"><span><span style="color:#0f0"># Examples</span>
+</span></span><span style="display:flex;"><span>ssh-copy-id -i .ssh/id_ed25519.pub user@host
+</span></span><span style="display:flex;"><span>ssh-copy-id -i /mnt/c/Users/maste/.ssh/id_ed25519.pub user@host
+</span></span></code></pre></div><p>If you&rsquo;re having trouble with this, just <code>cd</code> into the <code>.ssh</code> folder and use <code>-i id_ed25519.pub</code></p>
 <h3 id="windows-no-wsl" >Windows no WSL
 <span>
     <a href="#windows-no-wsl">
@@ -314,9 +316,9 @@ ssh-copy-id -i /mnt/c/Users/maste/.ssh/id_ed25519.pub user@host
     </a>
 </span>
 </h3><p>If you&rsquo;re on Windows, you won&rsquo;t have access to <code>ssh-copy-id</code>. Instead you can use either of these PowerShell command.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">type path\to\id_algo.pub | ssh user<span style="color:#eedd82">@host</span> <span style="color:#87ceeb">&#34;cat &gt;&gt; .ssh/authorized_keys&#34;</span>
-<span style="color:#0f0"># helper: type $env:USERPROFILE\.ssh\id_ed25519.pub | ssh user@host &#34;cat &gt;&gt; .ssh/authorized_keys&#34;</span>
-</code></pre></div><h2 id="setting-up-vs-code" >Setting up VS Code
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>type path\to\id_algo.pub | ssh user<span style="color:#eedd82">@host</span> <span style="color:#87ceeb">&#34;cat &gt;&gt; .ssh/authorized_keys&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#0f0"># helper: type $env:USERPROFILE\.ssh\id_ed25519.pub | ssh user@host &#34;cat &gt;&gt; .ssh/authorized_keys&#34;</span>
+</span></span></code></pre></div><h2 id="setting-up-vs-code" >Setting up VS Code
 <span>
     <a href="#setting-up-vs-code">
         <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
@@ -334,12 +336,12 @@ ssh-copy-id -i /mnt/c/Users/maste/.ssh/id_ed25519.pub user@host
 </li>
 <li>
 <p>Enter the information for your remote server(s). Here is mine for reference. I had to comment out publickey.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">Host uWaterloo
-  User e5lopez
-  HostName linux.student.cs.uwaterloo.ca
-  IdentityFile <span style="color:#87ceeb">&#34;C:\Users\maste\.ssh\id_ed25519&#34;</span>
-  <span style="color:#0f0"># PreferredAuthentications publickey</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>Host uWaterloo
+</span></span><span style="display:flex;"><span>  User e5lopez
+</span></span><span style="display:flex;"><span>  HostName linux.student.cs.uwaterloo.ca
+</span></span><span style="display:flex;"><span>  IdentityFile <span style="color:#87ceeb">&#34;C:\Users\maste\.ssh\id_ed25519&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#0f0"># PreferredAuthentications publickey</span>
+</span></span></code></pre></div></li>
 <li>
 <p>From the command palette, use &ldquo;Remote-SSH: Connect Current Window to Host&hellip;&rdquo; and select the host you just added</p>
 </li>

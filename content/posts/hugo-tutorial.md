@@ -23,26 +23,32 @@ If you are like me, you can follow the tutorial that [forks my site](#forking-my
 2. Make sure `hugo` is available in the PATH environment variable
 3. Have [git](https://git-scm.com/downloads) installed and available through the command line (in PATH)
 
-## Forking My Site
+## Forking My Template
 
-1. Fork [my repository](https://github.com/elibroftw/elibroftw.github.io) into `/USERNAME.github.io`
-2. Edit `config.yaml` and replace my information with yours
-3. Use the command `hugo new posts/POST.md` to create your posts
-4. Take a look at my posts in `content/posts` before deleting them because they use tags, categories, aliases, allow unlisted posts, and make use of \<img /> tags
-5. To enable the `pre-commit` hook, use the command `git config core.hookspath .githooks`
-6. The `pre-commit` hook will auto-update themes and build the site using `hugo -d docs` before commiting
-7. You may need to set the serve folder to `docs` instead of `/` under `https://github.com/USERNAME/USERNAME.github.io/settings/pages`
+1. Create a GitHub repo `USERNAME.github.io`
+2. Go to https://github.com/USERNAME/USERNAME.github.io/settings/pages
+3. Select the source as your defalt branch name (e.g. master, main)
+4. For folder select "/docs"
+5. Click save
+6. Clone your repo using `git clone https://github.com/USERNAME/USERNAME.github.io.git` or GitHub desktop
+7. Download my [blog template](https://github.com/elibroftw/hugo-blog-template) as a zip and move everything into your `USERNAME.github.io` local folder
+8. To enable the `pre-commit` hook, use the command `git config core.hookspath .githooks` in your repo directory
+   - The `pre-commit` hook will auto-update themes and build the site using `hugo -d docs` before commiting
+9. Edit `config.yaml` and replace my information with yours
+10. You can enable the about section by removing the \# but make sure to edit the about.md file and optionally remove
+ about-subpage.md
+11. There's a `content/posts/guide.md` in your repo to help you write, edit, and publish posts
 
-## From Scratch
+## From Scratch (Outdated)
 
 1. Create a `USERNAME.github.io` repository in GitHub
 2. Clone the repository
-3. Get the GitHub link for a theme from https://themes.gohugo.io/
+3. Get the GitHub link for a [theme](https://themes.gohugo.io/)
 4. Add the theme using `git submodule add GitHubURL.git themes/themeName`
 5. Read the theme instructions for basic configuration (i.e. `config.yaml` or `config.toml`)
 6. Edit `config.yaml` or `config.toml`
 7. Use `hugo new content/posts/POST.md` to create a new post
-8. Use `hugo serve -D` when drafting the post
+8. Use `hugo serve -D` when drafting the post and see your changes at [http://localhost:1313/](http://localhost:1313/)
 9. Set `draft: false` after you are done drafting a post
 10. Use `hugo -d docs` when you are ready to push your website
 11. Commit and push to origin (GitHub)
