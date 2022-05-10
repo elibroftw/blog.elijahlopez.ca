@@ -2,6 +2,11 @@
 title: "XMR-Btc Atomic Swap ASB"
 date: 2022-05-10T17:07:56-04:00
 draft: false
+tags: [
+    "monero",
+    "bitcoin",
+    "cryptocurrency",
+]
 ---
 
 A tutorial made for myself, not really others because
