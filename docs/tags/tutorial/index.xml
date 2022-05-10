@@ -46,13 +46,13 @@
     &lt;/a&gt;
 &lt;/span&gt;
 &lt;/h2&gt;&lt;p&gt;In case you want to blog on a new device, here are the commands to set yourself up.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;# replace USERNAME/blog with your username and blog repo name&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git clone --recurse-submodules -j8 https://github.com/USERNAME/blog.git
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;# choose cloned directory&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cd blog
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;# Enable the pre-commit hook&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git config core.hookspath .githooks
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;creating-content-eg-a-post&#34; &gt;Creating Content (e.g. a Post)
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;color:#0f0&#34;&gt;# replace USERNAME/blog with your username and blog repo name&lt;/span&gt;
+git clone --recurse-submodules -j8 https://github.com/USERNAME/blog.git
+&lt;span style=&#34;color:#0f0&#34;&gt;# choose cloned directory&lt;/span&gt;
+cd blog
+&lt;span style=&#34;color:#0f0&#34;&gt;# Enable the pre-commit hook&lt;/span&gt;
+git config core.hookspath .githooks
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;creating-content-eg-a-post&#34; &gt;Creating Content (e.g. a Post)
 &lt;span&gt;
     &lt;a href=&#34;#creating-content-eg-a-post&#34;&gt;
         &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
@@ -85,9 +85,9 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;TECHNICAL: The pre-commit hook updates the theme and builds your posts before committing
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git submodule update --remote --merge
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;hugo -d docs
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;git submodule update --remote --merge
+hugo -d docs
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id=&#34;images&#34; &gt;Images
 &lt;span&gt;
@@ -225,10 +225,10 @@ you make a stagenet wallet if you have already used a mainnet wallet.&lt;/p&gt;
         &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
     &lt;/a&gt;
 &lt;/span&gt;
-&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;monero-wallet-cli --stagenet --daemon-address=http://stagenet.xmr-tw.org:38081 --untrusted-daemon
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Enter wallet name: stagenet_one
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;For the next input: y
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;open-wallet-from-gui&#34; &gt;Open Wallet from GUI
+&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;monero-wallet-cli --stagenet --daemon-address=http://stagenet.xmr-tw.org:38081 --untrusted-daemon
+Enter wallet name: stagenet_one
+For the next input: y
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;open-wallet-from-gui&#34; &gt;Open Wallet from GUI
 &lt;span&gt;
     &lt;a href=&#34;#open-wallet-from-gui&#34;&gt;
         &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
@@ -267,41 +267,41 @@ any non-scripting language like C/C++ or Python.&lt;/p&gt;
 &lt;li&gt;Conditionals (if, elif, else, AND &amp;amp;&amp;amp;, OR ||)&lt;/li&gt;
 &lt;li&gt;For loop&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#eedd82&#34;&gt;supplied_arg&lt;/span&gt;=&lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;default&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;# iterate all arguments&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f00&#34;&gt;for&lt;/span&gt; arg in &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#eedd82&#34;&gt;$@&lt;/span&gt;&lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;&lt;/span&gt;; &lt;span style=&#34;color:#f00&#34;&gt;do&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#0f0&#34;&gt;# use [[ ]] to avoid double quoting variables&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f00&#34;&gt;if&lt;/span&gt; [[ &lt;span style=&#34;color:#eedd82&#34;&gt;$last_arg&lt;/span&gt; = &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;--supply&amp;#34;&lt;/span&gt; ]]; &lt;span style=&#34;color:#f00&#34;&gt;then&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#eedd82&#34;&gt;supplied_arg&lt;/span&gt;=&lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#eedd82&#34;&gt;$arg&lt;/span&gt;&lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#eedd82&#34;&gt;last_arg&lt;/span&gt;=&lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#0f0&#34;&gt;# OR ||&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f00&#34;&gt;elif&lt;/span&gt; [[ &lt;span style=&#34;color:#eedd82&#34;&gt;$arg&lt;/span&gt; = &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;--flag1&amp;#34;&lt;/span&gt; ]] || [[ &lt;span style=&#34;color:#eedd82&#34;&gt;$arg&lt;/span&gt; = &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;--flag&amp;#34;&lt;/span&gt; ]]; &lt;span style=&#34;color:#f00&#34;&gt;then&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#eedd82&#34;&gt;flag1&lt;/span&gt;=true
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#0f0&#34;&gt;# elif, AND &amp;amp;&amp;amp;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f00&#34;&gt;elif&lt;/span&gt; [[ &lt;span style=&#34;color:#eedd82&#34;&gt;$arg&lt;/span&gt; = &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;--override&amp;#34;&lt;/span&gt; ]] &amp;amp;&amp;amp; [[ ! &lt;span style=&#34;color:#eedd82&#34;&gt;$supplied_arg&lt;/span&gt; = &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;default&amp;#34;&lt;/span&gt; ]]; &lt;span style=&#34;color:#f00&#34;&gt;then&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#0f0&#34;&gt;# ignore the redundancy, this is to showcase &amp;amp;&amp;amp;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#eedd82&#34;&gt;flag_override&lt;/span&gt;=true
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f00&#34;&gt;else&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#0f0&#34;&gt;# you can do something with these args here&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#0f0&#34;&gt;# wc -l &amp;#34;$arg&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#0f0&#34;&gt;# or you can set last_arg in order to parse `--something ARG`&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#eedd82&#34;&gt;last_arg&lt;/span&gt;=&lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#eedd82&#34;&gt;$arg&lt;/span&gt;&lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#0f0&#34;&gt;# end of if statement&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f00&#34;&gt;fi&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;# done loop (for or while)&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f00&#34;&gt;done&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;# check if flag supplied&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f00&#34;&gt;if&lt;/span&gt; [ &lt;span style=&#34;color:#eedd82&#34;&gt;flag1&lt;/span&gt; = true]; &lt;span style=&#34;color:#f00&#34;&gt;then&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    echo &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;got --flag1 or --flag&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f00&#34;&gt;else&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#eedd82&#34;&gt;notGot&lt;/span&gt;=&lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;got neither --flag1 nor --flag&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f00&#34;&gt;fi&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;# flag not supplied (since variable was never set, we check ! = true rather than = false)&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f00&#34;&gt;if&lt;/span&gt; [ ! &lt;span style=&#34;color:#eedd82&#34;&gt;flag1&lt;/span&gt; = true ]; &lt;span style=&#34;color:#f00&#34;&gt;then&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    echo &lt;span style=&#34;color:#eedd82&#34;&gt;$notGot&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f00&#34;&gt;fi&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;linux---add-to-path&#34; &gt;Linux - Add to PATH
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;color:#eedd82&#34;&gt;supplied_arg&lt;/span&gt;=&lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;default&amp;#34;&lt;/span&gt;
+&lt;span style=&#34;color:#0f0&#34;&gt;# iterate all arguments&lt;/span&gt;
+&lt;span style=&#34;color:#f00&#34;&gt;for&lt;/span&gt; arg in &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#eedd82&#34;&gt;$@&lt;/span&gt;&lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;&lt;/span&gt;; &lt;span style=&#34;color:#f00&#34;&gt;do&lt;/span&gt;
+    &lt;span style=&#34;color:#0f0&#34;&gt;# use [[ ]] to avoid double quoting variables&lt;/span&gt;
+    &lt;span style=&#34;color:#f00&#34;&gt;if&lt;/span&gt; [[ &lt;span style=&#34;color:#eedd82&#34;&gt;$last_arg&lt;/span&gt; = &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;--supply&amp;#34;&lt;/span&gt; ]]; &lt;span style=&#34;color:#f00&#34;&gt;then&lt;/span&gt;
+        &lt;span style=&#34;color:#eedd82&#34;&gt;supplied_arg&lt;/span&gt;=&lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#eedd82&#34;&gt;$arg&lt;/span&gt;&lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;&lt;/span&gt;
+        &lt;span style=&#34;color:#eedd82&#34;&gt;last_arg&lt;/span&gt;=&lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;
+    &lt;span style=&#34;color:#0f0&#34;&gt;# OR ||&lt;/span&gt;
+    &lt;span style=&#34;color:#f00&#34;&gt;elif&lt;/span&gt; [[ &lt;span style=&#34;color:#eedd82&#34;&gt;$arg&lt;/span&gt; = &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;--flag1&amp;#34;&lt;/span&gt; ]] || [[ &lt;span style=&#34;color:#eedd82&#34;&gt;$arg&lt;/span&gt; = &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;--flag&amp;#34;&lt;/span&gt; ]]; &lt;span style=&#34;color:#f00&#34;&gt;then&lt;/span&gt;
+        &lt;span style=&#34;color:#eedd82&#34;&gt;flag1&lt;/span&gt;=true
+    &lt;span style=&#34;color:#0f0&#34;&gt;# elif, AND &amp;amp;&amp;amp;&lt;/span&gt;
+    &lt;span style=&#34;color:#f00&#34;&gt;elif&lt;/span&gt; [[ &lt;span style=&#34;color:#eedd82&#34;&gt;$arg&lt;/span&gt; = &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;--override&amp;#34;&lt;/span&gt; ]] &amp;amp;&amp;amp; [[ ! &lt;span style=&#34;color:#eedd82&#34;&gt;$supplied_arg&lt;/span&gt; = &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;default&amp;#34;&lt;/span&gt; ]]; &lt;span style=&#34;color:#f00&#34;&gt;then&lt;/span&gt;
+        &lt;span style=&#34;color:#0f0&#34;&gt;# ignore the redundancy, this is to showcase &amp;amp;&amp;amp;&lt;/span&gt;
+        &lt;span style=&#34;color:#eedd82&#34;&gt;flag_override&lt;/span&gt;=true
+    &lt;span style=&#34;color:#f00&#34;&gt;else&lt;/span&gt;
+        &lt;span style=&#34;color:#0f0&#34;&gt;# you can do something with these args here&lt;/span&gt;
+        &lt;span style=&#34;color:#0f0&#34;&gt;# wc -l &amp;#34;$arg&amp;#34;&lt;/span&gt;
+        &lt;span style=&#34;color:#0f0&#34;&gt;# or you can set last_arg in order to parse `--something ARG`&lt;/span&gt;
+        &lt;span style=&#34;color:#eedd82&#34;&gt;last_arg&lt;/span&gt;=&lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#eedd82&#34;&gt;$arg&lt;/span&gt;&lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;&lt;/span&gt;
+    &lt;span style=&#34;color:#0f0&#34;&gt;# end of if statement&lt;/span&gt;
+    &lt;span style=&#34;color:#f00&#34;&gt;fi&lt;/span&gt;
+&lt;span style=&#34;color:#0f0&#34;&gt;# done loop (for or while)&lt;/span&gt;
+&lt;span style=&#34;color:#f00&#34;&gt;done&lt;/span&gt;
+
+&lt;span style=&#34;color:#0f0&#34;&gt;# check if flag supplied&lt;/span&gt;
+&lt;span style=&#34;color:#f00&#34;&gt;if&lt;/span&gt; [ &lt;span style=&#34;color:#eedd82&#34;&gt;flag1&lt;/span&gt; = true]; &lt;span style=&#34;color:#f00&#34;&gt;then&lt;/span&gt;
+    echo &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;got --flag1 or --flag&amp;#34;&lt;/span&gt;
+&lt;span style=&#34;color:#f00&#34;&gt;else&lt;/span&gt;
+    &lt;span style=&#34;color:#eedd82&#34;&gt;notGot&lt;/span&gt;=&lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;got neither --flag1 nor --flag&amp;#34;&lt;/span&gt;
+&lt;span style=&#34;color:#f00&#34;&gt;fi&lt;/span&gt;
+&lt;span style=&#34;color:#0f0&#34;&gt;# flag not supplied (since variable was never set, we check ! = true rather than = false)&lt;/span&gt;
+&lt;span style=&#34;color:#f00&#34;&gt;if&lt;/span&gt; [ ! &lt;span style=&#34;color:#eedd82&#34;&gt;flag1&lt;/span&gt; = true ]; &lt;span style=&#34;color:#f00&#34;&gt;then&lt;/span&gt;
+    echo &lt;span style=&#34;color:#eedd82&#34;&gt;$notGot&lt;/span&gt;
+&lt;span style=&#34;color:#f00&#34;&gt;fi&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;linux---add-to-path&#34; &gt;Linux - Add to PATH
 &lt;span&gt;
     &lt;a href=&#34;#linux---add-to-path&#34;&gt;
         &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
@@ -322,28 +322,28 @@ any non-scripting language like C/C++ or Python.&lt;/p&gt;
 &lt;li&gt;adds the cronjob if not exists&lt;/li&gt;
 &lt;li&gt;prevents concurrent/overlap runs&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;add_cronjob() {
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#0f0&#34;&gt;# crontab will not set the working directory&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#0f0&#34;&gt;# create locks directory if it does not exist&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    mkdir -p ~/locks
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#0f0&#34;&gt;# my sample job uses flock to prevent overlapping runs&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#0f0&#34;&gt;# minute hour day month day_of_week&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#0f0&#34;&gt;# /X means divisible by X&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#eedd82&#34;&gt;cronjob&lt;/span&gt;=&lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;*/1 * * * * flock -n ~/locks/auto_deploy_&lt;/span&gt;&lt;span style=&#34;color:#eedd82&#34;&gt;$PROJECT&lt;/span&gt;&lt;span style=&#34;color:#87ceeb&#34;&gt;.lock &lt;/span&gt;&lt;span style=&#34;color:#eedd82&#34;&gt;$PYTHON&lt;/span&gt;&lt;span style=&#34;color:#87ceeb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#f00&#34;&gt;$(&lt;/span&gt;pwd&lt;span style=&#34;color:#f00&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color:#87ceeb&#34;&gt;/cronjob.py&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#0f0&#34;&gt;# cronjob.py will set the working directory&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f00&#34;&gt;if&lt;/span&gt; ! crontab -l &amp;amp;&amp;gt;/dev/null; &lt;span style=&#34;color:#f00&#34;&gt;then&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#0f0&#34;&gt;# crontab file does not exist&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        echo &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#eedd82&#34;&gt;$cronjob&lt;/span&gt;&lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;&lt;/span&gt; | crontab -
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        echo &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;Created new crontab with job&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f00&#34;&gt;elif&lt;/span&gt; ! crontab -l 2&amp;gt;/dev/null | grep -Fq &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#eedd82&#34;&gt;$cronjob&lt;/span&gt;&lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;&lt;/span&gt;; &lt;span style=&#34;color:#f00&#34;&gt;then&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#0f0&#34;&gt;# job not found in crontab&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        echo &lt;span style=&#34;color:#f00&#34;&gt;$(&lt;/span&gt;crontab -l ; echo &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#eedd82&#34;&gt;$cronjob&lt;/span&gt;&lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f00&#34;&gt;)&lt;/span&gt; | crontab -
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        echo &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;Added &lt;/span&gt;&lt;span style=&#34;color:#eedd82&#34;&gt;$cronjob&lt;/span&gt;&lt;span style=&#34;color:#87ceeb&#34;&gt; ... to existing crontab&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f00&#34;&gt;else&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        echo &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;Job already exists in crontab&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f00&#34;&gt;fi&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;linux---add-systemd-service&#34; &gt;Linux - Add Systemd Service
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;add_cronjob() {
+    &lt;span style=&#34;color:#0f0&#34;&gt;# crontab will not set the working directory&lt;/span&gt;
+    &lt;span style=&#34;color:#0f0&#34;&gt;# create locks directory if it does not exist&lt;/span&gt;
+    mkdir -p ~/locks
+    &lt;span style=&#34;color:#0f0&#34;&gt;# my sample job uses flock to prevent overlapping runs&lt;/span&gt;
+    &lt;span style=&#34;color:#0f0&#34;&gt;# minute hour day month day_of_week&lt;/span&gt;
+    &lt;span style=&#34;color:#0f0&#34;&gt;# /X means divisible by X&lt;/span&gt;
+    &lt;span style=&#34;color:#eedd82&#34;&gt;cronjob&lt;/span&gt;=&lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;*/1 * * * * flock -n ~/locks/auto_deploy_&lt;/span&gt;&lt;span style=&#34;color:#eedd82&#34;&gt;$PROJECT&lt;/span&gt;&lt;span style=&#34;color:#87ceeb&#34;&gt;.lock &lt;/span&gt;&lt;span style=&#34;color:#eedd82&#34;&gt;$PYTHON&lt;/span&gt;&lt;span style=&#34;color:#87ceeb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#f00&#34;&gt;$(&lt;/span&gt;pwd&lt;span style=&#34;color:#f00&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color:#87ceeb&#34;&gt;/cronjob.py&amp;#34;&lt;/span&gt;
+    &lt;span style=&#34;color:#0f0&#34;&gt;# cronjob.py will set the working directory&lt;/span&gt;
+    &lt;span style=&#34;color:#f00&#34;&gt;if&lt;/span&gt; ! crontab -l &amp;amp;&amp;gt;/dev/null; &lt;span style=&#34;color:#f00&#34;&gt;then&lt;/span&gt;
+        &lt;span style=&#34;color:#0f0&#34;&gt;# crontab file does not exist&lt;/span&gt;
+        echo &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#eedd82&#34;&gt;$cronjob&lt;/span&gt;&lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;&lt;/span&gt; | crontab -
+        echo &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;Created new crontab with job&amp;#34;&lt;/span&gt;
+    &lt;span style=&#34;color:#f00&#34;&gt;elif&lt;/span&gt; ! crontab -l 2&amp;gt;/dev/null | grep -Fq &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#eedd82&#34;&gt;$cronjob&lt;/span&gt;&lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;&lt;/span&gt;; &lt;span style=&#34;color:#f00&#34;&gt;then&lt;/span&gt;
+        &lt;span style=&#34;color:#0f0&#34;&gt;# job not found in crontab&lt;/span&gt;
+        echo &lt;span style=&#34;color:#f00&#34;&gt;$(&lt;/span&gt;crontab -l ; echo &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#eedd82&#34;&gt;$cronjob&lt;/span&gt;&lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f00&#34;&gt;)&lt;/span&gt; | crontab -
+        echo &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;Added &lt;/span&gt;&lt;span style=&#34;color:#eedd82&#34;&gt;$cronjob&lt;/span&gt;&lt;span style=&#34;color:#87ceeb&#34;&gt; ... to existing crontab&amp;#34;&lt;/span&gt;
+    &lt;span style=&#34;color:#f00&#34;&gt;else&lt;/span&gt;
+        echo &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;Job already exists in crontab&amp;#34;&lt;/span&gt;
+    &lt;span style=&#34;color:#f00&#34;&gt;fi&lt;/span&gt;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;linux---add-systemd-service&#34; &gt;Linux - Add Systemd Service
 &lt;span&gt;
     &lt;a href=&#34;#linux---add-systemd-service&#34;&gt;
         &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
@@ -360,52 +360,52 @@ any non-scripting language like C/C++ or Python.&lt;/p&gt;
         &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
     &lt;/a&gt;
 &lt;/span&gt;
-&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;# Context:&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;# define $DOMAIN (e.g. lenerva.com)&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;install_certbot() {
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    sudo snap install core; sudo snap refresh core
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    sudo snap install --classic certbot
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    sudo ln -s /snap/bin/certbot /usr/bin/certbot
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    sudo certbot --nginx -d &lt;span style=&#34;color:#eedd82&#34;&gt;$DOMAIN&lt;/span&gt; -d www.&lt;span style=&#34;color:#eedd82&#34;&gt;$DOMAIN&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;linux---auto-configure-nginx---gunicorn&#34; &gt;Linux - Auto Configure NGINX - Gunicorn
+&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;color:#0f0&#34;&gt;# Context:&lt;/span&gt;
+&lt;span style=&#34;color:#0f0&#34;&gt;# define $DOMAIN (e.g. lenerva.com)&lt;/span&gt;
+install_certbot() {
+    sudo snap install core; sudo snap refresh core
+    sudo snap install --classic certbot
+    sudo ln -s /snap/bin/certbot /usr/bin/certbot
+    sudo certbot --nginx -d &lt;span style=&#34;color:#eedd82&#34;&gt;$DOMAIN&lt;/span&gt; -d www.&lt;span style=&#34;color:#eedd82&#34;&gt;$DOMAIN&lt;/span&gt;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;linux---auto-configure-nginx---gunicorn&#34; &gt;Linux - Auto Configure NGINX - Gunicorn
 &lt;span&gt;
     &lt;a href=&#34;#linux---auto-configure-nginx---gunicorn&#34;&gt;
         &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
     &lt;/a&gt;
 &lt;/span&gt;
 &lt;/h2&gt;&lt;p&gt;This works for me but it is possible to fail for you without editing &lt;code&gt;/etc/nginx/nginx.conf&lt;/code&gt; manually server name hashes to 128&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;# Context:&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;# define $DOMAIN beforehand (e.g. lenerva.com)&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;# define $PROJECT beforehand (e.g. my-project)&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;# pwd is currently the project root directory&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;configure_nginx() {
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#0f0&#34;&gt;# configure nginx&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    sudo apt install nginx -y
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    sudo mkdir -p /var/www/&lt;span style=&#34;color:#eedd82&#34;&gt;$DOMAIN&lt;/span&gt;/html
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    sudo chown -R &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#eedd82&#34;&gt;$USER&lt;/span&gt;&lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;&lt;/span&gt;:&lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#eedd82&#34;&gt;$USER&lt;/span&gt;&lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;&lt;/span&gt; /var/www/&lt;span style=&#34;color:#eedd82&#34;&gt;$DOMAIN&lt;/span&gt;/html
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    sudo chmod -R &lt;span style=&#34;color:#f60&#34;&gt;755&lt;/span&gt; /var/www/&lt;span style=&#34;color:#eedd82&#34;&gt;$DOMAIN&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    echo &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;server {&amp;#34;&lt;/span&gt; | sudo tee /etc/nginx/sites-available/&lt;span style=&#34;color:#eedd82&#34;&gt;$PROJECT&lt;/span&gt; &amp;gt;/dev/null
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    echo &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;  listen [::]:80;&amp;#34;&lt;/span&gt; | sudo tee -a /etc/nginx/sites-available/&lt;span style=&#34;color:#eedd82&#34;&gt;$PROJECT&lt;/span&gt; &amp;gt;/dev/null
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    echo &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;  listen 80;&amp;#34;&lt;/span&gt; | sudo tee -a /etc/nginx/sites-available/&lt;span style=&#34;color:#eedd82&#34;&gt;$PROJECT&lt;/span&gt; &amp;gt;/dev/null
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    echo &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;  location / {&amp;#34;&lt;/span&gt; | sudo tee -a /etc/nginx/sites-available/&lt;span style=&#34;color:#eedd82&#34;&gt;$PROJECT&lt;/span&gt; &amp;gt;/dev/null
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    echo &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;    include proxy_params;&amp;#34;&lt;/span&gt; | sudo tee -a /etc/nginx/sites-available/&lt;span style=&#34;color:#eedd82&#34;&gt;$PROJECT&lt;/span&gt; &amp;gt;/dev/null
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    echo &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;    proxy_pass http://unix:&lt;/span&gt;&lt;span style=&#34;color:#f00&#34;&gt;$(&lt;/span&gt;pwd&lt;span style=&#34;color:#f00&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color:#87ceeb&#34;&gt;/gunicorn.sock;&amp;#34;&lt;/span&gt; | sudo tee -a /etc/nginx/sites-available/&lt;span style=&#34;color:#eedd82&#34;&gt;$PROJECT&lt;/span&gt; &amp;gt;/dev/null
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    echo &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;  }&amp;#34;&lt;/span&gt; | sudo tee -a /etc/nginx/sites-available/&lt;span style=&#34;color:#eedd82&#34;&gt;$PROJECT&lt;/span&gt; &amp;gt;/dev/null
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    echo &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;}&amp;#34;&lt;/span&gt; | sudo tee -a /etc/nginx/sites-available/&lt;span style=&#34;color:#eedd82&#34;&gt;$PROJECT&lt;/span&gt; &amp;gt;/dev/null
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    sudo ln -s &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;/etc/nginx/sites-available/&lt;/span&gt;&lt;span style=&#34;color:#eedd82&#34;&gt;$PROJECT&lt;/span&gt;&lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;&lt;/span&gt; /etc/nginx/sites-enabled
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#0f0&#34;&gt;# TODO: if publishing script, also set max server name hashes to 128 in /etc/nginx/nginx.conf&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#0f0&#34;&gt;# uncomment below if it didn&amp;#39;t work&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#0f0&#34;&gt;# nano /etc/nginx/nginx.conf&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    sudo systemctl restart nginx
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#0f0&#34;&gt;# Firewall&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    sudo ufw allow &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#39;Nginx Full&amp;#39;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;color:#0f0&#34;&gt;# Context:&lt;/span&gt;
+&lt;span style=&#34;color:#0f0&#34;&gt;# define $DOMAIN beforehand (e.g. lenerva.com)&lt;/span&gt;
+&lt;span style=&#34;color:#0f0&#34;&gt;# define $PROJECT beforehand (e.g. my-project)&lt;/span&gt;
+&lt;span style=&#34;color:#0f0&#34;&gt;# pwd is currently the project root directory&lt;/span&gt;
+configure_nginx() {
+    &lt;span style=&#34;color:#0f0&#34;&gt;# configure nginx&lt;/span&gt;
+    sudo apt install nginx -y
+
+    sudo mkdir -p /var/www/&lt;span style=&#34;color:#eedd82&#34;&gt;$DOMAIN&lt;/span&gt;/html
+    sudo chown -R &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#eedd82&#34;&gt;$USER&lt;/span&gt;&lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;&lt;/span&gt;:&lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#eedd82&#34;&gt;$USER&lt;/span&gt;&lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;&lt;/span&gt; /var/www/&lt;span style=&#34;color:#eedd82&#34;&gt;$DOMAIN&lt;/span&gt;/html
+    sudo chmod -R &lt;span style=&#34;color:#f60&#34;&gt;755&lt;/span&gt; /var/www/&lt;span style=&#34;color:#eedd82&#34;&gt;$DOMAIN&lt;/span&gt;
+
+    echo &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;server {&amp;#34;&lt;/span&gt; | sudo tee /etc/nginx/sites-available/&lt;span style=&#34;color:#eedd82&#34;&gt;$PROJECT&lt;/span&gt; &amp;gt;/dev/null
+    echo &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;  listen [::]:80;&amp;#34;&lt;/span&gt; | sudo tee -a /etc/nginx/sites-available/&lt;span style=&#34;color:#eedd82&#34;&gt;$PROJECT&lt;/span&gt; &amp;gt;/dev/null
+    echo &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;  listen 80;&amp;#34;&lt;/span&gt; | sudo tee -a /etc/nginx/sites-available/&lt;span style=&#34;color:#eedd82&#34;&gt;$PROJECT&lt;/span&gt; &amp;gt;/dev/null
+    echo &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;  location / {&amp;#34;&lt;/span&gt; | sudo tee -a /etc/nginx/sites-available/&lt;span style=&#34;color:#eedd82&#34;&gt;$PROJECT&lt;/span&gt; &amp;gt;/dev/null
+    echo &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;    include proxy_params;&amp;#34;&lt;/span&gt; | sudo tee -a /etc/nginx/sites-available/&lt;span style=&#34;color:#eedd82&#34;&gt;$PROJECT&lt;/span&gt; &amp;gt;/dev/null
+    echo &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;    proxy_pass http://unix:&lt;/span&gt;&lt;span style=&#34;color:#f00&#34;&gt;$(&lt;/span&gt;pwd&lt;span style=&#34;color:#f00&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color:#87ceeb&#34;&gt;/gunicorn.sock;&amp;#34;&lt;/span&gt; | sudo tee -a /etc/nginx/sites-available/&lt;span style=&#34;color:#eedd82&#34;&gt;$PROJECT&lt;/span&gt; &amp;gt;/dev/null
+    echo &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;  }&amp;#34;&lt;/span&gt; | sudo tee -a /etc/nginx/sites-available/&lt;span style=&#34;color:#eedd82&#34;&gt;$PROJECT&lt;/span&gt; &amp;gt;/dev/null
+    echo &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;}&amp;#34;&lt;/span&gt; | sudo tee -a /etc/nginx/sites-available/&lt;span style=&#34;color:#eedd82&#34;&gt;$PROJECT&lt;/span&gt; &amp;gt;/dev/null
+
+    sudo ln -s &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;/etc/nginx/sites-available/&lt;/span&gt;&lt;span style=&#34;color:#eedd82&#34;&gt;$PROJECT&lt;/span&gt;&lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;&lt;/span&gt; /etc/nginx/sites-enabled
+
+    &lt;span style=&#34;color:#0f0&#34;&gt;# TODO: if publishing script, also set max server name hashes to 128 in /etc/nginx/nginx.conf&lt;/span&gt;
+    &lt;span style=&#34;color:#0f0&#34;&gt;# uncomment below if it didn&amp;#39;t work&lt;/span&gt;
+    &lt;span style=&#34;color:#0f0&#34;&gt;# nano /etc/nginx/nginx.conf&lt;/span&gt;
+    sudo systemctl restart nginx
+    &lt;span style=&#34;color:#0f0&#34;&gt;# Firewall&lt;/span&gt;
+    sudo ufw allow &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#39;Nginx Full&amp;#39;&lt;/span&gt;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
     
     <item>
@@ -428,71 +428,71 @@ any non-scripting language like C/C++ or Python.&lt;/p&gt;
         &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
     &lt;/a&gt;
 &lt;/span&gt;
-&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-groovy&#34; data-lang=&#34;groovy&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f00&#34;&gt;import&lt;/span&gt; hudson.model.ParametersAction
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f00&#34;&gt;import&lt;/span&gt; jenkins.model.Jenkins
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f00&#34;&gt;import&lt;/span&gt; jenkins.model.CauseOfInterruption
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f00&#34;&gt;import&lt;/span&gt; jenkins.model.Jenkins
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;// type of _build in case you need it
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#f00&#34;&gt;import&lt;/span&gt; org.jenkinsci.plugins.workflow.job.WorkflowRun
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;// TODO: create plugin or something for custom status messages
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;@NonCPS
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ee82ee&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#ff0&#34;&gt;abortOldBuilds&lt;/span&gt;(String paramKey, String paramVal) {
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#0f0&#34;&gt;// param_key and paramVal can be used for PR numbers
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#ee82ee&#34;&gt;def&lt;/span&gt; job = Jenkins.instanceOrNull.getItem(JOB_NAME)
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ee82ee&#34;&gt;def&lt;/span&gt; buildID = BUILD_ID
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#0f0&#34;&gt;// highest running ID
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#ee82ee&#34;&gt;def&lt;/span&gt; highestRID = buildID
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#0f0&#34;&gt;// in case the current build is old
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;&lt;/span&gt;    WorkflowRun curBuild
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ee82ee&#34;&gt;def&lt;/span&gt; build = job.getLastBuild()
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#0f0&#34;&gt;// avoid .builds since it can cause iteration errors
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#f00&#34;&gt;while&lt;/span&gt; (build != &lt;span style=&#34;color:#f00&#34;&gt;null&lt;/span&gt;) {
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#ee82ee&#34;&gt;def&lt;/span&gt; cbuildID = build.id.toInteger()
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#ee82ee&#34;&gt;def&lt;/span&gt; curParamVal = build.allActions.find{it &lt;span style=&#34;color:#f00&#34;&gt;in&lt;/span&gt; ParametersAction}?.getParameter(paramKey)?.value
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#0f0&#34;&gt;// optionally filter out builds
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;&lt;/span&gt;        &lt;span style=&#34;color:#f00&#34;&gt;if&lt;/span&gt; (curParamVal == param_val) {
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#f00&#34;&gt;if&lt;/span&gt; (cbuildID == buildID) {
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                curBuild = build
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            } &lt;span style=&#34;color:#f00&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;color:#f00&#34;&gt;if&lt;/span&gt; (build.isBuilding() &amp;amp;&amp;amp; cbuildID &amp;lt; highestRID) {
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                build.doKill()
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                echo &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;terminated build #${cbuildID}&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#ee82ee&#34;&gt;def&lt;/span&gt; cause = &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;Aborted by #${buildID} for being an old build&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#0f0&#34;&gt;// + for paramVal
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;&lt;/span&gt;                &lt;span style=&#34;color:#0f0&#34;&gt;// add to the log of another build
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;&lt;/span&gt;                build.getListener().getLogger().println(cause)
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#0f0&#34;&gt;// The below will cause zombie jobs and so was abandoned
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;&lt;/span&gt;                &lt;span style=&#34;color:#0f0&#34;&gt;// def r = new ArrayList&amp;lt;&amp;gt;(Arrays.asList({ cause as String } as CauseOfInterruption))
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;&lt;/span&gt;                &lt;span style=&#34;color:#0f0&#34;&gt;// _build.addAction(new InterruptedBuildAction(r))
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;&lt;/span&gt;            } &lt;span style=&#34;color:#f00&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;color:#f00&#34;&gt;if&lt;/span&gt; (cbuildID &amp;gt; highestRID) {
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#0f0&#34;&gt;// update highest running ID
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;&lt;/span&gt;                highestRID = cbuildID
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            }
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        }
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        build = build.getPreviousBuild()
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f00&#34;&gt;if&lt;/span&gt; (highestRID &amp;gt; buildID) {
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        println &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;Terminating self since newer build was found&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#ee82ee&#34;&gt;def&lt;/span&gt; selfAbortCause = &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;Aborting due to the presence of a newer build&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        curBuild.doKill()
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;getting-build-log&#34; &gt;Getting Build Log
+&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-groovy&#34; data-lang=&#34;groovy&#34;&gt;&lt;span style=&#34;color:#f00&#34;&gt;import&lt;/span&gt; hudson.model.ParametersAction
+&lt;span style=&#34;color:#f00&#34;&gt;import&lt;/span&gt; jenkins.model.Jenkins
+&lt;span style=&#34;color:#f00&#34;&gt;import&lt;/span&gt; jenkins.model.CauseOfInterruption
+&lt;span style=&#34;color:#f00&#34;&gt;import&lt;/span&gt; jenkins.model.Jenkins
+&lt;span style=&#34;color:#0f0&#34;&gt;// type of _build in case you need it
+&lt;/span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#f00&#34;&gt;import&lt;/span&gt; org.jenkinsci.plugins.workflow.job.WorkflowRun
+
+&lt;span style=&#34;color:#0f0&#34;&gt;// TODO: create plugin or something for custom status messages
+&lt;/span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;&lt;/span&gt;
+@NonCPS
+&lt;span style=&#34;color:#ee82ee&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#ff0&#34;&gt;abortOldBuilds&lt;/span&gt;(String paramKey, String paramVal) {
+    &lt;span style=&#34;color:#0f0&#34;&gt;// param_key and paramVal can be used for PR numbers
+&lt;/span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#ee82ee&#34;&gt;def&lt;/span&gt; job = Jenkins.instanceOrNull.getItem(JOB_NAME)
+    &lt;span style=&#34;color:#ee82ee&#34;&gt;def&lt;/span&gt; buildID = BUILD_ID
+    &lt;span style=&#34;color:#0f0&#34;&gt;// highest running ID
+&lt;/span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#ee82ee&#34;&gt;def&lt;/span&gt; highestRID = buildID
+    &lt;span style=&#34;color:#0f0&#34;&gt;// in case the current build is old
+&lt;/span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;&lt;/span&gt;    WorkflowRun curBuild
+
+    &lt;span style=&#34;color:#ee82ee&#34;&gt;def&lt;/span&gt; build = job.getLastBuild()
+    &lt;span style=&#34;color:#0f0&#34;&gt;// avoid .builds since it can cause iteration errors
+&lt;/span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#f00&#34;&gt;while&lt;/span&gt; (build != &lt;span style=&#34;color:#f00&#34;&gt;null&lt;/span&gt;) {
+        &lt;span style=&#34;color:#ee82ee&#34;&gt;def&lt;/span&gt; cbuildID = build.id.toInteger()
+        &lt;span style=&#34;color:#ee82ee&#34;&gt;def&lt;/span&gt; curParamVal = build.allActions.find{it &lt;span style=&#34;color:#f00&#34;&gt;in&lt;/span&gt; ParametersAction}?.getParameter(paramKey)?.value
+        &lt;span style=&#34;color:#0f0&#34;&gt;// optionally filter out builds
+&lt;/span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;&lt;/span&gt;        &lt;span style=&#34;color:#f00&#34;&gt;if&lt;/span&gt; (curParamVal == param_val) {
+            &lt;span style=&#34;color:#f00&#34;&gt;if&lt;/span&gt; (cbuildID == buildID) {
+                curBuild = build
+            } &lt;span style=&#34;color:#f00&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;color:#f00&#34;&gt;if&lt;/span&gt; (build.isBuilding() &amp;amp;&amp;amp; cbuildID &amp;lt; highestRID) {
+                build.doKill()
+                echo &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;terminated build #${cbuildID}&amp;#34;&lt;/span&gt;
+                &lt;span style=&#34;color:#ee82ee&#34;&gt;def&lt;/span&gt; cause = &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;Aborted by #${buildID} for being an old build&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#0f0&#34;&gt;// + for paramVal
+&lt;/span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;&lt;/span&gt;                &lt;span style=&#34;color:#0f0&#34;&gt;// add to the log of another build
+&lt;/span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;&lt;/span&gt;                build.getListener().getLogger().println(cause)
+                &lt;span style=&#34;color:#0f0&#34;&gt;// The below will cause zombie jobs and so was abandoned
+&lt;/span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;&lt;/span&gt;                &lt;span style=&#34;color:#0f0&#34;&gt;// def r = new ArrayList&amp;lt;&amp;gt;(Arrays.asList({ cause as String } as CauseOfInterruption))
+&lt;/span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;&lt;/span&gt;                &lt;span style=&#34;color:#0f0&#34;&gt;// _build.addAction(new InterruptedBuildAction(r))
+&lt;/span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;&lt;/span&gt;            } &lt;span style=&#34;color:#f00&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;color:#f00&#34;&gt;if&lt;/span&gt; (cbuildID &amp;gt; highestRID) {
+                &lt;span style=&#34;color:#0f0&#34;&gt;// update highest running ID
+&lt;/span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;&lt;/span&gt;                highestRID = cbuildID
+            }
+        }
+        build = build.getPreviousBuild()
+    }
+    &lt;span style=&#34;color:#f00&#34;&gt;if&lt;/span&gt; (highestRID &amp;gt; buildID) {
+        println &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;Terminating self since newer build was found&amp;#34;&lt;/span&gt;
+        &lt;span style=&#34;color:#ee82ee&#34;&gt;def&lt;/span&gt; selfAbortCause = &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;Aborting due to the presence of a newer build&amp;#34;&lt;/span&gt;
+        curBuild.doKill()
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;getting-build-log&#34; &gt;Getting Build Log
 &lt;span&gt;
     &lt;a href=&#34;#getting-build-log&#34;&gt;
         &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
     &lt;/a&gt;
 &lt;/span&gt;
-&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-groovy&#34; data-lang=&#34;groovy&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f00&#34;&gt;import&lt;/span&gt; jenkins.model.Jenkins
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;@NonCPS
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ee82ee&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#ff0&#34;&gt;getLog&lt;/span&gt;() {
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ee82ee&#34;&gt;def&lt;/span&gt; job = Jenkins.instanceOrNull.getItem(JOB_NAME)
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ee82ee&#34;&gt;def&lt;/span&gt; build = job.getBuildByNumber(Integer.parseInt(BUILD_NUMBER))
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f00&#34;&gt;return&lt;/span&gt; build.logFile.text
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-groovy&#34; data-lang=&#34;groovy&#34;&gt;&lt;span style=&#34;color:#f00&#34;&gt;import&lt;/span&gt; jenkins.model.Jenkins
+
+@NonCPS
+&lt;span style=&#34;color:#ee82ee&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#ff0&#34;&gt;getLog&lt;/span&gt;() {
+    &lt;span style=&#34;color:#ee82ee&#34;&gt;def&lt;/span&gt; job = Jenkins.instanceOrNull.getItem(JOB_NAME)
+    &lt;span style=&#34;color:#ee82ee&#34;&gt;def&lt;/span&gt; build = job.getBuildByNumber(Integer.parseInt(BUILD_NUMBER))
+    &lt;span style=&#34;color:#f00&#34;&gt;return&lt;/span&gt; build.logFile.text
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
     
     <item>
@@ -507,59 +507,59 @@ any non-scripting language like C/C++ or Python.&lt;/p&gt;
         &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
     &lt;/a&gt;
 &lt;/span&gt;
-&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#eedd82&#34;&gt;$text&lt;/span&gt;=&lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;hello&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#eedd82&#34;&gt;$ext&lt;/span&gt;=&lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;txt&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#eedd82&#34;&gt;str_concat&lt;/span&gt;=&lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#eedd82&#34;&gt;$text&lt;/span&gt;&lt;span style=&#34;color:#87ceeb&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#eedd82&#34;&gt;$ext&lt;/span&gt;&lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#eedd82&#34;&gt;str_concat2&lt;/span&gt;=&lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#eedd82&#34;&gt;$text&lt;/span&gt;&lt;span style=&#34;color:#87ceeb&#34;&gt; .&lt;/span&gt;&lt;span style=&#34;color:#eedd82&#34;&gt;$ext&lt;/span&gt;&lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;# lesson: always use [[ ]] with string variables to avoid runtime errors&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f00&#34;&gt;if&lt;/span&gt; [[ &lt;span style=&#34;color:#eedd82&#34;&gt;$str_concat&lt;/span&gt; = &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;hello .txt&amp;#34;&lt;/span&gt; ]]; &lt;span style=&#34;color:#f00&#34;&gt;then&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    echo &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;preferred method&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f00&#34;&gt;fi&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;# you can also use double quotes, but it&amp;#39;s not as clean imo&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f00&#34;&gt;if&lt;/span&gt; [ &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#eedd82&#34;&gt;$str_concat&lt;/span&gt;&lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;&lt;/span&gt; = &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;hello .txt&amp;#34;&lt;/span&gt; ]; &lt;span style=&#34;color:#f00&#34;&gt;then&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    echo &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;option B, use double quotes&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f00&#34;&gt;fi&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;# this will result in too many arguments error&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;# if [ $str_concat2 = &amp;#34;hello .txt&amp;#34; ]; then&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;#     echo &amp;#34;not possible&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;# fi&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;# this works only if the variable does not contain spaces&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f00&#34;&gt;if&lt;/span&gt; [ &lt;span style=&#34;color:#eedd82&#34;&gt;$str_concat&lt;/span&gt; = &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;hello.txt&amp;#34;&lt;/span&gt; ]; &lt;span style=&#34;color:#f00&#34;&gt;then&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    echo &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;works&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f00&#34;&gt;fi&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;loops-and-more-conditionals&#34; &gt;Loops and More Conditionals
+&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;color:#eedd82&#34;&gt;$text&lt;/span&gt;=&lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;hello&amp;#34;&lt;/span&gt;
+&lt;span style=&#34;color:#eedd82&#34;&gt;$ext&lt;/span&gt;=&lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;txt&amp;#34;&lt;/span&gt;
+&lt;span style=&#34;color:#eedd82&#34;&gt;str_concat&lt;/span&gt;=&lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#eedd82&#34;&gt;$text&lt;/span&gt;&lt;span style=&#34;color:#87ceeb&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#eedd82&#34;&gt;$ext&lt;/span&gt;&lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;&lt;/span&gt;
+&lt;span style=&#34;color:#eedd82&#34;&gt;str_concat2&lt;/span&gt;=&lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#eedd82&#34;&gt;$text&lt;/span&gt;&lt;span style=&#34;color:#87ceeb&#34;&gt; .&lt;/span&gt;&lt;span style=&#34;color:#eedd82&#34;&gt;$ext&lt;/span&gt;&lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;&lt;/span&gt;
+
+&lt;span style=&#34;color:#0f0&#34;&gt;# lesson: always use [[ ]] with string variables to avoid runtime errors&lt;/span&gt;
+&lt;span style=&#34;color:#f00&#34;&gt;if&lt;/span&gt; [[ &lt;span style=&#34;color:#eedd82&#34;&gt;$str_concat&lt;/span&gt; = &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;hello .txt&amp;#34;&lt;/span&gt; ]]; &lt;span style=&#34;color:#f00&#34;&gt;then&lt;/span&gt;
+    echo &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;preferred method&amp;#34;&lt;/span&gt;
+&lt;span style=&#34;color:#f00&#34;&gt;fi&lt;/span&gt;
+&lt;span style=&#34;color:#0f0&#34;&gt;# you can also use double quotes, but it&amp;#39;s not as clean imo&lt;/span&gt;
+&lt;span style=&#34;color:#f00&#34;&gt;if&lt;/span&gt; [ &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#eedd82&#34;&gt;$str_concat&lt;/span&gt;&lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;&lt;/span&gt; = &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;hello .txt&amp;#34;&lt;/span&gt; ]; &lt;span style=&#34;color:#f00&#34;&gt;then&lt;/span&gt;
+    echo &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;option B, use double quotes&amp;#34;&lt;/span&gt;
+&lt;span style=&#34;color:#f00&#34;&gt;fi&lt;/span&gt;
+
+&lt;span style=&#34;color:#0f0&#34;&gt;# this will result in too many arguments error&lt;/span&gt;
+&lt;span style=&#34;color:#0f0&#34;&gt;# if [ $str_concat2 = &amp;#34;hello .txt&amp;#34; ]; then&lt;/span&gt;
+&lt;span style=&#34;color:#0f0&#34;&gt;#     echo &amp;#34;not possible&amp;#34;&lt;/span&gt;
+&lt;span style=&#34;color:#0f0&#34;&gt;# fi&lt;/span&gt;
+
+&lt;span style=&#34;color:#0f0&#34;&gt;# this works only if the variable does not contain spaces&lt;/span&gt;
+&lt;span style=&#34;color:#f00&#34;&gt;if&lt;/span&gt; [ &lt;span style=&#34;color:#eedd82&#34;&gt;$str_concat&lt;/span&gt; = &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;hello.txt&amp;#34;&lt;/span&gt; ]; &lt;span style=&#34;color:#f00&#34;&gt;then&lt;/span&gt;
+    echo &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;works&amp;#34;&lt;/span&gt;
+&lt;span style=&#34;color:#f00&#34;&gt;fi&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;loops-and-more-conditionals&#34; &gt;Loops and More Conditionals
 &lt;span&gt;
     &lt;a href=&#34;#loops-and-more-conditionals&#34;&gt;
         &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
     &lt;/a&gt;
 &lt;/span&gt;
-&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;# for loop examples&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f00&#34;&gt;for&lt;/span&gt; var in &lt;span style=&#34;color:#f60&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color:#f60&#34;&gt;2&lt;/span&gt; &lt;span style=&#34;color:#f60&#34;&gt;3&lt;/span&gt; str1 str2 str3 &lt;span style=&#34;color:#eedd82&#34;&gt;$flag1&lt;/span&gt; &lt;span style=&#34;color:#f60&#34;&gt;9&lt;/span&gt; 10; &lt;span style=&#34;color:#f00&#34;&gt;do&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    echo &lt;span style=&#34;color:#eedd82&#34;&gt;$var&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f00&#34;&gt;done&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;# range&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f00&#34;&gt;for&lt;/span&gt; var in {1..10}; &lt;span style=&#34;color:#f00&#34;&gt;do&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    echo &lt;span style=&#34;color:#eedd82&#34;&gt;$var&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f00&#34;&gt;done&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;# for loop as while loop&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;# some math here too&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#eedd82&#34;&gt;counter&lt;/span&gt;=&lt;span style=&#34;color:#f60&#34;&gt;0&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f00&#34;&gt;while&lt;/span&gt; [ &lt;span style=&#34;color:#eedd82&#34;&gt;$counter&lt;/span&gt; -lt &lt;span style=&#34;color:#f60&#34;&gt;10&lt;/span&gt; ]; &lt;span style=&#34;color:#f00&#34;&gt;do&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f00&#34;&gt;if&lt;/span&gt; [ &lt;span style=&#34;color:#eedd82&#34;&gt;$counter&lt;/span&gt; -eq &lt;span style=&#34;color:#f60&#34;&gt;0&lt;/span&gt; ]; &lt;span style=&#34;color:#f00&#34;&gt;then&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        ((counter++))
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        echo &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;counter+2=&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f00&#34;&gt;$((&lt;/span&gt;++counter&lt;span style=&#34;color:#f00&#34;&gt;))&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f00&#34;&gt;elif&lt;/span&gt; [ &lt;span style=&#34;color:#eedd82&#34;&gt;$counter&lt;/span&gt; -lt &lt;span style=&#34;color:#f60&#34;&gt;5&lt;/span&gt; ]; &lt;span style=&#34;color:#f00&#34;&gt;then&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        echo &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;less than 5&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f00&#34;&gt;elif&lt;/span&gt; [ &lt;span style=&#34;color:#eedd82&#34;&gt;$counter&lt;/span&gt; -gt &lt;span style=&#34;color:#f60&#34;&gt;5&lt;/span&gt; ]; &lt;span style=&#34;color:#f00&#34;&gt;then&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        echo &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;greater than 5&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f00&#34;&gt;fi&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f00&#34;&gt;done&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;color:#0f0&#34;&gt;# for loop examples&lt;/span&gt;
+&lt;span style=&#34;color:#f00&#34;&gt;for&lt;/span&gt; var in &lt;span style=&#34;color:#f60&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color:#f60&#34;&gt;2&lt;/span&gt; &lt;span style=&#34;color:#f60&#34;&gt;3&lt;/span&gt; str1 str2 str3 &lt;span style=&#34;color:#eedd82&#34;&gt;$flag1&lt;/span&gt; &lt;span style=&#34;color:#f60&#34;&gt;9&lt;/span&gt; 10; &lt;span style=&#34;color:#f00&#34;&gt;do&lt;/span&gt;
+    echo &lt;span style=&#34;color:#eedd82&#34;&gt;$var&lt;/span&gt;
+&lt;span style=&#34;color:#f00&#34;&gt;done&lt;/span&gt;
+
+&lt;span style=&#34;color:#0f0&#34;&gt;# range&lt;/span&gt;
+&lt;span style=&#34;color:#f00&#34;&gt;for&lt;/span&gt; var in {1..10}; &lt;span style=&#34;color:#f00&#34;&gt;do&lt;/span&gt;
+    echo &lt;span style=&#34;color:#eedd82&#34;&gt;$var&lt;/span&gt;
+&lt;span style=&#34;color:#f00&#34;&gt;done&lt;/span&gt;
+
+&lt;span style=&#34;color:#0f0&#34;&gt;# for loop as while loop&lt;/span&gt;
+&lt;span style=&#34;color:#0f0&#34;&gt;# some math here too&lt;/span&gt;
+&lt;span style=&#34;color:#eedd82&#34;&gt;counter&lt;/span&gt;=&lt;span style=&#34;color:#f60&#34;&gt;0&lt;/span&gt;
+&lt;span style=&#34;color:#f00&#34;&gt;while&lt;/span&gt; [ &lt;span style=&#34;color:#eedd82&#34;&gt;$counter&lt;/span&gt; -lt &lt;span style=&#34;color:#f60&#34;&gt;10&lt;/span&gt; ]; &lt;span style=&#34;color:#f00&#34;&gt;do&lt;/span&gt;
+    &lt;span style=&#34;color:#f00&#34;&gt;if&lt;/span&gt; [ &lt;span style=&#34;color:#eedd82&#34;&gt;$counter&lt;/span&gt; -eq &lt;span style=&#34;color:#f60&#34;&gt;0&lt;/span&gt; ]; &lt;span style=&#34;color:#f00&#34;&gt;then&lt;/span&gt;
+        ((counter++))
+        echo &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;counter+2=&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f00&#34;&gt;$((&lt;/span&gt;++counter&lt;span style=&#34;color:#f00&#34;&gt;))&lt;/span&gt;
+    &lt;span style=&#34;color:#f00&#34;&gt;elif&lt;/span&gt; [ &lt;span style=&#34;color:#eedd82&#34;&gt;$counter&lt;/span&gt; -lt &lt;span style=&#34;color:#f60&#34;&gt;5&lt;/span&gt; ]; &lt;span style=&#34;color:#f00&#34;&gt;then&lt;/span&gt;
+        echo &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;less than 5&amp;#34;&lt;/span&gt;
+    &lt;span style=&#34;color:#f00&#34;&gt;elif&lt;/span&gt; [ &lt;span style=&#34;color:#eedd82&#34;&gt;$counter&lt;/span&gt; -gt &lt;span style=&#34;color:#f60&#34;&gt;5&lt;/span&gt; ]; &lt;span style=&#34;color:#f00&#34;&gt;then&lt;/span&gt;
+        echo &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;greater than 5&amp;#34;&lt;/span&gt;
+    &lt;span style=&#34;color:#f00&#34;&gt;fi&lt;/span&gt;
+&lt;span style=&#34;color:#f00&#34;&gt;done&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
     
     <item>
@@ -640,14 +640,14 @@ In the end, performance is largely based on optimization, and not so much archit
 &lt;/h3&gt;&lt;p&gt;I know this article is not a 100% high quality article, but this article isn&amp;rsquo;t argumentative, it&amp;rsquo;s just a run through.&lt;/p&gt;
 &lt;p&gt;In conclusion, it&amp;rsquo;s better to distribute 32-bit and 64-bit applications than just 32-bit applications.
 But don&amp;rsquo;t be like VLC, and recommend 64-bit computers to install the 32-bit version!&lt;/p&gt;
-&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;section class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
 &lt;hr&gt;
 &lt;ol&gt;
-&lt;li id=&#34;fn:1&#34;&gt;
+&lt;li id=&#34;fn:1&#34; role=&#34;doc-endnote&#34;&gt;
 &lt;p&gt;&lt;a href=&#34;https://docs.microsoft.com/en-us/windows/win32/winprog64/running-32-bit-applications&#34;&gt;https://docs.microsoft.com/en-us/windows/win32/winprog64/running-32-bit-applications&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;
+&lt;/section&gt;
 </description>
     </item>
     
@@ -666,7 +666,7 @@ But don&amp;rsquo;t be like VLC, and recommend 64-bit computers to install the 3
 &lt;/span&gt;
 &lt;/h2&gt;&lt;p&gt;If you&amp;rsquo;re on Windows, you will need to install the OpenSSH feature from Settings or you can use WSL to be able to use &lt;code&gt;ssh-keygen&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;You can generate an SSH key using &lt;code&gt;ssh-keygen -t ed25519&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;Keep track of where the key is stored. For me this would be &lt;code&gt;C:\Users\maste\.ssh\id_ed25519&lt;/code&gt;.
+&lt;p&gt;Keep track of where the key is stored. (e.g. &lt;code&gt;C:\Users\maste\.ssh\id_ed25519&lt;/code&gt;)
 This will be useful when configuring the Remote-SSH VSCode extension.&lt;/p&gt;
 &lt;h2 id=&#34;adding-ssh-key-to-authorized-keys&#34; &gt;Adding SSH key to Authorized Keys
 &lt;span&gt;
@@ -681,21 +681,23 @@ This will be useful when configuring the Remote-SSH VSCode extension.&lt;/p&gt;
         &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
     &lt;/a&gt;
 &lt;/span&gt;
-&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ssh-copy-id -i path/to/file/if/not/default user@host
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;# Examples&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ssh-copy-id -i .ssh/id_ed25519.pub user@host
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ssh-copy-id -i /mnt/c/Users/maste/.ssh/id_ed25519.pub user@host
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;If you&amp;rsquo;re having trouble with this, just &lt;code&gt;cd&lt;/code&gt; into the &lt;code&gt;.ssh&lt;/code&gt; folder and use &lt;code&gt;-i id_ed25519.pub&lt;/code&gt;&lt;/p&gt;
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;ssh-copy-id -i path/to/file/if/not/default user@host
+&lt;span style=&#34;color:#0f0&#34;&gt;# examples&lt;/span&gt;
+ssh-copy-id -i .ssh/id_ed25519.pub user@host
+ssh-copy-id -i /mnt/c/Users/maste/.ssh/id_ed25519.pub user@host
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;If you&amp;rsquo;re having trouble with this, just &lt;code&gt;cd&lt;/code&gt; into the &lt;code&gt;.ssh&lt;/code&gt; folder and use &lt;code&gt;-i id_ed25519.pub&lt;/code&gt;&lt;/p&gt;
 &lt;h3 id=&#34;windows-no-wsl&#34; &gt;Windows no WSL
 &lt;span&gt;
     &lt;a href=&#34;#windows-no-wsl&#34;&gt;
         &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
     &lt;/a&gt;
 &lt;/span&gt;
-&lt;/h3&gt;&lt;p&gt;If you&amp;rsquo;re on Windows, you won&amp;rsquo;t have access to &lt;code&gt;ssh-copy-id&lt;/code&gt;. Instead you can use either of these PowerShell command.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-powershell&#34; data-lang=&#34;powershell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;type path\to\id_algo.pub | ssh user&lt;span style=&#34;color:#eedd82&#34;&gt;@host&lt;/span&gt; &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;cat &amp;gt;&amp;gt; .ssh/authorized_keys&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;# helper: type $env:USERPROFILE\.ssh\id_ed25519.pub | ssh user@host &amp;#34;cat &amp;gt;&amp;gt; .ssh/authorized_keys&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;setting-up-vs-code&#34; &gt;Setting up VS Code
+&lt;/h3&gt;&lt;p&gt;If you&amp;rsquo;re on Windows, you won&amp;rsquo;t have access to &lt;code&gt;ssh-copy-id&lt;/code&gt;. Instead you can modify the first command below or use the second command
+if you aren&amp;rsquo;t doing anything abnormal on your computer.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-powershell&#34; data-lang=&#34;powershell&#34;&gt;type path\to\id_algo.pub | ssh user&lt;span style=&#34;color:#eedd82&#34;&gt;@host&lt;/span&gt; &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;cat &amp;gt;&amp;gt; .ssh/authorized_keys&amp;#34;&lt;/span&gt;
+&lt;span style=&#34;color:#0f0&#34;&gt;# type $env:USERPROFILE\.ssh\id_ed25519.pub | ssh user@host &amp;#34;cat &amp;gt;&amp;gt; .ssh/authorized_keys&amp;#34;&lt;/span&gt;
+&lt;span style=&#34;color:#0f0&#34;&gt;# the above is a helper that hopefully requires no modifications&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;setting-up-vs-code&#34; &gt;Setting up VS Code
 &lt;span&gt;
     &lt;a href=&#34;#setting-up-vs-code&#34;&gt;
         &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
@@ -709,28 +711,28 @@ This will be useful when configuring the Remote-SSH VSCode extension.&lt;/p&gt;
 &lt;p&gt;Use the Command Palette (Ctrl + Shift + P) and use the &amp;ldquo;Remote-SSH: Open SSH Configuration File&amp;hellip;&amp;rdquo; command&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Select the first path (for me this was &lt;code&gt;C:\Users\maste\.ssh\config&lt;/code&gt;)&lt;/p&gt;
+&lt;p&gt;Select the first path  (e.g. &lt;code&gt;C:\Users\maste\.ssh\config&lt;/code&gt;)&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Enter the information for your remote server(s). Here is mine for reference. I had to comment out publickey.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Host uWaterloo
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  User e5lopez
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  HostName linux.student.cs.uwaterloo.ca
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  IdentityFile &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;C:\Users\maste\.ssh\id_ed25519&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#0f0&#34;&gt;# PreferredAuthentications publickey&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;p&gt;Enter the information for your remote server(s). Here is mine for reference. I had to comment out PreferredAuthentications.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;Host uWaterloo
+  User e5lopez
+  HostName linux.student.cs.uwaterloo.ca
+  IdentityFile &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;C:\Users\maste\.ssh\id_ed25519&amp;#34;&lt;/span&gt;
+  &lt;span style=&#34;color:#0f0&#34;&gt;# PreferredAuthentications publickey&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;From the command palette, use &amp;ldquo;Remote-SSH: Connect Current Window to Host&amp;hellip;&amp;rdquo; and select the host you just added&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;A window will show up asking you to choose the platform for the remote server. For me, it&amp;rsquo;s Linux.s&lt;/p&gt;
+&lt;p&gt;A window will show up asking you to choose the platform for the remote server so choose the &lt;strong&gt;remote server&amp;rsquo;s&lt;/strong&gt; platform (e.g. Linux)&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;If all goes well, you should be able to connect without having to enter a password
 &lt;img src=&#34;/images/vs-code-remote-ssh/connected-example.png&#34; alt=&#34;VS Code SSH&#34;&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;A tip is to add multiple folders in the remote server to a workspace&lt;/p&gt;
+&lt;p&gt;Tip: add multiple folders in the remote server to a workspace&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 </description>
@@ -844,12 +846,12 @@ In the next section, we&amp;rsquo;ll be integrating &lt;code&gt;vcpkg&lt;/code&g
 &lt;ul&gt;
 &lt;li&gt;In &lt;code&gt;CMakeLists.txt&lt;/code&gt;, add the following helper target &amp;ldquo;run&amp;rdquo;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-cmake&#34; data-lang=&#34;cmake&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  add_custom_target(&lt;span style=&#34;color:#87ceeb&#34;&gt;run&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#87ceeb&#34;&gt;COMMAND&lt;/span&gt; ${&lt;span style=&#34;color:#eedd82&#34;&gt;PROJECT_NAME&lt;/span&gt;}
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#87ceeb&#34;&gt;DEPENDS&lt;/span&gt; ${&lt;span style=&#34;color:#eedd82&#34;&gt;PROJECT_NAME&lt;/span&gt;}
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#87ceeb&#34;&gt;WORKING_DIRECTORY&lt;/span&gt; ${&lt;span style=&#34;color:#eedd82&#34;&gt;CMAKE_PROJECT_DIR&lt;/span&gt;}
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  )
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cmake&#34; data-lang=&#34;cmake&#34;&gt;  add_custom_target(&lt;span style=&#34;color:#87ceeb&#34;&gt;run&lt;/span&gt;
+      &lt;span style=&#34;color:#87ceeb&#34;&gt;COMMAND&lt;/span&gt; ${&lt;span style=&#34;color:#eedd82&#34;&gt;PROJECT_NAME&lt;/span&gt;}
+      &lt;span style=&#34;color:#87ceeb&#34;&gt;DEPENDS&lt;/span&gt; ${&lt;span style=&#34;color:#eedd82&#34;&gt;PROJECT_NAME&lt;/span&gt;}
+      &lt;span style=&#34;color:#87ceeb&#34;&gt;WORKING_DIRECTORY&lt;/span&gt; ${&lt;span style=&#34;color:#eedd82&#34;&gt;CMAKE_PROJECT_DIR&lt;/span&gt;}
+  )
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;
@@ -860,10 +862,10 @@ In the next section, we&amp;rsquo;ll be integrating &lt;code&gt;vcpkg&lt;/code&g
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Visual Studio Code: Add the following to your &lt;code&gt;settings.json&lt;/code&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;cmake.configureSettings&amp;#34;&lt;/span&gt;: {
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &amp;#34;CMAKE_TOOLCHAIN_FILE&amp;#34;: &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;...vcpkg.cmake&amp;#34;&lt;/span&gt;,
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;cmake.configureSettings&amp;#34;&lt;/span&gt;: {
+    &amp;#34;CMAKE_TOOLCHAIN_FILE&amp;#34;: &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;...vcpkg.cmake&amp;#34;&lt;/span&gt;,
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;If using &lt;code&gt;cmake&lt;/code&gt; from the command line, add &lt;code&gt;-DCMAKE_TOOLCHAIN_FILE=C:/Users/maste/Documents/GitHub/vcpkg/scripts/buildsystems/vcpkg.cmake&lt;/code&gt;&lt;/p&gt;
 &lt;/li&gt;
@@ -874,9 +876,9 @@ In the next section, we&amp;rsquo;ll be integrating &lt;code&gt;vcpkg&lt;/code&g
 &lt;ul&gt;
 &lt;li&gt;Create &lt;code&gt;vcpkg_rf.txt&lt;/code&gt; in the root directory with the contents:&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;install
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cpr
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;install
+cpr
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Install dependencies using &lt;code&gt;vcpkg &amp;quot;@vcpkg_rf.txt&amp;quot; [optional arguments]&lt;/code&gt;&lt;/p&gt;
 &lt;/li&gt;
@@ -885,29 +887,29 @@ In the next section, we&amp;rsquo;ll be integrating &lt;code&gt;vcpkg&lt;/code&g
 &lt;ul&gt;
 &lt;li&gt;For &lt;code&gt;cpr&lt;/code&gt;, that would be&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-cmake&#34; data-lang=&#34;cmake&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; find_package(&lt;span style=&#34;color:#87ceeb&#34;&gt;cpr&lt;/span&gt; &lt;span style=&#34;color:#87ceeb&#34;&gt;CONFIG&lt;/span&gt; &lt;span style=&#34;color:#87ceeb&#34;&gt;REQUIRED&lt;/span&gt;)
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; target_link_libraries(&lt;span style=&#34;color:#87ceeb&#34;&gt;PROJECT_NAME&lt;/span&gt; &lt;span style=&#34;color:#87ceeb&#34;&gt;PRIVATE&lt;/span&gt; &lt;span style=&#34;color:#87ceeb&#34;&gt;cpr::cpr&lt;/span&gt;)
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cmake&#34; data-lang=&#34;cmake&#34;&gt; find_package(&lt;span style=&#34;color:#87ceeb&#34;&gt;cpr&lt;/span&gt; &lt;span style=&#34;color:#87ceeb&#34;&gt;CONFIG&lt;/span&gt; &lt;span style=&#34;color:#87ceeb&#34;&gt;REQUIRED&lt;/span&gt;)
+ target_link_libraries(&lt;span style=&#34;color:#87ceeb&#34;&gt;PROJECT_NAME&lt;/span&gt; &lt;span style=&#34;color:#87ceeb&#34;&gt;PRIVATE&lt;/span&gt; &lt;span style=&#34;color:#87ceeb&#34;&gt;cpr::cpr&lt;/span&gt;)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
 &lt;li&gt;For more than one library, you only need one &lt;code&gt;target_link_libraries&lt;/code&gt; rather than one for each additional library&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Now let&amp;rsquo;s code. In the main C++ file, type the following:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e5e5e5&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#e5e5e5&#34;&gt;&amp;lt;cpr/cpr.h&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#e5e5e5&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e5e5e5&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#e5e5e5&#34;&gt;&amp;lt;iostream&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#e5e5e5&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e5e5e5&#34;&gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ee82ee&#34;&gt;int&lt;/span&gt; &lt;span style=&#34;color:#ff0&#34;&gt;main&lt;/span&gt;()
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;{
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    cpr::Response r = cpr::Get(cpr::Url{ &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;https://api.github.com/repos/whoshuu/cpr/contributors&amp;#34;&lt;/span&gt; },
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        cpr::Authentication{ &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;user&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;pass&amp;#34;&lt;/span&gt; },
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        cpr::Parameters{ {&lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;anon&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;true&amp;#34;&lt;/span&gt;}, {&lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;key&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;value&amp;#34;&lt;/span&gt;} });
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    r.status_code;                  &lt;span style=&#34;color:#0f0&#34;&gt;// 200
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;&lt;/span&gt;    r.header[&lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;content-type&amp;#34;&lt;/span&gt;];       &lt;span style=&#34;color:#0f0&#34;&gt;// application/json; charset=utf-8
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;&lt;/span&gt;    r.text;                         &lt;span style=&#34;color:#0f0&#34;&gt;// JSON text string
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;&lt;/span&gt;    std::cout &amp;lt;&amp;lt; r.text &amp;lt;&amp;lt; std::endl;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f00&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#f60&#34;&gt;0&lt;/span&gt;;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span style=&#34;color:#e5e5e5&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#e5e5e5&#34;&gt;&amp;lt;cpr/cpr.h&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#e5e5e5&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#e5e5e5&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#e5e5e5&#34;&gt;&amp;lt;iostream&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#e5e5e5&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#e5e5e5&#34;&gt;&lt;/span&gt;
+&lt;span style=&#34;color:#ee82ee&#34;&gt;int&lt;/span&gt; &lt;span style=&#34;color:#ff0&#34;&gt;main&lt;/span&gt;()
+{
+    cpr::Response r = cpr::Get(cpr::Url{ &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;https://api.github.com/repos/whoshuu/cpr/contributors&amp;#34;&lt;/span&gt; },
+        cpr::Authentication{ &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;user&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;pass&amp;#34;&lt;/span&gt; },
+        cpr::Parameters{ {&lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;anon&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;true&amp;#34;&lt;/span&gt;}, {&lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;key&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;value&amp;#34;&lt;/span&gt;} });
+    r.status_code;                  &lt;span style=&#34;color:#0f0&#34;&gt;// 200
+&lt;/span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;&lt;/span&gt;    r.header[&lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;content-type&amp;#34;&lt;/span&gt;];       &lt;span style=&#34;color:#0f0&#34;&gt;// application/json; charset=utf-8
+&lt;/span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;&lt;/span&gt;    r.text;                         &lt;span style=&#34;color:#0f0&#34;&gt;// JSON text string
+&lt;/span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;&lt;/span&gt;    std::cout &amp;lt;&amp;lt; r.text &amp;lt;&amp;lt; std::endl;
+    &lt;span style=&#34;color:#f00&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#f60&#34;&gt;0&lt;/span&gt;;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Let&amp;rsquo;s test our build&lt;/p&gt;
 &lt;ul&gt;

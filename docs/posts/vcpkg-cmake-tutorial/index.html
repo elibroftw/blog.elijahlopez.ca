@@ -77,7 +77,7 @@
     
 
     
-        <script src="/js/script.min.a65afe903825231554d9b55b073eb144da4ccf2d2823b216dcbc6cc656c9de76.js" type="text/javascript" charset="utf-8" integrity="sha256-plr&#43;kDglIxVU2bVbBz6xRNpMzy0oI7IW3LxsxlbJ3nY="></script>
+        <script src="/js/script.min.510c781c39dbb21b4c76d85c82e2bdf4689220adbb7cd61e49e9d293e442fb42.js" type="text/javascript" charset="utf-8" integrity="sha256-UQx4HDnbshtMdthcguK99GiSIK27fNYeSenSk&#43;RC&#43;0I="></script>
     
 
 
@@ -371,12 +371,12 @@ In the next section, we&rsquo;ll be integrating <code>vcpkg</code> within a CMak
 <ul>
 <li>In <code>CMakeLists.txt</code>, add the following helper target &ldquo;run&rdquo;</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmake" data-lang="cmake"><span style="display:flex;"><span>  add_custom_target(<span style="color:#87ceeb">run</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#87ceeb">COMMAND</span> ${<span style="color:#eedd82">PROJECT_NAME</span>}
-</span></span><span style="display:flex;"><span>      <span style="color:#87ceeb">DEPENDS</span> ${<span style="color:#eedd82">PROJECT_NAME</span>}
-</span></span><span style="display:flex;"><span>      <span style="color:#87ceeb">WORKING_DIRECTORY</span> ${<span style="color:#eedd82">CMAKE_PROJECT_DIR</span>}
-</span></span><span style="display:flex;"><span>  )
-</span></span></code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmake" data-lang="cmake">  add_custom_target(<span style="color:#87ceeb">run</span>
+      <span style="color:#87ceeb">COMMAND</span> ${<span style="color:#eedd82">PROJECT_NAME</span>}
+      <span style="color:#87ceeb">DEPENDS</span> ${<span style="color:#eedd82">PROJECT_NAME</span>}
+      <span style="color:#87ceeb">WORKING_DIRECTORY</span> ${<span style="color:#eedd82">CMAKE_PROJECT_DIR</span>}
+  )
+</code></pre></div></li>
 </ul>
 </li>
 <li>
@@ -387,10 +387,10 @@ In the next section, we&rsquo;ll be integrating <code>vcpkg</code> within a CMak
 </li>
 <li>
 <p>Visual Studio Code: Add the following to your <code>settings.json</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#87ceeb">&#34;cmake.configureSettings&#34;</span>: {
-</span></span><span style="display:flex;"><span>    &#34;CMAKE_TOOLCHAIN_FILE&#34;: <span style="color:#87ceeb">&#34;...vcpkg.cmake&#34;</span>,
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#87ceeb">&#34;cmake.configureSettings&#34;</span>: {
+    &#34;CMAKE_TOOLCHAIN_FILE&#34;: <span style="color:#87ceeb">&#34;...vcpkg.cmake&#34;</span>,
+}
+</code></pre></div></li>
 <li>
 <p>If using <code>cmake</code> from the command line, add <code>-DCMAKE_TOOLCHAIN_FILE=C:/Users/maste/Documents/GitHub/vcpkg/scripts/buildsystems/vcpkg.cmake</code></p>
 </li>
@@ -401,9 +401,9 @@ In the next section, we&rsquo;ll be integrating <code>vcpkg</code> within a CMak
 <ul>
 <li>Create <code>vcpkg_rf.txt</code> in the root directory with the contents:</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>install
-</span></span><span style="display:flex;"><span>cpr
-</span></span></code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">install
+cpr
+</code></pre></div></li>
 <li>
 <p>Install dependencies using <code>vcpkg &quot;@vcpkg_rf.txt&quot; [optional arguments]</code></p>
 </li>
@@ -412,29 +412,29 @@ In the next section, we&rsquo;ll be integrating <code>vcpkg</code> within a CMak
 <ul>
 <li>For <code>cpr</code>, that would be</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmake" data-lang="cmake"><span style="display:flex;"><span> find_package(<span style="color:#87ceeb">cpr</span> <span style="color:#87ceeb">CONFIG</span> <span style="color:#87ceeb">REQUIRED</span>)
-</span></span><span style="display:flex;"><span> target_link_libraries(<span style="color:#87ceeb">PROJECT_NAME</span> <span style="color:#87ceeb">PRIVATE</span> <span style="color:#87ceeb">cpr::cpr</span>)
-</span></span></code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmake" data-lang="cmake"> find_package(<span style="color:#87ceeb">cpr</span> <span style="color:#87ceeb">CONFIG</span> <span style="color:#87ceeb">REQUIRED</span>)
+ target_link_libraries(<span style="color:#87ceeb">PROJECT_NAME</span> <span style="color:#87ceeb">PRIVATE</span> <span style="color:#87ceeb">cpr::cpr</span>)
+</code></pre></div><ul>
 <li>For more than one library, you only need one <code>target_link_libraries</code> rather than one for each additional library</li>
 </ul>
 </li>
 <li>
 <p>Now let&rsquo;s code. In the main C++ file, type the following:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#e5e5e5">#include</span> <span style="color:#e5e5e5">&lt;cpr/cpr.h&gt;</span><span style="color:#e5e5e5">
-</span></span></span><span style="display:flex;"><span><span style="color:#e5e5e5">#include</span> <span style="color:#e5e5e5">&lt;iostream&gt;</span><span style="color:#e5e5e5">
-</span></span></span><span style="display:flex;"><span><span style="color:#e5e5e5"></span>
-</span></span><span style="display:flex;"><span><span style="color:#ee82ee">int</span> <span style="color:#ff0">main</span>()
-</span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>    cpr::Response r = cpr::Get(cpr::Url{ <span style="color:#87ceeb">&#34;https://api.github.com/repos/whoshuu/cpr/contributors&#34;</span> },
-</span></span><span style="display:flex;"><span>        cpr::Authentication{ <span style="color:#87ceeb">&#34;user&#34;</span>, <span style="color:#87ceeb">&#34;pass&#34;</span> },
-</span></span><span style="display:flex;"><span>        cpr::Parameters{ {<span style="color:#87ceeb">&#34;anon&#34;</span>, <span style="color:#87ceeb">&#34;true&#34;</span>}, {<span style="color:#87ceeb">&#34;key&#34;</span>, <span style="color:#87ceeb">&#34;value&#34;</span>} });
-</span></span><span style="display:flex;"><span>    r.status_code;                  <span style="color:#0f0">// 200
-</span></span></span><span style="display:flex;"><span><span style="color:#0f0"></span>    r.header[<span style="color:#87ceeb">&#34;content-type&#34;</span>];       <span style="color:#0f0">// application/json; charset=utf-8
-</span></span></span><span style="display:flex;"><span><span style="color:#0f0"></span>    r.text;                         <span style="color:#0f0">// JSON text string
-</span></span></span><span style="display:flex;"><span><span style="color:#0f0"></span>    std::cout &lt;&lt; r.text &lt;&lt; std::endl;
-</span></span><span style="display:flex;"><span>    <span style="color:#f00">return</span> <span style="color:#f60">0</span>;
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#e5e5e5">#include</span> <span style="color:#e5e5e5">&lt;cpr/cpr.h&gt;</span><span style="color:#e5e5e5">
+</span><span style="color:#e5e5e5">#include</span> <span style="color:#e5e5e5">&lt;iostream&gt;</span><span style="color:#e5e5e5">
+</span><span style="color:#e5e5e5"></span>
+<span style="color:#ee82ee">int</span> <span style="color:#ff0">main</span>()
+{
+    cpr::Response r = cpr::Get(cpr::Url{ <span style="color:#87ceeb">&#34;https://api.github.com/repos/whoshuu/cpr/contributors&#34;</span> },
+        cpr::Authentication{ <span style="color:#87ceeb">&#34;user&#34;</span>, <span style="color:#87ceeb">&#34;pass&#34;</span> },
+        cpr::Parameters{ {<span style="color:#87ceeb">&#34;anon&#34;</span>, <span style="color:#87ceeb">&#34;true&#34;</span>}, {<span style="color:#87ceeb">&#34;key&#34;</span>, <span style="color:#87ceeb">&#34;value&#34;</span>} });
+    r.status_code;                  <span style="color:#0f0">// 200
+</span><span style="color:#0f0"></span>    r.header[<span style="color:#87ceeb">&#34;content-type&#34;</span>];       <span style="color:#0f0">// application/json; charset=utf-8
+</span><span style="color:#0f0"></span>    r.text;                         <span style="color:#0f0">// JSON text string
+</span><span style="color:#0f0"></span>    std::cout &lt;&lt; r.text &lt;&lt; std::endl;
+    <span style="color:#f00">return</span> <span style="color:#f60">0</span>;
+}
+</code></pre></div></li>
 <li>
 <p>Let&rsquo;s test our build</p>
 <ul>
