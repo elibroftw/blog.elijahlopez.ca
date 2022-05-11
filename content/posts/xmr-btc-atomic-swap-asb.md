@@ -1,5 +1,5 @@
 ---
-title: "XMR-Btc Atomic Swap ASB"
+title: "XMR-BTC Atomic Swap ASB Guide"
 date: 2022-05-10T17:07:56-04:00
 draft: false
 tags: [
