@@ -26,4 +26,4 @@ aren't straight forward!
 4. Make sure this guide is readable with your terminal open
 5. Run `asb --testnet start` in a new terminal window and press enter for everything. Do not use Ctrl or Alt.
 6. A wallet will be created in 10 seconds
-7. Do not send XMR to this wallet because the asb breaks on the next launch
+7. If you close the ASB and want to start it again, restart the RPC to avoid a "wallet already exists error" from the ASB
