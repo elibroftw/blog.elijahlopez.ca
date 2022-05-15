@@ -18,6 +18,7 @@ menu:
     title: Subpage
     url: /about/subpage/
     weight: 10
+hidden: true
 ---
 
 Just a subpage of About.

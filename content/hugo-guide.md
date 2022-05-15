@@ -9,7 +9,7 @@ tags: [
     "github-pages",
     "git",
 ]
-hidden: false
+hidden: true
 ---
 
 DISCLAIMER: If you aren't from my hugo tutorial, please read my [Hugo tutorial](https://blog.elijahlopez.ca/posts/hugo-tutorial/#prerequisites)
