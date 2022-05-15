@@ -2,6 +2,11 @@
 title: "Running Python as a Scheduled Task (Windows)"
 date: 2019-05-23T22:34:21-05:00
 draft: false
+tags: [
+    "tutorial",
+    "programming",
+    "python",
+]
 ---
 
 To run python in the background is easy, to do it in the background and as a scheduled task is harder.

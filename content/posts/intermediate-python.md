@@ -2,6 +2,11 @@
 title: "Intermediate Python Tutorial Project Ideas and Tips"
 date: 2020-04-24T21:25:40-05:00
 draft: false
+tags: [
+    "tutorial",
+    "programming",
+    "python",
+]
 ---
 
 ## Introduction

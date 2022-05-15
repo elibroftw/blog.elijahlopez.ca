@@ -2,6 +2,11 @@
 title: "Parallel Concurrent Requests in Python"
 date: 2021-02-24T22:42:39-05:00
 draft: false
+tags: [
+    "tutorial",
+    "programming",
+    "python",
+]
 ---
 
 You’d think that the fastest way to make parallel network requests would be to use asyncio, but it’s actually `concurrent.futures.ThreadPoolExecutor`.

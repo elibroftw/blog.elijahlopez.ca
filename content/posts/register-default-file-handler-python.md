@@ -2,6 +2,11 @@
 title: "Registering Default File Handler's in Windows with Python"
 date: 2021-05-30T22:51:53-05:00
 draft: false
+tags: [
+    "tutorial",
+    "programming",
+    "python",
+]
 ---
 
 Recently I needed to make my music player register as a file handler for audio files (mp3, flac, etc…) but how would I do this? Say hello to Windows Registry.

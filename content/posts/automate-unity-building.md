@@ -2,6 +2,12 @@
 title: "Automate Unity Building"
 date: 2020-06-21T11:11:24-05:00
 draft: false
+tags: [
+    "tutorial",
+    "programming",
+    "python",
+    "c#",
+]
 ---
 
 It took me hours to figure out how to create a simple build script in Unity, even after watching videos, I was really confused.
@@ -34,7 +40,6 @@ You will need to make a shell/batch script or you can use Python so that the OS 
 You may have to modify some variables such as `UNITY` and also the zipping process if you don't want to zip the builds.
 You may also pair this up with an Ino setup script like so `iscc setup_script.iss`.
 I hope you found this tutorial helpful because I sure would've.
-
 
 ## Resources
 

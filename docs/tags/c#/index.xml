@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>c# on ELL Blog</title>
+    <link>/tags/c#/</link>
+    <description>ELL Blog (c#)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 21 Jun 2020 11:11:24 -0500</lastBuildDate>
+    
+    <atom:link href="/tags/c#/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Automate Unity Building</title>
+      <link>/posts/automate-unity-building/</link>
+      <pubDate>Sun, 21 Jun 2020 11:11:24 -0500</pubDate>
+      
+      <guid>/posts/automate-unity-building/</guid>
+      <description>&lt;p&gt;It took me hours to figure out how to create a simple build script in Unity, even after watching videos, I was really confused.
+So why not write an article so that other developers won&amp;rsquo;t need to spend that much time themselves.&lt;/p&gt;
+&lt;h2 id=&#34;getting-started&#34; &gt;Getting Started
+&lt;span&gt;
+    &lt;a href=&#34;#getting-started&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;Before we get started make sure you have the necessary build supports needed. In Unity Hub you can see your installations.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/images/automate-unity-building/unity-hub.png&#34; alt=&#34;Unity installation screenshot&#34;&gt;&lt;/p&gt;
+&lt;p&gt;If not, you&amp;rsquo;ll have to click the three dots, and then click &amp;ldquo;Add Modules.&amp;rdquo;
+Next, we will need to create a script named something like &lt;code&gt;BuildScript.cs&lt;/code&gt;.
+Make sure this file is placed in &lt;code&gt;Assets/Editor&lt;/code&gt;.
+This file will be responsible in calling Unity BuildPlayer as well as adding menu items for you to quickly build for your platform(s) of choice.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://gist.github.com/elibroftw/149c230518e3e0d9af54d9c472c2ee84#file-buildscript-cs&#34;&gt;BuildScript.cs&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Next copy the code below. Disclaimer: this code uses the scenes from your build settings so make sure the scenes there are correct.
+You can ignore the last function if you want, I just kept it there in case you need to use Asset Bundles (I did not).
+With this script you can call the build methods from &amp;ldquo;File &amp;gt; Build All&amp;rdquo; and Unity will build the players to the &amp;ldquo;Builds&amp;rdquo; directory in your project root.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/images/automate-unity-building/unity-hub.png&#34; alt=&#34;Unity build menu&#34;&gt;&lt;/p&gt;
+&lt;p&gt;This takes care of building from the editor but what if you were using CI/server to build it for you?
+You will need to make a shell/batch script or you can use Python so that the OS won&amp;rsquo;t matter.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://gist.github.com/elibroftw/be1f6ad737ccde25e86f858f2f11629f#file-unitybuild-py&#34;&gt;UnityBuild.py&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;You may have to modify some variables such as &lt;code&gt;UNITY&lt;/code&gt; and also the zipping process if you don&amp;rsquo;t want to zip the builds.
+You may also pair this up with an Ino setup script like so &lt;code&gt;iscc setup_script.iss&lt;/code&gt;.
+I hope you found this tutorial helpful because I sure would&amp;rsquo;ve.&lt;/p&gt;
+&lt;h2 id=&#34;resources&#34; &gt;Resources
+&lt;span&gt;
+    &lt;a href=&#34;#resources&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://docs.unity3d.com/Manual/BuildPlayerPipeline.html&#34;&gt;Build Player Pipeline&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://docs.unity3d.com/Manual/CommandLineArguments.html&#34;&gt;Unity Command line arguments&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

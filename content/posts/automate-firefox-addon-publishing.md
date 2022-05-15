@@ -2,6 +2,11 @@
 title: "Automate Firefox Addon Publishing"
 date: 2020-10-08T22:58:39-05:00
 draft: false
+tags: [
+    "tutorial",
+    "programming",
+    "python",
+]
 ---
 
 If you're like me, you always want to speed up aspects of your life especially routine tasks. I'll be doing this in Python but you can easily convert the code to a language of your choice.
