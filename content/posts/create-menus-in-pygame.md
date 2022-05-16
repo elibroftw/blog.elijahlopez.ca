@@ -2,6 +2,11 @@
 title: "How to Create Menus in Pygame"
 date: 2020-06-21T10:54:30-05:00
 draft: false
+tags: [
+    "tutorial",
+    "programming",
+    "python",
+]
 ---
 
 This article is about creating high functioning menus with an optimized workflow along with even a settings page.

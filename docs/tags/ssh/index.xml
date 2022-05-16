@@ -41,11 +41,11 @@ This will be useful when configuring the Remote-SSH VSCode extension.&lt;/p&gt;
         &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
     &lt;/a&gt;
 &lt;/span&gt;
-&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;ssh-copy-id -i path/to/file/if/not/default user@host
-&lt;span style=&#34;color:#0f0&#34;&gt;# examples&lt;/span&gt;
-ssh-copy-id -i .ssh/id_ed25519.pub user@host
-ssh-copy-id -i /mnt/c/Users/maste/.ssh/id_ed25519.pub user@host
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;If you&amp;rsquo;re having trouble with this, just &lt;code&gt;cd&lt;/code&gt; into the &lt;code&gt;.ssh&lt;/code&gt; folder and use &lt;code&gt;-i id_ed25519.pub&lt;/code&gt;&lt;/p&gt;
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ssh-copy-id -i path/to/file/if/not/default user@host
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;# examples&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ssh-copy-id -i .ssh/id_ed25519.pub user@host
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ssh-copy-id -i /mnt/c/Users/maste/.ssh/id_ed25519.pub user@host
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;If you&amp;rsquo;re having trouble with this, just &lt;code&gt;cd&lt;/code&gt; into the &lt;code&gt;.ssh&lt;/code&gt; folder and use &lt;code&gt;-i id_ed25519.pub&lt;/code&gt;&lt;/p&gt;
 &lt;h3 id=&#34;windows-no-wsl&#34; &gt;Windows no WSL
 &lt;span&gt;
     &lt;a href=&#34;#windows-no-wsl&#34;&gt;
@@ -54,10 +54,10 @@ ssh-copy-id -i /mnt/c/Users/maste/.ssh/id_ed25519.pub user@host
 &lt;/span&gt;
 &lt;/h3&gt;&lt;p&gt;If you&amp;rsquo;re on Windows, you won&amp;rsquo;t have access to &lt;code&gt;ssh-copy-id&lt;/code&gt;. Instead you can modify the first command below or use the second command
 if you aren&amp;rsquo;t doing anything abnormal on your computer.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-powershell&#34; data-lang=&#34;powershell&#34;&gt;type path\to\id_algo.pub | ssh user&lt;span style=&#34;color:#eedd82&#34;&gt;@host&lt;/span&gt; &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;cat &amp;gt;&amp;gt; .ssh/authorized_keys&amp;#34;&lt;/span&gt;
-&lt;span style=&#34;color:#0f0&#34;&gt;# type $env:USERPROFILE\.ssh\id_ed25519.pub | ssh user@host &amp;#34;cat &amp;gt;&amp;gt; .ssh/authorized_keys&amp;#34;&lt;/span&gt;
-&lt;span style=&#34;color:#0f0&#34;&gt;# the above is a helper that hopefully requires no modifications&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;setting-up-vs-code&#34; &gt;Setting up VS Code
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-powershell&#34; data-lang=&#34;powershell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;type path\to\id_algo.pub | ssh user&lt;span style=&#34;color:#eedd82&#34;&gt;@host&lt;/span&gt; &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;cat &amp;gt;&amp;gt; .ssh/authorized_keys&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;# type $env:USERPROFILE\.ssh\id_ed25519.pub | ssh user@host &amp;#34;cat &amp;gt;&amp;gt; .ssh/authorized_keys&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;# the above is a helper that hopefully requires no modifications&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;setting-up-vs-code&#34; &gt;Setting up VS Code
 &lt;span&gt;
     &lt;a href=&#34;#setting-up-vs-code&#34;&gt;
         &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
@@ -75,12 +75,12 @@ if you aren&amp;rsquo;t doing anything abnormal on your computer.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Enter the information for your remote server(s). Here is mine for reference. I had to comment out PreferredAuthentications.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;Host uWaterloo
-  User e5lopez
-  HostName linux.student.cs.uwaterloo.ca
-  IdentityFile &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;C:\Users\maste\.ssh\id_ed25519&amp;#34;&lt;/span&gt;
-  &lt;span style=&#34;color:#0f0&#34;&gt;# PreferredAuthentications publickey&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Host uWaterloo
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  User e5lopez
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  HostName linux.student.cs.uwaterloo.ca
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  IdentityFile &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;C:\Users\maste\.ssh\id_ed25519&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#0f0&#34;&gt;# PreferredAuthentications publickey&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;From the command palette, use &amp;ldquo;Remote-SSH: Connect Current Window to Host&amp;hellip;&amp;rdquo; and select the host you just added&lt;/p&gt;
 &lt;/li&gt;
