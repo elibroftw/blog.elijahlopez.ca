@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>c# on ELL Blog</title>
-    <link>/tags/c#/</link>
+    <link>https://blog.elijahlopez.ca/tags/c#/</link>
     <description>ELL Blog (c#)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Sun, 21 Jun 2020 11:11:24 -0500</lastBuildDate>
     
-    <atom:link href="/tags/c#/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://blog.elijahlopez.ca/tags/c#/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Automate Unity Building</title>
-      <link>/posts/automate-unity-building/</link>
+      <link>https://blog.elijahlopez.ca/posts/automate-unity-building/</link>
       <pubDate>Sun, 21 Jun 2020 11:11:24 -0500</pubDate>
       
-      <guid>/posts/automate-unity-building/</guid>
+      <guid>https://blog.elijahlopez.ca/posts/automate-unity-building/</guid>
       <description>&lt;p&gt;It took me hours to figure out how to create a simple build script in Unity, even after watching videos, I was really confused.
 So why not write an article so that other developers won&amp;rsquo;t need to spend that much time themselves.&lt;/p&gt;
 &lt;h2 id=&#34;getting-started&#34; &gt;Getting Started
@@ -26,7 +26,7 @@ So why not write an article so that other developers won&amp;rsquo;t need to spe
     &lt;/a&gt;
 &lt;/span&gt;
 &lt;/h2&gt;&lt;p&gt;Before we get started make sure you have the necessary build supports needed. In Unity Hub you can see your installations.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/images/automate-unity-building/unity-hub.png&#34; alt=&#34;Unity installation screenshot&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.elijahlopez.ca/images/automate-unity-building/unity-hub.png&#34; alt=&#34;Unity installation screenshot&#34;&gt;&lt;/p&gt;
 &lt;p&gt;If not, you&amp;rsquo;ll have to click the three dots, and then click &amp;ldquo;Add Modules.&amp;rdquo;
 Next, we will need to create a script named something like &lt;code&gt;BuildScript.cs&lt;/code&gt;.
 Make sure this file is placed in &lt;code&gt;Assets/Editor&lt;/code&gt;.
@@ -35,7 +35,7 @@ This file will be responsible in calling Unity BuildPlayer as well as adding men
 &lt;p&gt;Next copy the code below. Disclaimer: this code uses the scenes from your build settings so make sure the scenes there are correct.
 You can ignore the last function if you want, I just kept it there in case you need to use Asset Bundles (I did not).
 With this script you can call the build methods from &amp;ldquo;File &amp;gt; Build All&amp;rdquo; and Unity will build the players to the &amp;ldquo;Builds&amp;rdquo; directory in your project root.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/images/automate-unity-building/unity-hub.png&#34; alt=&#34;Unity build menu&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.elijahlopez.ca/images/automate-unity-building/unity-hub.png&#34; alt=&#34;Unity build menu&#34;&gt;&lt;/p&gt;
 &lt;p&gt;This takes care of building from the editor but what if you were using CI/server to build it for you?
 You will need to make a shell/batch script or you can use Python so that the OS won&amp;rsquo;t matter.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://gist.github.com/elibroftw/be1f6ad737ccde25e86f858f2f11629f#file-unitybuild-py&#34;&gt;UnityBuild.py&lt;/a&gt;&lt;/p&gt;

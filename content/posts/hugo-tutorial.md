@@ -36,7 +36,7 @@ If you are like me, you can follow the tutorial that [forks my site](#forking-my
 9. To enable the `pre-commit` hook, use the command `git config core.hookspath .githooks` in your repo directory
    - The `pre-commit` hook will auto-update themes and build the site using `hugo -d docs` before commiting
 10. Delete `content/posts` and `static/images`
-11. Edit `config.yaml` and replace my information with yours
+11. Edit `config.yaml` and replace my information with yours (set baseUrl to the one shown by GitHub)
 12. You can remove \# to enable certain features (the about section requires uses `content/about.md` and `content/about-subpage.md`)
 13. Read `content/hugo-guide.md` in your new repo to help you write, edit, and publish posts
 

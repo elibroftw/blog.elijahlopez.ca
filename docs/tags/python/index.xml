@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>python on ELL Blog</title>
-    <link>/tags/python/</link>
+    <link>https://blog.elijahlopez.ca/tags/python/</link>
     <description>ELL Blog (python)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Sun, 30 May 2021 22:51:53 -0500</lastBuildDate>
     
-    <atom:link href="/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://blog.elijahlopez.ca/tags/python/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Registering Default File Handler&#39;s in Windows with Python</title>
-      <link>/posts/register-default-file-handler-python/</link>
+      <link>https://blog.elijahlopez.ca/posts/register-default-file-handler-python/</link>
       <pubDate>Sun, 30 May 2021 22:51:53 -0500</pubDate>
       
-      <guid>/posts/register-default-file-handler-python/</guid>
+      <guid>https://blog.elijahlopez.ca/posts/register-default-file-handler-python/</guid>
       <description>&lt;p&gt;Recently I needed to make my music player register as a file handler for audio files (mp3, flac, etc…) but how would I do this? Say hello to Windows Registry.&lt;/p&gt;
 &lt;p&gt;Here is the helpers file for Music Caster. Look for &lt;code&gt;add_reg_handlers&lt;/code&gt; &lt;a href=&#34;https://github.com/elibroftw/music-caster/blob/master/src/helpers.py&#34;&gt;https://github.com/elibroftw/music-caster/blob/master/src/helpers.py&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;This function sets my music player as the default program for a variety of file extensions. It also adds custom right click options for those file extensions and folders as well.&lt;/p&gt;
@@ -33,10 +33,10 @@ At the end of the function is the code required to delete your registry modifica
     
     <item>
       <title>Parallel Concurrent Requests in Python</title>
-      <link>/posts/parallel-concurrent-requests-in-python/</link>
+      <link>https://blog.elijahlopez.ca/posts/parallel-concurrent-requests-in-python/</link>
       <pubDate>Wed, 24 Feb 2021 22:42:39 -0500</pubDate>
       
-      <guid>/posts/parallel-concurrent-requests-in-python/</guid>
+      <guid>https://blog.elijahlopez.ca/posts/parallel-concurrent-requests-in-python/</guid>
       <description>&lt;p&gt;You’d think that the fastest way to make parallel network requests would be to use asyncio, but it’s actually &lt;code&gt;concurrent.futures.ThreadPoolExecutor&lt;/code&gt;.
 I’ve known ThreadPools before as I worked with them in Java 6+ months ago, but I couldn’t find something similar in Python until yesterday.
 There is also a &lt;code&gt;ProcessPoolExecutor&lt;/code&gt;, but I’d only suggest you use that for CPU-bound tasks.
@@ -50,10 +50,10 @@ Here is a quick proof of concept using &lt;code&gt;ThreadPoolExecutor&lt;/code&g
     
     <item>
       <title>Automate Firefox Addon Publishing</title>
-      <link>/posts/automate-firefox-addon-publishing/</link>
+      <link>https://blog.elijahlopez.ca/posts/automate-firefox-addon-publishing/</link>
       <pubDate>Thu, 08 Oct 2020 22:58:39 -0500</pubDate>
       
-      <guid>/posts/automate-firefox-addon-publishing/</guid>
+      <guid>https://blog.elijahlopez.ca/posts/automate-firefox-addon-publishing/</guid>
       <description>&lt;p&gt;If you&amp;rsquo;re like me, you always want to speed up aspects of your life especially routine tasks. I&amp;rsquo;ll be doing this in Python but you can easily convert the code to a language of your choice.&lt;/p&gt;
 &lt;h2 id=&#34;prerequisites&#34; &gt;Prerequisites
 &lt;span&gt;
@@ -88,10 +88,10 @@ After installing these two modules, copy the snippet at the bottom of the articl
     
     <item>
       <title>Convert Word Files to PDF With Python</title>
-      <link>/posts/convert-word-files-to-pdf/</link>
+      <link>https://blog.elijahlopez.ca/posts/convert-word-files-to-pdf/</link>
       <pubDate>Wed, 02 Sep 2020 23:04:27 -0500</pubDate>
       
-      <guid>/posts/convert-word-files-to-pdf/</guid>
+      <guid>https://blog.elijahlopez.ca/posts/convert-word-files-to-pdf/</guid>
       <description>&lt;p&gt;NOTE: Windows tutorial.&lt;/p&gt;
 &lt;p&gt;Back when I first started University, I decided to type out all my math notes. Yes, you heard me right, I typed out my math notes (equation editor is very powerful) - or took screenshot snippets of the textbook PDF and pasted them into my notes.docx if I was lagging behind and too lazy to type it out later. I&amp;rsquo;m always about studying efficiently so whenever I needed to read my math notes, it was always annoying having to wait a couple seconds for Word to open up my notes so I decided to start exporting them to PDF but I didn&amp;rsquo;t want to do it manually every time for both all my course notes so I decided I would use Python to solve my problem. Here&amp;rsquo;s what I came up with after doing some research and debugging to optimize code execution.&lt;/p&gt;
 &lt;p&gt;A lot of the code is about leveraging the win32 API and I&amp;rsquo;d be lying if I knew what everything actually did, but rest assured I did have to figure out how to get it to work as you can see with the word = comments where I was figuring out how to do the conversion using threads. I&amp;rsquo;m sure you could even use multiprocessing here but that&amp;rsquo;s for another time since this code was made for only 4 files. You could also use a thread pool if it turns out you have more than 4 files but don&amp;rsquo;t want to rewrite the code to work with multiprocessing.&lt;/p&gt;
@@ -102,10 +102,10 @@ After installing these two modules, copy the snippet at the bottom of the articl
     
     <item>
       <title>Automate Unity Building</title>
-      <link>/posts/automate-unity-building/</link>
+      <link>https://blog.elijahlopez.ca/posts/automate-unity-building/</link>
       <pubDate>Sun, 21 Jun 2020 11:11:24 -0500</pubDate>
       
-      <guid>/posts/automate-unity-building/</guid>
+      <guid>https://blog.elijahlopez.ca/posts/automate-unity-building/</guid>
       <description>&lt;p&gt;It took me hours to figure out how to create a simple build script in Unity, even after watching videos, I was really confused.
 So why not write an article so that other developers won&amp;rsquo;t need to spend that much time themselves.&lt;/p&gt;
 &lt;h2 id=&#34;getting-started&#34; &gt;Getting Started
@@ -115,7 +115,7 @@ So why not write an article so that other developers won&amp;rsquo;t need to spe
     &lt;/a&gt;
 &lt;/span&gt;
 &lt;/h2&gt;&lt;p&gt;Before we get started make sure you have the necessary build supports needed. In Unity Hub you can see your installations.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/images/automate-unity-building/unity-hub.png&#34; alt=&#34;Unity installation screenshot&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.elijahlopez.ca/images/automate-unity-building/unity-hub.png&#34; alt=&#34;Unity installation screenshot&#34;&gt;&lt;/p&gt;
 &lt;p&gt;If not, you&amp;rsquo;ll have to click the three dots, and then click &amp;ldquo;Add Modules.&amp;rdquo;
 Next, we will need to create a script named something like &lt;code&gt;BuildScript.cs&lt;/code&gt;.
 Make sure this file is placed in &lt;code&gt;Assets/Editor&lt;/code&gt;.
@@ -124,7 +124,7 @@ This file will be responsible in calling Unity BuildPlayer as well as adding men
 &lt;p&gt;Next copy the code below. Disclaimer: this code uses the scenes from your build settings so make sure the scenes there are correct.
 You can ignore the last function if you want, I just kept it there in case you need to use Asset Bundles (I did not).
 With this script you can call the build methods from &amp;ldquo;File &amp;gt; Build All&amp;rdquo; and Unity will build the players to the &amp;ldquo;Builds&amp;rdquo; directory in your project root.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/images/automate-unity-building/unity-hub.png&#34; alt=&#34;Unity build menu&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.elijahlopez.ca/images/automate-unity-building/unity-hub.png&#34; alt=&#34;Unity build menu&#34;&gt;&lt;/p&gt;
 &lt;p&gt;This takes care of building from the editor but what if you were using CI/server to build it for you?
 You will need to make a shell/batch script or you can use Python so that the OS won&amp;rsquo;t matter.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://gist.github.com/elibroftw/be1f6ad737ccde25e86f858f2f11629f#file-unitybuild-py&#34;&gt;UnityBuild.py&lt;/a&gt;&lt;/p&gt;
@@ -144,10 +144,10 @@ I hope you found this tutorial helpful because I sure would&amp;rsquo;ve.&lt;/p&
     
     <item>
       <title>How to Create Menus in Pygame</title>
-      <link>/posts/create-menus-in-pygame/</link>
+      <link>https://blog.elijahlopez.ca/posts/create-menus-in-pygame/</link>
       <pubDate>Sun, 21 Jun 2020 10:54:30 -0500</pubDate>
       
-      <guid>/posts/create-menus-in-pygame/</guid>
+      <guid>https://blog.elijahlopez.ca/posts/create-menus-in-pygame/</guid>
       <description>&lt;p&gt;This article is about creating high functioning menus with an optimized workflow along with even a settings page.&lt;/p&gt;
 &lt;p&gt;One note of warning is that each of these sections of code cannot be run independently.
 I have split the code on purpose so that you can use it in a plug and play manner.
@@ -283,10 +283,10 @@ It&amp;rsquo;s just a question of placement (modifying button_rects) since I hav
     
     <item>
       <title>Intermediate Python Tutorial Project Ideas and Tips</title>
-      <link>/posts/intermediate-python/</link>
+      <link>https://blog.elijahlopez.ca/posts/intermediate-python/</link>
       <pubDate>Fri, 24 Apr 2020 21:25:40 -0500</pubDate>
       
-      <guid>/posts/intermediate-python/</guid>
+      <guid>https://blog.elijahlopez.ca/posts/intermediate-python/</guid>
       <description>&lt;h2 id=&#34;introduction&#34; &gt;Introduction
 &lt;span&gt;
     &lt;a href=&#34;#introduction&#34;&gt;
@@ -336,7 +336,7 @@ I suggest you do the same and you could even add the snippets featured in this a
 &lt;/span&gt;
 &lt;/h3&gt;&lt;p&gt;Instead of doing a calculation by hand or opening an IDE to create and run a script, you can actually execute Python code from the command line.
 Aside from the common batch functions (e.g. ls, cd), knowing how to use Python from the command line will save you a lot of time.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/images/intermediate-python/python-in-terminal.png&#34; alt=&#34;Python in the Terminal&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.elijahlopez.ca/images/intermediate-python/python-in-terminal.png&#34; alt=&#34;Python in the Terminal&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;how-to-search-engine&#34; &gt;How to Search Engine
 &lt;span&gt;
     &lt;a href=&#34;#how-to-search-engine&#34;&gt;
@@ -796,10 +796,10 @@ Git is a versioning tool used so that mistakes don’t hurt you, and for letting
     
     <item>
       <title>Python3 Simplehttpserver</title>
-      <link>/posts/python3-simplehttpserver/</link>
+      <link>https://blog.elijahlopez.ca/posts/python3-simplehttpserver/</link>
       <pubDate>Wed, 10 Jul 2019 22:38:39 -0500</pubDate>
       
-      <guid>/posts/python3-simplehttpserver/</guid>
+      <guid>https://blog.elijahlopez.ca/posts/python3-simplehttpserver/</guid>
       <description>&lt;h2 id=&#34;code&#34; &gt;Code
 &lt;span&gt;
     &lt;a href=&#34;#code&#34;&gt;
@@ -825,10 +825,10 @@ It worked perfectly and I just had to os.chdir(‘C:/’) to get exactly what I 
     
     <item>
       <title>Running Python as a Scheduled Task (Windows)</title>
-      <link>/posts/python-windows-task-scheduler/</link>
+      <link>https://blog.elijahlopez.ca/posts/python-windows-task-scheduler/</link>
       <pubDate>Thu, 23 May 2019 22:34:21 -0500</pubDate>
       
-      <guid>/posts/python-windows-task-scheduler/</guid>
+      <guid>https://blog.elijahlopez.ca/posts/python-windows-task-scheduler/</guid>
       <description>&lt;p&gt;To run python in the background is easy, to do it in the background and as a scheduled task is harder.&lt;/p&gt;
 &lt;p&gt;If you want to just run a script in the background, you can use&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;pythonw &amp;quot;script.py&amp;quot;&lt;/code&gt;&lt;/p&gt;
