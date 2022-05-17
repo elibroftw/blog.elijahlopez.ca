@@ -1,6 +1,6 @@
 ---
 title: "VS Code Remote SSH Tutorial"
-date: 2021-12-22T18:23:50-05:00
+date: 2020-09-11T18:23:50-05:00
 draft: false
 tags: [
     "programming",
@@ -16,7 +16,7 @@ In this tutorial we'll integrate SSH into VS Code in a way that won't require en
 
 If you're on Windows, you will need to install the OpenSSH feature from Settings or you can use WSL to be able to use `ssh-keygen`.
 
-You can generate an SSH key using `ssh-keygen -t ed25519`
+You can generate an SSH key using `ssh-keygen -t ed25519`. Press enter on the prompt to use the default filename.
 
 Keep track of where the key is stored. (e.g. `C:\Users\maste\.ssh\id_ed25519`)
 This will be useful when configuring the Remote-SSH VSCode extension.
@@ -25,24 +25,27 @@ This will be useful when configuring the Remote-SSH VSCode extension.
 
 During the process of adding our keys, we'll have to enter our passwords.
 
-### Linux / WSL
+### Linux / MacOS / WSL
 
 ```sh
-ssh-copy-id -i path/to/file/if/not/default user@host
+ssh-copy-id -i path/to/file/if/not/default USER@HOST
 # examples
-ssh-copy-id -i .ssh/id_ed25519.pub user@host
-ssh-copy-id -i /mnt/c/Users/maste/.ssh/id_ed25519.pub user@host
+ssh-copy-id -i .ssh/id_ed25519.pub USER@HOST
+ssh-copy-id -i /mnt/c/Users/maste/.ssh/id_ed25519.pub USER@HOST
 ```
+
+When doing this, press enter to any yes/no prompts such as fingerprints and etc. The fingerprint prompt is
+important only if you can't trust your network (e.g. Starbucks WiFi).
 
 If you're having trouble with this, just `cd` into the `.ssh` folder and use `-i id_ed25519.pub`
 
-### Windows no WSL
+### Windows Without WSL
 
 If you're on Windows, you won't have access to `ssh-copy-id`. Instead you can modify the first command below or use the second command
 if you aren't doing anything abnormal on your computer.
 
 ```powershell
-type path\to\id_algo.pub | ssh user@host "cat >> .ssh/authorized_keys"
+type path\to\id_algo.pub | ssh USER@HOST "cat >> .ssh/authorized_keys"
 # type $env:USERPROFILE\.ssh\id_ed25519.pub | ssh user@host "cat >> .ssh/authorized_keys"
 # the above is a helper that hopefully requires no modifications
 ```
@@ -59,6 +62,7 @@ type path\to\id_algo.pub | ssh user@host "cat >> .ssh/authorized_keys"
       User e5lopez
       HostName linux.student.cs.uwaterloo.ca
       IdentityFile "C:\Users\maste\.ssh\id_ed25519"
+      # Linux/MacOS: IdentityFile "/Users/USER/.ssh/id_ed25519"
       # PreferredAuthentications publickey
     ```
 

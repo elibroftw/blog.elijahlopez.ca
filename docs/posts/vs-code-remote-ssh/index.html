@@ -16,8 +16,7 @@
 
 <meta name="description" content="In this tutorial we&rsquo;ll integrate SSH into VS Code in a way that won&rsquo;t require entering a password every time.
 Generating an SSH keyIf you&rsquo;re on Windows, you will need to install the OpenSSH feature from Settings or you can use WSL to be able to use ssh-keygen.
-You can generate an SSH key using ssh-keygen -t ed25519
-Keep track of where the key is stored.">
+You can generate an SSH key using ssh-keygen -t ed25519. Press enter on the prompt to use the default filename.">
 
 
 
@@ -92,12 +91,11 @@ Keep track of where the key is stored.">
 <meta property="og:title" content="VS Code Remote SSH Tutorial" />
 <meta property="og:description" content="In this tutorial we&rsquo;ll integrate SSH into VS Code in a way that won&rsquo;t require entering a password every time.
 Generating an SSH keyIf you&rsquo;re on Windows, you will need to install the OpenSSH feature from Settings or you can use WSL to be able to use ssh-keygen.
-You can generate an SSH key using ssh-keygen -t ed25519
-Keep track of where the key is stored." />
+You can generate an SSH key using ssh-keygen -t ed25519. Press enter on the prompt to use the default filename." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/posts/vs-code-remote-ssh/" /><meta property="og:image" content="images"/><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2021-12-22T18:23:50-05:00" />
-<meta property="article:modified_time" content="2021-12-22T18:23:50-05:00" />
+<meta property="article:published_time" content="2020-09-11T18:23:50-05:00" />
+<meta property="article:modified_time" content="2020-09-11T18:23:50-05:00" />
 
 
 <meta name="twitter:card" content="summary_large_image"/>
@@ -106,8 +104,7 @@ Keep track of where the key is stored." />
 <meta name="twitter:title" content="VS Code Remote SSH Tutorial"/>
 <meta name="twitter:description" content="In this tutorial we&rsquo;ll integrate SSH into VS Code in a way that won&rsquo;t require entering a password every time.
 Generating an SSH keyIf you&rsquo;re on Windows, you will need to install the OpenSSH feature from Settings or you can use WSL to be able to use ssh-keygen.
-You can generate an SSH key using ssh-keygen -t ed25519
-Keep track of where the key is stored."/>
+You can generate an SSH key using ssh-keygen -t ed25519. Press enter on the prompt to use the default filename."/>
 
 
 
@@ -286,7 +283,7 @@ Keep track of where the key is stored."/>
     </a>
 </span>
 </h2><p>If you&rsquo;re on Windows, you will need to install the OpenSSH feature from Settings or you can use WSL to be able to use <code>ssh-keygen</code>.</p>
-<p>You can generate an SSH key using <code>ssh-keygen -t ed25519</code></p>
+<p>You can generate an SSH key using <code>ssh-keygen -t ed25519</code>. Press enter on the prompt to use the default filename.</p>
 <p>Keep track of where the key is stored. (e.g. <code>C:\Users\maste\.ssh\id_ed25519</code>)
 This will be useful when configuring the Remote-SSH VSCode extension.</p>
 <h2 id="adding-ssh-key-to-authorized-keys" >Adding SSH key to Authorized Keys
@@ -296,26 +293,28 @@ This will be useful when configuring the Remote-SSH VSCode extension.</p>
     </a>
 </span>
 </h2><p>During the process of adding our keys, we&rsquo;ll have to enter our passwords.</p>
-<h3 id="linux--wsl" >Linux / WSL
+<h3 id="linux--macos--wsl" >Linux / MacOS / WSL
 <span>
-    <a href="#linux--wsl">
+    <a href="#linux--macos--wsl">
         <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
     </a>
 </span>
-</h3><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>ssh-copy-id -i path/to/file/if/not/default user@host
+</h3><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>ssh-copy-id -i path/to/file/if/not/default USER@HOST
 </span></span><span style="display:flex;"><span><span style="color:#0f0"># examples</span>
-</span></span><span style="display:flex;"><span>ssh-copy-id -i .ssh/id_ed25519.pub user@host
-</span></span><span style="display:flex;"><span>ssh-copy-id -i /mnt/c/Users/maste/.ssh/id_ed25519.pub user@host
-</span></span></code></pre></div><p>If you&rsquo;re having trouble with this, just <code>cd</code> into the <code>.ssh</code> folder and use <code>-i id_ed25519.pub</code></p>
-<h3 id="windows-no-wsl" >Windows no WSL
+</span></span><span style="display:flex;"><span>ssh-copy-id -i .ssh/id_ed25519.pub USER@HOST
+</span></span><span style="display:flex;"><span>ssh-copy-id -i /mnt/c/Users/maste/.ssh/id_ed25519.pub USER@HOST
+</span></span></code></pre></div><p>When doing this, press enter to any yes/no prompts such as fingerprints and etc. The fingerprint prompt is
+important only if you can&rsquo;t trust your network (e.g. Starbucks WiFi).</p>
+<p>If you&rsquo;re having trouble with this, just <code>cd</code> into the <code>.ssh</code> folder and use <code>-i id_ed25519.pub</code></p>
+<h3 id="windows-without-wsl" >Windows Without WSL
 <span>
-    <a href="#windows-no-wsl">
+    <a href="#windows-without-wsl">
         <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
     </a>
 </span>
 </h3><p>If you&rsquo;re on Windows, you won&rsquo;t have access to <code>ssh-copy-id</code>. Instead you can modify the first command below or use the second command
 if you aren&rsquo;t doing anything abnormal on your computer.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>type path\to\id_algo.pub | ssh user<span style="color:#eedd82">@host</span> <span style="color:#87ceeb">&#34;cat &gt;&gt; .ssh/authorized_keys&#34;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>type path\to\id_algo.pub | ssh USER<span style="color:#eedd82">@HOST</span> <span style="color:#87ceeb">&#34;cat &gt;&gt; .ssh/authorized_keys&#34;</span>
 </span></span><span style="display:flex;"><span><span style="color:#0f0"># type $env:USERPROFILE\.ssh\id_ed25519.pub | ssh user@host &#34;cat &gt;&gt; .ssh/authorized_keys&#34;</span>
 </span></span><span style="display:flex;"><span><span style="color:#0f0"># the above is a helper that hopefully requires no modifications</span>
 </span></span></code></pre></div><h2 id="setting-up-vs-code" >Setting up VS Code
@@ -340,6 +339,7 @@ if you aren&rsquo;t doing anything abnormal on your computer.</p>
 </span></span><span style="display:flex;"><span>  User e5lopez
 </span></span><span style="display:flex;"><span>  HostName linux.student.cs.uwaterloo.ca
 </span></span><span style="display:flex;"><span>  IdentityFile <span style="color:#87ceeb">&#34;C:\Users\maste\.ssh\id_ed25519&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#0f0"># Linux/MacOS: IdentityFile &#34;/Users/USER/.ssh/id_ed25519&#34;</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#0f0"># PreferredAuthentications publickey</span>
 </span></span></code></pre></div></li>
 <li>
@@ -365,7 +365,7 @@ if you aren&rsquo;t doing anything abnormal on your computer.</p>
 
 <div class="post-info">
     
-        <div class="post-date dt-published">2021-Dec-22</div>
+        <div class="post-date dt-published">2020-Sep-11</div>
     
 
     <a class="post-hidden-url u-url" href="/posts/vs-code-remote-ssh/">/posts/vs-code-remote-ssh/</a>
@@ -403,12 +403,12 @@ if you aren&rsquo;t doing anything abnormal on your computer.</p>
     <div class="pagination post-pagination">
         <div class="left pagination-item ">
             
-                <a href="/posts/64bit-is-better-than-32bit/">Why 64-bit Programs are Better Than 32-bit</a>
+                <a href="/posts/automate-firefox-addon-publishing/">Automate Firefox Addon Publishing</a>
             
         </div>
         <div class="right pagination-item ">
             
-                <a href="/posts/vcpkg-cmake-tutorial/">Installing Libraries for C&#43;&#43; with Vcpkg and CMake</a>
+                <a href="/posts/convert-word-files-to-pdf/">Convert Word Files to PDF With Python</a>
             
         </div>
     </div>
