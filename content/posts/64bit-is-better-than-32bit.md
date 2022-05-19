@@ -4,7 +4,6 @@ date: 2021-12-25T10:30:44-06:00
 draft: false
 tags: [
   "opinion",
-  "tutorial",
 ]
 ---
 

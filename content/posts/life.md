@@ -3,6 +3,9 @@ title: "My Thoughts on Life"
 date: 2022-05-19T10:03:59-04:00
 draft: false
 hidden: true
+tags: [
+  "thoughts",
+]
 # https://blog.elijahlopez.ca/posts/life/
 ---
 
