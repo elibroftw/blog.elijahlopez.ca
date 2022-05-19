@@ -3,9 +3,10 @@ title: "Jenkins Snippets"
 date: 2022-02-07T11:08:15-05:00
 draft: false
 tags: [
-    "jenkins",
     "tutorial",
-    "groovy"
+    "programming",
+    "jenkins",
+    "groovy",
 ]
 ---
 

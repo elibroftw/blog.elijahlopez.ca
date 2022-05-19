@@ -2,6 +2,7 @@
 title: "MacOS Sucks"
 date: 2022-05-12T17:21:36-04:00
 draft: false
+hidden: true
 tags: [
     "opinion",
 ]

@@ -2,6 +2,7 @@
 title: "Male Grooming Tips"
 date: 2022-05-10T20:48:46-04:00
 draft: false
+hidden: true
 ---
 
 This is a work in progress.

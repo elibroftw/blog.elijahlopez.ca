@@ -3,8 +3,10 @@ title: "HTML and CSS - Mobile Responsive Design"
 date: 2022-02-24T00:40:12-05:00
 draft: false
 tags: [
+    "tutorial",
+    "programming",
     "html",
-    "css"
+    "css",
 ]
 ---
 
