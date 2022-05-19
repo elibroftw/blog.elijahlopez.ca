@@ -31,71 +31,71 @@
         &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
     &lt;/a&gt;
 &lt;/span&gt;
-&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-groovy&#34; data-lang=&#34;groovy&#34;&gt;&lt;span style=&#34;color:#f00&#34;&gt;import&lt;/span&gt; hudson.model.ParametersAction
-&lt;span style=&#34;color:#f00&#34;&gt;import&lt;/span&gt; jenkins.model.Jenkins
-&lt;span style=&#34;color:#f00&#34;&gt;import&lt;/span&gt; jenkins.model.CauseOfInterruption
-&lt;span style=&#34;color:#f00&#34;&gt;import&lt;/span&gt; jenkins.model.Jenkins
-&lt;span style=&#34;color:#0f0&#34;&gt;// type of _build in case you need it
-&lt;/span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#f00&#34;&gt;import&lt;/span&gt; org.jenkinsci.plugins.workflow.job.WorkflowRun
-
-&lt;span style=&#34;color:#0f0&#34;&gt;// TODO: create plugin or something for custom status messages
-&lt;/span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;&lt;/span&gt;
-@NonCPS
-&lt;span style=&#34;color:#ee82ee&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#ff0&#34;&gt;abortOldBuilds&lt;/span&gt;(String paramKey, String paramVal) {
-    &lt;span style=&#34;color:#0f0&#34;&gt;// param_key and paramVal can be used for PR numbers
-&lt;/span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#ee82ee&#34;&gt;def&lt;/span&gt; job = Jenkins.instanceOrNull.getItem(JOB_NAME)
-    &lt;span style=&#34;color:#ee82ee&#34;&gt;def&lt;/span&gt; buildID = BUILD_ID
-    &lt;span style=&#34;color:#0f0&#34;&gt;// highest running ID
-&lt;/span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#ee82ee&#34;&gt;def&lt;/span&gt; highestRID = buildID
-    &lt;span style=&#34;color:#0f0&#34;&gt;// in case the current build is old
-&lt;/span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;&lt;/span&gt;    WorkflowRun curBuild
-
-    &lt;span style=&#34;color:#ee82ee&#34;&gt;def&lt;/span&gt; build = job.getLastBuild()
-    &lt;span style=&#34;color:#0f0&#34;&gt;// avoid .builds since it can cause iteration errors
-&lt;/span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#f00&#34;&gt;while&lt;/span&gt; (build != &lt;span style=&#34;color:#f00&#34;&gt;null&lt;/span&gt;) {
-        &lt;span style=&#34;color:#ee82ee&#34;&gt;def&lt;/span&gt; cbuildID = build.id.toInteger()
-        &lt;span style=&#34;color:#ee82ee&#34;&gt;def&lt;/span&gt; curParamVal = build.allActions.find{it &lt;span style=&#34;color:#f00&#34;&gt;in&lt;/span&gt; ParametersAction}?.getParameter(paramKey)?.value
-        &lt;span style=&#34;color:#0f0&#34;&gt;// optionally filter out builds
-&lt;/span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;&lt;/span&gt;        &lt;span style=&#34;color:#f00&#34;&gt;if&lt;/span&gt; (curParamVal == param_val) {
-            &lt;span style=&#34;color:#f00&#34;&gt;if&lt;/span&gt; (cbuildID == buildID) {
-                curBuild = build
-            } &lt;span style=&#34;color:#f00&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;color:#f00&#34;&gt;if&lt;/span&gt; (build.isBuilding() &amp;amp;&amp;amp; cbuildID &amp;lt; highestRID) {
-                build.doKill()
-                echo &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;terminated build #${cbuildID}&amp;#34;&lt;/span&gt;
-                &lt;span style=&#34;color:#ee82ee&#34;&gt;def&lt;/span&gt; cause = &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;Aborted by #${buildID} for being an old build&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#0f0&#34;&gt;// + for paramVal
-&lt;/span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;&lt;/span&gt;                &lt;span style=&#34;color:#0f0&#34;&gt;// add to the log of another build
-&lt;/span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;&lt;/span&gt;                build.getListener().getLogger().println(cause)
-                &lt;span style=&#34;color:#0f0&#34;&gt;// The below will cause zombie jobs and so was abandoned
-&lt;/span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;&lt;/span&gt;                &lt;span style=&#34;color:#0f0&#34;&gt;// def r = new ArrayList&amp;lt;&amp;gt;(Arrays.asList({ cause as String } as CauseOfInterruption))
-&lt;/span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;&lt;/span&gt;                &lt;span style=&#34;color:#0f0&#34;&gt;// _build.addAction(new InterruptedBuildAction(r))
-&lt;/span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;&lt;/span&gt;            } &lt;span style=&#34;color:#f00&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;color:#f00&#34;&gt;if&lt;/span&gt; (cbuildID &amp;gt; highestRID) {
-                &lt;span style=&#34;color:#0f0&#34;&gt;// update highest running ID
-&lt;/span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;&lt;/span&gt;                highestRID = cbuildID
-            }
-        }
-        build = build.getPreviousBuild()
-    }
-    &lt;span style=&#34;color:#f00&#34;&gt;if&lt;/span&gt; (highestRID &amp;gt; buildID) {
-        println &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;Terminating self since newer build was found&amp;#34;&lt;/span&gt;
-        &lt;span style=&#34;color:#ee82ee&#34;&gt;def&lt;/span&gt; selfAbortCause = &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;Aborting due to the presence of a newer build&amp;#34;&lt;/span&gt;
-        curBuild.doKill()
-    }
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;getting-build-log&#34; &gt;Getting Build Log
+&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-groovy&#34; data-lang=&#34;groovy&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f00&#34;&gt;import&lt;/span&gt; hudson.model.ParametersAction
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f00&#34;&gt;import&lt;/span&gt; jenkins.model.Jenkins
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f00&#34;&gt;import&lt;/span&gt; jenkins.model.CauseOfInterruption
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f00&#34;&gt;import&lt;/span&gt; jenkins.model.Jenkins
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;// type of _build in case you need it
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#f00&#34;&gt;import&lt;/span&gt; org.jenkinsci.plugins.workflow.job.WorkflowRun
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;// TODO: create plugin or something for custom status messages
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;@NonCPS
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ee82ee&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#ff0&#34;&gt;abortOldBuilds&lt;/span&gt;(String paramKey, String paramVal) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#0f0&#34;&gt;// param_key and paramVal can be used for PR numbers
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#ee82ee&#34;&gt;def&lt;/span&gt; job = Jenkins.instanceOrNull.getItem(JOB_NAME)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ee82ee&#34;&gt;def&lt;/span&gt; buildID = BUILD_ID
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#0f0&#34;&gt;// highest running ID
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#ee82ee&#34;&gt;def&lt;/span&gt; highestRID = buildID
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#0f0&#34;&gt;// in case the current build is old
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;&lt;/span&gt;    WorkflowRun curBuild
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ee82ee&#34;&gt;def&lt;/span&gt; build = job.getLastBuild()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#0f0&#34;&gt;// avoid .builds since it can cause iteration errors
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#f00&#34;&gt;while&lt;/span&gt; (build != &lt;span style=&#34;color:#f00&#34;&gt;null&lt;/span&gt;) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#ee82ee&#34;&gt;def&lt;/span&gt; cbuildID = build.id.toInteger()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#ee82ee&#34;&gt;def&lt;/span&gt; curParamVal = build.allActions.find{it &lt;span style=&#34;color:#f00&#34;&gt;in&lt;/span&gt; ParametersAction}?.getParameter(paramKey)?.value
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#0f0&#34;&gt;// optionally filter out builds
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;&lt;/span&gt;        &lt;span style=&#34;color:#f00&#34;&gt;if&lt;/span&gt; (curParamVal == param_val) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#f00&#34;&gt;if&lt;/span&gt; (cbuildID == buildID) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                curBuild = build
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            } &lt;span style=&#34;color:#f00&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;color:#f00&#34;&gt;if&lt;/span&gt; (build.isBuilding() &amp;amp;&amp;amp; cbuildID &amp;lt; highestRID) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                build.doKill()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                echo &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;terminated build #${cbuildID}&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#ee82ee&#34;&gt;def&lt;/span&gt; cause = &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;Aborted by #${buildID} for being an old build&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#0f0&#34;&gt;// + for paramVal
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;&lt;/span&gt;                &lt;span style=&#34;color:#0f0&#34;&gt;// add to the log of another build
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;&lt;/span&gt;                build.getListener().getLogger().println(cause)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#0f0&#34;&gt;// The below will cause zombie jobs and so was abandoned
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;&lt;/span&gt;                &lt;span style=&#34;color:#0f0&#34;&gt;// def r = new ArrayList&amp;lt;&amp;gt;(Arrays.asList({ cause as String } as CauseOfInterruption))
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;&lt;/span&gt;                &lt;span style=&#34;color:#0f0&#34;&gt;// _build.addAction(new InterruptedBuildAction(r))
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;&lt;/span&gt;            } &lt;span style=&#34;color:#f00&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;color:#f00&#34;&gt;if&lt;/span&gt; (cbuildID &amp;gt; highestRID) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#0f0&#34;&gt;// update highest running ID
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;&lt;/span&gt;                highestRID = cbuildID
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        build = build.getPreviousBuild()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f00&#34;&gt;if&lt;/span&gt; (highestRID &amp;gt; buildID) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        println &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;Terminating self since newer build was found&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#ee82ee&#34;&gt;def&lt;/span&gt; selfAbortCause = &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;Aborting due to the presence of a newer build&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        curBuild.doKill()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;getting-build-log&#34; &gt;Getting Build Log
 &lt;span&gt;
     &lt;a href=&#34;#getting-build-log&#34;&gt;
         &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
     &lt;/a&gt;
 &lt;/span&gt;
-&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-groovy&#34; data-lang=&#34;groovy&#34;&gt;&lt;span style=&#34;color:#f00&#34;&gt;import&lt;/span&gt; jenkins.model.Jenkins
-
-@NonCPS
-&lt;span style=&#34;color:#ee82ee&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#ff0&#34;&gt;getLog&lt;/span&gt;() {
-    &lt;span style=&#34;color:#ee82ee&#34;&gt;def&lt;/span&gt; job = Jenkins.instanceOrNull.getItem(JOB_NAME)
-    &lt;span style=&#34;color:#ee82ee&#34;&gt;def&lt;/span&gt; build = job.getBuildByNumber(Integer.parseInt(BUILD_NUMBER))
-    &lt;span style=&#34;color:#f00&#34;&gt;return&lt;/span&gt; build.logFile.text
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-groovy&#34; data-lang=&#34;groovy&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f00&#34;&gt;import&lt;/span&gt; jenkins.model.Jenkins
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;@NonCPS
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ee82ee&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#ff0&#34;&gt;getLog&lt;/span&gt;() {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ee82ee&#34;&gt;def&lt;/span&gt; job = Jenkins.instanceOrNull.getItem(JOB_NAME)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ee82ee&#34;&gt;def&lt;/span&gt; build = job.getBuildByNumber(Integer.parseInt(BUILD_NUMBER))
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f00&#34;&gt;return&lt;/span&gt; build.logFile.text
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
     
   </channel>
