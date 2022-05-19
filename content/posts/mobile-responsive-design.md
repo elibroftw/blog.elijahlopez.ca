@@ -5,8 +5,7 @@ draft: false
 tags: [
     "tutorial",
     "programming",
-    "html",
-    "css",
+    "webdev",
 ]
 ---
 

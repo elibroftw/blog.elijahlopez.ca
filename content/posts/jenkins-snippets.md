@@ -7,6 +7,7 @@ tags: [
     "programming",
     "jenkins",
     "groovy",
+    "devops",
 ]
 ---
 

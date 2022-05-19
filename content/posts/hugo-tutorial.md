@@ -7,7 +7,6 @@ tags: [
     "programming",
     "hugo",
     "markdown",
-    "github-pages",
     "git",
 ]
 ---
