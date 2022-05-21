@@ -4,6 +4,7 @@ date: 2022-05-19T11:58:17-04:00
 draft: true
 tags: [
   "thoughts",
+  "canada",
 ]
 ---
 
