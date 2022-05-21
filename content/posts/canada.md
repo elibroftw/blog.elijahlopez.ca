@@ -2,7 +2,45 @@
 title: "What Canada Lacks"
 date: 2022-03-15T19:48:19-04:00
 draft: true
+tags: [
+    "canada",
+]
 ---
+
+This article is all my thoughts on Canada. If it isn't clear, I'm a Canadian citizen and will most likely always be.
+Please refer to the table of contents for interesting information.
+
+{{ < toc > }}
+
+## The Ideal Canadian Life
+
+What is the ideal Canadian life. I'll be taking an objective approach with indirect inspiration from my parents.
+The trajectory for reaching this idealism is 30 years old. I believe by 30 people would start a family. I also know
+that by 30, we start to visually age. So at 30, we want the best life.
+
+### Living Situation
+
+To live within our means. I haven't made up my mind on whether to have children or not, but in the off chance that I
+do, I'd probably have 2 children. Therefore, we need 3-4 bedrooms. The extra one for guests. I think there
+should also be three washrooms then. One should plan out the place they want to build a family right after marriage or something because then you won't be locked into a location because of work, family, or friends. I'm pretty sure this is one of the biggest factors preventing people from moving to affordable locations. The other factors are activities which we'll get to now. Personally, I would love to live in New Brunswick, but I'll try to cater to all. If you want nightlife, you'll have to lower your bedroom and washroom numbers.
+
+### Activities
+
+For this, I'll have to think from other peoples' shoes. We have two ways to go for this. We can go suburban or urban.
+For sake of the American Dream _fantasy_, we'll go the suburban route. So our activities consist of: waterpark within two hours, theme park within 2 hours, a picnic type park within 15 minutes, biking routes, tennis court, basketball court, soccer fields. Also a gym if you want to improve your physique. You can reduce or increase this list based on your wants.
+
+### Income
+
+Oooo, the big one. I'll keep it brief. Typically, we want $1M in cash by the time of retirement. Why? With $1M and 7% average annual S&P 500 return, we get $50,000-$70,000 per year if income tax is payable or not. I believe this is enough since we shouldn't be paying a mortgage in retirement and we wouldn't be going on a wild spending spree. With disposable income of $4,000 / month which would be worth $2,000 minimum accounting for inflation, we're good.
+In total, household networth at retirement (age 55) should be $1.5M to $3M. Usually in Business classes, we'd do some math to calculate money needed at retirement in order to die with X amount of money, but since we are dealing with ideal lifestyles, we want to be able to live off passive income and leave our children with something.
+
+We need to employ some financial equations now to account for real stock market growth of 7%.[^Moneychimp] We need to calculate income per month given a yield, a future value. and a time period. The formula for that is as follows:
+
+TODO: show math formula using github latex API and calculate using Python script
+
+[^Moneychimp] [Compound Annual Growth Rate (Annualized Return).](http://www.moneychimp.com/features/market_cagr.HomeComponent)
+
+
 
 ## Preface
 
