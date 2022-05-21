@@ -15,8 +15,8 @@ I'll start off with the tips and then go over what you need to know to follow th
 
 ## Tips
 
-1. If you won't be able to invest $100,000 over the span of 5 years, you should consider all your options. The market is volatile and in a decade a recession will probably make your stocks worth 2% more than where you started. That money could be used for other things that would improve your life today; a new car or a real estate down payment.
-2. When you do invest, invest on a weeky basis. This avoids the correlation of people who invest right after their salary gets deposited.
+1. You're either investing for the compound effect, in which case you need to invest often, or to live off the yield, in which case you can invest once and sell shares monthly for income
+2. If you want the benefits of compounding, invest on a weeky basis (pick a random day of th week to do it on)
 3. During bull markets, invest in $VOO; the Beta coefficient plays a huge role during the inevitable bear markets and you should try to avoid that
 4. Whenever the NASDAQ-100 is down -15% or more from its peak, invest in the $QQQ rather than the $VOO. The $QQQ will give a heuristically inflation adjusted CAGR of 10% (dividends excluded). The extra 2% is a big deal when we talk about decades. I'm actually not too sure about this recommendation, so stick to the $VOO for now.
 5. Do not try to time the market. The weekly schedule solves the issues of impatience.
