@@ -1,28 +1,34 @@
 ---
-title: "What Canada Lacks"
-date: 2022-03-15T19:48:19-04:00
+title: "My Thoughts on Canada"
+date: 2022-05-21T01:18:18-04:00
 draft: true
 tags: [
     "canada",
+    "finance",
 ]
 ---
 
-This article is all my thoughts on Canada. If it isn't clear, I'm a Canadian citizen and will most likely always be.
-Please refer to the table of contents for interesting information.
+This article encompasses my thoughts on Canada. Please refer to the table of contents to read sections
+that are interesting to you.
 
-{{ < toc > }}
+{{< toc >}}
 
 ## The Ideal Canadian Life
 
-What is the ideal Canadian life. I'll be taking an objective approach with indirect inspiration from my parents.
-The trajectory for reaching this idealism is 30 years old. I believe by 30 people would start a family. I also know
-that by 30, we start to visually age. So at 30, we want the best life.
+What is the ideal Canadian life? I want to answer this question.
+The age at which this idealism should be achieved for Canadians is 30 years old.
+I believe by 30 people would start a family. I also know that by 30,
+we start to visually age. So at 30, we want to be living the most ideal life.
 
 ### Living Situation
 
-To live within our means. I haven't made up my mind on whether to have children or not, but in the off chance that I
-do, I'd probably have 2 children. Therefore, we need 3-4 bedrooms. The extra one for guests. I think there
-should also be three washrooms then. One should plan out the place they want to build a family right after marriage or something because then you won't be locked into a location because of work, family, or friends. I'm pretty sure this is one of the biggest factors preventing people from moving to affordable locations. The other factors are activities which we'll get to now. Personally, I would love to live in New Brunswick, but I'll try to cater to all. If you want nightlife, you'll have to lower your bedroom and washroom numbers.
+I haven't made up my mind on whether to have children or not, but in the off chance that I
+do, I'd probably have 2 children. Therefore, an ideal _house_ will have 3-4 bedrooms.
+The extra one is for guests. I think there should also be 3 washrooms.
+
+One should plan out the general location where they want to build a family right after marriage[^marriage] because then you won't be locked into a location because of work, family, or friends. I'm pretty sure this is one of the biggest factors preventing people from moving to affordable locations. The other factors are activities which we'll get to now. Personally, I would love to live in New Brunswick, but I'll try to cater to all. If you want nightlife, you'll have to lower your bedroom and washroom numbers.
+
+[^marriage]: by marriage I mean the unification of partners in a relationship rather than the legal sense
 
 ### Activities
 
@@ -34,13 +40,15 @@ For sake of the American Dream _fantasy_, we'll go the suburban route. So our ac
 Oooo, the big one. I'll keep it brief. Typically, we want $1M in cash by the time of retirement. Why? With $1M and 7% average annual S&P 500 return, we get $50,000-$70,000 per year if income tax is payable or not. I believe this is enough since we shouldn't be paying a mortgage in retirement and we wouldn't be going on a wild spending spree. With disposable income of $4,000 / month which would be worth $2,000 minimum accounting for inflation, we're good.
 In total, household networth at retirement (age 55) should be $1.5M to $3M. Usually in Business classes, we'd do some math to calculate money needed at retirement in order to die with X amount of money, but since we are dealing with ideal lifestyles, we want to be able to live off passive income and leave our children with something.
 
-We need to employ some financial equations now to account for real stock market growth of 7%.[^Moneychimp] We need to calculate income per month given a yield, a future value. and a time period. The formula for that is as follows:
+We need to employ some financial equations now to account for real stock market growth of 8.66%.[^Moneychimp] To get this number, we use 35 years of data from Jan 1st 1986 to Dec 31 2021, adjust for inflation, add dividends, and subtract 0.03% because VOO is the cheapest S&P 500 exchange traded fund (ETF).
+
+I don't have time to update my old investing article, but I summarized the basics [here](/posts/investing).
+
+We need to calculate income per month given a yield, a future value. and a time period. The formula for that is as follows:
 
 TODO: show math formula using github latex API and calculate using Python script
 
-[^Moneychimp] [Compound Annual Growth Rate (Annualized Return).](http://www.moneychimp.com/features/market_cagr.HomeComponent)
-
-
+[^Moneychimp]: [Moneychimp - CAGR Stock Market Last 35 Years.](http://www.moneychimp.com/features/market_cagr.htm)
 
 ## Preface
 
