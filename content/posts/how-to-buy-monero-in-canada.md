@@ -1,7 +1,6 @@
 ---
 title: "How to Buy Monero in Canada"
 date: 2022-02-25T22:56:02-05:00
-draft: false
 tags: [
     "monero",
     "cryptocurrency",

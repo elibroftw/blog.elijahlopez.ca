@@ -1,7 +1,6 @@
 ---
 title: "How to Fill out W-8 BEN Form in Canada"
 date: 2022-01-04T13:37:18-05:00
-draft: false
 tags: [
     "canada",
 ]

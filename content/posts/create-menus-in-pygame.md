@@ -1,7 +1,6 @@
 ---
 title: "How to Create Menus in Pygame"
 date: 2020-06-21T10:54:30-05:00
-draft: false
 tags: [
     "tutorial",
     "programming",

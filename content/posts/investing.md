@@ -1,7 +1,6 @@
 ---
 title: "Investing (Equities)"
 date: 2022-05-20T01:18:18-04:00
-draft: false
 tags: [
     "canada",
     "finance",
