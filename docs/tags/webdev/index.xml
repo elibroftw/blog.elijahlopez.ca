@@ -37,49 +37,49 @@ not as much so about exporting.&lt;/p&gt;
     &lt;/a&gt;
 &lt;/span&gt;
 &lt;/h3&gt;&lt;p&gt;In &lt;code&gt;Home.js&lt;/code&gt;,&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f00&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color:#f00&#34;&gt;default&lt;/span&gt; &lt;span style=&#34;color:#f00&#34;&gt;function&lt;/span&gt; Main() { ... }
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;In &lt;code&gt;App.js&lt;/code&gt;,&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;// the imported name is arbitrary
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#f00&#34;&gt;import&lt;/span&gt; HomeComponent from &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#39;./Home&amp;#39;&lt;/span&gt;;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Imports follow unix file conventions!&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span style=&#34;color:#f00&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color:#f00&#34;&gt;default&lt;/span&gt; &lt;span style=&#34;color:#f00&#34;&gt;function&lt;/span&gt; Main() { ... }
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;In &lt;code&gt;App.js&lt;/code&gt;,&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span style=&#34;color:#0f0&#34;&gt;// the imported name is arbitrary
+&lt;/span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#f00&#34;&gt;import&lt;/span&gt; HomeComponent from &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#39;./Home&amp;#39;&lt;/span&gt;;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Imports follow unix file conventions!&lt;/p&gt;
 &lt;h3 id=&#34;exporting-a--object-as-default&#34; &gt;Exporting a {} Object as default
 &lt;span&gt;
     &lt;a href=&#34;#exporting-a--object-as-default&#34;&gt;
         &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
     &lt;/a&gt;
 &lt;/span&gt;
-&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f00&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color:#f00&#34;&gt;default&lt;/span&gt; { ... };
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;braces&#34; &gt;Braces
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span style=&#34;color:#f00&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color:#f00&#34;&gt;default&lt;/span&gt; { ... };
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;braces&#34; &gt;Braces
 &lt;span&gt;
     &lt;a href=&#34;#braces&#34;&gt;
         &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
     &lt;/a&gt;
 &lt;/span&gt;
-&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f00&#34;&gt;import&lt;/span&gt; { Fragment } from &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#39;react&amp;#39;&lt;/span&gt;;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This would be used if the variable exported is not the default. To import
+&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span style=&#34;color:#f00&#34;&gt;import&lt;/span&gt; { Fragment } from &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#39;react&amp;#39;&lt;/span&gt;;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This would be used if the variable exported is not the default. To import
 these non-default imports under another name we do:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f00&#34;&gt;import&lt;/span&gt; { IoSunnySharp as SunIcon } from &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#39;react-icons/io5&amp;#39;&lt;/span&gt;;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f00&#34;&gt;import&lt;/span&gt; { BsMoonStarsFill as MoonIcon } from &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#39;react-icons/bs&amp;#39;&lt;/span&gt;;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;example&#34; &gt;Example
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span style=&#34;color:#f00&#34;&gt;import&lt;/span&gt; { IoSunnySharp as SunIcon } from &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#39;react-icons/io5&amp;#39;&lt;/span&gt;;
+&lt;span style=&#34;color:#f00&#34;&gt;import&lt;/span&gt; { BsMoonStarsFill as MoonIcon } from &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#39;react-icons/bs&amp;#39;&lt;/span&gt;;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;example&#34; &gt;Example
 &lt;span&gt;
     &lt;a href=&#34;#example&#34;&gt;
         &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
     &lt;/a&gt;
 &lt;/span&gt;
-&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f00&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color:#f00&#34;&gt;const&lt;/span&gt; schedule200 = { ... };
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;mass-importing-and-exporting&#34; &gt;Mass Importing and Exporting
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span style=&#34;color:#f00&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color:#f00&#34;&gt;const&lt;/span&gt; schedule200 = { ... };
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;mass-importing-and-exporting&#34; &gt;Mass Importing and Exporting
 &lt;span&gt;
     &lt;a href=&#34;#mass-importing-and-exporting&#34;&gt;
         &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
     &lt;/a&gt;
 &lt;/span&gt;
-&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;// ./Files/index.js
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#f00&#34;&gt;export&lt;/span&gt; { &lt;span style=&#34;color:#f00&#34;&gt;default&lt;/span&gt; as file1 } from &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#39;/file1.js&amp;#39;&lt;/span&gt;;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f00&#34;&gt;export&lt;/span&gt; { &lt;span style=&#34;color:#f00&#34;&gt;default&lt;/span&gt; as file2 } from &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#39;/file1.js&amp;#39;&lt;/span&gt;;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;// in ./App.jsx
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#f00&#34;&gt;import&lt;/span&gt; * as files from &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#39;./Files&amp;#39;&lt;/span&gt;;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;console.log(files.file1);
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span style=&#34;color:#0f0&#34;&gt;// ./Files/index.js
+&lt;/span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#f00&#34;&gt;export&lt;/span&gt; { &lt;span style=&#34;color:#f00&#34;&gt;default&lt;/span&gt; as file1 } from &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#39;/file1.js&amp;#39;&lt;/span&gt;;
+&lt;span style=&#34;color:#f00&#34;&gt;export&lt;/span&gt; { &lt;span style=&#34;color:#f00&#34;&gt;default&lt;/span&gt; as file2 } from &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#39;/file1.js&amp;#39;&lt;/span&gt;;
+&lt;span style=&#34;color:#0f0&#34;&gt;// in ./App.jsx
+&lt;/span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#f00&#34;&gt;import&lt;/span&gt; * as files from &lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#39;./Files&amp;#39;&lt;/span&gt;;
+console.log(files.file1);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
     
     <item>
@@ -91,24 +91,24 @@ these non-default imports under another name we do:&lt;/p&gt;
       <description>&lt;p&gt;Tutorials nowadays just regurgitate the wrong information! Here&amp;rsquo;s the right way to do mobile responsive design. The key is to use
 a scale of 0.86 instead of 1. This way zooming in and out actually works!&lt;/p&gt;
 &lt;p&gt;From &lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag#viewport_width_and_screen_width&#34;&gt;https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag#viewport_width_and_screen_width&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;meta name=&lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;viewport&amp;#34;&lt;/span&gt; content=&lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;width=device-width, initial-scale=0.86, minimum-scale=0.86&amp;#34;&lt;/span&gt;&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Tutorials will recommend to style mobile first, but I usually create websites for the desktop view first.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-css&#34; data-lang=&#34;css&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;/* This is optional. I use it for Tablet or 16:10 */&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;@&lt;span style=&#34;color:#f00&#34;&gt;media&lt;/span&gt; screen and (max-width:1280px) {
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    #desktop-nav&amp;gt;a {
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#f00&#34;&gt;float&lt;/span&gt;: &lt;span style=&#34;color:#f00&#34;&gt;left&lt;/span&gt;;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#f00&#34;&gt;text-align&lt;/span&gt;: &lt;span style=&#34;color:#f00&#34;&gt;center&lt;/span&gt;;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#f00&#34;&gt;margin-left&lt;/span&gt;: &lt;span style=&#34;color:#f60&#34;&gt;5&lt;/span&gt;&lt;span style=&#34;color:#ee82ee&#34;&gt;%&lt;/span&gt;;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#0f0&#34;&gt;/* This is the mobile view */&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;@&lt;span style=&#34;color:#f00&#34;&gt;media&lt;/span&gt; screen and (max-width:870px) {
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    #desktop-nav {
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#f00&#34;&gt;display&lt;/span&gt;: &lt;span style=&#34;color:#f00&#34;&gt;none&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&amp;lt;meta name=&lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;viewport&amp;#34;&lt;/span&gt; content=&lt;span style=&#34;color:#87ceeb&#34;&gt;&amp;#34;width=device-width, initial-scale=0.86, minimum-scale=0.86&amp;#34;&lt;/span&gt;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Tutorials will recommend to style mobile first, but I usually create websites for the desktop view first.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-css&#34; data-lang=&#34;css&#34;&gt;&lt;span style=&#34;color:#0f0&#34;&gt;/* This is optional. I use it for Tablet or 16:10 */&lt;/span&gt;
+@&lt;span style=&#34;color:#f00&#34;&gt;media&lt;/span&gt; screen and (max-width:1280px) {
+    #desktop-nav&amp;gt;a {
+        &lt;span style=&#34;color:#f00&#34;&gt;float&lt;/span&gt;: &lt;span style=&#34;color:#f00&#34;&gt;left&lt;/span&gt;;
+        &lt;span style=&#34;color:#f00&#34;&gt;text-align&lt;/span&gt;: &lt;span style=&#34;color:#f00&#34;&gt;center&lt;/span&gt;;
+        &lt;span style=&#34;color:#f00&#34;&gt;margin-left&lt;/span&gt;: &lt;span style=&#34;color:#f60&#34;&gt;5&lt;/span&gt;&lt;span style=&#34;color:#ee82ee&#34;&gt;%&lt;/span&gt;;
+    }
+}
+
+&lt;span style=&#34;color:#0f0&#34;&gt;/* This is the mobile view */&lt;/span&gt;
+@&lt;span style=&#34;color:#f00&#34;&gt;media&lt;/span&gt; screen and (max-width:870px) {
+    #desktop-nav {
+        &lt;span style=&#34;color:#f00&#34;&gt;display&lt;/span&gt;: &lt;span style=&#34;color:#f00&#34;&gt;none&lt;/span&gt;
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
     
   </channel>
