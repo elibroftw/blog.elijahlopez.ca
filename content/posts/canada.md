@@ -1,7 +1,6 @@
 ---
 title: "My Thoughts on Canada"
 date: 2022-05-21T01:18:18-04:00
-hidden: true
 tags: [
     "canada",
     "finance",
@@ -13,10 +12,47 @@ that are interesting to you.
 
 {{< toc >}}
 
-## The Ideal (Content) Canadian Life
+## Housing Affordability
 
-What is the ideal Canadian life? I want to answer this question. It's very easy to fall prey to the unlimited
-wants nature, so we'll have to answer what would make a Canadian content without bias?
+Let us start off with one of the biggest issues facing Canadians under the age of 40.
+The best way to deal with housing affordability is to make homes affordable for those that don't own a home. This means reducing the demand from non-primrary home buyers and increasing housing supply.
+
+Domestic speculation is a probelm in Canada. Temporarily banning foreign buyers or taxing vacancy is not going to bring affordability. It doesn't go far enough. You have to ban foreign ownership itself.
+Why do we even let foreign buyers purchase residential homes in the first place? That itself should be taxable. Call it a foreign ownership tax.
+
+As a Canadian citizen, I would expect to not be able to purchase a US home, unless I have a green card or was a dual citizen, even if I have work permit. That is not the case, but that's because the US econmy is 10x Canada's. Likewise, foreigners who **cannot** reside in Canada, should not be able to buy properties in Canada.
+
+I do not think housing should be something where land lords can live off the rent they make. That is absurd, and thus companies should not be allowed to buy residential properties either. If companies own residential properties, it should be because of reasons like developing the property itself.
+
+As for undeveloped land, we could say that development of the land has to be started within a year of purchase, otherwise both the previous and the current owner get fined. However, I don't think there is a problem yet with undeveloped land, so let's keep this up our sleeve.
+
+### Reducing Demand - Major Speculation Tax
+
+To reduce demand, we will add a buyers (speculation) tax on non-primary home purchases for homes transactions that are more than $150,000. There's no reason to own more homes than people in your immediate family. For clarification on the definition of an immediate family, a couple with one kid over 18 can buy 3 homes but a couple with a kid less than 18 can only buy 2.
+
+I propose this speculation tax to start at 50% and to modify it the next year. If it's too low, we'll make it 100%. If prices dramatically fall, we will get hated by property owners but at least the U40 population will vote for us again. If even a 100% tax is too low, we can further reduce the 150k threshold so that most couples would have to use their secndary home allowance itself as the other tax-free property. For example a secondary property could be a storage area, a cottage, or a simple office.
+
+Existing home owners with more homes than people in their immediate family have 6 months to pay the buyers tax on their (# homes - # family members) most expensive homes. So even if a couples primary residence is the most expensive, they have to pay the buyers tax on it and not their cheaper investment properties. The problem in Canada isn't just foreign spending, it's domestic speculation. We need to tackle our own greed.
+
+With this buyers tax, one could argue that a couple itself is treated as one in the eyes of the law, and therefore they should be given one less home to own, but I think that would mess with something other than housing prices.
+
+I'm up for debate on whether to include properties that were inherited.
+
+This buyers tax should be implemented federally. People who are buying homes in multiple provinces are definitely upper middle class or rich. Therefore, a 50% or even 100% tax is not a problem if they are buying to live rather than to rent. Imagine a multi millionaire; that 500k property now costs 1M, so it's not a problem.
+
+### Increasing Supply - Prioritized Development
+
+In the case reducing demand isn't enough, the affordability problem is clearly supply sided. My proposal is that we use the tax revenue from the speculation tax to fund housing developments. The government should not spend this money. We should issue loans at an interest rate equal to the rate banks offer. We can either create a new department would handle this stuff or if there is a lot of money, loan the money to credit unions directly and let them issue the loans for us.
+
+The procedure for giving out loans is as follows. Start with neglected and cheaper provinces. The residents of these provinces have the least purchasing power and therefore are more vulnerable to housing affordability. New Brunswick for one. The territories have their own problem like Nunavut needing $100M for their water plant but I didn't get a chance to look at their budget to figure out if they just want a handout or are being serious. We want to fund housing developments in three provinces concurrently. These provinces are picked by a median income ascending. Again, territories are something else, so we need a different strategy for them.
+
+In the long term, we should focus on more than fixing housing prices, but distributing them equally across Canada which includes distributing job opportunity and incomes a cross the board.
+
+## The Ideal Canadian Life
+
+Now we can move on to idealism rather than current issues.
+
+What is the ideal Canadian life? I want to answer this question. It's very easy to fall prey to the unlimited wants nature, so we'll have to answer what would make a Canadian content without bias?
 
 The age at which this idealism should be achieved for Canadians is 30 years old.
 I believe by 30 people would start a family. I also know that by 30,
@@ -30,7 +66,7 @@ The extra one is for guests. I think there should also be 3 washrooms.
 
 One should plan out the general location where they want to build a family right after marriage[^marriage] because then you won't be locked into a location because of work, family, or friends. I'm pretty sure this is one of the biggest factors preventing people from moving to affordable locations. The other factors are activities which we'll get to now. Personally, I would love to live in New Brunswick, but I'll try to cater to all. If you want nightlife, you'll have to lower your bedroom and washroom numbers.
 
-[^marriage]: by marriage I mean the unification of partners in a relationship rather than the legal sense
+[^marriage]: By marriage I mean the unification of partners in a relationship rather than the legal sense
 
 ### Activities
 
@@ -101,7 +137,7 @@ I guess this is the problem then huh? When half of Canadians earn less than 80,0
 
 [^Moneychimp]: [Moneychimp - CAGR Stock Market Last 35 Years.](http://www.moneychimp.com/features/market_cagr.htm)
 
-## $125,000 Careers
+### $125,000 Careers
 
 Software engineering of course. Product managers and project managers also make this, but those career paths are really talked about. Someone should make an article on those two career paths. What else? Lawyers, doctors, investment banking.
 
@@ -109,8 +145,7 @@ I don't really feel like writing this section, so I'll stop for now. I think the
 
 ## Government Responsibilities
 
-Engineers are grossly underpaid in Canada and the US. Not all engineering challenges are complete, yet these people
-get paid pebbles. I propose some industries that are lacking in Canada. We need Canadian companies for these engineering innovation industries.
+Engineers are grossly underpaid in Canada and the US. Not all engineering challenges are complete, yet these people get paid pebbles. I propose some industries that are lacking in Canada. We need Canadian companies for these engineering innovation industries.
 
 - CPU chips
 - electronics
@@ -125,19 +160,15 @@ We should also abolish the P. Eng fee. What a useless fee. People should not be 
 
 ### Taxes
 
-The government goal should be to use taxes to create a sustainable environment for innovation and wealth. Taxes should be used wisely with the end goal of lowering taxes. Governments should create self-sustainable nationlised businesses
-where the nature is a priviledge rather than a need. Things like health care should remain nationalized, but private health care should also be allowed as it is in Quebec. Not sure why courts in Canada think that private health care access takes away from Canadians who are using the public health care system, but hey I'm not a judge and they aren't economists.
+The government goal should be to use taxes to create a sustainable environment for innovation and wealth. Taxes should be used wisely with the end goal of lowering taxes. Governments should create self-sustainable nationlised businesses where the nature is a priviledge rather than a need. Things like health care should remain nationalized, but private health care should also be allowed as it is in Quebec. Not sure why courts in Canada think that private health care access takes away from Canadians who are using the public health care system, but hey I'm not a judge and they aren't economists.
 
-Sales tax also needs to be improved. Some goods are basic requirements. For example, the CRA requires you
-to have a phone number in order to login via 2FA, so then phone plans should not have sales tax applied to them.
+Sales tax also needs to be improved. Some goods are basic requirements. For example, the CRA requires you to have a phone number in order to login via 2FA, so then phone plans should not have sales tax applied to them.
 
 ### Tariffs
 
-There should be almost 0 tariffs and import duties. If people want to shop in America, good for them. It's not like transporation to America is free, so why make citizens' lives more expensive?
+There should be almost 0 tariffs and import duties. If people want to shop in America, good for them. A trip to America is not free, so why make citizens' lives more expensive?
 
 ### Organ Donors
 
 People can choose to donate their organs for free upon death, but yet organs go for
-thousands of dollars in black markets? Governments should incentivize people in poverty to become organ donors so
-that when they die, their family will receive a payment instead of being left with nothing. A charity should be started
-for this at the very least.
+thousands of dollars in black markets? Governments should incentivize people in poverty to become organ donors so that when they die, their family will receive a payment instead of being left with nothing. A charity should be started for this at the very least.
