@@ -7,8 +7,8 @@ tags: [
 ]
 ---
 
-This article encompasses my thoughts on Canada. Please refer to the table of contents to read sections
-that are interesting to you.
+This article will be the one stop shop for my thoughts on Canada.
+Please refer to the table of contents to read sections that are interesting to you.
 
 {{< toc >}}
 
