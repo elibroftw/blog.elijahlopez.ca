@@ -297,10 +297,10 @@ not as much so about exporting.</p>
     </a>
 </span>
 </h3><p>In <code>Home.js</code>,</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#f00">export</span> <span style="color:#f00">default</span> <span style="color:#f00">function</span> Main() { ... }
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">export</span> <span style="color:#6ab825;font-weight:bold">default</span> <span style="color:#6ab825;font-weight:bold">function</span> Main() { ... }
 </span></span></code></pre></div><p>In <code>App.js</code>,</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#0f0">// the imported name is arbitrary
-</span></span></span><span style="display:flex;"><span><span style="color:#0f0"></span><span style="color:#f00">import</span> HomeComponent from <span style="color:#87ceeb">&#39;./Home&#39;</span>;
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#999;font-style:italic">// the imported name is arbitrary
+</span></span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"></span><span style="color:#6ab825;font-weight:bold">import</span> HomeComponent from <span style="color:#ed9d13">&#39;./Home&#39;</span>;
 </span></span></code></pre></div><p>Imports follow unix file conventions!</p>
 <h3 id="exporting-a--object-as-default" >Exporting a {} Object as default
 <span>
@@ -308,36 +308,36 @@ not as much so about exporting.</p>
         <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
     </a>
 </span>
-</h3><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#f00">export</span> <span style="color:#f00">default</span> { ... };
+</h3><div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">export</span> <span style="color:#6ab825;font-weight:bold">default</span> { ... };
 </span></span></code></pre></div><h2 id="braces" >Braces
 <span>
     <a href="#braces">
         <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
     </a>
 </span>
-</h2><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#f00">import</span> { Fragment } from <span style="color:#87ceeb">&#39;react&#39;</span>;
+</h2><div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">import</span> { Fragment } from <span style="color:#ed9d13">&#39;react&#39;</span>;
 </span></span></code></pre></div><p>This would be used if the variable exported is not the default. To import
 these non-default imports under another name we do:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#f00">import</span> { IoSunnySharp as SunIcon } from <span style="color:#87ceeb">&#39;react-icons/io5&#39;</span>;
-</span></span><span style="display:flex;"><span><span style="color:#f00">import</span> { BsMoonStarsFill as MoonIcon } from <span style="color:#87ceeb">&#39;react-icons/bs&#39;</span>;
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">import</span> { IoSunnySharp as SunIcon } from <span style="color:#ed9d13">&#39;react-icons/io5&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">import</span> { BsMoonStarsFill as MoonIcon } from <span style="color:#ed9d13">&#39;react-icons/bs&#39;</span>;
 </span></span></code></pre></div><h3 id="example" >Example
 <span>
     <a href="#example">
         <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
     </a>
 </span>
-</h3><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#f00">export</span> <span style="color:#f00">const</span> schedule200 = { ... };
+</h3><div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">export</span> <span style="color:#6ab825;font-weight:bold">const</span> schedule200 = { ... };
 </span></span></code></pre></div><h2 id="mass-importing-and-exporting" >Mass Importing and Exporting
 <span>
     <a href="#mass-importing-and-exporting">
         <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
     </a>
 </span>
-</h2><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#0f0">// ./Files/index.js
-</span></span></span><span style="display:flex;"><span><span style="color:#0f0"></span><span style="color:#f00">export</span> { <span style="color:#f00">default</span> as file1 } from <span style="color:#87ceeb">&#39;/file1.js&#39;</span>;
-</span></span><span style="display:flex;"><span><span style="color:#f00">export</span> { <span style="color:#f00">default</span> as file2 } from <span style="color:#87ceeb">&#39;/file1.js&#39;</span>;
-</span></span><span style="display:flex;"><span><span style="color:#0f0">// in ./App.jsx
-</span></span></span><span style="display:flex;"><span><span style="color:#0f0"></span><span style="color:#f00">import</span> * as files from <span style="color:#87ceeb">&#39;./Files&#39;</span>;
+</h2><div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#999;font-style:italic">// ./Files/index.js
+</span></span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"></span><span style="color:#6ab825;font-weight:bold">export</span> { <span style="color:#6ab825;font-weight:bold">default</span> as file1 } from <span style="color:#ed9d13">&#39;/file1.js&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">export</span> { <span style="color:#6ab825;font-weight:bold">default</span> as file2 } from <span style="color:#ed9d13">&#39;/file1.js&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic">// in ./App.jsx
+</span></span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"></span><span style="color:#6ab825;font-weight:bold">import</span> * as files from <span style="color:#ed9d13">&#39;./Files&#39;</span>;
 </span></span><span style="display:flex;"><span>console.log(files.file1);
 </span></span></code></pre></div>
         </div>

@@ -285,54 +285,54 @@
         <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
     </a>
 </span>
-</h2><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#f00">import</span> hudson.model.ParametersAction
-</span></span><span style="display:flex;"><span><span style="color:#f00">import</span> jenkins.model.Jenkins
-</span></span><span style="display:flex;"><span><span style="color:#f00">import</span> jenkins.model.CauseOfInterruption
-</span></span><span style="display:flex;"><span><span style="color:#f00">import</span> jenkins.model.Jenkins
-</span></span><span style="display:flex;"><span><span style="color:#0f0">// type of _build in case you need it
-</span></span></span><span style="display:flex;"><span><span style="color:#0f0"></span><span style="color:#f00">import</span> org.jenkinsci.plugins.workflow.job.WorkflowRun
+</h2><div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">import</span> <span style="color:#447fcf;text-decoration:underline">hudson.model.ParametersAction</span>
+</span></span><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">import</span> <span style="color:#447fcf;text-decoration:underline">jenkins.model.Jenkins</span>
+</span></span><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">import</span> <span style="color:#447fcf;text-decoration:underline">jenkins.model.CauseOfInterruption</span>
+</span></span><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">import</span> <span style="color:#447fcf;text-decoration:underline">jenkins.model.Jenkins</span>
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic">// type of _build in case you need it
+</span></span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"></span><span style="color:#6ab825;font-weight:bold">import</span> <span style="color:#447fcf;text-decoration:underline">org.jenkinsci.plugins.workflow.job.WorkflowRun</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#0f0">// TODO: create plugin or something for custom status messages
-</span></span></span><span style="display:flex;"><span><span style="color:#0f0"></span>
-</span></span><span style="display:flex;"><span>@NonCPS
-</span></span><span style="display:flex;"><span><span style="color:#ee82ee">def</span> <span style="color:#ff0">abortOldBuilds</span>(String paramKey, String paramVal) {
-</span></span><span style="display:flex;"><span>    <span style="color:#0f0">// param_key and paramVal can be used for PR numbers
-</span></span></span><span style="display:flex;"><span><span style="color:#0f0"></span>    <span style="color:#ee82ee">def</span> job = Jenkins.instanceOrNull.getItem(JOB_NAME)
-</span></span><span style="display:flex;"><span>    <span style="color:#ee82ee">def</span> buildID = BUILD_ID
-</span></span><span style="display:flex;"><span>    <span style="color:#0f0">// highest running ID
-</span></span></span><span style="display:flex;"><span><span style="color:#0f0"></span>    <span style="color:#ee82ee">def</span> highestRID = buildID
-</span></span><span style="display:flex;"><span>    <span style="color:#0f0">// in case the current build is old
-</span></span></span><span style="display:flex;"><span><span style="color:#0f0"></span>    WorkflowRun curBuild
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic">// TODO: create plugin or something for custom status messages
+</span></span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#ffa500">@NonCPS</span>
+</span></span><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">def</span> <span style="color:#447fcf">abortOldBuilds</span>(String paramKey, String paramVal) {
+</span></span><span style="display:flex;"><span>    <span style="color:#999;font-style:italic">// param_key and paramVal can be used for PR numbers
+</span></span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"></span>    <span style="color:#6ab825;font-weight:bold">def</span> job = Jenkins.<span style="color:#bbb">instanceOrNull</span>.<span style="color:#bbb">getItem</span>(JOB_NAME)
+</span></span><span style="display:flex;"><span>    <span style="color:#6ab825;font-weight:bold">def</span> buildID = BUILD_ID
+</span></span><span style="display:flex;"><span>    <span style="color:#999;font-style:italic">// highest running ID
+</span></span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"></span>    <span style="color:#6ab825;font-weight:bold">def</span> highestRID = buildID
+</span></span><span style="display:flex;"><span>    <span style="color:#999;font-style:italic">// in case the current build is old
+</span></span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"></span>    WorkflowRun curBuild
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#ee82ee">def</span> build = job.getLastBuild()
-</span></span><span style="display:flex;"><span>    <span style="color:#0f0">// avoid .builds since it can cause iteration errors
-</span></span></span><span style="display:flex;"><span><span style="color:#0f0"></span>    <span style="color:#f00">while</span> (build != <span style="color:#f00">null</span>) {
-</span></span><span style="display:flex;"><span>        <span style="color:#ee82ee">def</span> cbuildID = build.id.toInteger()
-</span></span><span style="display:flex;"><span>        <span style="color:#ee82ee">def</span> curParamVal = build.allActions.find{it <span style="color:#f00">in</span> ParametersAction}?.getParameter(paramKey)?.value
-</span></span><span style="display:flex;"><span>        <span style="color:#0f0">// optionally filter out builds
-</span></span></span><span style="display:flex;"><span><span style="color:#0f0"></span>        <span style="color:#f00">if</span> (curParamVal == param_val) {
-</span></span><span style="display:flex;"><span>            <span style="color:#f00">if</span> (cbuildID == buildID) {
+</span></span><span style="display:flex;"><span>    <span style="color:#6ab825;font-weight:bold">def</span> build = job.<span style="color:#bbb">getLastBuild</span>()
+</span></span><span style="display:flex;"><span>    <span style="color:#999;font-style:italic">// avoid .builds since it can cause iteration errors
+</span></span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"></span>    <span style="color:#6ab825;font-weight:bold">while</span> (build != <span style="color:#6ab825;font-weight:bold">null</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#6ab825;font-weight:bold">def</span> cbuildID = build.<span style="color:#bbb">id</span>.<span style="color:#bbb">toInteger</span>()
+</span></span><span style="display:flex;"><span>        <span style="color:#6ab825;font-weight:bold">def</span> curParamVal = build.<span style="color:#bbb">allActions</span>.<span style="color:#bbb">find</span>{it <span style="color:#6ab825;font-weight:bold">in</span> ParametersAction}?.<span style="color:#bbb">getParameter</span>(paramKey)?.<span style="color:#bbb">value</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#999;font-style:italic">// optionally filter out builds
+</span></span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"></span>        <span style="color:#6ab825;font-weight:bold">if</span> (curParamVal == param_val) {
+</span></span><span style="display:flex;"><span>            <span style="color:#6ab825;font-weight:bold">if</span> (cbuildID == buildID) {
 </span></span><span style="display:flex;"><span>                curBuild = build
-</span></span><span style="display:flex;"><span>            } <span style="color:#f00">else</span> <span style="color:#f00">if</span> (build.isBuilding() &amp;&amp; cbuildID &lt; highestRID) {
-</span></span><span style="display:flex;"><span>                build.doKill()
-</span></span><span style="display:flex;"><span>                echo <span style="color:#87ceeb">&#34;terminated build #${cbuildID}&#34;</span>
-</span></span><span style="display:flex;"><span>                <span style="color:#ee82ee">def</span> cause = <span style="color:#87ceeb">&#34;Aborted by #${buildID} for being an old build&#34;</span> <span style="color:#0f0">// + for paramVal
-</span></span></span><span style="display:flex;"><span><span style="color:#0f0"></span>                <span style="color:#0f0">// add to the log of another build
-</span></span></span><span style="display:flex;"><span><span style="color:#0f0"></span>                build.getListener().getLogger().println(cause)
-</span></span><span style="display:flex;"><span>                <span style="color:#0f0">// The below will cause zombie jobs and so was abandoned
-</span></span></span><span style="display:flex;"><span><span style="color:#0f0"></span>                <span style="color:#0f0">// def r = new ArrayList&lt;&gt;(Arrays.asList({ cause as String } as CauseOfInterruption))
-</span></span></span><span style="display:flex;"><span><span style="color:#0f0"></span>                <span style="color:#0f0">// _build.addAction(new InterruptedBuildAction(r))
-</span></span></span><span style="display:flex;"><span><span style="color:#0f0"></span>            } <span style="color:#f00">else</span> <span style="color:#f00">if</span> (cbuildID &gt; highestRID) {
-</span></span><span style="display:flex;"><span>                <span style="color:#0f0">// update highest running ID
-</span></span></span><span style="display:flex;"><span><span style="color:#0f0"></span>                highestRID = cbuildID
+</span></span><span style="display:flex;"><span>            } <span style="color:#6ab825;font-weight:bold">else</span> <span style="color:#6ab825;font-weight:bold">if</span> (build.<span style="color:#bbb">isBuilding</span>() &amp;&amp; cbuildID &lt; highestRID) {
+</span></span><span style="display:flex;"><span>                build.<span style="color:#bbb">doKill</span>()
+</span></span><span style="display:flex;"><span>                echo <span style="color:#ed9d13">&#34;terminated build #${cbuildID}&#34;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#6ab825;font-weight:bold">def</span> cause = <span style="color:#ed9d13">&#34;Aborted by #${buildID} for being an old build&#34;</span> <span style="color:#999;font-style:italic">// + for paramVal
+</span></span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"></span>                <span style="color:#999;font-style:italic">// add to the log of another build
+</span></span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"></span>                build.<span style="color:#bbb">getListener</span>().<span style="color:#bbb">getLogger</span>().<span style="color:#bbb">println</span>(cause)
+</span></span><span style="display:flex;"><span>                <span style="color:#999;font-style:italic">// The below will cause zombie jobs and so was abandoned
+</span></span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"></span>                <span style="color:#999;font-style:italic">// def r = new ArrayList&lt;&gt;(Arrays.asList({ cause as String } as CauseOfInterruption))
+</span></span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"></span>                <span style="color:#999;font-style:italic">// _build.addAction(new InterruptedBuildAction(r))
+</span></span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"></span>            } <span style="color:#6ab825;font-weight:bold">else</span> <span style="color:#6ab825;font-weight:bold">if</span> (cbuildID &gt; highestRID) {
+</span></span><span style="display:flex;"><span>                <span style="color:#999;font-style:italic">// update highest running ID
+</span></span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"></span>                highestRID = cbuildID
 </span></span><span style="display:flex;"><span>            }
 </span></span><span style="display:flex;"><span>        }
-</span></span><span style="display:flex;"><span>        build = build.getPreviousBuild()
+</span></span><span style="display:flex;"><span>        build = build.<span style="color:#bbb">getPreviousBuild</span>()
 </span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    <span style="color:#f00">if</span> (highestRID &gt; buildID) {
-</span></span><span style="display:flex;"><span>        println <span style="color:#87ceeb">&#34;Terminating self since newer build was found&#34;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#ee82ee">def</span> selfAbortCause = <span style="color:#87ceeb">&#34;Aborting due to the presence of a newer build&#34;</span>
-</span></span><span style="display:flex;"><span>        curBuild.doKill()
+</span></span><span style="display:flex;"><span>    <span style="color:#6ab825;font-weight:bold">if</span> (highestRID &gt; buildID) {
+</span></span><span style="display:flex;"><span>        println <span style="color:#ed9d13">&#34;Terminating self since newer build was found&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#6ab825;font-weight:bold">def</span> selfAbortCause = <span style="color:#ed9d13">&#34;Aborting due to the presence of a newer build&#34;</span>
+</span></span><span style="display:flex;"><span>        curBuild.<span style="color:#bbb">doKill</span>()
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><h2 id="getting-build-log" >Getting Build Log
@@ -341,13 +341,13 @@
         <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
     </a>
 </span>
-</h2><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#f00">import</span> jenkins.model.Jenkins
+</h2><div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">import</span> <span style="color:#447fcf;text-decoration:underline">jenkins.model.Jenkins</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>@NonCPS
-</span></span><span style="display:flex;"><span><span style="color:#ee82ee">def</span> <span style="color:#ff0">getLog</span>() {
-</span></span><span style="display:flex;"><span>    <span style="color:#ee82ee">def</span> job = Jenkins.instanceOrNull.getItem(JOB_NAME)
-</span></span><span style="display:flex;"><span>    <span style="color:#ee82ee">def</span> build = job.getBuildByNumber(Integer.parseInt(BUILD_NUMBER))
-</span></span><span style="display:flex;"><span>    <span style="color:#f00">return</span> build.logFile.text
+</span></span><span style="display:flex;"><span><span style="color:#ffa500">@NonCPS</span>
+</span></span><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">def</span> <span style="color:#447fcf">getLog</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#6ab825;font-weight:bold">def</span> job = Jenkins.<span style="color:#bbb">instanceOrNull</span>.<span style="color:#bbb">getItem</span>(JOB_NAME)
+</span></span><span style="display:flex;"><span>    <span style="color:#6ab825;font-weight:bold">def</span> build = job.<span style="color:#bbb">getBuildByNumber</span>(Integer.<span style="color:#bbb">parseInt</span>(BUILD_NUMBER))
+</span></span><span style="display:flex;"><span>    <span style="color:#6ab825;font-weight:bold">return</span> build.<span style="color:#bbb">logFile</span>.<span style="color:#bbb">text</span>
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div>
         </div>

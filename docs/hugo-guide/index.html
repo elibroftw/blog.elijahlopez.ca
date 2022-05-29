@@ -308,11 +308,11 @@
     </a>
 </span>
 </h2><p>In case you want to blog on a new device, here are the commands to set yourself up.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#0f0"># replace USERNAME/blog with your username and blog repo name</span>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#999;font-style:italic"># replace USERNAME/blog with your username and blog repo name</span>
 </span></span><span style="display:flex;"><span>git clone --recurse-submodules -j8 https://github.com/USERNAME/blog.git
-</span></span><span style="display:flex;"><span><span style="color:#0f0"># choose cloned directory</span>
-</span></span><span style="display:flex;"><span>cd blog
-</span></span><span style="display:flex;"><span><span style="color:#0f0"># Enable the pre-commit hook</span>
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"># choose cloned directory</span>
+</span></span><span style="display:flex;"><span><span style="color:#24909d">cd</span> blog
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"># Enable the pre-commit hook</span>
 </span></span><span style="display:flex;"><span>git config core.hookspath .githooks
 </span></span></code></pre></div><h2 id="creating-content-eg-a-post" >Creating Content (e.g. a Post)
 <span>
@@ -347,7 +347,7 @@
 </ul>
 </li>
 <li>TECHNICAL: The pre-commit hook updates the theme and builds your posts before committing
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git submodule update --remote --merge
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git submodule update --remote --merge
 </span></span><span style="display:flex;"><span>hugo -d docs
 </span></span></code></pre></div></li>
 </ol>

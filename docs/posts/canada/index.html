@@ -381,22 +381,22 @@ In total, household networth at retirement (age 55) should be $1.5M to $3M. In b
 <p>We need to employ some financial equations now to account for real stock market growth of 8.66%.<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> To get this number, I used 35 years of data from Jan 1st 1986 to Dec 31 2021, adjust for inflation, add dividends, and subtract 0.03% because VOO is the cheapest S&amp;P 500 exchange traded fund (ETF).</p>
 <p>I don&rsquo;t have time to update my old investing article, but I summarized the basics <a href="/posts/investing">here</a>.</p>
 <p>We can use this Python function I made in 2019/2020 to first calculate how much we need to put into the stock market per week.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span><span style="color:#f00">def</span> <span style="color:#ff0">get_savings_amt</span>(future_savings, years_to_retirement, interest_rate,
-</span></span><span style="display:flex;"><span>                    compounds_per_year=<span style="color:#f60">2</span>, startwith=<span style="color:#f60">0</span>, saving_period=<span style="color:#f60">12</span>):
-</span></span><span style="display:flex;"><span>    <span style="color:#87ceeb">&#34;&#34;&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#87ceeb">    Calculates how much you need to save per month to retire given the parameters
-</span></span></span><span style="display:flex;"><span><span style="color:#87ceeb">    &#34;&#34;&#34;</span>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">def</span> <span style="color:#447fcf">get_savings_amt</span>(future_savings, years_to_retirement, interest_rate,
+</span></span><span style="display:flex;"><span>                    compounds_per_year=<span style="color:#3677a9">2</span>, startwith=<span style="color:#3677a9">0</span>, saving_period=<span style="color:#3677a9">12</span>):
+</span></span><span style="display:flex;"><span>    <span style="color:#ed9d13">&#34;&#34;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#ed9d13">    Calculates how much you need to save per month to retire given the parameters
+</span></span></span><span style="display:flex;"><span><span style="color:#ed9d13">    &#34;&#34;&#34;</span>
 </span></span><span style="display:flex;"><span>    r, m, n = interest_rate, compounds_per_year, years_to_retirement * saving_period
-</span></span><span style="display:flex;"><span>    efr = (<span style="color:#f60">1</span> + r/m) ** (m / saving_period) - <span style="color:#f60">1</span>
-</span></span><span style="display:flex;"><span>    already_secured = startwith * (<span style="color:#f60">1</span> + r / m) ** (m * years_to_retirement)
+</span></span><span style="display:flex;"><span>    efr = (<span style="color:#3677a9">1</span> + r/m) ** (m / saving_period) - <span style="color:#3677a9">1</span>
+</span></span><span style="display:flex;"><span>    already_secured = startwith * (<span style="color:#3677a9">1</span> + r / m) ** (m * years_to_retirement)
 </span></span><span style="display:flex;"><span>    future_savings -= already_secured
-</span></span><span style="display:flex;"><span>    <span style="color:#f00">return</span> future_savings * efr / ((<span style="color:#f60">1</span> + efr) ** n - <span style="color:#f60">1</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#6ab825;font-weight:bold">return</span> future_savings * efr / ((<span style="color:#3677a9">1</span> + efr) ** n - <span style="color:#3677a9">1</span>)
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>&gt;&gt;&gt; <span style="color:#0f0"># assume we start working at 25, we start with $0, and we compound yearly</span>
-</span></span><span style="display:flex;"><span>&gt;&gt;&gt; <span style="color:#0f0"># multiply by two to account for market volatility</span>
-</span></span><span style="display:flex;"><span>&gt;&gt;&gt; get_savings_amt(<span style="color:#f60">1000000</span>, <span style="color:#f60">30</span>, <span style="color:#f60">0.0866</span>, <span style="color:#f60">1</span>, <span style="color:#f60">0</span>, <span style="color:#f60">52</span>) * <span style="color:#f60">2</span>
-</span></span><span style="display:flex;"><span>&gt;&gt;&gt; <span style="color:#f60">288.51322722512805</span>
+</span></span><span style="display:flex;"><span>&gt;&gt;&gt; <span style="color:#999;font-style:italic"># assume we start working at 25, we start with $0, and we compound yearly</span>
+</span></span><span style="display:flex;"><span>&gt;&gt;&gt; <span style="color:#999;font-style:italic"># multiply by two to account for market volatility</span>
+</span></span><span style="display:flex;"><span>&gt;&gt;&gt; get_savings_amt(<span style="color:#3677a9">1000000</span>, <span style="color:#3677a9">30</span>, <span style="color:#3677a9">0.0866</span>, <span style="color:#3677a9">1</span>, <span style="color:#3677a9">0</span>, <span style="color:#3677a9">52</span>) * <span style="color:#3677a9">2</span>
+</span></span><span style="display:flex;"><span>&gt;&gt;&gt; <span style="color:#3677a9">288.51322722512805</span>
 </span></span></code></pre></div><p>In the future I will try testing this out on actual data and seeing if the results are as intended. The market is volatile so we can&rsquo;t use an answer based on a monotonic assumption without double checking. In order to account for volatility, I doubled my answer.</p>
 <p>$288/week translates to $1,248/month or $14,976/yr.</p>
 <p>A down payment on a $2M home is $400,000 and if we want to buy it when we are 30, we&rsquo;ll need to save (household) $80,000
