@@ -14,9 +14,8 @@
 
 <title>MacOS Sucks - ELL Blog</title>
 
-<meta name="description" content="So you want to see hidden files? You go to finder settings but can&rsquo;t find it. So you then Google it. Turns out you were supposed to memorize the very intuitive keyboard shortcut (command &#43; shift &#43; period or simply command &#43; &gt;).
-rm -R folder requires sudo even if I own the files.
-Homebrew does not permanently ass packages to path. You have to create a shell config yourself with the export path shenanigans.">
+<meta name="description" content="Hidden FilesSo you want to see hidden files? You go to finder settings but can&rsquo;t find it. So you then Google it. Turns out you were supposed to memorize the very intuitive keyboard shortcut (command &#43; shift &#43; period or simply command &#43; &gt;).
+Removing Many Files via Command Linerm -R folder requires sudo even if I own the files.">
 
 
 
@@ -81,7 +80,7 @@ Homebrew does not permanently ass packages to path. You have to create a shell c
     
 
     
-        <script src="https://blog.elijahlopez.ca/js/script.min.a65afe903825231554d9b55b073eb144da4ccf2d2823b216dcbc6cc656c9de76.js" type="text/javascript" charset="utf-8" integrity="sha256-plr&#43;kDglIxVU2bVbBz6xRNpMzy0oI7IW3LxsxlbJ3nY="></script>
+        <script src="https://blog.elijahlopez.ca/js/script.min.510c781c39dbb21b4c76d85c82e2bdf4689220adbb7cd61e49e9d293e442fb42.js" type="text/javascript" charset="utf-8" integrity="sha256-UQx4HDnbshtMdthcguK99GiSIK27fNYeSenSk&#43;RC&#43;0I="></script>
     
 
 
@@ -91,9 +90,8 @@ Homebrew does not permanently ass packages to path. You have to create a shell c
 
 
 <meta property="og:title" content="MacOS Sucks" />
-<meta property="og:description" content="So you want to see hidden files? You go to finder settings but can&rsquo;t find it. So you then Google it. Turns out you were supposed to memorize the very intuitive keyboard shortcut (command &#43; shift &#43; period or simply command &#43; &gt;).
-rm -R folder requires sudo even if I own the files.
-Homebrew does not permanently ass packages to path. You have to create a shell config yourself with the export path shenanigans." />
+<meta property="og:description" content="Hidden FilesSo you want to see hidden files? You go to finder settings but can&rsquo;t find it. So you then Google it. Turns out you were supposed to memorize the very intuitive keyboard shortcut (command &#43; shift &#43; period or simply command &#43; &gt;).
+Removing Many Files via Command Linerm -R folder requires sudo even if I own the files." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.elijahlopez.ca/posts/macos-sucks/" /><meta property="og:image" content="https://blog.elijahlopez.ca/images"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-05-12T17:21:36-04:00" />
@@ -104,9 +102,8 @@ Homebrew does not permanently ass packages to path. You have to create a shell c
 <meta name="twitter:image" content="https://blog.elijahlopez.ca/images"/>
 
 <meta name="twitter:title" content="MacOS Sucks"/>
-<meta name="twitter:description" content="So you want to see hidden files? You go to finder settings but can&rsquo;t find it. So you then Google it. Turns out you were supposed to memorize the very intuitive keyboard shortcut (command &#43; shift &#43; period or simply command &#43; &gt;).
-rm -R folder requires sudo even if I own the files.
-Homebrew does not permanently ass packages to path. You have to create a shell config yourself with the export path shenanigans."/>
+<meta name="twitter:description" content="Hidden FilesSo you want to see hidden files? You go to finder settings but can&rsquo;t find it. So you then Google it. Turns out you were supposed to memorize the very intuitive keyboard shortcut (command &#43; shift &#43; period or simply command &#43; &gt;).
+Removing Many Files via Command Linerm -R folder requires sudo even if I own the files."/>
 
 
 
@@ -279,11 +276,35 @@ Homebrew does not permanently ass packages to path. You have to create a shell c
             </header>
         </div>
         <div class="content e-content">
-            <p>So you want to see hidden files?
+            <h3 id="hidden-files" >Hidden Files
+<span>
+    <a href="#hidden-files">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>So you want to see hidden files?
 You go to finder settings but can&rsquo;t find it. So you then Google it. Turns out you were supposed to memorize the very intuitive keyboard shortcut (command + shift + period or simply command + &gt;).</p>
-<p>rm -R folder requires sudo even if I own the files.</p>
-<p>Homebrew does not permanently ass packages to path. You have to create a shell config yourself with the export path shenanigans. Stackoverflow doesn&rsquo;t even bother giving you the one liner to do this. They make you create a file yourself and add it rather than a simple <code>echo &quot;export PATH=PATH:...&quot; &gt;&gt; ~/.zshrc</code>.</p>
-<p>Another reason is that every time you update MacOS X, you will get the following error when trying to use git.</p>
+<h3 id="removing-many-files-via-command-line" >Removing Many Files via Command Line
+<span>
+    <a href="#removing-many-files-via-command-line">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>rm -R folder requires sudo even if I own the files.</p>
+<h3 id="homebrew-does-not-modify-path" >Homebrew does not modify PATH
+<span>
+    <a href="#homebrew-does-not-modify-path">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>Homebrew does not permanently ass packages to path. You have to create a shell config yourself with the export path shenanigans. Stackoverflow doesn&rsquo;t even bother giving you the one liner to do this. They make you create a file yourself and add it rather than a simple <code>echo &quot;export PATH=PATH:...&quot; &gt;&gt; ~/.zshrc</code>.</p>
+<h3 id="updating-macos--breaks-git" >Updating macOS  Breaks git
+<span>
+    <a href="#updating-macos--breaks-git">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>Another reason is that every time you update MacOS, you will get the following error when trying to use git.</p>
 <p><a href="https://apple.stackexchange.com/questions/254380/why-am-i-getting-an-invalid-active-developer-path-when-attempting-to-use-git-a#254381">https://apple.stackexchange.com/questions/254380/why-am-i-getting-an-invalid-active-developer-path-when-attempting-to-use-git-a#254381</a></p>
 <p>The error is &ldquo;invalid developer path.&rdquo;</p>
 <p>Every time you update, you have to agree to Apple&rsquo;s XCodes terms of service in order to use git, which isn&rsquo;t made by Apple but simply
