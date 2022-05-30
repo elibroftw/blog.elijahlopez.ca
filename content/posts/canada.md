@@ -160,11 +160,19 @@ We should also abolish the P. Eng fee. What a useless fee. People should not be 
 
 ### Taxes
 
+TODO: split into different types of taxes (income, property, sales, sin, capital gains, tax ethics, duties/tariffs, etc.)
+
 The government goal should be to use taxes to create a sustainable environment for innovation and wealth. Taxes should be used wisely with the end goal of lowering taxes. Governments should create self-sustainable nationlised businesses where the nature is a priviledge rather than a need. Things like health care should remain nationalized, but private health care should also be allowed as it is in Quebec. Not sure why courts in Canada think that private health care access takes away from Canadians who are using the public health care system, but hey I'm not a judge and they aren't economists.
 
-Sales tax also needs to be improved. Some goods are basic requirements. For example, the CRA requires you to have a phone number in order to login via 2FA, so then phone plans should not have sales tax applied to them.
+#### Sales Tax
 
-### Tariffs
+Should not exist. There are so many exceptions and the CRA does not do a good job at exempting everything. For example, the CRA reqeuires you to have a phone number
+in order to login because of 2FA, but phone plans and phones have salex tax. These are necessities and a sales tax is regressive[^regressive] in this case.
+There are simply too many cases of figuring out what is a necessity and what isn't. Not to mention that on top of federal sales tax, each province has its
+own sales tax rules. Therefore a national business needs to report to so many different provinces or join something like US's nexus. So then implementing a
+sales tax fattens the government (additional beauracracy).
+
+#### Tariffs
 
 There should be almost 0 tariffs and import duties. If people want to shop in America, good for them. A trip to America is not free, so why make citizens' lives more expensive?
 
@@ -172,3 +180,6 @@ There should be almost 0 tariffs and import duties. If people want to shop in Am
 
 People can choose to donate their organs for free upon death, but yet organs go for
 thousands of dollars in black markets? Governments should incentivize people in poverty to become organ donors so that when they die, their family will receive a payment instead of being left with nothing. A charity should be started for this at the very least.
+
+[^regressive]: A sales tax is regressive because people with lower income pay a higher percentage of their income as sales tax if they bought the same goods.
+Paying for groceries is a lot harder on poorer people.
