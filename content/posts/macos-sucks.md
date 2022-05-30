@@ -1,12 +1,17 @@
 ---
 title: "MacOS Sucks"
 date: 2022-05-12T17:21:36-04:00
-draft: false
-hidden: true
 tags: [
     "opinion",
 ]
 ---
+
+Here are some reasons MacOS sucks. Of course, Linux and Windows suck too. The order for desktop OS's
+are MacOS < Linux Desktop < Windows. This article is not about why Windows > Linux, so please refrain
+from commenting about Linux. If you are a Mac user and are offended, Windows also sucks a) the Settings
+app does not include everything found in the control panel, and the control panel uses the same UI interface
+since Windows 7 and b) requires installing third party apps like TaskbarX, EarTrumpet, QuickLook, and ditto to improve the UX and
+c) there's no effort to bring Linux functionality to Windows (e.g. bash, posix kernel, preinstalled GNU coreutils, PATH limit and editable as a file).
 
 ### Hidden Files
 

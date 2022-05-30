@@ -387,6 +387,54 @@ If you are in America, pick &lt;a href=&#34;https://robinhood.com/&#34;&gt;Robin
     </item>
     
     <item>
+      <title>MacOS Sucks</title>
+      <link>https://blog.elijahlopez.ca/posts/macos-sucks/</link>
+      <pubDate>Thu, 12 May 2022 17:21:36 -0400</pubDate>
+      
+      <guid>https://blog.elijahlopez.ca/posts/macos-sucks/</guid>
+      <description>&lt;p&gt;Here are some reasons MacOS sucks. Of course, Linux and Windows suck too. The order for desktop OS&amp;rsquo;s
+are MacOS &amp;lt; Linux Desktop &amp;lt; Windows. This article is not about why Windows &amp;gt; Linux, so please refrain
+from commenting about Linux. If you are a Mac user and are offended, Windows also sucks a) the Settings
+app does not include everything found in the control panel, and the control panel uses the same UI interface
+since Windows 7 and b) requires installing third party apps like TaskbarX, EarTrumpet, QuickLook, and ditto to improve the UX and
+c) there&amp;rsquo;s no effort to bring Linux functionality to Windows (e.g. bash, posix kernel, preinstalled GNU coreutils, PATH limit and editable as a file).&lt;/p&gt;
+&lt;h3 id=&#34;hidden-files&#34; &gt;Hidden Files
+&lt;span&gt;
+    &lt;a href=&#34;#hidden-files&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;So you want to see hidden files?
+You go to finder settings but can&amp;rsquo;t find it. So you then Google it. Turns out you were supposed to memorize the very intuitive keyboard shortcut (command + shift + period or simply command + &amp;gt;).&lt;/p&gt;
+&lt;h3 id=&#34;removing-many-files-via-command-line&#34; &gt;Removing Many Files via Command Line
+&lt;span&gt;
+    &lt;a href=&#34;#removing-many-files-via-command-line&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;rm -R folder requires sudo even if I own the files.&lt;/p&gt;
+&lt;h3 id=&#34;homebrew-does-not-modify-path&#34; &gt;Homebrew does not modify PATH
+&lt;span&gt;
+    &lt;a href=&#34;#homebrew-does-not-modify-path&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;Homebrew does not permanently ass packages to path. You have to create a shell config yourself with the export path shenanigans. Stackoverflow doesn&amp;rsquo;t even bother giving you the one liner to do this. They make you create a file yourself and add it rather than a simple &lt;code&gt;echo &amp;quot;export PATH=PATH:...&amp;quot; &amp;gt;&amp;gt; ~/.zshrc&lt;/code&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;updating-macos--breaks-git&#34; &gt;Updating macOS  Breaks git
+&lt;span&gt;
+    &lt;a href=&#34;#updating-macos--breaks-git&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;Another reason is that every time you update MacOS, you will get the following error when trying to use git.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://apple.stackexchange.com/questions/254380/why-am-i-getting-an-invalid-active-developer-path-when-attempting-to-use-git-a#254381&#34;&gt;https://apple.stackexchange.com/questions/254380/why-am-i-getting-an-invalid-active-developer-path-when-attempting-to-use-git-a#254381&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The error is &amp;ldquo;invalid developer path.&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;Every time you update, you have to agree to Apple&amp;rsquo;s XCodes terms of service in order to use git, which isn&amp;rsquo;t made by Apple but simply
+preinstalled by them. Don&amp;rsquo;t want to instsall XCode? Too bad, the Command line tools themselves is 130MB.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>XMR-BTC Atomic Swap ASB Guide</title>
       <link>https://blog.elijahlopez.ca/posts/xmr-btc-atomic-swap-asb/</link>
       <pubDate>Tue, 10 May 2022 17:07:56 -0400</pubDate>
