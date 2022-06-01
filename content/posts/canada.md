@@ -40,6 +40,18 @@ I'm up for debate on whether to include properties that were inherited.
 
 This buyers tax should be implemented federally. People who are buying homes in multiple provinces are definitely upper middle class or rich. Therefore, a 50% or even 100% tax is not a problem if they are buying to live rather than to rent. Imagine a multi millionaire; that 500k property now costs 1M, so it's not a problem.
 
+### Increasing Supply - Vacant Homes
+
+I was watching a video on a $20M abandoned mansion in Toronto. I searched more up. There are many vacant or abandend properties in Toronto.
+This neeeds to stop. The governments on all levels need to enact a law that would force current property owners and banks to either find a tenant
+within 6 months, or be forced to auction the property off through a government website with no reservation price. This would end up housing
+60,000 groups of people in Toronto alone and probably. A vacanacy tax is only an incentive to sell, but does not actually
+solve housing. Nationally, we can conservatively estimate there to be $100,000. The purchasing agreement would be
+1 month to change the primary residences, find a tenant, or to create renovation plan with details.
+With thed demand constrained, it'll mostly be a primary residence thing rather than finding tenant.
+To prevent renovation abuse, we should enact a fine on the renovation filer 2 years later.
+This also prevents owners from abusing the renovation clause in order to flip the house.
+
 ### Increasing Supply - Prioritized Development
 
 In the case reducing demand isn't enough, the affordability problem is clearly supply sided. My proposal is that we use the tax revenue from the speculation tax to fund housing developments. The government should not spend this money. We should issue loans at an interest rate equal to the rate banks offer. We can either create a new department would handle this stuff or if there is a lot of money, loan the money to credit unions directly and let them issue the loans for us.
@@ -143,7 +155,7 @@ Software engineering of course. Product managers and project managers also make 
 
 I don't really feel like writing this section, so I'll stop for now. I think the issue is that there's no way to make a 30 year old experienced enough to earn that much in some of these career paths that start off only at $80,000.
 
-## Government Responsibilities
+## The Government
 
 Engineers are grossly underpaid in Canada and the US. Not all engineering challenges are complete, yet these people get paid pebbles. I propose some industries that are lacking in Canada. We need Canadian companies for these engineering innovation industries.
 
@@ -157,6 +169,13 @@ Engineers are grossly underpaid in Canada and the US. Not all engineering challe
 - lumber vertical integration (companies that use wood extensively)
 
 We should also abolish the P. Eng fee. What a useless fee. People should not be sitting on their asses while others work hard.
+
+### A Fair Electoral System
+
+After the 2021 Federal election, I was dismayed at how horribly parliament seats reflected who voters voted. So I came up
+with a proof-of-concept of a new electroal system that combines local representation with a proportional voting. I'm calling it the
+[Represenative Proportional Voting](/posts/representative-proportional-voting). It's in its infancy at the moment,
+but I hope to formalize the algorithm and system in the future.
 
 ### Taxes
 
