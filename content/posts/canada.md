@@ -203,7 +203,19 @@ thousands of dollars in black markets? Governments should incentivize people in 
 [^regressive]: A sales tax is regressive because people with lower income pay a higher percentage of their income as sales tax if they bought the same goods.
 Paying for groceries is a lot harder on poorer people.
 
-### Military (National Defence)
+### Education
+
+For a country to be competitive on the global stage, education must be done in a way that strives for perfection and without excuses.
+It is one of the things that I'm okay with requiring mandating. People under 18 are simply not mature or intelligent enough to make their own decisions
+in life, and the current state does not integrate elementary well with high school well with post-secondary. In high school, there is school
+every day, for four courses, in a longer term than university, where there are 5 courses, not every day, with a shorter term, harder, expensive,
+and a higher risk of failing.
+
+So what is "so good." Good question, I will leave this as an exercise for the reader. Just kidding; This is a TODO since like I said in the introduction,
+this article is a collection of my thoughts on Canada that come to mind. I also try to keep it as articulate and cohesive as possible,
+rather than vomit words. I aswell try to add my quirks and humor where I can.
+
+### National Defence
 
 One of the key functions of the government is to support national defence. Now even though Canada is part of NATO, NATO members are supposed to spend
 2% of their GDP on national defence. I disagree with this percentage idea. If a percentage, it should be based on tax revenue, not GDP. Better yet,
@@ -236,13 +248,3 @@ on living quarters, and drill sargents are a big no. People should not be scared
 be able to be completed in 3 months, there should be lots of free time mixed in so that people don't lose their minds. Since the program can be completed in 3
 months, an extra 2 weeks of bonus or specialized education should be added for people who completed the education on time while the people who lagged behind,
 can catch up on their basics. This is perfect because a) does not stop the progress of fast learners b) gives slower people more time to learn.
-
-### Education
-
-The education system should be so good that it won't require the attendence of students, BUT lack of attendance would result in a semi-annual
-checkup on the family. An ignorant person can get by easily if their parents are loaded, but will suffer tremendously if their parents
-do not earn enough money for the kid to live off of for the rese of their life.
-
-So what is "so good." Good question, I will leave it as an exercise for the reader. i.e. this is a TODO since like I said at the beginning, this
-article is a collection of thoughts on Canada that come to mind. I try to keep it as articulate and cohesive as possible, rather than a complete word
-vomit. And of course, I try to add some of my quirks and humor.
