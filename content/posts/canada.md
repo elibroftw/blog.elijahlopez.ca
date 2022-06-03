@@ -202,3 +202,47 @@ thousands of dollars in black markets? Governments should incentivize people in 
 
 [^regressive]: A sales tax is regressive because people with lower income pay a higher percentage of their income as sales tax if they bought the same goods.
 Paying for groceries is a lot harder on poorer people.
+
+### Military (National Defence)
+
+One of the key functions of the government is to support national defence. Now even though Canada is part of NATO, NATO members are supposed to spend
+2% of their GDP on national defence. I disagree with this percentage idea. If a percentage, it should be based on tax revenue, not GDP. Better yet,
+there should be a plan on how to spend on national defence. There are 4+ things when it comes to national defence. Air, Water, Land, range weapons (i.e. missiles/nukes),
+and air-defence (e.g. Iron Dome).
+
+#### Airforce
+
+An airforce is crucical. A single aircraft can devastate many land units, so an air-defence system is just as crucial. An airforce should be as mobile
+as possible and should be not be crippled with one attack. In other words, there should be multiple air-bases and the location of these bases need to completely
+classified or opaqued, but the existence of them should be stated. This is an equal balance between government secrets in the name of national defence. Some
+governments, like the USA, take it too far and classify even operations. An operation should be classified until it's over. Then it should be made as transparent as possible.
+
+#### Navy
+
+A Navy is useful for shipping as well as long-lasting operations. It's also useful to for saving the fuel of aircrafts and keeping a moving aircraft base.
+That is, instead of having fixed aircraft bases, we can have mobile bases. Hypothetically, aircraft carriers reduce the need of fixed airbases and thus
+we could save money while improving the reliability of the air-force.
+
+#### Army
+
+The army is useful when aircrafts and missiles cannot be used luxuriously. An army's strength is determined by both strategy and manpower. This is because, one
+person could either take out 100+ enemy soldiers, or die without being of any use. For countries like Canada, we should reduce the school length term for
+grade 12ers so that their 4 month summer can be spent learning how to be part of the military. I am against military conscription, but with a trained
+civilian population, we will be able to depend more on the power of patriotism, civil duty, and volunteerism. A person with even basic military education will
+be more willing than a 30 year old who has never shot a gun before.
+
+This training will not be as strict as the army and military is at the moment. I am strongly against force, so things like being forced to get a haircut, cost-savings
+on living quarters, and drill sargents are a big no. People should not be scared of the training, but rather take it calmly. The entire course should
+be able to be completed in 3 months, there should be lots of free time mixed in so that people don't lose their minds. Since the program can be completed in 3
+months, an extra 2 weeks of bonus or specialized education should be added for people who completed the education on time while the people who lagged behind,
+can catch up on their basics. This is perfect because a) does not stop the progress of fast learners b) gives slower people more time to learn.
+
+### Education
+
+The education system should be so good that it won't require the attendence of students, BUT lack of attendance would result in a semi-annual
+checkup on the family. An ignorant person can get by easily if their parents are loaded, but will suffer tremendously if their parents
+do not earn enough money for the kid to live off of for the rese of their life.
+
+So what is "so good." Good question, I will leave it as an exercise for the reader. i.e. this is a TODO since like I said at the beginning, this
+article is a collection of thoughts on Canada that come to mind. I try to keep it as articulate and cohesive as possible, rather than a complete word
+vomit. And of course, I try to add some of my quirks and humor.
