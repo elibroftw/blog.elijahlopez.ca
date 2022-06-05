@@ -127,7 +127,7 @@ The extra one is for guests. I think there should also be 3 washrooms.&lt;/p&gt;
         &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
     &lt;/a&gt;
 &lt;/span&gt;
-&lt;/h3&gt;&lt;p&gt;For this, I&amp;rsquo;ll have to think from other peoples&#39; shoes. We have two ways to go for this. We can go suburban or urban.
+&lt;/h3&gt;&lt;p&gt;For this, I&amp;rsquo;ll have to think from other peoples&amp;rsquo; shoes. We have two ways to go for this. We can go suburban or urban.
 For sake of the American Dream &lt;em&gt;fantasy&lt;/em&gt;, we&amp;rsquo;ll go the suburban route. So our activities consist of: waterpark within two hours, theme park within 2 hours, a picnic type park within 15 minutes, biking routes, tennis court, basketball court, soccer fields. Also a gym if you want to improve your physique. You can reduce or increase this list based on your wants.&lt;/p&gt;
 &lt;h3 id=&#34;income&#34; &gt;Income
 &lt;span&gt;
@@ -142,23 +142,23 @@ In total, household networth at retirement (age 55) should be $1.5M to $3M. In b
 &lt;p&gt;We need to employ some financial equations now to account for real stock market growth of 8.66%.&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt; To get this number, I used 35 years of data from Jan 1st 1986 to Dec 31 2021, adjust for inflation, add dividends, and subtract 0.03% because VOO is the cheapest S&amp;amp;P 500 exchange traded fund (ETF).&lt;/p&gt;
 &lt;p&gt;I don&amp;rsquo;t have time to update my old investing article, but I summarized the basics &lt;a href=&#34;https://blog.elijahlopez.ca/posts/investing&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;We can use this Python function I made in 2019/2020 to first calculate how much we need to put into the stock market per week.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-py&#34; data-lang=&#34;py&#34;&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#447fcf&#34;&gt;get_savings_amt&lt;/span&gt;(future_savings, years_to_retirement, interest_rate,
-                    compounds_per_year=&lt;span style=&#34;color:#3677a9&#34;&gt;2&lt;/span&gt;, startwith=&lt;span style=&#34;color:#3677a9&#34;&gt;0&lt;/span&gt;, saving_period=&lt;span style=&#34;color:#3677a9&#34;&gt;12&lt;/span&gt;):
-    &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;&amp;#34;&amp;#34;
-&lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;    Calculates how much you need to save per month to retire given the parameters
-&lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;    &amp;#34;&amp;#34;&amp;#34;&lt;/span&gt;
-    r, m, n = interest_rate, compounds_per_year, years_to_retirement * saving_period
-    efr = (&lt;span style=&#34;color:#3677a9&#34;&gt;1&lt;/span&gt; + r/m) ** (m / saving_period) - &lt;span style=&#34;color:#3677a9&#34;&gt;1&lt;/span&gt;
-    already_secured = startwith * (&lt;span style=&#34;color:#3677a9&#34;&gt;1&lt;/span&gt; + r / m) ** (m * years_to_retirement)
-    future_savings -= already_secured
-    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;return&lt;/span&gt; future_savings * efr / ((&lt;span style=&#34;color:#3677a9&#34;&gt;1&lt;/span&gt; + efr) ** n - &lt;span style=&#34;color:#3677a9&#34;&gt;1&lt;/span&gt;)
-
-
-&amp;gt;&amp;gt;&amp;gt; &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# assume we start working at 25, we start with $0, and we compound yearly&lt;/span&gt;
-&amp;gt;&amp;gt;&amp;gt; &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# multiply by two to account for market volatility&lt;/span&gt;
-&amp;gt;&amp;gt;&amp;gt; get_savings_amt(&lt;span style=&#34;color:#3677a9&#34;&gt;1000000&lt;/span&gt;, &lt;span style=&#34;color:#3677a9&#34;&gt;30&lt;/span&gt;, &lt;span style=&#34;color:#3677a9&#34;&gt;0.0866&lt;/span&gt;, &lt;span style=&#34;color:#3677a9&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color:#3677a9&#34;&gt;0&lt;/span&gt;, &lt;span style=&#34;color:#3677a9&#34;&gt;52&lt;/span&gt;) * &lt;span style=&#34;color:#3677a9&#34;&gt;2&lt;/span&gt;
-&amp;gt;&amp;gt;&amp;gt; &lt;span style=&#34;color:#3677a9&#34;&gt;288.51322722512805&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;In the future I will try testing this out on actual data and seeing if the results are as intended. The market is volatile so we can&amp;rsquo;t use an answer based on a monotonic assumption without double checking. In order to account for volatility, I doubled my answer.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-py&#34; data-lang=&#34;py&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#447fcf&#34;&gt;get_savings_amt&lt;/span&gt;(future_savings, years_to_retirement, interest_rate,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    compounds_per_year=&lt;span style=&#34;color:#3677a9&#34;&gt;2&lt;/span&gt;, startwith=&lt;span style=&#34;color:#3677a9&#34;&gt;0&lt;/span&gt;, saving_period=&lt;span style=&#34;color:#3677a9&#34;&gt;12&lt;/span&gt;):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;&amp;#34;&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;    Calculates how much you need to save per month to retire given the parameters
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;    &amp;#34;&amp;#34;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    r, m, n = interest_rate, compounds_per_year, years_to_retirement * saving_period
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    efr = (&lt;span style=&#34;color:#3677a9&#34;&gt;1&lt;/span&gt; + r/m) ** (m / saving_period) - &lt;span style=&#34;color:#3677a9&#34;&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    already_secured = startwith * (&lt;span style=&#34;color:#3677a9&#34;&gt;1&lt;/span&gt; + r / m) ** (m * years_to_retirement)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    future_savings -= already_secured
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;return&lt;/span&gt; future_savings * efr / ((&lt;span style=&#34;color:#3677a9&#34;&gt;1&lt;/span&gt; + efr) ** n - &lt;span style=&#34;color:#3677a9&#34;&gt;1&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;gt;&amp;gt;&amp;gt; &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# assume we start working at 25, we start with $0, and we compound yearly&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;gt;&amp;gt;&amp;gt; &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# multiply by two to account for market volatility&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;gt;&amp;gt;&amp;gt; get_savings_amt(&lt;span style=&#34;color:#3677a9&#34;&gt;1000000&lt;/span&gt;, &lt;span style=&#34;color:#3677a9&#34;&gt;30&lt;/span&gt;, &lt;span style=&#34;color:#3677a9&#34;&gt;0.0866&lt;/span&gt;, &lt;span style=&#34;color:#3677a9&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color:#3677a9&#34;&gt;0&lt;/span&gt;, &lt;span style=&#34;color:#3677a9&#34;&gt;52&lt;/span&gt;) * &lt;span style=&#34;color:#3677a9&#34;&gt;2&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;gt;&amp;gt;&amp;gt; &lt;span style=&#34;color:#3677a9&#34;&gt;288.51322722512805&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;In the future I will try testing this out on actual data and seeing if the results are as intended. The market is volatile so we can&amp;rsquo;t use an answer based on a monotonic assumption without double checking. In order to account for volatility, I doubled my answer.&lt;/p&gt;
 &lt;p&gt;$288/week translates to $1,248/month or $14,976/yr.&lt;/p&gt;
 &lt;p&gt;A down payment on a $2M home is $400,000 and if we want to buy it when we are 30, we&amp;rsquo;ll need to save (household) $80,000
 per year.&lt;/p&gt;
@@ -288,7 +288,7 @@ sales tax fattens the government (additional beauracracy).&lt;/p&gt;
         &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
     &lt;/a&gt;
 &lt;/span&gt;
-&lt;/h4&gt;&lt;p&gt;There should be almost 0 tariffs and import duties. If people want to shop in America, good for them. A trip to America is not free, so why make citizens&#39; lives more expensive?&lt;/p&gt;
+&lt;/h4&gt;&lt;p&gt;There should be almost 0 tariffs and import duties. If people want to shop in America, good for them. A trip to America is not free, so why make citizens&amp;rsquo; lives more expensive?&lt;/p&gt;
 &lt;h3 id=&#34;organ-donors&#34; &gt;Organ Donors
 &lt;span&gt;
     &lt;a href=&#34;#organ-donors&#34;&gt;
@@ -356,21 +356,21 @@ on living quarters, and drill sargents are a big no. People should not be scared
 be able to be completed in 3 months, there should be lots of free time mixed in so that people don&amp;rsquo;t lose their minds. Since the program can be completed in 3
 months, an extra 2 weeks of bonus or specialized education should be added for people who completed the education on time while the people who lagged behind,
 can catch up on their basics. This is perfect because a) does not stop the progress of fast learners b) gives slower people more time to learn.&lt;/p&gt;
-&lt;section class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
 &lt;hr&gt;
 &lt;ol&gt;
-&lt;li id=&#34;fn:1&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
 &lt;p&gt;By marriage I mean the unification of partners in a relationship rather than the legal sense&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
-&lt;li id=&#34;fn:2&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;li id=&#34;fn:2&#34;&gt;
 &lt;p&gt;&lt;a href=&#34;http://www.moneychimp.com/features/market_cagr.htm&#34;&gt;Moneychimp - CAGR Stock Market Last 35 Years.&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
-&lt;li id=&#34;fn:3&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;li id=&#34;fn:3&#34;&gt;
 &lt;p&gt;A sales tax is regressive because people with lower income pay a higher percentage of their income as sales tax if they bought the same goods.
 Paying for groceries is a lot harder on poorer people.&amp;#160;&lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/section&gt;
+&lt;/div&gt;
 </description>
     </item>
     

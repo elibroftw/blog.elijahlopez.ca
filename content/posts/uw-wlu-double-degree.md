@@ -3,7 +3,7 @@ title: "UW WLU Double Degree"
 date: 2021-12-17T21:36:13-05:00
 draft: false
 tags: [
-    "experiences",
+    "university",
 ]
 ---
 I started my double degree BCS and BBA journey in Fall 2019.

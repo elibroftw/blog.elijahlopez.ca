@@ -2,11 +2,13 @@
 title: "BU 375 Operations"
 date: 2022-06-04T10:23:48-04:00
 draft: false
+tags: [
+    "university",
+]
 ---
 
-This document are my notes and midterm review for the BU 375 Operations course taught at Wilfrid Laurier University. While studying for the midterm, I discovered my own formulae shortcuts, undoubtly due to "blind teaching syndrome" (I made that term up). So let's begin. I'll add a divider to let you know what's part of the midterm review.
-
-I'm probably going to write this while recording a youtube video, so let's try that.
+This document are my notes and midterm review for the BU 375 Operations course taught at Wilfrid Laurier University. While studying for the midterm, I discovered my own formulae shortcuts, undoubtly due to "blind teaching syndrome" (I made that term up).
+So let's begin. I'll add a divider to let you know what is part of the midterm.
 
 {{< toc >}}
 
@@ -226,19 +228,19 @@ Total = cost of achieving good quality + cost of poor quality
 
 Measures quality cost against a base value (e.g. manufacturing, sales, labor hours, quantity)
 
-<img class=equation src="https://latex.codecogs.com/svg.image?QI=\frac{Total\,\,Cost\,\,of\,\,Quality}{Base}\times 100">
+<img class=equation-tall src="https://latex.codecogs.com/svg.image?QI=\frac{Total\,\,Cost\,\,of\,\,Quality}{Base}\times 100">
 
 ## Productivity
 
 ### Single-Factor Productivity
 
-<img class=equation src="https://latex.codecogs.com/svg.image?\frac{Output}{Specific\,\,Input}">
+<img class=equation-tall src="https://latex.codecogs.com/svg.image?\frac{Output}{Specific\,\,Input}">
 
 where Specific Input could be Labor, Materials, Capital.
 
 ### Total Factor Productivity
 
-<img class=equation src="https://latex.codecogs.com/svg.image?\frac{Output}{All\,\,Inputs}">
+<img class=equation-tall src="https://latex.codecogs.com/svg.image?\frac{Output}{All\,\,Inputs}">
 
 To calculate multifactor productivity, use a subset of inputs.
 
@@ -254,7 +256,7 @@ OR
 
 For this one, I have my own simplified formulas.
 
-<img class=equation src="https://latex.codecogs.com/svg.image?Product\,\,Cost=\frac{(mfg\,\,cost)+(rework\,\,cost)(1-%good)(%reworked)}{%good\times(1-%good)(%reworked)}">
+<img class=equation-tall src="https://latex.codecogs.com/svg.image?Product\,\,Cost=\frac{(mfg\,\,cost)+(rework\,\,cost)(1-%good)(%reworked)}{%good\times(1-%good)(%reworked)}">
 
 This avoids calculating how many units were reworked.
 
@@ -262,25 +264,82 @@ This avoids calculating how many units were reworked.
 
 Even for this one, I have my own method, but I'll include the original in case some information isn't given.
 
-<img class=equation src="https://latex.codecogs.com/svg.image?QPR=\frac{% good}{(input)(processing\,\,cost)+(1-%good)(%reworked)(rework\,\,cost)}">
+<img class=equation-tall src="https://latex.codecogs.com/svg.image?QPR=\frac{% good}{(input)(processing\,\,cost)+(1-%good)(%reworked)(rework\,\,cost)}">
 
-<img class=equation src="https://latex.codecogs.com/svg.image?QPR=\frac{good}{(input)(processing\,\,cost)+(reworked)(rework\,\,cost)}">
+<img class=equation-tall src="https://latex.codecogs.com/svg.image?QPR=\frac{good}{(input)(processing\,\,cost)+(reworked)(rework\,\,cost)}">
 
 ## Statistical Analysis
 
-A type I Alpha error is an error that wasn't supposed to fall outside the control limits. False-positive.
-
-A type II Beta error is an error that should've falled outside the control limits.
+- A type I Alpha error is an error that wasn't supposed to fall outside the control limits. False-positive.
+- A type II Beta error is an error that should've falled outside the control limits.
+- Variations are either random or assignable.
+- `n` refers to sample size or number of observations, and `k` refers to the number of samples.
+- `z` refers to the sigma count; either 2 or 3
+- UCL and LCL stand for upper control limit and lower control limit.
 
 ### p-chart
 
+A p-chart is a control limit chart with relation to the proportion of defects. It is used when there are multiple observations per sample and defects are reported.
+
+<img class=equation-tall src="https://latex.codecogs.com/svg.image?\bar p=\frac{total\,\,defects}{nk}">
+<img class=equation-tall src="https://latex.codecogs.com/svg.image?\sigma_p=\sqrt{\frac{\bar p(1-\bar p)}{n}}">
+<img class=equation src="https://latex.codecogs.com/svg.image?UCL=\bar p+z\sigma_p, LCL=\bar p-z\sigma_p">
+
 ### c-chart
+
+Similar to p-chart, except there is only 1 observation per sample.
+
+<img class=equation-tall src="https://latex.codecogs.com/svg.image?\bar c=\frac{total\,\,defects}{k}">
+
+<img class=equation src="https://latex.codecogs.com/svg.image?\sigma_c=\sqrt{\bar c}">
+
+<img class=equation src="https://latex.codecogs.com/svg.image?UCL=\bar c+2\sigma_c, LCL=\bar c-2\sigma_c">
 
 ### x-chart
 
+A chart used for checking if process variability is in control.
+
+<img class=equation src="https://latex.codecogs.com/svg.image?\bar{\bar x}=grand\,\,mean = mean\,\,of\,\,means">
+
+<img class=equation-tall src="https://latex.codecogs.com/svg.image?\sigma_x=\frac{\sigma}{\sqrt n}">
+
+<img class=equation src="https://latex.codecogs.com/svg.image?UCL=\bar{\bar x}+z\sigma_x, LCL=\bar{\bar x}-z\sigma_x">
+
+In the case σ is unknown, use the control factors table along with thse formulas:
+
+<img class=equation src="https://latex.codecogs.com/svg.image?UCL=\bar{\bar x}+A_2\bar R, LCL=\bar{\bar x}-A_2\bar R">
+
 ### R-chart
 
+A range chart, to test if variability is in control. Use the control factors table to determine factor values or to help you figure out other factor values.
+
+<img class=equation src="https://latex.codecogs.com/svg.image?\bar R=average\,\,range">
+
+<img class=equation src="https://latex.codecogs.com/svg.image?UCL=D_4{\bar R}, LCL=D_3\bar R">
+
 ### Reliability
+
+To improve reliability,
+
+- reduce number of components in a series
+- increase backup components
+- increase individual component reliability
+
+To calculate the relaibility of a process, use these two functions.
+
+#### Series
+
+For components in a series (independents), multiply their reliability scores:
+
+<img class=equation src="https://latex.codecogs.com/svg.image?x_1x_2x_3">
+
+#### Parallel (Backups)
+
+For components that are in parallel (i.e. backups exist), follow this schema,
+
+<img class=equation src="https://latex.codecogs.com/svg.image?x_1+(1-x_1)x_2+(1-x_1)(1-x_2)x_3">
+
+### Capability
 
 ### Systeam Availability
 
