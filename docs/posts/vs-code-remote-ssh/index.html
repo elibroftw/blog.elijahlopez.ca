@@ -79,7 +79,7 @@ You can generate an SSH key using ssh-keygen -t ed25519. Press enter on the prom
     
 
     
-        <script src="https://blog.elijahlopez.ca/js/script.min.510c781c39dbb21b4c76d85c82e2bdf4689220adbb7cd61e49e9d293e442fb42.js" type="text/javascript" charset="utf-8" integrity="sha256-UQx4HDnbshtMdthcguK99GiSIK27fNYeSenSk&#43;RC&#43;0I="></script>
+        <script src="https://blog.elijahlopez.ca/js/script.min.a65afe903825231554d9b55b073eb144da4ccf2d2823b216dcbc6cc656c9de76.js" type="text/javascript" charset="utf-8" integrity="sha256-plr&#43;kDglIxVU2bVbBz6xRNpMzy0oI7IW3LxsxlbJ3nY="></script>
     
 
 
@@ -301,11 +301,11 @@ This will be useful when configuring the Remote-SSH VSCode extension.</p>
         <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
     </a>
 </span>
-</h3><div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">ssh-copy-id -i path/to/file/if/not/default USER@HOST
-<span style="color:#999;font-style:italic"># examples</span>
-ssh-copy-id -i .ssh/id_ed25519.pub USER@HOST
-ssh-copy-id -i /mnt/c/Users/maste/.ssh/id_ed25519.pub USER@HOST
-</code></pre></div><p>When doing this, press enter to any yes/no prompts such as fingerprints and etc. The fingerprint prompt is
+</h3><div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>ssh-copy-id -i path/to/file/if/not/default USER@HOST
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"># examples</span>
+</span></span><span style="display:flex;"><span>ssh-copy-id -i .ssh/id_ed25519.pub USER@HOST
+</span></span><span style="display:flex;"><span>ssh-copy-id -i /mnt/c/Users/maste/.ssh/id_ed25519.pub USER@HOST
+</span></span></code></pre></div><p>When doing this, press enter to any yes/no prompts such as fingerprints and etc. The fingerprint prompt is
 important only if you can&rsquo;t trust your network (e.g. Starbucks WiFi).</p>
 <p>If you&rsquo;re having trouble with this, just <code>cd</code> into the <code>.ssh</code> folder and use <code>-i id_ed25519.pub</code></p>
 <h3 id="windows-without-wsl" >Windows Without WSL
@@ -316,10 +316,10 @@ important only if you can&rsquo;t trust your network (e.g. Starbucks WiFi).</p>
 </span>
 </h3><p>If you&rsquo;re on Windows, you won&rsquo;t have access to <code>ssh-copy-id</code>. Instead you can modify the first command below or use the second command
 if you aren&rsquo;t doing anything abnormal on your computer.</p>
-<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell"><span style="color:#24909d">type </span>path\to\id_algo.pub | ssh USER<span style="color:#40ffff">@HOST</span> <span style="color:#ed9d13">&#34;cat &gt;&gt; .ssh/authorized_keys&#34;</span>
-<span style="color:#999;font-style:italic"># type $env:USERPROFILE\.ssh\id_ed25519.pub | ssh user@host &#34;cat &gt;&gt; .ssh/authorized_keys&#34;</span>
-<span style="color:#999;font-style:italic"># the above is a helper that hopefully requires no modifications</span>
-</code></pre></div><h2 id="setting-up-vs-code" >Setting up VS Code
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#24909d">type </span>path\to\id_algo.pub | ssh USER<span style="color:#40ffff">@HOST</span> <span style="color:#ed9d13">&#34;cat &gt;&gt; .ssh/authorized_keys&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"># type $env:USERPROFILE\.ssh\id_ed25519.pub | ssh user@host &#34;cat &gt;&gt; .ssh/authorized_keys&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"># the above is a helper that hopefully requires no modifications</span>
+</span></span></code></pre></div><h2 id="setting-up-vs-code" >Setting up VS Code
 <span>
     <a href="#setting-up-vs-code">
         <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
@@ -337,13 +337,13 @@ if you aren&rsquo;t doing anything abnormal on your computer.</p>
 </li>
 <li>
 <p>Enter the information for your remote server(s). Here is mine for reference. I had to comment out PreferredAuthentications.</p>
-<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">Host uWaterloo
-  User e5lopez
-  HostName linux.student.cs.uwaterloo.ca
-  IdentityFile <span style="color:#ed9d13">&#34;C:\Users\maste\.ssh\id_ed25519&#34;</span>
-  <span style="color:#999;font-style:italic"># Linux/MacOS: IdentityFile &#34;/Users/USER/.ssh/id_ed25519&#34;</span>
-  <span style="color:#999;font-style:italic"># PreferredAuthentications publickey</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>Host uWaterloo
+</span></span><span style="display:flex;"><span>  User e5lopez
+</span></span><span style="display:flex;"><span>  HostName linux.student.cs.uwaterloo.ca
+</span></span><span style="display:flex;"><span>  IdentityFile <span style="color:#ed9d13">&#34;C:\Users\maste\.ssh\id_ed25519&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#999;font-style:italic"># Linux/MacOS: IdentityFile &#34;/Users/USER/.ssh/id_ed25519&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#999;font-style:italic"># PreferredAuthentications publickey</span>
+</span></span></code></pre></div></li>
 <li>
 <p>From the command palette, use &ldquo;Remote-SSH: Connect Current Window to Host&hellip;&rdquo; and select the host you just added</p>
 </li>

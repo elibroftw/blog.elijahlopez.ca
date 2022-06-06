@@ -376,4 +376,100 @@ TODO: add table with formulas and descriptions
 
 ## Capacity Planning
 
-___
+***
+End of Midterm Review
+***
+
+## Supply Chain Management Strategy & Design
+
+- Chain of organizations and facilities, with varying activities
+- Multi-tiered
+- Activities
+  - forecasting, purchasing, product/proces design, manufacturing, quality assurance, inventory management, distribution
+
+### Supply Chain Process
+
+1. Procurement of raw materials and services
+2. Production of product and services
+3. Storage of products in inventory
+4. Taking orders and distribution of products to the customer
+
+### Supply Chain for Service Providers
+
+- Focuses on human resources
+- Fewer tiers
+
+### Supply Chain Management (SCM)
+
+- Systemic approach to manage entire flow of information, materials, and services from raw-materials to customers
+- Goal: perfecting coordination and collabortaion of components to effectively meet demand at the right price, time, and place
+- Competition becomes between supply chains rather than companies
+- Transparency is important
+
+#### Bullwhip Effect
+
+- Supply chain members farther down the line get information after the members
+nearer to customers.
+- Safety stock issues
+- Lack of accurate demand information
+- Order batching results in less orders but larger quantities
+- Price fluctuations
+- Shortage gaming (placing orders more than is required bc inventory is short supply)
+- Solutions
+  - Coordination by parties for pricing, transportation, and inventory management
+  - Joint demand information forecast
+  - Price stabilization
+  - Discouraging shortage gaming
+
+I believe a solution is for the supplier to force the orderer to
+tell them when the next order will be. That way, a supplier won't have to decide
+whether to anticipate more orders if batch ordering occurs.
+
+### Supply Chain Uncertainty
+
+- Inaccurate demand forecasting
+- Long and Varying times for orders
+- Late/Incomplete shipments
+- Product changes and price fluctuations/discounts
+- Batch ordering and inflated orders
+- Failures cause chain reactions, leading to lag, lack of supply, and lower sales
+- Inventory is used as insurance against uncertainty, however optimality needs to be determined
+
+### Supply Chain Coordination and Integration
+
+- Sharing information
+- Coordinated workflow, production, and operations, procurement
+- Adopt new business models and tech
+- Collaborative Planning, Forecasting, Replenishment (CPFR)
+- Entreprise Resource Planning (ERP)
+
+### Information Technology
+
+- E-Business
+- Electronic data interchange (EDI)
+- Barcode and point-of-sale (POS) data
+- Radio Frequency Identification (RFID)
+- Internet
+- Blockchain
+
+### Supply Chain Performance
+
+- inventory turnover
+- weeks of supply
+
+<img class=equation-tall src="https://latex.codecogs.com/svg.image?Inventory\,\,Turnover=\frac{cost\,\,of\,\,goods\,\,sold}{average\,\,aggregate\,\,value\,\,of\,\,inventory}">
+
+Average aggregate inventory value is the sum of average inventory times value for each item.
+
+<img class=equation-tall src="https://latex.codecogs.com/svg.image?Days\,\,of\,\,Supply=\frac{365}{Inventory\,\,Turnover}">
+
+Fill Rate = fraction of orders filled within a specific time period.
+
+### Scor Model
+
+- Plan
+- Source
+- Make
+- Deliver
+- Enable
+- Return
