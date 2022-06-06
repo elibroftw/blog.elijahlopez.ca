@@ -78,7 +78,7 @@
     
 
     
-        <script src="https://blog.elijahlopez.ca/js/script.min.a65afe903825231554d9b55b073eb144da4ccf2d2823b216dcbc6cc656c9de76.js" type="text/javascript" charset="utf-8" integrity="sha256-plr&#43;kDglIxVU2bVbBz6xRNpMzy0oI7IW3LxsxlbJ3nY="></script>
+        <script src="https://blog.elijahlopez.ca/js/script.min.510c781c39dbb21b4c76d85c82e2bdf4689220adbb7cd61e49e9d293e442fb42.js" type="text/javascript" charset="utf-8" integrity="sha256-UQx4HDnbshtMdthcguK99GiSIK27fNYeSenSk&#43;RC&#43;0I="></script>
     
 
 
@@ -331,8 +331,7 @@ So let&rsquo;s begin. I&rsquo;ll add a divider to let you know what is part of t
         <li><a href="#x-chart">x-chart</a></li>
         <li><a href="#r-chart">R-chart</a></li>
         <li><a href="#reliability">Reliability</a></li>
-        <li><a href="#capability">Capability</a></li>
-        <li><a href="#systeam-availability">Systeam Availability</a></li>
+        <li><a href="#process-capability-index">Process Capability Index</a></li>
       </ul>
     </li>
     <li><a href="#server-model">Server Model</a></li>
@@ -946,6 +945,7 @@ perceptions</p>
 <img class=equation src="https://latex.codecogs.com/svg.image?\bar{\bar x}=grand\,\,mean = mean\,\,of\,\,means">
 <img class=equation-tall src="https://latex.codecogs.com/svg.image?\sigma_x=\frac{\sigma}{\sqrt n}">
 <img class=equation src="https://latex.codecogs.com/svg.image?UCL=\bar{\bar x}+z\sigma_x, LCL=\bar{\bar x}-z\sigma_x">
+<!-- Ctrl + F sigma -->
 <p>In the case σ is unknown, use the control factors table along with thse formulas:</p>
 <img class=equation src="https://latex.codecogs.com/svg.image?UCL=\bar{\bar x}+A_2\bar R, LCL=\bar{\bar x}-A_2\bar R">
 <h3 id="r-chart" >R-chart
@@ -986,25 +986,40 @@ perceptions</p>
 </span>
 </h4><p>For components that are in parallel (i.e. backups exist), follow this schema,</p>
 <img class=equation src="https://latex.codecogs.com/svg.image?x_1+(1-x_1)x_2+(1-x_1)(1-x_2)x_3">
-<h3 id="capability" >Capability
+<h4 id="system-availability" >System Availability
 <span>
-    <a href="#capability">
+    <a href="#system-availability">
         <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
     </a>
 </span>
-</h3><h3 id="systeam-availability" >Systeam Availability
+</h4><img class=equation-tall src="https://latex.codecogs.com/svg.image?SA=\frac{mean\,\,time\,\,between\,\,failures}{MTBF+mean\,\,repair\,\,time}">
+<h3 id="process-capability-index" >Process Capability Index
 <span>
-    <a href="#systeam-availability">
+    <a href="#process-capability-index">
         <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
     </a>
 </span>
-</h3><h2 id="server-model" >Server Model
+</h3><p>When design mean and process mean are the same use c<sub>p</sub>, otherwise c<sub>pk</sub>.</p>
+<p>If c<sub>p</sub> and c<sub>pk</sub> are &gt;= 1, then the process is capable (99.70%).
+If c<sub>p</sub> = c<sub>pk</sub>, then design mean and process mean are the same.</p>
+<img class=equation-tall src="https://latex.codecogs.com/svg.image?c_p=\frac{upper\,\,limit-lower\,\,limit}{6\sigma}">
+<p>I tweaked the formula for c<sub>pk</sub>. Instead of dividing both numbers by 3σ, divide only the min.</p>
+<img class=equation-tall src="https://latex.codecogs.com/svg.image?c_{pk}=\frac{\min\{{upper\,\,limit-process\,\,mean,process\,\,mean-lower\,\,limit}\}}{3\sigma}">
+<p>The number chosen also represents which limit the process (mean) deviated towards.</p>
+<h2 id="server-model" >Server Model
 <span>
     <a href="#server-model">
         <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
     </a>
 </span>
-</h2><h2 id="simple-processes" >Simple Processes
+</h2><ul>
+<li>Poisson distribution</li>
+<li>First in First Out (FIFO)</li>
+<li>Infinite population because people served can re-join the queue</li>
+</ul>
+<p>The lambda variable refers to mean arrival rate and the mu variable refers to mean service rate.</p>
+<p>TODO: add table with formulas and descriptions</p>
+<h2 id="simple-processes" >Simple Processes
 <span>
     <a href="#simple-processes">
         <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>

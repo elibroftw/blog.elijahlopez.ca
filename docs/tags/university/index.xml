@@ -74,8 +74,7 @@ So let&amp;rsquo;s begin. I&amp;rsquo;ll add a divider to let you know what is p
         &lt;li&gt;&lt;a href=&#34;#x-chart&#34;&gt;x-chart&lt;/a&gt;&lt;/li&gt;
         &lt;li&gt;&lt;a href=&#34;#r-chart&#34;&gt;R-chart&lt;/a&gt;&lt;/li&gt;
         &lt;li&gt;&lt;a href=&#34;#reliability&#34;&gt;Reliability&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&#34;#capability&#34;&gt;Capability&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&#34;#systeam-availability&#34;&gt;Systeam Availability&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#process-capability-index&#34;&gt;Process Capability Index&lt;/a&gt;&lt;/li&gt;
       &lt;/ul&gt;
     &lt;/li&gt;
     &lt;li&gt;&lt;a href=&#34;#server-model&#34;&gt;Server Model&lt;/a&gt;&lt;/li&gt;
@@ -689,6 +688,7 @@ perceptions&lt;/p&gt;
 &lt;img class=equation src=&#34;https://latex.codecogs.com/svg.image?\bar{\bar x}=grand\,\,mean = mean\,\,of\,\,means&#34;&gt;
 &lt;img class=equation-tall src=&#34;https://latex.codecogs.com/svg.image?\sigma_x=\frac{\sigma}{\sqrt n}&#34;&gt;
 &lt;img class=equation src=&#34;https://latex.codecogs.com/svg.image?UCL=\bar{\bar x}+z\sigma_x, LCL=\bar{\bar x}-z\sigma_x&#34;&gt;
+&lt;!-- Ctrl + F sigma --&gt;
 &lt;p&gt;In the case σ is unknown, use the control factors table along with thse formulas:&lt;/p&gt;
 &lt;img class=equation src=&#34;https://latex.codecogs.com/svg.image?UCL=\bar{\bar x}+A_2\bar R, LCL=\bar{\bar x}-A_2\bar R&#34;&gt;
 &lt;h3 id=&#34;r-chart&#34; &gt;R-chart
@@ -729,25 +729,40 @@ perceptions&lt;/p&gt;
 &lt;/span&gt;
 &lt;/h4&gt;&lt;p&gt;For components that are in parallel (i.e. backups exist), follow this schema,&lt;/p&gt;
 &lt;img class=equation src=&#34;https://latex.codecogs.com/svg.image?x_1+(1-x_1)x_2+(1-x_1)(1-x_2)x_3&#34;&gt;
-&lt;h3 id=&#34;capability&#34; &gt;Capability
+&lt;h4 id=&#34;system-availability&#34; &gt;System Availability
 &lt;span&gt;
-    &lt;a href=&#34;#capability&#34;&gt;
+    &lt;a href=&#34;#system-availability&#34;&gt;
         &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
     &lt;/a&gt;
 &lt;/span&gt;
-&lt;/h3&gt;&lt;h3 id=&#34;systeam-availability&#34; &gt;Systeam Availability
+&lt;/h4&gt;&lt;img class=equation-tall src=&#34;https://latex.codecogs.com/svg.image?SA=\frac{mean\,\,time\,\,between\,\,failures}{MTBF+mean\,\,repair\,\,time}&#34;&gt;
+&lt;h3 id=&#34;process-capability-index&#34; &gt;Process Capability Index
 &lt;span&gt;
-    &lt;a href=&#34;#systeam-availability&#34;&gt;
+    &lt;a href=&#34;#process-capability-index&#34;&gt;
         &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
     &lt;/a&gt;
 &lt;/span&gt;
-&lt;/h3&gt;&lt;h2 id=&#34;server-model&#34; &gt;Server Model
+&lt;/h3&gt;&lt;p&gt;When design mean and process mean are the same use c&lt;sub&gt;p&lt;/sub&gt;, otherwise c&lt;sub&gt;pk&lt;/sub&gt;.&lt;/p&gt;
+&lt;p&gt;If c&lt;sub&gt;p&lt;/sub&gt; and c&lt;sub&gt;pk&lt;/sub&gt; are &amp;gt;= 1, then the process is capable (99.70%).
+If c&lt;sub&gt;p&lt;/sub&gt; = c&lt;sub&gt;pk&lt;/sub&gt;, then design mean and process mean are the same.&lt;/p&gt;
+&lt;img class=equation-tall src=&#34;https://latex.codecogs.com/svg.image?c_p=\frac{upper\,\,limit-lower\,\,limit}{6\sigma}&#34;&gt;
+&lt;p&gt;I tweaked the formula for c&lt;sub&gt;pk&lt;/sub&gt;. Instead of dividing both numbers by 3σ, divide only the min.&lt;/p&gt;
+&lt;img class=equation-tall src=&#34;https://latex.codecogs.com/svg.image?c_{pk}=\frac{\min\{{upper\,\,limit-process\,\,mean,process\,\,mean-lower\,\,limit}\}}{3\sigma}&#34;&gt;
+&lt;p&gt;The number chosen also represents which limit the process (mean) deviated towards.&lt;/p&gt;
+&lt;h2 id=&#34;server-model&#34; &gt;Server Model
 &lt;span&gt;
     &lt;a href=&#34;#server-model&#34;&gt;
         &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
     &lt;/a&gt;
 &lt;/span&gt;
-&lt;/h2&gt;&lt;h2 id=&#34;simple-processes&#34; &gt;Simple Processes
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Poisson distribution&lt;/li&gt;
+&lt;li&gt;First in First Out (FIFO)&lt;/li&gt;
+&lt;li&gt;Infinite population because people served can re-join the queue&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The lambda variable refers to mean arrival rate and the mu variable refers to mean service rate.&lt;/p&gt;
+&lt;p&gt;TODO: add table with formulas and descriptions&lt;/p&gt;
+&lt;h2 id=&#34;simple-processes&#34; &gt;Simple Processes
 &lt;span&gt;
     &lt;a href=&#34;#simple-processes&#34;&gt;
         &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
@@ -909,7 +924,7 @@ I will share some advice.&lt;/p&gt;
     &lt;/a&gt;
 &lt;/span&gt;
 &lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;The default first year math courses (MATH 137, MATH 135, MATH 136, MATH 138) are already harder than most Canadian Universities&amp;rsquo; first year math courses&lt;/li&gt;
+&lt;li&gt;The default first year math courses (MATH 137, MATH 135, MATH 136, MATH 138) are already harder than most Canadian Universities&#39; first year math courses&lt;/li&gt;
 &lt;li&gt;Computer Science students can take 12X math courses to have an easier time, but it only hurts them in the long run (easy = less stimulating)&lt;/li&gt;
 &lt;li&gt;Advanced courses are for the highest academic achievers who are ready to put in the time and effort
 &lt;ul&gt;

@@ -305,6 +305,8 @@ A chart used for checking if process variability is in control.
 
 <img class=equation src="https://latex.codecogs.com/svg.image?UCL=\bar{\bar x}+z\sigma_x, LCL=\bar{\bar x}-z\sigma_x">
 
+<!-- Ctrl + F sigma -->
+
 In the case σ is unknown, use the control factors table along with thse formulas:
 
 <img class=equation src="https://latex.codecogs.com/svg.image?UCL=\bar{\bar x}+A_2\bar R, LCL=\bar{\bar x}-A_2\bar R">
@@ -339,11 +341,34 @@ For components that are in parallel (i.e. backups exist), follow this schema,
 
 <img class=equation src="https://latex.codecogs.com/svg.image?x_1+(1-x_1)x_2+(1-x_1)(1-x_2)x_3">
 
-### Capability
+#### System Availability
 
-### Systeam Availability
+<img class=equation-tall src="https://latex.codecogs.com/svg.image?SA=\frac{mean\,\,time\,\,between\,\,failures}{MTBF+mean\,\,repair\,\,time}">
+
+### Process Capability Index
+
+When design mean and process mean are the same use c<sub>p</sub>, otherwise c<sub>pk</sub>.
+
+If c<sub>p</sub> and c<sub>pk</sub> are >= 1, then the process is capable (99.70%).
+If c<sub>p</sub> = c<sub>pk</sub>, then design mean and process mean are the same.
+
+<img class=equation-tall src="https://latex.codecogs.com/svg.image?c_p=\frac{upper\,\,limit-lower\,\,limit}{6\sigma}">
+
+I tweaked the formula for c<sub>pk</sub>. Instead of dividing both numbers by 3σ, divide only the min.
+
+<img class=equation-tall src="https://latex.codecogs.com/svg.image?c_{pk}=\frac{\min\{{upper\,\,limit-process\,\,mean,process\,\,mean-lower\,\,limit}\}}{3\sigma}">
+
+The number chosen also represents which limit the process (mean) deviated towards.
 
 ## Server Model
+
+- Poisson distribution
+- First in First Out (FIFO)
+- Infinite population because people served can re-join the queue
+
+The lambda variable refers to mean arrival rate and the mu variable refers to mean service rate.
+
+TODO: add table with formulas and descriptions
 
 ## Simple Processes
 
