@@ -473,3 +473,30 @@ Fill Rate = fraction of orders filled within a specific time period.
 - Deliver
 - Enable
 - Return
+
+## Project Management
+
+### Project Elements
+
+1. Objective
+2. Scope
+3. Contract requirements
+4. Schedules
+5. Resources
+6. Personnel
+7. Control
+8. Risk and problem analysis
+
+### Project Manager
+
+### Project Planning
+
+### Project Scheduling
+
+### Project Contrl
+
+### Work Breakdown Structure
+
+### CPM / PERT
+
+- Critcal Path Method (CPM) & Program Evaluation Review Technique
