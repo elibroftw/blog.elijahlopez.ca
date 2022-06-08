@@ -248,3 +248,74 @@ on living quarters, and drill sargents are a big no. People should not be scared
 be able to be completed in 3 months, there should be lots of free time mixed in so that people don't lose their minds. Since the program can be completed in 3
 months, an extra 2 weeks of bonus or specialized education should be added for people who completed the education on time while the people who lagged behind,
 can catch up on their basics. This is perfect because a) does not stop the progress of fast learners b) gives slower people more time to learn.
+
+## My Platform
+
+My platform would be run on the basis of redefining what a government's job. It is to govern after all, and so we need
+to redefined it to govern effectively. We'll start by prioritizing issues. What are the greatest issues faced by Canadians?
+I won't go into the detail on why I chose this order, only my plan or solution for each of them.
+
+1. Disability benefits
+2. Housing affordability
+3. Indigenous people
+4. Income, entering the workforce, brain drain
+5. Education
+
+### Improving Disability Benefits
+
+This issue is getting out of hand. On a pronvincial level, it's an expenditure spiral;
+in other words, the province with the best benefits attracts disabled people (rightfully) from other provinces
+and in the long-run, would end up paying more for the program than other provinces. Therefore, disability **benefits**
+should be solely within the jurisdiction of the Federal government. Accesibility doesn't seem like an issue so I won't comment on that.
+
+Now, let us create a comprehensive plan for disabled people in Canada. I'm waiting on getting data on Ontario's disability benefits,
+but after that I will continue this section.
+
+### Improving Housing Affordability
+
+I already talked about this at the [beginning](#housing-affordability)
+
+### Improving Indigenous Relations
+
+This is such a hot topic. People are quick to jump to their feet and march for the unmarked graves at residential schools,
+but aren't willing to start a discussion on what we should do in 2022. The indigenous issue has existed for over a century.
+For goodness sake, the indigenous are still referred to as Indians in formally! Anyways, getting back on topic...
+
+We need to think about the issue differently. That is take the total population of each province, and divide the pronvince's land size by this number.
+
+<img class=equation-tall src="https://latex.codecogs.com/svg.image?landPerCapita=\frac{province\,\,size}{province\,\,population}">
+
+Now that we have the land per capita, we multiply it by the Indigenous population in each province to get the land the indegenous are owed.
+This is the land that is owed, so then we partition hunting land in each province equal to land owed minus land presently occupied as reserves.
+This ensures that a) current reserves don't go away, b) no more than land owed. This calculation isn't required at the moment since I'm
+not even in politics!
+
+So we've given the indigenous people the land they are owed, but that's not enough. They need to be given more freedom and more rights.
+We shall negotatite with the Indenous and decide something important. Does the Indigenous people want government investment into infrastructure,
+or do they want to manage their land themselves? If the former, then they will have to pay only income taxes at half the rate for 250 years (not arbitrary, but it is rounded). If the latter,
+they can invite the private industry themselves to invest in infrastructure like fiber optics and tellecommunication towers. I have no clue
+how the Indigenous people want to live, but since each province's population gets to decide, I'm sure at least one would choose the nomad style.
+They are free to change their mind from no-support to having government support, but not the other way around.
+
+These areas will be free to incorporate. If they do so, a proportional voting system shall be used to determine 10 representatives and a leader.
+I think with proportional voting, this will suffice. Once incorporated, they can choose to sell land to developers and initiate a tax on that land.
+The government will provide city planners as advisors no matter the level of independence chosen. The goal is to build a sustainable economy for the
+indigenous and allow them to choose without pressure to leave the  Indigenous locality. For example, they might want to preserve their culture and language.
+So something like English/French language laws wouldn't apply. However, if they decide to invite private industry, they'd probably want to support the English language.
+
+The education system doesn't teach much about Indigenous history other than a couple classes in elementary school. How did they get here before the Vikings, what
+were they doing the last couple of centuries, how did they react to the British small pox? It is critical to include Indigenous history as part of Canada's history
+if we are to recognize them as having a claim to this land.
+
+Of course we can go the other route, which is to fully assimilate the Indigenous to Canadian society. This would mean requiring indigenous to attend a school
+of the majority language in the province. It is imperative one of these paths are chosen rather than what we got now, which is complete mess. "Do we let them own the
+land on the property, or would that result in them selling it immediately? They can't make those decisions for themselves." This faulty thinking is why
+the reserves are so poorly maintained.
+
+### Income, entering the workforce, brain drain
+
+This is too much to write at the moment.
+
+### Improving Education
+
+TODO: I will create an overview on what the education should teach, how it should teach, goals of the education system, etc.
