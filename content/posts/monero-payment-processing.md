@@ -13,7 +13,7 @@ tags: [
 ## Preface
 
 In January 2022, I created my very own
-ecommerce store with the following features:
+[ecommerce store](https://lenerva.com/store/) with the following features:
 
 - From scratch
 - JavaScript-free
