@@ -329,7 +329,8 @@ since it the scanning largely depends on the actualy daemon, which I have an upd
 &lt;li&gt;returns amount_in_mempool, amount_received (1 to X confirmations), amount_confirmed (X confirmations), and paid which is a boolean.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;either uses user provided view-wallets, or has some functionality to transfer upon payment, through a UI, or through an API.&lt;/li&gt;
+&lt;li&gt;when a user registers for the API, they can either provide a view-wallet, or a wallet is created for them&lt;/li&gt;
+&lt;li&gt;if no view-wallet is provided, there should be functionality to transfer upon payments, through a UI, or through a more restrictive API&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;A non-custodian processing service does not exist as far as I know, so I might create one and charge a monthly $5 fee.&lt;/p&gt;
 &lt;h3 id=&#34;pros&#34; &gt;Pros

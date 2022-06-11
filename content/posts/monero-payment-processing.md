@@ -286,7 +286,8 @@ This API would encapsulate the following
   - returns an address, the payment URI, and optionally the png data for the QR code, possibly even an invoice id (positive number).
 - check_invoice(address=None, invoice_id=None)
   - returns amount_in_mempool, amount_received (1 to X confirmations), amount_confirmed (X confirmations), and paid which is a boolean.
-- either uses user provided view-wallets, or has some functionality to transfer upon payment, through a UI, or through an API.
+- when a user registers for the API, they can either provide a view-wallet, or a wallet is created for them
+- if no view-wallet is provided, there should be functionality to transfer upon payments, through a UI, or through a more restrictive API
 
 A non-custodian processing service does not exist as far as I know, so I might create one and charge a monthly $5 fee.
 
