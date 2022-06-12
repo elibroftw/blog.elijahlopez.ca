@@ -255,11 +255,18 @@ My platform would be run on the basis of redefining what a government's job. It 
 to redefined it to govern effectively. We'll start by prioritizing issues. What are the greatest issues faced by Canadians?
 I won't go into the detail on why I chose this order, only my plan or solution for each of them.
 
-1. Disability benefits
-2. Housing affordability
-3. Indigenous people
-4. Income, entering the workforce, brain drain
-5. Education
+1. Electoral system
+2. Disability benefits
+3. Housing affordability
+4. Indigenous people
+5. Income, entering the workforce, brain drain
+6. Education
+
+### Improving Electoral System
+
+My first order of business is fixing the electoral system on all levels of government.  By making a system more democratic, parties are forced to collaborate in order to get work done. I want to set the example for what democracy looks like and all countries should look at Canada as being the most innovative and progressive in terms of democracy and fundamental human rights.
+
+As mentioned before, we will use the [Represenative Proportional Voting](/posts/representative-proportional-voting). A recap: MP and MPPs still exist, but are chosen based upon party confidence in each riding, and not winning the riding (independents are the exception).
 
 ### Improving Disability Benefits
 
