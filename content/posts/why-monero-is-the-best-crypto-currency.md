@@ -8,53 +8,59 @@ tags: [
 ]
 ---
 
-## Arguments
+{{< toc >}}
+
+## Introduction
+
+### Arguments
 
 - Fungibility
 - Privacy Reliability (Layer 1)
 - ASIC Resistance
-
-## Introduction
+- Store of value
+  - Not going to elaborate further than the fact that privacy invites storing wealth
 
 This article is meant to be the definitive guide on why Monero is the king of all cryptos when it comes to fulfilling the role of money or real currency.
-It is long in order to be thorough including foreseeing common responses/tactics. I am open to debate, but I will say that when it comes to crypto, privacy is a must.
+It is long in order to be thorough, as well as includes common responses/tactics.
 
 The intended target audience is an open-minded reader interested in cryptocurrency as well as fellow Monero users who continuously answer questions such as "why does Monero (not) do X?."
+I am open to debate, but I will say that when it comes to cryptoCURRENCY, privacy is a must.
 
-I like Monero for two reasons: its technology and the community's self-improvement philosophy.
-I am not loyal to Monero, it is simply the best crypto that can replace fiat currency.
-I own Monero not for number goes up economics but for myself and others who want to increase its adoption as an accepted currency.
-
-We will be comparing Monero to a couple of cryptos. Bitcoin (BTC), Ethereum (ETH), Solana (SOL), Stellar (XLM), and ZCash (ZEC).
-There's also Secret Network, but so far, they want to integrate with Monero, not replace it.
+I will be comparing Monero's features to those fund in Bitcoin (BTC), Ethereum (ETH), Stellar (XLM), and ZCash (ZEC).
 I will also talk about layer 2 solutions: BTC's Lightning, BCH's CashFusion, ETH's Tornado Cash.
 
 For all other cryptos/solutions, one can use the transitive property: If Monero > X and X > Y, then Monero > Y.
 
-Let's begin with what Monero is. If Monero is new to you, watch this video.
+I will start with a brief introduction to Monero, since privacy was not simple to implement.
 
-{{< youtube 6DQb0cMvU7I >}}
+## What is Monero?
 
-Otherwise, optionally read the bullet points in the next section as these are the core features that give Monero a technological advantage from the other cryptos when it comes to Fungibility, Privacy, and Consensus. Transaction Fees*, Supply*, and International Standards*.
-*non-important factors but are good to know
+On a high levels, Monero aims to be digital cash. It actually outdoes cash when it comes to fungibility.
+It does not support smart contracts, but there is another crypto in the works that will co-opt Monero's mining. I forget the name of it, but fluffypony is involved.
 
-I will admit foremost that Monero aims to fulfill the primary role of a currency and does not have Smart Contract capabilities. Could it be done on layer 2? Maybe. I do urge any readers to make a case for smart contracts as I have not thought of or seen any that will improve my life. One case I can come up with however is recurring payments, but even fiat does not need smart contracts to facilitate them. Services can be created to offer recurring payments on top of any currency for that matter. A question to think about is: do recurring payments offer more advantages than disadvantages?
+### Better than cash
 
-## Monero's Distinct and Important Features
+- balance cannot be calculated out without consent
+- transaction amounts, parties, and times cannot be figured by outside parties
+- each piece or whole is indiffertential from another (fungible)
+  - where cash suffers is that cash that has any trace of cocaine can be confiscated under civil forfeiture
+- cannot be stolen unless encryption is broken
+  - you should always store your Monero seed in a KeePassX database on two seperate devices
+  - if you are worried about transfering your money upon, there are ways other than a will to send a password to a person
+- digitally accessible
+  - it is as easy to send large amounts of XMR as it is small amounts
+- flat transaction fees
+  - credit cards do not have flat fees
 
-- There is no balance checker. No one knows how much any address holds or exactly whom the address has transacted with. The rich list is an inside joke filled with ???? XMR. The direct consequence of this is that you can't add up the value of everyone's XMR.
-  The supply can only be calculated by the sum of the coinbases of each block. Bulletproofs (range proofs) ensure that the senders have enough XMR, without revealing the XMR that they have.
-  I want to make it clear that the inability to sum the value of addresses in Monero is a feature, not a flaw. Money cares about usability, not countability.
-- Transaction values and messages are known only to the sender and receiver. Audited bulletproofs (range proofs) technology is used to ensure that the sender has the amount of Monero they are trying to send. Zcash requires the setup to be trusted but not Monero.
-- Monero uses stealth addresses to obscure the number of times an address has received Monero. These are similar to the modulus concept where (x mod 5 = 3) has an infinite number of solutions. They are created by the sender to protect the information of the receiver. That way, an observer is uncertain how many times a targeted address has actually received Monero. All wallets implement this, so only a bad actor would not create a stealth address, but Monero doesn't rely on just stealth addresses.
-- Monero uses ring signatures to protect the identity of the sender. At the moment, each transaction has 10 other possible signatories, called decoys, as seen here. These signatories are biased towards being from recent blocks that have 10 confirmations rather than older blocks. I won't talk about technicalities here, but if you are interested, feel free to visit the Monero Research Lab.
-- One seed is the key to an infinite amount of accounts each with an infinite amount of addresses. Think of this like having multiple chequing accounts and each has multiple direct deposit numbers. These accounts are mathematically created, so the nth account will always be the same on different wallet clients.
+### CryptoCurrency Properties
+
+- Monero uses stealth addresses to obscure the number of times an address has received Monero. These are similar to the modulus concept where (x mod 5 = 3) has an infinite number of solutions. They are created by the sender to protect the information of the receiver. That way, an observer is uncertain how many times a targeted address has actually received Monero. All wallets implement this, so only a bad actor would not create a stealth address, but Monero doesn't rely on just stealth addresses
+- Monero uses ring signatures to protect the identity of the sender. At the moment, each transaction has 10 other possible signatories, called decoys, as seen [here](https://xmrchain.net/tx/75fbbd3db7d7a5739e06c61282990bb44c090ee81ff288cde1feb7ea82f67f51)
+- One seed is the key to an infinite amount of accounts each with an infinite amount of addresses. Think of this like having multiple chequing accounts and each has multiple direct deposit numbers. These accounts are mathematically generated, so the nth account will always be the same on different wallet clients.
 - Transaction fees reduce as the number of transactions increase
-- Block sizes are dynamic in the long term but capped by miner penalties in the short term ensuring block size stability. There is technical information to this, but know that if transaction activity doubles, the next block's size won't be double the previous.
-- The above are all technical features that directly benefit the end-user. The below are for readers who want a holistic view.
-- Monero is a proof-of-work network using the RandomX algorithm for its ASIC resistance. We will talk about proof-of-stake and why ASIC resistance later.
-- Interesting fact: Monero is built from scratch, not a Bitcoin fork. It is actually a Bytecoin fork but has improved several times over.
-- Monero embraces the philosophy of always-improving technology. The goal is to be the best and hard forks are encouraged in achieving this goal.
+- Block sizes are dynamic in the long term but block-to-block growth is capped via mining penalties
+- Monero uses the proof-of-work consensus protocol RandomX algorithm for its ASIC resistance
+- Monero is not a Bitcoin fork. It is actually a Bytecoin fork with several improvements
 
 ## Fungibility
 
@@ -243,6 +249,39 @@ By now if you hate Monero, you will be tempted to start throwing a temper tantru
 To buy Monero, just do the same as above, but the other way around.
 
 ![Monero Swapping Fees](/images/crypto/monero-swap-fees.png)
+
+## Addressing Scalability
+
+Just as a reminder, with Monero, fees reduce as transactions per block go up.
+
+### Scenario A: Matching Bitcoin
+
+There are currently 272503 transactions per day on Bitcoin,
+so we need to check if even modern hard drives and SSDs can handle this amount of transactions on the Monero blockchain.
+
+From xmrchain.net, the average transaction size on Monero for the last 25 transactions is 2.05 kB.
+We'll use 3 kB per transaction to account for any future upgrades and other block data.
+
+Since block times are ~2 minutes, instead of 10, the transactions per block is: 272503/24/30 ~= 379 transactions per block.
+A block's size is 379 * 3 = 1.137 MB. Even poor internet download speeds could handle this.
+
+A year's worth of transactions would be 1.137 \* 30 \* 24 * 365 = 298,803.6 MB = 300GB.
+
+At 300GB a year, we use 3 TB a decade, and 9 TB every three decades.
+
+Overall, we need to spend $500 for a 16 TB hard drive or $1,000 for a 8 TB SSD.
+This is the cost in the present, but overtime storage prices will go down.
+By the usage described before, an SSD will last 2.5 decades and an HDD will last 5 decades!
+
+### Scenario B: a Practical Stress Test
+
+Now we will figure out the transactions/day limit. Let's say in the future, Monero upgrades to allow nodes
+to use data for 10 years. That is, any transactions incorporating outputs that are more than 10 years old
+will be considered invalid. At 8TB/decade, we get 800GB per year which is x2.67 more than our previous
+scenario. 800 / 365 / 3 = 730,593 transactions per day. And again, this is under the assumption that transactions become
+46% bigger than they currently are. If we use the present average of 2.05 kB, 800 GB / 365 / 2.05 KB = 1,069,161 transactions per day.
+
+Thus, max transactions per day is within the range [730,593, 1,069,161]
 
 ## Recap
 
