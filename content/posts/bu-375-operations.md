@@ -500,3 +500,50 @@ Fill Rate = fraction of orders filled within a specific time period.
 ### CPM / PERT
 
 - Critcal Path Method (CPM) & Program Evaluation Review Technique
+
+## Demand Forecasting
+
+Projections of demand for products/services underlies strategic planning when it comes to plant or service
+design.
+
+- often inaccurate
+- forecasts of similar goods is more accurate than individual items
+- forecast horizons increases uncertainty
+
+### Decision Based on Forecasts
+
+- Production and Operations
+  - aggregate planning
+  - inventory control
+  - scheduling
+- Finance
+  - plant/equipment investment
+  - budgetery planning
+- Marketing
+  - new product introduction
+  - sales-force allocation
+  - promotions
+- Human Resources
+  - workforce planning
+  - hiring, layoff
+
+### Making Forecasts Useful
+
+- long enough to make it relevant
+  - typically for daily, weekly, or monthly sales demand for up to approximately two
+  years into the future, depending on the company and the type of industry.
+- limitations on accuracy must be clearly stated
+- forecasting method should be reliable
+- operations forecasts should be expressed in units
+
+### Time-Series Methods
+
+#### naive method
+
+#### moving average
+
+#### weighted moving average
+
+#### exponential smoothing
+
+<img class=equation src="https://latex.codecogs.com/svg.image?F_{t+1}=\alpha D_t + (1-\alpha)F_t">
