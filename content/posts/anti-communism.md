@@ -1,7 +1,7 @@
 ---
 title: "RE: RE: Anti-Communism"
 date: 2022-06-17T18:34:42-04:00
-unlisted: true
+hidden: true
 ---
 
 A post responding to this youtube video
