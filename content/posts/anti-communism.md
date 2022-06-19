@@ -31,8 +31,8 @@ Has anyone actually said this? I guess you could argue communism tries to create
 Argument one: it was capitalism that was constraining people's freedom!
 
 Rebuttal: the ruling class has always pushed their views onto others, whether they are more progressive
-or less progressive than the previous rulers. The october revolution might've resulted in more freedoms, but
-for every good revolution, there are revolutions that ended up being worse. Notable case: Iran and women's right to
+or less progressive than the previous rulers. The october revolution might've resulted in more freedom, but
+for every good revolution, there are revolutions that end up being worse. Notable case: Iran and women's right to
 not wear a hijab.
 
 Argument two: in capitalism schools prepare students for a life time of work.
@@ -49,7 +49,7 @@ Counter-examples:
 - In 2020 capitlism = more than enough food. 2022: food shortage.
 - US collects $1T per year in taxes, $3.2T = wealth of all billionaires, malaria costs $10B tops to solve, US donates $10B/yr to the UN.
   - If the US can't solve malaria globally with $10B (not to mention military spending), then what good would $3.2T do?
-  - Not to mention the debt each country has. If we wanted to solve malari, why don't we just take $10B in debt and solve it?
+  - Not to mention the debt each country has. If we wanted to solve malaria, why don't we just take $10B in debt and solve it?
   - Is the cost of malaria under-represented, or are people just saying things without thinking about what their government actually spends their taxes on
 
 ## Innovation
@@ -75,6 +75,18 @@ arugment is that the human nature argument is generalizing humans, but that is a
 The human nature argument is that people don't think the same, and their opposing beliefs get in the way.
 It is not human nature of humans, but rather the human nature of <u>a</u> human.
 
+## Why live in Capitlism? Go to X country
+
+I concur that this is a poor argument, although no English speaking communist country
+exists. I highly doubt that communists would go to a communist country when they don't
+even speak the same language.
+
+Okay, we will ask a person to name the best country in the world. If it is communist (get them to clarify),
+ask them honestly why they don't move there? Most liekly, they will say money or language (culture).
+If money, ask them how much money they need to save up (proof by contradiction to get hipocrisy). Otherwise,
+ask them the country that they think is the most communist that they could assimilate to and then procede to do
+the same questioning.
+
 ## Horseshoe Theory
 
 Argument: Far-Right and Far-Left are not equally bad.
@@ -87,7 +99,7 @@ and far-right are obviously at the same level (i.e. there is a slope)
 
 Generalization intervensions as capitlism wanting to protect capital rather than a) national interests b) the pre-existing notion that communism would be bad.
 
-SSS blames capitalism for anything communism does that isn't stateless. Apparently the guerillas in South America are peacful and aren't killing
+SSS blames capitalism for anything communism does that isn't stateless. Apparently the guerillas in South America are peaceful and aren't killing
 innocent civilians. It actually capitalism that is making the guerila groups kill innocent people.
 
 "All capitlists cry when China defends itself" 😂😂😂😂
@@ -109,3 +121,5 @@ SSS ignores the existence of food banks and welfare systems.
 
 If people said they were in support of the previous dictatorship, does that automatically mean that dictatorship is better
 than democracy?
+
+- sampling bias
