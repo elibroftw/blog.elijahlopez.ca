@@ -319,6 +319,25 @@ of the majority language in the province. It is imperative one of these paths ar
 land on the property, or would that result in them selling it immediately? They can't make those decisions for themselves." This faulty thinking is why
 the reserves are so poorly maintained.
 
+### Improving the Tax System
+
+Filing taxes for Canadian corporations is attrocious. I use my parents' accountant for income tax but in the future I will
+have to do it myself and then I'll comment on that process.
+
+It is very clear why corporations avoid taxes if the CRA is trying to invade the corporations' privacy rather than just ask politely for
+the corporation to pay taxes on its profits. There are so many forms and you have to fill them in depending on questions that are asked
+as well as direct references to sections in the Income Tax Act!
+
+I realize very quickly, that for ethical individuals interested in a close-knit ownership (membership), not for-profits
+is the way to go. You get to control who becomes a director, and potential investors can be added to the board under a policy.
+For example, a contract that would stipulate what voting rights they get. It's absolutely ridiculous that not for-profits
+do not get taxed. The CIRA (canada internet registration authority) is a not for-profit and they only donate to other
+not for-profits ventures but the Canadian government? $40M to Rogers for New Brunswick internet infrastructure (thousands of dollars per family in New Brunswick).
+
+The Canadian tax code 100% punishes innovation and it makes me think that entrepreneurs in Canada are either patriotic, know
+for sure they are going to print money, or they just didn't think about the corporation residence that much. I'm the patriotic type, and my goals
+largely involve Canada.
+
 ### Income, entering the workforce, brain drain
 
 This is too much to write at the moment.
