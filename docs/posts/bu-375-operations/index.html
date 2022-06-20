@@ -78,7 +78,7 @@
     
 
     
-        <script src="https://blog.elijahlopez.ca/js/script.min.510c781c39dbb21b4c76d85c82e2bdf4689220adbb7cd61e49e9d293e442fb42.js" type="text/javascript" charset="utf-8" integrity="sha256-UQx4HDnbshtMdthcguK99GiSIK27fNYeSenSk&#43;RC&#43;0I="></script>
+        <script src="https://blog.elijahlopez.ca/js/script.min.a65afe903825231554d9b55b073eb144da4ccf2d2823b216dcbc6cc656c9de76.js" type="text/javascript" charset="utf-8" integrity="sha256-plr&#43;kDglIxVU2bVbBz6xRNpMzy0oI7IW3LxsxlbJ3nY="></script>
     
 
 
@@ -1371,7 +1371,80 @@ years into the future, depending on the company and the type of industry.</li>
     </a>
 </span>
 </h4><img class=equation src="https://latex.codecogs.com/svg.image?F_{t+1}=\alpha D_t + (1-\alpha)F_t">
-
+<h4 id="adjusted-exponential-smoothing" >adjusted exponential smoothing
+<span>
+    <a href="#adjusted-exponential-smoothing">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h4><p>Example</p>
+<p>For the data given below, generate a forecast period 1 - 5 sing adjusted exponential smoothing.
+Assume alpha = 0.5 and beta = 0.3.</p>
+<p>The formula for the adjusted exponential smoothing forecast requires an initial value for Tt to start
+the computational process. For this case let&rsquo;s assume initial T is 0.</p>
+<p>Ft = Ft-1 + alpha(A_t-1 - F_t-1)</p>
+<p>Tt = Beta(Ft - F_t-1) + (1 - Beta)T_t-1</p>
+<table>
+<thead>
+<tr>
+<th>Period</th>
+<th>Month</th>
+<th>Demand</th>
+<th>Forecast Ft</th>
+<th>Trend Ti</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>JAN</td>
+<td>37</td>
+<td>37.00</td>
+<td>-</td>
+</tr>
+<tr>
+<td>2</td>
+<td>FEB</td>
+<td>40</td>
+<td>37.00</td>
+<td>0</td>
+</tr>
+<tr>
+<td>3</td>
+<td>MAR</td>
+<td>41</td>
+<td>38.50</td>
+<td>0.45</td>
+</tr>
+<tr>
+<td>4</td>
+<td>APR</td>
+<td>37</td>
+<td>39.75</td>
+<td>0.69</td>
+</tr>
+<tr>
+<td>5</td>
+<td>MAY</td>
+<td>45</td>
+<td>38.37</td>
+<td>0.07</td>
+</tr>
+</tbody>
+</table>
+<h4 id="seasonal-adjustments" >Seasonal Adjustments
+<span>
+    <a href="#seasonal-adjustments">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h4><h4 id="forecasting-error" >Forecasting Error
+<span>
+    <a href="#forecasting-error">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h4>
         </div>
         
 

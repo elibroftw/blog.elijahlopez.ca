@@ -1114,7 +1114,80 @@ years into the future, depending on the company and the type of industry.&lt;/li
     &lt;/a&gt;
 &lt;/span&gt;
 &lt;/h4&gt;&lt;img class=equation src=&#34;https://latex.codecogs.com/svg.image?F_{t+1}=\alpha D_t + (1-\alpha)F_t&#34;&gt;
-</description>
+&lt;h4 id=&#34;adjusted-exponential-smoothing&#34; &gt;adjusted exponential smoothing
+&lt;span&gt;
+    &lt;a href=&#34;#adjusted-exponential-smoothing&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h4&gt;&lt;p&gt;Example&lt;/p&gt;
+&lt;p&gt;For the data given below, generate a forecast period 1 - 5 sing adjusted exponential smoothing.
+Assume alpha = 0.5 and beta = 0.3.&lt;/p&gt;
+&lt;p&gt;The formula for the adjusted exponential smoothing forecast requires an initial value for Tt to start
+the computational process. For this case let&amp;rsquo;s assume initial T is 0.&lt;/p&gt;
+&lt;p&gt;Ft = Ft-1 + alpha(A_t-1 - F_t-1)&lt;/p&gt;
+&lt;p&gt;Tt = Beta(Ft - F_t-1) + (1 - Beta)T_t-1&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Period&lt;/th&gt;
+&lt;th&gt;Month&lt;/th&gt;
+&lt;th&gt;Demand&lt;/th&gt;
+&lt;th&gt;Forecast Ft&lt;/th&gt;
+&lt;th&gt;Trend Ti&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;JAN&lt;/td&gt;
+&lt;td&gt;37&lt;/td&gt;
+&lt;td&gt;37.00&lt;/td&gt;
+&lt;td&gt;-&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;FEB&lt;/td&gt;
+&lt;td&gt;40&lt;/td&gt;
+&lt;td&gt;37.00&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;td&gt;MAR&lt;/td&gt;
+&lt;td&gt;41&lt;/td&gt;
+&lt;td&gt;38.50&lt;/td&gt;
+&lt;td&gt;0.45&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;td&gt;APR&lt;/td&gt;
+&lt;td&gt;37&lt;/td&gt;
+&lt;td&gt;39.75&lt;/td&gt;
+&lt;td&gt;0.69&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;5&lt;/td&gt;
+&lt;td&gt;MAY&lt;/td&gt;
+&lt;td&gt;45&lt;/td&gt;
+&lt;td&gt;38.37&lt;/td&gt;
+&lt;td&gt;0.07&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h4 id=&#34;seasonal-adjustments&#34; &gt;Seasonal Adjustments
+&lt;span&gt;
+    &lt;a href=&#34;#seasonal-adjustments&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h4&gt;&lt;h4 id=&#34;forecasting-error&#34; &gt;Forecasting Error
+&lt;span&gt;
+    &lt;a href=&#34;#forecasting-error&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h4&gt;</description>
     </item>
     
     <item>
@@ -1257,7 +1330,7 @@ I will share some advice.&lt;/p&gt;
     &lt;/a&gt;
 &lt;/span&gt;
 &lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;The default first year math courses (MATH 137, MATH 135, MATH 136, MATH 138) are already harder than most Canadian Universities&#39; first year math courses&lt;/li&gt;
+&lt;li&gt;The default first year math courses (MATH 137, MATH 135, MATH 136, MATH 138) are already harder than most Canadian Universities&amp;rsquo; first year math courses&lt;/li&gt;
 &lt;li&gt;Computer Science students can take 12X math courses to have an easier time, but it only hurts them in the long run (easy = less stimulating)&lt;/li&gt;
 &lt;li&gt;Advanced courses are for the highest academic achievers who are ready to put in the time and effort
 &lt;ul&gt;

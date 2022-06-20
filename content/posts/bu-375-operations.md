@@ -547,3 +547,30 @@ design.
 #### exponential smoothing
 
 <img class=equation src="https://latex.codecogs.com/svg.image?F_{t+1}=\alpha D_t + (1-\alpha)F_t">
+
+#### adjusted exponential smoothing
+
+Example
+
+For the data given below, generate a forecast period 1 - 5 sing adjusted exponential smoothing.
+Assume alpha = 0.5 and beta = 0.3.
+
+The formula for the adjusted exponential smoothing forecast requires an initial value for Tt to start
+the computational process. For this case let's assume initial T is 0.
+
+Ft = Ft-1 + alpha(A_t-1 - F_t-1)
+
+Tt = Beta(Ft - F_t-1) + (1 - Beta)T_t-1
+
+| Period | Month  | Demand | Forecast Ft | Trend Ti |
+| ------ | ------ | ------ | ----------- | ----------- |
+| 1      | JAN    | 37     | 37.00      | -
+| 2      | FEB    | 40     | 37.00     | 0
+| 3      | MAR    | 41     | 38.50      | 0.45
+| 4      | APR    | 37     | 39.75      | 0.69
+| 5      | MAY    | 45     | 38.37     | 0.07
+
+#### Seasonal Adjustments
+
+#### Forecasting Error
+
