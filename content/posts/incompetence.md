@@ -52,7 +52,8 @@ and unprofessional message to BMO because what kind of billion dollar corporatio
 
 I wish I was a billionaire. I'd start a bank to give these billion dollar banks REAL competition. RBC charges a monthly fee
 for a business account, so I can understand why the best = paid. For now, I'm going to move to CIBC which will hopefully not
-give me a massive migraine. If CIBC doesn't go well I'll go to FirstOntario Credit Union.
+give me a massive migraine. If CIBC doesn't go well I'll go with RBC since I bank there personally and have dislike their customer
+support personnel.
 
 ### Navigation bar isn't real
 
@@ -61,3 +62,13 @@ I have the bank UI zoomed in and noticed blurryness. Look at how fake these guys
 ![Blurry Navigation Bar](/images/incompetence/bmo1.jpg)
 
 ![Actual Navigation Bar](/images/incompetence/bmo2.png)
+
+### CIBC
+
+June 21st 2022
+
+I closed my BMO account and got a bank draft of my account balance minus $10. I go to CIBC and the lady there tells me the funds would've been put on hold and that
+since my business account doesn't even have ID, I need to speak to my business advisor. But I don't have a business advisor since
+I openeded up the account online. I end up going on a wild goose chase for another hour and then decided to just go
+with RBC since they have the best UI and I already personal bank with them. They charge a monthly fee of $6, but at least
+I know I'm getting COMPETENT service. I opened and verfied my account with just a phone call and some emails.
