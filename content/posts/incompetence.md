@@ -2,6 +2,10 @@
 title: "Incompetence"
 date: 2022-06-20T22:00:42-04:00
 draft: false
+tags: [
+    "opinion"
+]
+hidden: true
 ---
 
 This is a list of incompetence experienced in my life. It doesn't matter if you are in debt, have $0 in your name, are rich,
