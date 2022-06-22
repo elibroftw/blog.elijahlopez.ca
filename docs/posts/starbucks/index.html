@@ -12,14 +12,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="referrer" content="no-referrer-when-downgrade">
 
-<title>VS Code Remote SSH Tutorial - ELL Blog</title>
+<title>Starbucks Sucks - ELL Blog</title>
 
-<meta name="description" content="In this tutorial we&rsquo;ll integrate SSH into VS Code in a way that won&rsquo;t require entering a password every time.
-Generating an SSH keyIf you&rsquo;re on Windows, you will need to install the OpenSSH feature from Settings or you can use WSL to be able to use ssh-keygen.
-You can generate an SSH key using ssh-keygen -t ed25519. Press enter on the prompt to use the default filename.">
+<meta name="description" content="Starbux SuxAfter not going to a startbucks for more than two years, I went yesterday and today due to proximity in this 30&#43; degrees celsius weather.
+I had the choice to select from 4 of the promoted drinks. Two had coffee and two were similar to juices.
+Yesterday I got the chocolate ice cofee as it was recommended by the employee and it tasted like garbage.">
 
 
 
+
+<meta name="robots" content="noindex" />
 
 
 <link rel="icon" type="image/x-icon" href="https://blog.elijahlopez.ca/favicon.ico">
@@ -88,23 +90,23 @@ You can generate an SSH key using ssh-keygen -t ed25519. Press enter on the prom
 
 
 
-<meta property="og:title" content="VS Code Remote SSH Tutorial" />
-<meta property="og:description" content="In this tutorial we&rsquo;ll integrate SSH into VS Code in a way that won&rsquo;t require entering a password every time.
-Generating an SSH keyIf you&rsquo;re on Windows, you will need to install the OpenSSH feature from Settings or you can use WSL to be able to use ssh-keygen.
-You can generate an SSH key using ssh-keygen -t ed25519. Press enter on the prompt to use the default filename." />
+<meta property="og:title" content="Starbucks Sucks" />
+<meta property="og:description" content="Starbux SuxAfter not going to a startbucks for more than two years, I went yesterday and today due to proximity in this 30&#43; degrees celsius weather.
+I had the choice to select from 4 of the promoted drinks. Two had coffee and two were similar to juices.
+Yesterday I got the chocolate ice cofee as it was recommended by the employee and it tasted like garbage." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://blog.elijahlopez.ca/posts/vs-code-remote-ssh/" /><meta property="og:image" content="https://blog.elijahlopez.ca/images"/><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2020-09-11T18:23:50-05:00" />
-<meta property="article:modified_time" content="2020-09-11T18:23:50-05:00" />
+<meta property="og:url" content="https://blog.elijahlopez.ca/posts/starbucks/" /><meta property="og:image" content="https://blog.elijahlopez.ca/images"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-06-22T10:18:10-04:00" />
+<meta property="article:modified_time" content="2022-06-22T10:18:10-04:00" />
 
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://blog.elijahlopez.ca/images"/>
 
-<meta name="twitter:title" content="VS Code Remote SSH Tutorial"/>
-<meta name="twitter:description" content="In this tutorial we&rsquo;ll integrate SSH into VS Code in a way that won&rsquo;t require entering a password every time.
-Generating an SSH keyIf you&rsquo;re on Windows, you will need to install the OpenSSH feature from Settings or you can use WSL to be able to use ssh-keygen.
-You can generate an SSH key using ssh-keygen -t ed25519. Press enter on the prompt to use the default filename."/>
+<meta name="twitter:title" content="Starbucks Sucks"/>
+<meta name="twitter:description" content="Starbux SuxAfter not going to a startbucks for more than two years, I went yesterday and today due to proximity in this 30&#43; degrees celsius weather.
+I had the choice to select from 4 of the promoted drinks. Two had coffee and two were similar to juices.
+Yesterday I got the chocolate ice cofee as it was recommended by the employee and it tasted like garbage."/>
 
 
 
@@ -269,93 +271,26 @@ You can generate an SSH key using ssh-keygen -t ed25519. Press enter on the prom
     <article class="post h-entry">
         <div class="post-header">
             <header>
-                <h1 class="p-name post-title">VS Code Remote SSH Tutorial</h1>
+                <h1 class="p-name post-title">Starbucks Sucks</h1>
 
                 
             </header>
         </div>
         <div class="content e-content">
-            <p>In this tutorial we&rsquo;ll integrate SSH into VS Code in a way that won&rsquo;t require entering a password every time.</p>
-<h2 id="generating-an-ssh-key" >Generating an SSH key
+            <h2 id="starbux-sux" >Starbux Sux
 <span>
-    <a href="#generating-an-ssh-key">
+    <a href="#starbux-sux">
         <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
     </a>
 </span>
-</h2><p>If you&rsquo;re on Windows, you will need to install the OpenSSH feature from Settings or you can use WSL to be able to use <code>ssh-keygen</code>.</p>
-<p>You can generate an SSH key using <code>ssh-keygen -t ed25519</code>. Press enter on the prompt to use the default filename.</p>
-<p>Keep track of where the key is stored. (e.g. <code>C:\Users\maste\.ssh\id_ed25519</code>)
-This will be useful when configuring the Remote-SSH VSCode extension.</p>
-<h2 id="adding-ssh-key-to-authorized-keys" >Adding SSH key to Authorized Keys
-<span>
-    <a href="#adding-ssh-key-to-authorized-keys">
-        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
-    </a>
-</span>
-</h2><p>During the process of adding our keys, we&rsquo;ll have to enter our passwords.</p>
-<h3 id="linux--macos--wsl" >Linux / MacOS / WSL
-<span>
-    <a href="#linux--macos--wsl">
-        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
-    </a>
-</span>
-</h3><div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>ssh-copy-id -i path/to/file/if/not/default USER@HOST
-</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"># examples</span>
-</span></span><span style="display:flex;"><span>ssh-copy-id -i .ssh/id_ed25519.pub USER@HOST
-</span></span><span style="display:flex;"><span>ssh-copy-id -i /mnt/c/Users/maste/.ssh/id_ed25519.pub USER@HOST
-</span></span></code></pre></div><p>When doing this, press enter to any yes/no prompts such as fingerprints and etc. The fingerprint prompt is
-important only if you can&rsquo;t trust your network (e.g. Starbucks WiFi).</p>
-<p>If you&rsquo;re having trouble with this, just <code>cd</code> into the <code>.ssh</code> folder and use <code>-i id_ed25519.pub</code></p>
-<h3 id="windows-without-wsl" >Windows Without WSL
-<span>
-    <a href="#windows-without-wsl">
-        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
-    </a>
-</span>
-</h3><p>If you&rsquo;re on Windows, you won&rsquo;t have access to <code>ssh-copy-id</code>. Instead you can modify the first command below or use the second command
-if you aren&rsquo;t doing anything abnormal on your computer.</p>
-<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#24909d">type </span>path\to\id_algo.pub | ssh USER<span style="color:#40ffff">@HOST</span> <span style="color:#ed9d13">&#34;cat &gt;&gt; .ssh/authorized_keys&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"># type $env:USERPROFILE\.ssh\id_ed25519.pub | ssh user@host &#34;cat &gt;&gt; .ssh/authorized_keys&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"># the above is a helper that hopefully requires no modifications</span>
-</span></span></code></pre></div><h2 id="setting-up-vs-code" >Setting up VS Code
-<span>
-    <a href="#setting-up-vs-code">
-        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
-    </a>
-</span>
-</h2><ol>
-<li>
-<p>Install the <a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh">Remote - SSH extension</a></p>
-</li>
-<li>
-<p>Use the Command Palette (Ctrl + Shift + P) and use the &ldquo;Remote-SSH: Open SSH Configuration File&hellip;&rdquo; command</p>
-</li>
-<li>
-<p>Select the first path  (e.g. <code>C:\Users\maste\.ssh\config</code>)</p>
-</li>
-<li>
-<p>Enter the information for your remote server(s). Here is mine for reference. I had to comment out PreferredAuthentications.</p>
-<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>Host uWaterloo
-</span></span><span style="display:flex;"><span>  User e5lopez
-</span></span><span style="display:flex;"><span>  HostName linux.student.cs.uwaterloo.ca
-</span></span><span style="display:flex;"><span>  IdentityFile <span style="color:#ed9d13">&#34;C:\Users\maste\.ssh\id_ed25519&#34;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#999;font-style:italic"># Linux/MacOS: IdentityFile &#34;/Users/USER/.ssh/id_ed25519&#34;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#999;font-style:italic"># PreferredAuthentications publickey</span>
-</span></span></code></pre></div></li>
-<li>
-<p>From the command palette, use &ldquo;Remote-SSH: Connect Current Window to Host&hellip;&rdquo; and select the host you just added</p>
-</li>
-<li>
-<p>A window will show up asking you to choose the platform for the remote server so choose the <strong>remote server&rsquo;s</strong> platform (e.g. Linux)</p>
-</li>
-<li>
-<p>If all goes well, you should be able to connect without having to enter a password
-<img src="/images/vs-code-remote-ssh/connected-example.png" alt="VS Code SSH"></p>
-</li>
-<li>
-<p>Tip: add multiple folders in the remote server to a workspace</p>
-</li>
-</ol>
+</h2><p>After not going to a startbucks for more than two years, I went yesterday and today due to proximity in this
+30+ degrees celsius weather.</p>
+<p>I had the choice to select from 4 of the promoted drinks. Two had coffee and two were similar to juices.</p>
+<p>Yesterday I got the chocolate ice cofee as it was recommended by the employee and it tasted like garbage. Not even close to an ice cap. It&rsquo;s possible this is because I don&rsquo;t drink coffee, but coffee is nothing but grinded coffee beans brewed with water, so I would expect Starbuck&rsquo;s additional mixing to at least taste good.</p>
+<p>Today, I got a pinappele lemonade. What genius came up with this idea? Not only does it taste like a watery pineapple, but the lemonade leaves my throat dry. How can a drink taste worse than water?! Ridiculous.</p>
+<p>This is probably what I get for thinking Starbucks and general premium priced products are actually good.</p>
+<p>Throwback to that time when my dad bought be a Casio graphing calculator while everyone elsed bought 4x priced Texas Instruments graphing calculators and had to be taught how to use it.</p>
+<p>North American companies are filled with beauracracy and this will only hurt them when people who have the time start to take advantage of it.</p>
 
         </div>
         
@@ -365,32 +300,16 @@ if you aren&rsquo;t doing anything abnormal on your computer.</p>
 
 <div class="post-info">
     
-        <div class="post-date dt-published">2020-Sep-11</div>
+        <div class="post-date dt-published">2022-Jun-22</div>
     
 
-    <a class="post-hidden-url u-url" href="https://blog.elijahlopez.ca/posts/vs-code-remote-ssh/">https://blog.elijahlopez.ca/posts/vs-code-remote-ssh/</a>
+    <a class="post-hidden-url u-url" href="https://blog.elijahlopez.ca/posts/starbucks/">https://blog.elijahlopez.ca/posts/starbucks/</a>
     <a href="https://blog.elijahlopez.ca/" class="p-name p-author post-hidden-author h-card" rel="me">Elijah Lopez</a>
 
 
     <div class="post-taxonomies">
         
             
-                <ul class="post-tags">
-                    
-                        
-                        <li><a href="https://blog.elijahlopez.ca/tags/programming/">#programming</a></li>
-                    
-                        
-                        <li><a href="https://blog.elijahlopez.ca/tags/tutorial/">#tutorial</a></li>
-                    
-                        
-                        <li><a href="https://blog.elijahlopez.ca/tags/ssh/">#ssh</a></li>
-                    
-                        
-                        <li><a href="https://blog.elijahlopez.ca/tags/vscode/">#vscode</a></li>
-                    
-                </ul>
-        
     </div>
 </div>
 
@@ -401,14 +320,12 @@ if you aren&rsquo;t doing anything abnormal on your computer.</p>
     
         
     <div class="pagination post-pagination">
-        <div class="left pagination-item ">
-            
-                <a href="/posts/automate-firefox-addon-publishing/">Automate Firefox Addon Publishing</a>
+        <div class="left pagination-item disabled">
             
         </div>
         <div class="right pagination-item ">
             
-                <a href="/posts/convert-word-files-to-pdf/">Convert Word Files to PDF With Python</a>
+                <a href="/posts/incompetence/">Incompetence</a>
             
         </div>
     </div>

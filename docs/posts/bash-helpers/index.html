@@ -78,7 +78,7 @@ Bash - Argument Parsing and FlagsIf you don&rsquo;t get what&rsquo;s going 
     
 
     
-        <script src="https://blog.elijahlopez.ca/js/script.min.510c781c39dbb21b4c76d85c82e2bdf4689220adbb7cd61e49e9d293e442fb42.js" type="text/javascript" charset="utf-8" integrity="sha256-UQx4HDnbshtMdthcguK99GiSIK27fNYeSenSk&#43;RC&#43;0I="></script>
+        <script src="https://blog.elijahlopez.ca/js/script.min.a65afe903825231554d9b55b073eb144da4ccf2d2823b216dcbc6cc656c9de76.js" type="text/javascript" charset="utf-8" integrity="sha256-plr&#43;kDglIxVU2bVbBz6xRNpMzy0oI7IW3LxsxlbJ3nY="></script>
     
 
 
@@ -295,41 +295,41 @@ any non-scripting language like C/C++ or Python.</p>
 <li>Conditionals (if, elif, else, AND &amp;&amp;, OR ||)</li>
 <li>For loop</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#40ffff">supplied_arg</span>=<span style="color:#ed9d13">&#34;default&#34;</span>
-<span style="color:#999;font-style:italic"># iterate all arguments</span>
-<span style="color:#6ab825;font-weight:bold">for</span> arg in <span style="color:#ed9d13">&#34;</span><span style="color:#40ffff">$@</span><span style="color:#ed9d13">&#34;</span>; <span style="color:#6ab825;font-weight:bold">do</span>
-    <span style="color:#999;font-style:italic"># use [[ ]] to avoid double quoting variables</span>
-    <span style="color:#6ab825;font-weight:bold">if</span> [[ <span style="color:#40ffff">$last_arg</span> = <span style="color:#ed9d13">&#34;--supply&#34;</span> ]]; <span style="color:#6ab825;font-weight:bold">then</span>
-        <span style="color:#40ffff">supplied_arg</span>=<span style="color:#ed9d13">&#34;</span><span style="color:#40ffff">$arg</span><span style="color:#ed9d13">&#34;</span>
-        <span style="color:#40ffff">last_arg</span>=<span style="color:#ed9d13">&#34;&#34;</span>
-    <span style="color:#999;font-style:italic"># OR ||</span>
-    <span style="color:#6ab825;font-weight:bold">elif</span> [[ <span style="color:#40ffff">$arg</span> = <span style="color:#ed9d13">&#34;--flag1&#34;</span> ]] || [[ <span style="color:#40ffff">$arg</span> = <span style="color:#ed9d13">&#34;--flag&#34;</span> ]]; <span style="color:#6ab825;font-weight:bold">then</span>
-        <span style="color:#40ffff">flag1</span>=<span style="color:#24909d">true</span>
-    <span style="color:#999;font-style:italic"># elif, AND &amp;&amp;</span>
-    <span style="color:#6ab825;font-weight:bold">elif</span> [[ <span style="color:#40ffff">$arg</span> = <span style="color:#ed9d13">&#34;--override&#34;</span> ]] &amp;&amp; [[ ! <span style="color:#40ffff">$supplied_arg</span> = <span style="color:#ed9d13">&#34;default&#34;</span> ]]; <span style="color:#6ab825;font-weight:bold">then</span>
-        <span style="color:#999;font-style:italic"># ignore the redundancy, this is to showcase &amp;&amp;</span>
-        <span style="color:#40ffff">flag_override</span>=<span style="color:#24909d">true</span>
-    <span style="color:#6ab825;font-weight:bold">else</span>
-        <span style="color:#999;font-style:italic"># you can do something with these args here</span>
-        <span style="color:#999;font-style:italic"># wc -l &#34;$arg&#34;</span>
-        <span style="color:#999;font-style:italic"># or you can set last_arg in order to parse `--something ARG`</span>
-        <span style="color:#40ffff">last_arg</span>=<span style="color:#ed9d13">&#34;</span><span style="color:#40ffff">$arg</span><span style="color:#ed9d13">&#34;</span>
-    <span style="color:#999;font-style:italic"># end of if statement</span>
-    <span style="color:#6ab825;font-weight:bold">fi</span>
-<span style="color:#999;font-style:italic"># done loop (for or while)</span>
-<span style="color:#6ab825;font-weight:bold">done</span>
-
-<span style="color:#999;font-style:italic"># check if flag supplied</span>
-<span style="color:#6ab825;font-weight:bold">if</span> [ <span style="color:#40ffff">flag1</span> = true]; <span style="color:#6ab825;font-weight:bold">then</span>
-    <span style="color:#24909d">echo</span> <span style="color:#ed9d13">&#34;got --flag1 or --flag&#34;</span>
-<span style="color:#6ab825;font-weight:bold">else</span>
-    <span style="color:#40ffff">notGot</span>=<span style="color:#ed9d13">&#34;got neither --flag1 nor --flag&#34;</span>
-<span style="color:#6ab825;font-weight:bold">fi</span>
-<span style="color:#999;font-style:italic"># flag not supplied (since variable was never set, we check ! = true rather than = false)</span>
-<span style="color:#6ab825;font-weight:bold">if</span> [ ! <span style="color:#40ffff">flag1</span> = <span style="color:#24909d">true</span> ]; <span style="color:#6ab825;font-weight:bold">then</span>
-    <span style="color:#24909d">echo</span> <span style="color:#40ffff">$notGot</span>
-<span style="color:#6ab825;font-weight:bold">fi</span>
-</code></pre></div><h2 id="linux---add-to-path" >Linux - Add to PATH
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#40ffff">supplied_arg</span>=<span style="color:#ed9d13">&#34;default&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"># iterate all arguments</span>
+</span></span><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">for</span> arg in <span style="color:#ed9d13">&#34;</span><span style="color:#40ffff">$@</span><span style="color:#ed9d13">&#34;</span>; <span style="color:#6ab825;font-weight:bold">do</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#999;font-style:italic"># use [[ ]] to avoid double quoting variables</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#6ab825;font-weight:bold">if</span> [[ <span style="color:#40ffff">$last_arg</span> = <span style="color:#ed9d13">&#34;--supply&#34;</span> ]]; <span style="color:#6ab825;font-weight:bold">then</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#40ffff">supplied_arg</span>=<span style="color:#ed9d13">&#34;</span><span style="color:#40ffff">$arg</span><span style="color:#ed9d13">&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#40ffff">last_arg</span>=<span style="color:#ed9d13">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#999;font-style:italic"># OR ||</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#6ab825;font-weight:bold">elif</span> [[ <span style="color:#40ffff">$arg</span> = <span style="color:#ed9d13">&#34;--flag1&#34;</span> ]] || [[ <span style="color:#40ffff">$arg</span> = <span style="color:#ed9d13">&#34;--flag&#34;</span> ]]; <span style="color:#6ab825;font-weight:bold">then</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#40ffff">flag1</span>=<span style="color:#24909d">true</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#999;font-style:italic"># elif, AND &amp;&amp;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#6ab825;font-weight:bold">elif</span> [[ <span style="color:#40ffff">$arg</span> = <span style="color:#ed9d13">&#34;--override&#34;</span> ]] &amp;&amp; [[ ! <span style="color:#40ffff">$supplied_arg</span> = <span style="color:#ed9d13">&#34;default&#34;</span> ]]; <span style="color:#6ab825;font-weight:bold">then</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#999;font-style:italic"># ignore the redundancy, this is to showcase &amp;&amp;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#40ffff">flag_override</span>=<span style="color:#24909d">true</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#6ab825;font-weight:bold">else</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#999;font-style:italic"># you can do something with these args here</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#999;font-style:italic"># wc -l &#34;$arg&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#999;font-style:italic"># or you can set last_arg in order to parse `--something ARG`</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#40ffff">last_arg</span>=<span style="color:#ed9d13">&#34;</span><span style="color:#40ffff">$arg</span><span style="color:#ed9d13">&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#999;font-style:italic"># end of if statement</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#6ab825;font-weight:bold">fi</span>
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"># done loop (for or while)</span>
+</span></span><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">done</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"># check if flag supplied</span>
+</span></span><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">if</span> [ <span style="color:#40ffff">flag1</span> = true]; <span style="color:#6ab825;font-weight:bold">then</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#24909d">echo</span> <span style="color:#ed9d13">&#34;got --flag1 or --flag&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">else</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#40ffff">notGot</span>=<span style="color:#ed9d13">&#34;got neither --flag1 nor --flag&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">fi</span>
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"># flag not supplied (since variable was never set, we check ! = true rather than = false)</span>
+</span></span><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">if</span> [ ! <span style="color:#40ffff">flag1</span> = <span style="color:#24909d">true</span> ]; <span style="color:#6ab825;font-weight:bold">then</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#24909d">echo</span> <span style="color:#40ffff">$notGot</span>
+</span></span><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">fi</span>
+</span></span></code></pre></div><h2 id="linux---add-to-path" >Linux - Add to PATH
 <span>
     <a href="#linux---add-to-path">
         <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
@@ -350,28 +350,28 @@ any non-scripting language like C/C++ or Python.</p>
 <li>adds the cronjob if not exists</li>
 <li>prevents concurrent/overlap runs</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">add_cronjob() {
-    <span style="color:#999;font-style:italic"># crontab will not set the working directory</span>
-    <span style="color:#999;font-style:italic"># create locks directory if it does not exist</span>
-    mkdir -p ~/locks
-    <span style="color:#999;font-style:italic"># my sample job uses flock to prevent overlapping runs</span>
-    <span style="color:#999;font-style:italic"># minute hour day month day_of_week</span>
-    <span style="color:#999;font-style:italic"># /X means divisible by X</span>
-    <span style="color:#40ffff">cronjob</span>=<span style="color:#ed9d13">&#34;*/1 * * * * flock -n ~/locks/auto_deploy_</span><span style="color:#40ffff">$PROJECT</span><span style="color:#ed9d13">.lock </span><span style="color:#40ffff">$PYTHON</span><span style="color:#ed9d13"> </span><span style="color:#6ab825;font-weight:bold">$(</span><span style="color:#24909d">pwd</span><span style="color:#6ab825;font-weight:bold">)</span><span style="color:#ed9d13">/cronjob.py&#34;</span>
-    <span style="color:#999;font-style:italic"># cronjob.py will set the working directory</span>
-    <span style="color:#6ab825;font-weight:bold">if</span> ! crontab -l &amp;&gt;/dev/null; <span style="color:#6ab825;font-weight:bold">then</span>
-        <span style="color:#999;font-style:italic"># crontab file does not exist</span>
-        <span style="color:#24909d">echo</span> <span style="color:#ed9d13">&#34;</span><span style="color:#40ffff">$cronjob</span><span style="color:#ed9d13">&#34;</span> | crontab -
-        <span style="color:#24909d">echo</span> <span style="color:#ed9d13">&#34;Created new crontab with job&#34;</span>
-    <span style="color:#6ab825;font-weight:bold">elif</span> ! crontab -l 2&gt;/dev/null | grep -Fq <span style="color:#ed9d13">&#34;</span><span style="color:#40ffff">$cronjob</span><span style="color:#ed9d13">&#34;</span>; <span style="color:#6ab825;font-weight:bold">then</span>
-        <span style="color:#999;font-style:italic"># job not found in crontab</span>
-        <span style="color:#24909d">echo</span> <span style="color:#6ab825;font-weight:bold">$(</span>crontab -l ; <span style="color:#24909d">echo</span> <span style="color:#ed9d13">&#34;</span><span style="color:#40ffff">$cronjob</span><span style="color:#ed9d13">&#34;</span><span style="color:#6ab825;font-weight:bold">)</span> | crontab -
-        <span style="color:#24909d">echo</span> <span style="color:#ed9d13">&#34;Added </span><span style="color:#40ffff">$cronjob</span><span style="color:#ed9d13"> ... to existing crontab&#34;</span>
-    <span style="color:#6ab825;font-weight:bold">else</span>
-        <span style="color:#24909d">echo</span> <span style="color:#ed9d13">&#34;Job already exists in crontab&#34;</span>
-    <span style="color:#6ab825;font-weight:bold">fi</span>
-}
-</code></pre></div><h2 id="linux---add-systemd-service" >Linux - Add Systemd Service
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>add_cronjob() {
+</span></span><span style="display:flex;"><span>    <span style="color:#999;font-style:italic"># crontab will not set the working directory</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#999;font-style:italic"># create locks directory if it does not exist</span>
+</span></span><span style="display:flex;"><span>    mkdir -p ~/locks
+</span></span><span style="display:flex;"><span>    <span style="color:#999;font-style:italic"># my sample job uses flock to prevent overlapping runs</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#999;font-style:italic"># minute hour day month day_of_week</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#999;font-style:italic"># /X means divisible by X</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#40ffff">cronjob</span>=<span style="color:#ed9d13">&#34;*/1 * * * * flock -n ~/locks/auto_deploy_</span><span style="color:#40ffff">$PROJECT</span><span style="color:#ed9d13">.lock </span><span style="color:#40ffff">$PYTHON</span><span style="color:#ed9d13"> </span><span style="color:#6ab825;font-weight:bold">$(</span><span style="color:#24909d">pwd</span><span style="color:#6ab825;font-weight:bold">)</span><span style="color:#ed9d13">/cronjob.py&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#999;font-style:italic"># cronjob.py will set the working directory</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#6ab825;font-weight:bold">if</span> ! crontab -l &amp;&gt;/dev/null; <span style="color:#6ab825;font-weight:bold">then</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#999;font-style:italic"># crontab file does not exist</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#24909d">echo</span> <span style="color:#ed9d13">&#34;</span><span style="color:#40ffff">$cronjob</span><span style="color:#ed9d13">&#34;</span> | crontab -
+</span></span><span style="display:flex;"><span>        <span style="color:#24909d">echo</span> <span style="color:#ed9d13">&#34;Created new crontab with job&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#6ab825;font-weight:bold">elif</span> ! crontab -l 2&gt;/dev/null | grep -Fq <span style="color:#ed9d13">&#34;</span><span style="color:#40ffff">$cronjob</span><span style="color:#ed9d13">&#34;</span>; <span style="color:#6ab825;font-weight:bold">then</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#999;font-style:italic"># job not found in crontab</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#24909d">echo</span> <span style="color:#6ab825;font-weight:bold">$(</span>crontab -l ; <span style="color:#24909d">echo</span> <span style="color:#ed9d13">&#34;</span><span style="color:#40ffff">$cronjob</span><span style="color:#ed9d13">&#34;</span><span style="color:#6ab825;font-weight:bold">)</span> | crontab -
+</span></span><span style="display:flex;"><span>        <span style="color:#24909d">echo</span> <span style="color:#ed9d13">&#34;Added </span><span style="color:#40ffff">$cronjob</span><span style="color:#ed9d13"> ... to existing crontab&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#6ab825;font-weight:bold">else</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#24909d">echo</span> <span style="color:#ed9d13">&#34;Job already exists in crontab&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#6ab825;font-weight:bold">fi</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="linux---add-systemd-service" >Linux - Add Systemd Service
 <span>
     <a href="#linux---add-systemd-service">
         <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
@@ -388,52 +388,52 @@ any non-scripting language like C/C++ or Python.</p>
         <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
     </a>
 </span>
-</h2><div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#999;font-style:italic"># Context:</span>
-<span style="color:#999;font-style:italic"># define $DOMAIN (e.g. lenerva.com)</span>
-install_certbot() {
-    sudo snap install core; sudo snap refresh core
-    sudo snap install --classic certbot
-    sudo ln -s /snap/bin/certbot /usr/bin/certbot
-    sudo certbot --nginx -d <span style="color:#40ffff">$DOMAIN</span> -d www.<span style="color:#40ffff">$DOMAIN</span>
-}
-</code></pre></div><h2 id="linux---auto-configure-nginx---gunicorn" >Linux - Auto Configure NGINX - Gunicorn
+</h2><div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#999;font-style:italic"># Context:</span>
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"># define $DOMAIN (e.g. lenerva.com)</span>
+</span></span><span style="display:flex;"><span>install_certbot() {
+</span></span><span style="display:flex;"><span>    sudo snap install core; sudo snap refresh core
+</span></span><span style="display:flex;"><span>    sudo snap install --classic certbot
+</span></span><span style="display:flex;"><span>    sudo ln -s /snap/bin/certbot /usr/bin/certbot
+</span></span><span style="display:flex;"><span>    sudo certbot --nginx -d <span style="color:#40ffff">$DOMAIN</span> -d www.<span style="color:#40ffff">$DOMAIN</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="linux---auto-configure-nginx---gunicorn" >Linux - Auto Configure NGINX - Gunicorn
 <span>
     <a href="#linux---auto-configure-nginx---gunicorn">
         <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
     </a>
 </span>
 </h2><p>This works for me but it is possible to fail for you without editing <code>/etc/nginx/nginx.conf</code> manually server name hashes to 128</p>
-<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#999;font-style:italic"># Context:</span>
-<span style="color:#999;font-style:italic"># define $DOMAIN beforehand (e.g. lenerva.com)</span>
-<span style="color:#999;font-style:italic"># define $PROJECT beforehand (e.g. my-project)</span>
-<span style="color:#999;font-style:italic"># pwd is currently the project root directory</span>
-configure_nginx() {
-    <span style="color:#999;font-style:italic"># configure nginx</span>
-    sudo apt install nginx -y
-
-    sudo mkdir -p /var/www/<span style="color:#40ffff">$DOMAIN</span>/html
-    sudo chown -R <span style="color:#ed9d13">&#34;</span><span style="color:#40ffff">$USER</span><span style="color:#ed9d13">&#34;</span>:<span style="color:#ed9d13">&#34;</span><span style="color:#40ffff">$USER</span><span style="color:#ed9d13">&#34;</span> /var/www/<span style="color:#40ffff">$DOMAIN</span>/html
-    sudo chmod -R <span style="color:#3677a9">755</span> /var/www/<span style="color:#40ffff">$DOMAIN</span>
-
-    <span style="color:#24909d">echo</span> <span style="color:#ed9d13">&#34;server {&#34;</span> | sudo tee /etc/nginx/sites-available/<span style="color:#40ffff">$PROJECT</span> &gt;/dev/null
-    <span style="color:#24909d">echo</span> <span style="color:#ed9d13">&#34;  listen [::]:80;&#34;</span> | sudo tee -a /etc/nginx/sites-available/<span style="color:#40ffff">$PROJECT</span> &gt;/dev/null
-    <span style="color:#24909d">echo</span> <span style="color:#ed9d13">&#34;  listen 80;&#34;</span> | sudo tee -a /etc/nginx/sites-available/<span style="color:#40ffff">$PROJECT</span> &gt;/dev/null
-    <span style="color:#24909d">echo</span> <span style="color:#ed9d13">&#34;  location / {&#34;</span> | sudo tee -a /etc/nginx/sites-available/<span style="color:#40ffff">$PROJECT</span> &gt;/dev/null
-    <span style="color:#24909d">echo</span> <span style="color:#ed9d13">&#34;    include proxy_params;&#34;</span> | sudo tee -a /etc/nginx/sites-available/<span style="color:#40ffff">$PROJECT</span> &gt;/dev/null
-    <span style="color:#24909d">echo</span> <span style="color:#ed9d13">&#34;    proxy_pass http://unix:</span><span style="color:#6ab825;font-weight:bold">$(</span><span style="color:#24909d">pwd</span><span style="color:#6ab825;font-weight:bold">)</span><span style="color:#ed9d13">/gunicorn.sock;&#34;</span> | sudo tee -a /etc/nginx/sites-available/<span style="color:#40ffff">$PROJECT</span> &gt;/dev/null
-    <span style="color:#24909d">echo</span> <span style="color:#ed9d13">&#34;  }&#34;</span> | sudo tee -a /etc/nginx/sites-available/<span style="color:#40ffff">$PROJECT</span> &gt;/dev/null
-    <span style="color:#24909d">echo</span> <span style="color:#ed9d13">&#34;}&#34;</span> | sudo tee -a /etc/nginx/sites-available/<span style="color:#40ffff">$PROJECT</span> &gt;/dev/null
-
-    sudo ln -s <span style="color:#ed9d13">&#34;/etc/nginx/sites-available/</span><span style="color:#40ffff">$PROJECT</span><span style="color:#ed9d13">&#34;</span> /etc/nginx/sites-enabled
-
-    <span style="color:#999;font-style:italic"># TODO: if publishing script, also set max server name hashes to 128 in /etc/nginx/nginx.conf</span>
-    <span style="color:#999;font-style:italic"># uncomment below if it didn&#39;t work</span>
-    <span style="color:#999;font-style:italic"># nano /etc/nginx/nginx.conf</span>
-    sudo systemctl restart nginx
-    <span style="color:#999;font-style:italic"># Firewall</span>
-    sudo ufw allow <span style="color:#ed9d13">&#39;Nginx Full&#39;</span>
-}
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#999;font-style:italic"># Context:</span>
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"># define $DOMAIN beforehand (e.g. lenerva.com)</span>
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"># define $PROJECT beforehand (e.g. my-project)</span>
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"># pwd is currently the project root directory</span>
+</span></span><span style="display:flex;"><span>configure_nginx() {
+</span></span><span style="display:flex;"><span>    <span style="color:#999;font-style:italic"># configure nginx</span>
+</span></span><span style="display:flex;"><span>    sudo apt install nginx -y
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    sudo mkdir -p /var/www/<span style="color:#40ffff">$DOMAIN</span>/html
+</span></span><span style="display:flex;"><span>    sudo chown -R <span style="color:#ed9d13">&#34;</span><span style="color:#40ffff">$USER</span><span style="color:#ed9d13">&#34;</span>:<span style="color:#ed9d13">&#34;</span><span style="color:#40ffff">$USER</span><span style="color:#ed9d13">&#34;</span> /var/www/<span style="color:#40ffff">$DOMAIN</span>/html
+</span></span><span style="display:flex;"><span>    sudo chmod -R <span style="color:#3677a9">755</span> /var/www/<span style="color:#40ffff">$DOMAIN</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#24909d">echo</span> <span style="color:#ed9d13">&#34;server {&#34;</span> | sudo tee /etc/nginx/sites-available/<span style="color:#40ffff">$PROJECT</span> &gt;/dev/null
+</span></span><span style="display:flex;"><span>    <span style="color:#24909d">echo</span> <span style="color:#ed9d13">&#34;  listen [::]:80;&#34;</span> | sudo tee -a /etc/nginx/sites-available/<span style="color:#40ffff">$PROJECT</span> &gt;/dev/null
+</span></span><span style="display:flex;"><span>    <span style="color:#24909d">echo</span> <span style="color:#ed9d13">&#34;  listen 80;&#34;</span> | sudo tee -a /etc/nginx/sites-available/<span style="color:#40ffff">$PROJECT</span> &gt;/dev/null
+</span></span><span style="display:flex;"><span>    <span style="color:#24909d">echo</span> <span style="color:#ed9d13">&#34;  location / {&#34;</span> | sudo tee -a /etc/nginx/sites-available/<span style="color:#40ffff">$PROJECT</span> &gt;/dev/null
+</span></span><span style="display:flex;"><span>    <span style="color:#24909d">echo</span> <span style="color:#ed9d13">&#34;    include proxy_params;&#34;</span> | sudo tee -a /etc/nginx/sites-available/<span style="color:#40ffff">$PROJECT</span> &gt;/dev/null
+</span></span><span style="display:flex;"><span>    <span style="color:#24909d">echo</span> <span style="color:#ed9d13">&#34;    proxy_pass http://unix:</span><span style="color:#6ab825;font-weight:bold">$(</span><span style="color:#24909d">pwd</span><span style="color:#6ab825;font-weight:bold">)</span><span style="color:#ed9d13">/gunicorn.sock;&#34;</span> | sudo tee -a /etc/nginx/sites-available/<span style="color:#40ffff">$PROJECT</span> &gt;/dev/null
+</span></span><span style="display:flex;"><span>    <span style="color:#24909d">echo</span> <span style="color:#ed9d13">&#34;  }&#34;</span> | sudo tee -a /etc/nginx/sites-available/<span style="color:#40ffff">$PROJECT</span> &gt;/dev/null
+</span></span><span style="display:flex;"><span>    <span style="color:#24909d">echo</span> <span style="color:#ed9d13">&#34;}&#34;</span> | sudo tee -a /etc/nginx/sites-available/<span style="color:#40ffff">$PROJECT</span> &gt;/dev/null
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    sudo ln -s <span style="color:#ed9d13">&#34;/etc/nginx/sites-available/</span><span style="color:#40ffff">$PROJECT</span><span style="color:#ed9d13">&#34;</span> /etc/nginx/sites-enabled
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#999;font-style:italic"># TODO: if publishing script, also set max server name hashes to 128 in /etc/nginx/nginx.conf</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#999;font-style:italic"># uncomment below if it didn&#39;t work</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#999;font-style:italic"># nano /etc/nginx/nginx.conf</span>
+</span></span><span style="display:flex;"><span>    sudo systemctl restart nginx
+</span></span><span style="display:flex;"><span>    <span style="color:#999;font-style:italic"># Firewall</span>
+</span></span><span style="display:flex;"><span>    sudo ufw allow <span style="color:#ed9d13">&#39;Nginx Full&#39;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>
         </div>
         
 

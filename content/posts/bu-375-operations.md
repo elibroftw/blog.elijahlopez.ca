@@ -574,3 +574,24 @@ Tt = Beta(Ft - F_t-1) + (1 - Beta)T_t-1
 
 #### Forecasting Error
 
+## Inventory Management
+
+### Inventory Control Systems
+
+#### Continuous System
+
+- fixed order quantity
+- inventory is continually monitored
+- reorder oint, economic order quantity
+
+#### Periodic System
+
+- fixed time period
+
+### Economic Order Quantities
+
+### Inventory Control Cost
+
+TC = C_c times Q/2 + C_0 * D/Q
+
+

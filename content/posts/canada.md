@@ -346,3 +346,14 @@ This is too much to write at the moment.
 ### Improving Education
 
 TODO: I will create an overview on what the education should teach, how it should teach, goals of the education system, etc.
+
+### Drunk Driving
+
+I was reading about the billionaire killing. I do agree with the sentencing as it was already
+the harshest first offence drunk driving killing, BUT, we need to prevent drunk people from drinking,
+not punish the killers harshly.
+
+My policy would be that if you are caught in a DUI with hard evidence, unless it was a life-death emergency,
+your license should be suspended for an entire year. No jail, no felony, no record, but a license suspension. Well there would be one record which would be "got caught drunk driving" for potential future instances.
+
+A second offence would result in a 10 year license suspension.
