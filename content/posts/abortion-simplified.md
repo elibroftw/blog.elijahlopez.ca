@@ -26,18 +26,10 @@ I have made made a short guide for people of different polticial leanings.
 
 Classical liberals, libertarian-right, property rights advocates, gun rights advocates.
 
-I wish I could say religious, but to me a relgious people is one who think
-abortion and other acts are wrong due to root reasons found in their religious texts rather
-than root reason based in rationals.
-
-For example a religious person think that attraction to a person of the same gender is wrong because of
-a section in the Old Testament (not even the new). A more rational person would argue that opposite-gender
-attraction is simply more capable and satisfying but wouldn't flat out say it's wrong for someone else to be attracted
-to the same-gender. Most people in the west at least, would say that same-sex or same-gender attraction is not inferiror nor
-superiror to hetero relationships.
-
-Then there is the statistician who will pull out the domestic violence rates and claim that gay
-couples are superior. If you can't take (barely dark) jokes, we have bigger issues than my stance on abortion.
+It's incredibly hard to write in a way to reach out to the religious and close minded, but I'll do my best.
+By religious and close minded, I mean the people who use religious texts as evidence or proof or command to do certain actions or think certain ways
+rather than thinking deeper into why the text would say certain things or if its even valid anymore. This is not a critque of religion, so I will move on.
+My arguments are based on property & privacy rights as my hint strongly implies, rather than arguing the temper tantrum inducing "human life starts at conception."
 
 ## Obligations
 
