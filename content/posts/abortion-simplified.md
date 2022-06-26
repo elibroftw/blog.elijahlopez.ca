@@ -81,8 +81,8 @@ I consider myself a classical liberal, so I created this scenario to put an end 
 Say you invited a person to your home and now you want them to leave. They refuse, saying that you invited them here. The government says that
 no one, not you, not another human, nor the government, can forcibly remove the person.
 Do you accept the government's ruling or do you bring out the handgun your government has also banned in the country?
-Suppose you are a law abiding citizen and don't even have a gun sine guns are banned in your country.
-Do you try to forcibly remove the trespassor which might result in your death or do you wait out 9 month?
+Suppose you are a law abiding citizen and don't have a gun.
+Do you try to forcibly remove the trespassor which might result in your death or do you wait out 9 months?
 
 Wouldn't it be much better if you could just call someone to do it for you without the fear of legislative punishment?
 

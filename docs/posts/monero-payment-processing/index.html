@@ -80,7 +80,7 @@ At the end I mention an alternative, more long-term solution than the short-term
     
 
     
-        <script src="https://blog.elijahlopez.ca/js/script.min.510c781c39dbb21b4c76d85c82e2bdf4689220adbb7cd61e49e9d293e442fb42.js" type="text/javascript" charset="utf-8" integrity="sha256-UQx4HDnbshtMdthcguK99GiSIK27fNYeSenSk&#43;RC&#43;0I="></script>
+        <script src="https://blog.elijahlopez.ca/js/script.min.a65afe903825231554d9b55b073eb144da4ccf2d2823b216dcbc6cc656c9de76.js" type="text/javascript" charset="utf-8" integrity="sha256-plr&#43;kDglIxVU2bVbBz6xRNpMzy0oI7IW3LxsxlbJ3nY="></script>
     
 
 
@@ -334,51 +334,50 @@ At the end I mention an alternative, more long-term solution than the short-term
     </a>
 </span>
 </h2><p>In your backend, when a user creates an order and selects Monero as the payment method, you should send an API request the monero-wallet-rpc that is running. Here is a snippet of my code. The relevant portion is the request as well as the error checking.</p>
-<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#999;font-style:italic">############</span>
-<span style="color:#999;font-style:italic"># Defined in modules/monero.py</span>
-<span style="color:#999;font-style:italic"># two undefined func/var are os.environ related</span>
-XMR_RPC_PORT = <span style="color:#ed9d13">&#39;38088&#39;</span> <span style="color:#6ab825;font-weight:bold">if</span> is_dev() <span style="color:#6ab825;font-weight:bold">and</span> STAGENET_IN_DEV <span style="color:#6ab825;font-weight:bold">else</span> <span style="color:#ed9d13">&#39;18088&#39;</span>
-<span style="color:#999;font-style:italic"># TODO: v1.5 use ipv6</span>
-XMR_RPC_ENDPOINT = <span style="color:#ed9d13">f</span><span style="color:#ed9d13">&#39;http://127.0.0.1:</span><span style="color:#ed9d13">{</span>XMR_RPC_PORT<span style="color:#ed9d13">}</span><span style="color:#ed9d13">/json_rpc&#39;</span>
-
-<span style="color:#6ab825;font-weight:bold">def</span> <span style="color:#447fcf">xmr_rpc_api</span>(method_name, **params):
-    rpc_defaults = {<span style="color:#ed9d13">&#39;jsonrpc&#39;</span>: <span style="color:#ed9d13">&#39;2.0&#39;</span>, <span style="color:#ed9d13">&#39;id&#39;</span>: <span style="color:#ed9d13">&#39;0&#39;</span>}
-    <span style="color:#6ab825;font-weight:bold">if</span> <span style="color:#ed9d13">&#39;_in&#39;</span> <span style="color:#6ab825;font-weight:bold">in</span> params:
-        params[<span style="color:#ed9d13">&#39;in&#39;</span>] = params.pop(<span style="color:#ed9d13">&#39;_in&#39;</span>)
-    <span style="color:#6ab825;font-weight:bold">return</span> requests.post(XMR_RPC_ENDPOINT, json={**rpc_defaults, <span style="color:#ed9d13">&#39;method&#39;</span>: method_name, <span style="color:#ed9d13">&#39;params&#39;</span>: params}, auth=XMR_RPC_AUTH)
-<span style="color:#999;font-style:italic">########</span>
-
-<span style="color:#999;font-style:italic"># called in the payment_method == monero order creation method</span>
-<span style="color:#6ab825;font-weight:bold">def</span> <span style="color:#447fcf">finish_order_monero</span>(order):
-    <span style="color:#ed9d13">&#34;&#34;&#34; Updates base order for paying with Monero &#34;&#34;&#34;</span>
-    <span style="color:#6ab825;font-weight:bold">assert</span> order[<span style="color:#ed9d13">&#39;payment_method&#39;</span>] == <span style="color:#ed9d13">&#39;monero&#39;</span>
-    <span style="color:#999;font-style:italic"># Monero orders expire after one hour</span>
-    server_num = <span style="color:#24909d">int</span>(os.environ[<span style="color:#ed9d13">&#39;SERVER_NUM&#39;</span>])
-    <span style="color:#6ab825;font-weight:bold">try</span>:
-        <span style="color:#999;font-style:italic"># https://monerodocs.org/interacting/monero-wallet-rpc-reference/#create_address</span>
-        <span style="color:#999;font-style:italic"># create a new address for account idx server_num</span>
-        <span style="color:#999;font-style:italic"># PITFALL: it is imperative that the wallet file is not replaced, to avoid create_address returning an already used address</span>
-        <span style="color:#999;font-style:italic"># if the wallet is ever replaced, before starting the server, either change the account number or create addresses until it matches the address used by the last monero order</span>
-        r = xmr_rpc_api(<span style="color:#ed9d13">&#39;create_address&#39;</span>, account_index=server_num, label=<span style="color:#ed9d13">&#39;lenerva-store-payment&#39;</span>).json()
-        <span style="color:#6ab825;font-weight:bold">while</span> r.get(<span style="color:#ed9d13">&#39;error&#39;</span>):
-            <span style="color:#6ab825;font-weight:bold">if</span> r[<span style="color:#ed9d13">&#39;error&#39;</span>][<span style="color:#ed9d13">&#39;code&#39;</span>] == -<span style="color:#3677a9">14</span>:  <span style="color:#999;font-style:italic"># account index is out of bound (not created yet)</span>
-                account_created = <span style="color:#6ab825;font-weight:bold">False</span>
-                <span style="color:#6ab825;font-weight:bold">while</span> <span style="color:#6ab825;font-weight:bold">not</span> account_created:
-                    r = xmr_rpc_api(<span style="color:#ed9d13">&#39;create_account&#39;</span>, label=<span style="color:#ed9d13">&#39;lenerva-store&#39;</span>).json()
-                    account_created = r[<span style="color:#ed9d13">&#39;result&#39;</span>][<span style="color:#ed9d13">&#39;account_index&#39;</span>] == server_num
-                r = xmr_rpc_api(<span style="color:#ed9d13">&#39;create_address&#39;</span>, account_index=server_num, label=<span style="color:#ed9d13">&#39;lenerva-store-payment&#39;</span>).json()
-        address, address_idx = r[<span style="color:#ed9d13">&#39;result&#39;</span>][<span style="color:#ed9d13">&#39;address&#39;</span>], r[<span style="color:#ed9d13">&#39;result&#39;</span>][<span style="color:#ed9d13">&#39;address_index&#39;</span>]
-        total_xmr = usd_to_xmr(order[<span style="color:#ed9d13">&#39;total_usd&#39;</span>])
-        order.update({<span style="color:#ed9d13">&#39;xmr_address&#39;</span>: address, <span style="color:#ed9d13">&#39;xmr_address_idx&#39;</span>: address_idx,
-                      <span style="color:#ed9d13">&#39;total_xmr&#39;</span>: total_xmr, <span style="color:#ed9d13">&#39;total_xmr_atomic&#39;</span>: total_xmr * <span style="color:#3677a9">1e12</span>})
-    <span style="color:#6ab825;font-weight:bold">except</span> <span style="color:#bbb">Exception</span> <span style="color:#6ab825;font-weight:bold">as</span> e:
-        <span style="color:#6ab825;font-weight:bold">raise</span> MoneroError(<span style="color:#24909d">repr</span>(e)) <span style="color:#6ab825;font-weight:bold">from</span> <span style="color:#447fcf;text-decoration:underline">e</span>
-
-<span style="color:#999;font-style:italic"># showing order page to user</span>
-xmr_qr_data = <span style="color:#ed9d13">f</span><span style="color:#ed9d13">&#34;monero:</span><span style="color:#ed9d13">{</span>order[<span style="color:#ed9d13">&#39;xmr_address&#39;</span>]<span style="color:#ed9d13">}</span><span style="color:#ed9d13">?tx_amount=</span><span style="color:#ed9d13">{</span>order[<span style="color:#ed9d13">&#39;total_xmr&#39;</span>]<span style="color:#ed9d13">}</span><span style="color:#ed9d13">&#34;</span> \
-              <span style="color:#ed9d13">f</span><span style="color:#ed9d13">&#34;&amp;tx_description=Goods%20and%20Services&amp;recipient_name=LENERVA&#34;</span>
-
-</code></pre></div><p>Great, so users can now create an order with monero as the payment method. But how do they pay? When the order is created, in contrast to Stripe&rsquo;s Session, you can redirect the user to the order page and show them a QR code of <code>xmr_qr_data</code>. You will need to create the qr code yourself. If you use Python, install pyqrcode and pypng.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span><span style="color:#999;font-style:italic">############</span>
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"># Defined in modules/monero.py</span>
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"># two undefined func/var are os.environ related</span>
+</span></span><span style="display:flex;"><span>XMR_RPC_PORT = <span style="color:#ed9d13">&#39;38088&#39;</span> <span style="color:#6ab825;font-weight:bold">if</span> is_dev() <span style="color:#6ab825;font-weight:bold">and</span> STAGENET_IN_DEV <span style="color:#6ab825;font-weight:bold">else</span> <span style="color:#ed9d13">&#39;18088&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"># TODO: v1.5 use ipv6</span>
+</span></span><span style="display:flex;"><span>XMR_RPC_ENDPOINT = <span style="color:#ed9d13">f</span><span style="color:#ed9d13">&#39;http://127.0.0.1:</span><span style="color:#ed9d13">{</span>XMR_RPC_PORT<span style="color:#ed9d13">}</span><span style="color:#ed9d13">/json_rpc&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">def</span> <span style="color:#447fcf">xmr_rpc_api</span>(method_name, **params):
+</span></span><span style="display:flex;"><span>    rpc_defaults = {<span style="color:#ed9d13">&#39;jsonrpc&#39;</span>: <span style="color:#ed9d13">&#39;2.0&#39;</span>, <span style="color:#ed9d13">&#39;id&#39;</span>: <span style="color:#ed9d13">&#39;0&#39;</span>}
+</span></span><span style="display:flex;"><span>    <span style="color:#6ab825;font-weight:bold">if</span> <span style="color:#ed9d13">&#39;_in&#39;</span> <span style="color:#6ab825;font-weight:bold">in</span> params:
+</span></span><span style="display:flex;"><span>        params[<span style="color:#ed9d13">&#39;in&#39;</span>] = params.pop(<span style="color:#ed9d13">&#39;_in&#39;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#6ab825;font-weight:bold">return</span> requests.post(XMR_RPC_ENDPOINT, json={**rpc_defaults, <span style="color:#ed9d13">&#39;method&#39;</span>: method_name, <span style="color:#ed9d13">&#39;params&#39;</span>: params}, auth=XMR_RPC_AUTH)
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic">########</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"># called in the payment_method == monero order creation method</span>
+</span></span><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">def</span> <span style="color:#447fcf">finish_order_monero</span>(order):
+</span></span><span style="display:flex;"><span>    <span style="color:#ed9d13">&#34;&#34;&#34; Updates base order for paying with Monero &#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#6ab825;font-weight:bold">assert</span> order[<span style="color:#ed9d13">&#39;payment_method&#39;</span>] == <span style="color:#ed9d13">&#39;monero&#39;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#999;font-style:italic"># Monero orders expire after one hour</span>
+</span></span><span style="display:flex;"><span>    server_num = <span style="color:#24909d">int</span>(os.environ[<span style="color:#ed9d13">&#39;SERVER_NUM&#39;</span>])
+</span></span><span style="display:flex;"><span>    <span style="color:#6ab825;font-weight:bold">try</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#999;font-style:italic"># https://monerodocs.org/interacting/monero-wallet-rpc-reference/#create_address</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#999;font-style:italic"># create a new address for account idx server_num</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#999;font-style:italic"># PITFALL: it is imperative that the wallet file is not replaced, to avoid create_address returning an already used address</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#999;font-style:italic"># if the wallet is ever replaced, before starting the server, either change the account number or create addresses until it matches the address used by the last monero order</span>
+</span></span><span style="display:flex;"><span>        r = xmr_rpc_api(<span style="color:#ed9d13">&#39;create_address&#39;</span>, account_index=server_num, label=<span style="color:#ed9d13">&#39;lenerva-store-payment&#39;</span>).json()
+</span></span><span style="display:flex;"><span>        <span style="color:#6ab825;font-weight:bold">while</span> r.get(<span style="color:#ed9d13">&#39;error&#39;</span>):
+</span></span><span style="display:flex;"><span>            <span style="color:#6ab825;font-weight:bold">if</span> r[<span style="color:#ed9d13">&#39;error&#39;</span>][<span style="color:#ed9d13">&#39;code&#39;</span>] == -<span style="color:#3677a9">14</span>:  <span style="color:#999;font-style:italic"># account index is out of bound (not created yet)</span>
+</span></span><span style="display:flex;"><span>                account_created = <span style="color:#6ab825;font-weight:bold">False</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#6ab825;font-weight:bold">while</span> <span style="color:#6ab825;font-weight:bold">not</span> account_created:
+</span></span><span style="display:flex;"><span>                    r = xmr_rpc_api(<span style="color:#ed9d13">&#39;create_account&#39;</span>, label=<span style="color:#ed9d13">&#39;lenerva-store&#39;</span>).json()
+</span></span><span style="display:flex;"><span>                    account_created = r[<span style="color:#ed9d13">&#39;result&#39;</span>][<span style="color:#ed9d13">&#39;account_index&#39;</span>] == server_num
+</span></span><span style="display:flex;"><span>                r = xmr_rpc_api(<span style="color:#ed9d13">&#39;create_address&#39;</span>, account_index=server_num, label=<span style="color:#ed9d13">&#39;lenerva-store-payment&#39;</span>).json()
+</span></span><span style="display:flex;"><span>        address, address_idx = r[<span style="color:#ed9d13">&#39;result&#39;</span>][<span style="color:#ed9d13">&#39;address&#39;</span>], r[<span style="color:#ed9d13">&#39;result&#39;</span>][<span style="color:#ed9d13">&#39;address_index&#39;</span>]
+</span></span><span style="display:flex;"><span>        total_xmr = usd_to_xmr(order[<span style="color:#ed9d13">&#39;total_usd&#39;</span>])
+</span></span><span style="display:flex;"><span>        order.update({<span style="color:#ed9d13">&#39;xmr_address&#39;</span>: address, <span style="color:#ed9d13">&#39;xmr_address_idx&#39;</span>: address_idx,
+</span></span><span style="display:flex;"><span>                      <span style="color:#ed9d13">&#39;total_xmr&#39;</span>: total_xmr, <span style="color:#ed9d13">&#39;total_xmr_atomic&#39;</span>: total_xmr * <span style="color:#3677a9">1e12</span>})
+</span></span><span style="display:flex;"><span>    <span style="color:#6ab825;font-weight:bold">except</span> <span style="color:#bbb">Exception</span> <span style="color:#6ab825;font-weight:bold">as</span> e:
+</span></span><span style="display:flex;"><span>        <span style="color:#6ab825;font-weight:bold">raise</span> MoneroError(<span style="color:#24909d">repr</span>(e)) <span style="color:#6ab825;font-weight:bold">from</span> <span style="color:#447fcf;text-decoration:underline">e</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"># showing order page to user</span>
+</span></span><span style="display:flex;"><span>xmr_qr_data = <span style="color:#ed9d13">f</span><span style="color:#ed9d13">&#34;monero:</span><span style="color:#ed9d13">{</span>order[<span style="color:#ed9d13">&#39;xmr_address&#39;</span>]<span style="color:#ed9d13">}</span><span style="color:#ed9d13">?tx_amount=</span><span style="color:#ed9d13">{</span>order[<span style="color:#ed9d13">&#39;total_xmr&#39;</span>]<span style="color:#ed9d13">}</span><span style="color:#ed9d13">&#34;</span> \
+</span></span><span style="display:flex;"><span>              <span style="color:#ed9d13">f</span><span style="color:#ed9d13">&#34;&amp;tx_description=Goods%20and%20Services&amp;recipient_name=LENERVA&#34;</span>
+</span></span></code></pre></div><p>Great, so users can now create an order with monero as the payment method. But how do they pay? When the order is created, in contrast to Stripe&rsquo;s Session, you can redirect the user to the order page and show them a QR code of <code>xmr_qr_data</code>. You will need to create the qr code yourself. If you use Python, install pyqrcode and pypng.</p>
 <h2 id="my-processing-code" >My Processing Code
 <span>
     <a href="#my-processing-code">
@@ -386,104 +385,104 @@ xmr_qr_data = <span style="color:#ed9d13">f</span><span style="color:#ed9d13">&#
     </a>
 </span>
 </h2><p>Moving on to processing. This processing function is on a different thread/process. I used multiprocessing in Python to ensure that whenever the backend starts up, this function gets called. Modify to fit your needs. Important things in this function are: double spend protection, &gt; 1 confirmations required, 1 cent tolerance, sums all payments to an address instead of just one. When the order is marked as paid, your order processing task/service can take care of it.</p>
-<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#6ab825;font-weight:bold">def</span> <span style="color:#447fcf">monitor_xmr_payments</span>(run_file: <span style="color:#24909d">str</span>):
-    <span style="color:#ed9d13">&#34;&#34;&#34;
-</span><span style="color:#ed9d13">    Monitor Monero Payments Here
-</span><span style="color:#ed9d13">    Started from on_starting: multiprocessing
-</span><span style="color:#ed9d13">    One Monero Node per Server (Droplet)
-</span><span style="color:#ed9d13">    Unique Account per Server (Droplet)
-</span><span style="color:#ed9d13">    `run_file` implies that the main process is still running
-</span><span style="color:#ed9d13">    &#34;&#34;&#34;</span>
-    <span style="color:#999;font-style:italic"># one hour order expiration</span>
-    XMR_ORDER_TIMEOUT = <span style="color:#24909d">int</span>(os.environ.get(<span style="color:#ed9d13">&#39;XMR_ORDER_TIMEOUT&#39;</span>, <span style="color:#ed9d13">&#39;3600&#39;</span>))
-    XMR_EXTRA_TIME = <span style="color:#24909d">int</span>(os.environ.get(<span style="color:#ed9d13">&#39;XMR_EXTRA_TIME&#39;</span>, <span style="color:#ed9d13">&#39;3600&#39;</span>))
-    ACCOUNT_IDX = <span style="color:#24909d">int</span>(os.environ[<span style="color:#ed9d13">&#39;SERVER_NUM&#39;</span>])
-    <span style="color:#24909d">print</span>(<span style="color:#ed9d13">&#39;XMR Monitoring service started&#39;</span>)
-    update_check_time = <span style="color:#3677a9">0</span>
-    <span style="color:#6ab825;font-weight:bold">while</span> os.path.exists(run_file):
-        time_start = time.monotonic()
-        orders_to_check = Db.orders.find({<span style="color:#ed9d13">&#39;payment_method&#39;</span>: <span style="color:#ed9d13">&#39;monero&#39;</span>, <span style="color:#ed9d13">&#39;payment_confirmed&#39;</span>: <span style="color:#6ab825;font-weight:bold">False</span>,
-                                          <span style="color:#ed9d13">&#39;expired&#39;</span>: <span style="color:#6ab825;font-weight:bold">False</span>, <span style="color:#ed9d13">&#39;server_num&#39;</span>: ACCOUNT_IDX})
-        subaddr_indices = []
-        expired_orders = []  <span style="color:#999;font-style:italic"># ids</span>
-        address_idx_orders = {}  <span style="color:#999;font-style:italic"># payment_addr_idx: order_doc</span>
-        <span style="color:#6ab825;font-weight:bold">for</span> order <span style="color:#6ab825;font-weight:bold">in</span> orders_to_check:
-            addr_idx = order[<span style="color:#ed9d13">&#39;xmr_address_idx&#39;</span>]
-            address_idx_orders[addr_idx] = order
-            subaddr_indices.append(addr_idx)
-            <span style="color:#6ab825;font-weight:bold">if</span> order[<span style="color:#ed9d13">&#39;timestamp&#39;</span>] + XMR_ORDER_TIMEOUT &lt; time.time() <span style="color:#6ab825;font-weight:bold">and</span> order[<span style="color:#ed9d13">&#39;xmr_received&#39;</span>] == <span style="color:#3677a9">0</span>:
-                <span style="color:#999;font-style:italic"># don&#39;t want to expire orders where payments have already started</span>
-                expired_orders.append(order[<span style="color:#ed9d13">&#39;_id&#39;</span>])
-            <span style="color:#6ab825;font-weight:bold">elif</span> order[<span style="color:#ed9d13">&#39;timestamp&#39;</span>] + XMR_ORDER_TIMEOUT + XMR_EXTRA_TIME &lt; time.time():
-                <span style="color:#999;font-style:italic"># expire orders that took too long to complete</span>
-                expired_orders.append(order[<span style="color:#ed9d13">&#39;_id&#39;</span>])
-        <span style="color:#6ab825;font-weight:bold">if</span> expired_orders:
-            Db.orders.update_one({<span style="color:#ed9d13">&#39;_id&#39;</span>: {<span style="color:#ed9d13">&#39;$in&#39;</span>: expired_orders}}, {<span style="color:#ed9d13">&#39;$set&#39;</span>: {<span style="color:#ed9d13">&#39;expired&#39;</span>: <span style="color:#6ab825;font-weight:bold">True</span>}})
-        balances = {}  <span style="color:#999;font-style:italic"># xmr_address_idx: {total_xmr_received ($set), total_confirmed_xmr ($set)}</span>
-        <span style="color:#999;font-style:italic"># check for payments (transfers)</span>
-        <span style="color:#6ab825;font-weight:bold">try</span>:
-            <span style="color:#999;font-style:italic"># https://monerodocs.org/interacting/monero-wallet-rpc-reference/#get_transfers</span>
-            <span style="color:#6ab825;font-weight:bold">if</span> <span style="color:#6ab825;font-weight:bold">not</span> subaddr_indices:
-                <span style="color:#6ab825;font-weight:bold">raise</span> <span style="color:#bbb">StopIteration</span>(<span style="color:#ed9d13">&#39;No addresses to monitor&#39;</span>)
-            r = xmr_rpc_api(<span style="color:#ed9d13">&#39;get_transfers&#39;</span>, _in=<span style="color:#6ab825;font-weight:bold">True</span>, out=<span style="color:#6ab825;font-weight:bold">False</span>, pending=<span style="color:#6ab825;font-weight:bold">True</span>, pool=<span style="color:#6ab825;font-weight:bold">True</span>,
-                            account_index=ACCOUNT_IDX, subaddr_indices=subaddr_indices).json()
-            <span style="color:#6ab825;font-weight:bold">for</span> transfer <span style="color:#6ab825;font-weight:bold">in</span> chain(r[<span style="color:#ed9d13">&#39;result&#39;</span>].get(<span style="color:#ed9d13">&#39;in&#39;</span>, []), r[<span style="color:#ed9d13">&#39;result&#39;</span>].get(<span style="color:#ed9d13">&#39;pending&#39;</span>, [])):
-                addr_idx = transfer[<span style="color:#ed9d13">&#39;subaddr_index&#39;</span>][<span style="color:#ed9d13">&#39;minor&#39;</span>]
-                <span style="color:#6ab825;font-weight:bold">if</span> addr_idx <span style="color:#6ab825;font-weight:bold">not</span> <span style="color:#6ab825;font-weight:bold">in</span> address_idx_orders:
-                    <span style="color:#6ab825;font-weight:bold">continue</span>
-                order = address_idx_orders[addr_idx]
-                <span style="color:#6ab825;font-weight:bold">if</span> addr_idx <span style="color:#6ab825;font-weight:bold">not</span> <span style="color:#6ab825;font-weight:bold">in</span> balances:
-                    balances[addr_idx] = {<span style="color:#ed9d13">&#39;xmr_received&#39;</span>: <span style="color:#3677a9">0</span>, <span style="color:#ed9d13">&#39;xmr_confirmed&#39;</span>: <span style="color:#3677a9">0</span>}
-                balance = balances[addr_idx]
-                <span style="color:#999;font-style:italic"># check timestamp just in case, double_spend_seen just in case,</span>
-                <span style="color:#6ab825;font-weight:bold">if</span> (transfer[<span style="color:#ed9d13">&#39;timestamp&#39;</span>] &gt; order[<span style="color:#ed9d13">&#39;timestamp&#39;</span>] <span style="color:#6ab825;font-weight:bold">and</span> <span style="color:#6ab825;font-weight:bold">not</span> transfer[<span style="color:#ed9d13">&#39;double_spend_seen&#39;</span>]
-                        <span style="color:#6ab825;font-weight:bold">and</span> addr_idx <span style="color:#6ab825;font-weight:bold">in</span> address_idx_orders):
-                    balance[<span style="color:#ed9d13">&#39;xmr_received&#39;</span>] += transfer[<span style="color:#ed9d13">&#39;amount&#39;</span>]
-                    <span style="color:#6ab825;font-weight:bold">if</span> transfer[<span style="color:#ed9d13">&#39;confirmations&#39;</span>] &gt;= transfer[<span style="color:#ed9d13">&#39;suggested_confirmations_threshold&#39;</span>] <span style="color:#6ab825;font-weight:bold">and</span> transfer[<span style="color:#ed9d13">&#39;confirmations&#39;</span>] &gt; transfer.get(<span style="color:#ed9d13">&#39;unlock_time&#39;</span>, <span style="color:#3677a9">0</span>):
-                        balance[<span style="color:#ed9d13">&#39;xmr_confirmed&#39;</span>] += transfer[<span style="color:#ed9d13">&#39;amount&#39;</span>]
-                        <span style="color:#999;font-style:italic"># check if confirmation resulted in order payment being fulfilled</span>
-                        <span style="color:#999;font-style:italic"># tolerate 2 cent buffer due to transaction fee</span>
-                        xmr_buffer = usd_to_xmr(<span style="color:#3677a9">0.02</span>, as_atomic=<span style="color:#6ab825;font-weight:bold">True</span>)
-                        <span style="color:#6ab825;font-weight:bold">if</span> balance[<span style="color:#ed9d13">&#39;xmr_confirmed&#39;</span>] &gt;= order[<span style="color:#ed9d13">&#39;total_xmr_atomic&#39;</span>] - xmr_buffer:
-                            <span style="color:#999;font-style:italic"># payment confirmed, therefore, we can update the database</span>
-                            Db.orders.find_one_and_update({<span style="color:#ed9d13">&#39;_id&#39;</span>: order[<span style="color:#ed9d13">&#39;_id&#39;</span>]}, {<span style="color:#ed9d13">&#39;$set&#39;</span>: {
-                                <span style="color:#ed9d13">&#39;xmr_received&#39;</span>: <span style="color:#24909d">round</span>(balance[<span style="color:#ed9d13">&#39;xmr_received&#39;</span>] / <span style="color:#3677a9">1e12</span>, <span style="color:#3677a9">12</span>),
-                                <span style="color:#ed9d13">&#39;xmr_confirmed&#39;</span>: <span style="color:#24909d">round</span>(balance[<span style="color:#ed9d13">&#39;xmr_confirmed&#39;</span>] / <span style="color:#3677a9">1e12</span>, <span style="color:#3677a9">12</span>),
-                                <span style="color:#ed9d13">&#39;payment_confirmed&#39;</span>: <span style="color:#6ab825;font-weight:bold">True</span>
-                            }})
-                            <span style="color:#999;font-style:italic"># del addr_idx from balances since we don&#39;t need to update this order again</span>
-                            <span style="color:#6ab825;font-weight:bold">del</span> address_idx_orders[addr_idx]
-                            <span style="color:#6ab825;font-weight:bold">del</span> balances[addr_idx]
-                            <span style="color:#999;font-style:italic"># quick exit for fast restarts</span>
-                            <span style="color:#6ab825;font-weight:bold">if</span> <span style="color:#6ab825;font-weight:bold">not</span> os.path.exists(run_file):
-                                <span style="color:#6ab825;font-weight:bold">return</span>
-            <span style="color:#6ab825;font-weight:bold">for</span> addr_idx <span style="color:#6ab825;font-weight:bold">in</span> balances:
-                <span style="color:#999;font-style:italic"># convert from atomic</span>
-                xmr_received = <span style="color:#24909d">round</span>(balances[addr_idx][<span style="color:#ed9d13">&#39;xmr_received&#39;</span>] / <span style="color:#3677a9">1e12</span>, <span style="color:#3677a9">12</span>)
-                xmr_confirmed = <span style="color:#24909d">round</span>(balances[addr_idx][<span style="color:#ed9d13">&#39;xmr_confirmed&#39;</span>] / <span style="color:#3677a9">1e12</span>, <span style="color:#3677a9">12</span>)
-                order = address_idx_orders[addr_idx]
-                <span style="color:#6ab825;font-weight:bold">if</span> xmr_received &gt; order[<span style="color:#ed9d13">&#39;xmr_received&#39;</span>] <span style="color:#6ab825;font-weight:bold">or</span> xmr_confirmed &gt; order[<span style="color:#ed9d13">&#39;xmr_confirmed&#39;</span>]:
-                    <span style="color:#999;font-style:italic"># update xmr_* values for order</span>
-                    xmr_buffer = usd_to_xmr(<span style="color:#3677a9">0.02</span>, as_atomic=<span style="color:#6ab825;font-weight:bold">True</span>)
-                    enough_xmr_sent = xmr_received &gt;= order[<span style="color:#ed9d13">&#39;total_xmr_atomic&#39;</span>] - xmr_buffer
-                    Db.orders.update_one({<span style="color:#ed9d13">&#39;_id&#39;</span>: order[<span style="color:#ed9d13">&#39;_id&#39;</span>]}, {<span style="color:#ed9d13">&#39;$set&#39;</span>: {
-                        <span style="color:#ed9d13">&#39;xmr_received&#39;</span>: xmr_received,
-                        <span style="color:#ed9d13">&#39;xmr_confirmed&#39;</span>: xmr_confirmed,
-                        <span style="color:#ed9d13">&#39;enough_xmr_sent&#39;</span>: enough_xmr_sent,
-                    }})
-        <span style="color:#6ab825;font-weight:bold">except</span> <span style="color:#bbb">StopIteration</span>:
-            <span style="color:#6ab825;font-weight:bold">pass</span>
-        <span style="color:#6ab825;font-weight:bold">except</span> requests.RequestException:
-            <span style="color:#24909d">print</span>(<span style="color:#ed9d13">&#39;XMR RPC Connection Error - wallet is probably still syncing&#39;</span>)
-        <span style="color:#999;font-style:italic"># check for updates, and start update procedure</span>
-        <span style="color:#6ab825;font-weight:bold">if</span> <span style="color:#6ab825;font-weight:bold">not</span> is_dev() <span style="color:#6ab825;font-weight:bold">and</span> update_check_time &lt; time.time():
-            <span style="color:#999;font-style:italic"># check for an update every 10 minutes</span>
-            update_monero_rpc()
-            update_check_time = time.time() + <span style="color:#3677a9">600</span>
-        <span style="color:#999;font-style:italic"># sleep to conserve resources</span>
-        <span style="color:#6ab825;font-weight:bold">if</span> (time_taken := time.monotonic() - time_start) &lt; INTERVAL:
-            time.sleep(INTERVAL - time_taken)
-</code></pre></div><h2 id="logistics" >Logistics
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">def</span> <span style="color:#447fcf">monitor_xmr_payments</span>(run_file: <span style="color:#24909d">str</span>):
+</span></span><span style="display:flex;"><span>    <span style="color:#ed9d13">&#34;&#34;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#ed9d13">    Monitor Monero Payments Here
+</span></span></span><span style="display:flex;"><span><span style="color:#ed9d13">    Started from on_starting: multiprocessing
+</span></span></span><span style="display:flex;"><span><span style="color:#ed9d13">    One Monero Node per Server (Droplet)
+</span></span></span><span style="display:flex;"><span><span style="color:#ed9d13">    Unique Account per Server (Droplet)
+</span></span></span><span style="display:flex;"><span><span style="color:#ed9d13">    `run_file` implies that the main process is still running
+</span></span></span><span style="display:flex;"><span><span style="color:#ed9d13">    &#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#999;font-style:italic"># one hour order expiration</span>
+</span></span><span style="display:flex;"><span>    XMR_ORDER_TIMEOUT = <span style="color:#24909d">int</span>(os.environ.get(<span style="color:#ed9d13">&#39;XMR_ORDER_TIMEOUT&#39;</span>, <span style="color:#ed9d13">&#39;3600&#39;</span>))
+</span></span><span style="display:flex;"><span>    XMR_EXTRA_TIME = <span style="color:#24909d">int</span>(os.environ.get(<span style="color:#ed9d13">&#39;XMR_EXTRA_TIME&#39;</span>, <span style="color:#ed9d13">&#39;3600&#39;</span>))
+</span></span><span style="display:flex;"><span>    ACCOUNT_IDX = <span style="color:#24909d">int</span>(os.environ[<span style="color:#ed9d13">&#39;SERVER_NUM&#39;</span>])
+</span></span><span style="display:flex;"><span>    <span style="color:#24909d">print</span>(<span style="color:#ed9d13">&#39;XMR Monitoring service started&#39;</span>)
+</span></span><span style="display:flex;"><span>    update_check_time = <span style="color:#3677a9">0</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#6ab825;font-weight:bold">while</span> os.path.exists(run_file):
+</span></span><span style="display:flex;"><span>        time_start = time.monotonic()
+</span></span><span style="display:flex;"><span>        orders_to_check = Db.orders.find({<span style="color:#ed9d13">&#39;payment_method&#39;</span>: <span style="color:#ed9d13">&#39;monero&#39;</span>, <span style="color:#ed9d13">&#39;payment_confirmed&#39;</span>: <span style="color:#6ab825;font-weight:bold">False</span>,
+</span></span><span style="display:flex;"><span>                                          <span style="color:#ed9d13">&#39;expired&#39;</span>: <span style="color:#6ab825;font-weight:bold">False</span>, <span style="color:#ed9d13">&#39;server_num&#39;</span>: ACCOUNT_IDX})
+</span></span><span style="display:flex;"><span>        subaddr_indices = []
+</span></span><span style="display:flex;"><span>        expired_orders = []  <span style="color:#999;font-style:italic"># ids</span>
+</span></span><span style="display:flex;"><span>        address_idx_orders = {}  <span style="color:#999;font-style:italic"># payment_addr_idx: order_doc</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#6ab825;font-weight:bold">for</span> order <span style="color:#6ab825;font-weight:bold">in</span> orders_to_check:
+</span></span><span style="display:flex;"><span>            addr_idx = order[<span style="color:#ed9d13">&#39;xmr_address_idx&#39;</span>]
+</span></span><span style="display:flex;"><span>            address_idx_orders[addr_idx] = order
+</span></span><span style="display:flex;"><span>            subaddr_indices.append(addr_idx)
+</span></span><span style="display:flex;"><span>            <span style="color:#6ab825;font-weight:bold">if</span> order[<span style="color:#ed9d13">&#39;timestamp&#39;</span>] + XMR_ORDER_TIMEOUT &lt; time.time() <span style="color:#6ab825;font-weight:bold">and</span> order[<span style="color:#ed9d13">&#39;xmr_received&#39;</span>] == <span style="color:#3677a9">0</span>:
+</span></span><span style="display:flex;"><span>                <span style="color:#999;font-style:italic"># don&#39;t want to expire orders where payments have already started</span>
+</span></span><span style="display:flex;"><span>                expired_orders.append(order[<span style="color:#ed9d13">&#39;_id&#39;</span>])
+</span></span><span style="display:flex;"><span>            <span style="color:#6ab825;font-weight:bold">elif</span> order[<span style="color:#ed9d13">&#39;timestamp&#39;</span>] + XMR_ORDER_TIMEOUT + XMR_EXTRA_TIME &lt; time.time():
+</span></span><span style="display:flex;"><span>                <span style="color:#999;font-style:italic"># expire orders that took too long to complete</span>
+</span></span><span style="display:flex;"><span>                expired_orders.append(order[<span style="color:#ed9d13">&#39;_id&#39;</span>])
+</span></span><span style="display:flex;"><span>        <span style="color:#6ab825;font-weight:bold">if</span> expired_orders:
+</span></span><span style="display:flex;"><span>            Db.orders.update_one({<span style="color:#ed9d13">&#39;_id&#39;</span>: {<span style="color:#ed9d13">&#39;$in&#39;</span>: expired_orders}}, {<span style="color:#ed9d13">&#39;$set&#39;</span>: {<span style="color:#ed9d13">&#39;expired&#39;</span>: <span style="color:#6ab825;font-weight:bold">True</span>}})
+</span></span><span style="display:flex;"><span>        balances = {}  <span style="color:#999;font-style:italic"># xmr_address_idx: {total_xmr_received ($set), total_confirmed_xmr ($set)}</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#999;font-style:italic"># check for payments (transfers)</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#6ab825;font-weight:bold">try</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#999;font-style:italic"># https://monerodocs.org/interacting/monero-wallet-rpc-reference/#get_transfers</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#6ab825;font-weight:bold">if</span> <span style="color:#6ab825;font-weight:bold">not</span> subaddr_indices:
+</span></span><span style="display:flex;"><span>                <span style="color:#6ab825;font-weight:bold">raise</span> <span style="color:#bbb">StopIteration</span>(<span style="color:#ed9d13">&#39;No addresses to monitor&#39;</span>)
+</span></span><span style="display:flex;"><span>            r = xmr_rpc_api(<span style="color:#ed9d13">&#39;get_transfers&#39;</span>, _in=<span style="color:#6ab825;font-weight:bold">True</span>, out=<span style="color:#6ab825;font-weight:bold">False</span>, pending=<span style="color:#6ab825;font-weight:bold">True</span>, pool=<span style="color:#6ab825;font-weight:bold">True</span>,
+</span></span><span style="display:flex;"><span>                            account_index=ACCOUNT_IDX, subaddr_indices=subaddr_indices).json()
+</span></span><span style="display:flex;"><span>            <span style="color:#6ab825;font-weight:bold">for</span> transfer <span style="color:#6ab825;font-weight:bold">in</span> chain(r[<span style="color:#ed9d13">&#39;result&#39;</span>].get(<span style="color:#ed9d13">&#39;in&#39;</span>, []), r[<span style="color:#ed9d13">&#39;result&#39;</span>].get(<span style="color:#ed9d13">&#39;pending&#39;</span>, [])):
+</span></span><span style="display:flex;"><span>                addr_idx = transfer[<span style="color:#ed9d13">&#39;subaddr_index&#39;</span>][<span style="color:#ed9d13">&#39;minor&#39;</span>]
+</span></span><span style="display:flex;"><span>                <span style="color:#6ab825;font-weight:bold">if</span> addr_idx <span style="color:#6ab825;font-weight:bold">not</span> <span style="color:#6ab825;font-weight:bold">in</span> address_idx_orders:
+</span></span><span style="display:flex;"><span>                    <span style="color:#6ab825;font-weight:bold">continue</span>
+</span></span><span style="display:flex;"><span>                order = address_idx_orders[addr_idx]
+</span></span><span style="display:flex;"><span>                <span style="color:#6ab825;font-weight:bold">if</span> addr_idx <span style="color:#6ab825;font-weight:bold">not</span> <span style="color:#6ab825;font-weight:bold">in</span> balances:
+</span></span><span style="display:flex;"><span>                    balances[addr_idx] = {<span style="color:#ed9d13">&#39;xmr_received&#39;</span>: <span style="color:#3677a9">0</span>, <span style="color:#ed9d13">&#39;xmr_confirmed&#39;</span>: <span style="color:#3677a9">0</span>}
+</span></span><span style="display:flex;"><span>                balance = balances[addr_idx]
+</span></span><span style="display:flex;"><span>                <span style="color:#999;font-style:italic"># check timestamp just in case, double_spend_seen just in case,</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#6ab825;font-weight:bold">if</span> (transfer[<span style="color:#ed9d13">&#39;timestamp&#39;</span>] &gt; order[<span style="color:#ed9d13">&#39;timestamp&#39;</span>] <span style="color:#6ab825;font-weight:bold">and</span> <span style="color:#6ab825;font-weight:bold">not</span> transfer[<span style="color:#ed9d13">&#39;double_spend_seen&#39;</span>]
+</span></span><span style="display:flex;"><span>                        <span style="color:#6ab825;font-weight:bold">and</span> addr_idx <span style="color:#6ab825;font-weight:bold">in</span> address_idx_orders):
+</span></span><span style="display:flex;"><span>                    balance[<span style="color:#ed9d13">&#39;xmr_received&#39;</span>] += transfer[<span style="color:#ed9d13">&#39;amount&#39;</span>]
+</span></span><span style="display:flex;"><span>                    <span style="color:#6ab825;font-weight:bold">if</span> transfer[<span style="color:#ed9d13">&#39;confirmations&#39;</span>] &gt;= transfer[<span style="color:#ed9d13">&#39;suggested_confirmations_threshold&#39;</span>] <span style="color:#6ab825;font-weight:bold">and</span> transfer[<span style="color:#ed9d13">&#39;confirmations&#39;</span>] &gt; transfer.get(<span style="color:#ed9d13">&#39;unlock_time&#39;</span>, <span style="color:#3677a9">0</span>):
+</span></span><span style="display:flex;"><span>                        balance[<span style="color:#ed9d13">&#39;xmr_confirmed&#39;</span>] += transfer[<span style="color:#ed9d13">&#39;amount&#39;</span>]
+</span></span><span style="display:flex;"><span>                        <span style="color:#999;font-style:italic"># check if confirmation resulted in order payment being fulfilled</span>
+</span></span><span style="display:flex;"><span>                        <span style="color:#999;font-style:italic"># tolerate 2 cent buffer due to transaction fee</span>
+</span></span><span style="display:flex;"><span>                        xmr_buffer = usd_to_xmr(<span style="color:#3677a9">0.02</span>, as_atomic=<span style="color:#6ab825;font-weight:bold">True</span>)
+</span></span><span style="display:flex;"><span>                        <span style="color:#6ab825;font-weight:bold">if</span> balance[<span style="color:#ed9d13">&#39;xmr_confirmed&#39;</span>] &gt;= order[<span style="color:#ed9d13">&#39;total_xmr_atomic&#39;</span>] - xmr_buffer:
+</span></span><span style="display:flex;"><span>                            <span style="color:#999;font-style:italic"># payment confirmed, therefore, we can update the database</span>
+</span></span><span style="display:flex;"><span>                            Db.orders.find_one_and_update({<span style="color:#ed9d13">&#39;_id&#39;</span>: order[<span style="color:#ed9d13">&#39;_id&#39;</span>]}, {<span style="color:#ed9d13">&#39;$set&#39;</span>: {
+</span></span><span style="display:flex;"><span>                                <span style="color:#ed9d13">&#39;xmr_received&#39;</span>: <span style="color:#24909d">round</span>(balance[<span style="color:#ed9d13">&#39;xmr_received&#39;</span>] / <span style="color:#3677a9">1e12</span>, <span style="color:#3677a9">12</span>),
+</span></span><span style="display:flex;"><span>                                <span style="color:#ed9d13">&#39;xmr_confirmed&#39;</span>: <span style="color:#24909d">round</span>(balance[<span style="color:#ed9d13">&#39;xmr_confirmed&#39;</span>] / <span style="color:#3677a9">1e12</span>, <span style="color:#3677a9">12</span>),
+</span></span><span style="display:flex;"><span>                                <span style="color:#ed9d13">&#39;payment_confirmed&#39;</span>: <span style="color:#6ab825;font-weight:bold">True</span>
+</span></span><span style="display:flex;"><span>                            }})
+</span></span><span style="display:flex;"><span>                            <span style="color:#999;font-style:italic"># del addr_idx from balances since we don&#39;t need to update this order again</span>
+</span></span><span style="display:flex;"><span>                            <span style="color:#6ab825;font-weight:bold">del</span> address_idx_orders[addr_idx]
+</span></span><span style="display:flex;"><span>                            <span style="color:#6ab825;font-weight:bold">del</span> balances[addr_idx]
+</span></span><span style="display:flex;"><span>                            <span style="color:#999;font-style:italic"># quick exit for fast restarts</span>
+</span></span><span style="display:flex;"><span>                            <span style="color:#6ab825;font-weight:bold">if</span> <span style="color:#6ab825;font-weight:bold">not</span> os.path.exists(run_file):
+</span></span><span style="display:flex;"><span>                                <span style="color:#6ab825;font-weight:bold">return</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#6ab825;font-weight:bold">for</span> addr_idx <span style="color:#6ab825;font-weight:bold">in</span> balances:
+</span></span><span style="display:flex;"><span>                <span style="color:#999;font-style:italic"># convert from atomic</span>
+</span></span><span style="display:flex;"><span>                xmr_received = <span style="color:#24909d">round</span>(balances[addr_idx][<span style="color:#ed9d13">&#39;xmr_received&#39;</span>] / <span style="color:#3677a9">1e12</span>, <span style="color:#3677a9">12</span>)
+</span></span><span style="display:flex;"><span>                xmr_confirmed = <span style="color:#24909d">round</span>(balances[addr_idx][<span style="color:#ed9d13">&#39;xmr_confirmed&#39;</span>] / <span style="color:#3677a9">1e12</span>, <span style="color:#3677a9">12</span>)
+</span></span><span style="display:flex;"><span>                order = address_idx_orders[addr_idx]
+</span></span><span style="display:flex;"><span>                <span style="color:#6ab825;font-weight:bold">if</span> xmr_received &gt; order[<span style="color:#ed9d13">&#39;xmr_received&#39;</span>] <span style="color:#6ab825;font-weight:bold">or</span> xmr_confirmed &gt; order[<span style="color:#ed9d13">&#39;xmr_confirmed&#39;</span>]:
+</span></span><span style="display:flex;"><span>                    <span style="color:#999;font-style:italic"># update xmr_* values for order</span>
+</span></span><span style="display:flex;"><span>                    xmr_buffer = usd_to_xmr(<span style="color:#3677a9">0.02</span>, as_atomic=<span style="color:#6ab825;font-weight:bold">True</span>)
+</span></span><span style="display:flex;"><span>                    enough_xmr_sent = xmr_received &gt;= order[<span style="color:#ed9d13">&#39;total_xmr_atomic&#39;</span>] - xmr_buffer
+</span></span><span style="display:flex;"><span>                    Db.orders.update_one({<span style="color:#ed9d13">&#39;_id&#39;</span>: order[<span style="color:#ed9d13">&#39;_id&#39;</span>]}, {<span style="color:#ed9d13">&#39;$set&#39;</span>: {
+</span></span><span style="display:flex;"><span>                        <span style="color:#ed9d13">&#39;xmr_received&#39;</span>: xmr_received,
+</span></span><span style="display:flex;"><span>                        <span style="color:#ed9d13">&#39;xmr_confirmed&#39;</span>: xmr_confirmed,
+</span></span><span style="display:flex;"><span>                        <span style="color:#ed9d13">&#39;enough_xmr_sent&#39;</span>: enough_xmr_sent,
+</span></span><span style="display:flex;"><span>                    }})
+</span></span><span style="display:flex;"><span>        <span style="color:#6ab825;font-weight:bold">except</span> <span style="color:#bbb">StopIteration</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#6ab825;font-weight:bold">pass</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#6ab825;font-weight:bold">except</span> requests.RequestException:
+</span></span><span style="display:flex;"><span>            <span style="color:#24909d">print</span>(<span style="color:#ed9d13">&#39;XMR RPC Connection Error - wallet is probably still syncing&#39;</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#999;font-style:italic"># check for updates, and start update procedure</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#6ab825;font-weight:bold">if</span> <span style="color:#6ab825;font-weight:bold">not</span> is_dev() <span style="color:#6ab825;font-weight:bold">and</span> update_check_time &lt; time.time():
+</span></span><span style="display:flex;"><span>            <span style="color:#999;font-style:italic"># check for an update every 10 minutes</span>
+</span></span><span style="display:flex;"><span>            update_monero_rpc()
+</span></span><span style="display:flex;"><span>            update_check_time = time.time() + <span style="color:#3677a9">600</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#999;font-style:italic"># sleep to conserve resources</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#6ab825;font-weight:bold">if</span> (time_taken := time.monotonic() - time_start) &lt; INTERVAL:
+</span></span><span style="display:flex;"><span>            time.sleep(INTERVAL - time_taken)
+</span></span></code></pre></div><h2 id="logistics" >Logistics
 <span>
     <a href="#logistics">
         <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
@@ -510,57 +509,57 @@ or a public one. I use my own to ensure uptime</li>
 </h3><p>To install monero on a Linux server, you can use my bash script.
 <code>install_monero()</code> can also be called if you need to update monero on a
 server, like a remote node.</p>
-<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">add_to_path() {
-  <span style="color:#999;font-style:italic"># if .env_path DNE or the parser has not been added to ~/.bashrc,</span>
-  <span style="color:#6ab825;font-weight:bold">if</span> [ ! -f ~/.env_path ] &amp;&amp; ! grep -Fq <span style="color:#ed9d13">&#34;.env_path&#34;</span> ~/.bashrc; <span style="color:#6ab825;font-weight:bold">then</span>
-    <span style="color:#999;font-style:italic"># shellcheck disable=SC2129</span>
-    <span style="color:#24909d">echo</span> <span style="color:#ed9d13">&#34;if [ -f ~/.env_path ]; then&#34;</span> &gt;&gt; ~/.bashrc
-    <span style="color:#999;font-style:italic"># shellcheck disable=SC2140</span>
-    <span style="color:#24909d">echo</span> <span style="color:#ed9d13">&#34;    export PATH=\$PATH:\$(python3 -c &#34;</span><span style="color:#ed9d13">\&#34;</span><span style="color:#ed9d13">&#34;import os; from pathlib import Path; print(&#39;:&#39;.join((line.strip() for line in open(f&#39;{Path.home()}/.env_path&#39;).readlines() if line.strip())))&#34;</span><span style="color:#ed9d13">\&#34;</span><span style="color:#ed9d13">&#34;)&#34;</span> &gt;&gt; ~/.bashrc
-    <span style="color:#24909d">echo</span> <span style="color:#ed9d13">&#34;fi&#34;</span> &gt;&gt; ~/.bashrc
-  <span style="color:#6ab825;font-weight:bold">fi</span>
-  <span style="color:#999;font-style:italic"># add directories to path</span>
-  <span style="color:#6ab825;font-weight:bold">for</span> path in <span style="color:#ed9d13">&#34;</span><span style="color:#40ffff">$@</span><span style="color:#ed9d13">&#34;</span>; <span style="color:#6ab825;font-weight:bold">do</span>
-    <span style="color:#6ab825;font-weight:bold">if</span> [ ! -f ~/.env_path ]  || ! grep -Fq <span style="color:#ed9d13">&#34;</span><span style="color:#40ffff">$path</span><span style="color:#ed9d13">&#34;</span> ~/.env_path; <span style="color:#6ab825;font-weight:bold">then</span>
-      <span style="color:#999;font-style:italic"># .env_path DNE or string not in .env_path</span>
-      <span style="color:#24909d">echo</span> <span style="color:#ed9d13">&#34;</span><span style="color:#40ffff">$path</span><span style="color:#ed9d13">&#34;</span> &gt;&gt; ~/.env_path
-      <span style="color:#24909d">echo</span> <span style="color:#ed9d13">&#34;Added </span><span style="color:#40ffff">$path</span><span style="color:#ed9d13"> to PATH&#34;</span>
-    <span style="color:#6ab825;font-weight:bold">fi</span>
-  <span style="color:#6ab825;font-weight:bold">done</span>
-  <span style="color:#24909d">source</span> ~/.bashrc
-}
-
-<span style="color:#999;font-style:italic"># shellcheck disable=SC2120,SC2164</span>
-install_monero() {
-  <span style="color:#999;font-style:italic"># Install Monero (download and extract to ~/bin/monero)</span>
-  <span style="color:#6ab825;font-weight:bold">if</span> [ ! -f ~/bin/monero/monerod ] || [ ! <span style="color:#40ffff">$1</span> = <span style="color:#ed9d13">&#34;--force&#34;</span> ]; <span style="color:#6ab825;font-weight:bold">then</span>
-    mkdir -p ~/Downloads &amp;&amp; <span style="color:#24909d">cd</span> ~/Downloads
-    <span style="color:#24909d">echo</span> <span style="color:#ed9d13">&#34;Downloading and extracting Monero binaries&#34;</span>
-    curl -L https://downloads.getmonero.org/cli/linux64 | tar xj
-    rm -r -f ~/bin/monero &amp;&amp; mkdir -p ~/bin
-    mv monero-*-linux-* monero
-    mv monero ~/bin
-    <span style="color:#24909d">echo</span> <span style="color:#ed9d13">&#34;Downloaded Monero binaries to&#34;</span> ~/bin
-  <span style="color:#6ab825;font-weight:bold">else</span>
-    <span style="color:#24909d">echo</span> <span style="color:#ed9d13">&#34;INFO: Monero binaries already installed&#34;</span>
-  <span style="color:#6ab825;font-weight:bold">fi</span>
-  add_to_path ~/bin/monero
-  <span style="color:#24909d">source</span> ~/.bashrc
-}
-</code></pre></div><p>To ensure the RPC-wallet is running, you can add a &ldquo;start if not already running&rdquo; function to your backend. I&rsquo;ll share the code I use myself in the future, but these are the arguments for running your RPC. For development, ask the user to enter the wallet password since that wallet would most likely be spendable.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>add_to_path() {
+</span></span><span style="display:flex;"><span>  <span style="color:#999;font-style:italic"># if .env_path DNE or the parser has not been added to ~/.bashrc,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#6ab825;font-weight:bold">if</span> [ ! -f ~/.env_path ] &amp;&amp; ! grep -Fq <span style="color:#ed9d13">&#34;.env_path&#34;</span> ~/.bashrc; <span style="color:#6ab825;font-weight:bold">then</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#999;font-style:italic"># shellcheck disable=SC2129</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#24909d">echo</span> <span style="color:#ed9d13">&#34;if [ -f ~/.env_path ]; then&#34;</span> &gt;&gt; ~/.bashrc
+</span></span><span style="display:flex;"><span>    <span style="color:#999;font-style:italic"># shellcheck disable=SC2140</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#24909d">echo</span> <span style="color:#ed9d13">&#34;    export PATH=\$PATH:\$(python3 -c &#34;</span><span style="color:#ed9d13">\&#34;</span><span style="color:#ed9d13">&#34;import os; from pathlib import Path; print(&#39;:&#39;.join((line.strip() for line in open(f&#39;{Path.home()}/.env_path&#39;).readlines() if line.strip())))&#34;</span><span style="color:#ed9d13">\&#34;</span><span style="color:#ed9d13">&#34;)&#34;</span> &gt;&gt; ~/.bashrc
+</span></span><span style="display:flex;"><span>    <span style="color:#24909d">echo</span> <span style="color:#ed9d13">&#34;fi&#34;</span> &gt;&gt; ~/.bashrc
+</span></span><span style="display:flex;"><span>  <span style="color:#6ab825;font-weight:bold">fi</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#999;font-style:italic"># add directories to path</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#6ab825;font-weight:bold">for</span> path in <span style="color:#ed9d13">&#34;</span><span style="color:#40ffff">$@</span><span style="color:#ed9d13">&#34;</span>; <span style="color:#6ab825;font-weight:bold">do</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#6ab825;font-weight:bold">if</span> [ ! -f ~/.env_path ]  || ! grep -Fq <span style="color:#ed9d13">&#34;</span><span style="color:#40ffff">$path</span><span style="color:#ed9d13">&#34;</span> ~/.env_path; <span style="color:#6ab825;font-weight:bold">then</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#999;font-style:italic"># .env_path DNE or string not in .env_path</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#24909d">echo</span> <span style="color:#ed9d13">&#34;</span><span style="color:#40ffff">$path</span><span style="color:#ed9d13">&#34;</span> &gt;&gt; ~/.env_path
+</span></span><span style="display:flex;"><span>      <span style="color:#24909d">echo</span> <span style="color:#ed9d13">&#34;Added </span><span style="color:#40ffff">$path</span><span style="color:#ed9d13"> to PATH&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#6ab825;font-weight:bold">fi</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#6ab825;font-weight:bold">done</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#24909d">source</span> ~/.bashrc
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"># shellcheck disable=SC2120,SC2164</span>
+</span></span><span style="display:flex;"><span>install_monero() {
+</span></span><span style="display:flex;"><span>  <span style="color:#999;font-style:italic"># Install Monero (download and extract to ~/bin/monero)</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#6ab825;font-weight:bold">if</span> [ ! -f ~/bin/monero/monerod ] || [ ! <span style="color:#40ffff">$1</span> = <span style="color:#ed9d13">&#34;--force&#34;</span> ]; <span style="color:#6ab825;font-weight:bold">then</span>
+</span></span><span style="display:flex;"><span>    mkdir -p ~/Downloads &amp;&amp; <span style="color:#24909d">cd</span> ~/Downloads
+</span></span><span style="display:flex;"><span>    <span style="color:#24909d">echo</span> <span style="color:#ed9d13">&#34;Downloading and extracting Monero binaries&#34;</span>
+</span></span><span style="display:flex;"><span>    curl -L https://downloads.getmonero.org/cli/linux64 | tar xj
+</span></span><span style="display:flex;"><span>    rm -r -f ~/bin/monero &amp;&amp; mkdir -p ~/bin
+</span></span><span style="display:flex;"><span>    mv monero-*-linux-* monero
+</span></span><span style="display:flex;"><span>    mv monero ~/bin
+</span></span><span style="display:flex;"><span>    <span style="color:#24909d">echo</span> <span style="color:#ed9d13">&#34;Downloaded Monero binaries to&#34;</span> ~/bin
+</span></span><span style="display:flex;"><span>  <span style="color:#6ab825;font-weight:bold">else</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#24909d">echo</span> <span style="color:#ed9d13">&#34;INFO: Monero binaries already installed&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#6ab825;font-weight:bold">fi</span>
+</span></span><span style="display:flex;"><span>  add_to_path ~/bin/monero
+</span></span><span style="display:flex;"><span>  <span style="color:#24909d">source</span> ~/.bashrc
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>To ensure the RPC-wallet is running, you can add a &ldquo;start if not already running&rdquo; function to your backend. I&rsquo;ll share the code I use myself in the future, but these are the arguments for running your RPC. For development, ask the user to enter the wallet password since that wallet would most likely be spendable.</p>
 <p>Create a file <code>configs/monero-rpc.common.conf</code> to contain the base configuaration of the RPC. Other parameters are based upon whether we are running the website in devevelopment or production.</p>
 <pre tabindex="0"><code class="language-conf" data-lang="conf">non-interactive=1
-log-file=&quot;monero-wallet-rpc.log&quot;
+log-file=&#34;monero-wallet-rpc.log&#34;
 max-log-file-size=5000000
 max-log-files=2
 log-level=0
-</code></pre><div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py">monero_rpc_cmd = [<span style="color:#24909d">str</span>(monero_rpc), <span style="color:#ed9d13">&#39;--config-file&#39;</span>, <span style="color:#ed9d13">&#39;other_files/monero-rpc.common.conf&#39;</span>,
-                      <span style="color:#ed9d13">&#39;--rpc-login&#39;</span>, <span style="color:#ed9d13">&#39;monero:&#39;</span> + os.environ[<span style="color:#ed9d13">&#39;XMR_RPC_PW&#39;</span>],
-                      <span style="color:#ed9d13">&#39;--trusted-daemon&#39;</span> <span style="color:#6ab825;font-weight:bold">if</span> TRUSTED_DAEMON <span style="color:#6ab825;font-weight:bold">else</span> <span style="color:#ed9d13">&#39;--untrusted-daemon&#39;</span>,
-                      <span style="color:#ed9d13">&#39;--rpc-bind-port&#39;</span>, XMR_RPC_PORT, <span style="color:#ed9d13">&#39;--wallet-file&#39;</span>, wallet_file, <span style="color:#ed9d13">&#39;--password&#39;</span>]
-<span style="color:#999;font-style:italic"># production only: (requires XMR_WALLET_PW set in .env or system environemnt variable)</span>
-monero_rpc_cmd.extend((os.environ[<span style="color:#ed9d13">&#39;XMR_WALLET_PW&#39;</span>], <span style="color:#ed9d13">&#39;--daemon-address&#39;</span>, MAINNET_DAEMON))
-</code></pre></div><h2 id="limitations" >Limitations
+</code></pre><div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span>monero_rpc_cmd = [<span style="color:#24909d">str</span>(monero_rpc), <span style="color:#ed9d13">&#39;--config-file&#39;</span>, <span style="color:#ed9d13">&#39;other_files/monero-rpc.common.conf&#39;</span>,
+</span></span><span style="display:flex;"><span>                      <span style="color:#ed9d13">&#39;--rpc-login&#39;</span>, <span style="color:#ed9d13">&#39;monero:&#39;</span> + os.environ[<span style="color:#ed9d13">&#39;XMR_RPC_PW&#39;</span>],
+</span></span><span style="display:flex;"><span>                      <span style="color:#ed9d13">&#39;--trusted-daemon&#39;</span> <span style="color:#6ab825;font-weight:bold">if</span> TRUSTED_DAEMON <span style="color:#6ab825;font-weight:bold">else</span> <span style="color:#ed9d13">&#39;--untrusted-daemon&#39;</span>,
+</span></span><span style="display:flex;"><span>                      <span style="color:#ed9d13">&#39;--rpc-bind-port&#39;</span>, XMR_RPC_PORT, <span style="color:#ed9d13">&#39;--wallet-file&#39;</span>, wallet_file, <span style="color:#ed9d13">&#39;--password&#39;</span>]
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"># production only: (requires XMR_WALLET_PW set in .env or system environemnt variable)</span>
+</span></span><span style="display:flex;"><span>monero_rpc_cmd.extend((os.environ[<span style="color:#ed9d13">&#39;XMR_WALLET_PW&#39;</span>], <span style="color:#ed9d13">&#39;--daemon-address&#39;</span>, MAINNET_DAEMON))
+</span></span></code></pre></div><h2 id="limitations" >Limitations
 <span>
     <a href="#limitations">
         <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
