@@ -119,12 +119,12 @@ In the next section, we&amp;rsquo;ll be integrating &lt;code&gt;vcpkg&lt;/code&g
 &lt;ul&gt;
 &lt;li&gt;In &lt;code&gt;CMakeLists.txt&lt;/code&gt;, add the following helper target &amp;ldquo;run&amp;rdquo;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-cmake&#34; data-lang=&#34;cmake&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#24909d&#34;&gt;add_custom_target&lt;/span&gt;(&lt;span style=&#34;color:#ed9d13&#34;&gt;run&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#ed9d13&#34;&gt;COMMAND&lt;/span&gt; ${&lt;span style=&#34;color:#40ffff&#34;&gt;PROJECT_NAME&lt;/span&gt;}
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#ed9d13&#34;&gt;DEPENDS&lt;/span&gt; ${&lt;span style=&#34;color:#40ffff&#34;&gt;PROJECT_NAME&lt;/span&gt;}
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#ed9d13&#34;&gt;WORKING_DIRECTORY&lt;/span&gt; ${&lt;span style=&#34;color:#40ffff&#34;&gt;CMAKE_PROJECT_DIR&lt;/span&gt;}
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  )&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cmake&#34; data-lang=&#34;cmake&#34;&gt;  &lt;span style=&#34;color:#24909d&#34;&gt;add_custom_target&lt;/span&gt;(&lt;span style=&#34;color:#ed9d13&#34;&gt;run&lt;/span&gt;
+      &lt;span style=&#34;color:#ed9d13&#34;&gt;COMMAND&lt;/span&gt; ${&lt;span style=&#34;color:#40ffff&#34;&gt;PROJECT_NAME&lt;/span&gt;}
+      &lt;span style=&#34;color:#ed9d13&#34;&gt;DEPENDS&lt;/span&gt; ${&lt;span style=&#34;color:#40ffff&#34;&gt;PROJECT_NAME&lt;/span&gt;}
+      &lt;span style=&#34;color:#ed9d13&#34;&gt;WORKING_DIRECTORY&lt;/span&gt; ${&lt;span style=&#34;color:#40ffff&#34;&gt;CMAKE_PROJECT_DIR&lt;/span&gt;}
+  )&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;
@@ -135,10 +135,10 @@ In the next section, we&amp;rsquo;ll be integrating &lt;code&gt;vcpkg&lt;/code&g
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Visual Studio Code: Add the following to your &lt;code&gt;settings.json&lt;/code&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;cmake.configureSettings&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;:&lt;/span&gt; {
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;&amp;#34;CMAKE_TOOLCHAIN_FILE&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;...vcpkg.cmake&amp;#34;&lt;/span&gt;,
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;cmake.configureSettings&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;:&lt;/span&gt; {
+    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;&amp;#34;CMAKE_TOOLCHAIN_FILE&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;...vcpkg.cmake&amp;#34;&lt;/span&gt;,
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;If using &lt;code&gt;cmake&lt;/code&gt; from the command line, add &lt;code&gt;-DCMAKE_TOOLCHAIN_FILE=C:/Users/maste/Documents/GitHub/vcpkg/scripts/buildsystems/vcpkg.cmake&lt;/code&gt;&lt;/p&gt;
 &lt;/li&gt;
@@ -149,9 +149,9 @@ In the next section, we&amp;rsquo;ll be integrating &lt;code&gt;vcpkg&lt;/code&g
 &lt;ul&gt;
 &lt;li&gt;Create &lt;code&gt;vcpkg_rf.txt&lt;/code&gt; in the root directory with the contents:&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;install
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cpr
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;install
+cpr
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Install dependencies using &lt;code&gt;vcpkg &amp;quot;@vcpkg_rf.txt&amp;quot; [optional arguments]&lt;/code&gt;&lt;/p&gt;
 &lt;/li&gt;
@@ -160,29 +160,29 @@ In the next section, we&amp;rsquo;ll be integrating &lt;code&gt;vcpkg&lt;/code&g
 &lt;ul&gt;
 &lt;li&gt;For &lt;code&gt;cpr&lt;/code&gt;, that would be&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-cmake&#34; data-lang=&#34;cmake&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#24909d&#34;&gt;find_package&lt;/span&gt;(&lt;span style=&#34;color:#ed9d13&#34;&gt;cpr&lt;/span&gt; &lt;span style=&#34;color:#ed9d13&#34;&gt;CONFIG&lt;/span&gt; &lt;span style=&#34;color:#ed9d13&#34;&gt;REQUIRED&lt;/span&gt;)&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&lt;/span&gt; &lt;span style=&#34;color:#24909d&#34;&gt;target_link_libraries&lt;/span&gt;(&lt;span style=&#34;color:#ed9d13&#34;&gt;PROJECT_NAME&lt;/span&gt; &lt;span style=&#34;color:#ed9d13&#34;&gt;PRIVATE&lt;/span&gt; &lt;span style=&#34;color:#ed9d13&#34;&gt;cpr::cpr&lt;/span&gt;)&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cmake&#34; data-lang=&#34;cmake&#34;&gt; &lt;span style=&#34;color:#24909d&#34;&gt;find_package&lt;/span&gt;(&lt;span style=&#34;color:#ed9d13&#34;&gt;cpr&lt;/span&gt; &lt;span style=&#34;color:#ed9d13&#34;&gt;CONFIG&lt;/span&gt; &lt;span style=&#34;color:#ed9d13&#34;&gt;REQUIRED&lt;/span&gt;)&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&lt;/span&gt; &lt;span style=&#34;color:#24909d&#34;&gt;target_link_libraries&lt;/span&gt;(&lt;span style=&#34;color:#ed9d13&#34;&gt;PROJECT_NAME&lt;/span&gt; &lt;span style=&#34;color:#ed9d13&#34;&gt;PRIVATE&lt;/span&gt; &lt;span style=&#34;color:#ed9d13&#34;&gt;cpr::cpr&lt;/span&gt;)&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
 &lt;li&gt;For more than one library, you only need one &lt;code&gt;target_link_libraries&lt;/code&gt; rather than one for each additional library&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Now let&amp;rsquo;s code. In the main C++ file, type the following:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#cd2828;font-weight:bold&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#cd2828;font-weight:bold&#34;&gt;&amp;lt;cpr/cpr.h&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#cd2828;font-weight:bold&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#cd2828;font-weight:bold&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#cd2828;font-weight:bold&#34;&gt;&amp;lt;iostream&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#cd2828;font-weight:bold&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#cd2828;font-weight:bold&#34;&gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;int&lt;/span&gt; &lt;span style=&#34;color:#447fcf&#34;&gt;main&lt;/span&gt;()
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;{
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    cpr::Response r = cpr::Get(cpr::Url{ &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;https://api.github.com/repos/whoshuu/cpr/contributors&amp;#34;&lt;/span&gt; },
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        cpr::Authentication{ &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;user&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;pass&amp;#34;&lt;/span&gt; },
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        cpr::Parameters{ {&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;anon&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;true&amp;#34;&lt;/span&gt;}, {&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;key&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;value&amp;#34;&lt;/span&gt;} });
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    r.status_code;                  &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// 200
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;&lt;/span&gt;    r.header[&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;content-type&amp;#34;&lt;/span&gt;];       &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// application/json; charset=utf-8
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;&lt;/span&gt;    r.text;                         &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// JSON text string
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;&lt;/span&gt;    std::cout &amp;lt;&amp;lt; r.text &amp;lt;&amp;lt; std::endl;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#3677a9&#34;&gt;0&lt;/span&gt;;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span style=&#34;color:#cd2828;font-weight:bold&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#cd2828;font-weight:bold&#34;&gt;&amp;lt;cpr/cpr.h&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#cd2828;font-weight:bold&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#cd2828;font-weight:bold&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#cd2828;font-weight:bold&#34;&gt;&amp;lt;iostream&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#cd2828;font-weight:bold&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#cd2828;font-weight:bold&#34;&gt;&lt;/span&gt;
+&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;int&lt;/span&gt; &lt;span style=&#34;color:#447fcf&#34;&gt;main&lt;/span&gt;()
+{
+    cpr::Response r = cpr::Get(cpr::Url{ &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;https://api.github.com/repos/whoshuu/cpr/contributors&amp;#34;&lt;/span&gt; },
+        cpr::Authentication{ &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;user&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;pass&amp;#34;&lt;/span&gt; },
+        cpr::Parameters{ {&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;anon&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;true&amp;#34;&lt;/span&gt;}, {&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;key&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;value&amp;#34;&lt;/span&gt;} });
+    r.status_code;                  &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// 200
+&lt;/span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;&lt;/span&gt;    r.header[&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;content-type&amp;#34;&lt;/span&gt;];       &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// application/json; charset=utf-8
+&lt;/span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;&lt;/span&gt;    r.text;                         &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// JSON text string
+&lt;/span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;&lt;/span&gt;    std::cout &amp;lt;&amp;lt; r.text &amp;lt;&amp;lt; std::endl;
+    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#3677a9&#34;&gt;0&lt;/span&gt;;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Let&amp;rsquo;s test our build&lt;/p&gt;
 &lt;ul&gt;
@@ -227,11 +227,11 @@ This will be useful when configuring the Remote-SSH VSCode extension.&lt;/p&gt;
         &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
     &lt;/a&gt;
 &lt;/span&gt;
-&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ssh-copy-id -i path/to/file/if/not/default USER@HOST
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# examples&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ssh-copy-id -i .ssh/id_ed25519.pub USER@HOST
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ssh-copy-id -i /mnt/c/Users/maste/.ssh/id_ed25519.pub USER@HOST
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;When doing this, press enter to any yes/no prompts such as fingerprints and etc. The fingerprint prompt is
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;ssh-copy-id -i path/to/file/if/not/default USER@HOST
+&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# examples&lt;/span&gt;
+ssh-copy-id -i .ssh/id_ed25519.pub USER@HOST
+ssh-copy-id -i /mnt/c/Users/maste/.ssh/id_ed25519.pub USER@HOST
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;When doing this, press enter to any yes/no prompts such as fingerprints and etc. The fingerprint prompt is
 important only if you can&amp;rsquo;t trust your network (e.g. Starbucks WiFi).&lt;/p&gt;
 &lt;p&gt;If you&amp;rsquo;re having trouble with this, just &lt;code&gt;cd&lt;/code&gt; into the &lt;code&gt;.ssh&lt;/code&gt; folder and use &lt;code&gt;-i id_ed25519.pub&lt;/code&gt;&lt;/p&gt;
 &lt;h3 id=&#34;windows-without-wsl&#34; &gt;Windows Without WSL
@@ -242,10 +242,10 @@ important only if you can&amp;rsquo;t trust your network (e.g. Starbucks WiFi).&
 &lt;/span&gt;
 &lt;/h3&gt;&lt;p&gt;If you&amp;rsquo;re on Windows, you won&amp;rsquo;t have access to &lt;code&gt;ssh-copy-id&lt;/code&gt;. Instead you can modify the first command below or use the second command
 if you aren&amp;rsquo;t doing anything abnormal on your computer.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-powershell&#34; data-lang=&#34;powershell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#24909d&#34;&gt;type &lt;/span&gt;path\to\id_algo.pub | ssh USER&lt;span style=&#34;color:#40ffff&#34;&gt;@HOST&lt;/span&gt; &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;cat &amp;gt;&amp;gt; .ssh/authorized_keys&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# type $env:USERPROFILE\.ssh\id_ed25519.pub | ssh user@host &amp;#34;cat &amp;gt;&amp;gt; .ssh/authorized_keys&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# the above is a helper that hopefully requires no modifications&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;setting-up-vs-code&#34; &gt;Setting up VS Code
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-powershell&#34; data-lang=&#34;powershell&#34;&gt;&lt;span style=&#34;color:#24909d&#34;&gt;type &lt;/span&gt;path\to\id_algo.pub | ssh USER&lt;span style=&#34;color:#40ffff&#34;&gt;@HOST&lt;/span&gt; &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;cat &amp;gt;&amp;gt; .ssh/authorized_keys&amp;#34;&lt;/span&gt;
+&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# type $env:USERPROFILE\.ssh\id_ed25519.pub | ssh user@host &amp;#34;cat &amp;gt;&amp;gt; .ssh/authorized_keys&amp;#34;&lt;/span&gt;
+&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# the above is a helper that hopefully requires no modifications&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;setting-up-vs-code&#34; &gt;Setting up VS Code
 &lt;span&gt;
     &lt;a href=&#34;#setting-up-vs-code&#34;&gt;
         &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
@@ -263,13 +263,13 @@ if you aren&amp;rsquo;t doing anything abnormal on your computer.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Enter the information for your remote server(s). Here is mine for reference. I had to comment out PreferredAuthentications.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Host uWaterloo
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  User e5lopez
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  HostName linux.student.cs.uwaterloo.ca
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  IdentityFile &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;C:\Users\maste\.ssh\id_ed25519&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# Linux/MacOS: IdentityFile &amp;#34;/Users/USER/.ssh/id_ed25519&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# PreferredAuthentications publickey&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;Host uWaterloo
+  User e5lopez
+  HostName linux.student.cs.uwaterloo.ca
+  IdentityFile &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;C:\Users\maste\.ssh\id_ed25519&amp;#34;&lt;/span&gt;
+  &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# Linux/MacOS: IdentityFile &amp;#34;/Users/USER/.ssh/id_ed25519&amp;#34;&lt;/span&gt;
+  &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# PreferredAuthentications publickey&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;From the command palette, use &amp;ldquo;Remote-SSH: Connect Current Window to Host&amp;hellip;&amp;rdquo; and select the host you just added&lt;/p&gt;
 &lt;/li&gt;

@@ -1,7 +1,7 @@
 ---
 title: "OBS Washed Out Colors Fix"
 date: 2022-02-19T13:53:14-05:00
-draft: False
+draft: true
 ---
 
 {{< youtube 7uDn6NlqtTo >}}
