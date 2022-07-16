@@ -8,6 +8,12 @@ I've used Raspian (~2014), Ubuntu GNOME (~2016), Manjaro KDE (2020), Fedora, Zor
 
 My definition of a reason is: An issue/problem requiring a convoluted process to solve; Also something so simple that shouldn't have required me to use the terminal in order to unlock (fractional scaling should be allowed and not a tick box or a command).
 
+## Poor Cloud Storage Support
+
+Coming from Windows, I use OneDrive and MEGA. I do care about OneDrive since
+it has my personal files that I need backed up to the cloud. Where is the OneDrive support without using rsync which
+doesn't work half the time?
+
 ## Poor Installation Tutorials
 
 Just look at any tutorial for flashing an ISO. Generic tutorials tell you to use Rufus, an ugly and non-intuitive UI. Fedora has their own flash tool which looks nice but does not work on other distros (I broke two of my USB's).
