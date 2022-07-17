@@ -41,6 +41,8 @@ Yes the technical term on Linux is "nautilus" but I am a very practical person, 
 
 On Windows, it's simply Super+e . Most Linux distros? You have to know and create a keyboard shortcut in settings for the command nautilis --browser -w . This issue is not present on Zorin OS, but it was on Manjaro, and probably Fedora.
 
+To fix this in KDE, simply go to Settings → Configure Shortcuts....
+
 Let's criticize the file explorer even more. I can't create new files in the directory through a right click menu. I can't access the right click menu if I'm using list mode and the folder is full of files. On Windows, a right click is applied on the folder if the file is not selected, but on Nautilis, too bad so sad, did you mean to right click a file? It's not a big deal since the right click menu in Nautlis is only useful for accessing properties since its other features can be done using keyboard shortcuts (Ctrl +C, Ctrl + V, Ctrl +Shift+N).
 
 One last head ache is the inability to launch commands from the address bar… I want the best of GUI and command line, not just a GUI and not just a terminal.
