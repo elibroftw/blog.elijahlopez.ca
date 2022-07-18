@@ -461,9 +461,11 @@ whether to anticipate more orders if batch ordering occurs.
 
 Average aggregate inventory value is the sum of average inventory times value for each item.
 
-<img class=equation-tall src="https://latex.codecogs.com/svg.image?Days\,\,of\,\,Supply=\frac{365}{Inventory\,\,Turnover}">
+<img class=equation-tall src="https://latex.codecogs.com/svg.image?Days\,\,of\,\,Supply=\frac{opDays=365}{Inventory\,\,Turnover}">
 
 Fill Rate = fraction of orders filled within a specific time period.
+
+- low inventory turnover indicatest hat a large amount of inventory is required to satisfy demand
 
 ### Scor Model
 
@@ -475,6 +477,8 @@ Fill Rate = fraction of orders filled within a specific time period.
 - Return
 
 ## Project Management
+
+### Gantt Chart
 
 ### Project Elements
 
@@ -500,6 +504,23 @@ Fill Rate = fraction of orders filled within a specific time period.
 ### CPM / PERT
 
 - Critcal Path Method (CPM) & Program Evaluation Review Technique
+- Program Evaluation and Review Technique
+
+Crticial Path for a table.
+
+### Probabilityic Precedence Example
+
+1. Identify the critical path and compute the project completion time.
+
+Create a matrix and fill in values that are relvant.
+
+2. What is the probability that the entire project is completed in 15 weeks or less?
+
+std path = sqrt(variance of path) = sqrt( variance A + ... variance Z ). Then use z = (x - u) / std and a table to get probability.
+
+3. How many weeks are required to complete the project with probability 0.95?
+
+Use table to get z, then use x = (z * variance + u) to get x.
 
 ## Demand Forecasting
 
@@ -541,6 +562,8 @@ design.
 #### naive method
 
 #### moving average
+
+For MA-2, do (Actual_(n-1) + Actual_n) / 2. As the window increases, the lag will increase.
 
 #### weighted moving average
 
@@ -594,4 +617,4 @@ Tt = Beta(Ft - F_t-1) + (1 - Beta)T_t-1
 
 TC = C_c times Q/2 + C_0 * D/Q
 
-
+## Exam Review
