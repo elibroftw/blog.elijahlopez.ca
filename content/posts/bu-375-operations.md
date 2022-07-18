@@ -613,8 +613,14 @@ Tt = Beta(Ft - F_t-1) + (1 - Beta)T_t-1
 
 ### Economic Order Quantities
 
+EOQ = Q* = sqrt( 2DC/C_C )
+
+TC = C_c * (Q*)/2 + C_O * D/(Q*) = Holding Cost + Ordering cost
+
+D/Q = purchase orders per year
+
 ### Inventory Control Cost
 
-TC = C_c times Q/2 + C_0 * D/Q
+TC = C_c times Q/2 + C_O * D/Q
 
 ## Exam Review
