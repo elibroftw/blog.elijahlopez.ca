@@ -12,7 +12,7 @@ draft: false
 
 Watch the 5 year review here.
 
-{{ < youtube yUD-R7tB4w8 > }}
+{{< youtube yUD-R7tB4w8 >}}
 
 ### Background
 

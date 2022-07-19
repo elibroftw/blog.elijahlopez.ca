@@ -66,7 +66,7 @@ However, since the docs talk about `glob.glob` more than `glob.iglob`, we have m
 unoptimized code and concepts without audits. Here is the proper way to do it. I didn't bother adding my answer to the question since StackOverflow was complaining
 that there were too many answers; they did not contain the following golden egg:
 
-{{ < gist elibroftw 4599fb62d857bd5dce4040efc46e608d >}}
+{{< gist elibroftw 4599fb62d857bd5dce4040efc46e608d >}}
 
 Another occation was a question about parsing `tasklist` output with Python and the answer not using
 interators. Compare [this](https://stackoverflow.com/a/22914414/7732434) to [my edit](https://stackoverflow.com/a/64634901/7732434).
