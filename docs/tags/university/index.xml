@@ -102,8 +102,8 @@ So let&amp;rsquo;s begin. I&amp;rsquo;ll add a divider to let you know what is p
         &lt;li&gt;&lt;a href=&#34;#project-scheduling&#34;&gt;Project Scheduling&lt;/a&gt;&lt;/li&gt;
         &lt;li&gt;&lt;a href=&#34;#project-contrl&#34;&gt;Project Contrl&lt;/a&gt;&lt;/li&gt;
         &lt;li&gt;&lt;a href=&#34;#work-breakdown-structure&#34;&gt;Work Breakdown Structure&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&#34;#cpm--pert&#34;&gt;CPM / PERT&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&#34;#probabilityic-precedence-example&#34;&gt;Probabilityic Precedence Example&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#cpm--pert&#34;&gt;CPM &amp;amp; PERT&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#crashing&#34;&gt;Crashing&lt;/a&gt;&lt;/li&gt;
       &lt;/ul&gt;
     &lt;/li&gt;
     &lt;li&gt;&lt;a href=&#34;#demand-forecasting&#34;&gt;Demand Forecasting&lt;/a&gt;
@@ -1029,7 +1029,7 @@ whether to anticipate more orders if batch ordering occurs.&lt;/p&gt;
         &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
     &lt;/a&gt;
 &lt;/span&gt;
-&lt;/h3&gt;&lt;h3 id=&#34;cpm--pert&#34; &gt;CPM / PERT
+&lt;/h3&gt;&lt;h3 id=&#34;cpm--pert&#34; &gt;CPM &amp;amp; PERT
 &lt;span&gt;
     &lt;a href=&#34;#cpm--pert&#34;&gt;
         &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
@@ -1040,24 +1040,29 @@ whether to anticipate more orders if batch ordering occurs.&lt;/p&gt;
 &lt;li&gt;Program Evaluation and Review Technique&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Crticial Path for a table.&lt;/p&gt;
-&lt;h3 id=&#34;probabilityic-precedence-example&#34; &gt;Probabilityic Precedence Example
+&lt;p&gt;In CPM, estimates are given. In PERT, a best case, likely case, and worst case estimates are given.
+To calculate expected time of a single activity, use&lt;/p&gt;
+&lt;img class=equation src=&#34;https://latex.codecogs.com/svg.image?t_E=\frac{a + 4m + b}{6}&#34;&gt;
+&lt;p&gt;Where a is best case time, m is most likely, and b is worst case time.&lt;/p&gt;
+&lt;p&gt;Thus the expected duration of a path (t_path) is the sum of activity expected times.&lt;/p&gt;
+&lt;p&gt;The variance of each activity time is &lt;img class=equation src=&#34;https://latex.codecogs.com/svg.image?\sigma^2=(\frac{b - a}{6})^2&#34;&gt;&lt;/p&gt;
+&lt;p&gt;The variance of a path is then the sum of activity variances, and the variance of the &lt;em&gt;critical&lt;/em&gt; path is also known
+as the project variance.&lt;/p&gt;
+&lt;p&gt;Like always, the standard deviation of anything is the square root of the variance.&lt;/p&gt;
+&lt;p&gt;As for calculation probabilities, the probability of completing a project by a certain time is&lt;/p&gt;
+&lt;p&gt;Z = (deadline - t_path) / std of critical path and then use a z-table to get a probability representing p(x &amp;lt; deadline)&lt;/p&gt;
+&lt;p&gt;To calculate the deadline given a probability, use the z-table to get a z value, and then use the z formula to calculate.&lt;/p&gt;
+&lt;h3 id=&#34;crashing&#34; &gt;Crashing
 &lt;span&gt;
-    &lt;a href=&#34;#probabilityic-precedence-example&#34;&gt;
+    &lt;a href=&#34;#crashing&#34;&gt;
         &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
     &lt;/a&gt;
 &lt;/span&gt;
-&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;Identify the critical path and compute the project completion time.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;Create a matrix and fill in values that are relvant.&lt;/p&gt;
-&lt;ol start=&#34;2&#34;&gt;
-&lt;li&gt;What is the probability that the entire project is completed in 15 weeks or less?&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;std path = sqrt(variance of path) = sqrt( variance A + &amp;hellip; variance Z ). Then use z = (x - u) / std and a table to get probability.&lt;/p&gt;
-&lt;ol start=&#34;3&#34;&gt;
-&lt;li&gt;How many weeks are required to complete the project with probability 0.95?&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;Use table to get z, then use x = (z * variance + u) to get x.&lt;/p&gt;
+&lt;/h3&gt;&lt;p&gt;With CPM and PERT some activities can be crashed. For crashing to have an effect on the project duration, the crashes
+must reduce the time of the critical path or paths. A single crash might not have an affect on the project duration if there
+was an equivalent critical path that didn&amp;rsquo;t need that activity.&lt;/p&gt;
+&lt;p&gt;Crashing information is stated as cost to crash completely (additional cost) as well as how many weeks can be crashed. Thus,
+implicitly, activities can be crashed by a single week rather than the entire allowable crash time.&lt;/p&gt;
 &lt;h2 id=&#34;demand-forecasting&#34; &gt;Demand Forecasting
 &lt;span&gt;
     &lt;a href=&#34;#demand-forecasting&#34;&gt;

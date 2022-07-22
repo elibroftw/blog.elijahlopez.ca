@@ -501,26 +501,43 @@ Fill Rate = fraction of orders filled within a specific time period.
 
 ### Work Breakdown Structure
 
-### CPM / PERT
+### CPM & PERT
 
 - Critcal Path Method (CPM) & Program Evaluation Review Technique
 - Program Evaluation and Review Technique
 
 Crticial Path for a table.
 
-### Probabilityic Precedence Example
+In CPM, estimates are given. In PERT, a best case, likely case, and worst case estimates are given.
+To calculate expected time of a single activity, use
 
-1. Identify the critical path and compute the project completion time.
+<img class=equation src="https://latex.codecogs.com/svg.image?t_E=\frac{a + 4m + b}{6}">
 
-Create a matrix and fill in values that are relvant.
+Where a is best case time, m is most likely, and b is worst case time.
 
-2. What is the probability that the entire project is completed in 15 weeks or less?
+Thus the expected duration of a path (t_path) is the sum of activity expected times.
 
-std path = sqrt(variance of path) = sqrt( variance A + ... variance Z ). Then use z = (x - u) / std and a table to get probability.
+The variance of each activity time is <img class=equation src="https://latex.codecogs.com/svg.image?\sigma^2=(\frac{b - a}{6})^2">
 
-3. How many weeks are required to complete the project with probability 0.95?
+The variance of a path is then the sum of activity variances, and the variance of the *critical* path is also known
+as the project variance.
 
-Use table to get z, then use x = (z * variance + u) to get x.
+Like always, the standard deviation of anything is the square root of the variance.
+
+As for calculation probabilities, the probability of completing a project by a certain time is
+
+Z = (deadline - t_path) / std of critical path and then use a z-table to get a probability representing p(x < deadline)
+
+To calculate the deadline given a probability, use the z-table to get a z value, and then use the z formula to calculate.
+
+### Crashing
+
+With CPM and PERT some activities can be crashed. For crashing to have an effect on the project duration, the crashes
+must reduce the time of the critical path or paths. A single crash might not have an affect on the project duration if there
+was an equivalent critical path that didn't need that activity.
+
+Crashing information is stated as cost to crash completely (additional cost) as well as how many weeks can be crashed. Thus,
+implicitly, activities can be crashed by a single week rather than the entire allowable crash time.
 
 ## Demand Forecasting
 
