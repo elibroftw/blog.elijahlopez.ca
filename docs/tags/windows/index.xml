@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>windows on ELL Blog</title>
+    <link>https://blog.elijahlopez.ca/tags/windows/</link>
+    <description>ELL Blog (windows)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 24 Jul 2022 21:03:20 -0400</lastBuildDate>
+    
+    <atom:link href="https://blog.elijahlopez.ca/tags/windows/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Linux USB Formatting Issues</title>
+      <link>https://blog.elijahlopez.ca/posts/linux-usb-formatting-issues/</link>
+      <pubDate>Sun, 24 Jul 2022 21:03:20 -0400</pubDate>
+      
+      <guid>https://blog.elijahlopez.ca/posts/linux-usb-formatting-issues/</guid>
+      <description>&lt;p&gt;When trying to test out multiple Linux distros on multiple
+USB sticks, I ran into this horrible error. The creators of Balena Etcher
+simply do not care about users who soft brick their USBs. Rufus and Balena
+developers simply say that their software cannot hard brick the USB,
+which is a good thing but they provide 0 support in fixing the issue.&lt;/p&gt;
+&lt;p&gt;I am here to share my findings since solutios found online are in parts.&lt;/p&gt;
+&lt;p&gt;Operating System: Windows&lt;/p&gt;
+&lt;p&gt;How do you fix the error and other errors like:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;the volume was created successfully but not formatted&lt;/li&gt;
+&lt;li&gt;Please Insert Disk Into Removable Disk&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Like my other Linux tutorial on how to move a parititon in Windows, the &lt;a href=&#34;https://www.partitionwizard.com/free-partition-manager.html&#34;&gt;MiniTool Parition Wizard&lt;/a&gt; comes very handy. Open this tool up, right click the USB or drive you want to fix, and click wipe drive
+Fill the drive with 0s. This should take 10 minutes.&lt;/p&gt;
+&lt;p&gt;After this you can either format in Windows or run Balena Etcher to flash another ISO.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
