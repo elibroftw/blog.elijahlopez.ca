@@ -15,7 +15,7 @@
 <title>Automate Firefox Addon Publishing - ELL Blog</title>
 
 <meta name="description" content="If you&rsquo;re like me, you always want to speed up aspects of your life especially routine tasks. I&rsquo;ll be doing this in Python but you can easily convert the code to a language of your choice.
-PrerequisitesWe&rsquo;re going to be using the Firefox Add-ons API to upload your add-on so you will need some API keys. You can get your API keys from here. Place the pair of API keys into a .">
+PrerequisitesWe&rsquo;re going to be using the Firefox Add-ons API to upload your add-on so you will need some API keys. You can get your API keys from here. Place the pair of API keys into a .">
 
 
 
@@ -56,7 +56,7 @@ PrerequisitesWe&rsquo;re going to be using the Firefox Add-ons API to upload yo
     
 
     
-        <link rel="stylesheet" href="https://blog.elijahlopez.ca/css/style.min.f167f5e6990f4432bf960ea4abc8cc14727ed8b6abaacd1c448133a2cf004aaf.css" integrity="sha256-8Wf15pkPRDK/lg6kq8jMFHJ&#43;2Larqs0cRIEzos8ASq8=">
+        <link rel="stylesheet" href="https://blog.elijahlopez.ca/css/style.min.dd97d986c710dd2ef873cfcb7d46c9a9601cfbc52816f5eaaea21520dece6333.css" integrity="sha256-3ZfZhscQ3S74c8/LfUbJqWAc&#43;8UoFvXqrqIVIN7OYzM=">
     
 
 
@@ -78,7 +78,7 @@ PrerequisitesWe&rsquo;re going to be using the Firefox Add-ons API to upload yo
     
 
     
-        <script src="https://blog.elijahlopez.ca/js/script.min.74bf1a3fcf1af396efa4acf3e660e876b61a2153ab9cbe1893ac24ea6d4f94ee.js" type="text/javascript" charset="utf-8" integrity="sha256-dL8aP88a85bvpKzz5mDodrYaIVOrnL4Yk6wk6m1PlO4="></script>
+        <script src="https://blog.elijahlopez.ca/js/script.min.510c781c39dbb21b4c76d85c82e2bdf4689220adbb7cd61e49e9d293e442fb42.js" type="text/javascript" charset="utf-8" integrity="sha256-UQx4HDnbshtMdthcguK99GiSIK27fNYeSenSk&#43;RC&#43;0I="></script>
     
 
 
@@ -89,7 +89,7 @@ PrerequisitesWe&rsquo;re going to be using the Firefox Add-ons API to upload yo
 
 <meta property="og:title" content="Automate Firefox Addon Publishing" />
 <meta property="og:description" content="If you&rsquo;re like me, you always want to speed up aspects of your life especially routine tasks. I&rsquo;ll be doing this in Python but you can easily convert the code to a language of your choice.
-PrerequisitesWe&rsquo;re going to be using the Firefox Add-ons API to upload your add-on so you will need some API keys. You can get your API keys from here. Place the pair of API keys into a ." />
+PrerequisitesWe&rsquo;re going to be using the Firefox Add-ons API to upload your add-on so you will need some API keys. You can get your API keys from here. Place the pair of API keys into a ." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.elijahlopez.ca/posts/automate-firefox-addon-publishing/" /><meta property="og:image" content="https://blog.elijahlopez.ca/images"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-10-08T22:58:39-05:00" />
@@ -101,7 +101,7 @@ PrerequisitesWe&rsquo;re going to be using the Firefox Add-ons API to upload yo
 
 <meta name="twitter:title" content="Automate Firefox Addon Publishing"/>
 <meta name="twitter:description" content="If you&rsquo;re like me, you always want to speed up aspects of your life especially routine tasks. I&rsquo;ll be doing this in Python but you can easily convert the code to a language of your choice.
-PrerequisitesWe&rsquo;re going to be using the Firefox Add-ons API to upload your add-on so you will need some API keys. You can get your API keys from here. Place the pair of API keys into a ."/>
+PrerequisitesWe&rsquo;re going to be using the Firefox Add-ons API to upload your add-on so you will need some API keys. You can get your API keys from here. Place the pair of API keys into a ."/>
 
 
 
@@ -257,6 +257,8 @@ PrerequisitesWe&rsquo;re going to be using the Firefox Add-ons API to upload yo
 
 
 
+
+
             
         </header>
         <main id="main" tabindex="-1"> 
@@ -281,9 +283,9 @@ PrerequisitesWe&rsquo;re going to be using the Firefox Add-ons API to upload yo
 </span>
 </h2><p>We&rsquo;re going to be using the Firefox Add-ons API to upload your add-on so you will need some API keys. You can get your API keys from <a href="https://addons.mozilla.org/developers/addon/api/key/">here</a>. 
 Place the pair of API keys into a .env file like so:</p>
-<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>jwt-issuer=string
-</span></span><span style="display:flex;"><span>jwt-secret=string
-</span></span></code></pre></div><h2 id="third-party-libraries" >Third Party Libraries
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">jwt-issuer=string
+jwt-secret=string
+</code></pre></div><h2 id="third-party-libraries" >Third Party Libraries
 <span>
     <a href="#third-party-libraries">
         <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>

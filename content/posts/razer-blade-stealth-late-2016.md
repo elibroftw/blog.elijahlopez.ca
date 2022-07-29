@@ -132,6 +132,8 @@ with the cable plugged in. I have to charge while the laptop is awake and then s
 - Over the last 5-6 years, I needed to install (electron-based) software like GitHub Desktop and VSCode which is less efficient
 - I cannot watch twitch at all, which is a 1 year old habit of mine
 
+Geekbench 5 results are 500 for single core and 590 for multi core.
+
 ### Webcam is 720p
 
 Without perfect lighting, you will not look the same as you do in person. If I want

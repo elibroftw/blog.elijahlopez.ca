@@ -23,7 +23,9 @@ How do you fix the error and other errors like:
 - the volume was created successfully but not formatted
 - Please Insert Disk Into Removable Disk
 
-Like my other Linux tutorial on how to move a parititon in Windows, the [MiniTool Parition Wizard](https://www.partitionwizard.com/free-partition-manager.html) comes very handy. Open this tool up, right click the USB or drive you want to fix, and click wipe drive
-Fill the drive with 0s. This should take 10 minutes.
+Like my other Linux tutorial on how to move a parititon in Windows, a parition tool is very useful.
+The [MiniTool Parition Wizard](https://www.partitionwizard.com/free-partition-manager.html) was very handy.
+Open this tool up, right click the USB or drive you want to fix, and click wipe drive and fill the drive with 0s.
+This should take 10 minutes.
 
-After this you can either format in Windows or run Balena Etcher to flash another ISO.
+Afterwards, you can either format the drive in Windows or run Balena Etcher to flash another ISO.
