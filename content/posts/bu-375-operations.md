@@ -7,6 +7,8 @@ tags: [
 ]
 ---
 
+<!-- markdownlint-disable MD033 -->
+
 This document are my notes and midterm review for the BU 375 Operations course taught at Wilfrid Laurier University. While studying for the midterm, I discovered my own formulae shortcuts, undoubtly due to "blind teaching syndrome" (I made that term up).
 So let's begin. I'll add a divider to let you know what is part of the midterm.
 
@@ -389,10 +391,10 @@ End of Midterm Review
 
 ### Supply Chain Process
 
-1. Procurement of raw materials and services
-2. Production of product and services
-3. Storage of products in inventory
-4. Taking orders and distribution of products to the customer
+1. **Procurement** of **raw materials** and services
+2. **Production** of **product** and services
+3. **Storage** of products in **inventory**
+4. Taking orders and **distribution** of products to the customer
 
 ### Supply Chain for Service Providers
 
@@ -401,21 +403,23 @@ End of Midterm Review
 
 ### Supply Chain Management (SCM)
 
+- Create maximum value for the end customer
+- perfecting coordination and collabortaion of components
+- To provide enough supply at the right price, time, and place
 - Systemic approach to manage entire flow of information, materials, and services from raw-materials to customers
-- Goal: perfecting coordination and collabortaion of components to effectively meet demand at the right price, time, and place
 - Competition becomes between supply chains rather than companies
-- Transparency is important
 
 #### Bullwhip Effect
 
 - Supply chain members farther down the line get information after the members
 nearer to customers.
+- importance of transparency accrorss members
 - Safety stock issues
 - Lack of accurate demand information
 - Order batching results in less orders but larger quantities
 - Price fluctuations
 - Shortage gaming (placing orders more than is required bc inventory is short supply)
-- Solutions
+- **Solutions**
   - Coordination by parties for pricing, transportation, and inventory management
   - Joint demand information forecast
   - Price stabilization
@@ -467,7 +471,7 @@ Fill Rate = fraction of orders filled within a specific time period.
 
 - low inventory turnover indicatest hat a large amount of inventory is required to satisfy demand
 
-### Scor Model
+### SCOR Model
 
 - Plan
 - Source
@@ -478,7 +482,8 @@ Fill Rate = fraction of orders filled within a specific time period.
 
 ## Project Management
 
-### Gantt Chart
+A project is one-time and non-repetitive operational activities or efforts. Clear goal, limited time frame,
+budget, schedule, resources.
 
 ### Project Elements
 
@@ -493,27 +498,49 @@ Fill Rate = fraction of orders filled within a specific time period.
 
 ### Project Manager
 
-### Project Planning
+- plans, schedules, executes, controls project
+- meeting requirements
+- keeps project on track, within budget, and meets quality standards
+- makes trade-off decisions
+- expedites work when needed
+- resolves conflicts
+- adapts
 
-### Project Scheduling
+### Project Management Process
 
-### Project Contrl
+- Planning
+- Scheduling
+- Control
 
 ### Work Breakdown Structure
 
+1. Identify **major components** of the project
+2. Break down the major components into **subcomponents**
+3. Break down subcomponents into **work packages**
+
+### Responsibility Assignment Matrix (RAM)
+
+- Organizational breakdown structure (OBS) shows which organizational units are responsible for work items
+used to develop RAM
+
+### Gantt Chart
+
+- A visual aid for scheduling and control purposes
+
 ### CPM & PERT
 
-- Critcal Path Method (CPM) & Program Evaluation Review Technique
-- Program Evaluation and Review Technique
+- Critcal Path Method (CPM) has deterministic task times
+- Program Evaluation and Review Technique (PERT) has probabilistic task times
+- network path: starting node to finishing node sequence
+- critical path: longest network path; determines project duration
+- critical activities: activites on the critical path
+- slack time: allowable slippage for a path
 
-Crticial Path for a table.
-
-In CPM, estimates are given. In PERT, a best case, likely case, and worst case estimates are given.
 To calculate expected time of a single activity, use
 
 <img class=equation src="https://latex.codecogs.com/svg.image?t_E=\frac{a + 4m + b}{6}">
 
-Where a is best case time, m is most likely, and b is worst case time.
+Where `a` is best case time, `m` is most likely, and `b` is worst case time.
 
 Thus the expected duration of a path (t_path) is the sum of activity expected times.
 
@@ -574,70 +601,174 @@ design.
 - forecasting method should be reliable
 - operations forecasts should be expressed in units
 
-### Time-Series Methods
+### Quantitative Forecasting Methods
 
-#### naive method
+- Time-Series methods
+  - use historical data to project into the future
+  - naive method, moving average, weighted moving average, exeponential smoothing
+- Associative models
+  - independent casual variables
 
-#### moving average
+#### Naive Method
 
-For MA-2, do (Actual_(n-1) + Actual_n) / 2. As the window increases, the lag will increase.
+Assumes the demand for the next period will be the same as the previous period
 
-#### weighted moving average
+#### Moving Average
 
-#### exponential smoothing
+As the MA-window increases, so too will the lag.
 
-<img class=equation src="https://latex.codecogs.com/svg.image?F_{t+1}=\alpha D_t + (1-\alpha)F_t">
+For MA-2, do
 
-#### adjusted exponential smoothing
+<img class=equation-tall src="https://latex.codecogs.com/svg.image?F_t=MA_t=\frac{D_{t-1}+D_{t-2}}{2}">
+
+#### Weighted Moving Average
+
+<img class=equation-tall src="https://latex.codecogs.com/svg.image?F_t=WMA_t=\sum_{i \in periods} w_i \times D_i">
+
+#### Exponential Smoothing
+
+<img class=equation src="https://latex.codecogs.com/svg.image?F_t=\alpha D_{t-1} + (1-\alpha)F_{t-1}">
+
+#### Adjusted Exponential Smoothing
+
+Incorporates a trend factor on top of exponential smoothing
+
+<img class=equation src="https://latex.codecogs.com/svg.image?F_{a_t}=F_t+T_t">
+
+<img class=equation src="https://latex.codecogs.com/svg.image?T_t=\beta(F_t-F_{t-1})+(1-\beta)T_{t-1}">
+
+Where beta is a smoothing constant for the overall trend
 
 Example
 
-For the data given below, generate a forecast period 1 - 5 sing adjusted exponential smoothing.
+For the data given below, generate a forecast using adjusted exponential smoothing.
 Assume alpha = 0.5 and beta = 0.3.
 
-The formula for the adjusted exponential smoothing forecast requires an initial value for Tt to start
-the computational process. For this case let's assume initial T is 0.
+An adjusted exponential smoothing forecast requires T<sub>2</sub> to start the computational process.
+For this case, assume T<sub>2</sub> = 0.
 
-Ft = Ft-1 + alpha(A_t-1 - F_t-1)
+Period | Month  | Demand | Forecast F<sub>t</sub> | Trend T<sub>i</sub>   | Adjusted Forecast AF<sub>t</sub>
+------ | ------ | ------ | ---------------------- | --------------------- | --------------------------------
+1      | JAN    | 37     | 37.00                  | -                     | -
+2      | FEB    | 40     | 37.00                  | 0                     | 37.00
+3      | MAR    | 41     | 38.50                  | 0.45                  | 38.95
+4      | APR    | 37     | 39.75                  | 0.69                  | 40.44
+5      | MAY    | 45     | 38.37                  | 0.07                  | 38.44
 
-Tt = Beta(Ft - F_t-1) + (1 - Beta)T_t-1
+Sample calculation
 
-| Period | Month  | Demand | Forecast Ft | Trend Ti |
-| ------ | ------ | ------ | ----------- | ----------- |
-| 1      | JAN    | 37     | 37.00      | -
-| 2      | FEB    | 40     | 37.00     | 0
-| 3      | MAR    | 41     | 38.50      | 0.45
-| 4      | APR    | 37     | 39.75      | 0.69
-| 5      | MAY    | 45     | 38.37     | 0.07
+F<sub>3</sub> = alpha(D<sub>2</sub>) + (1 - alpha) F<sub>2</sub> = 38.5
+
+T<sub>3</sub> = Beta(F<sub>3</sub> - F<sub>2</sub>) + T<sub>2</sub>(1 - Beta) = 0.45
+
+AF<sub>3</sub> = F<sub>3</sub> + T<sub>3</sub>
 
 #### Seasonal Adjustments
 
-#### Forecasting Error
+Course specific: seasonal adjustment factor (S<sub>q</sub>) relative to
+the total demand for some period. Use factor after a forecast to get each quarter's demand forecast.
+
+<img class=equation-tall src="https://latex.codecogs.com/svg.image?S_q=\frac{D_q}{\sum D}">
+
+#### Forecast Accuracy
+
+e<sub>t</sub> = D<sub>t</sub> - F<sub>t</sub>
+
+MAD = sum of | e<sub>t</sub> | / n
+
+mean squared error = sum (e_t^2) / n
+
+mean absolute percentage deviation = sum (e_t) / sum (D_t)
 
 ## Inventory Management
+
+### What is Inventory?
+
+- raw materials
+- work in progress
+- finished products
+- packaging
+- replacement parts
+- goods-in-transit
+
+Important because assets are tied up in inventory. Too much inventory can increase costs
+and reduce efficiency while too
 
 ### Inventory Control Systems
 
 #### Continuous System
 
-- fixed order quantity
-- inventory is continually monitored
-- reorder oint, economic order quantity
+- economic \[fixed] order quantity (EOQ) whenever the reorder point is reached
+- inventory is continually monitored (costly)
 
 #### Periodic System
 
-- fixed time period
+- orders are placed on a fixed time interval
+- order quantity = desired inventory level - inventory on hand
+- less level of control
 
-### Economic Order Quantities
+### Economic Order Quantity (EOQ)
 
-EOQ = Q* = sqrt( 2DC/C_C )
+- single product
+- constant annual demand is known
+- single delivery with constant lead time smaller than the order cycle
+- no discounts
 
-TC = C_c * (Q*)/2 + C_O * D/(Q*) = Holding Cost + Ordering cost
+Average inventory = Q / 2
+
+Average inventory cost = Q / 2 * C<sub>c</sub> \[holding cost per unit]
+
+Number of orders = D / Q
+
+Annual order costs = D / Q * C<sub>0</sub>
+
+TC = Q/2 \* C<sub>c</sub> + D/Q \* C<sub>O</sub> = Holding Cost + Ordering cost
+
+<img class=equation-tall src="https://latex.codecogs.com/svg.image?EOQ = Q_{opt}=\sqrt{\frac{2DC_O}{C_C}}">
+
+Slope = dTC / dQ = C<sub>C</sub>/2 - DC_<sub>O</sub> / Q<sup>2</sup> = 0
 
 D/Q = purchase orders per year
 
-### Inventory Control Cost
+#### Quantity Discounts
 
-TC = C_c times Q/2 + C_O * D/Q
+Add PD to total cost where price is per unit and D is demand.
 
-## Exam Review
+If quantity is feasible done, otherwise compare with the minimum for each
+proce discount level larger than EOQ.
+
+### Economic Production Quantity
+
+Receive quantity incremetally while inventory is being depleted.
+
+<img class=equation-tall src="https://latex.codecogs.com/svg.image?EPQ = Q_{opt} = EOQ * \sqrt{\frac{p}{p-d}}">
+
+Where p is the production rate per day and d is the demand rate per day.
+
+Inventory max = (Q/p)(p-d)
+
+TC = I/2 * C<sub>c</sub> + D/Q * C<sub>S</sub> = Holding Cost + Setup cost per run
+
+### Reorder Point (Constant Demand)
+
+Ensure that the time unit is the same.
+
+### Reorder Point (Variable Demand)
+
+R = demand rate \* lead time + Safety Stock
+
+<img class=equation src="https://latex.codecogs.com/svg.image?z\sigma_d\sqrt{L}">
+
+Use table for z depending on % service level. e.g. 95% -> z = 1.65. Service level is the probability that demand won't be greater than quantity of goods in stock.
+
+### Periodic Order Quantities (Variable Demand)
+
+Q = average demand rate \* (time between orders + lead time) + z sigma (sqrt (t + L)) - I
+
+### Single Period Inventory Model
+
+Shortage Costs = revenue per unit - cost per unit
+
+Excess Costs = cost per unit - salvage value
+
+SL = C_S / (C_E + C_S) (round up to closest cumulative probability in table)

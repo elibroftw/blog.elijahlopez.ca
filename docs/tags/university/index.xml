@@ -17,7 +17,8 @@
       <pubDate>Sat, 04 Jun 2022 10:23:48 -0400</pubDate>
       
       <guid>https://blog.elijahlopez.ca/posts/bu-375-operations/</guid>
-      <description>&lt;p&gt;This document are my notes and midterm review for the BU 375 Operations course taught at Wilfrid Laurier University. While studying for the midterm, I discovered my own formulae shortcuts, undoubtly due to &amp;ldquo;blind teaching syndrome&amp;rdquo; (I made that term up).
+      <description>&lt;!-- markdownlint-disable MD033 --&gt;
+&lt;p&gt;This document are my notes and midterm review for the BU 375 Operations course taught at Wilfrid Laurier University. While studying for the midterm, I discovered my own formulae shortcuts, undoubtly due to &amp;ldquo;blind teaching syndrome&amp;rdquo; (I made that term up).
 So let&amp;rsquo;s begin. I&amp;rsquo;ll add a divider to let you know what is part of the midterm.&lt;/p&gt;
 &lt;div&gt;
     &lt;h2&gt;Table of Contents&lt;/h2&gt;
@@ -90,18 +91,17 @@ So let&amp;rsquo;s begin. I&amp;rsquo;ll add a divider to let you know what is p
         &lt;li&gt;&lt;a href=&#34;#supply-chain-coordination-and-integration&#34;&gt;Supply Chain Coordination and Integration&lt;/a&gt;&lt;/li&gt;
         &lt;li&gt;&lt;a href=&#34;#information-technology&#34;&gt;Information Technology&lt;/a&gt;&lt;/li&gt;
         &lt;li&gt;&lt;a href=&#34;#supply-chain-performance&#34;&gt;Supply Chain Performance&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&#34;#scor-model&#34;&gt;Scor Model&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#scor-model&#34;&gt;SCOR Model&lt;/a&gt;&lt;/li&gt;
       &lt;/ul&gt;
     &lt;/li&gt;
     &lt;li&gt;&lt;a href=&#34;#project-management&#34;&gt;Project Management&lt;/a&gt;
       &lt;ul&gt;
-        &lt;li&gt;&lt;a href=&#34;#gantt-chart&#34;&gt;Gantt Chart&lt;/a&gt;&lt;/li&gt;
         &lt;li&gt;&lt;a href=&#34;#project-elements&#34;&gt;Project Elements&lt;/a&gt;&lt;/li&gt;
         &lt;li&gt;&lt;a href=&#34;#project-manager&#34;&gt;Project Manager&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&#34;#project-planning&#34;&gt;Project Planning&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&#34;#project-scheduling&#34;&gt;Project Scheduling&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&#34;#project-contrl&#34;&gt;Project Contrl&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#project-management-process&#34;&gt;Project Management Process&lt;/a&gt;&lt;/li&gt;
         &lt;li&gt;&lt;a href=&#34;#work-breakdown-structure&#34;&gt;Work Breakdown Structure&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#responsibility-assignment-matrix-ram&#34;&gt;Responsibility Assignment Matrix (RAM)&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#gantt-chart&#34;&gt;Gantt Chart&lt;/a&gt;&lt;/li&gt;
         &lt;li&gt;&lt;a href=&#34;#cpm--pert&#34;&gt;CPM &amp;amp; PERT&lt;/a&gt;&lt;/li&gt;
         &lt;li&gt;&lt;a href=&#34;#crashing&#34;&gt;Crashing&lt;/a&gt;&lt;/li&gt;
       &lt;/ul&gt;
@@ -110,17 +110,21 @@ So let&amp;rsquo;s begin. I&amp;rsquo;ll add a divider to let you know what is p
       &lt;ul&gt;
         &lt;li&gt;&lt;a href=&#34;#decision-based-on-forecasts&#34;&gt;Decision Based on Forecasts&lt;/a&gt;&lt;/li&gt;
         &lt;li&gt;&lt;a href=&#34;#making-forecasts-useful&#34;&gt;Making Forecasts Useful&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&#34;#time-series-methods&#34;&gt;Time-Series Methods&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#quantitative-forecasting-methods&#34;&gt;Quantitative Forecasting Methods&lt;/a&gt;&lt;/li&gt;
       &lt;/ul&gt;
     &lt;/li&gt;
     &lt;li&gt;&lt;a href=&#34;#inventory-management&#34;&gt;Inventory Management&lt;/a&gt;
       &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#what-is-inventory&#34;&gt;What is Inventory?&lt;/a&gt;&lt;/li&gt;
         &lt;li&gt;&lt;a href=&#34;#inventory-control-systems&#34;&gt;Inventory Control Systems&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&#34;#economic-order-quantities&#34;&gt;Economic Order Quantities&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&#34;#inventory-control-cost&#34;&gt;Inventory Control Cost&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#economic-order-quantity-eoq&#34;&gt;Economic Order Quantity (EOQ)&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#economic-production-quantity&#34;&gt;Economic Production Quantity&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#reorder-point-constant-demand&#34;&gt;Reorder Point (Constant Demand)&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#reorder-point-variable-demand&#34;&gt;Reorder Point (Variable Demand)&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#periodic-order-quantities-variable-demand&#34;&gt;Periodic Order Quantities (Variable Demand)&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#single-period-inventory-model&#34;&gt;Single Period Inventory Model&lt;/a&gt;&lt;/li&gt;
       &lt;/ul&gt;
     &lt;/li&gt;
-    &lt;li&gt;&lt;a href=&#34;#exam-review&#34;&gt;Exam Review&lt;/a&gt;&lt;/li&gt;
   &lt;/ul&gt;
 &lt;/nav&gt;
 &lt;/div&gt;
@@ -845,10 +849,10 @@ If c&lt;sub&gt;p&lt;/sub&gt; = c&lt;sub&gt;pk&lt;/sub&gt;, then design mean and 
     &lt;/a&gt;
 &lt;/span&gt;
 &lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;Procurement of raw materials and services&lt;/li&gt;
-&lt;li&gt;Production of product and services&lt;/li&gt;
-&lt;li&gt;Storage of products in inventory&lt;/li&gt;
-&lt;li&gt;Taking orders and distribution of products to the customer&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Procurement&lt;/strong&gt; of &lt;strong&gt;raw materials&lt;/strong&gt; and services&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Production&lt;/strong&gt; of &lt;strong&gt;product&lt;/strong&gt; and services&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Storage&lt;/strong&gt; of products in &lt;strong&gt;inventory&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Taking orders and &lt;strong&gt;distribution&lt;/strong&gt; of products to the customer&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h3 id=&#34;supply-chain-for-service-providers&#34; &gt;Supply Chain for Service Providers
 &lt;span&gt;
@@ -867,10 +871,11 @@ If c&lt;sub&gt;p&lt;/sub&gt; = c&lt;sub&gt;pk&lt;/sub&gt;, then design mean and 
     &lt;/a&gt;
 &lt;/span&gt;
 &lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Create maximum value for the end customer&lt;/li&gt;
+&lt;li&gt;perfecting coordination and collabortaion of components&lt;/li&gt;
+&lt;li&gt;To provide enough supply at the right price, time, and place&lt;/li&gt;
 &lt;li&gt;Systemic approach to manage entire flow of information, materials, and services from raw-materials to customers&lt;/li&gt;
-&lt;li&gt;Goal: perfecting coordination and collabortaion of components to effectively meet demand at the right price, time, and place&lt;/li&gt;
 &lt;li&gt;Competition becomes between supply chains rather than companies&lt;/li&gt;
-&lt;li&gt;Transparency is important&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h4 id=&#34;bullwhip-effect&#34; &gt;Bullwhip Effect
 &lt;span&gt;
@@ -881,12 +886,13 @@ If c&lt;sub&gt;p&lt;/sub&gt; = c&lt;sub&gt;pk&lt;/sub&gt;, then design mean and 
 &lt;/h4&gt;&lt;ul&gt;
 &lt;li&gt;Supply chain members farther down the line get information after the members
 nearer to customers.&lt;/li&gt;
+&lt;li&gt;importance of transparency accrorss members&lt;/li&gt;
 &lt;li&gt;Safety stock issues&lt;/li&gt;
 &lt;li&gt;Lack of accurate demand information&lt;/li&gt;
 &lt;li&gt;Order batching results in less orders but larger quantities&lt;/li&gt;
 &lt;li&gt;Price fluctuations&lt;/li&gt;
 &lt;li&gt;Shortage gaming (placing orders more than is required bc inventory is short supply)&lt;/li&gt;
-&lt;li&gt;Solutions
+&lt;li&gt;&lt;strong&gt;Solutions&lt;/strong&gt;
 &lt;ul&gt;
 &lt;li&gt;Coordination by parties for pricing, transportation, and inventory management&lt;/li&gt;
 &lt;li&gt;Joint demand information forecast&lt;/li&gt;
@@ -957,7 +963,7 @@ whether to anticipate more orders if batch ordering occurs.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;low inventory turnover indicatest hat a large amount of inventory is required to satisfy demand&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;scor-model&#34; &gt;Scor Model
+&lt;h3 id=&#34;scor-model&#34; &gt;SCOR Model
 &lt;span&gt;
     &lt;a href=&#34;#scor-model&#34;&gt;
         &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
@@ -977,13 +983,9 @@ whether to anticipate more orders if batch ordering occurs.&lt;/p&gt;
         &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
     &lt;/a&gt;
 &lt;/span&gt;
-&lt;/h2&gt;&lt;h3 id=&#34;gantt-chart&#34; &gt;Gantt Chart
-&lt;span&gt;
-    &lt;a href=&#34;#gantt-chart&#34;&gt;
-        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
-    &lt;/a&gt;
-&lt;/span&gt;
-&lt;/h3&gt;&lt;h3 id=&#34;project-elements&#34; &gt;Project Elements
+&lt;/h2&gt;&lt;p&gt;A project is one-time and non-repetitive operational activities or efforts. Clear goal, limited time frame,
+budget, schedule, resources.&lt;/p&gt;
+&lt;h3 id=&#34;project-elements&#34; &gt;Project Elements
 &lt;span&gt;
     &lt;a href=&#34;#project-elements&#34;&gt;
         &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
@@ -1005,45 +1007,73 @@ whether to anticipate more orders if batch ordering occurs.&lt;/p&gt;
         &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
     &lt;/a&gt;
 &lt;/span&gt;
-&lt;/h3&gt;&lt;h3 id=&#34;project-planning&#34; &gt;Project Planning
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;plans, schedules, executes, controls project&lt;/li&gt;
+&lt;li&gt;meeting requirements&lt;/li&gt;
+&lt;li&gt;keeps project on track, within budget, and meets quality standards&lt;/li&gt;
+&lt;li&gt;makes trade-off decisions&lt;/li&gt;
+&lt;li&gt;expedites work when needed&lt;/li&gt;
+&lt;li&gt;resolves conflicts&lt;/li&gt;
+&lt;li&gt;adapts&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;project-management-process&#34; &gt;Project Management Process
 &lt;span&gt;
-    &lt;a href=&#34;#project-planning&#34;&gt;
+    &lt;a href=&#34;#project-management-process&#34;&gt;
         &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
     &lt;/a&gt;
 &lt;/span&gt;
-&lt;/h3&gt;&lt;h3 id=&#34;project-scheduling&#34; &gt;Project Scheduling
-&lt;span&gt;
-    &lt;a href=&#34;#project-scheduling&#34;&gt;
-        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
-    &lt;/a&gt;
-&lt;/span&gt;
-&lt;/h3&gt;&lt;h3 id=&#34;project-contrl&#34; &gt;Project Contrl
-&lt;span&gt;
-    &lt;a href=&#34;#project-contrl&#34;&gt;
-        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
-    &lt;/a&gt;
-&lt;/span&gt;
-&lt;/h3&gt;&lt;h3 id=&#34;work-breakdown-structure&#34; &gt;Work Breakdown Structure
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Planning&lt;/li&gt;
+&lt;li&gt;Scheduling&lt;/li&gt;
+&lt;li&gt;Control&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;work-breakdown-structure&#34; &gt;Work Breakdown Structure
 &lt;span&gt;
     &lt;a href=&#34;#work-breakdown-structure&#34;&gt;
         &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
     &lt;/a&gt;
 &lt;/span&gt;
-&lt;/h3&gt;&lt;h3 id=&#34;cpm--pert&#34; &gt;CPM &amp;amp; PERT
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;Identify &lt;strong&gt;major components&lt;/strong&gt; of the project&lt;/li&gt;
+&lt;li&gt;Break down the major components into &lt;strong&gt;subcomponents&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Break down subcomponents into &lt;strong&gt;work packages&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;responsibility-assignment-matrix-ram&#34; &gt;Responsibility Assignment Matrix (RAM)
+&lt;span&gt;
+    &lt;a href=&#34;#responsibility-assignment-matrix-ram&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Organizational breakdown structure (OBS) shows which organizational units are responsible for work items
+used to develop RAM&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;gantt-chart&#34; &gt;Gantt Chart
+&lt;span&gt;
+    &lt;a href=&#34;#gantt-chart&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;A visual aid for scheduling and control purposes&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;cpm--pert&#34; &gt;CPM &amp;amp; PERT
 &lt;span&gt;
     &lt;a href=&#34;#cpm--pert&#34;&gt;
         &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
     &lt;/a&gt;
 &lt;/span&gt;
 &lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;Critcal Path Method (CPM) &amp;amp; Program Evaluation Review Technique&lt;/li&gt;
-&lt;li&gt;Program Evaluation and Review Technique&lt;/li&gt;
+&lt;li&gt;Critcal Path Method (CPM) has deterministic task times&lt;/li&gt;
+&lt;li&gt;Program Evaluation and Review Technique (PERT) has probabilistic task times&lt;/li&gt;
+&lt;li&gt;network path: starting node to finishing node sequence&lt;/li&gt;
+&lt;li&gt;critical path: longest network path; determines project duration&lt;/li&gt;
+&lt;li&gt;critical activities: activites on the critical path&lt;/li&gt;
+&lt;li&gt;slack time: allowable slippage for a path&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Crticial Path for a table.&lt;/p&gt;
-&lt;p&gt;In CPM, estimates are given. In PERT, a best case, likely case, and worst case estimates are given.
-To calculate expected time of a single activity, use&lt;/p&gt;
+&lt;p&gt;To calculate expected time of a single activity, use&lt;/p&gt;
 &lt;img class=equation src=&#34;https://latex.codecogs.com/svg.image?t_E=\frac{a + 4m + b}{6}&#34;&gt;
-&lt;p&gt;Where a is best case time, m is most likely, and b is worst case time.&lt;/p&gt;
+&lt;p&gt;Where &lt;code&gt;a&lt;/code&gt; is best case time, &lt;code&gt;m&lt;/code&gt; is most likely, and &lt;code&gt;b&lt;/code&gt; is worst case time.&lt;/p&gt;
 &lt;p&gt;Thus the expected duration of a path (t_path) is the sum of activity expected times.&lt;/p&gt;
 &lt;p&gt;The variance of each activity time is &lt;img class=equation src=&#34;https://latex.codecogs.com/svg.image?\sigma^2=(\frac{b - a}{6})^2&#34;&gt;&lt;/p&gt;
 &lt;p&gt;The variance of a path is then the sum of activity variances, and the variance of the &lt;em&gt;critical&lt;/em&gt; path is also known
@@ -1127,59 +1157,79 @@ years into the future, depending on the company and the type of industry.&lt;/li
 &lt;li&gt;forecasting method should be reliable&lt;/li&gt;
 &lt;li&gt;operations forecasts should be expressed in units&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;time-series-methods&#34; &gt;Time-Series Methods
+&lt;h3 id=&#34;quantitative-forecasting-methods&#34; &gt;Quantitative Forecasting Methods
 &lt;span&gt;
-    &lt;a href=&#34;#time-series-methods&#34;&gt;
+    &lt;a href=&#34;#quantitative-forecasting-methods&#34;&gt;
         &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
     &lt;/a&gt;
 &lt;/span&gt;
-&lt;/h3&gt;&lt;h4 id=&#34;naive-method&#34; &gt;naive method
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Time-Series methods
+&lt;ul&gt;
+&lt;li&gt;use historical data to project into the future&lt;/li&gt;
+&lt;li&gt;naive method, moving average, weighted moving average, exeponential smoothing&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Associative models
+&lt;ul&gt;
+&lt;li&gt;independent casual variables&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;naive-method&#34; &gt;Naive Method
 &lt;span&gt;
     &lt;a href=&#34;#naive-method&#34;&gt;
         &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
     &lt;/a&gt;
 &lt;/span&gt;
-&lt;/h4&gt;&lt;h4 id=&#34;moving-average&#34; &gt;moving average
+&lt;/h4&gt;&lt;p&gt;Assumes the demand for the next period will be the same as the previous period&lt;/p&gt;
+&lt;h4 id=&#34;moving-average&#34; &gt;Moving Average
 &lt;span&gt;
     &lt;a href=&#34;#moving-average&#34;&gt;
         &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
     &lt;/a&gt;
 &lt;/span&gt;
-&lt;/h4&gt;&lt;p&gt;For MA-2, do (Actual_(n-1) + Actual_n) / 2. As the window increases, the lag will increase.&lt;/p&gt;
-&lt;h4 id=&#34;weighted-moving-average&#34; &gt;weighted moving average
+&lt;/h4&gt;&lt;p&gt;As the MA-window increases, so too will the lag.&lt;/p&gt;
+&lt;p&gt;For MA-2, do&lt;/p&gt;
+&lt;img class=equation-tall src=&#34;https://latex.codecogs.com/svg.image?F_t=MA_t=\frac{D_{t-1}+D_{t-2}}{2}&#34;&gt;
+&lt;h4 id=&#34;weighted-moving-average&#34; &gt;Weighted Moving Average
 &lt;span&gt;
     &lt;a href=&#34;#weighted-moving-average&#34;&gt;
         &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
     &lt;/a&gt;
 &lt;/span&gt;
-&lt;/h4&gt;&lt;h4 id=&#34;exponential-smoothing&#34; &gt;exponential smoothing
+&lt;/h4&gt;&lt;img class=equation-tall src=&#34;https://latex.codecogs.com/svg.image?F_t=WMA_t=\sum_{i \in periods} w_i \times D_i&#34;&gt;
+&lt;h4 id=&#34;exponential-smoothing&#34; &gt;Exponential Smoothing
 &lt;span&gt;
     &lt;a href=&#34;#exponential-smoothing&#34;&gt;
         &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
     &lt;/a&gt;
 &lt;/span&gt;
-&lt;/h4&gt;&lt;img class=equation src=&#34;https://latex.codecogs.com/svg.image?F_{t+1}=\alpha D_t + (1-\alpha)F_t&#34;&gt;
-&lt;h4 id=&#34;adjusted-exponential-smoothing&#34; &gt;adjusted exponential smoothing
+&lt;/h4&gt;&lt;img class=equation src=&#34;https://latex.codecogs.com/svg.image?F_t=\alpha D_{t-1} + (1-\alpha)F_{t-1}&#34;&gt;
+&lt;h4 id=&#34;adjusted-exponential-smoothing&#34; &gt;Adjusted Exponential Smoothing
 &lt;span&gt;
     &lt;a href=&#34;#adjusted-exponential-smoothing&#34;&gt;
         &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
     &lt;/a&gt;
 &lt;/span&gt;
-&lt;/h4&gt;&lt;p&gt;Example&lt;/p&gt;
-&lt;p&gt;For the data given below, generate a forecast period 1 - 5 sing adjusted exponential smoothing.
+&lt;/h4&gt;&lt;p&gt;Incorporates a trend factor on top of exponential smoothing&lt;/p&gt;
+&lt;img class=equation src=&#34;https://latex.codecogs.com/svg.image?F_{a_t}=F_t+T_t&#34;&gt;
+&lt;img class=equation src=&#34;https://latex.codecogs.com/svg.image?T_t=\beta(F_t-F_{t-1})+(1-\beta)T_{t-1}&#34;&gt;
+&lt;p&gt;Where beta is a smoothing constant for the overall trend&lt;/p&gt;
+&lt;p&gt;Example&lt;/p&gt;
+&lt;p&gt;For the data given below, generate a forecast using adjusted exponential smoothing.
 Assume alpha = 0.5 and beta = 0.3.&lt;/p&gt;
-&lt;p&gt;The formula for the adjusted exponential smoothing forecast requires an initial value for Tt to start
-the computational process. For this case let&amp;rsquo;s assume initial T is 0.&lt;/p&gt;
-&lt;p&gt;Ft = Ft-1 + alpha(A_t-1 - F_t-1)&lt;/p&gt;
-&lt;p&gt;Tt = Beta(Ft - F_t-1) + (1 - Beta)T_t-1&lt;/p&gt;
+&lt;p&gt;An adjusted exponential smoothing forecast requires T&lt;sub&gt;2&lt;/sub&gt; to start the computational process.
+For this case, assume T&lt;sub&gt;2&lt;/sub&gt; = 0.&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;Period&lt;/th&gt;
 &lt;th&gt;Month&lt;/th&gt;
 &lt;th&gt;Demand&lt;/th&gt;
-&lt;th&gt;Forecast Ft&lt;/th&gt;
-&lt;th&gt;Trend Ti&lt;/th&gt;
+&lt;th&gt;Forecast F&lt;sub&gt;t&lt;/sub&gt;&lt;/th&gt;
+&lt;th&gt;Trend T&lt;sub&gt;i&lt;/sub&gt;&lt;/th&gt;
+&lt;th&gt;Adjusted Forecast AF&lt;sub&gt;t&lt;/sub&gt;&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 &lt;tbody&gt;
@@ -1189,6 +1239,7 @@ the computational process. For this case let&amp;rsquo;s assume initial T is 0.&
 &lt;td&gt;37&lt;/td&gt;
 &lt;td&gt;37.00&lt;/td&gt;
 &lt;td&gt;-&lt;/td&gt;
+&lt;td&gt;-&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;2&lt;/td&gt;
@@ -1196,6 +1247,7 @@ the computational process. For this case let&amp;rsquo;s assume initial T is 0.&
 &lt;td&gt;40&lt;/td&gt;
 &lt;td&gt;37.00&lt;/td&gt;
 &lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;37.00&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;3&lt;/td&gt;
@@ -1203,6 +1255,7 @@ the computational process. For this case let&amp;rsquo;s assume initial T is 0.&
 &lt;td&gt;41&lt;/td&gt;
 &lt;td&gt;38.50&lt;/td&gt;
 &lt;td&gt;0.45&lt;/td&gt;
+&lt;td&gt;38.95&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;4&lt;/td&gt;
@@ -1210,6 +1263,7 @@ the computational process. For this case let&amp;rsquo;s assume initial T is 0.&
 &lt;td&gt;37&lt;/td&gt;
 &lt;td&gt;39.75&lt;/td&gt;
 &lt;td&gt;0.69&lt;/td&gt;
+&lt;td&gt;40.44&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;5&lt;/td&gt;
@@ -1217,28 +1271,56 @@ the computational process. For this case let&amp;rsquo;s assume initial T is 0.&
 &lt;td&gt;45&lt;/td&gt;
 &lt;td&gt;38.37&lt;/td&gt;
 &lt;td&gt;0.07&lt;/td&gt;
+&lt;td&gt;38.44&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
+&lt;p&gt;Sample calculation&lt;/p&gt;
+&lt;p&gt;F&lt;sub&gt;3&lt;/sub&gt; = alpha(D&lt;sub&gt;2&lt;/sub&gt;) + (1 - alpha) F&lt;sub&gt;2&lt;/sub&gt; = 38.5&lt;/p&gt;
+&lt;p&gt;T&lt;sub&gt;3&lt;/sub&gt; = Beta(F&lt;sub&gt;3&lt;/sub&gt; - F&lt;sub&gt;2&lt;/sub&gt;) + T&lt;sub&gt;2&lt;/sub&gt;(1 - Beta) = 0.45&lt;/p&gt;
+&lt;p&gt;AF&lt;sub&gt;3&lt;/sub&gt; = F&lt;sub&gt;3&lt;/sub&gt; + T&lt;sub&gt;3&lt;/sub&gt;&lt;/p&gt;
 &lt;h4 id=&#34;seasonal-adjustments&#34; &gt;Seasonal Adjustments
 &lt;span&gt;
     &lt;a href=&#34;#seasonal-adjustments&#34;&gt;
         &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
     &lt;/a&gt;
 &lt;/span&gt;
-&lt;/h4&gt;&lt;h4 id=&#34;forecasting-error&#34; &gt;Forecasting Error
+&lt;/h4&gt;&lt;p&gt;Course specific: seasonal adjustment factor (S&lt;sub&gt;q&lt;/sub&gt;) relative to
+the total demand for some period. Use factor after a forecast to get each quarter&amp;rsquo;s demand forecast.&lt;/p&gt;
+&lt;img class=equation-tall src=&#34;https://latex.codecogs.com/svg.image?S_q=\frac{D_q}{\sum D}&#34;&gt;
+&lt;h4 id=&#34;forecast-accuracy&#34; &gt;Forecast Accuracy
 &lt;span&gt;
-    &lt;a href=&#34;#forecasting-error&#34;&gt;
+    &lt;a href=&#34;#forecast-accuracy&#34;&gt;
         &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
     &lt;/a&gt;
 &lt;/span&gt;
-&lt;/h4&gt;&lt;h2 id=&#34;inventory-management&#34; &gt;Inventory Management
+&lt;/h4&gt;&lt;p&gt;e&lt;sub&gt;t&lt;/sub&gt; = D&lt;sub&gt;t&lt;/sub&gt; - F&lt;sub&gt;t&lt;/sub&gt;&lt;/p&gt;
+&lt;p&gt;MAD = sum of | e&lt;sub&gt;t&lt;/sub&gt; | / n&lt;/p&gt;
+&lt;p&gt;mean squared error = sum (e_t^2) / n&lt;/p&gt;
+&lt;p&gt;mean absolute percentage deviation = sum (e_t) / sum (D_t)&lt;/p&gt;
+&lt;h2 id=&#34;inventory-management&#34; &gt;Inventory Management
 &lt;span&gt;
     &lt;a href=&#34;#inventory-management&#34;&gt;
         &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
     &lt;/a&gt;
 &lt;/span&gt;
-&lt;/h2&gt;&lt;h3 id=&#34;inventory-control-systems&#34; &gt;Inventory Control Systems
+&lt;/h2&gt;&lt;h3 id=&#34;what-is-inventory&#34; &gt;What is Inventory?
+&lt;span&gt;
+    &lt;a href=&#34;#what-is-inventory&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;raw materials&lt;/li&gt;
+&lt;li&gt;work in progress&lt;/li&gt;
+&lt;li&gt;finished products&lt;/li&gt;
+&lt;li&gt;packaging&lt;/li&gt;
+&lt;li&gt;replacement parts&lt;/li&gt;
+&lt;li&gt;goods-in-transit&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Important because assets are tied up in inventory. Too much inventory can increase costs
+and reduce efficiency while too&lt;/p&gt;
+&lt;h3 id=&#34;inventory-control-systems&#34; &gt;Inventory Control Systems
 &lt;span&gt;
     &lt;a href=&#34;#inventory-control-systems&#34;&gt;
         &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
@@ -1251,9 +1333,8 @@ the computational process. For this case let&amp;rsquo;s assume initial T is 0.&
     &lt;/a&gt;
 &lt;/span&gt;
 &lt;/h4&gt;&lt;ul&gt;
-&lt;li&gt;fixed order quantity&lt;/li&gt;
-&lt;li&gt;inventory is continually monitored&lt;/li&gt;
-&lt;li&gt;reorder oint, economic order quantity&lt;/li&gt;
+&lt;li&gt;economic [fixed] order quantity (EOQ) whenever the reorder point is reached&lt;/li&gt;
+&lt;li&gt;inventory is continually monitored (costly)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h4 id=&#34;periodic-system&#34; &gt;Periodic System
 &lt;span&gt;
@@ -1262,31 +1343,83 @@ the computational process. For this case let&amp;rsquo;s assume initial T is 0.&
     &lt;/a&gt;
 &lt;/span&gt;
 &lt;/h4&gt;&lt;ul&gt;
-&lt;li&gt;fixed time period&lt;/li&gt;
+&lt;li&gt;orders are placed on a fixed time interval&lt;/li&gt;
+&lt;li&gt;order quantity = desired inventory level - inventory on hand&lt;/li&gt;
+&lt;li&gt;less level of control&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;economic-order-quantities&#34; &gt;Economic Order Quantities
+&lt;h3 id=&#34;economic-order-quantity-eoq&#34; &gt;Economic Order Quantity (EOQ)
 &lt;span&gt;
-    &lt;a href=&#34;#economic-order-quantities&#34;&gt;
+    &lt;a href=&#34;#economic-order-quantity-eoq&#34;&gt;
         &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
     &lt;/a&gt;
 &lt;/span&gt;
-&lt;/h3&gt;&lt;p&gt;EOQ = Q* = sqrt( 2DC/C_C )&lt;/p&gt;
-&lt;p&gt;TC = C_c * (Q*)/2 + C_O * D/(Q*) = Holding Cost + Ordering cost&lt;/p&gt;
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;single product&lt;/li&gt;
+&lt;li&gt;constant annual demand is known&lt;/li&gt;
+&lt;li&gt;single delivery with constant lead time smaller than the order cycle&lt;/li&gt;
+&lt;li&gt;no discounts&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Average inventory = Q / 2&lt;/p&gt;
+&lt;p&gt;Average inventory cost = Q / 2 * C&lt;sub&gt;c&lt;/sub&gt; [holding cost per unit]&lt;/p&gt;
+&lt;p&gt;Number of orders = D / Q&lt;/p&gt;
+&lt;p&gt;Annual order costs = D / Q * C&lt;sub&gt;0&lt;/sub&gt;&lt;/p&gt;
+&lt;p&gt;TC = Q/2 * C&lt;sub&gt;c&lt;/sub&gt; + D/Q * C&lt;sub&gt;O&lt;/sub&gt; = Holding Cost + Ordering cost&lt;/p&gt;
+&lt;img class=equation-tall src=&#34;https://latex.codecogs.com/svg.image?EOQ = Q_{opt}=\sqrt{\frac{2DC_O}{C_C}}&#34;&gt;
+&lt;p&gt;Slope = dTC / dQ = C&lt;sub&gt;C&lt;/sub&gt;/2 - DC_&lt;sub&gt;O&lt;/sub&gt; / Q&lt;sup&gt;2&lt;/sup&gt; = 0&lt;/p&gt;
 &lt;p&gt;D/Q = purchase orders per year&lt;/p&gt;
-&lt;h3 id=&#34;inventory-control-cost&#34; &gt;Inventory Control Cost
+&lt;h4 id=&#34;quantity-discounts&#34; &gt;Quantity Discounts
 &lt;span&gt;
-    &lt;a href=&#34;#inventory-control-cost&#34;&gt;
+    &lt;a href=&#34;#quantity-discounts&#34;&gt;
         &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
     &lt;/a&gt;
 &lt;/span&gt;
-&lt;/h3&gt;&lt;p&gt;TC = C_c times Q/2 + C_O * D/Q&lt;/p&gt;
-&lt;h2 id=&#34;exam-review&#34; &gt;Exam Review
+&lt;/h4&gt;&lt;p&gt;Add PD to total cost where price is per unit and D is demand.&lt;/p&gt;
+&lt;p&gt;If quantity is feasible done, otherwise compare with the minimum for each
+proce discount level larger than EOQ.&lt;/p&gt;
+&lt;h3 id=&#34;economic-production-quantity&#34; &gt;Economic Production Quantity
 &lt;span&gt;
-    &lt;a href=&#34;#exam-review&#34;&gt;
+    &lt;a href=&#34;#economic-production-quantity&#34;&gt;
         &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
     &lt;/a&gt;
 &lt;/span&gt;
-&lt;/h2&gt;</description>
+&lt;/h3&gt;&lt;p&gt;Receive quantity incremetally while inventory is being depleted.&lt;/p&gt;
+&lt;img class=equation-tall src=&#34;https://latex.codecogs.com/svg.image?EPQ = Q_{opt} = EOQ * \sqrt{\frac{p}{p-d}}&#34;&gt;
+&lt;p&gt;Where p is the production rate per day and d is the demand rate per day.&lt;/p&gt;
+&lt;p&gt;Inventory max = (Q/p)(p-d)&lt;/p&gt;
+&lt;p&gt;TC = I/2 * C&lt;sub&gt;c&lt;/sub&gt; + D/Q * C&lt;sub&gt;S&lt;/sub&gt; = Holding Cost + Setup cost per run&lt;/p&gt;
+&lt;h3 id=&#34;reorder-point-constant-demand&#34; &gt;Reorder Point (Constant Demand)
+&lt;span&gt;
+    &lt;a href=&#34;#reorder-point-constant-demand&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;Ensure that the time unit is the same.&lt;/p&gt;
+&lt;h3 id=&#34;reorder-point-variable-demand&#34; &gt;Reorder Point (Variable Demand)
+&lt;span&gt;
+    &lt;a href=&#34;#reorder-point-variable-demand&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;R = demand rate * lead time + Safety Stock&lt;/p&gt;
+&lt;img class=equation src=&#34;https://latex.codecogs.com/svg.image?z\sigma_d\sqrt{L}&#34;&gt;
+&lt;p&gt;Use table for z depending on % service level. e.g. 95% -&amp;gt; z = 1.65. Service level is the probability that demand won&amp;rsquo;t be greater than quantity of goods in stock.&lt;/p&gt;
+&lt;h3 id=&#34;periodic-order-quantities-variable-demand&#34; &gt;Periodic Order Quantities (Variable Demand)
+&lt;span&gt;
+    &lt;a href=&#34;#periodic-order-quantities-variable-demand&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;Q = average demand rate * (time between orders + lead time) + z sigma (sqrt (t + L)) - I&lt;/p&gt;
+&lt;h3 id=&#34;single-period-inventory-model&#34; &gt;Single Period Inventory Model
+&lt;span&gt;
+    &lt;a href=&#34;#single-period-inventory-model&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;Shortage Costs = revenue per unit - cost per unit&lt;/p&gt;
+&lt;p&gt;Excess Costs = cost per unit - salvage value&lt;/p&gt;
+&lt;p&gt;SL = C_S / (C_E + C_S) (round up to closest cumulative probability in table)&lt;/p&gt;
+</description>
     </item>
     
     <item>

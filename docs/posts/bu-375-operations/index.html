@@ -274,7 +274,8 @@
             </header>
         </div>
         <div class="content e-content">
-            <p>This document are my notes and midterm review for the BU 375 Operations course taught at Wilfrid Laurier University. While studying for the midterm, I discovered my own formulae shortcuts, undoubtly due to &ldquo;blind teaching syndrome&rdquo; (I made that term up).
+            <!-- markdownlint-disable MD033 -->
+<p>This document are my notes and midterm review for the BU 375 Operations course taught at Wilfrid Laurier University. While studying for the midterm, I discovered my own formulae shortcuts, undoubtly due to &ldquo;blind teaching syndrome&rdquo; (I made that term up).
 So let&rsquo;s begin. I&rsquo;ll add a divider to let you know what is part of the midterm.</p>
 <div>
     <h2>Table of Contents</h2>
@@ -347,18 +348,17 @@ So let&rsquo;s begin. I&rsquo;ll add a divider to let you know what is part of t
         <li><a href="#supply-chain-coordination-and-integration">Supply Chain Coordination and Integration</a></li>
         <li><a href="#information-technology">Information Technology</a></li>
         <li><a href="#supply-chain-performance">Supply Chain Performance</a></li>
-        <li><a href="#scor-model">Scor Model</a></li>
+        <li><a href="#scor-model">SCOR Model</a></li>
       </ul>
     </li>
     <li><a href="#project-management">Project Management</a>
       <ul>
-        <li><a href="#gantt-chart">Gantt Chart</a></li>
         <li><a href="#project-elements">Project Elements</a></li>
         <li><a href="#project-manager">Project Manager</a></li>
-        <li><a href="#project-planning">Project Planning</a></li>
-        <li><a href="#project-scheduling">Project Scheduling</a></li>
-        <li><a href="#project-contrl">Project Contrl</a></li>
+        <li><a href="#project-management-process">Project Management Process</a></li>
         <li><a href="#work-breakdown-structure">Work Breakdown Structure</a></li>
+        <li><a href="#responsibility-assignment-matrix-ram">Responsibility Assignment Matrix (RAM)</a></li>
+        <li><a href="#gantt-chart">Gantt Chart</a></li>
         <li><a href="#cpm--pert">CPM &amp; PERT</a></li>
         <li><a href="#crashing">Crashing</a></li>
       </ul>
@@ -367,17 +367,21 @@ So let&rsquo;s begin. I&rsquo;ll add a divider to let you know what is part of t
       <ul>
         <li><a href="#decision-based-on-forecasts">Decision Based on Forecasts</a></li>
         <li><a href="#making-forecasts-useful">Making Forecasts Useful</a></li>
-        <li><a href="#time-series-methods">Time-Series Methods</a></li>
+        <li><a href="#quantitative-forecasting-methods">Quantitative Forecasting Methods</a></li>
       </ul>
     </li>
     <li><a href="#inventory-management">Inventory Management</a>
       <ul>
+        <li><a href="#what-is-inventory">What is Inventory?</a></li>
         <li><a href="#inventory-control-systems">Inventory Control Systems</a></li>
-        <li><a href="#economic-order-quantities">Economic Order Quantities</a></li>
-        <li><a href="#inventory-control-cost">Inventory Control Cost</a></li>
+        <li><a href="#economic-order-quantity-eoq">Economic Order Quantity (EOQ)</a></li>
+        <li><a href="#economic-production-quantity">Economic Production Quantity</a></li>
+        <li><a href="#reorder-point-constant-demand">Reorder Point (Constant Demand)</a></li>
+        <li><a href="#reorder-point-variable-demand">Reorder Point (Variable Demand)</a></li>
+        <li><a href="#periodic-order-quantities-variable-demand">Periodic Order Quantities (Variable Demand)</a></li>
+        <li><a href="#single-period-inventory-model">Single Period Inventory Model</a></li>
       </ul>
     </li>
-    <li><a href="#exam-review">Exam Review</a></li>
   </ul>
 </nav>
 </div>
@@ -1102,10 +1106,10 @@ If c<sub>p</sub> = c<sub>pk</sub>, then design mean and process mean are the sam
     </a>
 </span>
 </h3><ol>
-<li>Procurement of raw materials and services</li>
-<li>Production of product and services</li>
-<li>Storage of products in inventory</li>
-<li>Taking orders and distribution of products to the customer</li>
+<li><strong>Procurement</strong> of <strong>raw materials</strong> and services</li>
+<li><strong>Production</strong> of <strong>product</strong> and services</li>
+<li><strong>Storage</strong> of products in <strong>inventory</strong></li>
+<li>Taking orders and <strong>distribution</strong> of products to the customer</li>
 </ol>
 <h3 id="supply-chain-for-service-providers" >Supply Chain for Service Providers
 <span>
@@ -1124,10 +1128,11 @@ If c<sub>p</sub> = c<sub>pk</sub>, then design mean and process mean are the sam
     </a>
 </span>
 </h3><ul>
+<li>Create maximum value for the end customer</li>
+<li>perfecting coordination and collabortaion of components</li>
+<li>To provide enough supply at the right price, time, and place</li>
 <li>Systemic approach to manage entire flow of information, materials, and services from raw-materials to customers</li>
-<li>Goal: perfecting coordination and collabortaion of components to effectively meet demand at the right price, time, and place</li>
 <li>Competition becomes between supply chains rather than companies</li>
-<li>Transparency is important</li>
 </ul>
 <h4 id="bullwhip-effect" >Bullwhip Effect
 <span>
@@ -1138,12 +1143,13 @@ If c<sub>p</sub> = c<sub>pk</sub>, then design mean and process mean are the sam
 </h4><ul>
 <li>Supply chain members farther down the line get information after the members
 nearer to customers.</li>
+<li>importance of transparency accrorss members</li>
 <li>Safety stock issues</li>
 <li>Lack of accurate demand information</li>
 <li>Order batching results in less orders but larger quantities</li>
 <li>Price fluctuations</li>
 <li>Shortage gaming (placing orders more than is required bc inventory is short supply)</li>
-<li>Solutions
+<li><strong>Solutions</strong>
 <ul>
 <li>Coordination by parties for pricing, transportation, and inventory management</li>
 <li>Joint demand information forecast</li>
@@ -1214,7 +1220,7 @@ whether to anticipate more orders if batch ordering occurs.</p>
 <ul>
 <li>low inventory turnover indicatest hat a large amount of inventory is required to satisfy demand</li>
 </ul>
-<h3 id="scor-model" >Scor Model
+<h3 id="scor-model" >SCOR Model
 <span>
     <a href="#scor-model">
         <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
@@ -1234,13 +1240,9 @@ whether to anticipate more orders if batch ordering occurs.</p>
         <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
     </a>
 </span>
-</h2><h3 id="gantt-chart" >Gantt Chart
-<span>
-    <a href="#gantt-chart">
-        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
-    </a>
-</span>
-</h3><h3 id="project-elements" >Project Elements
+</h2><p>A project is one-time and non-repetitive operational activities or efforts. Clear goal, limited time frame,
+budget, schedule, resources.</p>
+<h3 id="project-elements" >Project Elements
 <span>
     <a href="#project-elements">
         <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
@@ -1262,45 +1264,73 @@ whether to anticipate more orders if batch ordering occurs.</p>
         <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
     </a>
 </span>
-</h3><h3 id="project-planning" >Project Planning
+</h3><ul>
+<li>plans, schedules, executes, controls project</li>
+<li>meeting requirements</li>
+<li>keeps project on track, within budget, and meets quality standards</li>
+<li>makes trade-off decisions</li>
+<li>expedites work when needed</li>
+<li>resolves conflicts</li>
+<li>adapts</li>
+</ul>
+<h3 id="project-management-process" >Project Management Process
 <span>
-    <a href="#project-planning">
+    <a href="#project-management-process">
         <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
     </a>
 </span>
-</h3><h3 id="project-scheduling" >Project Scheduling
-<span>
-    <a href="#project-scheduling">
-        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
-    </a>
-</span>
-</h3><h3 id="project-contrl" >Project Contrl
-<span>
-    <a href="#project-contrl">
-        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
-    </a>
-</span>
-</h3><h3 id="work-breakdown-structure" >Work Breakdown Structure
+</h3><ul>
+<li>Planning</li>
+<li>Scheduling</li>
+<li>Control</li>
+</ul>
+<h3 id="work-breakdown-structure" >Work Breakdown Structure
 <span>
     <a href="#work-breakdown-structure">
         <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
     </a>
 </span>
-</h3><h3 id="cpm--pert" >CPM &amp; PERT
+</h3><ol>
+<li>Identify <strong>major components</strong> of the project</li>
+<li>Break down the major components into <strong>subcomponents</strong></li>
+<li>Break down subcomponents into <strong>work packages</strong></li>
+</ol>
+<h3 id="responsibility-assignment-matrix-ram" >Responsibility Assignment Matrix (RAM)
+<span>
+    <a href="#responsibility-assignment-matrix-ram">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>Organizational breakdown structure (OBS) shows which organizational units are responsible for work items
+used to develop RAM</li>
+</ul>
+<h3 id="gantt-chart" >Gantt Chart
+<span>
+    <a href="#gantt-chart">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>A visual aid for scheduling and control purposes</li>
+</ul>
+<h3 id="cpm--pert" >CPM &amp; PERT
 <span>
     <a href="#cpm--pert">
         <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
     </a>
 </span>
 </h3><ul>
-<li>Critcal Path Method (CPM) &amp; Program Evaluation Review Technique</li>
-<li>Program Evaluation and Review Technique</li>
+<li>Critcal Path Method (CPM) has deterministic task times</li>
+<li>Program Evaluation and Review Technique (PERT) has probabilistic task times</li>
+<li>network path: starting node to finishing node sequence</li>
+<li>critical path: longest network path; determines project duration</li>
+<li>critical activities: activites on the critical path</li>
+<li>slack time: allowable slippage for a path</li>
 </ul>
-<p>Crticial Path for a table.</p>
-<p>In CPM, estimates are given. In PERT, a best case, likely case, and worst case estimates are given.
-To calculate expected time of a single activity, use</p>
+<p>To calculate expected time of a single activity, use</p>
 <img class=equation src="https://latex.codecogs.com/svg.image?t_E=\frac{a + 4m + b}{6}">
-<p>Where a is best case time, m is most likely, and b is worst case time.</p>
+<p>Where <code>a</code> is best case time, <code>m</code> is most likely, and <code>b</code> is worst case time.</p>
 <p>Thus the expected duration of a path (t_path) is the sum of activity expected times.</p>
 <p>The variance of each activity time is <img class=equation src="https://latex.codecogs.com/svg.image?\sigma^2=(\frac{b - a}{6})^2"></p>
 <p>The variance of a path is then the sum of activity variances, and the variance of the <em>critical</em> path is also known
@@ -1384,59 +1414,79 @@ years into the future, depending on the company and the type of industry.</li>
 <li>forecasting method should be reliable</li>
 <li>operations forecasts should be expressed in units</li>
 </ul>
-<h3 id="time-series-methods" >Time-Series Methods
+<h3 id="quantitative-forecasting-methods" >Quantitative Forecasting Methods
 <span>
-    <a href="#time-series-methods">
+    <a href="#quantitative-forecasting-methods">
         <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
     </a>
 </span>
-</h3><h4 id="naive-method" >naive method
+</h3><ul>
+<li>Time-Series methods
+<ul>
+<li>use historical data to project into the future</li>
+<li>naive method, moving average, weighted moving average, exeponential smoothing</li>
+</ul>
+</li>
+<li>Associative models
+<ul>
+<li>independent casual variables</li>
+</ul>
+</li>
+</ul>
+<h4 id="naive-method" >Naive Method
 <span>
     <a href="#naive-method">
         <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
     </a>
 </span>
-</h4><h4 id="moving-average" >moving average
+</h4><p>Assumes the demand for the next period will be the same as the previous period</p>
+<h4 id="moving-average" >Moving Average
 <span>
     <a href="#moving-average">
         <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
     </a>
 </span>
-</h4><p>For MA-2, do (Actual_(n-1) + Actual_n) / 2. As the window increases, the lag will increase.</p>
-<h4 id="weighted-moving-average" >weighted moving average
+</h4><p>As the MA-window increases, so too will the lag.</p>
+<p>For MA-2, do</p>
+<img class=equation-tall src="https://latex.codecogs.com/svg.image?F_t=MA_t=\frac{D_{t-1}+D_{t-2}}{2}">
+<h4 id="weighted-moving-average" >Weighted Moving Average
 <span>
     <a href="#weighted-moving-average">
         <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
     </a>
 </span>
-</h4><h4 id="exponential-smoothing" >exponential smoothing
+</h4><img class=equation-tall src="https://latex.codecogs.com/svg.image?F_t=WMA_t=\sum_{i \in periods} w_i \times D_i">
+<h4 id="exponential-smoothing" >Exponential Smoothing
 <span>
     <a href="#exponential-smoothing">
         <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
     </a>
 </span>
-</h4><img class=equation src="https://latex.codecogs.com/svg.image?F_{t+1}=\alpha D_t + (1-\alpha)F_t">
-<h4 id="adjusted-exponential-smoothing" >adjusted exponential smoothing
+</h4><img class=equation src="https://latex.codecogs.com/svg.image?F_t=\alpha D_{t-1} + (1-\alpha)F_{t-1}">
+<h4 id="adjusted-exponential-smoothing" >Adjusted Exponential Smoothing
 <span>
     <a href="#adjusted-exponential-smoothing">
         <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
     </a>
 </span>
-</h4><p>Example</p>
-<p>For the data given below, generate a forecast period 1 - 5 sing adjusted exponential smoothing.
+</h4><p>Incorporates a trend factor on top of exponential smoothing</p>
+<img class=equation src="https://latex.codecogs.com/svg.image?F_{a_t}=F_t+T_t">
+<img class=equation src="https://latex.codecogs.com/svg.image?T_t=\beta(F_t-F_{t-1})+(1-\beta)T_{t-1}">
+<p>Where beta is a smoothing constant for the overall trend</p>
+<p>Example</p>
+<p>For the data given below, generate a forecast using adjusted exponential smoothing.
 Assume alpha = 0.5 and beta = 0.3.</p>
-<p>The formula for the adjusted exponential smoothing forecast requires an initial value for Tt to start
-the computational process. For this case let&rsquo;s assume initial T is 0.</p>
-<p>Ft = Ft-1 + alpha(A_t-1 - F_t-1)</p>
-<p>Tt = Beta(Ft - F_t-1) + (1 - Beta)T_t-1</p>
+<p>An adjusted exponential smoothing forecast requires T<sub>2</sub> to start the computational process.
+For this case, assume T<sub>2</sub> = 0.</p>
 <table>
 <thead>
 <tr>
 <th>Period</th>
 <th>Month</th>
 <th>Demand</th>
-<th>Forecast Ft</th>
-<th>Trend Ti</th>
+<th>Forecast F<sub>t</sub></th>
+<th>Trend T<sub>i</sub></th>
+<th>Adjusted Forecast AF<sub>t</sub></th>
 </tr>
 </thead>
 <tbody>
@@ -1446,6 +1496,7 @@ the computational process. For this case let&rsquo;s assume initial T is 0.</p>
 <td>37</td>
 <td>37.00</td>
 <td>-</td>
+<td>-</td>
 </tr>
 <tr>
 <td>2</td>
@@ -1453,6 +1504,7 @@ the computational process. For this case let&rsquo;s assume initial T is 0.</p>
 <td>40</td>
 <td>37.00</td>
 <td>0</td>
+<td>37.00</td>
 </tr>
 <tr>
 <td>3</td>
@@ -1460,6 +1512,7 @@ the computational process. For this case let&rsquo;s assume initial T is 0.</p>
 <td>41</td>
 <td>38.50</td>
 <td>0.45</td>
+<td>38.95</td>
 </tr>
 <tr>
 <td>4</td>
@@ -1467,6 +1520,7 @@ the computational process. For this case let&rsquo;s assume initial T is 0.</p>
 <td>37</td>
 <td>39.75</td>
 <td>0.69</td>
+<td>40.44</td>
 </tr>
 <tr>
 <td>5</td>
@@ -1474,28 +1528,56 @@ the computational process. For this case let&rsquo;s assume initial T is 0.</p>
 <td>45</td>
 <td>38.37</td>
 <td>0.07</td>
+<td>38.44</td>
 </tr>
 </tbody>
 </table>
+<p>Sample calculation</p>
+<p>F<sub>3</sub> = alpha(D<sub>2</sub>) + (1 - alpha) F<sub>2</sub> = 38.5</p>
+<p>T<sub>3</sub> = Beta(F<sub>3</sub> - F<sub>2</sub>) + T<sub>2</sub>(1 - Beta) = 0.45</p>
+<p>AF<sub>3</sub> = F<sub>3</sub> + T<sub>3</sub></p>
 <h4 id="seasonal-adjustments" >Seasonal Adjustments
 <span>
     <a href="#seasonal-adjustments">
         <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
     </a>
 </span>
-</h4><h4 id="forecasting-error" >Forecasting Error
+</h4><p>Course specific: seasonal adjustment factor (S<sub>q</sub>) relative to
+the total demand for some period. Use factor after a forecast to get each quarter&rsquo;s demand forecast.</p>
+<img class=equation-tall src="https://latex.codecogs.com/svg.image?S_q=\frac{D_q}{\sum D}">
+<h4 id="forecast-accuracy" >Forecast Accuracy
 <span>
-    <a href="#forecasting-error">
+    <a href="#forecast-accuracy">
         <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
     </a>
 </span>
-</h4><h2 id="inventory-management" >Inventory Management
+</h4><p>e<sub>t</sub> = D<sub>t</sub> - F<sub>t</sub></p>
+<p>MAD = sum of | e<sub>t</sub> | / n</p>
+<p>mean squared error = sum (e_t^2) / n</p>
+<p>mean absolute percentage deviation = sum (e_t) / sum (D_t)</p>
+<h2 id="inventory-management" >Inventory Management
 <span>
     <a href="#inventory-management">
         <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
     </a>
 </span>
-</h2><h3 id="inventory-control-systems" >Inventory Control Systems
+</h2><h3 id="what-is-inventory" >What is Inventory?
+<span>
+    <a href="#what-is-inventory">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>raw materials</li>
+<li>work in progress</li>
+<li>finished products</li>
+<li>packaging</li>
+<li>replacement parts</li>
+<li>goods-in-transit</li>
+</ul>
+<p>Important because assets are tied up in inventory. Too much inventory can increase costs
+and reduce efficiency while too</p>
+<h3 id="inventory-control-systems" >Inventory Control Systems
 <span>
     <a href="#inventory-control-systems">
         <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
@@ -1508,9 +1590,8 @@ the computational process. For this case let&rsquo;s assume initial T is 0.</p>
     </a>
 </span>
 </h4><ul>
-<li>fixed order quantity</li>
-<li>inventory is continually monitored</li>
-<li>reorder oint, economic order quantity</li>
+<li>economic [fixed] order quantity (EOQ) whenever the reorder point is reached</li>
+<li>inventory is continually monitored (costly)</li>
 </ul>
 <h4 id="periodic-system" >Periodic System
 <span>
@@ -1519,31 +1600,83 @@ the computational process. For this case let&rsquo;s assume initial T is 0.</p>
     </a>
 </span>
 </h4><ul>
-<li>fixed time period</li>
+<li>orders are placed on a fixed time interval</li>
+<li>order quantity = desired inventory level - inventory on hand</li>
+<li>less level of control</li>
 </ul>
-<h3 id="economic-order-quantities" >Economic Order Quantities
+<h3 id="economic-order-quantity-eoq" >Economic Order Quantity (EOQ)
 <span>
-    <a href="#economic-order-quantities">
+    <a href="#economic-order-quantity-eoq">
         <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
     </a>
 </span>
-</h3><p>EOQ = Q* = sqrt( 2DC/C_C )</p>
-<p>TC = C_c * (Q*)/2 + C_O * D/(Q*) = Holding Cost + Ordering cost</p>
+</h3><ul>
+<li>single product</li>
+<li>constant annual demand is known</li>
+<li>single delivery with constant lead time smaller than the order cycle</li>
+<li>no discounts</li>
+</ul>
+<p>Average inventory = Q / 2</p>
+<p>Average inventory cost = Q / 2 * C<sub>c</sub> [holding cost per unit]</p>
+<p>Number of orders = D / Q</p>
+<p>Annual order costs = D / Q * C<sub>0</sub></p>
+<p>TC = Q/2 * C<sub>c</sub> + D/Q * C<sub>O</sub> = Holding Cost + Ordering cost</p>
+<img class=equation-tall src="https://latex.codecogs.com/svg.image?EOQ = Q_{opt}=\sqrt{\frac{2DC_O}{C_C}}">
+<p>Slope = dTC / dQ = C<sub>C</sub>/2 - DC_<sub>O</sub> / Q<sup>2</sup> = 0</p>
 <p>D/Q = purchase orders per year</p>
-<h3 id="inventory-control-cost" >Inventory Control Cost
+<h4 id="quantity-discounts" >Quantity Discounts
 <span>
-    <a href="#inventory-control-cost">
+    <a href="#quantity-discounts">
         <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
     </a>
 </span>
-</h3><p>TC = C_c times Q/2 + C_O * D/Q</p>
-<h2 id="exam-review" >Exam Review
+</h4><p>Add PD to total cost where price is per unit and D is demand.</p>
+<p>If quantity is feasible done, otherwise compare with the minimum for each
+proce discount level larger than EOQ.</p>
+<h3 id="economic-production-quantity" >Economic Production Quantity
 <span>
-    <a href="#exam-review">
+    <a href="#economic-production-quantity">
         <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
     </a>
 </span>
-</h2>
+</h3><p>Receive quantity incremetally while inventory is being depleted.</p>
+<img class=equation-tall src="https://latex.codecogs.com/svg.image?EPQ = Q_{opt} = EOQ * \sqrt{\frac{p}{p-d}}">
+<p>Where p is the production rate per day and d is the demand rate per day.</p>
+<p>Inventory max = (Q/p)(p-d)</p>
+<p>TC = I/2 * C<sub>c</sub> + D/Q * C<sub>S</sub> = Holding Cost + Setup cost per run</p>
+<h3 id="reorder-point-constant-demand" >Reorder Point (Constant Demand)
+<span>
+    <a href="#reorder-point-constant-demand">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>Ensure that the time unit is the same.</p>
+<h3 id="reorder-point-variable-demand" >Reorder Point (Variable Demand)
+<span>
+    <a href="#reorder-point-variable-demand">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>R = demand rate * lead time + Safety Stock</p>
+<img class=equation src="https://latex.codecogs.com/svg.image?z\sigma_d\sqrt{L}">
+<p>Use table for z depending on % service level. e.g. 95% -&gt; z = 1.65. Service level is the probability that demand won&rsquo;t be greater than quantity of goods in stock.</p>
+<h3 id="periodic-order-quantities-variable-demand" >Periodic Order Quantities (Variable Demand)
+<span>
+    <a href="#periodic-order-quantities-variable-demand">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>Q = average demand rate * (time between orders + lead time) + z sigma (sqrt (t + L)) - I</p>
+<h3 id="single-period-inventory-model" >Single Period Inventory Model
+<span>
+    <a href="#single-period-inventory-model">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>Shortage Costs = revenue per unit - cost per unit</p>
+<p>Excess Costs = cost per unit - salvage value</p>
+<p>SL = C_S / (C_E + C_S) (round up to closest cumulative probability in table)</p>
+
         </div>
         
 
