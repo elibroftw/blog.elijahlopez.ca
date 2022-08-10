@@ -722,7 +722,7 @@ Average inventory cost = Q / 2 * C<sub>c</sub> \[holding cost per unit]
 
 Number of orders = D / Q
 
-Annual order costs = D / Q * C<sub>0</sub>
+Annual order costs = D / Q * C<sub>O</sub>
 
 TC = Q/2 \* C<sub>c</sub> + D/Q \* C<sub>O</sub> = Holding Cost + Ordering cost
 
