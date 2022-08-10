@@ -538,13 +538,13 @@ used to develop RAM
 
 To calculate expected time of a single activity, use
 
-<img class=equation src="https://latex.codecogs.com/svg.image?t_E=\frac{a + 4m + b}{6}">
+<img class=equation-tall src="https://latex.codecogs.com/svg.image?t_E=\frac{a + 4m + b}{6}">
 
 Where `a` is best case time, `m` is most likely, and `b` is worst case time.
 
 Thus the expected duration of a path (t_path) is the sum of activity expected times.
 
-The variance of each activity time is <img class=equation src="https://latex.codecogs.com/svg.image?\sigma^2=(\frac{b - a}{6})^2">
+The variance of each activity time is <img class=equation-tall src="https://latex.codecogs.com/svg.image?\sigma^2=(\frac{b - a}{6})^2">
 
 The variance of a path is then the sum of activity variances, and the variance of the *critical* path is also known
 as the project variance.
