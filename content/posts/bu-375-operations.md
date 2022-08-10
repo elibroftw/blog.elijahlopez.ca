@@ -469,7 +469,7 @@ Average aggregate inventory value is the sum of average inventory times value fo
 
 Fill Rate = fraction of orders filled within a specific time period.
 
-- low inventory turnover indicatest hat a large amount of inventory is required to satisfy demand
+- low inventory turnover indicatest that a large amount of inventory is required to satisfy demand
 
 ### SCOR Model
 
