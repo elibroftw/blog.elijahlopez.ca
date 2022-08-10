@@ -551,9 +551,11 @@ as the project variance.
 
 Like always, the standard deviation of anything is the square root of the variance.
 
-As for calculation probabilities, the probability of completing a project by a certain time is
+As for calculation probabilities, the probability of completing a project by a certain time isw
 
-Z = (deadline - t_path) / std of critical path and then use a z-table to get a probability representing p(x < deadline)
+<img class=equation-tall src="https://latex.codecogs.com/svg.image?z=\frac{deadline - t_path}{\sigma}">
+
+Use z-table to get a probability representing p(x < deadline) where sigma is the std of the critical path.
 
 To calculate the deadline given a probability, use the z-table to get a z value, and then use the z formula to calculate.
 
