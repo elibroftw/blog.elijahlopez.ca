@@ -720,7 +720,7 @@ Average inventory = Q / 2
 
 Average inventory cost = Q / 2 * C<sub>c</sub> \[holding cost per unit]
 
-Number of orders = D / Q
+Purchase orders per year = D / Q
 
 Annual order costs = D / Q * C<sub>O</sub>
 
@@ -729,8 +729,6 @@ TC = Q/2 \* C<sub>c</sub> + D/Q \* C<sub>O</sub> = Holding Cost + Ordering cost
 <img class=equation-tall src="https://latex.codecogs.com/svg.image?EOQ = Q_{opt}=\sqrt{\frac{2DC_O}{C_C}}">
 
 Slope = dTC / dQ = C<sub>C</sub>/2 - DC_<sub>O</sub> / Q<sup>2</sup> = 0
-
-D/Q = purchase orders per year
 
 #### Quantity Discounts
 
