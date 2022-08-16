@@ -11,9 +11,16 @@ tags: [
 I'll be testing all of these methods except LocalMonero since the actual fee there is at least 20% as of 2022/4/21.
 Testing is done by using converting the received XMR to CAD using the currency pair rates at the start of each new pair transaction.
 
-## Fixed Float
+## Fixed Float (XLM:XMR)
 
 Assuming you can purchase XLM via [Newton](https://web.newton.co/r/YREHXA), use [Fixed Float](https://fixedfloat.com/XLM/XMR?ref=dybjhjrb) for 0.5% - 1% fee per trade.
+
+## TODO: TradeOgre (USDT:XMR)
+
+TODO because I'll have to do the trades to see how much the "fee" is. The steps are to buy USDT from
+Newton and then deposit that USDT in TradeOgre and create an XMR limit-buy order on TradeOgre. Afterwards,
+simply withdraw from TradeOgre. TradeOgre has a horrible UI, especially for mobile so in the future I want
+to create a better crypto:crypto exchange (all currency pairs).
 
 ## Kraken
 
