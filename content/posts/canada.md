@@ -53,6 +53,19 @@ With thed demand constrained, it'll mostly be a primary residence thing rather t
 To prevent renovation abuse, we should enact a fine on the renovation filer 2 years later.
 This also prevents owners from abusing the renovation clause in order to flip the house.
 
+### Increasing Supply - Undeveloped Land
+
+Currently, one of the issues preventing houses from being built is zoning laws. This is hearsay as I have not encountered actual proof/rationale to
+why zoning laws contribute to expensive housing when land itself is expensive! If the previous policy does not work,
+then I propose a wild idea. Land earmarked for development needs to be sold within a year or start building a house within a year or two.
+Fines will be issued (percentage of last listing price) if land is sold a second time within a year or two, or if a milestone was not reached
+with 6 months buffer period (accounting for Winter). This would be a policy with an intent to be temporary, however if affordability doesn't improve in 4 years, it would end up being permanent. By affordability, I mean prices would have to drop to reasonable levels before even factoring inflation and wage increases.
+
+Land in small towns is cheap but requires building a house. Why would anyone build a house in a small town if salaries are surely going to be lower in those
+places? Only a WFH policy would help you out. Therefore, these places help couples with money who aren't struggling in the housing market (therefore no dent
+in demand). To actually dent demand in high demand areas, we need to spur small businesses in small towns. That's a demand side policy to reduce
+demand in places like the GTA.
+
 ### Increasing Supply - Prioritized Development
 
 In the case reducing demand isn't enough, the affordability problem is clearly supply sided. My proposal is that we use the tax revenue from the speculation tax to fund housing developments. The government should not spend this money. We should issue loans at an interest rate equal to the rate banks offer. We can either create a new department would handle this stuff or if there is a lot of money, loan the money to credit unions directly and let them issue the loans for us.
