@@ -1,6 +1,9 @@
 ---
 title: "American School Shootings Analysis"
 date: 2022-08-23T14:22:33-04:00
+tags: [
+    "politics",
+]
 ---
 
 For the last two decades, democrats and republicans have failed their country. Failed the children of their voters.

@@ -4,7 +4,8 @@ date: 2022-05-21T01:18:18-04:00
 tags: [
     "canada",
     "finance",
-    "opinion"
+    "opinion",
+    "politics",
 ]
 ---
 

@@ -2,6 +2,9 @@
 title: "RE: RE: Anti-Communism"
 date: 2022-06-17T18:34:42-04:00
 hidden: true
+tags: [
+    "politics",
+]
 ---
 
 A post responding to this youtube video
