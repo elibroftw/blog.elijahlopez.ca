@@ -333,12 +333,15 @@ these non-default imports under another name we do:</p>
         <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
     </a>
 </span>
-</h2><div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#999;font-style:italic">// ./Files/index.js
+</h2><div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#999;font-style:italic">// Files/index.js
 </span><span style="color:#999;font-style:italic"></span><span style="color:#6ab825;font-weight:bold">export</span> { <span style="color:#6ab825;font-weight:bold">default</span> as file1 } from <span style="color:#ed9d13">&#39;/file1.js&#39;</span>;
 <span style="color:#6ab825;font-weight:bold">export</span> { <span style="color:#6ab825;font-weight:bold">default</span> as file2 } from <span style="color:#ed9d13">&#39;/file1.js&#39;</span>;
-<span style="color:#999;font-style:italic">// in ./App.jsx
+<span style="color:#999;font-style:italic">// App.jsx
 </span><span style="color:#999;font-style:italic"></span><span style="color:#6ab825;font-weight:bold">import</span> * as files from <span style="color:#ed9d13">&#39;./Files&#39;</span>;
 console.log(files.file1);
+<span style="color:#999;font-style:italic">// App.jsx alternative
+</span><span style="color:#999;font-style:italic"></span><span style="color:#6ab825;font-weight:bold">import</span> { file1, file2 } from <span style="color:#ed9d13">&#39;./Files&#39;</span>;
+console.log(file1);
 </code></pre></div>
         </div>
         

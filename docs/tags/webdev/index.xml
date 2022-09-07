@@ -73,12 +73,15 @@ these non-default imports under another name we do:&lt;/p&gt;
         &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
     &lt;/a&gt;
 &lt;/span&gt;
-&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// ./Files/index.js
+&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// Files/index.js
 &lt;/span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;export&lt;/span&gt; { &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;default&lt;/span&gt; as file1 } from &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;/file1.js&amp;#39;&lt;/span&gt;;
 &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;export&lt;/span&gt; { &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;default&lt;/span&gt; as file2 } from &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;/file1.js&amp;#39;&lt;/span&gt;;
-&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// in ./App.jsx
+&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// App.jsx
 &lt;/span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;import&lt;/span&gt; * as files from &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;./Files&amp;#39;&lt;/span&gt;;
 console.log(files.file1);
+&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// App.jsx alternative
+&lt;/span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;import&lt;/span&gt; { file1, file2 } from &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;./Files&amp;#39;&lt;/span&gt;;
+console.log(file1);
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
     

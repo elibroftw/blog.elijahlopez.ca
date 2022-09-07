@@ -67,10 +67,13 @@ export const schedule200 = { ... };
 ## Mass Importing and Exporting
 
 ```js
-// ./Files/index.js
+// Files/index.js
 export { default as file1 } from '/file1.js';
 export { default as file2 } from '/file1.js';
-// in ./App.jsx
+// App.jsx
 import * as files from './Files';
 console.log(files.file1);
+// App.jsx alternative
+import { file1, file2 } from './Files';
+console.log(file1);
 ```
