@@ -12,10 +12,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="referrer" content="no-referrer-when-downgrade">
 
-<title>Good Food - ELL Blog</title>
+<title>JavaScript Snippets - ELL Blog</title>
 
-<meta name="description" content="This is a list of good food I would not mind eating again. If a restaurant is not here, either I didn&rsquo;t like the food and didn&rsquo;t have a good experience or I&rsquo;ve never been. Comment if you&rsquo;d like a food review. I have extremely niche needs when it comes to food.
-CookingMy breakfast on days I feel like cooking is two scrambled eggs, two hashbrowns, and bacon bits.">
+<meta name="description" content="Here are some snippets that would&rsquo;ve saved me many minutes of my time.
+YYYYMMDDHHMM to DateWe don&rsquo;t need to add to Date.prototype here because we will call this function from the Date class itself and not an instanace of Date. If we wanted to call it from any Date instance, then we would have to edit the prototype as shown in the toX snippets.
+Date.fromYYYYMMDDHHMM = s =&gt; { var yyyy = s.">
 
 
 
@@ -87,21 +88,23 @@ CookingMy breakfast on days I feel like cooking is two scrambled eggs, two 
 
 
 
-<meta property="og:title" content="Good Food" />
-<meta property="og:description" content="This is a list of good food I would not mind eating again. If a restaurant is not here, either I didn&rsquo;t like the food and didn&rsquo;t have a good experience or I&rsquo;ve never been. Comment if you&rsquo;d like a food review. I have extremely niche needs when it comes to food.
-CookingMy breakfast on days I feel like cooking is two scrambled eggs, two hashbrowns, and bacon bits." />
+<meta property="og:title" content="JavaScript Snippets" />
+<meta property="og:description" content="Here are some snippets that would&rsquo;ve saved me many minutes of my time.
+YYYYMMDDHHMM to DateWe don&rsquo;t need to add to Date.prototype here because we will call this function from the Date class itself and not an instanace of Date. If we wanted to call it from any Date instance, then we would have to edit the prototype as shown in the toX snippets.
+Date.fromYYYYMMDDHHMM = s =&gt; { var yyyy = s." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://blog.elijahlopez.ca/posts/good-food/" /><meta property="og:image" content="https://blog.elijahlopez.ca/images"/><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2022-08-23T21:36:50-04:00" />
-<meta property="article:modified_time" content="2022-08-23T21:36:50-04:00" />
+<meta property="og:url" content="https://blog.elijahlopez.ca/posts/javascript-snippets/" /><meta property="og:image" content="https://blog.elijahlopez.ca/images"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-08-29T14:21:28-04:00" />
+<meta property="article:modified_time" content="2022-08-29T14:21:28-04:00" />
 
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://blog.elijahlopez.ca/images"/>
 
-<meta name="twitter:title" content="Good Food"/>
-<meta name="twitter:description" content="This is a list of good food I would not mind eating again. If a restaurant is not here, either I didn&rsquo;t like the food and didn&rsquo;t have a good experience or I&rsquo;ve never been. Comment if you&rsquo;d like a food review. I have extremely niche needs when it comes to food.
-CookingMy breakfast on days I feel like cooking is two scrambled eggs, two hashbrowns, and bacon bits."/>
+<meta name="twitter:title" content="JavaScript Snippets"/>
+<meta name="twitter:description" content="Here are some snippets that would&rsquo;ve saved me many minutes of my time.
+YYYYMMDDHHMM to DateWe don&rsquo;t need to add to Date.prototype here because we will call this function from the Date class itself and not an instanace of Date. If we wanted to call it from any Date instance, then we would have to edit the prototype as shown in the toX snippets.
+Date.fromYYYYMMDDHHMM = s =&gt; { var yyyy = s."/>
 
 
 
@@ -268,119 +271,71 @@ CookingMy breakfast on days I feel like cooking is two scrambled eggs, two 
     <article class="post h-entry">
         <div class="post-header">
             <header>
-                <h1 class="p-name post-title">Good Food</h1>
+                <h1 class="p-name post-title">JavaScript Snippets</h1>
 
                 
             </header>
         </div>
         <div class="content e-content">
-            <p>This is a list of good food I would not mind eating again.
-If a restaurant is not here, either I didn&rsquo;t like the food and didn&rsquo;t have a good experience
-or I&rsquo;ve never been. Comment if you&rsquo;d like a food review. I have extremely niche needs
-when it comes to food.</p>
-<h2 id="cooking" >Cooking
+            <p>Here are some snippets that would&rsquo;ve saved me many minutes of my time.</p>
+<h2 id="yyyymmddhhmm-to-date" >YYYYMMDDHHMM to Date
 <span>
-    <a href="#cooking">
+    <a href="#yyyymmddhhmm-to-date">
         <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
     </a>
 </span>
-</h2><p>My breakfast on days I feel like cooking is two scrambled eggs, two hashbrowns, and bacon bits.
-I find bacon bits easier to enjoy since the egg, hashbrowns, and bacon are in equal proportions
-for every bite you take. I consider this breakfast <em>heavy</em> meaning that I don&rsquo;t have to eat lunch.</p>
-<h2 id="fast-food" >Fast Food
+</h2><p>We don&rsquo;t need to add to <code>Date.prototype</code> here
+because we will call this function from the Date class
+itself and not an instanace of <code>Date</code>. If we
+wanted to call it from any <code>Date</code> instance,
+then we would have to edit the prototype as shown
+in the <code>toX</code> snippets.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#24909d">Date</span>.fromYYYYMMDDHHMM = s =&gt; {
+    <span style="color:#6ab825;font-weight:bold">var</span> yyyy = s.substring(<span style="color:#3677a9">0</span>, <span style="color:#3677a9">4</span>);
+    <span style="color:#6ab825;font-weight:bold">var</span> mm = s.substring(<span style="color:#3677a9">4</span>, <span style="color:#3677a9">6</span>);
+    <span style="color:#6ab825;font-weight:bold">var</span> dd = s.substring(<span style="color:#3677a9">6</span>, <span style="color:#3677a9">8</span>);
+    <span style="color:#6ab825;font-weight:bold">var</span> hh = s.substring(<span style="color:#3677a9">8</span>, <span style="color:#3677a9">10</span>) || <span style="color:#ed9d13">&#39;00&#39;</span>;
+    <span style="color:#6ab825;font-weight:bold">var</span> min = s.substring(<span style="color:#3677a9">10</span>, <span style="color:#3677a9">12</span>) || <span style="color:#ed9d13">&#39;00&#39;</span>;
+    <span style="color:#6ab825;font-weight:bold">var</span> sec = s.substring(<span style="color:#3677a9">12</span>, <span style="color:#3677a9">14</span>) || <span style="color:#ed9d13">&#39;00&#39;</span>;
+    <span style="color:#6ab825;font-weight:bold">return</span> <span style="color:#6ab825;font-weight:bold">new</span> <span style="color:#24909d">Date</span>(yyyy, mm - <span style="color:#3677a9">1</span>, dd, hh, min, sec);
+}
+</code></pre></div><h2 id="date-to-yyyymmddhhmm" >Date to YYYYMMDDHHMM
 <span>
-    <a href="#fast-food">
+    <a href="#date-to-yyyymmddhhmm">
         <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
     </a>
 </span>
-</h2><h3 id="costco" >Costco
+</h2><div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#24909d">Date</span>.prototype.toYYYYMMDDHHMM = <span style="color:#6ab825;font-weight:bold">function</span>() {
+    <span style="color:#999;font-style:italic">// YYYYMMDDHHMM
+</span><span style="color:#999;font-style:italic"></span>    <span style="color:#999;font-style:italic">// 202105070400
+</span><span style="color:#999;font-style:italic"></span>    <span style="color:#6ab825;font-weight:bold">const</span> tzoffset = <span style="color:#6ab825;font-weight:bold">this</span>.getTimezoneOffset() * <span style="color:#3677a9">60000</span>;
+    <span style="color:#6ab825;font-weight:bold">const</span> localDate = <span style="color:#6ab825;font-weight:bold">new</span> <span style="color:#24909d">Date</span>(<span style="color:#6ab825;font-weight:bold">this</span> - tzoffset);
+    <span style="color:#6ab825;font-weight:bold">return</span> localDate.toISOString().replace(<span style="color:#ed9d13">/[^0-9]/g</span>, <span style="color:#ed9d13">&#39;&#39;</span>).slice(<span style="color:#3677a9">0</span>, <span style="color:#3677a9">12</span>);
+}
+</code></pre></div><h2 id="yyyymmdd-to-date" >YYYYMMDD to Date
 <span>
-    <a href="#costco">
+    <a href="#yyyymmdd-to-date">
         <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
     </a>
 </span>
-</h3><p>Hot dog, no sauce + soda. This is such a value meal, you could
-get two hot dogs if you want to have this for dinner or lunch. One is nothing
-but a snack.</p>
-<h3 id="harveys" >Harvey&rsquo;s
+</h2><div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#24909d">Date</span>.fromYYYYMMDD = s =&gt; {
+    <span style="color:#6ab825;font-weight:bold">var</span> yyyy = s.substring(<span style="color:#3677a9">0</span>, <span style="color:#3677a9">4</span>);
+    <span style="color:#6ab825;font-weight:bold">var</span> mm = s.substring(<span style="color:#3677a9">4</span>, <span style="color:#3677a9">6</span>);
+    <span style="color:#6ab825;font-weight:bold">var</span> dd = s.substring(<span style="color:#3677a9">6</span>, <span style="color:#3677a9">8</span>);
+    <span style="color:#6ab825;font-weight:bold">return</span> <span style="color:#6ab825;font-weight:bold">new</span> <span style="color:#24909d">Date</span>(yyyy, mm - <span style="color:#3677a9">1</span>, dd);
+}
+</code></pre></div><h2 id="date-to-yyyymmdd" >Date to YYYYMMDD
 <span>
-    <a href="#harveys">
+    <a href="#date-to-yyyymmdd">
         <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
     </a>
 </span>
-</h3><p>I went to Harvey&rsquo;s twice in the last month and enjoyed the Chicken Bacon Ranch poutine (regular).
-Optionally get a drink. Total cost is $10.17 including tax and drink. If you bring your own
-drink, you can reduce your expense.</p>
-<h3 id="wendys" >Wendy&rsquo;s
-<span>
-    <a href="#wendys">
-        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
-    </a>
-</span>
-</h3><p>I don&rsquo;t like the fries at Wendy&rsquo;s however their bacon deluxe burger is the perfect burger.
-So I recommend the bacon deluxe, bring your own drink, and if you are a big man, get the son
-of a baconator or a jr. bacon cheeseburger. I&rsquo;m going to get the breakfast baconator tomorrow to see
-if its a good eat-out breakfast.</p>
-<h3 id="pita-halal" >Pita Halal
-<span>
-    <a href="#pita-halal">
-        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
-    </a>
-</span>
-</h3><p>The quality has diminished, however their beef/chicken shawrma poutine used to be good. I recommend eating there instead of takeout
-as the food taste &amp; quality varies strongly with time. Fries can get soggy extremely quickly. I don&rsquo;t like their wraps that much.</p>
-<h2 id="burger-king" >Burger King
-<span>
-    <a href="#burger-king">
-        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
-    </a>
-</span>
-</h2><p>Before, I used to always get their features like the roadhouse king or the bacon king. I was naive
-in thinking more is better, as the whopper is definitely the best thing they have to offer. Their chicken sandwich comes
-in second, although some places put less mayo than others. Therefore, I recommend the whopper, but if they ever put less mayo in it,
-I think you should tell them to put more mayo next time you&rsquo;re there. This is a problem with Mcdoanlds as well.</p>
-<h2 id="dine-in-restaurants" >Dine-in Restaurants
-<span>
-    <a href="#dine-in-restaurants">
-        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
-    </a>
-</span>
-</h2><h3 id="piper-arms-pub" >Piper Arms Pub
-<span>
-    <a href="#piper-arms-pub">
-        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
-    </a>
-</span>
-</h3><p>The best restaurant I&rsquo;ve ever eaten at. Your $20-40 is well spent at this place. You really get
-what you pay for. I suggest getting 7-up as the drink as its topless. I think they have diet pepsi,
-but I rarely drink 7-up in general.</p>
-<p>For lunch, I&rsquo;ve eaten the Fish &amp; Chips as well as the burger. I don&rsquo;t recommend the burger as it&rsquo;s equivalent to
-two meals. The patty is just too big for me and I got acne the next day. If you&rsquo;re a big guy, then by all means,
-you will also enjoy it without the acne. The fish and chips did cause me to go to the washroom half an hour later, however
-that could&rsquo;ve just been pure coincidence.</p>
-<p>For dinner, my first time there, I got the half rack of ribs and half pound of wings. It came with fries too. This
-dinner was delicious, I was surprised I was able to finish most of it. I think it was only two wings and some
-fries that I could&rsquo;nt finish which is understandable since I wasn&rsquo;t hungry when I went there. I got the Caesar garlic
-parmesean for the wings seasoning/sauce which is rare in the market (only Sultan&rsquo;s in Burlington offered something like that).</p>
-<h3 id="famoso-neapolitan-pizzeria" >Famoso Neapolitan Pizzeria
-<span>
-    <a href="#famoso-neapolitan-pizzeria">
-        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
-    </a>
-</span>
-</h3><p>I went here with a friend and their pasta with the meatballs did not dissapoint me. I had water for the drink.
-The seating was awkward thought, we were at a table in the middle of the restaurant a meter or two away from the entrance
-to their outdoor dining. This is just a me thing, as I don&rsquo;t like people sitting towards my back. This is a place I&rsquo;d take
-a girl out for dinner or a come with a friend, not a place I&rsquo;d go alone. It&rsquo;s more classic and simple than the Piper Arms Place,
-although I&rsquo;d want to try their pizza out next time. So I guess, it&rsquo;s not a first date location after all.</p>
-<h3 id="beertown-public-house" >Beertown Public House
-<span>
-    <a href="#beertown-public-house">
-        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
-    </a>
-</span>
-</h3><p>TODO</p>
-
+</h2><div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#24909d">Date</span>.prototype.toYYYYMMDD = <span style="color:#6ab825;font-weight:bold">function</span>() {
+    <span style="color:#6ab825;font-weight:bold">var</span> mm = <span style="color:#6ab825;font-weight:bold">this</span>.getMonth() + <span style="color:#3677a9">1</span>;  <span style="color:#999;font-style:italic">// getMonth() is zero-based
+</span><span style="color:#999;font-style:italic"></span>    <span style="color:#6ab825;font-weight:bold">var</span> dd = <span style="color:#6ab825;font-weight:bold">this</span>.getDate();
+    <span style="color:#6ab825;font-weight:bold">return</span> [<span style="color:#6ab825;font-weight:bold">this</span>.getFullYear(), (mm &gt; <span style="color:#3677a9">9</span> ? <span style="color:#ed9d13">&#39;&#39;</span> : <span style="color:#ed9d13">&#39;0&#39;</span>) + mm, (dd &gt; <span style="color:#3677a9">9</span> ? <span style="color:#ed9d13">&#39;&#39;</span> : <span style="color:#ed9d13">&#39;0&#39;</span>) + dd].join(<span style="color:#ed9d13">&#39;&#39;</span>);
+};
+</code></pre></div>
         </div>
         
 
@@ -389,16 +344,32 @@ although I&rsquo;d want to try their pizza out next time. So I guess, it&rsquo;s
 
 <div class="post-info">
     
-        <div class="post-date dt-published">2022-Aug-23</div>
+        <div class="post-date dt-published">2022-Aug-29</div>
     
 
-    <a class="post-hidden-url u-url" href="https://blog.elijahlopez.ca/posts/good-food/">https://blog.elijahlopez.ca/posts/good-food/</a>
+    <a class="post-hidden-url u-url" href="https://blog.elijahlopez.ca/posts/javascript-snippets/">https://blog.elijahlopez.ca/posts/javascript-snippets/</a>
     <a href="https://blog.elijahlopez.ca/" class="p-name p-author post-hidden-author h-card" rel="me">Elijah Lopez</a>
 
 
     <div class="post-taxonomies">
         
             
+                <ul class="post-tags">
+                    
+                        
+                        <li><a href="https://blog.elijahlopez.ca/tags/tutorial/">#tutorial</a></li>
+                    
+                        
+                        <li><a href="https://blog.elijahlopez.ca/tags/programming/">#programming</a></li>
+                    
+                        
+                        <li><a href="https://blog.elijahlopez.ca/tags/javascript/">#javascript</a></li>
+                    
+                        
+                        <li><a href="https://blog.elijahlopez.ca/tags/webdev/">#webdev</a></li>
+                    
+                </ul>
+        
     </div>
 </div>
 
@@ -409,14 +380,12 @@ although I&rsquo;d want to try their pizza out next time. So I guess, it&rsquo;s
     
         
     <div class="pagination post-pagination">
-        <div class="left pagination-item ">
-            
-                <a href="/posts/javascript-snippets/">JavaScript Snippets</a>
+        <div class="left pagination-item disabled">
             
         </div>
         <div class="right pagination-item ">
             
-                <a href="/posts/american-school-shootings-analysis/">American School Shootings Analysis</a>
+                <a href="/posts/good-food/">Good Food</a>
             
         </div>
     </div>

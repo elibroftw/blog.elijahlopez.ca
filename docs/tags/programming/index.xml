@@ -6,10 +6,77 @@
     <description>ELL Blog (programming)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 10 Jun 2022 20:13:16 -0400</lastBuildDate>
+    <lastBuildDate>Mon, 29 Aug 2022 14:21:28 -0400</lastBuildDate>
     
     <atom:link href="https://blog.elijahlopez.ca/tags/programming/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>JavaScript Snippets</title>
+      <link>https://blog.elijahlopez.ca/posts/javascript-snippets/</link>
+      <pubDate>Mon, 29 Aug 2022 14:21:28 -0400</pubDate>
+      
+      <guid>https://blog.elijahlopez.ca/posts/javascript-snippets/</guid>
+      <description>&lt;p&gt;Here are some snippets that would&amp;rsquo;ve saved me many minutes of my time.&lt;/p&gt;
+&lt;h2 id=&#34;yyyymmddhhmm-to-date&#34; &gt;YYYYMMDDHHMM to Date
+&lt;span&gt;
+    &lt;a href=&#34;#yyyymmddhhmm-to-date&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;We don&amp;rsquo;t need to add to &lt;code&gt;Date.prototype&lt;/code&gt; here
+because we will call this function from the Date class
+itself and not an instanace of &lt;code&gt;Date&lt;/code&gt;. If we
+wanted to call it from any &lt;code&gt;Date&lt;/code&gt; instance,
+then we would have to edit the prototype as shown
+in the &lt;code&gt;toX&lt;/code&gt; snippets.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span style=&#34;color:#24909d&#34;&gt;Date&lt;/span&gt;.fromYYYYMMDDHHMM = s =&amp;gt; {
+    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;var&lt;/span&gt; yyyy = s.substring(&lt;span style=&#34;color:#3677a9&#34;&gt;0&lt;/span&gt;, &lt;span style=&#34;color:#3677a9&#34;&gt;4&lt;/span&gt;);
+    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;var&lt;/span&gt; mm = s.substring(&lt;span style=&#34;color:#3677a9&#34;&gt;4&lt;/span&gt;, &lt;span style=&#34;color:#3677a9&#34;&gt;6&lt;/span&gt;);
+    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;var&lt;/span&gt; dd = s.substring(&lt;span style=&#34;color:#3677a9&#34;&gt;6&lt;/span&gt;, &lt;span style=&#34;color:#3677a9&#34;&gt;8&lt;/span&gt;);
+    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;var&lt;/span&gt; hh = s.substring(&lt;span style=&#34;color:#3677a9&#34;&gt;8&lt;/span&gt;, &lt;span style=&#34;color:#3677a9&#34;&gt;10&lt;/span&gt;) || &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;00&amp;#39;&lt;/span&gt;;
+    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;var&lt;/span&gt; min = s.substring(&lt;span style=&#34;color:#3677a9&#34;&gt;10&lt;/span&gt;, &lt;span style=&#34;color:#3677a9&#34;&gt;12&lt;/span&gt;) || &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;00&amp;#39;&lt;/span&gt;;
+    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;var&lt;/span&gt; sec = s.substring(&lt;span style=&#34;color:#3677a9&#34;&gt;12&lt;/span&gt;, &lt;span style=&#34;color:#3677a9&#34;&gt;14&lt;/span&gt;) || &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;00&amp;#39;&lt;/span&gt;;
+    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color:#24909d&#34;&gt;Date&lt;/span&gt;(yyyy, mm - &lt;span style=&#34;color:#3677a9&#34;&gt;1&lt;/span&gt;, dd, hh, min, sec);
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;date-to-yyyymmddhhmm&#34; &gt;Date to YYYYMMDDHHMM
+&lt;span&gt;
+    &lt;a href=&#34;#date-to-yyyymmddhhmm&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span style=&#34;color:#24909d&#34;&gt;Date&lt;/span&gt;.prototype.toYYYYMMDDHHMM = &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;function&lt;/span&gt;() {
+    &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// YYYYMMDDHHMM
+&lt;/span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// 202105070400
+&lt;/span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;const&lt;/span&gt; tzoffset = &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;this&lt;/span&gt;.getTimezoneOffset() * &lt;span style=&#34;color:#3677a9&#34;&gt;60000&lt;/span&gt;;
+    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;const&lt;/span&gt; localDate = &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color:#24909d&#34;&gt;Date&lt;/span&gt;(&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;this&lt;/span&gt; - tzoffset);
+    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;return&lt;/span&gt; localDate.toISOString().replace(&lt;span style=&#34;color:#ed9d13&#34;&gt;/[^0-9]/g&lt;/span&gt;, &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;).slice(&lt;span style=&#34;color:#3677a9&#34;&gt;0&lt;/span&gt;, &lt;span style=&#34;color:#3677a9&#34;&gt;12&lt;/span&gt;);
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;yyyymmdd-to-date&#34; &gt;YYYYMMDD to Date
+&lt;span&gt;
+    &lt;a href=&#34;#yyyymmdd-to-date&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span style=&#34;color:#24909d&#34;&gt;Date&lt;/span&gt;.fromYYYYMMDD = s =&amp;gt; {
+    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;var&lt;/span&gt; yyyy = s.substring(&lt;span style=&#34;color:#3677a9&#34;&gt;0&lt;/span&gt;, &lt;span style=&#34;color:#3677a9&#34;&gt;4&lt;/span&gt;);
+    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;var&lt;/span&gt; mm = s.substring(&lt;span style=&#34;color:#3677a9&#34;&gt;4&lt;/span&gt;, &lt;span style=&#34;color:#3677a9&#34;&gt;6&lt;/span&gt;);
+    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;var&lt;/span&gt; dd = s.substring(&lt;span style=&#34;color:#3677a9&#34;&gt;6&lt;/span&gt;, &lt;span style=&#34;color:#3677a9&#34;&gt;8&lt;/span&gt;);
+    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color:#24909d&#34;&gt;Date&lt;/span&gt;(yyyy, mm - &lt;span style=&#34;color:#3677a9&#34;&gt;1&lt;/span&gt;, dd);
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;date-to-yyyymmdd&#34; &gt;Date to YYYYMMDD
+&lt;span&gt;
+    &lt;a href=&#34;#date-to-yyyymmdd&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span style=&#34;color:#24909d&#34;&gt;Date&lt;/span&gt;.prototype.toYYYYMMDD = &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;function&lt;/span&gt;() {
+    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;var&lt;/span&gt; mm = &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;this&lt;/span&gt;.getMonth() + &lt;span style=&#34;color:#3677a9&#34;&gt;1&lt;/span&gt;;  &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// getMonth() is zero-based
+&lt;/span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;var&lt;/span&gt; dd = &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;this&lt;/span&gt;.getDate();
+    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;return&lt;/span&gt; [&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;this&lt;/span&gt;.getFullYear(), (mm &amp;gt; &lt;span style=&#34;color:#3677a9&#34;&gt;9&lt;/span&gt; ? &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt; : &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;0&amp;#39;&lt;/span&gt;) + mm, (dd &amp;gt; &lt;span style=&#34;color:#3677a9&#34;&gt;9&lt;/span&gt; ? &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt; : &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;0&amp;#39;&lt;/span&gt;) + dd].join(&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;);
+};
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
     
     <item>
       <title>How to Create a Monero Payment Processor</title>
