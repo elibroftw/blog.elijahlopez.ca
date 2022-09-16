@@ -28,6 +28,11 @@ I went to Harvey's twice in the last month and enjoyed the Chicken Bacon Ranch p
 Optionally get a drink. Total cost is $10.17 including tax and drink. If you bring your own
 drink, you can reduce your expense.
 
+### Dairy Queen (DQ)
+
+An underrated franchise. The 4pc chicken strip basket (comes with fries and as side sauce) is pretty good
+and doesn't feel oily like burgers and other fries do.
+
 ### Wendy's
 
 I don't like the fries at Wendy's however their bacon deluxe burger is the perfect burger.
