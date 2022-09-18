@@ -3932,6 +3932,71 @@ For the next input: y
     </item>
     
     <item>
+      <title>OBS Best Settings and Trouble Shooting</title>
+      <link>https://blog.elijahlopez.ca/posts/obs-best-settings/</link>
+      <pubDate>Sat, 19 Feb 2022 13:53:14 -0500</pubDate>
+      
+      <guid>https://blog.elijahlopez.ca/posts/obs-best-settings/</guid>
+      <description>&lt;h2 id=&#34;obs-windows-washed-out-colors-fix&#34; &gt;OBS Windows Washed Out Colors Fix
+&lt;span&gt;
+    &lt;a href=&#34;#obs-windows-washed-out-colors-fix&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;A fix that worked for some people is disabling HDR in Windows, however,
+I didn&amp;rsquo;t even have an option to enable/disable HDR and still had the issue.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Open NVIDIA Control Panel&lt;/li&gt;
+&lt;li&gt;Click &amp;ldquo;Adjust Video Color Settings&amp;rdquo; from the menu on the left side&lt;/li&gt;
+&lt;li&gt;Click the monitors you use&lt;/li&gt;
+&lt;li&gt;Click &amp;ldquo;With the NVIDIA settings&amp;rdquo; under &amp;lsquo;How do you want to make color adjustments?&amp;rsquo;&lt;/li&gt;
+&lt;li&gt;Set brightness to 55% (+5%)&lt;/li&gt;
+&lt;li&gt;Set Saturation to 65% (+15%)&lt;/li&gt;
+&lt;li&gt;Set Gamma to 0.95 (-0.05) for Red, Green, and Blue (locked)&lt;/li&gt;
+&lt;li&gt;Under &amp;lsquo;Advanced&amp;rsquo;, set Dynamic Range to Full (0-255)&lt;/li&gt;
+&lt;li&gt;In OBS Settings, under advanced video, Color Format = NV12, Color Space = Rec. 709, Color Range = &lt;strong&gt;Limited&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;The only downside to this solution, is that the yellows for Windows Explorer
+will be a tad strong because of the saturation boost, but its not distracting.&lt;/p&gt;
+&lt;h2 id=&#34;obs-best-settings&#34; &gt;OBS Best Settings
+&lt;span&gt;
+    &lt;a href=&#34;#obs-best-settings&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;h3 id=&#34;output&#34; &gt;Output
+&lt;span&gt;
+    &lt;a href=&#34;#output&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;Set streaming bitrate to 6000 Kbps (max)&lt;/li&gt;
+&lt;li&gt;Recording Path &lt;code&gt;C:/Users/%USERNAME%/Videos/Captures&lt;/code&gt; (replace %USERNMAE% with your user)&lt;/li&gt;
+&lt;li&gt;Recording Quality of High Quality or Indistinguishable&lt;/li&gt;
+&lt;li&gt;Recording Format of mkv (in Advanced, check auto remux to mp4)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;advanced&#34; &gt;Advanced
+&lt;span&gt;
+    &lt;a href=&#34;#advanced&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;A recap of what should&amp;rsquo;ve been set already&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Color Format of &amp;ldquo;NV12 (8-bit, 4:2:0, 2 planes)&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;Color Space of &amp;ldquo;Rec. 709&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;Color Range of &amp;ldquo;Limited&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;Check &amp;ldquo;Automatically remux to mp4&amp;rdquo;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;After a recording test and a computer restart, you can try NV12 again as below.&lt;/p&gt;
+&lt;p&gt;Color Format: &lt;strong&gt;NV12&lt;/strong&gt;
+Color Range: &lt;strong&gt;Partial&lt;/strong&gt;
+Color Space: &lt;strong&gt;sRGB&lt;/strong&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Bash &amp; Linux Helpers</title>
       <link>https://blog.elijahlopez.ca/posts/bash-helpers/</link>
       <pubDate>Mon, 14 Feb 2022 14:06:30 -0500</pubDate>
