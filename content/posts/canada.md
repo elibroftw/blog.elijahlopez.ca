@@ -166,9 +166,9 @@ I guess this is the problem then huh? When half of Canadians earn less than 80,0
 
 ### $125,000 Careers
 
-Software engineering of course. Product managers and project managers also make this, but those career paths are really talked about. Someone should make an article on those two career paths. What else? Lawyers, doctors, investment banking.
+Software engineering of course. Product managers and project managers also make this, but those career paths are rarely talked about. Someone should make an article on those two career paths. What else? Lawyers, doctors, investment banking.
 
-I don't really feel like writing this section, so I'll stop for now. I think the issue is that there's no way to make a 30 year old experienced enough to earn that much in some of these career paths that start off only at $80,000.
+I don't really feel like writing this section, so I'll stop for now. I think the issue is that there's no way for a 30 year old to be experienced enough to earn that much in some career paths that start off at $80,000.
 
 ## The Government
 
