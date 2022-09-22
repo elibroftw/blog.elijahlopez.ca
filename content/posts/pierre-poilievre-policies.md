@@ -42,3 +42,8 @@ Now for something interesting I found. It seems that even before the LPC, an ass
 - [Pierre Poilievre on C-31 Cost of Living Relief Act, No. 2 9/22/2022](https://www.youtube.com/watch?v=Z39VZGF2k0A)
 
 [^sideNote1]: This specific part is similar to Trumps speech pattern that will undoubtedly be used as a rebuttal against Poilievre although it has nothing to do with his policies. I am stating this in case someone tries to call me biased for not addressing/catching the speech similarity.
+
+## Every Dollar Spent Should be Accompanied with a Dollar Received
+
+The idea is that politicans need to be forced to keep the budget balanced in order to reduce debt and prevent excess aggregate demand (-> inflation).
+Poilievre used the bill under Clinton as an example.e
