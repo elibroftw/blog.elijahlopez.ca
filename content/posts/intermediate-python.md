@@ -144,7 +144,8 @@ with open('test.txt') as f: # NEW; no close() needed
    f.seek(0)
    assert f.read()
    # f.read() returns a string now (unless test.txt is empty)
-   with open('test.txt', 'w') as f:
+   # ALWAYS SPECIFY ENCODING SINCE WINDOWS & POSIX HAVE DIFFERENT DEFAULT VALUES
+   with open('test.txt', 'w', encoding='utf-8') as f:
     # f.read()  ERROR do not do this
     f.write('this is a test\n')  # note there is no end parameter
     f.writelines(['line1\n', 'line2\n'])  # note no auto newline
