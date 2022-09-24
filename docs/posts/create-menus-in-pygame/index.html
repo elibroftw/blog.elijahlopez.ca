@@ -78,7 +78,7 @@ One note of warning is that each of these sections of code cannot be run indepen
     
 
     
-        <script src="https://blog.elijahlopez.ca/js/script.min.510c781c39dbb21b4c76d85c82e2bdf4689220adbb7cd61e49e9d293e442fb42.js" type="text/javascript" charset="utf-8" integrity="sha256-UQx4HDnbshtMdthcguK99GiSIK27fNYeSenSk&#43;RC&#43;0I="></script>
+        <script src="https://blog.elijahlopez.ca/js/script.min.74bf1a3fcf1af396efa4acf3e660e876b61a2153ab9cbe1893ac24ea6d4f94ee.js" type="text/javascript" charset="utf-8" integrity="sha256-dL8aP88a85bvpKzz5mDodrYaIVOrnL4Yk6wk6m1PlO4="></script>
     
 
 
@@ -339,15 +339,15 @@ Since there is no hover state, <code>draw_toggle</code> and <code>blit_text</cod
 </h2><p><a href="https://repl.it/@elilopez/PygameMenus#main_menu.py">main_menu.py</a></p>
 <p>Now that you have the boiler plate code we can now start with the main menu.
 The following is an overview of our game. Note that this is the order and not what each menu will contain since menus can have go back buttons.</p>
-<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">Main Menu
-    Game Loop
-        Pause
-            High Scores
-            QUIT
-    Settings
-    High Scores
-    QUIT
-</code></pre></div><p><code>main_menu()</code> is called exactly once to ensure there is no mutually recursive shenanigans going on.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Main Menu
+</span></span><span style="display:flex;"><span>    Game Loop
+</span></span><span style="display:flex;"><span>        Pause
+</span></span><span style="display:flex;"><span>            High Scores
+</span></span><span style="display:flex;"><span>            QUIT
+</span></span><span style="display:flex;"><span>    Settings
+</span></span><span style="display:flex;"><span>    High Scores
+</span></span><span style="display:flex;"><span>    QUIT
+</span></span></code></pre></div><p><code>main_menu()</code> is called exactly once to ensure there is no mutually recursive shenanigans going on.</p>
 <p>Whenever the game ends and the user is returned to the main menu, we will need to redraw the static parts of the main menu.
 This is what the <code>main_menu_setup()</code> is for.
 The event parsing is to check if &ldquo;Alt + F4&rdquo; or Esc were pressed so that the user can exit the game with standard keyboard shortcuts as well as checking if the user has left clicked.

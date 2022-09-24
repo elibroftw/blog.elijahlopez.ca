@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>reactjs on ELL Blog</title>
+    <link>https://blog.elijahlopez.ca/tags/reactjs/</link>
+    <description>ELL Blog (reactjs)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 23 Sep 2022 19:57:18 -0400</lastBuildDate>
+    
+    <atom:link href="https://blog.elijahlopez.ca/tags/reactjs/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>ReactJS Pitfalls</title>
+      <link>https://blog.elijahlopez.ca/posts/reactjs-pitfalls/</link>
+      <pubDate>Fri, 23 Sep 2022 19:57:18 -0400</pubDate>
+      
+      <guid>https://blog.elijahlopez.ca/posts/reactjs-pitfalls/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;m only in the mood for writing down my thoughts, so I apologize for upcoming messyness.&lt;/p&gt;
+&lt;h2 id=&#34;pitfall-1-using-uselayouteffect-for-performance-gains&#34; &gt;Pitfall 1: Using useLayoutEffect for Performance Gains
+&lt;span&gt;
+    &lt;a href=&#34;#pitfall-1-using-uselayouteffect-for-performance-gains&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;useLayoutEffect is not a hook to be used for performance but rather so that
+data that the user sees or modifies is the latest. useLayoutEffect is
+synchronous so it is a performance hinder not a performance gainer.&lt;/p&gt;
+&lt;h2 id=&#34;pitfall-2-using-usestate-for-persistence&#34; &gt;Pitfall 2: Using useState for Persistence
+&lt;span&gt;
+    &lt;a href=&#34;#pitfall-2-using-usestate-for-persistence&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;TL;DR: Use useRef in the parent to keep track of a child&amp;rsquo;s state value.&lt;/p&gt;
+&lt;p&gt;In an app structure like the following,&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-txt&#34; data-lang=&#34;txt&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;- App
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    - Home
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        - View 1...n
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    - Other Pages
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;I wanted to keep track of which view was open so that when ever the user would
+switch from Home to another Page and back to Home, the same view would open.&lt;/p&gt;
+&lt;p&gt;Home already had a state to keep track of which View was open and a setView
+that was passed down to each of the views so that they could go to eachother.
+Thus, I had a useEffect in Home.jsx to capture Home&amp;rsquo;s view variable and update
+App&amp;rsquo;s view variable.&lt;/p&gt;
+&lt;p&gt;The implications of this only occured to me afterwards when I wanted to persistent a value between different Views.
+I tried to do the same &amp;ldquo;tricK&amp;rdquo; at the Home scope, but for some reason every time I switched Views, the value I was trying
+to persist would get reset to the default of setState.&lt;/p&gt;
+&lt;p&gt;What was happeing was that changing views would update not only Home&amp;rsquo;s state, but also App&amp;rsquo;s state. Therefore Home would get re-rendered (instead of just the part that changed) and so the state would get overwritten.&lt;/p&gt;
+&lt;p&gt;I then decided its better anyways to persist the value I wanted to persist on the App scope so that it persists even if Home dismounts.
+I then realized that the variable wasn&amp;rsquo;t actually used as a state but rather as a persistant variable, and so I did some research and
+found out that useRef isn&amp;rsquo;t just something to use to refer to stuff, but to just hold anything. useRef more like useValue.&lt;/p&gt;
+&lt;p&gt;Instead of passing down two props for each state, I was now passing one ref, and improved performance due to limiting the scope of the re-render.&lt;/p&gt;
+&lt;h2 id=&#34;pitfall-3-wrapping-i18nchangelanguage&#34; &gt;Pitfall 3: Wrapping i18n.changeLanguage
+&lt;span&gt;
+    &lt;a href=&#34;#pitfall-3-wrapping-i18nchangelanguage&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;i18n.changeLanguage persists already between app reloads and relaunches, so you do not need
+to wrap the values change. I was using localForage even though it was completely unnecessary.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

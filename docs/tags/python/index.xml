@@ -63,9 +63,9 @@ Here is a quick proof of concept using &lt;code&gt;ThreadPoolExecutor&lt;/code&g
 &lt;/span&gt;
 &lt;/h2&gt;&lt;p&gt;We&amp;rsquo;re going to be using the Firefox Add-ons API to upload your add-on so you will need some API keys. You can get your API keys from &lt;a href=&#34;https://addons.mozilla.org/developers/addon/api/key/&#34;&gt;here&lt;/a&gt;. 
 Place the pair of API keys into a .env file like so:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;jwt-issuer=string
-jwt-secret=string
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;third-party-libraries&#34; &gt;Third Party Libraries
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;jwt-issuer=string
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;jwt-secret=string
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;third-party-libraries&#34; &gt;Third Party Libraries
 &lt;span&gt;
     &lt;a href=&#34;#third-party-libraries&#34;&gt;
         &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
@@ -213,15 +213,15 @@ Since there is no hover state, &lt;code&gt;draw_toggle&lt;/code&gt; and &lt;code
 &lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://repl.it/@elilopez/PygameMenus#main_menu.py&#34;&gt;main_menu.py&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Now that you have the boiler plate code we can now start with the main menu.
 The following is an overview of our game. Note that this is the order and not what each menu will contain since menus can have go back buttons.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;Main Menu
-    Game Loop
-        Pause
-            High Scores
-            QUIT
-    Settings
-    High Scores
-    QUIT
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;code&gt;main_menu()&lt;/code&gt; is called exactly once to ensure there is no mutually recursive shenanigans going on.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Main Menu
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    Game Loop
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        Pause
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            High Scores
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            QUIT
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    Settings
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    High Scores
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    QUIT
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;code&gt;main_menu()&lt;/code&gt; is called exactly once to ensure there is no mutually recursive shenanigans going on.&lt;/p&gt;
 &lt;p&gt;Whenever the game ends and the user is returned to the main menu, we will need to redraw the static parts of the main menu.
 This is what the &lt;code&gt;main_menu_setup()&lt;/code&gt; is for.
 The event parsing is to check if &amp;ldquo;Alt + F4&amp;rdquo; or Esc were pressed so that the user can exit the game with standard keyboard shortcuts as well as checking if the user has left clicked.
@@ -369,11 +369,11 @@ read only the headings, skip to the project ideas section, or stop reading altog
     &lt;/a&gt;
 &lt;/span&gt;
 &lt;/h2&gt;&lt;p&gt;In CS Circles, they talk about the print function and some of its optional parameters but it’s easy to forget about them so here they are again.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&amp;gt;&amp;gt;&amp;gt; &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# The default parameters for print are sep=&amp;#39; &amp;#39;, and end=&amp;#39;\n&amp;#39;&lt;/span&gt;
-&amp;gt;&amp;gt;&amp;gt; &lt;span style=&#34;color:#24909d&#34;&gt;print&lt;/span&gt;(&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;4&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;21&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#3677a9&#34;&gt;2020&lt;/span&gt;, sep=&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;/&amp;#39;&lt;/span&gt;, end=&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;---------&lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;&lt;/span&gt;)
-&lt;span style=&#34;color:#3677a9&#34;&gt;4&lt;/span&gt;/&lt;span style=&#34;color:#3677a9&#34;&gt;21&lt;/span&gt;/&lt;span style=&#34;color:#3677a9&#34;&gt;2020&lt;/span&gt;
----------
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;concepts&#34; &gt;Concepts
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;gt;&amp;gt;&amp;gt; &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# The default parameters for print are sep=&amp;#39; &amp;#39;, and end=&amp;#39;\n&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;gt;&amp;gt;&amp;gt; &lt;span style=&#34;color:#24909d&#34;&gt;print&lt;/span&gt;(&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;4&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;21&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#3677a9&#34;&gt;2020&lt;/span&gt;, sep=&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;/&amp;#39;&lt;/span&gt;, end=&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;---------&lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#3677a9&#34;&gt;4&lt;/span&gt;/&lt;span style=&#34;color:#3677a9&#34;&gt;21&lt;/span&gt;/&lt;span style=&#34;color:#3677a9&#34;&gt;2020&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;---------
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;concepts&#34; &gt;Concepts
 &lt;span&gt;
     &lt;a href=&#34;#concepts&#34;&gt;
         &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
@@ -386,10 +386,10 @@ read only the headings, skip to the project ideas section, or stop reading altog
     &lt;/a&gt;
 &lt;/span&gt;
 &lt;/h3&gt;&lt;p&gt;The input function has an optional parameter so that it can also act as a prompt and if you are using Python 3.6+, you can make use of f-strings.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;name = &lt;span style=&#34;color:#24909d&#34;&gt;input&lt;/span&gt;(&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;Enter your name: &amp;#39;&lt;/span&gt;)
-&lt;span style=&#34;color:#24909d&#34;&gt;print&lt;/span&gt;(&lt;span style=&#34;color:#ed9d13&#34;&gt;f&lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;Hello &lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;{&lt;/span&gt;name&lt;span style=&#34;color:#ed9d13&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;!&amp;#39;&lt;/span&gt;)  &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# modern way of string formatting&lt;/span&gt;
-&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# if input=&amp;#39;reader&amp;#39;, output: Hello reader!&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;for-loops&#34; &gt;For Loops
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;name = &lt;span style=&#34;color:#24909d&#34;&gt;input&lt;/span&gt;(&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;Enter your name: &amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#24909d&#34;&gt;print&lt;/span&gt;(&lt;span style=&#34;color:#ed9d13&#34;&gt;f&lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;Hello &lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;{&lt;/span&gt;name&lt;span style=&#34;color:#ed9d13&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;!&amp;#39;&lt;/span&gt;)  &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# modern way of string formatting&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# if input=&amp;#39;reader&amp;#39;, output: Hello reader!&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;for-loops&#34; &gt;For Loops
 &lt;span&gt;
     &lt;a href=&#34;#for-loops&#34;&gt;
         &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
@@ -398,26 +398,26 @@ read only the headings, skip to the project ideas section, or stop reading altog
 &lt;/h3&gt;&lt;p&gt;I want to make clear to you that a for loop, is not a while loop as it is in other languages. In Python, a for loop is an iteration over an iterable object.&lt;/p&gt;
 &lt;p&gt;The range function has three parameters, two of them being optional. The range has a default start value of 0, so unless you need to modify the default step value of 1, supplying a 0 is a redundant.&lt;/p&gt;
 &lt;p&gt;In this example, I will show you exactly what I mean by “not a while loop” and how a for loop (specifically range) does not add to the temporary value.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# range(start=0, stop, step=1)&lt;/span&gt;
-&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# range(5) == range(0, 5) == range(0, 5, 1)&lt;/span&gt;
-
-&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;for&lt;/span&gt; i &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;in&lt;/span&gt; &lt;span style=&#34;color:#24909d&#34;&gt;range&lt;/span&gt;(&lt;span style=&#34;color:#3677a9&#34;&gt;5&lt;/span&gt;):
-    &lt;span style=&#34;color:#24909d&#34;&gt;print&lt;/span&gt;(i)
-    i += &lt;span style=&#34;color:#3677a9&#34;&gt;2&lt;/span&gt;
-&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# Guess the output. HINT: i += 2 does not impact the next loop&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;If you run this code, you’ll notice that the output is increasing by 1 each time even if we are adding 2 to i at the end of every loop.
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# range(start=0, stop, step=1)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# range(5) == range(0, 5) == range(0, 5, 1)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;for&lt;/span&gt; i &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;in&lt;/span&gt; &lt;span style=&#34;color:#24909d&#34;&gt;range&lt;/span&gt;(&lt;span style=&#34;color:#3677a9&#34;&gt;5&lt;/span&gt;):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#24909d&#34;&gt;print&lt;/span&gt;(i)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    i += &lt;span style=&#34;color:#3677a9&#34;&gt;2&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# Guess the output. HINT: i += 2 does not impact the next loop&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;If you run this code, you’ll notice that the output is increasing by 1 each time even if we are adding 2 to i at the end of every loop.
 This is because i is set to the next value in range and isn’t a variable being increased by one each loop.
 This means that we can actually iterate over all sorts of iterable objects, like lists, without having to use range and indexing.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;some_letters = [&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;a&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;b&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;c&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;d&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;e&amp;#39;&lt;/span&gt;]
-&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;for&lt;/span&gt; letter &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;in&lt;/span&gt; some_letters:
-    &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# do something&lt;/span&gt;
-    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;pass&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Here I introduced the keyword &lt;code&gt;pass&lt;/code&gt; to avoid the syntax error that come with empty blocks.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;some_letters = [&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;a&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;b&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;c&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;d&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;e&amp;#39;&lt;/span&gt;]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;for&lt;/span&gt; letter &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;in&lt;/span&gt; some_letters:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# do something&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;pass&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Here I introduced the keyword &lt;code&gt;pass&lt;/code&gt; to avoid the syntax error that come with empty blocks.&lt;/p&gt;
 &lt;p&gt;If you want to keep track of the index as well as the item, you don’t have to use range, you can use the built-in function &lt;code&gt;enumerate&lt;/code&gt;.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# start indicates the start number of the index, not the actual index to start enumeration at!&lt;/span&gt;
-&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;for&lt;/span&gt; i, letter &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;in&lt;/span&gt; &lt;span style=&#34;color:#24909d&#34;&gt;enumerate&lt;/span&gt;(some_letters, start=&lt;span style=&#34;color:#3677a9&#34;&gt;0&lt;/span&gt;):
-    &lt;span style=&#34;color:#24909d&#34;&gt;print&lt;/span&gt;(&lt;span style=&#34;color:#ed9d13&#34;&gt;f&lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;item at index &lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;{&lt;/span&gt;i&lt;span style=&#34;color:#ed9d13&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt; is &lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;{&lt;/span&gt;letter&lt;span style=&#34;color:#ed9d13&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;&lt;/span&gt;)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;You can think of enumerate as turning an iterable into an iterable of pairs (index, item of iterable at index).&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# start indicates the start number of the index, not the actual index to start enumeration at!&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;for&lt;/span&gt; i, letter &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;in&lt;/span&gt; &lt;span style=&#34;color:#24909d&#34;&gt;enumerate&lt;/span&gt;(some_letters, start=&lt;span style=&#34;color:#3677a9&#34;&gt;0&lt;/span&gt;):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#24909d&#34;&gt;print&lt;/span&gt;(&lt;span style=&#34;color:#ed9d13&#34;&gt;f&lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;item at index &lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;{&lt;/span&gt;i&lt;span style=&#34;color:#ed9d13&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt; is &lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;{&lt;/span&gt;letter&lt;span style=&#34;color:#ed9d13&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;You can think of enumerate as turning an iterable into an iterable of pairs (index, item of iterable at index).&lt;/p&gt;
 &lt;p&gt;You can also use the next function to retrieve the next value in an iterator (if there is no next item, an error will be raised). All iterators are iterable, but not all iterable objects are iterators! List for example, is iterable but not an iterator so don’t call next on it.&lt;/p&gt;
 &lt;h3 id=&#34;file-io&#34; &gt;File IO
 &lt;span&gt;
@@ -425,54 +425,54 @@ This means that we can actually iterate over all sorts of iterable objects, like
         &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
     &lt;/a&gt;
 &lt;/span&gt;
-&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# make sure there exists a test.txt with content in it&lt;/span&gt;
-&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;with&lt;/span&gt; &lt;span style=&#34;color:#24909d&#34;&gt;open&lt;/span&gt;(&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;test.txt&amp;#39;&lt;/span&gt;) &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;as&lt;/span&gt; f: &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# NEW; no close() needed&lt;/span&gt;
-   &lt;span style=&#34;color:#24909d&#34;&gt;print&lt;/span&gt;(f.read())
-   &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# f.read() moves the &amp;#34;cursor&amp;#34; to the end of the file&lt;/span&gt;
-   &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;assert&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;not&lt;/span&gt; f.read()
-   f.seek(&lt;span style=&#34;color:#3677a9&#34;&gt;0&lt;/span&gt;)
-   &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;assert&lt;/span&gt; f.read()
-   &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# f.read() returns a string now (unless test.txt is empty)&lt;/span&gt;
-   &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;with&lt;/span&gt; &lt;span style=&#34;color:#24909d&#34;&gt;open&lt;/span&gt;(&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;test.txt&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;w&amp;#39;&lt;/span&gt;) &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;as&lt;/span&gt; f:
-    &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# f.read()  ERROR do not do this&lt;/span&gt;
-    f.write(&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;this is a test&lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;&lt;/span&gt;)  &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# note there is no end parameter&lt;/span&gt;
-    f.writelines([&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;line1&lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;line2&lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;&lt;/span&gt;])  &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# note no auto newline&lt;/span&gt;
-    &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# other modes: a for append, rb for reading-bytes, wb for writing bytes, and r+/w+ for both reading and writing at the same time&lt;/span&gt;
-
-&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# OLD way&lt;/span&gt;
-f = &lt;span style=&#34;color:#24909d&#34;&gt;open&lt;/span&gt;(&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;test.txt&amp;#39;&lt;/span&gt;)  &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# note default is mode=&amp;#39;r&amp;#39;&lt;/span&gt;
-&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# do something with f here&lt;/span&gt;
-f.close()
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;error-handling&#34; &gt;Error Handling
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# make sure there exists a test.txt with content in it&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;with&lt;/span&gt; &lt;span style=&#34;color:#24909d&#34;&gt;open&lt;/span&gt;(&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;test.txt&amp;#39;&lt;/span&gt;) &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;as&lt;/span&gt; f: &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# NEW; no close() needed&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;   &lt;span style=&#34;color:#24909d&#34;&gt;print&lt;/span&gt;(f.read())
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;   &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# f.read() moves the &amp;#34;cursor&amp;#34; to the end of the file&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;   &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;assert&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;not&lt;/span&gt; f.read()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;   f.seek(&lt;span style=&#34;color:#3677a9&#34;&gt;0&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;   &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;assert&lt;/span&gt; f.read()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;   &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# f.read() returns a string now (unless test.txt is empty)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;   &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;with&lt;/span&gt; &lt;span style=&#34;color:#24909d&#34;&gt;open&lt;/span&gt;(&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;test.txt&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;w&amp;#39;&lt;/span&gt;) &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;as&lt;/span&gt; f:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# f.read()  ERROR do not do this&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    f.write(&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;this is a test&lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;&lt;/span&gt;)  &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# note there is no end parameter&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    f.writelines([&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;line1&lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;line2&lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;&lt;/span&gt;])  &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# note no auto newline&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# other modes: a for append, rb for reading-bytes, wb for writing bytes, and r+/w+ for both reading and writing at the same time&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# OLD way&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;f = &lt;span style=&#34;color:#24909d&#34;&gt;open&lt;/span&gt;(&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;test.txt&amp;#39;&lt;/span&gt;)  &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# note default is mode=&amp;#39;r&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# do something with f here&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;f.close()
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;error-handling&#34; &gt;Error Handling
 &lt;span&gt;
     &lt;a href=&#34;#error-handling&#34;&gt;
         &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
     &lt;/a&gt;
 &lt;/span&gt;
-&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# handling an error&lt;/span&gt;
-&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;try&lt;/span&gt;:
-    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;raise&lt;/span&gt; &lt;span style=&#34;color:#bbb&#34;&gt;RuntimeWarning&lt;/span&gt;(&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;Something could go wrong&amp;#39;&lt;/span&gt;)
-&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;except&lt;/span&gt; &lt;span style=&#34;color:#bbb&#34;&gt;RuntimeWarning&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;as&lt;/span&gt; e:  &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# as e is optional&lt;/span&gt;
-    &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# handle the exception here&lt;/span&gt;
-
-&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# ignoring an error&lt;/span&gt;
-&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# old&lt;/span&gt;
-&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;try&lt;/span&gt;:
-    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;raise&lt;/span&gt; &lt;span style=&#34;color:#bbb&#34;&gt;Exception&lt;/span&gt;(&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;BOO&amp;#39;&lt;/span&gt;)
-&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;except&lt;/span&gt; &lt;span style=&#34;color:#bbb&#34;&gt;Exception&lt;/span&gt;: &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;pass&lt;/span&gt;
-
-&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# new&lt;/span&gt;
-&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;from&lt;/span&gt; &lt;span style=&#34;color:#447fcf;text-decoration:underline&#34;&gt;contextlib&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;import&lt;/span&gt; suppressdef ignore_error(exception: &lt;span style=&#34;color:#bbb&#34;&gt;Exception&lt;/span&gt;):
-    &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;&amp;#34;&amp;#34;
-&lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;    Use three quotes for docstrings or long strings
-&lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;    &amp;#34;&amp;#34;&amp;#34;&lt;/span&gt;
-    &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# use a colon (:) for type hinting (in a dynamic typed language!) and&lt;/span&gt;
-    &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# yes you can pass exceptions and functions as parameters&lt;/span&gt;
-    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;with&lt;/span&gt; suppress(exception):
-        &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;raise&lt;/span&gt; exception(&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;BOO&amp;#39;&lt;/span&gt;)
-        &lt;span style=&#34;color:#24909d&#34;&gt;print&lt;/span&gt;(&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;not printed&amp;#39;&lt;/span&gt;)ignore_error(&lt;span style=&#34;color:#bbb&#34;&gt;RuntimeError&lt;/span&gt;)
-&lt;span style=&#34;color:#24909d&#34;&gt;print&lt;/span&gt;(&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;this gets printed&amp;#39;&lt;/span&gt;)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;By this point if you are following along in IntelliJ, you would have seen some squiggly lines, especially under “Exception” in the above code.
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# handling an error&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;try&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;raise&lt;/span&gt; &lt;span style=&#34;color:#bbb&#34;&gt;RuntimeWarning&lt;/span&gt;(&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;Something could go wrong&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;except&lt;/span&gt; &lt;span style=&#34;color:#bbb&#34;&gt;RuntimeWarning&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;as&lt;/span&gt; e:  &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# as e is optional&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# handle the exception here&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# ignoring an error&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# old&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;try&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;raise&lt;/span&gt; &lt;span style=&#34;color:#bbb&#34;&gt;Exception&lt;/span&gt;(&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;BOO&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;except&lt;/span&gt; &lt;span style=&#34;color:#bbb&#34;&gt;Exception&lt;/span&gt;: &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;pass&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# new&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;from&lt;/span&gt; &lt;span style=&#34;color:#447fcf;text-decoration:underline&#34;&gt;contextlib&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;import&lt;/span&gt; suppressdef ignore_error(exception: &lt;span style=&#34;color:#bbb&#34;&gt;Exception&lt;/span&gt;):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;&amp;#34;&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;    Use three quotes for docstrings or long strings
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;    &amp;#34;&amp;#34;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# use a colon (:) for type hinting (in a dynamic typed language!) and&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# yes you can pass exceptions and functions as parameters&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;with&lt;/span&gt; suppress(exception):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;raise&lt;/span&gt; exception(&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;BOO&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#24909d&#34;&gt;print&lt;/span&gt;(&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;not printed&amp;#39;&lt;/span&gt;)ignore_error(&lt;span style=&#34;color:#bbb&#34;&gt;RuntimeError&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#24909d&#34;&gt;print&lt;/span&gt;(&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;this gets printed&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;By this point if you are following along in IntelliJ, you would have seen some squiggly lines, especially under “Exception” in the above code.
 These squiggly lines help you to avoid syntax errors, follow style guidelines, and bring attention to code that could be doing something you didn’t want it to be doing.&lt;/p&gt;
 &lt;h3 id=&#34;more-data-types&#34; &gt;More Data Types
 &lt;span&gt;
@@ -481,44 +481,44 @@ These squiggly lines help you to avoid syntax errors, follow style guidelines, a
     &lt;/a&gt;
 &lt;/span&gt;
 &lt;/h3&gt;&lt;p&gt;There are dictionaries, sets and generators (not discussed here). Dictionaries are like hash tables in other languages, because they “hash” the key to store information.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;empty_dict = {}  &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# or dict()&lt;/span&gt;
-my_dict = {&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;key&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;value&amp;#39;&lt;/span&gt;}
-&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# How to get value from dict&lt;/span&gt;
-my_dict[&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;a&amp;#39;&lt;/span&gt;]  &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# raises KeyError if &amp;#39;a&amp;#39; not in dictionary&lt;/span&gt;
-my_dict.get(&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;a&amp;#39;&lt;/span&gt;, DEFAULT_VALUE)
-
-&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;key&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;in&lt;/span&gt; my_dict:
-    val = my_dict[&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;key&amp;#39;&lt;/span&gt;]
-val = my_dict.get(&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;key&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;None&lt;/span&gt;)
-&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;if&lt;/span&gt; val &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;is&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;not&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;None&lt;/span&gt;: &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;pass&lt;/span&gt;
-&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;with&lt;/span&gt; suppress(&lt;span style=&#34;color:#bbb&#34;&gt;KeyError&lt;/span&gt;):
-    val = my_dict[&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;key&amp;#39;&lt;/span&gt;]
-
-&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# iterations&lt;/span&gt;
-&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;for&lt;/span&gt; k &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;in&lt;/span&gt; my_dict: &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;pass&lt;/span&gt;  &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# or for k in my_dict.keys()&lt;/span&gt;
-&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;for&lt;/span&gt; v &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;in&lt;/span&gt; my_dict.values(): &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;pass&lt;/span&gt;
-&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;for&lt;/span&gt; k, v &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;in&lt;/span&gt; my_dict.items():
-    &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# since items() generates the items as the iteration happens,&lt;/span&gt;
-    &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;#  my_dict cannot be modified in this loop.&lt;/span&gt;
-    &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# For modification use tuple(my_dict.items())&lt;/span&gt;
-    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;pass&lt;/span&gt;
-
-&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# remove key from dict&lt;/span&gt;
-&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;del&lt;/span&gt; my_dict[&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;key&amp;#39;&lt;/span&gt;]  &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# can raise KeyError&lt;/span&gt;
-
-&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# if you want to use the value, use .pop() and define a default&lt;/span&gt;
-&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# value to avoid KeyErrors&lt;/span&gt;
-
-my_dict.pop(&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;key&amp;#39;&lt;/span&gt;, DEFAULT_VALUE)
-
-&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# sets&lt;/span&gt;
-empty_set = &lt;span style=&#34;color:#24909d&#34;&gt;set&lt;/span&gt;()  &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# {} would initialize an empty dict&lt;/span&gt;
-my_set = {&lt;span style=&#34;color:#3677a9&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color:#3677a9&#34;&gt;2&lt;/span&gt;, &lt;span style=&#34;color:#3677a9&#34;&gt;3&lt;/span&gt;}
-&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#3677a9&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;in&lt;/span&gt; &lt;span style=&#34;color:#24909d&#34;&gt;set&lt;/span&gt;: &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;pass&lt;/span&gt;
-&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# there are many set methods, go check them out yourself&lt;/span&gt;
-&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# some include: union, intersect, difference&lt;/span&gt;
-&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# you can use + and - as well&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;data-structure-usage-efficiency&#34; &gt;Data Structure Usage (Efficiency)
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;empty_dict = {}  &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# or dict()&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;my_dict = {&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;key&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;value&amp;#39;&lt;/span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# How to get value from dict&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;my_dict[&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;a&amp;#39;&lt;/span&gt;]  &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# raises KeyError if &amp;#39;a&amp;#39; not in dictionary&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;my_dict.get(&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;a&amp;#39;&lt;/span&gt;, DEFAULT_VALUE)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;key&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;in&lt;/span&gt; my_dict:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    val = my_dict[&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;key&amp;#39;&lt;/span&gt;]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;val = my_dict.get(&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;key&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;None&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;if&lt;/span&gt; val &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;is&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;not&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;None&lt;/span&gt;: &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;pass&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;with&lt;/span&gt; suppress(&lt;span style=&#34;color:#bbb&#34;&gt;KeyError&lt;/span&gt;):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    val = my_dict[&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;key&amp;#39;&lt;/span&gt;]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# iterations&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;for&lt;/span&gt; k &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;in&lt;/span&gt; my_dict: &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;pass&lt;/span&gt;  &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# or for k in my_dict.keys()&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;for&lt;/span&gt; v &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;in&lt;/span&gt; my_dict.values(): &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;pass&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;for&lt;/span&gt; k, v &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;in&lt;/span&gt; my_dict.items():
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# since items() generates the items as the iteration happens,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;#  my_dict cannot be modified in this loop.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# For modification use tuple(my_dict.items())&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;pass&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# remove key from dict&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;del&lt;/span&gt; my_dict[&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;key&amp;#39;&lt;/span&gt;]  &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# can raise KeyError&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# if you want to use the value, use .pop() and define a default&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# value to avoid KeyErrors&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;my_dict.pop(&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;key&amp;#39;&lt;/span&gt;, DEFAULT_VALUE)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# sets&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;empty_set = &lt;span style=&#34;color:#24909d&#34;&gt;set&lt;/span&gt;()  &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# {} would initialize an empty dict&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;my_set = {&lt;span style=&#34;color:#3677a9&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color:#3677a9&#34;&gt;2&lt;/span&gt;, &lt;span style=&#34;color:#3677a9&#34;&gt;3&lt;/span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#3677a9&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;in&lt;/span&gt; &lt;span style=&#34;color:#24909d&#34;&gt;set&lt;/span&gt;: &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;pass&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# there are many set methods, go check them out yourself&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# some include: union, intersect, difference&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# you can use + and - as well&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;data-structure-usage-efficiency&#34; &gt;Data Structure Usage (Efficiency)
 &lt;span&gt;
     &lt;a href=&#34;#data-structure-usage-efficiency&#34;&gt;
         &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
@@ -544,46 +544,46 @@ Note that if you’re using sets as values, they are converted to lists in an ex
     &lt;/a&gt;
 &lt;/span&gt;
 &lt;/h3&gt;&lt;p&gt;Sometimes you will see functions like func(*args, **kwargs)&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# args = a list of arguments&lt;/span&gt;
-&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# kwargs = keyword arguments&lt;/span&gt;
-&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# (in the function it&amp;#39;ll be a dictionary)&lt;/span&gt;
-&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# *args: list in the function **kwargs: dict in the function&lt;/span&gt;
-&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#447fcf&#34;&gt;complex_func&lt;/span&gt;(*args, **kwargs):
-    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;pass&lt;/span&gt;
-
-&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#447fcf&#34;&gt;normal_func&lt;/span&gt;(a, b, c, sample_param=&lt;span style=&#34;color:#3677a9&#34;&gt;5&lt;/span&gt;):
-   &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;pass&lt;/span&gt;
-
-sample_args = {&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;sample_param&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#3677a9&#34;&gt;3&lt;/span&gt;}
-args = [&lt;span style=&#34;color:#3677a9&#34;&gt;0&lt;/span&gt;, &lt;span style=&#34;color:#3677a9&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color:#3677a9&#34;&gt;2&lt;/span&gt;]
-
-complex_func(&lt;span style=&#34;color:#3677a9&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color:#3677a9&#34;&gt;2&lt;/span&gt;, &lt;span style=&#34;color:#3677a9&#34;&gt;3&lt;/span&gt;, test=&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;true&amp;#39;&lt;/span&gt;)  &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# how you&amp;#39;d call it&lt;/span&gt;
-complex_func(*args, **sample_args)  &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# also works on normal functions&lt;/span&gt;
-normal_func(*args, **sample_args)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;list-comprehension-and-ternary&#34; &gt;List Comprehension and Ternary
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# args = a list of arguments&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# kwargs = keyword arguments&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# (in the function it&amp;#39;ll be a dictionary)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# *args: list in the function **kwargs: dict in the function&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#447fcf&#34;&gt;complex_func&lt;/span&gt;(*args, **kwargs):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;pass&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#447fcf&#34;&gt;normal_func&lt;/span&gt;(a, b, c, sample_param=&lt;span style=&#34;color:#3677a9&#34;&gt;5&lt;/span&gt;):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;   &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;pass&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sample_args = {&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;sample_param&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#3677a9&#34;&gt;3&lt;/span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;args = [&lt;span style=&#34;color:#3677a9&#34;&gt;0&lt;/span&gt;, &lt;span style=&#34;color:#3677a9&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color:#3677a9&#34;&gt;2&lt;/span&gt;]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;complex_func(&lt;span style=&#34;color:#3677a9&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color:#3677a9&#34;&gt;2&lt;/span&gt;, &lt;span style=&#34;color:#3677a9&#34;&gt;3&lt;/span&gt;, test=&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;true&amp;#39;&lt;/span&gt;)  &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# how you&amp;#39;d call it&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;complex_func(*args, **sample_args)  &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# also works on normal functions&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;normal_func(*args, **sample_args)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;list-comprehension-and-ternary&#34; &gt;List Comprehension and Ternary
 &lt;span&gt;
     &lt;a href=&#34;#list-comprehension-and-ternary&#34;&gt;
         &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
     &lt;/a&gt;
 &lt;/span&gt;
 &lt;/h3&gt;&lt;p&gt;One of the most beautiful parts of Python is list comprehensions; one liners to create lists.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# example: input is space separated integers&lt;/span&gt;
-integers = [&lt;span style=&#34;color:#24909d&#34;&gt;int&lt;/span&gt;(x) &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;for&lt;/span&gt; x &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;in&lt;/span&gt; &lt;span style=&#34;color:#24909d&#34;&gt;input&lt;/span&gt;.split()]
-&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# split(sep=&amp;#39; &amp;#39;, maxsplit=-1), -1 means no limit&lt;/span&gt;
-no_negatives = [x &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;for&lt;/span&gt; x &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;in&lt;/span&gt; integers &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;if&lt;/span&gt; x &amp;gt; &lt;span style=&#34;color:#3677a9&#34;&gt;0&lt;/span&gt;]  &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# only if&lt;/span&gt;
-positives = [x &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;if&lt;/span&gt; x &amp;gt; &lt;span style=&#34;color:#3677a9&#34;&gt;0&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;else&lt;/span&gt; -x &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;for&lt;/span&gt; x &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;in&lt;/span&gt; integers]  &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# if and else&lt;/span&gt;
-back_to_str = &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39; &amp;#39;&lt;/span&gt;.join((&lt;span style=&#34;color:#24909d&#34;&gt;str&lt;/span&gt;(x) &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;for&lt;/span&gt; x &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;in&lt;/span&gt; integers))
-&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# items in the list to join need to be of type str&lt;/span&gt;
-&lt;span style=&#34;color:#24909d&#34;&gt;print&lt;/span&gt;(integers)
-
-&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# this next case demonstrates the ternary operator _ if _ else _&lt;/span&gt;
-&lt;span style=&#34;color:#24909d&#34;&gt;print&lt;/span&gt;(&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;list is&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;not empty&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;if&lt;/span&gt; integers &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;empty&amp;#39;&lt;/span&gt;)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;You can also use list comprehensions to create dictionaries and sets&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;set_example = {x &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;for&lt;/span&gt; x &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;in&lt;/span&gt; &lt;span style=&#34;color:#24909d&#34;&gt;range&lt;/span&gt;(&lt;span style=&#34;color:#3677a9&#34;&gt;3&lt;/span&gt;)}
-dict_example = {x: x &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;for&lt;/span&gt; x &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;in&lt;/span&gt; &lt;span style=&#34;color:#24909d&#34;&gt;range&lt;/span&gt;(&lt;span style=&#34;color:#3677a9&#34;&gt;3&lt;/span&gt;)}
-&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# use generator when only one iteration is required&lt;/span&gt;
-generator_example = (x &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;for&lt;/span&gt; x &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;in&lt;/span&gt; &lt;span style=&#34;color:#24909d&#34;&gt;range&lt;/span&gt;(&lt;span style=&#34;color:#3677a9&#34;&gt;3&lt;/span&gt;))
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The third example is a generator. There are some use cases for it, so do your research before using them as they are an advanced topic not for this article.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# example: input is space separated integers&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;integers = [&lt;span style=&#34;color:#24909d&#34;&gt;int&lt;/span&gt;(x) &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;for&lt;/span&gt; x &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;in&lt;/span&gt; &lt;span style=&#34;color:#24909d&#34;&gt;input&lt;/span&gt;.split()]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# split(sep=&amp;#39; &amp;#39;, maxsplit=-1), -1 means no limit&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;no_negatives = [x &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;for&lt;/span&gt; x &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;in&lt;/span&gt; integers &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;if&lt;/span&gt; x &amp;gt; &lt;span style=&#34;color:#3677a9&#34;&gt;0&lt;/span&gt;]  &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# only if&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;positives = [x &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;if&lt;/span&gt; x &amp;gt; &lt;span style=&#34;color:#3677a9&#34;&gt;0&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;else&lt;/span&gt; -x &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;for&lt;/span&gt; x &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;in&lt;/span&gt; integers]  &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# if and else&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;back_to_str = &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39; &amp;#39;&lt;/span&gt;.join((&lt;span style=&#34;color:#24909d&#34;&gt;str&lt;/span&gt;(x) &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;for&lt;/span&gt; x &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;in&lt;/span&gt; integers))
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# items in the list to join need to be of type str&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#24909d&#34;&gt;print&lt;/span&gt;(integers)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# this next case demonstrates the ternary operator _ if _ else _&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#24909d&#34;&gt;print&lt;/span&gt;(&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;list is&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;not empty&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;if&lt;/span&gt; integers &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;empty&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;You can also use list comprehensions to create dictionaries and sets&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;set_example = {x &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;for&lt;/span&gt; x &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;in&lt;/span&gt; &lt;span style=&#34;color:#24909d&#34;&gt;range&lt;/span&gt;(&lt;span style=&#34;color:#3677a9&#34;&gt;3&lt;/span&gt;)}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;dict_example = {x: x &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;for&lt;/span&gt; x &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;in&lt;/span&gt; &lt;span style=&#34;color:#24909d&#34;&gt;range&lt;/span&gt;(&lt;span style=&#34;color:#3677a9&#34;&gt;3&lt;/span&gt;)}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# use generator when only one iteration is required&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;generator_example = (x &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;for&lt;/span&gt; x &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;in&lt;/span&gt; &lt;span style=&#34;color:#24909d&#34;&gt;range&lt;/span&gt;(&lt;span style=&#34;color:#3677a9&#34;&gt;3&lt;/span&gt;))
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The third example is a generator. There are some use cases for it, so do your research before using them as they are an advanced topic not for this article.&lt;/p&gt;
 &lt;h2 id=&#34;iterables-vs-primitives&#34; &gt;Iterables vs. Primitives
 &lt;span&gt;
     &lt;a href=&#34;#iterables-vs-primitives&#34;&gt;
@@ -591,100 +591,100 @@ generator_example = (x &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&g
     &lt;/a&gt;
 &lt;/span&gt;
 &lt;/h2&gt;&lt;p&gt;There is one very important distinction between primitive variables and iterable variables. For example.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;a = &lt;span style=&#34;color:#3677a9&#34;&gt;5&lt;/span&gt;
-b = a
-a = &lt;span style=&#34;color:#3677a9&#34;&gt;6&lt;/span&gt;
-&lt;span style=&#34;color:#24909d&#34;&gt;print&lt;/span&gt;(a == b)  &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# false&lt;/span&gt;
-&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# vs.&lt;/span&gt;
-a = [&lt;span style=&#34;color:#3677a9&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color:#3677a9&#34;&gt;2&lt;/span&gt;, &lt;span style=&#34;color:#3677a9&#34;&gt;3&lt;/span&gt;]
-b = a
-c = [&lt;span style=&#34;color:#3677a9&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color:#3677a9&#34;&gt;2&lt;/span&gt;, &lt;span style=&#34;color:#3677a9&#34;&gt;4&lt;/span&gt;]
-a[&lt;span style=&#34;color:#3677a9&#34;&gt;2&lt;/span&gt;] = &lt;span style=&#34;color:#3677a9&#34;&gt;4&lt;/span&gt;
-&lt;span style=&#34;color:#24909d&#34;&gt;print&lt;/span&gt;(a == b == c)  &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# true&lt;/span&gt;
-&lt;span style=&#34;color:#24909d&#34;&gt;print&lt;/span&gt;(a &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;is&lt;/span&gt; b)  &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# true; same refrence&lt;/span&gt;
-&lt;span style=&#34;color:#24909d&#34;&gt;print&lt;/span&gt;(a &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;is&lt;/span&gt; c)  &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# false&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This is especially important when dealing with nested iterables with how you create nested iterables and also copy them. Try out these examples yourself.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;lols = [[&lt;span style=&#34;color:#3677a9&#34;&gt;0&lt;/span&gt;] &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;for&lt;/span&gt; i &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;in&lt;/span&gt; &lt;span style=&#34;color:#24909d&#34;&gt;range&lt;/span&gt;(&lt;span style=&#34;color:#3677a9&#34;&gt;3&lt;/span&gt;)] &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# [0] is created 3 times&lt;/span&gt;
-lols[&lt;span style=&#34;color:#3677a9&#34;&gt;0&lt;/span&gt;][&lt;span style=&#34;color:#3677a9&#34;&gt;0&lt;/span&gt;] = &lt;span style=&#34;color:#3677a9&#34;&gt;5&lt;/span&gt;
-&lt;span style=&#34;color:#24909d&#34;&gt;print&lt;/span&gt;(lols)  &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# [[5], [0], [0]]&lt;/span&gt;
-&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# vs.&lt;/span&gt;
-a = [[&lt;span style=&#34;color:#3677a9&#34;&gt;0&lt;/span&gt;]]
-lols = a * &lt;span style=&#34;color:#3677a9&#34;&gt;3&lt;/span&gt;  &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# same as lols = [[0] * 3]&lt;/span&gt;
-lols[&lt;span style=&#34;color:#3677a9&#34;&gt;0&lt;/span&gt;][&lt;span style=&#34;color:#3677a9&#34;&gt;0&lt;/span&gt;] = &lt;span style=&#34;color:#3677a9&#34;&gt;5&lt;/span&gt;
-&lt;span style=&#34;color:#24909d&#34;&gt;print&lt;/span&gt;(lols)  &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# [[5], [5], [5]]&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;copying-iterables&#34; &gt;Copying Iterables
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;a = &lt;span style=&#34;color:#3677a9&#34;&gt;5&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;b = a
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;a = &lt;span style=&#34;color:#3677a9&#34;&gt;6&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#24909d&#34;&gt;print&lt;/span&gt;(a == b)  &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# false&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# vs.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;a = [&lt;span style=&#34;color:#3677a9&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color:#3677a9&#34;&gt;2&lt;/span&gt;, &lt;span style=&#34;color:#3677a9&#34;&gt;3&lt;/span&gt;]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;b = a
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;c = [&lt;span style=&#34;color:#3677a9&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color:#3677a9&#34;&gt;2&lt;/span&gt;, &lt;span style=&#34;color:#3677a9&#34;&gt;4&lt;/span&gt;]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;a[&lt;span style=&#34;color:#3677a9&#34;&gt;2&lt;/span&gt;] = &lt;span style=&#34;color:#3677a9&#34;&gt;4&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#24909d&#34;&gt;print&lt;/span&gt;(a == b == c)  &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# true&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#24909d&#34;&gt;print&lt;/span&gt;(a &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;is&lt;/span&gt; b)  &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# true; same refrence&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#24909d&#34;&gt;print&lt;/span&gt;(a &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;is&lt;/span&gt; c)  &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# false&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This is especially important when dealing with nested iterables with how you create nested iterables and also copy them. Try out these examples yourself.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;lols = [[&lt;span style=&#34;color:#3677a9&#34;&gt;0&lt;/span&gt;] &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;for&lt;/span&gt; i &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;in&lt;/span&gt; &lt;span style=&#34;color:#24909d&#34;&gt;range&lt;/span&gt;(&lt;span style=&#34;color:#3677a9&#34;&gt;3&lt;/span&gt;)] &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# [0] is created 3 times&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;lols[&lt;span style=&#34;color:#3677a9&#34;&gt;0&lt;/span&gt;][&lt;span style=&#34;color:#3677a9&#34;&gt;0&lt;/span&gt;] = &lt;span style=&#34;color:#3677a9&#34;&gt;5&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#24909d&#34;&gt;print&lt;/span&gt;(lols)  &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# [[5], [0], [0]]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# vs.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;a = [[&lt;span style=&#34;color:#3677a9&#34;&gt;0&lt;/span&gt;]]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;lols = a * &lt;span style=&#34;color:#3677a9&#34;&gt;3&lt;/span&gt;  &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# same as lols = [[0] * 3]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;lols[&lt;span style=&#34;color:#3677a9&#34;&gt;0&lt;/span&gt;][&lt;span style=&#34;color:#3677a9&#34;&gt;0&lt;/span&gt;] = &lt;span style=&#34;color:#3677a9&#34;&gt;5&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#24909d&#34;&gt;print&lt;/span&gt;(lols)  &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# [[5], [5], [5]]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;copying-iterables&#34; &gt;Copying Iterables
 &lt;span&gt;
     &lt;a href=&#34;#copying-iterables&#34;&gt;
         &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
     &lt;/a&gt;
 &lt;/span&gt;
 &lt;/h3&gt;&lt;p&gt;To make a shallow copy, use .copy(). BUT, note that for any nested iterables, only the reference is copied, not the actual nested list. That’s why it’s called a shallow copy. To deepcopy, we can use the copy module.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;new_copy = lols.copy()  &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# I prefer this over using [:]&lt;/span&gt;
-reversed_list = lols[::-&lt;span style=&#34;color:#3677a9&#34;&gt;1&lt;/span&gt;]
-&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# I do not use the above since reversed() and .reverse() are explicit&lt;/span&gt;
-new_copy[&lt;span style=&#34;color:#3677a9&#34;&gt;0&lt;/span&gt;][&lt;span style=&#34;color:#3677a9&#34;&gt;0&lt;/span&gt;] = &lt;span style=&#34;color:#3677a9&#34;&gt;6&lt;/span&gt;  &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# lols == [[6], [6], [6]]&lt;/span&gt;
-&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;assert&lt;/span&gt; lols == new_copy &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;and&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;not&lt;/span&gt; lols &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;is&lt;/span&gt; new_copy
-
-&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;from&lt;/span&gt; &lt;span style=&#34;color:#447fcf;text-decoration:underline&#34;&gt;copy&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;import&lt;/span&gt; deepcopynew_copy = deepcopy(list_of_lists)
-
-new_copy = list_of_lists
-new_copy[&lt;span style=&#34;color:#3677a9&#34;&gt;0&lt;/span&gt;][&lt;span style=&#34;color:#3677a9&#34;&gt;0&lt;/span&gt;] = &lt;span style=&#34;color:#3677a9&#34;&gt;4&lt;/span&gt;  &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# [[4], [4], [4]] because 3x of the same list&lt;/span&gt;
-&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;assert&lt;/span&gt; lols != new_copy &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;and&lt;/span&gt; lols &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;is&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;not&lt;/span&gt; new_copy
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;memoization-caching&#34; &gt;Memoization (Caching)
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;new_copy = lols.copy()  &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# I prefer this over using [:]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;reversed_list = lols[::-&lt;span style=&#34;color:#3677a9&#34;&gt;1&lt;/span&gt;]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# I do not use the above since reversed() and .reverse() are explicit&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;new_copy[&lt;span style=&#34;color:#3677a9&#34;&gt;0&lt;/span&gt;][&lt;span style=&#34;color:#3677a9&#34;&gt;0&lt;/span&gt;] = &lt;span style=&#34;color:#3677a9&#34;&gt;6&lt;/span&gt;  &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# lols == [[6], [6], [6]]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;assert&lt;/span&gt; lols == new_copy &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;and&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;not&lt;/span&gt; lols &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;is&lt;/span&gt; new_copy
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;from&lt;/span&gt; &lt;span style=&#34;color:#447fcf;text-decoration:underline&#34;&gt;copy&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;import&lt;/span&gt; deepcopynew_copy = deepcopy(list_of_lists)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;new_copy = list_of_lists
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;new_copy[&lt;span style=&#34;color:#3677a9&#34;&gt;0&lt;/span&gt;][&lt;span style=&#34;color:#3677a9&#34;&gt;0&lt;/span&gt;] = &lt;span style=&#34;color:#3677a9&#34;&gt;4&lt;/span&gt;  &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# [[4], [4], [4]] because 3x of the same list&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;assert&lt;/span&gt; lols != new_copy &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;and&lt;/span&gt; lols &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;is&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;not&lt;/span&gt; new_copy
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;memoization-caching&#34; &gt;Memoization (Caching)
 &lt;span&gt;
     &lt;a href=&#34;#memoization-caching&#34;&gt;
         &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
     &lt;/a&gt;
 &lt;/span&gt;
 &lt;/h3&gt;&lt;p&gt;Memoization is the caching of function return results in order to speed up repetitive calculations. An example would be the recursive implementation of the Fibonacci sequence.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;from&lt;/span&gt; &lt;span style=&#34;color:#447fcf;text-decoration:underline&#34;&gt;functools&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;import&lt;/span&gt; wrapsdef memo(func):  &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# remove print statements in a practical setting&lt;/span&gt;
-    cache = {}
-    &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;&amp;#39;&amp;#39;
-&lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;    Without the use of @wraps, square.__name__ would return
-&lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;    &amp;#39;_helper&amp;#39;, and the docstring of the original square() would
-&lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;    have been lost.
-&lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;    &amp;#39;&amp;#39;&amp;#39;&lt;/span&gt;
-    &lt;span style=&#34;color:#ffa500&#34;&gt;@wraps&lt;/span&gt;(func)
-    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#447fcf&#34;&gt;_helper&lt;/span&gt;(x):
-        &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# you could have multiple params (x, y, ...) and then&lt;/span&gt;
-        &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# cache using a tuple as the key&lt;/span&gt;
-        &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;if&lt;/span&gt; x &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;not&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;in&lt;/span&gt; cache:
-            &lt;span style=&#34;color:#24909d&#34;&gt;print&lt;/span&gt;(&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;not in cache&amp;#39;&lt;/span&gt;)
-            cache[x] = func(x)
-        &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;else&lt;/span&gt;:
-            &lt;span style=&#34;color:#24909d&#34;&gt;print&lt;/span&gt;(&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;in cache&amp;#39;&lt;/span&gt;)
-        &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;return&lt;/span&gt; cache[x]
-    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;return&lt;/span&gt; _helper
-
-
-&lt;span style=&#34;color:#ffa500&#34;&gt;@memo&lt;/span&gt;  &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# square = memo(square) &amp;lt;-- what it means&lt;/span&gt;
-&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#447fcf&#34;&gt;square&lt;/span&gt;(x):
-    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;return&lt;/span&gt; x * x
-
-&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;for&lt;/span&gt; i &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;in&lt;/span&gt; &lt;span style=&#34;color:#24909d&#34;&gt;range&lt;/span&gt;(&lt;span style=&#34;color:#3677a9&#34;&gt;3&lt;/span&gt;):
-    square(i), square(i)  &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# second one uses the cached result&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;An exercise is to make a memoize function that takes any number of positional arguments.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;from&lt;/span&gt; &lt;span style=&#34;color:#447fcf;text-decoration:underline&#34;&gt;functools&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;import&lt;/span&gt; wrapsdef memo(func):  &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# remove print statements in a practical setting&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    cache = {}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;&amp;#39;&amp;#39;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;    Without the use of @wraps, square.__name__ would return
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;    &amp;#39;_helper&amp;#39;, and the docstring of the original square() would
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;    have been lost.
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;    &amp;#39;&amp;#39;&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ffa500&#34;&gt;@wraps&lt;/span&gt;(func)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#447fcf&#34;&gt;_helper&lt;/span&gt;(x):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# you could have multiple params (x, y, ...) and then&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# cache using a tuple as the key&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;if&lt;/span&gt; x &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;not&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;in&lt;/span&gt; cache:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#24909d&#34;&gt;print&lt;/span&gt;(&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;not in cache&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            cache[x] = func(x)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;else&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#24909d&#34;&gt;print&lt;/span&gt;(&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;in cache&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;return&lt;/span&gt; cache[x]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;return&lt;/span&gt; _helper
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ffa500&#34;&gt;@memo&lt;/span&gt;  &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# square = memo(square) &amp;lt;-- what it means&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#447fcf&#34;&gt;square&lt;/span&gt;(x):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;return&lt;/span&gt; x * x
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;for&lt;/span&gt; i &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;in&lt;/span&gt; &lt;span style=&#34;color:#24909d&#34;&gt;range&lt;/span&gt;(&lt;span style=&#34;color:#3677a9&#34;&gt;3&lt;/span&gt;):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    square(i), square(i)  &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# second one uses the cached result&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;An exercise is to make a memoize function that takes any number of positional arguments.&lt;/p&gt;
 &lt;p&gt;Once you understand how memoization works, you can actually start using the built-in version: &lt;code&gt;lru_cache(maxsize=None)&lt;/code&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;from&lt;/span&gt; &lt;span style=&#34;color:#447fcf;text-decoration:underline&#34;&gt;functools&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;import&lt;/span&gt; lru_cache
-
-&lt;span style=&#34;color:#ffa500&#34;&gt;@lru_cache&lt;/span&gt;(maxsize=&lt;span style=&#34;color:#3677a9&#34;&gt;1&lt;/span&gt;)
-&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#447fcf&#34;&gt;get_value&lt;/span&gt;():
-   &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;&amp;#34;&amp;#34;
-&lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;   Calls a function that is resource intensive.
-&lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;   &amp;#34;&amp;#34;&amp;#34;&lt;/span&gt;
-   &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;return&lt;/span&gt; expensive_function()
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;lambdas&#34; &gt;Lambdas
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;from&lt;/span&gt; &lt;span style=&#34;color:#447fcf;text-decoration:underline&#34;&gt;functools&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;import&lt;/span&gt; lru_cache
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ffa500&#34;&gt;@lru_cache&lt;/span&gt;(maxsize=&lt;span style=&#34;color:#3677a9&#34;&gt;1&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#447fcf&#34;&gt;get_value&lt;/span&gt;():
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;   &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;&amp;#34;&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;   Calls a function that is resource intensive.
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;   &amp;#34;&amp;#34;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;   &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;return&lt;/span&gt; expensive_function()
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;lambdas&#34; &gt;Lambdas
 &lt;span&gt;
     &lt;a href=&#34;#lambdas&#34;&gt;
         &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
     &lt;/a&gt;
 &lt;/span&gt;
 &lt;/h3&gt;&lt;p&gt;Usually used in place of a function parameter if the calculation is short. For example, sorting.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;[&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;aa&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;Bb&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;Cc&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;dD&amp;#39;&lt;/span&gt;].sort(key=&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;lambda&lt;/span&gt; string: string.upper())
-[(&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;a&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#3677a9&#34;&gt;1&lt;/span&gt;), (&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;b&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#3677a9&#34;&gt;0&lt;/span&gt;)].sort(key=&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;lambda&lt;/span&gt; pair: pair[&lt;span style=&#34;color:#3677a9&#34;&gt;1&lt;/span&gt;])
-&lt;span style=&#34;color:#24909d&#34;&gt;sorted&lt;/span&gt;([(&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;a&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#3677a9&#34;&gt;1&lt;/span&gt;), (&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;b&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#3677a9&#34;&gt;0&lt;/span&gt;)], key=&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;lambda&lt;/span&gt; pair: pair[&lt;span style=&#34;color:#3677a9&#34;&gt;1&lt;/span&gt;])
-&lt;span style=&#34;color:#24909d&#34;&gt;max&lt;/span&gt;([(&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;a&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#3677a9&#34;&gt;1&lt;/span&gt;), (&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;b&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#3677a9&#34;&gt;0&lt;/span&gt;)], key=&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;lambda&lt;/span&gt; pair: pair[&lt;span style=&#34;color:#3677a9&#34;&gt;1&lt;/span&gt;])  &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# and min&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;modules&#34; &gt;Modules
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;aa&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;Bb&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;Cc&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;dD&amp;#39;&lt;/span&gt;].sort(key=&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;lambda&lt;/span&gt; string: string.upper())
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[(&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;a&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#3677a9&#34;&gt;1&lt;/span&gt;), (&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;b&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#3677a9&#34;&gt;0&lt;/span&gt;)].sort(key=&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;lambda&lt;/span&gt; pair: pair[&lt;span style=&#34;color:#3677a9&#34;&gt;1&lt;/span&gt;])
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#24909d&#34;&gt;sorted&lt;/span&gt;([(&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;a&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#3677a9&#34;&gt;1&lt;/span&gt;), (&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;b&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#3677a9&#34;&gt;0&lt;/span&gt;)], key=&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;lambda&lt;/span&gt; pair: pair[&lt;span style=&#34;color:#3677a9&#34;&gt;1&lt;/span&gt;])
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#24909d&#34;&gt;max&lt;/span&gt;([(&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;a&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#3677a9&#34;&gt;1&lt;/span&gt;), (&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;b&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#3677a9&#34;&gt;0&lt;/span&gt;)], key=&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;lambda&lt;/span&gt; pair: pair[&lt;span style=&#34;color:#3677a9&#34;&gt;1&lt;/span&gt;])  &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# and min&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;modules&#34; &gt;Modules
 &lt;span&gt;
     &lt;a href=&#34;#modules&#34;&gt;
         &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
@@ -701,16 +701,16 @@ the modules your project requires. You can install the modules from a file using
         &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
     &lt;/a&gt;
 &lt;/span&gt;
-&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;color:#447fcf;text-decoration:underline&#34;&gt;os&lt;/span&gt;
-os.mkdir()  &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# to make a NEW dir&lt;/span&gt;
-os.chdir()  &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# choose a current working dir&lt;/span&gt;
-os.getcwd()  &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# get current working dir&lt;/span&gt;
-os.path.exists()
-os.rename()
-os.remove()  &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# for existing files only&lt;/span&gt;
-os.rmdir()
-os.getenv(&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;key&amp;#39;&lt;/span&gt;)  &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# gets an environmental variable# use the shutil module for directories with sub directoriese&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;environmental-variables&#34; &gt;Environmental variables
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;color:#447fcf;text-decoration:underline&#34;&gt;os&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;os.mkdir()  &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# to make a NEW dir&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;os.chdir()  &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# choose a current working dir&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;os.getcwd()  &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# get current working dir&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;os.path.exists()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;os.rename()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;os.remove()  &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# for existing files only&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;os.rmdir()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;os.getenv(&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;key&amp;#39;&lt;/span&gt;)  &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# gets an environmental variable# use the shutil module for directories with sub directoriese&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;environmental-variables&#34; &gt;Environmental variables
 &lt;span&gt;
     &lt;a href=&#34;#environmental-variables&#34;&gt;
         &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
@@ -718,28 +718,27 @@ os.getenv(&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;key&amp;#39;&lt;/sp
 &lt;/span&gt;
 &lt;/h3&gt;&lt;p&gt;I recommend the &lt;code&gt;python-dotenv&lt;/code&gt; module to parse &lt;code&gt;.env&lt;/code&gt; files&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;pip install python-dotenv&lt;/code&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# in .env&lt;/span&gt;
-&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# KEY=VALUE&lt;/span&gt;
-
-&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;from&lt;/span&gt; &lt;span style=&#34;color:#447fcf;text-decoration:underline&#34;&gt;dotenv&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;import&lt;/span&gt; load_dotenv
-
-load_dotenv()
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;glob&#34; &gt;glob
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# in .env&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# KEY=VALUE&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;from&lt;/span&gt; &lt;span style=&#34;color:#447fcf;text-decoration:underline&#34;&gt;dotenv&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;import&lt;/span&gt; load_dotenv
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;load_dotenv()
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;glob&#34; &gt;glob
 &lt;span&gt;
     &lt;a href=&#34;#glob&#34;&gt;
         &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
     &lt;/a&gt;
 &lt;/span&gt;
 &lt;/h3&gt;&lt;p&gt;Used for getting a list of files/folders&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;from&lt;/span&gt; &lt;span style=&#34;color:#447fcf;text-decoration:underline&#34;&gt;glob&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;import&lt;/span&gt; glob, iglob
-&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# get all .py files in cwd, * is a wildcard&lt;/span&gt;
-&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# glob.iglob returns a generator&lt;/span&gt;
-&lt;span style=&#34;color:#24909d&#34;&gt;print&lt;/span&gt;([x &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;for&lt;/span&gt; x &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;in&lt;/span&gt; iglob(&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;*.py&amp;#39;&lt;/span&gt;)])
-&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# and if you want a list use glob.glob&lt;/span&gt;
-&lt;span style=&#34;color:#24909d&#34;&gt;print&lt;/span&gt;(glob(&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;*.py&amp;#39;&lt;/span&gt;))
-&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# exercise: find out how to get all .py files in cwd + its subdirs&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;threading&#34; &gt;Threading
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;from&lt;/span&gt; &lt;span style=&#34;color:#447fcf;text-decoration:underline&#34;&gt;glob&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;import&lt;/span&gt; glob, iglob
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# get all .py files in cwd, * is a wildcard&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# glob.iglob returns a generator&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#24909d&#34;&gt;print&lt;/span&gt;([x &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;for&lt;/span&gt; x &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;in&lt;/span&gt; iglob(&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;*.py&amp;#39;&lt;/span&gt;)])
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# and if you want a list use glob.glob&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#24909d&#34;&gt;print&lt;/span&gt;(glob(&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;*.py&amp;#39;&lt;/span&gt;))
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# exercise: find out how to get all .py files in cwd + its subdirs&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;threading&#34; &gt;Threading
 &lt;span&gt;
     &lt;a href=&#34;#threading&#34;&gt;
         &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
