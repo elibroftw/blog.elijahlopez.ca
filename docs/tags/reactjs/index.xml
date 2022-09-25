@@ -12,7 +12,7 @@
     
     
     <item>
-      <title>ReactJS Pitfalls</title>
+      <title>ReactJS Pitfalls &amp; Tricks</title>
       <link>https://blog.elijahlopez.ca/posts/reactjs-pitfalls/</link>
       <pubDate>Fri, 23 Sep 2022 19:57:18 -0400</pubDate>
       
@@ -35,20 +35,20 @@ synchronous so it is a performance hinder not a performance gainer.&lt;/p&gt;
 &lt;/span&gt;
 &lt;/h2&gt;&lt;p&gt;TL;DR: Use useRef in the parent to keep track of a child&amp;rsquo;s state value.&lt;/p&gt;
 &lt;p&gt;In an app structure like the following,&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-txt&#34; data-lang=&#34;txt&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;- App
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    - Home
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        - View 1...n
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    - Other Pages
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;I wanted to keep track of which view was open so that when ever the user would
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-txt&#34; data-lang=&#34;txt&#34;&gt;- App
+    - Home
+        - View 1...n
+    - Other Pages
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;I wanted to keep track of which view was open so that when ever the user would
 switch from Home to another Page and back to Home, the same view would open.&lt;/p&gt;
 &lt;p&gt;Home already had a state to keep track of which View was open and a setView
 that was passed down to each of the views so that they could go to eachother.
 Thus, I had a useEffect in Home.jsx to capture Home&amp;rsquo;s view variable and update
 App&amp;rsquo;s view variable.&lt;/p&gt;
 &lt;p&gt;The implications of this only occured to me afterwards when I wanted to persistent a value between different Views.
-I tried to do the same &amp;ldquo;tricK&amp;rdquo; at the Home scope, but for some reason every time I switched Views, the value I was trying
+I tried to do the same &amp;ldquo;trick&amp;rdquo; at the Home scope, but for some reason every time I switched Views, the value I was trying
 to persist would get reset to the default of setState.&lt;/p&gt;
-&lt;p&gt;What was happeing was that changing views would update not only Home&amp;rsquo;s state, but also App&amp;rsquo;s state. Therefore Home would get re-rendered (instead of just the part that changed) and so the state would get overwritten.&lt;/p&gt;
+&lt;p&gt;What was happening was that changing views would update not only Home&amp;rsquo;s state, but also App&amp;rsquo;s state. Therefore Home would get re-rendered (instead of just the part that changed) and so the state would get overwritten.&lt;/p&gt;
 &lt;p&gt;I then decided its better anyways to persist the value I wanted to persist on the App scope so that it persists even if Home dismounts.
 I then realized that the variable wasn&amp;rsquo;t actually used as a state but rather as a persistant variable, and so I did some research and
 found out that useRef isn&amp;rsquo;t just something to use to refer to stuff, but to just hold anything. useRef more like useValue.&lt;/p&gt;

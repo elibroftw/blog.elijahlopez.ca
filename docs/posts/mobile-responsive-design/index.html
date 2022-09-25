@@ -80,7 +80,7 @@ From https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag#viewpor
     
 
     
-        <script src="https://blog.elijahlopez.ca/js/script.min.74bf1a3fcf1af396efa4acf3e660e876b61a2153ab9cbe1893ac24ea6d4f94ee.js" type="text/javascript" charset="utf-8" integrity="sha256-dL8aP88a85bvpKzz5mDodrYaIVOrnL4Yk6wk6m1PlO4="></script>
+        <script src="https://blog.elijahlopez.ca/js/script.min.510c781c39dbb21b4c76d85c82e2bdf4689220adbb7cd61e49e9d293e442fb42.js" type="text/javascript" charset="utf-8" integrity="sha256-UQx4HDnbshtMdthcguK99GiSIK27fNYeSenSk&#43;RC&#43;0I="></script>
     
 
 
@@ -283,24 +283,24 @@ From https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag#viewpor
             <p>Tutorials nowadays just regurgitate the wrong information! Here&rsquo;s the right way to do mobile responsive design. The key is to use
 a scale of 0.86 instead of 1. This way zooming in and out actually works!</p>
 <p>From <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag#viewport_width_and_screen_width">https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag#viewport_width_and_screen_width</a></p>
-<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#6ab825;font-weight:bold">meta</span> <span style="color:#bbb">name</span>=<span style="color:#ed9d13">&#34;viewport&#34;</span> <span style="color:#bbb">content</span>=<span style="color:#ed9d13">&#34;width=device-width, initial-scale=0.86, minimum-scale=0.86&#34;</span>&gt;
-</span></span></code></pre></div><p>Tutorials will recommend to style mobile first, but I usually create websites for the desktop view first.</p>
-<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span><span style="color:#999;font-style:italic">/* This is optional. I use it for Tablet or 16:10 */</span>
-</span></span><span style="display:flex;"><span>@<span style="color:#6ab825;font-weight:bold">media</span> <span style="color:#6ab825;font-weight:bold">screen</span> <span style="color:#6ab825;font-weight:bold">and</span> (<span style="color:#6ab825;font-weight:bold">max-width</span>:<span style="color:#ffa500">1280px</span>) {
-</span></span><span style="display:flex;"><span>    #<span style="color:#447fcf;text-decoration:underline">desktop-nav</span>&gt;<span style="color:#6ab825;font-weight:bold">a</span> {
-</span></span><span style="display:flex;"><span>        <span style="color:#6ab825;font-weight:bold">float</span>: <span style="color:#6ab825;font-weight:bold">left</span>;
-</span></span><span style="display:flex;"><span>        <span style="color:#6ab825;font-weight:bold">text-align</span>: <span style="color:#6ab825;font-weight:bold">center</span>;
-</span></span><span style="display:flex;"><span>        <span style="color:#6ab825;font-weight:bold">margin-left</span>: <span style="color:#3677a9">5</span><span style="color:#6ab825;font-weight:bold">%</span>;
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic">/* This is the mobile view */</span>
-</span></span><span style="display:flex;"><span>@<span style="color:#6ab825;font-weight:bold">media</span> <span style="color:#6ab825;font-weight:bold">screen</span> <span style="color:#6ab825;font-weight:bold">and</span> (<span style="color:#6ab825;font-weight:bold">max-width</span>:<span style="color:#ffa500">870px</span>) {
-</span></span><span style="display:flex;"><span>    #<span style="color:#447fcf;text-decoration:underline">desktop-nav</span> {
-</span></span><span style="display:flex;"><span>        <span style="color:#6ab825;font-weight:bold">display</span>: <span style="color:#6ab825;font-weight:bold">none</span>
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#6ab825;font-weight:bold">meta</span> <span style="color:#bbb">name</span>=<span style="color:#ed9d13">&#34;viewport&#34;</span> <span style="color:#bbb">content</span>=<span style="color:#ed9d13">&#34;width=device-width, initial-scale=0.86, minimum-scale=0.86&#34;</span>&gt;
+</code></pre></div><p>Tutorials will recommend to style mobile first, but I usually create websites for the desktop view first.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#999;font-style:italic">/* This is optional. I use it for Tablet or 16:10 */</span>
+@<span style="color:#6ab825;font-weight:bold">media</span> <span style="color:#6ab825;font-weight:bold">screen</span> <span style="color:#6ab825;font-weight:bold">and</span> (<span style="color:#6ab825;font-weight:bold">max-width</span>:<span style="color:#ffa500">1280px</span>) {
+    #<span style="color:#447fcf;text-decoration:underline">desktop-nav</span>&gt;<span style="color:#6ab825;font-weight:bold">a</span> {
+        <span style="color:#6ab825;font-weight:bold">float</span>: <span style="color:#6ab825;font-weight:bold">left</span>;
+        <span style="color:#6ab825;font-weight:bold">text-align</span>: <span style="color:#6ab825;font-weight:bold">center</span>;
+        <span style="color:#6ab825;font-weight:bold">margin-left</span>: <span style="color:#3677a9">5</span><span style="color:#6ab825;font-weight:bold">%</span>;
+    }
+}
+
+<span style="color:#999;font-style:italic">/* This is the mobile view */</span>
+@<span style="color:#6ab825;font-weight:bold">media</span> <span style="color:#6ab825;font-weight:bold">screen</span> <span style="color:#6ab825;font-weight:bold">and</span> (<span style="color:#6ab825;font-weight:bold">max-width</span>:<span style="color:#ffa500">870px</span>) {
+    #<span style="color:#447fcf;text-decoration:underline">desktop-nav</span> {
+        <span style="color:#6ab825;font-weight:bold">display</span>: <span style="color:#6ab825;font-weight:bold">none</span>
+    }
+}
+</code></pre></div>
         </div>
         
 

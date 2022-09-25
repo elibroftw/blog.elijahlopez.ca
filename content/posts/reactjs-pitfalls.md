@@ -1,5 +1,5 @@
 ---
-title: "ReactJS Pitfalls"
+title: "ReactJS Pitfalls & Tricks"
 date: 2022-09-23T19:57:18-04:00
 tags: [
     "tutorial",
@@ -40,10 +40,10 @@ Thus, I had a useEffect in Home.jsx to capture Home's view variable and update
 App's view variable.
 
 The implications of this only occured to me afterwards when I wanted to persistent a value between different Views.
-I tried to do the same "tricK" at the Home scope, but for some reason every time I switched Views, the value I was trying
+I tried to do the same "trick" at the Home scope, but for some reason every time I switched Views, the value I was trying
 to persist would get reset to the default of setState.
 
-What was happeing was that changing views would update not only Home's state, but also App's state. Therefore Home would get re-rendered (instead of just the part that changed) and so the state would get overwritten.
+What was happening was that changing views would update not only Home's state, but also App's state. Therefore Home would get re-rendered (instead of just the part that changed) and so the state would get overwritten.
 
 I then decided its better anyways to persist the value I wanted to persist on the App scope so that it persists even if Home dismounts.
 I then realized that the variable wasn't actually used as a state but rather as a persistant variable, and so I did some research and
