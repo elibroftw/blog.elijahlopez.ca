@@ -15,7 +15,7 @@ friends (17) Eric Harris and Dylan Klebold. Legally, she did not commit any crim
 he _needed the money_ ($500), which is important when discussing gun policies. He served 19 months before being released to a halfway house.
 Mark Manes was able to purchase this gun in fall of the previous year at the age of 20 most likely. [^1]
 In my opinion, these two were made examples out of since they weren't taught how to sell guns privately and someone being born a couple months late
-should not make you serve six years, especially when you provided one of the four guns. _"Because customers must be 18 to get into gun shows and Klebold and Harris were high school seniors, Manes says their age didn't cross his mind."_
+should not make you serve six years, especially when you provided one of the _four_ guns. _"Because customers must be 18 to get into gun shows and Klebold and Harris were high school seniors, Manes says their age didn't cross his mind."_
 
 The gun could be sold at retail stores or in private sales, but couldn't be legally purchased from a firearms dealer by anyone under 21 or from a _private seller by anyone under 18._
 
