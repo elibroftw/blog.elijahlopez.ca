@@ -25,10 +25,10 @@ So what can we learn?
 
 1. Students shouldn't be allowed to buy guns at all. You should not be allowed to sell a gun to a person who has not even graduated high school yet. If going to school is mandatory, then there should be a system to check the education status of a student.
 2. The government of the USA is not poor. It is the most funded, and thus the country should be able to buy guns people want to sell. And it should be straight forward. Gun sellers should be able to bring a gun, and ask for the price they purchased the gun at and the government can also offer its own valuation.
-3. Gun shows need to ensure everyone in the show is 21+
-4. Guns should only be sold to those who are 21+, same as alcohol. If a person aged 18 isn't capable of consuming alcohol rationally, then neither can they a gun
-5. Guns can only be gifted to 18 and 19 year olds if the person gifting is a parent
-6. Guns cannot be gifted to under 18 year olds. It is parents responsibility to keep the gun safe.
+3. Gun shows need to ensure everyone in the show is 21+ or have no age restriction at all (-> no selling in the gun show)
+4. Guns should only be sold to those who are 21+, same as alcohol. If a person aged 18 isn't capable of [consuming alcohol rationally](#alcoholism), then neither can they handle _their own_ gun.
+5. Guns should only be gifted to 18-20 year olds if the person gifting is a parent.
+6. Guns cannot be gifted to people under 18 year olds (by [birth year](#birth-year)). It should be the parents responsibility to keep the gun safe, so even though a parent can practically buy a gun for their child, they are the official owners and are thus responsible for the gun and their child.
 
 This should be mandated federally, not at the state level. If states are free to do what they want,
 gun laws are useless, because crossing state lines is not illegal. Laws on products should be applied federally, not on the state level.
@@ -50,9 +50,32 @@ This event teaches us that parents are largely responsible in how a child behave
 
 > Adam had stopped speaking to his mother and communicated only through e-mail.
 
-Ridiculous. The mother is to be blamed. If your child isn't even communicating to you, and it's his fault and not yours, you should be actively solving the issue,
-not hiding the issue. Poor parenting is never going to go away, however when visitation rights are taken away, something has gone wrong. It's insane that even family court outcomes end up affecting school shootings. It's evident there is a bias in the USA courts for the child to be given to the mother than the father, and it seems that even this issue needs to be prioritized over other issues (like women's rights other than abortion). I strongly believe neither Republicans nor Democrats give any care to the state of the family court. Republicans cater towards the right-wing Christians and Democrats cater towards moderate Christians. Both act like women are victims and need an upper hand in the courts for divorces. This exists in Canada as well, however I don't think we have parents this poor.
+Ridiculous. The mother is to be blamed. If your child isn't even communicating to you, and it's his fault and not yours, you should be actively solving the issue, not hiding the issue.
+Poor parenting is never going to go away, however when visitation rights are taken away, something has gone wrong.
+It's insane that even family court outcomes end up affecting school shootings.
+It's evident there is a bias in the USA courts for the child to be given to the mother than the father, and it seems that even this issue needs to be prioritized over other issues (like women's rights other than abortion rights).
+I strongly believe neither Republicans nor Democrats give any care to the state of the family court.
+Republicans cater towards the right-wing Christians and Democrats cater towards moderate Christians.
+Both act like women are victims and need an upper hand in the courts for divorces.
+This exists in Canada as well, however the children aren't going as batshit insane.
 
 ## Conclusion
 
-I think these two highlight two different problems in America. Lack of sensible gun control combined with lack of lock down proceures and lack of proper parenting abilities. I definitely could've analyzed the Sandy Hook situation a bit more, but this is all that I had on my mind at the moment.
+I think these two tragic events highlight two different problems in America. Lack of sensible gun control combined with lack of lock down proceures and lack of proper parenting abilities. I definitely could've analyzed the Sandy Hook situation a bit more, but this is all that I had on my mind at the moment.
+
+## Alcoholism
+
+I do believe alcoholism and under age drinking is a problem, so the drinking age should be lowered to 18 and better education material should be included. Schools shouldn't behave as if children are not drinking alcohol. Children have been drinking alcohol since they were 13.
+Just like drugs, children and adult think its cool to drink as if its better than any other activity and non-alcoholic drinks humans partake in.
+I don't have a need to consume ridiculous amounts of alcohol and would never want to black out.
+The fact that it's not common sense to not black out from drinking, highlights a deeper issue of alcohol abuse and negligence of self health.
+Either it is caused by frail mental health (which in turn is caused by the social environment).
+Sorry about the rant, however I dislike using talking points which I am against without declaring I am against that talking point.
+
+## Birth Year
+
+I believe in strong rights to privacy. So strong in fact, I do not believe governments are entitled to know the birth day of individuals, only their birth year.
+It is ridiculous to claim a person born in December lacks the maturity of someone born in January of the same year even though academically they are indifferent.
+If I lead a country, one of the things I'd do is make all age related laws based on birth year rather than birth day and phase out birth days from ID cards going forward. Replacing existing ID cards would be a waste of money, but it should be allowed if a citizen wants ID without a birth day.
+Hopefully one day, society can mature enough to realize the birth day is irrelevant unless the society is authoritarian in nature.
+Some people will claim for some things it is relevant, but then wouldn't it be better to increase the age by 1 year? Since cannabis affects the mind until 18, state that cannabis should be illegal until 19 as that does not discriminate based on a birth day.
