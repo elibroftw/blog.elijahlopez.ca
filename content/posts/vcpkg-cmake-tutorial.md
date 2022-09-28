@@ -12,16 +12,19 @@ tags: [
 ]
 ---
 
-{{< youtube FeBzSYiWkEU >}}
+## Trouble Shooting
 
-## Prerequisties
+Most errors occur because of `CMakePresets.json` or `CMakeSettings.json`. I have proper samples
+available at https://github.com/elibroftw/cpp-vcpkg-cmake-example.
 
-- An IDE
+## Software Prerequisties
+
+- Anyone of the following IDEs
   - [Visual Studio Code](https://code.visualstudio.com/download)
   - [Visual Studio 2022](https://visualstudio.microsoft.com/downloads/) if on Windows for the compiler
   - Any IDE that has pretty good CMake integration
   - Otherwise, you will need to use `cmake` yourself
-- A Compiler
+- Any of the following compilers
   - [Visual Studio 2022](https://visualstudio.microsoft.com/downloads/) if on Windows
   - `gcc` (Linux)
   - MSYS2/Mingw `gcc` (Windows)
@@ -30,10 +33,10 @@ tags: [
 
 ## Installing CMake
 
-You will need [CMake 3.22+](https://cmake.org/download/) in order to use the Visual Studio 2022 compiler through VSCode.
+You will need [CMake 3.21+](https://cmake.org/download/) in order to use the Visual Studio 2022 compiler through VSCode.
 The installer does most of the work, so you won't have to manually add `cmake` to PATH.
 
-In VSCode, you will need to install the "C/C++ Extension" and the "CMake Tools" extensions.
+For VS Code, you will need to install the "C/C++ Extension" and the "CMake Tools" extensions.
 
 ### Installing Vcpkg
 
@@ -44,9 +47,10 @@ In VSCode, you will need to install the "C/C++ Extension" and the "CMake Tools" 
    - Windows: `"./bootstrap-vcpkg" -disableMetrics`
    - Unix: `./bootstrap-vcpkg.sh -disableMetrics`
 3. Modify environment variables
-   - Add the vcpkg cloned directory to PATH
+   - Add the vcpkg cloned directory to `PATH`
      - On Windows, use Windows search for "envir"
      - On Linux, open your `.bashrc` file and add `export PATH=$PATH:~/vcpkg` to your `.bashrc` file
+   - Set `VCPKG_ROOT` as the same value you added to `PATH`
    - Set `VCPKG_DEFAULT_TRIPLET` to `x64-windows` on Windows, or your computers triplet
      - Valid architectures are: x86, x64, arm, arm64 and wasm32.
      - Valid OS names are `'windows', 'linux', 'macos'` (I'm unsure about the macos part)
@@ -62,29 +66,22 @@ In the next section, we'll be integrating `vcpkg` within a CMake project.
 In this section we'll be creating a CMake C++ project that will make an HTTP request using the `cpr` library.
 
 1. Create a CMake project in Visual Studio or VSCode
+    - Ensure IDE is configured to use `CMakePresets.json`
     - VS: open visual studio and click "Create a new project" and search for "CMake Project"
     - VSCode: open an empty folder in VSCode and use "CMake: Quick Start" from the command palette (Ctrl + Shift + P)
-      - In `CMakeLists.txt`, add the following helper target "run"
 
-      ```cmake
-        add_custom_target(run
-            COMMAND ${PROJECT_NAME}
-            DEPENDS ${PROJECT_NAME}
-            WORKING_DIRECTORY ${CMAKE_PROJECT_DIR}
-        )
-        ```
-
-2. Set the CMake toolchain file to the path to `vcpkg.cmake` (from step 4)
-    - Visual Studio: Press manage configurations
-    - Visual Studio Code: Add the following to your `settings.json`
+2. Setting the CMake toolchain file to `vcpkg.cmake`
+    - Open CMakePresets.json [example](https://github.com/elibroftw/cpp-vcpkg-cmake-example/blob/master/CMakePresets.json)
+    - Add the following under `configurePresets[0] > cacheVariables`
 
         ```json
-        "cmake.configureSettings": {
-            "CMAKE_TOOLCHAIN_FILE": "...vcpkg.cmake",
-        }
+        "CMAKE_TOOLCHAIN_FILE": {
+            "value": "$env{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake",
+            "type": "FILEPATH"
+        },
         ```
 
-    - If using `cmake` from the command line, add `-DCMAKE_TOOLCHAIN_FILE=C:/Users/maste/Documents/GitHub/vcpkg/scripts/buildsystems/vcpkg.cmake`
+    - If using `cmake` from the command line on Linux, add `-DCMAKE_TOOLCHAIN_FILE=$VCPKG_ROOT/scripts/buildsystems/vcpkg.cmake`
 3. Create a `vcpkg` response file to maintain portability
    - Create `vcpkg_rf.txt` in the root directory with the contents:
 
@@ -104,7 +101,7 @@ In this section we'll be creating a CMake C++ project that will make an HTTP req
 
    - For more than one library, you only need one `target_link_libraries` rather than one for each additional library
 
-6. Now let's code. In the main C++ file, type the following:
+6. Now let's code. In the main cpp file, type the following:
 
     ```cpp
     #include <cpr/cpr.h>
@@ -130,3 +127,7 @@ In this section we'll be creating a CMake C++ project that will make an HTTP req
 
 If the steps didn't work for you, you can follow [this tutorial video](https://youtu.be/FeBzSYiWkEU).
 The video has an example of opening a project in VSCode that was made in Visual Studio.
+
+## Video
+
+{{< youtube FeBzSYiWkEU >}}

@@ -14,7 +14,8 @@
 
 <title>Installing Libraries for C&#43;&#43; with Vcpkg and CMake - ELL Blog</title>
 
-<meta name="description" content="Prerequisties An IDE  Visual Studio Code Visual Studio 2022 if on Windows for the compiler Any IDE that has pretty good CMake integration Otherwise, you will need to use cmake yourself   A Compiler  Visual Studio 2022 if on Windows gcc (Linux) MSYS2/Mingw gcc (Windows) clang (MacOS?)   git  Installing CMakeYou will need CMake 3.">
+<meta name="description" content="Trouble ShootingMost errors occur because of CMakePresets.json or CMakeSettings.json. I have proper samples available at https://github.com/elibroftw/cpp-vcpkg-cmake-example.
+Software Prerequisties Anyone of the following IDEs  Visual Studio Code Visual Studio 2022 if on Windows for the compiler Any IDE that has pretty good CMake integration Otherwise, you will need to use cmake yourself   Any of the following compilers  Visual Studio 2022 if on Windows gcc (Linux) MSYS2/Mingw gcc (Windows) clang (MacOS?">
 
 
 
@@ -87,7 +88,8 @@
 
 
 <meta property="og:title" content="Installing Libraries for C&#43;&#43; with Vcpkg and CMake" />
-<meta property="og:description" content="Prerequisties An IDE  Visual Studio Code Visual Studio 2022 if on Windows for the compiler Any IDE that has pretty good CMake integration Otherwise, you will need to use cmake yourself   A Compiler  Visual Studio 2022 if on Windows gcc (Linux) MSYS2/Mingw gcc (Windows) clang (MacOS?)   git  Installing CMakeYou will need CMake 3." />
+<meta property="og:description" content="Trouble ShootingMost errors occur because of CMakePresets.json or CMakeSettings.json. I have proper samples available at https://github.com/elibroftw/cpp-vcpkg-cmake-example.
+Software Prerequisties Anyone of the following IDEs  Visual Studio Code Visual Studio 2022 if on Windows for the compiler Any IDE that has pretty good CMake integration Otherwise, you will need to use cmake yourself   Any of the following compilers  Visual Studio 2022 if on Windows gcc (Linux) MSYS2/Mingw gcc (Windows) clang (MacOS?" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.elijahlopez.ca/posts/vcpkg-cmake-tutorial/" /><meta property="og:image" content="https://blog.elijahlopez.ca/images"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-12-19T19:51:55-05:00" />
@@ -98,7 +100,8 @@
 <meta name="twitter:image" content="https://blog.elijahlopez.ca/images"/>
 
 <meta name="twitter:title" content="Installing Libraries for C&#43;&#43; with Vcpkg and CMake"/>
-<meta name="twitter:description" content="Prerequisties An IDE  Visual Studio Code Visual Studio 2022 if on Windows for the compiler Any IDE that has pretty good CMake integration Otherwise, you will need to use cmake yourself   A Compiler  Visual Studio 2022 if on Windows gcc (Linux) MSYS2/Mingw gcc (Windows) clang (MacOS?)   git  Installing CMakeYou will need CMake 3."/>
+<meta name="twitter:description" content="Trouble ShootingMost errors occur because of CMakePresets.json or CMakeSettings.json. I have proper samples available at https://github.com/elibroftw/cpp-vcpkg-cmake-example.
+Software Prerequisties Anyone of the following IDEs  Visual Studio Code Visual Studio 2022 if on Windows for the compiler Any IDE that has pretty good CMake integration Otherwise, you will need to use cmake yourself   Any of the following compilers  Visual Studio 2022 if on Windows gcc (Linux) MSYS2/Mingw gcc (Windows) clang (MacOS?"/>
 
 
 
@@ -271,19 +274,22 @@
             </header>
         </div>
         <div class="content e-content">
-            
-<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="https://www.youtube.com/embed/FeBzSYiWkEU" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
-</div>
-
-<h2 id="prerequisties" >Prerequisties
+            <h2 id="trouble-shooting" >Trouble Shooting
 <span>
-    <a href="#prerequisties">
+    <a href="#trouble-shooting">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><p>Most errors occur because of <code>CMakePresets.json</code> or <code>CMakeSettings.json</code>. I have proper samples
+available at <a href="https://github.com/elibroftw/cpp-vcpkg-cmake-example">https://github.com/elibroftw/cpp-vcpkg-cmake-example</a>.</p>
+<h2 id="software-prerequisties" >Software Prerequisties
+<span>
+    <a href="#software-prerequisties">
         <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
     </a>
 </span>
 </h2><ul>
-<li>An IDE
+<li>Anyone of the following IDEs
 <ul>
 <li><a href="https://code.visualstudio.com/download">Visual Studio Code</a></li>
 <li><a href="https://visualstudio.microsoft.com/downloads/">Visual Studio 2022</a> if on Windows for the compiler</li>
@@ -291,7 +297,7 @@
 <li>Otherwise, you will need to use <code>cmake</code> yourself</li>
 </ul>
 </li>
-<li>A Compiler
+<li>Any of the following compilers
 <ul>
 <li><a href="https://visualstudio.microsoft.com/downloads/">Visual Studio 2022</a> if on Windows</li>
 <li><code>gcc</code> (Linux)</li>
@@ -307,9 +313,9 @@
         <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
     </a>
 </span>
-</h2><p>You will need <a href="https://cmake.org/download/">CMake 3.22+</a> in order to use the Visual Studio 2022 compiler through VSCode.
+</h2><p>You will need <a href="https://cmake.org/download/">CMake 3.21+</a> in order to use the Visual Studio 2022 compiler through VSCode.
 The installer does most of the work, so you won&rsquo;t have to manually add <code>cmake</code> to PATH.</p>
-<p>In VSCode, you will need to install the &ldquo;C/C++ Extension&rdquo; and the &ldquo;CMake Tools&rdquo; extensions.</p>
+<p>For VS Code, you will need to install the &ldquo;C/C++ Extension&rdquo; and the &ldquo;CMake Tools&rdquo; extensions.</p>
 <h3 id="installing-vcpkg" >Installing Vcpkg
 <span>
     <a href="#installing-vcpkg">
@@ -331,12 +337,13 @@ The installer does most of the work, so you won&rsquo;t have to manually add <co
 </li>
 <li>Modify environment variables
 <ul>
-<li>Add the vcpkg cloned directory to PATH
+<li>Add the vcpkg cloned directory to <code>PATH</code>
 <ul>
 <li>On Windows, use Windows search for &ldquo;envir&rdquo;</li>
 <li>On Linux, open your <code>.bashrc</code> file and add <code>export PATH=$PATH:~/vcpkg</code> to your <code>.bashrc</code> file</li>
 </ul>
 </li>
+<li>Set <code>VCPKG_ROOT</code> as the same value you added to <code>PATH</code></li>
 <li>Set <code>VCPKG_DEFAULT_TRIPLET</code> to <code>x64-windows</code> on Windows, or your computers triplet
 <ul>
 <li>Valid architectures are: x86, x64, arm, arm64 and wasm32.</li>
@@ -365,36 +372,26 @@ In the next section, we&rsquo;ll be integrating <code>vcpkg</code> within a CMak
 <li>
 <p>Create a CMake project in Visual Studio or VSCode</p>
 <ul>
-<li>
-<p>VS: open visual studio and click &ldquo;Create a new project&rdquo; and search for &ldquo;CMake Project&rdquo;</p>
-</li>
-<li>
-<p>VSCode: open an empty folder in VSCode and use &ldquo;CMake: Quick Start&rdquo; from the command palette (Ctrl + Shift + P)</p>
-<ul>
-<li>In <code>CMakeLists.txt</code>, add the following helper target &ldquo;run&rdquo;</li>
-</ul>
-<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmake" data-lang="cmake">  <span style="color:#24909d">add_custom_target</span>(<span style="color:#ed9d13">run</span>
-      <span style="color:#ed9d13">COMMAND</span> ${<span style="color:#40ffff">PROJECT_NAME</span>}
-      <span style="color:#ed9d13">DEPENDS</span> ${<span style="color:#40ffff">PROJECT_NAME</span>}
-      <span style="color:#ed9d13">WORKING_DIRECTORY</span> ${<span style="color:#40ffff">CMAKE_PROJECT_DIR</span>}
-  )<span style="color:#a61717;background-color:#e3d2d2">
-</span></code></pre></div></li>
+<li>Ensure IDE is configured to use <code>CMakePresets.json</code></li>
+<li>VS: open visual studio and click &ldquo;Create a new project&rdquo; and search for &ldquo;CMake Project&rdquo;</li>
+<li>VSCode: open an empty folder in VSCode and use &ldquo;CMake: Quick Start&rdquo; from the command palette (Ctrl + Shift + P)</li>
 </ul>
 </li>
 <li>
-<p>Set the CMake toolchain file to the path to <code>vcpkg.cmake</code> (from step 4)</p>
+<p>Setting the CMake toolchain file to <code>vcpkg.cmake</code></p>
 <ul>
 <li>
-<p>Visual Studio: Press manage configurations</p>
+<p>Open CMakePresets.json <a href="https://github.com/elibroftw/cpp-vcpkg-cmake-example/blob/master/CMakePresets.json">example</a></p>
 </li>
 <li>
-<p>Visual Studio Code: Add the following to your <code>settings.json</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#ed9d13">&#34;cmake.configureSettings&#34;</span><span style="color:#a61717;background-color:#e3d2d2">:</span> {
-    <span style="color:#6ab825;font-weight:bold">&#34;CMAKE_TOOLCHAIN_FILE&#34;</span>: <span style="color:#ed9d13">&#34;...vcpkg.cmake&#34;</span>,
-}
+<p>Add the following under <code>configurePresets[0] &gt; cacheVariables</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#ed9d13">&#34;CMAKE_TOOLCHAIN_FILE&#34;</span><span style="color:#a61717;background-color:#e3d2d2">:</span> {
+    <span style="color:#6ab825;font-weight:bold">&#34;value&#34;</span>: <span style="color:#ed9d13">&#34;$env{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake&#34;</span>,
+    <span style="color:#6ab825;font-weight:bold">&#34;type&#34;</span>: <span style="color:#ed9d13">&#34;FILEPATH&#34;</span>
+}<span style="color:#a61717;background-color:#e3d2d2">,</span>
 </code></pre></div></li>
 <li>
-<p>If using <code>cmake</code> from the command line, add <code>-DCMAKE_TOOLCHAIN_FILE=C:/Users/maste/Documents/GitHub/vcpkg/scripts/buildsystems/vcpkg.cmake</code></p>
+<p>If using <code>cmake</code> from the command line on Linux, add <code>-DCMAKE_TOOLCHAIN_FILE=$VCPKG_ROOT/scripts/buildsystems/vcpkg.cmake</code></p>
 </li>
 </ul>
 </li>
@@ -421,7 +418,7 @@ cpr
 </ul>
 </li>
 <li>
-<p>Now let&rsquo;s code. In the main C++ file, type the following:</p>
+<p>Now let&rsquo;s code. In the main cpp file, type the following:</p>
 <div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#cd2828;font-weight:bold">#include</span> <span style="color:#cd2828;font-weight:bold">&lt;cpr/cpr.h&gt;</span><span style="color:#cd2828;font-weight:bold">
 </span><span style="color:#cd2828;font-weight:bold">#include</span> <span style="color:#cd2828;font-weight:bold">&lt;iostream&gt;</span><span style="color:#cd2828;font-weight:bold">
 </span><span style="color:#cd2828;font-weight:bold"></span>
@@ -448,6 +445,17 @@ cpr
 </ol>
 <p>If the steps didn&rsquo;t work for you, you can follow <a href="https://youtu.be/FeBzSYiWkEU">this tutorial video</a>.
 The video has an example of opening a project in VSCode that was made in Visual Studio.</p>
+<h2 id="video" >Video
+<span>
+    <a href="#video">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2>
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/FeBzSYiWkEU" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
 
         </div>
         
