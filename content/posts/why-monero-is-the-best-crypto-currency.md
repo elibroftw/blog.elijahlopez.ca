@@ -162,6 +162,7 @@ it too is sanctioned. It was released in 2021 which is why it was not included i
 
 An overview of its issues:
 
+- ETH going in and coming out are branded as have being part of Aztec
 - You need 0.1 ETH to start recieving on Aztec
 - [IP logging](https://twitter.com/aztecnetwork/status/1560710578254925824) and Single-address pending deposit caps (I don't know exactly what this means)
 - [Extremely Centralized](https://medium.com/aztec-protocol/layer-by-layer-a-guide-to-aztecs-security-approach-87df087093c0)
