@@ -1,6 +1,6 @@
 ---
 title: "Why Monero Is the Best Crypto-Currency"
-date: 2022-02-26T11:37:57-05:00
+date: 2021-10-24T11:37:57-05:00
 draft: false
 tags: [
   "monero",
@@ -148,7 +148,31 @@ Bitcoin Cash users have the right mindset; privacy is a human right.
 They like the idea of privacy but have this loyalty towards BCH similar to smokers opting for cigarettes over ecigs.
 One is objectively better than the other. Crypto is still in its infancy, so it'll take 10 years for people to stop acting like hard drug users who should be using psychedelics instead.
 
-## ETH + Tornado 🌪 Cash
+### ETH + Aztec Protocol
+
+9/29/2022: Well I was right, the lack of ETH fungibility is proof that layer two solutions
+have a serious flaw and can make you a criminal or sanctioned just for wanting privacy. Tornado Cash being sanctioned means its worse even legally than to use than Monero. So now I will discuss an alternative [for now, as censorship is already brewing](https://twitter.com/aztecnetwork/status/1560710567249096704?s=20&t=-EDlvVlsKLdgAxGjJSfHJA). It's only a matter of time before the next popular privacy protocol gets sanctioned, so again, the main argument is that layer 2 protocols simply lack fungibility because
+observers can tell that a privacy preserving protocol was used and can thus discriminate your coins.
+With Monero, people have to either accept it for what it is or not accept it at all. All or nothing
+works; just like https and encryption works. Encryption is an all or nothing thing.
+
+So how does [Aztec](https://aztec.network/) work? It uses rollups meaning that it leverages the
+base layer of Ethereum for security, and it guarantees privacy after shielding. You can send shielded amounts to other accounta aliases and even layer 1 accounts, however the details of receiving are a bit unknown. I'll have to do some actual practical research to see its limitations as protocol, but since it is a protocol and not actual currency, it's only a matter of time until
+it too is sanctioned. It was released in 2021 which is why it was not included in the first publishing of this article.
+
+An overview of its issues:
+
+- You need 0.1 ETH to start recieving on Aztec
+- [IP logging](https://twitter.com/aztecnetwork/status/1560710578254925824) and Single-address pending deposit caps (I don't know exactly what this means)
+- [Extremely Centralized](https://medium.com/aztec-protocol/layer-by-layer-a-guide-to-aztecs-security-approach-87df087093c0)
+  - [Nodes](https://github.com/AztecProtocol/aztec-connect/tree/master/falafel) can be run decentralized, however because of the previous tweet, transactions can only be submitted when the central nodes fail. An antithesis to privacy! This is like the CIA being the only ones allowed to run TOR nodes and only if their nodes went down would other TOR nodes be allowed.
+- You send/receive with an alias; one alias per wallet (0.1ETH) or something
+  - this means to receive anonymously, you need another wallet to deposit 0.1ETH into Aztec.
+- Deposit cap of (5 ETH / 10,000 DAI) so $10,000 and written intension to keep it this way instead of increasing it to 50ETH / 100,000 DAI as promised.
+
+Overall, why limit yourself to this centralized privacy protocol, when [ETH-XMR](https://github.com/AthanorLabs/atomic-swap) atomic swaps on Arbitrum protocol are around the corner? Atomic swaps combined with better UI/UX front-ends will be the end for these privacy protocols.
+
+### ETH + Tornado 🌪 Cash
 
 The good thing about Tornado cash compared to CashFusion is that you don't have to rely on a centralized service. The web app is a UI for the Tornado: Mixer smart contract. This is a very good use of smart contracts but still, this service does not bring Ethereum up to Monero's default protections.
 
@@ -158,7 +182,10 @@ A single Monero seed can have an infinite number of accounts and each account ca
 
 A single Monero seed can have an infinite number of accounts and each account can have an infinite number of subaddresses. Instead of subaddresses showing up on the blockchain, a stealth address is created by the sender on the receiver's behalf and shows up on the transaction. Each transaction also has 7 other possible signatures (sender's being a stealth address again) and so the sender is protected as well. The transaction amount is also unknown to observers.
 
-Tornado Cash is just a mixer and like all mixer's unless all transactions go through Tornado, ETH with a history dating to a Tornado can be seen as more suspicious than non-Tornado ETH.
+**Tornado Cash is just a mixer and like all mixer's unless all transactions go through Tornado, ETH with a history dating to a Tornado can be seen as more suspicious than non-Tornado ETH.**
+
+2022/09/29: I was right, this flaw I highlighted is now viciously used to enforce the sanctioning of
+ETH that has gone through Tornado Cash.
 
 Ethereum has one thing over Monero which is smart contracts but just because they are called smart, does not mean they are used in a very smart way. DAO exploit resulted in a hard fork because it affects the founders, then there's the Polygon exploit, and the Indexed Finance exploit. Even after being audited, smart contracts can be exploited. DeFi is simply less secure at the moment compared to proprietary banking systems that are at least insured up to $100,000 per person. It's open-source minus the community inspection. I do hope DeFi improves in the coming years but a question for the reader is why Ethereum and not Solana, Cardano, Stellar? Should Ethereum really move away from proof-of-work? Let's find out in the next subsection.
 
