@@ -192,6 +192,12 @@ Ethereum has one thing over Monero which is smart contracts but just because the
 
 Ethereum has one thing over Monero which is smart contracts but just because they are called smart, does not mean they are used in a very smart way. DAO exploit resulted in a hard fork because it affects the founders, then there's the Polygon exploit, and the Indexed Finance exploit. Even after being audited, smart contracts can be exploited. DeFi is simply less secure at the moment compared to proprietary banking systems that are at least insured up to $100,000 per person. It's open-source minus the community inspection. I do hope DeFi improves in the coming years but a question for the reader is why Ethereum and not Solana, Cardano, Stellar? Should Ethereum really move away from proof-of-work? Let's find out in the next subsection.
 
+## MimbleWimble
+
+Coins that all into this category include, LTC, GRIN, BEAM.
+
+From ["Breaking Mimblewimble’s Privacy Model"](https://medium.com/dragonfly-research/breaking-mimblewimble-privacy-model-84bcd67bfe52), we see that there is a serious flaw in Mimblewimble that isn't emphasized enough and its consequences aren't communicated clearly. I highly suggest reading it, but I will simplify it. MimblewWimble works by aggregating multiple individual transactions into on big transaction / CoinJoin on the blockchain. However, since the CoinJoin has to be built one transaction at a time, a sniffer/malicious node that is connected to all other nodes in the network, can simply pick up transactions before the aggergation is finished and unwind the final coinjoin to see the sender and receiver (amounts are safe, but privacy is both identity and amount, not just amount). Privacy isn't real if its simply gatekept; Privcay is real when the technology is unable to be used against itself.
+
 ## Consensus Algorithm
 
 ### Proof-of-Stake (PoS) vs Delegated Proof-of-Stake (DPoS)
