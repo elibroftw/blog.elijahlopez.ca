@@ -20,6 +20,7 @@ If you are like me, you can follow the tutorial that [forks my site](#forking-my
 1. [Hugo](https://gohugo.io/getting-started/installing#binary-cross-platform) is "installed" and can be used (test `hugo version`)
 2. [git](https://git-scm.com/downloads) is installed and can be used (test `git version`)
 3. If either test fails (i.e. not on PATH), learn from [how to add to PATH](https://duckduckgo.com/?t=ffab&q=how+to+add+to+path&ia=web)
+4. VS Code + Hugo Helper extension
 
 ## Forking My Blog
 
@@ -47,6 +48,7 @@ If you are like me, you can follow the tutorial that [forks my site](#forking-my
 5. Read the theme instructions for basic configuration (i.e. `config.yaml` or `config.toml`)
 6. Edit `config.yaml` or `config.toml`
 7. Use `hugo new content/posts/POST.md` to create a new post
+    - Alternative: use the hugo helpers, "Hugo: create content" command
 8. Use `hugo serve -D` when drafting the post and see your changes at [http://localhost:1313/](http://localhost:1313/)
 9. Set `draft: false` after you are done drafting a post
 10. Use `hugo -d docs` when you are ready to push your website

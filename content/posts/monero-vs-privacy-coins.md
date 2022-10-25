@@ -224,7 +224,7 @@ Privacy is serious, you should not be sweeping these probles under the bed as if
 
 ## Dero
 
-### [Premined](https://github.com/deroproject/documentation/blob/master/premine.md)
+**[Premined](https://github.com/deroproject/documentation/blob/master/premine.md)**
 
 Monero has come a long way with consenting donations. No project, that aims to be the best, should force users to subsidize its development.
 

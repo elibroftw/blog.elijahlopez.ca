@@ -12,7 +12,7 @@ tags: [
 hidden: true
 ---
 
-DISCLAIMER: If you aren't from my hugo tutorial, please read my [Hugo tutorial](https://blog.elijahlopez.ca/posts/hugo-tutorial/#prerequisites)
+DISCLAIMER: If you aren't from my hugo tutorial, please read my [Hugo tutorial/posts/hugo-tutorial/#prerequisites)
 
 <!-- table of contents -->
 

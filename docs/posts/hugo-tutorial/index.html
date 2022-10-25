@@ -285,6 +285,7 @@ If you are like me, you can follow the tutorial that <a href="#forking-my-site">
 <li><a href="https://gohugo.io/getting-started/installing#binary-cross-platform">Hugo</a> is &ldquo;installed&rdquo; and can be used (test <code>hugo version</code>)</li>
 <li><a href="https://git-scm.com/downloads">git</a> is installed and can be used (test <code>git version</code>)</li>
 <li>If either test fails (i.e. not on PATH), learn from <a href="https://duckduckgo.com/?t=ffab&amp;q=how+to+add+to+path&amp;ia=web">how to add to PATH</a></li>
+<li>VS Code + Hugo Helper extension</li>
 </ol>
 <h2 id="forking-my-blog" >Forking My Blog
 <span>
@@ -324,7 +325,11 @@ If you are like me, you can follow the tutorial that <a href="#forking-my-site">
 <li>Add the theme using <code>git submodule add GitHubURL.git themes/themeName</code></li>
 <li>Read the theme instructions for basic configuration (i.e. <code>config.yaml</code> or <code>config.toml</code>)</li>
 <li>Edit <code>config.yaml</code> or <code>config.toml</code></li>
-<li>Use <code>hugo new content/posts/POST.md</code> to create a new post</li>
+<li>Use <code>hugo new content/posts/POST.md</code> to create a new post
+<ul>
+<li>Alternative: use the hugo helpers, &ldquo;Hugo: create content&rdquo; command</li>
+</ul>
+</li>
 <li>Use <code>hugo serve -D</code> when drafting the post and see your changes at <a href="http://localhost:1313/">http://localhost:1313/</a></li>
 <li>Set <code>draft: false</code> after you are done drafting a post</li>
 <li>Use <code>hugo -d docs</code> when you are ready to push your website</li>
