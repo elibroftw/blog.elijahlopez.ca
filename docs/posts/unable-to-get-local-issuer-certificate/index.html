@@ -12,15 +12,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="referrer" content="no-referrer-when-downgrade">
 
-<title>Tags - ELL Blog</title>
+<title>How to fix Unable to Get Local Issuer Certificate - ELL Blog</title>
 
-<meta name="description" content="">
-
-
-
+<meta name="description" content="So you were trying to use requests or httpx to access a website, in my case my own, and you got an SSL verify error:
+requests.exceptions.SSLError: HTTPSConnectionPool(host=&#39;domain&#39;, port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, &#39;[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:997)&#39;))) Your browser has no problems with the SSL verification. What gives? If a Man in the middle attack was occuring, your browser would tell you the website is unsafe, so an attacker is not the problem.">
 
 
-<link rel="alternate" type="application/rss+xml" href="https://blog.elijahlopez.ca/tags/index.xml" title="ELL Blog" />
+
+
+
 <link rel="icon" type="image/x-icon" href="https://blog.elijahlopez.ca/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://blog.elijahlopez.ca/favicon.png">
 
@@ -87,17 +87,21 @@
 
 
 
-<meta property="og:title" content="Tags" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://blog.elijahlopez.ca/tags/" /><meta property="og:image" content="https://blog.elijahlopez.ca/images"/>
+<meta property="og:title" content="How to fix Unable to Get Local Issuer Certificate" />
+<meta property="og:description" content="So you were trying to use requests or httpx to access a website, in my case my own, and you got an SSL verify error:
+requests.exceptions.SSLError: HTTPSConnectionPool(host=&#39;domain&#39;, port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, &#39;[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:997)&#39;))) Your browser has no problems with the SSL verification. What gives? If a Man in the middle attack was occuring, your browser would tell you the website is unsafe, so an attacker is not the problem." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.elijahlopez.ca/posts/unable-to-get-local-issuer-certificate/" /><meta property="og:image" content="https://blog.elijahlopez.ca/images"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-11-13T13:11:52-05:00" />
+<meta property="article:modified_time" content="2022-11-13T13:11:52-05:00" />
 
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://blog.elijahlopez.ca/images"/>
 
-<meta name="twitter:title" content="Tags"/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:title" content="How to fix Unable to Get Local Issuer Certificate"/>
+<meta name="twitter:description" content="So you were trying to use requests or httpx to access a website, in my case my own, and you got an SSL verify error:
+requests.exceptions.SSLError: HTTPSConnectionPool(host=&#39;domain&#39;, port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, &#39;[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:997)&#39;))) Your browser has no problems with the SSL verification. What gives? If a Man in the middle attack was occuring, your browser would tell you the website is unsafe, so an attacker is not the problem."/>
 
 
 
@@ -259,277 +263,114 @@
         </header>
         <main id="main" tabindex="-1"> 
             
-    <div class="index-content">
+    
+
+    <article class="post h-entry">
+        <div class="post-header">
+            <header>
+                <h1 class="p-name post-title">How to fix Unable to Get Local Issuer Certificate</h1>
+
+                
+            </header>
+        </div>
+        <div class="content e-content">
+            <p>So you were trying to use <code>requests</code> or <code>httpx</code> to access a website, in my case my own, and you got an SSL verify error:</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py">requests.exceptions.SSLError: HTTPSConnectionPool(host=<span style="color:#ed9d13">&#39;domain&#39;</span>, port=<span style="color:#3677a9">443</span>): Max retries exceeded <span style="color:#6ab825;font-weight:bold">with</span> url: / (Caused by SSLError(SSLCertVerificationError(<span style="color:#3677a9">1</span>, <span style="color:#ed9d13">&#39;[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:997)&#39;</span>)))
+</code></pre></div><p>Your browser has no problems with the SSL verification. What gives? If a Man in the middle attack was occuring, your browser would tell you the website is unsafe, so an attacker is not the problem.</p>
+<p>You searched the issue on a search engine and Stackoverflow tells you that you need to disable the verification or update certifi.
+Disabling verification is an unsafe/temporary work around, and the second didn&rsquo;t work, did it? What&rsquo;s the actual problem?</p>
+<p>The problem is that the website is only sending you their public certificate and not the entire certificate chain. Browsers are smart (or dumb)
+enough to fill in the gaps, but when security is in fact a concern, a library might not do the same. How do we fix this?</p>
+<p>The first thing you should do is contact the website owner and tell them that they are not sending the entire chain certificate and it&rsquo;s causing issues.</p>
+<p>If you are the website owner what do you need to do? Well if you were in charge of <a href="https://www.ssldragon.com/blog/how-to-install-an-ssl-certificate-on-heroku/">generating the CSR</a>, then you are capable of fixing the issue. When you buy a certificate from a certificate authority, you are actually buying the right to seek verification. To get verified, a certificate signing request (CSR) is required. To generate a CSR, a private key must be generated. After submitting the CSR to the certificate authority, like Sectingo (previously known as Comodo), they will give you your websites public certificate as well as a bundle. Someone new to SSL might not understand what the bundle is; Adding .crt extension at the end may clear is up; it&rsquo;s the missing intermediate certificates.</p>
+<p>To fix the issue, rather than add only your websites public certificate to your reverse-proxy/webserver, you must combine your websites certificate with the bundle and create a chain certificate. In other words, create a new file with certificates in this order:</p>
+<ol>
+<li>Domain</li>
+<li>Certificates in the bundle</li>
+</ol>
+<p>If you have <code>cat</code> installed, you can use the command <code>cat domain.crt .ca-bundle &gt; chain.crt</code>. On Windows, you can rename the file extensions or use Quicklook to read the contents of the file and copy paste them to a new text file.</p>
+<p>Lastly, you need to add the certificate (and possibly the private key) to your webserver.</p>
+<p>If you are using Heroku, you can go to settings, and click edit endpoint details under &ldquo;Add certificate&rdquo;. Test out requests again.</p>
+<p>I hope this fixed your issue, as a lot of my time was wasted because of poor Heroku docs the first time I added certificates. They did not emphasize combining the certificates.</p>
+
+        </div>
+        
+
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date dt-published">2022-Nov-13</div>
+    
+
+    <a class="post-hidden-url u-url" href="https://blog.elijahlopez.ca/posts/unable-to-get-local-issuer-certificate/">https://blog.elijahlopez.ca/posts/unable-to-get-local-issuer-certificate/</a>
+    <a href="https://blog.elijahlopez.ca/" class="p-name p-author post-hidden-author h-card" rel="me">Elijah Lopez</a>
+
+
+    <div class="post-taxonomies">
+        
+            
+                <ul class="post-tags">
+                    
+                        
+                        <li><a href="https://blog.elijahlopez.ca/tags/tutorial/">#tutorial</a></li>
+                    
+                        
+                        <li><a href="https://blog.elijahlopez.ca/tags/python/">#python</a></li>
+                    
+                        
+                        <li><a href="https://blog.elijahlopez.ca/tags/devops/">#devops</a></li>
+                    
+                </ul>
         
     </div>
+</div>
 
-    <h1>Tags</h1>
-    <ul class="terms">
-        
-            
-            
-                <li>
-                    <a href="/tags/bash/">bash</a>
-                    (2)
-                </li>
-            
-        
-            
-            
-                <li>
-                    <a href="/tags/bitcoin/">bitcoin</a>
-                    (1)
-                </li>
-            
-        
-            
-            
-                <li>
-                    <a href="/tags/c#/">c#</a>
-                    (1)
-                </li>
-            
-        
-            
-            
-                <li>
-                    <a href="/tags/c&#43;&#43;/">c&#43;&#43;</a>
-                    (1)
-                </li>
-            
-        
-            
-            
-                <li>
-                    <a href="/tags/canada/">canada</a>
-                    (6)
-                </li>
-            
-        
-            
-            
-                <li>
-                    <a href="/tags/cmake/">cmake</a>
-                    (1)
-                </li>
-            
-        
-            
-            
-                <li>
-                    <a href="/tags/cryptocurrency/">cryptocurrency</a>
-                    (5)
-                </li>
-            
-        
-            
-            
-                <li>
-                    <a href="/tags/devops/">devops</a>
-                    (4)
-                </li>
-            
-        
-            
-            
-                <li>
-                    <a href="/tags/finance/">finance</a>
-                    (2)
-                </li>
-            
-        
-            
-            
-                <li>
-                    <a href="/tags/git/">git</a>
-                    (1)
-                </li>
-            
-        
-            
-            
-        
-            
-            
-                <li>
-                    <a href="/tags/groovy/">groovy</a>
-                    (1)
-                </li>
-            
-        
-            
-            
-                <li>
-                    <a href="/tags/hugo/">hugo</a>
-                    (1)
-                </li>
-            
-        
-            
-            
-                <li>
-                    <a href="/tags/javascript/">javascript</a>
-                    (3)
-                </li>
-            
-        
-            
-            
-                <li>
-                    <a href="/tags/jenkins/">jenkins</a>
-                    (1)
-                </li>
-            
-        
-            
-            
-                <li>
-                    <a href="/tags/linux/">linux</a>
-                    (1)
-                </li>
-            
-        
-            
-            
-                <li>
-                    <a href="/tags/markdown/">markdown</a>
-                    (1)
-                </li>
-            
-        
-            
-            
-                <li>
-                    <a href="/tags/math/">math</a>
-                    (1)
-                </li>
-            
-        
-            
-            
-        
-            
-            
-                <li>
-                    <a href="/tags/monero/">monero</a>
-                    (5)
-                </li>
-            
-        
-            
-            
-                <li>
-                    <a href="/tags/opinion/">opinion</a>
-                    (5)
-                </li>
-            
-        
-            
-            
-                <li>
-                    <a href="/tags/politics/">politics</a>
-                    (3)
-                </li>
-            
-        
-            
-            
-                <li>
-                    <a href="/tags/programming/">programming</a>
-                    (21)
-                </li>
-            
-        
-            
-            
-                <li>
-                    <a href="/tags/python/">python</a>
-                    (10)
-                </li>
-            
-        
-            
-            
-                <li>
-                    <a href="/tags/reactjs/">reactjs</a>
-                    (1)
-                </li>
-            
-        
-            
-            
-                <li>
-                    <a href="/tags/review/">review</a>
-                    (2)
-                </li>
-            
-        
-            
-            
-                <li>
-                    <a href="/tags/ssh/">ssh</a>
-                    (1)
-                </li>
-            
-        
-            
-            
-                <li>
-                    <a href="/tags/thoughts/">thoughts</a>
-                    (1)
-                </li>
-            
-        
-            
-            
-                <li>
-                    <a href="/tags/tutorial/">tutorial</a>
-                    (22)
-                </li>
-            
-        
-            
-            
-                <li>
-                    <a href="/tags/university/">university</a>
-                    (2)
-                </li>
-            
-        
-            
-            
-                <li>
-                    <a href="/tags/vcpkg/">vcpkg</a>
-                    (1)
-                </li>
-            
-        
-            
-            
-                <li>
-                    <a href="/tags/vscode/">vscode</a>
-                    (3)
-                </li>
-            
-        
-            
-            
-                <li>
-                    <a href="/tags/webdev/">webdev</a>
-                    (4)
-                </li>
-            
-        
-            
-            
-                <li>
-                    <a href="/tags/windows/">windows</a>
-                    (1)
-                </li>
-            
-        
-    </ul>
+    </article>
 
+    
+
+    
+        
+    <div class="pagination post-pagination">
+        <div class="left pagination-item disabled">
+            
+        </div>
+        <div class="right pagination-item ">
+            
+                <a href="/posts/top-vscode-extensions/">Top VS Code Extensions</a>
+            
+        </div>
+    </div>
+
+
+
+
+    
+
+    
+        
+
+
+    
+
+
+<script src="https://utteranc.es/client.js"
+        repo="elibroftw/blog.elijahlopez.ca"
+        theme="github-dark"
+        label=""
+        issue-term="url"
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+
+
+
+
+    
 
         </main>
         

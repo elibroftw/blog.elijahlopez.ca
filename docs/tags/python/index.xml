@@ -6,10 +6,37 @@
     <description>ELL Blog (python)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 30 May 2021 22:51:53 -0500</lastBuildDate>
+    <lastBuildDate>Sun, 13 Nov 2022 13:11:52 -0500</lastBuildDate>
     
     <atom:link href="https://blog.elijahlopez.ca/tags/python/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>How to fix Unable to Get Local Issuer Certificate</title>
+      <link>https://blog.elijahlopez.ca/posts/unable-to-get-local-issuer-certificate/</link>
+      <pubDate>Sun, 13 Nov 2022 13:11:52 -0500</pubDate>
+      
+      <guid>https://blog.elijahlopez.ca/posts/unable-to-get-local-issuer-certificate/</guid>
+      <description>&lt;p&gt;So you were trying to use &lt;code&gt;requests&lt;/code&gt; or &lt;code&gt;httpx&lt;/code&gt; to access a website, in my case my own, and you got an SSL verify error:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-py&#34; data-lang=&#34;py&#34;&gt;requests.exceptions.SSLError: HTTPSConnectionPool(host=&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;domain&amp;#39;&lt;/span&gt;, port=&lt;span style=&#34;color:#3677a9&#34;&gt;443&lt;/span&gt;): Max retries exceeded &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;with&lt;/span&gt; url: / (Caused by SSLError(SSLCertVerificationError(&lt;span style=&#34;color:#3677a9&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:997)&amp;#39;&lt;/span&gt;)))
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Your browser has no problems with the SSL verification. What gives? If a Man in the middle attack was occuring, your browser would tell you the website is unsafe, so an attacker is not the problem.&lt;/p&gt;
+&lt;p&gt;You searched the issue on a search engine and Stackoverflow tells you that you need to disable the verification or update certifi.
+Disabling verification is an unsafe/temporary work around, and the second didn&amp;rsquo;t work, did it? What&amp;rsquo;s the actual problem?&lt;/p&gt;
+&lt;p&gt;The problem is that the website is only sending you their public certificate and not the entire certificate chain. Browsers are smart (or dumb)
+enough to fill in the gaps, but when security is in fact a concern, a library might not do the same. How do we fix this?&lt;/p&gt;
+&lt;p&gt;The first thing you should do is contact the website owner and tell them that they are not sending the entire chain certificate and it&amp;rsquo;s causing issues.&lt;/p&gt;
+&lt;p&gt;If you are the website owner what do you need to do? Well if you were in charge of &lt;a href=&#34;https://www.ssldragon.com/blog/how-to-install-an-ssl-certificate-on-heroku/&#34;&gt;generating the CSR&lt;/a&gt;, then you are capable of fixing the issue. When you buy a certificate from a certificate authority, you are actually buying the right to seek verification. To get verified, a certificate signing request (CSR) is required. To generate a CSR, a private key must be generated. After submitting the CSR to the certificate authority, like Sectingo (previously known as Comodo), they will give you your websites public certificate as well as a bundle. Someone new to SSL might not understand what the bundle is; Adding .crt extension at the end may clear is up; it&amp;rsquo;s the missing intermediate certificates.&lt;/p&gt;
+&lt;p&gt;To fix the issue, rather than add only your websites public certificate to your reverse-proxy/webserver, you must combine your websites certificate with the bundle and create a chain certificate. In other words, create a new file with certificates in this order:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Domain&lt;/li&gt;
+&lt;li&gt;Certificates in the bundle&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;If you have &lt;code&gt;cat&lt;/code&gt; installed, you can use the command &lt;code&gt;cat domain.crt .ca-bundle &amp;gt; chain.crt&lt;/code&gt;. On Windows, you can rename the file extensions or use Quicklook to read the contents of the file and copy paste them to a new text file.&lt;/p&gt;
+&lt;p&gt;Lastly, you need to add the certificate (and possibly the private key) to your webserver.&lt;/p&gt;
+&lt;p&gt;If you are using Heroku, you can go to settings, and click edit endpoint details under &amp;ldquo;Add certificate&amp;rdquo;. Test out requests again.&lt;/p&gt;
+&lt;p&gt;I hope this fixed your issue, as a lot of my time was wasted because of poor Heroku docs the first time I added certificates. They did not emphasize combining the certificates.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Registering Default File Handler&#39;s in Windows with Python</title>

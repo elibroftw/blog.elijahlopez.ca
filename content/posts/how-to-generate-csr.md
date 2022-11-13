@@ -7,6 +7,8 @@ tags: [
 ]
 ---
 
+https://www.ssldragon.com/blog/how-to-install-an-ssl-certificate-on-heroku/
+
 ```sh
 openssl req -newkey rsa:2048 -keyout elijahlopez.ca.key -out elijahlopez.ca.csr -config .\elijahlopez.ca.csr.conf
 ```
