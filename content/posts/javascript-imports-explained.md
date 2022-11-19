@@ -71,6 +71,7 @@ export const schedule200 = { ... };
 export { default as file1 } from '/file1.js';
 export { default as file2 } from '/file1.js';
 // App.jsx
+// import everything from Files under filese
 import * as files from './Files';
 console.log(files.file1);
 // App.jsx alternative
