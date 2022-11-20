@@ -1,7 +1,7 @@
 ---
 title: "Pierre Poilievre Policies"
 date: 2022-09-22T17:39:09-04:00
-draft: false
+hidden: true
 tags: [
     "canada",
     "opinion",
