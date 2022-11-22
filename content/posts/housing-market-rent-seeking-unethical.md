@@ -1,5 +1,5 @@
 ---
-title: "Housing Market Rent Seeking is Unethical"
+title: "Housing Market Rent-Seeking is Unethical"
 date: 2022-11-21T16:36:44-05:00
 draft: false
 tags: [
@@ -36,7 +36,7 @@ I am not claiming to be perfect but rather that I seek to be just more than thos
 
 From an economical point of ivew, *subsidized mortgage rent does not increase a countries wealth.*
 
-## But the Stock Market is rent-seeking!
+## But the Stock Market is Rent-Seeking!
 
 Yes stock market is rent-seeking. But that weath comes from the workers of the public company. Companies choose to go public, they
 were not forced and it is not necessary for companies to buy back shares, and neither is it necessary for other humans to buy your
@@ -47,7 +47,7 @@ volunteerily choosing to rent your shares when they sell them.
 
 ## Aside
 
-To my first-year business professor who insinuated that short-selling should be illegal because it is illegal to sell a borrowed car and returning the same model and make car bought from someone else: shares are **fungible**, cars are not.
+To my first-year business professor who insinuated that short-selling should be illegal because it is illegal to sell a borrowed car and then return the same make & model car bought from someone else: shares are **fungible**, cars are not.
 
 Plug: You what else isn't fungible? Bitcoin, Doge, Ethereum, Ripple, Cardano, Tether.
 Out of the top 25 cryptocurries, only Monero is fungible.
