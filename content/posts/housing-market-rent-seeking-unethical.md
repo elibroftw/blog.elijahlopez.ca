@@ -47,7 +47,16 @@ volunteerily choosing to rent your shares when they sell them.
 
 ## Aside
 
-To my first-year business professor who insinuated that short-selling should be illegal because it is illegal to sell a borrowed car and then return the same make & model car bought from someone else: shares are **fungible**, cars are not.
+<details>
+<summary>To my First Year Business Professor...</summary>
+who insinuated that short-selling should be illegal because it is illegal to sell a borrowed car and then return the same make & model car bought from someone else:
 
-Plug: You know what else isn't fungible? Bitcoin, Doge, Ethereum, Ripple, Cardano, Tether.
+Shares are **fungible**, cars are not.
+
+<details>
+<summary>Plug</summary>
+You know what else isn't fungible? Bitcoin, Doge, Ethereum, Ripple, Cardano, Tether.
 Out of the top 25 cryptocurries, only Monero is fungible.
+</details>
+
+</details>
