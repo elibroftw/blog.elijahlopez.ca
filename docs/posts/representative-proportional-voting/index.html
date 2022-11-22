@@ -15,7 +15,8 @@
 <title>Representative Proportional Voting - ELL Blog</title>
 
 <meta name="description" content="The one argument against common proportional voting systems is &ldquo;local represenation matters.&rdquo; Party-list proportional representation is the formal term for it but it does not care about local representations.
-To solve this we still keep the same voting methods. The only change is which MP actually get elected. Once all the votes are counted, first determine independent MPs using first past the post. Remove these seats from the total seats. Then use Huntington–Hill method to determine number of seats for each party (independents are not one party).">
+I have come up with a method to solve this supposed paradox.
+We still keep the same voting methods. That is each person will still vote for a representative for their district, except what changes is how that vote is used. As in which MP actually get elected.">
 
 
 
@@ -89,7 +90,8 @@ To solve this we still keep the same voting methods. The only change is which MP
 
 <meta property="og:title" content="Representative Proportional Voting" />
 <meta property="og:description" content="The one argument against common proportional voting systems is &ldquo;local represenation matters.&rdquo; Party-list proportional representation is the formal term for it but it does not care about local representations.
-To solve this we still keep the same voting methods. The only change is which MP actually get elected. Once all the votes are counted, first determine independent MPs using first past the post. Remove these seats from the total seats. Then use Huntington–Hill method to determine number of seats for each party (independents are not one party)." />
+I have come up with a method to solve this supposed paradox.
+We still keep the same voting methods. That is each person will still vote for a representative for their district, except what changes is how that vote is used. As in which MP actually get elected." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.elijahlopez.ca/posts/representative-proportional-voting/" /><meta property="og:image" content="https://blog.elijahlopez.ca/images"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-11-19T11:58:17-04:00" />
@@ -101,7 +103,8 @@ To solve this we still keep the same voting methods. The only change is which MP
 
 <meta name="twitter:title" content="Representative Proportional Voting"/>
 <meta name="twitter:description" content="The one argument against common proportional voting systems is &ldquo;local represenation matters.&rdquo; Party-list proportional representation is the formal term for it but it does not care about local representations.
-To solve this we still keep the same voting methods. The only change is which MP actually get elected. Once all the votes are counted, first determine independent MPs using first past the post. Remove these seats from the total seats. Then use Huntington–Hill method to determine number of seats for each party (independents are not one party)."/>
+I have come up with a method to solve this supposed paradox.
+We still keep the same voting methods. That is each person will still vote for a representative for their district, except what changes is how that vote is used. As in which MP actually get elected."/>
 
 
 
@@ -276,11 +279,23 @@ To solve this we still keep the same voting methods. The only change is which MP
         <div class="content e-content">
             <p>The one argument against common proportional voting systems is &ldquo;local represenation matters.&rdquo;
 Party-list proportional representation is the formal term for it but it does not care about local representations.</p>
-<p>To solve this we still keep the same voting methods. The only change is which MP actually get elected. Once all the votes are counted, first determine independent MPs using first past the post. Remove these seats from the total seats. Then use Huntington–Hill method to determine number of seats for each party (independents are not one party). Primary allocation is done using any party with more than hare quota.</p>
-<p>To protect independents we give independents priority when picking MP&rsquo;s for each riding.</p>
+<p>I have come up with a method to solve this supposed paradox.</p>
+<p>We still keep the same voting methods. That is each person will still vote for a representative for their district, except what changes is how that vote is used. As in which MP actually get elected. Once all the votes are counted, first determine independent MPs using first past the post. Remove these seats from the total seats. Then use <a href="https://en.wikipedia.org/wiki/Huntington-Hill_method">Huntington-Hill</a> method to determine number of seats for each party (independents are not one party). The primary (or first) seat allocation is done using any party with more than their quota.</p>
+<p>To incentivize and protect indepedent MPs, we give independents priority when picking MP&rsquo;s for each riding. If they were included in the <a href="https://en.wikipedia.org/wiki/Huntington-Hill_method">Huntington-Hill</a> method, even if the district voted 50+ % for the independent MP, they wouldn&rsquo;t
+be allocated any seat whatsoever! That is the entire reason why I kept the same voting procedures.</p>
 <p>After seats are allocated,</p>
 <p>From smallest seats party to largest:
 Find riding from unelected riding&rsquo;s with the highest percentage voting for that party (use sorting algorithm). Elect the party MP for that riding. Remove riding from unelected riding&rsquo;s. Repeat.</p>
+<p>We want peoples' votes to count so one party edging out the other party by a couple percent does not guarantee a win. Say a new party was founded and in its most popular riding the candidate loses by a couple percents.
+If the total votes for the party exceeded 100,000 (assuming one seat represents 100,000 Canadians) on a federal level, that seat will be theirs.</p>
+<p>I hope this was clear, but if not feel free to ask questions. This is an overview and not an implementation. If I was ever an MP, I would propose to use this method for all MP and MPP elections.</p>
+<h2 id="tricks" >Tricks
+<span>
+    <a href="#tricks">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><p>One can say people can claim to be independent but be supported by a party through the media. Elections Canada will be tasked at ensuring such <em>faltugiri</em> will not occur and the party will have their funding for that riding (votes used to appropriate funds) split equally amongst the other parties in that riding. The so called independent MP or candidate will be barred from running for election. I&rsquo;m not sure if its possible, but this should also result in criminal charges. It is anti-democratic and should be equivalent to Treason (commiting fraud on an entire country).</p>
 
         </div>
         
