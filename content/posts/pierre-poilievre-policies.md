@@ -46,4 +46,4 @@ Now for something interesting I found. It seems that even before the LPC, an ass
 ## Every Dollar Spent Should be Accompanied with a Dollar Received
 
 The idea is that politicans need to be forced to keep the budget balanced in order to reduce debt and prevent excess aggregate demand (-> inflation).
-Poilievre used the bill under Clinton as an example.e
+Poilievre used the bill under Clinton as an example.
