@@ -1,7 +1,6 @@
 ---
 title: "Incompetence"
 date: 2022-06-20T22:00:42-04:00
-draft: false
 tags: [
     "opinion"
 ]
