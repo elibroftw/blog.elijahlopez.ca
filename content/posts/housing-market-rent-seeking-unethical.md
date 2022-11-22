@@ -36,7 +36,7 @@ I am not claiming to be perfect but rather that I seek to be just more than thos
 
 From an economical point of ivew, *subsidized mortgage rent does not increase a countries wealth.*
 
-## Stock Market is rent-seeking
+## But the Stock Market is rent-seeking!
 
 Yes stock market is rent-seeking. But that weath comes from the workers of the public company. Companies choose to go public, they
 were not forced and it is not necessary for companies to buy back shares, and neither is it necessary for other humans to buy your
