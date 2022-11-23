@@ -29,7 +29,7 @@ Some Canadians see the housing market as a vehicle for financial gains. In other
 
 Why is this unethical? People need a place to live. By owning properties that you don't live in for the sole purpose of investment, you are gatekeeping home ownership. Ownership means that you have the right to do what you want to the property: customization, convertion, demolition, kicking someone out. Human rights is about the right to life **and liberty**. By treating housing as an investment, you are making it harder for someone to exercise their liberty (higher house prices). Okay, so you offer to lease the house so that you can feel good about accomodating someone.
 
-By charging a rent amount that subsidizes your mortgage payment, you are now making the people who can't afford properties pay for your equity ownership. In other words, if you're property wasn't available for rent, they'd be homeless, but with your property for rent, they are the ones helping you pay your mortgage for no equity! If you did not read this sentence to its depths, you are participating in a wealth transfer of the poor to your pockets.
+By charging a rent amount that subsidizes your mortgage payment, you are now making the people who can't afford properties pay for your equity ownership. In other words, if your property wasn't available for rent, they'd be homeless, but with your property for rent, they are the ones helping you pay your mortgage for no equity! If you did not read this sentence to its depths, you are participating in a wealth transfer of the poor to your pockets.
 Your increase in wealth comes at the cost of a decrease of someone else's and it is not by you producing real goods & services. **Rent-seeking is not a service**. By charging those renters a price that subsidizes your mortgage and property tax, you are taking away their assets so that you can have yours...at a cheaper price and sometimes you get the property for free! If you still don't get why this is unethical, the other person is at disadvantaged for not being able to take a loan and you have no consideration for them. Humans take up space simply by existing. To make it harder than necessary for another human to occupy space....that is unethical.
 
 It's easy to beahve and speak ethically when your self-interests is aligned with the ethical topic,
@@ -49,7 +49,7 @@ volunteerily choosing to rent your shares when they sell them.
 
 ## Policy
 
-I have written on my thoughts on Canada befoer, and my solution to this problem was to enact a [Major Speculation Tax](/posts/canada#reducing-demand---major-speculation-tax) which generally speaking would apply
+I have written on my thoughts on Canada before, and my solution to this problem was to enact a [Major Speculation Tax](/posts/canada#reducing-demand---major-speculation-tax) which generally speaking would apply
 to more than 2 houses per couple.
 
 ## Aside
