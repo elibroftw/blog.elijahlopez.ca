@@ -83,7 +83,9 @@ In the long term, we should focus on more than fixing housing prices, but distri
 
 ### Increasing Supply - Land Value Tax
 
-
+Oh yeah forgot to add this section. Essentially, it should be more expensive to own vacant land than an apartment building and property taxes from apartments should be much less than single family houses.
+This is because empty land is less efficient usage than a single family home which is less efficient land usage than an apartment building. This policy can only be done on the provincial level because
+it should be presumed that municipal residents (property owners) will vote in their own self-interests rather than taking into consideration those who do not own properties or who cannot afford suburbia.
 
 ## The Ideal Canadian Life
 
