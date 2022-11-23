@@ -47,6 +47,11 @@ shares. In other words, bidding the price of shares up hurts only the ones short
 The key difference is that when you take a loan to buy a share, no one is forced to rent that share from you. Stock shorters are
 volunteerily choosing to rent your shares when they sell them.
 
+## Policy
+
+I have written on my thoughts on Canada befoer, and my solution to this problem was to enact a [Major Speculation Tax](/posts/canada#reducing-demand---major-speculation-tax) which generally speaking would apply
+to more than 2 houses per couple.
+
 ## Aside
 
 <details>

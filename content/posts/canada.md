@@ -30,9 +30,9 @@ As for undeveloped land, we could say that development of the land has to be sta
 
 ### Reducing Demand - Major Speculation Tax
 
-To reduce demand, we will add a buyers (speculation) tax on non-primary home purchases for homes transactions that are more than $150,000. There's no reason to own more homes than people in your immediate family. For clarification on the definition of an immediate family, a couple with one kid over 18 can buy 3 homes but a couple with a kid less than 18 can only buy 2.
+To reduce demand, we will add a buyers (speculation) tax on non-primary home purchases for homes transactions that are more than $150,000. There's no reason to own more homes than people in your immediate family. For clarification on the definition of an immediate family, a couple for each kid over 18 can buy one additional home without this tax (to a max of 4 = 2 biological children + 2 adopted children). This policy can be tweaked a bit so for example, the total budget for non-primary houses can be $500,000 instead of $150,000 which might allow allow people to allocate it towards a condo rather than a cottage. The condo could be rented out to short-term residents. If the budget is too low, there might be no land lords which would force short-term tenants to either get a loan gaurantor or live in a basement.
 
-I propose this speculation tax to start at 50% and to modify it the next year. If it's too low, we'll make it 100%. If prices dramatically fall, we will get hated by property owners but at least the U40 population will vote for us again. If even a 100% tax is too low, we can further reduce the 150k threshold so that most couples would have to use their secndary home allowance itself as the other tax-free property. For example a secondary property could be a storage area, a cottage, or a simple office.
+I propose this speculation tax to start at 50% and to modify it the next year. If it's too low, we'll make it 100%. If prices dramatically fall, we will get hated by property owners but at least the U40 population will vote for us again. If even a 100% tax is too low, we can further reduce the 150k threshold so that most couples would have to use their secondary home allowance itself as the other tax-free property. For example a secondary property could be a storage area, a cottage, or a simple office.
 
 Existing home owners with more homes than people in their immediate family have 6 months to pay the buyers tax on their (# homes - # family members) most expensive homes. So even if a couples primary residence is the most expensive, they have to pay the buyers tax on it and not their cheaper investment properties. The problem in Canada isn't just foreign spending, it's domestic speculation. We need to tackle our own greed.
 
@@ -41,6 +41,12 @@ With this buyers tax, one could argue that a couple itself is treated as one in 
 I'm up for debate on whether to include properties that were inherited.
 
 This buyers tax should be implemented federally. People who are buying homes in multiple provinces are definitely upper middle class or rich. Therefore, a 50% or even 100% tax is not a problem if they are buying to live rather than to rent. Imagine a multi millionaire; that 500k property now costs 1M, so it's not a problem.
+
+Lastly, governments should play around trying to reduce rent-seeking behaviour without short-term tenants being unable to live because there are no land lords. For example, to accomodate the demand of students, a [supply side policy could be enacted to incenticize efficient land use 2km around universities](#increasing-supply---land-value-tax) combined with a tax exclusion on properties near the university if the parent has a student that goes to the university. This would allow parents to buy a property of 5 units and rent out 4 of them to students who's parents cannot afford to buy a property around the university. Universities or provincial governments would provide a guide for parents of student ineligible for the provincial university grants; So if there are 50,000 students and only 10% have parents who can afford to buy a secondary property, then 40,000 students are basically taken care of. Although I hope that parents wouldn't partake in the price gouging of their childs' peers, this tax exclusion can be taken away if something like that starts occuring.
+
+### Reducing Demand - Corporations Ban
+
+Corporations should not be allowed to own houses they did not develop themselves. Policy should incentivize denser housing supply and a corporation land lord is just the worst. Corporations that manage properties for client land lords would still be allowed to exist.
 
 ### Increasing Supply - Vacant Homes
 
@@ -74,6 +80,10 @@ In the case reducing demand isn't enough, the affordability problem is clearly s
 The procedure for giving out loans is as follows. Start with neglected and cheaper provinces. The residents of these provinces have the least purchasing power and therefore are more vulnerable to housing affordability. New Brunswick for one. The territories have their own problem like Nunavut needing $100M for their water plant but I didn't get a chance to look at their budget to figure out if they just want a handout or are being serious. We want to fund housing developments in three provinces concurrently. These provinces are picked by a median income ascending. Again, territories are something else, so we need a different strategy for them.
 
 In the long term, we should focus on more than fixing housing prices, but distributing them equally across Canada which includes distributing job opportunity and incomes a cross the board.
+
+### Increasing Supply - Land Value Tax
+
+
 
 ## The Ideal Canadian Life
 
