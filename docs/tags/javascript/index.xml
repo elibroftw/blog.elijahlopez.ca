@@ -26,11 +26,11 @@
 &lt;/span&gt;
 &lt;/h2&gt;&lt;p&gt;I constantly see webdevs use many redundant divs in their HTML and even JSX. If you are simply using a
 div as a way to organize your JSX or to return JSX without keys, then I suggest you use a React Fragment instead.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-jsx&#34; data-lang=&#34;jsx&#34;&gt;&amp;lt;&amp;gt;
-    &amp;lt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;p&lt;/span&gt;&amp;gt;Works without key prop&amp;lt;/&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;p&lt;/span&gt;&amp;gt;
-    &amp;lt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;p&lt;/span&gt;&amp;gt;Works without key prop&amp;lt;/&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;p&lt;/span&gt;&amp;gt;
-&amp;lt;/&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;If you need to add a key prop to the Fragment, use &lt;code&gt;&amp;lt;React.Fragment key=?&amp;gt;&lt;/code&gt; instead.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-jsx&#34; data-lang=&#34;jsx&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &amp;lt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;p&lt;/span&gt;&amp;gt;Works without key prop&amp;lt;/&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;p&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &amp;lt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;p&lt;/span&gt;&amp;gt;Works without key prop&amp;lt;/&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;p&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;/&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;If you need to add a key prop to the Fragment, use &lt;code&gt;&amp;lt;React.Fragment key=?&amp;gt;&lt;/code&gt; instead.&lt;/p&gt;
 &lt;h2 id=&#34;define-props-in-component-paramaters&#34; &gt;Define Props in Component Paramaters
 &lt;span&gt;
     &lt;a href=&#34;#define-props-in-component-paramaters&#34;&gt;
@@ -38,13 +38,13 @@ div as a way to organize your JSX or to return JSX without keys, then I suggest 
     &lt;/a&gt;
 &lt;/span&gt;
 &lt;/h2&gt;&lt;p&gt;Instead of using an all encompassing &lt;code&gt;props&lt;/code&gt; parameter, use this object destructuring technique&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-jsx&#34; data-lang=&#34;jsx&#34;&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// ExampleComponent.jsx
-&lt;/span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;function&lt;/span&gt; ExampleComponent({ name, children }) {}
-&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// App.jsx
-&lt;/span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;&lt;/span&gt;&amp;lt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;ExampleComponent&lt;/span&gt; &lt;span style=&#34;color:#bbb&#34;&gt;name&lt;/span&gt;=&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;First Last&amp;#39;&lt;/span&gt;&amp;gt;
-    &amp;lt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;p&lt;/span&gt;&amp;gt;temp&amp;lt;/&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;p&lt;/span&gt;&amp;gt;
-&amp;lt;/&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;ExampleComponent&lt;/span&gt;&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;using-providersjsx-for-your-contexts&#34; &gt;Using Providers.jsx for your Contexts
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-jsx&#34; data-lang=&#34;jsx&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// ExampleComponent.jsx
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;function&lt;/span&gt; ExampleComponent({ name, children }) {}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// App.jsx
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;&lt;/span&gt;&amp;lt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;ExampleComponent&lt;/span&gt; &lt;span style=&#34;color:#bbb&#34;&gt;name&lt;/span&gt;=&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;First Last&amp;#39;&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &amp;lt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;p&lt;/span&gt;&amp;gt;temp&amp;lt;/&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;p&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;/&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;ExampleComponent&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;using-providersjsx-for-your-contexts&#34; &gt;Using Providers.jsx for your Contexts
 &lt;span&gt;
     &lt;a href=&#34;#using-providersjsx-for-your-contexts&#34;&gt;
         &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
@@ -53,47 +53,47 @@ div as a way to organize your JSX or to return JSX without keys, then I suggest 
 &lt;/h2&gt;&lt;p&gt;If you are using ContextProviders in &lt;code&gt;App.jsx&lt;/code&gt; and have children components for the sake of using those contexts,
 you can extract those context providers into a component &lt;code&gt;Providers.jsx&lt;/code&gt; so that you can use the hooks in &lt;code&gt;App.jsx&lt;/code&gt; itself and
 disolve those abstraction components you had created.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-jsx&#34; data-lang=&#34;jsx&#34;&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// Providers.jsx
-&lt;/span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;function&lt;/span&gt; Providers({ children }) {
-    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;return&lt;/span&gt; (
-        &amp;lt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;Provider1&lt;/span&gt;&amp;gt;
-            &amp;lt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;Provider2&lt;/span&gt;&amp;gt;
-                {isLoading ? &amp;lt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;Splashscreen&lt;/span&gt; /&amp;gt; : children}
-            &amp;lt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;/ Provider2&amp;gt;&lt;/span&gt;
-        &amp;lt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;/ Provider1&amp;gt;&lt;/span&gt;
-    );
-}
-&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// main.jsx
-&lt;/span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;&lt;/span&gt;root.render(
-  &amp;lt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;React.StrictMode&lt;/span&gt;&amp;gt;
-    &amp;lt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;Providers&lt;/span&gt;&amp;gt;
-      &amp;lt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;App&lt;/span&gt; /&amp;gt;
-    &amp;lt;/&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;Providers&lt;/span&gt;&amp;gt;
-  &amp;lt;/&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;React.StrictMode&lt;/span&gt;&amp;gt;
-);
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;type-comparisons&#34; &gt;Type Comparisons
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-jsx&#34; data-lang=&#34;jsx&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// Providers.jsx
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;function&lt;/span&gt; Providers({ children }) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;return&lt;/span&gt; (
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &amp;lt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;Provider1&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &amp;lt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;Provider2&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                {isLoading ? &amp;lt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;Splashscreen&lt;/span&gt; /&amp;gt; : children}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &amp;lt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;/ Provider2&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &amp;lt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;/ Provider1&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    );
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// main.jsx
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;&lt;/span&gt;root.render(
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &amp;lt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;React.StrictMode&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &amp;lt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;Providers&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &amp;lt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;App&lt;/span&gt; /&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &amp;lt;/&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;Providers&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &amp;lt;/&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;React.StrictMode&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;type-comparisons&#34; &gt;Type Comparisons
 &lt;span&gt;
     &lt;a href=&#34;#type-comparisons&#34;&gt;
         &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
     &lt;/a&gt;
 &lt;/span&gt;
 &lt;/h2&gt;&lt;p&gt;This is very useful if you ever need to check the type of a variable. I found it on Stackoverlfow.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-jsx&#34; data-lang=&#34;jsx&#34;&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;function&lt;/span&gt; trueTypeOf(obj) {
-    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#24909d&#34;&gt;Object&lt;/span&gt;.prototype.toString.call(obj).slice(&lt;span style=&#34;color:#3677a9&#34;&gt;8&lt;/span&gt;, -&lt;span style=&#34;color:#3677a9&#34;&gt;1&lt;/span&gt;).toLowerCase()
-    &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;/*
-&lt;/span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;        []              -&amp;gt; array
-&lt;/span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;        {}              -&amp;gt; object
-&lt;/span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;        &amp;#39;&amp;#39;              -&amp;gt; string
-&lt;/span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;        new Date()      -&amp;gt; date
-&lt;/span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;        1               -&amp;gt; number
-&lt;/span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;        function () {}  -&amp;gt; function
-&lt;/span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;        /test/i         -&amp;gt; regexp
-&lt;/span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;        true            -&amp;gt; boolean
-&lt;/span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;        null            -&amp;gt; null
-&lt;/span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;        trueTypeOf()    -&amp;gt; undefined
-&lt;/span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;    */&lt;/span&gt;
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;usecookie-hook-for-faster-simple-storage&#34; &gt;useCookie Hook for Faster Simple Storage
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-jsx&#34; data-lang=&#34;jsx&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;function&lt;/span&gt; trueTypeOf(obj) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#24909d&#34;&gt;Object&lt;/span&gt;.prototype.toString.call(obj).slice(&lt;span style=&#34;color:#3677a9&#34;&gt;8&lt;/span&gt;, -&lt;span style=&#34;color:#3677a9&#34;&gt;1&lt;/span&gt;).toLowerCase()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;/*
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;        []              -&amp;gt; array
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;        {}              -&amp;gt; object
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;        &amp;#39;&amp;#39;              -&amp;gt; string
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;        new Date()      -&amp;gt; date
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;        1               -&amp;gt; number
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;        function () {}  -&amp;gt; function
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;        /test/i         -&amp;gt; regexp
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;        true            -&amp;gt; boolean
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;        null            -&amp;gt; null
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;        trueTypeOf()    -&amp;gt; undefined
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;    */&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;usecookie-hook-for-faster-simple-storage&#34; &gt;useCookie Hook for Faster Simple Storage
 &lt;span&gt;
     &lt;a href=&#34;#usecookie-hook-for-faster-simple-storage&#34;&gt;
         &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
@@ -104,18 +104,18 @@ the theme a user is using, then I suggest using a cookie to keep track of that i
 that they user will not see a theme different from the one they selected when they go to your app.&lt;/p&gt;
 &lt;p&gt;I can&amp;rsquo;t think of other examples right now, but if you aren&amp;rsquo;t able to send component props from the server, then
 this is better than local storage.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;function&lt;/span&gt; useCookie(key, defaultValue, { expires = &lt;span style=&#34;color:#3677a9&#34;&gt;365000&lt;/span&gt;, sameSite = &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;lax&amp;#39;&lt;/span&gt;, path = &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;/&amp;#39;&lt;/span&gt; } = {}) {
-    &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// cookie expires in a millenia
-&lt;/span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// sameSite != &amp;#39;strict&amp;#39; because the cookie is not read for sensitive actions
-&lt;/span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// synchronous
-&lt;/span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;const&lt;/span&gt; cookieValue = Cookies.get(key);
-    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;const&lt;/span&gt; [state, setState] = useState(cookieValue || defaultValue);
-    useEffect(() =&amp;gt; {
-        Cookies.set(key, state, { expires, sameSite, path });
-    }, [state]);
-    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;return&lt;/span&gt; [state, setState];
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;using-uselayouteffect-for-performance-gains&#34; &gt;Using useLayoutEffect for Performance Gains
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;function&lt;/span&gt; useCookie(key, defaultValue, { expires = &lt;span style=&#34;color:#3677a9&#34;&gt;365000&lt;/span&gt;, sameSite = &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;lax&amp;#39;&lt;/span&gt;, path = &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;/&amp;#39;&lt;/span&gt; } = {}) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// cookie expires in a millenia
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// sameSite != &amp;#39;strict&amp;#39; because the cookie is not read for sensitive actions
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// synchronous
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;const&lt;/span&gt; cookieValue = Cookies.get(key);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;const&lt;/span&gt; [state, setState] = useState(cookieValue || defaultValue);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    useEffect(() =&amp;gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        Cookies.set(key, state, { expires, sameSite, path });
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }, [state]);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;return&lt;/span&gt; [state, setState];
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;using-uselayouteffect-for-performance-gains&#34; &gt;Using useLayoutEffect for Performance Gains
 &lt;span&gt;
     &lt;a href=&#34;#using-uselayouteffect-for-performance-gains&#34;&gt;
         &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
@@ -132,11 +132,11 @@ synchronous so it is a performance hinder not a performance gainer.&lt;/p&gt;
 &lt;/span&gt;
 &lt;/h2&gt;&lt;p&gt;TL;DR: Use useRef in the parent to keep track of a child&amp;rsquo;s state value.&lt;/p&gt;
 &lt;p&gt;In an app structure like the following,&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-txt&#34; data-lang=&#34;txt&#34;&gt;- App
-    - Home
-        - View 1...n
-    - Other Pages
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;I wanted to keep track of which view was open so that when ever the user would
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-txt&#34; data-lang=&#34;txt&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;- App
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    - Home
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        - View 1...n
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    - Other Pages
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;I wanted to keep track of which view was open so that when ever the user would
 switch from Home to another Page and back to Home, the same view would open.&lt;/p&gt;
 &lt;p&gt;Home already had a state to keep track of which View was open and a setView
 that was passed down to each of the views so that they could go to eachother.
@@ -180,52 +180,52 @@ itself and not an instanace of &lt;code&gt;Date&lt;/code&gt;. If we
 wanted to call it from any &lt;code&gt;Date&lt;/code&gt; instance,
 then we would have to edit the prototype as shown
 in the &lt;code&gt;toX&lt;/code&gt; snippets.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span style=&#34;color:#24909d&#34;&gt;Date&lt;/span&gt;.fromYYYYMMDDHHMM = s =&amp;gt; {
-    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;var&lt;/span&gt; yyyy = s.substring(&lt;span style=&#34;color:#3677a9&#34;&gt;0&lt;/span&gt;, &lt;span style=&#34;color:#3677a9&#34;&gt;4&lt;/span&gt;);
-    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;var&lt;/span&gt; mm = s.substring(&lt;span style=&#34;color:#3677a9&#34;&gt;4&lt;/span&gt;, &lt;span style=&#34;color:#3677a9&#34;&gt;6&lt;/span&gt;);
-    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;var&lt;/span&gt; dd = s.substring(&lt;span style=&#34;color:#3677a9&#34;&gt;6&lt;/span&gt;, &lt;span style=&#34;color:#3677a9&#34;&gt;8&lt;/span&gt;);
-    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;var&lt;/span&gt; hh = s.substring(&lt;span style=&#34;color:#3677a9&#34;&gt;8&lt;/span&gt;, &lt;span style=&#34;color:#3677a9&#34;&gt;10&lt;/span&gt;) || &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;00&amp;#39;&lt;/span&gt;;
-    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;var&lt;/span&gt; min = s.substring(&lt;span style=&#34;color:#3677a9&#34;&gt;10&lt;/span&gt;, &lt;span style=&#34;color:#3677a9&#34;&gt;12&lt;/span&gt;) || &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;00&amp;#39;&lt;/span&gt;;
-    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;var&lt;/span&gt; sec = s.substring(&lt;span style=&#34;color:#3677a9&#34;&gt;12&lt;/span&gt;, &lt;span style=&#34;color:#3677a9&#34;&gt;14&lt;/span&gt;) || &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;00&amp;#39;&lt;/span&gt;;
-    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color:#24909d&#34;&gt;Date&lt;/span&gt;(yyyy, mm - &lt;span style=&#34;color:#3677a9&#34;&gt;1&lt;/span&gt;, dd, hh, min, sec);
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;date-to-yyyymmddhhmm&#34; &gt;Date to YYYYMMDDHHMM
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#24909d&#34;&gt;Date&lt;/span&gt;.fromYYYYMMDDHHMM = s =&amp;gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;var&lt;/span&gt; yyyy = s.substring(&lt;span style=&#34;color:#3677a9&#34;&gt;0&lt;/span&gt;, &lt;span style=&#34;color:#3677a9&#34;&gt;4&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;var&lt;/span&gt; mm = s.substring(&lt;span style=&#34;color:#3677a9&#34;&gt;4&lt;/span&gt;, &lt;span style=&#34;color:#3677a9&#34;&gt;6&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;var&lt;/span&gt; dd = s.substring(&lt;span style=&#34;color:#3677a9&#34;&gt;6&lt;/span&gt;, &lt;span style=&#34;color:#3677a9&#34;&gt;8&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;var&lt;/span&gt; hh = s.substring(&lt;span style=&#34;color:#3677a9&#34;&gt;8&lt;/span&gt;, &lt;span style=&#34;color:#3677a9&#34;&gt;10&lt;/span&gt;) || &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;00&amp;#39;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;var&lt;/span&gt; min = s.substring(&lt;span style=&#34;color:#3677a9&#34;&gt;10&lt;/span&gt;, &lt;span style=&#34;color:#3677a9&#34;&gt;12&lt;/span&gt;) || &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;00&amp;#39;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;var&lt;/span&gt; sec = s.substring(&lt;span style=&#34;color:#3677a9&#34;&gt;12&lt;/span&gt;, &lt;span style=&#34;color:#3677a9&#34;&gt;14&lt;/span&gt;) || &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;00&amp;#39;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color:#24909d&#34;&gt;Date&lt;/span&gt;(yyyy, mm - &lt;span style=&#34;color:#3677a9&#34;&gt;1&lt;/span&gt;, dd, hh, min, sec);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;date-to-yyyymmddhhmm&#34; &gt;Date to YYYYMMDDHHMM
 &lt;span&gt;
     &lt;a href=&#34;#date-to-yyyymmddhhmm&#34;&gt;
         &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
     &lt;/a&gt;
 &lt;/span&gt;
-&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span style=&#34;color:#24909d&#34;&gt;Date&lt;/span&gt;.prototype.toYYYYMMDDHHMM = &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;function&lt;/span&gt;() {
-    &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// YYYYMMDDHHMM
-&lt;/span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// 202105070400
-&lt;/span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;const&lt;/span&gt; tzoffset = &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;this&lt;/span&gt;.getTimezoneOffset() * &lt;span style=&#34;color:#3677a9&#34;&gt;60000&lt;/span&gt;;
-    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;const&lt;/span&gt; localDate = &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color:#24909d&#34;&gt;Date&lt;/span&gt;(&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;this&lt;/span&gt; - tzoffset);
-    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;return&lt;/span&gt; localDate.toISOString().replace(&lt;span style=&#34;color:#ed9d13&#34;&gt;/[^0-9]/g&lt;/span&gt;, &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;).slice(&lt;span style=&#34;color:#3677a9&#34;&gt;0&lt;/span&gt;, &lt;span style=&#34;color:#3677a9&#34;&gt;12&lt;/span&gt;);
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;yyyymmdd-to-date&#34; &gt;YYYYMMDD to Date
+&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#24909d&#34;&gt;Date&lt;/span&gt;.prototype.toYYYYMMDDHHMM = &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;function&lt;/span&gt;() {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// YYYYMMDDHHMM
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// 202105070400
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;const&lt;/span&gt; tzoffset = &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;this&lt;/span&gt;.getTimezoneOffset() * &lt;span style=&#34;color:#3677a9&#34;&gt;60000&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;const&lt;/span&gt; localDate = &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color:#24909d&#34;&gt;Date&lt;/span&gt;(&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;this&lt;/span&gt; - tzoffset);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;return&lt;/span&gt; localDate.toISOString().replace(&lt;span style=&#34;color:#ed9d13&#34;&gt;/[^0-9]/g&lt;/span&gt;, &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;).slice(&lt;span style=&#34;color:#3677a9&#34;&gt;0&lt;/span&gt;, &lt;span style=&#34;color:#3677a9&#34;&gt;12&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;yyyymmdd-to-date&#34; &gt;YYYYMMDD to Date
 &lt;span&gt;
     &lt;a href=&#34;#yyyymmdd-to-date&#34;&gt;
         &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
     &lt;/a&gt;
 &lt;/span&gt;
-&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span style=&#34;color:#24909d&#34;&gt;Date&lt;/span&gt;.fromYYYYMMDD = s =&amp;gt; {
-    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;var&lt;/span&gt; yyyy = s.substring(&lt;span style=&#34;color:#3677a9&#34;&gt;0&lt;/span&gt;, &lt;span style=&#34;color:#3677a9&#34;&gt;4&lt;/span&gt;);
-    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;var&lt;/span&gt; mm = s.substring(&lt;span style=&#34;color:#3677a9&#34;&gt;4&lt;/span&gt;, &lt;span style=&#34;color:#3677a9&#34;&gt;6&lt;/span&gt;);
-    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;var&lt;/span&gt; dd = s.substring(&lt;span style=&#34;color:#3677a9&#34;&gt;6&lt;/span&gt;, &lt;span style=&#34;color:#3677a9&#34;&gt;8&lt;/span&gt;);
-    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color:#24909d&#34;&gt;Date&lt;/span&gt;(yyyy, mm - &lt;span style=&#34;color:#3677a9&#34;&gt;1&lt;/span&gt;, dd);
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;date-to-yyyymmdd&#34; &gt;Date to YYYYMMDD
+&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#24909d&#34;&gt;Date&lt;/span&gt;.fromYYYYMMDD = s =&amp;gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;var&lt;/span&gt; yyyy = s.substring(&lt;span style=&#34;color:#3677a9&#34;&gt;0&lt;/span&gt;, &lt;span style=&#34;color:#3677a9&#34;&gt;4&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;var&lt;/span&gt; mm = s.substring(&lt;span style=&#34;color:#3677a9&#34;&gt;4&lt;/span&gt;, &lt;span style=&#34;color:#3677a9&#34;&gt;6&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;var&lt;/span&gt; dd = s.substring(&lt;span style=&#34;color:#3677a9&#34;&gt;6&lt;/span&gt;, &lt;span style=&#34;color:#3677a9&#34;&gt;8&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color:#24909d&#34;&gt;Date&lt;/span&gt;(yyyy, mm - &lt;span style=&#34;color:#3677a9&#34;&gt;1&lt;/span&gt;, dd);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;date-to-yyyymmdd&#34; &gt;Date to YYYYMMDD
 &lt;span&gt;
     &lt;a href=&#34;#date-to-yyyymmdd&#34;&gt;
         &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
     &lt;/a&gt;
 &lt;/span&gt;
-&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span style=&#34;color:#24909d&#34;&gt;Date&lt;/span&gt;.prototype.toYYYYMMDD = &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;function&lt;/span&gt;() {
-    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;var&lt;/span&gt; mm = &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;this&lt;/span&gt;.getMonth() + &lt;span style=&#34;color:#3677a9&#34;&gt;1&lt;/span&gt;;  &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// getMonth() is zero-based
-&lt;/span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;var&lt;/span&gt; dd = &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;this&lt;/span&gt;.getDate();
-    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;return&lt;/span&gt; [&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;this&lt;/span&gt;.getFullYear(), (mm &amp;gt; &lt;span style=&#34;color:#3677a9&#34;&gt;9&lt;/span&gt; ? &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt; : &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;0&amp;#39;&lt;/span&gt;) + mm, (dd &amp;gt; &lt;span style=&#34;color:#3677a9&#34;&gt;9&lt;/span&gt; ? &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt; : &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;0&amp;#39;&lt;/span&gt;) + dd].join(&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;);
-};
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#24909d&#34;&gt;Date&lt;/span&gt;.prototype.toYYYYMMDD = &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;function&lt;/span&gt;() {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;var&lt;/span&gt; mm = &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;this&lt;/span&gt;.getMonth() + &lt;span style=&#34;color:#3677a9&#34;&gt;1&lt;/span&gt;;  &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// getMonth() is zero-based
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;var&lt;/span&gt; dd = &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;this&lt;/span&gt;.getDate();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;return&lt;/span&gt; [&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;this&lt;/span&gt;.getFullYear(), (mm &amp;gt; &lt;span style=&#34;color:#3677a9&#34;&gt;9&lt;/span&gt; ? &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt; : &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;0&amp;#39;&lt;/span&gt;) + mm, (dd &amp;gt; &lt;span style=&#34;color:#3677a9&#34;&gt;9&lt;/span&gt; ? &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt; : &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;0&amp;#39;&lt;/span&gt;) + dd].join(&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;};
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
     
     <item>
@@ -254,53 +254,53 @@ not as much so about exporting.&lt;/p&gt;
     &lt;/a&gt;
 &lt;/span&gt;
 &lt;/h3&gt;&lt;p&gt;In &lt;code&gt;Home.js&lt;/code&gt;,&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;default&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;function&lt;/span&gt; Main() { ... }
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;In &lt;code&gt;App.js&lt;/code&gt;,&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// the imported name is arbitrary
-&lt;/span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;import&lt;/span&gt; HomeComponent from &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;./Home&amp;#39;&lt;/span&gt;;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Imports follow unix file conventions!&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;default&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;function&lt;/span&gt; Main() { ... }
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;In &lt;code&gt;App.js&lt;/code&gt;,&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// the imported name is arbitrary
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;import&lt;/span&gt; HomeComponent from &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;./Home&amp;#39;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Imports follow unix file conventions!&lt;/p&gt;
 &lt;h3 id=&#34;exporting-a--object-as-default&#34; &gt;Exporting a {} Object as default
 &lt;span&gt;
     &lt;a href=&#34;#exporting-a--object-as-default&#34;&gt;
         &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
     &lt;/a&gt;
 &lt;/span&gt;
-&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;default&lt;/span&gt; { ... };
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;braces&#34; &gt;Braces
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;default&lt;/span&gt; { ... };
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;braces&#34; &gt;Braces
 &lt;span&gt;
     &lt;a href=&#34;#braces&#34;&gt;
         &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
     &lt;/a&gt;
 &lt;/span&gt;
-&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;import&lt;/span&gt; { Fragment } from &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;react&amp;#39;&lt;/span&gt;;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This would be used if the variable exported is not the default. To import
+&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;import&lt;/span&gt; { Fragment } from &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;react&amp;#39;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This would be used if the variable exported is not the default. To import
 these non-default imports under another name we do:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;import&lt;/span&gt; { IoSunnySharp as SunIcon } from &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;react-icons/io5&amp;#39;&lt;/span&gt;;
-&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;import&lt;/span&gt; { BsMoonStarsFill as MoonIcon } from &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;react-icons/bs&amp;#39;&lt;/span&gt;;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;example&#34; &gt;Example
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;import&lt;/span&gt; { IoSunnySharp as SunIcon } from &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;react-icons/io5&amp;#39;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;import&lt;/span&gt; { BsMoonStarsFill as MoonIcon } from &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;react-icons/bs&amp;#39;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;example&#34; &gt;Example
 &lt;span&gt;
     &lt;a href=&#34;#example&#34;&gt;
         &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
     &lt;/a&gt;
 &lt;/span&gt;
-&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;const&lt;/span&gt; schedule200 = { ... };
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;mass-importing-and-exporting&#34; &gt;Mass Importing and Exporting
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;const&lt;/span&gt; schedule200 = { ... };
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;mass-importing-and-exporting&#34; &gt;Mass Importing and Exporting
 &lt;span&gt;
     &lt;a href=&#34;#mass-importing-and-exporting&#34;&gt;
         &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
     &lt;/a&gt;
 &lt;/span&gt;
-&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// Files/index.js
-&lt;/span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;export&lt;/span&gt; { &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;default&lt;/span&gt; as file1 } from &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;/file1.js&amp;#39;&lt;/span&gt;;
-&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;export&lt;/span&gt; { &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;default&lt;/span&gt; as file2 } from &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;/file1.js&amp;#39;&lt;/span&gt;;
-&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// App.jsx
-&lt;/span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// import everything from Files under filese
-&lt;/span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;import&lt;/span&gt; * as files from &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;./Files&amp;#39;&lt;/span&gt;;
-console.log(files.file1);
-&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// App.jsx alternative
-&lt;/span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;import&lt;/span&gt; { file1, file2 } from &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;./Files&amp;#39;&lt;/span&gt;;
-console.log(file1);
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// Files/index.js
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;export&lt;/span&gt; { &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;default&lt;/span&gt; as file1 } from &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;/file1.js&amp;#39;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;export&lt;/span&gt; { &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;default&lt;/span&gt; as file2 } from &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;/file1.js&amp;#39;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// App.jsx
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// import everything from Files under filese
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;import&lt;/span&gt; * as files from &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;./Files&amp;#39;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;console.log(files.file1);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// App.jsx alternative
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;import&lt;/span&gt; { file1, file2 } from &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;./Files&amp;#39;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;console.log(file1);
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
     
   </channel>

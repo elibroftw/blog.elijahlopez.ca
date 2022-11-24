@@ -78,7 +78,7 @@ requests.exceptions.SSLError: HTTPSConnectionPool(host=&#39;domain&#39;, port=44
     
 
     
-        <script src="https://blog.elijahlopez.ca/js/script.min.510c781c39dbb21b4c76d85c82e2bdf4689220adbb7cd61e49e9d293e442fb42.js" type="text/javascript" charset="utf-8" integrity="sha256-UQx4HDnbshtMdthcguK99GiSIK27fNYeSenSk&#43;RC&#43;0I="></script>
+        <script src="https://blog.elijahlopez.ca/js/script.min.74bf1a3fcf1af396efa4acf3e660e876b61a2153ab9cbe1893ac24ea6d4f94ee.js" type="text/javascript" charset="utf-8" integrity="sha256-dL8aP88a85bvpKzz5mDodrYaIVOrnL4Yk6wk6m1PlO4="></script>
     
 
 
@@ -275,8 +275,8 @@ requests.exceptions.SSLError: HTTPSConnectionPool(host=&#39;domain&#39;, port=44
         </div>
         <div class="content e-content">
             <p>So you were trying to use <code>requests</code> or <code>httpx</code> to access a website, in my case my own, and you got an SSL verify error:</p>
-<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py">requests.exceptions.SSLError: HTTPSConnectionPool(host=<span style="color:#ed9d13">&#39;domain&#39;</span>, port=<span style="color:#3677a9">443</span>): Max retries exceeded <span style="color:#6ab825;font-weight:bold">with</span> url: / (Caused by SSLError(SSLCertVerificationError(<span style="color:#3677a9">1</span>, <span style="color:#ed9d13">&#39;[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:997)&#39;</span>)))
-</code></pre></div><p>Your browser has no problems with the SSL verification. What gives? If a Man in the middle attack was occuring, your browser would tell you the website is unsafe, so an attacker is not the problem.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span>requests.exceptions.SSLError: HTTPSConnectionPool(host=<span style="color:#ed9d13">&#39;domain&#39;</span>, port=<span style="color:#3677a9">443</span>): Max retries exceeded <span style="color:#6ab825;font-weight:bold">with</span> url: / (Caused by SSLError(SSLCertVerificationError(<span style="color:#3677a9">1</span>, <span style="color:#ed9d13">&#39;[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:997)&#39;</span>)))
+</span></span></code></pre></div><p>Your browser has no problems with the SSL verification. What gives? If a Man in the middle attack was occuring, your browser would tell you the website is unsafe, so an attacker is not the problem.</p>
 <p>You searched the issue on a search engine and Stackoverflow tells you that you need to disable the verification or update certifi.
 Disabling verification is an unsafe/temporary work around, and the second didn&rsquo;t work, did it? What&rsquo;s the actual problem?</p>
 <p>The problem is that the website is only sending you their public certificate and not the entire certificate chain. Browsers are smart (or dumb)

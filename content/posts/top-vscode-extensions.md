@@ -60,6 +60,20 @@ I suggest changing the settings so that Code Runner runs in an integrated termin
 If you are a C++ worshipper like I am, this extension is right up your ally. If you are a vim/emacs/Stallman
 worshipper, why are you even reading this?
 
+## Spell Check
+
+[Download](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker)
+
+If you are using vscode for Markdown, I recommend installing this extension as well as creating a `.vscode/settings.json` with the following:
+
+```json
+{
+    "editor.fontFamily": "Helvetica, Sans-serif, Consolas, 'Courier New', monospace",
+    "editor.fontSize": 16,
+    "editor.fontWeight": "normal"
+}
+```
+
 ## Git Graph
 
 [Download](https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph)
