@@ -27,8 +27,6 @@ In case you want to blog on a new device, here are the commands to set yourself 
 git clone --recurse-submodules -j8 https://github.com/USERNAME/blog.git
 # choose cloned directory
 cd blog
-# Enable the pre-commit hook
-git config core.hookspath .githooks
 ```
 
 ## Creating Content (e.g. a Post)

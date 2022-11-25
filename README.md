@@ -13,6 +13,4 @@ Read `content/hugo-guide.md` ([online](https://blog.elijahlopez.ca/hugo-guide#ne
 git clone --recurse-submodules -j8 https://github.com/elibroftw/blog.elijahlopez.ca.git
 # choose cloned directory
 cd blog.elijahlopez.ca
-# enable the pre-commit hook if you want to keep the theme up to date
-git config core.hookspath .githooks
 ```
