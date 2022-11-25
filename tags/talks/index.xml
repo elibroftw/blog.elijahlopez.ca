@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Talks on ELL Blog</title>
+    <link>https://blog.elijahlopez.ca/tags/talks/</link>
+    <description>ELL Blog (Talks)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 27 May 2024 16:03:52 -0400</lastBuildDate>
+    
+    <atom:link href="https://blog.elijahlopez.ca/tags/talks/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Improving Safety and Efficiency of Payment System using AI and Quantum Computing</title>
+      <link>https://blog.elijahlopez.ca/posts/talks/improving-payments-with-ai-ajit-desai/</link>
+      <pubDate>Mon, 27 May 2024 16:03:52 -0400</pubDate>
+      
+      <guid>https://blog.elijahlopez.ca/posts/talks/improving-payments-with-ai-ajit-desai/</guid>
+      <description>&lt;h2 id=&#34;papers&#34; &gt;Papers
+&lt;span&gt;
+    &lt;a href=&#34;#papers&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Bank of Canada
+&lt;ul&gt;
+&lt;li&gt;Needle in a haystack (may 15 2024)&lt;/li&gt;
+&lt;li&gt;Using AI to improve the system (december 2023/2022)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;motivations&#34; &gt;Motivations
+&lt;span&gt;
+    &lt;a href=&#34;#motivations&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;transactions need to be settled&lt;/li&gt;
+&lt;li&gt;public payment system&lt;/li&gt;
+&lt;li&gt;national financial infrastructure for every country&lt;/li&gt;
+&lt;li&gt;hard to design a new fast and efficient payment system&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Can we predict GDP from payments? Usually only care when it is broken but now also want to ensure it won&amp;rsquo;t break in the future.&lt;/p&gt;
+&lt;h2 id=&#34;payment-system&#34; &gt;Payment System
+&lt;span&gt;
+    &lt;a href=&#34;#payment-system&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Processing &amp;amp; Netting: When customers and merchants interact, the banks are settling the payment on the customers behalf. Only net balance is settled at the end of the day (ACSS)
+&lt;ul&gt;
+&lt;li&gt;daily volume of 40M and $35B in value&lt;/li&gt;
+&lt;li&gt;POS&amp;lt; ABM, cheque, drafts, payroll, mortgages&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Lynx: large value payments (52,000 at $400B)
+&lt;ul&gt;
+&lt;li&gt;FX, CDX, retail settlement, central bank&amp;rsquo;s and government&amp;rsquo;s payments&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;High-Value Payments System&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Payment Data Opportunities&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Timely&lt;/li&gt;
+&lt;li&gt;Precise&lt;/li&gt;
+&lt;li&gt;High-frequency&lt;/li&gt;
+&lt;li&gt;broad&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Challenges&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;useful data is missing (e.g. purpose)&lt;/li&gt;
+&lt;li&gt;collected for admin adn regulatory purposes&lt;/li&gt;
+&lt;li&gt;policy and technological changes over time&lt;/li&gt;
+&lt;li&gt;data may not be used for policy or research&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;monitoring&#34; &gt;Monitoring
+&lt;span&gt;
+    &lt;a href=&#34;#monitoring&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Need to investigate changes to patterns&lt;/li&gt;
+&lt;li&gt;Anomalies such as different location&lt;/li&gt;
+&lt;li&gt;Cyber Attacks
+&lt;ul&gt;
+&lt;li&gt;hackers might attempt to steal from accounts at the New York Feds&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Challenges
+&lt;ul&gt;
+&lt;li&gt;Needle in a haystack&lt;/li&gt;
+&lt;li&gt;Complex strategic interactions&lt;/li&gt;
+&lt;li&gt;Most transactions are usual behaviour&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;layered-ml-framework&#34; &gt;Layered ML Framework
+&lt;span&gt;
+    &lt;a href=&#34;#layered-ml-framework&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;Use a payments classifiers to differentiate potential anomalies and then use another model for further analysis.&lt;/p&gt;
+&lt;h3 id=&#34;payment-feature-extraction&#34; &gt;Payment Feature Extraction
+&lt;span&gt;
+    &lt;a href=&#34;#payment-feature-extraction&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Basic transactions features
+&lt;ul&gt;
+&lt;li&gt;sender, receiver, and amount, type, etc.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Liquidity features
+&lt;ul&gt;
+&lt;li&gt;collateral pledged, credit limits of both the sender and receiver&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Timestamp features
+&lt;ul&gt;
+&lt;li&gt;day of week, day of month, week of the year, month&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Intraday features
+&lt;ul&gt;
+&lt;li&gt;temporal differences between payment settlement times&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Use a neutral network or regression for the classification problem. For example output can be morning vs afternoon&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;anomaly-detection&#34; &gt;Anomaly Detection
+&lt;span&gt;
+    &lt;a href=&#34;#anomaly-detection&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;isolation forest&lt;/li&gt;
+&lt;li&gt;payment amount vs payment timing&lt;/li&gt;
+&lt;li&gt;use usual days for training, special days (like holidays) are used for testing&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;quantum-transaction-ordering&#34; &gt;Quantum Transaction Ordering
+&lt;span&gt;
+    &lt;a href=&#34;#quantum-transaction-ordering&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Payment systems are liquidity intensive&lt;/li&gt;
+&lt;li&gt;Banks have to deposit collateral and then get credit&lt;/li&gt;
+&lt;li&gt;Can also recycle payments received&lt;/li&gt;
+&lt;li&gt;Lower liquidity higher delays&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Liquidity Efficiency&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;A → B ($3)&lt;/li&gt;
+&lt;li&gt;A → B ($1)&lt;/li&gt;
+&lt;li&gt;B → A ($1)&lt;/li&gt;
+&lt;li&gt;B → A ($2)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;First-in-first-out liquidity efficiency = 1.75&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;offsetting (seek netting sets) LE = 2.33&lt;/li&gt;
+&lt;li&gt;Ad-hoc reordering (bypass large payments) LE = 2.33&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Full reordering&lt;/p&gt;
+&lt;p&gt;What is the optimal order in which transactions should be processed to maximize the liquidity efficiency of the system? Processing time grows exponentially.&lt;/p&gt;
+&lt;p&gt;Maybe use an algorithm similar to median of medians.&lt;/p&gt;
+&lt;p&gt;NP-Hard optimization problem.&lt;/p&gt;
+&lt;p&gt;Physical properties of quantum computer delivers a better heuristic.&lt;/p&gt;
+&lt;p&gt;Put the quantum optimizer before it goes to the high-value payments system.&lt;/p&gt;
+&lt;p&gt;Computer that is being used (owned by DWAVE): DWave 5,000 Qubits, 700 maximum payment requests.&lt;/p&gt;
+&lt;p&gt;HIgher payments delay cost for the liquidity savings.&lt;/p&gt;
+&lt;h2 id=&#34;questions&#34; &gt;Questions
+&lt;span&gt;
+    &lt;a href=&#34;#questions&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Why are we settling payments one by one if they are are aggregated at the end of the day. Is the roadblock not regulatory
+&lt;ul&gt;
+&lt;li&gt;payments must be settled at end of day, and there are throughput guidelines for during the day&lt;/li&gt;
+&lt;li&gt;How does it actually work then?
+&lt;ul&gt;
+&lt;li&gt;The payments need to be settled real time, which is why this problem came to be&lt;/li&gt;
+&lt;li&gt;The payment queue builds up when the banks have exhausted their credit limit. The central bank then tries to use an algorithm to clear off as many as possible&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Is the Quantum solution actually being used right now?
+&lt;ul&gt;
+&lt;li&gt;no, it&amp;rsquo;s just a study&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
