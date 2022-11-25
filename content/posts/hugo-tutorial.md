@@ -41,12 +41,12 @@ If you are like me, you can follow the tutorial that [forks my site](#forking-my
 
 1. Create a `USERNAME.github.io` repository in GitHub
 2. Ensuring your articles publish
-    - Click "Actions" (beside Pull Request) and "New workflow"
-    - Copy sample from https://github.com/peaceiris/actions-gh-pages#getting-started
-    - Ensure that the default github branch is also main (edit the workflow twice to use default branch name)
-    - Rename "ubuntu-22.04" to "ubuntu-latest"
+    - Click "Actions" (beside Pull Request), "New workflow", "Set up..."
+    - Enter the name "gh-pages.yml"
+    - Copy sample workflow from [my repo](https://github.com/elibroftw/blog.elijahlopez.ca/blob/master/.github/workflows/gh-pages.yml)
+    - If you're default branch name (e.g. main) is not master, replace the two occurrences of master with your default branch name
     - Save
-3. Clone the repository (you'll need to install git and/or GitHub Desktop)
+3. Clone your repository using `git clone https://...`
 4. Get the GitHub link for a [theme](https://themes.gohugo.io/)
 5. Add the theme using `git submodule add GitHubURL.git themes/themeName`
 6. Read the theme instructions for basic configuration (i.e. `config.yaml` or `config.toml`)
@@ -55,9 +55,9 @@ If you are like me, you can follow the tutorial that [forks my site](#forking-my
     - Alternative: use the hugo helpers, "Hugo: create content" command
 9. Use `hugo serve -D` when drafting the post and see your changes at [http://localhost:1313/](http://localhost:1313/)
 10. Set `draft: false` after you are done drafting a post
-11. Commit and push to origin (GitHub)
-12. To update themes, use `git submodule update --remote --merge`
-13. You can automate to update the theme with a pre-commit hook but if you are not a technical user, I suggest only updating when you know that the latest version of the theme is safe
+11. Add README.md with `git clone --recurse-submodules -j8 https://github.com/USERNAME/blog.git` clone instructions
+12. Commit and push to origin (GitHub)
+13. To update your themes, use `git submodule update --remote --merge`
 
 ## Other Resources
 
