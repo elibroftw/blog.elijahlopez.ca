@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Virtual-Box on ELL Blog</title>
+    <link>https://blog.elijahlopez.ca/tags/virtual-box/</link>
+    <description>ELL Blog (Virtual-Box)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 19 Nov 2023 14:22:42 -0500</lastBuildDate>
+    
+    <atom:link href="https://blog.elijahlopez.ca/tags/virtual-box/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>How to SSH Into VirtualBox</title>
+      <link>https://blog.elijahlopez.ca/posts/ssh-into-virtualbox/</link>
+      <pubDate>Sun, 19 Nov 2023 14:22:42 -0500</pubDate>
+      
+      <guid>https://blog.elijahlopez.ca/posts/ssh-into-virtualbox/</guid>
+      <description>&lt;p&gt;For the Oracle VirtualBox VM, click the virtualbox network settings and add a new port forwarding rule under advanced settings and add a rule for SSH with the TCP protocol, 3022 Host port, and 22 guest port.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.elijahlopez.ca/images/virtual-box/port-forwarding-ssh.webp&#34; alt=&#34;port forwarding UI in VirtualBox&#34;&gt;&lt;/p&gt;
+&lt;p&gt;On the Virtual Machine, install openssh-server. This is how you would do it on Debian-based systems. I&amp;rsquo;m using Linux mint.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo apt install -y openssh-server
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;On your own machine, first try sshing into the virtual machine.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ssh -p &lt;span style=&#34;color:#3677a9&#34;&gt;3022&lt;/span&gt; elijah@127.0.0.1
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Once you can confirm it works, we want to copy our ssh-id so that we won&amp;rsquo;t have to repeatedly use our passwords. Especially when we want to use VSCode or something.&lt;/p&gt;
+&lt;h2 id=&#34;password-less-ssh&#34; &gt;Password-less SSH
+&lt;span&gt;
+    &lt;a href=&#34;#password-less-ssh&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;If you do not have an SSH key, &lt;code&gt;ssh-keygen -t ed25519&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;If you&amp;rsquo;re on Windows, you will need to first install the OpenSSH feature from Settings or you can use WSL to be able to use &lt;code&gt;ssh-keygen&lt;/code&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;windows&#34; &gt;Windows
+&lt;span&gt;
+    &lt;a href=&#34;#windows&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;Use either of the two commands below to copy your SSH ID to the Virtual Machine&amp;rsquo;s authorized keys. I created an SSH key on my PC over 4 years which is why when at the time the &amp;ldquo;gurus&amp;rdquo; were all spouting RSA.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-pwsh&#34; data-lang=&#34;pwsh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#24909d&#34;&gt;type &lt;/span&gt;~\.ssh\id_ed25519.pub | ssh -p &lt;span style=&#34;color:#3677a9&#34;&gt;3022&lt;/span&gt; elijah&lt;span style=&#34;color:#40ffff&#34;&gt;@127&lt;/span&gt;.0.0.1 &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;cat &amp;gt;&amp;gt; .ssh/authorized_keys&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#24909d&#34;&gt;type &lt;/span&gt;~\.ssh\id_rsa.pub | ssh -p &lt;span style=&#34;color:#3677a9&#34;&gt;3022&lt;/span&gt; elijah&lt;span style=&#34;color:#40ffff&#34;&gt;@127&lt;/span&gt;.0.0.1 &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;cat &amp;gt;&amp;gt; .ssh/authorized_keys&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;linux&#34; &gt;Linux
+&lt;span&gt;
+    &lt;a href=&#34;#linux&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ssh-copy-id -p elijah@127.0.0.1
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;To integrate with VSCode, adapt the following into your &lt;code&gt;.ssh/config&lt;/code&gt; file&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Host &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;VirtualBox Linux Mint&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    User elijah
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    HostName 127.0.0.1
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    Port &lt;span style=&#34;color:#3677a9&#34;&gt;3022&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    IdentityFile &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;C:\Users\maste\.ssh\id_rsa&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;If you want to run a GUI on the VirtualBox, run &lt;code&gt;export DISPLAY=:0&lt;/code&gt; first&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>How to Install macOS 12 Monterey on VirtualBox Windows 11</title>
+      <link>https://blog.elijahlopez.ca/posts/how-to-install-macos-on-virtualbox/</link>
+      <pubDate>Tue, 15 Aug 2023 21:15:51 -0400</pubDate>
+      
+      <guid>https://blog.elijahlopez.ca/posts/how-to-install-macos-on-virtualbox/</guid>
+      <description>&lt;p&gt;Update: I ended up purchasing a macbook air :(&lt;/p&gt;
+&lt;p&gt;For reference: my laptop is the Razer Blade 14 2022 with &lt;a href=&#34;https://www.amd.com/en/product/11541&#34;&gt;AMD Ryzen 9 6900HX&lt;/a&gt;. It supports AMD-V.&lt;/p&gt;
+&lt;p&gt;Ventura (13) didn&amp;rsquo;t work for me, so I will try Monterey (12).&lt;/p&gt;
+&lt;p&gt;Disable &amp;ldquo;Memory integrity&amp;rdquo; under Core isolation in the Windows Security app. Restart computer. This will disable the Hyper-V hypervisor.
+You can do this anytime before starting the virtual machine. This was the roadblock that prevented me from running the virtual machine.&lt;/p&gt;
+&lt;h3 id=&#34;creating-and-configuring-the-virtual-machine&#34; &gt;Creating and Configuring the Virtual Machine
+&lt;span&gt;
+    &lt;a href=&#34;#creating-and-configuring-the-virtual-machine&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;Writing this tutorial so that you can have an easier time.&lt;/p&gt;
+&lt;p&gt;Download &lt;a href=&#34;https://www.virtualbox.org/wiki/Downloads&#34;&gt;VirtualBox AND the Extension Pack&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Install VirtualBox and then install the Extension Pack&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.mediafire.com/file/4fcx0aeoehmbnmp/macOS+Monterey+by+Techrechard.com.iso/file&#34;&gt;macOS 12 ISO download&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.mediafire.com/file/dcji26zay7s3p8r/macOS+Ventura+ISO+for+VM+by+techrechard.com.iso/file&#34;&gt;macOS 13 ISO download&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Create a new Virtual machine, with the name &amp;ldquo;macOS 12&amp;rdquo;, and select file above for the ISO.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Memory: 7840 MB&lt;/li&gt;
+&lt;li&gt;Processors: 4&lt;/li&gt;
+&lt;li&gt;New Virtual Hard Drive Storage: 100GB&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Click Setting (cog)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Display: 128MB (max) Video Memory&lt;/li&gt;
+&lt;li&gt;USB: USB 3.0&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Close VirtualBox&lt;/p&gt;
+&lt;p&gt;Then run these commands in an administrative Powershell. If you are using Command Prompt, use &lt;code&gt;cd&lt;/code&gt; instead of Set-Location.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-powershell&#34; data-lang=&#34;powershell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#24909d&#34;&gt;Set-Location&lt;/span&gt; &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;C:\Program Files\Oracle\VirtualBox&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;.\VBoxManage.exe modifyvm &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;macOS 12&amp;#34;&lt;/span&gt; --cpuidset &lt;span style=&#34;color:#3677a9&#34;&gt;00000001&lt;/span&gt; &lt;span style=&#34;color:#3677a9&#34;&gt;000106e5&lt;/span&gt; &lt;span style=&#34;color:#3677a9&#34;&gt;00100800&lt;/span&gt; 0098e3fd bfebfbff
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;.\VBoxManage.exe setextradata &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;macOS 12&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;VBoxInternal/Devices/efi/0/Config/DmiSystemProduct&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;iMac19,3&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;.\VBoxManage.exe setextradata &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;macOS 12&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;VBoxInternal/Devices/efi/0/Config/DmiSystemVersion&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;1.0&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;.\VBoxManage.exe setextradata &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;macOS 12&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;VBoxInternal/Devices/efi/0/Config/DmiBoardProduct&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;Iloveapple&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;.\VBoxManage.exe setextradata &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;macOS 12&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;VBoxInternal/Devices/smc/0/Config/DeviceKey&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;ourhardworkbythesewordsguardedpleasedontsteal(c)AppleComputerInc&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;.\VBoxManage.exe setextradata &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;macOS 12&amp;#34;&lt;/span&gt; VBoxInternal2/EfiGraphicsResolution 1920x1080
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;.\VBoxManage.exe setextradata &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;macOS 12&amp;#34;&lt;/span&gt; GUI/ScaleFactor &lt;span style=&#34;color:#3677a9&#34;&gt;1.25&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;.\VBoxManage.exe setextradata &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;macOS 12&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;VBoxInternal/TM/TSCMode&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;RealTSCOffset&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;On AMD systems,&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-powershell&#34; data-lang=&#34;powershell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;.\VBoxManage.exe modifyvm &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;macOS 12&amp;#34;&lt;/span&gt; --cpu-profile &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;Intel Core i7-6700K&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;On Intel systems,&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-powershell&#34; data-lang=&#34;powershell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;.\VBoxManage.exe setextradata &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;macOS 12&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;VBoxInternal/Devices/smc/0/Config/GetKeyFromRealSMC&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#3677a9&#34;&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;If you get an error,&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-powershell&#34; data-lang=&#34;powershell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;.\VBoxManage.exe setextradata &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;macOS 12&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;VBoxInternal/Devices/smc/0/Config/GetKeyFromRealSMC&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#3677a9&#34;&gt;0&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-powershell&#34; data-lang=&#34;powershell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;.\VBoxManage.exe setextradata &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;macOS 12&amp;#34;&lt;/span&gt;  &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;VBoxInternal/Devices/efi/0/Config/DmiSystemFamily&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;MacBook Pro&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;.\VBoxManage.exe setextradata &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;macOS 12&amp;#34;&lt;/span&gt;  &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;VBoxInternal/Devices/efi/0/Config/DmiSystemProduct&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;MacBookPro11,2&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;.\VBoxManage.exe setextradata &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;macOS 12&amp;#34;&lt;/span&gt;  &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;VBoxInternal/Devices/efi/0/Config/DmiSystemSerial&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;NO_DEVICE_SN&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;.\VBoxManage.exe setextradata &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;macOS 12&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;VBoxInternal/Devices/efi/0/Config/DmiSystemUuid&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;CAFECAFE-CAFE-CAFE-CAFE-DECAFFDECAFF&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;.\VBoxManage.exe setextradata &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;macOS 12&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;VBoxInternal/Devices/efi/0/Config/DmiOEMVBoxVer&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#40ffff&#34;&gt;${DmiOEMVBoxVer}&lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;.\VBoxManage.exe setextradata &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;macOS 12&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;VBoxInternal/Devices/efi/0/Config/DmiOEMVBoxRev&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#40ffff&#34;&gt;${DmiOEMVBoxRev}&lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;.\VBoxManage.exe setextradata &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;macOS 12&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;VBoxInternal/Devices/efi/0/Config/DmiBIOSVersion&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;string:MBP7.89&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;.\VBoxManage.exe setextradata &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;macOS 12&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;VBoxInternal/Devices/efi/0/Config/DmiBoardProduct&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;Mac-3CBD00234E554E41&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;.\VBoxManage.exe setextradata &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;macOS 12&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;VBoxInternal/Devices/efi/0/Config/DmiBoardSerial&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;NO_LOGIC_BOARD_SN&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Open VirtualBox and press Start for macOS 12. Wait a couple minutes.&lt;/p&gt;
+&lt;p&gt;Follow &lt;a href=&#34;https://dortania.github.io/OpenCore-Post-Install/universal/iservices.html#using-gensmbios&#34;&gt;Fixing iMessage and other services with OpenCore&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;install-mac-os-x&#34; &gt;Install Mac OS X
+&lt;span&gt;
+    &lt;a href=&#34;#install-mac-os-x&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;In the menu bar of VirtualBox: View &amp;gt; Virtual Screen 1 to set the scale smaller or bigger (my laptop is QHD which is why I scaled to 125%)&lt;/p&gt;
+&lt;p&gt;TIP: Right Ctrl is the escape key to escape the virtual machine and use the host machine&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Select a language and then press the     right arrow icon&lt;/li&gt;
+&lt;li&gt;Click Disk Utilty and then Continue&lt;/li&gt;
+&lt;li&gt;On the left sidebar, click &amp;ldquo;VBOX HARDDISK Media&amp;rdquo; and then click Erase in the top right bar&lt;/li&gt;
+&lt;li&gt;Enter &amp;ldquo;macOS 12 HDD&amp;rdquo; as the name and click Erase, and then Done.&lt;/li&gt;
+&lt;li&gt;Close the Disk Utility by click the red circle in the top left&lt;/li&gt;
+&lt;li&gt;Click Install macOS 12 beta and then continue&lt;/li&gt;
+&lt;li&gt;Click Continue, agree, and agree&lt;/li&gt;
+&lt;li&gt;Click the HDD we just formatted and then click Continue&lt;/li&gt;
+&lt;li&gt;The installation should take 40 minutes&lt;/li&gt;
+&lt;li&gt;Do not log into Apple ID until after you&amp;rsquo;ve gone through the setup&lt;/li&gt;
+&lt;li&gt;Right Ctrl + F to enter full screen&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;installing-guest-additions&#34; &gt;Installing Guest Additions
+&lt;span&gt;
+    &lt;a href=&#34;#installing-guest-additions&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;&lt;a href=&#34;https://stackoverflow.com/questions/41691803/how-to-install-guest-addition-in-mac-os-as-guest-and-windows-machine-as-host&#34;&gt;Stack Overflow&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;troubleshooting&#34; &gt;Troubleshooting
+&lt;span&gt;
+    &lt;a href=&#34;#troubleshooting&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;A critical error has occurred while running the virtual machine&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://forums.virtualbox.org/viewtopic.php?f=1&amp;amp;t=62339&#34;&gt;I have a 64bit host, but can&amp;rsquo;t install 64bit guests&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
