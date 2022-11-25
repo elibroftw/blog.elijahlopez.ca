@@ -3,7 +3,7 @@ name: Push hugo build to gh-pages
 on:
   push:
     branches:
-      # If you're changing the branch from master, also change the `master` in `refs/heads/main` at the bottom
+      # if you're changing the branch from master, also change the `master` in `refs/heads/master` at the bottom
       - master
   pull_request:
 
@@ -46,6 +46,7 @@ jobs:
           hugo --minify
 
       - name: Push public to gh-pages
+        # change this if your branch is not master
         if: ${{ github.ref == 'refs/heads/master' }}
         run: |
           cd public
