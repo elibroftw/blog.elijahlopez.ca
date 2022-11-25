@@ -26,7 +26,14 @@ jobs:
           hugo-version: 'latest'
           extended: true
 
-      - uses: actions/cache@v2
+      - name: Setup output
+        id: vars
+        run: |
+          rm -rf public
+          echo "::set-output name=commit_msg::$(git log -1 --pretty=%B)"
+          git worktree add public gh-pages
+
+      - uses: actions/cache
         with:
           path: /tmp/hugo_cache
           key: ${{ runner.os }}-hugomod-${{ hashFiles('**/go.sum') }}
@@ -36,18 +43,15 @@ jobs:
       - name: Build
         # git worktree <path> <branch> sets <path> as root for <branch>
         run: |
-          rm -rf public
-          git worktree add public gh-pages
           hugo --minify
-          cd public
 
       - name: Push public to gh-pages
         if: ${{ github.ref == 'refs/heads/master' }}
         run: |
-          git config --global user.name '${{ github.actor }}'
-          git config --global user.email '${{ github.actor }}@users.noreply.github.com'
-          if [ "`git status -s`" ]
-          then
+          cd public
+          git config user.name '${GITHUB_ACTOR}'
+          git config user.email '${GITHUB_ACTOR}@users.noreply.github.com'
+          if [ "`git status -s`" ]; then
             git add --all
             git commit -am "deployed: ${{ steps.vars.outputs.commit_msg }}"
           fi
