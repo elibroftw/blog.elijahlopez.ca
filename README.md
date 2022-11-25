@@ -9,10 +9,10 @@ Read `content/hugo-guide.md` ([online](https://blog.elijahlopez.ca/hugo-guide#ne
 ## New Machine Setup
 
 ```bash
-# replace USERNAME/blog with your username and blog repo name
+# replace link and dirname with your repo link and repo name
 git clone --recurse-submodules -j8 https://github.com/elibroftw/blog.elijahlopez.ca.git
 # choose cloned directory
 cd blog.elijahlopez.ca
-# Enable the pre-commit hook
+# enable the pre-commit hook if you want to keep the theme up to date
 git config core.hookspath .githooks
 ```

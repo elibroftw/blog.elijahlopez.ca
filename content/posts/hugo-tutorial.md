@@ -26,35 +26,38 @@ If you are like me, you can follow the tutorial that [forks my site](#forking-my
 
 1. Web UI fork [blog.elijahlopez.ca](https://github.com/elibroftw/blog.elijahlopez.ca) with repository name `blog` and use your own description
 2. Go to https://github.com/USERNAME/blog/settings/pages
-3. Select the source as your defalt branch name (e.g. master, main)
-4. For folder select "/docs"
+3. Select the source as gh-pages (you may need to create the pages)
+4. For folder select "/"
 5. Click save
 6. Add a custom domain if you want later since it takes 5+ minutes
 7. Edit the About section in https://github.com/USERNAME/blog/ and change the website to `https://USERNAME.github.io` or a domain
 8. Clone your repo using `git clone --recurse-submodules -j8 https://github.com/USERNAME/blog.git` or GitHub desktop
-9. To enable the `pre-commit` hook, use the command `git config core.hookspath .githooks` in your repo directory
-   - The `pre-commit` hook will auto-update themes and build the site using `hugo -d docs` before commiting
-10. Delete `content/posts` and `static/images`
-11. Edit `config.yaml` and replace my information with yours (set baseUrl to the one shown by GitHub)
-12. You can remove \# to enable certain features (the about section requires uses `content/about.md` and `content/about-subpage.md`)
-13. Read `content/hugo-guide.md` in your new repo to help you write, edit, and publish posts
+9. Delete `content/posts` and `static/images`
+10. Edit `config.yaml` and replace my information with yours (set baseUrl to the one shown by GitHub)
+11. You can remove \# to enable certain features (the about section requires uses `content/about.md` and `content/about-subpage.md`)
+12. Read `content/hugo-guide.md` in your new repo to help you write, edit, and publish posts
 
-## From Scratch (Outdated)
+## From Scratch
 
 1. Create a `USERNAME.github.io` repository in GitHub
-2. Clone the repository
-3. Get the GitHub link for a [theme](https://themes.gohugo.io/)
-4. Add the theme using `git submodule add GitHubURL.git themes/themeName`
-5. Read the theme instructions for basic configuration (i.e. `config.yaml` or `config.toml`)
-6. Edit `config.yaml` or `config.toml`
-7. Use `hugo new content/posts/POST.md` to create a new post
+2. Ensuring your articles publish
+    - Click "Actions" (beside Pull Request) and "New workflow"
+    - Copy sample from https://github.com/peaceiris/actions-gh-pages#getting-started
+    - Ensure that the default github branch is also main (edit the workflow twice to use default branch name)
+    - Rename "ubuntu-22.04" to "ubuntu-latest"
+    - Save
+3. Clone the repository (you'll need to install git and/or GitHub Desktop)
+4. Get the GitHub link for a [theme](https://themes.gohugo.io/)
+5. Add the theme using `git submodule add GitHubURL.git themes/themeName`
+6. Read the theme instructions for basic configuration (i.e. `config.yaml` or `config.toml`)
+7. Edit `config.yaml` or `config.toml`
+8. Use `hugo new content/posts/POST.md` to create a new post
     - Alternative: use the hugo helpers, "Hugo: create content" command
-8. Use `hugo serve -D` when drafting the post and see your changes at [http://localhost:1313/](http://localhost:1313/)
-9. Set `draft: false` after you are done drafting a post
-10. Use `hugo -d docs` when you are ready to push your website
+9. Use `hugo serve -D` when drafting the post and see your changes at [http://localhost:1313/](http://localhost:1313/)
+10. Set `draft: false` after you are done drafting a post
 11. Commit and push to origin (GitHub)
 12. To update themes, use `git submodule update --remote --merge`
-13. You can use pre-commit hooks to automate steps 10 and 12 before every commit
+13. You can automate to update the theme with a pre-commit hook but if you are not a technical user, I suggest only updating when you know that the latest version of the theme is safe
 
 ## Other Resources
 
