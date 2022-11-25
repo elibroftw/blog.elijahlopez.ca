@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Docker on ELL Blog</title>
+    <link>https://blog.elijahlopez.ca/tags/docker/</link>
+    <description>ELL Blog (Docker)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 15 Apr 2024 13:27:34 -0400</lastBuildDate>
+    
+    <atom:link href="https://blog.elijahlopez.ca/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Docker Guide</title>
+      <link>https://blog.elijahlopez.ca/posts/docker-guide/</link>
+      <pubDate>Mon, 15 Apr 2024 13:27:34 -0400</pubDate>
+      
+      <guid>https://blog.elijahlopez.ca/posts/docker-guide/</guid>
+      <description>&lt;div&gt;
+    &lt;h2&gt;Table of Contents&lt;/h2&gt;
+    &lt;nav id=&#34;TableOfContents&#34;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&#34;#quick-reference&#34;&gt;Quick Reference&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#dockerfile&#34;&gt;Dockerfile&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#building-an-image&#34;&gt;Building an Image&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#running-an-image-container&#34;&gt;Running an Image (Container)&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+&lt;/div&gt;
+
+&lt;p&gt;This is an excerpt of my &lt;a href=&#34;https://blog.elijahlopez.ca/posts/university/cs-489-software-delivery/&#34;&gt;Software Delivery course notes&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Before learning Docker, it is best to figure out why we want to use Docker. We don&amp;rsquo;t want to force it down our throat unless it enables us to do more.&lt;/p&gt;
+&lt;p&gt;Put simply, Docker enables precise reproducibility. Projects can be compiled or run with one or two commands.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Without Docker, a guide would need to be followed manually to setup a dev environment&lt;/li&gt;
+&lt;li&gt;With docker, developers can build/download an environment with the compiled project with one command and run the project with another command&lt;/li&gt;
+&lt;/ul&gt;
+&lt;details&gt;&lt;summary&gt;My use case&lt;/summary&gt;
+&lt;p&gt;In my case, I have a music player, Music Caster which I want to port on Linux. Since it&amp;rsquo;s made with Python plus a tkinter custom add-on, there are several issues with setting up the development environment on Linux. One would need to install a non-system version of Python which is difficult on Debian based systems and then they would need to run a script to install one dependency on the system level but the rest virtually. Most importantly, I want to guarantee that when we compile the application for Linux that an important system dependency won&amp;rsquo;t be missing.&lt;/p&gt;
+&lt;p&gt;We can use Docker to ensure that builds will always work with one command on new machines and don&amp;rsquo;t have to worry about getting it to work on all the different distros just to produce an executable anyways. The &lt;code&gt;Image&lt;/code&gt; in this case is an environment to run the deployment procedure rather than running the application itself.&lt;/p&gt;
+&lt;/details&gt;
+&lt;p&gt;Therefore, deployment simplifies to focusing on replacing the image which is running (as a container) rather than figuring out how to keep the  dependencies up to date as the project progresses (most applicable to languages that require a runtime such as .NET, Java, Python, NodeJS)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.docker.com/get-started/overview/&#34;&gt;Overview&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;Client (docker cli or desktop), Daemon (always running background service), and Registry (image storage)&lt;/li&gt;
+&lt;li&gt;A container is an instance of an image&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Orchestration tool for containers with several features
+&lt;ul&gt;
+&lt;li&gt;Portability&lt;/li&gt;
+&lt;li&gt;App-centric&lt;/li&gt;
+&lt;li&gt;Builds from &amp;ldquo;source&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;Versioning&lt;/li&gt;
+&lt;li&gt;Component reuse&lt;/li&gt;
+&lt;li&gt;Public registry&lt;/li&gt;
+&lt;li&gt;Tool ecosystem&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;details&gt;&lt;summary&gt;Jekyll Dockerfile&lt;/summary&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-Dockerfile&#34; data-lang=&#34;Dockerfile&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;FROM&lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt; jekyll/jekyll:3.8.6&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# the base image sets the working directory to /srv/jekyll&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# the base image already uses EXPOSE 4000&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;COPY&lt;/span&gt; . .&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;RUN&lt;/span&gt; bundle install&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;CMD&lt;/span&gt; bundle &lt;span style=&#34;color:#24909d&#34;&gt;exec&lt;/span&gt; jekyll serve&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/details&gt;
+&lt;h2 id=&#34;quick-reference&#34; &gt;Quick Reference
+&lt;span&gt;
+    &lt;a href=&#34;#quick-reference&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;h3 id=&#34;dockerfile&#34; &gt;Dockerfile
+&lt;span&gt;
+    &lt;a href=&#34;#dockerfile&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;Dockerfile: a instruction sheet that docker will parse to build an &lt;code&gt;Image&lt;/code&gt;; an isolated environment&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Typically, each line is a new layer that can be cached
+&lt;ul&gt;
+&lt;li&gt;When a line is changed or a reference to the host on a line is modified, that layer and the layers below it are rebuilt&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ENV VAR=value&lt;/code&gt;: a way to define environment variables (usage: &lt;code&gt;$VAR&lt;/code&gt;)
+&lt;ul&gt;
+&lt;li&gt;We want to define environment variables just before where they are used to minimize rebuilds (an exception can be made if it&amp;rsquo;s permanent)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;FROM&lt;/code&gt;: an image to build off of. If we want to run an application, we would need an operating system. I recommend &lt;code&gt;alpine&lt;/code&gt; or &lt;code&gt;fedora&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;COPY&lt;/code&gt;: copy files from host into the image
+&lt;ul&gt;
+&lt;li&gt;This is a layer where changing files on the host can trigger a rebuild of the layer and subsequent layers&lt;/li&gt;
+&lt;li&gt;We want to COPY the absolute minimum into the image such as just the dependency list and lock file (package.json, yarn.lock, requirements.txt, custom whl files, Pipfile, Pipfile.lock)&lt;/li&gt;
+&lt;li&gt;Use &lt;code&gt;.dockerignore&lt;/code&gt; (similar syntax as &lt;code&gt;.gitignore&lt;/code&gt;) to ignore files such as the &lt;code&gt;.git/&lt;/code&gt; dir&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;RUN&lt;/code&gt;: execute shell (root by default) during build process&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;CMD&lt;/code&gt;: command to execute when an image is started in a container
+&lt;ul&gt;
+&lt;li&gt;use &lt;code&gt;&amp;amp;&amp;amp;&lt;/code&gt; to run multiple commands&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Use &lt;code&gt;\&lt;/code&gt; for multiline commands (&lt;code&gt;RUN&lt;/code&gt; and &lt;code&gt;CMD&lt;/code&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;building-an-image&#34; &gt;Building an Image
+&lt;span&gt;
+    &lt;a href=&#34;#building-an-image&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;docker build .&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Docker enables caching. Therefore, we want to include any system dependency &lt;code&gt;update&lt;/code&gt; and an &lt;code&gt;install&lt;/code&gt; in the same &lt;code&gt;RUN&lt;/code&gt; (e.g. apt)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/elibroftw/music-caster/blob/master/Dockerfile#L7&#34;&gt;dnf example in Music Caster&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;running-an-image-container&#34; &gt;Running an Image (Container)
+&lt;span&gt;
+    &lt;a href=&#34;#running-an-image-container&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;docker run --rm -p 4000:4000 tagOrId&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;&amp;lsquo;&amp;ndash;rm&amp;rsquo;: removes the container after it has stopped
+&lt;ul&gt;
+&lt;li&gt;A container stops once the CMD has finished running or if we decide to stop it manually and of course if an unexpected error occurs&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;`p: open the localhost container port&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;-d&lt;/code&gt;: run the container as a daemon (keep using the shell)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Use &lt;code&gt;docker tag source copy&lt;/code&gt; to clone the image (e.g. prepping for new push to a remote registry)&lt;/li&gt;
+&lt;li&gt;Use &lt;code&gt;docker push tag&lt;/code&gt; to push to a registry
+&lt;ul&gt;
+&lt;li&gt;Registry tags are usually of the form &lt;code&gt;{username}/{name}:{version}&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Use &amp;ndash;volume src:dest to copy a directory on the host machine to a directory on the container. This way we can persist data without deleting the volume&lt;/li&gt;
+&lt;li&gt;We can also limit the system resources available to the container (&lt;a href=&#34;https://docs.docker.com/config/containers/resource_constraints/#limit-a-containers-access-to-memory&#34;&gt;read more&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;After the container is running, you can use &lt;code&gt;docker exec -it containerId sh&lt;/code&gt; to use the shell inside a &lt;strong&gt;running&lt;/strong&gt; container&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

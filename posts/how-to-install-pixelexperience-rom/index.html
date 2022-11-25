@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="">
+<head>
+    
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name = "apple-mobile-web-app-capable" content = "yes">
+    <meta name="theme-color" content="#121212">
+
+    <meta charset="utf-8">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <title>How to Install and Root PixelExperience ROM for OnePlus 6T - ELL Blog</title>
+    <meta name="description" content="Installing the PixelExperience ROM took me more than 4 hours of my time and took a week total from the time I first tried installing the ROM. Some feedback for Android Custom ROM developers and tutorial writers/youtubers are: link to instructions in the original XDA post, do not assume that the user knows how to &ldquo;enter&rdquo; a recovery image, write thorough instructions rather than one portion of it, and stop promoting incorrect and unhelpful instructions. I have put everything I&rsquo;ve learned together here for you and me to extend our phone&rsquo;s life.">
+    
+    <link rel="icon" type="image/x-icon" href="https://blog.elijahlopez.ca/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" href="https://blog.elijahlopez.ca/favicon.png">
+
+    <link rel="stylesheet" href="https://blog.elijahlopez.ca/css/style.min.aaf2c7fda9310c97167f1a94f41891944861efa73f96c5467dbea9ecc5ddb751.css" integrity="sha256-qvLH/akxDJcWfxqU9BiRlEhh76c/lsVGfb6p7MXdt1E=">
+    <script src="https://blog.elijahlopez.ca/js/script.min.74bf1a3fcf1af396efa4acf3e660e876b61a2153ab9cbe1893ac24ea6d4f94ee.js" type="text/javascript" charset="utf-8" integrity="sha256-dL8aP88a85bvpKzz5mDodrYaIVOrnL4Yk6wk6m1PlO4="></script>
+    <meta property="og:url" content="https://blog.elijahlopez.ca/posts/how-to-install-pixelexperience-rom/">
+  <meta property="og:site_name" content="ELL Blog">
+  <meta property="og:title" content="How to Install and Root PixelExperience ROM for OnePlus 6T">
+  <meta property="og:description" content="Installing the PixelExperience ROM took me more than 4 hours of my time and took a week total from the time I first tried installing the ROM. Some feedback for Android Custom ROM developers and tutorial writers/youtubers are: link to instructions in the original XDA post, do not assume that the user knows how to “enter” a recovery image, write thorough instructions rather than one portion of it, and stop promoting incorrect and unhelpful instructions. I have put everything I’ve learned together here for you and me to extend our phone’s life.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2023-04-15T22:49:46-04:00">
+    <meta property="article:modified_time" content="2023-04-15T22:49:46-04:00">
+    <meta property="article:tag" content="Mobile">
+    <meta property="article:tag" content="Android">
+    <meta property="og:image" content="https://blog.elijahlopez.ca/images">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://blog.elijahlopez.ca/images">
+  <meta name="twitter:title" content="How to Install and Root PixelExperience ROM for OnePlus 6T">
+  <meta name="twitter:description" content="Installing the PixelExperience ROM took me more than 4 hours of my time and took a week total from the time I first tried installing the ROM. Some feedback for Android Custom ROM developers and tutorial writers/youtubers are: link to instructions in the original XDA post, do not assume that the user knows how to “enter” a recovery image, write thorough instructions rather than one portion of it, and stop promoting incorrect and unhelpful instructions. I have put everything I’ve learned together here for you and me to extend our phone’s life.">
+
+
+
+
+
+
+    
+
+
+
+
+
+</head>
+
+<body>
+    <a class="skip-main" href="#main">Skip to main content</a>
+    <div class="container">
+        <header class="common-header">
+            
+                
+
+    
+
+
+<div class="header-top">
+    <h1 class="site-title">
+        <a href="/">ELL Blog</a>
+    </h1>
+
+    <div class="header-top-left">
+    <ul class="social-icons">
+
+        <li>
+            <a href="/index.xml" title="Rss" rel="me">
+                <span class="inline-svg" >
+                    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" data-icon="rss" data-prefix="fas" focusable="false" role="img" viewBox="0 0 496 512"><path fill="currentColor" fill="currentColor" d="M128.081 415.959c0 35.369-28.672 64.041-64.041 64.041S0 451.328 0 415.959s28.672-64.041 64.041-64.041 64.04 28.673 64.04 64.041zm175.66 47.25c-8.354-154.6-132.185-278.587-286.95-286.95C7.656 175.765 0 183.105 0 192.253v48.069c0 8.415 6.49 15.472 14.887 16.018 111.832 7.284 201.473 96.702 208.772 208.772.547 8.397 7.604 14.887 16.018 14.887h48.069c9.149.001 16.489-7.655 15.995-16.79zm144.249.288C439.596 229.677 251.465 40.445 16.503 32.01 7.473 31.686 0 38.981 0 48.016v48.068c0 8.625 6.835 15.645 15.453 15.999 191.179 7.839 344.627 161.316 352.465 352.465.353 8.618 7.373 15.453 15.999 15.453h48.068c9.034-.001 16.329-7.474 16.005-16.504z"/></svg>
+                </span>
+
+            </a>
+        </li>
+    
+
+        <li>
+            <a href="https://elijahlopez.ca" title="Website" rel="me">
+                <span class="inline-svg" >
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M352 256C352 278.2 350.8 299.6 348.7 320H163.3C161.2 299.6 159.1 278.2 159.1 256C159.1 233.8 161.2 212.4 163.3 192H348.7C350.8 212.4 352 233.8 352 256zM503.9 192C509.2 212.5 512 233.9 512 256C512 278.1 509.2 299.5 503.9 320H380.8C382.9 299.4 384 277.1 384 256C384 234 382.9 212.6 380.8 192H503.9zM493.4 160H376.7C366.7 96.14 346.9 42.62 321.4 8.442C399.8 29.09 463.4 85.94 493.4 160zM344.3 160H167.7C173.8 123.6 183.2 91.38 194.7 65.35C205.2 41.74 216.9 24.61 228.2 13.81C239.4 3.178 248.7 0 256 0C263.3 0 272.6 3.178 283.8 13.81C295.1 24.61 306.8 41.74 317.3 65.35C328.8 91.38 338.2 123.6 344.3 160H344.3zM18.61 160C48.59 85.94 112.2 29.09 190.6 8.442C165.1 42.62 145.3 96.14 135.3 160H18.61zM131.2 192C129.1 212.6 127.1 234 127.1 256C127.1 277.1 129.1 299.4 131.2 320H8.065C2.8 299.5 0 278.1 0 256C0 233.9 2.8 212.5 8.065 192H131.2zM194.7 446.6C183.2 420.6 173.8 388.4 167.7 352H344.3C338.2 388.4 328.8 420.6 317.3 446.6C306.8 470.3 295.1 487.4 283.8 498.2C272.6 508.8 263.3 512 255.1 512C248.7 512 239.4 508.8 228.2 498.2C216.9 487.4 205.2 470.3 194.7 446.6H194.7zM190.6 503.6C112.2 482.9 48.59 426.1 18.61 352H135.3C145.3 415.9 165.1 469.4 190.6 503.6V503.6zM321.4 503.6C346.9 469.4 366.7 415.9 376.7 352H493.4C463.4 426.1 399.8 482.9 321.4 503.6V503.6z"/></svg>
+                </span>
+
+            </a>
+        </li>
+    
+
+        
+        
+        <li>
+            <a href="https://github.com/elibroftw" title="Github" rel="me">
+            <span class="inline-svg" >
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+                </span>
+
+            </a>
+        </li>
+    
+
+        
+        
+        <li>
+            <a href="https://twitter.com/elibroftw" title="Twitter" rel="me">
+            <span class="inline-svg" >
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+                </span>
+
+            </a>
+        </li>
+    
+
+        
+        
+        <li>
+            <a href="https://www.youtube.com/c/elibroftw" title="Youtube" rel="me">
+            <span class="inline-svg" >
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg>
+                </span>
+
+            </a>
+        </li>
+    
+
+        
+        
+        <li>
+            <a href="mailto:elijahllopezz@gmail.com" title="Email" rel="me">
+            <span class="inline-svg" >
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M464 64H48C21.49 64 0 85.49 0 112v288c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zm0 48v40.805c-22.422 18.259-58.168 46.651-134.587 106.49-16.841 13.247-50.201 45.072-73.413 44.701-23.208.375-56.579-31.459-73.413-44.701C106.18 199.465 70.425 171.067 48 152.805V112h416zM48 400V214.398c22.914 18.251 55.409 43.862 104.938 82.646 21.857 17.205 60.134 55.186 103.062 54.955 42.717.231 80.509-37.199 103.053-54.947 49.528-38.783 82.032-64.401 104.947-82.653V400H48z"/></svg>
+                </span>
+
+            </a>
+        </li>
+    
+
+        
+        
+        <li>
+            <a href="https://www.instagram.com/elijahllopezz" title="Instagram" rel="me">
+            <span class="inline-svg" >
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+                </span>
+
+            </a>
+        </li>
+    
+
+
+
+</ul>
+</div>
+    
+
+    
+
+
+
+
+    <div class="header-top-right theme-switcher">
+        <span class="inline-svg" >
+                    <svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 290 290">
+<path fill="currentColor" d="M142.959,0C64.131,0,0,64.132,0,142.96c0,78.828,64.131,142.959,142.959,142.959c78.828,0,142.96-64.131,142.96-142.959  C285.919,64.132,221.787,0,142.959,0z M142.959,260.919V142.96V25c65.043,0,117.96,52.917,117.96,117.96  C260.919,208.003,208.002,260.919,142.959,260.919z"/>
+</svg>
+                </span>
+
+    </div>
+
+
+<script>
+const STORAGE_KEY = 'user-color-scheme'
+const defaultTheme = "auto"
+
+let currentTheme
+let switchButton
+let autoDefinedScheme = window.matchMedia('(prefers-color-scheme: dark)')
+
+const autoChangeScheme = e => {
+    currentTheme = e.matches ? 'dark' : 'light'
+    document.documentElement.setAttribute('data-theme', currentTheme)
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    switchButton = document.querySelector('.theme-switcher')
+    currentTheme = detectCurrentScheme()
+    setThemeColorMeta(currentTheme)
+    if (currentTheme == 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark')
+    }
+
+    if (currentTheme == 'auto') {
+        autoChangeScheme(autoDefinedScheme);
+        autoDefinedScheme.addListener(autoChangeScheme);
+    }
+
+    if (switchButton) {
+        switchButton.addEventListener('click', switchTheme, false)
+    }
+})
+
+function detectCurrentScheme() {
+    if (localStorage !== null && localStorage.getItem(STORAGE_KEY)) {
+        return localStorage.getItem(STORAGE_KEY)
+    }
+    if (defaultTheme) {
+        return defaultTheme
+    }
+    if (!window.matchMedia) {
+        return defaultTheme
+    }
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        return 'dark'
+    }
+    return defaultTheme
+}
+
+function switchTheme(e) {
+    if (currentTheme == 'dark') {
+        if (localStorage !== null)
+            localStorage.setItem(STORAGE_KEY, 'light')
+        document.documentElement.setAttribute('data-theme', 'light')
+        currentTheme = 'light'
+    } else {
+        if (localStorage !== null)
+            localStorage.setItem(STORAGE_KEY, 'dark')
+        document.documentElement.setAttribute('data-theme', 'dark')
+        currentTheme = 'dark'
+    }
+    setThemeColorMeta(currentTheme)
+}
+
+function setThemeColorMeta(currentTheme) {
+    if (currentTheme == 'dark') {
+        document.querySelector('meta[name="theme-color"]').setAttribute('content', '#121212')
+    } else {
+        document.querySelector('meta[name="theme-color"]').setAttribute('content', '#fff')
+    }
+}
+</script>
+
+</div>
+
+
+    <nav>
+        
+        
+        <a class="" href="https://blog.elijahlopez.ca/" title="Home">Home</a>
+        
+        <a class="" href="https://blog.elijahlopez.ca/posts/" title="Archive">Archive</a>
+        
+        <a class="" href="https://blog.elijahlopez.ca/tags/" title="Tags">Tags</a>
+        
+    </nav>
+
+
+
+
+
+
+            
+        </header>
+        <main id="main" tabindex="-1">
+            
+    
+
+    <article class="post h-entry">
+        <div class="post-header">
+            <header>
+                <h1 class="p-name post-title">How to Install and Root PixelExperience ROM for OnePlus 6T</h1>
+
+                
+            </header>
+        </div>
+        
+
+
+
+
+        <div class="content e-content">
+            <p>Installing the PixelExperience ROM took me more than 4 hours of my time and took a week total from the time I first tried installing the ROM. Some feedback for Android Custom ROM developers and tutorial writers/youtubers are: link to instructions in the original XDA post, do not assume that the user knows how to &ldquo;enter&rdquo; a recovery image, write thorough instructions rather than one portion of it, and stop promoting incorrect and unhelpful instructions. I have put everything I&rsquo;ve learned together here for you and me to extend our phone&rsquo;s life.</p>
+<div>
+    <h2>Table of Contents</h2>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#back-up-your-data">Back up your data</a></li>
+    <li><a href="#platform-tools">Platform tools</a></li>
+    <li><a href="#upgrading-to-the-latest-oxygenos-firmware">Upgrading to the Latest OxygenOS Firmware</a></li>
+    <li><a href="#unlocking-the-bootloader">Unlocking the bootloader</a></li>
+    <li><a href="#flashing-the-pixelexperience-rom-corrected">Flashing the PixelExperience ROM Corrected</a>
+      <ul>
+        <li><a href="#downloads-for-rom-installation">Downloads for ROM Installation</a></li>
+        <li><a href="#flashing-the-rom">Flashing the ROM</a></li>
+        <li><a href="#updating-the-rom">Updating the ROM</a></li>
+      </ul>
+    </li>
+    <li><a href="#rooting">Rooting</a>
+      <ul>
+        <li><a href="#downloads-for-rooting">Downloads for Rooting</a></li>
+        <li><a href="#installing-magisk">Installing Magisk</a></li>
+        <li><a href="#passing-play-integrity--safetynet-attestation">Passing Play Integrity / SafetyNet Attestation</a></li>
+        <li><a href="#youtube-revanced">YouTube ReVanced</a></li>
+      </ul>
+    </li>
+    <li><a href="#troubleshooting">Troubleshooting</a>
+      <ul>
+        <li><a href="#to-get-out-of-crashdump-and-into-bootloader">To get out of CrashDump and into bootloader</a></li>
+        <li><a href="#unbricking-your-phone">Unbricking your Phone</a></li>
+      </ul>
+    </li>
+    <li><a href="#references-and-other-links">References and Other Links</a></li>
+  </ul>
+</nav>
+</div>
+
+<h2 id="back-up-your-data" >Back up your data
+<span>
+    <a href="#back-up-your-data">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><p>Make sure to backup everything. Some things to back up:</p>
+<ul>
+<li>Pictures folder</li>
+<li>DCIM/Camera folder</li>
+<li>Your two factor authenticator app (to google)</li>
+<li>Backup your google 2FA keycodes so that you can login to google with ease if you are away from home</li>
+<li>Backup your contacts to a VCF file</li>
+</ul>
+<h2 id="platform-tools" >Platform tools
+<span>
+    <a href="#platform-tools">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><p>Download <a href="https://developer.android.com/tools/releases/platform-tools">platform tools</a> and extract it to a folder <code>android/platform-tools</code>. This folder should be added
+to your PATH environment variable. My <a href="content%5Cposts%5Cwindows-add-to-PATH-environment-variable.md">Windows guide for adding a directory to Path</a></p>
+<p>Open a terminal window in the folder that will contain all android ROM related files. For me, this would be <code>&quot;...android\oneplus-6T-fajita&quot;</code>.</p>
+<p>To open a terminal window, either search up cmd or windows terminal from Windows search.</p>
+<h2 id="upgrading-to-the-latest-oxygenos-firmware" >Upgrading to the Latest OxygenOS Firmware
+<span>
+    <a href="#upgrading-to-the-latest-oxygenos-firmware">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><p>You need to be running the latest firmware, else the recovery image might not work properly. This only applies if you soft-bricked your phone and unbricked it using my instructions. It&rsquo;s better to download the Stock ROM once on your PC and reuse it rather than make your phone download every time you reset your phone to OOS 10.</p>
+<p><a href="https://www.oneplus.com/support/softwareupgrade/details?code=PM1574156215016">OxygenOS 11.1.2.2</a></p>
+<p><code>adb push OnePlus6TOxygen_34.J.62_OTA_0620_all_2111252336_f6eda340d7af4e3e.zip /sdcard</code></p>
+<p>To perform a local upgrade, go to Settings &gt; System &gt; System updates &gt; ⚙️ (top right) &gt; Local upgrade.</p>
+<h2 id="unlocking-the-bootloader" >Unlocking the bootloader
+<span>
+    <a href="#unlocking-the-bootloader">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><p>This will wipe your device, so again, backup everything.</p>
+<ol>
+<li>Enable developer options by clicking &ldquo;About phone&rdquo; and then &ldquo;build number&rdquo; at least 5 times until you see a toast notification informing you that developer options are enabled</li>
+<li>To get to developer options, click System (a menu before the above step) first and then &ldquo;Developer options&rdquo;</li>
+<li>Enable &ldquo;OEM unlocking&rdquo; and &ldquo;USB debugging&rdquo;</li>
+<li>Connect your device to your PC
+<ul>
+<li>A popup should come up asking for USB debugging permissions</li>
+</ul>
+</li>
+<li>run <code>adb reboot bootloader</code></li>
+<li>Once your phone shows the green &ldquo;START&rdquo; text, run <code>fastboot oem unlock</code></li>
+<li>On your phone, select &ldquo;UNLOCK THE BOOTLOADER&rdquo;
+<ul>
+<li>Press the volume down key twice on your phone and then press the power key</li>
+</ul>
+</li>
+<li>Wait 5 minutes for your phone to wipe and boot</li>
+<li>Skip setup so that you can access your phone&rsquo;s settings and re do steps 1 to 4</li>
+</ol>
+<h2 id="flashing-the-pixelexperience-rom-corrected" >Flashing the PixelExperience ROM Corrected
+<span>
+    <a href="#flashing-the-pixelexperience-rom-corrected">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><h3 id="downloads-for-rom-installation" >Downloads for ROM Installation
+<span>
+    <a href="#downloads-for-rom-installation">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li><code>copy_partitions.zip</code>, <code>vbmeta.img</code>, <code>boot.img</code>, <code>super_empty.img</code> from <a href="https://sourceforge.net/projects/evolution-x/files/fajita/">evolution-x</a></li>
+<li><a href="https://get.pixelexperience.org/devices">PixelExperience Plus ROM ZIP</a></li>
+</ul>
+<h3 id="flashing-the-rom" >Flashing the ROM
+<span>
+    <a href="#flashing-the-rom">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>Like before, enable USB debugging.</p>
+<blockquote>
+<ol>
+<li>Enable developer options by clicking &ldquo;About phone&rdquo; and then &ldquo;build number&rdquo; at least 5 times until you see a toast notification informing you that developer options are enabled</li>
+<li>To get to developer options, click System (a menu before the above step) first and then &ldquo;Developer options&rdquo;</li>
+<li>Enable &ldquo;OEM unlocking&rdquo; and &ldquo;USB debugging&rdquo;</li>
+<li>Connect your device to your PC
+<ul>
+<li>A popup should come up asking for USB debugging permissions</li>
+</ul>
+</li>
+</ol>
+</blockquote>
+<ol>
+<li>
+<p><code>adb reboot bootloader</code></p>
+</li>
+<li>
+<p>Flash the new retrofit dynamic partitions boot image &amp; recovery</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>fastboot flash vbmeta_a vbmeta.img
+</span></span><span style="display:flex;"><span>fastboot flash vbmeta_b vbmeta.img
+</span></span><span style="display:flex;"><span>fastboot flash boot_a boot.img
+</span></span><span style="display:flex;"><span>fastboot flash boot_b boot.img
+</span></span></code></pre></div></li>
+<li>
+<p>Erase the old android partitions with the following</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>fastboot erase system_a
+</span></span><span style="display:flex;"><span>fastboot erase system_b
+</span></span><span style="display:flex;"><span>fastboot erase odm_a
+</span></span><span style="display:flex;"><span>fastboot erase odm_b
+</span></span><span style="display:flex;"><span>fastboot erase vendor_a
+</span></span><span style="display:flex;"><span>fastboot erase vendor_b
+</span></span></code></pre></div></li>
+<li>
+<p>From the bootloader, use volume buttons, and click &ldquo;Recovery Mode&rdquo; to boot into recovery</p>
+</li>
+<li>
+<p>Volume down 3 times to Advanced and click power button.</p>
+</li>
+<li>
+<p>Click power button to enter fastboot</p>
+</li>
+<li>
+<p>Initialize the retrofit super partitions for each slot</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>fastboot wipe-super super_empty.img
+</span></span><span style="display:flex;"><span>fastboot set_active other
+</span></span><span style="display:flex;"><span>fastboot wipe-super super_empty.img
+</span></span><span style="display:flex;"><span>fastboot set_active other
+</span></span></code></pre></div></li>
+<li>
+<p>Now enter recovery</p>
+</li>
+<li>
+<p>Apply update &gt; Apply from ADB</p>
+</li>
+<li>
+<p><code>adb sideload copy-partitions.zip</code></p>
+</li>
+<li>
+<p>On phone, select &ldquo;Install anyways&rdquo;</p>
+</li>
+<li>
+<p>Select &ldquo;Apply from ADB&rdquo; again</p>
+</li>
+<li>
+<p><code>adb sideload PixelExperience_Plus_fajita-13.0-20230419-2046-OFFICIAL.zip</code> (different filename for you)</p>
+</li>
+<li>
+<p>Select &ldquo;Install anyways&rdquo;</p>
+</li>
+<li>
+<p>To go back, you can press the up arrow key first and then the power key</p>
+</li>
+<li>
+<p>Factory reset (Format data)</p>
+</li>
+<li>
+<p>Reboot to system (go back first)</p>
+</li>
+</ol>
+<h3 id="updating-the-rom" >Updating the ROM
+<span>
+    <a href="#updating-the-rom">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>We&rsquo;ll get to this in the future.</p>
+<h2 id="rooting" >Rooting
+<span>
+    <a href="#rooting">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><h3 id="downloads-for-rooting" >Downloads for Rooting
+<span>
+    <a href="#downloads-for-rooting">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li><a href="https://www.python.org/">Python</a> and add this to your Path environment variable</li>
+<li>Download or <code>git clone</code> <a href="https://github.com/vm03/payload_dumper">payload_dumper</a> and extract its contents to a folder like <code>android/payload_dumper</code></li>
+</ul>
+<h3 id="installing-magisk" >Installing Magisk
+<span>
+    <a href="#installing-magisk">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ol>
+<li>Inside the <code>payload-dumper</code> folder, run <code>python -m pip install -r requirements.txt</code></li>
+<li>Extract the PixelExperience.zip in another folder (e.g. <code>oneplus-6T-fajita/</code>) and run <code>python payload_dumper.py path/to/payload.bin</code></li>
+<li>Copy <code>payload_dump/output/boot.img</code> to your phone&rsquo;s device
+<ul>
+<li><code>adb push boot.img /sdcard/Download</code></li>
+</ul>
+</li>
+<li>Follow <a href="https://topjohnwu.github.io/Magisk/install.html#getting-started">Magisk instructions</a> to patch the boot image
+<ul>
+<li>Download and install the <a href="https://github.com/topjohnwu/Magisk/releases/latest">Magisk app</a></li>
+<li>On your phone, patch <code>boot.img</code> with the Magisk app
+<ul>
+<li>Click &ldquo;Install&rdquo; beside Magisk</li>
+<li>Method is &ldquo;Select and Patch a File&rdquo;</li>
+<li>&ldquo;LET&rsquo;S GO&rdquo;</li>
+</ul>
+</li>
+<li>Open a terminal in your oneplus-6T-fajita folder</li>
+<li><code>adb pull boot.img /sdcard/magisk_patched_[random_strings].img</code></li>
+</ul>
+</li>
+<li>Reboot into recovery (enabled advanced restart in phone settings)</li>
+<li>Flash the patched boot image
+<ul>
+<li><code>fastboot flash boot path_to_magisk_patched_[random_strings].img</code></li>
+</ul>
+</li>
+<li>Reboot, launch Magisk app and beside &ldquo;App&rdquo; click install</li>
+<li>Install Root Checker from Google Play Store
+<ul>
+<li>In Root Chcker, Click &ldquo;verify root&rdquo; and see if there is a popup from Magisk</li>
+</ul>
+</li>
+</ol>
+<h3 id="passing-play-integrity--safetynet-attestation" >Passing Play Integrity / SafetyNet Attestation
+<span>
+    <a href="#passing-play-integrity--safetynet-attestation">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ol>
+<li>
+<p>To your phone, download <a href="https://github.com/Magisk-Modules-Repo/MagiskHidePropsConf/releases/latest">MagiskHide Props Config</a></p>
+</li>
+<li>
+<p>To your phone, download <a href="https://github.com/Displax/safetynet-fix/releases/latest">Universal SafetyNet Fix</a></p>
+<ul>
+<li>In case these instructions don&rsquo;t work in the future, see if the <a href="https://github.com/kdrag0n/safetynet-fix/releases/latest">original fork has a more recent release</a></li>
+</ul>
+</li>
+<li>
+<p>Open the Magisk app, click modules, install the two zip files from storage, and reboot only after installing the second zip</p>
+</li>
+<li>
+<p>After reboot, open Magisk, click ⚙️ (top right), configure DenyList and add apps that you need to bypass</p>
+<ul>
+<li>Show System apps</li>
+<li>Deny all Google apps except for YouTube by searching &ldquo;google&rdquo;</li>
+<li>Deny any apps that require safety checks like some banking apps</li>
+</ul>
+</li>
+<li>
+<p>Enable denylist</p>
+</li>
+<li>
+<p>Restart phone</p>
+</li>
+<li>
+<p>Install <a href="https://play.google.com/store/apps/details?id=com.termux">Termux</a></p>
+</li>
+<li>
+<p>Edit props (just in case)</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>su  <span style="color:#999;font-style:italic"># GRANT ACCESS TEMPORARILY</span>
+</span></span><span style="display:flex;"><span>props
+</span></span><span style="display:flex;"><span>2. Force BASIC key attestation
+</span></span><span style="display:flex;"><span>d
+</span></span><span style="display:flex;"><span><span style="color:#3677a9">7</span>   <span style="color:#999;font-style:italic"># Google</span>
+</span></span><span style="display:flex;"><span><span style="color:#3677a9">5</span>   <span style="color:#999;font-style:italic"># Google Nexus 6P. Don&#39;t know why this worked?</span>
+</span></span><span style="display:flex;"><span>y    <span style="color:#999;font-style:italic"># confirm prop changes</span>
+</span></span><span style="display:flex;"><span>e    <span style="color:#999;font-style:italic"># don&#39;t reboot</span>
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"># editing device fingerprint might not be needed</span>
+</span></span><span style="display:flex;"><span>props
+</span></span><span style="display:flex;"><span>1. Edit Device fingerprint
+</span></span><span style="display:flex;"><span>f     <span style="color:#999;font-style:italic"># certified fingerprint</span>
+</span></span><span style="display:flex;"><span><span style="color:#3677a9">21</span>    <span style="color:#999;font-style:italic"># OnePLus</span>
+</span></span><span style="display:flex;"><span><span style="color:#3677a9">9</span>       <span style="color:#999;font-style:italic"># 6T</span>
+</span></span><span style="display:flex;"><span><span style="color:#3677a9">2</span>       <span style="color:#999;font-style:italic"># Android 10</span>
+</span></span><span style="display:flex;"><span>y
+</span></span><span style="display:flex;"><span>e   <span style="color:#999;font-style:italic"># don&#39;t reboot yet</span>
+</span></span></code></pre></div></li>
+<li>
+<p>In Magisk settings ⚙️, click hide the Magisk app and rename to &ldquo;Manager&rdquo; or whatever is easy for you to remember</p>
+</li>
+<li>
+<p>Clear all data of Google Play Services, Google Play Store, and Google Wallet through the phone&rsquo;s settings</p>
+</li>
+<li>
+<p>Confirm that the three apps above are on the deny list of Magisk</p>
+</li>
+<li>
+<p>Restart phone</p>
+</li>
+<li>
+<p>Open Google Wallet app / banking app</p>
+</li>
+<li>
+<p>Check integrity status with the <a href="https://play.google.com/store/apps/details?id=gr.nikolasspyr.integritycheck">Play Integrity API Checker</a></p>
+<ul>
+<li>First two lines should be green</li>
+<li>Third line should be red, DO NOT LOCK THE BOOT LOADER</li>
+</ul>
+</li>
+<li>
+<p>Check integrity status with the <a href="https://play.google.com/store/apps/details?id=rikka.safetynetchecker">YASNAC - SafetyNet Checker</a></p>
+</li>
+</ol>
+<h3 id="youtube-revanced" >YouTube ReVanced
+<span>
+    <a href="#youtube-revanced">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ol>
+<li><a href="https://github.com/revanced/revanced-manager/releases/latest">Download ReVanced Manager</a></li>
+<li>Open the manager</li>
+<li>Patchcher</li>
+<li>Select YouTube application</li>
+<li>Check if current version matches recommended. If not install the recommended version from <a href="https://apkpure.com/youtube/com.google.android.youtube/versions">apkpure</a></li>
+<li>Close and reopen the manager</li>
+<li>Select Patcher &gt; YouTube &gt; Selected patches &gt; Recommended &gt; Uncheck microG</li>
+<li>Done.</li>
+<li>Click patch and wait for 10 seconds</li>
+<li>Click install root</li>
+</ol>
+<p>The root install does not remove ads from the home screen, but it&rsquo;s not that big of a deal.</p>
+<h2 id="troubleshooting" >Troubleshooting
+<span>
+    <a href="#troubleshooting">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><h3 id="to-get-out-of-crashdump-and-into-bootloader" >To get out of CrashDump and into bootloader
+<span>
+    <a href="#to-get-out-of-crashdump-and-into-bootloader">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>This error occurs when the TWRP version you flashed is incompatible with the Android version running on the phone. For example, a _12 TWRP version is incompatible with Android 11 and a _11 TWRP version is incompatible with Android 12.</p>
+<ol>
+<li>Hold Pwr+Vol Up until phone buzzes and then immediately</li>
+<li>Hold Pwr+Vol Up+Vol Down to boot bootloader (let go when you read fastboot mode)</li>
+<li>Flash the correct TWRP boot image version for your device</li>
+</ol>
+<h3 id="unbricking-your-phone" >Unbricking your Phone
+<span>
+    <a href="#unbricking-your-phone">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ol>
+<li>Download MSMDownloadTool and extract to a folder
+<ul>
+<li><a href="https://androidfilehost.com/?fid=17248734326145733776">download link one</a></li>
+<li><a href="https://androidfilehost.com/?fid=1395089523397966003">download link alternative</a></li>
+<li>I keep all my android ROM related files in a folder called <code>android/device-name</code></li>
+</ul>
+</li>
+<li>Download and install <a href="https://droidwin.com/download-install-qualcomm-hs-usb-qdloader-9008-drivers/#Download_Qualcomm_HS-USB_QDLoader_9008_Drivers">Qualcomm HS-USB QDLoader 9008 Drivers</a></li>
+<li>Reboot PC</li>
+<li>Open MSM Download Tool</li>
+<li>Power off and disconnect phone</li>
+<li>Hold volume up and down buttons on phone</li>
+<li>While holding the buttons, connect the phone to the PC</li>
+<li>Press start in MSM Download Tool</li>
+<li>Takes 10-20 minutes</li>
+</ol>
+<h2 id="references-and-other-links" >References and Other Links
+<span>
+    <a href="#references-and-other-links">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><ol>
+<li><a href="https://github.com/snnbyyds/PE-retrofit_dynamic_partitions-Migration/blob/main/README.md">PixelExperience First Time Install</a></li>
+<li><a href="https://gist.github.com/jabashque/226406e5210bed057817a89608b20311">Evolution-X Install Instructions</a></li>
+<li><a href="https://sourceforge.net/projects/oneplus-6-series/files/">Recovery Files for OnePlus 6</a></li>
+<li><a href="https://sourceforge.net/projects/sn-roms/files/TWRP/">The Recommended TWRP</a></li>
+<li><a href="https://github.com/kdrag0n/safetynet-fix/issues/248">Universal Safetney Fix GitHub Issue</a></li>
+</ol>
+
+        </div>
+        <div class="post-info">
+    
+        <div class="post-date dt-published">
+            <a class="u-url" href="/posts/how-to-install-pixelexperience-rom/"><time datetime="2023-04-15">April 15, 2023</time></a>
+            
+        </div>
+    
+    <a class="post-hidden-url u-url" href="https://blog.elijahlopez.ca/posts/how-to-install-pixelexperience-rom/">https://blog.elijahlopez.ca/posts/how-to-install-pixelexperience-rom/</a>
+    <a href="https://blog.elijahlopez.ca/" class="p-name p-author post-hidden-author h-card" rel="me">Elijah Lopez</a>
+    <div class="post-taxonomies">
+        
+        
+            <ul class="post-tags">
+                
+                    
+                    <li><a href="https://blog.elijahlopez.ca/tags/mobile/">#Mobile</a></li>
+                
+                    
+                    <li><a href="https://blog.elijahlopez.ca/tags/android/">#Android</a></li>
+                
+            </ul>
+        
+        
+    </div>
+</div>
+
+    </article>
+
+    
+
+    
+        
+    
+    
+    <div class="pagination post-pagination">
+        <div class="left pagination-item ">
+            
+                <a title="iOS Versus Android" href="/posts/ios-versus-android/">iOS Versus Android</a>
+            
+        </div>
+        <div class="right pagination-item ">
+            
+                <a title="Fixed Seats Proportional Representation (FSP-R)" href="/posts/representative-proportional-voting/">Fixed Seats Proportional Representation (FSP-R)</a>
+            
+        </div>
+    </div>
+
+
+
+
+    
+
+    
+        <br>
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+<script src="https://giscus.app/client.js"
+        data-repo="elibroftw/blog.elijahlopez.ca"
+        data-repo-id="R_kgDOGiL7hg"
+        data-category="General"
+        data-category-id="DIC_kwDOGiL7hs4Cer6e"
+        data-mapping="og:title"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="preferred_color_scheme"
+        data-lang="en"
+        crossorigin="anonymous"
+        
+        async>
+</script>
+
+    
+
+        </main>
+        
+            <footer class="common-footer">
+    
+    
+
+    <div class="common-footer-bottom">
+        
+        <div class="copyright">
+            <p>© Elijah Lopez, 2024<br>
+            Powered by <a target="_blank" rel="noopener noreferrer" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" rel="noopener noreferrer" href="https://github.com/elibroftw/hugo-theme-anubis">Anubis</a>.<br>
+            
+            </p>
+        </div>
+    </div>
+
+    <p class="h-card vcard">
+
+    <a href=https://blog.elijahlopez.ca/ class="p-name u-url url fn" rel="me">Elijah Lopez</a> 
+
+     
+        /
+        <a class="p-email u-email email" rel="me" href="mailto:elijahllopezz@gmail.com">elijahllopezz@gmail.com</a>
+    
+
+     
+        <img class="u-photo" src="https://pbs.twimg.com/profile_images/1738729591064166400/vqarzcF7_400x400.jpg" />
+    
+</p> 
+</footer>
+
+        
+    </div>
+</body>
+</html>
