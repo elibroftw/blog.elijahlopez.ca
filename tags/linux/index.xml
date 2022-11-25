@@ -1,0 +1,1040 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linux on ELL Blog</title>
+    <link>https://blog.elijahlopez.ca/tags/linux/</link>
+    <description>ELL Blog (Linux)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 29 Sep 2024 20:28:08 -0400</lastBuildDate>
+    
+    <atom:link href="https://blog.elijahlopez.ca/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>[Linux] Touchpad Not Working After Waking From Suspend</title>
+      <link>https://blog.elijahlopez.ca/posts/linux-touchpad-not-working/</link>
+      <pubDate>Sun, 29 Sep 2024 20:28:08 -0400</pubDate>
+      
+      <guid>https://blog.elijahlopez.ca/posts/linux-touchpad-not-working/</guid>
+      <description>&lt;p&gt;So the touchpad can no longer be used after you wake from sleep? Well I am here with the solution after trying countless distros and still having this problem. The laptop I use is the 2016 Razer Blade Stealth and the distro I&amp;rsquo;ve settled on is Fedora KDE. The specs and my 5 years later review can be found &lt;a href=&#34;https://blog.elijahlopez.ca/posts/razer-blade-stealth-late-2016/#specs&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;To fix the issue you need to try running each of these lines in the terminal (Ctrl + Alt + T to open a Terminal using the keyboard).&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;sudo rmmod i2c_hid_acpi &amp;amp;&amp;amp; sudo modprobe i2c_hid_acpi&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;sudo rmmod i2c_hid &amp;amp;&amp;amp; sudo modprobe i2c_hid&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;sudo rmmod psmouse  &amp;amp;&amp;amp; sudo modprobe psmouse&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;sudo rmmod i2c_i801  &amp;amp;&amp;amp; sudo modprobe i2c_i801&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;sudo rmmod rmi_smbus &amp;amp;&amp;amp; sudo modprobe rmi_smbus&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Aside: &lt;code&gt;modprobe -r&lt;/code&gt; and rmmod do effectively the same thing&lt;/p&gt;
+&lt;p&gt;Once you found which command works, we want a permanent automatic solution so that we don&amp;rsquo;t have to do this every time. We need to create a script that will run our command on wake.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;In your terminal, run the following command &lt;code&gt;sudo nano /lib/systemd/system-sleep/restart-touchpad&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Paste (Ctrl + Shift + V) the following content and replace the lines 4 &amp;amp; 5 with the commands you used. Make sure to use only your keyboard to traverse the lines. I find it easier to not do any selection. If you can&amp;rsquo;t get it to work and want to use a more user friendly text editor, you replace &lt;code&gt;nano&lt;/code&gt; in the command with &lt;code&gt;kate&lt;/code&gt; (for KDE desktops) or &lt;code&gt;gedit&lt;/code&gt; (for GNOME desktops).&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#cd2828;font-weight:bold&#34;&gt;#!/usr/bin/env bash
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#cd2828;font-weight:bold&#34;&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;if&lt;/span&gt; [[ &lt;span style=&#34;color:#40ffff&#34;&gt;$1&lt;/span&gt; == post ]]; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;then&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    sudo rmmod  i2c_hid_acpi
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    sudo modprobe i2c_hid_acpi
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;fi&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Save the file using Ctrl + S&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Exit nano by using Ctrl + X&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Make the script we wrote executable &lt;code&gt;sudo chmod +x /lib/systemd/system-sleep/restart-touchpad&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;My solution has been adapted by reading a few different sources. Yes, even the people asking questions are helpful because the solutions that don&amp;rsquo;t work for them can be incorporated for others!&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://askubuntu.com/a/1083546&#34;&gt;https://askubuntu.com/a/1083546&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://unix.stackexchange.com/a/526488&#34;&gt;https://unix.stackexchange.com/a/526488&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://askubuntu.com/questions/577525/alternative-to-running-rmmod-and-modprobe-at-every-boot&#34;&gt;https://askubuntu.com/questions/577525/alternative-to-running-rmmod-and-modprobe-at-every-boot&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://discussion.fedoraproject.org/t/touchpad-dont-work-after-suspended/73733&#34;&gt;https://discussion.fedoraproject.org/t/touchpad-dont-work-after-suspended/73733&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;some-other-thoughts&#34; &gt;Some Other Thoughts
+&lt;span&gt;
+    &lt;a href=&#34;#some-other-thoughts&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;This was the biggest issue hindering using Linux on my old laptop. No distro could fix it out of the box but I&amp;rsquo;ve decided to start working on a Noob Friendly Mega Tutorial on Moving from Windows to Linux Desktop. This work has obviously paid off. Another red flag I solved yesterday was getting OBS to work. That required installing OBS via flatpak instead of the native version recommended by default in the Discover app store.&lt;/p&gt;
+&lt;p&gt;One of the biggest challenges in Linux Desktop was figuring out what the right distro is. It took me years to finally settle on recommending Fedora KDE. My use cases involved support for fractional scaling on multiple monitors which Linux Mint does not support, working with SecureBoot which distros like Nobara won&amp;rsquo;t support, supporting status icons out the box which GNOME hates, and not using snaps (i.e. not Ubuntu and not an Ubuntu fork) since using Snaps is worse than using Windows (I was convinced after watching &lt;a href=&#34;https://youtu.be/pMfqCzbSmQU&#34;&gt;Ubuntu&amp;rsquo;s Decline by Chris Titus Tech&lt;/a&gt;).&lt;/p&gt;
+&lt;p&gt;My test device is closer to being in a state where I can gift it to someone else. There&amp;rsquo;s only a few more hurdles to get through with one being how to fix the damn webcam and another being re-enabling secure boot!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Linux Desktop Detach Process From Terminal</title>
+      <link>https://blog.elijahlopez.ca/posts/linux-desktop-detach-process-from-terminal/</link>
+      <pubDate>Sat, 24 Feb 2024 15:23:23 -0500</pubDate>
+      
+      <guid>https://blog.elijahlopez.ca/posts/linux-desktop-detach-process-from-terminal/</guid>
+      <description>&lt;h3 id=&#34;using-disown&#34; &gt;Using disown
+&lt;span&gt;
+    &lt;a href=&#34;#using-disown&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;So let&amp;rsquo;s start a job in the shell.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;firefox &amp;amp;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This will start the job in the background of the shell, but it will still be a child of the terminal. We can confirm by running &lt;code&gt;jobs&lt;/code&gt;.
+If we want to keep the application running after we close or disconnect from the shell, then we need to use &lt;code&gt;disown&lt;/code&gt;. If we have multiple jobs, then we can also use &lt;code&gt;%n&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;firefox &amp;amp;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#24909d&#34;&gt;disown&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;firefox &amp;amp;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;code &amp;amp;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#24909d&#34;&gt;disown&lt;/span&gt; %1
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Putting it all together while ignoring stdout and stderr in the terminal&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;firefox &amp;gt;/dev/null 2&amp;gt;&amp;amp;&lt;span style=&#34;color:#3677a9&#34;&gt;1&lt;/span&gt; &amp;amp; &lt;span style=&#34;color:#24909d&#34;&gt;disown&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Yes the disown applies to the same command and not any currently active job&lt;/p&gt;
+&lt;h3 id=&#34;nohup&#34; &gt;nohup
+&lt;span&gt;
+    &lt;a href=&#34;#nohup&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;&lt;code&gt;nohup&lt;/code&gt;, is an application that executes another application such that it won&amp;rsquo;t receive a &lt;code&gt;SIGHUP&lt;/code&gt; when the shell receives the hang up signal. Typically, we also need to redirect &lt;code&gt;stdout&lt;/code&gt; and &lt;code&gt;stderr&lt;/code&gt; if we don&amp;rsquo;t want the creation of a &lt;code&gt;nohup.out&lt;/code&gt; file which is the default behaviour.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;nohup firefox &amp;gt;/dev/null 2&amp;gt;&amp;amp;&lt;span style=&#34;color:#3677a9&#34;&gt;1&lt;/span&gt; &amp;amp;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;In this command, we are informing the shell, to redirect output to &lt;code&gt;/dev/null&lt;/code&gt; (a place that discards everything that is written to it, and returns an End of File - EOF if read from). We also inform the shell to redirect the stderr (2) to wherever the stdout (1) is directed (&amp;amp;) to.&lt;/p&gt;
+&lt;h3 id=&#34;using-dex-for-desktop-entries&#34; &gt;Using &lt;code&gt;dex&lt;/code&gt; for Desktop Entries
+&lt;span&gt;
+    &lt;a href=&#34;#using-dex-for-desktop-entries&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;Another way is to use &lt;code&gt;dex&lt;/code&gt; to run the &amp;ldquo;Exec&amp;rdquo; value of a &lt;code&gt;.desktop&lt;/code&gt; file if the entry type is &lt;code&gt;Application&lt;/code&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;dex /usr/share/applications/firefox.desktop
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;a href=&#34;https://wiki.archlinux.org/title/Desktop_entries#Usage&#34;&gt;Desktop entries - ArchWiki&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;subshell&#34; &gt;Subshell
+&lt;span&gt;
+    &lt;a href=&#34;#subshell&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;Run the command (with bg) in a sub-shell like so&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;(firefox &amp;amp;)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;To ignore output,&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;(firefox &amp;gt;/dev/null 2&amp;gt;&amp;amp;&lt;span style=&#34;color:#3677a9&#34;&gt;1&lt;/span&gt; &amp;amp;)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+    
+    <item>
+      <title>Linux: Run Process in the Background and Detach</title>
+      <link>https://blog.elijahlopez.ca/posts/linux-background-process/</link>
+      <pubDate>Sat, 24 Feb 2024 15:23:23 -0500</pubDate>
+      
+      <guid>https://blog.elijahlopez.ca/posts/linux-background-process/</guid>
+      <description>&lt;h3 id=&#34;using-disown&#34; &gt;Using disown
+&lt;span&gt;
+    &lt;a href=&#34;#using-disown&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;So let&amp;rsquo;s start a job in the shell.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;firefox &amp;amp;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This will start the job in the background of the shell, but it will still be a child of the terminal. We can confirm by running &lt;code&gt;jobs&lt;/code&gt;.
+If we want to keep the application running after we close or disconnect from the shell, then we need to use &lt;code&gt;disown&lt;/code&gt;. If we have multiple jobs, then we can also use &lt;code&gt;%n&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;firefox &amp;amp;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#24909d&#34;&gt;disown&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;firefox &amp;amp;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;code &amp;amp;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#24909d&#34;&gt;disown&lt;/span&gt; %1
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Putting it all together while ignoring stdout and stderr in the terminal&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;firefox &amp;gt;/dev/null 2&amp;gt;&amp;amp;&lt;span style=&#34;color:#3677a9&#34;&gt;1&lt;/span&gt; &amp;amp; &lt;span style=&#34;color:#24909d&#34;&gt;disown&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Yes the disown applies to the same command and not any currently active job&lt;/p&gt;
+&lt;h3 id=&#34;nohup&#34; &gt;nohup
+&lt;span&gt;
+    &lt;a href=&#34;#nohup&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;&lt;code&gt;nohup&lt;/code&gt;, is an application that executes another application such that it won&amp;rsquo;t receive a &lt;code&gt;SIGHUP&lt;/code&gt; when the shell receives the hang up signal. Typically, we also need to redirect &lt;code&gt;stdout&lt;/code&gt; and &lt;code&gt;stderr&lt;/code&gt; if we don&amp;rsquo;t want the creation of a &lt;code&gt;nohup.out&lt;/code&gt; file which is the default behaviour.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;nohup firefox &amp;gt;/dev/null 2&amp;gt;&amp;amp;&lt;span style=&#34;color:#3677a9&#34;&gt;1&lt;/span&gt; &amp;amp;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;In this command, we are informing the shell, to redirect output to &lt;code&gt;/dev/null&lt;/code&gt; (a place that discards everything that is written to it, and returns an End of File - EOF if read from). We also inform the shell to redirect the stderr (2) to wherever the stdout (1) is directed (&amp;amp;) to.&lt;/p&gt;
+&lt;h3 id=&#34;using-dex-for-desktop-entries&#34; &gt;Using &lt;code&gt;dex&lt;/code&gt; for Desktop Entries
+&lt;span&gt;
+    &lt;a href=&#34;#using-dex-for-desktop-entries&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;Another way is to use &lt;code&gt;dex&lt;/code&gt; to run the &amp;ldquo;Exec&amp;rdquo; value of a &lt;code&gt;.desktop&lt;/code&gt; file if the entry type is &lt;code&gt;Application&lt;/code&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;dex /usr/share/applications/firefox.desktop
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;a href=&#34;https://wiki.archlinux.org/title/Desktop_entries#Usage&#34;&gt;Desktop entries - ArchWiki&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;subshell&#34; &gt;Subshell
+&lt;span&gt;
+    &lt;a href=&#34;#subshell&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;Run the command (with bg) in a sub-shell like so&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;(firefox &amp;amp;)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;To ignore output,&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;(firefox &amp;gt;/dev/null 2&amp;gt;&amp;amp;&lt;span style=&#34;color:#3677a9&#34;&gt;1&lt;/span&gt; &amp;amp;)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+    
+    <item>
+      <title>Linux [Desktop] Tips</title>
+      <link>https://blog.elijahlopez.ca/posts/linux-tips/</link>
+      <pubDate>Tue, 27 Jun 2023 10:56:19 -0400</pubDate>
+      
+      <guid>https://blog.elijahlopez.ca/posts/linux-tips/</guid>
+      <description>&lt;div&gt;
+    &lt;h2&gt;Table of Contents&lt;/h2&gt;
+    &lt;nav id=&#34;TableOfContents&#34;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&#34;#which-distro-should-i-use&#34;&gt;Which Distro Should I Use?&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#webcam-application&#34;&gt;Webcam Application&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#kde&#34;&gt;KDE&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#gnome&#34;&gt;Gnome&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#how-to-install-yay&#34;&gt;How to Install yay&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#how-to-install-packages-from-aur&#34;&gt;How to Install Packages from AUR&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#gpg-keyserver-recevie-failed-no-route-to-host&#34;&gt;gpg: keyserver recevie failed: No route to host&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#how-to-install-visual-studio-code-in-manjaro&#34;&gt;How to install Visual Studio Code in Manjaro&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#vscode-fix-zsh-font&#34;&gt;VSCode Fix ZSH Font&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#how-to-install-fira-code-nerd-font-on-arch&#34;&gt;How to Install Fira Code Nerd Font on Arch&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#setting-default-browser-for-electron-apps&#34;&gt;Setting Default Browser for Electron Apps&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#how-to-fix-sudo-password-not-accepted&#34;&gt;How to fix Sudo Password Not Accepted&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#virtual-terminal&#34;&gt;Virtual Terminal&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#x-server-restart&#34;&gt;X-Server Restart&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#how-to-setup-onedrive-on-linux&#34;&gt;How to setup OneDrive on Linux&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#linux-how-to-read-a-file-in-the-terminal&#34;&gt;Linux How to Read a File in the Terminal&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#how-to-install-an-appimage-on-manjaro&#34;&gt;How to Install an AppImage on Manjaro&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#linux-append-line-to-system-file&#34;&gt;Linux Append Line to System File&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#steam-scale-ui-on-linux-or-manjaro&#34;&gt;Steam Scale UI on Linux or Manjaro&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#how-to-pin-or-favourite-games-on-steam-linux&#34;&gt;How to Pin or Favourite Games on Steam Linux&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#how-to-force-close-apps-on-linux&#34;&gt;How to Force Close Apps on Linux&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#version-glibc_238-not-found&#34;&gt;version GLIBC_2.38 Not Found&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#failed-to-start-light-display-manager-error&#34;&gt;Failed to Start Light Display Manager Error&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#how-to-enable-wi-fi-in-ttyttl&#34;&gt;How to Enable Wi-Fi in TTY/TTL&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#how-to-install-python-310-on-manjaro-or-arch&#34;&gt;How to Install Python 3.10 on Manjaro (or Arch)&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#how-to-reduce-firefox-scroll-speed-or-sensitivity&#34;&gt;How to Reduce Firefox Scroll Speed or Sensitivity&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#fix-touchpad-after-waking-from-sleep&#34;&gt;Fix Touchpad after Waking From Sleep&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;which-distro-should-i-use&#34; &gt;Which Distro Should I Use?
+&lt;span&gt;
+    &lt;a href=&#34;#which-distro-should-i-use&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://fedoraproject.org/spins/kde/&#34;&gt;Fedora KDE&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The best distro is functionally the best, stable (for general and niches like gaming and content creation), and has better performance than the alternatives.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;For functionality, KDE is the best; fractional scaling.&lt;/li&gt;
+&lt;li&gt;For stability, we choose anything but Arch. A perfect example is this comment explaining that when things break, he doesn&amp;rsquo;t consider it broken &lt;a href=&#34;https://www.reddit.com/r/archlinux/comments/11t3wc1/comment/jchsx4e&#34;&gt;if he has to use the internet (arch wiki) to fix the problem&lt;/a&gt;. My definition of broken is that the issue cannot be fixed by restarting your computer.&lt;/li&gt;
+&lt;li&gt;For performance, we want to avoid Ubuntu-based distros that use snaps&lt;/li&gt;
+&lt;li&gt;We are left with distros that support KDE out of the box: Namely, Debian based (excluding Ubuntu) and Fedora based.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;So why Fedora instead of Debian? Well because it&amp;rsquo;s more up to date and it&amp;rsquo;s also not confusing to download unlike Debian.&lt;/p&gt;
+&lt;h2 id=&#34;webcam-application&#34; &gt;Webcam Application
+&lt;span&gt;
+    &lt;a href=&#34;#webcam-application&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;h3 id=&#34;kde&#34; &gt;KDE
+&lt;span&gt;
+    &lt;a href=&#34;#kde&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;Install kamoso (with Add/Remove Software).&lt;/p&gt;
+&lt;h3 id=&#34;gnome&#34; &gt;Gnome
+&lt;span&gt;
+    &lt;a href=&#34;#gnome&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;Cheese&lt;/p&gt;
+&lt;h2 id=&#34;how-to-install-yay&#34; &gt;How to Install yay
+&lt;span&gt;
+    &lt;a href=&#34;#how-to-install-yay&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;Yet Another Yogurt (yay) helps you install packages from AUR using the command &lt;code&gt;yay -S&lt;/code&gt; instead of entering in commands to clone and build the package.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-zsh&#34; data-lang=&#34;zsh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;pacman -S --needed --noconfirm git base-devel
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git clone https://aur.archlinux.org/yay.git
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#24909d&#34;&gt;cd&lt;/span&gt; yay
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;makepkg -si
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#24909d&#34;&gt;cd&lt;/span&gt; ..
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;rm yay -rf
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;how-to-install-packages-from-aur&#34; &gt;How to Install Packages from AUR
+&lt;span&gt;
+    &lt;a href=&#34;#how-to-install-packages-from-aur&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;You can either do &lt;code&gt;pamac build $PKGNAME&lt;/code&gt; or use &lt;code&gt;yay -s $PACKAGENAME&lt;/code&gt; which requires installing yay as shown above.&lt;/p&gt;
+&lt;p&gt;In the next section is an example on how to install visual studio code.&lt;/p&gt;
+&lt;p&gt;The following is a one-liner way to install packages in yay to skip the prompts.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#24909d&#34;&gt;echo&lt;/span&gt; y | &lt;span style=&#34;color:#40ffff&#34;&gt;LANG&lt;/span&gt;=C yay --provides=&lt;span style=&#34;color:#24909d&#34;&gt;false&lt;/span&gt; --answerdiff=None --answerclean=None --mflags &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;--noconfirm&amp;#34;&lt;/span&gt; -S &lt;span style=&#34;color:#40ffff&#34;&gt;$list_of_packages&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;gpg-keyserver-recevie-failed-no-route-to-host&#34; &gt;gpg: keyserver recevie failed: No route to host
+&lt;span&gt;
+    &lt;a href=&#34;#gpg-keyserver-recevie-failed-no-route-to-host&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;gpg --server hkp://keys.gnupg.net --recv-key KEY_GOES_HERE
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;If the above fails with &amp;ldquo;gpg: keyserver receive failed: Server indicated a failure&amp;rdquo;,&lt;/p&gt;
+&lt;p&gt;Use &lt;code&gt;sudo nano /etc/resolv.conf&lt;/code&gt; and add Cloudflare&amp;rsquo;s DNS&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-conf&#34; data-lang=&#34;conf&#34;&gt;nameserver 1.1.1.1  # Cloudflare
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;how-to-install-visual-studio-code-in-manjaro&#34; &gt;How to install Visual Studio Code in Manjaro
+&lt;span&gt;
+    &lt;a href=&#34;#how-to-install-visual-studio-code-in-manjaro&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;To install vscode, &lt;code&gt;yay -S visual-studio-code-bin&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;vscode-fix-zsh-font&#34; &gt;VSCode Fix ZSH Font
+&lt;span&gt;
+    &lt;a href=&#34;#vscode-fix-zsh-font&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo pacman -Su ttf-meslo-nerd-font-powerlevel10k ttf-firacode-nerd --noconfirm
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Set Terminal › Integrated: Font Family to &lt;code&gt;firaCode Nerd Font, monospace&lt;/code&gt; or &lt;code&gt;MesloLGS NF, monospace&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;how-to-install-fira-code-nerd-font-on-arch&#34; &gt;How to Install Fira Code Nerd Font on Arch
+&lt;span&gt;
+    &lt;a href=&#34;#how-to-install-fira-code-nerd-font-on-arch&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://github.com/tonsky/FiraCode/wiki/Linux-instructions#installing-with-a-package-manager&#34;&gt;Official install instructions&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Suppose you want to install a package on Arch. The first step would be to search for what you want using &lt;code&gt;pacman -Ss a query&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;gt; pacman -Ss fira code
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;extra/texlive-fontsextra 2023.66594-15 (texlive)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    TeX Live - Additional fonts
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;extra/texlive-latexextra 2023.66594-15 (texlive)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    TeX Live - LaTeX additional packages
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;extra/ttf-fira-code 6.2-2
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    Monospaced font with programming ligatures
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;extra/ttf-firacode-nerd 3.0.2-1 (nerd-fonts)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    Patched font Fira (Fura) Code from nerd fonts library
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;extra/woff-fira-code 6.2-2
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    Monospaced font with programming ligatures
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;extra/woff2-fira-code 6.2-2
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    Monospaced font with programming ligatures
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Next install the Fira Code Nerd Font.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo pacman -S ttf-firacode-nerd --noconfirm
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;To use this font in Visual Studio Code, set the editor font family to &lt;code&gt;firaCode Nerd Font, &#39;Cascadia Code&#39;, Consolas, &#39;Courier New&#39;, monospace&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Set the terminal font-family to &lt;code&gt;firaCode Nerd Font, monospace&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;setting-default-browser-for-electron-apps&#34; &gt;Setting Default Browser for Electron Apps
+&lt;span&gt;
+    &lt;a href=&#34;#setting-default-browser-for-electron-apps&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;xdg-mime default firefox.desktop x-scheme-handler/http
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;xdg-mime default firefox.desktop x-scheme-handler/https
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;how-to-fix-sudo-password-not-accepted&#34; &gt;How to fix Sudo Password Not Accepted
+&lt;span&gt;
+    &lt;a href=&#34;#how-to-fix-sudo-password-not-accepted&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-zsh&#34; data-lang=&#34;zsh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;systemctl start systemd-homed
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;pacman -S pambase --noconfirm   &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# optional&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;virtual-terminal&#34; &gt;Virtual Terminal
+&lt;span&gt;
+    &lt;a href=&#34;#virtual-terminal&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Ctrl + Alt + F4 to go to virtual terminal&lt;/li&gt;
+&lt;li&gt;Ctrl + Alt + F1 to go back to desktop&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;x-server-restart&#34; &gt;X-Server Restart
+&lt;span&gt;
+    &lt;a href=&#34;#x-server-restart&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;Ctrl + Alt + Backspace (unconfirmed)&lt;/p&gt;
+&lt;h2 id=&#34;how-to-setup-onedrive-on-linux&#34; &gt;How to setup OneDrive on Linux
+&lt;span&gt;
+    &lt;a href=&#34;#how-to-setup-onedrive-on-linux&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/jstaf/onedriver&#34;&gt;jstaf/onedriver&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;For Arch, use &lt;code&gt;sudo pamac build onedriver&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;yay onedrive-abraunegg
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Note: If asked regarding a provider for &amp;rsquo;d-runtime&amp;rsquo; and &amp;rsquo;d-compiler&amp;rsquo;, select &amp;rsquo;liblphobos&amp;rsquo; and &amp;rsquo;ldc&#39;&lt;/p&gt;
+&lt;p&gt;Run &lt;code&gt;onedrive&lt;/code&gt; to setup account.&lt;/p&gt;
+&lt;p&gt;Increase number of inotify watchers (number of files that can be monitored)&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#24909d&#34;&gt;echo&lt;/span&gt; fs.inotify.max_user_watches=&lt;span style=&#34;color:#3677a9&#34;&gt;524288&lt;/span&gt; | sudo tee /etc/sysctl.d/40-max-user-watches.conf &amp;amp;&amp;amp; sudo sysctl --system
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Enable the system service&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo systemctl &lt;span style=&#34;color:#24909d&#34;&gt;enable&lt;/span&gt; onedrive@&lt;span style=&#34;color:#40ffff&#34;&gt;$USER&lt;/span&gt;.service
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo systemctl start onedrive@&lt;span style=&#34;color:#40ffff&#34;&gt;$USER&lt;/span&gt;.service
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;journalctl -u onedrive@&lt;span style=&#34;color:#40ffff&#34;&gt;$USER&lt;/span&gt; &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# scroll to bottom to check if syncing works&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;linux-how-to-read-a-file-in-the-terminal&#34; &gt;Linux How to Read a File in the Terminal
+&lt;span&gt;
+    &lt;a href=&#34;#linux-how-to-read-a-file-in-the-terminal&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Use &lt;code&gt;less&lt;/code&gt; to read line by line (arrow up and down keys)&lt;/li&gt;
+&lt;li&gt;Use &lt;code&gt;more&lt;/code&gt; to read page by page (arrow up and down keys)&lt;/li&gt;
+&lt;li&gt;Use &lt;code&gt;cat&lt;/code&gt; to output entire file (useful for piping &lt;code&gt;|&lt;/code&gt; commands)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;how-to-install-an-appimage-on-manjaro&#34; &gt;How to Install an AppImage on Manjaro
+&lt;span&gt;
+    &lt;a href=&#34;#how-to-install-an-appimage-on-manjaro&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;First install &lt;code&gt;appimagelauncher&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo pacman -S appimagelauncher
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Next double click on the downloaded AppImage&lt;/p&gt;
+&lt;h2 id=&#34;linux-append-line-to-system-file&#34; &gt;Linux Append Line to System File
+&lt;span&gt;
+    &lt;a href=&#34;#linux-append-line-to-system-file&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;To append a line to a system file, do not use &lt;code&gt;&amp;gt;&amp;gt;&lt;/code&gt;. Instead use &lt;code&gt;commandForOutputGoesHere | sudo tee -a /path/to/file&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;steam-scale-ui-on-linux-or-manjaro&#34; &gt;Steam Scale UI on Linux or Manjaro
+&lt;span&gt;
+    &lt;a href=&#34;#steam-scale-ui-on-linux-or-manjaro&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;Before we get started, reminder to prefer using &lt;code&gt;Steam (Runtime)&lt;/code&gt; instead of &lt;code&gt;Steam (Native)&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;If you have root access, run the following command so that steam will be properly scaled
+no matter how it is launched (steam desktop shortcut, terminal, game desktop shortcut).&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#24909d&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;STEAM_FORCE_DESKTOPUI_SCALING=&amp;#39;1.5&amp;#39;&amp;#34;&lt;/span&gt; | sudo tee -a /etc/environment
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;If you do not have root access, edit your login shell (&lt;code&gt;~/.profile&lt;/code&gt;) instead.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#24909d&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;STEAM_FORCE_DESKTOPUI_SCALING=&amp;#39;1.5&amp;#39;&amp;#34;&lt;/span&gt; | sudo tee -a ~/.profile
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Test 1.5 out by using &lt;code&gt;source /path/to/file &amp;amp;&amp;amp; steam&lt;/code&gt;. If 1.5 isn&amp;rsquo;t right for you, use nano to edit your file:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;sudo nano /etc/environment&lt;/code&gt; or &lt;code&gt;nano ~/.profile&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Now log out and log back in so that your system will source from either of the files that you edited.&lt;/p&gt;
+&lt;details&gt;&lt;summary&gt;Alternatively, you could edit every single one of your game desktop entries in addition to your steam shortcuts,&lt;/summary&gt;
+&lt;p&gt;To fix scaling, simply run&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo nano /usr/share/applications/steam.desktop
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;If you have &lt;code&gt;gedit&lt;/code&gt;, you can use that instead.&lt;/p&gt;
+&lt;p&gt;Next scroll to the &lt;strong&gt;first&lt;/strong&gt; Exec for the desktop entry, and  add &lt;code&gt;-forcedesktopscaling=1.5&lt;/code&gt; like below&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-desktop&#34; data-lang=&#34;desktop&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;Exec&lt;/span&gt;=&lt;span style=&#34;color:#ed9d13&#34;&gt;/usr/bin/steam-runtime -forcedesktopscaling=1.5 %U&lt;/span&gt;&lt;span style=&#34;color:#666&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Save the file and restart steam (the next section has a command for shutting down apps by program name).&lt;/p&gt;
+&lt;p&gt;You will also have to add this argument to all game shortcuts.&lt;/p&gt;
+&lt;/details&gt;
+&lt;h2 id=&#34;how-to-pin-or-favourite-games-on-steam-linux&#34; &gt;How to Pin or Favourite Games on Steam Linux
+&lt;span&gt;
+    &lt;a href=&#34;#how-to-pin-or-favourite-games-on-steam-linux&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;Copy the desktop file to your local applications directory.
+This will let you pin / favourite the game to your start menu.
+You can choose to delete the original shortcut afterwards.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;mkdir ~/.local/share/applications
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo cp ~/Desktop/Game.desktop ~/.local/share/applications
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;how-to-force-close-apps-on-linux&#34; &gt;How to Force Close Apps on Linux
+&lt;span&gt;
+    &lt;a href=&#34;#how-to-force-close-apps-on-linux&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;killall steam
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;version-glibc_238-not-found&#34; &gt;version GLIBC_2.38 Not Found
+&lt;span&gt;
+    &lt;a href=&#34;#version-glibc_238-not-found&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;Man I tried to show my friend today how my Manjaro system was running and of course it breaks.&lt;/p&gt;
+&lt;p&gt;Manjaro fucking sucks. Let&amp;rsquo;s get that straight. I tried running a pacman command and it doesn&amp;rsquo;t upgrade my system. I did something and everything broke.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;pacman
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;pacman: /usr/lib/libc.so.6: version &lt;span style=&#34;color:#ed9d13&#34;&gt;`&lt;/span&gt;GLIBC_2.38&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39; not found (required by pacman)
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;pacman: /usr/lib/libc.so.6: version `GLIBC_2.38&amp;#39;&lt;/span&gt; not found (required by /usr/lib/libalpm.so.13)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;To fix this issue,&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Download &lt;a href=&#34;https://pkgbuild.com/~morganamilo/pacman-static/x86_64/bin/&#34;&gt;pacman-static&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;`cd ~/Downloads &amp;amp;&amp;amp; chmod +x ./pacman-static``&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;sudo pacman -Syu glibc-locales --overwrite /usr/lib/locale/\*/\* --noconfirm&lt;/code&gt; &lt;a href=&#34;https://forum.manjaro.org/t/stable-update-2023-10-09-mesa-grub-glibc-thunderbird-kde-frameworks-renaming/149302/2&#34;&gt;reference&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;sudo ./pacman-static -Syu --noconfirm&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;sudo pacman-mirrors -f5&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Hey hey hey, we fixed it.&lt;/p&gt;
+&lt;p&gt;My laptop&amp;rsquo;s battery drained so when I started it up again I got the error in the following section.&lt;/p&gt;
+&lt;h2 id=&#34;failed-to-start-light-display-manager-error&#34; &gt;Failed to Start Light Display Manager Error
+&lt;span&gt;
+    &lt;a href=&#34;#failed-to-start-light-display-manager-error&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;In the lightdm logs, you&amp;rsquo;ll see the following.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;failed to start seat: seat0
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;First step is to get terminal access&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Ctrl + Alt + F2&lt;/li&gt;
+&lt;li&gt;Enter your username and then your password&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;sudo pacman -Syu --noconfirm&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;nmtui    &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# connect to a wifi network if you are using wifi&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo pacman -S lightdm-gtk-greeter --noconfirm
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo pacman -Syu
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo systemctl start lightdm
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;how-to-enable-wi-fi-in-ttyttl&#34; &gt;How to Enable Wi-Fi in TTY/TTL
+&lt;span&gt;
+    &lt;a href=&#34;#how-to-enable-wi-fi-in-ttyttl&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;Ctrl + Alt + F2&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;nmtui&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;how-to-install-python-310-on-manjaro-or-arch&#34; &gt;How to Install Python 3.10 on Manjaro (or Arch)
+&lt;span&gt;
+    &lt;a href=&#34;#how-to-install-python-310-on-manjaro-or-arch&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;Try this first.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;yay -S python310
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;It didn&amp;rsquo;t work for me, so this is how I did it.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#24909d&#34;&gt;cd&lt;/span&gt; ~/Downloads
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git clone https://aur.archlinux.org/python310.git
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#24909d&#34;&gt;cd&lt;/span&gt; python310
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;makepkg -si
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# the directory is 360 MB, so only if that&amp;#39;s a lot for your system, remove it&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#24909d&#34;&gt;cd&lt;/span&gt; ..
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;rm -rf python310
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This will take a LONG time&amp;hellip;but it works.&lt;/p&gt;
+&lt;p&gt;Music Caster runs on Linux again!&lt;/p&gt;
+&lt;h2 id=&#34;how-to-reduce-firefox-scroll-speed-or-sensitivity&#34; &gt;How to Reduce Firefox Scroll Speed or Sensitivity
+&lt;span&gt;
+    &lt;a href=&#34;#how-to-reduce-firefox-scroll-speed-or-sensitivity&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;The scroll speed on Firefox is too sensitive. To reduce it,&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Go to about:config&lt;/li&gt;
+&lt;li&gt;Search for &lt;code&gt;mousewheel.default.delta_multiplier_y&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Set to 75 or change until satisfactory&lt;/li&gt;
+&lt;li&gt;You can test the scroll speed on this post itself&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;fix-touchpad-after-waking-from-sleep&#34; &gt;Fix Touchpad after Waking From Sleep
+&lt;span&gt;
+    &lt;a href=&#34;#fix-touchpad-after-waking-from-sleep&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://blog.elijahlopez.ca/posts/linux-touchpad-not-working/&#34;&gt;See my other post&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Linux USB Formatting Issues</title>
+      <link>https://blog.elijahlopez.ca/posts/linux-usb-formatting-issues/</link>
+      <pubDate>Sun, 24 Jul 2022 21:03:20 -0400</pubDate>
+      
+      <guid>https://blog.elijahlopez.ca/posts/linux-usb-formatting-issues/</guid>
+      <description>&lt;p&gt;When trying to test out multiple Linux distros on multiple
+USB sticks, I ran into this horrible error. The creators of Balena Etcher
+simply do not care about users who soft brick their USBs. Rufus and Balena
+developers simply say that their software cannot hard brick the USB,
+which is a good thing but they provide 0 support in fixing the issue.&lt;/p&gt;
+&lt;p&gt;I am here to share my findings since solutions found online are in parts.&lt;/p&gt;
+&lt;p&gt;Operating System: Windows&lt;/p&gt;
+&lt;p&gt;How do you fix the error and other errors like:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;the volume was created successfully but not formatted&lt;/li&gt;
+&lt;li&gt;Please Insert Disk Into Removable Disk&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Like my other Linux tutorial on how to move a partition in Windows, a partition tool is very useful.
+The &lt;a href=&#34;https://www.partitionwizard.com/free-partition-manager.html&#34;&gt;MiniTool Parition Wizard&lt;/a&gt; was very handy.
+Open this tool up, right click the USB or drive you want to fix, and click wipe drive and fill the drive with 0s.
+This should take 10 minutes.&lt;/p&gt;
+&lt;p&gt;Afterwards, you can either format the drive in Windows or run Balena Etcher to flash another ISO.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Linux Desktop Sucks!</title>
+      <link>https://blog.elijahlopez.ca/posts/linux-desktop-sucks/</link>
+      <pubDate>Sat, 26 Feb 2022 12:44:37 -0500</pubDate>
+      
+      <guid>https://blog.elijahlopez.ca/posts/linux-desktop-sucks/</guid>
+      <description>&lt;div&gt;
+    &lt;h2&gt;Table of Contents&lt;/h2&gt;
+    &lt;nav id=&#34;TableOfContents&#34;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&#34;#introduction&#34;&gt;Introduction&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#linux-mint&#34;&gt;Linux MInt&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#bluetooth-headphones&#34;&gt;Bluetooth (Headphones)&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#dual-boot-menu&#34;&gt;Dual Boot Menu&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#dual-boot-time&#34;&gt;Dual Boot Time&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#nvidia-driver-installation&#34;&gt;NVIDIA Driver Installation&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#external-monitor-scale-cannot-be-different&#34;&gt;External Monitor Scale Cannot be Different&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#wake-from-sleep-shows-clipped-login-ui&#34;&gt;Wake From Sleep shows Clipped Login UI&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#manjaro-kde-specific-issues&#34;&gt;Manjaro KDE Specific Issues&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#black-screen-bug&#34;&gt;Black Screen Bug&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#plugging-or-unplugging-power-puts-laptop-to-sleep&#34;&gt;Plugging or Unplugging Power Puts Laptop to Sleep&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#inefficient-upgrading&#34;&gt;Inefficient Upgrading&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#unintuitive-appearance-settings&#34;&gt;Unintuitive Appearance Settings&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#webcam&#34;&gt;Webcam&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#nautilis-sucks&#34;&gt;Nautilis Sucks&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#zorin-os&#34;&gt;Zorin OS&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#firefox-home-page-overwritten-on-every-login&#34;&gt;Firefox Home Page Overwritten on Every Login&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#nobara-kde&#34;&gt;Nobara KDE&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#other-issues&#34;&gt;Other Issues&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#canonical-and-snap-sucks&#34;&gt;Canonical and Snap Sucks&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#no-ctrl-for-tabbing&#34;&gt;No Ctrl for Tabbing&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#poor-cloud-storage-support&#34;&gt;Poor Cloud Storage Support&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#poor-installation-tutorials&#34;&gt;Poor Installation Tutorials&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#cant-shutdowneasily&#34;&gt;Can&amp;rsquo;t Shutdown Easily&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#installing-custom-programs-is-aheadache&#34;&gt;Installing Custom Programs is a HEADACHE&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#how-can-linux-distros-gainusers&#34;&gt;How Can Linux Distros Gain Users?&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;introduction&#34; &gt;Introduction
+&lt;span&gt;
+    &lt;a href=&#34;#introduction&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;I&amp;rsquo;ve used Raspian (~2014), Ubuntu GNOME (~2016), Manjaro KDE (2020 &amp;amp; 2022-2023), Fedora, Zorin (2021), Mint (2024), and Nobara (2024).&lt;/p&gt;
+&lt;p&gt;There&amp;rsquo;s a lot of UX issues with Linux and for some reasons the user base starts victim blaming instead of actually improving the experience. It&amp;rsquo;s very political regard and reminds me of this one person who genuinely believed that Libertarianism was about legalizing underage marriage.&lt;/p&gt;
+&lt;p&gt;The issues listed under each distro may actually extend to other distros as the desktop (e.g. KDE, or GNOME) or the Windowing System (Wayland) may be the same on different distros.&lt;/p&gt;
+&lt;h2 id=&#34;linux-mint&#34; &gt;Linux MInt
+&lt;span&gt;
+    &lt;a href=&#34;#linux-mint&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;I installed Linux Mint alongside Windows 11 on my laptop for work purposes. Running Linux Mint in a Virtual Machine is slow, ugly, and not as convenient as I thought it was. Why dual boot? Well I need a lot of services: OneDrive, Mega, GitHub Desktop, and video games. I also want an experience where the issues are minor. I think Windows 11 downgraded a lot of components to be more like macOS and Linux which is why I will be making some videos on why Windows 11 sucks, but this article is about my Linux experience.&lt;/p&gt;
+&lt;h3 id=&#34;bluetooth-headphones&#34; &gt;Bluetooth (Headphones)
+&lt;span&gt;
+    &lt;a href=&#34;#bluetooth-headphones&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;There are three issues I have with bluetooth on Linux Mint.. The first time I connected my headphones to the laptop, it was pretty smooth. Now that I want to use connect my headphones to the laptop after having used them with my phone, the laptop is going &amp;ldquo;Connected&amp;rdquo; right after double tapping, and then it fails to connect resulting in a disconnect.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;It doesn&amp;rsquo;t work. The error I after the UI has told me my headphones have connected is &amp;ldquo;Connection Failed: br-connection-unknown.&amp;rdquo; I had to remove the device and add it again for my headphones to connect.&lt;/li&gt;
+&lt;li&gt;One if the straight up lie that the laptop is connected to the headphones after a single double click. Stop telling the user that we have connected when we haven&amp;rsquo;t!&lt;/li&gt;
+&lt;li&gt;The bluetooth icon in the taskbar doesn&amp;rsquo;t open a tray UI like Date, Battery, Music, WiFi icon. It&amp;rsquo;s actually not part of the desktop, but as a user application. What??&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;dual-boot-menu&#34; &gt;Dual Boot Menu
+&lt;span&gt;
+    &lt;a href=&#34;#dual-boot-menu&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;First off, the default dual boot menu is ugly. GRUB is still not configured to scale on monitors that have a higher resolution than 1080p. I have been using 1440p laptop screens since 2017. That&amp;rsquo;s 7 years now. I&amp;rsquo;ll have to customize this, but it is an annoyance.&lt;/p&gt;
+&lt;p&gt;Refind was recommended to install but guess what, I got a scary red error: &amp;ldquo;Secure Boot violation. Invalid signature&amp;rdquo;. Searching for help yields a single reddit comment replying to post on r/linux4&lt;strong&gt;NOOBS&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;You need to create a local signing key, register it using the MOK utility, then sign the rEFInd binary using that signing key. You can access the full manual at &lt;a href=&#34;http://www.rodsbooks.com/refind/secureboot.html&#34;&gt;http://www.rodsbooks.com/refind/secureboot.html&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;How is this noob-friendly advice?&lt;/p&gt;
+&lt;p&gt;I uninstalled refind and yet I got the same error. Good thing I took a Timeshift yesterday which also backed up the boot drive. Good thing I don&amp;rsquo;t use this stupid distro as a daily driver where it can mess with my cloud files.&lt;/p&gt;
+&lt;h3 id=&#34;dual-boot-time&#34; &gt;Dual Boot Time
+&lt;span&gt;
+    &lt;a href=&#34;#dual-boot-time&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;For some reason Linux and Windows have different ways of storing time and no one on the Linux side thought about changing the way time works if installed alongside Windows. I really don&amp;rsquo;t want to have to adjust my time settings every time I boot back into Windows. I&amp;rsquo;ll probably just not adjust the time on the Linux side and let it be.&lt;/p&gt;
+&lt;h3 id=&#34;nvidia-driver-installation&#34; &gt;NVIDIA Driver Installation
+&lt;span&gt;
+    &lt;a href=&#34;#nvidia-driver-installation&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;When installing NVIDIA drivers for Linux Mint, we are told to enter a password for Secure Boot and that we would have to enter this after rebooting but a reboot does not actually make us enter the password&amp;hellip;unless we selected &amp;ldquo;Enroll MOK.&amp;rdquo; It would be helpful if the drivers app gave better instructions.&lt;/p&gt;
+&lt;h3 id=&#34;external-monitor-scale-cannot-be-different&#34; &gt;External Monitor Scale Cannot be Different
+&lt;span&gt;
+    &lt;a href=&#34;#external-monitor-scale-cannot-be-different&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;I have my laptop connected to two external monitors. The scale on all three displays has to be the same for the UI to fit 100%. On Windows I can set the scale to different values for each monitor without any problem. On Linux Mint, fractional scaling is still experimental.&lt;/p&gt;
+&lt;h3 id=&#34;wake-from-sleep-shows-clipped-login-ui&#34; &gt;Wake From Sleep shows Clipped Login UI
+&lt;span&gt;
+    &lt;a href=&#34;#wake-from-sleep-shows-clipped-login-ui&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://blog.elijahlopez.ca/images/linux/linux-mint-clipped-login-ui.webp&#34; alt=&#34;ALT: all of my three displays are black but my left monitor shows the clipped UI&#34;&gt;&lt;/p&gt;
+&lt;p&gt;I can still login by simply typing my password and pressing enter but this is such a subpar experience. Windows 11 has its issues but it is never a simple issue. The worst Windows 11 does is run the anti-virus on a folder I did not exempt.&lt;/p&gt;
+&lt;h2 id=&#34;manjaro-kde-specific-issues&#34; &gt;Manjaro KDE Specific Issues
+&lt;span&gt;
+    &lt;a href=&#34;#manjaro-kde-specific-issues&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;I had to daily drive Manjaro KDE for 3 weeks on my Razer Blade Stealth, and over that time I encountered a plethora of issues and I&amp;rsquo;ve documented &lt;a href=&#34;https://blog.elijahlopez.ca/posts/manjaro-kde-tips&#34;&gt;some solutions&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The Razer Blade stealth has a 6th generation laptop i5 processor and 8GB of RAM. I&amp;rsquo;m not sure if
+it&amp;rsquo;s because of the SSD speeds, but the laptop freezes either due to 100% memory or 99% CPU. VS Code freezes so often without even running an application.&lt;/p&gt;
+&lt;p&gt;I do believe Firefox is highly optimized on Linux as it never crashed. However, if you have 10+ tabs open, good bye.&lt;/p&gt;
+&lt;h3 id=&#34;black-screen-bug&#34; &gt;Black Screen Bug
+&lt;span&gt;
+    &lt;a href=&#34;#black-screen-bug&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;I&amp;rsquo;ll start with this as it is the reason why I will not recommend Manjaro for people interested in free (as in beer) software.&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;m logged in as my parents&amp;rsquo; user and now I log out and log into my account. The desktop splashscreen shows up and then boom black screen.&lt;/p&gt;
+&lt;p&gt;Maybe it&amp;rsquo;s a fluke, so I just create a thread to leave a paper trail. I use a physical power down and then log in without issues.&lt;/p&gt;
+&lt;p&gt;4 hours later, my parents are logged in, but I want to test something out myself. I turn on the laptop and click switch user, meaning that my parents are not
+logged out. The desktop splashscreen loads and I get the black screen again.&lt;/p&gt;
+&lt;p&gt;Manjaro is 11 years old. There is no excuse for this workflow to not work. There is no excuse because I go out of my way to make sure
+my music player runs for everyone&amp;rsquo;s workflow not just my own.&lt;/p&gt;
+&lt;h3 id=&#34;plugging-or-unplugging-power-puts-laptop-to-sleep&#34; &gt;Plugging or Unplugging Power Puts Laptop to Sleep
+&lt;span&gt;
+    &lt;a href=&#34;#plugging-or-unplugging-power-puts-laptop-to-sleep&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;As the subsection states, charging my laptop while it is on, puts it into the sleep state. I wish I was joking.
+How is this bug even possible in 2023. It makes zero sense why Manjaro can&amp;rsquo;t even handle the plugging of a power cord.&lt;/p&gt;
+&lt;h3 id=&#34;inefficient-upgrading&#34; &gt;Inefficient Upgrading
+&lt;span&gt;
+    &lt;a href=&#34;#inefficient-upgrading&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;Pacman manager so not specifically Manjaro.&lt;/p&gt;
+&lt;p&gt;I turn on the laptop after a couple months and the network folder no longer works. There were 2.1GB worth of updates so I decided to start upgrading.&lt;/p&gt;
+&lt;p&gt;After all the packages were downloading, for a couple minutes there were network errors due to the package manager hitting &lt;code&gt;http://mirror.ragenetwork.de&lt;/code&gt; &amp;ldquo;name or service not known&amp;rdquo; errors. Why are packages not installed while downloading new packages? It&amp;rsquo;s inefficient.&lt;/p&gt;
+&lt;p&gt;Only after the packages were installed and a restart completed did the network drive start to work.&lt;/p&gt;
+&lt;h3 id=&#34;unintuitive-appearance-settings&#34; &gt;Unintuitive Appearance Settings
+&lt;span&gt;
+    &lt;a href=&#34;#unintuitive-appearance-settings&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;So I click appearance from the settings app and there is no option to change the wallpaper. Pretty dumb!&lt;/p&gt;
+&lt;h3 id=&#34;webcam&#34; &gt;Webcam
+&lt;span&gt;
+    &lt;a href=&#34;#webcam&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;The webcam does not work. Glitches with green.&lt;/p&gt;
+&lt;h2 id=&#34;nautilis-sucks&#34; &gt;Nautilis Sucks
+&lt;span&gt;
+    &lt;a href=&#34;#nautilis-sucks&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;I can&amp;rsquo;t create new files in the directory through a right click menu. I can&amp;rsquo;t access the right click menu if I&amp;rsquo;m using list mode and the folder is full of files. On Windows, a right click is applied on the folder if the file is not selected, but on Nautilis, too bad so sad, did you mean to right click a file? It&amp;rsquo;s not a big deal since the right click menu in Nautlis is only useful for accessing properties since its other features can be done using keyboard shortcuts (Ctrl +C, Ctrl + V, Ctrl +Shift+N).&lt;/p&gt;
+&lt;h2 id=&#34;zorin-os&#34; &gt;Zorin OS
+&lt;span&gt;
+    &lt;a href=&#34;#zorin-os&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;h3 id=&#34;firefox-home-page-overwritten-on-every-login&#34; &gt;Firefox Home Page Overwritten on Every Login
+&lt;span&gt;
+    &lt;a href=&#34;#firefox-home-page-overwritten-on-every-login&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;On Zorin OS, the home page is overwritten on every log in to &lt;a href=&#34;https://start.zorin.com/&#34;&gt;https://start.zorin.com/&lt;/a&gt; which uses Google primarily. Are they even paid by Google to do that?&lt;/p&gt;
+&lt;h2 id=&#34;nobara-kde&#34; &gt;Nobara KDE
+&lt;span&gt;
+    &lt;a href=&#34;#nobara-kde&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;When the laptop wakes from sleep, the cursor cannot be moved by the touchpad anymore. Online search yielded to disable &amp;ldquo;suspend&amp;rdquo; or &amp;ldquo;modern standby&amp;rdquo; but I couldn&amp;rsquo;t find those settings in the BIOS menu of a 2016 laptop (razer blade stealth).&lt;/p&gt;
+&lt;p&gt;Had to disable secure boot so I see a tpm error on every boot and need to press enter.&lt;/p&gt;
+&lt;h2 id=&#34;other-issues&#34; &gt;Other Issues
+&lt;span&gt;
+    &lt;a href=&#34;#other-issues&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;h3 id=&#34;canonical-and-snap-sucks&#34; &gt;Canonical and Snap Sucks
+&lt;span&gt;
+    &lt;a href=&#34;#canonical-and-snap-sucks&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;I cannot believe Ubuntu is promoted to newbies when snaps are the default distribution model. Snaps literally make apps slower. Gigabytes of wasted storage
+for slower apps. A linux desktop experience should rival Windows, it should not make you say &amp;ldquo;it&amp;rsquo;s okay because it&amp;rsquo;s not Windows.&amp;rdquo;
+The mentality that we need to live a worse life just because we get a free experience is the worst mentality ever.&lt;/p&gt;
+&lt;h3 id=&#34;no-ctrl-for-tabbing&#34; &gt;No Ctrl for Tabbing
+&lt;span&gt;
+    &lt;a href=&#34;#no-ctrl-for-tabbing&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;If Linux desktop is all about customization, why is it so damn difficult to replace Alt with Ctrl? Windows predates Linux, so this Alt + # shortcut should
+not be forced upon users. At least on Firefox there&amp;rsquo;s an extension to give us the behaviour that Chrome supports.&lt;/p&gt;
+&lt;h3 id=&#34;poor-cloud-storage-support&#34; &gt;Poor Cloud Storage Support
+&lt;span&gt;
+    &lt;a href=&#34;#poor-cloud-storage-support&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;Coming from Windows, I use OneDrive and MEGA. I do care about OneDrive since
+it has my personal files that I need backed up to the cloud. Where is the OneDrive support without using rsync which
+doesn&amp;rsquo;t work half the time? Also, for information, Mega and OneDrive work on macOS. Sure you can argue it&amp;rsquo;s up to the app developers, but there&amp;rsquo;s so many distros and packaging is a pain in the ass as a developer myself. I had to resort to distributing Python scripts because it was so annoying to distribute apps without requiring system permissions to install.&lt;/p&gt;
+&lt;h3 id=&#34;poor-installation-tutorials&#34; &gt;Poor Installation Tutorials
+&lt;span&gt;
+    &lt;a href=&#34;#poor-installation-tutorials&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;Just look at any tutorial for flashing an ISO. Generic tutorials tell you to use Rufus, an ugly and non-intuitive UI. Fedora has their own flash tool which looks nice but does not work on other distros.&lt;/p&gt;
+&lt;p&gt;I only found out about balenaEtcher, the most intuitive ISO flash tool by pure luck when searching for something other than flashing ISOs.&lt;/p&gt;
+&lt;p&gt;With Debian, the tutorials tell you to use free-[software] ISO and make it too complicated just to download the non-free-[software] ISO. Then there is the language used to describe ISO&amp;rsquo;s. CD: an ISO that lets you install Debian and requires internet. DVD: live distro no requiring an internet connection. I&amp;rsquo;ll get some guy in the comments nitpicking my interpretation but the Debian explanation is not succinct at all.&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;m speaking from the point of a practical user who also programs. I love keyboard shortcuts, automation, and aesthetic design. I used to dual boot Zorin OS and Windows on my laptop. I found that Zorin OS looked the nicest (at the time) but I also realized that the only reason I was able to install it was luck. I flashed the Zorin OS 15 ISO in 2020 and only had motivation to dual boot in 2021 when Zorin OS 16 was out. When I tried to install Zorin OS 15, I ran into an issue so instead of giving up I could just try installing 16 as the problem may have been patched.&lt;/p&gt;
+&lt;h3 id=&#34;cant-shutdowneasily&#34; &gt;Can&amp;rsquo;t Shutdown Easily
+&lt;span&gt;
+    &lt;a href=&#34;#cant-shutdowneasily&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;A great and Windows comparable Linux distro should require minimal changes and should have a tips section. For example it&amp;rsquo;s faster to shutdown using &amp;ldquo;Alt + F2 → poweroff&amp;rdquo; than it is to use your mouse or searching (not in the menu) for shutdown, clicking enter, pressing the right key, and pressing enter. Why is the default click cancel instead of Shut down? On Windows it&amp;rsquo;s just Alt + F4 on the desktop and an Enter.&lt;/p&gt;
+&lt;p&gt;One last head ache is the inability to launch commands from the address bar… I want the best of GUI and command line, not just a GUI and not just a terminal.&lt;/p&gt;
+&lt;h3 id=&#34;installing-custom-programs-is-aheadache&#34; &gt;Installing Custom Programs is a HEADACHE
+&lt;span&gt;
+    &lt;a href=&#34;#installing-custom-programs-is-aheadache&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;Applies to: Fedora&lt;/p&gt;
+&lt;p&gt;On Windows, installers don&amp;rsquo;t even need administrative privileges to install programs and they still show up in the startup menu, but lets look at the worst case, where the application is shipped as an archive which is equivalent on Linux when the application is not available on a centralized location.&lt;/p&gt;
+&lt;p&gt;The example I&amp;rsquo;ll be using is Discord. On Linux, first let&amp;rsquo;s download the .tar.gz, which will automatically be downloaded to the Downloads folder as intended. Yes on Debian, there is a .deb .
+On Windows the procedure for installing via zips, is extracting to a folder, moving that folder to a location like C:/CustomPrograms, creating a shortcut of the program (context menu), and moving the shortcut to Start Menu/Programs.&lt;/p&gt;
+&lt;p&gt;On Linux, we are lucky that Discord came with the shortcut equivalent of discord.desktop . I found out that the Linux equivalent for the application menu is /usr/share/applications.&lt;/p&gt;
+&lt;p&gt;Now that we can open up the file explorer easily (Super + E), where is the root folder (This PC on Windows) / ? For no reason, the root directory is not pinned on the left tab of the file explorer. You can do Ctrl + L, /, Enter to get to the root folder. It is much quicker to just type /usr/share/applications in the address bar but root access isn&amp;rsquo;t just required for this one folder.&lt;/p&gt;
+&lt;p&gt;I do not have the permission to paste files into the directory. So let me get this straight. By default, I have to get permission from myself (sudo) just to create a shortcut on the application menu? And not just that, Nautilis won&amp;rsquo;t even ask me for permission but will just tell me it lacks the permission? &amp;ldquo;Ask and you shall receive&amp;rdquo;, but I guess the author never heard of that one. They do this in the same of security, but I say I should be able to drink wine out of both the cup of Freedom and Security.&lt;/p&gt;
+&lt;p&gt;A normal user would simply give up at this point, torrent Windows (if money is a problem) and use it.&lt;/p&gt;
+&lt;h2 id=&#34;how-can-linux-distros-gainusers&#34; &gt;How Can Linux Distros Gain Users?
+&lt;span&gt;
+    &lt;a href=&#34;#how-can-linux-distros-gainusers&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;By ditching this philosophy that open source software can&amp;rsquo;t benefit from proprietary companies. By proprietary, I mean OEM&amp;rsquo;s.&lt;/p&gt;
+&lt;p&gt;Supporting QHD displays where users want to use 150% DPI rather than 100% or 200% DPI.&lt;/p&gt;
+&lt;p&gt;Linux Distros are not OEM ready and until they are not, they will never going to take off. Dell only released a developer laptop running Ubuntu, not a laptop for all users.
+My OEM strategy would be as follows:
+Make sure Wine is installed and auto configures upon first run. By auto configure I mean that wine should scale with the resolution and not use its own default resolution.
+Make sure word files and etc are editable by default and still save as docx. Improve the UI for LibreOffice.
+Make sure browsers work with the same shortcuts.
+Make sure users can install software from online with ease. Add a right click menu on tar files that will &amp;ldquo;install&amp;rdquo; the binaries in a tar.gz.
+Make sure keyboard shortcuts work and that nautilus works better not less than windows explorer. Windows explorer includes a shell, and is not just a file explorer!
+Make sure the store is not filled with duo are software. There were two versions of vs code when I tried to install vs code.&lt;/p&gt;
+&lt;p&gt;Fix grub so that it scales by the resolution of the software. I tried to edit grub but the font size never changed. The booting experience is arcane.&lt;/p&gt;
+&lt;p&gt;What else? Don&amp;rsquo;t disregard any users&amp;rsquo; opinion. Every opinion is valid and only when the feature/change would hurt other users can you actually disregard an opinion after careful thought.&lt;/p&gt;
+&lt;p&gt;Making it easier to support Linux as a developer.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Bash &amp; Linux Helpers</title>
+      <link>https://blog.elijahlopez.ca/posts/bash-helpers/</link>
+      <pubDate>Mon, 14 Feb 2022 14:06:30 -0500</pubDate>
+      
+      <guid>https://blog.elijahlopez.ca/posts/bash-helpers/</guid>
+      <description>&lt;p&gt;It seems that many article tutorials on &lt;code&gt;bash&lt;/code&gt; are ugly, are suboptimal, and are no straight forward.
+My goal is for this file to be a reference file whenever I need to do scripting after a long time.
+One important concept in bash, is that an exit code of 0 indicates True, not False. Which seems counterintuitive if you program in
+any non-scripting language like C/C++ or Python.&lt;/p&gt;
+&lt;h2 id=&#34;bash---argument-parsing-and-flags&#34; &gt;Bash - Argument Parsing and Flags
+&lt;span&gt;
+    &lt;a href=&#34;#bash---argument-parsing-and-flags&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;If you don&amp;rsquo;t get what&amp;rsquo;s going on, read my &lt;a href=&#34;https://blog.elijahlopez.ca/posts/bash-quickstart.md&#34;&gt;bash quickstart article&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;concepts&#34; &gt;Concepts
+&lt;span&gt;
+    &lt;a href=&#34;#concepts&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;getopts is overkill, so here is an alternative.&lt;/li&gt;
+&lt;li&gt;&amp;ldquo;Booleans&amp;rdquo; using string comparison&lt;/li&gt;
+&lt;li&gt;Conditionals (if, elif, else, AND &amp;amp;&amp;amp;, OR ||)&lt;/li&gt;
+&lt;li&gt;For loop&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#40ffff&#34;&gt;supplied_arg&lt;/span&gt;=&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;default&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# iterate all arguments&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;for&lt;/span&gt; arg in &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#40ffff&#34;&gt;$@&lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;&lt;/span&gt;; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;do&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# use [[ ]] to avoid double quoting variables&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;if&lt;/span&gt; [[ &lt;span style=&#34;color:#40ffff&#34;&gt;$last_arg&lt;/span&gt; = &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;--supply&amp;#34;&lt;/span&gt; ]]; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;then&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#40ffff&#34;&gt;supplied_arg&lt;/span&gt;=&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#40ffff&#34;&gt;$arg&lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#40ffff&#34;&gt;last_arg&lt;/span&gt;=&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# OR ||&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;elif&lt;/span&gt; [[ &lt;span style=&#34;color:#40ffff&#34;&gt;$arg&lt;/span&gt; = &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;--flag1&amp;#34;&lt;/span&gt; ]] || [[ &lt;span style=&#34;color:#40ffff&#34;&gt;$arg&lt;/span&gt; = &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;--flag&amp;#34;&lt;/span&gt; ]]; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;then&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#40ffff&#34;&gt;flag1&lt;/span&gt;=&lt;span style=&#34;color:#24909d&#34;&gt;true&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# elif, AND &amp;amp;&amp;amp;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;elif&lt;/span&gt; [[ &lt;span style=&#34;color:#40ffff&#34;&gt;$arg&lt;/span&gt; = &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;--override&amp;#34;&lt;/span&gt; ]] &amp;amp;&amp;amp; [[ ! &lt;span style=&#34;color:#40ffff&#34;&gt;$supplied_arg&lt;/span&gt; = &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;default&amp;#34;&lt;/span&gt; ]]; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;then&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# ignore the redundancy, this is to showcase &amp;amp;&amp;amp;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#40ffff&#34;&gt;flag_override&lt;/span&gt;=&lt;span style=&#34;color:#24909d&#34;&gt;true&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;else&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# you can do something with these args here&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# wc -l &amp;#34;$arg&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# or you can set last_arg in order to parse `--something ARG`&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#40ffff&#34;&gt;last_arg&lt;/span&gt;=&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#40ffff&#34;&gt;$arg&lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# end of if statement&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;fi&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# done loop (for or while)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;done&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# check if flag supplied&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;if&lt;/span&gt; [ &lt;span style=&#34;color:#40ffff&#34;&gt;flag1&lt;/span&gt; = true]; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;then&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#24909d&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;got --flag1 or --flag&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;else&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#40ffff&#34;&gt;notGot&lt;/span&gt;=&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;got neither --flag1 nor --flag&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;fi&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# flag not supplied (since variable was never set, we check ! = true rather than = false)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;if&lt;/span&gt; [ ! &lt;span style=&#34;color:#40ffff&#34;&gt;flag1&lt;/span&gt; = &lt;span style=&#34;color:#24909d&#34;&gt;true&lt;/span&gt; ]; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;then&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#24909d&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color:#40ffff&#34;&gt;$notGot&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;fi&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;linux---add-to-path&#34; &gt;Linux - Add to PATH
+&lt;span&gt;
+    &lt;a href=&#34;#linux---add-to-path&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;A better approach than appending a statement to &lt;code&gt;PATH=&amp;quot;$PATH:/new/path&amp;quot;&amp;gt;&amp;gt; ~/.bashrc&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;TODO: add instructions&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;linux---add-cronjob&#34; &gt;Linux - Add Cronjob
+&lt;span&gt;
+    &lt;a href=&#34;#linux---add-cronjob&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;automated approach&lt;/li&gt;
+&lt;li&gt;adds the cronjob if not exists&lt;/li&gt;
+&lt;li&gt;prevents concurrent/overlap runs&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;add_cronjob() {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# crontab will not set the working directory&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# create locks directory if it does not exist&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    mkdir -p ~/locks
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# my sample job uses flock to prevent overlapping runs&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# minute hour day month day_of_week&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# /X means divisible by X&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#40ffff&#34;&gt;cronjob&lt;/span&gt;=&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;*/1 * * * * flock -n ~/locks/auto_deploy_&lt;/span&gt;&lt;span style=&#34;color:#40ffff&#34;&gt;$PROJECT&lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;.lock &lt;/span&gt;&lt;span style=&#34;color:#40ffff&#34;&gt;$PYTHON&lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;$(&lt;/span&gt;&lt;span style=&#34;color:#24909d&#34;&gt;pwd&lt;/span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;/cronjob.py&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# cronjob.py will set the working directory&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;if&lt;/span&gt; ! crontab -l &amp;amp;&amp;gt;/dev/null; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;then&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# crontab file does not exist&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#24909d&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#40ffff&#34;&gt;$cronjob&lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;&lt;/span&gt; | crontab -
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#24909d&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;Created new crontab with job&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;elif&lt;/span&gt; ! crontab -l 2&amp;gt;/dev/null | grep -Fq &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#40ffff&#34;&gt;$cronjob&lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;&lt;/span&gt;; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;then&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# job not found in crontab&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#24909d&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;$(&lt;/span&gt;crontab -l ; &lt;span style=&#34;color:#24909d&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#40ffff&#34;&gt;$cronjob&lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;)&lt;/span&gt; | crontab -
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#24909d&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;Added &lt;/span&gt;&lt;span style=&#34;color:#40ffff&#34;&gt;$cronjob&lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt; ... to existing crontab&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;else&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#24909d&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;Job already exists in crontab&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;fi&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;linux---add-systemd-service&#34; &gt;Linux - Add Systemd Service
+&lt;span&gt;
+    &lt;a href=&#34;#linux---add-systemd-service&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;I used lots of echos and tee [-a]&lt;/li&gt;
+&lt;li&gt;In order to work with spaces in an argument, I created strings with &lt;code&gt;\&#39;$VAR\&#39;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;TODO: add code&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;linux---auto-setup-certbot&#34; &gt;Linux - Auto Setup Certbot
+&lt;span&gt;
+    &lt;a href=&#34;#linux---auto-setup-certbot&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# Context:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# define $DOMAIN (e.g. lenerva.com)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;install_certbot() {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    sudo snap install core; sudo snap refresh core
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    sudo snap install --classic certbot
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    sudo ln -s /snap/bin/certbot /usr/bin/certbot
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    sudo certbot --nginx -d &lt;span style=&#34;color:#40ffff&#34;&gt;$DOMAIN&lt;/span&gt; -d www.&lt;span style=&#34;color:#40ffff&#34;&gt;$DOMAIN&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;linux---auto-configure-nginx---gunicorn&#34; &gt;Linux - Auto Configure NGINX - Gunicorn
+&lt;span&gt;
+    &lt;a href=&#34;#linux---auto-configure-nginx---gunicorn&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;This works for me but it is possible to fail for you without editing &lt;code&gt;/etc/nginx/nginx.conf&lt;/code&gt; manually server name hashes to 128&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# Context:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# define $DOMAIN beforehand (e.g. lenerva.com)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# define $PROJECT beforehand (e.g. my-project)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# pwd is currently the project root directory&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;configure_nginx() {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# configure nginx&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    sudo apt install nginx -y
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    sudo mkdir -p /var/www/&lt;span style=&#34;color:#40ffff&#34;&gt;$DOMAIN&lt;/span&gt;/html
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    sudo chown -R &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#40ffff&#34;&gt;$USER&lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;&lt;/span&gt;:&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#40ffff&#34;&gt;$USER&lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;&lt;/span&gt; /var/www/&lt;span style=&#34;color:#40ffff&#34;&gt;$DOMAIN&lt;/span&gt;/html
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    sudo chmod -R &lt;span style=&#34;color:#3677a9&#34;&gt;755&lt;/span&gt; /var/www/&lt;span style=&#34;color:#40ffff&#34;&gt;$DOMAIN&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#24909d&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;server {&amp;#34;&lt;/span&gt; | sudo tee /etc/nginx/sites-available/&lt;span style=&#34;color:#40ffff&#34;&gt;$PROJECT&lt;/span&gt; &amp;gt;/dev/null
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#24909d&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;  listen [::]:80;&amp;#34;&lt;/span&gt; | sudo tee -a /etc/nginx/sites-available/&lt;span style=&#34;color:#40ffff&#34;&gt;$PROJECT&lt;/span&gt; &amp;gt;/dev/null
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#24909d&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;  listen 80;&amp;#34;&lt;/span&gt; | sudo tee -a /etc/nginx/sites-available/&lt;span style=&#34;color:#40ffff&#34;&gt;$PROJECT&lt;/span&gt; &amp;gt;/dev/null
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#24909d&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;  location / {&amp;#34;&lt;/span&gt; | sudo tee -a /etc/nginx/sites-available/&lt;span style=&#34;color:#40ffff&#34;&gt;$PROJECT&lt;/span&gt; &amp;gt;/dev/null
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#24909d&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;    include proxy_params;&amp;#34;&lt;/span&gt; | sudo tee -a /etc/nginx/sites-available/&lt;span style=&#34;color:#40ffff&#34;&gt;$PROJECT&lt;/span&gt; &amp;gt;/dev/null
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#24909d&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;    proxy_pass http://unix:&lt;/span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;$(&lt;/span&gt;&lt;span style=&#34;color:#24909d&#34;&gt;pwd&lt;/span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;/gunicorn.sock;&amp;#34;&lt;/span&gt; | sudo tee -a /etc/nginx/sites-available/&lt;span style=&#34;color:#40ffff&#34;&gt;$PROJECT&lt;/span&gt; &amp;gt;/dev/null
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#24909d&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;  }&amp;#34;&lt;/span&gt; | sudo tee -a /etc/nginx/sites-available/&lt;span style=&#34;color:#40ffff&#34;&gt;$PROJECT&lt;/span&gt; &amp;gt;/dev/null
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#24909d&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;}&amp;#34;&lt;/span&gt; | sudo tee -a /etc/nginx/sites-available/&lt;span style=&#34;color:#40ffff&#34;&gt;$PROJECT&lt;/span&gt; &amp;gt;/dev/null
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    sudo ln -s &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;/etc/nginx/sites-available/&lt;/span&gt;&lt;span style=&#34;color:#40ffff&#34;&gt;$PROJECT&lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;&lt;/span&gt; /etc/nginx/sites-enabled
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# TODO: if publishing script, also set max server name hashes to 128 in /etc/nginx/nginx.conf&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# uncomment below if it didn&amp;#39;t work&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# nano /etc/nginx/nginx.conf&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    sudo systemctl restart nginx
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# Firewall&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    sudo ufw allow &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;Nginx Full&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

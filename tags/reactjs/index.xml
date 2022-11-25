@@ -1,0 +1,551 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Reactjs on ELL Blog</title>
+    <link>https://blog.elijahlopez.ca/tags/reactjs/</link>
+    <description>ELL Blog (Reactjs)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 24 Dec 2022 10:45:01 -0500</lastBuildDate>
+    
+    <atom:link href="https://blog.elijahlopez.ca/tags/reactjs/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Tauri Custom Titlebar (React)</title>
+      <link>https://blog.elijahlopez.ca/posts/tauri-custom-titlebar/</link>
+      <pubDate>Sat, 24 Dec 2022 10:45:01 -0500</pubDate>
+      
+      <guid>https://blog.elijahlopez.ca/posts/tauri-custom-titlebar/</guid>
+      <description>&lt;p&gt;This tutorial is based on Part 12 of my Tauri &amp;amp; ReactJS series.&lt;/p&gt;
+
+
+    
+    &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen=&#34;allowfullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/zONyCMTUwsI?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;
+      &gt;&lt;/iframe&gt;
+    &lt;/div&gt;
+
+&lt;p&gt;In this article, I&amp;rsquo;ll show you how I implemented custom titlebars for my Tauri apps. I&amp;rsquo;ll start off with an overview for
+what&amp;rsquo;s required.&lt;/p&gt;
+&lt;p&gt;The source code can be found &lt;a href=&#34;https://github.com/elibroftw/modern-desktop-app-template&#34;&gt;here&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Tauri APIs&lt;/li&gt;
+&lt;li&gt;Coding &lt;code&gt;Titlebar.jsx&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;How to get the translations for the window control tooltips&lt;/li&gt;
+&lt;li&gt;Enabling/disabling the native &amp;amp; custom titlebar based on the Operating System and if in fullscreen&lt;/li&gt;
+&lt;li&gt;Using &lt;code&gt;simplebar&lt;/code&gt; so that scrollbars are not beside the titlebar&lt;/li&gt;
+&lt;li&gt;Using &lt;code&gt;window-shadows&lt;/code&gt; crate to ensure rounded corners on Windows 11&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div&gt;
+    &lt;h2&gt;Table of Contents&lt;/h2&gt;
+    &lt;nav id=&#34;TableOfContents&#34;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&#34;#packagejson&#34;&gt;package.json&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#tauri-apis&#34;&gt;Tauri APIs&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#titlebarjsx&#34;&gt;Titlebar.jsx&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#i18njs&#34;&gt;i18n.js&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#how-to-use-titlebarjsx-effectively&#34;&gt;How to use Titlebar.jsx effectively&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#windows-11-rounded-corners&#34;&gt;Windows 11 Rounded Corners&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#conclusion&#34;&gt;Conclusion&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;packagejson&#34; &gt;package.json
+&lt;span&gt;
+    &lt;a href=&#34;#packagejson&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;The react libraries used are &lt;code&gt;@mantine/hooks&lt;/code&gt;, &lt;code&gt;react-i18next&lt;/code&gt;, &lt;code&gt;simplebar-react&lt;/code&gt;, &lt;code&gt;react-icons&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;I also use a styling library, &lt;code&gt;@mantine/core&lt;/code&gt;, but it&amp;rsquo;s not a hard requirement for a custom titlebar.&lt;/p&gt;
+&lt;h2 id=&#34;tauri-apis&#34; &gt;Tauri APIs
+&lt;span&gt;
+    &lt;a href=&#34;#tauri-apis&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;details&gt;
+&lt;summary&gt;src-tauri/tauri.conf.json: Enable window APIs&lt;/summary&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// ...
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;&amp;#34;tauri&amp;#34;&lt;/span&gt;: {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// ...
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;&lt;/span&gt;        &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;&amp;#34;allowlist&amp;#34;&lt;/span&gt;: {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// ...
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;&lt;/span&gt;            &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;&amp;#34;window&amp;#34;&lt;/span&gt;: {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// ...
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;&lt;/span&gt;                    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;&amp;#34;close&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;true&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;&amp;#34;maximize&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;true&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;&amp;#34;minimize&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;true&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;&amp;#34;setDecorations&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;true&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;&amp;#34;startDragging&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;true&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;&amp;#34;unmaximize&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;true&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;&amp;#34;unminimize&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;true&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/details&gt;
+&lt;details&gt;
+&lt;summary&gt;src-tauri/tauri.windows.conf.json: disable decorations by default on Windows&lt;/summary&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;&amp;#34;tauri&amp;#34;&lt;/span&gt;: {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;&amp;#34;windows&amp;#34;&lt;/span&gt;: [
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// copy window details from tauri.conf.json
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;&lt;/span&gt;                &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;&amp;#34;decorations&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;false&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;              }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        ]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/details&gt;
+&lt;h2 id=&#34;titlebarjsx&#34; &gt;Titlebar.jsx
+&lt;span&gt;
+    &lt;a href=&#34;#titlebarjsx&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;NOTE: This is a Windows replica. This article does not support custom Mac titlebars since I don&amp;rsquo;t own a Mac and thus cannot
+replicate it so easily.&lt;/p&gt;
+&lt;p&gt;Create a &lt;code&gt;src/Component/Titlebar.jsx&lt;/code&gt; where we will create a component that works in a plug and play manner.&lt;/p&gt;
+&lt;p&gt;You can modify this component to either use a different UI/styling library as well as to change the default title.
+In a future version of Tauri, the Titlebar will automatically synchronize the title (if you need synching asap for a
+production app, use a tauri version from a git revision rather than creates.io).&lt;/p&gt;
+&lt;p&gt;There is some code commented out if you want the title to be in the center rather than the left side.
+The styling was hand picked, especially the reds used for the close button.
+If you want to, you can remove or replace the Menu that shows up when you hover the app icon.&lt;/p&gt;
+&lt;details&gt;
+&lt;summary&gt;Code&lt;/summary&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-jsx&#34; data-lang=&#34;jsx&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;import&lt;/span&gt; { createStyles, Menu, Text, UnstyledButton } from &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;@mantine/core&amp;#39;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;import&lt;/span&gt; { useInterval } from &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;@mantine/hooks&amp;#39;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;import&lt;/span&gt; { appWindow } from &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;@tauri-apps/api/window&amp;#39;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;import&lt;/span&gt; { useEffect, useState } from &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;react&amp;#39;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;import&lt;/span&gt; { useTranslation } from &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;react-i18next&amp;#39;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;import&lt;/span&gt; { VscChromeClose, VscChromeMaximize, VscChromeMinimize, VscChromeRestore } from &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;react-icons/vsc&amp;#39;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;import&lt;/span&gt; AppIcon from &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;../../src-tauri/icons/32x32.png&amp;#39;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;function&lt;/span&gt; Titlebar() {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;const&lt;/span&gt; { t } = useTranslation();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;const&lt;/span&gt; { classes } = getTitleBarStyles();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;const&lt;/span&gt; [maximized, setMaximized] = useState(&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;false&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;const&lt;/span&gt; [fullscreen, setFullscreen] = useState(&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;false&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;const&lt;/span&gt; [windowTitle, setWindowTitle] = useState(&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;TitleBar.jsx Title&amp;#39;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;const&lt;/span&gt; tauriInterval = useInterval(() =&amp;gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        appWindow.isMaximized().then(setMaximized);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        appWindow.isFullscreen().then(setFullscreen);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        appWindow.title().then(setWindowTitle);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }, &lt;span style=&#34;color:#3677a9&#34;&gt;200&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    useEffect(() =&amp;gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        tauriInterval.start();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;return&lt;/span&gt; tauriInterval.stop;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }, []);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;return&lt;/span&gt; !fullscreen &amp;amp;&amp;amp; &amp;lt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;div&lt;/span&gt; &lt;span style=&#34;color:#bbb&#34;&gt;data&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;tauri&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;drag&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;region&lt;/span&gt; &lt;span style=&#34;color:#bbb&#34;&gt;className&lt;/span&gt;={classes.titlebar}&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &amp;lt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;div&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            {&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;/* window icon */&lt;/span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &amp;lt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;Menu&lt;/span&gt; &lt;span style=&#34;color:#bbb&#34;&gt;shadow&lt;/span&gt;=&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;md&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#bbb&#34;&gt;width&lt;/span&gt;={&lt;span style=&#34;color:#3677a9&#34;&gt;200&lt;/span&gt;}&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &amp;lt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;Menu.Target&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    &amp;lt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;UnstyledButton&lt;/span&gt; &lt;span style=&#34;color:#bbb&#34;&gt;style&lt;/span&gt;={{ cursor: &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;default&amp;#39;&lt;/span&gt; }}&amp;gt;&amp;lt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;img&lt;/span&gt; &lt;span style=&#34;color:#bbb&#34;&gt;className&lt;/span&gt;={classes.titlebarIcon} &lt;span style=&#34;color:#bbb&#34;&gt;height&lt;/span&gt;={&lt;span style=&#34;color:#3677a9&#34;&gt;16&lt;/span&gt;} &lt;span style=&#34;color:#bbb&#34;&gt;src&lt;/span&gt;={AppIcon} /&amp;gt;&amp;lt;/&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;UnstyledButton&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &amp;lt;/&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;Menu.Target&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &amp;lt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;Menu.Dropdown&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    &amp;lt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;Menu.Item&lt;/span&gt; &lt;span style=&#34;color:#bbb&#34;&gt;onClick&lt;/span&gt;={() =&amp;gt; appWindow.minimize()} &lt;span style=&#34;color:#bbb&#34;&gt;icon&lt;/span&gt;={&amp;lt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;VscChromeMinimize&lt;/span&gt; &lt;span style=&#34;color:#bbb&#34;&gt;size&lt;/span&gt;={&lt;span style=&#34;color:#3677a9&#34;&gt;14&lt;/span&gt;} /&amp;gt;}&amp;gt;{t(&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;Minimize&amp;#39;&lt;/span&gt;)}&amp;lt;/&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;Menu.Item&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    {maximized ?
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                        &amp;lt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;Menu.Item&lt;/span&gt; &lt;span style=&#34;color:#bbb&#34;&gt;onClick&lt;/span&gt;={() =&amp;gt; appWindow.toggleMaximize()} &lt;span style=&#34;color:#bbb&#34;&gt;icon&lt;/span&gt;={&amp;lt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;VscChromeRestore&lt;/span&gt; &lt;span style=&#34;color:#bbb&#34;&gt;size&lt;/span&gt;={&lt;span style=&#34;color:#3677a9&#34;&gt;14&lt;/span&gt;} /&amp;gt;}&amp;gt;{t(&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;Restore Down&amp;#39;&lt;/span&gt;)}&amp;lt;/&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;Menu.Item&lt;/span&gt;&amp;gt; :
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                        &amp;lt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;Menu.Item&lt;/span&gt; &lt;span style=&#34;color:#bbb&#34;&gt;onClick&lt;/span&gt;={() =&amp;gt; appWindow.toggleMaximize()} &lt;span style=&#34;color:#bbb&#34;&gt;icon&lt;/span&gt;={&amp;lt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;VscChromeMaximize&lt;/span&gt; &lt;span style=&#34;color:#bbb&#34;&gt;size&lt;/span&gt;={&lt;span style=&#34;color:#3677a9&#34;&gt;14&lt;/span&gt;} /&amp;gt;}&amp;gt;{t(&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;Maximize&amp;#39;&lt;/span&gt;)}&amp;lt;/&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;Menu.Item&lt;/span&gt;&amp;gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    &amp;lt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;Menu.Divider&lt;/span&gt; /&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    &amp;lt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;Menu.Item&lt;/span&gt; &lt;span style=&#34;color:#bbb&#34;&gt;onClick&lt;/span&gt;={() =&amp;gt; appWindow.close()} &lt;span style=&#34;color:#bbb&#34;&gt;icon&lt;/span&gt;={&amp;lt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;VscChromeClose&lt;/span&gt; &lt;span style=&#34;color:#bbb&#34;&gt;size&lt;/span&gt;={&lt;span style=&#34;color:#3677a9&#34;&gt;14&lt;/span&gt;} /&amp;gt;} &lt;span style=&#34;color:#bbb&#34;&gt;rightSection&lt;/span&gt;={
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                        &amp;lt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;Text&lt;/span&gt; &lt;span style=&#34;color:#bbb&#34;&gt;weight&lt;/span&gt;=&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;bold&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#bbb&#34;&gt;size&lt;/span&gt;=&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;xs&amp;#39;&lt;/span&gt;&amp;gt;Alt + F4&amp;lt;/&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;Text&lt;/span&gt;&amp;gt;}&amp;gt;{t(&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;Close&amp;#39;&lt;/span&gt;)}&amp;lt;/&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;Menu.Item&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &amp;lt;/&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;Menu.Dropdown&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &amp;lt;/&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;Menu&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            {&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;/* left window title */&lt;/span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &amp;lt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;Text&lt;/span&gt; &lt;span style=&#34;color:#bbb&#34;&gt;data&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;tauri&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;drag&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;region&lt;/span&gt; &lt;span style=&#34;color:#bbb&#34;&gt;inline&lt;/span&gt; &lt;span style=&#34;color:#bbb&#34;&gt;className&lt;/span&gt;={classes.titlebarLabel} &lt;span style=&#34;color:#bbb&#34;&gt;size&lt;/span&gt;=&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;xs&amp;#39;&lt;/span&gt;&amp;gt;{windowTitle}&amp;lt;/&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;Text&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &amp;lt;/&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;div&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        {&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;/* center window title */&lt;/span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        {&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;/* &amp;lt;Text data-tauri-drag-region inline className={classes.titlebarLabel} size=&amp;#39;xs&amp;#39;&amp;gt;{windowTitle}&amp;lt;/Text&amp;gt; */&lt;/span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &amp;lt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;div&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            {&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;/* window icons */&lt;/span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &amp;lt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;div&lt;/span&gt; &lt;span style=&#34;color:#bbb&#34;&gt;title&lt;/span&gt;={t(&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;Minimize&amp;#39;&lt;/span&gt;)} &lt;span style=&#34;color:#bbb&#34;&gt;className&lt;/span&gt;={classes.titlebarButton} &lt;span style=&#34;color:#bbb&#34;&gt;onClick&lt;/span&gt;={() =&amp;gt; appWindow.minimize()}&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &amp;lt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;VscChromeMinimize&lt;/span&gt; &lt;span style=&#34;color:#bbb&#34;&gt;className&lt;/span&gt;={classes.verticalAlign} /&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &amp;lt;/&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;div&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            {maximized ?
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &amp;lt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;div&lt;/span&gt; &lt;span style=&#34;color:#bbb&#34;&gt;title&lt;/span&gt;={t(&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;Restore Down&amp;#39;&lt;/span&gt;)} &lt;span style=&#34;color:#bbb&#34;&gt;className&lt;/span&gt;={classes.titlebarButton} &lt;span style=&#34;color:#bbb&#34;&gt;onClick&lt;/span&gt;={() =&amp;gt; appWindow.toggleMaximize()}&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    &amp;lt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;VscChromeRestore&lt;/span&gt; &lt;span style=&#34;color:#bbb&#34;&gt;className&lt;/span&gt;={classes.verticalAlign} /&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &amp;lt;/&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;div&lt;/span&gt;&amp;gt; :
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &amp;lt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;div&lt;/span&gt; &lt;span style=&#34;color:#bbb&#34;&gt;title&lt;/span&gt;={t(&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;Maximize&amp;#39;&lt;/span&gt;)} &lt;span style=&#34;color:#bbb&#34;&gt;className&lt;/span&gt;={classes.titlebarButton} &lt;span style=&#34;color:#bbb&#34;&gt;onClick&lt;/span&gt;={() =&amp;gt; appWindow.toggleMaximize()}&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    &amp;lt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;VscChromeMaximize&lt;/span&gt; &lt;span style=&#34;color:#bbb&#34;&gt;className&lt;/span&gt;={classes.verticalAlign} /&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &amp;lt;/&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;div&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &amp;lt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;div&lt;/span&gt; &lt;span style=&#34;color:#bbb&#34;&gt;title&lt;/span&gt;={t(&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;Close&amp;#39;&lt;/span&gt;)} &lt;span style=&#34;color:#bbb&#34;&gt;className&lt;/span&gt;={&lt;span style=&#34;color:#ed9d13&#34;&gt;`&lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;${&lt;/span&gt;classes.titlebarClose&lt;span style=&#34;color:#ed9d13&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;${&lt;/span&gt;classes.titlebarButton&lt;span style=&#34;color:#ed9d13&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;`&lt;/span&gt;} &lt;span style=&#34;color:#bbb&#34;&gt;onClick&lt;/span&gt;={() =&amp;gt; appWindow.close()}&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &amp;lt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;VscChromeClose&lt;/span&gt; &lt;span style=&#34;color:#bbb&#34;&gt;className&lt;/span&gt;={classes.verticalAlign} /&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &amp;lt;/&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;div&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &amp;lt;/&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;div&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &amp;lt;/&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;div&lt;/span&gt;&amp;gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;const&lt;/span&gt; getTitleBarStyles = createStyles(theme =&amp;gt; ({
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    titlebarIcon: {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        marginLeft: &lt;span style=&#34;color:#3677a9&#34;&gt;5&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        verticalAlign: &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;bottom&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        filter: theme.colorScheme === &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;dark&amp;#39;&lt;/span&gt; ? &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt; : &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;grayscale(100%) contrast(0)&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    },
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    verticalAlign: {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        verticalAlign: &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;middle&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    },
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    titlebarLabel: {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        display: &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;inline&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        marginLeft: &lt;span style=&#34;color:#3677a9&#34;&gt;5&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// marginLeft: 46 * 3 - 16 - 7.5  // for center labels
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;&lt;/span&gt;        lineHeight: &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;30px&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    },
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    titlebar: {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        height: &lt;span style=&#34;color:#3677a9&#34;&gt;30&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        background: theme.colorScheme === &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;dark&amp;#39;&lt;/span&gt; ? theme.colors.dark[&lt;span style=&#34;color:#3677a9&#34;&gt;8&lt;/span&gt;] : theme.colors.gray[&lt;span style=&#34;color:#3677a9&#34;&gt;1&lt;/span&gt;],
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// background: theme.colorScheme === &amp;#39;dark&amp;#39; ? theme.colors.dark[7] : &amp;#39;white&amp;#39;,
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;&lt;/span&gt;        display: &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;flex&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        justifyContent: &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;space-between&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        position: &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;fixed&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        userSelect: &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;none&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        top: &lt;span style=&#34;color:#3677a9&#34;&gt;0&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        left: &lt;span style=&#34;color:#3677a9&#34;&gt;0&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        right: &lt;span style=&#34;color:#3677a9&#34;&gt;0&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        zIndex: &lt;span style=&#34;color:#3677a9&#34;&gt;1000&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;&amp;gt;div:nth-of-type(2)&amp;#39;&lt;/span&gt;: {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            display: &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;flex&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            justifyContent: &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;flex-end&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    },
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    titlebarButton: {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        transitionDuration: &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;200ms&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        display: &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;inline-flex&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        justifyContent: &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;center&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        alignItems: &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;center&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;&amp;gt;svg&amp;#39;&lt;/span&gt;: {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            fill: theme.colorScheme === &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;dark&amp;#39;&lt;/span&gt; ? &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;white&amp;#39;&lt;/span&gt; : &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;black&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        },
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        width: &lt;span style=&#34;color:#3677a9&#34;&gt;46&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        height: &lt;span style=&#34;color:#3677a9&#34;&gt;30&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;&amp;amp;:hover&amp;#39;&lt;/span&gt;: {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            background: theme.colorScheme === &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;dark&amp;#39;&lt;/span&gt; ? theme.colors.dark[&lt;span style=&#34;color:#3677a9&#34;&gt;5&lt;/span&gt;] : theme.colors.gray[&lt;span style=&#34;color:#3677a9&#34;&gt;3&lt;/span&gt;],
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;&amp;amp;:active&amp;#39;&lt;/span&gt;: {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                background: theme.colorScheme === &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;dark&amp;#39;&lt;/span&gt; ? theme.colors.dark[&lt;span style=&#34;color:#3677a9&#34;&gt;4&lt;/span&gt;] : theme.colors.gray[&lt;span style=&#34;color:#3677a9&#34;&gt;4&lt;/span&gt;],
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    },
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    titlebarClose: {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;&amp;amp;:hover&amp;#39;&lt;/span&gt;: {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            background: &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;#e81123&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;&amp;gt;svg&amp;#39;&lt;/span&gt;: {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                fill: &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;white&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            },
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;&amp;amp;:active&amp;#39;&lt;/span&gt;: {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                background: theme.colorScheme === &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;dark&amp;#39;&lt;/span&gt; ? &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;#8b0a14&amp;#39;&lt;/span&gt; : &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;#f1707a&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}));
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/details&gt;
+&lt;h2 id=&#34;i18njs&#34; &gt;i18n.js
+&lt;span&gt;
+    &lt;a href=&#34;#i18njs&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;To get the translations for the buttons in another language, do not use Google translate. Rather, change the display language for Windows and after logging back in hover the window control buttons
+of native Windows applications. I did this for French (Canadian) and got the following. Google Translate gave something different for Maximize and Restore down.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;fr: {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    translations: {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;Minimize&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;Réduire&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;Maximize&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;Agrandir&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;Restore Down&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;Niveau inf.&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;Close&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;Fermer&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;how-to-use-titlebarjsx-effectively&#34; &gt;How to use Titlebar.jsx effectively
+&lt;span&gt;
+    &lt;a href=&#34;#how-to-use-titlebarjsx-effectively&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;To use the titlebar effectively, we need to first determine at runtime if we are using a custom titlebar or not.
+We also need to use scrollbars for inner components and disable the scrollbar for the entire window. Otherwise
+the scrollbar will show up beside the custom titlebar.&lt;/p&gt;
+&lt;p&gt;In &lt;code&gt;src/App.jsx&lt;/code&gt; I have the following code. &lt;a href=&#34;https://github.com/elibroftw/modern-desktop-app-template/blob/master/src/TauriProvider.jsx&#34;&gt;src/TauriProvider.jsx implementation&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-jsx&#34; data-lang=&#34;jsx&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;import&lt;/span&gt; { useState, useEffect, useRef } from &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;react&amp;#39;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;import&lt;/span&gt; SimpleBar from &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;simplebar-react&amp;#39;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;simplebar/dist/simplebar.min.css&amp;#39;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;import&lt;/span&gt; { Titlebar } from &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;./Components/Titlebar&amp;#39;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;import&lt;/span&gt; { useInterval } from &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;@mantine/hooks&amp;#39;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;import&lt;/span&gt; { appWindow } from &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;@tauri-apps/api/window&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;import&lt;/span&gt; { useTauriContext } from &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;./TauriProvider&amp;#39;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;import&lt;/span&gt; { WIN32_CUSTOM_TITLEBAR } from &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;./utils&amp;#39;&lt;/span&gt;;  &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// this is a constant set to true
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// ...
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;&lt;/span&gt;   &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// use the custom title bar only on Windows
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;&lt;/span&gt;  &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;const&lt;/span&gt; { osType } = useTauriContext();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  useEffect(() =&amp;gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;if&lt;/span&gt; (osType === &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;Windows_NT&amp;#39;&lt;/span&gt;) appWindow.setDecorations(!WIN32_CUSTOM_TITLEBAR);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  }, [osType]);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// hide titlebar in fullscreen
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;&lt;/span&gt;  &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;const&lt;/span&gt; [fullscreen, setFullscreen] = useState(&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;false&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;const&lt;/span&gt; tauriInterval = useInterval(() =&amp;gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    appWindow.isFullscreen().then(setFullscreen);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  }, &lt;span style=&#34;color:#3677a9&#34;&gt;200&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  useEffect(() =&amp;gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    tauriInterval.start();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;return&lt;/span&gt; tauriInterval.stop
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  }, []);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// use this variable like so &amp;lt;COMPONENT className={using_custom_titlebar ? classes.titlebarMargin : &amp;#39;&amp;#39;} /&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;&lt;/span&gt;  &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;const&lt;/span&gt; using_custom_titlebar = !fullscreen &amp;amp;&amp;amp; osType === &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;Windows_NT&amp;#39;&lt;/span&gt; &amp;amp;&amp;amp; WIN32_CUSTOM_TITLEBAR;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// ...
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;&lt;/span&gt;  &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;const&lt;/span&gt; scrollbar = useRef(); &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// pass this into a Scroll to top component
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;&lt;/span&gt;  &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;return&lt;/span&gt; &amp;lt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        {using_custom_titlebar &amp;amp;&amp;amp; &amp;lt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;Titlebar&lt;/span&gt; /&amp;gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        {&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;/* if you are using mantine, set dynamic global styles for  the custom scrollbar*/&lt;/span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        {&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;/* &amp;lt;Global styles={titlebarOverrides} /&amp;gt; */&lt;/span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &amp;lt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;SimpleBar&lt;/span&gt; &lt;span style=&#34;color:#bbb&#34;&gt;scrollableNodeProps&lt;/span&gt;={{ref: scrollbar}} &lt;span style=&#34;color:#bbb&#34;&gt;autoHide&lt;/span&gt;={&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;false&lt;/span&gt;} &lt;span style=&#34;color:#bbb&#34;&gt;className&lt;/span&gt;={classes.simpleBar}&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            {&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;/* code goes here */&lt;/span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &amp;lt;/&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;SimpleBar&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &amp;lt;/&amp;gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Classes are as follows in my case&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    simpleBar: {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        maxHeight: &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;100vh&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    },
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    titlebarMargin: {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        marginTop: &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;2em&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    },
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    headerOverrides: {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        maxHeight: &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;calc(70px + 1em)&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        paddingBottom: &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;0 !important&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        marginTop: &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;1em&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    },
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Global styles:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;.simplebar-vertical&amp;#39;&lt;/span&gt;: {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        backgroundClip: &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;padding-box&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        marginTop: using_custom_titlebar ? &lt;span style=&#34;color:#3677a9&#34;&gt;100&lt;/span&gt; : &lt;span style=&#34;color:#3677a9&#34;&gt;70&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        marginBottom: showFooter ? &lt;span style=&#34;color:#3677a9&#34;&gt;50&lt;/span&gt; : &lt;span style=&#34;color:#3677a9&#34;&gt;0&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    },
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    body: {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        overflowY: &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;hidden&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;windows-11-rounded-corners&#34; &gt;Windows 11 Rounded Corners
+&lt;span&gt;
+    &lt;a href=&#34;#windows-11-rounded-corners&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;To add back the rounded corners when decorations are off, add &lt;code&gt;window-shadows&lt;/code&gt; to your &lt;code&gt;Cargo.toml&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-toml&#34; data-lang=&#34;toml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[dependencies]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;window-shadows = {git = &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;https://github.com/tauri-apps/window-shadows&amp;#34;&lt;/span&gt;, branch = &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;dev&amp;#34;&lt;/span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Usage in &lt;code&gt;main.rs&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-rust&#34; data-lang=&#34;rust&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// -----------------------------
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;use&lt;/span&gt;&lt;span style=&#34;color:#666&#34;&gt; &lt;/span&gt;window_shadows::set_shadow;&lt;span style=&#34;color:#666&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#666&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// -----------------------------
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#666&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#666&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;fn&lt;/span&gt; &lt;span style=&#34;color:#447fcf&#34;&gt;main&lt;/span&gt;()&lt;span style=&#34;color:#666&#34;&gt; &lt;/span&gt;{&lt;span style=&#34;color:#666&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#666&#34;&gt;    &lt;/span&gt;tauri::Builder::default()&lt;span style=&#34;color:#666&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#666&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// -----------------------------
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#666&#34;&gt;        &lt;/span&gt;.setup(|app|&lt;span style=&#34;color:#666&#34;&gt; &lt;/span&gt;{&lt;span style=&#34;color:#666&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#666&#34;&gt;            &lt;/span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;if&lt;/span&gt;&lt;span style=&#34;color:#666&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;let&lt;/span&gt;&lt;span style=&#34;color:#666&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#24909d&#34;&gt;Some&lt;/span&gt;(window)&lt;span style=&#34;color:#666&#34;&gt; &lt;/span&gt;=&lt;span style=&#34;color:#666&#34;&gt; &lt;/span&gt;app.get_window(&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;main&amp;#34;&lt;/span&gt;)&lt;span style=&#34;color:#666&#34;&gt; &lt;/span&gt;{&lt;span style=&#34;color:#666&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#666&#34;&gt;                &lt;/span&gt;set_shadow(&amp;amp;window,&lt;span style=&#34;color:#666&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;true&lt;/span&gt;).expect(&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;Unsupported platform!&amp;#34;&lt;/span&gt;);&lt;span style=&#34;color:#666&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#666&#34;&gt;            &lt;/span&gt;}&lt;span style=&#34;color:#666&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#666&#34;&gt;            &lt;/span&gt;&lt;span style=&#34;color:#24909d&#34;&gt;Ok&lt;/span&gt;(())&lt;span style=&#34;color:#666&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#666&#34;&gt;        &lt;/span&gt;})&lt;span style=&#34;color:#666&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#666&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// -----------------------------
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#666&#34;&gt;        &lt;/span&gt;.run(tauri::generate_context!())&lt;span style=&#34;color:#666&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#666&#34;&gt;        &lt;/span&gt;.expect(&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;error while running tauri application&amp;#34;&lt;/span&gt;);&lt;span style=&#34;color:#666&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#666&#34;&gt;&lt;/span&gt;}&lt;span style=&#34;color:#666&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;conclusion&#34; &gt;Conclusion
+&lt;span&gt;
+    &lt;a href=&#34;#conclusion&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;This took around a couple hours to implement and I&amp;rsquo;ve provided this code to give you a headstart as I know very well
+everyone&amp;rsquo;s implementation will be slightly different.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>ReactJS Tips</title>
+      <link>https://blog.elijahlopez.ca/posts/reactjs-tips/</link>
+      <pubDate>Fri, 23 Sep 2022 19:57:18 -0400</pubDate>
+      
+      <guid>https://blog.elijahlopez.ca/posts/reactjs-tips/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;m only in the mood for writing down my thoughts, so I apologize for the upcoming messiness.&lt;/p&gt;
+&lt;h2 id=&#34;optimizing-states-that-use-objects&#34; &gt;Optimizing states that use objects
+&lt;span&gt;
+    &lt;a href=&#34;#optimizing-states-that-use-objects&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;Do you use objects for some states to bundle data? So do I! Did you know that if you update
+a key in the state with the same value, the object changes and so react triggers a re-render?&lt;/p&gt;
+&lt;p&gt;Well I only found out today when the hover CSS of one my views was lagging!&lt;/p&gt;
+&lt;p&gt;I used the profile and turns out my custom hook that used a state object was triggering a render when the component was simply idling.&lt;/p&gt;
+&lt;p&gt;I added an if statement inside the setState function to return the same state if the new value is already in the previous/current state!&lt;/p&gt;
+&lt;h2 id=&#34;use-react-fragments-instead-of-div&#34; &gt;Use React Fragments Instead of div
+&lt;span&gt;
+    &lt;a href=&#34;#use-react-fragments-instead-of-div&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;I constantly see webdevs use many redundant divs in their HTML and even JSX. If you are simply using a
+div as a way to organize your JSX or to return JSX without keys, then I suggest you use a React Fragment instead.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-jsx&#34; data-lang=&#34;jsx&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &amp;lt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;p&lt;/span&gt;&amp;gt;Works without key prop&amp;lt;/&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;p&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &amp;lt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;p&lt;/span&gt;&amp;gt;Works without key prop&amp;lt;/&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;p&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;/&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;If you need to add a key prop to the Fragment, use &lt;code&gt;&amp;lt;React.Fragment key=?&amp;gt;&lt;/code&gt; instead.&lt;/p&gt;
+&lt;h2 id=&#34;define-props-in-component-parameters&#34; &gt;Define Props in Component Parameters
+&lt;span&gt;
+    &lt;a href=&#34;#define-props-in-component-parameters&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;Instead of using an all encompassing &lt;code&gt;props&lt;/code&gt; parameter, use this object destructuring technique&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-jsx&#34; data-lang=&#34;jsx&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// ExampleComponent.jsx
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;function&lt;/span&gt; ExampleComponent({ name, children }) {}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// App.jsx
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;&lt;/span&gt;&amp;lt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;ExampleComponent&lt;/span&gt; &lt;span style=&#34;color:#bbb&#34;&gt;name&lt;/span&gt;=&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;First Last&amp;#39;&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &amp;lt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;p&lt;/span&gt;&amp;gt;temp&amp;lt;/&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;p&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;/&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;ExampleComponent&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;using-providersjsx-for-your-contexts&#34; &gt;Using Providers.jsx for your Contexts
+&lt;span&gt;
+    &lt;a href=&#34;#using-providersjsx-for-your-contexts&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;If you are using ContextProviders in &lt;code&gt;App.jsx&lt;/code&gt; and have children components for the sake of using those contexts,
+you can extract those context providers into a component &lt;code&gt;Providers.jsx&lt;/code&gt; so that you can use the hooks in &lt;code&gt;App.jsx&lt;/code&gt; itself and
+disolve those abstraction components you had created.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-jsx&#34; data-lang=&#34;jsx&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// Providers.jsx
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;function&lt;/span&gt; Providers({ children }) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;return&lt;/span&gt; (
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &amp;lt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;Provider1&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &amp;lt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;Provider2&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                {isLoading ? &amp;lt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;Splashscreen&lt;/span&gt; /&amp;gt; : children}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &amp;lt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;/ Provider2&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &amp;lt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;/ Provider1&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    );
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// main.jsx
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;&lt;/span&gt;root.render(
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &amp;lt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;React.StrictMode&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &amp;lt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;Providers&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &amp;lt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;App&lt;/span&gt; /&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &amp;lt;/&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;Providers&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &amp;lt;/&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;React.StrictMode&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;type-comparisons&#34; &gt;Type Comparisons
+&lt;span&gt;
+    &lt;a href=&#34;#type-comparisons&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;This is very useful if you ever need to check the type of a variable. I found it on Stackoverlfow.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-jsx&#34; data-lang=&#34;jsx&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;function&lt;/span&gt; trueTypeOf(obj) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#24909d&#34;&gt;Object&lt;/span&gt;.prototype.toString.call(obj).slice(&lt;span style=&#34;color:#3677a9&#34;&gt;8&lt;/span&gt;, -&lt;span style=&#34;color:#3677a9&#34;&gt;1&lt;/span&gt;).toLowerCase()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;/*
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;        []              &amp;amp;rarr; array
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;        {}              &amp;amp;rarr; object
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;        &amp;#39;&amp;#39;              &amp;amp;rarr; string
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;        new Date()      &amp;amp;rarr; date
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;        1               &amp;amp;rarr; number
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;        function () {}  &amp;amp;rarr; function
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;        /test/i         &amp;amp;rarr; regexp
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;        true            &amp;amp;rarr; boolean
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;        null            &amp;amp;rarr; null
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;        trueTypeOf()    &amp;amp;rarr; undefined
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;    */&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;usecookie-hook-for-faster-simple-storage&#34; &gt;useCookie Hook for Faster Simple Storage
+&lt;span&gt;
+    &lt;a href=&#34;#usecookie-hook-for-faster-simple-storage&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;If you need to store information that isn&amp;rsquo;t a core requirement to the App&amp;rsquo;s functionality, like
+the theme a user is using, then I suggest using a cookie to keep track of that information. This ensures
+that they user will not see a theme different from the one they selected when they go to your app.&lt;/p&gt;
+&lt;p&gt;I can&amp;rsquo;t think of other examples right now, but if you aren&amp;rsquo;t able to send component props from the server, then
+this is better than local storage.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;function&lt;/span&gt; useCookie(key, defaultValue, { expires = &lt;span style=&#34;color:#3677a9&#34;&gt;365000&lt;/span&gt;, sameSite = &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;lax&amp;#39;&lt;/span&gt;, path = &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;/&amp;#39;&lt;/span&gt; } = {}) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// cookie expires in a millenia
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// sameSite != &amp;#39;strict&amp;#39; because the cookie is not read for sensitive actions
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// synchronous
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;const&lt;/span&gt; cookieValue = Cookies.get(key);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;const&lt;/span&gt; [state, setState] = useState(cookieValue || defaultValue);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    useEffect(() =&amp;gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        Cookies.set(key, state, { expires, sameSite, path });
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }, [state]);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;return&lt;/span&gt; [state, setState];
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;using-uselayouteffect-for-performance-gains&#34; &gt;Using useLayoutEffect for Performance Gains
+&lt;span&gt;
+    &lt;a href=&#34;#using-uselayouteffect-for-performance-gains&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;useLayoutEffect is not a hook to be used for performance but rather so that
+data that the user sees or modifies is the latest. useLayoutEffect is
+synchronous so it is a performance hinder not a performance gainer.&lt;/p&gt;
+&lt;h2 id=&#34;using-usestate-for-persistence&#34; &gt;Using useState for Persistence
+&lt;span&gt;
+    &lt;a href=&#34;#using-usestate-for-persistence&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;TL;DR: Use useRef in the parent to keep track of a child&amp;rsquo;s state value.&lt;/p&gt;
+&lt;p&gt;In an app structure like the following,&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-txt&#34; data-lang=&#34;txt&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;- App
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    - Home
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        - View 1...n
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    - Other Pages
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;I wanted to keep track of which view was open so that when ever the user would
+switch from Home to another Page and back to Home, the same view would open.&lt;/p&gt;
+&lt;p&gt;Home already had a state to keep track of which View was open and a setView
+that was passed down to each of the views so that they could go to eachother.
+Thus, I had a useEffect in Home.jsx to capture Home&amp;rsquo;s view variable and update
+App&amp;rsquo;s view variable.&lt;/p&gt;
+&lt;p&gt;The implications of this only occured to me afterwards when I wanted to persistent a value between different Views.
+I tried to do the same &amp;ldquo;trick&amp;rdquo; at the Home scope, but for some reason every time I switched Views, the value I was trying
+to persist would get reset to the default of setState.&lt;/p&gt;
+&lt;p&gt;What was happening was that changing views would update not only Home&amp;rsquo;s state, but also App&amp;rsquo;s state. Therefore Home would get re-rendered (instead of just the part that changed) and so the state would get overwritten.&lt;/p&gt;
+&lt;p&gt;I then decided its better anyways to persist the value I wanted to persist on the App scope so that it persists even if Home dismounts.
+I then realized that the variable wasn&amp;rsquo;t actually used as a state but rather as a persistant variable, and so I did some research and
+found out that useRef isn&amp;rsquo;t just something to use to refer to stuff, but to just hold anything. useRef more like useValue.&lt;/p&gt;
+&lt;p&gt;Instead of passing down two props for each state, I was now passing one ref, and improved performance due to limiting the scope of the re-render.&lt;/p&gt;
+&lt;h2 id=&#34;wrapping-i18nchangelanguage&#34; &gt;Wrapping i18n.changeLanguage
+&lt;span&gt;
+    &lt;a href=&#34;#wrapping-i18nchangelanguage&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;i18n.changeLanguage persists already between app reloads and relaunches, so you do not need
+to wrap the values change. I was using localForage even though it was completely unnecessary.&lt;/p&gt;
+&lt;h2 id=&#34;ignoring-variables-from-array-deconstruct&#34; &gt;Ignoring Variables From Array DeConstruct
+&lt;span&gt;
+    &lt;a href=&#34;#ignoring-variables-from-array-deconstruct&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-jsx&#34; data-lang=&#34;jsx&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;const&lt;/span&gt; [, forceUpdate] = useReducer(x =&amp;gt; x + &lt;span style=&#34;color:#3677a9&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color:#3677a9&#34;&gt;0&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;forcing-a-state-update&#34; &gt;Forcing a State Update
+&lt;span&gt;
+    &lt;a href=&#34;#forcing-a-state-update&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;When there is a data change, maybe you need to force the hooks to refetch.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-jsx&#34; data-lang=&#34;jsx&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;const&lt;/span&gt; [, forceUpdate] = useReducer(x =&amp;gt; x + &lt;span style=&#34;color:#3677a9&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color:#3677a9&#34;&gt;0&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

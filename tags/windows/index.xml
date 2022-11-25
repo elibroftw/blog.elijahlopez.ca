@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Windows on ELL Blog</title>
+    <link>https://blog.elijahlopez.ca/tags/windows/</link>
+    <description>ELL Blog (Windows)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 15 Aug 2023 21:15:51 -0400</lastBuildDate>
+    
+    <atom:link href="https://blog.elijahlopez.ca/tags/windows/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>How to Install macOS 12 Monterey on VirtualBox Windows 11</title>
+      <link>https://blog.elijahlopez.ca/posts/how-to-install-macos-on-virtualbox/</link>
+      <pubDate>Tue, 15 Aug 2023 21:15:51 -0400</pubDate>
+      
+      <guid>https://blog.elijahlopez.ca/posts/how-to-install-macos-on-virtualbox/</guid>
+      <description>&lt;p&gt;Update: I ended up purchasing a macbook air :(&lt;/p&gt;
+&lt;p&gt;For reference: my laptop is the Razer Blade 14 2022 with &lt;a href=&#34;https://www.amd.com/en/product/11541&#34;&gt;AMD Ryzen 9 6900HX&lt;/a&gt;. It supports AMD-V.&lt;/p&gt;
+&lt;p&gt;Ventura (13) didn&amp;rsquo;t work for me, so I will try Monterey (12).&lt;/p&gt;
+&lt;p&gt;Disable &amp;ldquo;Memory integrity&amp;rdquo; under Core isolation in the Windows Security app. Restart computer. This will disable the Hyper-V hypervisor.
+You can do this anytime before starting the virtual machine. This was the roadblock that prevented me from running the virtual machine.&lt;/p&gt;
+&lt;h3 id=&#34;creating-and-configuring-the-virtual-machine&#34; &gt;Creating and Configuring the Virtual Machine
+&lt;span&gt;
+    &lt;a href=&#34;#creating-and-configuring-the-virtual-machine&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;Writing this tutorial so that you can have an easier time.&lt;/p&gt;
+&lt;p&gt;Download &lt;a href=&#34;https://www.virtualbox.org/wiki/Downloads&#34;&gt;VirtualBox AND the Extension Pack&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Install VirtualBox and then install the Extension Pack&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.mediafire.com/file/4fcx0aeoehmbnmp/macOS+Monterey+by+Techrechard.com.iso/file&#34;&gt;macOS 12 ISO download&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.mediafire.com/file/dcji26zay7s3p8r/macOS+Ventura+ISO+for+VM+by+techrechard.com.iso/file&#34;&gt;macOS 13 ISO download&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Create a new Virtual machine, with the name &amp;ldquo;macOS 12&amp;rdquo;, and select file above for the ISO.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Memory: 7840 MB&lt;/li&gt;
+&lt;li&gt;Processors: 4&lt;/li&gt;
+&lt;li&gt;New Virtual Hard Drive Storage: 100GB&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Click Setting (cog)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Display: 128MB (max) Video Memory&lt;/li&gt;
+&lt;li&gt;USB: USB 3.0&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Close VirtualBox&lt;/p&gt;
+&lt;p&gt;Then run these commands in an administrative Powershell. If you are using Command Prompt, use &lt;code&gt;cd&lt;/code&gt; instead of Set-Location.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-powershell&#34; data-lang=&#34;powershell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#24909d&#34;&gt;Set-Location&lt;/span&gt; &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;C:\Program Files\Oracle\VirtualBox&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;.\VBoxManage.exe modifyvm &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;macOS 12&amp;#34;&lt;/span&gt; --cpuidset &lt;span style=&#34;color:#3677a9&#34;&gt;00000001&lt;/span&gt; &lt;span style=&#34;color:#3677a9&#34;&gt;000106e5&lt;/span&gt; &lt;span style=&#34;color:#3677a9&#34;&gt;00100800&lt;/span&gt; 0098e3fd bfebfbff
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;.\VBoxManage.exe setextradata &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;macOS 12&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;VBoxInternal/Devices/efi/0/Config/DmiSystemProduct&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;iMac19,3&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;.\VBoxManage.exe setextradata &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;macOS 12&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;VBoxInternal/Devices/efi/0/Config/DmiSystemVersion&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;1.0&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;.\VBoxManage.exe setextradata &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;macOS 12&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;VBoxInternal/Devices/efi/0/Config/DmiBoardProduct&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;Iloveapple&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;.\VBoxManage.exe setextradata &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;macOS 12&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;VBoxInternal/Devices/smc/0/Config/DeviceKey&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;ourhardworkbythesewordsguardedpleasedontsteal(c)AppleComputerInc&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;.\VBoxManage.exe setextradata &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;macOS 12&amp;#34;&lt;/span&gt; VBoxInternal2/EfiGraphicsResolution 1920x1080
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;.\VBoxManage.exe setextradata &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;macOS 12&amp;#34;&lt;/span&gt; GUI/ScaleFactor &lt;span style=&#34;color:#3677a9&#34;&gt;1.25&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;.\VBoxManage.exe setextradata &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;macOS 12&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;VBoxInternal/TM/TSCMode&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;RealTSCOffset&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;On AMD systems,&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-powershell&#34; data-lang=&#34;powershell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;.\VBoxManage.exe modifyvm &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;macOS 12&amp;#34;&lt;/span&gt; --cpu-profile &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;Intel Core i7-6700K&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;On Intel systems,&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-powershell&#34; data-lang=&#34;powershell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;.\VBoxManage.exe setextradata &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;macOS 12&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;VBoxInternal/Devices/smc/0/Config/GetKeyFromRealSMC&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#3677a9&#34;&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;If you get an error,&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-powershell&#34; data-lang=&#34;powershell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;.\VBoxManage.exe setextradata &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;macOS 12&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;VBoxInternal/Devices/smc/0/Config/GetKeyFromRealSMC&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#3677a9&#34;&gt;0&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-powershell&#34; data-lang=&#34;powershell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;.\VBoxManage.exe setextradata &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;macOS 12&amp;#34;&lt;/span&gt;  &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;VBoxInternal/Devices/efi/0/Config/DmiSystemFamily&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;MacBook Pro&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;.\VBoxManage.exe setextradata &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;macOS 12&amp;#34;&lt;/span&gt;  &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;VBoxInternal/Devices/efi/0/Config/DmiSystemProduct&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;MacBookPro11,2&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;.\VBoxManage.exe setextradata &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;macOS 12&amp;#34;&lt;/span&gt;  &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;VBoxInternal/Devices/efi/0/Config/DmiSystemSerial&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;NO_DEVICE_SN&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;.\VBoxManage.exe setextradata &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;macOS 12&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;VBoxInternal/Devices/efi/0/Config/DmiSystemUuid&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;CAFECAFE-CAFE-CAFE-CAFE-DECAFFDECAFF&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;.\VBoxManage.exe setextradata &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;macOS 12&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;VBoxInternal/Devices/efi/0/Config/DmiOEMVBoxVer&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#40ffff&#34;&gt;${DmiOEMVBoxVer}&lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;.\VBoxManage.exe setextradata &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;macOS 12&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;VBoxInternal/Devices/efi/0/Config/DmiOEMVBoxRev&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#40ffff&#34;&gt;${DmiOEMVBoxRev}&lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;.\VBoxManage.exe setextradata &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;macOS 12&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;VBoxInternal/Devices/efi/0/Config/DmiBIOSVersion&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;string:MBP7.89&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;.\VBoxManage.exe setextradata &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;macOS 12&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;VBoxInternal/Devices/efi/0/Config/DmiBoardProduct&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;Mac-3CBD00234E554E41&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;.\VBoxManage.exe setextradata &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;macOS 12&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;VBoxInternal/Devices/efi/0/Config/DmiBoardSerial&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;NO_LOGIC_BOARD_SN&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Open VirtualBox and press Start for macOS 12. Wait a couple minutes.&lt;/p&gt;
+&lt;p&gt;Follow &lt;a href=&#34;https://dortania.github.io/OpenCore-Post-Install/universal/iservices.html#using-gensmbios&#34;&gt;Fixing iMessage and other services with OpenCore&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;install-mac-os-x&#34; &gt;Install Mac OS X
+&lt;span&gt;
+    &lt;a href=&#34;#install-mac-os-x&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;In the menu bar of VirtualBox: View &amp;gt; Virtual Screen 1 to set the scale smaller or bigger (my laptop is QHD which is why I scaled to 125%)&lt;/p&gt;
+&lt;p&gt;TIP: Right Ctrl is the escape key to escape the virtual machine and use the host machine&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Select a language and then press the     right arrow icon&lt;/li&gt;
+&lt;li&gt;Click Disk Utilty and then Continue&lt;/li&gt;
+&lt;li&gt;On the left sidebar, click &amp;ldquo;VBOX HARDDISK Media&amp;rdquo; and then click Erase in the top right bar&lt;/li&gt;
+&lt;li&gt;Enter &amp;ldquo;macOS 12 HDD&amp;rdquo; as the name and click Erase, and then Done.&lt;/li&gt;
+&lt;li&gt;Close the Disk Utility by click the red circle in the top left&lt;/li&gt;
+&lt;li&gt;Click Install macOS 12 beta and then continue&lt;/li&gt;
+&lt;li&gt;Click Continue, agree, and agree&lt;/li&gt;
+&lt;li&gt;Click the HDD we just formatted and then click Continue&lt;/li&gt;
+&lt;li&gt;The installation should take 40 minutes&lt;/li&gt;
+&lt;li&gt;Do not log into Apple ID until after you&amp;rsquo;ve gone through the setup&lt;/li&gt;
+&lt;li&gt;Right Ctrl + F to enter full screen&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;installing-guest-additions&#34; &gt;Installing Guest Additions
+&lt;span&gt;
+    &lt;a href=&#34;#installing-guest-additions&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;&lt;a href=&#34;https://stackoverflow.com/questions/41691803/how-to-install-guest-addition-in-mac-os-as-guest-and-windows-machine-as-host&#34;&gt;Stack Overflow&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;troubleshooting&#34; &gt;Troubleshooting
+&lt;span&gt;
+    &lt;a href=&#34;#troubleshooting&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;A critical error has occurred while running the virtual machine&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://forums.virtualbox.org/viewtopic.php?f=1&amp;amp;t=62339&#34;&gt;I have a 64bit host, but can&amp;rsquo;t install 64bit guests&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Windows Programming: Start App on Login</title>
+      <link>https://blog.elijahlopez.ca/posts/windows-programming-start-app-on-login/</link>
+      <pubDate>Thu, 29 Jun 2023 20:22:04 -0400</pubDate>
+      
+      <guid>https://blog.elijahlopez.ca/posts/windows-programming-start-app-on-login/</guid>
+      <description>&lt;p&gt;To start an app on login on Windows, you must add a REG_SZ value to the registry key &lt;code&gt;HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Run&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;The value&amp;rsquo;s name can be arbitrary, but not empty, and it&amp;rsquo;s data should be of the format &lt;code&gt;path\to\executable optional args&lt;/code&gt;. Personally, I add double quotes to the path, however apps like docker desktop do not even though the path has spaces.&lt;/p&gt;
+&lt;h3 id=&#34;python-start-app-on-login&#34; &gt;Python Start App on Login
+&lt;span&gt;
+    &lt;a href=&#34;#python-start-app-on-login&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;This an excerpt of my music player&amp;rsquo;s source code. This part is free for you to use without crediting me.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-py&#34; data-lang=&#34;py&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;from&lt;/span&gt; &lt;span style=&#34;color:#447fcf;text-decoration:underline&#34;&gt;pathlib&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;import&lt;/span&gt; Path
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#447fcf&#34;&gt;start_on_login_win32&lt;/span&gt;(path_to_exe: Path | &lt;span style=&#34;color:#24909d&#34;&gt;str&lt;/span&gt;, app_name: &lt;span style=&#34;color:#24909d&#34;&gt;str&lt;/span&gt;, args: &lt;span style=&#34;color:#24909d&#34;&gt;str&lt;/span&gt;, create_key=&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;True&lt;/span&gt;):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;&amp;#34;&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;    Example arguments:
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;    path_to_exe: r&amp;#39;C:\Users\maste\AppData\Local\Programs\Music Caster\Music Caster.exe&amp;#39;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;    app_name: &amp;#39;Music Caster&amp;#39;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;    args: &amp;#39;-m&amp;#39;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;    &amp;#34;&amp;#34;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;color:#447fcf;text-decoration:underline&#34;&gt;winreg&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;as&lt;/span&gt; &lt;span style=&#34;color:#447fcf;text-decoration:underline&#34;&gt;wr&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    classes_path = &lt;span style=&#34;color:#ed9d13&#34;&gt;r&lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;SOFTWARE\Microsoft\Windows\CurrentVersion\Run&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    access = wr.KEY_ALL_ACCESS | wr.KEY_WOW64_64KEY
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;with&lt;/span&gt; wr.OpenKeyEx(wr.HKEY_CURRENT_USER, classes_path, &lt;span style=&#34;color:#3677a9&#34;&gt;0&lt;/span&gt;, access) &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;as&lt;/span&gt; key:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;if&lt;/span&gt; create_key:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            wr.SetValueEx(key, app_name, &lt;span style=&#34;color:#3677a9&#34;&gt;0&lt;/span&gt;, wr.REG_SZ, &lt;span style=&#34;color:#ed9d13&#34;&gt;f&lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;{&lt;/span&gt;path_to_exe&lt;span style=&#34;color:#ed9d13&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34; &lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;{&lt;/span&gt;args&lt;span style=&#34;color:#ed9d13&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;not&lt;/span&gt; create_key:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;with&lt;/span&gt; suppress(&lt;span style=&#34;color:#bbb&#34;&gt;FileNotFoundError&lt;/span&gt;):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                wr.DeleteValue(key, app_name)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+    
+    <item>
+      <title>How to Add to PATH Environment Variable on Windows</title>
+      <link>https://blog.elijahlopez.ca/posts/windows-add-to-path-environment-variable/</link>
+      <pubDate>Fri, 21 Apr 2023 20:02:38 -0400</pubDate>
+      
+      <guid>https://blog.elijahlopez.ca/posts/windows-add-to-path-environment-variable/</guid>
+      <description>&lt;p&gt;In this concise guide, you will learn how to add a directory to the Path environment variable on Windows.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Press Windows key + S&lt;/li&gt;
+&lt;li&gt;Type in &amp;ldquo;edit environment variables for your account&amp;rdquo; and click it (you won&amp;rsquo;t need to type the entire sentence)
+&lt;img src=&#34;https://blog.elijahlopez.ca/images/windows/edit-env-variables-search.webp&#34; alt=&#34;Windows 10 search screenshot&#34;&gt;&lt;/li&gt;
+&lt;li&gt;Under the table &amp;ldquo;User variable for $USER&amp;rdquo; or &amp;ldquo;System variables&amp;rdquo;, scroll and find a Variable named &lt;code&gt;Path&lt;/code&gt;
+&lt;img src=&#34;https://blog.elijahlopez.ca/images/windows/user-path-variables.webp&#34; alt=&#34;Windows 10 user path variable&#34;&gt;&lt;/li&gt;
+&lt;li&gt;Either double click the row with &lt;code&gt;Path&lt;/code&gt; or single click it and click edit. A new window should open up
+&lt;img src=&#34;https://blog.elijahlopez.ca/images/windows/user-path-variable-edit.webp&#34; alt=&#34;Windows 10 Path variable window&#34;&gt;&lt;/li&gt;
+&lt;li&gt;Click &amp;ldquo;New&amp;rdquo;, paste the path to your directory without quotes, and press enter
+&lt;img src=&#34;https://blog.elijahlopez.ca/images/windows/add-new-user-path-variable.webp&#34; alt=&#34;Windows 10 new directory to Path&#34;&gt;&lt;/li&gt;
+&lt;li&gt;Click Ok and then click Ok again.&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>How to Disable Real Time Protection Permanently</title>
+      <link>https://blog.elijahlopez.ca/posts/disable-real-time-protection-permanently/</link>
+      <pubDate>Wed, 22 Feb 2023 23:58:11 -0500</pubDate>
+      
+      <guid>https://blog.elijahlopez.ca/posts/disable-real-time-protection-permanently/</guid>
+      <description>&lt;p&gt;As a developer who dabbles with web development, Real-Time protection ramps up CPU usage unnecessarily.&lt;/p&gt;
+&lt;h3 id=&#34;installing-group-policy-editor&#34; &gt;Installing Group Policy Editor
+&lt;span&gt;
+    &lt;a href=&#34;#installing-group-policy-editor&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;First check if you have &lt;code&gt;gpedit.msc&lt;/code&gt; installed (by searching the start menu or by using Win + R)&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Install gpedit.msc by downloading &lt;a href=&#34;https://www.majorgeeks.com/files/details/add_gpedit_msc_with_powershell.html&#34;&gt;gpedit-enalber.bat&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Extract the zip from the previous step&lt;/li&gt;
+&lt;li&gt;Right click &lt;code&gt;gpedit-enabler.bat&lt;/code&gt; and Run as administrator.&lt;/li&gt;
+&lt;li&gt;Go for a coffee break&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;disabling-real-time-protection&#34; &gt;Disabling Real-Time Protection
+&lt;span&gt;
+    &lt;a href=&#34;#disabling-real-time-protection&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;I&amp;rsquo;m not a plagiarizer. You can follow the instructions from &lt;a href=&#34;https://news.trendmicro.com/2022/12/14/how-to-turn-off-windows-defender/&#34;&gt;trend micro&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Linux USB Formatting Issues</title>
+      <link>https://blog.elijahlopez.ca/posts/linux-usb-formatting-issues/</link>
+      <pubDate>Sun, 24 Jul 2022 21:03:20 -0400</pubDate>
+      
+      <guid>https://blog.elijahlopez.ca/posts/linux-usb-formatting-issues/</guid>
+      <description>&lt;p&gt;When trying to test out multiple Linux distros on multiple
+USB sticks, I ran into this horrible error. The creators of Balena Etcher
+simply do not care about users who soft brick their USBs. Rufus and Balena
+developers simply say that their software cannot hard brick the USB,
+which is a good thing but they provide 0 support in fixing the issue.&lt;/p&gt;
+&lt;p&gt;I am here to share my findings since solutions found online are in parts.&lt;/p&gt;
+&lt;p&gt;Operating System: Windows&lt;/p&gt;
+&lt;p&gt;How do you fix the error and other errors like:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;the volume was created successfully but not formatted&lt;/li&gt;
+&lt;li&gt;Please Insert Disk Into Removable Disk&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Like my other Linux tutorial on how to move a partition in Windows, a partition tool is very useful.
+The &lt;a href=&#34;https://www.partitionwizard.com/free-partition-manager.html&#34;&gt;MiniTool Parition Wizard&lt;/a&gt; was very handy.
+Open this tool up, right click the USB or drive you want to fix, and click wipe drive and fill the drive with 0s.
+This should take 10 minutes.&lt;/p&gt;
+&lt;p&gt;Afterwards, you can either format the drive in Windows or run Balena Etcher to flash another ISO.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

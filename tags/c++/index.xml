@@ -1,0 +1,476 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>C&#43;&#43; on ELL Blog</title>
+    <link>https://blog.elijahlopez.ca/tags/c&#43;&#43;/</link>
+    <description>ELL Blog (C&#43;&#43;)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 03 Dec 2022 12:58:50 -0500</lastBuildDate>
+    
+    <atom:link href="https://blog.elijahlopez.ca/tags/c++/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Monero Onboarding for Windows Developers</title>
+      <link>https://blog.elijahlopez.ca/posts/monero-devs-windows/</link>
+      <pubDate>Sat, 03 Dec 2022 12:58:50 -0500</pubDate>
+      
+      <guid>https://blog.elijahlopez.ca/posts/monero-devs-windows/</guid>
+      <description>&lt;p&gt;This is a straightforward guide to start developing on the monero project (monero, monero-gui, etc.) on Windows without using a Linux [virtual] machine.
+Although I have a Linux machine, I am maximally productive on Windows as it is my primary OS.
+When copy pasting terminal commands, paste into notepad before pasting into your terminal because it&amp;rsquo;s a good habit to catch a clipboard jacking attack.&lt;/p&gt;
+&lt;h2 id=&#34;prerequisites&#34; &gt;Prerequisites
+&lt;span&gt;
+    &lt;a href=&#34;#prerequisites&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.msys2.org/#installation&#34;&gt;MSYS2&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;Use &lt;code&gt;Get-FileHash -Path .\INSTALLER -Algorithm SHA256&lt;/code&gt; and compare the hashes to verify the installer&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://code.visualstudio.com/download&#34;&gt;Visual Studio Code&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://git-scm.com/downloads&#34;&gt;Git&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Optional: &lt;a href=&#34;https://desktop.github.com/&#34;&gt;GitHub Desktop&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Optional: &lt;a href=&#34;https://github.com/&#34;&gt;GitHub Account&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Install these simultaneously.&lt;/p&gt;
+&lt;h2 id=&#34;forking-a-monero-repository&#34; &gt;Forking a Monero Repository
+&lt;span&gt;
+    &lt;a href=&#34;#forking-a-monero-repository&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;If you want to contribute through a GitHub account,
+you will need to fork the &lt;a href=&#34;https://github.com/monero-project/monero&#34;&gt;monero&lt;/a&gt; or &lt;a href=&#34;https://github.com/monero-project/monero-gui&#34;&gt;monero-gui&lt;/a&gt; repository.
+If you are new to GitHub, see: &lt;a href=&#34;https://docs.github.com/en/get-started/quickstart/fork-a-repo#forking-a-repository&#34;&gt;fork a repo&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;If you are interested in contributing without a GitHub account, you can skip this step.&lt;/p&gt;
+&lt;h2 id=&#34;cloning-the-repository&#34; &gt;Cloning the Repository
+&lt;span&gt;
+    &lt;a href=&#34;#cloning-the-repository&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;Use git or GitHub Desktop to clone your fork. Clone the original repository if you want to contribute anonymously.&lt;/p&gt;
+&lt;p&gt;Replace the URL below with the URL of your fork.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git clone --recursive https://github.com/monero-project/monero-gui.git
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;code&gt;--recursive&lt;/code&gt; is used so that submodules are cloned as well. Otherwise, you&amp;rsquo;d have to update those submodules when the build fails.&lt;/p&gt;
+&lt;h2 id=&#34;setting-up-vscode&#34; &gt;Setting Up VSCode
+&lt;span&gt;
+    &lt;a href=&#34;#setting-up-vscode&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;I use VS Code when working on the &lt;code&gt;monero-gui&lt;/code&gt; project and for most projects, even this blog!
+The exceptions being: Python, Windows C++ development, .NET development, Java.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Open the &lt;code&gt;monero-gui&lt;/code&gt; directory in VSCode&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Install &lt;a href=&#34;https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools-extension-pack&#34;&gt;C++ Extension Pack&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Install &lt;a href=&#34;https://marketplace.visualstudio.com/items?itemName=jeff-hykin.better-cpp-syntax&#34;&gt;Better C++ Syntax&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Add MSYS2 64-bit as a terminal profile in user &lt;code&gt;settings.json&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// if this setting already exists, add the MSYS2 portion
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;//     rather than overwriting any existing profiles
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;terminal.integrated.profiles.windows&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;:&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;&amp;#34;MSYS2&amp;#34;&lt;/span&gt;: {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;&amp;#34;path&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;C:\\msys64\\usr\\bin\\bash.exe&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;&amp;#34;args&amp;#34;&lt;/span&gt;: [
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;--login&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;-i&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            ],
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;&amp;#34;env&amp;#34;&lt;/span&gt;: {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;&amp;#34;MSYSTEM&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;MINGW64&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;&amp;#34;CHERE_INVOKING&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;1&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Add workspace settings as seen in my &lt;a href=&#34;https://github.dev/elibroftw/monero-gui/tree/vs-code-ide-settings/.vscode&#34;&gt;monero-gui fork&lt;/a&gt; (copy the .vscode folder)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;You will most likely only need to change the &amp;ldquo;release-win64&amp;rdquo; in &lt;code&gt;tasks.json&lt;/code&gt; if you are working on monero and not monero-gui.&lt;/li&gt;
+&lt;li&gt;I hope to merge these settings into upstream so that everyone debugging on their machines will have an easy time&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Set MSYS2 as the default terminal profile for Windows in the VSCode &lt;code&gt;workspace&lt;/code&gt; settings&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.elijahlopez.ca/images/vs-code/setting-default-profile.webp&#34; alt=&#34;Setting default terminal profile&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Open an MSYS2 Terminal in VS Code&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;I use a custom keyboard shortcut &lt;code&gt;Ctrl + T&lt;/code&gt; for toggling the terminal and &lt;code&gt;Ctrl + Shift + T&lt;/code&gt; to create a new default profile terminal&lt;/li&gt;
+&lt;li&gt;Ensure that the terminal you opened is MSYS2 (bash) and not CMD or PS (there will be a $ sign if you indeed opened MSYS2 64bit)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;installing-msys2-64-bit-dependencies&#34; &gt;Installing MSYS2 64-bit Dependencies
+&lt;span&gt;
+    &lt;a href=&#34;#installing-msys2-64-bit-dependencies&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;In the Windows instructions for the Monero project you are interested in, you may see that &lt;code&gt;pacman&lt;/code&gt; is used to install dependencies. Pacman is the default package manager on &lt;em&gt;Arch btw&lt;/em&gt;.
+However, the installing process is not guaranteed to work for &lt;code&gt;monero-gui&lt;/code&gt; since the &lt;code&gt;README.md&lt;/code&gt; is missing the &lt;code&gt;-Syu&lt;/code&gt; command. If you already have MSYS2 installed like I had, you&amp;rsquo;d run into issues.&lt;/p&gt;
+&lt;p&gt;Run the following commands in an MSYS2 64-bit bash window. I suggest using the one we opened up in the previous step or you can open one externally if you don&amp;rsquo;t use VSCode.
+Note that the dependencies take a bit of storage. I think I used a couple GBs (my perspective is that I have 4+ drives). I&amp;rsquo;ve included &lt;code&gt;--noconfirm&lt;/code&gt; so that you can play Pacman on Google while these commands are running.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Upgrade dependencies&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;pacman -Syu --noconfirm  &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# upgrade existing database and packages&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# the terminal may close automatically&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Install Monero dependencies&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;pacman -S mingw-w64-x86_64-toolchain make mingw-w64-x86_64-cmake mingw-w64-x86_64-boost mingw-w64-x86_64-openssl mingw-w64-x86_64-zeromq mingw-w64-x86_64-libsodium mingw-w64-x86_64-hidapi mingw-w64-x86_64-protobuf-c mingw-w64-x86_64-libusb mingw-w64-x86_64-libgcrypt mingw-w64-x86_64-unbound mingw-w64-x86_64-doxygen mingw-w64-x86_64-libunwind mingw-w64-x86_64-ccache mingw-w64-x86_64-pcre --noconfirm
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;If you are reading this far into the future, ensure that the list of dependencies installed is a merger of the ones I have listed and the ones listed in the project&amp;rsquo;s &lt;code&gt;README.md&lt;/code&gt;
+When I was writing this article, build failures were common for 3+ hours due to missing packages, an unsupported &lt;code&gt;debug-static-win64&lt;/code&gt; build target, and ccache working suddenly.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Install Qt5&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;pacman -S mingw-w64-x86_64-qt5 --noconfirm
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;building-setup&#34; &gt;Building Setup
+&lt;span&gt;
+    &lt;a href=&#34;#building-setup&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;h3 id=&#34;anti-virus&#34; &gt;Anti-Virus
+&lt;span&gt;
+    &lt;a href=&#34;#anti-virus&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;I noticed that when building, Windows anti-virus would spike. So I recommend excluding the project folder as well as the msys2 folder from Windows Security or whatever anti-virus software you are running.&lt;/p&gt;
+&lt;h3 id=&#34;default-number-of-jobs-for-make&#34; &gt;Default Number of Jobs for Make
+&lt;span&gt;
+    &lt;a href=&#34;#default-number-of-jobs-for-make&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;We want to avoid entering in &lt;code&gt;-jN&lt;/code&gt; every time we build, but what should N be? I use CPU cores - 1 so that
+I can still use my browser and other apps while building. You can run the following to set that so.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#24909d&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;alias make=\&amp;#34;/usr/bin/make -j&lt;/span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;$((&lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;`&lt;/span&gt;nproc&lt;span style=&#34;color:#ed9d13&#34;&gt;`&lt;/span&gt; &amp;gt; &lt;span style=&#34;color:#3677a9&#34;&gt;1&lt;/span&gt; ? &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;$((&lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;`&lt;/span&gt;nproc&lt;span style=&#34;color:#ed9d13&#34;&gt;`&lt;/span&gt; - &lt;span style=&#34;color:#3677a9&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;))&lt;/span&gt; : &lt;span style=&#34;color:#3677a9&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;))&lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;\&amp;#34;&amp;#34;&lt;/span&gt; &amp;gt;&amp;gt; ~/.profile
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#24909d&#34;&gt;source&lt;/span&gt; ~/.profile  &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;#  you do not need to run this in subsequent terminals&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;building&#34; &gt;Building
+&lt;span&gt;
+    &lt;a href=&#34;#building&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Optionally enable console mode for GUI projects by commenting out &lt;code&gt;set(EXECUTABLE_FLAG WIN32)&lt;/code&gt; from &lt;code&gt;src/CMakeLists.txt&lt;/code&gt; (thanks @selsta)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Run &lt;code&gt;build/release/bin/monero-wallet-gui.exe&lt;/code&gt; in the VSCode terminal after a build (next step)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Run the build command (5 minutes)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;For &lt;code&gt;monero-gui&lt;/code&gt;, you can either use the VSCode debugger (workspace settings) or run &lt;code&gt;make release-win64&lt;/code&gt;. The debug builds weren&amp;rsquo;t working for  me.&lt;/li&gt;
+&lt;li&gt;For &lt;code&gt;monero&lt;/code&gt;, same as above but try using &lt;code&gt;debug-static-win64&lt;/code&gt; instead (need to edit &lt;code&gt;.vscode/tasks.json[0] &amp;gt; windows &amp;gt; args[0]&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;If the debug build failed, you might need to &lt;code&gt;make clean&lt;/code&gt; for the release build to work&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Troubleshooting failures&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;build failed because of missing library
+&lt;ul&gt;
+&lt;li&gt;build release after a make clean&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;pacman -S mingw-w64-x86_64-name&lt;/code&gt; (where name is the libname with and without lib)&lt;/li&gt;
+&lt;li&gt;Search for the library (with and without the lib prefix) on &lt;a href=&#34;https://packages.msys2.org/search&#34;&gt;packages.msys2.org&lt;/a&gt;. Click on relevant search results and install the binary package starting with &lt;code&gt;mingw-w64-x86_64&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;make clean&lt;/code&gt; before building&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;runtime error from Qt failing to load plugin?
+&lt;ul&gt;
+&lt;li&gt;make clean&lt;/li&gt;
+&lt;li&gt;uninstall all qt packages using &lt;code&gt;pacman -R $(pacman -Qq | grep qt)&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;install qt using &lt;code&gt;pacman -S mingw-w64-x86_64-qt5 --noconfirm&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;For a &lt;code&gt;monero-gui&lt;/code&gt; full build, use &lt;code&gt;cd build/release &amp;amp;&amp;amp; make deploy&lt;/code&gt; after running &lt;code&gt;make release-win64&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;If the build fails due to DLL copy error, follow the troubleshooting instructions in step 4 and let me know what worked so that I can update this article&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;contributing-anonymously&#34; &gt;Contributing Anonymously
+&lt;span&gt;
+    &lt;a href=&#34;#contributing-anonymously&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;If you want to contribute anonymously, I suggest you git commit on a separate branch than the default one.
+After you&amp;rsquo;ve committed your changes, run the following from your branch.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;git format-patch master --stdout &amp;gt; ~/Downloads/PATCH_NAME.patch&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Here I&amp;rsquo;ve assumed that the default branch is master, but it is entirely possible when working on other projects where the default branch is not master. Default branch names I&amp;rsquo;ve seen are &lt;code&gt;dev&lt;/code&gt; and &lt;code&gt;main&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;After you&amp;rsquo;ve created a patch, you can post it on #monero-dev or #monero-gui.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://matrix.to/#/#monero-dev:monero.social&#34;&gt;monero-dev matrix&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://matrix.to/#/#monero-gui:monero.social&#34;&gt;monero-gui matrix&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;irc://irc.libera.chat/#monero-dev&#34;&gt;monero-dev IRC&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;irc://irc.libera.chat/#monero-gui&#34;&gt;monero-gui IRC&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Funny thing. My house has these Plume devices which blocks matrix.to links, so I&amp;rsquo;m running a VPN a lot of the time now.&lt;/p&gt;
+&lt;h2 id=&#34;git-situations&#34; &gt;Git Situations
+&lt;span&gt;
+    &lt;a href=&#34;#git-situations&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;I will assume you can figure out yourself how to commit your code changes and push them to your GitHub fork.
+However, I will provide some git commands to use for common occurrences. I am not a git guru so I use GitHub Desktop + VS Code most of the time.&lt;/p&gt;
+&lt;p&gt;I use the &lt;a href=&#34;https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph&#34;&gt;Git Graph&lt;/a&gt; extension to avoid the CLI for rebasing, squashing commits, and other actions
+where GitHub Desktop is inadequate.&lt;/p&gt;
+&lt;h3 id=&#34;resolving-merge-conflicts-or-syncing-with-original-repo&#34; &gt;Resolving Merge Conflicts or Syncing with Original Repo
+&lt;span&gt;
+    &lt;a href=&#34;#resolving-merge-conflicts-or-syncing-with-original-repo&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;Suppose you are developing a feature and now your forked repo is many commits behind the upstream target branch. Or your pull request cannot be merged due to at least one conflict (a conflict arises when git cannot determine whose change should be respected because there are exclusive commits in two different branches that changed the same thing).&lt;/p&gt;
+&lt;p&gt;Solution: rebase. A rebase is when you sandwich exclusive commits from another branch between the shared commits within your branch and your exclusive commits.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Ensure you are on the branch with your commits. Use &lt;code&gt;git checkout branchName&lt;/code&gt; if you aren&amp;rsquo;t.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git remote add upstream ORIGINAL_REPO_LINK&lt;/code&gt; (CLI)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git rebase upstream/master&lt;/code&gt; (CLI)&lt;/li&gt;
+&lt;li&gt;Resolve conflicts (IDE like VSCode or CLI editor)&lt;/li&gt;
+&lt;li&gt;Commit and force push (UI or CLI)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;If you did not fork the repo, life is a bit easier as you can skip step 2 and use the command &lt;code&gt;git rebase master&lt;/code&gt; for step 3.&lt;/p&gt;
+&lt;h3 id=&#34;squashing-commits&#34; &gt;Squashing Commits
+&lt;span&gt;
+    &lt;a href=&#34;#squashing-commits&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;Suppose you went on a commit rampage just for one feature. Everything works, so one commit is more elegant than many commits.
+To perform a squash, reset your branch to the commit you don&amp;rsquo;t want to squash. Commit your changes and force push. Make sure
+the commit you are resetting to is on the same branch. Otherwise you are performing a rebase and might need to resolve a merge conflict.&lt;/p&gt;
+&lt;h2 id=&#34;conclusion&#34; &gt;Conclusion
+&lt;span&gt;
+    &lt;a href=&#34;#conclusion&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;I hope this was helpful. I spent 8+ hours writing and debugging over two days. Feel free to donate some Monero.
+&lt;a href=&#34;monero:84PR6SkYd5zaFLKDjAFrQfbaAg2c7SV3q3XDZ15QCpEZUggrN4YzY7n8m9XC3deXjo41yWHTm1LrsUpPTYGnRQbD9Cwp8En&#34;&gt;84PR6SkYd5zaFLKDjAFrQfbaAg2c7SV3q3XDZ15QCpEZUggrN4YzY7n8m9XC3deXjo41yWHTm1LrsUpPTYGnRQbD9Cwp8En&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://elijahlopez.ca/static/images/monero.png&#34; alt=&#34;monero:84PR6SkYd5zaFLKDjAFrQfbaAg2c7SV3q3XDZ15QCpEZUggrN4YzY7n8m9XC3deXjo41yWHTm1LrsUpPTYGnRQbD9Cwp8En&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Installing Libraries for C&#43;&#43; with Vcpkg and CMake</title>
+      <link>https://blog.elijahlopez.ca/posts/vcpkg-cmake-tutorial/</link>
+      <pubDate>Sun, 19 Dec 2021 19:51:55 -0500</pubDate>
+      
+      <guid>https://blog.elijahlopez.ca/posts/vcpkg-cmake-tutorial/</guid>
+      <description>&lt;h2 id=&#34;trouble-shooting&#34; &gt;Trouble Shooting
+&lt;span&gt;
+    &lt;a href=&#34;#trouble-shooting&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;Most errors occur because of &lt;code&gt;CMakePresets.json&lt;/code&gt; or &lt;code&gt;CMakeSettings.json&lt;/code&gt;. I have proper samples
+available at &lt;a href=&#34;https://github.com/elibroftw/cpp-vcpkg-cmake-example&#34;&gt;https://github.com/elibroftw/cpp-vcpkg-cmake-example&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;software-prerequisties&#34; &gt;Software Prerequisties
+&lt;span&gt;
+    &lt;a href=&#34;#software-prerequisties&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Anyone of the following IDEs
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://code.visualstudio.com/download&#34;&gt;Visual Studio Code&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://visualstudio.microsoft.com/downloads/&#34;&gt;Visual Studio 2022&lt;/a&gt; if on Windows for the compiler&lt;/li&gt;
+&lt;li&gt;Any IDE that has pretty good CMake integration&lt;/li&gt;
+&lt;li&gt;Otherwise, you will need to use &lt;code&gt;cmake&lt;/code&gt; yourself&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Any of the following compilers
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://visualstudio.microsoft.com/downloads/&#34;&gt;Visual Studio 2022&lt;/a&gt; if on Windows&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;gcc&lt;/code&gt; (Linux)&lt;/li&gt;
+&lt;li&gt;MSYS2/Mingw &lt;code&gt;gcc&lt;/code&gt; (Windows)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;clang&lt;/code&gt; (MacOS?)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;installing-cmake&#34; &gt;Installing CMake
+&lt;span&gt;
+    &lt;a href=&#34;#installing-cmake&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;You will need &lt;a href=&#34;https://cmake.org/download/&#34;&gt;CMake 3.21+&lt;/a&gt; in order to use the Visual Studio 2022 compiler through VSCode.
+The installer does most of the work, so you won&amp;rsquo;t have to manually add &lt;code&gt;cmake&lt;/code&gt; to PATH.&lt;/p&gt;
+&lt;p&gt;For VS Code, you will need to install the &amp;ldquo;C/C++ Extension&amp;rdquo; and the &amp;ldquo;CMake Tools&amp;rdquo; extensions.&lt;/p&gt;
+&lt;h3 id=&#34;installing-vcpkg&#34; &gt;Installing Vcpkg
+&lt;span&gt;
+    &lt;a href=&#34;#installing-vcpkg&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;Clone &lt;a href=&#34;https://github.com/microsoft/vcpkg&#34;&gt;vcpkg&lt;/a&gt; into a directory that won&amp;rsquo;t bother you in your day to day life
+&lt;ul&gt;
+&lt;li&gt;For me, that would be &lt;code&gt;C:\Users\maste\Documents\GitHub\vcpkg&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Use &lt;code&gt;git clone https://github.com/microsoft/vcpkg.git&lt;/code&gt; or GitHub desktop&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Run the Vcpkg bootstrap script
+&lt;ul&gt;
+&lt;li&gt;Windows: &lt;code&gt;&amp;quot;./bootstrap-vcpkg&amp;quot; -disableMetrics&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Unix: &lt;code&gt;./bootstrap-vcpkg.sh -disableMetrics&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Modify environment variables
+&lt;ul&gt;
+&lt;li&gt;Add the vcpkg cloned directory to &lt;code&gt;PATH&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;On Windows, use Windows search for &amp;ldquo;envir&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;On Linux, open your &lt;code&gt;.bashrc&lt;/code&gt; file and add &lt;code&gt;export PATH=$PATH:~/vcpkg&lt;/code&gt; to your &lt;code&gt;.bashrc&lt;/code&gt; file&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Set &lt;code&gt;VCPKG_ROOT&lt;/code&gt; as the same value you added to &lt;code&gt;PATH&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Set &lt;code&gt;VCPKG_DEFAULT_TRIPLET&lt;/code&gt; to &lt;code&gt;x64-windows&lt;/code&gt; on Windows, or your computers triplet
+&lt;ul&gt;
+&lt;li&gt;Valid architectures are: x86, x64, arm, arm64 and wasm32.&lt;/li&gt;
+&lt;li&gt;Valid OS names are &lt;code&gt;&#39;windows&#39;, &#39;linux&#39;, &#39;macos&#39;&lt;/code&gt; (I&amp;rsquo;m unsure about the macos part)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Enable vcpkg packages to be used in VS/MSBuild:
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;vcpkg integrate install&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;copy the path to vcpkg.cmake for use later&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;You can now install packages using &lt;code&gt;vcpkg install &amp;lt;lib&amp;gt;&lt;/code&gt; and search for them using &lt;code&gt;vcpkg search &amp;lt;lib&amp;gt;&lt;/code&gt;.
+In the next section, we&amp;rsquo;ll be integrating &lt;code&gt;vcpkg&lt;/code&gt; within a CMake project.&lt;/p&gt;
+&lt;h2 id=&#34;integrating-vcpkg-into-a-new-cmake-project&#34; &gt;Integrating Vcpkg into a new CMake Project
+&lt;span&gt;
+    &lt;a href=&#34;#integrating-vcpkg-into-a-new-cmake-project&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;In this section we&amp;rsquo;ll be creating a CMake C++ project that will make an HTTP request using the &lt;code&gt;cpr&lt;/code&gt; library.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Create a CMake project in Visual Studio or VSCode&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Ensure IDE is configured to use &lt;code&gt;CMakePresets.json&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;VS: open visual studio and click &amp;ldquo;Create a new project&amp;rdquo; and search for &amp;ldquo;CMake Project&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;VSCode: open an empty folder in VSCode and use &amp;ldquo;CMake: Quick Start&amp;rdquo; from the command palette (Ctrl + Shift + P)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Setting the CMake toolchain file to &lt;code&gt;vcpkg.cmake&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Open CMakePresets.json &lt;a href=&#34;https://github.com/elibroftw/cpp-vcpkg-cmake-example/blob/master/CMakePresets.json&#34;&gt;example&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Add the following under &lt;code&gt;configurePresets[0] &amp;gt; cacheVariables&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;CMAKE_TOOLCHAIN_FILE&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;:&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;&amp;#34;value&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;$env{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;&amp;#34;type&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;FILEPATH&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;If using &lt;code&gt;cmake&lt;/code&gt; from the command line on Linux, add &lt;code&gt;-DCMAKE_TOOLCHAIN_FILE=$VCPKG_ROOT/scripts/buildsystems/vcpkg.cmake&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Create a &lt;code&gt;vcpkg&lt;/code&gt; response file to maintain portability&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Create &lt;code&gt;vcpkg_rf.txt&lt;/code&gt; in the root directory with the contents:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;install
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cpr
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Install dependencies using &lt;code&gt;vcpkg &amp;quot;@vcpkg_rf.txt&amp;quot; [optional arguments]&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;For each library installed, you&amp;rsquo;ll see instructions for what to add or modify in your &lt;code&gt;CMakeLists.txt&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;For &lt;code&gt;cpr&lt;/code&gt;, that would be&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-cmake&#34; data-lang=&#34;cmake&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#24909d&#34;&gt;find_package&lt;/span&gt;(&lt;span style=&#34;color:#ed9d13&#34;&gt;cpr&lt;/span&gt; &lt;span style=&#34;color:#ed9d13&#34;&gt;CONFIG&lt;/span&gt; &lt;span style=&#34;color:#ed9d13&#34;&gt;REQUIRED&lt;/span&gt;)&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&lt;/span&gt; &lt;span style=&#34;color:#24909d&#34;&gt;target_link_libraries&lt;/span&gt;(&lt;span style=&#34;color:#ed9d13&#34;&gt;PROJECT_NAME&lt;/span&gt; &lt;span style=&#34;color:#ed9d13&#34;&gt;PRIVATE&lt;/span&gt; &lt;span style=&#34;color:#ed9d13&#34;&gt;cpr::cpr&lt;/span&gt;)&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;For more than one library, you only need one &lt;code&gt;target_link_libraries&lt;/code&gt; rather than one for each additional library&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Now let&amp;rsquo;s code. In the main cpp file, type the following:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#cd2828;font-weight:bold&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#cd2828;font-weight:bold&#34;&gt;&amp;lt;cpr/cpr.h&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#cd2828;font-weight:bold&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#cd2828;font-weight:bold&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#cd2828;font-weight:bold&#34;&gt;&amp;lt;iostream&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#cd2828;font-weight:bold&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#cd2828;font-weight:bold&#34;&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;int&lt;/span&gt; &lt;span style=&#34;color:#447fcf&#34;&gt;main&lt;/span&gt;()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    cpr::Response r = cpr::Get(cpr::Url{ &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;https://api.github.com/repos/whoshuu/cpr/contributors&amp;#34;&lt;/span&gt; },
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        cpr::Authentication{ &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;user&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;pass&amp;#34;&lt;/span&gt; },
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        cpr::Parameters{ {&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;anon&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;true&amp;#34;&lt;/span&gt;}, {&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;key&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;value&amp;#34;&lt;/span&gt;} });
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    r.status_code;                  &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// 200
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;&lt;/span&gt;    r.header[&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;content-type&amp;#34;&lt;/span&gt;];       &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// application/json; charset=utf-8
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;&lt;/span&gt;    r.text;                         &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// JSON text string
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;&lt;/span&gt;    std::cout &amp;lt;&amp;lt; r.text &amp;lt;&amp;lt; std::endl;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#3677a9&#34;&gt;0&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Let&amp;rsquo;s test our build&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;If something doesn&amp;rsquo;t work, you may need to configure/delete CMake cache using your IDE or doing it manually&lt;/li&gt;
+&lt;li&gt;In Visual Studio, just click the green play button&lt;/li&gt;
+&lt;li&gt;In Visual Studio Code, you can use the &amp;ldquo;Build: Target&amp;rdquo; and select &amp;ldquo;run&amp;rdquo; from the command palette&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;If the steps didn&amp;rsquo;t work for you, you can follow &lt;a href=&#34;https://youtu.be/FeBzSYiWkEU&#34;&gt;this tutorial video&lt;/a&gt;.
+The video has an example of opening a project in VSCode that was made in Visual Studio.&lt;/p&gt;
+&lt;h2 id=&#34;video&#34; &gt;Video
+&lt;span&gt;
+    &lt;a href=&#34;#video&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;
+
+    
+    &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen=&#34;allowfullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/FeBzSYiWkEU?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;
+      &gt;&lt;/iframe&gt;
+    &lt;/div&gt;
+
+</description>
+    </item>
+    
+  </channel>
+</rss>
