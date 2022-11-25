@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>pyhon on ELL Blog</title><link>https://blog.elijahlopez.ca/tags/pyhon/</link><description>ELL Blog (pyhon)</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 22 Jul 2023 01:00:56 -0400</lastBuildDate><atom:link href="https://blog.elijahlopez.ca/tags/pyhon/index.xml" rel="self" type="application/rss+xml"/><item><title>Tips for Distributing Python Apps</title><link>https://blog.elijahlopez.ca/posts/tips-for-distributing-python-apps/</link><pubDate>Sat, 22 Jul 2023 01:00:56 -0400</pubDate><guid>https://blog.elijahlopez.ca/posts/tips-for-distributing-python-apps/</guid><description>&lt;p>Here are some pillars for making Python app distribution better for end users. I was not able to follow some of these pillars when I distributed Music Caster, so I wrote them down for other methods I&amp;rsquo;d try if I were to go about doing it again.&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>Python apps should be able to be installed without requiring administrative privileges.&lt;/p>
+&lt;ul>
+&lt;li>pip&lt;/li>
+&lt;li>git + script&lt;/li>
+&lt;li>Inno/NSIS/Wix&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Distribute python code as opposed to compiled code&lt;/p>
+&lt;ul>
+&lt;li>obfuscate if you want to&lt;/li>
+&lt;li>install dependencies on user side or bundle in zip file&lt;/li>
+&lt;li>instruct user to install Python 3.X&lt;/li>
+&lt;li>create virtualenv on setup&lt;/li>
+&lt;li>TODO: look into &lt;a href="https://docs.pipenv.org/">pipenv&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Create start menu shortcuts for platforms&lt;/p>
+&lt;ul>
+&lt;li>Linux: &lt;code>~/.local/share/applications/my_app.desktop&lt;/code>&lt;/li>
+&lt;li>Windows: &lt;code>%appdata%\Microsoft\Windows\Start Menu\Programs&lt;/code>&lt;/li>
+&lt;li>MacOSX: ???&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Install to a common programs folder&lt;/p>
+&lt;ul>
+&lt;li>Linux: &lt;code>~/.local/bin&lt;/code>&lt;/li>
+&lt;li>Windows: &lt;code>%localappdata%\Programs&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Allow users to manually update by default and allow auto updating&lt;/p>
+&lt;p>When using a git based approach, git fetch to check for updates, and git reset to the latest v* tag when updating. Try not to update to latest commit since a commit does not imply code change or testing.&lt;/p>
+&lt;p>When using executables, use a server link or github API request combined with digital signed checksum (Tauri does this).&lt;/p>
+&lt;/li>
+&lt;/ol></description></item></channel></rss>
