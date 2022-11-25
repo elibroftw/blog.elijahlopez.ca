@@ -1,0 +1,1204 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="">
+<head>
+    
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name = "apple-mobile-web-app-capable" content = "yes">
+    <meta name="theme-color" content="#121212">
+
+    <meta charset="utf-8">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <title>AI Coding Leaderboard - ELL Blog</title>
+    <meta name="description" content="Explore a leaderboard of AI models ranked by coding benchmarks like SWE-bench and Codeforces. Discusses challenges and limitations of existing benchmarks.">
+    
+    <link rel="icon" type="image/x-icon" href="https://blog.elijahlopez.ca/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" href="https://blog.elijahlopez.ca/favicon.png">
+
+    <link rel="stylesheet" href="https://blog.elijahlopez.ca/css/style.min.a3636fe363937f82d02cf99304911d0408aab8e9cb1849af08144cfcedc2e758.css" integrity="sha256-o2Nv42OTf4LQLPmTBJEdBAiquOnLGEmvCBRM/O3C51g=">
+    <script src="https://blog.elijahlopez.ca/js/script.min.74bf1a3fcf1af396efa4acf3e660e876b61a2153ab9cbe1893ac24ea6d4f94ee.js" type="text/javascript" charset="utf-8" integrity="sha256-dL8aP88a85bvpKzz5mDodrYaIVOrnL4Yk6wk6m1PlO4="></script>
+    <meta property="og:url" content="https://blog.elijahlopez.ca/posts/ai-coding-leaderboard/">
+  <meta property="og:site_name" content="ELL Blog">
+  <meta property="og:title" content="AI Coding Leaderboard">
+  <meta property="og:description" content="Explore a leaderboard of AI models ranked by coding benchmarks like SWE-bench and Codeforces. Discusses challenges and limitations of existing benchmarks.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-05-05T15:33:20-04:00">
+    <meta property="article:modified_time" content="2025-05-05T15:33:20-04:00">
+    <meta property="article:tag" content="Ai">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="AI Coding Leaderboard">
+  <meta name="twitter:description" content="Explore a leaderboard of AI models ranked by coding benchmarks like SWE-bench and Codeforces. Discusses challenges and limitations of existing benchmarks.">
+
+    
+    <script src="https://ryb.elijahlopez.ca/api/script.js" data-site-id="1" defer></script>
+</head>
+
+
+<body>
+    <a class="skip-main" href="#main">Skip to main content</a>
+    <div class="container">
+        <header class="common-header">
+            
+                
+
+    
+
+
+<div class="header-top">
+    <h1 class="site-title">
+        <a href="/">ELL Blog</a>
+    </h1>
+
+    <div class="header-top-left">
+    <ul class="social-icons">
+
+        <li>
+            <a href="/index.xml" title="Rss" rel="me">
+                <span class="inline-svg" >
+                    
+                </span>
+
+            </a>
+        </li>
+    
+<li>
+            <a href="https://elijahlopez.ca" title="Website" rel="me">
+            <span class="inline-svg" >
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M352 256C352 278.2 350.8 299.6 348.7 320H163.3C161.2 299.6 159.1 278.2 159.1 256C159.1 233.8 161.2 212.4 163.3 192H348.7C350.8 212.4 352 233.8 352 256zM503.9 192C509.2 212.5 512 233.9 512 256C512 278.1 509.2 299.5 503.9 320H380.8C382.9 299.4 384 277.1 384 256C384 234 382.9 212.6 380.8 192H503.9zM493.4 160H376.7C366.7 96.14 346.9 42.62 321.4 8.442C399.8 29.09 463.4 85.94 493.4 160zM344.3 160H167.7C173.8 123.6 183.2 91.38 194.7 65.35C205.2 41.74 216.9 24.61 228.2 13.81C239.4 3.178 248.7 0 256 0C263.3 0 272.6 3.178 283.8 13.81C295.1 24.61 306.8 41.74 317.3 65.35C328.8 91.38 338.2 123.6 344.3 160H344.3zM18.61 160C48.59 85.94 112.2 29.09 190.6 8.442C165.1 42.62 145.3 96.14 135.3 160H18.61zM131.2 192C129.1 212.6 127.1 234 127.1 256C127.1 277.1 129.1 299.4 131.2 320H8.065C2.8 299.5 0 278.1 0 256C0 233.9 2.8 212.5 8.065 192H131.2zM194.7 446.6C183.2 420.6 173.8 388.4 167.7 352H344.3C338.2 388.4 328.8 420.6 317.3 446.6C306.8 470.3 295.1 487.4 283.8 498.2C272.6 508.8 263.3 512 255.1 512C248.7 512 239.4 508.8 228.2 498.2C216.9 487.4 205.2 470.3 194.7 446.6H194.7zM190.6 503.6C112.2 482.9 48.59 426.1 18.61 352H135.3C145.3 415.9 165.1 469.4 190.6 503.6V503.6zM321.4 503.6C346.9 469.4 366.7 415.9 376.7 352H493.4C463.4 426.1 399.8 482.9 321.4 503.6V503.6z"/></svg>
+                </span>
+
+            </a>
+        </li>
+    
+
+        
+        
+        <li>
+            <a href="https://github.com/elibroftw" title="Github" rel="me">
+            <span class="inline-svg" >
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+                </span>
+
+            </a>
+        </li>
+    
+
+        
+        
+        <li>
+            <a href="https://twitter.com/elibroftw" title="Twitter" rel="me">
+            <span class="inline-svg" >
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+                </span>
+
+            </a>
+        </li>
+    
+
+        
+        
+        <li>
+            <a href="https://www.youtube.com/c/elibroftw" title="Youtube" rel="me">
+            <span class="inline-svg" >
+                    <svg viewBox="0 -3 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g id="Dribbble-Light-Preview" transform="translate(-300.000000, -7442.000000)" fill="#000000">
+      <g id="icons" transform="translate(56.000000, 160.000000)">
+        <path fill="currentColor"
+          d="M251.988432,7291.58588 L251.988432,7285.97425 C253.980638,7286.91168 255.523602,7287.8172 257.348463,7288.79353 C255.843351,7289.62824 253.980638,7290.56468 251.988432,7291.58588 M263.090998,7283.18289 C262.747343,7282.73013 262.161634,7282.37809 261.538073,7282.26141 C259.705243,7281.91336 248.270974,7281.91237 246.439141,7282.26141 C245.939097,7282.35515 245.493839,7282.58153 245.111335,7282.93357 C243.49964,7284.42947 244.004664,7292.45151 244.393145,7293.75096 C244.556505,7294.31342 244.767679,7294.71931 245.033639,7294.98558 C245.376298,7295.33761 245.845463,7295.57995 246.384355,7295.68865 C247.893451,7296.0008 255.668037,7296.17532 261.506198,7295.73552 C262.044094,7295.64178 262.520231,7295.39147 262.895762,7295.02447 C264.385932,7293.53455 264.28433,7285.06174 263.090998,7283.18289"
+          id="youtube-[#168]">
+        </path>
+      </g>
+    </g>
+  </g>
+</svg>
+
+                </span>
+
+            </a>
+        </li>
+    
+
+        
+        
+        <li>
+            <a href="mailto:elijahllopezz@gmail.com" title="Email" rel="me">
+            <span class="inline-svg" >
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48L48 64zM0 176L0 384c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-208L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"/></svg>
+
+                </span>
+
+            </a>
+        </li>
+    
+
+        
+        
+        <li>
+            <a href="https://www.instagram.com/elijahllopezz" title="Instagram" rel="me">
+            <span class="inline-svg" >
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M12 18C15.3137 18 18 15.3137 18 12C18 8.68629 15.3137 6 12 6C8.68629 6 6 8.68629 6 12C6 15.3137 8.68629 18 12 18ZM12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z" fill="#0F0F0F"/>
+<path fill="currentColor" d="M18 5C17.4477 5 17 5.44772 17 6C17 6.55228 17.4477 7 18 7C18.5523 7 19 6.55228 19 6C19 5.44772 18.5523 5 18 5Z" fill="#0F0F0F"/>
+<path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M1.65396 4.27606C1 5.55953 1 7.23969 1 10.6V13.4C1 16.7603 1 18.4405 1.65396 19.7239C2.2292 20.8529 3.14708 21.7708 4.27606 22.346C5.55953 23 7.23969 23 10.6 23H13.4C16.7603 23 18.4405 23 19.7239 22.346C20.8529 21.7708 21.7708 20.8529 22.346 19.7239C23 18.4405 23 16.7603 23 13.4V10.6C23 7.23969 23 5.55953 22.346 4.27606C21.7708 3.14708 20.8529 2.2292 19.7239 1.65396C18.4405 1 16.7603 1 13.4 1H10.6C7.23969 1 5.55953 1 4.27606 1.65396C3.14708 2.2292 2.2292 3.14708 1.65396 4.27606ZM13.4 3H10.6C8.88684 3 7.72225 3.00156 6.82208 3.0751C5.94524 3.14674 5.49684 3.27659 5.18404 3.43597C4.43139 3.81947 3.81947 4.43139 3.43597 5.18404C3.27659 5.49684 3.14674 5.94524 3.0751 6.82208C3.00156 7.72225 3 8.88684 3 10.6V13.4C3 15.1132 3.00156 16.2777 3.0751 17.1779C3.14674 18.0548 3.27659 18.5032 3.43597 18.816C3.81947 19.5686 4.43139 20.1805 5.18404 20.564C5.49684 20.7234 5.94524 20.8533 6.82208 20.9249C7.72225 20.9984 8.88684 21 10.6 21H13.4C15.1132 21 16.2777 20.9984 17.1779 20.9249C18.0548 20.8533 18.5032 20.7234 18.816 20.564C19.5686 20.1805 20.1805 19.5686 20.564 18.816C20.7234 18.5032 20.8533 18.0548 20.9249 17.1779C20.9984 16.2777 21 15.1132 21 13.4V10.6C21 8.88684 20.9984 7.72225 20.9249 6.82208C20.8533 5.94524 20.7234 5.49684 20.564 5.18404C20.1805 4.43139 19.5686 3.81947 18.816 3.43597C18.5032 3.27659 18.0548 3.14674 17.1779 3.0751C16.2777 3.00156 15.1132 3 13.4 3Z" fill="#0F0F0F"/>
+</svg>
+
+                </span>
+
+            </a>
+        </li>
+    
+
+
+
+    <li>
+            <a href="https://blog.elijahlopez.ca/index.xml" title="RSS" rel="me"><span class="inline-svg" >
+                    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" data-icon="rss" data-prefix="fas" focusable="false" role="img" viewBox="0 0 496 512"><path fill="currentColor" fill="currentColor" d="M128.081 415.959c0 35.369-28.672 64.041-64.041 64.041S0 451.328 0 415.959s28.672-64.041 64.041-64.041 64.04 28.673 64.04 64.041zm175.66 47.25c-8.354-154.6-132.185-278.587-286.95-286.95C7.656 175.765 0 183.105 0 192.253v48.069c0 8.415 6.49 15.472 14.887 16.018 111.832 7.284 201.473 96.702 208.772 208.772.547 8.397 7.604 14.887 16.018 14.887h48.069c9.149.001 16.489-7.655 15.995-16.79zm144.249.288C439.596 229.677 251.465 40.445 16.503 32.01 7.473 31.686 0 38.981 0 48.016v48.068c0 8.625 6.835 15.645 15.453 15.999 191.179 7.839 344.627 161.316 352.465 352.465.353 8.618 7.373 15.453 15.999 15.453h48.068c9.034-.001 16.329-7.474 16.005-16.504z"/></svg>
+                </span>
+</a>
+        </li>
+    
+</ul>
+</div>
+    
+
+    
+
+
+
+
+    <div class="header-top-right theme-switcher">
+        <span class="inline-svg" >
+                    <svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 290 290">
+<path fill="currentColor" d="M142.959,0C64.131,0,0,64.132,0,142.96c0,78.828,64.131,142.959,142.959,142.959c78.828,0,142.96-64.131,142.96-142.959  C285.919,64.132,221.787,0,142.959,0z M142.959,260.919V142.96V25c65.043,0,117.96,52.917,117.96,117.96  C260.919,208.003,208.002,260.919,142.959,260.919z"/>
+</svg>
+                </span>
+
+    </div>
+
+
+<script>
+const STORAGE_KEY = 'user-color-scheme'
+const defaultTheme = "auto"
+
+let currentTheme
+let switchButton
+let autoDefinedScheme = window.matchMedia('(prefers-color-scheme: dark)')
+
+const autoChangeScheme = e => {
+    currentTheme = e.matches ? 'dark' : 'light'
+    document.documentElement.setAttribute('data-theme', currentTheme)
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    switchButton = document.querySelector('.theme-switcher')
+    currentTheme = detectCurrentScheme()
+    setThemeColorMeta(currentTheme)
+    if (currentTheme == 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark')
+    }
+
+    if (currentTheme == 'auto') {
+        autoChangeScheme(autoDefinedScheme);
+        autoDefinedScheme.addListener(autoChangeScheme);
+    }
+
+    if (switchButton) {
+        switchButton.addEventListener('click', switchTheme, false)
+    }
+})
+
+function detectCurrentScheme() {
+    if (localStorage !== null && localStorage.getItem(STORAGE_KEY)) {
+        return localStorage.getItem(STORAGE_KEY)
+    }
+    if (defaultTheme) {
+        return defaultTheme
+    }
+    if (!window.matchMedia) {
+        return defaultTheme
+    }
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        return 'dark'
+    }
+    return defaultTheme
+}
+
+function switchTheme(e) {
+    if (currentTheme == 'dark') {
+        if (localStorage !== null)
+            localStorage.setItem(STORAGE_KEY, 'light')
+        document.documentElement.setAttribute('data-theme', 'light')
+        currentTheme = 'light'
+    } else {
+        if (localStorage !== null)
+            localStorage.setItem(STORAGE_KEY, 'dark')
+        document.documentElement.setAttribute('data-theme', 'dark')
+        currentTheme = 'dark'
+    }
+    setThemeColorMeta(currentTheme)
+}
+
+function setThemeColorMeta(currentTheme) {
+    if (currentTheme == 'dark') {
+        document.querySelector('meta[name="theme-color"]').setAttribute('content', '#121212')
+    } else {
+        document.querySelector('meta[name="theme-color"]').setAttribute('content', '#fff')
+    }
+}
+</script>
+
+</div>
+
+
+    <nav>
+        
+        
+        <a class="" href="https://blog.elijahlopez.ca/" title="Home">Home</a>
+        
+        <a class="" href="https://blog.elijahlopez.ca/posts/" title="Archive">Archive</a>
+        
+        <a class="" href="https://blog.elijahlopez.ca/graph/" title="Graph">Graph</a>
+        
+        <a class="" href="https://blog.elijahlopez.ca/tags/" title="Tags">Tags</a>
+        
+    </nav>
+
+
+
+
+
+
+            
+        </header>
+        <main id="main" tabindex="-1">
+            
+    
+
+    <article class="post h-entry">
+        <div class="post-header">
+            <header>
+                <h1 class="p-name post-title">AI Coding Leaderboard</h1>
+                
+            </header>
+        </div>
+        
+        
+            
+            
+            <div class="post-info">
+                <ul class="post-authors">
+                    <a href="https://blog.elijahlopez.ca/authors/elijah-lopez/">@Elijah Lopez</a>
+                </ul>
+            </div>
+        
+
+        <div class="post-info">
+    
+
+    
+        <div class="post-date dt-published">
+            <a title="2025-05-05 15:33:20 -0400 -0400" class="u-url" href="/posts/ai-coding-leaderboard/"><time datetime="2025-05-05">May 5, 2025</time></a>
+            
+        </div>
+    
+    <a class="post-hidden-url u-url" href="https://blog.elijahlopez.ca/posts/ai-coding-leaderboard/">https://blog.elijahlopez.ca/posts/ai-coding-leaderboard/</a>
+    <a href="https://blog.elijahlopez.ca/" class="p-name p-author post-hidden-author h-card" rel="me">Elijah Lopez</a>
+    <div class="post-taxonomies">
+        
+        
+            <ul class="post-tags">
+                
+                    
+                    <li><a class="tag" href="https://blog.elijahlopez.ca/tags/ai/">#Ai</a></li>
+                
+            </ul>
+        
+    </div>
+</div>
+
+        
+
+
+
+
+        <div class="content e-content">
+            <p>DEPRECATED: <a href="https://aider.chat/docs/leaderboards/">Aider Polyglot</a> is multi-lingual compared to SWE-bench verified and that does not require me to make use of my own aggregated leaderboard. I will still try my best to maintain this post, but just letting you know I suggest using Aider Polyglot going forward for which model to use for pair programming.</p>
+<ul>
+<li><a href="https://aider.chat/2024/12/21/polyglot.html#the-polyglot-benchmark">Aider polyglot</a>: Based on the 225 most difficult <a href="https://exercism.org/">Exercism</a> coding problems in the following languages: C++, Go, Java, JavaScript, Python and Rust. See <a href="https://aider.chat/docs/leaderboards/">Aider polyglot coding leaderboard</a>. The problem I see is that models can just train on the solutions and game this leaderboard versus LiveCodeBench which is free of contaminations.</li>
+<li><a href="https://openai.com/index/introducing-swe-bench-verified/">SWE-bench verified</a> (August 13, 2024). A subset of 500 Python-exclusive tasks from the full 2000 which have been verified by humans as solvable. This is the defacto way to evaluate AI models as almost almost all models will report their scores for this benchmark. The unofficial <a href="https://www.swebench.com/#verified">leaderboard</a> includes SWE copilot tool. The problem is that it doesn&rsquo;t include self-reported results unlike my leaderboard.</li>
+<li><a href="https://codeforces.com/">Codeforces</a>: the elo represents how good the AI model is at competitive programming tasks. There is no leaderboard since most AI models will self-report or benchmark other models</li>
+<li>The problem with EvalPlus is that it doesn&rsquo;t include bleeding edge models, it&rsquo;s basically almost solved, and not many new models even report their scores anymore.</li>
+<li>I don&rsquo;t like LiveCodeBench because it&rsquo;s not useful for comparing different models released at different times due to (1) every-updating problem set (2) not continuously testing all frontier models. If a benchmark score has an expiry date, then referencing it is really bad for a leaderboard. It&rsquo;s good for relative performance in papers however then you have to read the fine print to ensure the authors retested the models they compared their new model against. See how complicated that is? Then you&rsquo;d have to compile your own leaderboard because can you really trust others to do it right? No you can&rsquo;t! I may include some sort of LiveCodeBench relative ranking in the future.</li>
+</ul>
+<p>Future: Replace AIder Polyglot with SWE-bench Multilingual</p>
+<p>Ideally, the best programming tool would be implemented as follows, given the release of grok-1-fast:</p>
+<p>An Architecture &lt;-&gt; Programmer workflow where an agent is in charge of responding to questions that the coder agent has. The thinker will be the one to plan out the project and break it into chunks for the programer to implement.</p>
+<h3 id="leaderboard" >Leaderboard
+<span>
+    <a href="#leaderboard">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><table>
+  <thead>
+      <tr>
+          <th>Model / Product</th>
+          <th>Company</th>
+          <th>Tier</th>
+          <th>Aider Polyglot</th>
+          <th>SWE-bench verified</th>
+          <th>Codeforces</th>
+          <th>Date Available</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Grok 4 Fast<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></td>
+          <td>xAI</td>
+          <td>PI</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>Sep-2025</td>
+      </tr>
+      <tr>
+          <td>Claude Sonnet 4.5 <sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></td>
+          <td>Anthropic</td>
+          <td>PI</td>
+          <td>-</td>
+          <td>77.2%</td>
+          <td>-</td>
+          <td>Sep-2025</td>
+      </tr>
+      <tr>
+          <td>GPT-5-Codex<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup></td>
+          <td>OpenAI</td>
+          <td>PI</td>
+          <td>-</td>
+          <td>74.5%</td>
+          <td>-</td>
+          <td>Sep-2025</td>
+      </tr>
+      <tr>
+          <td>GPT-5<sup id="fnref1:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup></td>
+          <td>OpenAI</td>
+          <td>PI</td>
+          <td>88%</td>
+          <td>72.8%</td>
+          <td>-</td>
+          <td>Sep-2025</td>
+      </tr>
+      <tr>
+          <td>Codex-1<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup></td>
+          <td>OpenAI</td>
+          <td>PI</td>
+          <td>-</td>
+          <td>72.1%</td>
+          <td>-</td>
+          <td>May-2025</td>
+      </tr>
+      <tr>
+          <td>Claude Opus 4.1<sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup></td>
+          <td>Anthropic</td>
+          <td>PI</td>
+          <td>-</td>
+          <td>74.5%</td>
+          <td>-</td>
+          <td>Aug-2025</td>
+      </tr>
+      <tr>
+          <td>Claude Sonnet 4 <sup id="fnref:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup></td>
+          <td>Anthropic</td>
+          <td>PI</td>
+          <td>-</td>
+          <td>72.7%</td>
+          <td>-</td>
+          <td>May-2025</td>
+      </tr>
+      <tr>
+          <td>Claude Opus 4<sup id="fnref1:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup></td>
+          <td>Anthropic</td>
+          <td>PI</td>
+          <td>72.5%</td>
+          <td>72.5%</td>
+          <td>-</td>
+          <td>May-2025</td>
+      </tr>
+      <tr>
+          <td>Grok Code Fast 1<sup id="fnref:7"><a href="#fn:7" class="footnote-ref" role="doc-noteref">7</a></sup></td>
+          <td>xAI</td>
+          <td>PI</td>
+          <td>-</td>
+          <td>70.8%</td>
+          <td>-</td>
+          <td>Aug-2025</td>
+      </tr>
+      <tr>
+          <td>Claude Sonnet 3.7 (Custom Scaffold)<sup id="fnref:8"><a href="#fn:8" class="footnote-ref" role="doc-noteref">8</a></sup></td>
+          <td>Anthropic</td>
+          <td>PI</td>
+          <td>-</td>
+          <td>70.3%</td>
+          <td>-</td>
+          <td>Feb-2025</td>
+      </tr>
+      <tr>
+          <td>Gemini 2.5 Pro<sup id="fnref:9"><a href="#fn:9" class="footnote-ref" role="doc-noteref">9</a></sup></td>
+          <td>Google</td>
+          <td>PI</td>
+          <td>-</td>
+          <td>67.2%</td>
+          <td>-</td>
+          <td>May-2025</td>
+      </tr>
+      <tr>
+          <td>Qwen 3 Coder 480B<sup id="fnref:10"><a href="#fn:10" class="footnote-ref" role="doc-noteref">10</a></sup></td>
+          <td>Qwen</td>
+          <td>OI</td>
+          <td>61.8%</td>
+          <td>69.6%</td>
+          <td>-</td>
+          <td>Jul-2025</td>
+      </tr>
+      <tr>
+          <td>o3-pro<sup id="fnref:11"><a href="#fn:11" class="footnote-ref" role="doc-noteref">11</a></sup></td>
+          <td>OpenAI</td>
+          <td>PI</td>
+          <td>84.9%</td>
+          <td>69.0%</td>
+          <td>2748</td>
+          <td>Apr-2025</td>
+      </tr>
+      <tr>
+          <td>o3<sup id="fnref1:11"><a href="#fn:11" class="footnote-ref" role="doc-noteref">11</a></sup></td>
+          <td>OpenAI</td>
+          <td>PI</td>
+          <td>79.6%</td>
+          <td>69.1%</td>
+          <td>2706</td>
+          <td>Apr-2025</td>
+      </tr>
+      <tr>
+          <td>Qwen 3 Max<sup id="fnref:12"><a href="#fn:12" class="footnote-ref" role="doc-noteref">12</a></sup></td>
+          <td>Qwen</td>
+          <td>PI</td>
+          <td>-</td>
+          <td>69.6%</td>
+          <td>-</td>
+          <td>Sep-2025</td>
+      </tr>
+      <tr>
+          <td>DeepSeek-V3.1-Terminus<sup id="fnref:13"><a href="#fn:13" class="footnote-ref" role="doc-noteref">13</a></sup></td>
+          <td>DeepSeek</td>
+          <td>OI</td>
+          <td>76.1%</td>
+          <td>68.4%</td>
+          <td>-</td>
+          <td>Sep-2025</td>
+      </tr>
+      <tr>
+          <td>o4-mini<sup id="fnref2:11"><a href="#fn:11" class="footnote-ref" role="doc-noteref">11</a></sup></td>
+          <td>OpenAI</td>
+          <td>PI</td>
+          <td>72.0%</td>
+          <td>68.1%</td>
+          <td>2719</td>
+          <td>Apr-2025</td>
+      </tr>
+      <tr>
+          <td>DeepSeek-V3.2-Exp<sup id="fnref:14"><a href="#fn:14" class="footnote-ref" role="doc-noteref">14</a></sup></td>
+          <td>DeepSeek</td>
+          <td>OI</td>
+          <td>74.5%</td>
+          <td>67.8%</td>
+          <td>-</td>
+          <td>Sep-2025</td>
+      </tr>
+      <tr>
+          <td>GLM-4.6<sup id="fnref:15"><a href="#fn:15" class="footnote-ref" role="doc-noteref">15</a></sup></td>
+          <td>Z AI</td>
+          <td>OI</td>
+          <td>-</td>
+          <td>68%</td>
+          <td>-</td>
+          <td>Sep-2025</td>
+      </tr>
+      <tr>
+          <td>DeepSeek-V3.1<sup id="fnref:16"><a href="#fn:16" class="footnote-ref" role="doc-noteref">16</a></sup></td>
+          <td>DeepSeek</td>
+          <td>OI</td>
+          <td>-</td>
+          <td>66.0%</td>
+          <td>-</td>
+          <td>Aug-2025</td>
+      </tr>
+      <tr>
+          <td>Code World Model<sup id="fnref:17"><a href="#fn:17" class="footnote-ref" role="doc-noteref">17</a></sup></td>
+          <td>Meta</td>
+          <td>OIII</td>
+          <td>-</td>
+          <td>65.8 %</td>
+          <td>-</td>
+          <td>Sep-2025</td>
+      </tr>
+      <tr>
+          <td>Kimi-K2-Instruct<sup id="fnref:18"><a href="#fn:18" class="footnote-ref" role="doc-noteref">18</a></sup></td>
+          <td>Moonshot AI</td>
+          <td>OI</td>
+          <td>60%</td>
+          <td>65.8%</td>
+          <td>-</td>
+          <td>Jul-2025</td>
+      </tr>
+      <tr>
+          <td>GLM-4.5<sup id="fnref:19"><a href="#fn:19" class="footnote-ref" role="doc-noteref">19</a></sup></td>
+          <td>Z AI</td>
+          <td>OI</td>
+          <td>-</td>
+          <td>64.2%</td>
+          <td>-</td>
+          <td>Jul-2025</td>
+      </tr>
+      <tr>
+          <td>gpt-oss-120B<sup id="fnref:20"><a href="#fn:20" class="footnote-ref" role="doc-noteref">20</a></sup></td>
+          <td>OpenAI</td>
+          <td>OII</td>
+          <td>44.4%</td>
+          <td>62.4%</td>
+          <td>2622</td>
+          <td>Aug-2025</td>
+      </tr>
+      <tr>
+          <td>Gemini 2.5 Flash Thinking<sup id="fnref:21"><a href="#fn:21" class="footnote-ref" role="doc-noteref">21</a></sup></td>
+          <td>OpenAI</td>
+          <td>PI</td>
+          <td>61.9%</td>
+          <td>60.4%</td>
+          <td>-</td>
+          <td>Aug-2025</td>
+      </tr>
+      <tr>
+          <td>Gemini 2.5 Pro<sup id="fnref:22"><a href="#fn:22" class="footnote-ref" role="doc-noteref">22</a></sup></td>
+          <td>Google</td>
+          <td>PI</td>
+          <td>82.2%</td>
+          <td>59.6%</td>
+          <td>2001</td>
+          <td>May-2025</td>
+      </tr>
+      <tr>
+          <td>GLM-4.5-Air <sup id="fnref1:19"><a href="#fn:19" class="footnote-ref" role="doc-noteref">19</a></sup></td>
+          <td>Z AI</td>
+          <td>OII</td>
+          <td>-</td>
+          <td>57.6%</td>
+          <td>-</td>
+          <td>Jul-2025</td>
+      </tr>
+      <tr>
+          <td>Claude 3.7 Sonnet<sup id="fnref1:8"><a href="#fn:8" class="footnote-ref" role="doc-noteref">8</a></sup></td>
+          <td>Anthropic</td>
+          <td>OI</td>
+          <td>64.9%</td>
+          <td>62.3%</td>
+          <td>-</td>
+          <td>Feb-2025</td>
+      </tr>
+      <tr>
+          <td>o3-mini<sup id="fnref3:11"><a href="#fn:11" class="footnote-ref" role="doc-noteref">11</a></sup></td>
+          <td>OpenAI</td>
+          <td>PI</td>
+          <td>-</td>
+          <td>61.0%</td>
+          <td>2036</td>
+          <td>Apr-2025</td>
+      </tr>
+      <tr>
+          <td>gpt-oss-20B<sup id="fnref1:20"><a href="#fn:20" class="footnote-ref" role="doc-noteref">20</a></sup></td>
+          <td>OpenAI</td>
+          <td>OII</td>
+          <td>34.2%</td>
+          <td>60.7%</td>
+          <td>2516</td>
+          <td>Aug-2025</td>
+      </tr>
+      <tr>
+          <td>DeepSeek-R1-0528 (2025)<sup id="fnref:23"><a href="#fn:23" class="footnote-ref" role="doc-noteref">23</a></sup></td>
+          <td>DeepSeek</td>
+          <td>OI</td>
+          <td>-</td>
+          <td>57.60% (Multiple Attempts)</td>
+          <td>1930</td>
+          <td>May-2025</td>
+      </tr>
+      <tr>
+          <td>Qwen3-235B-A22B<sup id="fnref:24"><a href="#fn:24" class="footnote-ref" role="doc-noteref">24</a></sup></td>
+          <td>Qwen</td>
+          <td>OI</td>
+          <td>-</td>
+          <td>52.2<sup id="fnref1:12"><a href="#fn:12" class="footnote-ref" role="doc-noteref">12</a></sup></td>
+          <td>2056</td>
+          <td>Apr-2025</td>
+      </tr>
+      <tr>
+          <td>Grok 3<sup id="fnref:25"><a href="#fn:25" class="footnote-ref" role="doc-noteref">25</a></sup></td>
+          <td>xAI</td>
+          <td>PI</td>
+          <td>53.3%</td>
+          <td>-</td>
+          <td>-</td>
+          <td>Feb-2025</td>
+      </tr>
+      <tr>
+          <td>DeepSeek R1 (01/20)<sup id="fnref:26"><a href="#fn:26" class="footnote-ref" role="doc-noteref">26</a></sup></td>
+          <td>DeepSeek</td>
+          <td>OI</td>
+          <td>56.9%</td>
+          <td>49.2%</td>
+          <td>1530</td>
+          <td>Jan-2025</td>
+      </tr>
+      <tr>
+          <td>DeepSeek V3 (03/24)<sup id="fnref1:16"><a href="#fn:16" class="footnote-ref" role="doc-noteref">16</a></sup></td>
+          <td>DeepSeek</td>
+          <td>OI</td>
+          <td>-</td>
+          <td>45.4%</td>
+          <td>-</td>
+          <td>Mar-2025</td>
+      </tr>
+      <tr>
+          <td>Mistral Medium 3<sup id="fnref:27"><a href="#fn:27" class="footnote-ref" role="doc-noteref">27</a></sup></td>
+          <td>Mistarl</td>
+          <td>PI</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>May-2025</td>
+      </tr>
+      <tr>
+          <td>ChatGPT 4.1<sup id="fnref:28"><a href="#fn:28" class="footnote-ref" role="doc-noteref">28</a></sup></td>
+          <td>OpenAI</td>
+          <td>PI</td>
+          <td>-</td>
+          <td>55%</td>
+          <td>-</td>
+          <td>Apr-2025</td>
+      </tr>
+      <tr>
+          <td>Claude 3.5 Sonnet<sup id="fnref:29"><a href="#fn:29" class="footnote-ref" role="doc-noteref">29</a></sup></td>
+          <td>Anthropic</td>
+          <td>PI</td>
+          <td>-</td>
+          <td>49%</td>
+          <td>-</td>
+          <td>Oct-2024</td>
+      </tr>
+      <tr>
+          <td>o1</td>
+          <td>OpenAI</td>
+          <td>PI</td>
+          <td>-</td>
+          <td>48.9%</td>
+          <td>1891</td>
+          <td>Dec-2024</td>
+      </tr>
+      <tr>
+          <td>Qwen3-32B<sup id="fnref1:24"><a href="#fn:24" class="footnote-ref" role="doc-noteref">24</a></sup></td>
+          <td>Qwen</td>
+          <td>OII</td>
+          <td>-</td>
+          <td>-</td>
+          <td>1977</td>
+          <td>Apr-2025</td>
+      </tr>
+      <tr>
+          <td>Qwen3-30B-A3B<sup id="fnref2:24"><a href="#fn:24" class="footnote-ref" role="doc-noteref">24</a></sup></td>
+          <td>Qwen</td>
+          <td>OII</td>
+          <td>-</td>
+          <td>-</td>
+          <td>1974</td>
+          <td>Apr-2025</td>
+      </tr>
+      <tr>
+          <td>Qwen3-14B</td>
+          <td>Qwen</td>
+          <td>OIII</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>Apr-2025</td>
+      </tr>
+      <tr>
+          <td>Qwen3-8B</td>
+          <td>Qwen</td>
+          <td>OIII</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>Apr-2025</td>
+      </tr>
+      <tr>
+          <td><del>DeepSeek-R1-Distill-70B</del></td>
+          <td>DeepSeek</td>
+          <td>OII</td>
+          <td>-</td>
+          <td>-</td>
+          <td>1633</td>
+          <td>Jan-2025</td>
+      </tr>
+      <tr>
+          <td>Phi 4 reasoning (14B)</td>
+          <td>Microsoft</td>
+          <td>OIII</td>
+          <td>-</td>
+          <td>-</td>
+          <td>1736</td>
+          <td>Dec-2025</td>
+      </tr>
+      <tr>
+          <td>Phi 4 reasoning plus</td>
+          <td>Microsoft</td>
+          <td>OIII</td>
+          <td>-</td>
+          <td>-</td>
+          <td>1723</td>
+          <td>Dec-2025</td>
+      </tr>
+      <tr>
+          <td>Qwen3-4B<sup id="fnref3:24"><a href="#fn:24" class="footnote-ref" role="doc-noteref">24</a></sup></td>
+          <td>Qwen</td>
+          <td>OIII</td>
+          <td>-</td>
+          <td>-</td>
+          <td>1671</td>
+          <td>Apr-2025</td>
+      </tr>
+      <tr>
+          <td>Gemma3-27B-IT</td>
+          <td>Google</td>
+          <td>OII</td>
+          <td>-</td>
+          <td>-</td>
+          <td>1063</td>
+          <td>Mar-2025</td>
+      </tr>
+      <tr>
+          <td>DeepSeek V3 (12/24)<sup id="fnref:30"><a href="#fn:30" class="footnote-ref" role="doc-noteref">30</a></sup></td>
+          <td>DeepSeek</td>
+          <td>OI</td>
+          <td>-</td>
+          <td>42%</td>
+          <td>-</td>
+          <td>Dec-2024</td>
+      </tr>
+      <tr>
+          <td>Claude 3.5 Haiku<sup id="fnref:31"><a href="#fn:31" class="footnote-ref" role="doc-noteref">31</a></sup></td>
+          <td>Anthropic</td>
+          <td>PI</td>
+          <td>-</td>
+          <td>40.6%</td>
+          <td>-</td>
+          <td>Oct-2024</td>
+      </tr>
+      <tr>
+          <td><del>o1-preview</del></td>
+          <td>OpenAI</td>
+          <td>PI</td>
+          <td>-</td>
+          <td>40%</td>
+          <td>1258</td>
+          <td>Sep-2024</td>
+      </tr>
+      <tr>
+          <td>ChatGPT 4.5<sup id="fnref:32"><a href="#fn:32" class="footnote-ref" role="doc-noteref">32</a></sup></td>
+          <td>OpenAI</td>
+          <td>PI</td>
+          <td>-</td>
+          <td>38.0%</td>
+          <td>-</td>
+          <td>Feb-2025</td>
+      </tr>
+      <tr>
+          <td>Claude 3.5 Sonnet (old)<sup id="fnref1:29"><a href="#fn:29" class="footnote-ref" role="doc-noteref">29</a></sup></td>
+          <td>Anthropic</td>
+          <td>PI</td>
+          <td>-</td>
+          <td>33.4%</td>
+          <td>-</td>
+          <td>Jun-2024</td>
+      </tr>
+      <tr>
+          <td>ChatGPT 4o<sup id="fnref1:32"><a href="#fn:32" class="footnote-ref" role="doc-noteref">32</a></sup></td>
+          <td>OpenAI</td>
+          <td>PI</td>
+          <td>-</td>
+          <td>33.2%</td>
+          <td>900</td>
+          <td>May-2024</td>
+      </tr>
+      <tr>
+          <td>o1-mini<sup id="fnref:33"><a href="#fn:33" class="footnote-ref" role="doc-noteref">33</a></sup></td>
+          <td>OpenAI</td>
+          <td>PI</td>
+          <td>-</td>
+          <td>30%</td>
+          <td>1650</td>
+          <td>Sep-2024</td>
+      </tr>
+      <tr>
+          <td>Claude 3 Opus<sup id="fnref2:29"><a href="#fn:29" class="footnote-ref" role="doc-noteref">29</a></sup></td>
+          <td>Anthropic</td>
+          <td>PI</td>
+          <td>-</td>
+          <td>22%</td>
+          <td>-</td>
+          <td>Mar-2024</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="definition-of-tier" >Definition of Tier
+<span>
+    <a href="#definition-of-tier">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><table>
+  <thead>
+      <tr>
+          <th>Tier</th>
+          <th>Name</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>P</td>
+          <td>Proprietary</td>
+      </tr>
+      <tr>
+          <td>O</td>
+          <td>Open Weights</td>
+      </tr>
+      <tr>
+          <td>I</td>
+          <td>Flagship</td>
+      </tr>
+      <tr>
+          <td>II</td>
+          <td>Dedicated Hardware (32GB &lt; VRAM &lt;= 144 GB)</td>
+      </tr>
+      <tr>
+          <td>III</td>
+          <td>&lt;= 32GB VRAM</td>
+      </tr>
+      <tr>
+          <td>IV</td>
+          <td>Speed</td>
+      </tr>
+  </tbody>
+</table>
+<p>When I say dedicated hardware, I&rsquo;m talking about having to buy hardware dedicated for running AI models locally. The best bang for you buck available as far as I know is <a href="https://tinygrad.org/#tinybox">tiny box</a> or <a href="https://itsalltruffles.com/">Truffle</a> with the former costing over 10k and the latter costing under 20k. I mean at that price point, unless you&rsquo;re doing something sensitive, it&rsquo;s better to use API endpoints via openrouter.</p>
+<h3 id="notes" >Notes
+<span>
+    <a href="#notes">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>Google Gemini 2.5 Pro May update is missing from the leaderboard</li>
+<li>I&rsquo;m disappointed in the Grok team at xAI for failing to release benchmarks that can be compared against future frontier models (Gemini 2.5 Pro was released in March 2025, o4-mini was released in April 2025, and Qwen3 in April 2025). Their benchmark only proves that Grok 3 Beta and Grok 3 mini Beta (THINK) outperform o3-mini. They only really used LiveCodeBench which like I said before, is not a good way to do comparison across time. On LiveCodeBench, Grok 3 Beta scored higher than o3-mini and Deepseek-R1, but nothing really to compare against Gemini 2.5 Pro, which is the frontier model that got released after Grok 3. Even when Gemini 2.5 Pro was released, Grok 3 Beta&rsquo;s SWE-bench verified score was and is still <code>-</code>. Amongst all the models Gemini 2.5 Pro compared against, Grok 3 Beta was the one with the most missing benchmarks (6). And that&rsquo;s with the Gemini team excluding Claude 3.7&rsquo;s <a href="https://gr.inc/OpenAI/SimpleQA/">estimated SimpleQA score</a> of ~50.</li>
+<li>I put R1 above o1 because R1 was better at software <em>engineering</em> not just programming. The example I can give is asking about fixing a race condition regarding writing to a file that needs to be read. R1 properly told me to use <code>fsync</code> (note: call <code>F_FULLFSYNC</code> for Darwin platforms)</li>
+<li>The codeforces scores change depending on when they are recorded. This is the case for DeepSeek R1, which got a bump of ~150. I did this to ensure that Qwen3 models that don&rsquo;t contain a SWE-bench verified score are not ranked above DeepSeek R1. I also removed Claude 3.5 Sonnet&rsquo;s Codeforces score because there was apparently a (new) model released for it which has clearly not been benchmarked by the new models. It&rsquo;s a bit weird that the new Qwen release does not benchmark claude 3.7.</li>
+<li>Explaining Synthetic Rankings of models with missing scores.
+<ul>
+<li>According to Mistral, Mistral Medium 3 performs just below Claude 3.7 and ranks DeepSeek V3 (03/24) above Claude 3.7 according to their LiveCodeBench benchmarking. However, until I see an updated SWE-bench verified on Mistral Medium 3, it will be placed below DeepSeek V3</li>
+<li>Qwen3-235B-A22B and Grok 3 are only placed so high due to outperforming o3-mini and DeepSeek R1 at the LiveCodeBench. Surprisingly, Gemini 2.5 Pro has the highest LiveCodeBench score according to Qwen&rsquo;s blog. Therefore, it makes sense to ignore the CodeForces when computing the synthetic ranking for Qwen3-235B-A22B and Grok 3. Reasoning models are also worse for productivity because they take longer to respond.</li>
+</ul>
+</li>
+</ul>
+<h3 id="interpreting-the-leaderboard" >Interpreting the Leaderboard
+<span>
+    <a href="#interpreting-the-leaderboard">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>2025-05-05</p>
+<p>Models that are prohibitively expensive: o3 (high), claude 3.7 + thinking.</p>
+<p>In my opinion, given that Claude 3.7 sucks at following simple instructions and behaves like an intern when it modifies code it was told not to edit, the models I recommend as of comes down to:</p>
+<ul>
+<li>o3 (too expensive?)</li>
+<li>o4-mini</li>
+<li>gemini-2.5-pro-preview</li>
+</ul>
+<h2 id="conclusions" >Conclusions
+<span>
+    <a href="#conclusions">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><p>Why can&rsquo;t I get paid to do this? If I was paid money, I would HAPPILY run benchmarks on all frontier models and maintain the leaderboards for all the necessary models. Hell I would even make a fancy UI and everything instead of just a static markdown table that can&rsquo;t be sorted.</p>
+<ol>
+<li>EvalPlus is deprecated; read more in the coding leaderboard</li>
+<li>LCB scores are static and the depreciation mechanism makes it very difficult to compare a model that was just released to a model realeased a few months ago. For example, look at Grok 3. They exclusively use this benchmark, even though there&rsquo;s a 99.99% chance that Grok 3&rsquo;s future LCB score would be lower. This is exhibited well in Qwen&rsquo;s blog which showed Gemini 2.5 Pro absolutely crushing LCB. The biggest issues for LCB is that if you have a restraint like &ldquo;I only want to run open-source models less than 20B in size&rdquo;, you will definitely not be able to benefit from LCB&rsquo;s own published leaderboards.</li>
+<li>xAI is releasing a suspicuiously low amount of benchmark scores. Not only that, but the xAI team has taken the approach that we all have patience. Their LCB score is useless to real world scenarios once you realize not only did it have to think to achieve them, gemini 2.5 pro beat it anyways. Not to mention that o4-mini and Gemini 2.5 Pro Preview were released on openrouter 7-8 days after grok 3 BETA was released on openrouter.</li>
+<li>Qwen3 30B is a great model and has &ldquo;deprecated&rdquo; DeepSeek R1 Distill 70B</li>
+</ol>
+<h2 id="history-of-releases" >History of Releases
+<span>
+    <a href="#history-of-releases">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><ul>
+<li>Anthropic: Claude 3 Opus scored scored 22% on SWE-bench verified, the paper was released later in August</li>
+<li>OpenAI: ChatGPT 4o May 2025 scored 33.2% on SWE-bench verified
+They started off very strong in June 2024 with 3.5 Sonnet, but are slowly plateauing in performance</li>
+<li>Anthropic: Claude 3.5 released in June, revolutionary even though on paper it was only 33.4%</li>
+<li>Anthropic: Claude 3.5 released in June, revolutionary even though on paper it was only 33.4%</li>
+<li>OpenAI: o1 preview and mini, the latter of which scores 30%, the former was scoring 40%.</li>
+<li>Anthropic: October update Claude 3.5 Haiku scores 40.6% and the new Claude 3.5 Sonnet scores 49%, crowing it 2024&rsquo;s best model</li>
+<li>OpenAI: o1 released in Dec-2024 with a score of 48.9%</li>
+<li>DeepSeek: V3 (open-weight) released in Dec-2024 with a score of 42%!
+2025</li>
+<li>DeepSeek: R1 (open) release in Jan-2025 with a score of 49.2%! Everyone started going crazy</li>
+<li>Grok: Announces 3 Beta on 19th (still can&rsquo;t find official 3 non-beta release blog post LOL) with some LCB scores</li>
+<li>Anthropic: Sonnet 3.7 released on 24th; Raised the bar to the next level at 62.3%</li>
+<li>OpenAI: disappointing chat gpt 4.5 release (Feb 27th)</li>
+<li>Google: Fully releases Gemini 2.5 Pro in Mar-2025 with a score of 67.2%, also release Gemma3, but not as relevant</li>
+<li>DeepSeek: V3 refresher</li>
+<li>OpenAI: Strikes back with o3 in Apr-2025 with a score of 69.1%</li>
+<li>Qwen: Qwen3 (open) released in Apr-2025, offers better performance for less size than DeepSeek R1 distills (made me very optimistic about open-weight models)</li>
+<li>Anthropic: Claude 4 Sonnet comes in at 72.7% in may</li>
+<li>DeepSeek: R1 refresh improves score to 57.6%</li>
+<li>Grok: 4 release, leaked scores showing a &ldquo;code&rdquo; model scoring 75% on swe-bench verified. Removed from my leaderboard. They only compared to Gemini 2.5 Pro which was at that point &ldquo;inferior&rdquo; to both o3, and 4</li>
+<li>Z, Kimi, Qwen: July was a win for open source with all three companies releasing models. Qwen 3 Coder 480B replaced R1 as the open SOTA score at 69.6%. Z&rsquo;s GLM 4.5 Air showed that performance does not need to come with unattainable hardware.</li>
+<li>August: OpenAI (open-source models, best performance at 20B - consumer level), 120B released redundant due to GLM 4.5 Air, Deepseek V3.1, Anthropic 4.1 opus SOTA 74.5%, Grok code-fast (very good performance for quick response time)</li>
+<li>Septemeber: OpenAI codex + gpt5, Grok 4 Fast, V3.1 refresh</li>
+</ul>
+<p>Anthropic started 2024 behind OpenAI but aggressively leapfrogged the competition multiple times to stay near the top</p>
+<p>Qwen and DeepSeek reduced the performance gap. They are at the heels of proprietary companies. Open SOTA is 69.6% for swe-bench verified in July 2025 vs. 74%+ scores which came out in August and September 2025. If we go back to July 2025, only Anthropic was ahead at 72.5%.</p>
+<p>OpenAI: Codex and gpt 5 is significant, but..</p>
+<p>Grok: Grok Code Fast and Grok 4 shows that Grok team is changing direction and focusing on results and specialization rather than generalization. Their Code Fast models make them a company to take more seriously.</p>
+<p>Google: Google seems to take it laid back (deserving so). The 2.5 Pro May update is not benchmarked as much but it keeps their model relevant. Google seems to focus on releasing models to maintain relevancy rather than cater to benchmark scores.</p>
+<h2 id="references" >References
+<span>
+    <a href="#references">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><p>DeepSeek R1 claims 96.3th percentile which is [1989, 2095]<sup id="fnref:34"><a href="#fn:34" class="footnote-ref" role="doc-noteref">34</a></sup> However OpenAI claims a score of 1891. Since DeepSeek reported that o1 has a higher codeforces percentile, we can assume that DeepSeek R1&rsquo;s score should be strictly less than o1&rsquo;s codeforces score, which is 1890 at best.</p>
+<p>DeepSeek V3 claims 51.6th percentile and most recently 58.7th percentile. Given that R1 is below that percentile, I&rsquo;ve used the lowest 51th percentile (assuming that the median barely moved up).</p>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p><a href="https://x.ai/news/grok-4-fast">Grok 4 Fast</a> scores higher than Grok 4 on the same LiveCodeBench (Jan-May 2025)<sup id="fnref:35"><a href="#fn:35" class="footnote-ref" role="doc-noteref">35</a></sup>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p><a href="https://www.anthropic.com/news/claude-sonnet-4-5">Introducing Claude Sonnet 4.5</a>&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3">
+<p><a href="https://openai.com/index/introducing-upgrades-to-codex">Introducing Upgrades to Codex - OpenAI</a>&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref1:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:4">
+<p><a href="https://openai.com/index/introducing-codex/">Introducing Codex</a>&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:5">
+<p><a href="https://www.anthropic.com/news/claude-opus-4-1">Claude Opus 4.1 - Anthropic</a>&#160;<a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:6">
+<p><a href="https://www.anthropic.com/news/claude-4">Introducing Claude 4</a>&#160;<a href="#fnref:6" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref1:6" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:7">
+<p><a href="https://x.ai/news/grok-code-fast-1">Grok Code Fast 1 News - xAI</a>&#160;<a href="#fnref:7" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:8">
+<p><a href="https://www.anthropic.com/news/claude-3-7-sonnet">Claude 3.7 Sonnet - Anthropic</a>&#160;<a href="#fnref:8" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref1:8" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:9">
+<p><a href="https://blog.google/products/gemini/gemini-2-5-pro-updates/">Build rich, interactive web apps with an updated Gemini 2.5 Pro</a>&#160;<a href="#fnref:9" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:10">
+<p><a href="https://qwen3lm.com/">Qwen3 Coder - Agentic Coding Adventure</a> (see picture beside &ldquo;What Is Qwen3 Coder?&rdquo;)&#160;<a href="#fnref:10" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:11">
+<p><a href="https://openai.com/index/introducing-o3-and-o4-mini">Introducing O3 and O4 Mini - OpenAI</a>&#160;<a href="#fnref:11" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref1:11" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref2:11" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref3:11" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:12">
+<p><a href="https://qwen.ai/blog?id=241398b9cd6353de490b0f82806c7848c5d2777d&amp;from=research.latest-advancements-list">Qwen3-Max: Just Scale it</a>&#160;<a href="#fnref:12" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref1:12" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:13">
+<p><a href="https://api-docs.deepseek.com/news/news250922">DeepSeek-V3.1-Terminus</a>&#160;<a href="#fnref:13" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:14">
+<p><a href="https://api-docs.deepseek.com/news/news250929">Introducing DeepSeek-V3.2-Exp</a>&#160;<a href="#fnref:14" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:15">
+<p><a href="https://z.ai/blog/glm-4.6">GLM-4.6: Advanced Agentic, Reasoning and Coding Capabilities</a>&#160;<a href="#fnref:15" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:16">
+<p><a href="https://api-docs.deepseek.com/news/news250821">DeepSeek-V3.1</a>&#160;<a href="#fnref:16" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref1:16" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:17">
+<p><a href="https://ai.meta.com/research/publications/cwm-an-open-weights-llm-for-research-on-code-generation-with-world-models/">CWM: An Open-Weights LLM for Research on Code Generation with World Models</a>&#160;<a href="#fnref:17" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:18">
+<p><a href="https://github.com/MoonshotAI/Kimi-K2">Kimi-K2 - Moonshot AI</a>&#160;<a href="#fnref:18" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:19">
+<p><a href="https://z.ai/blog/glm-4.5">GLM-4.5: Reasoning, Coding, and Agentic Abililties</a>&#160;<a href="#fnref:19" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref1:19" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:20">
+<p><a href="https://cdn.openai.com/pdf/419b6906-9da6-406c-a19d-1bb078ac7637/oai_gpt-oss_model_card.pdf">OpenAI GPT-OSS Model Card - OpenAI</a>&#160;<a href="#fnref:20" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref1:20" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:21">
+<p><a href="https://deepmind.google/models/gemini/flash/">Gemini Flash (2025-09-27)</a>&#160;<a href="#fnref:21" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:22">
+<p><a href="https://blog.google/technology/google-deepmind/gemini-model-thinking-updates-march-2025/#gemini-2-5-pro">Gemini Model Thinking Updates March 2025 - Google DeepMind</a>&#160;<a href="#fnref:22" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:23">
+<p><a href="https://api-docs.deepseek.com/news/news250528">DeepSeek-R1-0528 Release</a>&#160;<a href="#fnref:23" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:24">
+<p><a href="https://qwen.ai/blog?id=1e3fa5c2d4662af2855586055ad037ed9e555125&amp;from=research.research-list">Qwen3: Think Deeper, Act Faster</a>&#160;<a href="#fnref:24" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref1:24" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref2:24" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref3:24" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:25">
+<p><a href="https://x.ai/news/grok-3">Grok 3 Beta — The Age of Reasoning Agents</a>&#160;<a href="#fnref:25" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:26">
+<p><a href="https://api-docs.deepseek.com/news/news250120">DeepSeek API News 2025-01-20 - DeepSeek</a>&#160;<a href="#fnref:26" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:27">
+<p><a href="https://mistral.ai/news/mistral-medium-3">Mistral Medium 3 News - Mistral AI</a>&#160;<a href="#fnref:27" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:28">
+<p><a href="https://openai.com/index/gpt-4-1">GPT-4.1 - OpenAI</a>&#160;<a href="#fnref:28" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:29">
+<p><a href="https://www.anthropic.com/engineering/swe-bench-sonnet">Raising the bar on SWE-bench Verified with Claude 3.5 Sonnet</a>&#160;<a href="#fnref:29" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref1:29" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref2:29" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:30">
+<p><a href="https://api-docs.deepseek.com/news/news1226">Introducing DeepSeek-V3</a>&#160;<a href="#fnref:30" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:31">
+<p><a href="https://www.anthropic.com/news/3-5-models-and-computer-use">Introducing computer use, a new Claude 3.5 Sonnet, and Claude 3.5 Haiku</a>&#160;<a href="#fnref:31" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:32">
+<p><a href="https://openai.com/index/introducing-gpt-4-5">Introducing GPT-4.5 - OpenAI</a>&#160;<a href="#fnref:32" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref1:32" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:33">
+<p><a href="https://openai.com/index/openai-o1-mini-advancing-cost-efficient-reasoning">O1 Mini: Advancing Cost-Efficient Reasoning - OpenAI</a>&#160;<a href="#fnref:33" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:34">
+<p><a href="https://codeforces.com/blog/entry/126802">2024 Codeforces Rating Distribution + rating percentiles</a>&#160;<a href="#fnref:34" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:35">
+<p><a href="https://x.com/legit_api/status/1941165728708874514">Grok-4 and Grok-4 Code on benchmarks - x/@legit_api leak</a>; Grok 4 has a higher LiveCodeBench score than all the other models for <a href="https://1drv.ms/b/c/7FD1036D7D077AF4/EXmAOOAkOFJPkoIE-4h9N1EBz4MJk1LCfI_SPejC7gfeGg?e=SYSsJB">Jan 2025 to May 2025</a>&#160;<a href="#fnref:35" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+
+        </div>
+    </article>
+
+    
+
+    
+        
+    
+    
+    <div class="pagination post-pagination">
+        <div class="left pagination-item ">
+            
+                <a title="Pre-Seed Venture Capital in Canada" href="/posts/pre-seed-capital-in-canada/">Pre-Seed Venture Capital in Canada</a>
+            
+        </div>
+        <div class="right pagination-item ">
+            
+                <a title="AI Awesome List" href="/posts/ai/">AI Awesome List</a>
+            
+        </div>
+    </div>
+
+
+
+
+    
+
+    
+        <br>
+
+
+
+
+
+
+
+    
+
+
+
+
+
+<script src="https://giscus.app/client.js"
+        data-repo="elibroftw/blog.elijahlopez.ca"
+        data-repo-id="R_kgDOGiL7hg"
+        data-category="General"
+        data-category-id="DIC_kwDOGiL7hs4Cer6e"
+        data-mapping="og:title"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="preferred_color_scheme"
+        data-lang="en"
+        crossorigin="anonymous"
+        
+        async>
+</script>
+
+    
+
+        </main>
+        
+            <footer class="common-footer">
+    
+    
+
+    <div class="common-footer-bottom">
+        
+        <div class="copyright">
+            <p>© Elijah Lopez, 2025<br>
+            Powered by <a target="_blank" rel="noopener noreferrer" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" rel="noopener noreferrer" href="https://github.com/elibroftw/hugo-theme-anubis">Anubis</a>.<br>
+            
+            </p>
+        </div>
+    </div>
+
+    <p class="h-card vcard">
+
+    <a href=https://blog.elijahlopez.ca/ class="p-name u-url url fn" rel="me">Elijah Lopez</a> 
+
+     
+        /
+        <a class="p-email u-email email" rel="me" href="mailto:elijahllopezz@gmail.com">elijahllopezz@gmail.com</a>
+    
+
+     
+        <img class="u-photo" src="https://pbs.twimg.com/profile_images/1738729591064166400/vqarzcF7_400x400.jpg" />
+    
+</p> 
+</footer>
+
+        
+    </div>
+</body>
+</html>

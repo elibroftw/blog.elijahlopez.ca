@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Split-the-Tank on ELL Blog</title>
+    <link>https://blog.elijahlopez.ca/tags/split-the-tank/</link>
+    <description>ELL Blog (Split-the-Tank)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 12 May 2024 20:29:11 -0400</lastBuildDate>
+    
+    <atom:link href="https://blog.elijahlopez.ca/tags/split-the-tank/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Split the Tank Technical Stack</title>
+      <link>https://blog.elijahlopez.ca/posts/split-the-tank-technical-stack/</link>
+      <pubDate>Sun, 12 May 2024 20:29:11 -0400</pubDate>
+      
+      <guid>https://blog.elijahlopez.ca/posts/split-the-tank-technical-stack/</guid>
+      <description>&lt;h2 id=&#34;hosting&#34; &gt;Hosting
+&lt;span&gt;
+    &lt;a href=&#34;#hosting&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;Azure&lt;/p&gt;
+&lt;p&gt;After applying to &amp;lsquo;Microsoft for Startups&amp;rsquo;, we got free Microsoft 365 (what we used for mail), Azure credits, and more perks.&lt;/p&gt;
+&lt;h2 id=&#34;database&#34; &gt;Database
+&lt;span&gt;
+    &lt;a href=&#34;#database&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;The database used was MongoDB via Atlas. The main reason I chose this was because of extensive experience which would save time even if I do know SQL. With MongoDB, there is a focus on agility, as you don&amp;rsquo;t need to think about how the tables will be created and with what columns (In MongoDB, the struct/class is automatically mapped to the Document fields). In a developer team environment however (or in a non-boostrapped startup), I would easily have chosen PostgreSQL. A positive note about MongoDB Atlas is that you can pay using the Azure credits.&lt;/p&gt;
+&lt;p&gt;One frustration I had with MongoDB + C# classes was dealing with dynamic fields in a sub-document, however I realized later that it&amp;rsquo;s better to make a document for each of those dynamic fields,  make a new ID, and create an index on the old ID.&lt;/p&gt;
+&lt;h2 id=&#34;server-side&#34; &gt;Server-Side
+&lt;span&gt;
+    &lt;a href=&#34;#server-side&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;The decision to use C# ASP.NET was driven by ease-of-deployment onto Azure. Even with knowledge of Continuous Deployment from the &lt;a href=&#34;https://blog.elijahlopez.ca/posts/university/cs-489-software-delivery&#34;&gt;Software Delivery course&lt;/a&gt;, Visual Studio&amp;rsquo;s publish is good enough and meets my minimum requirements. ASP.NET also offers superior performance to common web frameworks that I&amp;rsquo;ve used/worked with in the past such as Python-Flask, NodeJS-Express, Java-Springboot.&lt;/p&gt;
+&lt;p&gt;Some alternatives to consider are Actix (Rust), Supabase (JavaScript + Deno), and Vert.x (Kotlin/Java).&lt;/p&gt;
+&lt;p&gt;A strong reason to still go with ASP.NET is that there is a pretty good starter (for the time) template. I plan on releasing my own template for ASP.NET as I have spent time coding many &lt;a href=&#34;https://blog.elijahlopez.ca/tags/asp.net/&#34;&gt;adjustments&lt;/a&gt;. Until there are maintained templates for the other frameworks, solo developers should use ASP.NET via Visual Studio or my template to get to coding quickly.&lt;/p&gt;
+&lt;p&gt;In the ideal world where I can pay people to write code, I would instruct developers to setup a Kubernetes cluster that uses Actix and RabbitMQ (a messaging queue is useful for async events). Then these developers can also maintain templates for everyone to use (side project idea for readers).&lt;/p&gt;
+&lt;p&gt;For solo-developers looking to build for production, I fully recommend using ASP.NET for Web APIs.&lt;/p&gt;
+&lt;p&gt;One of the issues I believe in the software world is a focus on capabilities and not enough focus on guiding downstream developers to use best-practices including security-related practices such as CSRF protections. This is evident in Flask, the first web framework I learned and use for my personal website. With any web-framework template I plan on releasing, I&amp;rsquo;m going to ensure that they include security practices so that no one ends up saving plaintext passwords to the database.&lt;/p&gt;
+&lt;h2 id=&#34;client-side&#34; &gt;Client-Side
+&lt;span&gt;
+    &lt;a href=&#34;#client-side&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;Since Split the Tank would heavily use device features such as location, it was best to focus on native mobile apps and not a progressive web app that may not work. I am planning on adding a basic frontend for people who would only be passengers, however, that was out of scope for the official release.&lt;/p&gt;
+&lt;p&gt;When deciding the mobile application stack, I was faced with two barriers. One was that I did not have a macbook at the time, so writing both apps natively would most definitely take double the time. Two was that I didn&amp;rsquo;t have experience with Kotlin nor Swift and I did not enjoy Java. I ended up picking UnoPlatform since using C# for everything would be &lt;em&gt;cool&lt;/em&gt;, however it had a lot of issues and so was a waste of time. I then experimented with Flutter again, however it is still not that good. I then settled on React Native, as I already had React experience. Although I was more productive with React Native than UnoPlatform and Flutter, I still ran into react-native specific issues, and wrote about the &lt;a href=&#34;https://blog.elijahlopez.ca/posts/mobile-development-is-painful&#34;&gt;pains of mobile development&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;My thoughts after making this app are that mobile apps are too complicated and messy to use frameworks, and that native is the way to go. Writing code twice is not a problem if the developer already owns a Macbook (unless XCode is reverse engineered), and being able to write natively means being able to use best-practices set by the platforms as well as the documentation provided. For Android, this would be Jetpack Compose and for iOS, it would be SwiftUI.&lt;/p&gt;
+&lt;p&gt;Personally, I won&amp;rsquo;t be writing non-commercial apps for iOS in the future. I have plans to make apps regarding Monero, however, I strongly prefer my Razer Blade 14 (2022) over my Macbook Air M2, and I don&amp;rsquo;t really like Apple anyways!&lt;/p&gt;
+&lt;h2 id=&#34;deployment&#34; &gt;Deployment
+&lt;span&gt;
+    &lt;a href=&#34;#deployment&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;We deployed the ASP.NET application to Azure App Service via Visual Studio&amp;rsquo;s publish. The project is initialized with a Dockerfile and offers to create a GitHub action workflow, however it&amp;rsquo;s a task to do in the future.&lt;/p&gt;
+&lt;h2 id=&#34;email&#34; &gt;Email
+&lt;span&gt;
+    &lt;a href=&#34;#email&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;We used Postmark for sending emails. This is mostly because it&amp;rsquo;s highly recommended and is the most affordable.&lt;/p&gt;
+&lt;h2 id=&#34;peer-to-peer-payments&#34; &gt;Peer-to-Peer Payments
+&lt;span&gt;
+    &lt;a href=&#34;#peer-to-peer-payments&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;This is incredibly hard to do for low-amount payments. Stripe has  the Connect solution, however we have to pay a monthly fee for each verified account and for simply moving money within Stripe. All on top of the processing fees. Any commission we would take would be unsustainable and make the app unattractive to use.&lt;/p&gt;
+&lt;p&gt;Furthermore, Stripe&amp;rsquo;s Connect feature only applies intracountry unless the host country is the USA. This would make the rollout to USA even more difficult.&lt;/p&gt;
+&lt;p&gt;The alternative considered is PayPal, however there isn&amp;rsquo;t a guarantee it will work and the decision was months after the app was in the testing phase. We decided that payments wasn&amp;rsquo;t that important as the off-app settlement should be good enough for the MVP as the app still provides a valuable feature.&lt;/p&gt;
+&lt;h2 id=&#34;closing-thoughts&#34; &gt;Closing Thoughts
+&lt;span&gt;
+    &lt;a href=&#34;#closing-thoughts&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;Developing is hard. It should be more enjoyable and that is definitely something I can improve.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

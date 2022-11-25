@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="">
+<head>
+    
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name = "apple-mobile-web-app-capable" content = "yes">
+    <meta name="theme-color" content="#121212">
+
+    <meta charset="utf-8">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <title>Awesome Monero - ELL Blog</title>
+    <meta name="description" content="A curated list of Monero resources, including recommended wallets, payment gateways, exchanges, funding opportunities, and libraries with insights on open-source options and integrations.">
+    
+    <link rel="icon" type="image/x-icon" href="https://blog.elijahlopez.ca/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" href="https://blog.elijahlopez.ca/favicon.png">
+
+    <link rel="stylesheet" href="https://blog.elijahlopez.ca/css/style.min.a3636fe363937f82d02cf99304911d0408aab8e9cb1849af08144cfcedc2e758.css" integrity="sha256-o2Nv42OTf4LQLPmTBJEdBAiquOnLGEmvCBRM/O3C51g=">
+    <script src="https://blog.elijahlopez.ca/js/script.min.74bf1a3fcf1af396efa4acf3e660e876b61a2153ab9cbe1893ac24ea6d4f94ee.js" type="text/javascript" charset="utf-8" integrity="sha256-dL8aP88a85bvpKzz5mDodrYaIVOrnL4Yk6wk6m1PlO4="></script>
+    <meta property="og:url" content="https://blog.elijahlopez.ca/posts/awesome-monero/">
+  <meta property="og:site_name" content="ELL Blog">
+  <meta property="og:title" content="Awesome Monero">
+  <meta property="og:description" content="A curated list of Monero resources, including recommended wallets, payment gateways, exchanges, funding opportunities, and libraries with insights on open-source options and integrations.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2024-07-04T08:48:18-04:00">
+    <meta property="article:modified_time" content="2024-07-04T08:48:18-04:00">
+    <meta property="article:tag" content="Monero">
+    <meta property="article:tag" content="Cryptocurrency">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Awesome Monero">
+  <meta name="twitter:description" content="A curated list of Monero resources, including recommended wallets, payment gateways, exchanges, funding opportunities, and libraries with insights on open-source options and integrations.">
+
+    
+    <script src="https://ryb.elijahlopez.ca/api/script.js" data-site-id="1" defer></script>
+</head>
+
+
+<body>
+    <a class="skip-main" href="#main">Skip to main content</a>
+    <div class="container">
+        <header class="common-header">
+            
+                
+
+    
+
+
+<div class="header-top">
+    <h1 class="site-title">
+        <a href="/">ELL Blog</a>
+    </h1>
+
+    <div class="header-top-left">
+    <ul class="social-icons">
+
+        <li>
+            <a href="/index.xml" title="Rss" rel="me">
+                <span class="inline-svg" >
+                    
+                </span>
+
+            </a>
+        </li>
+    
+<li>
+            <a href="https://elijahlopez.ca" title="Website" rel="me">
+            <span class="inline-svg" >
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M352 256C352 278.2 350.8 299.6 348.7 320H163.3C161.2 299.6 159.1 278.2 159.1 256C159.1 233.8 161.2 212.4 163.3 192H348.7C350.8 212.4 352 233.8 352 256zM503.9 192C509.2 212.5 512 233.9 512 256C512 278.1 509.2 299.5 503.9 320H380.8C382.9 299.4 384 277.1 384 256C384 234 382.9 212.6 380.8 192H503.9zM493.4 160H376.7C366.7 96.14 346.9 42.62 321.4 8.442C399.8 29.09 463.4 85.94 493.4 160zM344.3 160H167.7C173.8 123.6 183.2 91.38 194.7 65.35C205.2 41.74 216.9 24.61 228.2 13.81C239.4 3.178 248.7 0 256 0C263.3 0 272.6 3.178 283.8 13.81C295.1 24.61 306.8 41.74 317.3 65.35C328.8 91.38 338.2 123.6 344.3 160H344.3zM18.61 160C48.59 85.94 112.2 29.09 190.6 8.442C165.1 42.62 145.3 96.14 135.3 160H18.61zM131.2 192C129.1 212.6 127.1 234 127.1 256C127.1 277.1 129.1 299.4 131.2 320H8.065C2.8 299.5 0 278.1 0 256C0 233.9 2.8 212.5 8.065 192H131.2zM194.7 446.6C183.2 420.6 173.8 388.4 167.7 352H344.3C338.2 388.4 328.8 420.6 317.3 446.6C306.8 470.3 295.1 487.4 283.8 498.2C272.6 508.8 263.3 512 255.1 512C248.7 512 239.4 508.8 228.2 498.2C216.9 487.4 205.2 470.3 194.7 446.6H194.7zM190.6 503.6C112.2 482.9 48.59 426.1 18.61 352H135.3C145.3 415.9 165.1 469.4 190.6 503.6V503.6zM321.4 503.6C346.9 469.4 366.7 415.9 376.7 352H493.4C463.4 426.1 399.8 482.9 321.4 503.6V503.6z"/></svg>
+                </span>
+
+            </a>
+        </li>
+    
+
+        
+        
+        <li>
+            <a href="https://github.com/elibroftw" title="Github" rel="me">
+            <span class="inline-svg" >
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+                </span>
+
+            </a>
+        </li>
+    
+
+        
+        
+        <li>
+            <a href="https://twitter.com/elibroftw" title="Twitter" rel="me">
+            <span class="inline-svg" >
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+                </span>
+
+            </a>
+        </li>
+    
+
+        
+        
+        <li>
+            <a href="https://www.youtube.com/c/elibroftw" title="Youtube" rel="me">
+            <span class="inline-svg" >
+                    <svg viewBox="0 -3 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g id="Dribbble-Light-Preview" transform="translate(-300.000000, -7442.000000)" fill="#000000">
+      <g id="icons" transform="translate(56.000000, 160.000000)">
+        <path fill="currentColor"
+          d="M251.988432,7291.58588 L251.988432,7285.97425 C253.980638,7286.91168 255.523602,7287.8172 257.348463,7288.79353 C255.843351,7289.62824 253.980638,7290.56468 251.988432,7291.58588 M263.090998,7283.18289 C262.747343,7282.73013 262.161634,7282.37809 261.538073,7282.26141 C259.705243,7281.91336 248.270974,7281.91237 246.439141,7282.26141 C245.939097,7282.35515 245.493839,7282.58153 245.111335,7282.93357 C243.49964,7284.42947 244.004664,7292.45151 244.393145,7293.75096 C244.556505,7294.31342 244.767679,7294.71931 245.033639,7294.98558 C245.376298,7295.33761 245.845463,7295.57995 246.384355,7295.68865 C247.893451,7296.0008 255.668037,7296.17532 261.506198,7295.73552 C262.044094,7295.64178 262.520231,7295.39147 262.895762,7295.02447 C264.385932,7293.53455 264.28433,7285.06174 263.090998,7283.18289"
+          id="youtube-[#168]">
+        </path>
+      </g>
+    </g>
+  </g>
+</svg>
+
+                </span>
+
+            </a>
+        </li>
+    
+
+        
+        
+        <li>
+            <a href="mailto:elijahllopezz@gmail.com" title="Email" rel="me">
+            <span class="inline-svg" >
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48L48 64zM0 176L0 384c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-208L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"/></svg>
+
+                </span>
+
+            </a>
+        </li>
+    
+
+        
+        
+        <li>
+            <a href="https://www.instagram.com/elijahllopezz" title="Instagram" rel="me">
+            <span class="inline-svg" >
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M12 18C15.3137 18 18 15.3137 18 12C18 8.68629 15.3137 6 12 6C8.68629 6 6 8.68629 6 12C6 15.3137 8.68629 18 12 18ZM12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z" fill="#0F0F0F"/>
+<path fill="currentColor" d="M18 5C17.4477 5 17 5.44772 17 6C17 6.55228 17.4477 7 18 7C18.5523 7 19 6.55228 19 6C19 5.44772 18.5523 5 18 5Z" fill="#0F0F0F"/>
+<path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M1.65396 4.27606C1 5.55953 1 7.23969 1 10.6V13.4C1 16.7603 1 18.4405 1.65396 19.7239C2.2292 20.8529 3.14708 21.7708 4.27606 22.346C5.55953 23 7.23969 23 10.6 23H13.4C16.7603 23 18.4405 23 19.7239 22.346C20.8529 21.7708 21.7708 20.8529 22.346 19.7239C23 18.4405 23 16.7603 23 13.4V10.6C23 7.23969 23 5.55953 22.346 4.27606C21.7708 3.14708 20.8529 2.2292 19.7239 1.65396C18.4405 1 16.7603 1 13.4 1H10.6C7.23969 1 5.55953 1 4.27606 1.65396C3.14708 2.2292 2.2292 3.14708 1.65396 4.27606ZM13.4 3H10.6C8.88684 3 7.72225 3.00156 6.82208 3.0751C5.94524 3.14674 5.49684 3.27659 5.18404 3.43597C4.43139 3.81947 3.81947 4.43139 3.43597 5.18404C3.27659 5.49684 3.14674 5.94524 3.0751 6.82208C3.00156 7.72225 3 8.88684 3 10.6V13.4C3 15.1132 3.00156 16.2777 3.0751 17.1779C3.14674 18.0548 3.27659 18.5032 3.43597 18.816C3.81947 19.5686 4.43139 20.1805 5.18404 20.564C5.49684 20.7234 5.94524 20.8533 6.82208 20.9249C7.72225 20.9984 8.88684 21 10.6 21H13.4C15.1132 21 16.2777 20.9984 17.1779 20.9249C18.0548 20.8533 18.5032 20.7234 18.816 20.564C19.5686 20.1805 20.1805 19.5686 20.564 18.816C20.7234 18.5032 20.8533 18.0548 20.9249 17.1779C20.9984 16.2777 21 15.1132 21 13.4V10.6C21 8.88684 20.9984 7.72225 20.9249 6.82208C20.8533 5.94524 20.7234 5.49684 20.564 5.18404C20.1805 4.43139 19.5686 3.81947 18.816 3.43597C18.5032 3.27659 18.0548 3.14674 17.1779 3.0751C16.2777 3.00156 15.1132 3 13.4 3Z" fill="#0F0F0F"/>
+</svg>
+
+                </span>
+
+            </a>
+        </li>
+    
+
+
+
+    <li>
+            <a href="https://blog.elijahlopez.ca/index.xml" title="RSS" rel="me"><span class="inline-svg" >
+                    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" data-icon="rss" data-prefix="fas" focusable="false" role="img" viewBox="0 0 496 512"><path fill="currentColor" fill="currentColor" d="M128.081 415.959c0 35.369-28.672 64.041-64.041 64.041S0 451.328 0 415.959s28.672-64.041 64.041-64.041 64.04 28.673 64.04 64.041zm175.66 47.25c-8.354-154.6-132.185-278.587-286.95-286.95C7.656 175.765 0 183.105 0 192.253v48.069c0 8.415 6.49 15.472 14.887 16.018 111.832 7.284 201.473 96.702 208.772 208.772.547 8.397 7.604 14.887 16.018 14.887h48.069c9.149.001 16.489-7.655 15.995-16.79zm144.249.288C439.596 229.677 251.465 40.445 16.503 32.01 7.473 31.686 0 38.981 0 48.016v48.068c0 8.625 6.835 15.645 15.453 15.999 191.179 7.839 344.627 161.316 352.465 352.465.353 8.618 7.373 15.453 15.999 15.453h48.068c9.034-.001 16.329-7.474 16.005-16.504z"/></svg>
+                </span>
+</a>
+        </li>
+    
+</ul>
+</div>
+    
+
+    
+
+
+
+
+    <div class="header-top-right theme-switcher">
+        <span class="inline-svg" >
+                    <svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 290 290">
+<path fill="currentColor" d="M142.959,0C64.131,0,0,64.132,0,142.96c0,78.828,64.131,142.959,142.959,142.959c78.828,0,142.96-64.131,142.96-142.959  C285.919,64.132,221.787,0,142.959,0z M142.959,260.919V142.96V25c65.043,0,117.96,52.917,117.96,117.96  C260.919,208.003,208.002,260.919,142.959,260.919z"/>
+</svg>
+                </span>
+
+    </div>
+
+
+<script>
+const STORAGE_KEY = 'user-color-scheme'
+const defaultTheme = "auto"
+
+let currentTheme
+let switchButton
+let autoDefinedScheme = window.matchMedia('(prefers-color-scheme: dark)')
+
+const autoChangeScheme = e => {
+    currentTheme = e.matches ? 'dark' : 'light'
+    document.documentElement.setAttribute('data-theme', currentTheme)
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    switchButton = document.querySelector('.theme-switcher')
+    currentTheme = detectCurrentScheme()
+    setThemeColorMeta(currentTheme)
+    if (currentTheme == 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark')
+    }
+
+    if (currentTheme == 'auto') {
+        autoChangeScheme(autoDefinedScheme);
+        autoDefinedScheme.addListener(autoChangeScheme);
+    }
+
+    if (switchButton) {
+        switchButton.addEventListener('click', switchTheme, false)
+    }
+})
+
+function detectCurrentScheme() {
+    if (localStorage !== null && localStorage.getItem(STORAGE_KEY)) {
+        return localStorage.getItem(STORAGE_KEY)
+    }
+    if (defaultTheme) {
+        return defaultTheme
+    }
+    if (!window.matchMedia) {
+        return defaultTheme
+    }
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        return 'dark'
+    }
+    return defaultTheme
+}
+
+function switchTheme(e) {
+    if (currentTheme == 'dark') {
+        if (localStorage !== null)
+            localStorage.setItem(STORAGE_KEY, 'light')
+        document.documentElement.setAttribute('data-theme', 'light')
+        currentTheme = 'light'
+    } else {
+        if (localStorage !== null)
+            localStorage.setItem(STORAGE_KEY, 'dark')
+        document.documentElement.setAttribute('data-theme', 'dark')
+        currentTheme = 'dark'
+    }
+    setThemeColorMeta(currentTheme)
+}
+
+function setThemeColorMeta(currentTheme) {
+    if (currentTheme == 'dark') {
+        document.querySelector('meta[name="theme-color"]').setAttribute('content', '#121212')
+    } else {
+        document.querySelector('meta[name="theme-color"]').setAttribute('content', '#fff')
+    }
+}
+</script>
+
+</div>
+
+
+    <nav>
+        
+        
+        <a class="" href="https://blog.elijahlopez.ca/" title="Home">Home</a>
+        
+        <a class="" href="https://blog.elijahlopez.ca/posts/" title="Archive">Archive</a>
+        
+        <a class="" href="https://blog.elijahlopez.ca/graph/" title="Graph">Graph</a>
+        
+        <a class="" href="https://blog.elijahlopez.ca/tags/" title="Tags">Tags</a>
+        
+    </nav>
+
+
+
+
+
+
+            
+        </header>
+        <main id="main" tabindex="-1">
+            
+    
+
+    <article class="post h-entry">
+        <div class="post-header">
+            <header>
+                <h1 class="p-name post-title">Awesome Monero</h1>
+                
+            </header>
+        </div>
+        
+        
+            
+            
+            <div class="post-info">
+                <ul class="post-authors">
+                    <a href="https://blog.elijahlopez.ca/authors/elijah-lopez/">@Elijah Lopez</a>
+                </ul>
+            </div>
+        
+
+        <div class="post-info">
+    
+
+    
+        <div class="post-date dt-published">
+            <a title="2024-07-04 08:48:18 -0400 -0400" class="u-url" href="/posts/awesome-monero/"><time datetime="2024-07-04">July 4, 2024</time></a>
+            
+        </div>
+    
+    <a class="post-hidden-url u-url" href="https://blog.elijahlopez.ca/posts/awesome-monero/">https://blog.elijahlopez.ca/posts/awesome-monero/</a>
+    <a href="https://blog.elijahlopez.ca/" class="p-name p-author post-hidden-author h-card" rel="me">Elijah Lopez</a>
+    <div class="post-taxonomies">
+        
+        
+            <ul class="post-tags">
+                
+                    
+                    <li><a class="tag" href="https://blog.elijahlopez.ca/tags/cryptocurrency/">#Cryptocurrency</a></li>
+                
+                    
+                    <li><a class="tag" href="https://blog.elijahlopez.ca/tags/monero/">#Monero</a></li>
+                
+            </ul>
+        
+    </div>
+</div>
+
+        
+
+
+
+
+        <div class="content e-content">
+            <div>
+    <h2>Table of Contents</h2>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#staying-up-to-date">Staying Up to Date</a></li>
+    <li><a href="#wallets">Wallets</a>
+      <ul>
+        <li><a href="#blockchain-explorer">Blockchain Explorer</a></li>
+      </ul>
+    </li>
+    <li><a href="#exchanges-and-swap-services">Exchanges and Swap Services</a></li>
+    <li><a href="#mining-monero">Mining Monero</a></li>
+    <li><a href="#commerce">Commerce</a></li>
+    <li><a href="#monero-events">Monero Events</a></li>
+    <li><a href="#accepting-monero">Accepting Monero</a>
+      <ul>
+        <li><a href="#monero-payment-gateways">Monero Payment Gateways</a></li>
+        <li><a href="#cms-integration">CMS Integration</a></li>
+        <li><a href="#point-of-sale-integrations">Point of Sale Integrations</a></li>
+        <li><a href="#accepting-monero-as-a-creator">Accepting Monero as a Creator</a></li>
+      </ul>
+    </li>
+    <li><a href="#funding-monero-projects">Funding Monero Projects</a></li>
+    <li><a href="#monero-libraries">Monero Libraries</a></li>
+    <li><a href="#deploying-monero-node-on-vps">Deploying Monero Node on VPS</a></li>
+    <li><a href="#whats-missing">What&rsquo;s Missing</a></li>
+  </ul>
+</nav>
+</div>
+
+<p>If you want to know why I believe in Monero, feel free to read <a href="/posts/why-monero-is-the-best-crypto-currency">Why monero is the best crypto CURRENCY</a>.</p>
+<h2 id="staying-up-to-date" >Staying Up to Date
+<span>
+    <a href="#staying-up-to-date">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><ul>
+<li><a href="https://www.getmonero.org/blog/">Official Monero blog</a></li>
+<li><a href="https://www.themoneromoon.com/">The Monero Moon</a></li>
+<li><a href="https://monero.observer/">Monero Observer</a>
+<ul>
+<li>Dedicates a post for everything important in Monero</li>
+<li>Blitz Reports are released at the end of every month</li>
+<li><a href="https://monero.observer/resources/">Non-Curated Resources directory</a></li>
+</ul>
+</li>
+<li><a href="https://www.revuo-xmr.com/">Revuo</a>
+<ul>
+<li>Supports weekly publications</li>
+</ul>
+</li>
+</ul>
+<h2 id="wallets" >Wallets
+<span>
+    <a href="#wallets">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><ol>
+<li><a href="https://docs.featherwallet.org/">Feather Wallet</a>
+<ul>
+<li>Desktop</li>
+<li>Small UI but at least the wallet works</li>
+</ul>
+</li>
+<li><a href="https://www.monerujo.io/">Monerujo</a>
+<ul>
+<li>Android</li>
+<li>Best mobile wallet</li>
+</ul>
+</li>
+<li><a href="https://github.com/monero-project/monero-gui">Monero GUI</a>
+<ul>
+<li>Desktop</li>
+<li>Annoyingly doesn&rsquo;t open monero URIs in existing</li>
+</ul>
+</li>
+<li><a href="https://stackwallet.com/">Stack Wallet</a>
+<ul>
+<li>Annoyingly doesn&rsquo;t support monero URIs</li>
+</ul>
+</li>
+<li><a href="https://cakewallet.com/">Cake Wallet</a>
+<ul>
+<li>Mobile and Desktop</li>
+<li>Although the app is very polished, it was prone to crash for me</li>
+<li>Annoyingly doesn&rsquo;t support monero URIs</li>
+</ul>
+</li>
+</ol>
+<p><a href="https://monero.fail/">monero.fail</a>: a list of remote nodes (be sure to vet the node)</p>
+<details><summary>Other wallets that I do not recommend</summary>
+<ul>
+<li><a href="https://trustwallet.com/monero-wallet">Trust Wallet</a>
+<ul>
+<li>Mobile and Cross Platform Desktop</li>
+<li><strong>Proprietary</strong></li>
+<li>Multi coin wallet</li>
+</ul>
+</li>
+<li><a href="https://mymonero.com/">MyMonero</a>
+<ul>
+<li>Mobile and Cross Platform Desktop</li>
+<li>Desktop app hasn&rsquo;t been updated since November 2022</li>
+<li>Android app hasn&rsquo;t been updated since September 2023</li>
+<li>Uses a different way to sync wallet, I can&rsquo;t recommend it</li>
+<li>Can corrupt the wallet save file, just not good for beginners</li>
+</ul>
+</li>
+</ul>
+</details>
+<h3 id="blockchain-explorer" >Blockchain Explorer
+<span>
+    <a href="#blockchain-explorer">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li><a href="https://localmonero.co/blocks/">Monero blocks</a></li>
+</ul>
+<h2 id="exchanges-and-swap-services" >Exchanges and Swap Services
+<span>
+    <a href="#exchanges-and-swap-services">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><ul>
+<li>Swaps
+<ul>
+<li><a href="https://trocador.app/">Trocador.app</a></li>
+<li><a href="https://orangefren.com/">OrangeFren</a></li>
+</ul>
+</li>
+<li>Centralized
+<ul>
+<li>Kraken
+<ul>
+<li><a href="/posts/how-to-buy-monero-in-canada">How to buy Monero in Canada</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Decentralized
+<ul>
+<li><a href="https://retoswap.com/">RetoSwap - Haveno</a></li>
+<li><a href="https://serai.exchange/">Serai</a> (not yet launched)</li>
+<li>Bisq</li>
+<li>Atomic swaps
+<ul>
+<li><a href="https://unstoppableswap.net/">Unstoppable Swaps</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="https://coinatmradar.com/">ATMs</a></li>
+</ul>
+<h2 id="mining-monero" >Mining Monero
+<span>
+    <a href="#mining-monero">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><ul>
+<li><a href="https://github.com/hinto-janai/gupax?tab=readme-ov-file#what-is-monerop2poolxmriggupax">Gupax: P2Pool and XMRig manager</a></li>
+</ul>
+<h2 id="commerce" >Commerce
+<span>
+    <a href="#commerce">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><ul>
+<li><a href="https://xmr.directory/">xmr.directory/</a></li>
+<li><a href="https://xmrbazaar.com/">xmrbazaar.com/</a></li>
+<li><a href="https://cryptwerk.com/coinmap/xmr/">Cryptwerk</a></li>
+<li><a href="https://monerica.com/">Monerica</a></li>
+</ul>
+<h2 id="monero-events" >Monero Events
+<span>
+    <a href="#monero-events">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><ul>
+<li><a href="https://monerotopia.com/">Monerotopia</a></li>
+<li><a href="https://www.monerokon.org/">Monero Kon</a></li>
+</ul>
+<h2 id="accepting-monero" >Accepting Monero
+<span>
+    <a href="#accepting-monero">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><h3 id="monero-payment-gateways" >Monero Payment Gateways
+<span>
+    <a href="#monero-payment-gateways">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>For this section, I will list both the ideal way and the easier ways to accept Monero. I will rank the items based on open-source (and thus self-hosted) and the ability to accept only monero. The ease of deployment will be used as a tie-breaker.</p>
+<p>Security notes: (a) a good monero gateway must handle timelocks. (b) As a bonus, instructions should prevent unauthorized access to the password file that will be passed to <code>monero-wallet-rpc</code>. I&rsquo;m not sure if it&rsquo;s overkill, but if someone stole your ssh private key, you would want them to need your server&rsquo;s user password too in order to read the file, whereas you don&rsquo;t want to force the <code>monero-wallet-rpc</code> program to require a password. (c) it would be good to provide some form of auto-update mechanism whenever Monero updates to reduce downtime.</p>
+<ol>
+<li><a href="https://github.com/moneropay/moneropay">MoneroPay</a>
+<ul>
+<li>Pro: never had a time-lock bug</li>
+<li>Pro: similar to Stripe&rsquo;s API (REST + webhook architecture)</li>
+<li>Con: Does not forward mempool detections (I will try to contribute this myself)</li>
+<li>Con: deployment instructions are not service based (manual only)</li>
+</ul>
+</li>
+<li><a href="https://sethforprivacy.com/guides/accepting-monero-via-btcpay-server/">BtcPay</a>
+<ul>
+<li>The biggest pain point of BtcPay is that all these tutorials force you to accept Bitcoin, which is definitely not what I&rsquo;m about. Bitcoin has significant privacy issues making it very unattractive to me from the beginning of my Crypto experience. I definitely dislike that the tutorials, including this one by Seth, force you to accept Bitcoin. It&rsquo;s ridiculous. The other thing, is that you are forced to use the &ldquo;BTCPAY&rdquo; branding.</li>
+</ul>
+</li>
+<li><a href="https://bitpay.com/business/">bitpay</a>
+<ul>
+<li>Proprietary processing</li>
+<li>Percentage fees</li>
+</ul>
+</li>
+<li><a href="https://nowpayments.io/">NOWPayments</a>
+<ul>
+<li>Proprietary processing</li>
+<li>Percentage fees</li>
+<li>The only reason I put it below bitpay is because it confuses first time crypto-currency users. If you want to send 4 XMR, the receiver gets 4 XMR, however the sender pays a network fee. Therefore, you spend more than 4 XMR, and the receiver receives exactly 4 XMR. Only in the case where there are not enough funds is it possible for the receiver to receive less than 4 XMR. NOWPayments fear mongers saying that you have to send enough to cover the fees. This confuses users because now users may believe they need to send more than 4 XMR and that the fee is taken from the amount being sent.</li>
+</ul>
+</li>
+</ol>
+<p>Proof of Concepts</p>
+<ul>
+<li><a href="/posts/monero-payment-processing/">Custom Python Implementation</a>
+<ul>
+<li>Concise code to adapt to any language</li>
+<li>Untested support for mempool (if it doesn&rsquo;t work, it&rsquo;s the fault of  monero-wallet-rpc)</li>
+<li>No timelock bug (my code always considered the possibility of rogue actors)</li>
+<li>Live on <a href="https://lenerva.com/store/">lenerva.com/store</a>. The reason I put it in proof-of-concept is because I bundle the processing code with my backend, thereby making this a stingy solution. There&rsquo;s also no monero-wallet-rpc update mechanism and it&rsquo;s not dockerized. monero-pay was implemented thinking of the bigger picture, whereas I was thinking of tailoring.</li>
+</ul>
+</li>
+<li><a href="https://github.com/CryptoGrampy/HotShop">HotShop by CryptoGrampy</a>
+<ul>
+<li>Small business types of shops that don&rsquo;t have an integrated inventory-POS software</li>
+<li>Unsure if timelock issue is taken care of</li>
+<li>Unsure if mempool is seen</li>
+</ul>
+</li>
+<li><a href="https://github.com/busyboredom/acceptxmr/">AcceptXMR</a>
+<ul>
+<li>Unsure if mempool is seen</li>
+</ul>
+</li>
+</ul>
+<h3 id="cms-integration" >CMS Integration
+<span>
+    <a href="#cms-integration">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>that uses CMS or ecommerce plugins: WordPress, Shopify, WooCommerce, Clover.</p>
+<ul>
+<li>Shopify: TODO, however it&rsquo;s just BtcPay</li>
+<li>WordPress without WooCommerce: TODO, however it&rsquo;s also BtcPay</li>
+<li>WordPress with WooCommerce: TODO, however it&rsquo;s also BtcPay</li>
+</ul>
+<h3 id="point-of-sale-integrations" >Point of Sale Integrations
+<span>
+    <a href="#point-of-sale-integrations">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>This section will be on how to integrate Monero processing in stores that already use a POS system such as Square and Clover. This section is empty because apparently only I care to think of closing this gap in terms of usability. The work for Clover would involve Android development.</p>
+<h3 id="accepting-monero-as-a-creator" >Accepting Monero as a Creator
+<span>
+    <a href="#accepting-monero-as-a-creator">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p><a href="https://xmrchat.com/">XMRChat</a></p>
+<h2 id="funding-monero-projects" >Funding Monero Projects
+<span>
+    <a href="#funding-monero-projects">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><ul>
+<li><a href="https://ccs.getmonero.org/">Monero Community Crowdfunding System (CCS)</a></li>
+<li><a href="https://bounties.monero.social/">Monero Bounties</a></li>
+<li><a href="https://donate.magicgrants.org/monero">Magic Grants</a></li>
+</ul>
+<h2 id="monero-libraries" >Monero Libraries
+<span>
+    <a href="#monero-libraries">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><ul>
+<li><a href="https://github.com/monero-project/monero">Original C++ Monero</a></li>
+<li><a href="https://github.com/serai-dex/serai/tree/develop/networks/monero">serai monero transaction library</a></li>
+<li><a href="https://github.com/serai-dex/serai/tree/develop/networks/monero/wallet">serai monero wallet</a></li>
+<li><a href="https://github.com/Cuprate/cuprate">monero cuprate</a></li>
+</ul>
+<h2 id="deploying-monero-node-on-vps" >Deploying Monero Node on VPS
+<span>
+    <a href="#deploying-monero-node-on-vps">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><p>I recommend finding a server with 300GB+ SSD storage using <a href="https://www.serverhunter.com/#query=storage_capacity:%3E=525+stock:(in_stock+OR+unknown)">serverhunter</a>. Alternative, you can use OVHCloud or Vultr.</p>
+<ul>
+<li>Ansible Playbooks
+<ul>
+<li>I will make my own since these are unmaintained and require a lot of maintenance.</li>
+<li>Ideally you just need <a href="https://github.com/lalanza808/docker-monero-node?tab=readme-ov-file#docker-monero-node">docker-monero-node</a> and every time you get notified that Monero has updated, you can just run the same ansible playbook with a password and without changing anything. A password will be required to inject ENV variables.</li>
+<li><a href="https://github.com/lalvarezguillen/monerod-node-vps">lalvarezguillen/monerod-node-vps</a></li>
+<li><a href="https://github.com/Al13n0/monero-nodes-ansible">Al13n0/monero-nodes-ansible</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="whats-missing" >What&rsquo;s Missing
+<span>
+    <a href="#whats-missing">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><ul>
+<li>Vouchers like <a href="https://azte.co/learn/articles/what-are-azteco-bitcoin-vouchers#What-are-Azteco-bitcoin-vouchers">Azteco bitcoin vouchers</a></li>
+</ul>
+
+        </div>
+    </article>
+
+    
+
+    
+        
+    
+    
+    <div class="pagination post-pagination">
+        <div class="left pagination-item ">
+            
+                <a title="Banking in Canada" href="/posts/banking-in-canada/">Banking in Canada</a>
+            
+        </div>
+        <div class="right pagination-item ">
+            
+                <a title="Rent Control Reduces New Housing Builds" href="/posts/rent-control-reduces-housing-starts/">Rent Control Reduces New Housing Builds</a>
+            
+        </div>
+    </div>
+
+
+
+
+    
+
+    
+        <br>
+
+
+
+
+
+
+
+    
+
+
+
+
+
+<script src="https://giscus.app/client.js"
+        data-repo="elibroftw/blog.elijahlopez.ca"
+        data-repo-id="R_kgDOGiL7hg"
+        data-category="General"
+        data-category-id="DIC_kwDOGiL7hs4Cer6e"
+        data-mapping="og:title"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="preferred_color_scheme"
+        data-lang="en"
+        crossorigin="anonymous"
+        
+        async>
+</script>
+
+    
+
+        </main>
+        
+            <footer class="common-footer">
+    
+    
+
+    <div class="common-footer-bottom">
+        
+        <div class="copyright">
+            <p>© Elijah Lopez, 2025<br>
+            Powered by <a target="_blank" rel="noopener noreferrer" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" rel="noopener noreferrer" href="https://github.com/elibroftw/hugo-theme-anubis">Anubis</a>.<br>
+            
+            </p>
+        </div>
+    </div>
+
+    <p class="h-card vcard">
+
+    <a href=https://blog.elijahlopez.ca/ class="p-name u-url url fn" rel="me">Elijah Lopez</a> 
+
+     
+        /
+        <a class="p-email u-email email" rel="me" href="mailto:elijahllopezz@gmail.com">elijahllopezz@gmail.com</a>
+    
+
+     
+        <img class="u-photo" src="https://pbs.twimg.com/profile_images/1738729591064166400/vqarzcF7_400x400.jpg" />
+    
+</p> 
+</footer>
+
+        
+    </div>
+</body>
+</html>
