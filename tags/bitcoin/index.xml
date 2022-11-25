@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Bitcoin on ELL Blog</title>
+    <link>https://blog.elijahlopez.ca/tags/bitcoin/</link>
+    <description>ELL Blog (Bitcoin)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 10 May 2022 17:07:56 -0400</lastBuildDate>
+    
+    <atom:link href="https://blog.elijahlopez.ca/tags/bitcoin/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>XMR-BTC Atomic Swap ASB Guide</title>
+      <link>https://blog.elijahlopez.ca/posts/xmr-btc-atomic-swap-asb/</link>
+      <pubDate>Tue, 10 May 2022 17:07:56 -0400</pubDate>
+      
+      <guid>https://blog.elijahlopez.ca/posts/xmr-btc-atomic-swap-asb/</guid>
+      <description>&lt;p&gt;A tutorial made for myself, not really others because
+the &lt;a href=&#34;https://github.com/comit-network/xmr-btc-swap/blob/master/docs/asb/README.md&#34;&gt;docs&lt;/a&gt;
+aren&amp;rsquo;t straight forward!&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Download &lt;a href=&#34;https://github.com/comit-network/xmr-btc-swap/releases/latest&#34;&gt;ASB and Swap zips&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Extract to &lt;code&gt;C:\Users\%USERNAME%\Documents\Monero&lt;/code&gt; or &lt;code&gt;~/Documents/Monero&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Run the monero-rpc-wallet (pre-req: add monero install location to PATH)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://monero.fail/?nettype=stagenet&#34;&gt;Find stagenet node&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Use port 28088 if mainnet/production&lt;/li&gt;
+&lt;li&gt;Security risk: rpc-login is disabled&lt;/li&gt;
+&lt;li&gt;wallet-dir: directory of an existing wallet (match to stagenet or mainnet)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;C:&lt;span style=&#34;color:#ed9d13&#34;&gt;\U&lt;/span&gt;sers&lt;span style=&#34;color:#ed9d13&#34;&gt;\m&lt;/span&gt;aste&lt;span style=&#34;color:#ed9d13&#34;&gt;\D&lt;/span&gt;ocuments&lt;span style=&#34;color:#ed9d13&#34;&gt;\M&lt;/span&gt;onero&amp;gt;monero-wallet-rpc --stagenet --daemon-host http://stagenet.melo.tools:38081 --rpc-bind-port &lt;span style=&#34;color:#3677a9&#34;&gt;38083&lt;/span&gt; --disable-rpc-login --wallet-dir wallets/stagenet_one
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Make sure this guide is readable with your terminal open&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Run &lt;code&gt;asb --testnet start&lt;/code&gt; in a new terminal window and press enter for everything. Do not use Ctrl or Alt.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;A wallet will be created in 10 seconds&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;If you close the ASB and want to start it again, restart the RPC to avoid a &amp;ldquo;wallet already exists error&amp;rdquo; from the ASB&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

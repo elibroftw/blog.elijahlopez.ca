@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Virtual-Box on ELL&#39;s Blog</title>
+    <link>https://blog.elijahlopez.ca/tags/virtual-box/</link>
+    <description>ELL&#39;s Blog (Virtual-Box)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 19 Nov 2023 14:22:42 -0500</lastBuildDate>
+    
+    <atom:link href="https://blog.elijahlopez.ca/tags/virtual-box/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>How to SSH Into VirtualBox</title>
+      <link>https://blog.elijahlopez.ca/posts/ssh-into-virtualbox/</link>
+      <pubDate>Sun, 19 Nov 2023 14:22:42 -0500</pubDate>
+      
+      <guid>https://blog.elijahlopez.ca/posts/ssh-into-virtualbox/</guid>
+      <description>&lt;p&gt;For the Oracle VirtualBox VM, click the virtualbox network settings and add a new port forwarding rule under advanced settings and add a rule for SSH with the TCP protocol, 3022 Host port, and 22 guest port.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.elijahlopez.ca/images/virtual-box/port-forwarding-ssh.webp&#34; alt=&#34;port forwarding UI in VirtualBox&#34;&gt;&lt;/p&gt;
+&lt;p&gt;On the Virtual Machine, install openssh-server. This is how you would do it on Debian-based systems. I&amp;rsquo;m using Linux mint.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo apt install -y openssh-server
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;On your own machine, first try sshing into the virtual machine.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ssh -p &lt;span style=&#34;color:#3677a9&#34;&gt;3022&lt;/span&gt; elijah@127.0.0.1
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Once you can confirm it works, we want to copy our ssh-id so that we won&amp;rsquo;t have to repeatedly use our passwords. Especially when we want to use VSCode or something.&lt;/p&gt;
+&lt;h2 id=&#34;password-less-ssh&#34; &gt;Password-less SSH
+&lt;span&gt;
+    &lt;a href=&#34;#password-less-ssh&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;If you do not have an SSH key, &lt;code&gt;ssh-keygen -t ed25519&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;If you&amp;rsquo;re on Windows, you will need to first install the OpenSSH feature from Settings or you can use WSL to be able to use &lt;code&gt;ssh-keygen&lt;/code&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;windows&#34; &gt;Windows
+&lt;span&gt;
+    &lt;a href=&#34;#windows&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;Use either of the two commands below to copy your SSH ID to the Virtual Machine&amp;rsquo;s authorized keys. I created an SSH key on my PC over 4 years which is why when at the time the &amp;ldquo;gurus&amp;rdquo; were all spouting RSA.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-pwsh&#34; data-lang=&#34;pwsh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#24909d&#34;&gt;type &lt;/span&gt;~\.ssh\id_ed25519.pub | ssh -p &lt;span style=&#34;color:#3677a9&#34;&gt;3022&lt;/span&gt; elijah&lt;span style=&#34;color:#40ffff&#34;&gt;@127&lt;/span&gt;.0.0.1 &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;cat &amp;gt;&amp;gt; .ssh/authorized_keys&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#24909d&#34;&gt;type &lt;/span&gt;~\.ssh\id_rsa.pub | ssh -p &lt;span style=&#34;color:#3677a9&#34;&gt;3022&lt;/span&gt; elijah&lt;span style=&#34;color:#40ffff&#34;&gt;@127&lt;/span&gt;.0.0.1 &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;cat &amp;gt;&amp;gt; .ssh/authorized_keys&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;linux&#34; &gt;Linux
+&lt;span&gt;
+    &lt;a href=&#34;#linux&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ssh-copy-id -p elijah@127.0.0.1
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;To integrate with VSCode, adapt the following into your &lt;code&gt;.ssh/config&lt;/code&gt; file&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Host &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;VirtualBox Linux Mint&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    User elijah
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    HostName 127.0.0.1
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    Port &lt;span style=&#34;color:#3677a9&#34;&gt;3022&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    IdentityFile &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;C:\Users\maste\.ssh\id_rsa&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;If you want to run a GUI on the VirtualBox, run &lt;code&gt;export DISPLAY=:0&lt;/code&gt; first&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
