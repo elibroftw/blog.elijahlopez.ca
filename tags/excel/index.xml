@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Excel on ELL Blog</title>
+    <link>https://blog.elijahlopez.ca/tags/excel/</link>
+    <description>ELL Blog (Excel)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 08 Apr 2024 11:30:07 -0400</lastBuildDate>
+    
+    <atom:link href="https://blog.elijahlopez.ca/tags/excel/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Excel FILTER Formula on Table Excluding Headers</title>
+      <link>https://blog.elijahlopez.ca/posts/excel-filter-table-excluding-headers/</link>
+      <pubDate>Mon, 08 Apr 2024 11:30:07 -0400</pubDate>
+      
+      <guid>https://blog.elijahlopez.ca/posts/excel-filter-table-excluding-headers/</guid>
+      <description>&lt;p&gt;Enter a variant of the formula below where Table1 is the name of the table (Ctrl + T to create tables in Excel). Since we are using a formula in another sheet, it might be prudent to place this on row 3 to make room for custom headers on row 1 and custom data (or another filter) on row 2.&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-excel&#34; data-lang=&#34;excel&#34;&gt;# Enter this in A5
+=FILTER(Table1[Stock]:Table1[Status],NOT(ISBLANK(Table1[Status])))
+# Enter this in C5 or the width of the first formula + 1
+=FILTER(Table1[Speculation]&amp;amp;&amp;#34;&amp;#34;,NOT(ISBLANK(Table1[Status])))
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The reason there are two formulas is because empty cells show up as &amp;ldquo;0&amp;rdquo; by filter, so if we need spill-overs, we need to use the &lt;code&gt;&amp;amp;&amp;quot;&amp;quot;&lt;/code&gt; modifier on each array separately.&lt;/p&gt;
+&lt;p&gt;Here is a snippet of Table1&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;Stock&lt;/th&gt;
+          &lt;th&gt;Status&lt;/th&gt;
+          &lt;th&gt;Speculation&lt;/th&gt;
+          &lt;th&gt;Ticker&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;DOLLARAMA INC. (XTSE:DOL)&lt;/td&gt;
+          &lt;td&gt;HOLD&lt;/td&gt;
+          &lt;td&gt;Possibly over-valued&lt;/td&gt;
+          &lt;td&gt;DOL&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Canadian Pacific Kansas City Limited (XTSE:CP)&lt;/td&gt;
+          &lt;td&gt;BUY&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+          &lt;td&gt;CP&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Vale SA (XNYS:VALE)&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+          &lt;td&gt;VALE&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;ABBVIE INC. (XNYS:ABBV)&lt;/td&gt;
+          &lt;td&gt;BUY&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+          &lt;td&gt;ABBV&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;PROSPECT CAPITAL CORPORATION (XNAS:PSEC)&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+          &lt;td&gt;PSEC&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;THE BANK OF NOVA SCOTIA (XTSE:BNS)&lt;/td&gt;
+          &lt;td&gt;BUY&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+          &lt;td&gt;BNS&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;WHITEHORSE FINANCE, INC. (XNAS:WHF)&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+          &lt;td&gt;WHF&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;STELLUS CAPITAL INVESTMENT CORPORATION (XNYS:SCM)&lt;/td&gt;
+          &lt;td&gt;BUY&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+          &lt;td&gt;SCM&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;LAMAR ADVERTISING COMPANY (XNAS:LAMR)&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+          &lt;td&gt;LAMR&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;NEXTERA ENERGY PARTNERS UNT (XNYS:NEP)&lt;/td&gt;
+          &lt;td&gt;BUY&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+          &lt;td&gt;NEP&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;THE TORONTO-DOMINION BANK (XTSE:TD)&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+          &lt;td&gt;TD&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;After I used the formula on Table1, I got the following table. Notice that the data excludes any headers and only includes the wanted columns that had a Status.&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;&lt;/th&gt;
+          &lt;th&gt;&lt;/th&gt;
+          &lt;th&gt;&lt;/th&gt;
+          &lt;th&gt;&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;DOLLARAMA INC. (XTSE:DOL)&lt;/td&gt;
+          &lt;td&gt;HOLD&lt;/td&gt;
+          &lt;td&gt;Possibly over-valued&lt;/td&gt;
+          &lt;td&gt;DOL&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Canadian Pacific Kansas City Limited (XTSE:CP)&lt;/td&gt;
+          &lt;td&gt;BUY&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+          &lt;td&gt;CP&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;ABBVIE INC. (XNYS:ABBV)&lt;/td&gt;
+          &lt;td&gt;BUY&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+          &lt;td&gt;ABBV&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;THE BANK OF NOVA SCOTIA (XTSE:BNS)&lt;/td&gt;
+          &lt;td&gt;BUY&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+          &lt;td&gt;BNS&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;STELLUS CAPITAL INVESTMENT CORPORATION (XNYS:SCM)&lt;/td&gt;
+          &lt;td&gt;BUY&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+          &lt;td&gt;SCM&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;NEXTERA ENERGY PARTNERS UNT (XNYS:NEP)&lt;/td&gt;
+          &lt;td&gt;BUY&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+          &lt;td&gt;NEP&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;BRITISH AMERICAN TOBACCO P.L.C. (XNYS:BTI)&lt;/td&gt;
+          &lt;td&gt;BUY&lt;/td&gt;
+          &lt;td&gt;Undervalued&lt;/td&gt;
+          &lt;td&gt;BTI&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;SUN LIFE FINANCIAL INC (XTSE:SLF)&lt;/td&gt;
+          &lt;td&gt;HOLD&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+          &lt;td&gt;SLF&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Brazilian Petroleum Corporation - Petrobras (XNYS:PBR.A)&lt;/td&gt;
+          &lt;td&gt;HOLD&lt;/td&gt;
+          &lt;td&gt;Do not top-up&lt;/td&gt;
+          &lt;td&gt;PBR.A&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;3M COMPANY (XNYS:MMM)&lt;/td&gt;
+          &lt;td&gt;BUY&lt;/td&gt;
+          &lt;td&gt;Undervalued&lt;/td&gt;
+          &lt;td&gt;MMM&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;PFIZER INC. (XNYS:PFE)&lt;/td&gt;
+          &lt;td&gt;BUY&lt;/td&gt;
+          &lt;td&gt;Undervalued&lt;/td&gt;
+          &lt;td&gt;PFE&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;em&gt;&lt;caption&gt;the data contains entries missing in the first snippet because the original table was used&lt;/caption&gt;&lt;/em&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
