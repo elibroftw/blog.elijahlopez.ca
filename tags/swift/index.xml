@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Swift on ELL Blog</title>
+    <link>https://blog.elijahlopez.ca/tags/swift/</link>
+    <description>ELL Blog (Swift)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 08 Aug 2024 09:44:21 -0400</lastBuildDate>
+    
+    <atom:link href="https://blog.elijahlopez.ca/tags/swift/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Swift - How to Get Logs</title>
+      <link>https://blog.elijahlopez.ca/posts/how-to-get-logs-in-swift/</link>
+      <pubDate>Thu, 08 Aug 2024 09:44:21 -0400</pubDate>
+      
+      <guid>https://blog.elijahlopez.ca/posts/how-to-get-logs-in-swift/</guid>
+      <description>&lt;p&gt;Here is the following code if you need to get your app&amp;rsquo;s logs as well as system logs through Applications code. The docs will tell you that the &lt;code&gt;.system&lt;/code&gt; scope requires administration, but the reality is that by using the &lt;code&gt;local&lt;/code&gt; log store, you can still get the system logs. &lt;a href=&#34;https://mjtsai.com/blog/2021/12/10/oslogstore-on-monterey/&#34;&gt;OSLogStore on Monterey by Michael Tsai&lt;/a&gt;.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Quinn “The Eskimo!” @ Developer Technical Support @ Apple&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;https://developer.apple.com/documentation/oslog/oslogstore/local()&#34;&gt;OSLogStore.local()&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Gaining access to the local unified logging system requires permission from the system. The caller must be run by an admin account and have the com.apple.logging.local-store entitlement.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;The docs here are actually outdated since you do not need that entitlement. Note that using the &lt;code&gt;.system&lt;/code&gt; scope won&amp;rsquo;t work with sandboxed apps.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-swift&#34; data-lang=&#34;swift&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;color:#447fcf;text-decoration:underline&#34;&gt;AppKit&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;color:#447fcf;text-decoration:underline&#34;&gt;Foundation&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;color:#447fcf;text-decoration:underline&#34;&gt;OSLog&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;color:#447fcf;text-decoration:underline&#34;&gt;ZipArchive&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;let&lt;/span&gt; &lt;span style=&#34;color:#40ffff&#34;&gt;utcDateFormat&lt;/span&gt;: DateFormatter = {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#40ffff&#34;&gt;f&lt;/span&gt; = DateFormatter()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    f.dateFormat = &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;yyyy-MM-dd&amp;#39;T&amp;#39;HH:mm:ss&amp;#39;Z&amp;#39;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    f.timeZone = TimeZone.gmt
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;return&lt;/span&gt; f
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;let&lt;/span&gt; &lt;span style=&#34;color:#40ffff&#34;&gt;logStore&lt;/span&gt;: OSLogStore
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;do&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    logStore = &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;try&lt;/span&gt; OSLogStore.local()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    fileName = &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;system.log&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;} &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;catch&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;self&lt;/span&gt;.writeError(name: &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;system-logs&amp;#34;&lt;/span&gt;, error: error)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    logStore = &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;try&lt;/span&gt; OSLogStore(scope: .currentProcessIdentifier)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    fileName = &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;client.log&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;let&lt;/span&gt; &lt;span style=&#34;color:#40ffff&#34;&gt;logEntries&lt;/span&gt; = &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;try&lt;/span&gt; logStore.getEntries(
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    at: logStore.position(date: &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;self&lt;/span&gt;.logStartTimestamp),
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    matching: NSPredicate(format: &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;&amp;#34;&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;        process CONTAINS[c] &amp;#34;&lt;/span&gt;APP_NAME&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34; || subsystem CONTAINS[c] &amp;#34;&lt;/span&gt;APP_NAME&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;        || process CONTAINS[c] &amp;#34;&lt;/span&gt;neagent&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;        || process CONTAINS[c] &amp;#34;&lt;/span&gt;nesessionmanager&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;        || subsystem CONTAINS[c] &amp;#34;&lt;/span&gt;com.apple.networkextension&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;    &amp;#34;&amp;#34;&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;let&lt;/span&gt; &lt;span style=&#34;color:#40ffff&#34;&gt;file&lt;/span&gt; = &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;try&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;self&lt;/span&gt;.openFile(name: fileName)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;for&lt;/span&gt; entry &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;in&lt;/span&gt; logEntries {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;if&lt;/span&gt; entry.date &amp;gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;self&lt;/span&gt;.bundleTimestamp {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;break&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// &lt;/span&gt;&lt;span style=&#34;color:#e50808;background-color:#520000;font-weight:bold&#34;&gt;TODO:&lt;/span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt; Buffering?&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;let&lt;/span&gt; &lt;span style=&#34;color:#40ffff&#34;&gt;date&lt;/span&gt; = utcDateFormat.string(from: entry.date)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// &lt;/span&gt;&lt;span style=&#34;color:#e50808;background-color:#520000;font-weight:bold&#34;&gt;TODO:&lt;/span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt; Structured data.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;let&lt;/span&gt; &lt;span style=&#34;color:#40ffff&#34;&gt;formatted&lt;/span&gt; = &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;\(&lt;/span&gt;date&lt;span style=&#34;color:#ed9d13&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;: &lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;\(&lt;/span&gt;entry.composedMessage&lt;span style=&#34;color:#ed9d13&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// This is safe because String is unicode.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;let&lt;/span&gt; &lt;span style=&#34;color:#40ffff&#34;&gt;data&lt;/span&gt; = formatted.data(using: &lt;span style=&#34;color:#24909d&#34;&gt;String&lt;/span&gt;.Encoding.utf8)!
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;try&lt;/span&gt; file.write(contentsOf: data)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;try&lt;/span&gt; file.close()
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;references&#34; &gt;References
+&lt;span&gt;
+    &lt;a href=&#34;#references&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://steipete.com/posts/logging-in-swift/&#34;&gt;Peter Steinberger; Logging in Swift; August 27, 2021&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://developer.apple.com/documentation/oslog/oslogstore/local()&#34;&gt;Apple Developer; OSLogStore.local() Description&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://mjtsai.com/blog/2021/12/10/oslogstore-on-monterey/&#34;&gt;Michael Tsai; OSLogStore on Monterey; December 10, 2021&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

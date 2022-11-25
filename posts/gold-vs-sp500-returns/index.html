@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="">
+<head>
+    
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name = "apple-mobile-web-app-capable" content = "yes">
+    <meta name="theme-color" content="#121212">
+
+    <meta charset="utf-8">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <title>Gold vs S&amp;P500 Annualized Return by Month Invested (Jan 1975 - Sep 2025) - ELL Blog</title>
+    <meta name="description" content="Gold hit $4,000 in October 2025. This is a comprehensive analysis comparing gold prices vs S&amp;P 500 total returns for every month since 1975. I analyze the results and try to derive some insights on how gold can prove useful when there treasury bills are unable to provide expected risk-free real interest rates that are positive and significant.">
+    
+    <link rel="icon" type="image/x-icon" href="https://blog.elijahlopez.ca/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" href="https://blog.elijahlopez.ca/favicon.png">
+
+    <link rel="stylesheet" href="https://blog.elijahlopez.ca/css/style.min.a3636fe363937f82d02cf99304911d0408aab8e9cb1849af08144cfcedc2e758.css" integrity="sha256-o2Nv42OTf4LQLPmTBJEdBAiquOnLGEmvCBRM/O3C51g=">
+    <script src="https://blog.elijahlopez.ca/js/script.min.74bf1a3fcf1af396efa4acf3e660e876b61a2153ab9cbe1893ac24ea6d4f94ee.js" type="text/javascript" charset="utf-8" integrity="sha256-dL8aP88a85bvpKzz5mDodrYaIVOrnL4Yk6wk6m1PlO4="></script>
+    <meta property="og:url" content="https://blog.elijahlopez.ca/posts/gold-vs-sp500-returns/">
+  <meta property="og:site_name" content="ELL Blog">
+  <meta property="og:title" content="Gold vs S&P500 Annualized Return by Month Invested (Jan 1975 - Sep 2025)">
+  <meta property="og:description" content="Gold hit $4,000 in October 2025. This is a comprehensive analysis comparing gold prices vs S&amp;P 500 total returns for every month since 1975. I analyze the results and try to derive some insights on how gold can prove useful when there treasury bills are unable to provide expected risk-free real interest rates that are positive and significant.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-10-09T12:33:38-04:00">
+    <meta property="article:modified_time" content="2025-10-09T12:33:38-04:00">
+    <meta property="article:tag" content="Finance">
+    <meta property="article:tag" content="Economics">
+    <meta property="article:tag" content="Investing">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Gold vs S&P500 Annualized Return by Month Invested (Jan 1975 - Sep 2025)">
+  <meta name="twitter:description" content="Gold hit $4,000 in October 2025. This is a comprehensive analysis comparing gold prices vs S&amp;P 500 total returns for every month since 1975. I analyze the results and try to derive some insights on how gold can prove useful when there treasury bills are unable to provide expected risk-free real interest rates that are positive and significant.">
+
+    
+    <script src="https://ryb.elijahlopez.ca/api/script.js" data-site-id="1" defer></script>
+</head>
+
+
+<body>
+    <a class="skip-main" href="#main">Skip to main content</a>
+    <div class="container">
+        <header class="common-header">
+            
+                
+
+    
+
+
+<div class="header-top">
+    <h1 class="site-title">
+        <a href="/">ELL Blog</a>
+    </h1>
+
+    <div class="header-top-left">
+    <ul class="social-icons">
+
+        <li>
+            <a href="/index.xml" title="Rss" rel="me">
+                <span class="inline-svg" >
+                    
+                </span>
+
+            </a>
+        </li>
+    
+<li>
+            <a href="https://elijahlopez.ca" title="Website" rel="me">
+            <span class="inline-svg" >
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M352 256C352 278.2 350.8 299.6 348.7 320H163.3C161.2 299.6 159.1 278.2 159.1 256C159.1 233.8 161.2 212.4 163.3 192H348.7C350.8 212.4 352 233.8 352 256zM503.9 192C509.2 212.5 512 233.9 512 256C512 278.1 509.2 299.5 503.9 320H380.8C382.9 299.4 384 277.1 384 256C384 234 382.9 212.6 380.8 192H503.9zM493.4 160H376.7C366.7 96.14 346.9 42.62 321.4 8.442C399.8 29.09 463.4 85.94 493.4 160zM344.3 160H167.7C173.8 123.6 183.2 91.38 194.7 65.35C205.2 41.74 216.9 24.61 228.2 13.81C239.4 3.178 248.7 0 256 0C263.3 0 272.6 3.178 283.8 13.81C295.1 24.61 306.8 41.74 317.3 65.35C328.8 91.38 338.2 123.6 344.3 160H344.3zM18.61 160C48.59 85.94 112.2 29.09 190.6 8.442C165.1 42.62 145.3 96.14 135.3 160H18.61zM131.2 192C129.1 212.6 127.1 234 127.1 256C127.1 277.1 129.1 299.4 131.2 320H8.065C2.8 299.5 0 278.1 0 256C0 233.9 2.8 212.5 8.065 192H131.2zM194.7 446.6C183.2 420.6 173.8 388.4 167.7 352H344.3C338.2 388.4 328.8 420.6 317.3 446.6C306.8 470.3 295.1 487.4 283.8 498.2C272.6 508.8 263.3 512 255.1 512C248.7 512 239.4 508.8 228.2 498.2C216.9 487.4 205.2 470.3 194.7 446.6H194.7zM190.6 503.6C112.2 482.9 48.59 426.1 18.61 352H135.3C145.3 415.9 165.1 469.4 190.6 503.6V503.6zM321.4 503.6C346.9 469.4 366.7 415.9 376.7 352H493.4C463.4 426.1 399.8 482.9 321.4 503.6V503.6z"/></svg>
+                </span>
+
+            </a>
+        </li>
+    
+
+        
+        
+        <li>
+            <a href="https://github.com/elibroftw" title="Github" rel="me">
+            <span class="inline-svg" >
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+                </span>
+
+            </a>
+        </li>
+    
+
+        
+        
+        <li>
+            <a href="https://twitter.com/elibroftw" title="Twitter" rel="me">
+            <span class="inline-svg" >
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+                </span>
+
+            </a>
+        </li>
+    
+
+        
+        
+        <li>
+            <a href="https://www.youtube.com/c/elibroftw" title="Youtube" rel="me">
+            <span class="inline-svg" >
+                    <svg viewBox="0 -3 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g id="Dribbble-Light-Preview" transform="translate(-300.000000, -7442.000000)" fill="#000000">
+      <g id="icons" transform="translate(56.000000, 160.000000)">
+        <path fill="currentColor"
+          d="M251.988432,7291.58588 L251.988432,7285.97425 C253.980638,7286.91168 255.523602,7287.8172 257.348463,7288.79353 C255.843351,7289.62824 253.980638,7290.56468 251.988432,7291.58588 M263.090998,7283.18289 C262.747343,7282.73013 262.161634,7282.37809 261.538073,7282.26141 C259.705243,7281.91336 248.270974,7281.91237 246.439141,7282.26141 C245.939097,7282.35515 245.493839,7282.58153 245.111335,7282.93357 C243.49964,7284.42947 244.004664,7292.45151 244.393145,7293.75096 C244.556505,7294.31342 244.767679,7294.71931 245.033639,7294.98558 C245.376298,7295.33761 245.845463,7295.57995 246.384355,7295.68865 C247.893451,7296.0008 255.668037,7296.17532 261.506198,7295.73552 C262.044094,7295.64178 262.520231,7295.39147 262.895762,7295.02447 C264.385932,7293.53455 264.28433,7285.06174 263.090998,7283.18289"
+          id="youtube-[#168]">
+        </path>
+      </g>
+    </g>
+  </g>
+</svg>
+
+                </span>
+
+            </a>
+        </li>
+    
+
+        
+        
+        <li>
+            <a href="mailto:elijahllopezz@gmail.com" title="Email" rel="me">
+            <span class="inline-svg" >
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48L48 64zM0 176L0 384c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-208L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"/></svg>
+
+                </span>
+
+            </a>
+        </li>
+    
+
+        
+        
+        <li>
+            <a href="https://www.instagram.com/elijahllopezz" title="Instagram" rel="me">
+            <span class="inline-svg" >
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M12 18C15.3137 18 18 15.3137 18 12C18 8.68629 15.3137 6 12 6C8.68629 6 6 8.68629 6 12C6 15.3137 8.68629 18 12 18ZM12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z" fill="#0F0F0F"/>
+<path fill="currentColor" d="M18 5C17.4477 5 17 5.44772 17 6C17 6.55228 17.4477 7 18 7C18.5523 7 19 6.55228 19 6C19 5.44772 18.5523 5 18 5Z" fill="#0F0F0F"/>
+<path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M1.65396 4.27606C1 5.55953 1 7.23969 1 10.6V13.4C1 16.7603 1 18.4405 1.65396 19.7239C2.2292 20.8529 3.14708 21.7708 4.27606 22.346C5.55953 23 7.23969 23 10.6 23H13.4C16.7603 23 18.4405 23 19.7239 22.346C20.8529 21.7708 21.7708 20.8529 22.346 19.7239C23 18.4405 23 16.7603 23 13.4V10.6C23 7.23969 23 5.55953 22.346 4.27606C21.7708 3.14708 20.8529 2.2292 19.7239 1.65396C18.4405 1 16.7603 1 13.4 1H10.6C7.23969 1 5.55953 1 4.27606 1.65396C3.14708 2.2292 2.2292 3.14708 1.65396 4.27606ZM13.4 3H10.6C8.88684 3 7.72225 3.00156 6.82208 3.0751C5.94524 3.14674 5.49684 3.27659 5.18404 3.43597C4.43139 3.81947 3.81947 4.43139 3.43597 5.18404C3.27659 5.49684 3.14674 5.94524 3.0751 6.82208C3.00156 7.72225 3 8.88684 3 10.6V13.4C3 15.1132 3.00156 16.2777 3.0751 17.1779C3.14674 18.0548 3.27659 18.5032 3.43597 18.816C3.81947 19.5686 4.43139 20.1805 5.18404 20.564C5.49684 20.7234 5.94524 20.8533 6.82208 20.9249C7.72225 20.9984 8.88684 21 10.6 21H13.4C15.1132 21 16.2777 20.9984 17.1779 20.9249C18.0548 20.8533 18.5032 20.7234 18.816 20.564C19.5686 20.1805 20.1805 19.5686 20.564 18.816C20.7234 18.5032 20.8533 18.0548 20.9249 17.1779C20.9984 16.2777 21 15.1132 21 13.4V10.6C21 8.88684 20.9984 7.72225 20.9249 6.82208C20.8533 5.94524 20.7234 5.49684 20.564 5.18404C20.1805 4.43139 19.5686 3.81947 18.816 3.43597C18.5032 3.27659 18.0548 3.14674 17.1779 3.0751C16.2777 3.00156 15.1132 3 13.4 3Z" fill="#0F0F0F"/>
+</svg>
+
+                </span>
+
+            </a>
+        </li>
+    
+
+
+
+    <li>
+            <a href="https://blog.elijahlopez.ca/index.xml" title="RSS" rel="me"><span class="inline-svg" >
+                    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" data-icon="rss" data-prefix="fas" focusable="false" role="img" viewBox="0 0 496 512"><path fill="currentColor" fill="currentColor" d="M128.081 415.959c0 35.369-28.672 64.041-64.041 64.041S0 451.328 0 415.959s28.672-64.041 64.041-64.041 64.04 28.673 64.04 64.041zm175.66 47.25c-8.354-154.6-132.185-278.587-286.95-286.95C7.656 175.765 0 183.105 0 192.253v48.069c0 8.415 6.49 15.472 14.887 16.018 111.832 7.284 201.473 96.702 208.772 208.772.547 8.397 7.604 14.887 16.018 14.887h48.069c9.149.001 16.489-7.655 15.995-16.79zm144.249.288C439.596 229.677 251.465 40.445 16.503 32.01 7.473 31.686 0 38.981 0 48.016v48.068c0 8.625 6.835 15.645 15.453 15.999 191.179 7.839 344.627 161.316 352.465 352.465.353 8.618 7.373 15.453 15.999 15.453h48.068c9.034-.001 16.329-7.474 16.005-16.504z"/></svg>
+                </span>
+</a>
+        </li>
+    
+</ul>
+</div>
+    
+
+    
+
+
+
+
+    <div class="header-top-right theme-switcher">
+        <span class="inline-svg" >
+                    <svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 290 290">
+<path fill="currentColor" d="M142.959,0C64.131,0,0,64.132,0,142.96c0,78.828,64.131,142.959,142.959,142.959c78.828,0,142.96-64.131,142.96-142.959  C285.919,64.132,221.787,0,142.959,0z M142.959,260.919V142.96V25c65.043,0,117.96,52.917,117.96,117.96  C260.919,208.003,208.002,260.919,142.959,260.919z"/>
+</svg>
+                </span>
+
+    </div>
+
+
+<script>
+const STORAGE_KEY = 'user-color-scheme'
+const defaultTheme = "auto"
+
+let currentTheme
+let switchButton
+let autoDefinedScheme = window.matchMedia('(prefers-color-scheme: dark)')
+
+const autoChangeScheme = e => {
+    currentTheme = e.matches ? 'dark' : 'light'
+    document.documentElement.setAttribute('data-theme', currentTheme)
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    switchButton = document.querySelector('.theme-switcher')
+    currentTheme = detectCurrentScheme()
+    setThemeColorMeta(currentTheme)
+    if (currentTheme == 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark')
+    }
+
+    if (currentTheme == 'auto') {
+        autoChangeScheme(autoDefinedScheme);
+        autoDefinedScheme.addListener(autoChangeScheme);
+    }
+
+    if (switchButton) {
+        switchButton.addEventListener('click', switchTheme, false)
+    }
+})
+
+function detectCurrentScheme() {
+    if (localStorage !== null && localStorage.getItem(STORAGE_KEY)) {
+        return localStorage.getItem(STORAGE_KEY)
+    }
+    if (defaultTheme) {
+        return defaultTheme
+    }
+    if (!window.matchMedia) {
+        return defaultTheme
+    }
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        return 'dark'
+    }
+    return defaultTheme
+}
+
+function switchTheme(e) {
+    if (currentTheme == 'dark') {
+        if (localStorage !== null)
+            localStorage.setItem(STORAGE_KEY, 'light')
+        document.documentElement.setAttribute('data-theme', 'light')
+        currentTheme = 'light'
+    } else {
+        if (localStorage !== null)
+            localStorage.setItem(STORAGE_KEY, 'dark')
+        document.documentElement.setAttribute('data-theme', 'dark')
+        currentTheme = 'dark'
+    }
+    setThemeColorMeta(currentTheme)
+}
+
+function setThemeColorMeta(currentTheme) {
+    if (currentTheme == 'dark') {
+        document.querySelector('meta[name="theme-color"]').setAttribute('content', '#121212')
+    } else {
+        document.querySelector('meta[name="theme-color"]').setAttribute('content', '#fff')
+    }
+}
+</script>
+
+</div>
+
+
+    <nav>
+        
+        
+        <a class="" href="https://blog.elijahlopez.ca/" title="Home">Home</a>
+        
+        <a class="" href="https://blog.elijahlopez.ca/posts/" title="Archive">Archive</a>
+        
+        <a class="" href="https://blog.elijahlopez.ca/graph/" title="Graph">Graph</a>
+        
+        <a class="" href="https://blog.elijahlopez.ca/tags/" title="Tags">Tags</a>
+        
+    </nav>
+
+
+
+
+
+
+            
+        </header>
+        <main id="main" tabindex="-1">
+            
+    
+
+    <article class="post h-entry">
+        <div class="post-header">
+            <header>
+                <h1 class="p-name post-title">Gold vs S&amp;P500 Annualized Return by Month Invested (Jan 1975 - Sep 2025)</h1>
+                
+            </header>
+        </div>
+        
+        
+            
+            
+            <div class="post-info">
+                <ul class="post-authors">
+                    <a href="https://blog.elijahlopez.ca/authors/elijah-lopez/">@Elijah Lopez</a>
+                </ul>
+            </div>
+        
+
+        <div class="post-info">
+    
+
+    
+        <div class="post-date dt-published">
+            <a title="2025-10-09 12:33:38 -0400 -0400" class="u-url" href="/posts/gold-vs-sp500-returns/"><time datetime="2025-10-09">October 9, 2025</time></a>
+            
+        </div>
+    
+    <a class="post-hidden-url u-url" href="https://blog.elijahlopez.ca/posts/gold-vs-sp500-returns/">https://blog.elijahlopez.ca/posts/gold-vs-sp500-returns/</a>
+    <a href="https://blog.elijahlopez.ca/" class="p-name p-author post-hidden-author h-card" rel="me">Elijah Lopez</a>
+    <div class="post-taxonomies">
+        
+        
+            <ul class="post-tags">
+                
+                    
+                    <li><a class="tag" href="https://blog.elijahlopez.ca/tags/economics/">#Economics</a></li>
+                
+                    
+                    <li><a class="tag" href="https://blog.elijahlopez.ca/tags/finance/">#Finance</a></li>
+                
+                    
+                    <li><a class="tag" href="https://blog.elijahlopez.ca/tags/investing/">#Investing</a></li>
+                
+            </ul>
+        
+    </div>
+</div>
+
+        
+
+
+
+
+        <div class="content e-content">
+            <p>Gold crossed $4,000 per troy ounce on October 7th. Given this milestone, I wanted to investigate the claim that gold is a better investment than the S&amp;P500. When people usually share their charts showing Gold versus the S&amp;P500 <em>index</em>, there are a few biases I&rsquo;ve always noticed. Of course, the same day I started doing my analysis on this topic, CNBC puts out an article <a href="https://www.cnbc.com/2025/10/08/gold-vs-sp500-returns.html">gold vs. sp500 long term returns</a>.</p>
+<ol>
+<li>The most egregious bias in my opinion, is the investment year is cherry-picked (e.g. peak of the dot-com bubble in 2000), and along it comparing against NASDAQ instead of the S&amp;P500. To account for this bias, I have charted the difference in returns for all years, and annualized them to make teh results more digestible, since total returns aren&rsquo;t comparable across years.</li>
+<li>Another bias is that people will cherry pick years very long ago without accounting for executive order 6102 which prohibited owning gold from 1933 until the &ldquo;International Development Association Appropriations Act of 1975&rdquo; was passed, legalizing owning gold starting from January 1st, 1975. This bias is accounted for by restricting the time frame from January 1st, 1975 to the most recent data available for comparison (September 1st, 2025).</li>
+<li>A third bias is comparing against the S&amp;P500 index rather than teh S&amp;P500 total return index which incorporates dividends reinvested. Big shout out to Robert Shiller for maintaining this dataset for us.</li>
+</ol>
+<p>End date: Sep-2025.</p>
+<p><img src="/posts/gold-vs-sp500-returns/gold_vs_sp500_plot.png" alt="Gold Price to S&amp;P 500 Total Return Price"></p>
+<p>Overall, since 1975, the S&amp;P 500 manages to outperform gold on a y/y basis 70% of the time (note that this is based on investing at the start of the year). The cool thing about gold is that it has a Beta coefficient of around 0.5 (Yahoo, using GLD ETF as a proxy).</p>
+<p>After creating the initial plots which show the performance for the two different types of investments, I noticed that since 1997 to the present day (include the monster returns of 2024 and 2025), there are periods where an investment in gold - a zero-cashflow generating asset - would&rsquo;ve outperformed the S&amp;P500 - cash flow generating securities. After that there are periods where an investment in the S&amp;P500 would&rsquo;ve outperformed gold. This makes some sense once you factor in that gold is not correlated to S&amp;P500. Once the market crashed and started going up in March 2009, due to the great financial crisis, there was opportunity to shift from gold into the market.</p>
+<p>If we use a 10-year window, the results are bit more different, suggesting that over the long-term the S&amp;P500 will outperform gold. The periods where the S&amp;P500 outperforms are taller and the dot-com bursts are deeper compared to the all time annualized performance, however even on a 10 year period the pre-1995 bull market provided excess returns over gold as well as the post-GFC bull market. These make it very clear that gold is not a buy always hold forever instrument but rather an instrument to bring into play when investors speculate that the risk-free real interest rates is lower than what they desire.</p>
+<p><img src="/posts/gold-vs-sp500-returns/gold_10yr_rolling.png" alt="Gold vs S&amp;P 500 Total Return Price 10 year window"></p>
+<p>There was definitely a year (2012) where you should&rsquo;ve sold gold for bonds or stocks. The year is 2012 and inflation starts dipping below 2%. The Feds start cutting rates, however its clear that holding USD will provide a provide a positive enough risk-free real rate of return. So what happens to gold? It falls to its &ldquo;fair value&rdquo; and stays there since inflation is being tamed, as made clear with interest rates rising from 2016 to 2019.</p>
+<p><img src="/posts/gold-vs-sp500-returns/gold_sp500_ratio_plot_35_years.png" alt="Gold vs S&amp;P 500 Performance"></p>
+<p>The questions that arise after looking at the graphs are why is gold going up in 2024 and 2025, whether this is similar to 2012, how to avoid another dot-com bubble situation, and lastly, how do we know when the top is in regarding the business/debt cycle.</p>
+<h2 id="analysis" >Analysis
+<span>
+    <a href="#analysis">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><h3 id="gold-surge-in-2024-and-2025" >Gold Surge in 2024 and 2025
+<span>
+    <a href="#gold-surge-in-2024-and-2025">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>As illustrated in the provided charts, the gold price rise seems to be a reflection of both the  <strong>declining confidence</strong> in the Federal Reserve&rsquo;s ability to control inflation as well as its status as a safe haven asset.</p>
+<p>Gold is inversely correlated with the expected risk-free real interest rate. Gold is also seen as a safe-haven asset. Meaning that the real interest rate could be flat, but the existence of some fear, like tariffs, could cause mass buying of gold. What factors determine the expected risk-free real interest rate?</p>
+<ul>
+<li>The expected inflation rate
+<ul>
+<li><a href="https://www.bnnbloomberg.ca/business/2025/08/20/us-budget-deficit-forecast-us1-trillion-higher-over-next-decade-watchdog-says/">increase in deficit</a></li>
+<li>Tariffs (import prices are higher)</li>
+</ul>
+</li>
+<li>Treasury Yields (1yr or 10yr)
+<ul>
+<li>The Feds Fund rate</li>
+</ul>
+</li>
+</ul>
+<p><a href="https://www.spglobal.com/market-intelligence/en/news-insights/research/treasury-yields-and-gold-prices-breaking-expectations">Treasury yields and gold prices: breaking expectations (March 25, 2025)</a></p>
+<p>If you look at the inflation data, the 1yr treasury bill yields, and the actual Feds Fund rates, a relationship can somewhat be determined between expected inflation, expected risk-free real interest rates, and thus gold prices. When the expected risk-free real interest rate falls, gold is viewed as the stronger store of value. This seems to be because treasuries get crowded out due to a <a href="https://www.bankofcanada.ca/2025/10/staff-analytical-note-2025-25/#Money-market-mutual-funds-have-experienced-high-growth">lag</a> in people pulling money out of money market funds as interest rates get cut. The lag is 1yr.</p>
+<h3 id="fishers-equation-and-real-interest-rates" >Fisher&rsquo;s Equation and Real Interest Rates
+<span>
+    <a href="#fishers-equation-and-real-interest-rates">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>This concept of real interest rates comes from the <a href="/posts/bu-473-investment-management#interest-rates-and-inflation-rates">Fisher equation</a>.</p>
+<img class=equation-tall src="https://latex.codecogs.com/svg.image?r_e=N(1-t)-\pi_e">
+<p>The &ldquo;real risk-free required rate of return&rdquo; varies by investor type. This is possibly due to differences in taxation. If all participants seek similar post-tax real rates of return, then where they are situated may affect how the bid on securities, and if the market is small enough, it may crowd out investors with higher marginal tax rates.</p>
+<ul>
+<li><strong>Geographic Tax Advantages</strong>: Institutions based in zero-tax jurisdictions could drive down pre-tax real returns for all market participants to match their own post-tax expectations.</li>
+<li><strong>Commodity Allocation</strong>: institutions are less likely to be able to crowd out commodities like gold, thus it gives all investors ane better chance at pursuing investments that meet their desired risk-free real rates of return when treasury bills don&rsquo;t meet the bar.</li>
+</ul>
+<h3 id="current-market-assessment" >Current Market Assessment
+<span>
+    <a href="#current-market-assessment">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p><strong>Gold Outlook</strong> Based on the Gold Price to S&amp;P 500 Total Return Price Ratio over the last 30 years, a gold price crash appears unlikely.</p>
+<p><strong>S&amp;P 500 Valuation</strong> (Chart 2): The TR CAPE excess yield metric suggests the S&amp;P 500 is not currently in a speculative bubble. This metric compares the yield of the S&amp;P 500 Total Return Cyclically Adjusted Price-to-Earnings (TR CAPE) ratio against the inflation-adjusted 10-year Treasury yield.</p>
+<p>The TR CAPE excess yield metric is the difference between the yield of the SP500 Total Return Cyclically Adjusted Price to Earnings (TR CAPE) ratio minus the 10-year Treasury yield adjusted for inflation. The implication is that when treasuries offer a better real return than the market, the market is definitely in a bubble since it would be be poised to underperform treasuries on a real basis for the next 10 years. That or it would require a long-term sustaining bubble.</p>
+<p>CAPE takes into account the business cycle and TR takes into account the various method of returning cash to shareholders (dividends, buybacks, etc)</p>
+<h3 id="systemic-crashes" >Systemic Crashes
+<span>
+    <a href="#systemic-crashes">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>The stock market crashing is systemic. There are multiple factors at play.</p>
+<ul>
+<li>Business Cycles
+<ul>
+<li>When a business cycle is going down, it is called a recession</li>
+<li>Employment data
+<ul>
+<li>Employment ratios will go up and down just due to the nature of a business cycle</li>
+<li>The business cycle is what central banks are tasked at shortening, however it is not a solved problem</li>
+<li>Personally I think recessions are characterized based on the employment data because unemployment is the problem, not a fall in economic growth. If economic growth exists and people are unemployed, then there is still a crisis because people are struggling.</li>
+<li>Regardless, a traditional GDP based recession metric is clearly a follow up on a decrease in employment, where the recession becomes a reality if the loss in jobs is long-enough to cause a decrease in consumption, which would result in a decrease in earnings, which decreases stock prices</li>
+</ul>
+</li>
+<li>Debt crisis
+<ul>
+<li>A recession becomes a debt crisis when a lot of capital is tied to &ldquo;never ending growth&rdquo;</li>
+<li>A debt crisis occurs when a lot of capital is tied to being owed money from over-leveraged entities who can go under due to even the smallest of mishaps. In the GFC, the subprime mortgage instrument combined with over-leverage meant that a minor real estate correction would wipe out the Lehman Brothers, and of course a fall in employment is going to prevent real estate from continuing to go up.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Black swan events (e.g. lockdowns)</li>
+<li>An increase in the possibility of a black swan event (e.g. COVID-19)</li>
+<li>Sharp rise in interest rates causing valuations to plummet due to a higher required rate of return
+<ul>
+<li>In 2023, interest rates stopped rising. This in turn started a bull market due to risk-premiums being fixed. As interest rates were hiked in 2022, the market risk-premium necessitates that the required rate of return is higher. When the required rate of return rises without the stock market already having corrected, a rise in the required rate of return (based on expectations not just rate announcements), would immediately cause downward pressure on stocks.</li>
+</ul>
+</li>
+</ul>
+<h2 id="looking-forward" >Looking Forward
+<span>
+    <a href="#looking-forward">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><p>I want to pursue live graphs that show a simple risk factor as to how likely forward earnings will miss expectations (and thus cause a systemic crash) barring external and black swan events. On top of that, because systemic crashes cause even good stocks to go down, there needs to be a super simple tool that can figure out which stocks were oversold. In a market crash, one of the reasons for asset sales is the lack of liquidity itself! Stock valuations aren&rsquo;t just a reflection of fundamentals but also of liquidity (supply &amp; demand). Some factors that are interesting to me are:</p>
+<ul>
+<li>inflation (to predict interest rate announcements, however bank analysts will probably do this themselves)</li>
+<li>jobs data (to predict and visualize where the economy is in the business cycle)</li>
+<li>risk-free interest rates (to know what the market&rsquo;s required rate of return is)
+<ul>
+<li>the required rate of return is a combination of Beta, equity-risk premium, and the risk-free return. The equity risk-premium is not necessarily static, however it must be a positive number. My theory is that it depends on the various opportunity costs available at any point in time. As time goes forward and as investment innovations increase, equity-risk premiums should be rising, however they can fluctuate due to government policies providing or removing incentives for certain industries and sectors. We must also be aware that the equity risk premium is affected by investable wealth. Meaning that the larger the security in terms of market capitalization, the lower the equity risk premium is to compensate for the fact that more capital to invest also means less available investments.</li>
+</ul>
+</li>
+<li>10 year treasury prices and yield versus gold (specifically for analyzing periods of distress)</li>
+</ul>
+<h2 id="historical-perspectives-on-market-valuations" >Historical Perspectives on Market Valuations
+<span>
+    <a href="#historical-perspectives-on-market-valuations">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><p>Several prominent economists have warned about speculative bubbles and irrational market behavior:</p>
+<p><strong>Alan Greenspan</strong> (December 5, 1996, &ldquo;The Challenge of Central Banking in a Democratic Society&rdquo;):</p>
+<blockquote>
+<p>&ldquo;Sustained low inflation implies less uncertainty about the future, and lower risk premiums imply higher prices of stocks and other earning assets&hellip; But how do we know when irrational exuberance has unduly escalated asset values, which then become subject to unexpected and prolonged contractions as they have in Japan over the past decade?&rdquo;</p>
+</blockquote>
+<p><strong>Franco Modigliani</strong>, Nobel Laureate (March 30, 2000, New York Times):</p>
+<blockquote>
+<p>&ldquo;The expectation of growth produces the growth, which confirms the expectation; people will buy it because it went up. But once you are convinced that it is not growing anymore, nobody wants to hold a stock because it is overvalued.&rdquo;</p>
+</blockquote>
+<p><strong>Robert Shiller</strong> (<em>Irrational Exuberance</em>, 2000):</p>
+<blockquote>
+<p>&ldquo;Irrational exuberance is the psychological basis of a speculative bubble&hellip; news of price increases spurs investor enthusiasm, which spreads by psychological contagion from person to person&hellip; bringing in a larger and larger class of investors who, despite doubts about the real value of an investment, are drawn to it partly by envy of others&rsquo; successes and partly through a gamblers&rsquo; excitement.&rdquo;</p>
+</blockquote>
+<h2 id="reproducing-results" >Reproducing Results
+<span>
+    <a href="#reproducing-results">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><ul>
+<li><a href="https://www.macrotrends.net/1333/historical-gold-prices-100-year-chart">Gold Prices from Macrotrends</a></li>
+<li><a href="https://shillerdata.com/">S&amp;P Total Price Return from Shiller Data</a> (ie_data.xls)</li>
+</ul>
+<p>The Pythons script for producing the results can be found in my <a href="https://github.com/elibroftw/python-finance-library/blob/master/src/gold.py">python-finance-library</a></p>
+
+        </div>
+    </article>
+
+    
+
+    
+        
+    
+    
+    <div class="pagination post-pagination">
+        <div class="left pagination-item disabled">
+            
+        </div>
+        <div class="right pagination-item ">
+            
+                <a title="Canada&rsquo;s Problems Are Entirely Artificial" href="/posts/canadas-problems-are-entirely-artificial/">Canada&rsquo;s Problems Are Entirely Artificial</a>
+            
+        </div>
+    </div>
+
+
+
+
+    
+
+    
+        <br>
+
+
+
+
+
+
+
+    
+
+
+
+
+
+<script src="https://giscus.app/client.js"
+        data-repo="elibroftw/blog.elijahlopez.ca"
+        data-repo-id="R_kgDOGiL7hg"
+        data-category="General"
+        data-category-id="DIC_kwDOGiL7hs4Cer6e"
+        data-mapping="og:title"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="preferred_color_scheme"
+        data-lang="en"
+        crossorigin="anonymous"
+        
+        async>
+</script>
+
+    
+
+        </main>
+        
+            <footer class="common-footer">
+    
+    
+
+    <div class="common-footer-bottom">
+        
+        <div class="copyright">
+            <p>© Elijah Lopez, 2025<br>
+            Powered by <a target="_blank" rel="noopener noreferrer" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" rel="noopener noreferrer" href="https://github.com/elibroftw/hugo-theme-anubis">Anubis</a>.<br>
+            
+            </p>
+        </div>
+    </div>
+
+    <p class="h-card vcard">
+
+    <a href=https://blog.elijahlopez.ca/ class="p-name u-url url fn" rel="me">Elijah Lopez</a> 
+
+     
+        /
+        <a class="p-email u-email email" rel="me" href="mailto:elijahllopezz@gmail.com">elijahllopezz@gmail.com</a>
+    
+
+     
+        <img class="u-photo" src="https://pbs.twimg.com/profile_images/1738729591064166400/vqarzcF7_400x400.jpg" />
+    
+</p> 
+</footer>
+
+        
+    </div>
+</body>
+</html>
