@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Winui3 on ELL Blog</title>
+    <link>https://blog.elijahlopez.ca/tags/winui3/</link>
+    <description>ELL Blog (Winui3)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 07 Jul 2026 23:22:09 -0400</lastBuildDate>
+    
+    <atom:link href="https://blog.elijahlopez.ca/tags/winui3/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>WinUI3 Single Instance and URI Protocol Tutorial</title>
+      <link>https://blog.elijahlopez.ca/posts/winui3-single-instance-and-uri-protocol/</link>
+      <pubDate>Tue, 07 Jul 2026 23:22:09 -0400</pubDate>
+      
+      <guid>https://blog.elijahlopez.ca/posts/winui3-single-instance-and-uri-protocol/</guid>
+      <description>&lt;p&gt;For the last few months, I&amp;rsquo;ve been working with WinUI 3 and dealing with some of its &lt;a href=&#34;https://blog.elijahlopez.ca/tags/winui3&#34;&gt;quirks&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;When following the &lt;a href=&#34;https://johngagefaulkner.github.io/01-Build-a-Single-Instance-WinUI-3-App-2026-Gemini-2.5-Pro.html&#34;&gt;WinUI 3 Single-Instance &amp;amp; Protocol Activation&lt;/a&gt; tutorial, our app had multiple issues regarding activation and URI handling.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;#focus-issue&#34;&gt;Focus issue&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#the-crash-bug-i-was-facing&#34;&gt;Crash&lt;/a&gt; after opening hidden window from URI (app was running in tray).&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;First I will provide the up to date code, and then I will provide some explanation behind what is going on.&lt;/p&gt;
+&lt;h2 id=&#34;putting-it-all-together&#34; &gt;Putting it all Together
+&lt;span&gt;
+    &lt;a href=&#34;#putting-it-all-together&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;Appxmanifest (for packaged apps or packaged with external location apps)&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;&amp;lt;Application&lt;/span&gt; &lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;...&lt;/span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;&amp;lt;!-- ... --&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;&amp;lt;Extensions&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;&amp;lt;uap:Extension&lt;/span&gt; &lt;span style=&#34;color:#bbb&#34;&gt;Category=&lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;windows.protocol&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;          &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;&amp;lt;uap:Protocol&lt;/span&gt; &lt;span style=&#34;color:#bbb&#34;&gt;Name=&lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;obscuravpn&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;&amp;lt;uap:DisplayName&amp;gt;&lt;/span&gt;App Name&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;&amp;lt;/uap:DisplayName&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;          &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;&amp;lt;/uap:Protocol&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;&amp;lt;/uap:Extension&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;&amp;lt;/Extensions&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;&amp;lt;!-- ... --&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&amp;lt;&lt;/span&gt;/Application ...&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;NativeMethods.txt assuming the use of &lt;a href=&#34;https://microsoft.github.io/CsWin32/docs/getting-started.html&#34;&gt;CsWin32&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-txt&#34; data-lang=&#34;txt&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;SetForegroundWindow
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ShowWindow
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// MainWindow.xaml.cs&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;internal&lt;/span&gt; HWND GetWindowHandle()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;return&lt;/span&gt; (HWND)WinRT.Interop.WindowNative.GetWindowHandle(&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;this&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;internal&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;async&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;void&lt;/span&gt; HandleAppUrl(Uri uri)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        Log.Info(&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;HandleAppURL called&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;switch&lt;/span&gt; (uri.AbsolutePath)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;case&lt;/span&gt; &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;/settings&amp;#34;&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                SelectNavigationView(NavigationView.Account);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;break&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;default&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                Log.Warn(&lt;span style=&#34;color:#ed9d13&#34;&gt;$&amp;#34;Unhandled app path: {uri.AbsolutePath}&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;break&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// NavigationView is an enum, which is used by MainWindow.xaml (NavigationView tutorial coming later)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// Must be called on window&amp;#39;s creation thread (e.g. via dispatcher queue)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// Note that there should be a way to have enums on the Tags. I have not gotten to that cleanup yet.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;internal&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;void&lt;/span&gt; SelectNavigationView(NavigationView view)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;var&lt;/span&gt; item = NavView.MenuItems.Concat(NavView.FooterMenuItems)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            .OfType&amp;lt;NavigationViewItem&amp;gt;()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            .FirstOrDefault(i =&amp;gt; i.Tag &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;is&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;int&lt;/span&gt; tag &amp;amp;&amp;amp; tag == (&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;int&lt;/span&gt;)view);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;if&lt;/span&gt; (item == &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;null&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            Log.Warn(&lt;span style=&#34;color:#ed9d13&#34;&gt;$&amp;#34;No navigation pane item for view: {view}&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;return&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        NavView.SelectedItem = item;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// App.xaml.cs&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;using&lt;/span&gt; &lt;span style=&#34;color:#447fcf;text-decoration:underline&#34;&gt;System&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;using&lt;/span&gt; &lt;span style=&#34;color:#447fcf;text-decoration:underline&#34;&gt;System.IO&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;using&lt;/span&gt; &lt;span style=&#34;color:#447fcf;text-decoration:underline&#34;&gt;System.Threading&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;using&lt;/span&gt; &lt;span style=&#34;color:#447fcf;text-decoration:underline&#34;&gt;System.Threading.Tasks&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;using&lt;/span&gt; &lt;span style=&#34;color:#447fcf;text-decoration:underline&#34;&gt;log4net&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;using&lt;/span&gt; &lt;span style=&#34;color:#447fcf;text-decoration:underline&#34;&gt;log4net.Appender&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;using&lt;/span&gt; &lt;span style=&#34;color:#447fcf;text-decoration:underline&#34;&gt;log4net.Config&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;using&lt;/span&gt; &lt;span style=&#34;color:#447fcf;text-decoration:underline&#34;&gt;log4net.Layout&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;using&lt;/span&gt; &lt;span style=&#34;color:#447fcf;text-decoration:underline&#34;&gt;Microsoft.UI.Dispatching&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;using&lt;/span&gt; &lt;span style=&#34;color:#447fcf;text-decoration:underline&#34;&gt;Microsoft.UI.Xaml&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;using&lt;/span&gt; &lt;span style=&#34;color:#447fcf;text-decoration:underline&#34;&gt;Microsoft.Windows.AppLifecycle&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;using&lt;/span&gt; &lt;span style=&#34;color:#447fcf;text-decoration:underline&#34;&gt;Microsoft.Windows.AppNotifications&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;using&lt;/span&gt; &lt;span style=&#34;color:#447fcf;text-decoration:underline&#34;&gt;Microsoft.Windows.AppNotifications.Builder&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;using&lt;/span&gt; &lt;span style=&#34;color:#447fcf;text-decoration:underline&#34;&gt;Windows.Win32&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;using&lt;/span&gt; &lt;span style=&#34;color:#447fcf;text-decoration:underline&#34;&gt;Windows.Win32.Foundation&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;using&lt;/span&gt; &lt;span style=&#34;color:#447fcf;text-decoration:underline&#34;&gt;Windows.Win32.System.Com&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;using&lt;/span&gt; &lt;span style=&#34;color:#447fcf;text-decoration:underline&#34;&gt;Windows.Win32.UI.WindowsAndMessaging&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;namespace&lt;/span&gt; &lt;span style=&#34;color:#447fcf;text-decoration:underline&#34;&gt;AppName&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;partial&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#447fcf;text-decoration:underline&#34;&gt;App&lt;/span&gt; : Application
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;static&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;readonly&lt;/span&gt; ILog Log = LogManager.GetLogger(&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;typeof&lt;/span&gt;(App));
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;static&lt;/span&gt; App Current =&amp;gt; (App)Application.Current;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    MainWindow? _window;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;protected&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;override&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;void&lt;/span&gt; OnLaunched(LaunchActivatedEventArgs launchArgs)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        _window = &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;new&lt;/span&gt; MainWindow();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;var&lt;/span&gt; args = AppInstance.GetCurrent().GetActivatedEventArgs();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;if&lt;/span&gt; (args.Kind != ExtendedActivationKind.StartupTask)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            ShowMainWindow();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        HandleActivation(args);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;void&lt;/span&gt; HandleActivation(AppActivationArguments activationArgs)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;if&lt;/span&gt; (activationArgs.Kind == ExtendedActivationKind.Protocol
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &amp;amp;&amp;amp; activationArgs.Data &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;is&lt;/span&gt; Windows.ApplicationModel.Activation.IProtocolActivatedEventArgs protocolArgs)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            Log.Info(&lt;span style=&#34;color:#ed9d13&#34;&gt;$&amp;#34;handling protocol activation: {protocolArgs.Uri}&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            _window?.DispatcherQueue.TryEnqueue(() =&amp;gt; _window.HandleAppUrl(protocolArgs.Uri));
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;internal&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;void&lt;/span&gt; ShowMainWindow()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        Log.Info(&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;activating main window&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;//  This should only happen if  you allow it to be destroyed instead of hiding it on close&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;if&lt;/span&gt; (_window == &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;null&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            Log.Warn(&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;creating new main window&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            _window = &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;new&lt;/span&gt; MainWindow();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        PInvoke.ShowWindow(_window.GetWindowHandle(), SHOW_WINDOW_CMD.SW_NORMAL);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        PInvoke.SetForegroundWindow(_window.GetWindowHandle());
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        Log.Info(&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;activated main window&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#e50808;background-color:#520000;font-weight:bold&#34;&gt;/// &amp;lt;summary&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#e50808;background-color:#520000;font-weight:bold&#34;&gt;/// Before booting the WinUI runtime, we claim the single-instance key. A redundant launch hands&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#e50808;background-color:#520000;font-weight:bold&#34;&gt;/// its activation to the primary instance and exits immediately; One UI process ever runs.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#e50808;background-color:#520000;font-weight:bold&#34;&gt;/// &amp;lt;/summary&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;    [STAThread]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;static&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;void&lt;/span&gt; Main()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        ConfigureLogging();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        Log.Info(&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;App instance launched; Logging initialized&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;try&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            WinRT.ComWrappersSupport.InitializeComWrappers();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            Log.Info(&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;COM wrappers initialized&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        } &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;catch&lt;/span&gt; (Exception ex)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            Log.Error(&lt;span style=&#34;color:#ed9d13&#34;&gt;$&amp;#34;Failed to initialize COM wrappers. Not pumping COM. {ex}&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;if&lt;/span&gt; (DecideRedirection())
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// Activation has been handed to the primary instance&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;return&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        Start((p) =&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;var&lt;/span&gt; context = &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;new&lt;/span&gt; DispatcherQueueSynchronizationContext(DispatcherQueue.GetForCurrentThread());
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            SynchronizationContext.SetSynchronizationContext(context);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            _ = &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;new&lt;/span&gt; App();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        });
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#e50808;background-color:#520000;font-weight:bold&#34;&gt;/// &amp;lt;summary&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#e50808;background-color:#520000;font-weight:bold&#34;&gt;/// Claims the single-instance key. Returns true if this process is a redundant launch whose&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#e50808;background-color:#520000;font-weight:bold&#34;&gt;/// activation has been redirected to the primary instance (and should therefore exit).&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#e50808;background-color:#520000;font-weight:bold&#34;&gt;/// &amp;lt;/summary&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;static&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;bool&lt;/span&gt; DecideRedirection()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;var&lt;/span&gt; keyInstance = AppInstance.FindOrRegisterForKey(&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;primary&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;if&lt;/span&gt; (keyInstance.IsCurrent)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// Handle redirect activations of subsequent launches&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            keyInstance.Activated += OnRedirectActivated;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;false&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// Subsequent launches will redirect activation to the primary instance&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;var&lt;/span&gt; activationArgs = AppInstance.GetCurrent().GetActivatedEventArgs();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        RedirectActivationTo(activationArgs, keyInstance);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;true&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;static&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;void&lt;/span&gt; RedirectActivationTo(AppActivationArguments activationArgs, AppInstance keyInstance)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// A single-thread apartment (STA) must pump messages while idle to avoid jamming up window broadcasts&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// The redirect activation is waited using a method that continues dispatching messages&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;using&lt;/span&gt; &lt;span style=&#34;color:#447fcf;text-decoration:underline&#34;&gt;var&lt;/span&gt; redirectComplete = &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;new&lt;/span&gt; ManualResetEvent(&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;false&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;var&lt;/span&gt; redirectTimeout = TimeSpan.FromSeconds(&lt;span style=&#34;color:#3677a9&#34;&gt;32&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;using&lt;/span&gt; &lt;span style=&#34;color:#447fcf;text-decoration:underline&#34;&gt;var&lt;/span&gt; cts = &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;new&lt;/span&gt; CancellationTokenSource(redirectTimeout);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        Task.Run(() =&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;try&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                keyInstance.RedirectActivationToAsync(activationArgs).AsTask(cts.Token).GetAwaiter().GetResult();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;catch&lt;/span&gt; (OperationCanceledException)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                Log.Error(&lt;span style=&#34;color:#ed9d13&#34;&gt;$&amp;#34;Failed to activate existing instance; timed out after {redirectTimeout}.&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;catch&lt;/span&gt; (Exception ex)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                Log.Error(&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;Failed to activate existing instance&amp;#34;&lt;/span&gt;, ex);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;finally&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                redirectComplete.Set();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        });
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;var&lt;/span&gt; handle = &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;new&lt;/span&gt; HANDLE(redirectComplete.SafeWaitHandle.DangerousGetHandle());
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        PInvoke.CoWaitForMultipleObjects((&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;uint&lt;/span&gt;)CWMO_FLAGS.CWMO_DEFAULT, PInvoke.INFINITE, [handle], &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;out&lt;/span&gt; _);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;static&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;async&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;void&lt;/span&gt; OnRedirectActivated(&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;object?&lt;/span&gt; sender, AppActivationArguments args)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        Current.ShowMainWindow();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        Current.HandleActivation(args);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;focus-issue&#34; &gt;Focus Issue
+&lt;span&gt;
+    &lt;a href=&#34;#focus-issue&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;In the tutorials that existed/created before this one, the code would result in your window being shown without keyboard/input focus (greyed out titlebar title). The fix for this is to call &lt;code&gt;SetForegroundWindow&lt;/code&gt; after &lt;code&gt;Activate&lt;/code&gt;, and not on the dispatcher queue. Because activate has to be run on the dispatcher queue, we can simply replace activate with the native WinRT method ShowWindow.&lt;/p&gt;
+&lt;p&gt;Add  methods to &lt;code&gt;NativeMethods.txt&lt;/code&gt; (I recommend using &lt;a href=&#34;https://microsoft.github.io/CsWin32/docs/getting-started.html&#34;&gt;CsWin32&lt;/a&gt; to avoid having to manually write out &lt;code&gt;DllImport&lt;/code&gt;s).&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-txt&#34; data-lang=&#34;txt&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;SetForegroundWindow
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ShowWindow
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// App.xaml.cs&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;internal&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;void&lt;/span&gt; ShowMainWindow()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      Log.Info(&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;activating main window&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;if&lt;/span&gt; (_window == &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;null&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;          Log.Warn(&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;creating new main window&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;          _window = &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;new&lt;/span&gt; MainWindow();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      PInvoke.ShowWindow(_window.GetWindowHandle(), SHOW_WINDOW_CMD.SW_NORMAL);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      PInvoke.SetForegroundWindow(_window.GetWindowHandle());
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      Log.Info(&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;activated main window&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;static&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;async&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;void&lt;/span&gt; OnRedirectActivated(&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;object?&lt;/span&gt; sender, AppActivationArguments args)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  Current.ShowMainWindow();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  Current.HandleActivation(args);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// MainWindow.xaml.cs&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;internal&lt;/span&gt; HWND GetWindowHandle()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;return&lt;/span&gt; (HWND)WinRT.Interop.WindowNative.GetWindowHandle(&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;this&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;the-crash-bug-i-was-facing&#34; &gt;The Crash Bug I Was Facing
+&lt;span&gt;
+    &lt;a href=&#34;#the-crash-bug-i-was-facing&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;Opening &lt;code&gt;appname:///location&lt;/code&gt; would crash the app when the app was running with the window closed. Here is a minimum reproducible of the crash. My guess is that &lt;code&gt;activationArgs.Data&lt;/code&gt; causes issues.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// App.xaml.cs&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// keyInstance.Activated += OnRedirectActivated;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;static&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;async&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;void&lt;/span&gt; OnRedirectActivated(&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;object?&lt;/span&gt; sender, AppActivationArguments args)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        Current.ShowMainWindow();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        Current._window?.DispatcherQueue.TryEnqueue(() =&amp;gt; Current.HandleActivation(args));
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;void&lt;/span&gt; HandleActivation(AppActivationArguments activationArgs)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;//CRASH&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        Log.Info(&lt;span style=&#34;color:#ed9d13&#34;&gt;$&amp;#34;activationArgs.Kind: {activationArgs.Kind}&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        Log.Info(&lt;span style=&#34;color:#ed9d13&#34;&gt;$&amp;#34;activationArgs.Data Type: {activationArgs.Data.GetType()}&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;//CRASH&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+    
+    <item>
+      <title>WebView2&#39;s GetDevToolsProtocolEventReceiver Will Crash Your WinUI App if You Don&#39;t Store the Receiver</title>
+      <link>https://blog.elijahlopez.ca/posts/dotnet-webview2-garbage-collection-bug/</link>
+      <pubDate>Mon, 25 May 2026 15:14:31 -0400</pubDate>
+      
+      <guid>https://blog.elijahlopez.ca/posts/dotnet-webview2-garbage-collection-bug/</guid>
+      <description>&lt;p&gt;I spent the last week investigating a crash in a WinUI 3 + WebView2 app on Windows ARM64. I was encountering seemingly random Memory Access Violation exceptions thrown from inside the WebView2 DLLs, with no useful stack trace. The cause turned out to be due to not storing a event receiver.&lt;/p&gt;
+&lt;h2 id=&#34;what-is-a-devtools-protocol-event-receiver&#34; &gt;What is a DevTools Protocol Event Receiver?
+&lt;span&gt;
+    &lt;a href=&#34;#what-is-a-devtools-protocol-event-receiver&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;WebView2 lets you subscribe to Chrome DevTools Protocol (CDP) events from .NET — things like &amp;ldquo;the page logged something to the console,&amp;rdquo; &amp;ldquo;the page navigated,&amp;rdquo; &amp;ldquo;an uncaught exception was thrown in JavaScript.&amp;rdquo; The API for this looks like:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;var&lt;/span&gt; receiver = WebView.CoreWebView2.GetDevToolsProtocolEventReceiver(&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;Runtime.consoleAPICalled&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;receiver.DevToolsProtocolEventReceived += MyHandler;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The class returned by &lt;code&gt;GetDevToolsProtocolEventReceiver&lt;/code&gt; is a &lt;code&gt;CoreWebView2DevToolsProtocolEventReceiver&lt;/code&gt;. I&amp;rsquo;ll just call it a &lt;strong&gt;receiver&lt;/strong&gt; for the rest of this post.&lt;/p&gt;
+&lt;p&gt;A receiver is a managed (.NET) wrapper around a native WebView2 event source. You ask WebView2 &amp;ldquo;give me the receiver for event X,&amp;rdquo; and from then on, anything that happens in the embedded browser that matches event X fires the receiver&amp;rsquo;s &lt;code&gt;DevToolsProtocolEventReceived&lt;/code&gt; event. You subscribe to that event in the normal C# way (&lt;code&gt;+=&lt;/code&gt;), and your handler runs on the UI thread when WebView2 dispatches.&lt;/p&gt;
+&lt;p&gt;The whole API feels like any other .NET event publisher. It is not.&lt;/p&gt;
+&lt;h2 id=&#34;the-bug-in-one-line&#34; &gt;The Bug, in One Line
+&lt;span&gt;
+    &lt;a href=&#34;#the-bug-in-one-line&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;This is the minimal repro:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;WebView.CoreWebView2
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    .GetDevToolsProtocolEventReceiver(&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;Runtime.consoleAPICalled&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    .DevToolsProtocolEventReceived += (s, e) =&amp;gt; OnWebviewConsoleApiCall(e.ParameterObjectAsJson);
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The bug is that &lt;strong&gt;nothing in my code holds a reference to the receiver&lt;/strong&gt;. The expression chain calls &lt;code&gt;GetDevToolsProtocolEventReceiver&lt;/code&gt;, subscribes a handler, and discards the receiver. From the GC&amp;rsquo;s perspective, the receiver is unreachable the instant the statement finishes.&lt;/p&gt;
+&lt;p&gt;Based on my conversation with Claude, I think I can understand what happened.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;DevToolsProtocolEventReceived::add&lt;/code&gt;, the delegate, in this case a pointer to calling &lt;code&gt;(s, e) =&amp;gt; OnWebviewConsoleApiCall(e.ParameterObjectAsJson)&lt;/code&gt;does not store a reference to the pointer, but calls subscribe directly. This wasn&amp;rsquo;t always the case, since the definition for &lt;code&gt;DevToolsProtocolEventReceived add&lt;/code&gt; calls something called &lt;code&gt;Get_DevToolsProtocolEventReceived2&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;When we store a reference to the receiver, we keep alive &lt;code&gt;CoreWebView2DevToolsProtocolEventReceiver&lt;/code&gt;&amp;rsquo;s own fields. In particular &lt;code&gt;_inner&lt;/code&gt;. So it seems that whatever pointer variable holds a reference to our callback function is dependent on the preservation of &lt;code&gt;_inner&lt;/code&gt;. When we don&amp;rsquo;t hold a reference to &lt;code&gt;_inner&lt;/code&gt; which is an ID, it seems that whatever inner is pointed to (Claude thinks a COM object) could also be freed.&lt;/p&gt;
+&lt;p&gt;So it ends up being on us to keep a reference to the receiver returned by&lt;code&gt;GetDevToolsProtocolEventReceiver&lt;/code&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;the-fix&#34; &gt;The Fix
+&lt;span&gt;
+    &lt;a href=&#34;#the-fix&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;Store the receiver in a field:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;private&lt;/span&gt; CoreWebView2DevToolsProtocolEventReceiver? _consoleReceiver;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;_consoleReceiver = WebView.CoreWebView2.GetDevToolsProtocolEventReceiver(&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;Runtime.consoleAPICalled&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;_consoleReceiver.DevToolsProtocolEventReceived += (s, e) =&amp;gt; OnWebviewConsoleApiCall(e.ParameterObjectAsJson);
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;A field on the page or window keeps the receiver alive for the lifetime of that page or window, which is exactly what you want. The crash disappears completely. The handler — lambda or method group, doesn&amp;rsquo;t matter — fires correctly forever after.&lt;/p&gt;
+&lt;p&gt;For multiple subscriptions, just add more fields:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;private&lt;/span&gt; CoreWebView2DevToolsProtocolEventReceiver? _logEventReceiver;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;private&lt;/span&gt; CoreWebView2DevToolsProtocolEventReceiver? _consoleReceiver;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;private&lt;/span&gt; CoreWebView2DevToolsProtocolEventReceiver? _exceptionReceiver;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;_logEventReceiver = WebView.CoreWebView2.GetDevToolsProtocolEventReceiver(&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;Log.entryAdded&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;_logEventReceiver.DevToolsProtocolEventReceived += OnWebviewLogEntry;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;_consoleReceiver = WebView.CoreWebView2.GetDevToolsProtocolEventReceiver(&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;Runtime.consoleAPICalled&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;_consoleReceiver.DevToolsProtocolEventReceived += (s, e) =&amp;gt; OnWebviewConsoleApiCall(e.ParameterObjectAsJson);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;_exceptionReceiver = WebView.CoreWebView2.GetDevToolsProtocolEventReceiver(&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;Runtime.exceptionThrown&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;_exceptionReceiver.DevToolsProtocolEventReceived += OnWebviewException;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;If you&amp;rsquo;d rather not pollute your class with three fields, a list works too:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;readonly&lt;/span&gt; List&amp;lt;CoreWebView2DevToolsProtocolEventReceiver&amp;gt; _receivers = &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;new&lt;/span&gt;();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;CoreWebView2DevToolsProtocolEventReceiver Subscribe(
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;string&lt;/span&gt; eventName,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    EventHandler&amp;lt;CoreWebView2DevToolsProtocolEventReceivedEventArgs&amp;gt; handler)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;var&lt;/span&gt; r = WebView.CoreWebView2.GetDevToolsProtocolEventReceiver(eventName);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    r.DevToolsProtocolEventReceived += handler;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    _receivers.Add(r);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;return&lt;/span&gt; r;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Subscribe(&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;Log.entryAdded&amp;#34;&lt;/span&gt;, OnWebviewLogEntry);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Subscribe(&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;Runtime.consoleAPICalled&amp;#34;&lt;/span&gt;, OnWebviewConsoleApiCall);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Subscribe(&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;Runtime.exceptionThrown&amp;#34;&lt;/span&gt;, OnWebviewException);
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;whose-bug-is-it&#34; &gt;Whose Bug Is It?
+&lt;span&gt;
+    &lt;a href=&#34;#whose-bug-is-it&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;I went back and forth on this one. My initial conclusion — that the bug was in my code — was based on the lambda-pinning theory, which turned out to be wrong. Once you take that explanation off the table, the case for &amp;ldquo;user code bug&amp;rdquo; gets much weaker.&lt;/p&gt;
+&lt;p&gt;The code that crashes is idiomatic C#. It follows the same pattern as every other event subscription in the BCL, in WPF, in WinForms, in WinUI. It produces no compiler warnings, no analyzer warnings, no documentation hint, nothing. The fact that it silently breaks because WebView2&amp;rsquo;s receiver doesn&amp;rsquo;t keep itself alive is a &lt;strong&gt;WebView2 API design issue&lt;/strong&gt;, not a user code issue.&lt;/p&gt;
+&lt;p&gt;The strongest evidence for this is that Claude Code — trained on a vast corpus of C# code — wrote the buggy version by default. So did I, several times, over several days, while actively trying to fix the crash. That&amp;rsquo;s not a &amp;ldquo;one developer didn&amp;rsquo;t read the docs&amp;rdquo; problem; that&amp;rsquo;s &amp;ldquo;the API expects something the entire C# ecosystem doesn&amp;rsquo;t do.&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;A correctly designed managed wrapper for a native event source should either keep itself alive while it has live subscriptions, or document the requirement loudly. WebView2 does neither.&lt;/p&gt;
+&lt;p&gt;I filed an &lt;a href=&#34;https://github.com/MicrosoftEdge/WebView2Feedback/issues/5597&#34;&gt;issue on the WebView2Feedback repo&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;why-doesnt-tooling-catch-this&#34; &gt;Why Doesn&amp;rsquo;t Tooling Catch This?
+&lt;span&gt;
+    &lt;a href=&#34;#why-doesnt-tooling-catch-this&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;Static analysis could in principle catch &amp;ldquo;you called a method that returned an object, subscribed to an event on it, and then discarded the reference.&amp;rdquo; But no current analyzer does this for events specifically, because &lt;strong&gt;for almost every other event in C#, that pattern is fine&lt;/strong&gt;. The publisher is usually rooted by something else, so the discarded local doesn&amp;rsquo;t matter.&lt;/p&gt;
+&lt;p&gt;A WebView2-specific analyzer (a Roslyn analyzer shipped in the WebView2 NuGet package) could flag this. That would be the right place to fix it long-term — even if Microsoft never changes the receiver&amp;rsquo;s lifetime semantics, an analyzer catching &lt;code&gt;[].DevToolsProtocolEventReceived += ...&lt;/code&gt; on a non-stored receiver would prevent the crash entirely.&lt;/p&gt;
+&lt;h2 id=&#34;the-takeaway&#34; &gt;The Takeaway
+&lt;span&gt;
+    &lt;a href=&#34;#the-takeaway&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;If you use WebView2&amp;rsquo;s DevTools Protocol event receivers in .NET, &lt;strong&gt;store them in fields&lt;/strong&gt;. Don&amp;rsquo;t subscribe inline. Don&amp;rsquo;t store the receiver in a local. The compiler will not warn you. The runtime will not warn you. The app will simply crash randomly during normal use, and the stack trace will not point at your code.&lt;/p&gt;
+&lt;p&gt;It&amp;rsquo;s one line of code to fix and zero lines of code to introduce — exactly the shape of bug that wastes weeks of debugging.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
