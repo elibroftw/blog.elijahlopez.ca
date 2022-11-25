@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Markdown on ELL Blog</title>
+    <link>https://blog.elijahlopez.ca/tags/markdown/</link>
+    <description>ELL Blog (Markdown)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 07 May 2022 17:57:32 -0400</lastBuildDate>
+    
+    <atom:link href="https://blog.elijahlopez.ca/tags/markdown/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Creating a Blog With GitHub Pages and Hugo</title>
+      <link>https://blog.elijahlopez.ca/posts/hugo-tutorial/</link>
+      <pubDate>Fri, 17 Dec 2021 22:18:47 -0500</pubDate>
+      
+      <guid>https://blog.elijahlopez.ca/posts/hugo-tutorial/</guid>
+      <description>&lt;p&gt;I created this blog using Hugo and host it on GitHub Pages. In this tutorial, I&amp;rsquo;ll teach you to do the same.
+The resources I had used to create a working blog left out some important details that I will include in my tutorial.
+I&amp;rsquo;ve also done the brunt of the work to perfect the theme and workflow.
+If you are like me, you can follow the tutorial that &lt;a href=&#34;#forking-my-blog&#34;&gt;forks my site&lt;/a&gt; rather than making a blog site &lt;a href=&#34;#from-scratch&#34;&gt;from scratch&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;prerequisites&#34; &gt;Prerequisites
+&lt;span&gt;
+    &lt;a href=&#34;#prerequisites&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://gohugo.io/getting-started/installing#binary-cross-platform&#34;&gt;Hugo&lt;/a&gt; is &amp;ldquo;installed&amp;rdquo; and can be used (test &lt;code&gt;hugo version&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://git-scm.com/downloads&#34;&gt;git&lt;/a&gt; is installed and can be used (test &lt;code&gt;git version&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;If either test fails (i.e. not on PATH), learn from &lt;a href=&#34;https://duckduckgo.com/?t=ffab&amp;amp;q=how+to+add+to+path&amp;amp;ia=web&#34;&gt;how to add to PATH&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;VS Code + Hugo Helper extension&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;forking-my-blog&#34; &gt;Forking My Blog
+&lt;span&gt;
+    &lt;a href=&#34;#forking-my-blog&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;Web UI fork &lt;a href=&#34;https://github.com/elibroftw/blog.elijahlopez.ca&#34;&gt;blog.elijahlopez.ca&lt;/a&gt; with repository name &lt;code&gt;blog&lt;/code&gt; and use your own description&lt;/li&gt;
+&lt;li&gt;Go to &lt;a href=&#34;https://github.com/USERNAME/blog/settings/pages&#34;&gt;https://github.com/USERNAME/blog/settings/pages&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Select the source as &lt;code&gt;gh-pages&lt;/code&gt; (you may need to create this branch)&lt;/li&gt;
+&lt;li&gt;For folder select &lt;code&gt;/&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Click save&lt;/li&gt;
+&lt;li&gt;Add a custom domain if you want later since it takes 5+ minutes&lt;/li&gt;
+&lt;li&gt;Edit the About section in &lt;a href=&#34;https://github.com/USERNAME/blog/&#34;&gt;https://github.com/USERNAME/blog/&lt;/a&gt; and change the website to &lt;code&gt;https://USERNAME.github.io&lt;/code&gt; or a domain&lt;/li&gt;
+&lt;li&gt;Clone your repo using &lt;code&gt;git clone --recurse-submodules -j8 https://github.com/USERNAME/blog.git&lt;/code&gt; or GitHub desktop
+&lt;ul&gt;
+&lt;li&gt;also set &lt;code&gt;git config --global submodule.recurse true&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Delete &lt;code&gt;content/posts&lt;/code&gt; and &lt;code&gt;static/images&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;Add your own &lt;code&gt;favicon.ico&lt;/code&gt; to &lt;code&gt;static/images&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Edit &lt;code&gt;hugo.yaml&lt;/code&gt; and replace my information with yours
+&lt;ul&gt;
+&lt;li&gt;set &lt;code&gt;baseUrl&lt;/code&gt; to the one shown by GitHub&lt;/li&gt;
+&lt;li&gt;change the &lt;code&gt;author&lt;/code&gt;, &lt;code&gt;email&lt;/code&gt;, and &lt;code&gt;social&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;for a comment section, set up &lt;code&gt;Giscus&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;Go to &lt;a href=&#34;https://giscus.app/&#34;&gt;https://giscus.app&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Enter your repository&lt;/li&gt;
+&lt;li&gt;Select a category&lt;/li&gt;
+&lt;li&gt;Under Enable giscus, copy the IDs from the website&amp;rsquo;s script code into the &lt;code&gt;Giscus*&lt;/code&gt; fields in the &lt;code&gt;hugo.yaml&lt;/code&gt; file&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;You can remove # to enable certain features (the about section requires uses &lt;code&gt;content/about.md&lt;/code&gt; and &lt;code&gt;content/about-subpage.md&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;Read &lt;code&gt;content/hugo-guide.md&lt;/code&gt; in your new repo to help you write, edit, and publish posts&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;from-scratch&#34; &gt;From Scratch
+&lt;span&gt;
+    &lt;a href=&#34;#from-scratch&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;Create a &lt;code&gt;USERNAME.github.io&lt;/code&gt; repository in GitHub&lt;/li&gt;
+&lt;li&gt;Ensuring your articles publish
+&lt;ul&gt;
+&lt;li&gt;Click &amp;ldquo;Actions&amp;rdquo; (beside Pull Request), &amp;ldquo;New workflow&amp;rdquo;, &amp;ldquo;Set up&amp;hellip;&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;Enter the name &amp;ldquo;gh-pages.yml&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;Copy sample workflow from &lt;a href=&#34;https://github.com/elibroftw/blog.elijahlopez.ca/blob/master/.github/workflows/gh-pages.yml&#34;&gt;my repo&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;If you&amp;rsquo;re default branch name (e.g. main) is not master, replace the two occurrences of master with your default branch name&lt;/li&gt;
+&lt;li&gt;Save&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Clone your repository using &lt;code&gt;git clone https://...&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Get the GitHub link for a &lt;a href=&#34;https://themes.gohugo.io/&#34;&gt;theme&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Add the theme using &lt;code&gt;git submodule add GitHubURL.git themes/themeName&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Read the theme instructions for basic configuration (i.e. &lt;code&gt;config.yaml&lt;/code&gt; or &lt;code&gt;config.toml&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;Edit &lt;code&gt;config.yaml&lt;/code&gt; or &lt;code&gt;config.toml&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;Also add your own &lt;code&gt;favicon.ico&lt;/code&gt; to &lt;code&gt;static/images&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Use &lt;code&gt;hugo new content/posts/POST.md&lt;/code&gt; to create a new post
+&lt;ul&gt;
+&lt;li&gt;Alternative: use the hugo helpers, &amp;ldquo;Hugo: create content&amp;rdquo; command&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Use &lt;code&gt;hugo serve -D&lt;/code&gt; when drafting the post and see your changes at &lt;a href=&#34;http://localhost:1313/&#34;&gt;http://localhost:1313/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Set &lt;code&gt;draft: false&lt;/code&gt; after you are done drafting a post&lt;/li&gt;
+&lt;li&gt;Add README.md with &lt;code&gt;git clone --recurse-submodules -j8 https://github.com/USERNAME/blog.git&lt;/code&gt; clone instructions&lt;/li&gt;
+&lt;li&gt;Commit and push to origin (GitHub)&lt;/li&gt;
+&lt;li&gt;To update your themes, use &lt;code&gt;git submodule update --remote --merge&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;other-resources&#34; &gt;Other Resources
+&lt;span&gt;
+    &lt;a href=&#34;#other-resources&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://gohugo.io/getting-started/quick-start/&#34;&gt;https://gohugo.io/getting-started/quick-start/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://retrolog.io/blog/creating-a-hugo-theme-from-scratch/&#34;&gt;https://retrolog.io/blog/creating-a-hugo-theme-from-scratch/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://levelup.gitconnected.com/build-a-personal-website-with-github-pages-and-hugo-6c68592204c7&#34;&gt;https://levelup.gitconnected.com/build-a-personal-website-with-github-pages-and-hugo-6c68592204c7&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
