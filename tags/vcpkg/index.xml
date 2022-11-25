@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Vcpkg on ELL Blog</title>
+    <link>https://blog.elijahlopez.ca/tags/vcpkg/</link>
+    <description>ELL Blog (Vcpkg)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 19 Dec 2021 19:51:55 -0500</lastBuildDate>
+    
+    <atom:link href="https://blog.elijahlopez.ca/tags/vcpkg/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Installing Libraries for C&#43;&#43; with Vcpkg and CMake</title>
+      <link>https://blog.elijahlopez.ca/posts/vcpkg-cmake-tutorial/</link>
+      <pubDate>Sun, 19 Dec 2021 19:51:55 -0500</pubDate>
+      
+      <guid>https://blog.elijahlopez.ca/posts/vcpkg-cmake-tutorial/</guid>
+      <description>&lt;h2 id=&#34;trouble-shooting&#34; &gt;Trouble Shooting
+&lt;span&gt;
+    &lt;a href=&#34;#trouble-shooting&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;Most errors occur because of &lt;code&gt;CMakePresets.json&lt;/code&gt; or &lt;code&gt;CMakeSettings.json&lt;/code&gt;. I have proper samples
+available at &lt;a href=&#34;https://github.com/elibroftw/cpp-vcpkg-cmake-example&#34;&gt;https://github.com/elibroftw/cpp-vcpkg-cmake-example&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;software-prerequisties&#34; &gt;Software Prerequisties
+&lt;span&gt;
+    &lt;a href=&#34;#software-prerequisties&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Anyone of the following IDEs
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://code.visualstudio.com/download&#34;&gt;Visual Studio Code&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://visualstudio.microsoft.com/downloads/&#34;&gt;Visual Studio 2022&lt;/a&gt; if on Windows for the compiler&lt;/li&gt;
+&lt;li&gt;Any IDE that has pretty good CMake integration&lt;/li&gt;
+&lt;li&gt;Otherwise, you will need to use &lt;code&gt;cmake&lt;/code&gt; yourself&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Any of the following compilers
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://visualstudio.microsoft.com/downloads/&#34;&gt;Visual Studio 2022&lt;/a&gt; if on Windows&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;gcc&lt;/code&gt; (Linux)&lt;/li&gt;
+&lt;li&gt;MSYS2/Mingw &lt;code&gt;gcc&lt;/code&gt; (Windows)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;clang&lt;/code&gt; (MacOS?)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;installing-cmake&#34; &gt;Installing CMake
+&lt;span&gt;
+    &lt;a href=&#34;#installing-cmake&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;You will need &lt;a href=&#34;https://cmake.org/download/&#34;&gt;CMake 3.21+&lt;/a&gt; in order to use the Visual Studio 2022 compiler through VSCode.
+The installer does most of the work, so you won&amp;rsquo;t have to manually add &lt;code&gt;cmake&lt;/code&gt; to PATH.&lt;/p&gt;
+&lt;p&gt;For VS Code, you will need to install the &amp;ldquo;C/C++ Extension&amp;rdquo; and the &amp;ldquo;CMake Tools&amp;rdquo; extensions.&lt;/p&gt;
+&lt;h3 id=&#34;installing-vcpkg&#34; &gt;Installing Vcpkg
+&lt;span&gt;
+    &lt;a href=&#34;#installing-vcpkg&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;Clone &lt;a href=&#34;https://github.com/microsoft/vcpkg&#34;&gt;vcpkg&lt;/a&gt; into a directory that won&amp;rsquo;t bother you in your day to day life
+&lt;ul&gt;
+&lt;li&gt;For me, that would be &lt;code&gt;C:\Users\maste\Documents\GitHub\vcpkg&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Use &lt;code&gt;git clone https://github.com/microsoft/vcpkg.git&lt;/code&gt; or GitHub desktop&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Run the Vcpkg bootstrap script
+&lt;ul&gt;
+&lt;li&gt;Windows: &lt;code&gt;&amp;quot;./bootstrap-vcpkg&amp;quot; -disableMetrics&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Unix: &lt;code&gt;./bootstrap-vcpkg.sh -disableMetrics&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Modify environment variables
+&lt;ul&gt;
+&lt;li&gt;Add the vcpkg cloned directory to &lt;code&gt;PATH&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;On Windows, use Windows search for &amp;ldquo;envir&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;On Linux, open your &lt;code&gt;.bashrc&lt;/code&gt; file and add &lt;code&gt;export PATH=$PATH:~/vcpkg&lt;/code&gt; to your &lt;code&gt;.bashrc&lt;/code&gt; file&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Set &lt;code&gt;VCPKG_ROOT&lt;/code&gt; as the same value you added to &lt;code&gt;PATH&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Set &lt;code&gt;VCPKG_DEFAULT_TRIPLET&lt;/code&gt; to &lt;code&gt;x64-windows&lt;/code&gt; on Windows, or your computers triplet
+&lt;ul&gt;
+&lt;li&gt;Valid architectures are: x86, x64, arm, arm64 and wasm32.&lt;/li&gt;
+&lt;li&gt;Valid OS names are &lt;code&gt;&#39;windows&#39;, &#39;linux&#39;, &#39;macos&#39;&lt;/code&gt; (I&amp;rsquo;m unsure about the macos part)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Enable vcpkg packages to be used in VS/MSBuild:
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;vcpkg integrate install&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;copy the path to vcpkg.cmake for use later&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;You can now install packages using &lt;code&gt;vcpkg install &amp;lt;lib&amp;gt;&lt;/code&gt; and search for them using &lt;code&gt;vcpkg search &amp;lt;lib&amp;gt;&lt;/code&gt;.
+In the next section, we&amp;rsquo;ll be integrating &lt;code&gt;vcpkg&lt;/code&gt; within a CMake project.&lt;/p&gt;
+&lt;h2 id=&#34;integrating-vcpkg-into-a-new-cmake-project&#34; &gt;Integrating Vcpkg into a new CMake Project
+&lt;span&gt;
+    &lt;a href=&#34;#integrating-vcpkg-into-a-new-cmake-project&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;In this section we&amp;rsquo;ll be creating a CMake C++ project that will make an HTTP request using the &lt;code&gt;cpr&lt;/code&gt; library.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Create a CMake project in Visual Studio or VSCode&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Ensure IDE is configured to use &lt;code&gt;CMakePresets.json&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;VS: open visual studio and click &amp;ldquo;Create a new project&amp;rdquo; and search for &amp;ldquo;CMake Project&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;VSCode: open an empty folder in VSCode and use &amp;ldquo;CMake: Quick Start&amp;rdquo; from the command palette (Ctrl + Shift + P)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Setting the CMake toolchain file to &lt;code&gt;vcpkg.cmake&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Open CMakePresets.json &lt;a href=&#34;https://github.com/elibroftw/cpp-vcpkg-cmake-example/blob/master/CMakePresets.json&#34;&gt;example&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Add the following under &lt;code&gt;configurePresets[0] &amp;gt; cacheVariables&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;CMAKE_TOOLCHAIN_FILE&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;:&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;&amp;#34;value&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;$env{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;&amp;#34;type&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;FILEPATH&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;If using &lt;code&gt;cmake&lt;/code&gt; from the command line on Linux, add &lt;code&gt;-DCMAKE_TOOLCHAIN_FILE=$VCPKG_ROOT/scripts/buildsystems/vcpkg.cmake&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Create a &lt;code&gt;vcpkg&lt;/code&gt; response file to maintain portability&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Create &lt;code&gt;vcpkg_rf.txt&lt;/code&gt; in the root directory with the contents:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;install
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cpr
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Install dependencies using &lt;code&gt;vcpkg &amp;quot;@vcpkg_rf.txt&amp;quot; [optional arguments]&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;For each library installed, you&amp;rsquo;ll see instructions for what to add or modify in your &lt;code&gt;CMakeLists.txt&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;For &lt;code&gt;cpr&lt;/code&gt;, that would be&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-cmake&#34; data-lang=&#34;cmake&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#24909d&#34;&gt;find_package&lt;/span&gt;(&lt;span style=&#34;color:#ed9d13&#34;&gt;cpr&lt;/span&gt; &lt;span style=&#34;color:#ed9d13&#34;&gt;CONFIG&lt;/span&gt; &lt;span style=&#34;color:#ed9d13&#34;&gt;REQUIRED&lt;/span&gt;)&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&lt;/span&gt; &lt;span style=&#34;color:#24909d&#34;&gt;target_link_libraries&lt;/span&gt;(&lt;span style=&#34;color:#ed9d13&#34;&gt;PROJECT_NAME&lt;/span&gt; &lt;span style=&#34;color:#ed9d13&#34;&gt;PRIVATE&lt;/span&gt; &lt;span style=&#34;color:#ed9d13&#34;&gt;cpr::cpr&lt;/span&gt;)&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;For more than one library, you only need one &lt;code&gt;target_link_libraries&lt;/code&gt; rather than one for each additional library&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Now let&amp;rsquo;s code. In the main cpp file, type the following:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#cd2828;font-weight:bold&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#cd2828;font-weight:bold&#34;&gt;&amp;lt;cpr/cpr.h&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#cd2828;font-weight:bold&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#cd2828;font-weight:bold&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#cd2828;font-weight:bold&#34;&gt;&amp;lt;iostream&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#cd2828;font-weight:bold&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#cd2828;font-weight:bold&#34;&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;int&lt;/span&gt; &lt;span style=&#34;color:#447fcf&#34;&gt;main&lt;/span&gt;()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    cpr::Response r = cpr::Get(cpr::Url{ &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;https://api.github.com/repos/whoshuu/cpr/contributors&amp;#34;&lt;/span&gt; },
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        cpr::Authentication{ &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;user&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;pass&amp;#34;&lt;/span&gt; },
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        cpr::Parameters{ {&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;anon&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;true&amp;#34;&lt;/span&gt;}, {&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;key&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;value&amp;#34;&lt;/span&gt;} });
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    r.status_code;                  &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// 200
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;&lt;/span&gt;    r.header[&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;content-type&amp;#34;&lt;/span&gt;];       &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// application/json; charset=utf-8
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;&lt;/span&gt;    r.text;                         &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// JSON text string
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;&lt;/span&gt;    std::cout &amp;lt;&amp;lt; r.text &amp;lt;&amp;lt; std::endl;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#3677a9&#34;&gt;0&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Let&amp;rsquo;s test our build&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;If something doesn&amp;rsquo;t work, you may need to configure/delete CMake cache using your IDE or doing it manually&lt;/li&gt;
+&lt;li&gt;In Visual Studio, just click the green play button&lt;/li&gt;
+&lt;li&gt;In Visual Studio Code, you can use the &amp;ldquo;Build: Target&amp;rdquo; and select &amp;ldquo;run&amp;rdquo; from the command palette&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;If the steps didn&amp;rsquo;t work for you, you can follow &lt;a href=&#34;https://youtu.be/FeBzSYiWkEU&#34;&gt;this tutorial video&lt;/a&gt;.
+The video has an example of opening a project in VSCode that was made in Visual Studio.&lt;/p&gt;
+&lt;h2 id=&#34;video&#34; &gt;Video
+&lt;span&gt;
+    &lt;a href=&#34;#video&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;
+
+    
+    &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen=&#34;allowfullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/FeBzSYiWkEU?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;
+      &gt;&lt;/iframe&gt;
+    &lt;/div&gt;
+
+</description>
+    </item>
+    
+  </channel>
+</rss>

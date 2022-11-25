@@ -1,0 +1,2311 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="">
+<head>
+    
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name = "apple-mobile-web-app-capable" content = "yes">
+    <meta name="theme-color" content="#121212">
+
+    <meta charset="utf-8">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <title>BU 449 Fixed Income Analysis - ELL Blog</title>
+    <meta name="description" content="
+    Table of Contents
+    
+  
+    Introduction to the Fixed Income Environment
+      
+        Trifecta Framework
+      
+    
+    Chapter 1
+      
+        Market Players
+        Seniority
+        Default Risk
+        Debentures
+        Seniority &amp; Capital Structure
+        Model AA Toyota Bond Value
+        Dealer Bid Ask Spreads
+        Prices
+        Call Protection Period
+        Calling Back a Bond
+        Callable versus Refundable
+        Callable Make Whole Provision
+        Make-whole versus Fixed Call
+        Embedded Bond Options
+      
+    
+    Overview of the fixed income market
+      
+        Process of Issuing Corporate Debt
+        Trustee
+        Indenture
+        Why covenants
+        Medium Term Note
+        Corporate Debt Primary Debt
+        Regulation History
+        Optimal Debt Issue
+        Primary Dealers
+        Why do Foreign Countries own US Treasuries
+        Uniform Price Dutch auction
+        Bid Cover Ratio
+        Secondary Market for Treasury Debt
+        Algorithmic Trading: GovPX
+        Federal Fund Market
+        Federal Funds Rate and Monetary Policy
+      
+    
+    Bond Buyback at Deutsche Bank
+      
+        Contingent Convertible Bonds
+        Structure of CoCos
+        Hedge Fund Strategies
+        LIBOR-Scandal and SOFR
+        Interest Rate Swap
+      
+    
+    Teva Pharmaceuticals
+      
+        Momentum and Contrarian
+        Bloomberg
+        Nominal Spread
+        Zero Volatility Spread
+        OAS
+        Eurobond
+        Global Bond
+        Eurobond Market
+        Brady Bonds
+      
+    
+    Repo market
+      
+        Introduction to Repo Market
+        Repo Blowup of 2019
+        Bear Sterns
+        Troubled Asset Relief Program (TARP)
+        Three Types of Repos
+        Haircuts
+        Trip-Party Repo Market
+        Repo Collateral
+        ARRC
+      
+    
+    Massachusetts Bay Transportation Authority Sustainability Bonds
+      
+        Munis
+        Green Bonds
+        International Capital Markets ASsociation
+        Green Bond Principles
+        Green Bond Types
+        Sustainability Bonds
+        MTBA Auction
+      
+    
+    Durations
+      
+        Duration Mismatch of FIs
+        NCNB
+        Saving and Loan Crisis
+        Spread Trades
+        Price Value of a Basis Point
+        Duration
+        Convexity
+      
+    
+    SVB Case
+      
+        SVB Background
+        SVB Failure
+      
+    
+    Bank Crises
+      
+        RIsk Capital
+        Risk Capital Spiral
+        Margin Haircut Spiral
+        Shadow Banks
+        Dealer Repo Activity
+        Credit Liquidity Spread
+        Flight to Liquidity
+        Commercial Paper
+        Swap Spread
+        GNMA MBS
+      
+    
+    Ratings
+    Mortgage and Asset Backed Markets
+      
+        Overview of Structured Financial Products
+        Agency Debt
+        Amortization Table Improvements
+        Prepayment Risk Hedge Funds
+        Stripped MBS
+      
+    
+    Course Feedback
+  
+
+
+
+Introduction to the Fixed Income Environment
+
+    
+        
+    
+
+
+US: bloomberg real yield
+CA: BNN bloomberg
+
+goldilocks report (happy equilibrium)">
+    
+    <link rel="icon" type="image/x-icon" href="https://blog.elijahlopez.ca/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" href="https://blog.elijahlopez.ca/favicon.png">
+
+    <link rel="stylesheet" href="https://blog.elijahlopez.ca/css/style.min.aaf2c7fda9310c97167f1a94f41891944861efa73f96c5467dbea9ecc5ddb751.css" integrity="sha256-qvLH/akxDJcWfxqU9BiRlEhh76c/lsVGfb6p7MXdt1E=">
+    <script src="https://blog.elijahlopez.ca/js/script.min.74bf1a3fcf1af396efa4acf3e660e876b61a2153ab9cbe1893ac24ea6d4f94ee.js" type="text/javascript" charset="utf-8" integrity="sha256-dL8aP88a85bvpKzz5mDodrYaIVOrnL4Yk6wk6m1PlO4="></script>
+    <meta property="og:url" content="https://blog.elijahlopez.ca/posts/university/bu-449-fixed-income-analysis/">
+  <meta property="og:site_name" content="ELL Blog">
+  <meta property="og:title" content="BU 449 Fixed Income Analysis">
+  <meta property="og:description" content="Table of Contents Introduction to the Fixed Income Environment Trifecta Framework Chapter 1 Market Players Seniority Default Risk Debentures Seniority &amp; Capital Structure Model AA Toyota Bond Value Dealer Bid Ask Spreads Prices Call Protection Period Calling Back a Bond Callable versus Refundable Callable Make Whole Provision Make-whole versus Fixed Call Embedded Bond Options Overview of the fixed income market Process of Issuing Corporate Debt Trustee Indenture Why covenants Medium Term Note Corporate Debt Primary Debt Regulation History Optimal Debt Issue Primary Dealers Why do Foreign Countries own US Treasuries Uniform Price Dutch auction Bid Cover Ratio Secondary Market for Treasury Debt Algorithmic Trading: GovPX Federal Fund Market Federal Funds Rate and Monetary Policy Bond Buyback at Deutsche Bank Contingent Convertible Bonds Structure of CoCos Hedge Fund Strategies LIBOR-Scandal and SOFR Interest Rate Swap Teva Pharmaceuticals Momentum and Contrarian Bloomberg Nominal Spread Zero Volatility Spread OAS Eurobond Global Bond Eurobond Market Brady Bonds Repo market Introduction to Repo Market Repo Blowup of 2019 Bear Sterns Troubled Asset Relief Program (TARP) Three Types of Repos Haircuts Trip-Party Repo Market Repo Collateral ARRC Massachusetts Bay Transportation Authority Sustainability Bonds Munis Green Bonds International Capital Markets ASsociation Green Bond Principles Green Bond Types Sustainability Bonds MTBA Auction Durations Duration Mismatch of FIs NCNB Saving and Loan Crisis Spread Trades Price Value of a Basis Point Duration Convexity SVB Case SVB Background SVB Failure Bank Crises RIsk Capital Risk Capital Spiral Margin Haircut Spiral Shadow Banks Dealer Repo Activity Credit Liquidity Spread Flight to Liquidity Commercial Paper Swap Spread GNMA MBS Ratings Mortgage and Asset Backed Markets Overview of Structured Financial Products Agency Debt Amortization Table Improvements Prepayment Risk Hedge Funds Stripped MBS Course Feedback Introduction to the Fixed Income Environment US: bloomberg real yield CA: BNN bloomberg goldilocks report (happy equilibrium)">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2024-05-09T15:59:30-04:00">
+    <meta property="article:modified_time" content="2024-05-09T15:59:30-04:00">
+    <meta property="article:tag" content="University">
+    <meta property="article:tag" content="Finance">
+    <meta property="og:image" content="https://blog.elijahlopez.ca/images">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://blog.elijahlopez.ca/images">
+  <meta name="twitter:title" content="BU 449 Fixed Income Analysis">
+  <meta name="twitter:description" content="Table of Contents Introduction to the Fixed Income Environment Trifecta Framework Chapter 1 Market Players Seniority Default Risk Debentures Seniority &amp; Capital Structure Model AA Toyota Bond Value Dealer Bid Ask Spreads Prices Call Protection Period Calling Back a Bond Callable versus Refundable Callable Make Whole Provision Make-whole versus Fixed Call Embedded Bond Options Overview of the fixed income market Process of Issuing Corporate Debt Trustee Indenture Why covenants Medium Term Note Corporate Debt Primary Debt Regulation History Optimal Debt Issue Primary Dealers Why do Foreign Countries own US Treasuries Uniform Price Dutch auction Bid Cover Ratio Secondary Market for Treasury Debt Algorithmic Trading: GovPX Federal Fund Market Federal Funds Rate and Monetary Policy Bond Buyback at Deutsche Bank Contingent Convertible Bonds Structure of CoCos Hedge Fund Strategies LIBOR-Scandal and SOFR Interest Rate Swap Teva Pharmaceuticals Momentum and Contrarian Bloomberg Nominal Spread Zero Volatility Spread OAS Eurobond Global Bond Eurobond Market Brady Bonds Repo market Introduction to Repo Market Repo Blowup of 2019 Bear Sterns Troubled Asset Relief Program (TARP) Three Types of Repos Haircuts Trip-Party Repo Market Repo Collateral ARRC Massachusetts Bay Transportation Authority Sustainability Bonds Munis Green Bonds International Capital Markets ASsociation Green Bond Principles Green Bond Types Sustainability Bonds MTBA Auction Durations Duration Mismatch of FIs NCNB Saving and Loan Crisis Spread Trades Price Value of a Basis Point Duration Convexity SVB Case SVB Background SVB Failure Bank Crises RIsk Capital Risk Capital Spiral Margin Haircut Spiral Shadow Banks Dealer Repo Activity Credit Liquidity Spread Flight to Liquidity Commercial Paper Swap Spread GNMA MBS Ratings Mortgage and Asset Backed Markets Overview of Structured Financial Products Agency Debt Amortization Table Improvements Prepayment Risk Hedge Funds Stripped MBS Course Feedback Introduction to the Fixed Income Environment US: bloomberg real yield CA: BNN bloomberg goldilocks report (happy equilibrium)">
+
+
+
+
+
+
+    
+
+
+
+
+
+</head>
+
+<body>
+    <a class="skip-main" href="#main">Skip to main content</a>
+    <div class="container">
+        <header class="common-header">
+            
+                
+
+    
+
+
+<div class="header-top">
+    <h1 class="site-title">
+        <a href="/">ELL Blog</a>
+    </h1>
+
+    <div class="header-top-left">
+    <ul class="social-icons">
+
+        <li>
+            <a href="/index.xml" title="Rss" rel="me">
+                <span class="inline-svg" >
+                    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" data-icon="rss" data-prefix="fas" focusable="false" role="img" viewBox="0 0 496 512"><path fill="currentColor" fill="currentColor" d="M128.081 415.959c0 35.369-28.672 64.041-64.041 64.041S0 451.328 0 415.959s28.672-64.041 64.041-64.041 64.04 28.673 64.04 64.041zm175.66 47.25c-8.354-154.6-132.185-278.587-286.95-286.95C7.656 175.765 0 183.105 0 192.253v48.069c0 8.415 6.49 15.472 14.887 16.018 111.832 7.284 201.473 96.702 208.772 208.772.547 8.397 7.604 14.887 16.018 14.887h48.069c9.149.001 16.489-7.655 15.995-16.79zm144.249.288C439.596 229.677 251.465 40.445 16.503 32.01 7.473 31.686 0 38.981 0 48.016v48.068c0 8.625 6.835 15.645 15.453 15.999 191.179 7.839 344.627 161.316 352.465 352.465.353 8.618 7.373 15.453 15.999 15.453h48.068c9.034-.001 16.329-7.474 16.005-16.504z"/></svg>
+                </span>
+
+            </a>
+        </li>
+    
+
+        <li>
+            <a href="https://elijahlopez.ca" title="Website" rel="me">
+                <span class="inline-svg" >
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M352 256C352 278.2 350.8 299.6 348.7 320H163.3C161.2 299.6 159.1 278.2 159.1 256C159.1 233.8 161.2 212.4 163.3 192H348.7C350.8 212.4 352 233.8 352 256zM503.9 192C509.2 212.5 512 233.9 512 256C512 278.1 509.2 299.5 503.9 320H380.8C382.9 299.4 384 277.1 384 256C384 234 382.9 212.6 380.8 192H503.9zM493.4 160H376.7C366.7 96.14 346.9 42.62 321.4 8.442C399.8 29.09 463.4 85.94 493.4 160zM344.3 160H167.7C173.8 123.6 183.2 91.38 194.7 65.35C205.2 41.74 216.9 24.61 228.2 13.81C239.4 3.178 248.7 0 256 0C263.3 0 272.6 3.178 283.8 13.81C295.1 24.61 306.8 41.74 317.3 65.35C328.8 91.38 338.2 123.6 344.3 160H344.3zM18.61 160C48.59 85.94 112.2 29.09 190.6 8.442C165.1 42.62 145.3 96.14 135.3 160H18.61zM131.2 192C129.1 212.6 127.1 234 127.1 256C127.1 277.1 129.1 299.4 131.2 320H8.065C2.8 299.5 0 278.1 0 256C0 233.9 2.8 212.5 8.065 192H131.2zM194.7 446.6C183.2 420.6 173.8 388.4 167.7 352H344.3C338.2 388.4 328.8 420.6 317.3 446.6C306.8 470.3 295.1 487.4 283.8 498.2C272.6 508.8 263.3 512 255.1 512C248.7 512 239.4 508.8 228.2 498.2C216.9 487.4 205.2 470.3 194.7 446.6H194.7zM190.6 503.6C112.2 482.9 48.59 426.1 18.61 352H135.3C145.3 415.9 165.1 469.4 190.6 503.6V503.6zM321.4 503.6C346.9 469.4 366.7 415.9 376.7 352H493.4C463.4 426.1 399.8 482.9 321.4 503.6V503.6z"/></svg>
+                </span>
+
+            </a>
+        </li>
+    
+
+        
+        
+        <li>
+            <a href="https://github.com/elibroftw" title="Github" rel="me">
+            <span class="inline-svg" >
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+                </span>
+
+            </a>
+        </li>
+    
+
+        
+        
+        <li>
+            <a href="https://twitter.com/elibroftw" title="Twitter" rel="me">
+            <span class="inline-svg" >
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+                </span>
+
+            </a>
+        </li>
+    
+
+        
+        
+        <li>
+            <a href="https://www.youtube.com/c/elibroftw" title="Youtube" rel="me">
+            <span class="inline-svg" >
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg>
+                </span>
+
+            </a>
+        </li>
+    
+
+        
+        
+        <li>
+            <a href="mailto:elijahllopezz@gmail.com" title="Email" rel="me">
+            <span class="inline-svg" >
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M464 64H48C21.49 64 0 85.49 0 112v288c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zm0 48v40.805c-22.422 18.259-58.168 46.651-134.587 106.49-16.841 13.247-50.201 45.072-73.413 44.701-23.208.375-56.579-31.459-73.413-44.701C106.18 199.465 70.425 171.067 48 152.805V112h416zM48 400V214.398c22.914 18.251 55.409 43.862 104.938 82.646 21.857 17.205 60.134 55.186 103.062 54.955 42.717.231 80.509-37.199 103.053-54.947 49.528-38.783 82.032-64.401 104.947-82.653V400H48z"/></svg>
+                </span>
+
+            </a>
+        </li>
+    
+
+        
+        
+        <li>
+            <a href="https://www.instagram.com/elijahllopezz" title="Instagram" rel="me">
+            <span class="inline-svg" >
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+                </span>
+
+            </a>
+        </li>
+    
+
+
+
+</ul>
+</div>
+    
+
+    
+
+
+
+
+    <div class="header-top-right theme-switcher">
+        <span class="inline-svg" >
+                    <svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 290 290">
+<path fill="currentColor" d="M142.959,0C64.131,0,0,64.132,0,142.96c0,78.828,64.131,142.959,142.959,142.959c78.828,0,142.96-64.131,142.96-142.959  C285.919,64.132,221.787,0,142.959,0z M142.959,260.919V142.96V25c65.043,0,117.96,52.917,117.96,117.96  C260.919,208.003,208.002,260.919,142.959,260.919z"/>
+</svg>
+                </span>
+
+    </div>
+
+
+<script>
+const STORAGE_KEY = 'user-color-scheme'
+const defaultTheme = "auto"
+
+let currentTheme
+let switchButton
+let autoDefinedScheme = window.matchMedia('(prefers-color-scheme: dark)')
+
+const autoChangeScheme = e => {
+    currentTheme = e.matches ? 'dark' : 'light'
+    document.documentElement.setAttribute('data-theme', currentTheme)
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    switchButton = document.querySelector('.theme-switcher')
+    currentTheme = detectCurrentScheme()
+    setThemeColorMeta(currentTheme)
+    if (currentTheme == 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark')
+    }
+
+    if (currentTheme == 'auto') {
+        autoChangeScheme(autoDefinedScheme);
+        autoDefinedScheme.addListener(autoChangeScheme);
+    }
+
+    if (switchButton) {
+        switchButton.addEventListener('click', switchTheme, false)
+    }
+})
+
+function detectCurrentScheme() {
+    if (localStorage !== null && localStorage.getItem(STORAGE_KEY)) {
+        return localStorage.getItem(STORAGE_KEY)
+    }
+    if (defaultTheme) {
+        return defaultTheme
+    }
+    if (!window.matchMedia) {
+        return defaultTheme
+    }
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        return 'dark'
+    }
+    return defaultTheme
+}
+
+function switchTheme(e) {
+    if (currentTheme == 'dark') {
+        if (localStorage !== null)
+            localStorage.setItem(STORAGE_KEY, 'light')
+        document.documentElement.setAttribute('data-theme', 'light')
+        currentTheme = 'light'
+    } else {
+        if (localStorage !== null)
+            localStorage.setItem(STORAGE_KEY, 'dark')
+        document.documentElement.setAttribute('data-theme', 'dark')
+        currentTheme = 'dark'
+    }
+    setThemeColorMeta(currentTheme)
+}
+
+function setThemeColorMeta(currentTheme) {
+    if (currentTheme == 'dark') {
+        document.querySelector('meta[name="theme-color"]').setAttribute('content', '#121212')
+    } else {
+        document.querySelector('meta[name="theme-color"]').setAttribute('content', '#fff')
+    }
+}
+</script>
+
+</div>
+
+
+    <nav>
+        
+        
+        <a class="" href="https://blog.elijahlopez.ca/" title="Home">Home</a>
+        
+        <a class="" href="https://blog.elijahlopez.ca/posts/" title="Archive">Archive</a>
+        
+        <a class="" href="https://blog.elijahlopez.ca/tags/" title="Tags">Tags</a>
+        
+    </nav>
+
+
+
+
+
+
+            
+        </header>
+        <main id="main" tabindex="-1">
+            
+    
+
+    <article class="post h-entry">
+        <div class="post-header">
+            <header>
+                <h1 class="p-name post-title">BU 449 Fixed Income Analysis</h1>
+
+                
+            </header>
+        </div>
+        
+
+
+
+
+        <div class="content e-content">
+            <div>
+    <h2>Table of Contents</h2>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction-to-the-fixed-income-environment">Introduction to the Fixed Income Environment</a>
+      <ul>
+        <li><a href="#trifecta-framework">Trifecta Framework</a></li>
+      </ul>
+    </li>
+    <li><a href="#chapter-1">Chapter 1</a>
+      <ul>
+        <li><a href="#market-players">Market Players</a></li>
+        <li><a href="#seniority">Seniority</a></li>
+        <li><a href="#default-risk">Default Risk</a></li>
+        <li><a href="#debentures">Debentures</a></li>
+        <li><a href="#seniority--capital-structure">Seniority &amp; Capital Structure</a></li>
+        <li><a href="#model-aa-toyota-bond-value">Model AA Toyota Bond Value</a></li>
+        <li><a href="#dealer-bid-ask-spreads">Dealer Bid Ask Spreads</a></li>
+        <li><a href="#prices">Prices</a></li>
+        <li><a href="#call-protection-period">Call Protection Period</a></li>
+        <li><a href="#calling-back-a-bond">Calling Back a Bond</a></li>
+        <li><a href="#callable-versus-refundable">Callable versus Refundable</a></li>
+        <li><a href="#callable-make-whole-provision">Callable Make Whole Provision</a></li>
+        <li><a href="#make-whole-versus-fixed-call">Make-whole versus Fixed Call</a></li>
+        <li><a href="#embedded-bond-options">Embedded Bond Options</a></li>
+      </ul>
+    </li>
+    <li><a href="#overview-of-the-fixed-income-market">Overview of the fixed income market</a>
+      <ul>
+        <li><a href="#process-of-issuing-corporate-debt">Process of Issuing Corporate Debt</a></li>
+        <li><a href="#trustee">Trustee</a></li>
+        <li><a href="#indenture">Indenture</a></li>
+        <li><a href="#why-covenants">Why covenants</a></li>
+        <li><a href="#medium-term-note">Medium Term Note</a></li>
+        <li><a href="#corporate-debt-primary-debt">Corporate Debt Primary Debt</a></li>
+        <li><a href="#regulation-history">Regulation History</a></li>
+        <li><a href="#optimal-debt-issue">Optimal Debt Issue</a></li>
+        <li><a href="#primary-dealers">Primary Dealers</a></li>
+        <li><a href="#why-do-foreign-countries-own-us-treasuries">Why do Foreign Countries own US Treasuries</a></li>
+        <li><a href="#uniform-price-dutch-auction">Uniform Price Dutch auction</a></li>
+        <li><a href="#bid-cover-ratio">Bid Cover Ratio</a></li>
+        <li><a href="#secondary-market-for-treasury-debt">Secondary Market for Treasury Debt</a></li>
+        <li><a href="#algorithmic-trading-govpx">Algorithmic Trading: GovPX</a></li>
+        <li><a href="#federal-fund-market">Federal Fund Market</a></li>
+        <li><a href="#federal-funds-rate-and-monetary-policy">Federal Funds Rate and Monetary Policy</a></li>
+      </ul>
+    </li>
+    <li><a href="#bond-buyback-at-deutsche-bank">Bond Buyback at Deutsche Bank</a>
+      <ul>
+        <li><a href="#contingent-convertible-bonds">Contingent Convertible Bonds</a></li>
+        <li><a href="#structure-of-cocos">Structure of CoCos</a></li>
+        <li><a href="#hedge-fund-strategies">Hedge Fund Strategies</a></li>
+        <li><a href="#libor-scandal-and-sofr">LIBOR-Scandal and SOFR</a></li>
+        <li><a href="#interest-rate-swap">Interest Rate Swap</a></li>
+      </ul>
+    </li>
+    <li><a href="#teva-pharmaceuticals">Teva Pharmaceuticals</a>
+      <ul>
+        <li><a href="#momentum-and-contrarian">Momentum and Contrarian</a></li>
+        <li><a href="#bloomberg">Bloomberg</a></li>
+        <li><a href="#nominal-spread">Nominal Spread</a></li>
+        <li><a href="#zero-volatility-spread">Zero Volatility Spread</a></li>
+        <li><a href="#oas">OAS</a></li>
+        <li><a href="#eurobond">Eurobond</a></li>
+        <li><a href="#global-bond">Global Bond</a></li>
+        <li><a href="#eurobond-market">Eurobond Market</a></li>
+        <li><a href="#brady-bonds">Brady Bonds</a></li>
+      </ul>
+    </li>
+    <li><a href="#repo-market">Repo market</a>
+      <ul>
+        <li><a href="#introduction-to-repo-market">Introduction to Repo Market</a></li>
+        <li><a href="#repo-blowup-of-2019">Repo Blowup of 2019</a></li>
+        <li><a href="#bear-sterns">Bear Sterns</a></li>
+        <li><a href="#troubled-asset-relief-program-tarp">Troubled Asset Relief Program (TARP)</a></li>
+        <li><a href="#three-types-of-repos">Three Types of Repos</a></li>
+        <li><a href="#haircuts">Haircuts</a></li>
+        <li><a href="#trip-party-repo-market">Trip-Party Repo Market</a></li>
+        <li><a href="#repo-collateral">Repo Collateral</a></li>
+        <li><a href="#arrc">ARRC</a></li>
+      </ul>
+    </li>
+    <li><a href="#massachusetts-bay-transportation-authority-sustainability-bonds">Massachusetts Bay Transportation Authority Sustainability Bonds</a>
+      <ul>
+        <li><a href="#munis">Munis</a></li>
+        <li><a href="#green-bonds">Green Bonds</a></li>
+        <li><a href="#international-capital-markets-association">International Capital Markets ASsociation</a></li>
+        <li><a href="#green-bond-principles">Green Bond Principles</a></li>
+        <li><a href="#green-bond-types">Green Bond Types</a></li>
+        <li><a href="#sustainability-bonds">Sustainability Bonds</a></li>
+        <li><a href="#mtba-auction">MTBA Auction</a></li>
+      </ul>
+    </li>
+    <li><a href="#durations">Durations</a>
+      <ul>
+        <li><a href="#duration-mismatch-of-fis">Duration Mismatch of FIs</a></li>
+        <li><a href="#ncnb">NCNB</a></li>
+        <li><a href="#saving-and-loan-crisis">Saving and Loan Crisis</a></li>
+        <li><a href="#spread-trades">Spread Trades</a></li>
+        <li><a href="#price-value-of-a-basis-point">Price Value of a Basis Point</a></li>
+        <li><a href="#duration">Duration</a></li>
+        <li><a href="#convexity">Convexity</a></li>
+      </ul>
+    </li>
+    <li><a href="#svb-case">SVB Case</a>
+      <ul>
+        <li><a href="#svb-background">SVB Background</a></li>
+        <li><a href="#svb-failure">SVB Failure</a></li>
+      </ul>
+    </li>
+    <li><a href="#bank-crises">Bank Crises</a>
+      <ul>
+        <li><a href="#risk-capital">RIsk Capital</a></li>
+        <li><a href="#risk-capital-spiral">Risk Capital Spiral</a></li>
+        <li><a href="#margin-haircut-spiral">Margin Haircut Spiral</a></li>
+        <li><a href="#shadow-banks">Shadow Banks</a></li>
+        <li><a href="#dealer-repo-activity">Dealer Repo Activity</a></li>
+        <li><a href="#credit-liquidity-spread">Credit Liquidity Spread</a></li>
+        <li><a href="#flight-to-liquidity">Flight to Liquidity</a></li>
+        <li><a href="#commercial-paper">Commercial Paper</a></li>
+        <li><a href="#swap-spread">Swap Spread</a></li>
+        <li><a href="#gnma-mbs">GNMA MBS</a></li>
+      </ul>
+    </li>
+    <li><a href="#ratings">Ratings</a></li>
+    <li><a href="#mortgage-and-asset-backed-markets">Mortgage and Asset Backed Markets</a>
+      <ul>
+        <li><a href="#overview-of-structured-financial-products">Overview of Structured Financial Products</a></li>
+        <li><a href="#agency-debt">Agency Debt</a></li>
+        <li><a href="#amortization-table-improvements">Amortization Table Improvements</a></li>
+        <li><a href="#prepayment-risk-hedge-funds">Prepayment Risk Hedge Funds</a></li>
+        <li><a href="#stripped-mbs">Stripped MBS</a></li>
+      </ul>
+    </li>
+    <li><a href="#course-feedback">Course Feedback</a></li>
+  </ul>
+</nav>
+</div>
+
+<h2 id="introduction-to-the-fixed-income-environment" >Introduction to the Fixed Income Environment
+<span>
+    <a href="#introduction-to-the-fixed-income-environment">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><ul>
+<li>US: bloomberg real yield</li>
+<li>CA: BNN bloomberg</li>
+</ul>
+<p>goldilocks report (happy equilibrium)</p>
+<p>Inflation @ 2.8%  wanted to bring it down to 2% but not really possible anymore. Jobs report are strong so can&rsquo;t really do any cuts yet.</p>
+<p>Job report and interest rate cuts are very highly connected. 2-yr treasury rate fell to 4.79 when it was over 5 a few months ago.</p>
+<p>Fed funds rates (US interbank borrowing rate), 2yr treasury</p>
+<p>Dual mandate</p>
+<p>Things causing inflation: monetary (demand), non-monetary (supply)</p>
+<p>How does the policy discussion reflect the yield curve is market driven</p>
+<p>Yield curve: yield vs maturity</p>
+<p>Suppose 2-year yield has dropped in anticipation of interest rate cuts.</p>
+<p>What is refunding regarding bond auctions:</p>
+<ul>
+<li>government borrowing through issuance of bonds</li>
+<li>refund: refinancing of existing debt
+<ul>
+<li>issuing debt to buy back older debt that was probably issued at higher rates</li>
+</ul>
+</li>
+<li>probably higher if investors think that the yield will decrease</li>
+</ul>
+<p>Bank of Canada mandate is to promote economic and financial welfare, unlike the Federal Reservers mandate which is both price level and unemployment</p>
+<p>ECB: European Central Bank</p>
+<p>When there is high inflation, coupons are worth less and the higher interest keeps bond prices lower.</p>
+<p>Where to invest in? Treasury 2-4yr, Corporate, Provinces.</p>
+<p>Federal Agency Securities: debt taken by government corporations</p>
+<p>Secularization: Using loans as collateral to sell something</p>
+<p>Money Markets: short-term borrowing using commercial paper&hellip;</p>
+<p><a href="https://www.sifma.org/resources/research/fixed-income-chart/">Fixed Income Outstanding</a></p>
+<ul>
+<li>Treasury: 22.5</li>
+<li>Treasury + Federal Agency: ~24T</li>
+<li>Municipalties: $4T</li>
+<li>Corporate Bonds: $10T</li>
+</ul>
+<h3 id="trifecta-framework" >Trifecta Framework
+<span>
+    <a href="#trifecta-framework">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>analytics</li>
+<li>intuition</li>
+<li>communication</li>
+</ul>
+<h2 id="chapter-1" >Chapter 1
+<span>
+    <a href="#chapter-1">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><h3 id="market-players" >Market Players
+<span>
+    <a href="#market-players">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>Issuers</li>
+<li>Intermediaries
+<ul>
+<li>Investment banks</li>
+<li>Commercial banks</li>
+<li>Dealers</li>
+<li>Primary Dealers</li>
+<li>Inter-dealer brokers</li>
+<li>Credit rating agencies</li>
+</ul>
+</li>
+<li>Investors</li>
+</ul>
+<h3 id="seniority" >Seniority
+<span>
+    <a href="#seniority">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>Senior secured</li>
+<li>Senior unsecured</li>
+<li>Senior subordinated</li>
+<li>Subordinated</li>
+<li>Junior subordinated</li>
+</ul>
+<p>Moodys credit report for recovery rates shows difference between senior secured and senior unsecured and all tranches</p>
+<h3 id="default-risk" >Default Risk
+<span>
+    <a href="#default-risk">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>default risk = prob of default * loss given default = prob of default * (1 - recovery rate)</p>
+<h3 id="debentures" >Debentures
+<span>
+    <a href="#debentures">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><h3 id="seniority--capital-structure" >Seniority &amp; Capital Structure
+<span>
+    <a href="#seniority--capital-structure">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><h3 id="model-aa-toyota-bond-value" >Model AA Toyota Bond Value
+<span>
+    <a href="#model-aa-toyota-bond-value">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>Structured instruments</p>
+<ul>
+<li>unlisted for 5 years</li>
+<li>voting rights</li>
+<li>120% of ordinary shares</li>
+<li>can be bought back at par value</li>
+<li>eligible for set defined dividends</li>
+</ul>
+<h3 id="dealer-bid-ask-spreads" >Dealer Bid Ask Spreads
+<span>
+    <a href="#dealer-bid-ask-spreads">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>Quotes from dealers are dollar plus 1/32nds</li>
+<li>To calculate the bid-ask spread, take all asks and all bids and calculate the difference between the lowest ask and the highest bid</li>
+<li>So if there is an ask of 95 plus 22 and a bid of 95 plus 17, the bid-ask spread is 5/32</li>
+<li>Can infer that there is an implicit ask yield that is lower than the bid yield</li>
+<li>the bid-ask spread is a proxy for (lack of) liquidity</li>
+</ul>
+<h3 id="prices" >Prices
+<span>
+    <a href="#prices">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>Full price
+<ul>
+<li>Dirty Price</li>
+<li>Invoice price = quoted Price plus the interest accrued since the last coupon payment</li>
+</ul>
+</li>
+<li>Actual price
+<ul>
+<li>Clean price</li>
+<li>Quoted price (US bond prices quoted on a Bloomberg Terminal)</li>
+</ul>
+</li>
+<li>Invoice needs to include the interest accrued</li>
+</ul>
+<p>To calculate returns, make sure to consistently use the same price. Don&rsquo;t mix up clean and dirty.</p>
+<h3 id="call-protection-period" >Call Protection Period
+<span>
+    <a href="#call-protection-period">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>Callability is the ability for the issuer to call the bond back
+<ul>
+<li>usually when interest rates drop, or the firms rating improves</li>
+</ul>
+</li>
+<li>although the callability itself leads to a premium, call protections is typical for the first half of the bond&rsquo;s life which reduces the flexibility of the firm</li>
+</ul>
+<h3 id="calling-back-a-bond" >Calling Back a Bond
+<span>
+    <a href="#calling-back-a-bond">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>Single call date (called in whole)</li>
+<li>Declining call schedule for future years for what price to pay</li>
+<li>Discretely callable schedule (10 days notice)</li>
+</ul>
+<h3 id="callable-versus-refundable" >Callable versus Refundable
+<span>
+    <a href="#callable-versus-refundable">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>Refundable bond
+<ul>
+<li>only refinanced by issuing new debt at lower yields</li>
+</ul>
+</li>
+<li>Callable bonds can be refinanced by
+<ul>
+<li>capital injection</li>
+<li>call option more costly to bond-holders than refundable option</li>
+</ul>
+</li>
+</ul>
+<h3 id="callable-make-whole-provision" >Callable Make Whole Provision
+<span>
+    <a href="#callable-make-whole-provision">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>Special callable bond because it can be exercised at any time, call price is based on the treasury yield at the time the call occurs. The make whole price can go above par value unlike callable which has a ceiling.</p>
+<h3 id="make-whole-versus-fixed-call" >Make-whole versus Fixed Call
+<span>
+    <a href="#make-whole-versus-fixed-call">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><h3 id="embedded-bond-options" >Embedded Bond Options
+<span>
+    <a href="#embedded-bond-options">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>Favourable to issuers
+<ul>
+<li>accelerated sinking fund provision:
+<ul>
+<li>sets a reserve aside to retire parts of the debt (further than callable)</li>
+</ul>
+</li>
+<li>cap on a floater: max amount of variable rate to pay</li>
+<li>callable option
+<ul>
+<li>the entire bond is called back, not just a part of it</li>
+</ul>
+</li>
+<li>prepayment option</li>
+<li><strong>higher yields and lower prices</strong></li>
+</ul>
+</li>
+<li>Favourable to investors
+<ul>
+<li>put-table option: investor can force the issuer to make the investor whole</li>
+<li>extendible option: maturity date can be extended</li>
+<li>conversion option: converted to equity</li>
+<li>floor on a floater: variable rate but with a guaranteed yield</li>
+<li><strong>lower yields and higher prices</strong></li>
+</ul>
+</li>
+</ul>
+<h2 id="overview-of-the-fixed-income-market" >Overview of the fixed income market
+<span>
+    <a href="#overview-of-the-fixed-income-market">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><p>Primary vs Secondary</p>
+<p>Issuance vs trading</p>
+<p>underwriter has firm commitment</p>
+<h3 id="process-of-issuing-corporate-debt" >Process of Issuing Corporate Debt
+<span>
+    <a href="#process-of-issuing-corporate-debt">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>corporate → prospectus → dealer (underwriter) → investors → buy side (pension funds, insurance companies, mutual funds, trusts)</p>
+<p>Dealers (syndicate)</p>
+<ul>
+<li>assesses demand for the debt issue (ratings)</li>
+<li>pricing the issue</li>
+<li>hedging inventory positions</li>
+<li>distributing securities to ultimate investors</li>
+</ul>
+<h3 id="trustee" >Trustee
+<span>
+    <a href="#trustee">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>ensures legal requirements are met</li>
+<li>monitors the issuing firm&rsquo;s performance</li>
+<li>takes action</li>
+</ul>
+<h3 id="indenture" >Indenture
+<span>
+    <a href="#indenture">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>enforced by trustee</li>
+<li>financial covenants</li>
+<li>restrictive covenants</li>
+<li>underwriter helps</li>
+</ul>
+<h3 id="why-covenants" >Why covenants
+<span>
+    <a href="#why-covenants">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>lowers cost of debt</li>
+<li>shareholders restrict managers</li>
+<li>bond holders restrict shareholders and managers</li>
+<li>credit sights covenant review</li>
+<li>violation of covenant can lead to penalties and trustee control</li>
+</ul>
+<h3 id="medium-term-note" >Medium Term Note
+<span>
+    <a href="#medium-term-note">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>Five to ten year maturity</p>
+<h3 id="corporate-debt-primary-debt" >Corporate Debt Primary Debt
+<span>
+    <a href="#corporate-debt-primary-debt">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>Secondary Corporate Bond Market</p>
+<ul>
+<li>Trading of corporate bonds</li>
+<li>Over $10T in bonds</li>
+<li>99% goes through Dealer Markets
+<ul>
+<li>Reuters</li>
+<li>Bloomberg</li>
+<li>ICAP (ECN)</li>
+</ul>
+</li>
+</ul>
+<h3 id="regulation-history" >Regulation History
+<span>
+    <a href="#regulation-history">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>80s
+<ul>
+<li>LBO defaults</li>
+</ul>
+</li>
+<li>Fixed Income Pricing System introduced introduced in 1994</li>
+<li>2003
+<ul>
+<li>TRACE system introduced. Trade Reporting and Compliance Engine</li>
+</ul>
+</li>
+<li>144A Issue does not have to register with SEC
+<ul>
+<li>Promote foreign/emerging market companies to come to the US</li>
+<li>Go to dealers who sell only to Qualified Institutional Buyers (QIBs)</li>
+<li>Speed of issuance</li>
+<li>Private lenders tend to have significant advantages over public lenders in handling credit risk and information asymmetry (Lender specialization)</li>
+<li>Favourable for higher yields (B rating) issuances</li>
+<li>International corporations favour 144A way more than US companies although it is going up slowly with the business cycle</li>
+</ul>
+</li>
+<li>Private debt is issued significantly more than public debt
+<ul>
+<li>Most of it is through bank loans</li>
+</ul>
+</li>
+</ul>
+<p>Canada</p>
+<ul>
+<li>IIROC working with CSA to enhance transparency</li>
+<li>Before November 2015, debt market was opaque</li>
+</ul>
+<h3 id="optimal-debt-issue" >Optimal Debt Issue
+<span>
+    <a href="#optimal-debt-issue">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>debt or equity</li>
+<li>market timing</li>
+<li>debt composition</li>
+<li>maturity structure</li>
+<li>issuance markets?</li>
+<li>currency composition</li>
+</ul>
+<h3 id="primary-dealers" >Primary Dealers
+<span>
+    <a href="#primary-dealers">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>Federal Reserve Bank of New York&hellip;</p>
+<p>Cantor Fitzgerald &amp; Co.: iconic / ubiquitous company</p>
+<p>Must take part in all the auctions.</p>
+<p>Discretionary is more expensive than dutch auction.</p>
+<p>Trade using overnight borrowing for (repo) markets</p>
+<h3 id="why-do-foreign-countries-own-us-treasuries" >Why do Foreign Countries own US Treasuries
+<span>
+    <a href="#why-do-foreign-countries-own-us-treasuries">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>When countries export to US, they get USD currency. To get pay workers, these corporations need to acquire RMB, so they increase the currency exchange rate, which would make exports less attractive. Therefore, the foreign central banks want to facilitate the exchange rate themselves. With all the extra USD, they want to earn a rate of return. So therefore, they invest in the safest security; treasuries.</p>
+<p>Why are they abandoning treasuries?</p>
+<p>When US overnight lending rates go higher, the bond prices go down too. QE: federal reserve buys the bonds. Foreign demand (China and Japan) has been lower coincidentally further once rates started going up. Japanese and Chinese cost to buy debt has gone up due to a higher currency exchange rate. US domestic buyers (mutual funds, households, pension funds, insurance companies) are filling in the gap.</p>
+<h3 id="uniform-price-dutch-auction" >Uniform Price Dutch auction
+<span>
+    <a href="#uniform-price-dutch-auction">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>$20B where 16B is competitive tender and 4B is non-competitive tender.</p>
+<ol>
+<li>Treasury announces $16B 2 year note</li>
+<li>Demand schedule for quantity and yields</li>
+<li>Coupon rate set to 1/8th rounded down from highest aggregate demand yield that satisfies the tender. Therefore, the price is usually at a discount.</li>
+<li>Stop-out yield: all yields lower than the stop-out yield are met</li>
+</ol>
+<h3 id="bid-cover-ratio" >Bid Cover Ratio
+<span>
+    <a href="#bid-cover-ratio">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>Higher the bid-cover ratio, higher the interest in the issue. Measures the excess demand.</p>
+<p>Sum the $ demanded (competitive + non-competitive) at any yield and divide by the total $ issued.</p>
+<p>The BoC only has 2 people working at running these auctions since most of the process has been automated.</p>
+<h3 id="secondary-market-for-treasury-debt" >Secondary Market for Treasury Debt
+<span>
+    <a href="#secondary-market-for-treasury-debt">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>trading amongst dealers (90%)</li>
+<li>10% external sources</li>
+<li>IDB: interdealer broker
+<ul>
+<li>6 of them</li>
+<li>anonymous trading</li>
+</ul>
+</li>
+</ul>
+<h3 id="algorithmic-trading-govpx" >Algorithmic Trading: GovPX
+<span>
+    <a href="#algorithmic-trading-govpx">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>Improves public&rsquo;s access to US Treasury prices by disseminating all trades, best bids, offers in the market</li>
+<li>consolidates data from 5-6 brokers</li>
+</ul>
+<h3 id="federal-fund-market" >Federal Fund Market
+<span>
+    <a href="#federal-fund-market">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>Member banks borrow and lend within each other</li>
+<li>Surplus bank lends to deficit bank</li>
+<li>In the US, banks borrow to keep reserve requirements</li>
+<li>In Canada, deficit banks borrow to maintain their internal Basel III requirements</li>
+<li>The central bank can keep selling treasuries to remove liquidity</li>
+<li>The central bank can also keep buying treasuries to provide liquidity</li>
+<li>during great financial recession, banks were unwilling to lend to each other so there were spikes in the effective rate</li>
+</ul>
+<h3 id="federal-funds-rate-and-monetary-policy" >Federal Funds Rate and Monetary Policy
+<span>
+    <a href="#federal-funds-rate-and-monetary-policy">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>Decrease in overnight lending rate → dollar goes down, interest rate goes down → increase in demand → higher costs/prices → higher rate of inflation</p>
+<p>Increase in overnight lending rate → dollar goes up, interest rate goes up → decrease in demand → lower costs/prices → lower rate of inflation</p>
+<ul>
+<li>dollar changes due to foreign investment</li>
+<li>demand: <strong>household, corporate</strong>, government, and <strong>exports</strong></li>
+</ul>
+<h2 id="bond-buyback-at-deutsche-bank" >Bond Buyback at Deutsche Bank
+<span>
+    <a href="#bond-buyback-at-deutsche-bank">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><ul>
+<li>February 2016</li>
+<li>Falling stock price and CoCo bond price
+<ul>
+<li>CoCo&rsquo;s pay higher interest than traditional bonds</li>
+</ul>
+</li>
+<li>Under-performing euro stock index</li>
+<li>Decision is whether to buy back $5.5B CoCo bonds</li>
+<li>Deutsche Bank: financial services
+<ul>
+<li>investment banking (majority)</li>
+<li>commercial banking</li>
+<li>asset management</li>
+</ul>
+</li>
+<li>Global bank headquartered in Frankfurt, Germany</li>
+<li>31.1B EUR market cap</li>
+<li>SWOT
+<ul>
+<li>Strategy 2020</li>
+<li>Established Brand</li>
+</ul>
+</li>
+<li>When the dividend was suspended, the price declined</li>
+<li>Higher Credit Default Swap spread</li>
+<li>Maturity Transformation
+<ul>
+<li>Difference between short term rates and long-term rates matters to banks</li>
+<li>Banks borrow at short-term rates and lend at long-term rates</li>
+</ul>
+</li>
+</ul>
+<h3 id="contingent-convertible-bonds" >Contingent Convertible Bonds
+<span>
+    <a href="#contingent-convertible-bonds">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>Compared to a convertible, the contingent holder has no say and the bond can convert when share price decreases.</p>
+<p>Core Equity Tier 1 (CET1)</p>
+<ul>
+<li>Common Shares</li>
+<li>Retained Earnings</li>
+</ul>
+<p>Additional Tier 1 (AT1)</p>
+<ul>
+<li>preferred shares</li>
+<li>high-trigger CoCos
+<ul>
+<li>low triggers means lower loss absorbing capacity</li>
+<li>usually not AT1</li>
+<li>Boost T2 capital in cost-efficient manner</li>
+<li>Regulators and markets pressured banks to boost T1 capital</li>
+<li>CoCos with higher triggers are more expensive</li>
+<li>Basel III and Dodd-Frank regulations</li>
+</ul>
+</li>
+</ul>
+<p>Tier 2 (T2)</p>
+<ul>
+<li>non-coco subordinated debt</li>
+<li>low-trigger cocos</li>
+</ul>
+<h3 id="structure-of-cocos" >Structure of CoCos
+<span>
+    <a href="#structure-of-cocos">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>Triggers
+<ul>
+<li>Mechnical (book value or market value)</li>
+<li>Discretionary</li>
+</ul>
+</li>
+<li>Loss absorption mechanism
+<ul>
+<li>Conversion to equity</li>
+<li>Principal write down (cash for forgoing the principal)</li>
+</ul>
+</li>
+<li>Capital Requirements
+<ul>
+<li>Buffer against a shock</li>
+<li>4.5% for T1</li>
+<li>Add-on by adding T2</li>
+<li>Tier 1 vs Tier 2
+<ul>
+<li>Tier 1 is equity</li>
+<li>Tier 2 is subordinated debt that could be kept as debt forever*</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="hedge-fund-strategies" >Hedge Fund Strategies
+<span>
+    <a href="#hedge-fund-strategies">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>Bearish on the Firm
+<ul>
+<li>Short stock, buy CDS</li>
+<li>Solvency perception goes down as stock goes down</li>
+<li>Short unsecured bons + long CDS</li>
+<li>Short CoCo bonds + long CDS</li>
+<li>Combination of above</li>
+</ul>
+</li>
+<li>Bullish
+<ul>
+<li>Long stock + short CDS</li>
+<li>Long unsecured bonds + short CDS</li>
+<li>Long CoCo bonds + short CDS</li>
+<li>Combination of above</li>
+</ul>
+</li>
+</ul>
+<h3 id="libor-scandal-and-sofr" >LIBOR-Scandal and SOFR
+<span>
+    <a href="#libor-scandal-and-sofr">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>london interbank offer rate</li>
+<li>rate banks charge each other in London</li>
+<li>want a low LIBOR rate not a high rate</li>
+<li>banks even in USA use LIBOR as a going rate for risk free</li>
+<li>Lower than it should&rsquo;ve been to avoid regulation</li>
+<li>Cannot trust self-regulation</li>
+</ul>
+<p>Fed Funds Rate is AAA whereas LIBOR is AA.</p>
+<p>ICE took control of LIBOR.</p>
+<p>LIBOR-ICE turned to Overnight interest swaps</p>
+<h3 id="interest-rate-swap" >Interest Rate Swap
+<span>
+    <a href="#interest-rate-swap">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>One side pays fixed rate, the other pays LIBOR on the principal, therefore there is a net cash flow.</p>
+<h2 id="teva-pharmaceuticals" >Teva Pharmaceuticals
+<span>
+    <a href="#teva-pharmaceuticals">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><p>Pricing the 2016 bond offering.</p>
+<ul>
+<li>Cross border acquisition</li>
+<li>Israeli pharmaceutical company founded in 1901</li>
+<li>Merged with Orphahell in 1982 to become Teva</li>
+<li>Allergan acquisition, a division of ($40B from cash, shares and $19.5B bond financing)</li>
+<li>Copaxone patent expiring: 20% revenue, 50% profits</li>
+<li>Generic medicine is 54% of revenue
+<ul>
+<li>Cost savings, no clinical trials, lower prices</li>
+<li>Largest producer in the US?</li>
+<li>5 big producers (Teva - Israel, Novantis - Belgium, Sun Pharma - India, Mylan - Switzerland, Allergan - Ireland)</li>
+</ul>
+</li>
+<li>Consolidation?
+<ul>
+<li>Probably just economies of scale</li>
+<li>Less patents coming out</li>
+</ul>
+</li>
+<li>Regulations
+<ul>
+<li>US Hatch Waxman ACt
+<ul>
+<li>No need for repetitive preclinical and clinical trials for generic drugs, only need prove equivalency</li>
+</ul>
+</li>
+<li>Europe
+<ul>
+<li>Centralized procedure</li>
+<li>Applications submitted to a group of countries, only one member evaluation needed</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Macro-economic conditions
+<ul>
+<li>China, Japan, Breixt</li>
+</ul>
+</li>
+<li>Bond yields
+<ul>
+<li>Decreasing yields</li>
+</ul>
+</li>
+<li>Allergen: botox</li>
+<li>M&amp;A Synergies
+<ul>
+<li>Newer markets</li>
+<li>Cost synergies: stream</li>
+<li>Offsetting Copaxone patent expiration</li>
+</ul>
+</li>
+<li>Bond Plan
+<ul>
+<li>USD (six tranches, multiple maturities), EUR (three tranches), CHF</li>
+<li>Exchange rate frozen to July 16, 2016</li>
+<li>Looked at competitors&rsquo; coupon rates to benchmark scenario analysis</li>
+</ul>
+</li>
+</ul>
+<h3 id="momentum-and-contrarian" >Momentum and Contrarian
+<span>
+    <a href="#momentum-and-contrarian">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>Momentum would be applicable only to an industry</li>
+</ul>
+<h3 id="bloomberg" >Bloomberg
+<span>
+    <a href="#bloomberg">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>Bloomberg originally located in Israel</li>
+<li>Operations research company
+<ul>
+<li>Optimization</li>
+</ul>
+</li>
+</ul>
+<h3 id="nominal-spread" >Nominal Spread
+<span>
+    <a href="#nominal-spread">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>Nominal spread is the difference in YTMs between spot curve and yield on a non-treasury bond for a given maturity</p>
+<h3 id="zero-volatility-spread" >Zero Volatility Spread
+<span>
+    <a href="#zero-volatility-spread">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>Zero-volatility (ZV) spreads are the (parallel) spread added to Treasury spot-rate curve, such that the PV of bond = market price</p>
+<p>When the curve is flat, z-spread and nominal spread are equal.</p>
+<p>When the spot curve is upward (downward) sloping, z-spread is greater (smaller) compared to the nominal spread</p>
+<h3 id="oas" >OAS
+<span>
+    <a href="#oas">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><h3 id="eurobond" >Eurobond
+<span>
+    <a href="#eurobond">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>GE Euro issue (GBP)</li>
+<li>Teva did some Euro issue in dollars</li>
+</ul>
+<h3 id="global-bond" >Global Bond
+<span>
+    <a href="#global-bond">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>IBM global issue: luxembourg</li>
+</ul>
+<h3 id="eurobond-market" >Eurobond Market
+<span>
+    <a href="#eurobond-market">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>collared bond (cap and a floor)
+<ul>
+<li>cap: a cap on the floating coupon being paid</li>
+<li>floor: a floor on the floating coupon being paid</li>
+</ul>
+</li>
+<li>drop-lock: change floating into fixed once a trigger occurs</li>
+<li>perpetual/undated floating issue</li>
+<li>dual currency issues (pay coupon in one currency and principal in another)</li>
+<li>option currency bonds: investor or issuer chooses the currency</li>
+</ul>
+<h3 id="brady-bonds" >Brady Bonds
+<span>
+    <a href="#brady-bonds">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>Emerging market debt blowing up</li>
+<li>Non-performing loans to emerging market governments that were restructured into marketable securities</li>
+<li>Interest rate bonds: interest due on the loans</li>
+<li>Principal bonds: principal amount owed on the bank loans</li>
+</ul>
+<h2 id="repo-market" >Repo market
+<span>
+    <a href="#repo-market">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><h3 id="introduction-to-repo-market" >Introduction to Repo Market
+<span>
+    <a href="#introduction-to-repo-market">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>Repurchase Agreements. Bank A has cash, Bank B has treasuries. A Repo means that Bank B will repurchase from Bank A at a higher price at a later date. The difference between the prices is an implied paid interest also known as the repo rate. The difference between the collateral value and the cash received is called the haircut.</p>
+<p>Borrowers are usually: hedge funds, investment banks, etc.</p>
+<ul>
+<li>If nobody wants to lend to you in a repo market, you basically collapse.</li>
+<li>Takeaway is to always have a backup plan in case the rumours come.</li>
+<li>Repo: borrowing dollars against a collateral
+<ul>
+<li>Bullish: want to buy low and sell high</li>
+</ul>
+</li>
+<li>Reverse-repo: lending dollars against a collateral
+<ul>
+<li>Bearish: want to sell high buy low</li>
+</ul>
+</li>
+</ul>
+<p>Backed by primary dealers and</p>
+<h3 id="repo-blowup-of-2019" >Repo Blowup of 2019
+<span>
+    <a href="#repo-blowup-of-2019">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>Sep 16, 2019</li>
+<li>Usually means market participants don&rsquo;t want to lend</li>
+<li>In this case, liquidity was low while securities were high</li>
+<li>Corporate Tax Payments drain liquidity</li>
+<li>JPM, BOA, CITI, Wells Fargo</li>
+<li>Repo markets depending more on big 4</li>
+<li>These four were blamed for the liquidity, but they cannot be relied upon like the central bank can</li>
+<li>Jamie Dimon shifted the blame and said it was due to liquidity coverage rate
+(LCR)</li>
+<li>Before, Federal reserves provided liquidity due to great recession</li>
+<li>Federal funds rate is the interbank overnight lending rate</li>
+<li>Government Collateral Repo Rate is different
+<ul>
+<li>Published by the US Federal Reserve</li>
+<li>During a crisis, government collateral takes precedence</li>
+</ul>
+</li>
+<li>Usually the two rates are overlapping, but sometimes they depart the repo rate falls</li>
+<li>Repo rate is below the federal funds rate because there is collateral</li>
+</ul>
+<h3 id="bear-sterns" >Bear Sterns
+<span>
+    <a href="#bear-sterns">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>rumour that it held toxic assets</li>
+<li>when it was being margin called, it had to sell these assets at a discount</li>
+<li>it was in a liquidity crunch and no one wanted to lend the money</li>
+</ul>
+<h3 id="troubled-asset-relief-program-tarp" >Troubled Asset Relief Program (TARP)
+<span>
+    <a href="#troubled-asset-relief-program-tarp">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>After initial shocks were delivered,</li>
+<li>$780-800B injection to recapitalize the banks</li>
+<li>Prevention of all banks collapsing when they had to sell assets at discounts to deleverage</li>
+</ul>
+<h3 id="three-types-of-repos" >Three Types of Repos
+<span>
+    <a href="#three-types-of-repos">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>To sell a security, need to borrow the security first.</p>
+<ul>
+<li>Bi-party</li>
+<li>Tri-party</li>
+<li>Government</li>
+</ul>
+<h3 id="haircuts" >Haircuts
+<span>
+    <a href="#haircuts">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>Sell price minus repo financing cost minus haircut funding cost</li>
+<li>Original collateral might be $X, but only got less than that</li>
+</ul>
+<h3 id="trip-party-repo-market" >Trip-Party Repo Market
+<span>
+    <a href="#trip-party-repo-market">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>US Treasuries</li>
+<li>Less liquid securities: corporate</li>
+<li>Agency Debentures</li>
+</ul>
+<p>Funders, Broker-Dealer, Customers</p>
+<h3 id="repo-collateral" >Repo Collateral
+<span>
+    <a href="#repo-collateral">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>10y treasury bond, bellweather bond</li>
+</ul>
+<h3 id="arrc" >ARRC
+<span>
+    <a href="#arrc">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>alternative reference interest rate</li>
+<li>transaction based</li>
+<li>secured overnight finance rate (SOF)
+<ul>
+<li>Average repo rate
+<ul>
+<li>Biparty, triparty, government collateral</li>
+</ul>
+</li>
+<li>NY federal reserve
+<ul>
+<li>Rank highest volume to lowest volume of then remove 25% of the lowest volume</li>
+<li>Remove <em>Trading special</em></li>
+<li>transaction weighted median rate posted every business day at 8am</li>
+<li>On average, daily SOFR is more volatile than EFFR and is 3.9 basis points lower</li>
+<li>Even more volatile on quarter end dates</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Transaction activity</li>
+</ul>
+<h2 id="massachusetts-bay-transportation-authority-sustainability-bonds" >Massachusetts Bay Transportation Authority Sustainability Bonds
+<span>
+    <a href="#massachusetts-bay-transportation-authority-sustainability-bonds">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><ul>
+<li>nuances of sustainability bonds compared to green bonds and traditional bonds</li>
+<li>$535M bond issues, $382M sustainability bonds, and $133M municipal tax-exempt bonds</li>
+<li>CitiBank underwriting the bond
+<ul>
+<li>success reselling bonds</li>
+</ul>
+</li>
+<li>bid uncertainty</li>
+</ul>
+<h3 id="munis" >Munis
+<span>
+    <a href="#munis">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>Federal, States, Munis ($3.8T)</li>
+<li>Infrastructure</li>
+<li>Federally tax-exempt status</li>
+<li>tax-exempt income (lower yield)
+<ul>
+<li>two different yield curves</li>
+</ul>
+</li>
+<li>alternative minimum tax</li>
+<li>liquidity risk, similar to corporate bonds</li>
+<li>tax benefits</li>
+<li>Q: is this also applicable to Canada</li>
+</ul>
+<p>Types</p>
+<ul>
+<li>General Obligation Bond
+<ul>
+<li>backed by tax revenue collected by the government</li>
+</ul>
+</li>
+<li>Revenue Bonds
+<ul>
+<li>tolls from toll roads, airports, etc.</li>
+</ul>
+</li>
+</ul>
+<h3 id="green-bonds" >Green Bonds
+<span>
+    <a href="#green-bonds">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>2007: First climate awareness bond</li>
+<li>2008: world bank</li>
+<li>2013: private sector started</li>
+<li>Investment Banks came together to form green bond principles</li>
+<li>US: Agency&rsquo;s are issuing the most
+<ul>
+<li>Larger budgets and ability to issue more</li>
+</ul>
+</li>
+<li>EU: Financial Institutions
+<ul>
+<li>Securitized?</li>
+</ul>
+</li>
+<li>Greenium
+<ul>
+<li>Cost/Yield will be lower</li>
+<li>Look at similar bonds for what the greenium spread is</li>
+</ul>
+</li>
+</ul>
+<h3 id="international-capital-markets-association" >International Capital Markets ASsociation
+<span>
+    <a href="#international-capital-markets-association">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>Sets standards, advocacy</li>
+</ul>
+<h3 id="green-bond-principles" >Green Bond Principles
+<span>
+    <a href="#green-bond-principles">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>use of proceeds
+<ul>
+<li>clearly defined and quantifiable</li>
+<li>most for water-pollution from municipal market</li>
+</ul>
+</li>
+<li>project evaluation &amp; selection for use of proceeds
+<ul>
+<li>is nuclear considered part of green bonds?</li>
+</ul>
+</li>
+<li>management of proceeds</li>
+<li>reporting
+<ul>
+<li>the higher the size, the higher the quality of reporting</li>
+<li>frequency is annually</li>
+</ul>
+</li>
+</ul>
+<p>Q: if we were to compare a green bond and a traditional bond from the same company, what might the differences be in terms of yield?</p>
+<h3 id="green-bond-types" >Green Bond Types
+<span>
+    <a href="#green-bond-types">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>standard
+<ul>
+<li>finance green project and secured by issuer</li>
+</ul>
+</li>
+<li>green revenue
+<ul>
+<li>secured by pledged cash flows from related or unrelated projects</li>
+</ul>
+</li>
+<li>green project
+<ul>
+<li>secured by cash flows and assets ot the projects</li>
+<li>for example large wind farms</li>
+</ul>
+</li>
+<li>green securitized
+<ul>
+<li>secured by pool of assets</li>
+</ul>
+</li>
+</ul>
+<p>Q: what are the risks associated with these types of bonds</p>
+<h3 id="sustainability-bonds" >Sustainability Bonds
+<span>
+    <a href="#sustainability-bonds">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>Social Bond Principles (SBP)
+<ul>
+<li>Positive social outcomes</li>
+<li>Basic infra, access to services, <strong>affordable housing</strong>, employment</li>
+</ul>
+</li>
+<li>Sometimes, bonds are SBP and GBP so they called them sustainability bonds</li>
+<li>Briti companies</li>
+</ul>
+<h3 id="mtba-auction" >MTBA Auction
+<span>
+    <a href="#mtba-auction">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>Dutch auction, submitted at the yield
+<ul>
+<li>highest yield at which the entire issue can be sold</li>
+</ul>
+</li>
+<li>how to optimally determine the maturity of each of the bonds? Why not just put all bonds at the highest maturity?</li>
+<li>case study: 2027 (10 year)</li>
+</ul>
+<h2 id="durations" >Durations
+<span>
+    <a href="#durations">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><h3 id="duration-mismatch-of-fis" >Duration Mismatch of FIs
+<span>
+    <a href="#duration-mismatch-of-fis">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>Depository institutions fund long-term assets</li>
+<li>As a result, their liabilities are more frequently funded compared to their assets</li>
+</ul>
+<h3 id="ncnb" >NCNB
+<span>
+    <a href="#ncnb">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>Bought long-maturity bonds by speculating on interest rate cuts</li>
+<li>When interest rates rose, NCNB got wiped out</li>
+</ul>
+<h3 id="saving-and-loan-crisis" >Saving and Loan Crisis
+<span>
+    <a href="#saving-and-loan-crisis">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>short maturity deposits, long-term investments</li>
+<li>yield curve inverted and S&amp;L took significant losses</li>
+</ul>
+<h3 id="spread-trades" >Spread Trades
+<span>
+    <a href="#spread-trades">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>The trader is expecting the yield curve to get steeper</li>
+<li>Fed is trying to lower short-term borrowing cost</li>
+<li>Economy looking up</li>
+<li><code>PVBP = n_2yr * PVBP_2yr + n_10yr * PVBP_10yr = 0</code></li>
+</ul>
+<h3 id="price-value-of-a-basis-point" >Price Value of a Basis Point
+<span>
+    <a href="#price-value-of-a-basis-point">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>Tangent equal to change in price over change in yield</li>
+<li>average of PV minus + PV plus</li>
+</ul>
+<h3 id="duration" >Duration
+<span>
+    <a href="#duration">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>TODO</p>
+<h3 id="convexity" >Convexity
+<span>
+    <a href="#convexity">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>TODO</p>
+<h2 id="svb-case" >SVB Case
+<span>
+    <a href="#svb-case">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><p>March 24, 2015, Greg Becker testified to U.S. Senate Committee on Banking, Housing and Urban Affairs.</p>
+<blockquote>
+<p>Becker’s goal was to provide evidence in support of raising the threshold of US$50 billion in assets for the enforcement of enhanced prudential standards on SVB Financial under the Dodd-Frank Act</p>
+</blockquote>
+<p>those standard had become become effective as of June 1, 2014</p>
+<p>&ldquo;many banks complained that these regulations imposed onerous costs on the&rdquo;</p>
+<blockquote>
+<p>SVB Financial had reported total assets of $39.3 billion in its 10-K filing for the end of fiscal year 2014, and average total assets of $33.0 billion for fiscal year 2014.5 These figures placed SVB above the threshold of $10 billion for some enhanced prudential standards, and close to the $50 billion cut-off for the full array of enhanced prudential standards [additional capital and risk management requirements]</p>
+</blockquote>
+<p>DF: company-level stress tests and mandatory risk committees</p>
+<p>Becker testimony (starting quote):</p>
+<blockquote>
+<p>SVB, like our mid-sized bank peers, does not present systemic risks. &hellip; Dodd-Frank Act requirements that were designed for the largest bank holding companies</p>
+</blockquote>
+<p>The question to answer is if traditional banking - taking deposits and lending to growing companies that drive job creation and investors in those companies, has systemic risk. Was Dodd-Frank Act really designed for the biggest banks (BHC)</p>
+<blockquote>
+<p>The thresholds for enforcement were materially increased several years later, partially due to Becker’s testimony</p>
+</blockquote>
+<p>For fiscal year 2021, the parent company reported $211.5 billion in period-end total assets and $166.0 billion in average assets for the fiscal year - 438 per cent growth in total assets - yet it was below the asset threshold for strict scrutiny. Based on Exhibit 5, the balance sheet blew up in 2020 and then again in 2021. From $70B at the end of 2019 to 208 at the start of 2022. Let&rsquo;s create loan-asset ratios, and deposit loan ratios. Compare to a Canadian bank to get a picture of the size of SVB before and after its balance sheet expansion.</p>
+<p>Does anyone care to guess what factor the threshold increase by? The threshold had become $250B.</p>
+<p>Should becker continue to invest in fixed income securities with the rapid growth of deposits? At the end of 2021, treasury bond rates were 0.39 per cent for one-year, 1.26 per cent for five-year, and 1.52 per cent for 10-year bonds. Should SVB chase higher yields provided by longer-term bonds and accept higher interest rate risk? What risk management practices should SVB follow? Deposit base is largely uninsured, what is the risk exposure?</p>
+<h3 id="svb-background" >SVB Background
+<span>
+    <a href="#svb-background">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>Founded in 1983, SVB specialized in serving the tech industry. The business model is very simple. Provide loans to companies on the condition that the VC money of these startups is parked at their bank. The businesses were high growth, high risk with high adaptability.</p>
+<p>When did it go public?</p>
+<p>Should we mention dot com?</p>
+<p>Under TARP, SVB received $235M for series B preferred stock. In 2009, SVB issued a $300M equity offering to redeem the preferred shares. In 2015, it stated that it server 65% of US startups. Syndicated loans (explain this) and foreign currency management.</p>
+<p><em>SVB was the only US financial institution working with virtual currency start-ups&quot;</em></p>
+<p>Balance sheet: $66 billion in loans, $125 billion in securities, and $13 billion in cash as of the end of 2021. $175B in deposits with 97% being over the $250,000 Federal Deposit Insurance Corporation threshold. Tolerance of idiosyncrasy is why it was favoured among startups.</p>
+<p>Sample loan agreement with a client (turn into bullet points)</p>
+<blockquote>
+<p>Maintain all of its and all of its Subsidiaries’ operating accounts, depository accounts, and excess cash with Bank and Bank’s Affiliates; provided, however, Foreign Subsidiaries of Borrower may maintain accounts outside of the United States with financial institutions other than Bank and Bank’s Affiliates. In addition to the foregoing, Borrower, any Subsidiary of Borrower, and any Guarantor shall obtain any business credit card exclusively from Bank</p>
+</blockquote>
+<p>The bank receiving short-term deposits and extending longer-term. Mortgages could have up to 30-year terms but commercial and industrial loans were typically offered with five-year term. <em>maturity transformation</em> (read definition in notes before). Bank profits: difference in spread of interest paid on deposits and interest earned from borrowers.</p>
+<p>Net Interest Margin = Interest Revenue-Interest Expenses / Average Earning Assets</p>
+<p>Risks: maturity transformation, credit risk, interest rate risk, and bank run risk. 2008 washington mutual failed due to mortgage defaults. Deteriorating housing market.</p>
+<p>A charge-off is writing off a loan as a loss and recoveries is what was gained on debt that was delinquent.</p>
+<p>Funds that can be withdrawn on demand are <em>runnable</em>. If the clients lose faith in the solvency of their bank, they will rush to withdraw funds, similar to the Great Depression of 1929, after which the Banking Act of 1933 established the FDIC.</p>
+<p>By 2021, <strong>unlike</strong> many other banks, SVB invested significant amount in held-to-maturity securities. $98.2B on the balance sheet, compared to $65.9B in loans. On the April 22, 2021 earnings call, CFO Daniel J. Beck responded to questions about the HTM portfolio:</p>
+<blockquote>
+<p>We&rsquo;ve seen just incredible liquidity growth continuing. Comfortable holding 3-5 year range maturities. Available for sale category is 2-year duration.</p>
+</blockquote>
+<p>The thought process was that stability of liquidity will persist. Agency securities, Agency mortgage Backs, agency CMOs in 3-5 year range. Compared to 2015, the bank is doing more than just deposits and loans.</p>
+<p>Accounts standards deem that HTM will be shown at the amortized cost, rather than fair value whereas available for sale securities will be recorded at fair value. The classification is based on the buyer&rsquo;s intent. Securities should not be classified as HTM if a change in interest rates and liquidity needs would prompt a sale. Sales only allowed when debt issuer creditworthiness changes, regulatory changes, or major changes.</p>
+<p>Dodd-Frank Act required board to to have a risk committee including an expert in &ldquo;identifying, assessing, and managing risk exposure of large, complex financial  firms&rdquo;</p>
+<p>Roger Dunbar was chair since 2012, director since 2004, and was the chair of the risk-committee from the inception and still serving at the end of 2021. The board met seven times in 2021.</p>
+<p>SVB also had a chief risk officer Laura Izurieta since 2016 with an extensive career at Capital One, Freddie Mac, and Bank of America</p>
+<p>SVB had lobbied hard for Economic Growth, Regulatory Relief, and Consumer Protection Act of 2018. Regulation YY increased company-run stress tests from $10B to $250B and risk committees from $10B to $50B.</p>
+<p>In January 2019,  US Federal Reserve issued a Matters Requiring Attention regarding the risk management practices (reference 67)</p>
+<p>Interest Rate Risk</p>
+<p>Although treasuries are safe from the perspective that its backed by the US government.</p>
+<p>Modified Duration: percentage decline in fixed income security&rsquo;s value for one percentage point increase in the discount rate. % change in price = -MD * delta y. reference 72. The durations are given. Maybe use inflation data or money supply data?</p>
+<p>If B(y) is the price of the bond, then B(y +- delta y) is the bond price at a higher/lower discount rate.</p>
+<p>MD = - (B(y + delta y) - B(y - delta y)) / 2 dela y * 1/B(y)</p>
+<p>Portfolio modified durations are the weighted average of each individual security.s</p>
+<p>Duration of uninsured deposits is 0.</p>
+<p><code>Dollar Value of 01</code>: dollar change of assets for a change in 1 basis point in discount rate.</p>
+<p><code>DV01 = -MD * 0.0001 * original value</code></p>
+<p>After calculating DV01, FOMC (Federal Open  Market Commitee) generally increased federal funds rate in increments of 25 bps</p>
+<p>SVB was aware of the risks as seen in their 2021 10K</p>
+<blockquote>
+<p>To manage interest rate risk on the AFS portfolio, they have interest rate swap contracts to hedge against changes in the fair value of the securities. hedge accounting (see Intermediate Accounting II).</p>
+</blockquote>
+<p>An interest rate swap is a derivative where two parties agree to exchange payments for a set amount of time. In this case, at the end of the year for multiple years. One party, SVB in this case makes a fixed payment and the counterparty will pay  based on the future interest rate of SOFR (secured overnight financing rate).</p>
+<p>No information was provided regarding the maturities of these swap contracts, although the maturities are for two-year, five-year, 10-year, and 30-year.</p>
+<p>Was risk management using swaps appropriately? Increase or decrease the use of swaps?</p>
+<p>Currently using $10.7B in notional interest rate swaps. Do some stress tests basically.</p>
+<p>Try to reuse the interest rate swap from the case when explaining the concept on the slide deck.</p>
+<h3 id="svb-failure" >SVB Failure
+<span>
+    <a href="#svb-failure">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>On Thursday March 9th, 2023, depositors withdrew almost 25% of deposits. On March 10, it was presumed that everything would be withdrawn. Regulators were forced to close the bank in the middle of the day. The second-biggest failure in nominal terms in US history, second to Washington Mutual Bank. Silicon Valley Bank was highly unusual in that about 94 percent of its deposits are large enough to be uninsured.</p>
+<p>FDIC limit of $250,000 per account.</p>
+<p>FDA changed in 2019 which relaxed rules for banks like SVB.</p>
+<p>SVB had systemtic risk. Panic of 2023: Signature Bank became third largest failure on Sunday March 12th.</p>
+<blockquote>
+<p>The “systemic-risk exception” included in a 1991 law allows the FDIC to act immediately without taking time to seek out a least-cost method of resolving a bank failure: in this case, the FDIC announced that even uninsured depositors would be fully covered at both Silicon Valley Bank and Signature</p>
+</blockquote>
+<p>Additionally the Federal Reserve stepped in</p>
+<blockquote>
+<p>In turn, the Federal Reserve invoked its power to take action during “unusual and exigent circumstances” that was included in a 1935 revision of the Federal Reserve Act and created a novel emergency-lending program with generous terms</p>
+</blockquote>
+<p>Makes sense since one of the problems during the great depression was the lack of a central bank and thus the money supply
+dropped tremendously.</p>
+<p>First Republic Bank failed in May, which became at the new second-largest bank failure.</p>
+<p>Lastly, the panic spread to Europe and Credit Suisse, which in April 2023 became the single largest bank failure in the world, ever.</p>
+<p>significant “unrealized” losses on assets</p>
+<p>net interest margin: difference between interest earned and paid for via its assets and liabilities. Assets pay interest, and liabilities incur interest.</p>
+<p>2019: $70 billion of assets ($33B loans - credit lines to SVB customers rather than project loans or residential/commercial mortgages, $28B securities - exclusively government or agency-backed bonds) and $63B deposits. The securities holding of 40% was above national average of 25%, but not an outlier. Reasoning to hold loans: higher yield to store funds that will be lent out. 2. source of liquidity. Cash was $6B</p>
+<p>FDIC: most accounts covered, and only 42% of total deposits are over this limit. The specific choice of $250,000 as the legal threshold is an attempt to balance the benefits (financial stability) and costs (excess risk-taking by banks) of insurance.</p>
+<p>FDIC Insurance backed by standing fund financed by insurance premiums charged to banks, with a credit line from the US Treasury and the full faith and credit of the United States standing as additional lines of defense. Although uninsured deposits don&rsquo;t have explicit protection, in most bank failures FDIC has transferred the deposit base to another bank which allows the depositors to be made whole. The total losses in the last 30 years has been less than $300M. Implicit safety. Concentration in the largest banks. Out of bank with more than $50B in assets, SVB stood out for having the highest percentage of uninsured deposits.</p>
+<ul>
+<li>Since customer deposits can be withdrawn on demand, they have a maturity of zero, whereas the assets need to earn their net interest margin and thus have higher maturities.</li>
+<li>The difference between the Assets and Liabilities is considered Equities, but from a bank&rsquo;s perspective, this is Cushion Capital which is used to protect depositors and debtholders from variations int eh value of the assets. It was a mere $5B in 2019. This cushion is how bank checks and deposits have a no-questions-asked property.</li>
+</ul>
+<p>A depositor is not going to do a deep analysis on whether their bank is safe given a multi-component deposits. It&rsquo;s easier to withdraw their deposits.</p>
+<p>SVB was $3B already insolvent (negative $3B in equity) by December 2022 when assets were marked to market.</p>
+<p>SVB relied on stickiness to hedge interest-rate risk. stickiness allowed the dotted line to be so low.</p>
+<p>According to Dreschler, Savov, and Schnabl (2021), deposit spread is a remarkable hedge against interest-rate risk. From a valuation perspective, the net present value of the deposit spread can be called the &ldquo;franchise value of deposits&rdquo; which isn&rsquo;t included in the balance sheets. This value in theory goes up when interest rates rise. Therefore, although from a balance sheet perspective, many banks were close to insolvency, the stickiness of deposits makes banks. Therefore lack of stickiness results in insolvency.</p>
+<p>Fear of Collapse Begets Collapse.</p>
+<p>From public filings, everyone could tell with some math that the bank was insolvent.</p>
+<blockquote>
+<p>The crucial shock arrived on March 8, 2023 [10-K] report, when Silicon Valley Bank announced that it had sold $24 billion of book value securities earlier that day for a loss of $1.8 billion, along with a plan to raise $2.25 billion of new equity.</p>
+</blockquote>
+<p><a href="https://d18rn0p25nwr6d.cloudfront.net/CIK-0000719739/eede72d3-1cc6-45ee-89cf-3dc4f59469ad.pdf">March 8th 2023 8K notable event</a></p>
+<p><a href="https://d18rn0p25nwr6d.cloudfront.net/CIK-0000719739/f36fc4d7-9459-41d7-9e3d-2c468971b386.pdf">February 24th 2023 10K annual</a></p>
+<blockquote>
+<p>On February 27, 2023, Becker sold 12,451 shares of company stock, worth a total of $3.6 million.</p>
+</blockquote>
+<p>So in, 12 days they sold their entire AFS portfolio meaning that management were only thinking of the decision after February 24th. Therefore, deposit withdrawals must&rsquo;ve been occurring within days of the 10K being filed.</p>
+<p>All it takes to lose the no-questions-asked property is the salience of questions of why the bank had to sell assets for a loss. The next day, many depositors withdrew because
+to depositors its cheaper to transfer to another bank than to transfer after the bank has already collapsed even if their funds are implicitly secured. Depositors don&rsquo;t read 8Ks, they just see big loss and withdraw.</p>
+<blockquote>
+<p>While we will realize a one-time, post-tax earnings loss of approximately $1.8 billion in connection with the sale, we expect the reinvestment of the proceeds to be immediately accretive to net interest income (NII) and net interest margin (NIM), resulting in a short payback period of approximately three years. As a result of these actions, we expect an approximately $450 million post-tax improvement in annualized NII.</p>
+</blockquote>
+<p>&hellip;</p>
+<blockquote>
+<p>Even before today, we had ample liquidity and flexibility to manage our liquidity position, with one of the lowest loan-to-deposit ratios of any bank of our size, income from progressive securities paydowns, levers to manage our off-balance sheet client funds, and substantial borrowing capacity. The improved cash liquidity, profitability and financial flexibility resulting from the actions we announced today will bolster our financial position and our ability to support clients through sustained market pressures</p>
+</blockquote>
+<ul>
+<li>NII: net interest income (magnitude)</li>
+<li>NIM: net income margin (spread)</li>
+</ul>
+<blockquote>
+<p>The Federal Deposit Insurance Corporation took the bank into receivership in the morning—the first intraday receivership in its history</p>
+</blockquote>
+<p>Violation of no-questions-asked property at many other banks with a high percentage of uninsured deposits combined with significant unrealized losses on their assets.</p>
+<p>Banks hit on Friday, March 10: Signature Bank ($110 billion in asset, $10B outflows), First Republic Bank, with ($213 billion, $25B outflows).</p>
+<p>Signature Bank had no pre-positioned collateral at the Federal Reserve.</p>
+<p>FDIC has a least cost duty unless they invoke systemic risk exception enacted in 1991. Positive vote from the boards of both the FDIC and Federal Reserve.
+SVB was not marked as systemic previously. No losses will be borne by the taxpayer.</p>
+<ul>
+<li>idiosyncratic: having strange or unusual habits, ways of behaving, or features</li>
+</ul>
+<p>Bank Term Funding Program introduced: instead of borrowing market value minus small cushion, allows borrowing up to par value.</p>
+<p>Capital Regulations:</p>
+<blockquote>
+<p>At 7 percent, the ratio at Silicon Valley Bank at the end of 2019 was below the 9.66 percent average for insured banks in the United States, but still above the acceptable minimum of 4 percent</p>
+</blockquote>
+<p>Liquidity Regulations:</p>
+<blockquote>
+<p>reserve requirements; minimum cash-to-deposits ratio; can&rsquo;t survive full run.</p>
+</blockquote>
+<p>Federal Reserve Conclusion</p>
+<blockquote>
+<p>“we need to evaluate how we supervise and regulate a bank’s management of interest rate risk. While interest rate risk is a core risk of banking that is not new to banks or supervisors, SVB did not appropriately manage its interest rate risk, and supervisors did not force the bank to fix these issues quickly enough”</p>
+</blockquote>
+<p>The US doesn&rsquo;t have rules to do mark-to-market interest rate stress tests, but the EU does, but the lower interest-rate risk there is shifted to credit-risk due to issuance of higher variable interest rate loans.</p>
+<blockquote>
+<p>An information event that calls into question a bank’s solvency can quickly become self-reinforcing</p>
+</blockquote>
+<p>Explanation of deposit outflows:</p>
+<h2 id="bank-crises" >Bank Crises
+<span>
+    <a href="#bank-crises">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><h3 id="risk-capital" >RIsk Capital
+<span>
+    <a href="#risk-capital">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>Drops in value</li>
+<li>Value at risk requirement</li>
+</ul>
+<h3 id="risk-capital-spiral" >Risk Capital Spiral
+<span>
+    <a href="#risk-capital-spiral">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>loan and asset values dorp</li>
+<li>collateral value drops</li>
+<li>equity capital drops</li>
+<li>risk aversion rises</li>
+<li>assets need to be sold to recapitalized and deleverage</li>
+<li>liquidity drop &amp; volatility goes up</li>
+<li>repeat</li>
+</ul>
+<h3 id="margin-haircut-spiral" >Margin Haircut Spiral
+<span>
+    <a href="#margin-haircut-spiral">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>Haircuts go up</li>
+<li>Borrowing goes down</li>
+<li>Counterparty risk: AGI default can screw up CDS spreads</li>
+</ul>
+<h3 id="shadow-banks" >Shadow Banks
+<span>
+    <a href="#shadow-banks">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>short-term liabilities, short-term borrowing, longer-term assets like MBS as collateral</li>
+<li>fire-sales recapitalize</li>
+</ul>
+<h3 id="dealer-repo-activity" >Dealer Repo Activity
+<span>
+    <a href="#dealer-repo-activity">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>Fell in October 2008</li>
+</ul>
+<h3 id="credit-liquidity-spread" >Credit Liquidity Spread
+<span>
+    <a href="#credit-liquidity-spread">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>Liquidity risk different from credit risk
+<ul>
+<li>TED spread</li>
+</ul>
+</li>
+<li>Credit risk is the Baa spread (difference between Moody&rsquo;s Baa and 10 year rate)</li>
+</ul>
+<h3 id="flight-to-liquidity" >Flight to Liquidity
+<span>
+    <a href="#flight-to-liquidity">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>Long to short term end</li>
+<li>3-month OIS dropped</li>
+</ul>
+<h3 id="commercial-paper" >Commercial Paper
+<span>
+    <a href="#commercial-paper">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>short-term funding</li>
+</ul>
+<h3 id="swap-spread" >Swap Spread
+<span>
+    <a href="#swap-spread">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>difference between 10 year swap rate and 10 year Treasury rate</li>
+<li>default proxy for financial sector</li>
+<li>turned negative</li>
+</ul>
+<h3 id="gnma-mbs" >GNMA MBS
+<span>
+    <a href="#gnma-mbs">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>yield spread went up reflecting higher risk</li>
+</ul>
+<h2 id="ratings" >Ratings
+<span>
+    <a href="#ratings">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><p>Explain?</p>
+<h2 id="mortgage-and-asset-backed-markets" >Mortgage and Asset Backed Markets
+<span>
+    <a href="#mortgage-and-asset-backed-markets">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><h3 id="overview-of-structured-financial-products" >Overview of Structured Financial Products
+<span>
+    <a href="#overview-of-structured-financial-products">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>Asset backed
+<ul>
+<li>Backed by a pool of loans and receivables</li>
+</ul>
+</li>
+<li>Mortgage backed
+<ul>
+<li>Backed by a pool of mortgage loans</li>
+<li>Commercial
+<ul>
+<li>In trouble because vacancy from work from home</li>
+</ul>
+</li>
+<li>Residential
+<ul>
+<li>Agency MBS
+<ul>
+<li>Federally Related Institutions
+<ul>
+<li>Tennessee Valley Authority</li>
+</ul>
+</li>
+<li>Government sponsored Enterprises (OSEs)</li>
+</ul>
+</li>
+<li>Non-agency MBS</li>
+<li>CMOs</li>
+<li>Stripped MBS</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="agency-debt" >Agency Debt
+<span>
+    <a href="#agency-debt">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>Assets
+<ul>
+<li>Agency loans</li>
+<li>Confirming pools
+<ul>
+<li>?</li>
+</ul>
+</li>
+<li>CLO tranches
+<ul>
+<li>?</li>
+</ul>
+</li>
+<li>Synthetic CDO tranches
+<ul>
+<li>?</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Liabilities</li>
+</ul>
+<h3 id="amortization-table-improvements" >Amortization Table Improvements
+<span>
+    <a href="#amortization-table-improvements">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>Passthrough rate</li>
+<li>Prepayment rate risk</li>
+<li>See amortization table file for the extra columns</li>
+<li>My thoughts: just add a penalty in the contract</li>
+</ul>
+<h3 id="prepayment-risk-hedge-funds" >Prepayment Risk Hedge Funds
+<span>
+    <a href="#prepayment-risk-hedge-funds">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>CMOS</li>
+<li>CLOS
+<ul>
+<li>Syndicated Loan Market</li>
+</ul>
+</li>
+<li>CDOs</li>
+</ul>
+<p>Public Securities Association (PSA) prepayment benchmark.</p>
+<ul>
+<li>If t&lt;30, then CPR=PSA * 6% * t/30</li>
+<li>If t≥30, then CPR=PSA * 6%</li>
+</ul>
+<p>SMM: Single monthly mortality rate</p>
+<p>1 - (1 - CPR)^(1/12)</p>
+<h3 id="stripped-mbs" >Stripped MBS
+<span>
+    <a href="#stripped-mbs">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>Principal only tranche</li>
+<li>Interest only tranche</li>
+</ul>
+<h2 id="course-feedback" >Course Feedback
+<span>
+    <a href="#course-feedback">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><p>This course needs to be restructured so that it goes through the perspectives of each of the participants in the fixed income world. That would be</p>
+<ul>
+<li>Central bank (both BOC and US Federal Reserve)</li>
+<li>US Treasury (which is like the BoC with regard to issuing bonds)</li>
+<li>Investment bankers</li>
+<li>Dealers</li>
+<li>Traders</li>
+<li>Underwriters</li>
+<li>Private debt</li>
+<li>Banks</li>
+<li>Public companies</li>
+<li>Private companies</li>
+</ul>
+
+        </div>
+        <div class="post-info">
+    
+        <div class="post-date dt-published">
+            <a class="u-url" href="/posts/university/bu-449-fixed-income-analysis/"><time datetime="2024-05-09">May 9, 2024</time></a>
+            
+        </div>
+    
+    <a class="post-hidden-url u-url" href="https://blog.elijahlopez.ca/posts/university/bu-449-fixed-income-analysis/">https://blog.elijahlopez.ca/posts/university/bu-449-fixed-income-analysis/</a>
+    <a href="https://blog.elijahlopez.ca/" class="p-name p-author post-hidden-author h-card" rel="me">Elijah Lopez</a>
+    <div class="post-taxonomies">
+        
+        
+            <ul class="post-tags">
+                
+                    
+                    <li><a href="https://blog.elijahlopez.ca/tags/university/">#University</a></li>
+                
+                    
+                    <li><a href="https://blog.elijahlopez.ca/tags/finance/">#Finance</a></li>
+                
+            </ul>
+        
+        
+    </div>
+</div>
+
+    </article>
+
+    
+
+    
+        
+    
+    
+    <div class="pagination post-pagination">
+        <div class="left pagination-item ">
+            
+                <a title="Split the Tank Technical Stack" href="/posts/split-the-tank-technical-stack/">Split the Tank Technical Stack</a>
+            
+        </div>
+        <div class="right pagination-item ">
+            
+                <a title="BU 493 Behavioural Finance" href="/posts/university/bu-493-behavioural-finance/">BU 493 Behavioural Finance</a>
+            
+        </div>
+    </div>
+
+
+
+
+    
+
+    
+        <br>
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+<script src="https://giscus.app/client.js"
+        data-repo="elibroftw/blog.elijahlopez.ca"
+        data-repo-id="R_kgDOGiL7hg"
+        data-category="General"
+        data-category-id="DIC_kwDOGiL7hs4Cer6e"
+        data-mapping="og:title"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="preferred_color_scheme"
+        data-lang="en"
+        crossorigin="anonymous"
+        
+        async>
+</script>
+
+    
+
+        </main>
+        
+            <footer class="common-footer">
+    
+    
+
+    <div class="common-footer-bottom">
+        
+        <div class="copyright">
+            <p>© Elijah Lopez, 2024<br>
+            Powered by <a target="_blank" rel="noopener noreferrer" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" rel="noopener noreferrer" href="https://github.com/elibroftw/hugo-theme-anubis">Anubis</a>.<br>
+            
+            </p>
+        </div>
+    </div>
+
+    <p class="h-card vcard">
+
+    <a href=https://blog.elijahlopez.ca/ class="p-name u-url url fn" rel="me">Elijah Lopez</a> 
+
+     
+        /
+        <a class="p-email u-email email" rel="me" href="mailto:elijahllopezz@gmail.com">elijahllopezz@gmail.com</a>
+    
+
+     
+        <img class="u-photo" src="https://pbs.twimg.com/profile_images/1738729591064166400/vqarzcF7_400x400.jpg" />
+    
+</p> 
+</footer>
+
+        
+    </div>
+</body>
+</html>

@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="">
+<head>
+    
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name = "apple-mobile-web-app-capable" content = "yes">
+    <meta name="theme-color" content="#121212">
+
+    <meta charset="utf-8">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <title>Monero vs &ldquo;Privacy Coins&rdquo; - ELL Blog</title>
+    <meta name="description" content="
+    Table of Contents
+    
+  
+    Preface
+    ZCash
+      
+        zk-SNARKs more like zk-NARKs
+        A Privacy Coin without Privacy Users
+        Wallet Experience
+        Horrendous Developer / Testing Experience
+        Leadership? Of a cryptocurrency?
+        A Counter-Argument to Zooko
+      
+    
+    Oxen
+    Secret Network
+    MimbleWimble (Grin, Litecoin)
+    Beam
+    Firo
+    Dero
+    Pirate Chain
+    Particl (PART)
+    Cloud Coin
+    Conclusion
+  
+
+
+
+Preface
+
+    
+        
+    
+
+Unlike my last article about why Monero is the best crypto as a currency because of its privacy vs. layer 2 solutions, this article is a deep dive on why I continue to choose Monero and not its privacy-related competitors.">
+    
+    <link rel="icon" type="image/x-icon" href="https://blog.elijahlopez.ca/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" href="https://blog.elijahlopez.ca/favicon.png">
+
+    <link rel="stylesheet" href="https://blog.elijahlopez.ca/css/style.min.aaf2c7fda9310c97167f1a94f41891944861efa73f96c5467dbea9ecc5ddb751.css" integrity="sha256-qvLH/akxDJcWfxqU9BiRlEhh76c/lsVGfb6p7MXdt1E=">
+    <script src="https://blog.elijahlopez.ca/js/script.min.74bf1a3fcf1af396efa4acf3e660e876b61a2153ab9cbe1893ac24ea6d4f94ee.js" type="text/javascript" charset="utf-8" integrity="sha256-dL8aP88a85bvpKzz5mDodrYaIVOrnL4Yk6wk6m1PlO4="></script>
+    <meta property="og:url" content="https://blog.elijahlopez.ca/posts/monero-vs-privacy-coins/">
+  <meta property="og:site_name" content="ELL Blog">
+  <meta property="og:title" content="Monero vs &#34;Privacy Coins&#34;">
+  <meta property="og:description" content="Table of Contents Preface ZCash zk-SNARKs more like zk-NARKs A Privacy Coin without Privacy Users Wallet Experience Horrendous Developer / Testing Experience Leadership? Of a cryptocurrency? A Counter-Argument to Zooko Oxen Secret Network MimbleWimble (Grin, Litecoin) Beam Firo Dero Pirate Chain Particl (PART) Cloud Coin Conclusion Preface Unlike my last article about why Monero is the best crypto as a currency because of its privacy vs. layer 2 solutions, this article is a deep dive on why I continue to choose Monero and not its privacy-related competitors.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2022-02-26T12:48:07-05:00">
+    <meta property="article:modified_time" content="2022-02-26T12:48:07-05:00">
+    <meta property="article:tag" content="Monero">
+    <meta property="article:tag" content="Cryptocurrency">
+    <meta property="og:image" content="https://blog.elijahlopez.ca/images">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://blog.elijahlopez.ca/images">
+  <meta name="twitter:title" content="Monero vs &#34;Privacy Coins&#34;">
+  <meta name="twitter:description" content="Table of Contents Preface ZCash zk-SNARKs more like zk-NARKs A Privacy Coin without Privacy Users Wallet Experience Horrendous Developer / Testing Experience Leadership? Of a cryptocurrency? A Counter-Argument to Zooko Oxen Secret Network MimbleWimble (Grin, Litecoin) Beam Firo Dero Pirate Chain Particl (PART) Cloud Coin Conclusion Preface Unlike my last article about why Monero is the best crypto as a currency because of its privacy vs. layer 2 solutions, this article is a deep dive on why I continue to choose Monero and not its privacy-related competitors.">
+
+
+
+
+
+
+    
+
+
+
+
+
+</head>
+
+<body>
+    <a class="skip-main" href="#main">Skip to main content</a>
+    <div class="container">
+        <header class="common-header">
+            
+                
+
+    
+
+
+<div class="header-top">
+    <h1 class="site-title">
+        <a href="/">ELL Blog</a>
+    </h1>
+
+    <div class="header-top-left">
+    <ul class="social-icons">
+
+        <li>
+            <a href="/index.xml" title="Rss" rel="me">
+                <span class="inline-svg" >
+                    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" data-icon="rss" data-prefix="fas" focusable="false" role="img" viewBox="0 0 496 512"><path fill="currentColor" fill="currentColor" d="M128.081 415.959c0 35.369-28.672 64.041-64.041 64.041S0 451.328 0 415.959s28.672-64.041 64.041-64.041 64.04 28.673 64.04 64.041zm175.66 47.25c-8.354-154.6-132.185-278.587-286.95-286.95C7.656 175.765 0 183.105 0 192.253v48.069c0 8.415 6.49 15.472 14.887 16.018 111.832 7.284 201.473 96.702 208.772 208.772.547 8.397 7.604 14.887 16.018 14.887h48.069c9.149.001 16.489-7.655 15.995-16.79zm144.249.288C439.596 229.677 251.465 40.445 16.503 32.01 7.473 31.686 0 38.981 0 48.016v48.068c0 8.625 6.835 15.645 15.453 15.999 191.179 7.839 344.627 161.316 352.465 352.465.353 8.618 7.373 15.453 15.999 15.453h48.068c9.034-.001 16.329-7.474 16.005-16.504z"/></svg>
+                </span>
+
+            </a>
+        </li>
+    
+
+        <li>
+            <a href="https://elijahlopez.ca" title="Website" rel="me">
+                <span class="inline-svg" >
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M352 256C352 278.2 350.8 299.6 348.7 320H163.3C161.2 299.6 159.1 278.2 159.1 256C159.1 233.8 161.2 212.4 163.3 192H348.7C350.8 212.4 352 233.8 352 256zM503.9 192C509.2 212.5 512 233.9 512 256C512 278.1 509.2 299.5 503.9 320H380.8C382.9 299.4 384 277.1 384 256C384 234 382.9 212.6 380.8 192H503.9zM493.4 160H376.7C366.7 96.14 346.9 42.62 321.4 8.442C399.8 29.09 463.4 85.94 493.4 160zM344.3 160H167.7C173.8 123.6 183.2 91.38 194.7 65.35C205.2 41.74 216.9 24.61 228.2 13.81C239.4 3.178 248.7 0 256 0C263.3 0 272.6 3.178 283.8 13.81C295.1 24.61 306.8 41.74 317.3 65.35C328.8 91.38 338.2 123.6 344.3 160H344.3zM18.61 160C48.59 85.94 112.2 29.09 190.6 8.442C165.1 42.62 145.3 96.14 135.3 160H18.61zM131.2 192C129.1 212.6 127.1 234 127.1 256C127.1 277.1 129.1 299.4 131.2 320H8.065C2.8 299.5 0 278.1 0 256C0 233.9 2.8 212.5 8.065 192H131.2zM194.7 446.6C183.2 420.6 173.8 388.4 167.7 352H344.3C338.2 388.4 328.8 420.6 317.3 446.6C306.8 470.3 295.1 487.4 283.8 498.2C272.6 508.8 263.3 512 255.1 512C248.7 512 239.4 508.8 228.2 498.2C216.9 487.4 205.2 470.3 194.7 446.6H194.7zM190.6 503.6C112.2 482.9 48.59 426.1 18.61 352H135.3C145.3 415.9 165.1 469.4 190.6 503.6V503.6zM321.4 503.6C346.9 469.4 366.7 415.9 376.7 352H493.4C463.4 426.1 399.8 482.9 321.4 503.6V503.6z"/></svg>
+                </span>
+
+            </a>
+        </li>
+    
+
+        
+        
+        <li>
+            <a href="https://github.com/elibroftw" title="Github" rel="me">
+            <span class="inline-svg" >
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+                </span>
+
+            </a>
+        </li>
+    
+
+        
+        
+        <li>
+            <a href="https://twitter.com/elibroftw" title="Twitter" rel="me">
+            <span class="inline-svg" >
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+                </span>
+
+            </a>
+        </li>
+    
+
+        
+        
+        <li>
+            <a href="https://www.youtube.com/c/elibroftw" title="Youtube" rel="me">
+            <span class="inline-svg" >
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg>
+                </span>
+
+            </a>
+        </li>
+    
+
+        
+        
+        <li>
+            <a href="mailto:elijahllopezz@gmail.com" title="Email" rel="me">
+            <span class="inline-svg" >
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M464 64H48C21.49 64 0 85.49 0 112v288c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zm0 48v40.805c-22.422 18.259-58.168 46.651-134.587 106.49-16.841 13.247-50.201 45.072-73.413 44.701-23.208.375-56.579-31.459-73.413-44.701C106.18 199.465 70.425 171.067 48 152.805V112h416zM48 400V214.398c22.914 18.251 55.409 43.862 104.938 82.646 21.857 17.205 60.134 55.186 103.062 54.955 42.717.231 80.509-37.199 103.053-54.947 49.528-38.783 82.032-64.401 104.947-82.653V400H48z"/></svg>
+                </span>
+
+            </a>
+        </li>
+    
+
+        
+        
+        <li>
+            <a href="https://www.instagram.com/elijahllopezz" title="Instagram" rel="me">
+            <span class="inline-svg" >
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+                </span>
+
+            </a>
+        </li>
+    
+
+
+
+</ul>
+</div>
+    
+
+    
+
+
+
+
+    <div class="header-top-right theme-switcher">
+        <span class="inline-svg" >
+                    <svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 290 290">
+<path fill="currentColor" d="M142.959,0C64.131,0,0,64.132,0,142.96c0,78.828,64.131,142.959,142.959,142.959c78.828,0,142.96-64.131,142.96-142.959  C285.919,64.132,221.787,0,142.959,0z M142.959,260.919V142.96V25c65.043,0,117.96,52.917,117.96,117.96  C260.919,208.003,208.002,260.919,142.959,260.919z"/>
+</svg>
+                </span>
+
+    </div>
+
+
+<script>
+const STORAGE_KEY = 'user-color-scheme'
+const defaultTheme = "auto"
+
+let currentTheme
+let switchButton
+let autoDefinedScheme = window.matchMedia('(prefers-color-scheme: dark)')
+
+const autoChangeScheme = e => {
+    currentTheme = e.matches ? 'dark' : 'light'
+    document.documentElement.setAttribute('data-theme', currentTheme)
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    switchButton = document.querySelector('.theme-switcher')
+    currentTheme = detectCurrentScheme()
+    setThemeColorMeta(currentTheme)
+    if (currentTheme == 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark')
+    }
+
+    if (currentTheme == 'auto') {
+        autoChangeScheme(autoDefinedScheme);
+        autoDefinedScheme.addListener(autoChangeScheme);
+    }
+
+    if (switchButton) {
+        switchButton.addEventListener('click', switchTheme, false)
+    }
+})
+
+function detectCurrentScheme() {
+    if (localStorage !== null && localStorage.getItem(STORAGE_KEY)) {
+        return localStorage.getItem(STORAGE_KEY)
+    }
+    if (defaultTheme) {
+        return defaultTheme
+    }
+    if (!window.matchMedia) {
+        return defaultTheme
+    }
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        return 'dark'
+    }
+    return defaultTheme
+}
+
+function switchTheme(e) {
+    if (currentTheme == 'dark') {
+        if (localStorage !== null)
+            localStorage.setItem(STORAGE_KEY, 'light')
+        document.documentElement.setAttribute('data-theme', 'light')
+        currentTheme = 'light'
+    } else {
+        if (localStorage !== null)
+            localStorage.setItem(STORAGE_KEY, 'dark')
+        document.documentElement.setAttribute('data-theme', 'dark')
+        currentTheme = 'dark'
+    }
+    setThemeColorMeta(currentTheme)
+}
+
+function setThemeColorMeta(currentTheme) {
+    if (currentTheme == 'dark') {
+        document.querySelector('meta[name="theme-color"]').setAttribute('content', '#121212')
+    } else {
+        document.querySelector('meta[name="theme-color"]').setAttribute('content', '#fff')
+    }
+}
+</script>
+
+</div>
+
+
+    <nav>
+        
+        
+        <a class="" href="https://blog.elijahlopez.ca/" title="Home">Home</a>
+        
+        <a class="" href="https://blog.elijahlopez.ca/posts/" title="Archive">Archive</a>
+        
+        <a class="" href="https://blog.elijahlopez.ca/tags/" title="Tags">Tags</a>
+        
+    </nav>
+
+
+
+
+
+
+            
+        </header>
+        <main id="main" tabindex="-1">
+            
+    
+
+    <article class="post h-entry">
+        <div class="post-header">
+            <header>
+                <h1 class="p-name post-title">Monero vs &ldquo;Privacy Coins&rdquo;</h1>
+
+                
+            </header>
+        </div>
+        
+
+
+
+
+        <div class="content e-content">
+            <div>
+    <h2>Table of Contents</h2>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#preface">Preface</a></li>
+    <li><a href="#zcash">ZCash</a>
+      <ul>
+        <li><a href="#zk-snarks-more-like-zk-narks">zk-SNARKs more like zk-NARKs</a></li>
+        <li><a href="#a-privacy-coin-without-privacy-users">A Privacy Coin without Privacy Users</a></li>
+        <li><a href="#wallet-experience">Wallet Experience</a></li>
+        <li><a href="#horrendous-developer--testing-experience">Horrendous Developer / Testing Experience</a></li>
+        <li><a href="#leadership-of-a-cryptocurrency">Leadership? Of a cryptocurrency?</a></li>
+        <li><a href="#a-counter-argument-to-zooko">A Counter-Argument to Zooko</a></li>
+      </ul>
+    </li>
+    <li><a href="#oxen">Oxen</a></li>
+    <li><a href="#secret-network">Secret Network</a></li>
+    <li><a href="#mimblewimble-grin-litecoin">MimbleWimble (Grin, Litecoin)</a></li>
+    <li><a href="#beam">Beam</a></li>
+    <li><a href="#firo">Firo</a></li>
+    <li><a href="#dero">Dero</a></li>
+    <li><a href="#pirate-chain">Pirate Chain</a></li>
+    <li><a href="#particl-part">Particl (PART)</a></li>
+    <li><a href="#cloud-coin">Cloud Coin</a></li>
+    <li><a href="#conclusion">Conclusion</a></li>
+  </ul>
+</nav>
+</div>
+
+<h2 id="preface" >Preface
+<span>
+    <a href="#preface">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><p>Unlike my last article about why Monero is the best crypto as a currency because of its privacy vs. layer 2 solutions, this article is a deep dive on why I continue to choose Monero and not its privacy-related competitors.</p>
+<p>There is a cultural noticeable difference in culture and attitude amongst Monero and other coins. In r/monero, there is always a discussion going on.
+In these other privacy coin subreddits however, there is so many posts about price and going to the moon.</p>
+<p>I value quality, so if I make any argumentative mistakes in the article, I will correct them if I am notified.
+I have multiple reasons, so if one or two are technically incorrect, my argument will hold.</p>
+<ol>
+<li>Monero is the FIRST privacy coin that was NOT PRE-MINED.</li>
+<li>Monero is the <strong>most used</strong> <em>privacy</em> crypto</li>
+<li>Monero is actively improved/developed</li>
+<li>Monero Changes for the Better
+<ul>
+<li>It&rsquo;s a fork of ByteCoin without the <a href="https://bitcointalk.org/index.php?topic=740112">premine and shadyness</a>
+<ul>
+<li>Monero innovated beyond ByteCoin with: RandomX ASIC-resistance, Ring-CT, Bulletproofs(+)</li>
+</ul>
+</li>
+<li>The RandomX mining algorithm does not require modifications via hard forks to maintain its ASIC-resistance</li>
+<li>Monero is superior today than Monero 5 years ago, and Monero in 5 years will be superior to Monero today</li>
+<li>Atomic swaps (infrastructure)</li>
+</ul>
+</li>
+<li>Monero&rsquo;s researchers actively create / think of attacks on Monero&rsquo;s privacy so that the protocol can be improved to defend against these attacks.</li>
+<li>Censorship free, there is even a post called Skepticism Sunday on r/monero! Even my unpopular post critiquing UX was approved.</li>
+</ol>
+<p>I&rsquo;ll start with comparing ZCash since it is propped up as being the runner up to Monero. By comparing Monero to ZCash,
+all other coins should make a case that they are better than ZCash before trying to spread Monero FUD. That is why I put in more effort in the ZCash section
+than the other coins.</p>
+<p>It&rsquo;s only fair that the lesser known and used privacy cryptocurrencies figure out who the runner up to Monero is.
+Otherwise, it&rsquo;ll be impossible for any one person to perform an unbiased comparison of them all to Monero in the future when thousands of people think
+claim to be the next Satoshi. This is already the case with arguably subjective things like religion/faith/belief. There are thousands of religions, it is simply unfeasible to conduct a thorough unbiased review of all religions including the less known ones.</p>
+<h2 id="zcash" >ZCash
+<span>
+    <a href="#zcash">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><p>We won&rsquo;t use trusted setup as an argument for this section, even though as of 2022-2-26, the Halo Arc update that was supposed to remove trusted setup is 28+ days overdue.
+What is unavailable is the technical aspects of how the trusted setup will be removed or what replaces it to ensure privacy.</p>
+<h3 id="zk-snarks-more-like-zk-narks" >zk-SNARKs more like zk-NARKs
+<span>
+    <a href="#zk-snarks-more-like-zk-narks">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>Zk-snarks is an unproven technology simply asserted as secure. The assumptions are relatively new compared to the decades old and reliable elliptic curve cryptography used by Monero.
+It&rsquo;d be like saying RSA is secure because we don&rsquo;t know if products can be back calculated with ease.
+We <strong>do</strong> know that products can&rsquo;t be back calculated with ease, and we also know that Quantum computers are a threat. This is called a strong guarantee.</p>
+<p>Since ZCash is built on <a href="https://twitter.com/zooko/status/1016429267175989248">unproven technology</a> (accessed 2022-12-4), it could have a fatal flaw and is thus one giant experiment. Therefore, if you want digital cash, you can either be a real life guinea pig by using ZCash or use Monero which is based on battle-test technology. One who uses cryptocurrencies is already making a speculation that decentralized money is the future. By trusting ZCash, one is making a second speculation which is that no flaws will be found in ZK-SNARK for two more decades.</p>
+<h3 id="a-privacy-coin-without-privacy-users" >A Privacy Coin without Privacy Users
+<span>
+    <a href="#a-privacy-coin-without-privacy-users">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>This applies to every coin below since they all have less users than Monero.</p>
+<p>The best privacy would be the best at being untraceable and at protecting users&rsquo; holdings and their multiple identities.
+In 2020, a <a href="https://eprint.iacr.org/2020/593.pdf">team of researchers (PDF)</a> concluded that 99.9% of ZCash transactions are traceable.
+In the abstract, researchers say &ldquo;strict security and anonymity requirements, … makes the coin effectively untraceable, as shown by <em>Monero</em>.&rdquo;</p>
+<p>What does this mean? Optional privacy is junk. If you decide to use shielded transactions on ZCash, you&rsquo;ve made a target of yourself since your transactions stick out like a sore thumb! You don&rsquo;t have privacy if you are the only user.</p>
+<p>Most ZCash users don&rsquo;t use shielded addresses and even the miners don&rsquo;t follow the advice of Electric Coin Company to use shielded addresses.
+Mining pools get to decide whether miners get to use shielded addresses. Another case of optional privacy simply not working!</p>
+<p><a href="https://explorer.zcha.in/transactions/537a4edc34ea030216ef0c04e0a977e5efeda53aa497c41560c4ac658a5f5192">Transparent to shielded transactions</a> don&rsquo;t even hide the amount sent to a shielded address.</p>
+<p>The consequence of this is that users have to consciously remember to use different transparent addresses for people/entities who refuse
+to send ZEC to shielded addresses. What a nuisance! It&rsquo;d be like being in relationships with many women and keeping track of a schedule so that they don&rsquo;t know of each other.</p>
+<p>These are the technical arguments against ZCash. Onwards, I have the more UX and developer based arguments compared to Monero. I also touch on the fact
+that there is a 10% dev tax on the total ZCash supply. This is no different than paying government officials just to use cash (the government has a bigger job than just managing its currency).</p>
+<h3 id="wallet-experience" >Wallet Experience
+<span>
+    <a href="#wallet-experience">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>From the picture below, how would the user know if they are sending from a shielded address? They don&rsquo;t know! This hurts the privayc of ZEC users. It hinders privacy without even improving UX.</p>
+<p><img src="/images/crypto/zcash-wallet-1.webp" alt="ZCash Wallet 1"></p>
+<p>Each address is it&rsquo;s own account, and so no sub-addresses are possible.</p>
+<p><img src="/images/crypto/zcash-wallet-2.webp" alt="ZCash Wallet 2"></p>
+<p>Compare this to Monero. Each account has infinitely generated subaddresses and the balance is shown on an account basis.</p>
+<p><img src="/images/crypto/monero-wallet-1.webp" alt="Monero Wallet 1"></p>
+<p><img src="/images/crypto/monero-wallet-2.webp" alt="Monero Wallet 1"></p>
+<p>The Zecwallet Lite also does not store the wallet encrypted.
+I was never asked to create a pass code to decrypt the wallet so anyone who uses ZCash on a computer can have their ZCash stolen if their laptop/computer/storage is accessed by a third party.
+I don&rsquo;t know about you, but privacy goes hand in hand with (operating and informational) security. There even is a wallet encryption option, but just like privacy, security is off by default!
+To think that these people sponsor Edward Snowden who has the spine to go against the USA but has no spine to scrutinize this project.</p>
+<p>When sending Monero, users do not have to think about if they are sending from the &ldquo;right&rdquo; account since each account&rsquo;s primary address shows up as a stealth address in the Ring-CT in the block of the blockchain.
+Recipients can&rsquo;t make judgments about your level of care to privacy if you decide to donate with a primary account or other account.
+Unlike ZCash, where the recipient will know whether you made a shielded transaction or not, and then make you a target (assuming an all Monero ecosystem or an all ZCash ecosystem).</p>
+<p>ZCash users say ZCash is better because it uses zk-snarks to avoid large transactions sizes. We&rsquo;ll see what happens when we combine this with optional privacy.</p>
+<h3 id="horrendous-developer--testing-experience" >Horrendous Developer / Testing Experience
+<span>
+    <a href="#horrendous-developer--testing-experience">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>There is also no wallet for Stagenet/testnet, so testing ZCash will be a problem.
+Here is the <a href="https://zcash.readthedocs.io/en/latest/rtd_pages/testnet_guide.html">ZCash testnet</a> in case someone or even myself in the future wants to find
+more practical issues with ZCash.</p>
+<p>I was trying to test out ZCash transactions, but ran into major troubles.
+First of all, the ZCash GUI wallets don&rsquo;t support testnet.
+Secondly, the CLI does not support for on Windows.
+Thirdly, because I have WSL, their <code>zcash-cli</code> says it requires a <code>zcash.conf</code> even though the file exists in same directory as the binary!</p>
+<p>I was trying to test out ZCash because to confirm that creating sheilded transactions are incredibly slow.
+There are no demos online showing the time it takes to generate a simple shielded transaction.</p>
+<p>For Monero, below is a video I made demoing a Monero transaction with one receiving address.
+The relevant portions took only 10 seconds! Most of the time was spent entering an address, an amount,
+entering my password, moving the GUI, and me talking.</p>
+
+
+    
+    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/_Sqn7aaR1oM?autoplay=0&controls=1&end=0&loop=0&mute=0&start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"
+      ></iframe>
+    </div>
+
+<p>Searching online for Zcash demos yields some guy using two webapps and a CLI to send ZEC to many receivers.
+He cut the waiting process.</p>
+<h3 id="leadership-of-a-cryptocurrency" >Leadership? Of a cryptocurrency?
+<span>
+    <a href="#leadership-of-a-cryptocurrency">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>Yes, ZCash is basically a publicly traded company, except the owners of ZEC have no power
+over the owners of the Codebase.</p>
+<p>There is a developer tax of 10% on the total capped supply.</p>
+<p>No single company owns 10% of the total money of the world, yet ZCash founders think it&rsquo;s reasonable or they think ZCash isn&rsquo;t a global currency.
+Users have to pay a tax to keep ZCash in development?
+Where&rsquo;s the Linux tax then to use Linux? Linus Torvald should be the richest man alive if this was an ethical thing to do!</p>
+<p>Lastly, ZEC does not use an ASIC resistant PoW algorithm and will become PoS in the future as indicated by its CEO!
+Yes, ZEC is a product of centralization, not decentralization. It&rsquo;s CEO had drunkenly admitted to being against privacy for all (criminals here).</p>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">… At least for as long as criminals want to cash out to fiat (years? decades?). …</p>&mdash; zooko🛡🦓🦓🦓 ⓩ (@zooko) <a href="https://twitter.com/zooko/status/863202964416077824?ref_src=twsrc%5Etfw">May 13, 2017</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+<p>It&rsquo;s funny how ZCash pays Edward Snowden, a criminal to the USA, to support ZCash, which would turn around and oust him if he used it in the US.
+ZCash&rsquo;s philosophy is &ldquo;if a state doesn&rsquo;t like you, we don&rsquo;t like you, unless you are an influencer.&rdquo; I had no idea that it&rsquo;s even possible to be a double hypocrite.</p>
+<p>How it can be done is a question but before you think of banning criminals from having privacy, first think about how that&rsquo;s even possible.
+And then think about if you would&rsquo;ve been a criminal if you had just been living in a different country, such as an authoritarian one.
+Venezuela, China, Saudi Arabia, Russia, not that any of these are extreme authoritarianism.</p>
+<h3 id="a-counter-argument-to-zooko" >A Counter-Argument to Zooko
+<span>
+    <a href="#a-counter-argument-to-zooko">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>The solution to the narrow problem below is random amounts of churning, at least until Seraphis comes and increases the ring signature.</p>
+<p>Zooko believes Monero&rsquo;s privacy obfuscation does not work because of the poisoned outputs attack.
+In essence, bad actor A sends to an anonymous address owned by person B, and person B sends monero with this stealth address in the ring signature to bad actor C without anonymity.
+If this occurs at least 2 times or with another bad actor, then the bad actors can derive the identity of the anonymous person.</p>
+<p>The thing is, this attack is not full proof because users can send Monero to themselves (churning).
+Each churn would increase the distance between the bad actors, and increases the anonymity set.
+At a certain point, which requires more research to determine, there would be significant doubt
+whether the stealth address included 5 transactions deep is the same user as the one sending the monero.
+And if the stealth address is included in someone elses transaction to the bad actor, consider all
+accusations void!</p>
+<p>The assumptions that Zooko makes are:</p>
+<ol>
+<li>User does not churn</li>
+<li>Users are sending Monero without anonymity to bad actors
+<ul>
+<li>selling of XMR for fiat one exchanges</li>
+<li>buying goods and services from businesses who don&rsquo;t respect user privacy</li>
+</ul>
+</li>
+<li>User is being targeted by state actors, which Zooko says he supports in his drunken tweets as I mentioned previously.</li>
+</ol>
+<p>When it comes to privacy, how privacy tools are used greatly affects the privacy achieved.</p>
+<h2 id="oxen" >Oxen
+<span>
+    <a href="#oxen">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><p>A PoS (read as proof of stake not piece of shit) fork of Monero, so it&rsquo;s not good for money. However they are trying to innovate in terms of DApps unlike other projects listed here.</p>
+<p><a href="https://blog.elijahlopez.ca/posts/why-monero-is-the-best-crypto-currency/#consensus-algorithm">PoW vs. PoS vs. DPoS</a></p>
+<h2 id="secret-network" >Secret Network
+<span>
+    <a href="#secret-network">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><p>It&rsquo;s a PoS (read as both proof of stake and piece of shit). Secret Network has not demonstrated that they are private at all. <a href="https://explorer.secret.dev/tx/0x250f41c1b7988a57ad79503d412c99e1dfba04edb110b0237b7e9e2c31d03645/internal-transactions">Here</a> is a random transaction I found on their blockchain explorer.</p>
+<p>We see the sender address, the receiver address, the value of the transaction, the balances of both the
+<a href="https://explorer.secret.dev/address/0xF070515d7a05ED5f7b2C50106F615E8275e1b9D2/transactions">receiver</a> and the <a href="https://explorer.secret.dev/address/0x53d77827bE168aB2a911B5A14D0f16D1C5657196/transactions">sender</a>, and by extension transaction history as well.
+I&rsquo;ve said it before and I&rsquo;ll say it again; Transparent transactions on the blockchain hurt the privacy of all users. In Monero, there are view keys to allow for transactions to be shared without the blockchain showing that.</p>
+<p>Secret Network claims to be private, but the blockchain explorer says otherwise. I have more bad news.</p>
+<p>Let&rsquo;s open their <a href="https://scrt.network/">website</a>. It looks nice, I&rsquo;ll give them that. However, suppose I&rsquo;m interested in owning SCRT. I go to the page with the wallets and Keplr doesn&rsquo;t support Firefox, neither does Cosmostation, and the second option requires signing up! Privacy but you need to use Chrome? Privacy is interlinked with freedom. You simply can&rsquo;t have one without the other and claim supremacy.</p>
+<p>The bare minimum for any crypto project is a working desktop GUI wallet that doesn&rsquo;t require additional dependencies. I thought Monero&rsquo;s GUI lacks some UX, but amongst the competition, it ranks at the top.</p>
+<h2 id="mimblewimble-grin-litecoin" >MimbleWimble (Grin, Litecoin)
+<span>
+    <a href="#mimblewimble-grin-litecoin">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><ul>
+<li><a href="https://github.com/bogatyy/grin-linkability#faq">96% of Grin transactions were linked</a> because MimbleWimble is flawed</li>
+<li>Like the Lightning Network, users need to actively exchange data in order to receive. Want to receive donations? You&rsquo;ll need to use a website to facilitate the transaction. They did this in the name of scale. But this is a huge downside. Scale is not an issue in Monero, and if it does become an issue, then we can talk about solutions. YouTube itself has managed to stay stable and it stores Petabytes of information. Scale is a relative term and until Monero is over 1TB in size, scale is a non-problem.</li>
+<li>Since it is mimblewimble by default, it is just the successor to Litecoin, and not anything special. If mimblewimble was that good, even Litecoin would be considered as private. In terms of the privacy hierarchy, Grin is at the same level of ZCash, maybe a bit worse since no</li>
+</ul>
+<h2 id="beam" >Beam
+<span>
+    <a href="#beam">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><p>Something like Beam competes with Grin. At this point, I&rsquo;ve given up having to do the homework of people for them.
+Monero is #1. The burden of proof is on all other cryptos to prove they are better than Grin, ZCash, and Secret Network.
+If they can&rsquo;t or don&rsquo;t do that, users shouldn&rsquo;t even pay these projects a piece of mind. Refer to the introduction of this article.</p>
+<h2 id="firo" >Firo
+<span>
+    <a href="#firo">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><p>Very disingenuous. On their home page, they spit out jargon like Lelantus and Lelantus Spark without explanation.
+It fails to adhere to their privacy standards tagline.</p>
+<ul>
+<li>No stealth addresses
+<ul>
+<li>What you give out is what gets put into the chain, this is bad when combined with the next point</li>
+</ul>
+</li>
+<li>Transaction Data is visible
+<ul>
+<li>Amounts, receiver address, sender address are compltely visible</li>
+<li><a href="https://explorer.firo.org/tx/1d78dcade7ed4274b018df96e136c4256992491679a0c448a1380327748f2c77">Sample transaction</a></li>
+</ul>
+</li>
+<li><a href="https://www.reddit.com/r/FiroProject/comments/n70pve/comment/gxang90/">Dev (Scam) Tax</a>
+<ul>
+<li>A project that forces users to donate, is no open-source project at all!</li>
+</ul>
+</li>
+<li>Hybrid Consensus
+<ul>
+<li>Firo uses their own FiroPoW algorithm that is optimized for GPUs.
+<ul>
+<li>CPUs are definitely more accessible than GPUs so coins like Firo make the cost of GPUs go up for people who buy them to game and not to mine.</li>
+<li>CPUs are much more in abundance and anyone can start mining on their already owned devices.</li>
+<li>Their reasoning is to sap ETH miners and they throw shade for being anti-botnet which is not true. Botnets are the problem, not what botnets are used for!</li>
+</ul>
+</li>
+<li>Masternodes (PoS) are used to mititgate 51% attacks.
+<ul>
+<li>The rich get richer by using masternodes which requires $3,000</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>They are either not private at all, or not private by default.
+They are definitely disingenuous to say the least in claiming that FIRO is setting privacy standards.
+More like Firo is failing to meet the privacy standards.</p>
+<p>Privacy is serious. You should not sweep these problems under the bed as if they don&rsquo;t exist.</p>
+<h2 id="dero" >Dero
+<span>
+    <a href="#dero">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><p><strong><a href="https://github.com/deroproject/documentation/blob/master/premine.md">Premined</a></strong></p>
+<p>Monero has come a long way with consenting donations. No project, that aims to be the best, should force users to subsidize its development.</p>
+<p>DERO cannot to be trusted at all.
+They used bulletproof technology before the technology was already audited and
+the PR person at the time just said <a href="https://www.reddit.com/r/CryptoCurrency/comments/8pnt1u/dero_creates_a_new_type_of_dag/e0cvb87/">&ldquo;our devs looked at it okayed it.&rdquo;</a></p>
+<p>Furthermore, there is no GUI wallet.</p>
+<p>As for their community, they argue from a position of bad faith:</p>
+<p><a href="https://www.reddit.com/r/CryptoCurrency/comments/8pnt1u/dero_creates_a_new_type_of_dag/e0cvb87/">Reddit Example</a></p>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Reminder: The <a href="https://twitter.com/DeroProject?ref_src=twsrc%5Etfw">@DeroProject</a> team are getting ready to upgrade to our new <a href="https://twitter.com/hashtag/atlantis?src=hash&amp;ref_src=twsrc%5Etfw">#atlantis</a> <a href="https://twitter.com/hashtag/mainnet?src=hash&amp;ref_src=twsrc%5Etfw">#mainnet</a> - testing is nearly complete and we will announce a block height snapshot soon<br><br>200x more scalable than <a href="https://twitter.com/hashtag/monero?src=hash&amp;ref_src=twsrc%5Etfw">#monero</a> with all the <a href="https://twitter.com/hashtag/privacy?src=hash&amp;ref_src=twsrc%5Etfw">#privacy</a> &amp; no compromises<a href="https://twitter.com/search?q=%24dero&amp;src=ctag&amp;ref_src=twsrc%5Etfw">$dero</a> <a href="https://twitter.com/hashtag/dero?src=hash&amp;ref_src=twsrc%5Etfw">#dero</a> <a href="https://twitter.com/search?q=%24xmr&amp;src=ctag&amp;ref_src=twsrc%5Etfw">$xmr</a> <a href="https://twitter.com/hashtag/xmr?src=hash&amp;ref_src=twsrc%5Etfw">#xmr</a> <a href="https://twitter.com/hashtag/blockchain?src=hash&amp;ref_src=twsrc%5Etfw">#blockchain</a> <a href="https://twitter.com/hashtag/DAG?src=hash&amp;ref_src=twsrc%5Etfw">#DAG</a> <a href="https://t.co/MaZAE4Wb6A">pic.twitter.com/MaZAE4Wb6A</a></p>&mdash; Serena (@Serena_Fox_CP) <a href="https://twitter.com/Serena_Fox_CP/status/1010026987321098240?ref_src=twsrc%5Etfw">June 22, 2018</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+<p>This PR lady is just as dead as the project. Anyone that mentions DERO is either arrogant or has malicious intent.
+That can be said for many of these coins: DERO, Pirate Chain, Grin, SecretCoin, ZCash.
+Disingenuous is the middle name of many projects in this article.</p>
+<p>It is also unusably inefficient.</p>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">2/ DERO claims to be using &quot;fully-homomorphic encryption&quot; to prevent nodes from being able to see transaction information.<br><br>Not only is this nonsensical (zk-proofs allow verification without revealing data simply) FHE is absolutely unusably inefficient:<a href="https://t.co/dXvRgfD6T6">https://t.co/dXvRgfD6T6</a> <a href="https://t.co/gWYtkbGbpJ">pic.twitter.com/gWYtkbGbpJ</a></p>&mdash; Seth For Privacy | #FreeSamourai (@sethforprivacy) <a href="https://twitter.com/sethforprivacy/status/1517141767132393472?ref_src=twsrc%5Etfw">April 21, 2022</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+<h2 id="pirate-chain" >Pirate Chain
+<span>
+    <a href="#pirate-chain">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><p>This is a fork of Zcash without transparent addresses . There&rsquo;s not enough information available to comment on Pirate Chain except for</p>
+<p><a href="https://github.com/PirateNetwork/pirate#build-pirate">&ldquo;This software is based on zcash and considered experimental and is continuously undergoing heavy development.&rdquo;</a> - accessed 2022-12-4</p>
+<p>It uses the same proof of work algorithm as ZCash which is <a href="https://shop.bitmain.com/?coin=ZEC">not ASIC-resistant</a> - accessed 2022-12-4</p>
+<p>It&rsquo;s simply not popular enough to warrant a discussion and it should be them to argue against Monero.
+Their only argument is usually zk-snarks, but trusting zk-snarks is risky because it requires trusting that the system was setup correctly.
+Pirate chain used a trusted setup since it was a ZCash pre-Halo fork. In the privacy and security space, strong guarantees are required and <a href="https://www.vice.com/en/article/93b3ay/fbi-backdoor-anom-phones-gps-data">not probabilities or &ldquo;trust me&rdquo;</a>.</p>
+<p>I also tried to test their sketchy wallet, but it required me to download the blockchain. Yeah, no thank you. If Monero can be used without a local blockchain, then I shouldn&rsquo;t need to download the blockchain to test a coin that does not even have a tenth of Monero&rsquo;s usage.</p>
+<h2 id="particl-part" >Particl (PART)
+<span>
+    <a href="#particl-part">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><p>Privacy except at certain times</p>
+<h2 id="cloud-coin" >Cloud Coin
+<span>
+    <a href="#cloud-coin">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><p>I can&rsquo;t believe someone actually came across this.</p>
+<p>The <a href="http://raidatech.com/">RAIDA Tech</a> which is supposed to be the backbone, uses HTTP instead of HTTPS!
+They claim &ldquo;greater privacy&rdquo; but they use HTTP instead of HTTPS by default. My websites all use HTTPS by default.
+It is also unclear how to independently run a node.</p>
+<h2 id="conclusion" >Conclusion
+<span>
+    <a href="#conclusion">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><p>Cryptocurrency is a tool. and similar to religion, there are many of them.
+In religion, there&rsquo;s something called Pascal&rsquo;s Wager. ThereminTrees has a good video on the fallacy.</p>
+
+
+    
+    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/fZpJ7yUPwdU?autoplay=0&controls=1&end=0&loop=0&mute=0&start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"
+      ></iframe>
+    </div>
+
+<p>Essentially, there isn&rsquo;t enough time for you to do an unbiased research on all religions to figure out
+the best one. But we are presented with this same problem for cryptocurrency but <a href="/posts/converging-opinions">I have a solution</a>.</p>
+<p>Compared to Monero, these other privacy coins are used 1000x less. The burden of proof is on them to prove
+that they are better than Grin, ZCash, and Secret Network before asking to argue against Monero.
+Every redundant coin comes at the expense of collective privacy.</p>
+<p>It&rsquo;s unreasonable to ask Monero developers and experts to spend their time rebutting your arguments
+when the cryptos both have the same goal. And if you can prove the coin to be better than Monero to me,
+good luck trying to do it with Bitcoin maxis. I have an open mind; why else would I even try to use ZCash and Secret Network?</p>
+<p>Lastly, I hope for people to contribute to a single digital cash project rather than start their own.
+It&rsquo;s sad enough that people think the upgrades to Monero are not needed.</p>
+<p>Feel free to donate some Monero.
+<a href="monero:84PR6SkYd5zaFLKDjAFrQfbaAg2c7SV3q3XDZ15QCpEZUggrN4YzY7n8m9XC3deXjo41yWHTm1LrsUpPTYGnRQbD9Cwp8En">84PR6SkYd5zaFLKDjAFrQfbaAg2c7SV3q3XDZ15QCpEZUggrN4YzY7n8m9XC3deXjo41yWHTm1LrsUpPTYGnRQbD9Cwp8En</a></p>
+<p><img src="https://elijahlopez.ca/static/images/monero.webp" alt="monero:84PR6SkYd5zaFLKDjAFrQfbaAg2c7SV3q3XDZ15QCpEZUggrN4YzY7n8m9XC3deXjo41yWHTm1LrsUpPTYGnRQbD9Cwp8En"></p>
+
+        </div>
+        <div class="post-info">
+    
+        <div class="post-date dt-published">
+            <a class="u-url" href="/posts/monero-vs-privacy-coins/"><time datetime="2022-02-26">February 26, 2022</time></a>
+            
+        </div>
+    
+    <a class="post-hidden-url u-url" href="https://blog.elijahlopez.ca/posts/monero-vs-privacy-coins/">https://blog.elijahlopez.ca/posts/monero-vs-privacy-coins/</a>
+    <a href="https://blog.elijahlopez.ca/" class="p-name p-author post-hidden-author h-card" rel="me">Elijah Lopez</a>
+    <div class="post-taxonomies">
+        
+        
+            <ul class="post-tags">
+                
+                    
+                    <li><a href="https://blog.elijahlopez.ca/tags/monero/">#Monero</a></li>
+                
+                    
+                    <li><a href="https://blog.elijahlopez.ca/tags/cryptocurrency/">#Cryptocurrency</a></li>
+                
+            </ul>
+        
+        
+    </div>
+</div>
+
+    </article>
+
+    
+
+    
+        
+    
+    
+    <div class="pagination post-pagination">
+        <div class="left pagination-item ">
+            
+                <a title="Figuring Out the Most Correct Opinion" href="/posts/converging-opinions/">Figuring Out the Most Correct Opinion</a>
+            
+        </div>
+        <div class="right pagination-item ">
+            
+                <a title="Linux Desktop Sucks!" href="/posts/linux-desktop-sucks/">Linux Desktop Sucks!</a>
+            
+        </div>
+    </div>
+
+
+
+
+    
+
+    
+        <br>
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+<script src="https://giscus.app/client.js"
+        data-repo="elibroftw/blog.elijahlopez.ca"
+        data-repo-id="R_kgDOGiL7hg"
+        data-category="General"
+        data-category-id="DIC_kwDOGiL7hs4Cer6e"
+        data-mapping="og:title"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="preferred_color_scheme"
+        data-lang="en"
+        crossorigin="anonymous"
+        
+        async>
+</script>
+
+    
+
+        </main>
+        
+            <footer class="common-footer">
+    
+    
+
+    <div class="common-footer-bottom">
+        
+        <div class="copyright">
+            <p>© Elijah Lopez, 2024<br>
+            Powered by <a target="_blank" rel="noopener noreferrer" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" rel="noopener noreferrer" href="https://github.com/elibroftw/hugo-theme-anubis">Anubis</a>.<br>
+            
+            </p>
+        </div>
+    </div>
+
+    <p class="h-card vcard">
+
+    <a href=https://blog.elijahlopez.ca/ class="p-name u-url url fn" rel="me">Elijah Lopez</a> 
+
+     
+        /
+        <a class="p-email u-email email" rel="me" href="mailto:elijahllopezz@gmail.com">elijahllopezz@gmail.com</a>
+    
+
+     
+        <img class="u-photo" src="https://pbs.twimg.com/profile_images/1738729591064166400/vqarzcF7_400x400.jpg" />
+    
+</p> 
+</footer>
+
+        
+    </div>
+</body>
+</html>

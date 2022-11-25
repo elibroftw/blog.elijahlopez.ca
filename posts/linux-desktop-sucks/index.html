@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="">
+<head>
+    
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name = "apple-mobile-web-app-capable" content = "yes">
+    <meta name="theme-color" content="#121212">
+
+    <meta charset="utf-8">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <title>Linux Desktop Sucks! - ELL Blog</title>
+    <meta name="description" content="
+    Table of Contents
+    
+  
+    Introduction
+    Linux MInt
+      
+        Bluetooth (Headphones)
+        Dual Boot Menu
+        Dual Boot Time
+        NVIDIA Driver Installation
+        External Monitor Scale Cannot be Different
+        Wake From Sleep shows Clipped Login UI
+      
+    
+    Manjaro KDE Specific Issues
+      
+        Black Screen Bug
+        Plugging or Unplugging Power Puts Laptop to Sleep
+        Inefficient Upgrading
+        Unintuitive Appearance Settings
+        Webcam
+      
+    
+    Nautilis Sucks
+    Zorin OS
+      
+        Firefox Home Page Overwritten on Every Login
+      
+    
+    Nobara KDE
+    Other Issues
+      
+        Canonical and Snap Sucks
+        No Ctrl for Tabbing
+        Poor Cloud Storage Support
+        Poor Installation Tutorials
+        Can&rsquo;t Shutdown Easily
+        Installing Custom Programs is a HEADACHE
+      
+    
+    How Can Linux Distros Gain Users?
+  
+
+
+
+Introduction
+
+    
+        
+    
+
+I&rsquo;ve used Raspian (~2014), Ubuntu GNOME (~2016), Manjaro KDE (2020 &amp; 2022-2023), Fedora, Zorin (2021), Mint (2024), and Nobara (2024).">
+    
+    <link rel="icon" type="image/x-icon" href="https://blog.elijahlopez.ca/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" href="https://blog.elijahlopez.ca/favicon.png">
+
+    <link rel="stylesheet" href="https://blog.elijahlopez.ca/css/style.min.aaf2c7fda9310c97167f1a94f41891944861efa73f96c5467dbea9ecc5ddb751.css" integrity="sha256-qvLH/akxDJcWfxqU9BiRlEhh76c/lsVGfb6p7MXdt1E=">
+    <script src="https://blog.elijahlopez.ca/js/script.min.74bf1a3fcf1af396efa4acf3e660e876b61a2153ab9cbe1893ac24ea6d4f94ee.js" type="text/javascript" charset="utf-8" integrity="sha256-dL8aP88a85bvpKzz5mDodrYaIVOrnL4Yk6wk6m1PlO4="></script>
+    <meta property="og:url" content="https://blog.elijahlopez.ca/posts/linux-desktop-sucks/">
+  <meta property="og:site_name" content="ELL Blog">
+  <meta property="og:title" content="Linux Desktop Sucks!">
+  <meta property="og:description" content="Table of Contents Introduction Linux MInt Bluetooth (Headphones) Dual Boot Menu Dual Boot Time NVIDIA Driver Installation External Monitor Scale Cannot be Different Wake From Sleep shows Clipped Login UI Manjaro KDE Specific Issues Black Screen Bug Plugging or Unplugging Power Puts Laptop to Sleep Inefficient Upgrading Unintuitive Appearance Settings Webcam Nautilis Sucks Zorin OS Firefox Home Page Overwritten on Every Login Nobara KDE Other Issues Canonical and Snap Sucks No Ctrl for Tabbing Poor Cloud Storage Support Poor Installation Tutorials Can’t Shutdown Easily Installing Custom Programs is a HEADACHE How Can Linux Distros Gain Users? Introduction I’ve used Raspian (~2014), Ubuntu GNOME (~2016), Manjaro KDE (2020 &amp; 2022-2023), Fedora, Zorin (2021), Mint (2024), and Nobara (2024).">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2022-02-26T12:44:37-05:00">
+    <meta property="article:modified_time" content="2022-02-26T12:44:37-05:00">
+    <meta property="article:tag" content="Linux">
+    <meta property="article:tag" content="Opinion">
+    <meta property="og:image" content="https://blog.elijahlopez.ca/images">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://blog.elijahlopez.ca/images">
+  <meta name="twitter:title" content="Linux Desktop Sucks!">
+  <meta name="twitter:description" content="Table of Contents Introduction Linux MInt Bluetooth (Headphones) Dual Boot Menu Dual Boot Time NVIDIA Driver Installation External Monitor Scale Cannot be Different Wake From Sleep shows Clipped Login UI Manjaro KDE Specific Issues Black Screen Bug Plugging or Unplugging Power Puts Laptop to Sleep Inefficient Upgrading Unintuitive Appearance Settings Webcam Nautilis Sucks Zorin OS Firefox Home Page Overwritten on Every Login Nobara KDE Other Issues Canonical and Snap Sucks No Ctrl for Tabbing Poor Cloud Storage Support Poor Installation Tutorials Can’t Shutdown Easily Installing Custom Programs is a HEADACHE How Can Linux Distros Gain Users? Introduction I’ve used Raspian (~2014), Ubuntu GNOME (~2016), Manjaro KDE (2020 &amp; 2022-2023), Fedora, Zorin (2021), Mint (2024), and Nobara (2024).">
+
+
+
+
+
+
+    
+
+
+
+
+
+</head>
+
+<body>
+    <a class="skip-main" href="#main">Skip to main content</a>
+    <div class="container">
+        <header class="common-header">
+            
+                
+
+    
+
+
+<div class="header-top">
+    <h1 class="site-title">
+        <a href="/">ELL Blog</a>
+    </h1>
+
+    <div class="header-top-left">
+    <ul class="social-icons">
+
+        <li>
+            <a href="/index.xml" title="Rss" rel="me">
+                <span class="inline-svg" >
+                    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" data-icon="rss" data-prefix="fas" focusable="false" role="img" viewBox="0 0 496 512"><path fill="currentColor" fill="currentColor" d="M128.081 415.959c0 35.369-28.672 64.041-64.041 64.041S0 451.328 0 415.959s28.672-64.041 64.041-64.041 64.04 28.673 64.04 64.041zm175.66 47.25c-8.354-154.6-132.185-278.587-286.95-286.95C7.656 175.765 0 183.105 0 192.253v48.069c0 8.415 6.49 15.472 14.887 16.018 111.832 7.284 201.473 96.702 208.772 208.772.547 8.397 7.604 14.887 16.018 14.887h48.069c9.149.001 16.489-7.655 15.995-16.79zm144.249.288C439.596 229.677 251.465 40.445 16.503 32.01 7.473 31.686 0 38.981 0 48.016v48.068c0 8.625 6.835 15.645 15.453 15.999 191.179 7.839 344.627 161.316 352.465 352.465.353 8.618 7.373 15.453 15.999 15.453h48.068c9.034-.001 16.329-7.474 16.005-16.504z"/></svg>
+                </span>
+
+            </a>
+        </li>
+    
+
+        <li>
+            <a href="https://elijahlopez.ca" title="Website" rel="me">
+                <span class="inline-svg" >
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M352 256C352 278.2 350.8 299.6 348.7 320H163.3C161.2 299.6 159.1 278.2 159.1 256C159.1 233.8 161.2 212.4 163.3 192H348.7C350.8 212.4 352 233.8 352 256zM503.9 192C509.2 212.5 512 233.9 512 256C512 278.1 509.2 299.5 503.9 320H380.8C382.9 299.4 384 277.1 384 256C384 234 382.9 212.6 380.8 192H503.9zM493.4 160H376.7C366.7 96.14 346.9 42.62 321.4 8.442C399.8 29.09 463.4 85.94 493.4 160zM344.3 160H167.7C173.8 123.6 183.2 91.38 194.7 65.35C205.2 41.74 216.9 24.61 228.2 13.81C239.4 3.178 248.7 0 256 0C263.3 0 272.6 3.178 283.8 13.81C295.1 24.61 306.8 41.74 317.3 65.35C328.8 91.38 338.2 123.6 344.3 160H344.3zM18.61 160C48.59 85.94 112.2 29.09 190.6 8.442C165.1 42.62 145.3 96.14 135.3 160H18.61zM131.2 192C129.1 212.6 127.1 234 127.1 256C127.1 277.1 129.1 299.4 131.2 320H8.065C2.8 299.5 0 278.1 0 256C0 233.9 2.8 212.5 8.065 192H131.2zM194.7 446.6C183.2 420.6 173.8 388.4 167.7 352H344.3C338.2 388.4 328.8 420.6 317.3 446.6C306.8 470.3 295.1 487.4 283.8 498.2C272.6 508.8 263.3 512 255.1 512C248.7 512 239.4 508.8 228.2 498.2C216.9 487.4 205.2 470.3 194.7 446.6H194.7zM190.6 503.6C112.2 482.9 48.59 426.1 18.61 352H135.3C145.3 415.9 165.1 469.4 190.6 503.6V503.6zM321.4 503.6C346.9 469.4 366.7 415.9 376.7 352H493.4C463.4 426.1 399.8 482.9 321.4 503.6V503.6z"/></svg>
+                </span>
+
+            </a>
+        </li>
+    
+
+        
+        
+        <li>
+            <a href="https://github.com/elibroftw" title="Github" rel="me">
+            <span class="inline-svg" >
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+                </span>
+
+            </a>
+        </li>
+    
+
+        
+        
+        <li>
+            <a href="https://twitter.com/elibroftw" title="Twitter" rel="me">
+            <span class="inline-svg" >
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+                </span>
+
+            </a>
+        </li>
+    
+
+        
+        
+        <li>
+            <a href="https://www.youtube.com/c/elibroftw" title="Youtube" rel="me">
+            <span class="inline-svg" >
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg>
+                </span>
+
+            </a>
+        </li>
+    
+
+        
+        
+        <li>
+            <a href="mailto:elijahllopezz@gmail.com" title="Email" rel="me">
+            <span class="inline-svg" >
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M464 64H48C21.49 64 0 85.49 0 112v288c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zm0 48v40.805c-22.422 18.259-58.168 46.651-134.587 106.49-16.841 13.247-50.201 45.072-73.413 44.701-23.208.375-56.579-31.459-73.413-44.701C106.18 199.465 70.425 171.067 48 152.805V112h416zM48 400V214.398c22.914 18.251 55.409 43.862 104.938 82.646 21.857 17.205 60.134 55.186 103.062 54.955 42.717.231 80.509-37.199 103.053-54.947 49.528-38.783 82.032-64.401 104.947-82.653V400H48z"/></svg>
+                </span>
+
+            </a>
+        </li>
+    
+
+        
+        
+        <li>
+            <a href="https://www.instagram.com/elijahllopezz" title="Instagram" rel="me">
+            <span class="inline-svg" >
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+                </span>
+
+            </a>
+        </li>
+    
+
+
+
+</ul>
+</div>
+    
+
+    
+
+
+
+
+    <div class="header-top-right theme-switcher">
+        <span class="inline-svg" >
+                    <svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 290 290">
+<path fill="currentColor" d="M142.959,0C64.131,0,0,64.132,0,142.96c0,78.828,64.131,142.959,142.959,142.959c78.828,0,142.96-64.131,142.96-142.959  C285.919,64.132,221.787,0,142.959,0z M142.959,260.919V142.96V25c65.043,0,117.96,52.917,117.96,117.96  C260.919,208.003,208.002,260.919,142.959,260.919z"/>
+</svg>
+                </span>
+
+    </div>
+
+
+<script>
+const STORAGE_KEY = 'user-color-scheme'
+const defaultTheme = "auto"
+
+let currentTheme
+let switchButton
+let autoDefinedScheme = window.matchMedia('(prefers-color-scheme: dark)')
+
+const autoChangeScheme = e => {
+    currentTheme = e.matches ? 'dark' : 'light'
+    document.documentElement.setAttribute('data-theme', currentTheme)
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    switchButton = document.querySelector('.theme-switcher')
+    currentTheme = detectCurrentScheme()
+    setThemeColorMeta(currentTheme)
+    if (currentTheme == 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark')
+    }
+
+    if (currentTheme == 'auto') {
+        autoChangeScheme(autoDefinedScheme);
+        autoDefinedScheme.addListener(autoChangeScheme);
+    }
+
+    if (switchButton) {
+        switchButton.addEventListener('click', switchTheme, false)
+    }
+})
+
+function detectCurrentScheme() {
+    if (localStorage !== null && localStorage.getItem(STORAGE_KEY)) {
+        return localStorage.getItem(STORAGE_KEY)
+    }
+    if (defaultTheme) {
+        return defaultTheme
+    }
+    if (!window.matchMedia) {
+        return defaultTheme
+    }
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        return 'dark'
+    }
+    return defaultTheme
+}
+
+function switchTheme(e) {
+    if (currentTheme == 'dark') {
+        if (localStorage !== null)
+            localStorage.setItem(STORAGE_KEY, 'light')
+        document.documentElement.setAttribute('data-theme', 'light')
+        currentTheme = 'light'
+    } else {
+        if (localStorage !== null)
+            localStorage.setItem(STORAGE_KEY, 'dark')
+        document.documentElement.setAttribute('data-theme', 'dark')
+        currentTheme = 'dark'
+    }
+    setThemeColorMeta(currentTheme)
+}
+
+function setThemeColorMeta(currentTheme) {
+    if (currentTheme == 'dark') {
+        document.querySelector('meta[name="theme-color"]').setAttribute('content', '#121212')
+    } else {
+        document.querySelector('meta[name="theme-color"]').setAttribute('content', '#fff')
+    }
+}
+</script>
+
+</div>
+
+
+    <nav>
+        
+        
+        <a class="" href="https://blog.elijahlopez.ca/" title="Home">Home</a>
+        
+        <a class="" href="https://blog.elijahlopez.ca/posts/" title="Archive">Archive</a>
+        
+        <a class="" href="https://blog.elijahlopez.ca/tags/" title="Tags">Tags</a>
+        
+    </nav>
+
+
+
+
+
+
+            
+        </header>
+        <main id="main" tabindex="-1">
+            
+    
+
+    <article class="post h-entry">
+        <div class="post-header">
+            <header>
+                <h1 class="p-name post-title">Linux Desktop Sucks!</h1>
+
+                
+            </header>
+        </div>
+        
+
+
+
+
+        <div class="content e-content">
+            <div>
+    <h2>Table of Contents</h2>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#linux-mint">Linux MInt</a>
+      <ul>
+        <li><a href="#bluetooth-headphones">Bluetooth (Headphones)</a></li>
+        <li><a href="#dual-boot-menu">Dual Boot Menu</a></li>
+        <li><a href="#dual-boot-time">Dual Boot Time</a></li>
+        <li><a href="#nvidia-driver-installation">NVIDIA Driver Installation</a></li>
+        <li><a href="#external-monitor-scale-cannot-be-different">External Monitor Scale Cannot be Different</a></li>
+        <li><a href="#wake-from-sleep-shows-clipped-login-ui">Wake From Sleep shows Clipped Login UI</a></li>
+      </ul>
+    </li>
+    <li><a href="#manjaro-kde-specific-issues">Manjaro KDE Specific Issues</a>
+      <ul>
+        <li><a href="#black-screen-bug">Black Screen Bug</a></li>
+        <li><a href="#plugging-or-unplugging-power-puts-laptop-to-sleep">Plugging or Unplugging Power Puts Laptop to Sleep</a></li>
+        <li><a href="#inefficient-upgrading">Inefficient Upgrading</a></li>
+        <li><a href="#unintuitive-appearance-settings">Unintuitive Appearance Settings</a></li>
+        <li><a href="#webcam">Webcam</a></li>
+      </ul>
+    </li>
+    <li><a href="#nautilis-sucks">Nautilis Sucks</a></li>
+    <li><a href="#zorin-os">Zorin OS</a>
+      <ul>
+        <li><a href="#firefox-home-page-overwritten-on-every-login">Firefox Home Page Overwritten on Every Login</a></li>
+      </ul>
+    </li>
+    <li><a href="#nobara-kde">Nobara KDE</a></li>
+    <li><a href="#other-issues">Other Issues</a>
+      <ul>
+        <li><a href="#canonical-and-snap-sucks">Canonical and Snap Sucks</a></li>
+        <li><a href="#no-ctrl-for-tabbing">No Ctrl for Tabbing</a></li>
+        <li><a href="#poor-cloud-storage-support">Poor Cloud Storage Support</a></li>
+        <li><a href="#poor-installation-tutorials">Poor Installation Tutorials</a></li>
+        <li><a href="#cant-shutdowneasily">Can&rsquo;t Shutdown Easily</a></li>
+        <li><a href="#installing-custom-programs-is-aheadache">Installing Custom Programs is a HEADACHE</a></li>
+      </ul>
+    </li>
+    <li><a href="#how-can-linux-distros-gainusers">How Can Linux Distros Gain Users?</a></li>
+  </ul>
+</nav>
+</div>
+
+<h2 id="introduction" >Introduction
+<span>
+    <a href="#introduction">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><p>I&rsquo;ve used Raspian (~2014), Ubuntu GNOME (~2016), Manjaro KDE (2020 &amp; 2022-2023), Fedora, Zorin (2021), Mint (2024), and Nobara (2024).</p>
+<p>There&rsquo;s a lot of UX issues with Linux and for some reasons the user base starts victim blaming instead of actually improving the experience. It&rsquo;s very political regard and reminds me of this one person who genuinely believed that Libertarianism was about legalizing underage marriage.</p>
+<p>The issues listed under each distro may actually extend to other distros as the desktop (e.g. KDE, or GNOME) or the Windowing System (Wayland) may be the same on different distros.</p>
+<h2 id="linux-mint" >Linux MInt
+<span>
+    <a href="#linux-mint">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><p>I installed Linux Mint alongside Windows 11 on my laptop for work purposes. Running Linux Mint in a Virtual Machine is slow, ugly, and not as convenient as I thought it was. Why dual boot? Well I need a lot of services: OneDrive, Mega, GitHub Desktop, and video games. I also want an experience where the issues are minor. I think Windows 11 downgraded a lot of components to be more like macOS and Linux which is why I will be making some videos on why Windows 11 sucks, but this article is about my Linux experience.</p>
+<h3 id="bluetooth-headphones" >Bluetooth (Headphones)
+<span>
+    <a href="#bluetooth-headphones">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>There are three issues I have with bluetooth on Linux Mint.. The first time I connected my headphones to the laptop, it was pretty smooth. Now that I want to use connect my headphones to the laptop after having used them with my phone, the laptop is going &ldquo;Connected&rdquo; right after double tapping, and then it fails to connect resulting in a disconnect.</p>
+<ol>
+<li>It doesn&rsquo;t work. The error I after the UI has told me my headphones have connected is &ldquo;Connection Failed: br-connection-unknown.&rdquo; I had to remove the device and add it again for my headphones to connect.</li>
+<li>One if the straight up lie that the laptop is connected to the headphones after a single double click. Stop telling the user that we have connected when we haven&rsquo;t!</li>
+<li>The bluetooth icon in the taskbar doesn&rsquo;t open a tray UI like Date, Battery, Music, WiFi icon. It&rsquo;s actually not part of the desktop, but as a user application. What??</li>
+</ol>
+<h3 id="dual-boot-menu" >Dual Boot Menu
+<span>
+    <a href="#dual-boot-menu">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>First off, the default dual boot menu is ugly. GRUB is still not configured to scale on monitors that have a higher resolution than 1080p. I have been using 1440p laptop screens since 2017. That&rsquo;s 7 years now. I&rsquo;ll have to customize this, but it is an annoyance.</p>
+<p>Refind was recommended to install but guess what, I got a scary red error: &ldquo;Secure Boot violation. Invalid signature&rdquo;. Searching for help yields a single reddit comment replying to post on r/linux4<strong>NOOBS</strong></p>
+<blockquote>
+<p>You need to create a local signing key, register it using the MOK utility, then sign the rEFInd binary using that signing key. You can access the full manual at <a href="http://www.rodsbooks.com/refind/secureboot.html">http://www.rodsbooks.com/refind/secureboot.html</a></p>
+</blockquote>
+<p>How is this noob-friendly advice?</p>
+<p>I uninstalled refind and yet I got the same error. Good thing I took a Timeshift yesterday which also backed up the boot drive. Good thing I don&rsquo;t use this stupid distro as a daily driver where it can mess with my cloud files.</p>
+<h3 id="dual-boot-time" >Dual Boot Time
+<span>
+    <a href="#dual-boot-time">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>For some reason Linux and Windows have different ways of storing time and no one on the Linux side thought about changing the way time works if installed alongside Windows. I really don&rsquo;t want to have to adjust my time settings every time I boot back into Windows. I&rsquo;ll probably just not adjust the time on the Linux side and let it be.</p>
+<h3 id="nvidia-driver-installation" >NVIDIA Driver Installation
+<span>
+    <a href="#nvidia-driver-installation">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>When installing NVIDIA drivers for Linux Mint, we are told to enter a password for Secure Boot and that we would have to enter this after rebooting but a reboot does not actually make us enter the password&hellip;unless we selected &ldquo;Enroll MOK.&rdquo; It would be helpful if the drivers app gave better instructions.</p>
+<h3 id="external-monitor-scale-cannot-be-different" >External Monitor Scale Cannot be Different
+<span>
+    <a href="#external-monitor-scale-cannot-be-different">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>I have my laptop connected to two external monitors. The scale on all three displays has to be the same for the UI to fit 100%. On Windows I can set the scale to different values for each monitor without any problem. On Linux Mint, fractional scaling is still experimental.</p>
+<h3 id="wake-from-sleep-shows-clipped-login-ui" >Wake From Sleep shows Clipped Login UI
+<span>
+    <a href="#wake-from-sleep-shows-clipped-login-ui">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p><img src="/images/linux/linux-mint-clipped-login-ui.webp" alt="ALT: all of my three displays are black but my left monitor shows the clipped UI"></p>
+<p>I can still login by simply typing my password and pressing enter but this is such a subpar experience. Windows 11 has its issues but it is never a simple issue. The worst Windows 11 does is run the anti-virus on a folder I did not exempt.</p>
+<h2 id="manjaro-kde-specific-issues" >Manjaro KDE Specific Issues
+<span>
+    <a href="#manjaro-kde-specific-issues">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><p>I had to daily drive Manjaro KDE for 3 weeks on my Razer Blade Stealth, and over that time I encountered a plethora of issues and I&rsquo;ve documented <a href="/posts/manjaro-kde-tips">some solutions</a>.</p>
+<p>The Razer Blade stealth has a 6th generation laptop i5 processor and 8GB of RAM. I&rsquo;m not sure if
+it&rsquo;s because of the SSD speeds, but the laptop freezes either due to 100% memory or 99% CPU. VS Code freezes so often without even running an application.</p>
+<p>I do believe Firefox is highly optimized on Linux as it never crashed. However, if you have 10+ tabs open, good bye.</p>
+<h3 id="black-screen-bug" >Black Screen Bug
+<span>
+    <a href="#black-screen-bug">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>I&rsquo;ll start with this as it is the reason why I will not recommend Manjaro for people interested in free (as in beer) software.</p>
+<p>I&rsquo;m logged in as my parents&rsquo; user and now I log out and log into my account. The desktop splashscreen shows up and then boom black screen.</p>
+<p>Maybe it&rsquo;s a fluke, so I just create a thread to leave a paper trail. I use a physical power down and then log in without issues.</p>
+<p>4 hours later, my parents are logged in, but I want to test something out myself. I turn on the laptop and click switch user, meaning that my parents are not
+logged out. The desktop splashscreen loads and I get the black screen again.</p>
+<p>Manjaro is 11 years old. There is no excuse for this workflow to not work. There is no excuse because I go out of my way to make sure
+my music player runs for everyone&rsquo;s workflow not just my own.</p>
+<h3 id="plugging-or-unplugging-power-puts-laptop-to-sleep" >Plugging or Unplugging Power Puts Laptop to Sleep
+<span>
+    <a href="#plugging-or-unplugging-power-puts-laptop-to-sleep">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>As the subsection states, charging my laptop while it is on, puts it into the sleep state. I wish I was joking.
+How is this bug even possible in 2023. It makes zero sense why Manjaro can&rsquo;t even handle the plugging of a power cord.</p>
+<h3 id="inefficient-upgrading" >Inefficient Upgrading
+<span>
+    <a href="#inefficient-upgrading">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>Pacman manager so not specifically Manjaro.</p>
+<p>I turn on the laptop after a couple months and the network folder no longer works. There were 2.1GB worth of updates so I decided to start upgrading.</p>
+<p>After all the packages were downloading, for a couple minutes there were network errors due to the package manager hitting <code>http://mirror.ragenetwork.de</code> &ldquo;name or service not known&rdquo; errors. Why are packages not installed while downloading new packages? It&rsquo;s inefficient.</p>
+<p>Only after the packages were installed and a restart completed did the network drive start to work.</p>
+<h3 id="unintuitive-appearance-settings" >Unintuitive Appearance Settings
+<span>
+    <a href="#unintuitive-appearance-settings">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>So I click appearance from the settings app and there is no option to change the wallpaper. Pretty dumb!</p>
+<h3 id="webcam" >Webcam
+<span>
+    <a href="#webcam">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>The webcam does not work. Glitches with green.</p>
+<h2 id="nautilis-sucks" >Nautilis Sucks
+<span>
+    <a href="#nautilis-sucks">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><p>I can&rsquo;t create new files in the directory through a right click menu. I can&rsquo;t access the right click menu if I&rsquo;m using list mode and the folder is full of files. On Windows, a right click is applied on the folder if the file is not selected, but on Nautilis, too bad so sad, did you mean to right click a file? It&rsquo;s not a big deal since the right click menu in Nautlis is only useful for accessing properties since its other features can be done using keyboard shortcuts (Ctrl +C, Ctrl + V, Ctrl +Shift+N).</p>
+<h2 id="zorin-os" >Zorin OS
+<span>
+    <a href="#zorin-os">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><h3 id="firefox-home-page-overwritten-on-every-login" >Firefox Home Page Overwritten on Every Login
+<span>
+    <a href="#firefox-home-page-overwritten-on-every-login">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>On Zorin OS, the home page is overwritten on every log in to <a href="https://start.zorin.com/">https://start.zorin.com/</a> which uses Google primarily. Are they even paid by Google to do that?</p>
+<h2 id="nobara-kde" >Nobara KDE
+<span>
+    <a href="#nobara-kde">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><p>When the laptop wakes from sleep, the cursor cannot be moved by the touchpad anymore. Online search yielded to disable &ldquo;suspend&rdquo; or &ldquo;modern standby&rdquo; but I couldn&rsquo;t find those settings in the BIOS menu of a 2016 laptop (razer blade stealth).</p>
+<p>Had to disable secure boot so I see a tpm error on every boot and need to press enter.</p>
+<h2 id="other-issues" >Other Issues
+<span>
+    <a href="#other-issues">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><h3 id="canonical-and-snap-sucks" >Canonical and Snap Sucks
+<span>
+    <a href="#canonical-and-snap-sucks">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>I cannot believe Ubuntu is promoted to newbies when snaps are the default distribution model. Snaps literally make apps slower. Gigabytes of wasted storage
+for slower apps. A linux desktop experience should rival Windows, it should not make you say &ldquo;it&rsquo;s okay because it&rsquo;s not Windows.&rdquo;
+The mentality that we need to live a worse life just because we get a free experience is the worst mentality ever.</p>
+<h3 id="no-ctrl-for-tabbing" >No Ctrl for Tabbing
+<span>
+    <a href="#no-ctrl-for-tabbing">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>If Linux desktop is all about customization, why is it so damn difficult to replace Alt with Ctrl? Windows predates Linux, so this Alt + # shortcut should
+not be forced upon users. At least on Firefox there&rsquo;s an extension to give us the behaviour that Chrome supports.</p>
+<h3 id="poor-cloud-storage-support" >Poor Cloud Storage Support
+<span>
+    <a href="#poor-cloud-storage-support">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>Coming from Windows, I use OneDrive and MEGA. I do care about OneDrive since
+it has my personal files that I need backed up to the cloud. Where is the OneDrive support without using rsync which
+doesn&rsquo;t work half the time? Also, for information, Mega and OneDrive work on macOS. Sure you can argue it&rsquo;s up to the app developers, but there&rsquo;s so many distros and packaging is a pain in the ass as a developer myself. I had to resort to distributing Python scripts because it was so annoying to distribute apps without requiring system permissions to install.</p>
+<h3 id="poor-installation-tutorials" >Poor Installation Tutorials
+<span>
+    <a href="#poor-installation-tutorials">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>Just look at any tutorial for flashing an ISO. Generic tutorials tell you to use Rufus, an ugly and non-intuitive UI. Fedora has their own flash tool which looks nice but does not work on other distros.</p>
+<p>I only found out about balenaEtcher, the most intuitive ISO flash tool by pure luck when searching for something other than flashing ISOs.</p>
+<p>With Debian, the tutorials tell you to use free-[software] ISO and make it too complicated just to download the non-free-[software] ISO. Then there is the language used to describe ISO&rsquo;s. CD: an ISO that lets you install Debian and requires internet. DVD: live distro no requiring an internet connection. I&rsquo;ll get some guy in the comments nitpicking my interpretation but the Debian explanation is not succinct at all.</p>
+<p>I&rsquo;m speaking from the point of a practical user who also programs. I love keyboard shortcuts, automation, and aesthetic design. I used to dual boot Zorin OS and Windows on my laptop. I found that Zorin OS looked the nicest (at the time) but I also realized that the only reason I was able to install it was luck. I flashed the Zorin OS 15 ISO in 2020 and only had motivation to dual boot in 2021 when Zorin OS 16 was out. When I tried to install Zorin OS 15, I ran into an issue so instead of giving up I could just try installing 16 as the problem may have been patched.</p>
+<h3 id="cant-shutdowneasily" >Can&rsquo;t Shutdown Easily
+<span>
+    <a href="#cant-shutdowneasily">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>A great and Windows comparable Linux distro should require minimal changes and should have a tips section. For example it&rsquo;s faster to shutdown using &ldquo;Alt + F2 → poweroff&rdquo; than it is to use your mouse or searching (not in the menu) for shutdown, clicking enter, pressing the right key, and pressing enter. Why is the default click cancel instead of Shut down? On Windows it&rsquo;s just Alt + F4 on the desktop and an Enter.</p>
+<p>One last head ache is the inability to launch commands from the address bar… I want the best of GUI and command line, not just a GUI and not just a terminal.</p>
+<h3 id="installing-custom-programs-is-aheadache" >Installing Custom Programs is a HEADACHE
+<span>
+    <a href="#installing-custom-programs-is-aheadache">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>Applies to: Fedora</p>
+<p>On Windows, installers don&rsquo;t even need administrative privileges to install programs and they still show up in the startup menu, but lets look at the worst case, where the application is shipped as an archive which is equivalent on Linux when the application is not available on a centralized location.</p>
+<p>The example I&rsquo;ll be using is Discord. On Linux, first let&rsquo;s download the .tar.gz, which will automatically be downloaded to the Downloads folder as intended. Yes on Debian, there is a .deb .
+On Windows the procedure for installing via zips, is extracting to a folder, moving that folder to a location like C:/CustomPrograms, creating a shortcut of the program (context menu), and moving the shortcut to Start Menu/Programs.</p>
+<p>On Linux, we are lucky that Discord came with the shortcut equivalent of discord.desktop . I found out that the Linux equivalent for the application menu is /usr/share/applications.</p>
+<p>Now that we can open up the file explorer easily (Super + E), where is the root folder (This PC on Windows) / ? For no reason, the root directory is not pinned on the left tab of the file explorer. You can do Ctrl + L, /, Enter to get to the root folder. It is much quicker to just type /usr/share/applications in the address bar but root access isn&rsquo;t just required for this one folder.</p>
+<p>I do not have the permission to paste files into the directory. So let me get this straight. By default, I have to get permission from myself (sudo) just to create a shortcut on the application menu? And not just that, Nautilis won&rsquo;t even ask me for permission but will just tell me it lacks the permission? &ldquo;Ask and you shall receive&rdquo;, but I guess the author never heard of that one. They do this in the same of security, but I say I should be able to drink wine out of both the cup of Freedom and Security.</p>
+<p>A normal user would simply give up at this point, torrent Windows (if money is a problem) and use it.</p>
+<h2 id="how-can-linux-distros-gainusers" >How Can Linux Distros Gain Users?
+<span>
+    <a href="#how-can-linux-distros-gainusers">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><p>By ditching this philosophy that open source software can&rsquo;t benefit from proprietary companies. By proprietary, I mean OEM&rsquo;s.</p>
+<p>Supporting QHD displays where users want to use 150% DPI rather than 100% or 200% DPI.</p>
+<p>Linux Distros are not OEM ready and until they are not, they will never going to take off. Dell only released a developer laptop running Ubuntu, not a laptop for all users.
+My OEM strategy would be as follows:
+Make sure Wine is installed and auto configures upon first run. By auto configure I mean that wine should scale with the resolution and not use its own default resolution.
+Make sure word files and etc are editable by default and still save as docx. Improve the UI for LibreOffice.
+Make sure browsers work with the same shortcuts.
+Make sure users can install software from online with ease. Add a right click menu on tar files that will &ldquo;install&rdquo; the binaries in a tar.gz.
+Make sure keyboard shortcuts work and that nautilus works better not less than windows explorer. Windows explorer includes a shell, and is not just a file explorer!
+Make sure the store is not filled with duo are software. There were two versions of vs code when I tried to install vs code.</p>
+<p>Fix grub so that it scales by the resolution of the software. I tried to edit grub but the font size never changed. The booting experience is arcane.</p>
+<p>What else? Don&rsquo;t disregard any users&rsquo; opinion. Every opinion is valid and only when the feature/change would hurt other users can you actually disregard an opinion after careful thought.</p>
+<p>Making it easier to support Linux as a developer.</p>
+
+        </div>
+        <div class="post-info">
+    
+        <div class="post-date dt-published">
+            <a class="u-url" href="/posts/linux-desktop-sucks/"><time datetime="2022-02-26">February 26, 2022</time></a>
+            
+        </div>
+    
+    <a class="post-hidden-url u-url" href="https://blog.elijahlopez.ca/posts/linux-desktop-sucks/">https://blog.elijahlopez.ca/posts/linux-desktop-sucks/</a>
+    <a href="https://blog.elijahlopez.ca/" class="p-name p-author post-hidden-author h-card" rel="me">Elijah Lopez</a>
+    <div class="post-taxonomies">
+        
+        
+            <ul class="post-tags">
+                
+                    
+                    <li><a href="https://blog.elijahlopez.ca/tags/linux/">#Linux</a></li>
+                
+                    
+                    <li><a href="https://blog.elijahlopez.ca/tags/opinion/">#Opinion</a></li>
+                
+            </ul>
+        
+        
+    </div>
+</div>
+
+    </article>
+
+    
+
+    
+        
+    
+    
+    <div class="pagination post-pagination">
+        <div class="left pagination-item ">
+            
+                <a title="Monero vs &ldquo;Privacy Coins&rdquo;" href="/posts/monero-vs-privacy-coins/">Monero vs &ldquo;Privacy Coins&rdquo;</a>
+            
+        </div>
+        <div class="right pagination-item ">
+            
+                <a title="How to Buy Monero in Canada" href="/posts/how-to-buy-monero-in-canada/">How to Buy Monero in Canada</a>
+            
+        </div>
+    </div>
+
+
+
+
+    
+
+    
+        <br>
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+<script src="https://giscus.app/client.js"
+        data-repo="elibroftw/blog.elijahlopez.ca"
+        data-repo-id="R_kgDOGiL7hg"
+        data-category="General"
+        data-category-id="DIC_kwDOGiL7hs4Cer6e"
+        data-mapping="og:title"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="preferred_color_scheme"
+        data-lang="en"
+        crossorigin="anonymous"
+        
+        async>
+</script>
+
+    
+
+        </main>
+        
+            <footer class="common-footer">
+    
+    
+
+    <div class="common-footer-bottom">
+        
+        <div class="copyright">
+            <p>© Elijah Lopez, 2024<br>
+            Powered by <a target="_blank" rel="noopener noreferrer" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" rel="noopener noreferrer" href="https://github.com/elibroftw/hugo-theme-anubis">Anubis</a>.<br>
+            
+            </p>
+        </div>
+    </div>
+
+    <p class="h-card vcard">
+
+    <a href=https://blog.elijahlopez.ca/ class="p-name u-url url fn" rel="me">Elijah Lopez</a> 
+
+     
+        /
+        <a class="p-email u-email email" rel="me" href="mailto:elijahllopezz@gmail.com">elijahllopezz@gmail.com</a>
+    
+
+     
+        <img class="u-photo" src="https://pbs.twimg.com/profile_images/1738729591064166400/vqarzcF7_400x400.jpg" />
+    
+</p> 
+</footer>
+
+        
+    </div>
+</body>
+</html>

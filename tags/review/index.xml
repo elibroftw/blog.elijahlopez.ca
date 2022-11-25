@@ -1,0 +1,1000 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Review on ELL Blog</title>
+    <link>https://blog.elijahlopez.ca/tags/review/</link>
+    <description>ELL Blog (Review)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 13 Oct 2024 16:08:38 -0400</lastBuildDate>
+    
+    <atom:link href="https://blog.elijahlopez.ca/tags/review/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>I Advise Against Taking CS 489 Software and Systems Security (University of Waterloo)</title>
+      <link>https://blog.elijahlopez.ca/posts/university/cs-489-software-and-systems-security-review/</link>
+      <pubDate>Wed, 03 Apr 2024 14:49:36 -0400</pubDate>
+      
+      <guid>https://blog.elijahlopez.ca/posts/university/cs-489-software-and-systems-security-review/</guid>
+      <description>&lt;p&gt;I took CS 489/698 Software and Systems Security this past Winter term (2024) and I have to say, it&amp;rsquo;s in the top 5 courses that have been a waste of time, money, and stress. I do not recommend it. 3/4 Assignments are related to the content but they expect you to learn from google and LLMs to figure out how to solve them, even though the starting directives are not enough.&lt;/p&gt;
+&lt;h2 id=&#34;assignment-criticism&#34; &gt;Assignment Criticism
+&lt;span&gt;
+    &lt;a href=&#34;#assignment-criticism&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;In the first assignment, there&amp;rsquo;s a buffer overflow but we were only taught how to do it on a 32-bit system where the vulnerability was in the main method versus the assignment where the vulnerability is in another function and on 64-bit program. &lt;del&gt;Not to mention, that they don&amp;rsquo;t mention during class anything about the gcc options-fstack-protector and -fno-stack-protector and how it&amp;rsquo;s the fault of certain (idk which ones) linux distros &lt;a href=&#34;https://stackoverflow.com/a/10713028/7732434&#34;&gt;see here&lt;/a&gt;.&lt;/del&gt;&lt;/p&gt;
+&lt;p&gt;In the second assignment, the assignment tried to be situational, but in my opinion, it would be much more effective if instead of having a bunch of classes on the content, the class itself was situational and we were put in groups to simulate how things go wrong. This would&amp;rsquo;ve been much more effective, similar to scenes in Mr. Robot where we see social and technical vulnerabilities being exploited. It would be nice to see an actual device exploited by a USB and/or disc in class rather than just be told that this is an existing potential weakness to be exploited.&lt;/p&gt;
+&lt;p&gt;In the third assignment, we had to learn about the various fuzzers. The biggest problems with this assignment is that it takes hours to setup the environment (100GB), and we aren&amp;rsquo;t given docs on the various fuzzers. We have to create code with bugs that won&amp;rsquo;t be detected by the fuzzers. The biggest problem is that for one of the fuzzers, it would work locally but not on their test servers which would report character comparisons as a crash&amp;hellip;
+In the fourth assignment, we are given seccom-bpf sandboxes and are told to make a program that can read and print out a specific file&amp;rsquo;s contents. The only issues was I had no idea that open corresponded to the open_at system call, otherwise I could&amp;rsquo;ve done 3/4ths of the assignment.
+In class we are only taught that these sandboxes exist, and the piazza post states to use &lt;code&gt;seccom-tools&lt;/code&gt;. Yeah, I have quizzes and other projects to do, I don&amp;rsquo;t think spending hours just to maintain a high mark in the course is a good enough motivation to sink hours. It&amp;rsquo;s not satisfying and it&amp;rsquo;s a deterioration of my mental health which in my humble opinion should be prioritized over school most of the time.&lt;/p&gt;
+&lt;h2 id=&#34;content-criticism&#34; &gt;Content Criticism
+&lt;span&gt;
+    &lt;a href=&#34;#content-criticism&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;Let&amp;rsquo;s review some content shall we, and compare it to my own experience related to security.&lt;/p&gt;
+&lt;h3 id=&#34;firewalls-what-are-those&#34; &gt;Firewalls? What are those?
+&lt;span&gt;
+    &lt;a href=&#34;#firewalls-what-are-those&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;When discussing Operating System Security, you&amp;rsquo;d think encryption of disk and firewalls would be mentioned, except you&amp;rsquo;d be wrong. Although not a real criticism, the history of &lt;code&gt;ssh&lt;/code&gt; isn&amp;rsquo;t mentioned.&lt;/p&gt;
+&lt;p&gt;The firewall that comes with Ubuntu is &lt;code&gt;ufw&lt;/code&gt; and the firewall that comes with Red Hate Entreprise variants is &lt;code&gt;firewalld&lt;/code&gt;. We should be taught how to secure production applications but instead we go through this program and might end up developing startup software that has severe vulnerabilities.&lt;/p&gt;
+&lt;h3 id=&#34;sql-injection-mitigation&#34; &gt;SQL Injection Mitigation
+&lt;span&gt;
+    &lt;a href=&#34;#sql-injection-mitigation&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;Although SQL injection is mentioned, the course does not educate people on how to properly mitigate the issue. The only thing given is the %s which is a raw SQL statement and not something we usually do in Python. I highly suggest the course amend their slides so that mitigation&amp;rsquo;s in common programming languages: Rust, C#, Java, and Python are shown.&lt;/p&gt;
+&lt;p&gt;For reference, one of my group mates in a previous course who works at a $1T+ company committed unsecure code and would fix the SQL injection only in a commit days later.&lt;/p&gt;
+&lt;h3 id=&#34;cross-site-scripting-attack-xss-mitigation&#34; &gt;Cross Site Scripting Attack (XSS) Mitigation
+&lt;span&gt;
+    &lt;a href=&#34;#cross-site-scripting-attack-xss-mitigation&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;XSS (Cross site scripting attack) is mentioned but focuses more on client-side mediation rather than server-side mediation
+&lt;ul&gt;
+&lt;li&gt;The best example of XSS is someone submitting a script tag in a comment&lt;/li&gt;
+&lt;li&gt;Rather than focus on how to best escape untrusted input, the instructor just says &amp;ldquo;do very careful checks.&amp;rdquo; This is wrong.&lt;/li&gt;
+&lt;li&gt;The best way to mitigate an XSS is to make sure your whatever you are using to generate the HTML escapes all variables unless they are explicitly marked as &amp;ldquo;safe&amp;rdquo;. For example in Jinaj2, all values are escaped by default, so if you want to add custom HTML, you need to supply &lt;code&gt;{{ data | safe }}&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;cross-site-request-forgery&#34; &gt;Cross Site Request Forgery
+&lt;span&gt;
+    &lt;a href=&#34;#cross-site-request-forgery&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;One of the most dangerous attacks that can be easily deployed in production is not mentioned. To illustrate how dangerous this attack is, imagine a bank had a form that you can send money to someone. A CSRF vulnerability would allow clicking a button on another website to straight up hijack that request.&lt;/p&gt;
+&lt;p&gt;By not teaching students about the existence of how CSRF vulnerabilities come to be and how to mitigate (form tokens) them, the school&amp;rsquo;s creating software developers who will create vast vulnerabilities while thinking they are highly aware of common security vulnerabilities. So instead of  developers being humble about the lack of security in their code, they will have large egos that their code can&amp;rsquo;t have vulnerabilities since they got 100% in the security course at the &amp;ldquo;prestigious&amp;rdquo; University of Waterloo.&lt;/p&gt;
+&lt;h2 id=&#34;final-thoughts&#34; &gt;Final Thoughts
+&lt;span&gt;
+    &lt;a href=&#34;#final-thoughts&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;At the end of the day, the course does not prepare us for the real world. The best advice the course can give you is a) choose Rust over C and C++ in side projects and in production projects; b) don&amp;rsquo;t be shy in using a different framework than the norm as genetic diversity does reduce the spread of an exploit.&lt;/p&gt;
+&lt;p&gt;Lastly, I recommend taking Privacy, Cryptography, Network, and Data Security instead. A much healthier course to take it seems. I&amp;rsquo;ve downloaded the slides, so I will study it myself alongside the networks course I&amp;rsquo;m taking next term.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Critique of Wilfrid Laurier University</title>
+      <link>https://blog.elijahlopez.ca/posts/critique-of-wlu/</link>
+      <pubDate>Fri, 15 Mar 2024 20:16:01 -0400</pubDate>
+      
+      <guid>https://blog.elijahlopez.ca/posts/critique-of-wlu/</guid>
+      <description>&lt;h2 id=&#34;introduction&#34; &gt;Introduction
+&lt;span&gt;
+    &lt;a href=&#34;#introduction&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;I&amp;rsquo;m a 5th (yes 5th) year student at Wilfrid Laurier University (B. Business Administration) and University of Waterloo (B. Computer Science) and I&amp;rsquo;ve been through some rough times and some good times. My worst term was 2B but 5A is in second place and actually prompted (EC 250 ONLINE) me write this post.&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;m going to divide my thoughts based on main sections.&lt;/p&gt;
+&lt;p&gt;This is always a work in progress so comment below with anything I should add.&lt;/p&gt;
+&lt;div&gt;
+    &lt;h2&gt;Table of Contents&lt;/h2&gt;
+    &lt;nav id=&#34;TableOfContents&#34;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&#34;#introduction&#34;&gt;Introduction&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#housing&#34;&gt;Housing&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#culture&#34;&gt;Culture&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#miscellaneous&#34;&gt;Miscellaneous&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#onecard-credits-and-food-court&#34;&gt;OneCard Credits and Food Court&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#academics&#34;&gt;Academics&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#wileyplus-and-timed-textbooks-or-access-codes-for-marks-is-unethical&#34;&gt;WileyPlus and Timed Textbooks or Access Codes for Marks is Unethical&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#micro-economics-1-should-be-combined-with-micro-economics-2&#34;&gt;Micro-Economics 1 Should be Combined with Micro-Economics 2&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#ec-250----macro-economics-2-is-crammed&#34;&gt;EC 250 -  Macro-Economics 2 is Crammed&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#bu-111---introduction-to-business-organization&#34;&gt;BU 111 - Introduction to Business Organization&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#bu-121&#34;&gt;BU 121&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#bu-288---organizational-behaviour-1&#34;&gt;BU 288 - Organizational Behaviour 1&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#bu-398---organizational-behaviour-2&#34;&gt;BU 398 - Organizational Behaviour 2&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#bu-362---building-and-managing-products-services-and-brands&#34;&gt;BU 362 - Building and Managing Products, Services and Brands&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#bu-375---operations-management&#34;&gt;BU 375 - Operations Management&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#integrated-case-exercise-ice&#34;&gt;Integrated Case Exercise (ICE)&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#bu-481---strategic-management-policy-1&#34;&gt;BU 481 - Strategic Management (Policy 1)&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#bu-489---international-strategy-policy-2&#34;&gt;BU 489 - International Strategy (Policy 2)&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#closing-thoughts&#34;&gt;Closing Thoughts&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;housing&#34; &gt;Housing
+&lt;span&gt;
+    &lt;a href=&#34;#housing&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;One of the biggest issues I have with this university is how there is a housing shortage and this school decides to not take responsibility of the housing of students and instead leave it up to the private industry where what ends up happening is that in the buildings right behind campus, there are non-students living under rent-control with neighbors being students paying $300+ more per month.&lt;/p&gt;
+&lt;p&gt;The second thing I hate about the school is that it doesn&amp;rsquo;t advocate for student&amp;rsquo;s quality of life. We have a double road going through campus.&lt;/p&gt;
+&lt;h2 id=&#34;culture&#34; &gt;Culture
+&lt;span&gt;
+    &lt;a href=&#34;#culture&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;I simply cannot claim to be proud to be a golden hawk. I feel like after second-year, I didn&amp;rsquo;t care too much about parties anyways. I ended up solving my mental health issues and would rather hang out with friends I can count on. After I solved my mental health issues, I realized culture is about a mindset, and whatever mindset I have is not valued here at Laurier.&lt;/p&gt;
+&lt;h2 id=&#34;miscellaneous&#34; &gt;Miscellaneous
+&lt;span&gt;
+    &lt;a href=&#34;#miscellaneous&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;h3 id=&#34;onecard-credits-and-food-court&#34; &gt;OneCard Credits and Food Court
+&lt;span&gt;
+    &lt;a href=&#34;#onecard-credits-and-food-court&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;Screw this monetary system. Thank fully I&amp;rsquo;m almost done using the money on Subway bowls.&lt;/p&gt;
+&lt;h2 id=&#34;academics&#34; &gt;Academics
+&lt;span&gt;
+    &lt;a href=&#34;#academics&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;h3 id=&#34;wileyplus-and-timed-textbooks-or-access-codes-for-marks-is-unethical&#34; &gt;WileyPlus and Timed Textbooks or Access Codes for Marks is Unethical
+&lt;span&gt;
+    &lt;a href=&#34;#wileyplus-and-timed-textbooks-or-access-codes-for-marks-is-unethical&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;!-- - This school is filled with unethical practices simultaneously as the school claims to be a leader in ethics --&gt;
+&lt;ul&gt;
+&lt;li&gt;If ethics matters at all, the last thing to do is to turn around and subject students to similar unethical practices&lt;/li&gt;
+&lt;li&gt;if unethical practices don&amp;rsquo;t matter when students are on the receiving end, why would students care if a minority is on the receiving end?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;micro-economics-1-should-be-combined-with-micro-economics-2&#34; &gt;Micro-Economics 1 Should be Combined with Micro-Economics 2
+&lt;span&gt;
+    &lt;a href=&#34;#micro-economics-1-should-be-combined-with-micro-economics-2&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;When I took Microeconomics 2 over the summer of 2020, my notes were condenses to 76 lines. This was after I started writing my notes in Word files and before I started writing my notes on my &lt;a href=&#34;https://blog.elijahlopez.ca/tags/university&#34;&gt;blog&lt;/a&gt;. My micro-economic notes were a continuation of my notes from high school which was a word document for each chapter. Clearly, with notes like mine, micro-economics 2 should just be a chapter in microeconomics 1. On top of this, the only reason we had to take micro-economics 2 or macro-economics 2 was that you had to take one to graduate plus they are pre-requisites to 4th year finance courses that can be overridden by an academic advisor. Additionally, micro-economics 1 is similar to managerial accounting. So if anything, micro-economics 1 should be combined with managerial accounting 1.&lt;/p&gt;
+&lt;details&gt;&lt;summary&gt;MicroEconomics 2 Notes&lt;/summary&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-txt&#34; data-lang=&#34;txt&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;MR = P_e (1 + 1/η)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;η = dQ/dP * P_e/Q_e
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Price is elastic when 0 &amp;lt;= Q &amp;lt; a/2b where a and b are coefficients of the demand function
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;INPUT MAXIMIZATION
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;MR / Product of input a = Marginal Expenditure of input a
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;MP_L / P_L = MP_K / P_K
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Elasticity of output for Cobb-Douglas equals the exponent of the respective input
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;E.g.
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Q_1 = 100 * L^0.7 * K^0.4
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;increase labour by 1%: Q_2 = 100(1.01L)^0.7 * K^0.4
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Q_2 = 1.006989(100L^0.7 * K^0.4)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Q_2 ~= 1.007Q -&amp;gt; 0.7% increase (exponent)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Economies of Scope
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;When it is cheaper to produce quantities of two products together
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;How much is saved as a percentage of the new cost
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;(OLD COST - NEW COST) / NEW COST
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;In PC, profit maximizing level is when P = MC
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;markup equal to −1/(1 + η)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;markup % = P / MC
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;in fixed proportions, MC = MR_A + MR_B as long as either MR is &amp;gt; 0
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Cournot solution
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Set dProfit/dQ_a/b = 0 for both companies where Q_a/b is the respective Quantity for each company (e.g. TR_a = XQ_A + m(Q_a + Q_b)Q_a )
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Substitute equations and voila
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Price leader
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Using the Q_b = ... equation, sub into P= equation
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;e.g.  Q = Q_a + Q_b where Q_b is the substituted equation
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Advertising expenditures are optimal if an additional dollar spent on ads
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;increases net profit (NOT MR) by one dollar.
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;MR from $1 of advertising should equal elasticity of demand curve
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Price Discrimination Optimal
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;MR_1 = MR_2
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;P_1(1 + 1 / ped_1) = P_2(1 + 1 / ped_2)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;P_1 / P_2 = [1 + (1 / ped_2)] / [1 + (1 / ped_1)]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;First degree
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Charging at demand curve
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Second degree
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;By usage. Less/q as q increases
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Third degree
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Discounting distinct separable markets
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;set MR_1 = MC = MR_2
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Peak load pricing
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Pricing Strategy (Coupons)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;MR_R = MR_S = MC
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;P(1 + 1 / PED_R) = (P - X)(1 + 1 / PED_S)= MC.
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;X is discount value
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;PED_R for those who don&amp;#39;t use coupons.
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;PED_S for those who use coupons.
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Two part tariff
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Entry fee = consumer surplus where P = MC
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Per use fee found by P = MC
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Profit = R - Fixed Costs - Dis-utility of Manager as $
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;When calculating utility with probabilities, first calculate utility of all wealths
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;and then multiply by the probabilities
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;When there are big firms and small firms,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;set MC_i = P to first find q_i and then * by # to get Q_small
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Then do Q - Q_small to get Q_big which you can use to find P
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;variance = weight * (val_1 - weighted_mean)^2 + ...
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;std_dev = sqrt(variance)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/details&gt;
+&lt;h3 id=&#34;ec-250----macro-economics-2-is-crammed&#34; &gt;EC 250 -  Macro-Economics 2 is Crammed
+&lt;span&gt;
+    &lt;a href=&#34;#ec-250----macro-economics-2-is-crammed&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;First, defraying the costs that low-income workers face when entering the labour force costs money.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;This is headache of a sentence straight from the textbook. So much redundancy and it&amp;rsquo;s so hard to parse. What does it mean? It means it costs money to subsidize low-income workers when they enter the labour force.&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;m in 5A and I&amp;rsquo;m taking EC-250 because it&amp;rsquo;s a pre-requisite to fixed income but I&amp;rsquo;m also interested in macro-economics. This is one of the few times where I have felt constant pressure and burnout throughout the term. Maybe only 2 weeks of breathing room and this course was responsible for the stress. The expectation was to read an entire chapter, sometimes two, then do homework, and then do a quiz. When things got tough, I just resorted to reading the instructors &amp;ldquo;summaries&amp;rdquo; which were also filled with word vomit. My notes are most definitely filled with word vomits. Somewhere along the line, conceptual teaching was thrown out in favour of memorization. I suggest Macro-Economics 1 and 2 be taught in first year where the load is balanced between the two.&lt;/p&gt;
+&lt;p&gt;The difference between the courses is that Macro Economics 1 is abstracted whereas Macro Economics 2 answers where the abstractions come from which is just as important and more enlightening. Generally speaking, macro-economics 1 and 2 should cover the following:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Macro Economics 1 (What are we playing with)
+&lt;ul&gt;
+&lt;li&gt;Output (GDP and what are Real Prices)&lt;/li&gt;
+&lt;li&gt;Labour
+&lt;ul&gt;
+&lt;li&gt;Unemployment&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Investment and Savings
+&lt;ul&gt;
+&lt;li&gt;Interest Rates&lt;/li&gt;
+&lt;li&gt;Currencies&lt;/li&gt;
+&lt;li&gt;Open vs. Closed Economies&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Money
+&lt;ul&gt;
+&lt;li&gt;Central Bank&lt;/li&gt;
+&lt;li&gt;Reserves&lt;/li&gt;
+&lt;li&gt;Fractional reserve banking&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Inflation&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Macro Economics 2 (How to play)
+&lt;ul&gt;
+&lt;li&gt;Business Cycles
+&lt;ul&gt;
+&lt;li&gt;Shocks&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Monetary Policies
+&lt;ul&gt;
+&lt;li&gt;Money Supply&lt;/li&gt;
+&lt;li&gt;Overnight interest rates&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Fiscal Policies
+&lt;ul&gt;
+&lt;li&gt;Government&lt;/li&gt;
+&lt;li&gt;Taxes&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Inflation and Unemployment&lt;/li&gt;
+&lt;li&gt;Economic Growth
+&lt;ul&gt;
+&lt;li&gt;Purpose&lt;/li&gt;
+&lt;li&gt;Factors&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;bu-111---introduction-to-business-organization&#34; &gt;BU 111 - Introduction to Business Organization
+&lt;span&gt;
+    &lt;a href=&#34;#bu-111---introduction-to-business-organization&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;BU 111 is super generalized and should not cover time value of money. Time Value is an important concept that belongs in finance 1 where students should be taught how to start creating Excel templates that can be used for Finance 2, Investment Management, and Futures, Swap, &amp;amp; Options.&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;ll have to revisit my notes to improve this critique.&lt;/p&gt;
+&lt;h3 id=&#34;bu-121&#34; &gt;BU 121
+&lt;span&gt;
+    &lt;a href=&#34;#bu-121&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;Don&amp;rsquo;t have much criticisms of BU 121 as it is more of a practical application of BU 111 and should focus on either extending or applying said courses.&lt;/p&gt;
+&lt;h3 id=&#34;bu-288---organizational-behaviour-1&#34; &gt;BU 288 - Organizational Behaviour 1
+&lt;span&gt;
+    &lt;a href=&#34;#bu-288---organizational-behaviour-1&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;These courses are very subpar. First, I vaguely remember the content but remember the professors well since they had personalities. The first course mentions Dunning Kruger even thought the &amp;ldquo;effect&amp;rdquo; is &lt;a href=&#34;https://economicsfromthetopdown.com/2022/04/08/the-dunning-kruger-effect-is-autocorrelation/#fn1&#34;&gt;autocorrelation&lt;/a&gt; (i.e. the effect isn&amp;rsquo;t psychological but statistical and &amp;ldquo;tells us nothing about the people it supposedly measures&amp;rdquo;).&lt;/p&gt;
+&lt;p&gt;The course is a bunch of theories that the take away is to manage people based on evidence proven to work. It&amp;rsquo;s more of a psychology course and the one takeaway is that my locus of control is 5/10 (fence-sitter). In my opinion, anyone who thinks they solely can determine their behaviour/actions is dumb and so are the people who think they cannot take responsibility for themselves. This course should instead be called and focused on &lt;strong&gt;pitfalls of groups and ethics&lt;/strong&gt;. Takeaways:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Limit group membership to 10 people (e.g. committees, board of directors)&lt;/li&gt;
+&lt;li&gt;Group polarization: sometimes an idea that is unpopular to even all members can be agreed upon just because of it being the only suggestion&lt;/li&gt;
+&lt;li&gt;Biases in decision making: heuristics (snappy solution), self-interests, information availability&lt;/li&gt;
+&lt;li&gt;Jargon is for insecure people&lt;/li&gt;
+&lt;li&gt;Negotiation: &lt;strong&gt;needs improvement&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Ethics: &lt;strong&gt;needs more&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;bu-398---organizational-behaviour-2&#34; &gt;BU 398 - Organizational Behaviour 2
+&lt;span&gt;
+    &lt;a href=&#34;#bu-398---organizational-behaviour-2&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;This course focused on the behaviour of the organization itself. It&amp;rsquo;s definitely an information overload.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Porter&amp;rsquo;s Competitive Strategies (cost vs. quality, targe market size)&lt;/li&gt;
+&lt;li&gt;Organizational culture: implicit (e.g. tacit knowledge), integration of new members, adapting
+&lt;ul&gt;
+&lt;li&gt;Culture picked for a strategy (needs to talk about pitfalls in real companies)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Whistlblowing: what should you do when corporation does not have a whistlblowing protocol&lt;/li&gt;
+&lt;li&gt;Organizational structure and reporting relationships&lt;/li&gt;
+&lt;li&gt;Interorganizatitonal relationships: resource dependence, collaborative, competitor&amp;hellip;&lt;/li&gt;
+&lt;li&gt;&amp;ldquo;Life cycle&amp;rdquo;: give us examples though&lt;/li&gt;
+&lt;li&gt;Bureaucracy and why organizations don&amp;rsquo;t change and what to do about it&lt;/li&gt;
+&lt;li&gt;International Organizations even though this is discussed in more details in BU 489&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The only good thing about the second course is that it was in person and people actually showed up to class.&lt;/p&gt;
+&lt;h3 id=&#34;bu-362---building-and-managing-products-services-and-brands&#34; &gt;BU 362 - Building and Managing Products, Services and Brands
+&lt;span&gt;
+    &lt;a href=&#34;#bu-362---building-and-managing-products-services-and-brands&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;This was a case based course which was okay and got reworked anyways so I won&amp;rsquo;t talk about it. Basically a way for laurier to get more money from us and make us pay $100+ for the articles.&lt;/p&gt;
+&lt;h3 id=&#34;bu-375---operations-management&#34; &gt;BU 375 - Operations Management
+&lt;span&gt;
+    &lt;a href=&#34;#bu-375---operations-management&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;Useful course since it&amp;rsquo;s an intro to project management. Pairs well with Waterloo&amp;rsquo;s Algorithms which goes over a graph algorithm. Two assignments that were a burden. For the second assignment, I even created a python program to draw the graphs for me using networkx and matplotlib.&lt;/p&gt;
+&lt;h3 id=&#34;integrated-case-exercise-ice&#34; &gt;Integrated Case Exercise (ICE)
+&lt;span&gt;
+    &lt;a href=&#34;#integrated-case-exercise-ice&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;My group members recommended the company to innovate in creating digital humans that have the same genetic reactions as actual humans to be used in clinical trials.
+Make with this what you will but in my opinion, a BBA holder is not a good consultant if the average person can&amp;rsquo;t even critically think of a good solution. I think the BBA program needs to seriously promote intra-organizational case solutions more.&lt;/p&gt;
+&lt;h3 id=&#34;bu-481---strategic-management-policy-1&#34; &gt;BU 481 - Strategic Management (Policy 1)
+&lt;span&gt;
+    &lt;a href=&#34;#bu-481---strategic-management-policy-1&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;Disgusting course. Never focused on failures, only successes. Talks about strategies from OB 2. Had to read cases every week. Content was very boring.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Porter&amp;rsquo;s 5 forces&lt;/li&gt;
+&lt;li&gt;PESTEL&lt;/li&gt;
+&lt;li&gt;Industry Value Chain&lt;/li&gt;
+&lt;li&gt;Resource based view&lt;/li&gt;
+&lt;li&gt;Leader analysis: refuses to acknowledge that leaders are picked by luck not merit and can fool shareholders like with Jack Welch&lt;/li&gt;
+&lt;li&gt;Frameworks&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;bu-489---international-strategy-policy-2&#34; &gt;BU 489 - International Strategy (Policy 2)
+&lt;span&gt;
+    &lt;a href=&#34;#bu-489---international-strategy-policy-2&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;What this course should focus and teach: when to expand outside of a country, when to start outside the country, how to create a strategy to expand outside of a country, how to maintain and/or manage an organization with a presence in more than one location, when does an organization transcend it&amp;rsquo;s nationality (Transnational), and when should organizations exit a market?&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Worldwide scope of organizations&lt;/li&gt;
+&lt;li&gt;Midterm was not fun at all since it required memorization and was under lockdown browser&lt;/li&gt;
+&lt;li&gt;Discussions were nice&lt;/li&gt;
+&lt;li&gt;Don&amp;rsquo;t really think it taught us how to get into the position where we can make these decisions&lt;/li&gt;
+&lt;li&gt;Jargon heavy, just read my comments on the deglobalization article&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;What I wish these courses would do as they are in an academic setting is bring something like &amp;ldquo;degrowth&amp;rdquo; into the picture. University should be about exposing people to new ideas not just incumbent ones.&lt;/p&gt;
+&lt;p&gt;A person who takes this course should know when and how to start exporting goods they produce in Canada to America and Europe.&lt;/p&gt;
+&lt;h2 id=&#34;closing-thoughts&#34; &gt;Closing Thoughts
+&lt;span&gt;
+    &lt;a href=&#34;#closing-thoughts&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;Maybe in the future when I don&amp;rsquo;t have to worry about money, I can develop a business programme that does shape people into becoming holistic critical thinkers who can come up with and implement strategies.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Zero Sugar Carbonated Drink Reviews</title>
+      <link>https://blog.elijahlopez.ca/posts/zero-sugar-carbonated-drink-reviews/</link>
+      <pubDate>Sat, 11 Nov 2023 17:50:33 -0500</pubDate>
+      
+      <guid>https://blog.elijahlopez.ca/posts/zero-sugar-carbonated-drink-reviews/</guid>
+      <description>&lt;h3 id=&#34;diet-pepsi&#34; &gt;Diet Pepsi
+&lt;span&gt;
+    &lt;a href=&#34;#diet-pepsi&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;Probably the best&lt;/p&gt;
+&lt;h3 id=&#34;coke-zero&#34; &gt;Coke Zero
+&lt;span&gt;
+    &lt;a href=&#34;#coke-zero&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;Not as good as diet pepsi, but still good&lt;/p&gt;
+&lt;h3 id=&#34;diet-coke&#34; &gt;Diet Coke
+&lt;span&gt;
+    &lt;a href=&#34;#diet-coke&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;Pretty good. Sometimes better than coke zero.&lt;/p&gt;
+&lt;h3 id=&#34;pepsi-zero-sugar&#34; &gt;Pepsi Zero Sugar
+&lt;span&gt;
+    &lt;a href=&#34;#pepsi-zero-sugar&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;Do not buy, makes your stomach bloated and kind of sick to be honest&lt;/p&gt;
+&lt;h3 id=&#34;mountain-dew-zero-sugar&#34; &gt;Mountain Dew (Zero Sugar)
+&lt;span&gt;
+    &lt;a href=&#34;#mountain-dew-zero-sugar&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;This is tasty enough to drink again. Some cans failed quality control for sure.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Good Food</title>
+      <link>https://blog.elijahlopez.ca/posts/good-food/</link>
+      <pubDate>Tue, 23 Aug 2022 21:36:50 -0400</pubDate>
+      
+      <guid>https://blog.elijahlopez.ca/posts/good-food/</guid>
+      <description>&lt;p&gt;This is a list of good food I would not mind eating again.
+If a restaurant is not here, either I didn&amp;rsquo;t like the food and didn&amp;rsquo;t have a good experience
+or I&amp;rsquo;ve never been. Comment if you&amp;rsquo;d like a food review. I have extremely niche needs
+when it comes to food.&lt;/p&gt;
+&lt;h2 id=&#34;cooking&#34; &gt;Cooking
+&lt;span&gt;
+    &lt;a href=&#34;#cooking&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;My breakfast on days I feel like cooking is two scrambled eggs, two hash browns, and bacon bits.
+I find bacon bits easier to enjoy since the egg, hash browns, and bacon are in equal proportions
+for every bite you take. I consider this breakfast &lt;em&gt;heavy&lt;/em&gt; meaning that I don&amp;rsquo;t have to eat lunch.&lt;/p&gt;
+&lt;h2 id=&#34;fast-food&#34; &gt;Fast Food
+&lt;span&gt;
+    &lt;a href=&#34;#fast-food&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;h3 id=&#34;right-wingers&#34; &gt;Right Wingers
+&lt;span&gt;
+    &lt;a href=&#34;#right-wingers&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;For now I really liked the Shawarma Specialty Pizza.&lt;/p&gt;
+&lt;p&gt;The wings also provide good value but I found the sauces lacking.&lt;/p&gt;
+&lt;h3 id=&#34;wendys&#34; &gt;Wendy&amp;rsquo;s
+&lt;span&gt;
+    &lt;a href=&#34;#wendys&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;The Honey BBQ chicken tenders combo with the frosty swapped for the drink is the perfect meal. C$12.39 plus tax; $14 in Ontario.&lt;/li&gt;
+&lt;li&gt;Bacon deluxe burger is the perfect burger&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;pita-halal&#34; &gt;Pita Halal
+&lt;span&gt;
+    &lt;a href=&#34;#pita-halal&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;I recommend both the beef and chicken shawarma poutine. I recommend dining in because otherwise the fries get soggy. Also they provide these fancy ceramic bowls to eat the poutine in. I don&amp;rsquo;t like their wraps much.&lt;/p&gt;
+&lt;h3 id=&#34;osmows&#34; &gt;Osmow&amp;rsquo;s
+&lt;span&gt;
+    &lt;a href=&#34;#osmows&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;Recently stepped up their game when it comes to chicken shawarma wraps (C$10.95). I find that the chicken quality depends on the location.&lt;/p&gt;
+&lt;h2 id=&#34;burger-king&#34; &gt;Burger King
+&lt;span&gt;
+    &lt;a href=&#34;#burger-king&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;Chicken Jr&lt;/li&gt;
+&lt;li&gt;Whopper Jr&lt;/li&gt;
+&lt;li&gt;Whopper&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Fries are okay sometimes.&lt;/p&gt;
+&lt;h3 id=&#34;costco&#34; &gt;Costco
+&lt;span&gt;
+    &lt;a href=&#34;#costco&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;Hot dog, no sauce + soda. This is such a value meal, you could
+get two hot dogs if you want to have this for dinner or lunch. One is nothing
+but a snack.&lt;/p&gt;
+&lt;h3 id=&#34;harveys&#34; &gt;Harvey&amp;rsquo;s
+&lt;span&gt;
+    &lt;a href=&#34;#harveys&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;I went to Harvey&amp;rsquo;s twice in the last month and enjoyed the Chicken Bacon Ranch poutine (regular).
+Optionally get a drink. Total cost is $10.17 including tax and drink. If you bring your own
+drink, you can reduce your expense.&lt;/p&gt;
+&lt;h3 id=&#34;dairy-queen-dq&#34; &gt;Dairy Queen (DQ)
+&lt;span&gt;
+    &lt;a href=&#34;#dairy-queen-dq&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;An underrated franchise. The 4pc chicken strip basket (comes with fries and as side sauce) is pretty good
+and doesn&amp;rsquo;t feel oily like burgers and other fries do.&lt;/p&gt;
+&lt;h3 id=&#34;zesty-pita&#34; &gt;Zesty Pita
+&lt;span&gt;
+    &lt;a href=&#34;#zesty-pita&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;I was craving beef on rice instead of fries and this place delivered. I feel that rice may be healthier than fries
+so will try eating these mixes with a rice base instead of a fries base. The food here was more expensive than Pita Halal
+but I liked it either way. The beef tasted slightly like mutton.&lt;/p&gt;
+&lt;h2 id=&#34;dine-in-or-take-out-restaurants&#34; &gt;Dine-in or Take Out Restaurants
+&lt;span&gt;
+    &lt;a href=&#34;#dine-in-or-take-out-restaurants&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;h3 id=&#34;chawlas-cuisine&#34; &gt;Chawla&amp;rsquo;s Cuisine
+&lt;span&gt;
+    &lt;a href=&#34;#chawlas-cuisine&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;&lt;a href=&#34;https://www.chawlascuisine.com/menus&#34;&gt;Brampton, Ontario&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Best food I&amp;rsquo;ve had in my life.&lt;/p&gt;
+&lt;p&gt;My family recently had a get together at our house and we ordered food from this place. Appetizers were
+gobi 65, tandoori chicken. Dinner was butter chicken and a vegetarian dish (possibly vegetarian kofta).&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Chicken tikka masala&lt;/li&gt;
+&lt;li&gt;Butter chicken&lt;/li&gt;
+&lt;li&gt;Szhezuan chow mein&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The tandoori chicken actually tasted the same as it does in India which was incredible.&lt;/p&gt;
+&lt;h3 id=&#34;cheers-restaurant&#34; &gt;Cheers Restaurant
+&lt;span&gt;
+    &lt;a href=&#34;#cheers-restaurant&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;&lt;a href=&#34;www.cheerswelland.com&#34;&gt;Welland, Ontario&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Best fish and chips. The first time they had perch and it was made extremely well.
+The second time, even though they didn&amp;rsquo;t have perch, the food was still delicious.&lt;/p&gt;
+&lt;h3 id=&#34;piper-arms-pub&#34; &gt;Piper Arms Pub
+&lt;span&gt;
+    &lt;a href=&#34;#piper-arms-pub&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;Waterloo, Ontario&lt;/p&gt;
+&lt;p&gt;The best restaurant I&amp;rsquo;ve ever eaten at. Your $20-40 is well spent at this place. You really get
+what you pay for. I suggest getting 7-up as the drink as its topless. I think they have diet pepsi,
+but I rarely drink 7-up in general.&lt;/p&gt;
+&lt;p&gt;For lunch, I&amp;rsquo;ve eaten the Fish &amp;amp; Chips as well as the burger. I don&amp;rsquo;t recommend the burger as it&amp;rsquo;s equivalent to
+two meals. The patty is just too big for me and I got acne the next day. If you&amp;rsquo;re a big guy, then by all means,
+you will also enjoy it without the acne. The fish and chips did cause me to go to the washroom half an hour later, however
+that could&amp;rsquo;ve just been pure coincidence.&lt;/p&gt;
+&lt;p&gt;For dinner, my first time there, I got the half rack of ribs and half pound of wings. It came with fries too. This
+dinner was delicious, I was surprised I was able to finish most of it. I think it was only two wings and some
+fries that I could&amp;rsquo;nt finish which is understandable since I wasn&amp;rsquo;t hungry when I went there. I got the Caesar garlic
+parmesean for the wings seasoning/sauce which is rare.&lt;/p&gt;
+&lt;h3 id=&#34;famoso-neapolitan-pizzeria&#34; &gt;Famoso Neapolitan Pizzeria
+&lt;span&gt;
+    &lt;a href=&#34;#famoso-neapolitan-pizzeria&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;Waterloo, Ontario&lt;/p&gt;
+&lt;p&gt;I went here with a friend and their pasta with the meatballs did not dissapoint me. I had water for the drink.
+The seating was awkward thought, we were at a table in the middle of the restaurant a meter or two away from the entrance
+to their outdoor dining. This is just a me thing, as I don&amp;rsquo;t like people sitting towards my back. This is a place I&amp;rsquo;d take
+a girl out for dinner or a come with a friend, not a place I&amp;rsquo;d go alone. It&amp;rsquo;s more classic and simple than the Piper Arms Place,
+although I&amp;rsquo;d want to try their pizza out next time. So I guess, it&amp;rsquo;s not a first date location after all.&lt;/p&gt;
+&lt;h3 id=&#34;beertown-public-house&#34; &gt;Beertown Public House
+&lt;span&gt;
+    &lt;a href=&#34;#beertown-public-house&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;BT Brisket
+&lt;ul&gt;
+&lt;li&gt;Big portioning&lt;/li&gt;
+&lt;li&gt;If you leave the fat for last, don&amp;rsquo;t eat it&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Raspberry Sorbet
+&lt;ul&gt;
+&lt;li&gt;For $6 + tax, you get a dessert than you can savour and that won&amp;rsquo;t leave you feeling sick the way ice cream does.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Oneplus 6T Review</title>
+      <link>https://blog.elijahlopez.ca/posts/oneplus-6t/</link>
+      <pubDate>Thu, 28 Jul 2022 20:15:28 -0400</pubDate>
+      
+      <guid>https://blog.elijahlopez.ca/posts/oneplus-6t/</guid>
+      <description>&lt;p&gt;I submitted this review to OnePlus for a chance to review their Oneplus 10T.&lt;/p&gt;
+&lt;p&gt;The oneplus 6T was a phone I purchased out of need at the start of 2018 when my oneplus 3&amp;rsquo;s display went out of commission due to a major drop. That phone was only two years olds at the time and I had already replaced the display once before and the device performance was slow already. My current oneplus 6t I have dropped multiple times, however the display is in top shape and I&amp;rsquo;ve never had a major drop as before. I&amp;rsquo;m still using the same screen protector and currently don&amp;rsquo;t even use a case. I find that oneplus doesn&amp;rsquo;t inform you that their phones ship with a semi case so I ended up having 3 cases since I also ordered the heavy duty one from oneplus. The first case was the malleable plastic that wraps around the phone. The second one was the matte black friction case for better grip and the third was the one I added on which was a thick layer to the case. All three cases made the phone bulkier and heavier. The thicker case ended up tearing at the corners after a couple years and the grip case ended up having pieces broken at the top not to mention it catches hold of the threads in my pocket.&lt;/p&gt;
+&lt;p&gt;Anyways, let&amp;rsquo;s move on to the phone itself. My favorite part is always software in all tech because tech hardware exists to run software and if the software, especially the os, is unproductive or lacking, then it defeats the entire productivity benefit that software is supposed to give us. Oneplus has the best mobile OS hands down. They didn&amp;rsquo;t dealing their os for a target audience, they designed their os for everyone and every case. Just the other day I was at a family friend&amp;rsquo;s house and my mom needed to connect to the wifi. My friend who&amp;rsquo;s house it is opened up a book and tried the password from there but it was wrong. My quick thinking told him to share the wifi and all that showed up was a qr code. My mom uses an iPhone so that&amp;rsquo;s obviously useless, however I knew that my phone, the handy oneplus 6t, shares a qr code AND the actual password itself. These are the minor and small ux improvements that I appreciate.&lt;/p&gt;
+&lt;p&gt;Moving on, let&amp;rsquo;s talk about navigation. One gripe I have is the inability to use the same app transition that is found on pixels. The buttery smooth one found on other Android 12 devices. I had to stop using Nova launcher because 3rd party launchers, and for oneplus the default one as well, was never supported with this feature. In terms fo performance, the oneplus 6t can handle games like Cod fine, although the phone&amp;rsquo;s temperature gets hot and battery life is reduced significantly after an hour or two. I&amp;rsquo;m more of a pc gamer so i prefer AAA games than mobile. I&amp;rsquo;d say I play a mobile game every two months. I really dislike the state of mobile gaming, most games are designed to waste your time, and it&amp;rsquo;s obvious. In comparison to AAA games where games are explicitly designed to be fun, and this fun keeps you playing.&lt;/p&gt;
+&lt;p&gt;Since it&amp;rsquo;s relevant, the geekbench 5 score is 294 for single core and 1056 for multi core. 1000 is the baseline for the i3-8100 and my old razer Blade Stealth (i5-7200u) scores 500 for single core and 590 for multi core. My phone&amp;rsquo;s scores are significantly under average as geekbench would report the oneplus 6T to have a single score around 1000. Not sure how a 4 year old 8 series snapdragon can equal the desktop performance of an i3-8100, but that&amp;rsquo;s what geekbench said. This performance lackluster is present when I have multiple tabs open in Firefox or basically push any software to its limit, even google keep, and sync for reddit. Ram management breaks at certain times where entire pages in Firefox will reload when swiping between tabs. When I run the camera, everything in ram is lost. If I open the camera app, all the other apps are no longer saved and end up refreshing. I made sure to copy this review before opening the camera to double check. Yep this form was cleared. Camera quality &amp;amp; everything else is fine. Top of volume rocker rarely works. Wish phones were built for 5 years, and not 3.&lt;/p&gt;
+&lt;p&gt;EDIT 2023/4/15:&lt;/p&gt;
+&lt;p&gt;The phone has been glitching. The camera is slow, the audio freezes. Either it&amp;rsquo;s due to the oneplus buds pro or something else. Anyways, I&amp;rsquo;m getting a new phone. The OnePlus 11 5G seems too expensive, and the OnePlus 10T is a bit bigger as my dad already has it. It seems to lack the ringer so that&amp;rsquo;s a bumper. The pixel on the other hand has top notch software image processing which beats the processing done by iPhones. It is also smaller or just as big as the OnePlus 6T. It&amp;rsquo;s already annoying using my phone with one hand, so I can&amp;rsquo;t wait to have a phone that&amp;rsquo;s a tiny bit smaller and easier to hold. The software support will be 3 android updates which will be amazing. So I will get android 14, 15, and 16; not to mention my OnePlus 6T is running Android 11 right now! So I haven&amp;rsquo;t experienced android 12 nor Android 13. Seems like Android 12 added one handed mode, so I&amp;rsquo;ll have that too.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Razer Blade Stealth Late 2016, 5 Years Later</title>
+      <link>https://blog.elijahlopez.ca/posts/razer-blade-stealth-late-2016/</link>
+      <pubDate>Tue, 19 Jul 2022 12:34:25 -0400</pubDate>
+      
+      <guid>https://blog.elijahlopez.ca/posts/razer-blade-stealth-late-2016/</guid>
+      <description>&lt;div&gt;
+    &lt;h2&gt;Table of Contents&lt;/h2&gt;
+    &lt;nav id=&#34;TableOfContents&#34;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&#34;#introduction&#34;&gt;Introduction&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#video&#34;&gt;Video&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#background&#34;&gt;Background&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#specs&#34;&gt;Specs&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#good-things&#34;&gt;Good Things&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#testament-of-time&#34;&gt;Testament of Time&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#free-headset&#34;&gt;Free Headset&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#qhd&#34;&gt;QHD&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#speakers&#34;&gt;Speakers&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#keyboard&#34;&gt;Keyboard&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#medium-tasks&#34;&gt;Medium Tasks&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#what-made-me-upgrade&#34;&gt;What made me upgrade?&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#memory&#34;&gt;Memory&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#battery&#34;&gt;Battery&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#no-gpu&#34;&gt;No GPU&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#mobile-cpu&#34;&gt;Mobile CPU&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#webcam-is-720p&#34;&gt;Webcam is 720p&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#storage&#34;&gt;Storage&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#minor-faults&#34;&gt;Minor Faults&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#plans&#34;&gt;Plans&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;introduction&#34; &gt;Introduction
+&lt;span&gt;
+    &lt;a href=&#34;#introduction&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;h3 id=&#34;video&#34; &gt;Video
+&lt;span&gt;
+    &lt;a href=&#34;#video&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;Watch the 5 year review here.&lt;/p&gt;
+
+
+    
+    &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen=&#34;allowfullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/yUD-R7tB4w8?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;
+      &gt;&lt;/iframe&gt;
+    &lt;/div&gt;
+
+&lt;h3 id=&#34;background&#34; &gt;Background
+&lt;span&gt;
+    &lt;a href=&#34;#background&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;I purchased the Razer Blade Stealth 12.5&amp;quot; in April/May 2017 for CAD$1,500 including tax max.
+It came with $150 of razerstore credits which I spent on a Kraken V2 Headset since my desktop lack a microphone and headphones.&lt;/p&gt;
+&lt;p&gt;This review takes place in July 2022, so the laptop has lasted more than 5 years. I&amp;rsquo;m upgrading
+to the Razer Blade 14 which has more desktop related specs along with allegedly better battery life.&lt;/p&gt;
+&lt;h3 id=&#34;specs&#34; &gt;Specs
+&lt;span&gt;
+    &lt;a href=&#34;#specs&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;The specs is predominantly why this laptop is not suited for productivity and makes it not versatile.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;CPU: i5-7200u (dual core)&lt;/li&gt;
+&lt;li&gt;GPU: integrated graphics&lt;/li&gt;
+&lt;li&gt;Storage: 128 GB&lt;/li&gt;
+&lt;li&gt;RAM: 8GB&lt;/li&gt;
+&lt;li&gt;Battery: ???&lt;/li&gt;
+&lt;li&gt;Left side ports: USB C charging, USB 3, audio jack&lt;/li&gt;
+&lt;li&gt;Right side ports: HDMI, USB 3&lt;/li&gt;
+&lt;li&gt;Chassis: aluminum&lt;/li&gt;
+&lt;li&gt;Color: black&lt;/li&gt;
+&lt;li&gt;Keyboard: RGB lightning but does not light up symbols on the functions keys.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;good-things&#34; &gt;Good Things
+&lt;span&gt;
+    &lt;a href=&#34;#good-things&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;Although you might LOL after reading the first four specs, mind you this was my &lt;strong&gt;first&lt;/strong&gt; notebook that wasn&amp;rsquo;t intel pentium, and I didn&amp;rsquo;t have the financial freedom I have currently. My previous two laptops were a Windows XP laptop that had been in the family for over a decade, followed by a bulky Asus laptop with intel pentium.&lt;/p&gt;
+&lt;h3 id=&#34;testament-of-time&#34; &gt;Testament of Time
+&lt;span&gt;
+    &lt;a href=&#34;#testament-of-time&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;It&amp;rsquo;s lasted 5 years even with low storage and required only $100 for a battery replacement due
+to stressing the laptop for hours per day without a CPU limit. Currently, I have the CPU
+limited to 90% to prevent high temperatures. The CPU itself is not a pentium so that&amp;rsquo;s another
+plus, although it is a mobile i5. Build quality is amazing. The laptop has no plastic and
+the touchpad is not trash. The only nicks present are on the sharp
+edges of the laptop lid, most likely due to letting other people touch or move your laptop.
+Pro-tip: never let anyone touch your laptop. You&amp;rsquo;d think moving a laptop would be done
+carefully by everyone, but no.&lt;/p&gt;
+&lt;h3 id=&#34;free-headset&#34; &gt;Free Headset
+&lt;span&gt;
+    &lt;a href=&#34;#free-headset&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;Another good thing as said before was the $150 credits the laptop came with which I used
+to buy a headset which I use to this day. It only required ear pad replacements which was
+only possible because Razer built the headset with maintainability in mind. Thanks Razer.&lt;/p&gt;
+&lt;h3 id=&#34;qhd&#34; &gt;QHD
+&lt;span&gt;
+    &lt;a href=&#34;#qhd&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;This laptop, although the display is small, has a QHD display. Macbooks all comes with higher
+than 1080p resolution, so it makes sense why Razer was pushing high PPI displays even in 2016.
+The display size was small, so it required 150% scaling which was possible in Windows. Had
+the display not been QHD, I would never have noticed that Linux distros have poor
+defaults when it comes to handling QHD displays (grub).&lt;/p&gt;
+&lt;h3 id=&#34;speakers&#34; &gt;Speakers
+&lt;span&gt;
+    &lt;a href=&#34;#speakers&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;Reviewers are claiming that the Razer Blade 14 has poor speakers, but I think
+it&amp;rsquo;s just a relative thing because even my Stealth has some fantastic speakers.
+Dolby Digital Audio makes a big difference. I compared it off, on, and
+made sure to tweak it to make music sound the best. If this laptop&amp;rsquo;s speakers
+are satisfying, it makes no sense that a 2022 laptop would have worse speakers.&lt;/p&gt;
+&lt;h3 id=&#34;keyboard&#34; &gt;Keyboard
+&lt;span&gt;
+    &lt;a href=&#34;#keyboard&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;Love the keyboard and the RGB lighting. I was pro-lgbtq+ way before people decided
+it was a personality trait.&lt;/p&gt;
+&lt;h3 id=&#34;medium-tasks&#34; &gt;Medium Tasks
+&lt;span&gt;
+    &lt;a href=&#34;#medium-tasks&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;Could handle less than medium heavy tasks like YouTube, Word, google, even cuphead.
+Photoshop and Illustrator work fine. Premiere Pro, After Effects work but not for rendering.&lt;/p&gt;
+&lt;h2 id=&#34;what-made-me-upgrade&#34; &gt;What made me upgrade?
+&lt;span&gt;
+    &lt;a href=&#34;#what-made-me-upgrade&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;h3 id=&#34;memory&#34; &gt;Memory
+&lt;span&gt;
+    &lt;a href=&#34;#memory&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;Out of memory issues starting in early 2022. If I ran IntelliJ along with word
+and a browser, I quickly ran out of memory. As a developer, you constantly learn
+things and although 8GB is enough for single tasks, multi-tasking is part of my daily routine and is unavoidable if you are constly referencing things.
+Although I have a desktop, performance portability (a made-up term) has become a major need for me.
+Thus, I want to be as productive programming on my laptop as I am on my desktop.&lt;/p&gt;
+&lt;h3 id=&#34;battery&#34; &gt;Battery
+&lt;span&gt;
+    &lt;a href=&#34;#battery&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;The laptop died after 3 hours and 50 minutes on battery with max brightness, max speakers, max brightness keyboard lighting,
+moderate Youtube playback, Microsoft word, some 30 minutes of idling. No programming, no VSCode, nor IntelliJ.&lt;/p&gt;
+&lt;p&gt;I want performance portability without a severe hit in battery life. If I was programming religiously on this laptop while playing YouTube
+and listening to music with microsoft word open, the laptop would surely last less.&lt;/p&gt;
+&lt;p&gt;In 2020, I was overusing the laptop and the fans were spinning constantly every day. The battery ending up becoming bloated
+and I had to replace it. I was able to replace it myself, however the 3 hours and 50 minutes is using this new battery.&lt;/p&gt;
+&lt;p&gt;The cord that is connected to the adaptor has the outside worn out. Not sure if the wires are exposed, but
+obviously the laptop cannot be sold without the cable and adapter replaced.&lt;/p&gt;
+&lt;p&gt;A recent development has been charging the laptop itself. Charging is unreliable. I cannot tell if the laptop is charging anymore
+with the cable plugged in. I have to charge while the laptop is awake and then shut down or close the laptop lid.&lt;/p&gt;
+&lt;h3 id=&#34;no-gpu&#34; &gt;No GPU
+&lt;span&gt;
+    &lt;a href=&#34;#no-gpu&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Can&amp;rsquo;t export in Premiere Pro or render in After Effects&lt;/li&gt;
+&lt;li&gt;Thought it was okay because I had a desktop before&lt;/li&gt;
+&lt;li&gt;Presently want laptop capable of handling desktop level work (productivity)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;mobile-cpu&#34; &gt;Mobile CPU
+&lt;span&gt;
+    &lt;a href=&#34;#mobile-cpu&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Slow at opening apps even though &amp;ldquo;i5&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;Mobile CPU at the time meant dual core, but worse than the desktop i3 (LOL)&lt;/li&gt;
+&lt;li&gt;I limited CPU speed to 90% on WIndows to avoid loud fans and to avoid future battery bloating incidents&lt;/li&gt;
+&lt;li&gt;&lt;del&gt;I cannot watch twitch&lt;/del&gt; I can confirm Twitch is watchable in 2024 on Fedora KDE.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Geekbench 5 results are 500 for single core and 590 for multi core.&lt;/p&gt;
+&lt;h3 id=&#34;webcam-is-720p&#34; &gt;Webcam is 720p
+&lt;span&gt;
+    &lt;a href=&#34;#webcam-is-720p&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;Without perfect lighting, you will not look the same as you do in person. If I want
+a laptop to last until 2032, it will need to have a 1080p webcam. This is not compromisable
+which is why I chose the Razer Blade 14 instead of its Asus equivalent in 2022. In 2024 and probably beyond, my recommendation is the Asus Zephyrus G14.&lt;/p&gt;
+&lt;h3 id=&#34;storage&#34; &gt;Storage
+&lt;span&gt;
+    &lt;a href=&#34;#storage&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;128 GB storage is enough for non-developers and non-photo/video people. I wasn&amp;rsquo;t as
+knowledgeable at programming in 2017 as I am today, which is why that 128 GB got absolutely
+eaten and requires cleaning up the computer every 2 months or so; If I didn&amp;rsquo;t
+have to do this, I wouldn&amp;rsquo;t have found out that VSCode does not clean up after
+itself and creates many folders that aren&amp;rsquo;t required for it to function.
+The storage is almost full and this slows down the nvme SSD considerably.&lt;/p&gt;
+&lt;p&gt;Compared to Dave 2D&amp;rsquo;s review at launch, the SSD performance today is at best half for reading and worse than a fifth when it comes to write performance. In 2024, not only is the storage not enough, this performance degradation reminds me of how slow my first PC was when I was using an HDD instead of an SSD. The write speed is one third of what an HDD would provide meaning that I&amp;rsquo;ll be buying a new SSD when Black Friday comes around.&lt;/p&gt;
+&lt;p&gt;CrystalDiskMark Results (MB/s, R = Read, W = Write)&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;Device&lt;/th&gt;
+          &lt;th&gt;My Blade Stealth&lt;/th&gt;
+          &lt;th&gt;At Launch (Dave 2D)&lt;/th&gt;
+          &lt;th&gt;w/ new SSD&lt;/th&gt;
+          &lt;th&gt;Razer Blade 14 (2022)&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;SEQ1M - Q8T1&lt;/td&gt;
+          &lt;td&gt;440.62R 42.58W&lt;/td&gt;
+          &lt;td&gt;1043R 159.7W&lt;/td&gt;
+          &lt;td&gt;N/A&lt;/td&gt;
+          &lt;td&gt;6529.36R 2653.02W&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;SEQ1M - Q1T1&lt;/td&gt;
+          &lt;td&gt;367.82R 28.52W&lt;/td&gt;
+          &lt;td&gt;520.9R 160.1W&lt;/td&gt;
+          &lt;td&gt;N/A&lt;/td&gt;
+          &lt;td&gt;4142.25R 2169.57W&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;RND4k - Q32T1&lt;/td&gt;
+          &lt;td&gt;237.36R 20.05W&lt;/td&gt;
+          &lt;td&gt;941R 160.6W&lt;/td&gt;
+          &lt;td&gt;N/A&lt;/td&gt;
+          &lt;td&gt;469.99R 287.14W&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;RND4k - Q1T1&lt;/td&gt;
+          &lt;td&gt;19.83R 20.45W&lt;/td&gt;
+          &lt;td&gt;43.38R 146.7W&lt;/td&gt;
+          &lt;td&gt;N/A&lt;/td&gt;
+          &lt;td&gt;67.82R 149.92W&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;minor-faults&#34; &gt;Minor Faults
+&lt;span&gt;
+    &lt;a href=&#34;#minor-faults&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Palm rest obviously not that big&lt;/li&gt;
+&lt;li&gt;Edges are razor sharp. If you put shaving cream on your face, you can use this laptop to shave.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;plans&#34; &gt;Plans
+&lt;span&gt;
+    &lt;a href=&#34;#plans&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;Experimenting on this laptop so that I can make the best Linux desktop tutorial mankind has seen.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

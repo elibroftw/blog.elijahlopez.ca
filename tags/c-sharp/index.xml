@@ -1,0 +1,1015 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>C-Sharp on ELL Blog</title>
+    <link>https://blog.elijahlopez.ca/tags/c-sharp/</link>
+    <description>ELL Blog (C-Sharp)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 29 Mar 2024 15:01:59 -0400</lastBuildDate>
+    
+    <atom:link href="https://blog.elijahlopez.ca/tags/c-sharp/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>C# How to Uri Encode Strings and Queries</title>
+      <link>https://blog.elijahlopez.ca/posts/csharp-uri-encode-string-and-queries/</link>
+      <pubDate>Fri, 29 Mar 2024 15:01:59 -0400</pubDate>
+      
+      <guid>https://blog.elijahlopez.ca/posts/csharp-uri-encode-string-and-queries/</guid>
+      <description>&lt;p&gt;Use &lt;a href=&#34;https://learn.microsoft.com/en-us/dotnet/api/system.uri.escapedatastring&#34;&gt;System.Uri.EscapeDateString&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// using System;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;var&lt;/span&gt; email = &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;email@gmail.com&amp;#34;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;var&lt;/span&gt; url = &lt;span style=&#34;color:#ed9d13&#34;&gt;$&amp;#34;/send-email?email={Uri.EscapeDataString(email)}&amp;#34;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;In an ASP.NET Integration test:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;[Fact]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;async&lt;/span&gt; Task TestPayouts() {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;var&lt;/span&gt; client = _factory.CreateClient();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;var&lt;/span&gt; url = &lt;span style=&#34;color:#ed9d13&#34;&gt;$&amp;#34;/test/inc-payout?email={Uri.EscapeDataString(Constants.PAYOUT_TEST_ACCOUNT)}&amp;#34;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;var&lt;/span&gt; response = &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;await&lt;/span&gt; client.PostAsync(url, &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;null&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    response.EnsureSuccessStatusCode();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+    
+    <item>
+      <title>ASP.NET Core Add Versioning</title>
+      <link>https://blog.elijahlopez.ca/posts/aspnet-add-versioning/</link>
+      <pubDate>Thu, 07 Mar 2024 02:05:53 -0500</pubDate>
+      
+      <guid>https://blog.elijahlopez.ca/posts/aspnet-add-versioning/</guid>
+      <description>&lt;h3 id=&#34;introduction&#34; &gt;Introduction
+&lt;span&gt;
+    &lt;a href=&#34;#introduction&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;This tutorial will save you 5 hours. I don&amp;rsquo;t know when I started adding API version support to my ASP.NET project, but I can tell you that the current documentation is atrocious if you strive for perfection like I do.&lt;/p&gt;
+&lt;p&gt;As our mobile application is about to have an official MVP release, I wanted to fix the Stripe payment intent method &amp;ldquo;invoice.&amp;rdquo; Currently, the invoice method would only return the client secret, but the official docs suggest to return the customer ID and a ephemeral key in addition to the payment intent client secret. I had two options. Either break current builds in use because you know its only beta testing anyways, or I can use this as an opportunity to add API versioning. There&amp;rsquo;s two main ways to do API versioning in my eyes. The first way, which is what I thought I would&amp;rsquo;ve added in the future, is to be one of those companies with apis like &lt;code&gt;/v2/my-api&lt;/code&gt; but then I found out about header APIs where the client can just add a header. This saves a lot of time because first of all, most of my apis were &lt;code&gt;/api&lt;/code&gt; not &lt;code&gt;/v1/api&lt;/code&gt; and the client was already calling without a version. I want an easy way to just switch the default version to &lt;code&gt;v2&lt;/code&gt; so I went with reading the API version from the header.&lt;/p&gt;
+&lt;p&gt;After hours of consulting Gemini, the official docs, and examples, and personal touches, I present the absolutely bare minimum way to add versioning to your ASP.NET application.&lt;/p&gt;
+&lt;h3 id=&#34;nuget-packages&#34; &gt;NuGet Packages
+&lt;span&gt;
+    &lt;a href=&#34;#nuget-packages&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;Either go to Manage Nuget Packages or use the CLI to install &lt;code&gt;Asp.Versioning.Mvc.ApiExplorer&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;nuget install Asp.Versioning.Mvc.ApiExplorer&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;programcs&#34; &gt;Program.cs
+&lt;span&gt;
+    &lt;a href=&#34;#programcs&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;Note that by default, ASP.NET will set each route as version 1 unless otherwise defined. Also note that if a client does not specify a version, the version 1 route will be used by default.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;builder.Services.AddApiVersioning(options =&amp;gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    options.DefaultApiVersion = &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;new&lt;/span&gt; ApiVersion(&lt;span style=&#34;color:#3677a9&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color:#3677a9&#34;&gt;0&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    options.AssumeDefaultVersionWhenUnspecified = &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;true&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    options.ApiVersionReader = &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;new&lt;/span&gt; HeaderApiVersionReader(&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;x-ms-version&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    options.ReportApiVersions = &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;true&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    options.UnsupportedApiVersionStatusCode = &lt;span style=&#34;color:#3677a9&#34;&gt;501&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;})
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// format the version as &amp;#34;&amp;#39;v&amp;#39;major[.minor][-status]&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;.AddApiExplorer(options =&amp;gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    options.GroupNameFormat = &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;&amp;#39;v&amp;#39;VVV&amp;#34;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;});
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;programauxiliarycs&#34; &gt;ProgramAuxiliary.cs
+&lt;span&gt;
+    &lt;a href=&#34;#programauxiliarycs&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;The following code allows the Swagger UI to work with the versioning.&lt;/p&gt;
+&lt;p&gt;Some of this code might be unused, this is because in my own &lt;code&gt;ProgramAuxiliary.cs&lt;/code&gt;, I also have the code to enable &lt;a href=&#34;https://blog.elijahlopez.ca/posts/aspnet-kebab-case-routes/&#34;&gt;kebab case routes&lt;/a&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// ProgramAuxiliary.cs is a supplementary to the startup code in Program.cs where this file contains some boilerplate to provide abstraction&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;using&lt;/span&gt; &lt;span style=&#34;color:#447fcf;text-decoration:underline&#34;&gt;Asp.Versioning.ApiExplorer&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;using&lt;/span&gt; &lt;span style=&#34;color:#447fcf;text-decoration:underline&#34;&gt;Microsoft.AspNetCore.Mvc.ApiExplorer&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;using&lt;/span&gt; &lt;span style=&#34;color:#447fcf;text-decoration:underline&#34;&gt;Microsoft.AspNetCore.Mvc.ModelBinding&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;using&lt;/span&gt; &lt;span style=&#34;color:#447fcf;text-decoration:underline&#34;&gt;Microsoft.Extensions.Options&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;using&lt;/span&gt; &lt;span style=&#34;color:#447fcf;text-decoration:underline&#34;&gt;Microsoft.OpenApi.Models&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;using&lt;/span&gt; &lt;span style=&#34;color:#447fcf;text-decoration:underline&#34;&gt;Swashbuckle.AspNetCore.SwaggerGen&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;using&lt;/span&gt; &lt;span style=&#34;color:#447fcf;text-decoration:underline&#34;&gt;System.Text.Json&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;using&lt;/span&gt; &lt;span style=&#34;color:#447fcf;text-decoration:underline&#34;&gt;System.Text.RegularExpressions&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;namespace&lt;/span&gt; &lt;span style=&#34;color:#447fcf;text-decoration:underline&#34;&gt;SttApi&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// all I know is that this is related to making swagger work with different versions of the API&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#447fcf;text-decoration:underline&#34;&gt;ConfigureSwaggerOptions&lt;/span&gt;(IApiVersionDescriptionProvider provider) : IConfigureOptions&amp;lt;SwaggerGenOptions&amp;gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;readonly&lt;/span&gt; IApiVersionDescriptionProvider _provider = provider;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;readonly&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;string&lt;/span&gt; _apiName = &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;Split The Tank&amp;#34;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;void&lt;/span&gt; Configure(SwaggerGenOptions options) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;foreach&lt;/span&gt; (&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;var&lt;/span&gt; description &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;in&lt;/span&gt; _provider.ApiVersionDescriptions) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            options.SwaggerDoc(
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;              description.GroupName,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;new&lt;/span&gt; OpenApiInfo() {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    Title = &lt;span style=&#34;color:#ed9d13&#34;&gt;$&amp;#34;{_apiName} API {description.ApiVersion}&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    Version = description.ApiVersion.ToString(),
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                });
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// All I know is that this bunch of code is related to making sure the API version is set in the header by default&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#447fcf;text-decoration:underline&#34;&gt;SwaggerDefaultValues&lt;/span&gt; : IOperationFilter {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#e50808;background-color:#520000;font-weight:bold&#34;&gt;/// &amp;lt;inheritdoc /&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;void&lt;/span&gt; Apply(OpenApiOperation operation, OperationFilterContext context) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;var&lt;/span&gt; apiDescription = context.ApiDescription;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        operation.Deprecated |= apiDescription.IsDeprecated();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// REF: https://github.com/domaindrivendev/Swashbuckle.AspNetCore/issues/1752#issue-663991077&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;foreach&lt;/span&gt; (&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;var&lt;/span&gt; responseType &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;in&lt;/span&gt; context.ApiDescription.SupportedResponseTypes) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// REF: https://github.com/domaindrivendev/Swashbuckle.AspNetCore/blob/b7cf75e7905050305b115dd96640ddd6e74c7ac9/src/Swashbuckle.AspNetCore.SwaggerGen/SwaggerGenerator/SwaggerGenerator.cs#L383-L387&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;var&lt;/span&gt; responseKey = responseType.IsDefaultResponse ? &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;default&amp;#34;&lt;/span&gt; : responseType.StatusCode.ToString();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;var&lt;/span&gt; response = operation.Responses[responseKey];
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;foreach&lt;/span&gt; (&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;var&lt;/span&gt; contentType &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;in&lt;/span&gt; response.Content.Keys) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;if&lt;/span&gt; (!responseType.ApiResponseFormats.Any(x =&amp;gt; x.MediaType == contentType)) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    response.Content.Remove(contentType);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;if&lt;/span&gt; (operation.Parameters == &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;null&lt;/span&gt;) &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;return&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// REF: https://github.com/domaindrivendev/Swashbuckle.AspNetCore/issues/412&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// REF: https://github.com/domaindrivendev/Swashbuckle.AspNetCore/pull/413&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;foreach&lt;/span&gt; (&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;var&lt;/span&gt; parameter &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;in&lt;/span&gt; operation.Parameters) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;var&lt;/span&gt; description = apiDescription.ParameterDescriptions.First(p =&amp;gt; p.Name == parameter.Name);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            parameter.Description ??= description.ModelMetadata?.Description;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;if&lt;/span&gt; (parameter.Schema.Default == &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;null&lt;/span&gt; &amp;amp;&amp;amp; description.DefaultValue != &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;null&lt;/span&gt; &amp;amp;&amp;amp;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                 description.DefaultValue &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;is&lt;/span&gt; not DBNull &amp;amp;&amp;amp; description.ModelMetadata &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;is&lt;/span&gt; ModelMetadata modelMetadata) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// REF: https://github.com/Microsoft/aspnet-api-versioning/issues/429#issuecomment-605402330&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;var&lt;/span&gt; json = JsonSerializer.Serialize(description.DefaultValue, modelMetadata.ModelType);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                parameter.Schema.Default = OpenApiAnyFactory.CreateFromJson(json);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            parameter.Required |= description.IsRequired;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;controller-sample&#34; &gt;Controller Sample
+&lt;span&gt;
+    &lt;a href=&#34;#controller-sample&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;[Route(&amp;#34;[controller]&lt;/span&gt;/[action]&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;)]
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;[ApiController]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;[Authorize]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// since we are defining a version 2, we want to inform ASP.NET that the other routes are version 1, you can experiment without this at first just to see the result&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;[ApiVersion(1.0)]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#447fcf;text-decoration:underline&#34;&gt;PaymentController&lt;/span&gt; : ControllerBase {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// this is Version 1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;  [HttpGet]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;async&lt;/span&gt; Task&amp;lt;ActionResult&amp;lt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;string&lt;/span&gt;&amp;gt;&amp;gt; Invoice(&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;string&lt;/span&gt; payee) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// implementation omitted&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;  [HttpGet]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;  [ApiVersion(2.0)]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;  [ActionName(nameof(Invoice))]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;async&lt;/span&gt; Task&amp;lt;ActionResult&amp;lt;PaymentSheetProps&amp;gt;&amp;gt; InvoiceV2(&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;string&lt;/span&gt; payee) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// implementation omitted&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// gate-keep entire API to reduce possibility of unofficial clients&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;[Route(&amp;#34;[controller]&lt;/span&gt;/[action]&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;)]
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;[ApiController]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;[Authorize]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#447fcf;text-decoration:underline&#34;&gt;CarsController&lt;/span&gt; : Controller {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;readonly&lt;/span&gt; CarService _carService;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;public&lt;/span&gt; CarsController(CarService carService) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        _carService = carService;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// this is implicitly Version 1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;    [HttpGet]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;async&lt;/span&gt; Task&amp;lt;List&amp;lt;OwnedCar&amp;gt;&amp;gt; Owned() {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;var&lt;/span&gt; cars = &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;await&lt;/span&gt; _carService.GetOwned(User.FindFirstValue(ClaimTypes.Email)!);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;return&lt;/span&gt; cars!;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;client-sample&#34; &gt;Client Sample
+&lt;span&gt;
+    &lt;a href=&#34;#client-sample&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;In the future, I will provide samples in Kotlin and Swift as well. For now, here&amp;rsquo;s a JS implementation. Just use an LLM to get code for the language of the client you are writing.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// note that jwtFetch is just a wrapper around fetch that does auto logging out and .json() conversion when application
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;async&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;function&lt;/span&gt; paymentInvoice(jwt, logout, payee) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;const&lt;/span&gt; response = &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;await&lt;/span&gt; jwtFetch(&lt;span style=&#34;color:#ed9d13&#34;&gt;`payment/invoice?payee=&lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;${&lt;/span&gt;payee&lt;span style=&#34;color:#ed9d13&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;`&lt;/span&gt;, logout, {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    method: &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;GET&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    headers: { ...buildAuthHeader(jwt), &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;x-ms-version&amp;#39;&lt;/span&gt;: &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39;2.0&amp;#39;&lt;/span&gt; },
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  });
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;return&lt;/span&gt; response;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+    
+    <item>
+      <title>C# MongoDB Add Item to Dictionary</title>
+      <link>https://blog.elijahlopez.ca/posts/csharp-mongodb-add-item-to-dictionary/</link>
+      <pubDate>Sat, 12 Aug 2023 11:12:03 -0400</pubDate>
+      
+      <guid>https://blog.elijahlopez.ca/posts/csharp-mongodb-add-item-to-dictionary/</guid>
+      <description>&lt;p&gt;To add an item to a Dictionary field in a MongoDB collection - say &lt;code&gt;JoinRequests&lt;/code&gt; of the &lt;code&gt;Ride&lt;/code&gt; collection - treat the dictionary field an array and utilize the &lt;code&gt;$push&lt;/code&gt; operator. I do not like the k, v extra outlining, but this is the only way I found that works with dots in the key. If you find an atomic way that can treat the dictionary as a Document and
+not as an array of documents, please let me know.&lt;/p&gt;
+&lt;p&gt;Here is an example.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;using&lt;/span&gt; &lt;span style=&#34;color:#447fcf;text-decoration:underline&#34;&gt;Microsoft.Extensions.Options&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;using&lt;/span&gt; &lt;span style=&#34;color:#447fcf;text-decoration:underline&#34;&gt;MongoDB.Driver&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#447fcf;text-decoration:underline&#34;&gt;Ride&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// ..&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;    [BsonDictionaryOptions(DictionaryRepresentation.ArrayOfDocuments)]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;public&lt;/span&gt; Dictionary&amp;lt;Email, Passenger&amp;gt; Passengers { &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;get&lt;/span&gt;; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;set&lt;/span&gt;; } = &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;new&lt;/span&gt;();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;/*
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;    &amp;#34;Passengers&amp;#34;: [{ &amp;#34;k&amp;#34;: Email, &amp;#34;v&amp;#34;: Passenger }]
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;*/&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;async&lt;/span&gt; Task&amp;lt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;bool&lt;/span&gt;&amp;gt; AcceptJoinRequest(&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;string&lt;/span&gt; rideId, &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;string&lt;/span&gt; driver, &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;string&lt;/span&gt; user) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;var&lt;/span&gt; updatePull = Builders&amp;lt;Ride&amp;gt;.Update.Pull(r =&amp;gt; r.JoinRequests, user);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;var&lt;/span&gt; update = updatePull.Update.Push(r =&amp;gt; r.Passengers, &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;new&lt;/span&gt; KeyValuePair&amp;lt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;string&lt;/span&gt;, Passenger&amp;gt;(user, &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;new&lt;/span&gt; Passenger()));
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;var&lt;/span&gt; res = &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;await&lt;/span&gt; _ridesCollection.UpdateOneAsync(x =&amp;gt; x.Driver == driver &amp;amp;&amp;amp; x.Id == rideId &amp;amp;&amp;amp; x.JoinRequests.Contains(user), update);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;return&lt;/span&gt; res.IsModifiedCountAvailable &amp;amp;&amp;amp; res.ModifiedCount &amp;gt; &lt;span style=&#34;color:#3677a9&#34;&gt;0&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+    
+    <item>
+      <title>ASP.NET Core Global Json Options</title>
+      <link>https://blog.elijahlopez.ca/posts/aspnet-global-json-options/</link>
+      <pubDate>Sun, 23 Jul 2023 15:48:46 -0400</pubDate>
+      
+      <guid>https://blog.elijahlopez.ca/posts/aspnet-global-json-options/</guid>
+      <description>&lt;p&gt;When adding JSON options to an ASP.NET controller, these options do not apply to manual uses of the json serializer.
+Therefore, if you want to use the same options for other serializing or deserializing, you can use dependency injection.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;using&lt;/span&gt; &lt;span style=&#34;color:#447fcf;text-decoration:underline&#34;&gt;Microsoft.AspNetCore.Mvc&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;using&lt;/span&gt; &lt;span style=&#34;color:#447fcf;text-decoration:underline&#34;&gt;Microsoft.Extensions.Options&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;namespace&lt;/span&gt; &lt;span style=&#34;color:#447fcf;text-decoration:underline&#34;&gt;Api.Services&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;public&lt;/span&gt; Constructor(IOptions&amp;lt;JsonOptions&amp;gt; jsonOptions) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;var&lt;/span&gt; serializerOptions = jsonOptions.Value.JsonSerializerOptions;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;If you don&amp;rsquo;t know how to set default Json serializer options for the controller, read &lt;a href=&#34;https://blog.elijahlopez.ca/posts/aspnet-optional-json-fields&#34;&gt;ASP.NET Core Optional Json Fields&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;m not sure why this was a draft, but I made it public again.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>ASP.NET Core Add HTML to Web Api</title>
+      <link>https://blog.elijahlopez.ca/posts/aspnet-add-html-to-web-api/</link>
+      <pubDate>Sat, 15 Jul 2023 12:45:48 -0400</pubDate>
+      
+      <guid>https://blog.elijahlopez.ca/posts/aspnet-add-html-to-web-api/</guid>
+      <description>&lt;p&gt;Suppose you wanted to add html to your asp.net web api project, how would you go about it?&lt;/p&gt;
+&lt;p&gt;Sure you may just &lt;a href=&#34;https://stackoverflow.com/questions/26822277/return-html-from-asp-net-web-api&#34;&gt;write the HTML&lt;/a&gt; in the controller, but that&amp;rsquo;s not good enough if you want to return an actual webpage.&lt;/p&gt;
+&lt;p&gt;We need to integrate Razor pages to our application. In &lt;code&gt;Program.cs&lt;/code&gt;,&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;builder.Services.AddRazorPages();  &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// add this&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;builder.Services.AddHttpContextAccessor();  &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// add this&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;var&lt;/span&gt; app = builder.Build();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;app.MapControllers();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;app.MapRazorPages(); &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// add this, it doesn&amp;#39;t matter if it is before or after MapControllers&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;app.Run();
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Suppose we want to serve a page for website.com/about&lt;/p&gt;
+&lt;p&gt;In your project folder, create &lt;code&gt;Pages/About.cshtml&lt;/code&gt;&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-cshtml&#34; data-lang=&#34;cshtml&#34;&gt;@page
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+
+&amp;lt;!DOCTYPE html&amp;gt;
+&amp;lt;style&amp;gt;
+    @Html.Raw(&amp;#34;@&amp;#34;)media only screen and (min-width: 950px) {
+        .center {
+            width: 30%;
+        }
+    }
+&amp;lt;/style&amp;gt;
+
+&amp;lt;a href=&amp;#34;@(HttpContextAccessor.HttpContext.Request.Path)@(HttpContextAccessor.HttpContext.Request.QueryString.ToUriComponent())&amp;#34;&amp;gt;This pages url&amp;lt;/a&amp;gt;
+&amp;lt;p&amp;gt;a get request query for field name: @HttpContextAccessor.HttpContext.Request.Query[&amp;#34;name&amp;#34;]&amp;lt;/p&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;how-to-escape--in-razor-pages-cshtml&#34; &gt;How to escape @ in Razor Pages (cshtml)
+&lt;span&gt;
+    &lt;a href=&#34;#how-to-escape--in-razor-pages-cshtml&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;To escape the @ in Razor pages, use &lt;code&gt;@Html.Raw(&amp;quot;@&amp;quot;)&lt;/code&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>ASP.NET Core HTTP Error Responses Best Practice?</title>
+      <link>https://blog.elijahlopez.ca/posts/aspnet-http-error-responses/</link>
+      <pubDate>Sat, 01 Jul 2023 17:29:24 -0400</pubDate>
+      
+      <guid>https://blog.elijahlopez.ca/posts/aspnet-http-error-responses/</guid>
+      <description>&lt;p&gt;How do you return a bad request or an unauthorized response in ASP.NET while also being
+able to return a strongly typed response? I present to you &lt;code&gt;ActionResult&amp;lt;T&amp;gt;&lt;/code&gt;. Here
+is an example of me using ActionResult to validate the request as well as to check authorization.
+Since this is an example, is it not for copy-pasting but rather to show you how to use &lt;code&gt;ActionResult&amp;lt;T&amp;gt;&lt;/code&gt; in practice.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// one of these is imports may be relevant&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;using&lt;/span&gt; &lt;span style=&#34;color:#447fcf;text-decoration:underline&#34;&gt;System.Security.Claims&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;using&lt;/span&gt; &lt;span style=&#34;color:#447fcf;text-decoration:underline&#34;&gt;Microsoft.AspNetCore.Authorization&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;using&lt;/span&gt; &lt;span style=&#34;color:#447fcf;text-decoration:underline&#34;&gt;Microsoft.AspNetCore.Mvc&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;[HttpPost]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;async&lt;/span&gt; Task&amp;lt;ActionResult&amp;lt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;string&lt;/span&gt;&amp;gt;&amp;gt; New(StartRideRequest startRideRequest) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;var&lt;/span&gt; email = User.FindFirstValue(ClaimTypes.Email);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;if&lt;/span&gt; (email == &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;null&lt;/span&gt;) &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;return&lt;/span&gt; Unauthorized();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;if&lt;/span&gt; (!_dataValidationService.validCurrency(startRideRequest.Currency)) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        HttpContext.Features.Set(&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;new&lt;/span&gt; ArgumentException(&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;invalid currency&amp;#34;&lt;/span&gt;));
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;return&lt;/span&gt; BadRequest(&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;invalid currency&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// ...&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;return&lt;/span&gt; Ok(&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;id&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+    
+    <item>
+      <title>ASP.NET Core Serve Embedded Resource</title>
+      <link>https://blog.elijahlopez.ca/posts/aspnet-serve-embedded-resource/</link>
+      <pubDate>Fri, 02 Jun 2023 14:09:28 -0400</pubDate>
+      
+      <guid>https://blog.elijahlopez.ca/posts/aspnet-serve-embedded-resource/</guid>
+      <description>&lt;p&gt;You really shouldn&amp;rsquo;t be serving static files from the server but rather a reverse proxy like NGINX or something like an S3 bucket. However, what if you are just doing some debugging? In that case, here are three examples of reading an embedded resource in different contexts.&lt;/p&gt;
+&lt;p&gt;The embedded resource that needs to be accessed are &lt;code&gt;SttApi/Assets/SwaggerDark.css&lt;/code&gt;
+and &lt;code&gt;SttApi/Assets/getmakes.json&lt;/code&gt; where SttApi is the project name.&lt;/p&gt;
+&lt;p&gt;First we need to make the resource embedded. You can either do this through the properties panel in Visual Studio or by manually editing the &lt;code&gt;Proj/Proj.csproj&lt;/code&gt; like so:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;&amp;lt;Project&lt;/span&gt; &lt;span style=&#34;color:#bbb&#34;&gt;Sdk=&lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;Microsoft.NET.Sdk.Web&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;&amp;lt;!-- ... --&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;&amp;lt;ItemGroup&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;&amp;lt;!-- other embedded resources --&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;&amp;lt;EmbeddedResource&lt;/span&gt; &lt;span style=&#34;color:#bbb&#34;&gt;Include=&lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;Assets/getmakes.json&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;/&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;&amp;lt;EmbeddedResource&lt;/span&gt; &lt;span style=&#34;color:#bbb&#34;&gt;Include=&lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;Assets/SwaggerDark.css&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;/&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;&amp;lt;/ItemGroup&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;&amp;lt;!-- ... --&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;&amp;lt;/Project&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;At least on Windows, it doesn&amp;rsquo;t matter if the path separator is \ or /.&lt;/p&gt;
+&lt;h3 id=&#34;example-1-programcs&#34; &gt;Example 1 Program.cs
+&lt;span&gt;
+    &lt;a href=&#34;#example-1-programcs&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// Program.cs&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;using&lt;/span&gt; &lt;span style=&#34;color:#447fcf;text-decoration:underline&#34;&gt;System.Reflection&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// scope skipped for conciseness&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            app.MapGet(&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;/css/SwaggerDark.css&amp;#34;&lt;/span&gt;, () =&amp;gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;var&lt;/span&gt; assembly = Assembly.GetExecutingAssembly();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;return&lt;/span&gt; Results.Stream(assembly.GetManifestResourceStream(&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;SttApi.Assets.SwaggerDark.css&amp;#34;&lt;/span&gt;)!, &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;text/css&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            }).ExcludeFromDescription();
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;example-2-controllercs&#34; &gt;Example 2 Controller.cs
+&lt;span&gt;
+    &lt;a href=&#34;#example-2-controllercs&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// ExampleController.cs&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;using&lt;/span&gt; &lt;span style=&#34;color:#447fcf;text-decoration:underline&#34;&gt;System.Reflection&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// scope skipped for conciseness&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;    [HttpGet]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;public&lt;/span&gt; IResult EmbeddedResource() {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;var&lt;/span&gt; assembly = Assembly.GetExecutingAssembly();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;return&lt;/span&gt; Results.Stream(assembly.GetManifestResourceStream(&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;SttApi.Assets.SwaggerDark.css&amp;#34;&lt;/span&gt;)!, &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;text/css&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;example-3-servicecs&#34; &gt;Example 3 Service.cs
+&lt;span&gt;
+    &lt;a href=&#34;#example-3-servicecs&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// ExampleService.cs&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;using&lt;/span&gt; &lt;span style=&#34;color:#447fcf;text-decoration:underline&#34;&gt;System.Reflection&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// scope skipped for conciseness&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;var&lt;/span&gt; assembly = Assembly.GetExecutingAssembly();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    IEnumerable&amp;lt;CarMake&amp;gt; carMakes = JsonSerializer.Deserialize&amp;lt;IEnumerable&amp;lt;CarMake&amp;gt;&amp;gt;(assembly.GetManifestResourceStream(&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;SttApi.Assets.getmakes.json&amp;#34;&lt;/span&gt;)!)!;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+    
+    <item>
+      <title>ASP.NET Core Swagger Dark Theme</title>
+      <link>https://blog.elijahlopez.ca/posts/aspnet-swagger-dark-theme/</link>
+      <pubDate>Fri, 02 Jun 2023 12:49:14 -0400</pubDate>
+      
+      <guid>https://blog.elijahlopez.ca/posts/aspnet-swagger-dark-theme/</guid>
+      <description>&lt;p&gt;&lt;em&gt;For the SEO&lt;/em&gt;: How to add dark theme to Swagger UI ASP.NET? Follow these instructions.&lt;/p&gt;
+&lt;p&gt;If you have guidelines for other frameworks, feel free to email me your code so I can add it to the &lt;a href=&#34;https://github.com/elibroftw/SwaggerDark/tree/master&#34;&gt;README.md&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;There&amp;rsquo;s two ways to accomplish this. One is to use serve static files and the other is to only serve the static file (through embedded resource). I&amp;rsquo;ll give instructions just in case.&lt;/p&gt;
+&lt;h3 id=&#34;serving-from-static-folder&#34; &gt;Serving From Static Folder
+&lt;span&gt;
+    &lt;a href=&#34;#serving-from-static-folder&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;Create &lt;a href=&#34;https://github.com/elibroftw/SwaggerDark/blob/master/SwaggerDark.css&#34;&gt;ProjectName/wwwroot/css/SwaggerDark.json&lt;/a&gt; in your project. You need to create these folders if they do not exist. If you have guidelines for other frameworks, feel free to email me your code so I can add it to the &lt;a href=&#34;https://github.com/elibroftw/SwaggerDark/tree/master&#34;&gt;README.md&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;In Program.cs:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;app.UseStaticFiles();  &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// ADD THIS LINE&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;if&lt;/span&gt; (app.Environment.IsDevelopment()) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            app.UseHttpLogging();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            app.UseSwagger();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            app.UseSwaggerUI(c =&amp;gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                c.EnableTryItOutByDefault();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                c.InjectStylesheet(&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;/css/SwaggerDark.css&amp;#34;&lt;/span&gt;);  &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// ADD THIS LINE&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            });
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        }
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;serving-from-an-embedded-resource&#34; &gt;Serving From an Embedded Resource
+&lt;span&gt;
+    &lt;a href=&#34;#serving-from-an-embedded-resource&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;I don&amp;rsquo;t really recommend this route anymore, as it adds complexity for serving static files.&lt;/p&gt;
+&lt;p&gt;Create &lt;a href=&#34;https://github.com/elibroftw/SwaggerDark/blob/master/SwaggerDark.css&#34;&gt;ProjectName/Assets/SwaggerDark.json&lt;/a&gt; in your project. You need to create the asset folder if it does not exist.&lt;/p&gt;
+&lt;p&gt;In Program.cs:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;using&lt;/span&gt; &lt;span style=&#34;color:#447fcf;text-decoration:underline&#34;&gt;System.Reflection&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;if&lt;/span&gt; (app.Environment.IsDevelopment()) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            app.UseHttpLogging();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            app.UseSwagger();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            app.UseSwaggerUI(c =&amp;gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                c.EnableTryItOutByDefault();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                c.InjectStylesheet(&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;/css/SwaggerDark.css&amp;#34;&lt;/span&gt;);  &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// ADD THIS LINE&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            });
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// add this:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            app.MapGet(&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;/css/SwaggerDark.css&amp;#34;&lt;/span&gt;, () =&amp;gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;var&lt;/span&gt; assembly = Assembly.GetExecutingAssembly();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// SttApi to ProjectName&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;return&lt;/span&gt; Results.Stream(assembly.GetManifestResourceStream(&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;SttApi.Assets.SwaggerDark.css&amp;#34;&lt;/span&gt;)!, &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;text/css&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            }).ExcludeFromDescription();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        }
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;In &lt;code&gt;ProjectName/ProjectName.csproj&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;&amp;lt;Project&lt;/span&gt; &lt;span style=&#34;color:#bbb&#34;&gt;Sdk=&lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;Microsoft.NET.Sdk.Web&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;&amp;lt;!-- ... --&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;&amp;lt;ItemGroup&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;&amp;lt;!-- other embedded resources --&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;&amp;lt;EmbeddedResource&lt;/span&gt; &lt;span style=&#34;color:#bbb&#34;&gt;Include=&lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;Assets/SwaggerDark.css&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;/&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;&amp;lt;/ItemGroup&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;&amp;lt;!-- ... --&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;&amp;lt;/Project&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;You may need to hard restart your app for the changes to take effect.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/Amoenus/SwaggerDark/master/SwaggerDark.png&#34; alt=&#34;Screenshot 1 of Swagger Dark Theme&#34; title=&#34;Swagger Dark Theme Screenshot 1&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/elibroftw/SwaggerDark/master/SwaggerDark2.png&#34; alt=&#34;Screenshot 2 of Swagger Dark Theme&#34; title=&#34;Swagger Dark Theme Screenshot 2&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>ASP.NET Core Name Routes After Methods</title>
+      <link>https://blog.elijahlopez.ca/posts/aspnet-name-routes-after-methods/</link>
+      <pubDate>Sun, 28 May 2023 18:10:09 -0400</pubDate>
+      
+      <guid>https://blog.elijahlopez.ca/posts/aspnet-name-routes-after-methods/</guid>
+      <description>&lt;p&gt;Suppose you want to avoid using decorators for every public method you write and you just want the route to following the same convention as your methods in your controller.
+Adapt the following for your own use. The Route decorator indicates that the route for the following will be &lt;code&gt;auth/request-token&lt;/code&gt; if your API is using the &lt;a href=&#34;https://blog.elijahlopez.ca/posts/aspnet-kebab-case-routes&#34;&gt;kebab-case route configuration&lt;/a&gt;. If you aren&amp;rsquo;t using kebab-case routing, then the expected route below would be something like &lt;code&gt;Auth/RequestToken&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;NOTE: If you are writing a backend that serves a frontend (HTML or a webapp), then I suggest using an &amp;ldquo;api&amp;rdquo; prefix like so: &lt;code&gt;[Route(&amp;quot;api/[controller]/[action]&amp;quot;)]&lt;/code&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;[ApiController]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;[Route(&amp;#34;[controller]&lt;/span&gt;/[action]&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;)]
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#447fcf;text-decoration:underline&#34;&gt;AuthController&lt;/span&gt; : ControllerBase {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// CODE&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;    [HttpGet]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;async&lt;/span&gt; Task&amp;lt;RequestTokenResponse&amp;gt; RequestToken(&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;string&lt;/span&gt; email) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// CODE&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+    
+    <item>
+      <title>ASP.NET Core JWT Authorization</title>
+      <link>https://blog.elijahlopez.ca/posts/aspnet-jwt-authorization/</link>
+      <pubDate>Wed, 03 May 2023 13:14:55 -0400</pubDate>
+      
+      <guid>https://blog.elijahlopez.ca/posts/aspnet-jwt-authorization/</guid>
+      <description>&lt;p&gt;Don&amp;rsquo;t feel like explaining my code, so just copy and modify it for yourself as I can assure you it&amp;rsquo;s one of the cleanest you can find.&lt;/p&gt;
+&lt;p&gt;I removed my login handling code since you can do that yourself. My login code was send login code to email via postmark and verify it. I was also using a MongoDB database.&lt;/p&gt;
+&lt;p&gt;The project is called &amp;ldquo;SttApi&amp;rdquo; so replace that with your own project name.&lt;/p&gt;
+&lt;details&gt;&lt;summary&gt;appsettings.json&lt;/summary&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;...&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;&amp;#34;Jwt&amp;#34;&lt;/span&gt;: {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;&amp;#34;Key&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;Generate a key using Python secrets.token_hex(64) or similar&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;&amp;#34;Issuer&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;https://localhost:44355/&amp;#34;&lt;/span&gt;,           &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// url of the project, am using development settings
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;&lt;/span&gt;        &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;&amp;#34;Audience&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;https://localhost:44355/&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/details&gt;
+&lt;details&gt;&lt;summary&gt;Program.cs&lt;/summary&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;using&lt;/span&gt; &lt;span style=&#34;color:#447fcf;text-decoration:underline&#34;&gt;Microsoft.AspNetCore.Authentication.JwtBearer&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;using&lt;/span&gt; &lt;span style=&#34;color:#447fcf;text-decoration:underline&#34;&gt;Microsoft.IdentityModel.Tokens&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;using&lt;/span&gt; &lt;span style=&#34;color:#447fcf;text-decoration:underline&#34;&gt;Microsoft.OpenApi.Models&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;//  ---------------- OTHER CODE ----------------&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;static&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;void&lt;/span&gt; Main(&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;string&lt;/span&gt;[] args) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;var&lt;/span&gt; builder = WebApplication.CreateBuilder(args);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;//  ---------------- OTHER CODE ----------------&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// Swagger UI Authorization&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        builder.Services.AddSwaggerGen(option =&amp;gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            option.AddSecurityDefinition(&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;Bearer&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;new&lt;/span&gt; OpenApiSecurityScheme {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                In = ParameterLocation.Header,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                Description = &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;Please enter a valid token&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                Name = &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;Authorization&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                Type = SecuritySchemeType.Http,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                BearerFormat = &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;JWT&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                Scheme = &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;Bearer&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            });
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            option.AddSecurityRequirement(&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;new&lt;/span&gt; OpenApiSecurityRequirement{{
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                        &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;new&lt;/span&gt; OpenApiSecurityScheme { Reference = &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;new&lt;/span&gt; OpenApiReference {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                                Type=ReferenceType.SecurityScheme,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                                Id=&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;Bearer&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                            }},
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                        Array.Empty&amp;lt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;string&lt;/span&gt;&amp;gt;()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                });
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        });
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;//JWT Authentication&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =&amp;gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            options.TokenValidationParameters = &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;new&lt;/span&gt; TokenValidationParameters {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                ValidateIssuer = &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;true&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                ValidateAudience = &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;true&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                ValidateLifetime = &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;true&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                ValidateIssuerSigningKey = &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;true&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                ValidIssuer = builder.Configuration[&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;Jwt:Issuer&amp;#34;&lt;/span&gt;],
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                ValidAudience = builder.Configuration[&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;Jwt:Audience&amp;#34;&lt;/span&gt;],
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                IssuerSigningKey = &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;new&lt;/span&gt; SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration[&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;Jwt:Key&amp;#34;&lt;/span&gt;]))
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            };
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        });
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;//  ---------------- OTHER CODE ----------------&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;var&lt;/span&gt; app = builder.Build();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;//  ---------------- OTHER CODE ----------------&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;//  ---------------- OTHER CODE ----------------&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/details&gt;
+&lt;details&gt;&lt;summary&gt;AuthController.cs&lt;/summary&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// Controllers/AuthController.cs&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;using&lt;/span&gt; &lt;span style=&#34;color:#447fcf;text-decoration:underline&#34;&gt;System.IdentityModel.Tokens.Jwt&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;using&lt;/span&gt; &lt;span style=&#34;color:#447fcf;text-decoration:underline&#34;&gt;System.Linq&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;using&lt;/span&gt; &lt;span style=&#34;color:#447fcf;text-decoration:underline&#34;&gt;System.Security.Claims&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;using&lt;/span&gt; &lt;span style=&#34;color:#447fcf;text-decoration:underline&#34;&gt;System.Text&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;using&lt;/span&gt; &lt;span style=&#34;color:#447fcf;text-decoration:underline&#34;&gt;Microsoft.AspNetCore.Authorization&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;using&lt;/span&gt; &lt;span style=&#34;color:#447fcf;text-decoration:underline&#34;&gt;Microsoft.AspNetCore.Mvc&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;using&lt;/span&gt; &lt;span style=&#34;color:#447fcf;text-decoration:underline&#34;&gt;Microsoft.IdentityModel.Tokens&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;using&lt;/span&gt; &lt;span style=&#34;color:#447fcf;text-decoration:underline&#34;&gt;SttApi.Models&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;using&lt;/span&gt; &lt;span style=&#34;color:#447fcf;text-decoration:underline&#34;&gt;SttApi.Services&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// Controller for handling user signup and login with code sent to email&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// https://learn.microsoft.com/en-ca/aspnet/core/tutorials/first-mongo-app?WT.mc_id=dotnet-35129-website&amp;amp;view=aspnetcore-7.0&amp;amp;tabs=visual-studio&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// https://learn.microsoft.com/en-ca/aspnet/core/tutorials/first-web-api?view=aspnetcore-7.0&amp;amp;tabs=visual-studio&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;namespace&lt;/span&gt; &lt;span style=&#34;color:#447fcf;text-decoration:underline&#34;&gt;SttApi.Controllers&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;[ApiController]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;[Route(&amp;#34;[controller]&lt;/span&gt;/[action]&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;)]
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#447fcf;text-decoration:underline&#34;&gt;AuthController&lt;/span&gt; : ControllerBase {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;readonly&lt;/span&gt; SigningCredentials credentials;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;readonly&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;string&lt;/span&gt; jwtIssuer;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;readonly&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;string&lt;/span&gt; jwtAudience;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;readonly&lt;/span&gt; JwtSecurityTokenHandler jwtSecurityTokenHandler;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;public&lt;/span&gt; AuthController(IConfiguration config) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        jwtIssuer = config[&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;Jwt:Issuer&amp;#34;&lt;/span&gt;];
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        jwtAudience = config[&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;Jwt:Audience&amp;#34;&lt;/span&gt;];
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        jwtSecurityTokenHandler = &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;new&lt;/span&gt; JwtSecurityTokenHandler();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;var&lt;/span&gt; securityKey = &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;new&lt;/span&gt; SymmetricSecurityKey(Encoding.UTF8.GetBytes(config[&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;Jwt:Key&amp;#34;&lt;/span&gt;]));
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        credentials = &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;new&lt;/span&gt; SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;    [HttpPost]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;string&lt;/span&gt; Login() {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// LOGIN VERIFICATION CODE GOES HERE&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;//  in general you will have to add a RequestBody parameter (just a Class)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;//  and you will need to make the return type another class&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// you will also most likely need to return Task&amp;lt;ResponseType&amp;gt; because of await/async usages&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;//  and JsonWebToken will be just a field of that type&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;return&lt;/span&gt; GenerateToken(&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;email&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#cd2828;font-weight:bold&#34;&gt;#if&lt;/span&gt; DEBUG
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;    [HttpGet]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;    [Authorize(Roles = &amp;#34;User&amp;#34;)]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;string&lt;/span&gt; TestAuthorization() {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;var&lt;/span&gt; email = User.FindFirstValue(ClaimTypes.Email);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#ed9d13&#34;&gt;$&amp;#34;Your email is {email}&amp;#34;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#cd2828;font-weight:bold&#34;&gt;#endif&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;string&lt;/span&gt; GenerateToken(&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;string&lt;/span&gt; email) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;var&lt;/span&gt; claims = &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;new&lt;/span&gt;[] { &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;new&lt;/span&gt; Claim(ClaimTypes.Email, email), &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;new&lt;/span&gt; Claim(ClaimTypes.Role, &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;User&amp;#34;&lt;/span&gt;) };
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;var&lt;/span&gt; token = &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;new&lt;/span&gt; JwtSecurityToken(jwtIssuer, jwtAudience, claims, signingCredentials: credentials);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// client needs to save JWT as well incldue it in the Authorization Bearer Token header of subsequent requests&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;return&lt;/span&gt; jwtSecurityTokenHandler.WriteToken(token);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;DO NOT USE JwtRegisteredClaimNames AS YOU WILL SPEND OVER AN HOUR DEBUGGING ISSUES!!&lt;/p&gt;
+&lt;/details&gt;
+&lt;h2 id=&#34;gate-keeping-routes-and-reading-user-claims&#34; &gt;Gate-keeping Routes and Reading User Claims
+&lt;span&gt;
+    &lt;a href=&#34;#gate-keeping-routes-and-reading-user-claims&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;I&amp;rsquo;m making this separate because it&amp;rsquo;s a common issue and the following way is the best way to get a claim. You can use &lt;code&gt;[Authorize(Roles = &amp;quot;...&amp;quot;)]&lt;/code&gt; in order to gate keep a single route or all routes of a controller (put the macro before the controller in the latter case).&lt;/p&gt;
+&lt;p&gt;This is a method I have in my auth controller for faster debugging since I&amp;rsquo;m doing backend and frontend for a new project.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#cd2828;font-weight:bold&#34;&gt;#if&lt;/span&gt; DEBUG
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;    [HttpGet]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;    [Authorize(Roles = &amp;#34;User&amp;#34;)]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;string&lt;/span&gt; TestAuthorization() {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// JwtRegisteredClaimNames&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;var&lt;/span&gt; email = User.FindFirstValue(ClaimTypes.Email);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#ed9d13&#34;&gt;$&amp;#34;Your email is {email}&amp;#34;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#cd2828;font-weight:bold&#34;&gt;#endif&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+    
+    <item>
+      <title>Uno Platform Logging</title>
+      <link>https://blog.elijahlopez.ca/posts/uno-platform-logging/</link>
+      <pubDate>Fri, 17 Feb 2023 21:59:46 -0500</pubDate>
+      
+      <guid>https://blog.elijahlopez.ca/posts/uno-platform-logging/</guid>
+      <description>&lt;p&gt;Note that you will need to run with debugging (F5) for some logging and breakpoints/tracepoints to work.&lt;/p&gt;
+&lt;p&gt;If you want to log regardless of debugging, then using the info function may work for you better.&lt;/p&gt;
+&lt;h2 id=&#34;tracepoints&#34; &gt;Tracepoints
+&lt;span&gt;
+    &lt;a href=&#34;#tracepoints&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;First, if you simply need to debug something, try using
+&lt;a href=&#34;https://learn.microsoft.com/en-us/visualstudio/debugger/using-tracepoints?view=vs-2022&#34;&gt;Visual Studio Tracepoints&lt;/a&gt; which is nothing but a breakpoint as shown below (use curly braces to print variables). Click the the light grey part on the extreme left, add an action, and voila.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.elijahlopez.ca/images/c-sharp/visual-studio-breakpoint.webp&#34; alt=&#34;breakpoint screenshot&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;logging&#34; &gt;Logging
+&lt;span&gt;
+    &lt;a href=&#34;#logging&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;In your &lt;code&gt;Page.xaml.cs&lt;/code&gt;, add the differences&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;using&lt;/span&gt; &lt;span style=&#34;color:#447fcf;text-decoration:underline&#34;&gt;Uno.Extensions&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;using&lt;/span&gt; &lt;span style=&#34;color:#447fcf;text-decoration:underline&#34;&gt;Uno.Logging&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;sealed&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;partial&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#447fcf;text-decoration:underline&#34;&gt;YourPage&lt;/span&gt; : Page {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;static&lt;/span&gt; ILogger _logger { &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;get&lt;/span&gt;; } = &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;typeof&lt;/span&gt;(YourPage).Log();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;void&lt;/span&gt; ButtonClick(&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;object&lt;/span&gt; sender, RoutedEventArgs e) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        _logger.LogTrace(&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;wont show up, cause we set the LogLevel to be Debug in the next step&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        _logger.Debug(&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;asd&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        _logger.Error(&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;qwe&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;new&lt;/span&gt; Exception(&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;zxc&amp;#34;&lt;/span&gt;));
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;In &lt;code&gt;App.xaml.cs&lt;/code&gt; and &lt;code&gt;AppHead.xaml.cs&lt;/code&gt;, in &lt;code&gt;InitializeLogging&lt;/code&gt; above the default filters, modify the first line of code below. I have provided this code in context and it works regardless of where the page is located in your project. For
+example, the page this blog post is based on is located in a Views directory.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// Custom filters&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;builder.AddFilter(&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;YourProject.YourPage&amp;#34;&lt;/span&gt;, LogLevel.Debug);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// Default filters for Uno Platform namespaces [THIS IS ALREADY IN THE FILE]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;builder.AddFilter(&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;Uno&amp;#34;&lt;/span&gt;, LogLevel.Warning);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;builder.AddFilter(&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;Windows&amp;#34;&lt;/span&gt;, LogLevel.Warning);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;builder.AddFilter(&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;Microsoft&amp;#34;&lt;/span&gt;, LogLevel.Warning);
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This blog post is adapted from &lt;a href=&#34;https://github.com/unoplatform/uno/discussions/11348#discussioncomment-5005121&#34;&gt;this GitHub discussion&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>ASP.NET Core Hyphen Separated (Kebab) Routes</title>
+      <link>https://blog.elijahlopez.ca/posts/aspnet-hyphen-separated-routes/</link>
+      <pubDate>Sun, 29 Jan 2023 14:37:16 -0500</pubDate>
+      
+      <guid>https://blog.elijahlopez.ca/posts/aspnet-hyphen-separated-routes/</guid>
+      <description>&lt;p&gt;See &lt;a href=&#34;https://learn.microsoft.com/en-us/aspnet/core/mvc/controllers/routing#use-a-parameter-transformer-to-customize-token-replacement&#34;&gt;docs&lt;/a&gt; for the latest way to do it. Here is how you would do it for ASP.NET Core 7.0:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-c#&#34; data-lang=&#34;c#&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// Program.cs&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// EXISTING IMPORTS&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;using&lt;/span&gt; &lt;span style=&#34;color:#447fcf;text-decoration:underline&#34;&gt;System.Text.RegularExpressions&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;namespace&lt;/span&gt; &lt;span style=&#34;color:#447fcf;text-decoration:underline&#34;&gt;YourApi&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#447fcf;text-decoration:underline&#34;&gt;Program&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;static&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;void&lt;/span&gt; Main(&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;string&lt;/span&gt;[] args) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// replace builder.Services.AddControllers() with the following&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        builder.Services.AddControllersWithViews(options =&amp;gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            options.Conventions.Add(&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;new&lt;/span&gt; RouteTokenTransformerConvention(&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;new&lt;/span&gt; SlugifyParameterTransformer()));
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        });
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// EXISTING CODE&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// https://learn.microsoft.com/en-us/aspnet/core/mvc/controllers/routing#use-a-parameter-transformer-to-customize-token-replacement&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#447fcf;text-decoration:underline&#34;&gt;SlugifyParameterTransformer&lt;/span&gt; : IOutboundParameterTransformer {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;string?&lt;/span&gt; TransformOutbound(&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;object?&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;value&lt;/span&gt;) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;value&lt;/span&gt; == &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;null&lt;/span&gt;) { &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;null&lt;/span&gt;; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;return&lt;/span&gt; Regex.Replace(&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;value&lt;/span&gt;.ToString(),
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                                &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;([a-z])([A-Z])&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                                &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;$1-$2&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                                RegexOptions.CultureInvariant,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                                TimeSpan.FromMilliseconds(&lt;span style=&#34;color:#3677a9&#34;&gt;100&lt;/span&gt;)).ToLowerInvariant();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+    
+    <item>
+      <title>ASP.NET Core Serialize Enum as String</title>
+      <link>https://blog.elijahlopez.ca/posts/aspnet-serialize-enum-as-string/</link>
+      <pubDate>Sun, 29 Jan 2023 14:05:19 -0500</pubDate>
+      
+      <guid>https://blog.elijahlopez.ca/posts/aspnet-serialize-enum-as-string/</guid>
+      <description>&lt;h2 id=&#34;aspnet-backend&#34; &gt;ASP.NET Backend
+&lt;span&gt;
+    &lt;a href=&#34;#aspnet-backend&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;builder.Services.AddControllersWithViews(options =&amp;gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            options.Conventions.Add(&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;new&lt;/span&gt; RouteTokenTransformerConvention(
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                                         &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;new&lt;/span&gt; SlugifyParameterTransformer()));
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        }).AddJsonOptions(options =&amp;gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            options.JsonSerializerOptions.NumberHandling = JsonNumberHandling.AllowReadingFromString;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            options.JsonSerializerOptions.PropertyNamingPolicy = JsonNamingPolicy.CamelCase;               &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// JSON response is in  camelCase&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            options.JsonSerializerOptions.DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull;  &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// null not serialized&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            options.JsonSerializerOptions.Converters.Add(&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;new&lt;/span&gt; JsonStringEnumConverter());                        &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// enums to string&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        });
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;client-side&#34; &gt;Client Side
+&lt;span&gt;
+    &lt;a href=&#34;#client-side&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;internal&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#447fcf;text-decoration:underline&#34;&gt;Api&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// Insert variables below here&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;protected&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;static&lt;/span&gt; HttpClient _client;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;protected&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;static&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;string&lt;/span&gt; BASE_URL = &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;http://10.0.2.2:5284/&amp;#34;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// protected static string BASE_URL = &amp;#34;https://api.domain.com/&amp;#34;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;static&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;readonly&lt;/span&gt; ILogger _logger = &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;typeof&lt;/span&gt;(Api).Log();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;static&lt;/span&gt; JsonSerializerOptions _serializerOptions;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;static&lt;/span&gt; Api() {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        _client = &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;new&lt;/span&gt; HttpClient();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        _serializerOptions = &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;new&lt;/span&gt;() {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        };
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        _serializerOptions.Converters.Add(&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;new&lt;/span&gt; JsonStringEnumConverter());
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;string&lt;/span&gt; serializePayload&amp;lt;T&amp;gt;(T &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;value&lt;/span&gt;) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;return&lt;/span&gt; JsonSerializer.Serialize(&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;value&lt;/span&gt;, _serializerOptions);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;public&lt;/span&gt; T deserializePayload&amp;lt;T&amp;gt;(&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;string&lt;/span&gt; payload) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;return&lt;/span&gt; JsonSerializer.Deserialize&amp;lt;T&amp;gt;(payload, _serializerOptions);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;generalized&#34; &gt;Generalized
+&lt;span&gt;
+    &lt;a href=&#34;#generalized&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-c#&#34; data-lang=&#34;c#&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;using&lt;/span&gt; &lt;span style=&#34;color:#447fcf;text-decoration:underline&#34;&gt;System.Text.Json.Serialization&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;namespace&lt;/span&gt; &lt;span style=&#34;color:#447fcf;text-decoration:underline&#34;&gt;MyApi.Models&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;enum&lt;/span&gt; LoginErrors {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    InvalidEmail,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    TooManyRequests,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#447fcf;text-decoration:underline&#34;&gt;StartLoginResponse&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// this right here:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;    [JsonConverter(typeof(JsonStringEnumConverter))]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;    [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;public&lt;/span&gt; LoginErrors? Error { &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;get&lt;/span&gt;; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;set&lt;/span&gt;; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+    
+    <item>
+      <title>ASP.NET Core Optional Json Fields</title>
+      <link>https://blog.elijahlopez.ca/posts/aspnet-optional-json-fields/</link>
+      <pubDate>Sun, 29 Jan 2023 14:03:20 -0500</pubDate>
+      
+      <guid>https://blog.elijahlopez.ca/posts/aspnet-optional-json-fields/</guid>
+      <description>&lt;p&gt;Also featured in this article is enum to string converter.&lt;/p&gt;
+&lt;h2 id=&#34;aspnet-backend&#34; &gt;ASP.NET Backend
+&lt;span&gt;
+    &lt;a href=&#34;#aspnet-backend&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;builder.Services.AddControllersWithViews(options =&amp;gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            options.Conventions.Add(&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;new&lt;/span&gt; RouteTokenTransformerConvention(
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                                         &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;new&lt;/span&gt; SlugifyParameterTransformer()));
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        }).AddJsonOptions(options =&amp;gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            options.JsonSerializerOptions.NumberHandling = JsonNumberHandling.AllowReadingFromString;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            options.JsonSerializerOptions.PropertyNamingPolicy = JsonNamingPolicy.CamelCase;               &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// JSON response is in  camelCase&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            options.JsonSerializerOptions.DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull;  &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// null not serialized&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            options.JsonSerializerOptions.Converters.Add(&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;new&lt;/span&gt; JsonStringEnumConverter());                        &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// enums to string&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;//  options.JsonSerializerOptions.IncludeFields = true;  // if you want to [de]serialize fields (i.e. get or set are omitted in the class)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        });
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;client-side&#34; &gt;Client Side
+&lt;span&gt;
+    &lt;a href=&#34;#client-side&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;internal&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#447fcf;text-decoration:underline&#34;&gt;Api&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// Insert variables below here&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;protected&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;static&lt;/span&gt; HttpClient _client;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;protected&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;static&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;string&lt;/span&gt; BASE_URL = &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;http://10.0.2.2:5284/&amp;#34;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// protected static string BASE_URL = &amp;#34;https://api.domain.com/&amp;#34;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;static&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;readonly&lt;/span&gt; ILogger _logger = &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;typeof&lt;/span&gt;(Api).Log();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;static&lt;/span&gt; JsonSerializerOptions _serializerOptions;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;static&lt;/span&gt; Api() {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        _client = &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;new&lt;/span&gt; HttpClient();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        _serializerOptions = &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;new&lt;/span&gt;() {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        };
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        _serializerOptions.Converters.Add(&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;new&lt;/span&gt; JsonStringEnumConverter());
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;string&lt;/span&gt; serializePayload&amp;lt;T&amp;gt;(T &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;value&lt;/span&gt;) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;return&lt;/span&gt; JsonSerializer.Serialize(&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;value&lt;/span&gt;, _serializerOptions);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;public&lt;/span&gt; T deserializePayload&amp;lt;T&amp;gt;(&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;string&lt;/span&gt; payload) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;return&lt;/span&gt; JsonSerializer.Deserialize&amp;lt;T&amp;gt;(payload, _serializerOptions);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;generalized&#34; &gt;Generalized
+&lt;span&gt;
+    &lt;a href=&#34;#generalized&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;details&gt;
+&lt;summary&gt;Fields&lt;/summary&gt;
+&lt;p&gt;Since System.Text.Json is only&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;Field&lt;/th&gt;
+          &lt;th&gt;Description&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Always&lt;/td&gt;
+          &lt;td&gt;Property is always ignored.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Never&lt;/td&gt;
+          &lt;td&gt;Property is always serialized and deserialized, regardless of IgnoreNullValues configuration.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;WhenWritingDefault&lt;/td&gt;
+          &lt;td&gt;Property is ignored only if it equals the default value for its type.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;WhenWritingNull&lt;/td&gt;
+          &lt;td&gt;Property is ignored if its value is null. This is applied only to reference-type properties and fields.&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;For readers in a decade or so, see &lt;a href=&#34;https://learn.microsoft.com/en-us/dotnet/api/system.text.json.serialization.jsonignorecondition#fields&#34;&gt;JsonIgnoreCondition&lt;/a&gt;&lt;/p&gt;
+&lt;/details&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-c#&#34; data-lang=&#34;c#&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;using&lt;/span&gt; &lt;span style=&#34;color:#447fcf;text-decoration:underline&#34;&gt;System.Text.Json.Serialization&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;namespace&lt;/span&gt; &lt;span style=&#34;color:#447fcf;text-decoration:underline&#34;&gt;MyApi.Models&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;enum&lt;/span&gt; LoginErrors {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    InvalidEmail,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    TooManyRequests,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#447fcf;text-decoration:underline&#34;&gt;StartLoginResponse&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;    [JsonConverter(typeof(JsonStringEnumConverter))]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// this right here:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;    [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;public&lt;/span&gt; LoginErrors? Error { &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;get&lt;/span&gt;; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;set&lt;/span&gt;; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+    
+    <item>
+      <title>ASP.NET WEB API launch.json for Visual Studio Code</title>
+      <link>https://blog.elijahlopez.ca/posts/vscode-aspnet-rest-api-launch-configuration/</link>
+      <pubDate>Sun, 29 Jan 2023 13:03:33 -0500</pubDate>
+      
+      <guid>https://blog.elijahlopez.ca/posts/vscode-aspnet-rest-api-launch-configuration/</guid>
+      <description>&lt;p&gt;Suppose you want to be able to work on your ASP.NET application in Visual Studio as well as Visual Studio Code. Sure you can use the run feature of the Solution Explorer extension in Visual Studio Code, but that&amp;rsquo;s not a native feeling.&lt;/p&gt;
+&lt;p&gt;Create the following file:&lt;/p&gt;
+&lt;details&gt;&lt;summary&gt;.vscode/launch.json&lt;/summary&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;&amp;#34;version&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;0.2.0&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;&amp;#34;configurations&amp;#34;&lt;/span&gt;: [
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// Use IntelliSense to find out which attributes exist for C# debugging
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;&lt;/span&gt;            &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// Use hover for the description of the existing attributes
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;&lt;/span&gt;            &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// For further information visit https://github.com/OmniSharp/omnisharp-vscode/blob/master/debugger-launchjson.md
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;&lt;/span&gt;            &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;&amp;#34;name&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;.NET Core Launch (web)&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;&amp;#34;type&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;coreclr&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;&amp;#34;request&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;launch&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;&amp;#34;preLaunchTask&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;build&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;&amp;#34;program&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;dotnet&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// alternative program: if you have changed target frameworks, make sure to update the program path.
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;&lt;/span&gt;            &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// &amp;#34;program&amp;#34;: &amp;#34;${workspaceFolder}/SttApi/bin/Debug/net7.0/SttApi.dll&amp;#34;,
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;&lt;/span&gt;            &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;&amp;#34;args&amp;#34;&lt;/span&gt;: [&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;watch&amp;#34;&lt;/span&gt;],
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;&amp;#34;cwd&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;${workspaceFolder}/SttApi&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;&amp;#34;stopAtEntry&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;false&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;&amp;#34;console&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;integratedTerminal&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// Enable launching a web browser when ASP.NET Core starts. For more information: https://aka.ms/VSCode-CS-LaunchJson-WebBrowser
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;&lt;/span&gt;            &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;&amp;#34;serverReadyAction&amp;#34;&lt;/span&gt;: {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;&amp;#34;action&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;openExternally&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;&amp;#34;pattern&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;\\bNow listening on:\\s+(https?://\\S+)&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;&amp;#34;uriFormat&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;%s/swagger&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            },
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;&amp;#34;env&amp;#34;&lt;/span&gt;: {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;&amp;#34;ASPNETCORE_ENVIRONMENT&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;Development&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;&amp;#34;ASPNETCORE_URLS&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;http://localhost:5284&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// restart instead of prompt if a non-hot reloadable edit was made
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;&lt;/span&gt;                &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;&amp;#34;DOTNET_WATCH_RESTART_ON_RUDE_EDIT&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;true&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            },
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;&amp;#34;sourceFileMap&amp;#34;&lt;/span&gt;: {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;&amp;#34;/Views&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;${workspaceFolder}/Views&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        },
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;&amp;#34;name&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;.NET Core Attach&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;&amp;#34;type&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;coreclr&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;&amp;#34;request&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;attach&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    ]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/details&gt;
+&lt;p&gt;Press F5 and enjoy.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Automate Unity Building</title>
+      <link>https://blog.elijahlopez.ca/posts/automate-unity-building/</link>
+      <pubDate>Sun, 21 Jun 2020 11:11:24 -0500</pubDate>
+      
+      <guid>https://blog.elijahlopez.ca/posts/automate-unity-building/</guid>
+      <description>&lt;p&gt;It took me hours to figure out how to create a simple build script in Unity, even after watching videos, I was really confused.
+So why not write an article so that other developers won&amp;rsquo;t need to spend that much time themselves.&lt;/p&gt;
+&lt;h2 id=&#34;getting-started&#34; &gt;Getting Started
+&lt;span&gt;
+    &lt;a href=&#34;#getting-started&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;Before we get started make sure you have the necessary build supports needed. In Unity Hub you can see your installations.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.elijahlopez.ca/images/automate-unity-building/unity-hub.webp&#34; alt=&#34;Unity installation screenshot&#34;&gt;&lt;/p&gt;
+&lt;p&gt;If not, you&amp;rsquo;ll have to click the three dots, and then click &amp;ldquo;Add Modules.&amp;rdquo;
+Next, we will need to create a script named something like &lt;code&gt;BuildScript.cs&lt;/code&gt;.
+Make sure this file is placed in &lt;code&gt;Assets/Editor&lt;/code&gt;.
+This file will be responsible in calling Unity BuildPlayer as well as adding menu items for you to quickly build for your platform(s) of choice.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://gist.github.com/elibroftw/149c230518e3e0d9af54d9c472c2ee84#file-buildscript-cs&#34;&gt;BuildScript.cs&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Next copy the code below. Disclaimer: this code uses the scenes from your build settings so make sure the scenes there are correct.
+You can ignore the last function if you want, I just kept it there in case you need to use Asset Bundles (I did not).
+With this script you can call the build methods from &amp;ldquo;File &amp;gt; Build All&amp;rdquo; and Unity will build the players to the &amp;ldquo;Builds&amp;rdquo; directory in your project root.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.elijahlopez.ca/images/automate-unity-building/unity-hub.webp&#34; alt=&#34;Unity build menu&#34;&gt;&lt;/p&gt;
+&lt;p&gt;This takes care of building from the editor but what if you were using CI/server to build it for you?
+You will need to make a shell/batch script or you can use Python so that the OS won&amp;rsquo;t matter.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://gist.github.com/elibroftw/be1f6ad737ccde25e86f858f2f11629f#file-unitybuild-py&#34;&gt;UnityBuild.py&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;You may have to modify some variables such as &lt;code&gt;UNITY&lt;/code&gt; and also the zipping process if you don&amp;rsquo;t want to zip the builds.
+You may also pair this up with an Ino setup script like so &lt;code&gt;iscc setup_script.iss&lt;/code&gt;.
+I hope you found this tutorial helpful because I sure would&amp;rsquo;ve.&lt;/p&gt;
+&lt;h2 id=&#34;resources&#34; &gt;Resources
+&lt;span&gt;
+    &lt;a href=&#34;#resources&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://docs.unity3d.com/Manual/BuildPlayerPipeline.html&#34;&gt;Build Player Pipeline&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://docs.unity3d.com/Manual/CommandLineArguments.html&#34;&gt;Unity Command line arguments&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

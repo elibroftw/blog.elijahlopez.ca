@@ -1,0 +1,2917 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="">
+<head>
+    
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name = "apple-mobile-web-app-capable" content = "yes">
+    <meta name="theme-color" content="#121212">
+
+    <meta charset="utf-8">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <title>CS 456 Computer Networks - ELL Blog</title>
+    <meta name="description" content="Overview of the Internet
+
+    
+        
+    
+
+Open Systems Interconnection
+
+    
+        
+    
+
+
+Physical
+
+fiber, cable, radio mediums that carry individual bits (smallest unit of data, 1 or 0)
+
+
+Data Link
+
+organizes all the data being transmitted into datagrams (the network-layer packet is referred to as a datagram) and frames and enables node ⇆ node communication
+handles error detection and correction
+Ethernet, 802.11 (WIFI), point-to-point protocol (PPP)?
+
+
+Network
+
+the Internet Protocol (v4 and v6), and routing protocols for transferring packets to hosts
+
+
+Transport
+
+TCP, UDP
+
+
+Session
+
+Manages connections between applications
+
+
+Presentation
+
+Formats and encrypts data for the application layer
+
+
+Application
+
+Network services
+HTTP, IMAP, SMTP, DNS
+Firewalls
+
+
+
+Chapter 1 Overall Picture of Computer Networking
+
+    
+        
+    
+
+Circuit Switching Vs. Packet Switching, Access Networks, Physical Media, Network Delays, Protocol Layering, Internet architecture">
+    
+    <link rel="icon" type="image/x-icon" href="https://blog.elijahlopez.ca/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" href="https://blog.elijahlopez.ca/favicon.png">
+
+    <link rel="stylesheet" href="https://blog.elijahlopez.ca/css/style.min.aaf2c7fda9310c97167f1a94f41891944861efa73f96c5467dbea9ecc5ddb751.css" integrity="sha256-qvLH/akxDJcWfxqU9BiRlEhh76c/lsVGfb6p7MXdt1E=">
+    <script src="https://blog.elijahlopez.ca/js/script.min.74bf1a3fcf1af396efa4acf3e660e876b61a2153ab9cbe1893ac24ea6d4f94ee.js" type="text/javascript" charset="utf-8" integrity="sha256-dL8aP88a85bvpKzz5mDodrYaIVOrnL4Yk6wk6m1PlO4="></script>
+    <meta property="og:url" content="https://blog.elijahlopez.ca/posts/university/cs-456-computer-networks/">
+  <meta property="og:site_name" content="ELL Blog">
+  <meta property="og:title" content="CS 456 Computer Networks">
+  <meta property="og:description" content="Overview of the Internet Open Systems Interconnection Physical fiber, cable, radio mediums that carry individual bits (smallest unit of data, 1 or 0) Data Link organizes all the data being transmitted into datagrams (the network-layer packet is referred to as a datagram) and frames and enables node ⇆ node communication handles error detection and correction Ethernet, 802.11 (WIFI), point-to-point protocol (PPP)? Network the Internet Protocol (v4 and v6), and routing protocols for transferring packets to hosts Transport TCP, UDP Session Manages connections between applications Presentation Formats and encrypts data for the application layer Application Network services HTTP, IMAP, SMTP, DNS Firewalls Chapter 1 Overall Picture of Computer Networking Circuit Switching Vs. Packet Switching, Access Networks, Physical Media, Network Delays, Protocol Layering, Internet architecture">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2024-05-07T08:29:57-04:00">
+    <meta property="article:modified_time" content="2024-05-07T08:29:57-04:00">
+    <meta property="article:tag" content="University">
+    <meta property="article:tag" content="Computer-Science">
+    <meta property="og:image" content="https://blog.elijahlopez.ca/images">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://blog.elijahlopez.ca/images">
+  <meta name="twitter:title" content="CS 456 Computer Networks">
+  <meta name="twitter:description" content="Overview of the Internet Open Systems Interconnection Physical fiber, cable, radio mediums that carry individual bits (smallest unit of data, 1 or 0) Data Link organizes all the data being transmitted into datagrams (the network-layer packet is referred to as a datagram) and frames and enables node ⇆ node communication handles error detection and correction Ethernet, 802.11 (WIFI), point-to-point protocol (PPP)? Network the Internet Protocol (v4 and v6), and routing protocols for transferring packets to hosts Transport TCP, UDP Session Manages connections between applications Presentation Formats and encrypts data for the application layer Application Network services HTTP, IMAP, SMTP, DNS Firewalls Chapter 1 Overall Picture of Computer Networking Circuit Switching Vs. Packet Switching, Access Networks, Physical Media, Network Delays, Protocol Layering, Internet architecture">
+
+
+
+
+
+
+    
+
+
+
+
+
+</head>
+
+<body>
+    <a class="skip-main" href="#main">Skip to main content</a>
+    <div class="container">
+        <header class="common-header">
+            
+                
+
+    
+
+
+<div class="header-top">
+    <h1 class="site-title">
+        <a href="/">ELL Blog</a>
+    </h1>
+
+    <div class="header-top-left">
+    <ul class="social-icons">
+
+        <li>
+            <a href="/index.xml" title="Rss" rel="me">
+                <span class="inline-svg" >
+                    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" data-icon="rss" data-prefix="fas" focusable="false" role="img" viewBox="0 0 496 512"><path fill="currentColor" fill="currentColor" d="M128.081 415.959c0 35.369-28.672 64.041-64.041 64.041S0 451.328 0 415.959s28.672-64.041 64.041-64.041 64.04 28.673 64.04 64.041zm175.66 47.25c-8.354-154.6-132.185-278.587-286.95-286.95C7.656 175.765 0 183.105 0 192.253v48.069c0 8.415 6.49 15.472 14.887 16.018 111.832 7.284 201.473 96.702 208.772 208.772.547 8.397 7.604 14.887 16.018 14.887h48.069c9.149.001 16.489-7.655 15.995-16.79zm144.249.288C439.596 229.677 251.465 40.445 16.503 32.01 7.473 31.686 0 38.981 0 48.016v48.068c0 8.625 6.835 15.645 15.453 15.999 191.179 7.839 344.627 161.316 352.465 352.465.353 8.618 7.373 15.453 15.999 15.453h48.068c9.034-.001 16.329-7.474 16.005-16.504z"/></svg>
+                </span>
+
+            </a>
+        </li>
+    
+
+        <li>
+            <a href="https://elijahlopez.ca" title="Website" rel="me">
+                <span class="inline-svg" >
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M352 256C352 278.2 350.8 299.6 348.7 320H163.3C161.2 299.6 159.1 278.2 159.1 256C159.1 233.8 161.2 212.4 163.3 192H348.7C350.8 212.4 352 233.8 352 256zM503.9 192C509.2 212.5 512 233.9 512 256C512 278.1 509.2 299.5 503.9 320H380.8C382.9 299.4 384 277.1 384 256C384 234 382.9 212.6 380.8 192H503.9zM493.4 160H376.7C366.7 96.14 346.9 42.62 321.4 8.442C399.8 29.09 463.4 85.94 493.4 160zM344.3 160H167.7C173.8 123.6 183.2 91.38 194.7 65.35C205.2 41.74 216.9 24.61 228.2 13.81C239.4 3.178 248.7 0 256 0C263.3 0 272.6 3.178 283.8 13.81C295.1 24.61 306.8 41.74 317.3 65.35C328.8 91.38 338.2 123.6 344.3 160H344.3zM18.61 160C48.59 85.94 112.2 29.09 190.6 8.442C165.1 42.62 145.3 96.14 135.3 160H18.61zM131.2 192C129.1 212.6 127.1 234 127.1 256C127.1 277.1 129.1 299.4 131.2 320H8.065C2.8 299.5 0 278.1 0 256C0 233.9 2.8 212.5 8.065 192H131.2zM194.7 446.6C183.2 420.6 173.8 388.4 167.7 352H344.3C338.2 388.4 328.8 420.6 317.3 446.6C306.8 470.3 295.1 487.4 283.8 498.2C272.6 508.8 263.3 512 255.1 512C248.7 512 239.4 508.8 228.2 498.2C216.9 487.4 205.2 470.3 194.7 446.6H194.7zM190.6 503.6C112.2 482.9 48.59 426.1 18.61 352H135.3C145.3 415.9 165.1 469.4 190.6 503.6V503.6zM321.4 503.6C346.9 469.4 366.7 415.9 376.7 352H493.4C463.4 426.1 399.8 482.9 321.4 503.6V503.6z"/></svg>
+                </span>
+
+            </a>
+        </li>
+    
+
+        
+        
+        <li>
+            <a href="https://github.com/elibroftw" title="Github" rel="me">
+            <span class="inline-svg" >
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+                </span>
+
+            </a>
+        </li>
+    
+
+        
+        
+        <li>
+            <a href="https://twitter.com/elibroftw" title="Twitter" rel="me">
+            <span class="inline-svg" >
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+                </span>
+
+            </a>
+        </li>
+    
+
+        
+        
+        <li>
+            <a href="https://www.youtube.com/c/elibroftw" title="Youtube" rel="me">
+            <span class="inline-svg" >
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg>
+                </span>
+
+            </a>
+        </li>
+    
+
+        
+        
+        <li>
+            <a href="mailto:elijahllopezz@gmail.com" title="Email" rel="me">
+            <span class="inline-svg" >
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M464 64H48C21.49 64 0 85.49 0 112v288c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zm0 48v40.805c-22.422 18.259-58.168 46.651-134.587 106.49-16.841 13.247-50.201 45.072-73.413 44.701-23.208.375-56.579-31.459-73.413-44.701C106.18 199.465 70.425 171.067 48 152.805V112h416zM48 400V214.398c22.914 18.251 55.409 43.862 104.938 82.646 21.857 17.205 60.134 55.186 103.062 54.955 42.717.231 80.509-37.199 103.053-54.947 49.528-38.783 82.032-64.401 104.947-82.653V400H48z"/></svg>
+                </span>
+
+            </a>
+        </li>
+    
+
+        
+        
+        <li>
+            <a href="https://www.instagram.com/elijahllopezz" title="Instagram" rel="me">
+            <span class="inline-svg" >
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+                </span>
+
+            </a>
+        </li>
+    
+
+
+
+</ul>
+</div>
+    
+
+    
+
+
+
+
+    <div class="header-top-right theme-switcher">
+        <span class="inline-svg" >
+                    <svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 290 290">
+<path fill="currentColor" d="M142.959,0C64.131,0,0,64.132,0,142.96c0,78.828,64.131,142.959,142.959,142.959c78.828,0,142.96-64.131,142.96-142.959  C285.919,64.132,221.787,0,142.959,0z M142.959,260.919V142.96V25c65.043,0,117.96,52.917,117.96,117.96  C260.919,208.003,208.002,260.919,142.959,260.919z"/>
+</svg>
+                </span>
+
+    </div>
+
+
+<script>
+const STORAGE_KEY = 'user-color-scheme'
+const defaultTheme = "auto"
+
+let currentTheme
+let switchButton
+let autoDefinedScheme = window.matchMedia('(prefers-color-scheme: dark)')
+
+const autoChangeScheme = e => {
+    currentTheme = e.matches ? 'dark' : 'light'
+    document.documentElement.setAttribute('data-theme', currentTheme)
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    switchButton = document.querySelector('.theme-switcher')
+    currentTheme = detectCurrentScheme()
+    setThemeColorMeta(currentTheme)
+    if (currentTheme == 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark')
+    }
+
+    if (currentTheme == 'auto') {
+        autoChangeScheme(autoDefinedScheme);
+        autoDefinedScheme.addListener(autoChangeScheme);
+    }
+
+    if (switchButton) {
+        switchButton.addEventListener('click', switchTheme, false)
+    }
+})
+
+function detectCurrentScheme() {
+    if (localStorage !== null && localStorage.getItem(STORAGE_KEY)) {
+        return localStorage.getItem(STORAGE_KEY)
+    }
+    if (defaultTheme) {
+        return defaultTheme
+    }
+    if (!window.matchMedia) {
+        return defaultTheme
+    }
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        return 'dark'
+    }
+    return defaultTheme
+}
+
+function switchTheme(e) {
+    if (currentTheme == 'dark') {
+        if (localStorage !== null)
+            localStorage.setItem(STORAGE_KEY, 'light')
+        document.documentElement.setAttribute('data-theme', 'light')
+        currentTheme = 'light'
+    } else {
+        if (localStorage !== null)
+            localStorage.setItem(STORAGE_KEY, 'dark')
+        document.documentElement.setAttribute('data-theme', 'dark')
+        currentTheme = 'dark'
+    }
+    setThemeColorMeta(currentTheme)
+}
+
+function setThemeColorMeta(currentTheme) {
+    if (currentTheme == 'dark') {
+        document.querySelector('meta[name="theme-color"]').setAttribute('content', '#121212')
+    } else {
+        document.querySelector('meta[name="theme-color"]').setAttribute('content', '#fff')
+    }
+}
+</script>
+
+</div>
+
+
+    <nav>
+        
+        
+        <a class="" href="https://blog.elijahlopez.ca/" title="Home">Home</a>
+        
+        <a class="" href="https://blog.elijahlopez.ca/posts/" title="Archive">Archive</a>
+        
+        <a class="" href="https://blog.elijahlopez.ca/tags/" title="Tags">Tags</a>
+        
+    </nav>
+
+
+
+
+
+
+            
+        </header>
+        <main id="main" tabindex="-1">
+            
+    
+
+    <article class="post h-entry">
+        <div class="post-header">
+            <header>
+                <h1 class="p-name post-title">CS 456 Computer Networks</h1>
+
+                
+            </header>
+        </div>
+        
+
+
+
+
+        <div class="content e-content">
+            <h2 id="overview-of-the-internet" >Overview of the Internet
+<span>
+    <a href="#overview-of-the-internet">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><h3 id="open-systems-interconnection" >Open Systems Interconnection
+<span>
+    <a href="#open-systems-interconnection">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ol>
+<li><a href="#physical-media-links">Physical</a>
+<ul>
+<li>fiber, cable, radio mediums that carry individual bits (smallest unit of data, 1 or 0)</li>
+</ul>
+</li>
+<li><a href="#chapter-6-data-link-layer">Data Link</a>
+<ul>
+<li>organizes all the data being transmitted into datagrams (the network-layer packet is referred to as a datagram) and frames and enables node ⇆ node communication</li>
+<li>handles error detection and correction</li>
+<li>Ethernet, 802.11 (WIFI), point-to-point protocol (PPP)?</li>
+</ul>
+</li>
+<li><a href="#chapter-4--5-network-layer">Network</a>
+<ul>
+<li>the Internet Protocol (v4 and v6), and routing protocols for transferring packets to hosts</li>
+</ul>
+</li>
+<li><a href="#chapter-3-transport-layer-protocols">Transport</a>
+<ul>
+<li>TCP, UDP</li>
+</ul>
+</li>
+<li><a href="#tcp-3-way-handshake">Session</a>
+<ul>
+<li>Manages connections between applications</li>
+</ul>
+</li>
+<li><a href="#tcp-security">Presentation</a>
+<ul>
+<li>Formats and encrypts data for the application layer</li>
+</ul>
+</li>
+<li><a href="#chapter-2-application-layer-protocols">Application</a>
+<ul>
+<li>Network services</li>
+<li>HTTP, IMAP, SMTP, DNS</li>
+<li>Firewalls</li>
+</ul>
+</li>
+</ol>
+<h2 id="chapter-1-overall-picture-of-computer-networking" >Chapter 1 Overall Picture of Computer Networking
+<span>
+    <a href="#chapter-1-overall-picture-of-computer-networking">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><p>Circuit Switching Vs. Packet Switching, Access Networks, Physical Media, Network Delays, Protocol Layering, Internet architecture</p>
+<p>What is the internet and what is a protocol?</p>
+<ul>
+<li>Network edge: hosts, access network, physical media</li>
+<li>Network core: packet/circuit switching, internet structure</li>
+<li>Performance: loss, delay, throughput</li>
+<li>Protocol layers, service models</li>
+<li>Security</li>
+<li>HIstory</li>
+</ul>
+<h3 id="nuts-and-bolts-view-of-the-internet" >Nuts and Bolts View of The Internet
+<span>
+    <a href="#nuts-and-bolts-view-of-the-internet">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>billions of devices connected to each other</li>
+<li>hosts: end systems (runs network apps at internet&rsquo;s <em>edge</em>)
+<ul>
+<li>bit is the smallest unit</li>
+<li>throughput is capacity</li>
+</ul>
+</li>
+<li>packet switches: packet forwarder (routers and switches)</li>
+<li>communication links: bandwidth (fiber, copper, radio, satellite)</li>
+<li>networks: collection of devices, routers, links managed by an organization
+<ul>
+<li>internet service providers connect different networks</li>
+<li>regional connectivity, national, and international connectivity</li>
+</ul>
+</li>
+</ul>
+<h3 id="internet-services-view" >Internet Services View
+<span>
+    <a href="#internet-services-view">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>Infrastructure that provides services to applications
+<ul>
+<li>web, streaming video, teleconferencing, email, games</li>
+<li>Examples: HTTP, Skype</li>
+</ul>
+</li>
+<li>Provides programming interface to distribute applications
+<ul>
+<li>hooks apps to send/receive</li>
+<li>provides service options (like postal service)</li>
+</ul>
+</li>
+</ul>
+<h3 id="the-internet" >The Internet
+<span>
+    <a href="#the-internet">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>protocols are everywhere
+<ul>
+<li>controls sending and receiving of messages</li>
+<li>e.g. HTTP (Web), streaming video, skype, TCP, IP, WiFi, 4G, Ethernet, bittorrent</li>
+</ul>
+</li>
+<li>Internet standards
+<ul>
+<li>RFC: Request for COmments</li>
+<li>IETF: Internet Engineering Task Force</li>
+</ul>
+</li>
+</ul>
+<h3 id="what-is-a-protocol" >What is a Protocol
+<span>
+    <a href="#what-is-a-protocol">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>Human: what&rsquo;s the time, I have a question</li>
+<li>Network protocols: devices rather than humans (governs internet communications)</li>
+<li>Human: has conversation with someone</li>
+<li>Networks:
+<ul>
+<li>A-to-B: TCP connection request</li>
+<li>B-to-A: TCP connection response</li>
+<li>A-to-B: <code>GET http://gaia.cs.umass.edu/kurose_ross</code></li>
+<li>B-to-A: <code>&lt;file&gt;</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="hosts-on-the-internet" >Hosts on the Internet
+<span>
+    <a href="#hosts-on-the-internet">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>network edge:
+<ul>
+<li>either clients or servers</li>
+</ul>
+</li>
+<li>access networks, physical media
+<ul>
+<li>access points (WiFi) connect to a switch (modem?)</li>
+<li>then the switches connect to routers to form a network</li>
+<li>then there&rsquo;s a router that connects outside the network</li>
+<li>wired, wireless communication links</li>
+</ul>
+</li>
+</ul>
+<h3 id="access-networks-tv-cable-based-access" >Access Networks: TV Cable-based Access
+<span>
+    <a href="#access-networks-tv-cable-based-access">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>frequency division multiplexing (FDM): different channels transmitted in different frequency bands
+<ul>
+<li>splitter to split the channels into TV and cable modem</li>
+<li>channels for video, data (downstream and upstream), and control</li>
+<li>Physics!</li>
+</ul>
+</li>
+<li>Hybrid fiber coax (HFC)
+<ul>
+<li>asymmetric: up to 40Mbps - 1.2Gbps downstream, 30-100 Mbps upstream</li>
+</ul>
+</li>
+<li>data is with packets with a source and a destination (ip addresses)</li>
+</ul>
+<h3 id="digital-subscriber-line-dsl" >Digital Subscriber Line (DSL)
+<span>
+    <a href="#digital-subscriber-line-dsl">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>On top of telephone network</li>
+<li>Before DSL, it was dial-up modems</li>
+<li>DSL access multiplexer (DSLAM)</li>
+<li>Need a splitter to split the data into Telephone and DSL modem</li>
+</ul>
+<h3 id="wireless-access-networks" >Wireless Access Networks
+<span>
+    <a href="#wireless-access-networks">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>Wireless local area networks (WLANs)
+<ul>
+<li>Within or around building</li>
+<li>802.11b/g/n (WiFi): 11, 54, 450 mbps</li>
+</ul>
+</li>
+<li>Wide-area cellular access networks
+<ul>
+<li>10mbps</li>
+<li>4G, 5G</li>
+<li>cellular network operator</li>
+</ul>
+</li>
+</ul>
+<h3 id="institutional-networks" >Institutional Networks
+<span>
+    <a href="#institutional-networks">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>As mentioned before, in an institutional network, we have lots of access points in each building, and they all connect to switches which connect to distribution routers (routers in buildings) which connect to core routers which connect to edge routers which connect to at least one ISP.</p>
+<ul>
+<li><a href="https://ns-info.uwaterloo.ca/netstats/core.php">UWaterloo Core Network Statistics</a></li>
+<li><a href="https://ns-info.uwaterloo.ca/netstats/building.php">UWaterloo Building Network Statistics</a></li>
+</ul>
+<h3 id="router-versus-switches" >Router Versus Switches
+<span>
+    <a href="#router-versus-switches">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>If two networks use different technologies, we need to use routers, which is a switch with more capabilities.</p>
+<h3 id="access-networks-data-center-networks" >Access Networks: Data Center Networks
+<span>
+    <a href="#access-networks-data-center-networks">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>high-bandwidth links (10s to 100s Gbps)</li>
+<li>connect hundreds to thousands of servers together, and to internet</li>
+</ul>
+<h3 id="hosts-send-packets-of-data" >Hosts Send Packets of Data
+<span>
+    <a href="#hosts-send-packets-of-data">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>packet-switching: application messages is broken into smaller chunks (packets) of length <em>L</em> bits</li>
+<li>transmits packet into access network at transmission rate <em>R</em></li>
+<li>Link transmission rate is the capacity (link bandwidth)</li>
+<li>packet transmission delay = time needed to transmit L-bit packet into link = L (bits) / R (bits per second)</li>
+</ul>
+<h3 id="physical-media-links" >Physical Media Links
+<span>
+    <a href="#physical-media-links">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>coaxial cable
+<ul>
+<li>two concentric copper conductors</li>
+<li>broadbands (100&rsquo;s Mbps per channel, multiple frequency channels)</li>
+</ul>
+</li>
+<li>fiber optic cable
+<ul>
+<li>glass fiber carrying light pulses, each pulse is a bit</li>
+<li>high-speed operation: high-speed point-to-point (10s-100s Gbps)</li>
+<li>low error rate: repeaters spaced far part, immune to electromagnetic noise</li>
+</ul>
+</li>
+<li>wireless radio
+<ul>
+<li>bands</li>
+</ul>
+</li>
+<li>radio link types
+<ul>
+<li>Wireless LAN (WiFi)</li>
+<li>Bluetooth: cable replacement</li>
+<li>terrestrial microwave</li>
+<li>satellite</li>
+</ul>
+</li>
+</ul>
+<h3 id="the-network-core" >The Network Core
+<span>
+    <a href="#the-network-core">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>network forwards packets from one router to the next, across links on path from source to destination</li>
+<li>forwarding (switching)
+<ul>
+<li>move arriving packet from input link to appropriate output link (each router has many output ports). <a href="https://www.cisco.com/c/en/us/products/collateral/switches/catalyst-2960-x-series-switches/datasheet_c78-728232.html">Example</a></li>
+</ul>
+</li>
+<li>Run a routing algorithm/protocol on the routers
+<ul>
+<li>It will end up deciding what the best output port is for linking</li>
+<li>creates the forwarding table
+<ul>
+<li>packet header has an address</li>
+<li>forwarding table has a mapping of header value to output link</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="packet-switching-store-and-forward" >Packet Switching store-and-forward
+<span>
+    <a href="#packet-switching-store-and-forward">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>takes L/R seconds to transmit L-bit packet into link at R bits per second</li>
+<li>entire packet must arrive at router before it can be transmitted on next link</li>
+<li>When R2 &gt; R1, the router receives bits at a faster rate than it can handle
+<ul>
+<li>3rd packet: <code>t = 3L/R1 + L/R2</code></li>
+</ul>
+</li>
+<li>When R1 &gt; R2,
+<ul>
+<li>3rd packet: <code>t = L/R1 + 3L/R2</code></li>
+</ul>
+</li>
+</ul>
+<p>Finding out probability of users transmitting (binomial distributions):</p>
+<p>(users choose n) * p^n * p^(1 - n)</p>
+<p>For &ldquo;at least 2&rdquo; you can do 1 - P(n=1) - P(n = 0).</p>
+<h3 id="packet-switching-queuing" >Packet Switching Queuing
+<span>
+    <a href="#packet-switching-queuing">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>When R2 &gt; R1, the queue fills because work arrives faster than it can service (transmission rate)</li>
+<li>packets are dropped if buffer is full (congestion)</li>
+</ul>
+<h3 id="circuit-switching" >Circuit Switching
+<span>
+    <a href="#circuit-switching">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>max users = link speed / required bandwidth</li>
+<li>end-to-end resources allocated to, researched for &ldquo;call&rdquo; between source and destination</li>
+<li>traditional telephone networks</li>
+<li>no sharing</li>
+<li>each link is split into sub-channels that can be used for circuits</li>
+</ul>
+<h3 id="time-division-multiplexing-tdm" >Time Division Multiplexing (TDM)
+<span>
+    <a href="#time-division-multiplexing-tdm">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>Alternatively to FDM where each call is allocated its own band, we can divide time into slots and each call is allocated a periodic slots that can transmit at the wide frequency band and so would get a higher rate</p>
+<h3 id="network-of-networks" >Network of Networks
+<span>
+    <a href="#network-of-networks">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>Impossible O(N^2) to connect all ISPs to all other ISPs so there are global ISPs that connect to each other global ISPs via an Internet Exchange Point and peering links. Regional ISPs will connect access nets to ISPs. Content provider networks (Google, Microsoft, Netflix) may connect directly to an IXP or beside a global ISP to be close to end users. Data centers, bypassing higher tier ISPs, more control over user experience, less money for sending traffic into provider networks, avoiding network discrimination.</p>
+<p><a href="https://www.torix.ca/who-we-are/">TORIX</a>: Toronto Internet Exchange Point</p>
+<h3 id="packet-delays-and-loss" >Packet Delays and Loss
+<span>
+    <a href="#packet-delays-and-loss">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>Packet delay is the sum of four sources</p>
+<ol>
+<li>Processing
+<ul>
+<li>Checking bit errors, determining output link (&lt; microsecond)</li>
+</ul>
+</li>
+<li>Queueing
+<ul>
+<li>Waiting at output link</li>
+<li>Congestion</li>
+</ul>
+</li>
+<li>Transmission
+<ul>
+<li>Time for packet until it is sent off (transmitted)</li>
+</ul>
+</li>
+<li>Propagation
+<ul>
+<li>Traveling to the next link takes time</li>
+</ul>
+</li>
+</ol>
+<p>Packets have time-to-live which is a uint defining the max hops. If a router encounters a packet with a TTL of 1, it drops the packet and typically returns an error to the sender. Otherwise it propagates a packet with the TTL minus 1.</p>
+<p>Traffic intensity (I) = Transmission Rate = Packet Length * Average Packet Arrival Rate / Link Bandwidth = <code>La/R</code> where L is packet length and R is transmission speed.</p>
+<p>Queueing Delay = I * L / R(1 - I)</p>
+<ul>
+<li>Transmission Rate ~= 0: small delay</li>
+<li>Transmission Rate close to 1 but not larger: large delay</li>
+<li>Transmission Rate &gt; 1: infinite delay due to more work than servicing</li>
+</ul>
+<h3 id="real-internet-delays" >Real Internet Delays
+<span>
+    <a href="#real-internet-delays">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p><code>traceroute</code> program</p>
+<p><code>traceroute</code> will send sets (probe) of 3 packets with for all i = 1, to a TTL of 64 until the destination is reached. For each i, the packets are dropped by a router at the index i. The router at index i is not necessarily going to be the same for each packet. This program therefore allows inspecting/probing the network path.</p>
+<p>Reasons for different paths: routing table changes, load balancing</p>
+<h3 id="throughput" >Throughput
+<span>
+    <a href="#throughput">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>bits/time unit
+<ul>
+<li>instantaneous: any point in a time slot (what you would show in a software that downloads stuff for the user)</li>
+<li>average: rate over longer period of time (useful for performance)</li>
+</ul>
+</li>
+<li>Bottleneck Link
+<ul>
+<li>Which link is constraining the throughput</li>
+</ul>
+</li>
+</ul>
+<h3 id="network-security" >Network Security
+<span>
+    <a href="#network-security">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>internet was designed for trusted groups in mind, so designers are catching up</li>
+<li>all layers need to be protected</li>
+<li>packet sniffing
+<ul>
+<li>using wireshark, someone can inspect packets that are broadcasted by making their network card promiscuous (accept all packets instead of the default behaviour dropping ones that were not meant for the device). Especially harmful for unencrypted traffic</li>
+<li>IP spoofing: false source address can trick server into sending too much information to the real device</li>
+<li>Denial of Service
+<ul>
+<li>Overwhelm server with bogus traffic</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="layers-framework" >Layers Framework
+<span>
+    <a href="#layers-framework">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>Why layers?</p>
+<ul>
+<li>explicit structure allows identification, relationship of
+system’s pieces</li>
+<li>modularization eases maintenance, updating of system</li>
+</ul>
+<h3 id="protocol-layers-and-reference-models" >Protocol layers and reference models
+<span>
+    <a href="#protocol-layers-and-reference-models">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>hosts</li>
+<li>routers</li>
+<li>links of various media</li>
+<li>applications</li>
+<li>protocols</li>
+<li>hardware, software</li>
+</ul>
+<p>Example of layers is air travel</p>
+<ul>
+<li>ticket (purchase) → ticketing service → ticket (complain)</li>
+<li>baggage (check) → baggage service → baggage (claim)</li>
+<li>gates (load) → gate service → gate (unload)</li>
+<li>runway takeoff → runway service → runway landing</li>
+<li>airplane routing → routing service → airplane routing</li>
+</ul>
+<h2 id="chapter-2-application-layer-protocols" >Chapter 2 Application Layer Protocols
+<span>
+    <a href="#chapter-2-application-layer-protocols">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><p>World Wide Web (HTTP), File Transfer (FTP), Electronic Mail (SMTP), Domain Name System (DNS), Socket Programming.</p>
+<h3 id="client-server-paradigm" >Client-server Paradigm
+<span>
+    <a href="#client-server-paradigm">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>Server
+<ul>
+<li>always-on host</li>
+<li>permanent IP address</li>
+<li>often in data centers, for scaling</li>
+</ul>
+</li>
+<li>client
+<ul>
+<li>contact, communicate with server</li>
+<li>may be intermittently connected</li>
+<li>may have dynamic IP Addresses</li>
+<li>do not communicate directly with each other</li>
+</ul>
+</li>
+</ul>
+<h3 id="peer-peer-architecture" >Peer-peer Architecture
+<span>
+    <a href="#peer-peer-architecture">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>no always-on server</li>
+<li>arbitrary end systems directly communicate</li>
+<li>peers request service from other peers, provide service in return to other peers</li>
+<li>self scalability - new peers bring new service capacity as well as new service demands</li>
+<li>peers are intermittently connected and change IP addresses</li>
+</ul>
+<h3 id="sockets" >Sockets
+<span>
+    <a href="#sockets">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>Sockets are like doors on each of the processes that can send and receive messages relying on the transport infrastructure to deliver messages to socket on receiving process. Sockets can be UDP or TCP and can communicate within the same machine.</p>
+<h3 id="addressing-processes" >Addressing Processes
+<span>
+    <a href="#addressing-processes">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>Each host device has unique 32-bit Internet Protocol address</li>
+<li>Ports are used to differentiate <strong>processes</strong> running on the same host</li>
+<li>2^16 - 1 port numbers</li>
+</ul>
+<h3 id="application-layer-protocol" >Application Layer Protocol
+<span>
+    <a href="#application-layer-protocol">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>types of messages (request, response)</li>
+<li>message syntax (fields to delineate)</li>
+<li>message semantics (meaning of field values)</li>
+<li>rules (when and how to do something)</li>
+<li>open protocols (RFCs)
+<ul>
+<li>Interoperability</li>
+<li>HTTP, SMTP</li>
+</ul>
+</li>
+<li>Proprietary protocols
+<ul>
+<li>Skype, Zoom</li>
+</ul>
+</li>
+</ul>
+<h3 id="transport-service-requirements" >Transport Service Requirements
+<span>
+    <a href="#transport-service-requirements">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>data integrity</li>
+<li>throughput</li>
+<li>timing</li>
+<li>security</li>
+</ul>
+<h3 id="tcp-vs-udp" >TCP vs UDP
+<span>
+    <a href="#tcp-vs-udp">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>Classes of services: reliability (TCP), throughput (not guaranteed), delivery time (not guaranteed), and confidentiality via encryption (not guaranteed).</p>
+<ul>
+<li>TCP
+<ul>
+<li>reliable transport between sending and receiving process</li>
+<li>flow control: sender won&rsquo;t overwhelm receiver</li>
+<li>congestion control: throttle sender when network overloaded</li>
+<li>connection-oriented: setup required between client and server processes</li>
+<li>does not provide: timing, minimum throughput guarantee, security</li>
+</ul>
+</li>
+<li>UDP
+<ul>
+<li>unreliable data transfer between sending and receiving process</li>
+<li>does not provide: reliability, flow control, congestion control, timing, throughput, guarantee, security, or connection setup</li>
+</ul>
+</li>
+<li>Why does UDP exist?
+<ul>
+<li>to establish low-latency and loss-tolerating connections between applications on the internet</li>
+<li>there is no read (acknowledgement) receipt and no need for a TCP connection setup</li>
+</ul>
+</li>
+</ul>
+<h3 id="tcp-security" >TCP Security
+<span>
+    <a href="#tcp-security">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>Transport Layer Security (TLS)
+<ul>
+<li>Encrypted connections</li>
+<li>data integrity</li>
+<li>end-point authentication</li>
+<li>Application layer</li>
+</ul>
+</li>
+</ul>
+<h3 id="web-and-http" >Web and HTTP
+<span>
+    <a href="#web-and-http">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>web page consists of objects</li>
+<li>objects: HTML file, JPEG image, Java applet, audio file</li>
+<li>web page contains base HTML-file which includes several
+referenced objects, each addressable by a URL</li>
+</ul>
+<h3 id="hypertext-transfer-protocol-http" >Hypertext Transfer Protocol (HTTP)
+<span>
+    <a href="#hypertext-transfer-protocol-http">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>client: browser that requests, receives, displays</li>
+<li>server:  Web server sends objects in response to requests</li>
+<li>stateless</li>
+<li>RTT: <em>Round Trip Time</em>: time for a small packet to travel from client to server and back</li>
+</ul>
+<p>Non-Persistent</p>
+<ol>
+<li>TCP connection opened</li>
+<li>at most one object sent
+over TCP connection</li>
+<li>TCP connection closed</li>
+</ol>
+<ul>
+<li>downloading multiple objects required multiple connections</li>
+<li>Per object: One RTT for TCP initiation, one RTT for request and return, object/file transmission time</li>
+<li>browsers open parallel TCP connections to fetch objects</li>
+</ul>
+<p>Persistent (HTTP 1.1)</p>
+<ol>
+<li>TCP connection opened to a server</li>
+<li>multiple objects can be sent over single TCP connection between client, and that server</li>
+<li>TCP connection closed</li>
+</ol>
+<ul>
+<li>send messages over initial connection</li>
+<li>as little as one RTT to request all the referenced objects, which cuts response time in half</li>
+<li>requires the content length header so that the client can segregate all the incoming data into their respective responses. For example, if the server is sending 3 responses, the client will use the content length to know when the second, third, and fourth responses start</li>
+</ul>
+<h3 id="http-request-message" >HTTP Request Message
+<span>
+    <a href="#http-request-message">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>ASCII (human-readable format)</li>
+<li>Request line (GET, POST, HEAD commands)</li>
+<li>Fun fact, all ASCII text transmitted must use CR LF for EOL</li>
+<li>CR: carriage return</li>
+<li>LF: line feed</li>
+</ul>
+<h3 id="http-response-message" >HTTP Response Message
+<span>
+    <a href="#http-response-message">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>Status line (protocol, status code, status phrase)</li>
+<li>header</li>
+<li>data</li>
+<li>301 Moved Permanently</li>
+<li>505 HTTP Version Not Supported</li>
+</ul>
+<h3 id="manual-http-request" >Manual HTTP Request
+<span>
+    <a href="#manual-http-request">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ol>
+<li>Netcat</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>nc -Cv gaia.cs.umass.edu <span style="color:#3677a9">80</span>
+</span></span></code></pre></div><ol start="2">
+<li>HTTP GET Request</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>GET /kurose_ross/interactive/index.php HTTP/1.1
+</span></span><span style="display:flex;"><span>Host: gaia.cs.umass.edu
+</span></span><span style="display:flex;"><span><span style="color:#999;font-style:italic"># Hit x2 CR</span>
+</span></span></code></pre></div><h3 id="http2" >HTTP/2
+<span>
+    <a href="#http2">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>Key goal: decreased delay in multi-object HTTP requests</li>
+<li>HTTP 1.1 introduced first-come-first-served which can block small objects behind large objects</li>
+<li>HTTP 2 introduces transmission priority</li>
+<li>divide objects into frames, schedule frames to mitigate head-of-
+line blocking</li>
+</ul>
+<h3 id="http3" >HTTP/3
+<span>
+    <a href="#http3">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>HTTP/2
+<ul>
+<li>recovery from packet loss still stalls all object transmissions</li>
+<li>browsers have incentive to open multiple parallel TCP connections to reduce stalling</li>
+</ul>
+</li>
+<li>HTTP/3
+<ul>
+<li>adds security, per object error and congestion-control over UDP</li>
+</ul>
+</li>
+</ul>
+<h3 id="maintaining-state-with-cookies" >Maintaining State With Cookies
+<span>
+    <a href="#maintaining-state-with-cookies">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ol>
+<li>Cookie header line of HTTP response message</li>
+<li>Cookie header line of HTTP request message</li>
+<li>Cookie file kept on users&rsquo; host managed by browser</li>
+<li>backend database at website</li>
+</ol>
+<p>Can be as simple as backend creating a unique ID in a database and giving a cookie to the user so that it can identify the user in subsequent requests.</p>
+<p>What cookies can be used for :</p>
+<ul>
+<li>authorization</li>
+<li>shopping carts</li>
+<li>recommendations</li>
+<li>user session state (Web e-mail)</li>
+</ul>
+<p>Keeping state:</p>
+<ul>
+<li>maintain state at
+sender/receiver over multiple
+transactions</li>
+<li>could be just for a session</li>
+</ul>
+<h3 id="web-caches-proxy-server" >Web Caches (Proxy Server)
+<span>
+    <a href="#web-caches-proxy-server">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>why don&rsquo;t we keep the query result somewhere closer to us to reuse</li>
+<li>server tells cache about object’s allowable caching in response header
+<ul>
+<li><code>Cache-Control: max-age=&lt;seconds&gt;</code></li>
+<li><code>Cache-Control: no-cache</code></li>
+</ul>
+</li>
+<li>reduces response time for client</li>
+<li>reduce traffic on an institution&rsquo;s access link</li>
+<li>internet dense with caches to enable poor content providers to more effectively deliver content</li>
+<li>First configure your machine and browser configured with a proxy server</li>
+</ul>
+<details><summary>Caching example</summary>
+<ul>
+<li>access link rate: 1.54Mbps</li>
+<li>RTT from institutional router to server: 2 seconds</li>
+<li>web object size: 100K bits</li>
+<li>Average request rate: 15/sec
+<ul>
+<li>Average data rate to browsers: 1.50Mbps</li>
+</ul>
+</li>
+</ul>
+<p>Performance</p>
+<ul>
+<li>access link utilization = 0.97 (1.50 / 1.54)</li>
+<li>LAN utilization = 0.0015</li>
+<li>End-end delay = Internet delay + access link delay + LAN delay = 2 sec + mins + usecs</li>
+<li>Another way to think about end-end delay: time to gather bits for a packet, time to transmit the packet, and time to propagate the packet, plus the time to process and queue</li>
+</ul>
+<p>Options to improve</p>
+<ol>
+<li>Buy faster access link → faster access link rate → lower access link utilization</li>
+<li>Install a web cache to handle redundant requests
+<ul>
+<li>Assume a hit rate of 0.4 → 0.6 * 1.5 = 0.9 Mbps rate to browsers</li>
+<li>Access rate utilization = 0.9 / 1.54 = 0.58</li>
+<li>Average end-end- delay = 0.6 * (delay from origin) + 0.4 * (delay when satisfied at cache)</li>
+<li>LAN utilization →</li>
+</ul>
+</li>
+</ol>
+</details>
+<h3 id="conditional-get" >Conditional GET
+<span>
+    <a href="#conditional-get">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>don’t send object if cache has up-to-date cached version</li>
+<li>specify date of cached copy in HTTP request
+<ul>
+<li>Header: <code>If-modified-since: &lt;date&gt;</code></li>
+</ul>
+</li>
+<li>Server
+<ul>
+<li><code>HTTP/1.0 304 Not Modified</code></li>
+</ul>
+</li>
+<li>Implementation notes
+<ul>
+<li>If the backend is being updated, set default date of the database schema to the day after the feature was rolled out (in debugging, test both future date and older date). When a client requests a route/object (with authorization), if the if-modified-since: date is definite</li>
+<li>frontend: simply keep track in persistent storage (local storage, IndexDB, preferred, shared preferences, DataStore)</li>
+</ul>
+</li>
+</ul>
+<h3 id="e-mail" >E-mail
+<span>
+    <a href="#e-mail">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>user agents</li>
+<li>mail servers</li>
+<li>simple mail transfer protocol: SMTP</li>
+</ul>
+<p>User Agent</p>
+<p>SMTP RFC (5321)</p>
+<p>TCP three phases:</p>
+<ul>
+<li>handshaking (3 RTTs)</li>
+<li>transfer of messages</li>
+<li>closure</li>
+</ul>
+<p>SMTP Origin</p>
+<ul>
+<li>Check sender</li>
+<li>Check recipient</li>
+<li>Send DATA ending with &ldquo;.&rdquo; on a line by itself</li>
+<li>Message added to queue</li>
+<li>After sending all the mail, send QUIT to close TCP connection</li>
+<li>One RTT for each of these stages, but since the connection is persistent, we don&rsquo;t expense double the RTT</li>
+</ul>
+<p>IMAP (Internet Mail Access Protocol)</p>
+<ul>
+<li>Internet Mail Access Protocol [RFC 3501]: messages stored on server</li>
+<li>IMAP provides retrieval, deletion, folders of stored messages on server</li>
+<li>HTTP: web-based interfaces on top of SMTP and IMAP (or POP)</li>
+</ul>
+<h3 id="domain-name-system" >Domain Name System
+<span>
+    <a href="#domain-name-system">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>distributed database implemented in hierarchy of many name servers</li>
+<li>application-layer protocol: hosts, DNS servers communicate to resolve names</li>
+<li>services
+<ul>
+<li>hostname to IP address translation</li>
+<li>host aliasing
+<ul>
+<li>canonical, alias names</li>
+</ul>
+</li>
+<li>mail server aliasing</li>
+<li>load distribution</li>
+</ul>
+</li>
+<li>don&rsquo;t want to centralize
+<ul>
+<li>single point of failure</li>
+<li>traffic volume (Billions to Trillions a day)</li>
+</ul>
+</li>
+<li>more reads than writes</li>
+<li>performance matters</li>
+<li>physically decentralized</li>
+<li>root DNS servers (13 logical servers, ICANN)
+<ul>
+<li>.com DNS servers
+<ul>
+<li>individual website.com DNS servers (e.g. \www.amazon.com)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="top-level-domain" >Top Level Domain
+<span>
+    <a href="#top-level-domain">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>responsible for .com, .org, .net, .edu, .aero, .jobs, .museums, and all top-level country domains, e.g.: .cn, .uk, .fr, .ca, .jp</li>
+<li>Network Solutions: authoritative registry for .com, .net TLD</li>
+<li>Educause: .edu TLD</li>
+</ul>
+<h3 id="authoritative-dns-servers" >Authoritative DNS Servers
+<span>
+    <a href="#authoritative-dns-servers">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>organization’s own DNS server provided by self or service provider</li>
+</ul>
+<h3 id="local-dns-server" >Local DNS Server
+<span>
+    <a href="#local-dns-server">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>local name servers</li>
+<li>return from cache which could be out of date</li>
+<li>Use a TTL to expire cache entires
+<ul>
+<li>If the hostname IP changes, need all TTLs to expire</li>
+</ul>
+</li>
+</ul>
+<h3 id="dns-records" >DNS Records
+<span>
+    <a href="#dns-records">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>type=CNAME
+<ul>
+<li>name to name</li>
+<li>name is alias for the canonical name</li>
+<li>value is the canonical name</li>
+<li><code>www.ibm.com</code> → <code>severeast.backup2.ibm.com</code></li>
+<li>similar to symbolic links and shortcuts</li>
+</ul>
+</li>
+<li>type=A
+<ul>
+<li>name to IP</li>
+<li>name is hostname, value is IP address</li>
+</ul>
+</li>
+<li>type=NS
+<ul>
+<li>name to authoritative name server which indicates the other DNS records</li>
+<li>name is the domain, value is hostname of the authoritative name server for the domain</li>
+</ul>
+</li>
+<li>type=MX
+<ul>
+<li>value is the hostname of the SMTP name server associated with the current domain NAME</li>
+</ul>
+</li>
+</ul>
+<h3 id="dns-protocol-messages" >DNS Protocol Messages
+<span>
+    <a href="#dns-protocol-messages">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>Identification
+<ul>
+<li>16 bit number for query and in reply</li>
+</ul>
+</li>
+<li>Flags
+<ul>
+<li>query or reply</li>
+<li>recursion desired?</li>
+<li>recursion available?</li>
+<li>reply is authoritative</li>
+</ul>
+</li>
+</ul>
+<h3 id="dns-registar" >DNS Registar
+<span>
+    <a href="#dns-registar">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>register domain with DNS registrar (Network Solutions for .com)
+<ul>
+<li>provide names, IP addresses of authoritative name server (primary, and secondary)</li>
+<li>registar inserts NS, A, resource records (RR) into the .com TLD server</li>
+</ul>
+</li>
+</ul>
+<h3 id="dns-security" >DNS Security
+<span>
+    <a href="#dns-security">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>DDOS
+<ul>
+<li>root servers can handle it</li>
+<li>more dangerous for TLD servers</li>
+</ul>
+</li>
+<li>Spoofing attacks
+<ul>
+<li>intercept DNS queries, return bogus reply</li>
+<li>RFC 4033 (authentication services)</li>
+</ul>
+</li>
+</ul>
+<h3 id="peer-to-peer-p2p-architecture" >Peer-to-peer (P2P) architecture
+<span>
+    <a href="#peer-to-peer-p2p-architecture">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>self scalability</li>
+<li>no always-on server</li>
+<li>complex management
+<ul>
+<li>not attractive to develop, but would want to pay for it to be developed</li>
+</ul>
+</li>
+<li>time to distribute in server to many clients is the max of either the server upload divided by the number of downloads or the download speeds of the clients</li>
+<li>With P2P, the server uploads at least one, but takes advantage of each client&rsquo;s upload speed
+<ul>
+<li>D &gt;= max{ F/us, F/dmin, NF/(us+ sum u)}</li>
+<li>server one upload, slowest client download, all clients helping server with uploading</li>
+</ul>
+</li>
+</ul>
+<h3 id="bittorrent" >BitTorrent
+<span>
+    <a href="#bittorrent">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>256Kb chunks</li>
+<li><em>tracker</em>: tracks peers participating in swarm</li>
+<li><em>swarm</em>: group of peers exchanging chunks of a file</li>
+<li><em>churn</em>: peers may come and go</li>
+<li>periodically need to ask each peer for list of chunks that they have</li>
+<li>request missing chunks from peers, rarest first!</li>
+<li>send chunks to top 4 who have sending her chunks at highest rate</li>
+<li>re-evaluate top 4 every 10 seconds</li>
+<li>every 30 seconds, randomly select another peer to send chunks to (unchoke)</li>
+</ul>
+<h3 id="streaming-video-dash" >Streaming Video (DASH)
+<span>
+    <a href="#streaming-video-dash">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>Dynamic, Adaptive Streaming over HTTP</li>
+<li>manifest file: provides URLs for different chunks</li>
+<li>divide video into multiple chunks</li>
+<li>each chunk encoded at multiple different rates</li>
+<li>different rate encodings stored in different files</li>
+<li>files replicated in various CDN nodes</li>
+</ul>
+<p>The client needs to</p>
+<ul>
+<li>periodically estimate server-to-client bandwidth</li>
+<li>consulting manifest, requests one chunk at a time</li>
+<li>chooses maximum coding rate sustainable given current bandwidth</li>
+<li>can choose different coding rates at different points in time</li>
+<li>when to request chunk (avoid buffer overflow), what encoding rate, where to request chunk (which server to request from)</li>
+<li>streaming video = encoding + DASH + playout buffer</li>
+</ul>
+<h3 id="content-distribution-network-cdns" >Content Distribution Network (CDNs)
+<span>
+    <a href="#content-distribution-network-cdns">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>challenge: streaming content to hundreds of simultaneous users</li>
+<li>option 1: mega server
+<ul>
+<li>single point of failure</li>
+<li>possible network congestion</li>
+</ul>
+</li>
+<li>option 2: store copies at multiple geographically distributed sites (CDN)
+<ul>
+<li>enter deep: push CDN servers into many access networks close to users (Akamai has 240,000 servers deployed in &gt; 120 countries in 2015)</li>
+<li>bring home: larger clusters near access nets</li>
+</ul>
+</li>
+</ul>
+<h3 id="socket-programming" >Socket Programming
+<span>
+    <a href="#socket-programming">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>UDP: no connection nor handshake (may be lost or received out-of-order)</li>
+<li>TCP: server must be running first</li>
+</ul>
+<h2 id="chapter-3-transport-layer-protocols" >Chapter 3 Transport Layer Protocols
+<span>
+    <a href="#chapter-3-transport-layer-protocols">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><p>Design Issues, Connectionless UDP, Principles of Reliable Data Transfer, Connection-oriented Transport TCP, Flow Control, Congestion Control</p>
+<h3 id="transport-services-and-protocols" >Transport Services and Protocols
+<span>
+    <a href="#transport-services-and-protocols">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>provide logical communication between application processes running on different hosts</li>
+<li>sender breaks application messages into segments passed to network layer</li>
+<li>receiver reassembles segments into messages, passes to application layer</li>
+</ul>
+<blockquote>
+<p>12 kids in Ann&rsquo;s house sending letter to 12 kids in Bill&rsquo;s house, hosts = houses, processes = kids, app messages = letters in envelopes</p>
+</blockquote>
+<p>The network layer connects hosts, the transport layer connects processes</p>
+<h3 id="principal-internet-transport-protocols" >Principal Internet Transport Protocols
+<span>
+    <a href="#principal-internet-transport-protocols">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>TCP: Transmission Control Protocol
+<ul>
+<li>reliable, congestion control, flow control, connection setup</li>
+</ul>
+</li>
+<li>UDP: User Datagram Protocol
+<ul>
+<li>unreliable, unordered delivery, no-frills extension of &ldquo;best-effort&rdquo; IP</li>
+</ul>
+</li>
+<li>Datagram: alternative name for packet (packet term should not be used in the first place)</li>
+</ul>
+<h3 id="multiplexingdemultiplexing" >Multiplexing/demultiplexing
+<span>
+    <a href="#multiplexingdemultiplexing">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>Connectionless
+<ul>
+<li>Single direction transfers</li>
+<li>Each datagram has an IP, and the transport-layer segment it carries contains the source and destination port number
+<ul>
+<li>Implication 1: System API for sockets requires a local port number</li>
+<li>Implication 2: System API for sending datagrams must have both destination IP and port #</li>
+<li>Same destination and port # corresponds to same socket at the receiver host</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Connection-oriented demultiplexing
+<ul>
+<li>TCP socket has a 4-tuple: (source IP, source port, dest IP, dest port)</li>
+<li>demux: receiver uses all four values to direct segment to appropriate socket (even with the same port, the segment can be directed to a different socket)</li>
+<li>Each socket can be associated with different connecting client</li>
+</ul>
+</li>
+</ul>
+<h3 id="connectionless-transport" >Connectionless Transport
+<span>
+    <a href="#connectionless-transport">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>UDP no handshaking; RFC 768</li>
+<li>UDP each segment is handled independently</li>
+<li>No connection establishment (less delays)
+<ul>
+<li>SImple: no connection state at sender, receiver</li>
+<li>Small header size</li>
+<li>No congestion control (as fast as desired and works in congestion)
+<ul>
+<li>sender not throttled</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Use cases
+<ul>
+<li>Streaming/Multi-media (loss tolerant, rate sensitive)</li>
+<li>DNS, SNMP, HTTP/3</li>
+</ul>
+</li>
+<li>Checksum
+<ul>
+<li>Detect errors in transmitted segment</li>
+<li>Sender treats UDP as 16-bit integer</li>
+<li>Checksum: summation</li>
+<li>Receiver: compute checksum</li>
+<li>Even if cheksum is 100%, it is still possible for a coincidental checksum bit error</li>
+<li>The checksum can remain the same even if a bit is changed in two different integers</li>
+</ul>
+</li>
+</ul>
+<h3 id="reliable-data-transfer" >Reliable Data Transfer
+<span>
+    <a href="#reliable-data-transfer">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>Let us invent the Reliable Data Transfer protocol (rdt)</li>
+<li>Unidirectional data flow: finite state machines to specify sender, receiver</li>
+<li>Handling errors
+<ul>
+<li>Wait for receiver to send the ACK before sending another packet</li>
+<li>Add acknowledgements: (ACKs) which explicitly tells sender that packet received is OK</li>
+<li>Add negative acknowledgements (NAKs) which explicitly tells sender that packet received had errors</li>
+<li>Sender can retransmit on receiving a NAK</li>
+<li>To deal with corrupted acknowledgements, sender will use sequence numbers to the packet so that the receiver can discard duplicates</li>
+</ul>
+</li>
+<li>To eliminate NAK, receiver sends ACK for last pkt received OK (including sequence number), so if there is a duplicate ACK, retransmit current pkt</li>
+<li>To deal with packet loss (data or ACKs), we need a reasonable time for the ACK
+<ul>
+<li>Retransmit if ACK not received within a countdown, duplicate packets are handled appropriately anyways</li>
+</ul>
+</li>
+<li>Performance
+<ul>
+<li>t =  RTT + L / R (transmission)</li>
+<li>utilization of sender busy sending = (L / R) / (RTT + L / R)</li>
+</ul>
+</li>
+</ul>
+<h3 id="go-back-n" >Go-Back-N
+<span>
+    <a href="#go-back-n">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>Sender:</p>
+<p>Pipelining: send multiple, &ldquo;in-flight&rdquo;, yet-to-be acknowledged packets which increases utilization by 3x</p>
+<p>Sender sends a window up to N, cumulative ACKs: send ACKs of all packets inclusive up to N, move window forward to begin at n+1. Use a timeout(n) to retransmit packet n and higher in the window</p>
+<p>Receiver:</p>
+<p>Send ACK of <strong>highest in-order</strong> received sequence #. Remember only rcv_base. When receiving out-of-order packet, can either discard of buffer (implementation decision). re-ACK the packet with highest sequence number.</p>
+<h3 id="selective-repeat" >Selective Repeat
+<span>
+    <a href="#selective-repeat">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>Another pipelining protocol. Receiver individually acknowledges all correctly packets (regardless of order). Sender maintains timer for each unACKed packet. Sender window, N consecutive sequence #s.</p>
+<p>Want to avoid resending packets that were sent properly.</p>
+<p>Problem: if the ACK is not received of the first packet, then the sender will retransmit packet0, but the receiver is expecting the next packet0 not the previous packet0.</p>
+<p>Solution:</p>
+<ul>
+<li>Window size &gt;= max sequence number / 2.</li>
+<li>Sequence numbers need to cover at least two window sizes.</li>
+</ul>
+<h3 id="tcp" >TCP
+<span>
+    <a href="#tcp">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>reliable and in-order byte stream</li>
+<li>full duplex data
+<ul>
+<li>bi-directional on same connection</li>
+<li>maximum segment size</li>
+</ul>
+</li>
+<li>Uses go-back-N (cumulative ACKs) protocol with pipelining</li>
+<li>full duplex data, connection-oriented
+<ul>
+<li>handshaking</li>
+</ul>
+</li>
+<li>Usually with 500ms ACK delay for the first segment</li>
+<li>ACK is for the next expected packet number</li>
+</ul>
+<h3 id="tcp-segment-structure" >TCP Segment Structure
+<span>
+    <a href="#tcp-segment-structure">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>Other than source port and destination port,</li>
+<li>sequence number</li>
+<li>acknowledgement number
+<ul>
+<li>the next sequence number to expect (this is an ACK?)</li>
+</ul>
+</li>
+<li>flow control (receive window, number of bytes receiver willing to accept)</li>
+<li>congestion notification (C, E)</li>
+</ul>
+<h3 id="tcp-sequence-numbers" >TCP Sequence Numbers
+<span>
+    <a href="#tcp-sequence-numbers">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>Q: How receiver handles out-of- order segments?</p>
+<p>A: TCP spec doesn’t say; up to implementor</p>
+<p>TCP timeout needs to be longer than the RTT, but RTT varies. You can estimate RTT by using a SampleRTT (ignore retransmissions). Average several recent measurements.</p>
+<p>Exponential weighted moving average, with alpha = 0.125.</p>
+<p>(1 - a) EstimatedRTT + a(SampleRTT)</p>
+<p>Timeout interval = Estimated RTT + 4 * DevRTT</p>
+<p>DevRTT: EWMA of SampleRTT deviation from EstimatedRTT</p>
+<p>DevRTT = (1 - Beta) *\ DevRTT + Beta *  | Sample RTT - EstimatedRTT |</p>
+<h3 id="tcp-ack-generation" >TCP ACK Generation
+<span>
+    <a href="#tcp-ack-generation">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>First segment will not be ACKed until 500ms for next segment</li>
+<li>If a second segment is sent, ACK is sent immediately, to avoid overhead</li>
+<li>If there&rsquo;s a timeout, the sender resends the first packet, but the receiver sends the <strong>ACK of the highest one</strong>
+<ul>
+<li>Implication: sender does not retransmit for &ldquo;lost&rdquo; ACKs</li>
+</ul>
+</li>
+</ul>
+<h3 id="tcp-fast-retransmit" >TCP Fast Retransmit
+<span>
+    <a href="#tcp-fast-retransmit">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>Instead of waiting for the timer to wait-out, a three duplicate ACKs for an earlier segment will trigger retransmission</p>
+<h3 id="tcp-3-way-handshake" >TCP 3-way handshake
+<span>
+    <a href="#tcp-3-way-handshake">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>before exchanging data</li>
+<li>need to agree on a connection parameters (starting sequence numbers)</li>
+</ul>
+<ol>
+<li>Client listens on socket, chooses init sequence number x, send <code>SYN</code> message (synchronize the initial sequence number)</li>
+<li>Server chooses init sequence number y, <code>SYNACK</code></li>
+<li>Client sends an ACK for the SYNACK(x) which indicated that the server is alive</li>
+</ol>
+<p>Closing the connection</p>
+<ol>
+<li>Client sends <code>FIN</code> bit=1, seq = x</li>
+<li>Server sends <code>FINACK</code></li>
+<li>Server sends <code>FIN</code> bit</li>
+<li>Client sends ACK</li>
+<li>Client waits for 2 * max segment lifetime before closing the socket</li>
+</ol>
+<h3 id="tcp-flow-control" >TCP Flow Control
+<span>
+    <a href="#tcp-flow-control">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>Delivery is faster than the application layer reads from the socket buffer</li>
+<li>In the TCP packet sent back to the sender, add flow control to the header of the TCP segment</li>
+<li><code>rwnd</code> field. RcvBuffer size set via socket options (default is 4096)</li>
+<li>sender limits amount of unACKed data to <code>rwnd</code></li>
+</ul>
+<h3 id="tcp-congestion-control" >TCP Congestion Control
+<span>
+    <a href="#tcp-congestion-control">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>high delay (queueing delays)</li>
+<li>packet loss (buffer overflow)</li>
+</ul>
+<p>Causes</p>
+<ul>
+<li>premature timeout → retransmission</li>
+<li>multi-hop paths, some routers get more traffic through them</li>
+</ul>
+<p>Costs</p>
+<ul>
+<li>additional work</li>
+<li>lower maximum throughput</li>
+</ul>
+<p>Control</p>
+<ul>
+<li>Routers provide direct feedback when flow passes through congest router</li>
+<li>TCP ECN, ATM, DECbit protocols</li>
+</ul>
+<h3 id="congestion-control-via-aimd" >Congestion Control via AIMD
+<span>
+    <a href="#congestion-control-via-aimd">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>AI/MD</li>
+<li><em>Additive Increase</em>
+<ul>
+<li>increase <code>cwnd</code> (congestion window) by 1 packet (increase data sent by the maximum segment size) on every RTT until loss is detected</li>
+</ul>
+</li>
+<li><em>Multiplicative Decrease</em>
+<ul>
+<li>cut sending rate in half at each loss event (e.g. triple duplicate ACK)</li>
+<li>sawtooth behaviour probing for bandwidth</li>
+<li>cut to 1 MSS (maximum segment size) when loss detected by timeout</li>
+</ul>
+</li>
+</ul>
+<h3 id="congestion-information-via-network-assisted" >Congestion Information via Network-Assisted
+<span>
+    <a href="#congestion-information-via-network-assisted">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>Two bits in the TCP header indicating congestion (set by network operator at 80-85%)</p>
+<h3 id="net-neutrality" >Net Neutrality
+<span>
+    <a href="#net-neutrality">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>multimedia apps often do not use TCP</li>
+<li>there is no internet police policing use of congestion control</li>
+<li>web browsers and 9 existing connections
+<ul>
+<li>we want R / 2 instead of R / 10</li>
+</ul>
+</li>
+</ul>
+<h3 id="tcp-cubic" >TCP CUBIC
+<span>
+    <a href="#tcp-cubic">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>Better way to probe than AIMD for usable bandwidth?</li>
+<li>K: point in time when TCP window size will reach W max</li>
+<li>K itself is tuneable</li>
+<li>Increase W (sending rate) as a function of the cube of the distance between current time and K</li>
+<li>Default in Linux</li>
+</ul>
+<h3 id="quic-quick-udp-internet-connections" >QUIC: Quick UDP Internet Connections
+<span>
+    <a href="#quic-quick-udp-internet-connections">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>Application-layer protocol on top of UDP</li>
+<li>Deployed on many Google servers and apps</li>
+<li>Increase performance of HTTP</li>
+<li>Combine TCP and TLS functionality into QUIC and combine with HTTP/2 slim to create HTTP 3</li>
+<li>error and congestion control</li>
+<li>streams parallel, no HOL (head-of-line) blocking</li>
+</ul>
+<blockquote>
+<p>The most important difference in QUIC compared to HTTP/2 is that it&rsquo;s UDP-based, with built-in encryption, and more performant. The aim of the protocol is to thwart TCP&rsquo;s head-of-line blocking and higher latency. QUIC also allows multiplexing several application streams via a single connection.</p>
+</blockquote>
+<h3 id="head-of-line-blocking" >Head-of-line Blocking
+<span>
+    <a href="#head-of-line-blocking">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>If the head packet is lost, then all subsequent packets are blocked until the first packet in the sequence has been received. This is applicable to TCP and HTTP/2 (i.e. the streams). The subsequent packets are blocked because TCP ensures <strong>in-order</strong> delivery via sequence numbers and acknowledgements.</p>
+<h2 id="chapter-4--5-network-layer" >Chapter 4 &amp; 5 Network Layer
+<span>
+    <a href="#chapter-4--5-network-layer">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><p>Routing approaches, routing in the Internet, Internet Protocol, IPv6, tunnelling, router design, control/data plane, SDN.</p>
+<h3 id="network-layer-services" >Network-layer Services
+<span>
+    <a href="#network-layer-services">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>transport from sender to receiver</li>
+<li>sender
+<ul>
+<li>datagrams passed to link layer</li>
+</ul>
+</li>
+<li>receiver
+<ul>
+<li>segments to transport layer protocol</li>
+</ul>
+</li>
+<li>network layer implemented in every internet device</li>
+</ul>
+<h3 id="data-plane" >Data Plane
+<span>
+    <a href="#data-plane">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>Packet forwarding</p>
+<h3 id="ipv4-datagram" >IPv4 Datagram
+<span>
+    <a href="#ipv4-datagram">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>Version (4-bits, v4 or v6), Header length, Type of service (e.g. FTP), datagram length</li>
+<li>16-bit ID, Flags, 13-bit Fragmentation offset
+<ul>
+<li>Networks links have MTU (maximum transmission unit), so a large IP datagram is fragmented and put back together.</li>
+</ul>
+</li>
+<li>TTL, Upper-layer protocol, header checksum</li>
+<li>32-bit source</li>
+<li>32-bit destination</li>
+<li>options</li>
+<li>data</li>
+</ul>
+<p>IPv4 is 32-bit so its address space was quickly used up.</p>
+<p>A datagram with 4000 bytes with an MTU of 1500 bytes. ID of all three fragmented datagram will be the same, and the fragment flag will be set for all but the last one. The offset field exists since there are headers of each of the smaller datagrams. 1480 bytes in data field. Therefore, offset = 1480/8. Offset is based on 8 bytes and is interpreted as how many bytes were sent in the other datagram. If datagrams are received out of order, can easily figure out what was missing.</p>
+<ul>
+<li>datagram #1: offset = 0, fragmentation flag</li>
+<li>datagram #2: offset = 1480/8, fragmentation flag</li>
+<li>datagram #3: offset = 2960/8, no fragmentation flag</li>
+</ul>
+<h3 id="ip-addresses" >IP Addresses
+<span>
+    <a href="#ip-addresses">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>192.168.2.0/24</li>
+<li>Each decimal number separated by decimal corresponds to 8 bits</li>
+<li>Therefore, the slash-24 corresponds to the rightmost 24 bits, or the rightmost 3 decimal numbers</li>
+</ul>
+<h3 id="nat" >NAT
+<span>
+    <a href="#nat">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>Network Address Translation</li>
+<li>Addresses IP address allocation (pun!)</li>
+<li>Many home networks with same address space (say 10.0.0.0/24) for private network usage</li>
+<li>A NAT-enabled router has a single IP address which appears as a device to the outside world</li>
+<li>The router gets its IP address from the ISP&rsquo;s DHCP server!</li>
+<li>The router takes any connection which uses a device&rsquo;s random port and assigns it a 16-bit port that the router finds in its NAT table of size 60,000</li>
+<li>Port-forwarding takes care of home servers</li>
+<li>P2P can leverage NAT traversal for when all nodes are NAT enabled (NAT = hard to accept incoming connections)</li>
+<li>IPv6 does not need NAT as there are enough unique addresses for all devices</li>
+</ul>
+<h3 id="ipv6-datagram" >IPv6 Datagram
+<span>
+    <a href="#ipv6-datagram">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>addressing expanded to 128-bits (every grain of sand on the planet) from 32-bits</li>
+<li>before unicast and multicast addresses.</li>
+<li>Now: anycast address, which is one from a group of hosts</li>
+<li>40-byte header</li>
+<li>TOS swapped out for traffic class</li>
+<li>Flow label: request special handling of certain types of datagrams (e.g. audio or video)</li>
+<li>Next header: replaces protocol field (TCP or UDP)</li>
+<li>Hop limit: same functionality as the TTL in IPv4</li>
+<li>No fragmentation/reassembly by intermediate routers. Source and Receivers are responsible. Routers will return &ldquo;Packet Too Big&rdquo; instead.</li>
+<li>No header checksum,</li>
+<li>No options (use next header instead)</li>
+</ul>
+<p>For the transition, tunneling (protocol 41, RFC 4213) is used (IPv6 datagram inside IPv4 data field).</p>
+<h3 id="openflow-match-and-action" >OpenFlow Match and Action
+<span>
+    <a href="#openflow-match-and-action">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>Match
+<ul>
+<li>Physical (Ingress port)</li>
+<li>Link (MAC, Ethernet, Virtual LAN)</li>
+<li>Network (IPs, TOS, Protocol)</li>
+<li>Transport (TCP/UDP ports)</li>
+</ul>
+</li>
+<li>Action
+<ul>
+<li>forward to physical port or broadcast</li>
+<li>drop</li>
+<li>modify-field (packet header fields except IP Protocol field)</li>
+</ul>
+</li>
+</ul>
+<h3 id="control-plane" >Control Plane
+<span>
+    <a href="#control-plane">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>whatever is configuring the router is in the control plane</li>
+<li>per-router control plane: routing algorithm runs in each router</li>
+<li>Software-defined networking: remote controller
+<ul>
+<li>Every router connected to remote controller server which will install forwarding tables in routers</li>
+</ul>
+</li>
+</ul>
+<h3 id="network-service-model" >Network Service Model
+<span>
+    <a href="#network-service-model">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><h3 id="router-architecture" >Router Architecture
+<span>
+    <a href="#router-architecture">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>input ports</li>
+<li>output ports</li>
+<li>high-speed switching fabric</li>
+<li>processor
+<ul>
+<li>need to route in milliseconds</li>
+<li>forwards data plane (nanosecond frame)</li>
+</ul>
+</li>
+</ul>
+<h3 id="input-port-functions" >Input Port Functions
+<span>
+    <a href="#input-port-functions">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ol>
+<li>Consult lookup table</li>
+<li>Queue if switch fabric too slow</li>
+<li>Head-of-the-line blocking can occur if switch fabric is busy with the port another input packet wants to go to (the packet afterwards wants to go to a currently free port)</li>
+</ol>
+<h3 id="longest-prefix-matching" >Longest Prefix Matching
+<span>
+    <a href="#longest-prefix-matching">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>when looking at the forwarding table given a destination address, use longest address prefix that matches destination address</li>
+<li>1M routing table in Ternary Content Addressable Memories (TCAM)</li>
+</ul>
+<h3 id="output-port-queuing" >Output Port Queuing
+<span>
+    <a href="#output-port-queuing">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>switch fabric</li>
+<li>how much buffering?
+<ul>
+<li>tail drop: drop arriving packets</li>
+<li>priority: drop/remove on priority basis</li>
+</ul>
+</li>
+</ul>
+<h3 id="packet-scheduling" >Packet Scheduling
+<span>
+    <a href="#packet-scheduling">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>first come, first served</li>
+<li>priority</li>
+<li>round robin</li>
+<li>weighted fair queueing (WFQ)
+<ul>
+<li>each class has a weight and each cycle is divided by the weights</li>
+<li>weight x is 2, y is 1, and z is 1 then two packets from x, one form y, and one form z</li>
+<li>minimum bandwidth guarantee (per-traffic-class)</li>
+</ul>
+</li>
+</ul>
+<h3 id="subnets" >Subnets
+<span>
+    <a href="#subnets">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>&ldquo;Network mask&rdquo;</li>
+<li>set of interfaces that can physically reach each other without passing through an intervening router</li>
+<li>IP addresses have structure
+<ul>
+<li>subnet part</li>
+<li>host part</li>
+</ul>
+</li>
+<li>detach each interface from its host or router, creating islands of isolated networks</li>
+<li>each isolated network is called a subnet
+<ul>
+<li>subnet mask: /24 (high-order 24 bits: subnet part of the IP address)</li>
+<li>even links connecting two routers is a subnet</li>
+<li>one way is to hide the routers and see the link groups</li>
+<li>another way is to take the unique 24-bit high-order IP addresses</li>
+</ul>
+</li>
+</ul>
+<p>Consider a router that interconnects three subnets: Subnet 1, Subnet 2, and
+Subnet 3. Suppose all of the interfaces in each of these three subnets are
+required to have the prefix 223.1.17.0/24. Also suppose that Subnet 1 is
+required to support at least 60 interfaces, Subnet 2 is to support at least 90
+interfaces, and Subnet 3 is to support at least 12 interfaces. Which three
+network addresses (of the form a.b.c.d/x) satisfy these constraints?</p>
+<ul>
+<li>Subnet1: 223.1.17.0/26,</li>
+<li>Subnet2: 223.1.17.128/25,</li>
+<li>Subnet3: 223.1.17.64/28</li>
+</ul>
+<h4 id="classless-interdomain-routing" >Classless Interdomain Routing
+<span>
+    <a href="#classless-interdomain-routing">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h4><ul>
+<li>Cider / CIDR</li>
+<li>Can get something like 200.23.16.0/23</li>
+<li>System admin sets IP addresses of each host</li>
+<li>DHCP: Dynamic Host Configuration Protocol
+<ul>
+<li>plug-and-play to set IP addresses</li>
+<li>can renew addresses</li>
+</ul>
+</li>
+</ul>
+<h3 id="dhcp" >DHCP
+<span>
+    <a href="#dhcp">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>host broadcasts DHCP discover msg (optional)</li>
+<li>DHCP server responds with DHCP offer msg (optional)</li>
+<li>host requests IP address: DHCP request msg
+<ul>
+<li>broadcast IP</li>
+<li>everyone in the network receives the message, but only server is configured to respond to the message</li>
+</ul>
+</li>
+<li>DHCP server sends address: DHCP ack msg
+<ul>
+<li>Contains IP, subnet mask, DNS server IP, default gateway</li>
+</ul>
+</li>
+<li>Steps
+<ul>
+<li>broadcast IP</li>
+<li>DHCP server offers an IP address</li>
+<li>Client tells DHCP server that it wants to use that IP address</li>
+<li>DHCP acknowledges</li>
+<li>IP has lifetime</li>
+</ul>
+</li>
+</ul>
+<h3 id="generalized-forwarding" >Generalized Forwarding
+<span>
+    <a href="#generalized-forwarding">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>subheader matching,</li>
+<li>action: forwarding/drop/modify</li>
+<li>flow table abstraction
+<ul>
+<li>priority</li>
+<li>counters</li>
+</ul>
+</li>
+</ul>
+<h3 id="routing-algorithms" >Routing Algorithms
+<span>
+    <a href="#routing-algorithms">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>Link-State Routing Protocol
+<ul>
+<li>global knowledge about the network</li>
+<li>Dijkstra&rsquo;s algorithm</li>
+<li>Least-cost path from one node to all other nodes</li>
+<li>For k iterations, there are k nodes with known least-cost paths</li>
+<li>O(n^2) runtime complexity</li>
+</ul>
+</li>
+<li>Bellman-Ford</li>
+<li>Distance-vector
+<ul>
+<li>wait, recompute (start at 1 for adjacent nodes), notify (current internal mapping)
+<ul>
+<li>Convergence: two furthest nodes (t = largest number of hops)</li>
+<li>Link cost changes
+<ul>
+<li>recalculate local DV, notify neighbours</li>
+<li>bad news travels slow</li>
+<li>if there is an update that makes a link really bad, the nodes will keep relaying information to another updating by 1 each time till it&rsquo;s done</li>
+<li>to avoid this, we can use &ldquo;poisoned reverse&rdquo; and &ldquo;split horizon&rdquo;</li>
+<li><em>poisoned reverse</em>: accept higher value (error message)</li>
+<li><em>split horizon</em>: if the predecessor sends an update, don&rsquo;t send back an update. Let timeout expiry fix the cost</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Example of DV.  C - A  - B. In first iteration, we figure out the distance and we notify. C and B update their mappings, so notify a second time, and be done.</p>
+<h3 id="routing-scaling" >Routing Scaling
+<span>
+    <a href="#routing-scaling">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>administration Autonomous System routing</li>
+<li>Tier-1 ISPs either have one or multiple</li>
+<li>AS numbers assigned by ICANN</li>
+<li>intra-AS routing</li>
+<li>RIP: Routing INformation Protocol (RFC 1723)
+<ul>
+<li>Classic DV</li>
+</ul>
+</li>
+<li>EIGRP: Enhanced Interior Gateway Routing Protocol
+<ul>
+<li>Cisco-proprietary for decades (2013 open, RFC 7868)</li>
+</ul>
+</li>
+<li>OSPF: Open Shortest Path First (RFC 2328)</li>
+</ul>
+<h3 id="ebgp-ibgp" >eBGP, iBGP
+<span>
+    <a href="#ebgp-ibgp">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>Route between AS (inter-AS routing protocol)</li>
+<li>Advertise that a subnet exist to all routers</li>
+<li>Determine best route to a <em>prefix</em> (e.g. 138.16.68/22)</li>
+<li>All ASs run BGP for inter-AS routing</li>
+<li>External Border Gateway Protocol (two ASs)</li>
+<li>Internal Border Gateway Protocol (one AS)</li>
+<li>BGP session
+<ul>
+<li>semi-permanent TCP connection</li>
+</ul>
+</li>
+<li>AS-PATH: list of ASes prefix has passed</li>
+<li>NEXT-HOP: internal-AS router to next-hop AS</li>
+</ul>
+<h3 id="software-defined-networking" >Software Defined Networking
+<span>
+    <a href="#software-defined-networking">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>Why a logically centralized control plane?</li>
+<li>table-forwarding to routers</li>
+<li>OpenFlow: table-based switch control
+<ul>
+<li>Many header field to match</li>
+<li>VLAN: Virtual LAN</li>
+</ul>
+</li>
+<li>SDN Controller: state management, communications</li>
+<li><em>packet-in</em>: transfer packet to controller</li>
+<li><em>flow-removed</em>: flow table entry deleted at Switch</li>
+<li><em>port-status</em>: inform controller of a change on a port</li>
+<li><em>modify-state</em>: modify entries in switch flow table</li>
+<li><em>read-state</em>: stats</li>
+</ul>
+<h3 id="icmp-internet-control-message-protocol" >ICMP: Internet Control Message Protocol
+<span>
+    <a href="#icmp-internet-control-message-protocol">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>RFC 792</li>
+<li>network level information</li>
+<li>hosts and routers</li>
+<li>unreachable (1) host, (2) network, (3) port, (4) protocol</li>
+<li>echo request/reply (ping)</li>
+<li>typically used for errors</li>
+</ul>
+<pre tabindex="0"><code class="language-icmp" data-lang="icmp">Echo reply (to ping), type 0, code 0
+Destination network unreachable, type 3 code 0
+Destination host unreachable, type 3, code 1.
+Source quench (congestion control), type 4 code 0.
+</code></pre><h2 id="chapter-6-data-link-layer" >Chapter 6 Data Link Layer
+<span>
+    <a href="#chapter-6-data-link-layer">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><p>Multiple access protocols and LAN&rsquo;s, address resolution protocol, Ethernet.</p>
+<h3 id="where-is-it-implemented" >Where is it Implemented
+<span>
+    <a href="#where-is-it-implemented">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>on every host</li>
+<li>inside network interface cards (NICs) or a chip, attached to systems buses</li>
+</ul>
+<h3 id="link-layer-protocol" >Link-Layer Protocol
+<span>
+    <a href="#link-layer-protocol">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>Layer 2</li>
+<li>A node is a device running such protocols</li>
+<li>Examples of nodes: hosts, routers, switches, and WiFi access points</li>
+</ul>
+<h3 id="what-is-a-link" >What is a Link?
+<span>
+    <a href="#what-is-a-link">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>The communication channels that connect adjacent nodes along the communication path</p>
+<h3 id="link-layer-frame" >Link Layer Frame
+<span>
+    <a href="#link-layer-frame">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>Transmitting nodes encapsulate datagrams in a <em>link-layer frame</em>. These frames are transmitted into links.
+The datagram is a person in a transportation vehicle (e.g. train), and the links are the rails.</p>
+<h3 id="error-detection-via-parity-checks" >Error Detection via Parity Checks
+<span>
+    <a href="#error-detection-via-parity-checks">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>Single bit parity: even number of 1s
+<ul>
+<li>Fails to catch even number of bit errors</li>
+</ul>
+</li>
+<li>Two-dimensional bit parity
+<ul>
+<li>Divide total bits in data into i rows and j columns</li>
+<li>Parity bit on the row and column</li>
+<li>Detect and correct single bit errors on the row and column</li>
+<li>if a bit is flipped, both the row and column parities will report an error, in a coordinate form</li>
+</ul>
+</li>
+</ul>
+<h3 id="error-detection-via-checksum" >Error Detection via Checksum
+<span>
+    <a href="#error-detection-via-checksum">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>total bits are a sequence of k-bit integers</li>
+<li>sum the integers for the error-detection bits</li>
+<li>internet checksum: 16-bit integers</li>
+<li>check: take 1s complement of the sum of data including checksum and expect 0</li>
+<li>TCP &amp; UDP: one checksum for entire packet</li>
+<li>IP: checksum for header</li>
+<li>Transport layer is software based so we want it to be quick</li>
+</ul>
+<h3 id="cyclic-redundancy-check-crc" >Cyclic Redundancy Check (CRC)
+<span>
+    <a href="#cyclic-redundancy-check-crc">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>Sender and receiver agree on r + 1 bit pattern (generator) that should be able to divide the data bits plus r additional bits (binary division)</li>
+<li>bit pattern: DR (d + r bits)</li>
+<li>R = remainder (D * 2^r / G)</li>
+<li>Error detection guaranteed for fewer than r + 1 bit errors</li>
+<li>link-layer</li>
+<li>dedicated hardware</li>
+<li>CRC codes or polynomial codes</li>
+</ul>
+<h3 id="multiple-access-protocols" >Multiple Access Protocols
+<span>
+    <a href="#multiple-access-protocols">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>There are point-to-point links (single sender, single receiver) and broadcast links (multiple sending and receiving nodes all connected to a single shared broadcast channel implying that every node gets every broadcast).</p>
+<ul>
+<li>point-to-point links
+<ul>
+<li>point-to-point protocol (PPP)</li>
+<li>high-level data link control (HDLC)</li>
+</ul>
+</li>
+<li>broadcast links
+<ul>
+<li>when any one node transmits a frame, the channel broadcasts the frame and each of the other nodes receives a copy</li>
+<li>Ethernet or WiFi (wireless LAN), 4G/5G</li>
+<li><strong>multiple access problem</strong></li>
+<li>collision: a node can&rsquo;t make the two or more tangled frames it received due to two or more nodes transmitting simultaneously
+<ul>
+<li>data loss, wasted broadcast bandwidth</li>
+</ul>
+</li>
+<li>four decades of academic research on multiple access protocols have been done</li>
+</ul>
+</li>
+<li>more info
+<ul>
+<li>distributed algorithm</li>
+<li>channel sharing info is shared on the channel itself</li>
+</ul>
+</li>
+</ul>
+<p>Three Categories of multiple access protocols</p>
+<ul>
+<li>channel partitioning protocols</li>
+<li>random access protocols</li>
+<li>taking-turns protocols</li>
+</ul>
+<h3 id="multiple-access-protocol-desirable-characteristics" >Multiple Access Protocol Desirable Characteristics
+<span>
+    <a href="#multiple-access-protocol-desirable-characteristics">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>For a broadcast channel of rate R bits per second,</p>
+<ol>
+<li>When only one node has data to send, that node has a throughput of R bps.</li>
+<li>When M nodes have data to send, each of these nodes has a throughput of R/M
+bps. This need not necessarily imply that each of the M nodes always has an
+instantaneous rate of R/M, but rather that each node should have an average
+transmission rate of R/M over some suitably defined interval of time.</li>
+<li>The protocol is decentralized; that is, there is no master node that represents a
+single point of failure for the network.</li>
+<li>The protocol is simple, so that it is inexpensive to implement.</li>
+</ol>
+<h3 id="channel-partitioning-protocols-protocols" >Channel Partitioning Protocols Protocols
+<span>
+    <a href="#channel-partitioning-protocols-protocols">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>TDMA: Time Division Multiple Access
+<ul>
+<li>divides time into time frames and further divides each time frame into N time slots</li>
+<li>slot sizes are chosen to fit a single packet</li>
+<li>rounds, fixed length slot per station in each round</li>
+<li>unused slots are idle</li>
+<li>drawback 1: node is limited to R/N even if only broadcaster</li>
+<li>drawback 2: node has to wait for its turn again even if only broadcaster</li>
+</ul>
+</li>
+<li>FDMA: Frequency Division Multiple Access
+<ul>
+<li>Frequency bands instead of time slots</li>
+<li>Same drawback of limited speed</li>
+</ul>
+</li>
+<li>CDMA: Code Division Multiple Access
+<ul>
+<li>Encode data bits based on unique code for each node which allows receivers to work with collisions</li>
+<li>Anti-jamming</li>
+</ul>
+</li>
+</ul>
+<h3 id="random-access-protocols" >Random Access Protocols
+<span>
+    <a href="#random-access-protocols">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>
+<p>Allows for full rate of transmission when node&rsquo;s are given access</p>
+</li>
+<li>
+<p>Retransmit on collision with independently chosen random delay</p>
+</li>
+<li>
+<p>Slotted ALOHA</p>
+<ul>
+<li>fixed size (L bits) frames</li>
+<li>divide time into fixed slots of size L/R seconds (enough time to transmit one frame)</li>
+<li>clocks synced across nodes</li>
+<li>transmit only at start of slots</li>
+<li>since transmission speed is the same, all nodes would detect the collision</li>
+<li>when colliding, retransmit with probability p until success
+<ul>
+<li>if there was no probability, then collisions would persist</li>
+</ul>
+</li>
+<li>max efficiency of 1/e = .37</li>
+</ul>
+</li>
+<li>
+<p>Pure ALOHA (original from Abramson 1970)</p>
+<ul>
+<li>no time slots, no clock sync, fully decentralized</li>
+<li>if collision: retransmit with probability p or wait for frame time</li>
+<li>else: wait for frame transmission time before transmitting again</li>
+<li>max efficiency of 1/2e = 18% efficiency (higher collision probability)</li>
+</ul>
+</li>
+<li>
+<p>CSMA (Carrier Sense Multiple Access)</p>
+<ul>
+<li>Listen first, don&rsquo;t interrupt
+<ul>
+<li>idle: transmit entire frame</li>
+<li>busy: defer</li>
+<li><strong>collision occurs due to propagation delay</strong> (time for datagram to travel the link)
+<ul>
+<li>on collision, entire packet <strong>transmission</strong> time wasted</li>
+<li>p = function of distance + propagation delay</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>CSMA/CD: with collision detection</p>
+<ul>
+<li>listen while transmitting, abort on detection</li>
+<li>we want an interval that is short when the number of colliding nodes is small, and long when the number of colliding nodes is large.</li>
+<li>binary (exponential) backoff on aborts
+<ul>
+<li>wait <code>K \* time to transmit 512 bits</code>, where K is chosen from 0 to 2^n -1 where n is the number of collisions</li>
+</ul>
+</li>
+<li>detect fast and abort transmissions to reduce channel wastage</li>
+<li>easy for ethernet, hard for wireless</li>
+</ul>
+</li>
+</ul>
+<p>Questions</p>
+<p>In CSMA/CD, after the fifth collision of the same frame, what is the probability that a node chooses K = 4? The result K = 4 corresponds to a backoff delay of how many seconds on a 10 Mbps Ethernet?</p>
+<p>Probability = 1 / 2^4 = 1/32. Delay = 4 * (512 / 10_000_000 (M = 1e6) * 1_000_000) microseconds (1e6)</p>
+<h3 id="taking-turns-protocols" >Taking-Turns Protocols
+<span>
+    <a href="#taking-turns-protocols">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>polling protocol
+<ul>
+<li>master node required, which is a single point of failure</li>
+<li>master node polls each of the nodes in round-robin</li>
+<li>master node can tell if node is done by detecting the lack of a &ldquo;signal&rdquo; on the channel</li>
+</ul>
+</li>
+<li>token-passing protocol
+<ul>
+<li>control token passed from one node to the other</li>
+<li>decentralized, but still has a single point of failure</li>
+</ul>
+</li>
+</ul>
+<h3 id="switched-local-networks" >Switched Local Networks
+<span>
+    <a href="#switched-local-networks">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>ethernet protocol</li>
+<li>switches don&rsquo;t know shit about the network layer</li>
+<li>switches use the receiver MAC address in the packet header to figure out where to send the frame, otherwise all nodes get it</li>
+<li>if a node wants to broadcast, it will send to MAC address FF-FF-FF-FF-FF-FF (48 1s)</li>
+</ul>
+<h3 id="mac-addresses" >MAC Addresses
+<span>
+    <a href="#mac-addresses">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>aka: link-layer address; LAN address; physical address</li>
+<li>each frame has a unique MAC (Multiple Access Channel) address for source</li>
+<li>MAC needed to get assigned an IP address by the DHCP server (probably bundled with the router in home networks)</li>
+<li>48-bit MAC address (hardware or random software)</li>
+<li>local unique 32-bit IP address</li>
+<li>IEEE manages the MAC address space so that manufacturers do not conflict</li>
+<li>manufacturers purchase MAC address space</li>
+</ul>
+<h3 id="arp-in-action" >ARP in Action
+<span>
+    <a href="#arp-in-action">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>Address Resolution Protocol</li>
+<li>Determining corresponding MAC address of an IP address</li>
+<li>Use if a node doesn&rsquo;t have a MAC address in its <em>ARP table</em></li>
+<li>Off the subnet:
+<ul>
+<li>Need to send the frame to the router first via MAC address (datagram still destined to receiver&rsquo;s IP address)</li>
+<li>The router will take care of modifying the MAC destination header via its routing table</li>
+</ul>
+</li>
+</ul>
+<h3 id="ethernet" >Ethernet
+<span>
+    <a href="#ethernet">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>dominant LAN tech</li>
+<li>single chip</li>
+<li>bus: all nodes in same collision domain (interconnected cord)</li>
+<li>switched: active link-layer 2 switch in center</li>
+<li>frame
+<ul>
+<li>preamble, destination addr, source addr, type, data/payload, CRC</li>
+<li>preamble is used to sync receiver and sender clock rates</li>
+<li>ethernet type: higher layer protocol (e.g. IP, but could be others)</li>
+</ul>
+</li>
+<li>relies on higher layers to figure out reliability</li>
+<li>no connection</li>
+<li>MAC protocol: unslotted CSMA/CD with binary backoff</li>
+<li>Many standards, different physical layer media (fiber, cable), speeds, but common MAC protocol and frame format</li>
+</ul>
+<h3 id="ethernet-switch" >Ethernet Switch
+<span>
+    <a href="#ethernet-switch">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>link-layer switch</li>
+<li>improvement over hubs (which is how ethernet collisions could occur before)</li>
+<li>no collisions, full duplex, limits collision domains to each link
+<ul>
+<li>cannot send multiple to one without collisions</li>
+</ul>
+</li>
+<li>store-and-forward Ethernet frames</li>
+<li>examine incoming frame&rsquo;s MAC address, selectively forward frame</li>
+<li>hosts are unaware of switches</li>
+<li>Uses switch table to not require configuration (self-learning)</li>
+</ul>
+<h3 id="switches-vs-routers" >Switches vs Routers
+<span>
+    <a href="#switches-vs-routers">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p>Routers are layer-3 packet switches meaning they route using IP addressees, not MAC address. Routers need to be setup, whereas switches are plug-n-play. Switches are susceptible to broadcast storms or large ARP tables. Routers do not have a spanning tree restriction (switches only have one path, whereas routers enable multiple paths for example North America and Europe).</p>
+<h3 id="self-learning-switches" >Self Learning Switches
+<span>
+    <a href="#self-learning-switches">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>When a frame is received, the switch learns of the MAC and location of the sender</li>
+<li>If the destination MAC address is in the table (indexed), send frame only to that node</li>
+<li>Otherwise, flood all interfaces except for arriving interface</li>
+</ul>
+<h3 id="interconnecting-switches" >Interconnecting Switches
+<span>
+    <a href="#interconnecting-switches">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>still self learning</li>
+</ul>
+<h3 id="virtual-lans" >Virtual LANs
+<span>
+    <a href="#virtual-lans">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>Map group of port numbers to a VLAN and avoid cross-contamination</li>
+<li>To get from one VLAN to another use the router that is attached to the device with the switch</li>
+<li>Desires
+<ul>
+<li>Traffic isolation</li>
+<li>Inefficient uses of switch: suppose 10 groups, either need 10 switches or one switch with 96 ports and lack of traffic isolation</li>
+<li>Managing users: want to allow users to move to another group without having to modify cables</li>
+</ul>
+</li>
+<li>VLAN trunking: special port on all switches to intersect all VLANs (Ethernet frame 802.1Q to cross the VLAN trunk with VLAN ID tag)</li>
+</ul>
+<h3 id="data-center-networks" >Data Center Networks
+<span>
+    <a href="#data-center-networks">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>top of rack (TOR) switch is layer-4 because it also makes decision based on the destination port-numbers</li>
+<li>20-40 server blades</li>
+</ul>
+<p>Facebook F16:</p>
+<ul>
+<li>spine switch</li>
+<li>fabric switch</li>
+<li>TOR switch</li>
+</ul>
+<p>Multipath with redundancy</p>
+<h3 id="datacenter-protocol-innovations" >Datacenter Protocol Innovations
+<span>
+    <a href="#datacenter-protocol-innovations">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><ul>
+<li>RoCE: remote DMA (RDMA) over Converged Etherenet
+<ul>
+<li>Don&rsquo;t know what this is</li>
+</ul>
+</li>
+<li>ECN: explicit congestion notification used in transport-layer congestion control (DCTCP, DCQCN)</li>
+<li>experimentation with hop-by-hop (backpressure) congestion control</li>
+<li>SDN used within</li>
+</ul>
+<h2 id="nym-mixnet-sphinx" >Nym Mixnet Sphinx
+<span>
+    <a href="#nym-mixnet-sphinx">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><p>Abdullah and Hossein project</p>
+<ul>
+<li><a href="https://github.com/nymtech">Nym GitHub</a></li>
+<li><a href="https://github.com/nymtech/sphinx">Sphinx Rust implementation</a></li>
+</ul>
+<h2 id="questions" >Questions
+<span>
+    <a href="#questions">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h2><ul>
+<li>What is QoS (quality of service)</li>
+</ul>
+<h3 id="other" >Other
+<span>
+    <a href="#other">
+        <svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/></svg>
+    </a>
+</span>
+</h3><p><a href="https://tools.ietf.org/html/rfc1918">RC 1918</a></p>
+<ul>
+<li>Private network addresses: 10/8, 172.16/12, and 192.168/16.</li>
+</ul>
+
+        </div>
+        <div class="post-info">
+    
+        <div class="post-date dt-published">
+            <a class="u-url" href="/posts/university/cs-456-computer-networks/"><time datetime="2024-05-07">May 7, 2024</time></a>
+            
+        </div>
+    
+    <a class="post-hidden-url u-url" href="https://blog.elijahlopez.ca/posts/university/cs-456-computer-networks/">https://blog.elijahlopez.ca/posts/university/cs-456-computer-networks/</a>
+    <a href="https://blog.elijahlopez.ca/" class="p-name p-author post-hidden-author h-card" rel="me">Elijah Lopez</a>
+    <div class="post-taxonomies">
+        
+        
+            <ul class="post-tags">
+                
+                    
+                    <li><a href="https://blog.elijahlopez.ca/tags/university/">#University</a></li>
+                
+                    
+                    <li><a href="https://blog.elijahlopez.ca/tags/computer-science/">#Computer-Science</a></li>
+                
+            </ul>
+        
+        
+    </div>
+</div>
+
+    </article>
+
+    
+
+    
+        
+    
+    
+    <div class="pagination post-pagination">
+        <div class="left pagination-item ">
+            
+                <a title="BU 430 Financial Markets and Securities Trading" href="/posts/university/bu-430-financial-markets-and-securities-trading/">BU 430 Financial Markets and Securities Trading</a>
+            
+        </div>
+        <div class="right pagination-item ">
+            
+                <a title="BU 466 Taxation II" href="/posts/university/bu-466-taxation-2/">BU 466 Taxation II</a>
+            
+        </div>
+    </div>
+
+
+
+
+    
+
+    
+        <br>
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+<script src="https://giscus.app/client.js"
+        data-repo="elibroftw/blog.elijahlopez.ca"
+        data-repo-id="R_kgDOGiL7hg"
+        data-category="General"
+        data-category-id="DIC_kwDOGiL7hs4Cer6e"
+        data-mapping="og:title"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="preferred_color_scheme"
+        data-lang="en"
+        crossorigin="anonymous"
+        
+        async>
+</script>
+
+    
+
+        </main>
+        
+            <footer class="common-footer">
+    
+    
+
+    <div class="common-footer-bottom">
+        
+        <div class="copyright">
+            <p>© Elijah Lopez, 2024<br>
+            Powered by <a target="_blank" rel="noopener noreferrer" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" rel="noopener noreferrer" href="https://github.com/elibroftw/hugo-theme-anubis">Anubis</a>.<br>
+            
+            </p>
+        </div>
+    </div>
+
+    <p class="h-card vcard">
+
+    <a href=https://blog.elijahlopez.ca/ class="p-name u-url url fn" rel="me">Elijah Lopez</a> 
+
+     
+        /
+        <a class="p-email u-email email" rel="me" href="mailto:elijahllopezz@gmail.com">elijahllopezz@gmail.com</a>
+    
+
+     
+        <img class="u-photo" src="https://pbs.twimg.com/profile_images/1738729591064166400/vqarzcF7_400x400.jpg" />
+    
+</p> 
+</footer>
+
+        
+    </div>
+</body>
+</html>
