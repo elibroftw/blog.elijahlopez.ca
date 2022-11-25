@@ -4,15 +4,14 @@ A site I'll be writing new posts on, since Medium is centralized, slow, and does
 
 This blog uses the [Anubis Theme](https://github.com/Mitrichius/hugo-theme-anubis).
 
-Read `content/hugo-guide.md` ([online](https://blog.elijahlopez.ca/hugo-guide#new-machine-setup)) for blogging on a new machine.
+Read `content/hugo-guide.md` ([Online](https://blog.elijahlopez.ca/hugo-guide#new-machine-setup)) on how to
+create posts, custom pages, using images, and embedding rich content (e.g. tweets, youtube, gfycat, github gist).
 
 ## New Machine Setup
 
 ```bash
-# replace USERNAME/blog with your username and blog repo name
+# replace link and dirname with your repo link and repo name
 git clone --recurse-submodules -j8 https://github.com/elibroftw/blog.elijahlopez.ca.git
 # choose cloned directory
 cd blog.elijahlopez.ca
-# Enable the pre-commit hook
-git config core.hookspath .githooks
 ```

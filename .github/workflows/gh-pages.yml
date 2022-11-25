@@ -1,0 +1,58 @@
+name: Push hugo build to gh-pages
+
+on:
+  push:
+    branches:
+      # If you're changing the branch from master, also change the `master` in `refs/heads/main` at the bottom
+      - master
+  pull_request:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          submodules: true # Fetch Hugo themes (true OR recursive)
+          fetch-depth: 0 # Fetch all history for .GitInfo and .Lastmod
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: 'latest'
+          extended: true
+
+      - name: Setup output
+        id: vars
+        run: |
+          rm -rf public
+          echo "name=commit_msg::$(git log -1 --pretty=%B)" >> $GITHUB_OUTPUT
+          git worktree add public gh-pages
+
+      - uses: actions/cache@v3
+        with:
+          path: /tmp/hugo_cache
+          key: ${{ runner.os }}-hugomod-${{ hashFiles('**/go.sum') }}
+          restore-keys: |
+            ${{ runner.os }}-hugomod-
+
+      - name: Build
+        # git worktree <path> <branch> sets <path> as root for <branch>
+        run: |
+          hugo --minify
+
+      - name: Push public to gh-pages
+        if: ${{ github.ref == 'refs/heads/master' }}
+        run: |
+          cd public
+          git config user.name '${{ github.actor }}'
+          git config user.email '${{ github.actor }}@users.noreply.github.com'
+          if [ "`git status -s`" ]; then
+            git add --all
+            git commit -am "deployed: ${{ steps.vars.outputs.commit_msg }}"
+          fi
+          git push --all

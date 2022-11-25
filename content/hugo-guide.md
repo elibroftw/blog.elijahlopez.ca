@@ -27,8 +27,6 @@ In case you want to blog on a new device, here are the commands to set yourself 
 git clone --recurse-submodules -j8 https://github.com/USERNAME/blog.git
 # choose cloned directory
 cd blog
-# Enable the pre-commit hook
-git config core.hookspath .githooks
 ```
 
 ## Creating Content (e.g. a Post)
@@ -54,12 +52,18 @@ git config core.hookspath .githooks
 
 ## Images
 
-To embed an image, make sure the image is under the `static/images` directory. I organize images based on the post or tag they
+To embed an image in markdown use.
+
+```md
+![Unity installation screenshot](/images/automate-unity-building/unity-hub.png)
+```
+
+ make sure the image is under the `static/images` directory. I organize images based on the post or tag they
 are related to, so I suggest putting the image in `static/images/crypto/monero.png` or `static/images/about/headshot.png`.
 
 To embed this image, add something like the below.
 
-```.
+```md
 ![Unity installation screenshot](/images/automate-unity-building/unity-hub.png)
 ```
 
@@ -90,8 +94,8 @@ Here are some common ones I use. For more, you can search google or something "H
 From https://twitter.com/MPelletierCIO/status/1522704947556483073.
 We need the username and the status id:
 
-```.
-{{< tweet user="MPelletierCIO" id="1522704947556483073" >}}
+```bash
+{{</* tweet user="MPelletierCIO" id="1522704947556483073" */>}}
 ```
 
 {{< tweet user="MPelletierCIO" id="1522704947556483073" >}}
@@ -101,8 +105,8 @@ We need the username and the status id:
 An old video of mine https://www.youtube.com/watch?v=rtSR9ySQ5h4 or https://youtu.be/rtSR9ySQ5h4.
 We just need the video id.
 
-```.
-{{< youtube rtSR9ySQ5h4 >}}
+```bash
+{{</* youtube rtSR9ySQ5h4 */>}}
 ```
 
 {{< youtube rtSR9ySQ5h4 >}}
@@ -111,16 +115,16 @@ We just need the video id.
 
 This one is a custom shortcode, but we just need the id of the gfycat link.
 
-```.
-{{< gfycat arcticbigheartedaddax >}}
+```bash
+{{</* gfycat arcticbigheartedaddax */>}}
 ```
 
 {{< gfycat arcticbigheartedaddax >}}
 
 ### GitHub Gist
 
-```.
-{{< gist elibroftw 1a94149a2f6232d062b666c4ee9ea530 >}}
+```bash
+{{</* gist elibroftw 1a94149a2f6232d062b666c4ee9ea530 */>}}
 ```
 
 {{< gist elibroftw 1a94149a2f6232d062b666c4ee9ea530 >}}
