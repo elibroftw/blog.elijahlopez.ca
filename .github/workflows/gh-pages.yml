@@ -30,7 +30,7 @@ jobs:
         id: vars
         run: |
           rm -rf public
-          echo "::set-output name=commit_msg::$(git log -1 --pretty=%B)"
+          echo "name=commit_msg::$(git log -1 --pretty=%B)" >> $GITHUB_OUTPUT
           git worktree add public gh-pages
 
       - uses: actions/cache@v3
@@ -49,8 +49,8 @@ jobs:
         if: ${{ github.ref == 'refs/heads/master' }}
         run: |
           cd public
-          git config user.name '${GITHUB_ACTOR}'
-          git config user.email '${GITHUB_ACTOR}@users.noreply.github.com'
+          git config user.name '${{ github.actor }}'
+          git config user.email '${{ github.actor }}@users.noreply.github.com'
           if [ "`git status -s`" ]; then
             git add --all
             git commit -am "deployed: ${{ steps.vars.outputs.commit_msg }}"
