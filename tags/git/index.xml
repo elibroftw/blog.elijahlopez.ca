@@ -44,14 +44,14 @@ If you are like me, you can follow the tutorial that &lt;a href="#forking-my-sit
 &lt;li>Create a &lt;code>USERNAME.github.io&lt;/code> repository in GitHub&lt;/li>
 &lt;li>Ensuring your articles publish
 &lt;ul>
-&lt;li>Click &amp;ldquo;Actions&amp;rdquo; (beside Pull Request) and &amp;ldquo;New workflow&amp;rdquo;&lt;/li>
-&lt;li>Copy sample from &lt;a href="https://github.com/peaceiris/actions-gh-pages#getting-started">https://github.com/peaceiris/actions-gh-pages#getting-started&lt;/a>&lt;/li>
-&lt;li>Ensure that the default github branch is also main (edit the workflow twice to use default branch name)&lt;/li>
-&lt;li>Rename &amp;ldquo;ubuntu-22.04&amp;rdquo; to &amp;ldquo;ubuntu-latest&amp;rdquo;&lt;/li>
+&lt;li>Click &amp;ldquo;Actions&amp;rdquo; (beside Pull Request), &amp;ldquo;New workflow&amp;rdquo;, &amp;ldquo;Set up&amp;hellip;&amp;rdquo;&lt;/li>
+&lt;li>Enter the name &amp;ldquo;gh-pages.yml&amp;rdquo;&lt;/li>
+&lt;li>Copy sample workflow from &lt;a href="https://github.com/elibroftw/blog.elijahlopez.ca/blob/master/.github/workflows/gh-pages.yml">my repo&lt;/a>&lt;/li>
+&lt;li>If you&amp;rsquo;re default branch name (e.g. main) is not master, replace the two occurrences of master with your default branch name&lt;/li>
 &lt;li>Save&lt;/li>
 &lt;/ul>
 &lt;/li>
-&lt;li>Clone the repository (you&amp;rsquo;ll need to install git and/or GitHub Desktop)&lt;/li>
+&lt;li>Clone your repository using &lt;code>git clone https://...&lt;/code>&lt;/li>
 &lt;li>Get the GitHub link for a &lt;a href="https://themes.gohugo.io/">theme&lt;/a>&lt;/li>
 &lt;li>Add the theme using &lt;code>git submodule add GitHubURL.git themes/themeName&lt;/code>&lt;/li>
 &lt;li>Read the theme instructions for basic configuration (i.e. &lt;code>config.yaml&lt;/code> or &lt;code>config.toml&lt;/code>)&lt;/li>
@@ -63,9 +63,9 @@ If you are like me, you can follow the tutorial that &lt;a href="#forking-my-sit
 &lt;/li>
 &lt;li>Use &lt;code>hugo serve -D&lt;/code> when drafting the post and see your changes at &lt;a href="http://localhost:1313/">http://localhost:1313/&lt;/a>&lt;/li>
 &lt;li>Set &lt;code>draft: false&lt;/code> after you are done drafting a post&lt;/li>
+&lt;li>Add README.md with &lt;code>git clone --recurse-submodules -j8 https://github.com/USERNAME/blog.git&lt;/code> clone instructions&lt;/li>
 &lt;li>Commit and push to origin (GitHub)&lt;/li>
-&lt;li>To update themes, use &lt;code>git submodule update --remote --merge&lt;/code>&lt;/li>
-&lt;li>You can automate to update the theme with a pre-commit hook but if you are not a technical user, I suggest only updating when you know that the latest version of the theme is safe&lt;/li>
+&lt;li>To update your themes, use &lt;code>git submodule update --remote --merge&lt;/code>&lt;/li>
 &lt;/ol>
 &lt;h2 id="other-resources" >Other Resources
 &lt;span>
