@@ -33,7 +33,9 @@ If you are like me, you can follow the tutorial that [forks my site](#forking-my
 7. Edit the About section in https://github.com/USERNAME/blog/ and change the website to `https://USERNAME.github.io` or a domain
 8. Clone your repo using `git clone --recurse-submodules -j8 https://github.com/USERNAME/blog.git` or GitHub desktop
 9. Delete `content/posts` and `static/images`
-10. Edit `config.yaml` and replace my information with yours (set baseUrl to the one shown by GitHub)
+10. Edit `config.yaml` and replace my information with yours
+    - set `baseUrl` to the one shown by GitHub
+    - change the `author`, `email`, `utterancesRepo`, and `social`
 11. You can remove \# to enable certain features (the about section requires uses `content/about.md` and `content/about-subpage.md`)
 12. Read `content/hugo-guide.md` in your new repo to help you write, edit, and publish posts
 
