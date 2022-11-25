@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>vcpkg on ELL Blog</title><link>https://blog.elijahlopez.ca/tags/vcpkg/</link><description>ELL Blog (vcpkg)</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 19 Dec 2021 19:51:55 -0500</lastBuildDate><atom:link href="https://blog.elijahlopez.ca/tags/vcpkg/index.xml" rel="self" type="application/rss+xml"/><item><title>Installing Libraries for C++ with Vcpkg and CMake</title><link>https://blog.elijahlopez.ca/posts/vcpkg-cmake-tutorial/</link><pubDate>Sun, 19 Dec 2021 19:51:55 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/vcpkg-cmake-tutorial/</guid><description>&lt;h2 id="trouble-shooting" >Trouble Shooting
+&lt;span>
+&lt;a href="#trouble-shooting">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>Most errors occur because of &lt;code>CMakePresets.json&lt;/code> or &lt;code>CMakeSettings.json&lt;/code>. I have proper samples
+available at &lt;a href="https://github.com/elibroftw/cpp-vcpkg-cmake-example">https://github.com/elibroftw/cpp-vcpkg-cmake-example&lt;/a>.&lt;/p>
+&lt;h2 id="software-prerequisties" >Software Prerequisties
+&lt;span>
+&lt;a href="#software-prerequisties">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;ul>
+&lt;li>Anyone of the following IDEs
+&lt;ul>
+&lt;li>&lt;a href="https://code.visualstudio.com/download">Visual Studio Code&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://visualstudio.microsoft.com/downloads/">Visual Studio 2022&lt;/a> if on Windows for the compiler&lt;/li>
+&lt;li>Any IDE that has pretty good CMake integration&lt;/li>
+&lt;li>Otherwise, you will need to use &lt;code>cmake&lt;/code> yourself&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Any of the following compilers
+&lt;ul>
+&lt;li>&lt;a href="https://visualstudio.microsoft.com/downloads/">Visual Studio 2022&lt;/a> if on Windows&lt;/li>
+&lt;li>&lt;code>gcc&lt;/code> (Linux)&lt;/li>
+&lt;li>MSYS2/Mingw &lt;code>gcc&lt;/code> (Windows)&lt;/li>
+&lt;li>&lt;code>clang&lt;/code> (MacOS?)&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;code>git&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;h2 id="installing-cmake" >Installing CMake
+&lt;span>
+&lt;a href="#installing-cmake">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>You will need &lt;a href="https://cmake.org/download/">CMake 3.21+&lt;/a> in order to use the Visual Studio 2022 compiler through VSCode.
+The installer does most of the work, so you won&amp;rsquo;t have to manually add &lt;code>cmake&lt;/code> to PATH.&lt;/p>
+&lt;p>For VS Code, you will need to install the &amp;ldquo;C/C++ Extension&amp;rdquo; and the &amp;ldquo;CMake Tools&amp;rdquo; extensions.&lt;/p>
+&lt;h3 id="installing-vcpkg" >Installing Vcpkg
+&lt;span>
+&lt;a href="#installing-vcpkg">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ol>
+&lt;li>Clone &lt;a href="https://github.com/microsoft/vcpkg">vcpkg&lt;/a> into a directory that won&amp;rsquo;t bother you in your day to day life
+&lt;ul>
+&lt;li>For me, that would be &lt;code>C:\Users\maste\Documents\GitHub\vcpkg&lt;/code>&lt;/li>
+&lt;li>Use &lt;code>git clone https://github.com/microsoft/vcpkg.git&lt;/code> or GitHub desktop&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Run the Vcpkg bootstrap script
+&lt;ul>
+&lt;li>Windows: &lt;code>&amp;quot;./bootstrap-vcpkg&amp;quot; -disableMetrics&lt;/code>&lt;/li>
+&lt;li>Unix: &lt;code>./bootstrap-vcpkg.sh -disableMetrics&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Modify environment variables
+&lt;ul>
+&lt;li>Add the vcpkg cloned directory to &lt;code>PATH&lt;/code>
+&lt;ul>
+&lt;li>On Windows, use Windows search for &amp;ldquo;envir&amp;rdquo;&lt;/li>
+&lt;li>On Linux, open your &lt;code>.bashrc&lt;/code> file and add &lt;code>export PATH=$PATH:~/vcpkg&lt;/code> to your &lt;code>.bashrc&lt;/code> file&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Set &lt;code>VCPKG_ROOT&lt;/code> as the same value you added to &lt;code>PATH&lt;/code>&lt;/li>
+&lt;li>Set &lt;code>VCPKG_DEFAULT_TRIPLET&lt;/code> to &lt;code>x64-windows&lt;/code> on Windows, or your computers triplet
+&lt;ul>
+&lt;li>Valid architectures are: x86, x64, arm, arm64 and wasm32.&lt;/li>
+&lt;li>Valid OS names are &lt;code>'windows', 'linux', 'macos'&lt;/code> (I&amp;rsquo;m unsure about the macos part)&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Enable vcpkg packages to be used in VS/MSBuild:
+&lt;ul>
+&lt;li>&lt;code>vcpkg integrate install&lt;/code>&lt;/li>
+&lt;li>copy the path to vcpkg.cmake for use later&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ol>
+&lt;p>You can now install packages using &lt;code>vcpkg install &amp;lt;lib&amp;gt;&lt;/code> and search for them using &lt;code>vcpkg search &amp;lt;lib&amp;gt;&lt;/code>.
+In the next section, we&amp;rsquo;ll be integrating &lt;code>vcpkg&lt;/code> within a CMake project.&lt;/p>
+&lt;h2 id="integrating-vcpkg-into-a-new-cmake-project" >Integrating Vcpkg into a new CMake Project
+&lt;span>
+&lt;a href="#integrating-vcpkg-into-a-new-cmake-project">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>In this section we&amp;rsquo;ll be creating a CMake C++ project that will make an HTTP request using the &lt;code>cpr&lt;/code> library.&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>Create a CMake project in Visual Studio or VSCode&lt;/p>
+&lt;ul>
+&lt;li>Ensure IDE is configured to use &lt;code>CMakePresets.json&lt;/code>&lt;/li>
+&lt;li>VS: open visual studio and click &amp;ldquo;Create a new project&amp;rdquo; and search for &amp;ldquo;CMake Project&amp;rdquo;&lt;/li>
+&lt;li>VSCode: open an empty folder in VSCode and use &amp;ldquo;CMake: Quick Start&amp;rdquo; from the command palette (Ctrl + Shift + P)&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Setting the CMake toolchain file to &lt;code>vcpkg.cmake&lt;/code>&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Open CMakePresets.json &lt;a href="https://github.com/elibroftw/cpp-vcpkg-cmake-example/blob/master/CMakePresets.json">example&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Add the following under &lt;code>configurePresets[0] &amp;gt; cacheVariables&lt;/code>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-json" data-lang="json">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ed9d13">&amp;#34;CMAKE_TOOLCHAIN_FILE&amp;#34;&lt;/span>&lt;span style="color:#a61717;background-color:#e3d2d2">:&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">&amp;#34;value&amp;#34;&lt;/span>: &lt;span style="color:#ed9d13">&amp;#34;$env{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">&amp;#34;type&amp;#34;&lt;/span>: &lt;span style="color:#ed9d13">&amp;#34;FILEPATH&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}&lt;span style="color:#a61717;background-color:#e3d2d2">,&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>If using &lt;code>cmake&lt;/code> from the command line on Linux, add &lt;code>-DCMAKE_TOOLCHAIN_FILE=$VCPKG_ROOT/scripts/buildsystems/vcpkg.cmake&lt;/code>&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Create a &lt;code>vcpkg&lt;/code> response file to maintain portability&lt;/p>
+&lt;ul>
+&lt;li>Create &lt;code>vcpkg_rf.txt&lt;/code> in the root directory with the contents:&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>install
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cpr
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Install dependencies using &lt;code>vcpkg &amp;quot;@vcpkg_rf.txt&amp;quot; [optional arguments]&lt;/code>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>For each library installed, you&amp;rsquo;ll see instructions for what to add or modify in your &lt;code>CMakeLists.txt&lt;/code>&lt;/p>
+&lt;ul>
+&lt;li>For &lt;code>cpr&lt;/code>, that would be&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-cmake" data-lang="cmake">&lt;span style="display:flex;">&lt;span> &lt;span style="color:#24909d">find_package&lt;/span>(&lt;span style="color:#ed9d13">cpr&lt;/span> &lt;span style="color:#ed9d13">CONFIG&lt;/span> &lt;span style="color:#ed9d13">REQUIRED&lt;/span>)&lt;span style="color:#a61717;background-color:#e3d2d2">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a61717;background-color:#e3d2d2">&lt;/span> &lt;span style="color:#24909d">target_link_libraries&lt;/span>(&lt;span style="color:#ed9d13">PROJECT_NAME&lt;/span> &lt;span style="color:#ed9d13">PRIVATE&lt;/span> &lt;span style="color:#ed9d13">cpr::cpr&lt;/span>)&lt;span style="color:#a61717;background-color:#e3d2d2">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>For more than one library, you only need one &lt;code>target_link_libraries&lt;/code> rather than one for each additional library&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Now let&amp;rsquo;s code. In the main cpp file, type the following:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-cpp" data-lang="cpp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cd2828;font-weight:bold">#include&lt;/span> &lt;span style="color:#cd2828;font-weight:bold">&amp;lt;cpr/cpr.h&amp;gt;&lt;/span>&lt;span style="color:#cd2828;font-weight:bold">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cd2828;font-weight:bold">#include&lt;/span> &lt;span style="color:#cd2828;font-weight:bold">&amp;lt;iostream&amp;gt;&lt;/span>&lt;span style="color:#cd2828;font-weight:bold">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cd2828;font-weight:bold">&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">int&lt;/span> &lt;span style="color:#447fcf">main&lt;/span>()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> cpr::Response r = cpr::Get(cpr::Url{ &lt;span style="color:#ed9d13">&amp;#34;https://api.github.com/repos/whoshuu/cpr/contributors&amp;#34;&lt;/span> },
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> cpr::Authentication{ &lt;span style="color:#ed9d13">&amp;#34;user&amp;#34;&lt;/span>, &lt;span style="color:#ed9d13">&amp;#34;pass&amp;#34;&lt;/span> },
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> cpr::Parameters{ {&lt;span style="color:#ed9d13">&amp;#34;anon&amp;#34;&lt;/span>, &lt;span style="color:#ed9d13">&amp;#34;true&amp;#34;&lt;/span>}, {&lt;span style="color:#ed9d13">&amp;#34;key&amp;#34;&lt;/span>, &lt;span style="color:#ed9d13">&amp;#34;value&amp;#34;&lt;/span>} });
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> r.status_code; &lt;span style="color:#999;font-style:italic">// 200
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">&lt;/span> r.header[&lt;span style="color:#ed9d13">&amp;#34;content-type&amp;#34;&lt;/span>]; &lt;span style="color:#999;font-style:italic">// application/json; charset=utf-8
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">&lt;/span> r.text; &lt;span style="color:#999;font-style:italic">// JSON text string
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">&lt;/span> std::cout &amp;lt;&amp;lt; r.text &amp;lt;&amp;lt; std::endl;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">return&lt;/span> &lt;span style="color:#3677a9">0&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Let&amp;rsquo;s test our build&lt;/p>
+&lt;ul>
+&lt;li>If something doesn&amp;rsquo;t work, you may need to configure/delete CMake cache using your IDE or doing it manually&lt;/li>
+&lt;li>In Visual Studio, just click the green play button&lt;/li>
+&lt;li>In Visual Studio Code, you can use the &amp;ldquo;Build: Target&amp;rdquo; and select &amp;ldquo;run&amp;rdquo; from the command palette&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ol>
+&lt;p>If the steps didn&amp;rsquo;t work for you, you can follow &lt;a href="https://youtu.be/FeBzSYiWkEU">this tutorial video&lt;/a>.
+The video has an example of opening a project in VSCode that was made in Visual Studio.&lt;/p>
+&lt;h2 id="video" >Video
+&lt;span>
+&lt;a href="#video">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>
+&lt;div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+&lt;iframe src="https://www.youtube.com/embed/FeBzSYiWkEU" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video">&lt;/iframe>
+&lt;/div></description></item></channel></rss>

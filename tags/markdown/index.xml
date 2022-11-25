@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>markdown on ELL Blog</title><link>https://blog.elijahlopez.ca/tags/markdown/</link><description>ELL Blog (markdown)</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 07 May 2022 17:57:32 -0400</lastBuildDate><atom:link href="https://blog.elijahlopez.ca/tags/markdown/index.xml" rel="self" type="application/rss+xml"/><item><title>Creating a Blog With GitHub Pages and Hugo</title><link>https://blog.elijahlopez.ca/posts/hugo-tutorial/</link><pubDate>Fri, 17 Dec 2021 22:18:47 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/hugo-tutorial/</guid><description>&lt;p>I created this blog using Hugo and host it on GitHub Pages. In this tutorial, I&amp;rsquo;ll teach you to do the same.
+The resources I had used to create a working blog left out some important details that I will include in my tutorial.
+I&amp;rsquo;ve also done the brunt of the work to perfect the theme and workflow.
+If you are like me, you can follow the tutorial that &lt;a href="#forking-my-site">forks my site&lt;/a> rather than making a blog site &lt;a href="#from-scratch">from scratch&lt;/a>.&lt;/p>
+&lt;h2 id="prerequisites" >Prerequisites
+&lt;span>
+&lt;a href="#prerequisites">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;ol>
+&lt;li>&lt;a href="https://gohugo.io/getting-started/installing#binary-cross-platform">Hugo&lt;/a> is &amp;ldquo;installed&amp;rdquo; and can be used (test &lt;code>hugo version&lt;/code>)&lt;/li>
+&lt;li>&lt;a href="https://git-scm.com/downloads">git&lt;/a> is installed and can be used (test &lt;code>git version&lt;/code>)&lt;/li>
+&lt;li>If either test fails (i.e. not on PATH), learn from &lt;a href="https://duckduckgo.com/?t=ffab&amp;amp;q=how+to+add+to+path&amp;amp;ia=web">how to add to PATH&lt;/a>&lt;/li>
+&lt;li>VS Code + Hugo Helper extension&lt;/li>
+&lt;/ol>
+&lt;h2 id="forking-my-blog" >Forking My Blog
+&lt;span>
+&lt;a href="#forking-my-blog">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;ol>
+&lt;li>Web UI fork &lt;a href="https://github.com/elibroftw/blog.elijahlopez.ca">blog.elijahlopez.ca&lt;/a> with repository name &lt;code>blog&lt;/code> and use your own description&lt;/li>
+&lt;li>Go to &lt;a href="https://github.com/USERNAME/blog/settings/pages">https://github.com/USERNAME/blog/settings/pages&lt;/a>&lt;/li>
+&lt;li>Select the source as &lt;code>gh-pages&lt;/code> (you may need to create this branch)&lt;/li>
+&lt;li>For folder select &lt;code>/&lt;/code>&lt;/li>
+&lt;li>Click save&lt;/li>
+&lt;li>Add a custom domain if you want later since it takes 5+ minutes&lt;/li>
+&lt;li>Edit the About section in &lt;a href="https://github.com/USERNAME/blog/">https://github.com/USERNAME/blog/&lt;/a> and change the website to &lt;code>https://USERNAME.github.io&lt;/code> or a domain&lt;/li>
+&lt;li>Clone your repo using &lt;code>git clone --recurse-submodules -j8 https://github.com/USERNAME/blog.git&lt;/code> or GitHub desktop&lt;/li>
+&lt;li>Delete &lt;code>content/posts&lt;/code> and &lt;code>static/images&lt;/code>&lt;/li>
+&lt;li>Edit &lt;code>config.yaml&lt;/code> and replace my information with yours (set baseUrl to the one shown by GitHub)&lt;/li>
+&lt;li>You can remove # to enable certain features (the about section requires uses &lt;code>content/about.md&lt;/code> and &lt;code>content/about-subpage.md&lt;/code>)&lt;/li>
+&lt;li>Read &lt;code>content/hugo-guide.md&lt;/code> in your new repo to help you write, edit, and publish posts&lt;/li>
+&lt;/ol>
+&lt;h2 id="from-scratch" >From Scratch
+&lt;span>
+&lt;a href="#from-scratch">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;ol>
+&lt;li>Create a &lt;code>USERNAME.github.io&lt;/code> repository in GitHub&lt;/li>
+&lt;li>Ensuring your articles publish
+&lt;ul>
+&lt;li>Click &amp;ldquo;Actions&amp;rdquo; (beside Pull Request) and &amp;ldquo;New workflow&amp;rdquo;&lt;/li>
+&lt;li>Copy sample from &lt;a href="https://github.com/peaceiris/actions-gh-pages#getting-started">https://github.com/peaceiris/actions-gh-pages#getting-started&lt;/a>&lt;/li>
+&lt;li>Ensure that the default github branch is also main (edit the workflow twice to use default branch name)&lt;/li>
+&lt;li>Rename &amp;ldquo;ubuntu-22.04&amp;rdquo; to &amp;ldquo;ubuntu-latest&amp;rdquo;&lt;/li>
+&lt;li>Save&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Clone the repository (you&amp;rsquo;ll need to install git and/or GitHub Desktop)&lt;/li>
+&lt;li>Get the GitHub link for a &lt;a href="https://themes.gohugo.io/">theme&lt;/a>&lt;/li>
+&lt;li>Add the theme using &lt;code>git submodule add GitHubURL.git themes/themeName&lt;/code>&lt;/li>
+&lt;li>Read the theme instructions for basic configuration (i.e. &lt;code>config.yaml&lt;/code> or &lt;code>config.toml&lt;/code>)&lt;/li>
+&lt;li>Edit &lt;code>config.yaml&lt;/code> or &lt;code>config.toml&lt;/code>&lt;/li>
+&lt;li>Use &lt;code>hugo new content/posts/POST.md&lt;/code> to create a new post
+&lt;ul>
+&lt;li>Alternative: use the hugo helpers, &amp;ldquo;Hugo: create content&amp;rdquo; command&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Use &lt;code>hugo serve -D&lt;/code> when drafting the post and see your changes at &lt;a href="http://localhost:1313/">http://localhost:1313/&lt;/a>&lt;/li>
+&lt;li>Set &lt;code>draft: false&lt;/code> after you are done drafting a post&lt;/li>
+&lt;li>Commit and push to origin (GitHub)&lt;/li>
+&lt;li>To update themes, use &lt;code>git submodule update --remote --merge&lt;/code>&lt;/li>
+&lt;li>You can automate to update the theme with a pre-commit hook but if you are not a technical user, I suggest only updating when you know that the latest version of the theme is safe&lt;/li>
+&lt;/ol>
+&lt;h2 id="other-resources" >Other Resources
+&lt;span>
+&lt;a href="#other-resources">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;ul>
+&lt;li>&lt;a href="https://gohugo.io/getting-started/quick-start/">https://gohugo.io/getting-started/quick-start/&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://retrolog.io/blog/creating-a-hugo-theme-from-scratch/">https://retrolog.io/blog/creating-a-hugo-theme-from-scratch/&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://levelup.gitconnected.com/build-a-personal-website-with-github-pages-and-hugo-6c68592204c7">https://levelup.gitconnected.com/build-a-personal-website-with-github-pages-and-hugo-6c68592204c7&lt;/a>&lt;/li>
+&lt;/ul></description></item></channel></rss>

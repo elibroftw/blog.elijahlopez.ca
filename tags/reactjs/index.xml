@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>reactjs on ELL Blog</title><link>https://blog.elijahlopez.ca/tags/reactjs/</link><description>ELL Blog (reactjs)</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 23 Sep 2022 19:57:18 -0400</lastBuildDate><atom:link href="https://blog.elijahlopez.ca/tags/reactjs/index.xml" rel="self" type="application/rss+xml"/><item><title>ReactJS Tips</title><link>https://blog.elijahlopez.ca/posts/reactjs-tips/</link><pubDate>Fri, 23 Sep 2022 19:57:18 -0400</pubDate><guid>https://blog.elijahlopez.ca/posts/reactjs-tips/</guid><description>&lt;p>I&amp;rsquo;m only in the mood for writing down my thoughts, so I apologize for the upcoming messyness.&lt;/p>
+&lt;h2 id="use-react-fragments-instead-of-div" >Use React Fragments Instead of div
+&lt;span>
+&lt;a href="#use-react-fragments-instead-of-div">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>I constantly see webdevs use many redundant divs in their HTML and even JSX. If you are simply using a
+div as a way to organize your JSX or to return JSX without keys, then I suggest you use a React Fragment instead.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-jsx" data-lang="jsx">&lt;span style="display:flex;">&lt;span>&amp;lt;&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#6ab825;font-weight:bold">p&lt;/span>&amp;gt;Works without key prop&amp;lt;/&lt;span style="color:#6ab825;font-weight:bold">p&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#6ab825;font-weight:bold">p&lt;/span>&amp;gt;Works without key prop&amp;lt;/&lt;span style="color:#6ab825;font-weight:bold">p&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;/&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>If you need to add a key prop to the Fragment, use &lt;code>&amp;lt;React.Fragment key=?&amp;gt;&lt;/code> instead.&lt;/p>
+&lt;h2 id="define-props-in-component-paramaters" >Define Props in Component Paramaters
+&lt;span>
+&lt;a href="#define-props-in-component-paramaters">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>Instead of using an all encompassing &lt;code>props&lt;/code> parameter, use this object destructuring technique&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-jsx" data-lang="jsx">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">// ExampleComponent.jsx
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">&lt;/span>&lt;span style="color:#6ab825;font-weight:bold">function&lt;/span> ExampleComponent({ name, children }) {}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">// App.jsx
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">&lt;/span>&amp;lt;&lt;span style="color:#6ab825;font-weight:bold">ExampleComponent&lt;/span> &lt;span style="color:#bbb">name&lt;/span>=&lt;span style="color:#ed9d13">&amp;#39;First Last&amp;#39;&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#6ab825;font-weight:bold">p&lt;/span>&amp;gt;temp&amp;lt;/&lt;span style="color:#6ab825;font-weight:bold">p&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;/&lt;span style="color:#6ab825;font-weight:bold">ExampleComponent&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="using-providersjsx-for-your-contexts" >Using Providers.jsx for your Contexts
+&lt;span>
+&lt;a href="#using-providersjsx-for-your-contexts">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>If you are using ContextProviders in &lt;code>App.jsx&lt;/code> and have children components for the sake of using those contexts,
+you can extract those context providers into a component &lt;code>Providers.jsx&lt;/code> so that you can use the hooks in &lt;code>App.jsx&lt;/code> itself and
+disolve those abstraction components you had created.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-jsx" data-lang="jsx">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">// Providers.jsx
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">&lt;/span>&lt;span style="color:#6ab825;font-weight:bold">export&lt;/span> &lt;span style="color:#6ab825;font-weight:bold">function&lt;/span> Providers({ children }) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">return&lt;/span> (
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#6ab825;font-weight:bold">Provider1&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#6ab825;font-weight:bold">Provider2&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {isLoading ? &amp;lt;&lt;span style="color:#6ab825;font-weight:bold">Splashscreen&lt;/span> /&amp;gt; : children}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#a61717;background-color:#e3d2d2">/ Provider2&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#a61717;background-color:#e3d2d2">/ Provider1&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> );
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">// main.jsx
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">&lt;/span>root.render(
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#6ab825;font-weight:bold">React.StrictMode&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#6ab825;font-weight:bold">Providers&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#6ab825;font-weight:bold">App&lt;/span> /&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#6ab825;font-weight:bold">Providers&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#6ab825;font-weight:bold">React.StrictMode&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>);
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="type-comparisons" >Type Comparisons
+&lt;span>
+&lt;a href="#type-comparisons">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>This is very useful if you ever need to check the type of a variable. I found it on Stackoverlfow.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-jsx" data-lang="jsx">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">export&lt;/span> &lt;span style="color:#6ab825;font-weight:bold">function&lt;/span> trueTypeOf(obj) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">return&lt;/span> &lt;span style="color:#24909d">Object&lt;/span>.prototype.toString.call(obj).slice(&lt;span style="color:#3677a9">8&lt;/span>, -&lt;span style="color:#3677a9">1&lt;/span>).toLowerCase()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic">/*
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic"> [] -&amp;gt; array
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic"> {} -&amp;gt; object
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic"> &amp;#39;&amp;#39; -&amp;gt; string
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic"> new Date() -&amp;gt; date
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic"> 1 -&amp;gt; number
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic"> function () {} -&amp;gt; function
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic"> /test/i -&amp;gt; regexp
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic"> true -&amp;gt; boolean
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic"> null -&amp;gt; null
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic"> trueTypeOf() -&amp;gt; undefined
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic"> */&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="usecookie-hook-for-faster-simple-storage" >useCookie Hook for Faster Simple Storage
+&lt;span>
+&lt;a href="#usecookie-hook-for-faster-simple-storage">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>If you need to store information that isn&amp;rsquo;t a core requirement to the App&amp;rsquo;s functionality, like
+the theme a user is using, then I suggest using a cookie to keep track of that information. This ensures
+that they user will not see a theme different from the one they selected when they go to your app.&lt;/p>
+&lt;p>I can&amp;rsquo;t think of other examples right now, but if you aren&amp;rsquo;t able to send component props from the server, then
+this is better than local storage.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-js" data-lang="js">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">export&lt;/span> &lt;span style="color:#6ab825;font-weight:bold">function&lt;/span> useCookie(key, defaultValue, { expires = &lt;span style="color:#3677a9">365000&lt;/span>, sameSite = &lt;span style="color:#ed9d13">&amp;#39;lax&amp;#39;&lt;/span>, path = &lt;span style="color:#ed9d13">&amp;#39;/&amp;#39;&lt;/span> } = {}) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic">// cookie expires in a millenia
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">&lt;/span> &lt;span style="color:#999;font-style:italic">// sameSite != &amp;#39;strict&amp;#39; because the cookie is not read for sensitive actions
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">&lt;/span> &lt;span style="color:#999;font-style:italic">// synchronous
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">&lt;/span> &lt;span style="color:#6ab825;font-weight:bold">const&lt;/span> cookieValue = Cookies.get(key);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">const&lt;/span> [state, setState] = useState(cookieValue || defaultValue);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> useEffect(() =&amp;gt; {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Cookies.set(key, state, { expires, sameSite, path });
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }, [state]);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">return&lt;/span> [state, setState];
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="using-uselayouteffect-for-performance-gains" >Using useLayoutEffect for Performance Gains
+&lt;span>
+&lt;a href="#using-uselayouteffect-for-performance-gains">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>useLayoutEffect is not a hook to be used for performance but rather so that
+data that the user sees or modifies is the latest. useLayoutEffect is
+synchronous so it is a performance hinder not a performance gainer.&lt;/p>
+&lt;h2 id="using-usestate-for-persistence" >Using useState for Persistence
+&lt;span>
+&lt;a href="#using-usestate-for-persistence">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>TL;DR: Use useRef in the parent to keep track of a child&amp;rsquo;s state value.&lt;/p>
+&lt;p>In an app structure like the following,&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-txt" data-lang="txt">&lt;span style="display:flex;">&lt;span>- App
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - Home
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - View 1...n
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - Other Pages
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>I wanted to keep track of which view was open so that when ever the user would
+switch from Home to another Page and back to Home, the same view would open.&lt;/p>
+&lt;p>Home already had a state to keep track of which View was open and a setView
+that was passed down to each of the views so that they could go to eachother.
+Thus, I had a useEffect in Home.jsx to capture Home&amp;rsquo;s view variable and update
+App&amp;rsquo;s view variable.&lt;/p>
+&lt;p>The implications of this only occured to me afterwards when I wanted to persistent a value between different Views.
+I tried to do the same &amp;ldquo;trick&amp;rdquo; at the Home scope, but for some reason every time I switched Views, the value I was trying
+to persist would get reset to the default of setState.&lt;/p>
+&lt;p>What was happening was that changing views would update not only Home&amp;rsquo;s state, but also App&amp;rsquo;s state. Therefore Home would get re-rendered (instead of just the part that changed) and so the state would get overwritten.&lt;/p>
+&lt;p>I then decided its better anyways to persist the value I wanted to persist on the App scope so that it persists even if Home dismounts.
+I then realized that the variable wasn&amp;rsquo;t actually used as a state but rather as a persistant variable, and so I did some research and
+found out that useRef isn&amp;rsquo;t just something to use to refer to stuff, but to just hold anything. useRef more like useValue.&lt;/p>
+&lt;p>Instead of passing down two props for each state, I was now passing one ref, and improved performance due to limiting the scope of the re-render.&lt;/p>
+&lt;h2 id="wrapping-i18nchangelanguage" >Wrapping i18n.changeLanguage
+&lt;span>
+&lt;a href="#wrapping-i18nchangelanguage">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>i18n.changeLanguage persists already between app reloads and relaunches, so you do not need
+to wrap the values change. I was using localForage even though it was completely unnecessary.&lt;/p></description></item></channel></rss>

@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>devops on ELL Blog</title><link>https://blog.elijahlopez.ca/tags/devops/</link><description>ELL Blog (devops)</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 13 Nov 2022 13:11:52 -0500</lastBuildDate><atom:link href="https://blog.elijahlopez.ca/tags/devops/index.xml" rel="self" type="application/rss+xml"/><item><title>How to fix Unable to Get Local Issuer Certificate</title><link>https://blog.elijahlopez.ca/posts/unable-to-get-local-issuer-certificate/</link><pubDate>Sun, 13 Nov 2022 13:11:52 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/unable-to-get-local-issuer-certificate/</guid><description>&lt;p>So you were trying to use &lt;code>requests&lt;/code> or &lt;code>httpx&lt;/code> to access a website, in my case my own, and you got an SSL verify error:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-py" data-lang="py">&lt;span style="display:flex;">&lt;span>requests.exceptions.SSLError: HTTPSConnectionPool(host=&lt;span style="color:#ed9d13">&amp;#39;domain&amp;#39;&lt;/span>, port=&lt;span style="color:#3677a9">443&lt;/span>): Max retries exceeded &lt;span style="color:#6ab825;font-weight:bold">with&lt;/span> url: / (Caused by SSLError(SSLCertVerificationError(&lt;span style="color:#3677a9">1&lt;/span>, &lt;span style="color:#ed9d13">&amp;#39;[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:997)&amp;#39;&lt;/span>)))
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Your browser has no problems with the SSL verification. What gives? If a Man in the middle attack was occuring, your browser would tell you the website is unsafe, so an attacker is not the problem.&lt;/p>
+&lt;p>You searched the issue on a search engine and Stackoverflow tells you that you need to disable the verification or update certifi.
+Disabling verification is an unsafe/temporary work around, and the second didn&amp;rsquo;t work, did it? What&amp;rsquo;s the actual problem?&lt;/p>
+&lt;p>The problem is that the website is only sending you their public certificate and not the entire certificate chain. Browsers are smart (or dumb)
+enough to fill in the gaps, but when security is in fact a concern, a library might not do the same. How do we fix this?&lt;/p>
+&lt;p>The first thing you should do is contact the website owner and tell them that they are not sending the entire chain certificate and it&amp;rsquo;s causing issues.&lt;/p>
+&lt;p>If you are the website owner what do you need to do? Well if you were in charge of &lt;a href="https://www.ssldragon.com/blog/how-to-install-an-ssl-certificate-on-heroku/">generating the CSR&lt;/a>, then you are capable of fixing the issue. When you buy a certificate from a certificate authority, you are actually buying the right to seek verification. To get verified, a certificate signing request (CSR) is required. To generate a CSR, a private key must be generated. After submitting the CSR to the certificate authority, like Sectingo (previously known as Comodo), they will give you your websites public certificate as well as a bundle. Someone new to SSL might not understand what the bundle is; Adding .crt extension at the end may clear is up; it&amp;rsquo;s the missing intermediate certificates.&lt;/p>
+&lt;p>To fix the issue, rather than add only your websites public certificate to your reverse-proxy/webserver, you must combine your websites certificate with the bundle and create a chain certificate. In other words, create a new file with certificates in this order:&lt;/p>
+&lt;ol>
+&lt;li>Domain&lt;/li>
+&lt;li>Certificates in the bundle&lt;/li>
+&lt;/ol>
+&lt;p>If you have &lt;code>cat&lt;/code> installed, you can use the command &lt;code>cat domain.crt .ca-bundle &amp;gt; chain.crt&lt;/code>. On Windows, you can rename the file extensions or use Quicklook to read the contents of the file and copy paste them to a new text file.&lt;/p>
+&lt;p>Lastly, you need to add the certificate (and possibly the private key) to your webserver.&lt;/p>
+&lt;p>If you are using Heroku, you can go to settings, and click edit endpoint details under &amp;ldquo;Add certificate&amp;rdquo;. Test out requests again.&lt;/p>
+&lt;p>I hope this fixed your issue, as a lot of my time was wasted because of poor Heroku docs the first time I added certificates. They did not emphasize combining the certificates.&lt;/p></description></item><item><title>Bash &amp; Linux Helpers</title><link>https://blog.elijahlopez.ca/posts/bash-helpers/</link><pubDate>Mon, 14 Feb 2022 14:06:30 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/bash-helpers/</guid><description>&lt;p>It seems that many article tutorials on &lt;code>bash&lt;/code> are ugly, are unoptimal, and are no straight forward.
+My goal is for this file to be a reference file whenever I need to do scripting after a long time.
+One important concept in bash, is that an exit code of 0 indicates True, not False. Which seems counterintuitive if you program in
+any non-scripting language like C/C++ or Python.&lt;/p>
+&lt;h2 id="bash---argument-parsing-and-flags" >Bash - Argument Parsing and Flags
+&lt;span>
+&lt;a href="#bash---argument-parsing-and-flags">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>If you don&amp;rsquo;t get what&amp;rsquo;s going on, read my &lt;a href="https://blog.elijahlopez.ca/posts/bash-quickstart.md">bash quickstart article&lt;/a>&lt;/p>
+&lt;h3 id="concepts" >Concepts
+&lt;span>
+&lt;a href="#concepts">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>getopts is overkill, so here is an alternative.&lt;/li>
+&lt;li>&amp;ldquo;Booleans&amp;rdquo; using string comparison&lt;/li>
+&lt;li>Conditionals (if, elif, else, AND &amp;amp;&amp;amp;, OR ||)&lt;/li>
+&lt;li>For loop&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#40ffff">supplied_arg&lt;/span>=&lt;span style="color:#ed9d13">&amp;#34;default&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic"># iterate all arguments&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">for&lt;/span> arg in &lt;span style="color:#ed9d13">&amp;#34;&lt;/span>&lt;span style="color:#40ffff">$@&lt;/span>&lt;span style="color:#ed9d13">&amp;#34;&lt;/span>; &lt;span style="color:#6ab825;font-weight:bold">do&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic"># use [[ ]] to avoid double quoting variables&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">if&lt;/span> [[ &lt;span style="color:#40ffff">$last_arg&lt;/span> = &lt;span style="color:#ed9d13">&amp;#34;--supply&amp;#34;&lt;/span> ]]; &lt;span style="color:#6ab825;font-weight:bold">then&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#40ffff">supplied_arg&lt;/span>=&lt;span style="color:#ed9d13">&amp;#34;&lt;/span>&lt;span style="color:#40ffff">$arg&lt;/span>&lt;span style="color:#ed9d13">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#40ffff">last_arg&lt;/span>=&lt;span style="color:#ed9d13">&amp;#34;&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic"># OR ||&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">elif&lt;/span> [[ &lt;span style="color:#40ffff">$arg&lt;/span> = &lt;span style="color:#ed9d13">&amp;#34;--flag1&amp;#34;&lt;/span> ]] || [[ &lt;span style="color:#40ffff">$arg&lt;/span> = &lt;span style="color:#ed9d13">&amp;#34;--flag&amp;#34;&lt;/span> ]]; &lt;span style="color:#6ab825;font-weight:bold">then&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#40ffff">flag1&lt;/span>=&lt;span style="color:#24909d">true&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic"># elif, AND &amp;amp;&amp;amp;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">elif&lt;/span> [[ &lt;span style="color:#40ffff">$arg&lt;/span> = &lt;span style="color:#ed9d13">&amp;#34;--override&amp;#34;&lt;/span> ]] &amp;amp;&amp;amp; [[ ! &lt;span style="color:#40ffff">$supplied_arg&lt;/span> = &lt;span style="color:#ed9d13">&amp;#34;default&amp;#34;&lt;/span> ]]; &lt;span style="color:#6ab825;font-weight:bold">then&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic"># ignore the redundancy, this is to showcase &amp;amp;&amp;amp;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#40ffff">flag_override&lt;/span>=&lt;span style="color:#24909d">true&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">else&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic"># you can do something with these args here&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic"># wc -l &amp;#34;$arg&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic"># or you can set last_arg in order to parse `--something ARG`&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#40ffff">last_arg&lt;/span>=&lt;span style="color:#ed9d13">&amp;#34;&lt;/span>&lt;span style="color:#40ffff">$arg&lt;/span>&lt;span style="color:#ed9d13">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic"># end of if statement&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">fi&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic"># done loop (for or while)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">done&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic"># check if flag supplied&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">if&lt;/span> [ &lt;span style="color:#40ffff">flag1&lt;/span> = true]; &lt;span style="color:#6ab825;font-weight:bold">then&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#24909d">echo&lt;/span> &lt;span style="color:#ed9d13">&amp;#34;got --flag1 or --flag&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">else&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#40ffff">notGot&lt;/span>=&lt;span style="color:#ed9d13">&amp;#34;got neither --flag1 nor --flag&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">fi&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic"># flag not supplied (since variable was never set, we check ! = true rather than = false)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">if&lt;/span> [ ! &lt;span style="color:#40ffff">flag1&lt;/span> = &lt;span style="color:#24909d">true&lt;/span> ]; &lt;span style="color:#6ab825;font-weight:bold">then&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#24909d">echo&lt;/span> &lt;span style="color:#40ffff">$notGot&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">fi&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="linux---add-to-path" >Linux - Add to PATH
+&lt;span>
+&lt;a href="#linux---add-to-path">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;ul>
+&lt;li>A better approach than appending a statement to &lt;code>PATH=&amp;quot;$PATH:/new/path&amp;quot;&amp;gt;&amp;gt; ~/.bashrc&lt;/code>&lt;/li>
+&lt;li>TODO: add instructions&lt;/li>
+&lt;/ul>
+&lt;h2 id="linux---add-cronjob" >Linux - Add Cronjob
+&lt;span>
+&lt;a href="#linux---add-cronjob">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;ul>
+&lt;li>automated approach&lt;/li>
+&lt;li>adds the cronjob if not exists&lt;/li>
+&lt;li>prevents concurrent/overlap runs&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>add_cronjob() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic"># crontab will not set the working directory&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic"># create locks directory if it does not exist&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> mkdir -p ~/locks
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic"># my sample job uses flock to prevent overlapping runs&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic"># minute hour day month day_of_week&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic"># /X means divisible by X&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#40ffff">cronjob&lt;/span>=&lt;span style="color:#ed9d13">&amp;#34;*/1 * * * * flock -n ~/locks/auto_deploy_&lt;/span>&lt;span style="color:#40ffff">$PROJECT&lt;/span>&lt;span style="color:#ed9d13">.lock &lt;/span>&lt;span style="color:#40ffff">$PYTHON&lt;/span>&lt;span style="color:#ed9d13"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">$(&lt;/span>&lt;span style="color:#24909d">pwd&lt;/span>&lt;span style="color:#6ab825;font-weight:bold">)&lt;/span>&lt;span style="color:#ed9d13">/cronjob.py&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic"># cronjob.py will set the working directory&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">if&lt;/span> ! crontab -l &amp;amp;&amp;gt;/dev/null; &lt;span style="color:#6ab825;font-weight:bold">then&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic"># crontab file does not exist&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#24909d">echo&lt;/span> &lt;span style="color:#ed9d13">&amp;#34;&lt;/span>&lt;span style="color:#40ffff">$cronjob&lt;/span>&lt;span style="color:#ed9d13">&amp;#34;&lt;/span> | crontab -
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#24909d">echo&lt;/span> &lt;span style="color:#ed9d13">&amp;#34;Created new crontab with job&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">elif&lt;/span> ! crontab -l 2&amp;gt;/dev/null | grep -Fq &lt;span style="color:#ed9d13">&amp;#34;&lt;/span>&lt;span style="color:#40ffff">$cronjob&lt;/span>&lt;span style="color:#ed9d13">&amp;#34;&lt;/span>; &lt;span style="color:#6ab825;font-weight:bold">then&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic"># job not found in crontab&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#24909d">echo&lt;/span> &lt;span style="color:#6ab825;font-weight:bold">$(&lt;/span>crontab -l ; &lt;span style="color:#24909d">echo&lt;/span> &lt;span style="color:#ed9d13">&amp;#34;&lt;/span>&lt;span style="color:#40ffff">$cronjob&lt;/span>&lt;span style="color:#ed9d13">&amp;#34;&lt;/span>&lt;span style="color:#6ab825;font-weight:bold">)&lt;/span> | crontab -
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#24909d">echo&lt;/span> &lt;span style="color:#ed9d13">&amp;#34;Added &lt;/span>&lt;span style="color:#40ffff">$cronjob&lt;/span>&lt;span style="color:#ed9d13"> ... to existing crontab&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">else&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#24909d">echo&lt;/span> &lt;span style="color:#ed9d13">&amp;#34;Job already exists in crontab&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">fi&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="linux---add-systemd-service" >Linux - Add Systemd Service
+&lt;span>
+&lt;a href="#linux---add-systemd-service">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;ul>
+&lt;li>I used lots of echos and tee [-a]&lt;/li>
+&lt;li>In order to work with spaces in an argument, I created strings with &lt;code>\'$VAR\'&lt;/code>&lt;/li>
+&lt;li>TODO: add code&lt;/li>
+&lt;/ul>
+&lt;h2 id="linux---auto-setup-certbot" >Linux - Auto Setup Certbot
+&lt;span>
+&lt;a href="#linux---auto-setup-certbot">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic"># Context:&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic"># define $DOMAIN (e.g. lenerva.com)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>install_certbot() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> sudo snap install core; sudo snap refresh core
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> sudo snap install --classic certbot
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> sudo ln -s /snap/bin/certbot /usr/bin/certbot
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> sudo certbot --nginx -d &lt;span style="color:#40ffff">$DOMAIN&lt;/span> -d www.&lt;span style="color:#40ffff">$DOMAIN&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="linux---auto-configure-nginx---gunicorn" >Linux - Auto Configure NGINX - Gunicorn
+&lt;span>
+&lt;a href="#linux---auto-configure-nginx---gunicorn">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>This works for me but it is possible to fail for you without editing &lt;code>/etc/nginx/nginx.conf&lt;/code> manually server name hashes to 128&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic"># Context:&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic"># define $DOMAIN beforehand (e.g. lenerva.com)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic"># define $PROJECT beforehand (e.g. my-project)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic"># pwd is currently the project root directory&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>configure_nginx() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic"># configure nginx&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> sudo apt install nginx -y
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> sudo mkdir -p /var/www/&lt;span style="color:#40ffff">$DOMAIN&lt;/span>/html
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> sudo chown -R &lt;span style="color:#ed9d13">&amp;#34;&lt;/span>&lt;span style="color:#40ffff">$USER&lt;/span>&lt;span style="color:#ed9d13">&amp;#34;&lt;/span>:&lt;span style="color:#ed9d13">&amp;#34;&lt;/span>&lt;span style="color:#40ffff">$USER&lt;/span>&lt;span style="color:#ed9d13">&amp;#34;&lt;/span> /var/www/&lt;span style="color:#40ffff">$DOMAIN&lt;/span>/html
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> sudo chmod -R &lt;span style="color:#3677a9">755&lt;/span> /var/www/&lt;span style="color:#40ffff">$DOMAIN&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#24909d">echo&lt;/span> &lt;span style="color:#ed9d13">&amp;#34;server {&amp;#34;&lt;/span> | sudo tee /etc/nginx/sites-available/&lt;span style="color:#40ffff">$PROJECT&lt;/span> &amp;gt;/dev/null
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#24909d">echo&lt;/span> &lt;span style="color:#ed9d13">&amp;#34; listen [::]:80;&amp;#34;&lt;/span> | sudo tee -a /etc/nginx/sites-available/&lt;span style="color:#40ffff">$PROJECT&lt;/span> &amp;gt;/dev/null
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#24909d">echo&lt;/span> &lt;span style="color:#ed9d13">&amp;#34; listen 80;&amp;#34;&lt;/span> | sudo tee -a /etc/nginx/sites-available/&lt;span style="color:#40ffff">$PROJECT&lt;/span> &amp;gt;/dev/null
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#24909d">echo&lt;/span> &lt;span style="color:#ed9d13">&amp;#34; location / {&amp;#34;&lt;/span> | sudo tee -a /etc/nginx/sites-available/&lt;span style="color:#40ffff">$PROJECT&lt;/span> &amp;gt;/dev/null
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#24909d">echo&lt;/span> &lt;span style="color:#ed9d13">&amp;#34; include proxy_params;&amp;#34;&lt;/span> | sudo tee -a /etc/nginx/sites-available/&lt;span style="color:#40ffff">$PROJECT&lt;/span> &amp;gt;/dev/null
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#24909d">echo&lt;/span> &lt;span style="color:#ed9d13">&amp;#34; proxy_pass http://unix:&lt;/span>&lt;span style="color:#6ab825;font-weight:bold">$(&lt;/span>&lt;span style="color:#24909d">pwd&lt;/span>&lt;span style="color:#6ab825;font-weight:bold">)&lt;/span>&lt;span style="color:#ed9d13">/gunicorn.sock;&amp;#34;&lt;/span> | sudo tee -a /etc/nginx/sites-available/&lt;span style="color:#40ffff">$PROJECT&lt;/span> &amp;gt;/dev/null
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#24909d">echo&lt;/span> &lt;span style="color:#ed9d13">&amp;#34; }&amp;#34;&lt;/span> | sudo tee -a /etc/nginx/sites-available/&lt;span style="color:#40ffff">$PROJECT&lt;/span> &amp;gt;/dev/null
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#24909d">echo&lt;/span> &lt;span style="color:#ed9d13">&amp;#34;}&amp;#34;&lt;/span> | sudo tee -a /etc/nginx/sites-available/&lt;span style="color:#40ffff">$PROJECT&lt;/span> &amp;gt;/dev/null
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> sudo ln -s &lt;span style="color:#ed9d13">&amp;#34;/etc/nginx/sites-available/&lt;/span>&lt;span style="color:#40ffff">$PROJECT&lt;/span>&lt;span style="color:#ed9d13">&amp;#34;&lt;/span> /etc/nginx/sites-enabled
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic"># TODO: if publishing script, also set max server name hashes to 128 in /etc/nginx/nginx.conf&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic"># uncomment below if it didn&amp;#39;t work&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic"># nano /etc/nginx/nginx.conf&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> sudo systemctl restart nginx
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic"># Firewall&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> sudo ufw allow &lt;span style="color:#ed9d13">&amp;#39;Nginx Full&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Jenkins Snippets</title><link>https://blog.elijahlopez.ca/posts/jenkins-snippets/</link><pubDate>Mon, 07 Feb 2022 11:08:15 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/jenkins-snippets/</guid><description>&lt;h2 id="ignorable-preface" >Ignorable Preface
+&lt;span>
+&lt;a href="#ignorable-preface">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>One of my tasks at work was to prevent builds aborted by &lt;code>kill_outdated_builds()&lt;/code> from resuming upon a Jenkins restart. After I finished that one, I got a task later to remove all unsafe method usages, mainly the use of &lt;code>getRawBuild&lt;/code> which was used beyond the aforementioned function. It is used liberally on StackOverFlow, which is unfortunate, as if a public repository decides to use the function, there will be a massive security hole.&lt;/p>
+&lt;p>These two snippets are a safe but rather unintuitive way to abort builds and get the build log in Jenkins. They took hours of research just to figure out and implement.&lt;/p>
+&lt;h2 id="aborting-old--outdated-builds" >Aborting Old / Outdated Builds
+&lt;span>
+&lt;a href="#aborting-old--outdated-builds">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-groovy" data-lang="groovy">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">import&lt;/span> &lt;span style="color:#447fcf;text-decoration:underline">hudson.model.ParametersAction&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">import&lt;/span> &lt;span style="color:#447fcf;text-decoration:underline">jenkins.model.Jenkins&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">import&lt;/span> &lt;span style="color:#447fcf;text-decoration:underline">jenkins.model.CauseOfInterruption&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">import&lt;/span> &lt;span style="color:#447fcf;text-decoration:underline">jenkins.model.Jenkins&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">// type of _build in case you need it
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">&lt;/span>&lt;span style="color:#6ab825;font-weight:bold">import&lt;/span> &lt;span style="color:#447fcf;text-decoration:underline">org.jenkinsci.plugins.workflow.job.WorkflowRun&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">// TODO: create plugin or something for custom status messages
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ffa500">@NonCPS&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">def&lt;/span> &lt;span style="color:#447fcf">abortOldBuilds&lt;/span>(String paramKey, String paramVal) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic">// param_key and paramVal can be used for PR numbers
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">&lt;/span> &lt;span style="color:#6ab825;font-weight:bold">def&lt;/span> job = Jenkins.&lt;span style="color:#bbb">instanceOrNull&lt;/span>.&lt;span style="color:#bbb">getItem&lt;/span>(JOB_NAME)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">def&lt;/span> buildID = BUILD_ID
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic">// highest running ID
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">&lt;/span> &lt;span style="color:#6ab825;font-weight:bold">def&lt;/span> highestRID = buildID
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic">// in case the current build is old
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">&lt;/span> WorkflowRun curBuild
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">def&lt;/span> build = job.&lt;span style="color:#bbb">getLastBuild&lt;/span>()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic">// avoid .builds since it can cause iteration errors
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">&lt;/span> &lt;span style="color:#6ab825;font-weight:bold">while&lt;/span> (build != &lt;span style="color:#6ab825;font-weight:bold">null&lt;/span>) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">def&lt;/span> cbuildID = build.&lt;span style="color:#bbb">id&lt;/span>.&lt;span style="color:#bbb">toInteger&lt;/span>()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">def&lt;/span> curParamVal = build.&lt;span style="color:#bbb">allActions&lt;/span>.&lt;span style="color:#bbb">find&lt;/span>{it &lt;span style="color:#6ab825;font-weight:bold">in&lt;/span> ParametersAction}?.&lt;span style="color:#bbb">getParameter&lt;/span>(paramKey)?.&lt;span style="color:#bbb">value&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic">// optionally filter out builds
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">&lt;/span> &lt;span style="color:#6ab825;font-weight:bold">if&lt;/span> (curParamVal == param_val) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">if&lt;/span> (cbuildID == buildID) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> curBuild = build
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> } &lt;span style="color:#6ab825;font-weight:bold">else&lt;/span> &lt;span style="color:#6ab825;font-weight:bold">if&lt;/span> (build.&lt;span style="color:#bbb">isBuilding&lt;/span>() &amp;amp;&amp;amp; cbuildID &amp;lt; highestRID) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> build.&lt;span style="color:#bbb">doKill&lt;/span>()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> echo &lt;span style="color:#ed9d13">&amp;#34;terminated build #${cbuildID}&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">def&lt;/span> cause = &lt;span style="color:#ed9d13">&amp;#34;Aborted by #${buildID} for being an old build&amp;#34;&lt;/span> &lt;span style="color:#999;font-style:italic">// + for paramVal
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">&lt;/span> &lt;span style="color:#999;font-style:italic">// add to the log of another build
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">&lt;/span> build.&lt;span style="color:#bbb">getListener&lt;/span>().&lt;span style="color:#bbb">getLogger&lt;/span>().&lt;span style="color:#bbb">println&lt;/span>(cause)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic">// The below will cause zombie jobs and so was abandoned
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">&lt;/span> &lt;span style="color:#999;font-style:italic">// def r = new ArrayList&amp;lt;&amp;gt;(Arrays.asList({ cause as String } as CauseOfInterruption))
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">&lt;/span> &lt;span style="color:#999;font-style:italic">// _build.addAction(new InterruptedBuildAction(r))
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">&lt;/span> } &lt;span style="color:#6ab825;font-weight:bold">else&lt;/span> &lt;span style="color:#6ab825;font-weight:bold">if&lt;/span> (cbuildID &amp;gt; highestRID) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic">// update highest running ID
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">&lt;/span> highestRID = cbuildID
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> build = build.&lt;span style="color:#bbb">getPreviousBuild&lt;/span>()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">if&lt;/span> (highestRID &amp;gt; buildID) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> println &lt;span style="color:#ed9d13">&amp;#34;Terminating self since newer build was found&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">def&lt;/span> selfAbortCause = &lt;span style="color:#ed9d13">&amp;#34;Aborting due to the presence of a newer build&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> curBuild.&lt;span style="color:#bbb">doKill&lt;/span>()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="getting-build-log" >Getting Build Log
+&lt;span>
+&lt;a href="#getting-build-log">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-groovy" data-lang="groovy">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">import&lt;/span> &lt;span style="color:#447fcf;text-decoration:underline">jenkins.model.Jenkins&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ffa500">@NonCPS&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">def&lt;/span> &lt;span style="color:#447fcf">getLog&lt;/span>() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">def&lt;/span> job = Jenkins.&lt;span style="color:#bbb">instanceOrNull&lt;/span>.&lt;span style="color:#bbb">getItem&lt;/span>(JOB_NAME)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">def&lt;/span> build = job.&lt;span style="color:#bbb">getBuildByNumber&lt;/span>(Integer.&lt;span style="color:#bbb">parseInt&lt;/span>(BUILD_NUMBER))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">return&lt;/span> build.&lt;span style="color:#bbb">logFile&lt;/span>.&lt;span style="color:#bbb">text&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Bash Quickstart</title><link>https://blog.elijahlopez.ca/posts/bash-quickstart/</link><pubDate>Wed, 26 Jan 2022 12:38:14 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/bash-quickstart/</guid><description>&lt;h2 id="strings" >Strings
+&lt;span>
+&lt;a href="#strings">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#40ffff">$text&lt;/span>=&lt;span style="color:#ed9d13">&amp;#34;hello&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#40ffff">$ext&lt;/span>=&lt;span style="color:#ed9d13">&amp;#34;txt&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#40ffff">str_concat&lt;/span>=&lt;span style="color:#ed9d13">&amp;#34;&lt;/span>&lt;span style="color:#40ffff">$text&lt;/span>&lt;span style="color:#ed9d13">.&lt;/span>&lt;span style="color:#40ffff">$ext&lt;/span>&lt;span style="color:#ed9d13">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#40ffff">str_concat2&lt;/span>=&lt;span style="color:#ed9d13">&amp;#34;&lt;/span>&lt;span style="color:#40ffff">$text&lt;/span>&lt;span style="color:#ed9d13"> .&lt;/span>&lt;span style="color:#40ffff">$ext&lt;/span>&lt;span style="color:#ed9d13">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic"># lesson: always use [[ ]] with string variables to avoid runtime errors&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">if&lt;/span> [[ &lt;span style="color:#40ffff">$str_concat&lt;/span> = &lt;span style="color:#ed9d13">&amp;#34;hello .txt&amp;#34;&lt;/span> ]]; &lt;span style="color:#6ab825;font-weight:bold">then&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#24909d">echo&lt;/span> &lt;span style="color:#ed9d13">&amp;#34;preferred method&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">fi&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic"># you can also use double quotes, but it&amp;#39;s not as clean imo&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">if&lt;/span> [ &lt;span style="color:#ed9d13">&amp;#34;&lt;/span>&lt;span style="color:#40ffff">$str_concat&lt;/span>&lt;span style="color:#ed9d13">&amp;#34;&lt;/span> = &lt;span style="color:#ed9d13">&amp;#34;hello .txt&amp;#34;&lt;/span> ]; &lt;span style="color:#6ab825;font-weight:bold">then&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#24909d">echo&lt;/span> &lt;span style="color:#ed9d13">&amp;#34;option B, use double quotes&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">fi&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic"># this will result in too many arguments error&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic"># if [ $str_concat2 = &amp;#34;hello .txt&amp;#34; ]; then&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic"># echo &amp;#34;not possible&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic"># fi&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic"># this works only if the variable does not contain spaces&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">if&lt;/span> [ &lt;span style="color:#40ffff">$str_concat&lt;/span> = &lt;span style="color:#ed9d13">&amp;#34;hello.txt&amp;#34;&lt;/span> ]; &lt;span style="color:#6ab825;font-weight:bold">then&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#24909d">echo&lt;/span> &lt;span style="color:#ed9d13">&amp;#34;works&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">fi&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="loops-and-more-conditionals" >Loops and More Conditionals
+&lt;span>
+&lt;a href="#loops-and-more-conditionals">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic"># for loop examples&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">for&lt;/span> var in &lt;span style="color:#3677a9">1&lt;/span> &lt;span style="color:#3677a9">2&lt;/span> &lt;span style="color:#3677a9">3&lt;/span> str1 str2 str3 &lt;span style="color:#40ffff">$flag1&lt;/span> &lt;span style="color:#3677a9">9&lt;/span> 10; &lt;span style="color:#6ab825;font-weight:bold">do&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#24909d">echo&lt;/span> &lt;span style="color:#40ffff">$var&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">done&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic"># range&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">for&lt;/span> var in {1..10}; &lt;span style="color:#6ab825;font-weight:bold">do&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#24909d">echo&lt;/span> &lt;span style="color:#40ffff">$var&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">done&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic"># for loop as while loop&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic"># some math here too&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#40ffff">counter&lt;/span>=&lt;span style="color:#3677a9">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">while&lt;/span> [ &lt;span style="color:#40ffff">$counter&lt;/span> -lt &lt;span style="color:#3677a9">10&lt;/span> ]; &lt;span style="color:#6ab825;font-weight:bold">do&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">if&lt;/span> [ &lt;span style="color:#40ffff">$counter&lt;/span> -eq &lt;span style="color:#3677a9">0&lt;/span> ]; &lt;span style="color:#6ab825;font-weight:bold">then&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ((counter++))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#24909d">echo&lt;/span> &lt;span style="color:#ed9d13">&amp;#34;counter+2=&amp;#34;&lt;/span> &lt;span style="color:#6ab825;font-weight:bold">$((&lt;/span>++counter&lt;span style="color:#6ab825;font-weight:bold">))&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">elif&lt;/span> [ &lt;span style="color:#40ffff">$counter&lt;/span> -lt &lt;span style="color:#3677a9">5&lt;/span> ]; &lt;span style="color:#6ab825;font-weight:bold">then&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#24909d">echo&lt;/span> &lt;span style="color:#ed9d13">&amp;#34;less than 5&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">elif&lt;/span> [ &lt;span style="color:#40ffff">$counter&lt;/span> -gt &lt;span style="color:#3677a9">5&lt;/span> ]; &lt;span style="color:#6ab825;font-weight:bold">then&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#24909d">echo&lt;/span> &lt;span style="color:#ed9d13">&amp;#34;greater than 5&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">fi&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">done&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>

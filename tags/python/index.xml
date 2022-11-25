@@ -1,0 +1,770 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>python on ELL Blog</title><link>https://blog.elijahlopez.ca/tags/python/</link><description>ELL Blog (python)</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 13 Nov 2022 13:11:52 -0500</lastBuildDate><atom:link href="https://blog.elijahlopez.ca/tags/python/index.xml" rel="self" type="application/rss+xml"/><item><title>How to fix Unable to Get Local Issuer Certificate</title><link>https://blog.elijahlopez.ca/posts/unable-to-get-local-issuer-certificate/</link><pubDate>Sun, 13 Nov 2022 13:11:52 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/unable-to-get-local-issuer-certificate/</guid><description>&lt;p>So you were trying to use &lt;code>requests&lt;/code> or &lt;code>httpx&lt;/code> to access a website, in my case my own, and you got an SSL verify error:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-py" data-lang="py">&lt;span style="display:flex;">&lt;span>requests.exceptions.SSLError: HTTPSConnectionPool(host=&lt;span style="color:#ed9d13">&amp;#39;domain&amp;#39;&lt;/span>, port=&lt;span style="color:#3677a9">443&lt;/span>): Max retries exceeded &lt;span style="color:#6ab825;font-weight:bold">with&lt;/span> url: / (Caused by SSLError(SSLCertVerificationError(&lt;span style="color:#3677a9">1&lt;/span>, &lt;span style="color:#ed9d13">&amp;#39;[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:997)&amp;#39;&lt;/span>)))
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Your browser has no problems with the SSL verification. What gives? If a Man in the middle attack was occuring, your browser would tell you the website is unsafe, so an attacker is not the problem.&lt;/p>
+&lt;p>You searched the issue on a search engine and Stackoverflow tells you that you need to disable the verification or update certifi.
+Disabling verification is an unsafe/temporary work around, and the second didn&amp;rsquo;t work, did it? What&amp;rsquo;s the actual problem?&lt;/p>
+&lt;p>The problem is that the website is only sending you their public certificate and not the entire certificate chain. Browsers are smart (or dumb)
+enough to fill in the gaps, but when security is in fact a concern, a library might not do the same. How do we fix this?&lt;/p>
+&lt;p>The first thing you should do is contact the website owner and tell them that they are not sending the entire chain certificate and it&amp;rsquo;s causing issues.&lt;/p>
+&lt;p>If you are the website owner what do you need to do? Well if you were in charge of &lt;a href="https://www.ssldragon.com/blog/how-to-install-an-ssl-certificate-on-heroku/">generating the CSR&lt;/a>, then you are capable of fixing the issue. When you buy a certificate from a certificate authority, you are actually buying the right to seek verification. To get verified, a certificate signing request (CSR) is required. To generate a CSR, a private key must be generated. After submitting the CSR to the certificate authority, like Sectingo (previously known as Comodo), they will give you your websites public certificate as well as a bundle. Someone new to SSL might not understand what the bundle is; Adding .crt extension at the end may clear is up; it&amp;rsquo;s the missing intermediate certificates.&lt;/p>
+&lt;p>To fix the issue, rather than add only your websites public certificate to your reverse-proxy/webserver, you must combine your websites certificate with the bundle and create a chain certificate. In other words, create a new file with certificates in this order:&lt;/p>
+&lt;ol>
+&lt;li>Domain&lt;/li>
+&lt;li>Certificates in the bundle&lt;/li>
+&lt;/ol>
+&lt;p>If you have &lt;code>cat&lt;/code> installed, you can use the command &lt;code>cat domain.crt .ca-bundle &amp;gt; chain.crt&lt;/code>. On Windows, you can rename the file extensions or use Quicklook to read the contents of the file and copy paste them to a new text file.&lt;/p>
+&lt;p>Lastly, you need to add the certificate (and possibly the private key) to your webserver.&lt;/p>
+&lt;p>If you are using Heroku, you can go to settings, and click edit endpoint details under &amp;ldquo;Add certificate&amp;rdquo;. Test out requests again.&lt;/p>
+&lt;p>I hope this fixed your issue, as a lot of my time was wasted because of poor Heroku docs the first time I added certificates. They did not emphasize combining the certificates.&lt;/p></description></item><item><title>Registering Default File Handler's in Windows with Python</title><link>https://blog.elijahlopez.ca/posts/register-default-file-handler-python/</link><pubDate>Sun, 30 May 2021 22:51:53 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/register-default-file-handler-python/</guid><description>&lt;p>Recently I needed to make my music player register as a file handler for audio files (mp3, flac, etc…) but how would I do this? Say hello to Windows Registry.&lt;/p>
+&lt;p>Here is the helpers file for Music Caster. Look for &lt;code>add_reg_handlers&lt;/code> &lt;a href="https://github.com/elibroftw/music-caster/blob/master/src/helpers.py">https://github.com/elibroftw/music-caster/blob/master/src/helpers.py&lt;/a>&lt;/p>
+&lt;p>This function sets my music player as the default program for a variety of file extensions. It also adds custom right click options for those file extensions and folders as well.&lt;/p>
+&lt;p>I&amp;rsquo;m sorry for the lack of an explanation but the best I can do is:&lt;/p>
+&lt;p>First, you can choose to implement a URI protocol so that your program can be opened from a hyperlink in your browser.&lt;/p>
+&lt;p>Create a class name for your program. Something like &amp;ldquo;ProgramEXT&amp;rdquo; for each extension or if the extensions are all related to each other, something like &amp;ldquo;ProgramFile.&amp;rdquo;&lt;/p>
+&lt;p>Now come up with a generic name for each of the file extensions you want to be the default program for. For example, if your program might be a PDF reader, you would want to call any .pdf&amp;rsquo;s a &amp;ldquo;PDF File.&amp;rdquo; You can look at the code for how to write this to the registry, along with setting the icon.&lt;/p>
+&lt;p>Looking at the code, next comes the default command. This defines what happens when the file is opened in the default program or double clicked.&lt;/p>
+&lt;p>Next comes supplementary commands that will show even if the user did not want to make your program the default handler. Note that these commands only appear on the extensions you want them to appear on, unless you want to include them on all file extensions, but for that you will have to do more reading on your own.&lt;/p>
+&lt;p>Finally comes the part where you can add custom right click options to folders.
+At the end of the function is the code required to delete your registry modifications.&lt;/p></description></item><item><title>Parallel Concurrent Requests in Python</title><link>https://blog.elijahlopez.ca/posts/parallel-concurrent-requests-in-python/</link><pubDate>Wed, 24 Feb 2021 22:42:39 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/parallel-concurrent-requests-in-python/</guid><description>&lt;p>You’d think that the fastest way to make parallel network requests would be to use asyncio, but it’s actually &lt;code>concurrent.futures.ThreadPoolExecutor&lt;/code>.
+I’ve known ThreadPools before as I worked with them in Java 6+ months ago, but I couldn’t find something similar in Python until yesterday.
+There is also a &lt;code>ProcessPoolExecutor&lt;/code>, but I’d only suggest you use that for CPU-bound tasks.
+ThreadPoolExecutor is better since requests are network bound (and also because I encountered a jumbled error when I tried to use &lt;code>ProcessPoolExecutor&lt;/code>.
+Here is a quick proof of concept using &lt;code>ThreadPoolExecutor&lt;/code>.&lt;/p>
+&lt;script type="application/javascript" src="https://gist.github.com/elibroftw/fc61f40da65ad3178ea03c768c86a932.js">&lt;/script>
+&lt;p>I hope that the comments in the code above were enough but if not, please let me know.&lt;/p></description></item><item><title>Automate Firefox Addon Publishing</title><link>https://blog.elijahlopez.ca/posts/automate-firefox-addon-publishing/</link><pubDate>Thu, 08 Oct 2020 22:58:39 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/automate-firefox-addon-publishing/</guid><description>&lt;p>If you&amp;rsquo;re like me, you always want to speed up aspects of your life especially routine tasks. I&amp;rsquo;ll be doing this in Python but you can easily convert the code to a language of your choice.&lt;/p>
+&lt;h2 id="prerequisites" >Prerequisites
+&lt;span>
+&lt;a href="#prerequisites">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>We&amp;rsquo;re going to be using the Firefox Add-ons API to upload your add-on so you will need some API keys. You can get your API keys from &lt;a href="https://addons.mozilla.org/developers/addon/api/key/">here&lt;/a>. 
+Place the pair of API keys into a .env file like so:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>jwt-issuer=string
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>jwt-secret=string
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="third-party-libraries" >Third Party Libraries
+&lt;span>
+&lt;a href="#third-party-libraries">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>After you do that, you will need to install some necessary modules (add to &lt;code>requirements.txt&lt;/code>): &lt;code>pip install requests PyJWT&lt;/code>
+After installing these two modules, copy the snippet at the bottom of the article.&lt;/p>
+&lt;h2 id="modifying-thescript" >Modifying the Script
+&lt;span>
+&lt;a href="#modifying-thescript">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>&lt;code>GUID&lt;/code>: include the &amp;lsquo;{&amp;rsquo; and &amp;lsquo;}&amp;rsquo; into the string if applicable
+&lt;code>addon_files&lt;/code>: a list of source files of the add-on (relative path&lt;/p>
+&lt;script type="application/javascript" src="https://gist.github.com/elibroftw/1a94149a2f6232d062b666c4ee9ea530.js">&lt;/script></description></item><item><title>Convert Word Files to PDF With Python</title><link>https://blog.elijahlopez.ca/posts/convert-word-files-to-pdf/</link><pubDate>Wed, 02 Sep 2020 23:04:27 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/convert-word-files-to-pdf/</guid><description>&lt;p>NOTE: Windows tutorial.&lt;/p>
+&lt;p>Back when I first started University, I decided to type out all my math notes. Yes, you heard me right, I typed out my math notes (equation editor is very powerful) - or took screenshot snippets of the textbook PDF and pasted them into my notes.docx if I was lagging behind and too lazy to type it out later. I&amp;rsquo;m always about studying efficiently so whenever I needed to read my math notes, it was always annoying having to wait a couple seconds for Word to open up my notes so I decided to start exporting them to PDF but I didn&amp;rsquo;t want to do it manually every time for both all my course notes so I decided I would use Python to solve my problem. Here&amp;rsquo;s what I came up with after doing some research and debugging to optimize code execution.&lt;/p>
+&lt;p>A lot of the code is about leveraging the win32 API and I&amp;rsquo;d be lying if I knew what everything actually did, but rest assured I did have to figure out how to get it to work as you can see with the word = comments where I was figuring out how to do the conversion using threads. I&amp;rsquo;m sure you could even use multiprocessing here but that&amp;rsquo;s for another time since this code was made for only 4 files. You could also use a thread pool if it turns out you have more than 4 files but don&amp;rsquo;t want to rewrite the code to work with multiprocessing.&lt;/p>
+&lt;script type="application/javascript" src="https://gist.github.com/elibroftw/5d048a6fededb730e3f2e95793212046.js">&lt;/script></description></item><item><title>Automate Unity Building</title><link>https://blog.elijahlopez.ca/posts/automate-unity-building/</link><pubDate>Sun, 21 Jun 2020 11:11:24 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/automate-unity-building/</guid><description>&lt;p>It took me hours to figure out how to create a simple build script in Unity, even after watching videos, I was really confused.
+So why not write an article so that other developers won&amp;rsquo;t need to spend that much time themselves.&lt;/p>
+&lt;h2 id="getting-started" >Getting Started
+&lt;span>
+&lt;a href="#getting-started">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>Before we get started make sure you have the necessary build supports needed. In Unity Hub you can see your installations.&lt;/p>
+&lt;p>&lt;img src="https://blog.elijahlopez.ca/images/automate-unity-building/unity-hub.png" alt="Unity installation screenshot">&lt;/p>
+&lt;p>If not, you&amp;rsquo;ll have to click the three dots, and then click &amp;ldquo;Add Modules.&amp;rdquo;
+Next, we will need to create a script named something like &lt;code>BuildScript.cs&lt;/code>.
+Make sure this file is placed in &lt;code>Assets/Editor&lt;/code>.
+This file will be responsible in calling Unity BuildPlayer as well as adding menu items for you to quickly build for your platform(s) of choice.&lt;/p>
+&lt;p>&lt;a href="https://gist.github.com/elibroftw/149c230518e3e0d9af54d9c472c2ee84#file-buildscript-cs">BuildScript.cs&lt;/a>&lt;/p>
+&lt;p>Next copy the code below. Disclaimer: this code uses the scenes from your build settings so make sure the scenes there are correct.
+You can ignore the last function if you want, I just kept it there in case you need to use Asset Bundles (I did not).
+With this script you can call the build methods from &amp;ldquo;File &amp;gt; Build All&amp;rdquo; and Unity will build the players to the &amp;ldquo;Builds&amp;rdquo; directory in your project root.&lt;/p>
+&lt;p>&lt;img src="https://blog.elijahlopez.ca/images/automate-unity-building/unity-hub.png" alt="Unity build menu">&lt;/p>
+&lt;p>This takes care of building from the editor but what if you were using CI/server to build it for you?
+You will need to make a shell/batch script or you can use Python so that the OS won&amp;rsquo;t matter.&lt;/p>
+&lt;p>&lt;a href="https://gist.github.com/elibroftw/be1f6ad737ccde25e86f858f2f11629f#file-unitybuild-py">UnityBuild.py&lt;/a>&lt;/p>
+&lt;p>You may have to modify some variables such as &lt;code>UNITY&lt;/code> and also the zipping process if you don&amp;rsquo;t want to zip the builds.
+You may also pair this up with an Ino setup script like so &lt;code>iscc setup_script.iss&lt;/code>.
+I hope you found this tutorial helpful because I sure would&amp;rsquo;ve.&lt;/p>
+&lt;h2 id="resources" >Resources
+&lt;span>
+&lt;a href="#resources">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>&lt;a href="https://docs.unity3d.com/Manual/BuildPlayerPipeline.html">Build Player Pipeline&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://docs.unity3d.com/Manual/CommandLineArguments.html">Unity Command line arguments&lt;/a>&lt;/p></description></item><item><title>How to Create Menus in Pygame</title><link>https://blog.elijahlopez.ca/posts/create-menus-in-pygame/</link><pubDate>Sun, 21 Jun 2020 10:54:30 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/create-menus-in-pygame/</guid><description>&lt;p>This article is about creating high functioning menus with an optimized workflow along with even a settings page.&lt;/p>
+&lt;p>One note of warning is that each of these sections of code cannot be run independently.
+I have split the code on purpose so that you can use it in a plug and play manner.
+I will link my own pygame project at the end so that you can see that the code I&amp;rsquo;ve shared is the code I do in fact use.&lt;/p>
+&lt;h2 id="boilerplate-code" >Boilerplate Code
+&lt;span>
+&lt;a href="#boilerplate-code">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>The following snippet defines constants such as button widths and text sizes.
+You should expect an undefined error since I have not shown main_menu() yet.&lt;/p>
+&lt;p>&lt;a href="https://repl.it/@elilopez/PygameMenus#boilerplate.py">boilereplate.py&lt;/a>&lt;/p>
+&lt;p>&lt;code>gfxdraw&lt;/code> is what we will use to make anti-aliased circles for our toggle button.
+There&amp;rsquo;s a variable called &lt;code>button_layout_4&lt;/code> which I use as the layout for if the menu will have 4 centred buttons of the same size.
+You can make your own custom layout if you need x buttons. I actually made a local button_layout_3 in my own end game menu since it only required only 3 buttons.&lt;/p>
+&lt;p>In this repl, there are other files as well that we will take a look at.&lt;/p>
+&lt;h2 id="helper-functions" >Helper Functions
+&lt;span>
+&lt;a href="#helper-functions">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>&lt;a href="https://repl.it/@elilopez/PygameMenus#helpers.py">helpers.py&lt;/a>&lt;/p>
+&lt;h3 id="text_objects" >text_objects(…)
+&lt;span>
+&lt;a href="#text_objects">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Returns the text surface and its dimensions&lt;/p>
+&lt;h3 id="button" >button(…)
+&lt;span>
+&lt;a href="#button">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Creates a visual button with a passive and hovered (active) state.
+Return value is whether or not the button was clicked.
+Note that there is a 100ms buffer time to ensure the click was not of a previous menu button.&lt;/p>
+&lt;h3 id="draw_circle" >draw_circle(…)
+&lt;span>
+&lt;a href="#draw_circle">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Draws an anti-aliased circle. First the outline is drawn and then the fill is drawn.&lt;/p>
+&lt;h3 id="toggle_btn" >toggle_btn(…)
+&lt;span>
+&lt;a href="#toggle_btn">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>This function creates the text and toggle with enabled and disabled states.
+The return value is whether the toggle (including the text) was clicked.
+Since there is no hover state, &lt;code>draw_toggle&lt;/code> and &lt;code>blit_text&lt;/code> are available to avoid redundant blitting and drawing.&lt;/p>
+&lt;h2 id="main-menu" >Main Menu
+&lt;span>
+&lt;a href="#main-menu">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>&lt;a href="https://repl.it/@elilopez/PygameMenus#main_menu.py">main_menu.py&lt;/a>&lt;/p>
+&lt;p>Now that you have the boiler plate code we can now start with the main menu.
+The following is an overview of our game. Note that this is the order and not what each menu will contain since menus can have go back buttons.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-text" data-lang="text">&lt;span style="display:flex;">&lt;span>Main Menu
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Game Loop
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Pause
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> High Scores
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> QUIT
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Settings
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> High Scores
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> QUIT
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;code>main_menu()&lt;/code> is called exactly once to ensure there is no mutually recursive shenanigans going on.&lt;/p>
+&lt;p>Whenever the game ends and the user is returned to the main menu, we will need to redraw the static parts of the main menu.
+This is what the &lt;code>main_menu_setup()&lt;/code> is for.
+The event parsing is to check if &amp;ldquo;Alt + F4&amp;rdquo; or Esc were pressed so that the user can exit the game with standard keyboard shortcuts as well as checking if the user has left clicked.
+You can add your own custom keyboard shortcuts that associate to specific buttons like I did for viewing high scores.&lt;/p>
+&lt;p>You should modify &lt;code>BUTTON_WIDTH&lt;/code>, &lt;code>button_rects&lt;/code>, the button texts, and also the button if statement logic to fit your needs.
+When experimenting you can use raw pixel values to determine the right positions, but when you are satisfied convert these pixel values to percentages of &lt;code>SCREEN_WIDTH&lt;/code> and &lt;code>SCREEN_HEIGHT&lt;/code>.
+Using raw pixel values will make the GUI look drastically different for devices with different resolutions from the device you develop on.&lt;/p>
+&lt;h2 id="settings-menu" >Settings Menu
+&lt;span>
+&lt;a href="#settings-menu">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>&lt;a href="https://repl.it/@elilopez/PygameMenus#settings_menu.py">settings_menu.py&lt;/a>&lt;/p>
+&lt;p>The logic for the settings menu is similar to the main menu except we have to deal with writing and reading settings.
+I use a variable &lt;code>config: dict&lt;/code> to store the game settings and I have a &lt;code>save_config()&lt;/code> function that writes the dict to a &lt;code>config.json&lt;/code> file.
+Since toggle buttons are static, I keep track of whether or not its the first loop and if the toggles need to be redrawn (setting changed).
+Note that the back button is just a return. This is because of the game logic I talked about earlier to avoid unnecessary recursion.
+As you can see, we have modified the function of pressing the Escape key to return back to the main menu.&lt;/p>
+&lt;h2 id="pause-menu" >Pause Menu
+&lt;span>
+&lt;a href="#pause-menu">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>&lt;a href="https://repl.it/@elilopez/PygameMenus#pause_menu.py">pause_menu.py&lt;/a>&lt;/p>
+&lt;p>This is definitely one of the more complicated menus to create because I had to deal with game character movement + having a translucent background.
+Similar to the main menu, we will need to redraw the background every time we are returning from either the settings page or the high scores page.&lt;/p>
+&lt;p>Note that I have updated this code after I created the gif at the bottom.&lt;/p>
+&lt;p>My version of the pause menu required me to pass the game character because of some roadblocks I faced, but yours may not require this.
+A lot of the differences between this code and the previous menus have to do with handling character movement (whether to stop the character from moving, keep the character moving, etc).
+The most important part is how I save the translucent background so that I can use it again when returning from the high score and settings menus.&lt;/p>
+&lt;h2 id="other-menus" >Other Menus
+&lt;span>
+&lt;a href="#other-menus">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>Other menus include the end screen and high scores menu but I won&amp;rsquo;t be showing the code for those since the point of this article is to help you create your own menus optimally, not to do everything for you.
+It&amp;rsquo;s just a question of placement (modifying button_rects) since I have taught you how the game logic should be and also creating the buttons themselves.&lt;/p>
+&lt;p>Check out my game &lt;a href="https://github.com/elibroftw/jungle-climb">Jungle Climb&lt;/a> if you want to see how all the helper functions are put together.&lt;/p>
+&lt;div style='position:relative;padding-bottom:calc(100% / 1.78)'>&lt;iframe src='https://gfycat.com/ifr/arcticbigheartedaddax' frameborder='0' scrolling='no' width='100%' height='100%' style='position:absolute;top:0;left:0;' allowfullscreen>&lt;/iframe>&lt;/div>
+&lt;h2 id="possible-improvements" >Possible Improvements
+&lt;span>
+&lt;a href="#possible-improvements">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;h3 id="2022" >2022
+&lt;span>
+&lt;a href="#2022">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>I ran the game and am blinded by own menu. It&amp;rsquo;s too white and bright. It would be better for the menu background to be black and transcluent rather than white and tranclucent.&lt;/p></description></item><item><title>Intermediate Python Tutorial Project Ideas and Tips</title><link>https://blog.elijahlopez.ca/posts/intermediate-python/</link><pubDate>Fri, 24 Apr 2020 21:25:40 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/intermediate-python/</guid><description>&lt;h2 id="introduction" >Introduction
+&lt;span>
+&lt;a href="#introduction">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>The purpose of this article is to teach you, the reader, intermediate level Python.
+I’ll assume you know the basics of Python; you are able to create a quadratic root solver.
+I will share what my next steps were, as well as how you can follow suit in a shorter period of time by reading 2 years of concepts in this article.&lt;/p>
+&lt;h2 id="how-it-all-started" >How It All Started
+&lt;span>
+&lt;a href="#how-it-all-started">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>I learned Python basics through &lt;a href="https://cscircles.cemc.uwaterloo.ca/">CS Circles&lt;/a>, and then proceeded to improve/test my problem solving skills.
+I did this by doing &lt;a href="https://cemc.uwaterloo.ca/contests/ccc-cco.html">CCC&lt;/a> questions which you can find (among other contest problems) at &lt;a href="https://dmoj.ca/">DMOJ&lt;/a>.
+Other sites to improve your algorithmic problem solving skills include &lt;a href="https://www.hackerrank.com/">HackerRank&lt;/a> and &lt;a href="https://leetcode.com/">LeetCode&lt;/a>.
+Most developers on here are doing it for interview prep rather than broadening their thinking and concepts.&lt;/p>
+&lt;p>While I was doing this, I was programming with the default IDLE!
+Four months went by before I learned about PyCharm. Due to redundancy within the IntelliJ ecosystem,
+I suggest installing &lt;a href="https://www.jetbrains.com/idea/">IntelliJ IDEA&lt;/a> with the Python plugin. This avoids the instllation
+of more than one IntelliJ products when programming in many languages.
+IntelliJ has a slight learning curve but is has lots of productivity features.
+Nowadays, I use both IntelliJ and Visual Studio Code.&lt;/p>
+&lt;p>I have an entire folder dedicated to snippets of code I could use in the future.
+I suggest you do the same and you could even add the snippets featured in this article to avoid needless online searching in the future.&lt;/p>
+&lt;h2 id="general-tips" >General Tips
+&lt;span>
+&lt;a href="#general-tips">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>These are some tips that are not bound to programming but just life and productivity in general.&lt;/p>
+&lt;h3 id="know-your-keyboard-shortcuts" >Know your keyboard shortcuts
+&lt;span>
+&lt;a href="#know-your-keyboard-shortcuts">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Know both the program specific ones (browser, explorer, IDE of choice, etc.) and also OS specific ones (e.g. Win + R for run).&lt;/p>
+&lt;h3 id="using-the-terminal" >Using the Terminal
+&lt;span>
+&lt;a href="#using-the-terminal">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Instead of doing a calculation by hand or opening an IDE to create and run a script, you can actually execute Python code from the command line.
+Aside from the common batch functions (e.g. ls, cd), knowing how to use Python from the command line will save you a lot of time.&lt;/p>
+&lt;p>&lt;img src="https://blog.elijahlopez.ca/images/intermediate-python/python-in-terminal.png" alt="Python in the Terminal">&lt;/p>
+&lt;h3 id="how-to-search-engine" >How to Search Engine
+&lt;span>
+&lt;a href="#how-to-search-engine">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Google (or your search engine of choice), should be your best friend. It has saved me a lot of time and so it could also save you a lot of time.
+It can’t do that if you don’t use it or don’t know how to use it.
+When you Google something, your query needs to be general enough that you can find answers, but also specific enough so that those answers are relevant.&lt;/p>
+&lt;h3 id="problem-breakdown-strategy" >Problem Breakdown Strategy
+&lt;span>
+&lt;a href="#problem-breakdown-strategy">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>This goes hand in hand with Googling. Suppose you have a problem/project. You need to break it down into smaller parts.
+You then need to analyze each of these parts and see if they are small enough for you to complete each of them.
+If not, either your missing some knowledge that you should Google or the part is too big and needs to be broken down again.
+You keep doing this recursive procedure until your project has been split into solvable parts so that you can complete them and then weave together a project.
+When I search and find answers through Google, I don’t expect them to be 100% what I need.
+I usually need to remix them into what I want and that’s what you should also expect:
+the bare minimum solution that takes you at least one step forward.&lt;/p>
+&lt;p>With these tips stated, you can do a couple of different things next.
+You can skim the rest of the document and make notes on the snippets of code I feature (what I would do personally),
+read only the headings, skip to the project ideas section, or stop reading altogether as my tips are so useful.&lt;/p>
+&lt;h2 id="refresher" >Refresher
+&lt;span>
+&lt;a href="#refresher">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>In CS Circles, they talk about the print function and some of its optional parameters but it’s easy to forget about them so here they are again.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&amp;gt;&amp;gt;&amp;gt; &lt;span style="color:#999;font-style:italic"># The default parameters for print are sep=&amp;#39; &amp;#39;, and end=&amp;#39;\n&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;gt;&amp;gt;&amp;gt; &lt;span style="color:#24909d">print&lt;/span>(&lt;span style="color:#ed9d13">&amp;#39;4&amp;#39;&lt;/span>, &lt;span style="color:#ed9d13">&amp;#39;21&amp;#39;&lt;/span>, &lt;span style="color:#3677a9">2020&lt;/span>, sep=&lt;span style="color:#ed9d13">&amp;#39;/&amp;#39;&lt;/span>, end=&lt;span style="color:#ed9d13">&amp;#39;&lt;/span>&lt;span style="color:#ed9d13">\n&lt;/span>&lt;span style="color:#ed9d13">---------&lt;/span>&lt;span style="color:#ed9d13">\n&lt;/span>&lt;span style="color:#ed9d13">&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#3677a9">4&lt;/span>/&lt;span style="color:#3677a9">21&lt;/span>/&lt;span style="color:#3677a9">2020&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>---------
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="concepts" >Concepts
+&lt;span>
+&lt;a href="#concepts">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;h3 id="input-and-string-formatting" >input() and String Formatting
+&lt;span>
+&lt;a href="#input-and-string-formatting">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>The input function has an optional parameter so that it can also act as a prompt and if you are using Python 3.6+, you can make use of f-strings.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>name = &lt;span style="color:#24909d">input&lt;/span>(&lt;span style="color:#ed9d13">&amp;#39;Enter your name: &amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#24909d">print&lt;/span>(&lt;span style="color:#ed9d13">f&lt;/span>&lt;span style="color:#ed9d13">&amp;#39;Hello &lt;/span>&lt;span style="color:#ed9d13">{&lt;/span>name&lt;span style="color:#ed9d13">}&lt;/span>&lt;span style="color:#ed9d13">!&amp;#39;&lt;/span>) &lt;span style="color:#999;font-style:italic"># modern way of string formatting&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic"># if input=&amp;#39;reader&amp;#39;, output: Hello reader!&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="for-loops" >For Loops
+&lt;span>
+&lt;a href="#for-loops">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>I want to make clear to you that a for loop, is not a while loop as it is in other languages. In Python, a for loop is an iteration over an iterable object.&lt;/p>
+&lt;p>The range function has three parameters, two of them being optional. The range has a default start value of 0, so unless you need to modify the default step value of 1, supplying a 0 is a redundant.&lt;/p>
+&lt;p>In this example, I will show you exactly what I mean by “not a while loop” and how a for loop (specifically range) does not add to the temporary value.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic"># range(start=0, stop, step=1)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic"># range(5) == range(0, 5) == range(0, 5, 1)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">for&lt;/span> i &lt;span style="color:#6ab825;font-weight:bold">in&lt;/span> &lt;span style="color:#24909d">range&lt;/span>(&lt;span style="color:#3677a9">5&lt;/span>):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#24909d">print&lt;/span>(i)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> i += &lt;span style="color:#3677a9">2&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic"># Guess the output. HINT: i += 2 does not impact the next loop&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>If you run this code, you’ll notice that the output is increasing by 1 each time even if we are adding 2 to i at the end of every loop.
+This is because i is set to the next value in range and isn’t a variable being increased by one each loop.
+This means that we can actually iterate over all sorts of iterable objects, like lists, without having to use range and indexing.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>some_letters = [&lt;span style="color:#ed9d13">&amp;#39;a&amp;#39;&lt;/span>, &lt;span style="color:#ed9d13">&amp;#39;b&amp;#39;&lt;/span>, &lt;span style="color:#ed9d13">&amp;#39;c&amp;#39;&lt;/span>, &lt;span style="color:#ed9d13">&amp;#39;d&amp;#39;&lt;/span>, &lt;span style="color:#ed9d13">&amp;#39;e&amp;#39;&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">for&lt;/span> letter &lt;span style="color:#6ab825;font-weight:bold">in&lt;/span> some_letters:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic"># do something&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">pass&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Here I introduced the keyword &lt;code>pass&lt;/code> to avoid the syntax error that come with empty blocks.&lt;/p>
+&lt;p>If you want to keep track of the index as well as the item, you don’t have to use range, you can use the built-in function &lt;code>enumerate&lt;/code>.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic"># start indicates the start number of the index, not the actual index to start enumeration at!&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">for&lt;/span> i, letter &lt;span style="color:#6ab825;font-weight:bold">in&lt;/span> &lt;span style="color:#24909d">enumerate&lt;/span>(some_letters, start=&lt;span style="color:#3677a9">0&lt;/span>):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#24909d">print&lt;/span>(&lt;span style="color:#ed9d13">f&lt;/span>&lt;span style="color:#ed9d13">&amp;#39;item at index &lt;/span>&lt;span style="color:#ed9d13">{&lt;/span>i&lt;span style="color:#ed9d13">}&lt;/span>&lt;span style="color:#ed9d13"> is &lt;/span>&lt;span style="color:#ed9d13">{&lt;/span>letter&lt;span style="color:#ed9d13">}&lt;/span>&lt;span style="color:#ed9d13">&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>You can think of enumerate as turning an iterable into an iterable of pairs (index, item of iterable at index).&lt;/p>
+&lt;p>You can also use the next function to retrieve the next value in an iterator (if there is no next item, an error will be raised). All iterators are iterable, but not all iterable objects are iterators! List for example, is iterable but not an iterator so don’t call next on it.&lt;/p>
+&lt;h3 id="file-io" >File IO
+&lt;span>
+&lt;a href="#file-io">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic"># make sure there exists a test.txt with content in it&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">with&lt;/span> &lt;span style="color:#24909d">open&lt;/span>(&lt;span style="color:#ed9d13">&amp;#39;test.txt&amp;#39;&lt;/span>) &lt;span style="color:#6ab825;font-weight:bold">as&lt;/span> f: &lt;span style="color:#999;font-style:italic"># NEW; no close() needed&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#24909d">print&lt;/span>(f.read())
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic"># f.read() moves the &amp;#34;cursor&amp;#34; to the end of the file&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">assert&lt;/span> &lt;span style="color:#6ab825;font-weight:bold">not&lt;/span> f.read()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> f.seek(&lt;span style="color:#3677a9">0&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">assert&lt;/span> f.read()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic"># f.read() returns a string now (unless test.txt is empty)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic"># ALWAYS SPECIFY ENCODING SINCE WINDOWS &amp;amp; POSIX HAVE DIFFERENT DEFAULT VALUES&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">with&lt;/span> &lt;span style="color:#24909d">open&lt;/span>(&lt;span style="color:#ed9d13">&amp;#39;test.txt&amp;#39;&lt;/span>, &lt;span style="color:#ed9d13">&amp;#39;w&amp;#39;&lt;/span>, encoding=&lt;span style="color:#ed9d13">&amp;#39;utf-8&amp;#39;&lt;/span>) &lt;span style="color:#6ab825;font-weight:bold">as&lt;/span> f:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic"># f.read() ERROR do not do this&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> f.write(&lt;span style="color:#ed9d13">&amp;#39;this is a test&lt;/span>&lt;span style="color:#ed9d13">\n&lt;/span>&lt;span style="color:#ed9d13">&amp;#39;&lt;/span>) &lt;span style="color:#999;font-style:italic"># note there is no end parameter&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> f.writelines([&lt;span style="color:#ed9d13">&amp;#39;line1&lt;/span>&lt;span style="color:#ed9d13">\n&lt;/span>&lt;span style="color:#ed9d13">&amp;#39;&lt;/span>, &lt;span style="color:#ed9d13">&amp;#39;line2&lt;/span>&lt;span style="color:#ed9d13">\n&lt;/span>&lt;span style="color:#ed9d13">&amp;#39;&lt;/span>]) &lt;span style="color:#999;font-style:italic"># note no auto newline&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic"># other modes: a for append, rb for reading-bytes, wb for writing bytes, and r+/w+ for both reading and writing at the same time&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic"># OLD way&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>f = &lt;span style="color:#24909d">open&lt;/span>(&lt;span style="color:#ed9d13">&amp;#39;test.txt&amp;#39;&lt;/span>) &lt;span style="color:#999;font-style:italic"># note default is mode=&amp;#39;r&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic"># do something with f here&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>f.close()
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="error-handling" >Error Handling
+&lt;span>
+&lt;a href="#error-handling">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic"># handling an error&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">try&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">raise&lt;/span> &lt;span style="color:#bbb">RuntimeWarning&lt;/span>(&lt;span style="color:#ed9d13">&amp;#39;Something could go wrong&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">except&lt;/span> &lt;span style="color:#bbb">RuntimeWarning&lt;/span> &lt;span style="color:#6ab825;font-weight:bold">as&lt;/span> e: &lt;span style="color:#999;font-style:italic"># as e is optional&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic"># handle the exception here&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic"># ignoring an error&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic"># old&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">try&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">raise&lt;/span> &lt;span style="color:#bbb">Exception&lt;/span>(&lt;span style="color:#ed9d13">&amp;#39;BOO&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">except&lt;/span> &lt;span style="color:#bbb">Exception&lt;/span>: &lt;span style="color:#6ab825;font-weight:bold">pass&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic"># new&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">from&lt;/span> &lt;span style="color:#447fcf;text-decoration:underline">contextlib&lt;/span> &lt;span style="color:#6ab825;font-weight:bold">import&lt;/span> suppressdef ignore_error(exception: &lt;span style="color:#bbb">Exception&lt;/span>):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;&amp;#34;&amp;#34;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ed9d13"> Use three quotes for docstrings or long strings
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ed9d13"> &amp;#34;&amp;#34;&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic"># use a colon (:) for type hinting (in a dynamic typed language!) and&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic"># yes you can pass exceptions and functions as parameters&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">with&lt;/span> suppress(exception):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">raise&lt;/span> exception(&lt;span style="color:#ed9d13">&amp;#39;BOO&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#24909d">print&lt;/span>(&lt;span style="color:#ed9d13">&amp;#39;not printed&amp;#39;&lt;/span>)ignore_error(&lt;span style="color:#bbb">RuntimeError&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#24909d">print&lt;/span>(&lt;span style="color:#ed9d13">&amp;#39;this gets printed&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>By this point if you are following along in IntelliJ, you would have seen some squiggly lines, especially under “Exception” in the above code.
+These squiggly lines help you to avoid syntax errors, follow style guidelines, and bring attention to code that could be doing something you didn’t want it to be doing.&lt;/p>
+&lt;h3 id="more-data-types" >More Data Types
+&lt;span>
+&lt;a href="#more-data-types">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>There are dictionaries, sets and generators (not discussed here). Dictionaries are like hash tables in other languages, because they “hash” the key to store information.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>empty_dict = {} &lt;span style="color:#999;font-style:italic"># or dict()&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>my_dict = {&lt;span style="color:#ed9d13">&amp;#39;key&amp;#39;&lt;/span>: &lt;span style="color:#ed9d13">&amp;#39;value&amp;#39;&lt;/span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic"># How to get value from dict&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>my_dict[&lt;span style="color:#ed9d13">&amp;#39;a&amp;#39;&lt;/span>] &lt;span style="color:#999;font-style:italic"># raises KeyError if &amp;#39;a&amp;#39; not in dictionary&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>my_dict.get(&lt;span style="color:#ed9d13">&amp;#39;a&amp;#39;&lt;/span>, DEFAULT_VALUE)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">if&lt;/span> &lt;span style="color:#ed9d13">&amp;#39;key&amp;#39;&lt;/span> &lt;span style="color:#6ab825;font-weight:bold">in&lt;/span> my_dict:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> val = my_dict[&lt;span style="color:#ed9d13">&amp;#39;key&amp;#39;&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>val = my_dict.get(&lt;span style="color:#ed9d13">&amp;#39;key&amp;#39;&lt;/span>, &lt;span style="color:#6ab825;font-weight:bold">None&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">if&lt;/span> val &lt;span style="color:#6ab825;font-weight:bold">is&lt;/span> &lt;span style="color:#6ab825;font-weight:bold">not&lt;/span> &lt;span style="color:#6ab825;font-weight:bold">None&lt;/span>: &lt;span style="color:#6ab825;font-weight:bold">pass&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">with&lt;/span> suppress(&lt;span style="color:#bbb">KeyError&lt;/span>):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> val = my_dict[&lt;span style="color:#ed9d13">&amp;#39;key&amp;#39;&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic"># iterations&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">for&lt;/span> k &lt;span style="color:#6ab825;font-weight:bold">in&lt;/span> my_dict: &lt;span style="color:#6ab825;font-weight:bold">pass&lt;/span> &lt;span style="color:#999;font-style:italic"># or for k in my_dict.keys()&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">for&lt;/span> v &lt;span style="color:#6ab825;font-weight:bold">in&lt;/span> my_dict.values(): &lt;span style="color:#6ab825;font-weight:bold">pass&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">for&lt;/span> k, v &lt;span style="color:#6ab825;font-weight:bold">in&lt;/span> my_dict.items():
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic"># since items() generates the items as the iteration happens,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic"># my_dict cannot be modified in this loop.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic"># For modification use tuple(my_dict.items())&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">pass&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic"># remove key from dict&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">del&lt;/span> my_dict[&lt;span style="color:#ed9d13">&amp;#39;key&amp;#39;&lt;/span>] &lt;span style="color:#999;font-style:italic"># can raise KeyError&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic"># if you want to use the value, use .pop() and define a default&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic"># value to avoid KeyErrors&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>my_dict.pop(&lt;span style="color:#ed9d13">&amp;#39;key&amp;#39;&lt;/span>, DEFAULT_VALUE)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic"># sets&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>empty_set = &lt;span style="color:#24909d">set&lt;/span>() &lt;span style="color:#999;font-style:italic"># {} would initialize an empty dict&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>my_set = {&lt;span style="color:#3677a9">1&lt;/span>, &lt;span style="color:#3677a9">2&lt;/span>, &lt;span style="color:#3677a9">3&lt;/span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">if&lt;/span> &lt;span style="color:#3677a9">1&lt;/span> &lt;span style="color:#6ab825;font-weight:bold">in&lt;/span> &lt;span style="color:#24909d">set&lt;/span>: &lt;span style="color:#6ab825;font-weight:bold">pass&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic"># there are many set methods, go check them out yourself&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic"># some include: union, intersect, difference&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic"># you can use + and - as well&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="data-structure-usage-efficiency" >Data Structure Usage (Efficiency)
+&lt;span>
+&lt;a href="#data-structure-usage-efficiency">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>The data structure you use is very important to writing good code.&lt;/p>
+&lt;ul>
+&lt;li>use dictionaries if order doesn’t matter + each key has information (value) associated with it&lt;/li>
+&lt;li>use sets if order doesn’t matter + no values per key (e.g. keeping track of what you have ‘used’ per se)&lt;/li>
+&lt;li>use tuples if you need ordered data but don’t need to modify the data (e.g. coordinates)&lt;/li>
+&lt;li>use lists if you need order and mutability (most flexible)&lt;/li>
+&lt;li>There are more data structures that are not mentioned in this article. Such as deque, heaps, custom node linked list&lt;/li>
+&lt;/ul>
+&lt;p>You can’t use sets or dictionaries or sets if you need to keep track of duplicates.
+That’s because sets and dictionaries hash the keys so that it is super fast (O(1)) to check if a key is in a dictionary.
+This does mean that you can’t use lists, sets, and generators as keys (but you can definitely use tuples as long as lists are not nested).&lt;/p>
+&lt;p>Dictionaries are also like JSON objects so you can actually use the json module to export them to a JSON file.
+Note that if you’re using sets as values, they are converted to lists in an exported json file.&lt;/p>
+&lt;h3 id="miscellaneous-functions" >Miscellaneous Functions
+&lt;span>
+&lt;a href="#miscellaneous-functions">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Sometimes you will see functions like func(*args, **kwargs)&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic"># args = a list of arguments&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic"># kwargs = keyword arguments&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic"># (in the function it&amp;#39;ll be a dictionary)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic"># *args: list in the function **kwargs: dict in the function&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">def&lt;/span> &lt;span style="color:#447fcf">complex_func&lt;/span>(*args, **kwargs):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">pass&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">def&lt;/span> &lt;span style="color:#447fcf">normal_func&lt;/span>(a, b, c, sample_param=&lt;span style="color:#3677a9">5&lt;/span>):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">pass&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sample_args = {&lt;span style="color:#ed9d13">&amp;#39;sample_param&amp;#39;&lt;/span>: &lt;span style="color:#3677a9">3&lt;/span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>args = [&lt;span style="color:#3677a9">0&lt;/span>, &lt;span style="color:#3677a9">1&lt;/span>, &lt;span style="color:#3677a9">2&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>complex_func(&lt;span style="color:#3677a9">1&lt;/span>, &lt;span style="color:#3677a9">2&lt;/span>, &lt;span style="color:#3677a9">3&lt;/span>, test=&lt;span style="color:#ed9d13">&amp;#39;true&amp;#39;&lt;/span>) &lt;span style="color:#999;font-style:italic"># how you&amp;#39;d call it&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>complex_func(*args, **sample_args) &lt;span style="color:#999;font-style:italic"># also works on normal functions&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>normal_func(*args, **sample_args)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="list-comprehension-and-ternary" >List Comprehension and Ternary
+&lt;span>
+&lt;a href="#list-comprehension-and-ternary">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>One of the most beautiful parts of Python is list comprehensions; one liners to create lists.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic"># example: input is space separated integers&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>integers = [&lt;span style="color:#24909d">int&lt;/span>(x) &lt;span style="color:#6ab825;font-weight:bold">for&lt;/span> x &lt;span style="color:#6ab825;font-weight:bold">in&lt;/span> &lt;span style="color:#24909d">input&lt;/span>.split()]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic"># split(sep=&amp;#39; &amp;#39;, maxsplit=-1), -1 means no limit&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>no_negatives = [x &lt;span style="color:#6ab825;font-weight:bold">for&lt;/span> x &lt;span style="color:#6ab825;font-weight:bold">in&lt;/span> integers &lt;span style="color:#6ab825;font-weight:bold">if&lt;/span> x &amp;gt; &lt;span style="color:#3677a9">0&lt;/span>] &lt;span style="color:#999;font-style:italic"># only if&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>positives = [x &lt;span style="color:#6ab825;font-weight:bold">if&lt;/span> x &amp;gt; &lt;span style="color:#3677a9">0&lt;/span> &lt;span style="color:#6ab825;font-weight:bold">else&lt;/span> -x &lt;span style="color:#6ab825;font-weight:bold">for&lt;/span> x &lt;span style="color:#6ab825;font-weight:bold">in&lt;/span> integers] &lt;span style="color:#999;font-style:italic"># if and else&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>back_to_str = &lt;span style="color:#ed9d13">&amp;#39; &amp;#39;&lt;/span>.join((&lt;span style="color:#24909d">str&lt;/span>(x) &lt;span style="color:#6ab825;font-weight:bold">for&lt;/span> x &lt;span style="color:#6ab825;font-weight:bold">in&lt;/span> integers))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic"># items in the list to join need to be of type str&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#24909d">print&lt;/span>(integers)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic"># this next case demonstrates the ternary operator _ if _ else _&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#24909d">print&lt;/span>(&lt;span style="color:#ed9d13">&amp;#39;list is&amp;#39;&lt;/span>, &lt;span style="color:#ed9d13">&amp;#39;not empty&amp;#39;&lt;/span> &lt;span style="color:#6ab825;font-weight:bold">if&lt;/span> integers &lt;span style="color:#6ab825;font-weight:bold">else&lt;/span> &lt;span style="color:#ed9d13">&amp;#39;empty&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>You can also use list comprehensions to create dictionaries and sets&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>set_example = {x &lt;span style="color:#6ab825;font-weight:bold">for&lt;/span> x &lt;span style="color:#6ab825;font-weight:bold">in&lt;/span> &lt;span style="color:#24909d">range&lt;/span>(&lt;span style="color:#3677a9">3&lt;/span>)}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dict_example = {x: x &lt;span style="color:#6ab825;font-weight:bold">for&lt;/span> x &lt;span style="color:#6ab825;font-weight:bold">in&lt;/span> &lt;span style="color:#24909d">range&lt;/span>(&lt;span style="color:#3677a9">3&lt;/span>)}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic"># use generator when only one iteration is required&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>generator_example = (x &lt;span style="color:#6ab825;font-weight:bold">for&lt;/span> x &lt;span style="color:#6ab825;font-weight:bold">in&lt;/span> &lt;span style="color:#24909d">range&lt;/span>(&lt;span style="color:#3677a9">3&lt;/span>))
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>The third example is a generator. There are some use cases for it, so do your research before using them as they are an advanced topic not for this article.&lt;/p>
+&lt;h2 id="iterables-vs-primitives" >Iterables vs. Primitives
+&lt;span>
+&lt;a href="#iterables-vs-primitives">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>There is one very important distinction between primitive variables and iterable variables. For example.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>a = &lt;span style="color:#3677a9">5&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>b = a
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>a = &lt;span style="color:#3677a9">6&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#24909d">print&lt;/span>(a == b) &lt;span style="color:#999;font-style:italic"># false&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic"># vs.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>a = [&lt;span style="color:#3677a9">1&lt;/span>, &lt;span style="color:#3677a9">2&lt;/span>, &lt;span style="color:#3677a9">3&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>b = a
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>c = [&lt;span style="color:#3677a9">1&lt;/span>, &lt;span style="color:#3677a9">2&lt;/span>, &lt;span style="color:#3677a9">4&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>a[&lt;span style="color:#3677a9">2&lt;/span>] = &lt;span style="color:#3677a9">4&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#24909d">print&lt;/span>(a == b == c) &lt;span style="color:#999;font-style:italic"># true&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#24909d">print&lt;/span>(a &lt;span style="color:#6ab825;font-weight:bold">is&lt;/span> b) &lt;span style="color:#999;font-style:italic"># true; same refrence&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#24909d">print&lt;/span>(a &lt;span style="color:#6ab825;font-weight:bold">is&lt;/span> c) &lt;span style="color:#999;font-style:italic"># false&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>This is especially important when dealing with nested iterables with how you create nested iterables and also copy them. Try out these examples yourself.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>lols = [[&lt;span style="color:#3677a9">0&lt;/span>] &lt;span style="color:#6ab825;font-weight:bold">for&lt;/span> i &lt;span style="color:#6ab825;font-weight:bold">in&lt;/span> &lt;span style="color:#24909d">range&lt;/span>(&lt;span style="color:#3677a9">3&lt;/span>)] &lt;span style="color:#999;font-style:italic"># [0] is created 3 times&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>lols[&lt;span style="color:#3677a9">0&lt;/span>][&lt;span style="color:#3677a9">0&lt;/span>] = &lt;span style="color:#3677a9">5&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#24909d">print&lt;/span>(lols) &lt;span style="color:#999;font-style:italic"># [[5], [0], [0]]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic"># vs.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>a = [[&lt;span style="color:#3677a9">0&lt;/span>]]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>lols = a * &lt;span style="color:#3677a9">3&lt;/span> &lt;span style="color:#999;font-style:italic"># same as lols = [[0] * 3]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>lols[&lt;span style="color:#3677a9">0&lt;/span>][&lt;span style="color:#3677a9">0&lt;/span>] = &lt;span style="color:#3677a9">5&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#24909d">print&lt;/span>(lols) &lt;span style="color:#999;font-style:italic"># [[5], [5], [5]]&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="copying-iterables" >Copying Iterables
+&lt;span>
+&lt;a href="#copying-iterables">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>To make a shallow copy, use .copy(). BUT, note that for any nested iterables, only the reference is copied, not the actual nested list. That’s why it’s called a shallow copy. To deepcopy, we can use the copy module.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>new_copy = lols.copy() &lt;span style="color:#999;font-style:italic"># I prefer this over using [:]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>reversed_list = lols[::-&lt;span style="color:#3677a9">1&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic"># I do not use the above since reversed() and .reverse() are explicit&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>new_copy[&lt;span style="color:#3677a9">0&lt;/span>][&lt;span style="color:#3677a9">0&lt;/span>] = &lt;span style="color:#3677a9">6&lt;/span> &lt;span style="color:#999;font-style:italic"># lols == [[6], [6], [6]]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">assert&lt;/span> lols == new_copy &lt;span style="color:#6ab825;font-weight:bold">and&lt;/span> &lt;span style="color:#6ab825;font-weight:bold">not&lt;/span> lols &lt;span style="color:#6ab825;font-weight:bold">is&lt;/span> new_copy
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">from&lt;/span> &lt;span style="color:#447fcf;text-decoration:underline">copy&lt;/span> &lt;span style="color:#6ab825;font-weight:bold">import&lt;/span> deepcopynew_copy = deepcopy(list_of_lists)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>new_copy = list_of_lists
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>new_copy[&lt;span style="color:#3677a9">0&lt;/span>][&lt;span style="color:#3677a9">0&lt;/span>] = &lt;span style="color:#3677a9">4&lt;/span> &lt;span style="color:#999;font-style:italic"># [[4], [4], [4]] because 3x of the same list&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">assert&lt;/span> lols != new_copy &lt;span style="color:#6ab825;font-weight:bold">and&lt;/span> lols &lt;span style="color:#6ab825;font-weight:bold">is&lt;/span> &lt;span style="color:#6ab825;font-weight:bold">not&lt;/span> new_copy
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="memoization-caching" >Memoization (Caching)
+&lt;span>
+&lt;a href="#memoization-caching">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Memoization is the caching of function return results in order to speed up repetitive calculations. An example would be the recursive implementation of the Fibonacci sequence.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">from&lt;/span> &lt;span style="color:#447fcf;text-decoration:underline">functools&lt;/span> &lt;span style="color:#6ab825;font-weight:bold">import&lt;/span> wrapsdef memo(func): &lt;span style="color:#999;font-style:italic"># remove print statements in a practical setting&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> cache = {}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#39;&amp;#39;&amp;#39;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ed9d13"> Without the use of @wraps, square.__name__ would return
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ed9d13"> &amp;#39;_helper&amp;#39;, and the docstring of the original square() would
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ed9d13"> have been lost.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ed9d13"> &amp;#39;&amp;#39;&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ffa500">@wraps&lt;/span>(func)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">def&lt;/span> &lt;span style="color:#447fcf">_helper&lt;/span>(x):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic"># you could have multiple params (x, y, ...) and then&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic"># cache using a tuple as the key&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">if&lt;/span> x &lt;span style="color:#6ab825;font-weight:bold">not&lt;/span> &lt;span style="color:#6ab825;font-weight:bold">in&lt;/span> cache:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#24909d">print&lt;/span>(&lt;span style="color:#ed9d13">&amp;#39;not in cache&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> cache[x] = func(x)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#24909d">print&lt;/span>(&lt;span style="color:#ed9d13">&amp;#39;in cache&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">return&lt;/span> cache[x]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">return&lt;/span> _helper
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ffa500">@memo&lt;/span> &lt;span style="color:#999;font-style:italic"># square = memo(square) &amp;lt;-- what it means&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">def&lt;/span> &lt;span style="color:#447fcf">square&lt;/span>(x):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">return&lt;/span> x * x
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">for&lt;/span> i &lt;span style="color:#6ab825;font-weight:bold">in&lt;/span> &lt;span style="color:#24909d">range&lt;/span>(&lt;span style="color:#3677a9">3&lt;/span>):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> square(i), square(i) &lt;span style="color:#999;font-style:italic"># second one uses the cached result&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>An exercise is to make a memoize function that takes any number of positional arguments.&lt;/p>
+&lt;p>Once you understand how memoization works, you can actually start using the built-in version: &lt;code>lru_cache(maxsize=None)&lt;/code>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">from&lt;/span> &lt;span style="color:#447fcf;text-decoration:underline">functools&lt;/span> &lt;span style="color:#6ab825;font-weight:bold">import&lt;/span> lru_cache
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ffa500">@lru_cache&lt;/span>(maxsize=&lt;span style="color:#3677a9">1&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">def&lt;/span> &lt;span style="color:#447fcf">get_value&lt;/span>():
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;&amp;#34;&amp;#34;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ed9d13"> Calls a function that is resource intensive.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ed9d13"> &amp;#34;&amp;#34;&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">return&lt;/span> expensive_function()
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="lambdas" >Lambdas
+&lt;span>
+&lt;a href="#lambdas">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Usually used in place of a function parameter if the calculation is short. For example, sorting.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>[&lt;span style="color:#ed9d13">&amp;#39;aa&amp;#39;&lt;/span>, &lt;span style="color:#ed9d13">&amp;#39;Bb&amp;#39;&lt;/span>, &lt;span style="color:#ed9d13">&amp;#39;Cc&amp;#39;&lt;/span>, &lt;span style="color:#ed9d13">&amp;#39;dD&amp;#39;&lt;/span>].sort(key=&lt;span style="color:#6ab825;font-weight:bold">lambda&lt;/span> string: string.upper())
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>[(&lt;span style="color:#ed9d13">&amp;#39;a&amp;#39;&lt;/span>, &lt;span style="color:#3677a9">1&lt;/span>), (&lt;span style="color:#ed9d13">&amp;#39;b&amp;#39;&lt;/span>, &lt;span style="color:#3677a9">0&lt;/span>)].sort(key=&lt;span style="color:#6ab825;font-weight:bold">lambda&lt;/span> pair: pair[&lt;span style="color:#3677a9">1&lt;/span>])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#24909d">sorted&lt;/span>([(&lt;span style="color:#ed9d13">&amp;#39;a&amp;#39;&lt;/span>, &lt;span style="color:#3677a9">1&lt;/span>), (&lt;span style="color:#ed9d13">&amp;#39;b&amp;#39;&lt;/span>, &lt;span style="color:#3677a9">0&lt;/span>)], key=&lt;span style="color:#6ab825;font-weight:bold">lambda&lt;/span> pair: pair[&lt;span style="color:#3677a9">1&lt;/span>])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#24909d">max&lt;/span>([(&lt;span style="color:#ed9d13">&amp;#39;a&amp;#39;&lt;/span>, &lt;span style="color:#3677a9">1&lt;/span>), (&lt;span style="color:#ed9d13">&amp;#39;b&amp;#39;&lt;/span>, &lt;span style="color:#3677a9">0&lt;/span>)], key=&lt;span style="color:#6ab825;font-weight:bold">lambda&lt;/span> pair: pair[&lt;span style="color:#3677a9">1&lt;/span>]) &lt;span style="color:#999;font-style:italic"># and min&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="modules" >Modules
+&lt;span>
+&lt;a href="#modules">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>Modules play a big part in projects you will do. Some built-in ones are os, shutil, copy, glob, and threading.
+For third party modules, you need to use the command &lt;code>pip install module_name&lt;/code> in your terminal.
+Some common modules are requests, beautifulsoup4, PIL, and flask.
+If you’re working on a big project, you’ll probably end up using 3rd party modules. Use a &lt;code>requirements.txt&lt;/code> file to track
+the modules your project requires. You can install the modules from a file using &lt;code>pip install -r requirements.txt&lt;/code>.&lt;/p>
+&lt;h3 id="os" >os
+&lt;span>
+&lt;a href="#os">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">import&lt;/span> &lt;span style="color:#447fcf;text-decoration:underline">os&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>os.mkdir() &lt;span style="color:#999;font-style:italic"># to make a NEW dir&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>os.chdir() &lt;span style="color:#999;font-style:italic"># choose a current working dir&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>os.getcwd() &lt;span style="color:#999;font-style:italic"># get current working dir&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>os.path.exists()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>os.rename()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>os.remove() &lt;span style="color:#999;font-style:italic"># for existing files only&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>os.rmdir()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>os.getenv(&lt;span style="color:#ed9d13">&amp;#39;key&amp;#39;&lt;/span>) &lt;span style="color:#999;font-style:italic"># gets an environmental variable# use the shutil module for directories with sub directoriese&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="environmental-variables" >Environmental variables
+&lt;span>
+&lt;a href="#environmental-variables">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>I recommend the &lt;code>python-dotenv&lt;/code> module to parse &lt;code>.env&lt;/code> files&lt;/p>
+&lt;p>&lt;code>pip install python-dotenv&lt;/code>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic"># in .env&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic"># KEY=VALUE&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">from&lt;/span> &lt;span style="color:#447fcf;text-decoration:underline">dotenv&lt;/span> &lt;span style="color:#6ab825;font-weight:bold">import&lt;/span> load_dotenv
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>load_dotenv()
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="glob" >glob
+&lt;span>
+&lt;a href="#glob">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Used for getting a list of files/folders&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">from&lt;/span> &lt;span style="color:#447fcf;text-decoration:underline">glob&lt;/span> &lt;span style="color:#6ab825;font-weight:bold">import&lt;/span> glob, iglob
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic"># get all .py files in cwd, * is a wildcard&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic"># glob.iglob returns a generator&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#24909d">print&lt;/span>([x &lt;span style="color:#6ab825;font-weight:bold">for&lt;/span> x &lt;span style="color:#6ab825;font-weight:bold">in&lt;/span> iglob(&lt;span style="color:#ed9d13">&amp;#39;*.py&amp;#39;&lt;/span>)])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic"># and if you want a list use glob.glob&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#24909d">print&lt;/span>(glob(&lt;span style="color:#ed9d13">&amp;#39;*.py&amp;#39;&lt;/span>))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic"># exercise: find out how to get all .py files in cwd + its subdirs&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="threading" >Threading
+&lt;span>
+&lt;a href="#threading">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>&lt;a href="https://gist.github.com/elibroftw/dc61cbb99c41976c1b466ad4db6bd6d4#file-threading_examples-py">threading_example.py&lt;/a>&lt;/p>
+&lt;h2 id="advanced-topics-future-python-learning" >Advanced Topics (future Python learning)
+&lt;span>
+&lt;a href="#advanced-topics-future-python-learning">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;h3 id="classes" >Classes
+&lt;span>
+&lt;a href="#classes">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>I did not cover classes because that is more about OOP than Python programming and the use cases for classes are very small. One thing you should know when you are learning classes is &lt;strong>slots&lt;/strong> property, so do search that up on your own.&lt;/p>
+&lt;h3 id="generators" >Generators
+&lt;span>
+&lt;a href="#generators">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Again this is an advanced topic and learning about it now will only lead to confusion, its best to learn this on your own or in a practical setting.&lt;/p>
+&lt;h3 id="decorators" >Decorators
+&lt;span>
+&lt;a href="#decorators">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>I covered the basics of decorators.
+There are decorators used by lots of other 3rd party libraries and different use cases (e.g. timing functions) so I suggest you do your own research on them as well.
+There is a wraps found in the functools module that’ll help you.&lt;/p>
+&lt;h3 id="git-and-git-workflow" >git and git workflow
+&lt;span>
+&lt;a href="#git-and-git-workflow">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>This is very important when your collaborating with others or are working for a company.
+Git is a versioning tool used so that mistakes don’t hurt you, and for letting you work on multiple features at the same time.&lt;/p>
+&lt;h3 id="other-built-in-modules" >Other Built-in Modules
+&lt;span>
+&lt;a href="#other-built-in-modules">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Such as itertools, threading, multiprocessing, and more.&lt;/p>
+&lt;p>Thanks for reading and good luck to your learning journey.&lt;/p>
+&lt;p>&lt;a href="https://gist.github.com/elibroftw/063115da075fc2203a7cf20bd8a1542e#file-intermediate-project-ideas-md">Project Ideas&lt;/a>&lt;/p></description></item><item><title>Python3 Simplehttpserver</title><link>https://blog.elijahlopez.ca/posts/python3-simplehttpserver/</link><pubDate>Wed, 10 Jul 2019 22:38:39 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/python3-simplehttpserver/</guid><description>&lt;h2 id="code" >Code
+&lt;span>
+&lt;a href="#code">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;script type="application/javascript" src="https://gist.github.com/elibroftw/bcbf2ee1c8662d8fb6f6116a3705d337.js">&lt;/script>
+&lt;h2 id="backstory" >Backstory
+&lt;span>
+&lt;a href="#backstory">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>The project I am working on is a tray icon app that will let me play my audio files on my Google Home Mini. To do this I needed to have an HTTP server running so that I can serve my local files from my computer to the Home device.&lt;/p>
+&lt;p>When I Googled how to do this, I came across this article from 2018 but uses a bit of Python2 to do it. So I tried to find the Python3 alternative and I found out about http.server.
+This was still a command line solution, not a coded one, so I had to Google again and I came across this article but its too long for too little. I needed a simple HTTP server which can serve files.&lt;/p>
+&lt;p>I fiddled with my imports and took a look at the BaseHTTPRequestHandler class and tried to use that for the HTTPServer, but it failed. My import statement looked like this:
+from http.server import HTTPServer, BaseHTTPRequestHandler. I removed BaseHTTPRequestHandler and started typing in simple just out of curiosity and voila, my IDE recommend me SimpleHTTPRequestHandler.
+It worked perfectly and I just had to os.chdir(‘C:/’) to get exactly what I wanted.&lt;/p></description></item><item><title>Running Python as a Scheduled Task (Windows)</title><link>https://blog.elijahlopez.ca/posts/python-windows-task-scheduler/</link><pubDate>Thu, 23 May 2019 22:34:21 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/python-windows-task-scheduler/</guid><description>&lt;p>To run python in the background is easy, to do it in the background and as a scheduled task is harder.&lt;/p>
+&lt;p>If you want to just run a script in the background, you can use&lt;/p>
+&lt;p>&lt;code>pythonw &amp;quot;script.py&amp;quot;&lt;/code>&lt;/p>
+&lt;p>or change your script&amp;rsquo;s extension to .pyw, and then call the script.
+Here&amp;rsquo;s how to schedule a task&lt;/p>
+&lt;ol>
+&lt;li>Create &lt;code>run.bat&lt;/code> in your project directory with the content &lt;code>python &amp;quot;script.py&lt;/code>&lt;/li>
+&lt;li>Open up Task Scheduler (search from the Start menu).&lt;/li>
+&lt;li>On the left sidebar, click &amp;ldquo;Task Scheduler Library.&amp;rdquo;&lt;/li>
+&lt;li>Click &amp;ldquo;Create Basic Task…&amp;rdquo;&lt;/li>
+&lt;li>Enter the task name, description, and click next.&lt;/li>
+&lt;li>Select your trigger, I needed &amp;ldquo;When the computer starts.&amp;rdquo;&lt;/li>
+&lt;li>Action is &amp;ldquo;Start a program.&amp;rdquo;&lt;/li>
+&lt;li>Program/script will be the bat file you created in Step 1&lt;/li>
+&lt;li>Make sure &amp;ldquo;Start in&amp;rdquo; is your project directory.&lt;/li>
+&lt;li>Click next, and check &amp;ldquo;Open the Properties dialog…&amp;rdquo;&lt;/li>
+&lt;li>Have &amp;ldquo;Run whether user is logged on or not&amp;rdquo; checked (if your trigger is running when the computer starts).&lt;/li>
+&lt;li>Have &amp;ldquo;Hidden&amp;rdquo; checked.&lt;/li>
+&lt;li>Change &amp;ldquo;Configure for:&amp;rdquo; to the correct option. Windows 10, in my case.&lt;/li>
+&lt;li>Tinker with the other options if you need to.&lt;/li>
+&lt;li>Click &amp;ldquo;OK.&amp;rdquo; You will need to provide your password.&lt;/li>
+&lt;li>Test the task by clicking &amp;ldquo;Run&amp;rdquo; on the right panel.&lt;/li>
+&lt;/ol>
+&lt;p>If the task did not execute (or it did but not in the background) it may be that you didn&amp;rsquo;t follow the steps properly (e.g. I forgot to set the configure for).
+I hope you found this helpful. Leave a comment or email me if you have any issues.&lt;/p></description></item></channel></rss>

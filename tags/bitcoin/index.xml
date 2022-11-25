@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>bitcoin on ELL Blog</title><link>https://blog.elijahlopez.ca/tags/bitcoin/</link><description>ELL Blog (bitcoin)</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 10 May 2022 17:07:56 -0400</lastBuildDate><atom:link href="https://blog.elijahlopez.ca/tags/bitcoin/index.xml" rel="self" type="application/rss+xml"/><item><title>XMR-BTC Atomic Swap ASB Guide</title><link>https://blog.elijahlopez.ca/posts/xmr-btc-atomic-swap-asb/</link><pubDate>Tue, 10 May 2022 17:07:56 -0400</pubDate><guid>https://blog.elijahlopez.ca/posts/xmr-btc-atomic-swap-asb/</guid><description>&lt;p>A tutorial made for myself, not really others because
+the &lt;a href="https://github.com/comit-network/xmr-btc-swap/blob/master/docs/asb/README.md">docs&lt;/a>
+aren&amp;rsquo;t straight forward!&lt;/p>
+&lt;ol>
+&lt;li>Download &lt;a href="https://github.com/comit-network/xmr-btc-swap/releases/latest">ASB and Swap zips&lt;/a>&lt;/li>
+&lt;li>Extract to &lt;code>C:\Users\%USERNAME%\Documents\Monero&lt;/code> or &lt;code>~/Documents/Monero&lt;/code>&lt;/li>
+&lt;li>Run the monero-rpc-wallet (pre-req: add monero install location to PATH)
+&lt;ul>
+&lt;li>&lt;a href="https://monero.fail/?nettype=stagenet">Find stagenet node&lt;/a>&lt;/li>
+&lt;li>Use port 28088 if mainnet/production&lt;/li>
+&lt;li>Security risk: rpc-login is disabled&lt;/li>
+&lt;li>wallet-dir: directory of an existing wallet (match to stagenet or mainnet)&lt;/li>
+&lt;/ul>
+&lt;pre tabindex="0">&lt;code>C:\Users\maste\Documents\Monero&amp;gt;monero-wallet-rpc --stagenet --daemon-host http://stagenet.melo.tools:38081 --rpc-bind-port 38083 --disable-rpc-login --wallet-dir wallets/stagenet_one
+&lt;/code>&lt;/pre>&lt;/li>
+&lt;li>Make sure this guide is readable with your terminal open&lt;/li>
+&lt;li>Run &lt;code>asb --testnet start&lt;/code> in a new terminal window and press enter for everything. Do not use Ctrl or Alt.&lt;/li>
+&lt;li>A wallet will be created in 10 seconds&lt;/li>
+&lt;li>If you close the ASB and want to start it again, restart the RPC to avoid a &amp;ldquo;wallet already exists error&amp;rdquo; from the ASB&lt;/li>
+&lt;/ol></description></item></channel></rss>

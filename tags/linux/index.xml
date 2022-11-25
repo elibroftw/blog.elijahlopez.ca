@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>linux on ELL Blog</title><link>https://blog.elijahlopez.ca/tags/linux/</link><description>ELL Blog (linux)</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 24 Jul 2022 21:03:20 -0400</lastBuildDate><atom:link href="https://blog.elijahlopez.ca/tags/linux/index.xml" rel="self" type="application/rss+xml"/><item><title>Linux USB Formatting Issues</title><link>https://blog.elijahlopez.ca/posts/linux-usb-formatting-issues/</link><pubDate>Sun, 24 Jul 2022 21:03:20 -0400</pubDate><guid>https://blog.elijahlopez.ca/posts/linux-usb-formatting-issues/</guid><description>&lt;p>When trying to test out multiple Linux distros on multiple
+USB sticks, I ran into this horrible error. The creators of Balena Etcher
+simply do not care about users who soft brick their USBs. Rufus and Balena
+developers simply say that their software cannot hard brick the USB,
+which is a good thing but they provide 0 support in fixing the issue.&lt;/p>
+&lt;p>I am here to share my findings since solutios found online are in parts.&lt;/p>
+&lt;p>Operating System: Windows&lt;/p>
+&lt;p>How do you fix the error and other errors like:&lt;/p>
+&lt;ul>
+&lt;li>the volume was created successfully but not formatted&lt;/li>
+&lt;li>Please Insert Disk Into Removable Disk&lt;/li>
+&lt;/ul>
+&lt;p>Like my other Linux tutorial on how to move a parititon in Windows, a parition tool is very useful.
+The &lt;a href="https://www.partitionwizard.com/free-partition-manager.html">MiniTool Parition Wizard&lt;/a> was very handy.
+Open this tool up, right click the USB or drive you want to fix, and click wipe drive and fill the drive with 0s.
+This should take 10 minutes.&lt;/p>
+&lt;p>Afterwards, you can either format the drive in Windows or run Balena Etcher to flash another ISO.&lt;/p></description></item></channel></rss>

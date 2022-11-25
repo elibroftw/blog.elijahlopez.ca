@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>vscode on ELL Blog</title><link>https://blog.elijahlopez.ca/tags/vscode/</link><description>ELL Blog (vscode)</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 24 Oct 2022 21:28:18 -0400</lastBuildDate><atom:link href="https://blog.elijahlopez.ca/tags/vscode/index.xml" rel="self" type="application/rss+xml"/><item><title>Top VS Code Extensions</title><link>https://blog.elijahlopez.ca/posts/top-vscode-extensions/</link><pubDate>Mon, 24 Oct 2022 21:28:18 -0400</pubDate><guid>https://blog.elijahlopez.ca/posts/top-vscode-extensions/</guid><description>&lt;p>For this article, I&amp;rsquo;m going to skip over default language packs since they are a goto install.&lt;/p>
+&lt;h2 id="material-theme" >Material Theme
+&lt;span>
+&lt;a href="#material-theme">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>&lt;a href="https://marketplace.visualstudio.com/items?itemName=Equinusocio.vsc-material-theme">Download&lt;/a>&lt;/p>
+&lt;p>The most important part of any IDE is its aesthetics.&lt;/p>
+&lt;p>After installing, use the command &amp;ldquo;Preferences: Color Theme&amp;rdquo; to select a theme.&lt;/p>
+&lt;p>The theme I use is &amp;ldquo;Material Theme Darker High Contrast&amp;rdquo; combined with this custom setting so that comments appear lighter.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-json" data-lang="json">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ed9d13">&amp;#34;editor.tokenColorCustomizations&amp;#34;&lt;/span>&lt;span style="color:#a61717;background-color:#e3d2d2">:&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">&amp;#34;[Material Theme Darker High Contrast]&amp;#34;&lt;/span>: {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">&amp;#34;textMateRules&amp;#34;&lt;/span>: [
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">&amp;#34;scope&amp;#34;&lt;/span>: [
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;comment&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;comment punctuation.definition.comment&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;string.quoted.docstring.multi.python&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic">// example comment
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">&lt;/span> ],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">&amp;#34;settings&amp;#34;&lt;/span>: {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">&amp;#34;foreground&amp;#34;&lt;/span>: &lt;span style="color:#ed9d13">&amp;#34;#a1a1a1&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }&lt;span style="color:#a61717;background-color:#e3d2d2">,&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="material-theme-icons" >Material Theme Icons
+&lt;span>
+&lt;a href="#material-theme-icons">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>&lt;a href="https://marketplace.visualstudio.com/items?itemName=Equinusocio.vsc-material-theme-icons">Download&lt;/a>&lt;/p>
+&lt;p>Aesthetics can be improved further than a theme. We need nice icons in the file explorer!&lt;/p>
+&lt;h2 id="code-runner" >Code Runner
+&lt;span>
+&lt;a href="#code-runner">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>&lt;a href="https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner">Download&lt;/a>&lt;/p>
+&lt;p>This extension let&amp;rsquo;s you run a file using Ctrl + Alt + N.
+I suggest changing the settings so that Code Runner runs in an integrated terminal rather than an output window so that you can enter input.&lt;/p>
+&lt;h2 id="better-c-syntax" >Better C++ Syntax
+&lt;span>
+&lt;a href="#better-c-syntax">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>&lt;a href="https://marketplace.visualstudio.com/items?itemName=jeff-hykin.better-cpp-syntax">Download&lt;/a>&lt;/p>
+&lt;p>If you are a C++ worshipper like I am, this extension is right up your ally. If you are a vim/emacs/Stallman
+worshipper, why are you even reading this?&lt;/p>
+&lt;h2 id="spell-check" >Spell Check
+&lt;span>
+&lt;a href="#spell-check">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>&lt;a href="https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker">Download&lt;/a>&lt;/p>
+&lt;p>If you are using vscode for Markdown, I recommend installing this extension as well as creating a &lt;code>.vscode/settings.json&lt;/code> with the following:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-json" data-lang="json">&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">&amp;#34;editor.fontFamily&amp;#34;&lt;/span>: &lt;span style="color:#ed9d13">&amp;#34;Helvetica, Sans-serif, Consolas, &amp;#39;Courier New&amp;#39;, monospace&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">&amp;#34;editor.fontSize&amp;#34;&lt;/span>: &lt;span style="color:#3677a9">16&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">&amp;#34;editor.fontWeight&amp;#34;&lt;/span>: &lt;span style="color:#ed9d13">&amp;#34;normal&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="git-graph" >Git Graph
+&lt;span>
+&lt;a href="#git-graph">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>&lt;a href="https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph">Download&lt;/a>&lt;/p>
+&lt;p>Git Graph, although not perfect, is one of the easiest ways to perform a git rebase / squash.
+To do so, simply right click a previous commit and click &amp;ldquo;reset&amp;rdquo; and then commit your changes, and then click force push normal git view.
+To rebase on a commit in origin, you just have to pull, fix merge conflicts, and then do the same thing.&lt;/p>
+&lt;h2 id="excel-viewer" >Excel Viewer
+&lt;span>
+&lt;a href="#excel-viewer">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>&lt;a href="https://marketplace.visualstudio.com/items?itemName=GrapeCity.gc-excelviewer">Download&lt;/a>&lt;/p>
+&lt;p>View CSV files in VSCode itself.&lt;/p>
+&lt;h2 id="fix-json" >Fix JSON
+&lt;span>
+&lt;a href="#fix-json">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>&lt;a href="https://marketplace.visualstudio.com/items?itemName=oliversturm.fix-json">Download&lt;/a>&lt;/p>
+&lt;p>I&amp;rsquo;m not sure if this is still the case, but VS Code can&amp;rsquo;t auto-format JSON files by default.
+PRO Tip: if you don&amp;rsquo;t want linters to go off on comments in JSON files, use the .jsonc file extension.&lt;/p>
+&lt;h2 id="jinja" >Jinja
+&lt;span>
+&lt;a href="#jinja">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>&lt;a href="https://marketplace.visualstudio.com/items?itemName=wholroyd.jinja">Download&lt;/a>&lt;/p>
+&lt;p>If you use Flask, this is a very nice extension.&lt;/p>
+&lt;h2 id="mongodb-for-vs-code" >MongoDB for VS Code
+&lt;span>
+&lt;a href="#mongodb-for-vs-code">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>&lt;a href="https://marketplace.visualstudio.com/items?itemName=mongodb.mongodb-vscode">Download&lt;/a>&lt;/p>
+&lt;p>If you use MongoDB Atlas, this extension is much nicer than the Compass app to find, view, and edit documents in your database.&lt;/p>
+&lt;h2 id="shellcheck" >ShellCheck
+&lt;span>
+&lt;a href="#shellcheck">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>&lt;a href="https://marketplace.visualstudio.com/items?itemName=timonwong.shellcheck">Download&lt;/a>&lt;/p>
+&lt;p>If you work with shell files, this extension is helpful to catch some bugs you may accidently write simply
+due to how bash/sh interprets differently because of missing quotation marks.&lt;/p>
+&lt;h2 id="remote-development" >Remote Development
+&lt;span>
+&lt;a href="#remote-development">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>&lt;a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack">Download&lt;/a>&lt;/p>
+&lt;p>If you need to ssh often to do some programming, I suggest using this extension and reading &lt;a href="https://blog.elijahlopez.ca/posts/vs-code-remote-ssh/">my tutorial&lt;/a>&lt;/p>
+&lt;h2 id="remote-x11" >Remote X11
+&lt;span>
+&lt;a href="#remote-x11">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>&lt;a href="https://marketplace.visualstudio.com/items?itemName=spadin.remote-x11">Download&lt;/a>&lt;/p>
+&lt;blockquote>
+&lt;p>Sets the DISPLAY variable when in a remote workspace so that GUI applications can be run from VS Code.&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="select-line-status-bar" >Select Line Status Bar
+&lt;span>
+&lt;a href="#select-line-status-bar">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>&lt;a href="https://marketplace.visualstudio.com/items?itemName=tomoki1207.selectline-statusbar">Download&lt;/a>&lt;/p>
+&lt;p>For those who want to compare which implementation is more concise, this extension comes ini handy.
+The lines selected count shows up in the bottom right.&lt;/p>
+&lt;h2 id="vscode-pdf" >vscode-pdf
+&lt;span>
+&lt;a href="#vscode-pdf">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>&lt;a href="https://marketplace.visualstudio.com/items?itemName=tomoki1207.pdf">Download&lt;/a>&lt;/p>
+&lt;p>I&amp;rsquo;m not sure if this extension is buggy, but I used this extension extensively when doing programming assignments to avoid
+alt-tabbing. I usually split my editor into two panels and have pdfs open on the right panel. Even with two monitors, I&amp;rsquo;d still use this extension
+since the second monitor will be used for gaming or watching videos.&lt;/p>
+&lt;h2 id="todo-tree" >Todo Tree
+&lt;span>
+&lt;a href="#todo-tree">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>&lt;a href="https://marketplace.visualstudio.com/items?itemName=Gruntfuggly.todo-tree">Download&lt;/a>&lt;/p>
+&lt;p>If you&amp;rsquo;re a lazy programmer who only implements the most important parts and litters the project with TODOs for later,
+this extension helps you go through all the TODOs you wrote so that you can go through them in order.
+Of course, a project Ctrl + Shift + F might be satisfiable.&lt;/p></description></item><item><title>Installing Libraries for C++ with Vcpkg and CMake</title><link>https://blog.elijahlopez.ca/posts/vcpkg-cmake-tutorial/</link><pubDate>Sun, 19 Dec 2021 19:51:55 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/vcpkg-cmake-tutorial/</guid><description>&lt;h2 id="trouble-shooting" >Trouble Shooting
+&lt;span>
+&lt;a href="#trouble-shooting">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>Most errors occur because of &lt;code>CMakePresets.json&lt;/code> or &lt;code>CMakeSettings.json&lt;/code>. I have proper samples
+available at &lt;a href="https://github.com/elibroftw/cpp-vcpkg-cmake-example">https://github.com/elibroftw/cpp-vcpkg-cmake-example&lt;/a>.&lt;/p>
+&lt;h2 id="software-prerequisties" >Software Prerequisties
+&lt;span>
+&lt;a href="#software-prerequisties">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;ul>
+&lt;li>Anyone of the following IDEs
+&lt;ul>
+&lt;li>&lt;a href="https://code.visualstudio.com/download">Visual Studio Code&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://visualstudio.microsoft.com/downloads/">Visual Studio 2022&lt;/a> if on Windows for the compiler&lt;/li>
+&lt;li>Any IDE that has pretty good CMake integration&lt;/li>
+&lt;li>Otherwise, you will need to use &lt;code>cmake&lt;/code> yourself&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Any of the following compilers
+&lt;ul>
+&lt;li>&lt;a href="https://visualstudio.microsoft.com/downloads/">Visual Studio 2022&lt;/a> if on Windows&lt;/li>
+&lt;li>&lt;code>gcc&lt;/code> (Linux)&lt;/li>
+&lt;li>MSYS2/Mingw &lt;code>gcc&lt;/code> (Windows)&lt;/li>
+&lt;li>&lt;code>clang&lt;/code> (MacOS?)&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;code>git&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;h2 id="installing-cmake" >Installing CMake
+&lt;span>
+&lt;a href="#installing-cmake">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>You will need &lt;a href="https://cmake.org/download/">CMake 3.21+&lt;/a> in order to use the Visual Studio 2022 compiler through VSCode.
+The installer does most of the work, so you won&amp;rsquo;t have to manually add &lt;code>cmake&lt;/code> to PATH.&lt;/p>
+&lt;p>For VS Code, you will need to install the &amp;ldquo;C/C++ Extension&amp;rdquo; and the &amp;ldquo;CMake Tools&amp;rdquo; extensions.&lt;/p>
+&lt;h3 id="installing-vcpkg" >Installing Vcpkg
+&lt;span>
+&lt;a href="#installing-vcpkg">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ol>
+&lt;li>Clone &lt;a href="https://github.com/microsoft/vcpkg">vcpkg&lt;/a> into a directory that won&amp;rsquo;t bother you in your day to day life
+&lt;ul>
+&lt;li>For me, that would be &lt;code>C:\Users\maste\Documents\GitHub\vcpkg&lt;/code>&lt;/li>
+&lt;li>Use &lt;code>git clone https://github.com/microsoft/vcpkg.git&lt;/code> or GitHub desktop&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Run the Vcpkg bootstrap script
+&lt;ul>
+&lt;li>Windows: &lt;code>&amp;quot;./bootstrap-vcpkg&amp;quot; -disableMetrics&lt;/code>&lt;/li>
+&lt;li>Unix: &lt;code>./bootstrap-vcpkg.sh -disableMetrics&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Modify environment variables
+&lt;ul>
+&lt;li>Add the vcpkg cloned directory to &lt;code>PATH&lt;/code>
+&lt;ul>
+&lt;li>On Windows, use Windows search for &amp;ldquo;envir&amp;rdquo;&lt;/li>
+&lt;li>On Linux, open your &lt;code>.bashrc&lt;/code> file and add &lt;code>export PATH=$PATH:~/vcpkg&lt;/code> to your &lt;code>.bashrc&lt;/code> file&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Set &lt;code>VCPKG_ROOT&lt;/code> as the same value you added to &lt;code>PATH&lt;/code>&lt;/li>
+&lt;li>Set &lt;code>VCPKG_DEFAULT_TRIPLET&lt;/code> to &lt;code>x64-windows&lt;/code> on Windows, or your computers triplet
+&lt;ul>
+&lt;li>Valid architectures are: x86, x64, arm, arm64 and wasm32.&lt;/li>
+&lt;li>Valid OS names are &lt;code>'windows', 'linux', 'macos'&lt;/code> (I&amp;rsquo;m unsure about the macos part)&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Enable vcpkg packages to be used in VS/MSBuild:
+&lt;ul>
+&lt;li>&lt;code>vcpkg integrate install&lt;/code>&lt;/li>
+&lt;li>copy the path to vcpkg.cmake for use later&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ol>
+&lt;p>You can now install packages using &lt;code>vcpkg install &amp;lt;lib&amp;gt;&lt;/code> and search for them using &lt;code>vcpkg search &amp;lt;lib&amp;gt;&lt;/code>.
+In the next section, we&amp;rsquo;ll be integrating &lt;code>vcpkg&lt;/code> within a CMake project.&lt;/p>
+&lt;h2 id="integrating-vcpkg-into-a-new-cmake-project" >Integrating Vcpkg into a new CMake Project
+&lt;span>
+&lt;a href="#integrating-vcpkg-into-a-new-cmake-project">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>In this section we&amp;rsquo;ll be creating a CMake C++ project that will make an HTTP request using the &lt;code>cpr&lt;/code> library.&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>Create a CMake project in Visual Studio or VSCode&lt;/p>
+&lt;ul>
+&lt;li>Ensure IDE is configured to use &lt;code>CMakePresets.json&lt;/code>&lt;/li>
+&lt;li>VS: open visual studio and click &amp;ldquo;Create a new project&amp;rdquo; and search for &amp;ldquo;CMake Project&amp;rdquo;&lt;/li>
+&lt;li>VSCode: open an empty folder in VSCode and use &amp;ldquo;CMake: Quick Start&amp;rdquo; from the command palette (Ctrl + Shift + P)&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Setting the CMake toolchain file to &lt;code>vcpkg.cmake&lt;/code>&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Open CMakePresets.json &lt;a href="https://github.com/elibroftw/cpp-vcpkg-cmake-example/blob/master/CMakePresets.json">example&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Add the following under &lt;code>configurePresets[0] &amp;gt; cacheVariables&lt;/code>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-json" data-lang="json">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ed9d13">&amp;#34;CMAKE_TOOLCHAIN_FILE&amp;#34;&lt;/span>&lt;span style="color:#a61717;background-color:#e3d2d2">:&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">&amp;#34;value&amp;#34;&lt;/span>: &lt;span style="color:#ed9d13">&amp;#34;$env{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">&amp;#34;type&amp;#34;&lt;/span>: &lt;span style="color:#ed9d13">&amp;#34;FILEPATH&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}&lt;span style="color:#a61717;background-color:#e3d2d2">,&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>If using &lt;code>cmake&lt;/code> from the command line on Linux, add &lt;code>-DCMAKE_TOOLCHAIN_FILE=$VCPKG_ROOT/scripts/buildsystems/vcpkg.cmake&lt;/code>&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Create a &lt;code>vcpkg&lt;/code> response file to maintain portability&lt;/p>
+&lt;ul>
+&lt;li>Create &lt;code>vcpkg_rf.txt&lt;/code> in the root directory with the contents:&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>install
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cpr
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Install dependencies using &lt;code>vcpkg &amp;quot;@vcpkg_rf.txt&amp;quot; [optional arguments]&lt;/code>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>For each library installed, you&amp;rsquo;ll see instructions for what to add or modify in your &lt;code>CMakeLists.txt&lt;/code>&lt;/p>
+&lt;ul>
+&lt;li>For &lt;code>cpr&lt;/code>, that would be&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-cmake" data-lang="cmake">&lt;span style="display:flex;">&lt;span> &lt;span style="color:#24909d">find_package&lt;/span>(&lt;span style="color:#ed9d13">cpr&lt;/span> &lt;span style="color:#ed9d13">CONFIG&lt;/span> &lt;span style="color:#ed9d13">REQUIRED&lt;/span>)&lt;span style="color:#a61717;background-color:#e3d2d2">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a61717;background-color:#e3d2d2">&lt;/span> &lt;span style="color:#24909d">target_link_libraries&lt;/span>(&lt;span style="color:#ed9d13">PROJECT_NAME&lt;/span> &lt;span style="color:#ed9d13">PRIVATE&lt;/span> &lt;span style="color:#ed9d13">cpr::cpr&lt;/span>)&lt;span style="color:#a61717;background-color:#e3d2d2">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>For more than one library, you only need one &lt;code>target_link_libraries&lt;/code> rather than one for each additional library&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Now let&amp;rsquo;s code. In the main cpp file, type the following:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-cpp" data-lang="cpp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cd2828;font-weight:bold">#include&lt;/span> &lt;span style="color:#cd2828;font-weight:bold">&amp;lt;cpr/cpr.h&amp;gt;&lt;/span>&lt;span style="color:#cd2828;font-weight:bold">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cd2828;font-weight:bold">#include&lt;/span> &lt;span style="color:#cd2828;font-weight:bold">&amp;lt;iostream&amp;gt;&lt;/span>&lt;span style="color:#cd2828;font-weight:bold">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cd2828;font-weight:bold">&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">int&lt;/span> &lt;span style="color:#447fcf">main&lt;/span>()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> cpr::Response r = cpr::Get(cpr::Url{ &lt;span style="color:#ed9d13">&amp;#34;https://api.github.com/repos/whoshuu/cpr/contributors&amp;#34;&lt;/span> },
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> cpr::Authentication{ &lt;span style="color:#ed9d13">&amp;#34;user&amp;#34;&lt;/span>, &lt;span style="color:#ed9d13">&amp;#34;pass&amp;#34;&lt;/span> },
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> cpr::Parameters{ {&lt;span style="color:#ed9d13">&amp;#34;anon&amp;#34;&lt;/span>, &lt;span style="color:#ed9d13">&amp;#34;true&amp;#34;&lt;/span>}, {&lt;span style="color:#ed9d13">&amp;#34;key&amp;#34;&lt;/span>, &lt;span style="color:#ed9d13">&amp;#34;value&amp;#34;&lt;/span>} });
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> r.status_code; &lt;span style="color:#999;font-style:italic">// 200
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">&lt;/span> r.header[&lt;span style="color:#ed9d13">&amp;#34;content-type&amp;#34;&lt;/span>]; &lt;span style="color:#999;font-style:italic">// application/json; charset=utf-8
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">&lt;/span> r.text; &lt;span style="color:#999;font-style:italic">// JSON text string
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">&lt;/span> std::cout &amp;lt;&amp;lt; r.text &amp;lt;&amp;lt; std::endl;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">return&lt;/span> &lt;span style="color:#3677a9">0&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Let&amp;rsquo;s test our build&lt;/p>
+&lt;ul>
+&lt;li>If something doesn&amp;rsquo;t work, you may need to configure/delete CMake cache using your IDE or doing it manually&lt;/li>
+&lt;li>In Visual Studio, just click the green play button&lt;/li>
+&lt;li>In Visual Studio Code, you can use the &amp;ldquo;Build: Target&amp;rdquo; and select &amp;ldquo;run&amp;rdquo; from the command palette&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ol>
+&lt;p>If the steps didn&amp;rsquo;t work for you, you can follow &lt;a href="https://youtu.be/FeBzSYiWkEU">this tutorial video&lt;/a>.
+The video has an example of opening a project in VSCode that was made in Visual Studio.&lt;/p>
+&lt;h2 id="video" >Video
+&lt;span>
+&lt;a href="#video">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>
+&lt;div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+&lt;iframe src="https://www.youtube.com/embed/FeBzSYiWkEU" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video">&lt;/iframe>
+&lt;/div></description></item><item><title>VS Code Remote SSH Tutorial</title><link>https://blog.elijahlopez.ca/posts/vs-code-remote-ssh/</link><pubDate>Fri, 11 Sep 2020 18:23:50 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/vs-code-remote-ssh/</guid><description>&lt;p>In this tutorial we&amp;rsquo;ll integrate SSH into VS Code in a way that won&amp;rsquo;t require entering a password every time.&lt;/p>
+&lt;h2 id="generating-an-ssh-key" >Generating an SSH key
+&lt;span>
+&lt;a href="#generating-an-ssh-key">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>If you&amp;rsquo;re on Windows, you will need to install the OpenSSH feature from Settings or you can use WSL to be able to use &lt;code>ssh-keygen&lt;/code>.&lt;/p>
+&lt;p>You can generate an SSH key using &lt;code>ssh-keygen -t ed25519&lt;/code>. Press enter on the prompt to use the default filename.&lt;/p>
+&lt;p>Keep track of where the key is stored. (e.g. &lt;code>C:\Users\maste\.ssh\id_ed25519&lt;/code>)
+This will be useful when configuring the Remote-SSH VSCode extension.&lt;/p>
+&lt;h2 id="adding-ssh-key-to-authorized-keys" >Adding SSH key to Authorized Keys
+&lt;span>
+&lt;a href="#adding-ssh-key-to-authorized-keys">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>During the process of adding our keys, we&amp;rsquo;ll have to enter our passwords.&lt;/p>
+&lt;h3 id="linux--macos--wsl" >Linux / MacOS / WSL
+&lt;span>
+&lt;a href="#linux--macos--wsl">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>ssh-copy-id -i path/to/file/if/not/default USER@HOST
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic"># examples&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ssh-copy-id -i .ssh/id_ed25519.pub USER@HOST
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ssh-copy-id -i /mnt/c/Users/maste/.ssh/id_ed25519.pub USER@HOST
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>When doing this, press enter to any yes/no prompts such as fingerprints and etc. The fingerprint prompt is
+important only if you can&amp;rsquo;t trust your network (e.g. Starbucks WiFi).&lt;/p>
+&lt;p>If you&amp;rsquo;re having trouble with this, just &lt;code>cd&lt;/code> into the &lt;code>.ssh&lt;/code> folder and use &lt;code>-i id_ed25519.pub&lt;/code>&lt;/p>
+&lt;h3 id="windows-without-wsl" >Windows Without WSL
+&lt;span>
+&lt;a href="#windows-without-wsl">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>If you&amp;rsquo;re on Windows, you won&amp;rsquo;t have access to &lt;code>ssh-copy-id&lt;/code>. Instead you can modify the first command below or use the second command
+if you aren&amp;rsquo;t doing anything abnormal on your computer.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-powershell" data-lang="powershell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#24909d">type &lt;/span>path\to\id_algo.pub | ssh USER&lt;span style="color:#40ffff">@HOST&lt;/span> &lt;span style="color:#ed9d13">&amp;#34;cat &amp;gt;&amp;gt; .ssh/authorized_keys&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic"># type $env:USERPROFILE\.ssh\id_ed25519.pub | ssh user@host &amp;#34;cat &amp;gt;&amp;gt; .ssh/authorized_keys&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic"># the above is a helper that hopefully requires no modifications&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="setting-up-vs-code" >Setting up VS Code
+&lt;span>
+&lt;a href="#setting-up-vs-code">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;ol>
+&lt;li>
+&lt;p>Install the &lt;a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh">Remote - SSH extension&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Use the Command Palette (Ctrl + Shift + P) and use the &amp;ldquo;Remote-SSH: Open SSH Configuration File&amp;hellip;&amp;rdquo; command&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Select the first path (e.g. &lt;code>C:\Users\maste\.ssh\config&lt;/code>)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Enter the information for your remote server(s). Here is mine for reference. I had to comment out PreferredAuthentications.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>Host uWaterloo
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> User e5lopez
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> HostName linux.student.cs.uwaterloo.ca
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> IdentityFile &lt;span style="color:#ed9d13">&amp;#34;C:\Users\maste\.ssh\id_ed25519&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic"># Linux/MacOS: IdentityFile &amp;#34;/Users/USER/.ssh/id_ed25519&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic"># PreferredAuthentications publickey&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>From the command palette, use &amp;ldquo;Remote-SSH: Connect Current Window to Host&amp;hellip;&amp;rdquo; and select the host you just added&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>A window will show up asking you to choose the platform for the remote server so choose the &lt;strong>remote server&amp;rsquo;s&lt;/strong> platform (e.g. Linux)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>If all goes well, you should be able to connect without having to enter a password
+&lt;img src="https://blog.elijahlopez.ca/images/vs-code-remote-ssh/connected-example.png" alt="VS Code SSH">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Tip: add multiple folders in the remote server to a workspace&lt;/p>
+&lt;/li>
+&lt;/ol></description></item></channel></rss>
