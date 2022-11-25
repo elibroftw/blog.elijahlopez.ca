@@ -33,7 +33,7 @@ jobs:
           echo "::set-output name=commit_msg::$(git log -1 --pretty=%B)"
           git worktree add public gh-pages
 
-      - uses: actions/cache@latest
+      - uses: actions/cache@v3
         with:
           path: /tmp/hugo_cache
           key: ${{ runner.os }}-hugomod-${{ hashFiles('**/go.sum') }}
