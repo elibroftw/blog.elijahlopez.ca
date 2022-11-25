@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Html on ELL Blog</title>
+    <link>https://blog.elijahlopez.ca/tags/html/</link>
+    <description>ELL Blog (Html)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 15 Jul 2023 12:45:48 -0400</lastBuildDate>
+    
+    <atom:link href="https://blog.elijahlopez.ca/tags/html/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>ASP.NET Core Add HTML to Web Api</title>
+      <link>https://blog.elijahlopez.ca/posts/aspnet-add-html-to-web-api/</link>
+      <pubDate>Sat, 15 Jul 2023 12:45:48 -0400</pubDate>
+      
+      <guid>https://blog.elijahlopez.ca/posts/aspnet-add-html-to-web-api/</guid>
+      <description>&lt;p&gt;Suppose you wanted to add html to your asp.net web api project, how would you go about it?&lt;/p&gt;
+&lt;p&gt;Sure you may just &lt;a href=&#34;https://stackoverflow.com/questions/26822277/return-html-from-asp-net-web-api&#34;&gt;write the HTML&lt;/a&gt; in the controller, but that&amp;rsquo;s not good enough if you want to return an actual webpage.&lt;/p&gt;
+&lt;p&gt;We need to integrate Razor pages to our application. In &lt;code&gt;Program.cs&lt;/code&gt;,&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-cs&#34; data-lang=&#34;cs&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;builder.Services.AddRazorPages();  &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// add this&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;builder.Services.AddHttpContextAccessor();  &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// add this&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;var&lt;/span&gt; app = builder.Build();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;app.MapControllers();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;app.MapRazorPages(); &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// add this, it doesn&amp;#39;t matter if it is before or after MapControllers&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;app.Run();
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Suppose we want to serve a page for website.com/about&lt;/p&gt;
+&lt;p&gt;In your project folder, create &lt;code&gt;Pages/About.cshtml&lt;/code&gt;&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-cshtml&#34; data-lang=&#34;cshtml&#34;&gt;@page
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+
+&amp;lt;!DOCTYPE html&amp;gt;
+&amp;lt;style&amp;gt;
+    @Html.Raw(&amp;#34;@&amp;#34;)media only screen and (min-width: 950px) {
+        .center {
+            width: 30%;
+        }
+    }
+&amp;lt;/style&amp;gt;
+
+&amp;lt;a href=&amp;#34;@(HttpContextAccessor.HttpContext.Request.Path)@(HttpContextAccessor.HttpContext.Request.QueryString.ToUriComponent())&amp;#34;&amp;gt;This pages url&amp;lt;/a&amp;gt;
+&amp;lt;p&amp;gt;a get request query for field name: @HttpContextAccessor.HttpContext.Request.Query[&amp;#34;name&amp;#34;]&amp;lt;/p&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;how-to-escape--in-razor-pages-cshtml&#34; &gt;How to escape @ in Razor Pages (cshtml)
+&lt;span&gt;
+    &lt;a href=&#34;#how-to-escape--in-razor-pages-cshtml&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;To escape the @ in Razor pages, use &lt;code&gt;@Html.Raw(&amp;quot;@&amp;quot;)&lt;/code&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

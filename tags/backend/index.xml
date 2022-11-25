@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Backend on ELL Blog</title>
+    <link>https://blog.elijahlopez.ca/tags/backend/</link>
+    <description>ELL Blog (Backend)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 27 Mar 2024 10:35:26 -0400</lastBuildDate>
+    
+    <atom:link href="https://blog.elijahlopez.ca/tags/backend/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>A REST API Should Not Return 404 When A Resource is Null</title>
+      <link>https://blog.elijahlopez.ca/posts/rest-apis-do-not-return-404/</link>
+      <pubDate>Wed, 27 Mar 2024 10:35:26 -0400</pubDate>
+      
+      <guid>https://blog.elijahlopez.ca/posts/rest-apis-do-not-return-404/</guid>
+      <description>&lt;p&gt;Last year when I was implementing a get-status endpoint, I searched online whether I should return a 404 or null when the user has no active status. The reasons provided were not convincing but while debugging an error in my application recently (unrelated), even though I had logs set to error-only, that 404 error would still be seen! So here are the reasons why a REST API should return 204 (no content) or an empty/null response when there is no content.&lt;/p&gt;
+&lt;h2 id=&#34;reasons&#34; &gt;Reasons
+&lt;span&gt;
+    &lt;a href=&#34;#reasons&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;h3 id=&#34;reason-1---polluting-the-error-log&#34; &gt;Reason 1 - Polluting the Error Log
+&lt;span&gt;
+    &lt;a href=&#34;#reason-1---polluting-the-error-log&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;The 404 error pollutes the error log from real errors and makes it hard to differentiate between the authentic errors and the intentional 404s.&lt;/p&gt;
+&lt;h3 id=&#34;reason-2---unnecessary-client-side-error-handling-complications&#34; &gt;Reason 2 - Unnecessary Client-Side Error Handling Complications
+&lt;span&gt;
+    &lt;a href=&#34;#reason-2---unnecessary-client-side-error-handling-complications&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;There is added complexity in the client or consumer of the rest API. Instead of logging all errors the client has to make an exception for the 404 and what if there&amp;rsquo;s a typo in the future? The error won&amp;rsquo;t be caught then since it would be returning an authentic 404.&lt;/p&gt;
+&lt;h3 id=&#34;reason-3---no-content-204-is-a-better-alternative&#34; &gt;Reason 3 - No Content 204 is a Better Alternative
+&lt;span&gt;
+    &lt;a href=&#34;#reason-3---no-content-204-is-a-better-alternative&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;One of the reasons I used 404 was because it made more sense from a language perspective of hey that resource doesn&amp;rsquo;t exist! But this way of thing needs to be reframed. I know the endpoint exists, so the client is simply asking if there is anything to &lt;strong&gt;report&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;A 204 is successful and and doesn&amp;rsquo;t require an error message. The client can easily handle this status code without needing to change or make an exception to how they handle network errors.&lt;/p&gt;
+&lt;h2 id=&#34;what-is-the-alternative&#34; &gt;What is the Alternative?
+&lt;span&gt;
+    &lt;a href=&#34;#what-is-the-alternative&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;Return a 204 status code is the alternative and works well when the mindset of thinking of the REST actions themselves as being the resources the client wants to interact with rather than the backend action being only a facilitator to a resource stored in the database.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
