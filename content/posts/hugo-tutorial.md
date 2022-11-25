@@ -26,8 +26,8 @@ If you are like me, you can follow the tutorial that [forks my site](#forking-my
 
 1. Web UI fork [blog.elijahlopez.ca](https://github.com/elibroftw/blog.elijahlopez.ca) with repository name `blog` and use your own description
 2. Go to https://github.com/USERNAME/blog/settings/pages
-3. Select the source as gh-pages (you may need to create the pages)
-4. For folder select "/"
+3. Select the source as `gh-pages` (you may need to create this branch)
+4. For folder select `/`
 5. Click save
 6. Add a custom domain if you want later since it takes 5+ minutes
 7. Edit the About section in https://github.com/USERNAME/blog/ and change the website to `https://USERNAME.github.io` or a domain
