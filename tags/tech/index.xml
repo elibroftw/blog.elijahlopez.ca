@@ -1,0 +1,1455 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tech on ELL&#39;s Blog</title>
+    <link>https://blog.elijahlopez.ca/tags/tech/</link>
+    <description>ELL&#39;s Blog (Tech)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 29 Sep 2024 20:28:08 -0400</lastBuildDate>
+    
+    <atom:link href="https://blog.elijahlopez.ca/tags/tech/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>[Linux] Touchpad Not Working After Waking From Suspend</title>
+      <link>https://blog.elijahlopez.ca/posts/linux-touchpad-not-working/</link>
+      <pubDate>Sun, 29 Sep 2024 20:28:08 -0400</pubDate>
+      
+      <guid>https://blog.elijahlopez.ca/posts/linux-touchpad-not-working/</guid>
+      <description>&lt;p&gt;So the touchpad can no longer be used after you wake from sleep? Well I am here with the solution after trying countless distros and still having this problem. The laptop I use is the 2016 Razer Blade Stealth and the distro I&amp;rsquo;ve settled on is Fedora KDE. The specs and my 5 years later review can be found &lt;a href=&#34;https://blog.elijahlopez.ca/posts/razer-blade-stealth-late-2016/#specs&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;To fix the issue you need to try running each of these lines in the terminal (Ctrl + Alt + T to open a Terminal using the keyboard).&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;sudo rmmod i2c_hid_acpi &amp;amp;&amp;amp; sudo modprobe i2c_hid_acpi&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;sudo rmmod i2c_hid &amp;amp;&amp;amp; sudo modprobe i2c_hid&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;sudo rmmod psmouse  &amp;amp;&amp;amp; sudo modprobe psmouse&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;sudo rmmod i2c_i801  &amp;amp;&amp;amp; sudo modprobe i2c_i801&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;sudo rmmod rmi_smbus &amp;amp;&amp;amp; sudo modprobe rmi_smbus&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Aside: &lt;code&gt;modprobe -r&lt;/code&gt; and rmmod do effectively the same thing&lt;/p&gt;
+&lt;p&gt;Once you found which command works, we want a permanent automatic solution so that we don&amp;rsquo;t have to do this every time. We need to create a script that will run our command on wake.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;In your terminal, run the following command &lt;code&gt;sudo nano /lib/systemd/system-sleep/restart-touchpad&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Paste (Ctrl + Shift + V) the following content and replace the lines 4 &amp;amp; 5 with the commands you used. Make sure to use only your keyboard to traverse the lines. I find it easier to not do any selection. If you can&amp;rsquo;t get it to work and want to use a more user friendly text editor, you replace &lt;code&gt;nano&lt;/code&gt; in the command with &lt;code&gt;kate&lt;/code&gt; (for KDE desktops) or &lt;code&gt;gedit&lt;/code&gt; (for GNOME desktops).&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#cd2828;font-weight:bold&#34;&gt;#!/usr/bin/env bash
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;if&lt;/span&gt; [[ &lt;span style=&#34;color:#40ffff&#34;&gt;$1&lt;/span&gt; == post ]]; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;then&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    sudo rmmod  i2c_hid_acpi
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    sudo modprobe i2c_hid_acpi
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;fi&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Save the file using Ctrl + S&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Exit nano by using Ctrl + X&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Make the script we wrote executable &lt;code&gt;sudo chmod +x /lib/systemd/system-sleep/restart-touchpad&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;My solution has been adapted by reading a few different sources. Yes, even the people asking questions are helpful because the solutions that don&amp;rsquo;t work for them can be incorporated for others!&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://askubuntu.com/a/1083546&#34;&gt;https://askubuntu.com/a/1083546&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://unix.stackexchange.com/a/526488&#34;&gt;https://unix.stackexchange.com/a/526488&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://askubuntu.com/questions/577525/alternative-to-running-rmmod-and-modprobe-at-every-boot&#34;&gt;https://askubuntu.com/questions/577525/alternative-to-running-rmmod-and-modprobe-at-every-boot&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://discussion.fedoraproject.org/t/touchpad-dont-work-after-suspended/73733&#34;&gt;https://discussion.fedoraproject.org/t/touchpad-dont-work-after-suspended/73733&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;some-other-thoughts&#34; &gt;Some Other Thoughts
+&lt;span&gt;
+    &lt;a href=&#34;#some-other-thoughts&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;This was the biggest issue hindering using Linux on my old laptop. No distro could fix it out of the box but I&amp;rsquo;ve decided to start working on a Noob Friendly Mega Tutorial on Moving from Windows to Linux Desktop. This work has obviously paid off. Another red flag I solved yesterday was getting OBS to work. That required installing OBS via flatpak instead of the native version recommended by default in the Discover app store.&lt;/p&gt;
+&lt;p&gt;One of the biggest challenges in Linux Desktop was figuring out what the right distro is. It took me years to finally settle on recommending Fedora KDE. My use cases involved support for fractional scaling on multiple monitors which Linux Mint does not support, working with SecureBoot which distros like Nobara won&amp;rsquo;t support, supporting status icons out the box which GNOME hates, and not using snaps (i.e. not Ubuntu and not an Ubuntu fork) since using Snaps is worse than using Windows (I was convinced after watching &lt;a href=&#34;https://youtu.be/pMfqCzbSmQU&#34;&gt;Ubuntu&amp;rsquo;s Decline by Chris Titus Tech&lt;/a&gt;).&lt;/p&gt;
+&lt;p&gt;My test device is closer to being in a state where I can gift it to someone else. There&amp;rsquo;s only a few more hurdles to get through with one being how to fix the damn webcam and another being re-enabling secure boot!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>When an iPad Isn&#39;t Enough</title>
+      <link>https://blog.elijahlopez.ca/posts/macbook-pros-over-an-ipad/</link>
+      <pubDate>Tue, 07 May 2024 12:28:28 -0400</pubDate>
+      
+      <guid>https://blog.elijahlopez.ca/posts/macbook-pros-over-an-ipad/</guid>
+      <description>&lt;p&gt;Here is a compilation of tasks that an iPad can&amp;rsquo;t do that a Macbook / computer can do. For some tasks, I&amp;rsquo;ve added examples and implications.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;File management and file type support (PSD?) is lacking
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.reddit.com/r/ipad/comments/11kavgf/comment/jb69nvd/&#34;&gt;Apparently, difficult to backup files to an external drive&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;From my own experience trying to copy files from an external SSD, I ended up duplicating a 10+ files because to copy files from an external drive to the iPad in the files app, you need to click the share button first! Why is duplicating files easier than copying files to another folder?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Website that require you to use a browser with the Chromium engine&lt;/li&gt;
+&lt;li&gt;Can&amp;rsquo;t format a drive (as if iPad users would be in this situation)&lt;/li&gt;
+&lt;li&gt;Can&amp;rsquo;t run some software that is available for macOS&lt;/li&gt;
+&lt;li&gt;Any type of development: XCode, VSCode (albeit web version exist), running scripts/docker images
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.reddit.com/r/ipad/comments/11kavgf/comment/jb9wbd9/&#34;&gt;someone&amp;rsquo;s setup for Python&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Playing from multiple audio sources
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.reddit.com/r/ipad/comments/1106m1x/comment/j87tdyv/&#34;&gt;Can&amp;rsquo;t play on iPad speakers when connected to monitor&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Google apps don&amp;rsquo;t work well (why aren&amp;rsquo;t these people paying for Office if they are fine with paying the premium for Apple products?)&lt;/li&gt;
+&lt;li&gt;Window management / multi-tasking&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.reddit.com/r/ipad/comments/11kavgf/comment/jb6scqn/&#34;&gt;Apparently, text apps are missing the equation editor feature on iPad&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Printer support is not feature-parity&lt;/li&gt;
+&lt;li&gt;Zip file (I&amp;rsquo;m really surprised that people are reporting this as a problem)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.reddit.com/r/ipad/comments/11kavgf/comment/jbcffge/&#34;&gt;Attaching multiple files at once to an Email&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Can&amp;rsquo;t flash/burn an external drive (unconfirmed)&lt;/li&gt;
+&lt;li&gt;No Firefox extensions&lt;/li&gt;
+&lt;li&gt;I won&amp;rsquo;t &amp;ldquo;ding&amp;rdquo; it, but if video editing is a must, it&amp;rsquo;s good to test all the features out before the return window closes&lt;/li&gt;
+&lt;li&gt;Camera placement (you don&amp;rsquo;t look like you are paying attention to the call). Apparently this isn&amp;rsquo;t an issue anymore.&lt;/li&gt;
+&lt;li&gt;Allegedly no multi-user support? I find this really hard to believe since Android has had this feature for over a decade now&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.reddit.com/r/ipad/comments/1106m1x/comment/j87zl55/&#34;&gt;Java-based apps&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.reddit.com/r/ipad/comments/1106m1x/comment/j88gdg3/&#34;&gt;Serious PDF editing&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Using external displays when the primary device is closed (&amp;ldquo;clamshell&amp;rdquo; mode)
+&lt;ul&gt;
+&lt;li&gt;The workaround is to disable locking the iPad when the cover is closed (the iPad screen will remain on so it&amp;rsquo;s not real &amp;ldquo;clamshell&amp;rdquo; mode)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://blog.elijahlopez.ca/posts/desktop-games-on-app-store#macos-games&#34;&gt;macOS Games&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Windows vs. Mac</title>
+      <link>https://blog.elijahlopez.ca/posts/windows-vs-mac/</link>
+      <pubDate>Wed, 27 Mar 2024 14:06:32 -0400</pubDate>
+      
+      <guid>https://blog.elijahlopez.ca/posts/windows-vs-mac/</guid>
+      <description>&lt;p&gt;macOS does have its merits especially considering their superior integration of custom ARM silicon AND the recently announced MacBook Neo. Dave2D made a wonderful video &lt;a href=&#34;https://www.youtube.com/watch?v=Z5XOhPfIgho&#34;&gt;Apple MacBook Neo vs Dell XPS 13&lt;/a&gt;. I am more shocked at how Apple is not maximizing shareholder value by making their hardware more accessible to non-Apple OS. Being able to run Android on an iPhone or Windows on a Macbook would enable Apple to earn revenue and profits from every single company that makes money just because Windows is required.&lt;/p&gt;
+&lt;p&gt;Additionally, after using a surface laptop which has ARM CPUs, it&amp;rsquo;s a great development laptop, but some apps like PotPlayer perform worse. So from my perspective Windows on ARM is not there yet and I would recommend Windows x64 for performance junkies.&lt;/p&gt;
+&lt;h2 id=&#34;battery-life&#34; &gt;Battery Life
+&lt;span&gt;
+    &lt;a href=&#34;#battery-life&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;For those looking at battery life, here are the comparisons for each category of performance.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;MacBook Air vs Surface laptop vs HP OmniBook 5 14 (default, where battery life and webcam quality matters)&lt;/li&gt;
+&lt;li&gt;MacBook Neo vs Dell XPS 13 (entry)&lt;/li&gt;
+&lt;li&gt;MacBook Pro vs Dell XPS 14 (pro) vs Framework Laptop 13 Pro vs Yoga Slim 7x (Snapdragon X2 Elite)
+&lt;ul&gt;
+&lt;li&gt;pro tasks: Video editing*, 3D applications, &lt;a href=&#34;https://www.nvidia.com/en-us/accelerated-applications/?filter=eyJ3b3JrbG9hZHMiOlsiQ29udGVudCBDcmVhdGlvbiAvIFJlbmRlcmluZyJdfQ==&#34;&gt;creative applications&lt;/a&gt;, AI. Gaming doesn&amp;rsquo;t count because of the (low) price point.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;software&#34; &gt;Software
+&lt;span&gt;
+    &lt;a href=&#34;#software&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;You generally need to pay for good software on macOS, but the software is really good and UX friendly. Take for example &lt;a href=&#34;https://mac.getutm.app/&#34;&gt;UTM&lt;/a&gt;. Windows comes with Hyper-V out of the box, which is pretty good too, but that&amp;rsquo;s a microsoft app, not a free-market app.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;wanting-macbook-graphics-performance-without-macos&#34; &gt;Wanting Macbook Graphics Performance Without MacOS
+&lt;span&gt;
+    &lt;a href=&#34;#wanting-macbook-graphics-performance-without-macos&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://blog.elijahlopez.ca/posts/macos-sucks&#34;&gt;I&amp;rsquo;m not a fan of the operating system&lt;/a&gt; but I wanted equivalent performance when rendering. I hated the render performance of my old laptop with its integrated graphics. That&amp;rsquo;s when I realized mobile i5&amp;rsquo;s are a sham. I made sure to look for a laptop with a graphics card and I&amp;rsquo;m content it will last a long time.&lt;/p&gt;
+&lt;h2 id=&#34;limited-external-monitor-support&#34; &gt;Limited External Monitor Support
+&lt;span&gt;
+    &lt;a href=&#34;#limited-external-monitor-support&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;Even if you pay a boatload of money, the base M-series chip, in my case the M2, only supports one external monitor! Compare that to my Razer Blade: even though it&amp;rsquo;s best to connect to one monitor with the dedicated GPU (dGPU), and the other monitor via the integrated GPU (iGPU), if there was no dGPU, the regular iGPU would still be able to connect to two external monitors. That means that the Macbook air is limited to two screens, whereas the Razer Blade is limited to at least 4 screens (2 through USB C / iGPU, 1 through HDMI / dGPU). In recent (2024) gaming laptops like the Zephyrus, both the HDMI port and one of the USB C ports are both connected to the dGPU, meaning you can make use of the entire monitor&amp;rsquo;s specs without any performance hinderance. Regardless, the AMD integrated GPUs perform much better than the integrated Intel GPUs, at least until more ARC technology enabled CPUs &lt;a href=&#34;https://www.acer.com/us-en/laptops/swift/swift-go-16#filterHeader&#34;&gt;show up&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;mouse-and-touchpad-sync&#34; &gt;Mouse and touchpad Sync
+&lt;span&gt;
+    &lt;a href=&#34;#mouse-and-touchpad-sync&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;Mac developers are actually stupid. First of all, natural scrolling is disabled by default! That means if you scroll up, the page goes up instead of acting like a page of paper where scrolling up moves the screen down. When you enable natural scrolling, then your mouse behaves the wrong way as well! With natural scrolling enabled, the scroll wheel of the mouse is inverted! That means when you scroll the scroll wheel down, the page goes up instead of down. How frustrating. Apple fans love to praise Apple about how &amp;ldquo;intuitive&amp;rdquo; their Operating System is, but the reality is that Apple products are for simple people. The OS is made stupid simple, that only stupid simple people would find it useful. Clearly I am not wrong as Generation Z and Alpha are having trouble using computers, which can use 100% of Excel features, which guess what? Is required by the workplace.&lt;/p&gt;
+&lt;p&gt;I should really be thanking Apple for making it easier to compete with businesses and get employed. In the age of Apple supremacy, people who are locked into the eco-system are at a disadvantage when it comes to getting paid.&lt;/p&gt;
+&lt;h2 id=&#34;linux-support&#34; &gt;Linux Support
+&lt;span&gt;
+    &lt;a href=&#34;#linux-support&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://asahilinux.org/&#34;&gt;Asahi Linux&lt;/a&gt; aims to bring Linux on Apple Silicon. The most recent chip it supports is M2 (which I have luckily), but even then the following features are missing as of 2026-09-13:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;USB-C Displays&lt;/li&gt;
+&lt;li&gt;Thunderbolt / USB4/&lt;/li&gt;
+&lt;li&gt;Touch ID&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;video-games&#34; &gt;Video Games
+&lt;span&gt;
+    &lt;a href=&#34;#video-games&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;At the end of the day, if cost is a concern, a console makes the most sense and this point is moot. Therefore, this point only makes sense for those wanting to PC games without building a desktop.&lt;/p&gt;
+&lt;p&gt;Although the M5 (Pro) can compete with desktops, it lacks in GPU. Money can be spent on a GPU rather than upgrading to an M5 Pro, and then to play &lt;a href=&#34;https://blog.elijahlopez.ca/posts/desktop-games-on-app-store#games-not-on-apple&#34;&gt;non-apple supported games&lt;/a&gt;, you&amp;rsquo;d need to have a CrossOver subscription. This becomes too expensive to game on a MacBook. Fortunately, since this category is gaming, we can broaden the comparison to MacBook plus console versus Notebook plus Console versus Notebook plus eGPU.&lt;/p&gt;
+&lt;p&gt;From my experience of previously daily driving a Razer Blade 14, I would prefer an eGPU rather than a a gaming laptop, because day-to-day battery life matters a lot more than the time spent gaming, which is usually done at home with a power connection. An eGPU also allows you to upgrade the GPU before upgrading the laptop (CPU bump). A laptop in my experience can last 3-4 years. I only upgraded from my Razer Blade 14 because it was a gaming laptop which struggled to play CyberPunk 2077 2.0 and could not put out 60 frames on Battlefield 6. So for gaming, go with Notebook + eGPU or a dedicated PC or a console (which is the biggest win considering GTA VI releases first on console).&lt;/p&gt;
+&lt;p&gt;Console Player&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;MacBook Neo + PS5 + PlayStation Plus (for multiplayer games)
+&lt;ul&gt;
+&lt;li&gt;$700 + $600&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;XPS 13 + PS5
+&lt;ul&gt;
+&lt;li&gt;$700 + $600&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;x64 Notebook + eGPU&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;$1250 + $550 + $280 = $2,080; $780 premium&lt;/li&gt;
+&lt;li&gt;GPU: RX 9070 $550&lt;/li&gt;
+&lt;li&gt;eGPU: AOOSTAR AG03 $280&lt;/li&gt;
+&lt;li&gt;Laptop Comparables
+&lt;ul&gt;
+&lt;li&gt;ThinkBook 14 Gen 9 Intel (Ultra 7 355); $1,249.99&lt;/li&gt;
+&lt;li&gt;XPS 13 (Ultra 7 355); $1,499.99&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.lenovo.com/us/en/p/laptops/thinkbook/thinkbook-series/lenovo-thinkbook-14-gen-9-14-inch-intel/21ux000hus&#34;&gt;ThinkBook 14 Gen 9 Intel (14″)&lt;/a&gt; (Ultra 5 325);&lt;/li&gt;
+&lt;li&gt;ThinkPad X1 Carbon (Ultra 5 335 vPro)&lt;/li&gt;
+&lt;li&gt;ThinkPad X9 (Ultra 5 338H)&lt;/li&gt;
+&lt;li&gt;Snapdragon X2 Elite&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;on-local-ai&#34; &gt;On Local AI
+&lt;span&gt;
+    &lt;a href=&#34;#on-local-ai&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;The M5 has gotten the necessary improvements that target running models locally (NPU). So a dGPU is not an advantage over a MacBook here.&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;m also less concerned about needing portable VRAM. Once AI is so good and useful that everyone would be running it, the most cost effective solution is running it at home on a box and connecting non-GPU devices to it whenever you need it. On top of that, there are useful LLMs that are small enough to run on non-GPU hardware.&lt;/p&gt;
+&lt;h2 id=&#34;recommend-laptop-specs&#34; &gt;Recommend Laptop Specs
+&lt;span&gt;
+    &lt;a href=&#34;#recommend-laptop-specs&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;I&amp;rsquo;ve dabbled with gaming laptops, PCs, and even an ARM surface laptop, and I think the most ideal configuration is actually just a battery-life focused laptop that you can connect an eGPU to. The eGPU is more important for non-gaming tasks as a console can be a dedicated gaming device.&lt;/p&gt;
+&lt;p&gt;When buying a non-Apple laptop, 32GB of RAM is a minimum. For Apple computers, 16GB of RAM is minimum.&lt;/p&gt;
+&lt;p&gt;Some laptops I&amp;rsquo;d consider at varying price points:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Entry level: MacBook Neo or XPS 13&lt;/li&gt;
+&lt;li&gt;Work
+&lt;ul&gt;
+&lt;li&gt;At this point, I&amp;rsquo;m assuming you&amp;rsquo;re compiling programs, rendering videos, CAD, blender, etc..&lt;/li&gt;
+&lt;li&gt;32GB RAM (non-Apple) / 16GB RAM (Apple)&lt;/li&gt;
+&lt;li&gt;1TB storage&lt;/li&gt;
+&lt;li&gt;nice to have add-ons: eGPU or upgrading to the Pro variant of Apple silicon&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Niche Work (no compromises so battery life not important)
+&lt;ul&gt;
+&lt;li&gt;Chips: M5 Pro / Max, Snapdragon X2 Extreme, Intel Ultra 7&lt;/li&gt;
+&lt;li&gt;Optional dGPU&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Best Cell Phone Carriers Canada</title>
+      <link>https://blog.elijahlopez.ca/posts/best-cell-phone-carriers-canada/</link>
+      <pubDate>Tue, 02 Jan 2024 18:14:11 -0500</pubDate>
+      
+      <guid>https://blog.elijahlopez.ca/posts/best-cell-phone-carriers-canada/</guid>
+      <description>&lt;p&gt;So I got a look at the boxing day deals and all the 4 carriers had $34 for 50GB of data per month. I thought I had a good deal at $39 for 25GB per month! I even fought on the phone with Koodo about it during the summer since they were offering 20GB for $39 at the time and I was paying $40 for 6GB. I had switched to Koodo from Fredumb Mobile either in 2022 or something.&lt;/p&gt;
+&lt;p&gt;So here is my list of the best cell phone carriers.&lt;/p&gt;
+&lt;h2 id=&#34;for-individuals&#34; &gt;For Individuals
+&lt;span&gt;
+    &lt;a href=&#34;#for-individuals&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;h3 id=&#34;1-public-mobile&#34; &gt;1. Public Mobile
+&lt;span&gt;
+    &lt;a href=&#34;#1-public-mobile&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;During the boxing week sale, I looked at all alternatives and only Public Mobile had a functional and snappy website that let me purchase the plan online. Not only that, but Public Mobile had cheaper boxing day deals for different data. During boxing week they had a $24 for 4G 4GB plan, a $29 for 4G 30GB, and a $34 for 5G 50GB plan which all the other carriers in this list were offering. I am also thankful for Public Mobile offering a eSIM check tool although I&amp;rsquo;m not sure it works effectively since it reported that the IMEI of my Pixel 7, a phone known to support eSIM, does not support it. So I got a free physical SIM card instead which is great nonetheless.&lt;/p&gt;
+&lt;p&gt;Public Mobile is owned by Telus.&lt;/p&gt;
+&lt;h4 id=&#34;2-freedom-mobile&#34; &gt;2. Freedom Mobile
+&lt;span&gt;
+    &lt;a href=&#34;#2-freedom-mobile&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h4&gt;&lt;p&gt;Previously known as Wind mobile, they used to be the go to carrier for affordable plans, but the reality is that they can turn into the other carriers in just a couple years. I&amp;rsquo;m only putting them at the second spot because they have decided to offer a $29/month $20GB boxing day deal without any upfront fees which is a plus from before. 30GB is better than 20GB but who knows what the plans will be in the future.&lt;/p&gt;
+&lt;p&gt;I will admit I ordered from Public Mobile before looking at the cheaper Freedom plans because I had a low opinion of them.&lt;/p&gt;
+&lt;p&gt;Subsidiary of Quebecor after Rogers acquired Shaw.&lt;/p&gt;
+&lt;h3 id=&#34;3-virgin-plus&#34; &gt;3. Virgin Plus
+&lt;span&gt;
+    &lt;a href=&#34;#3-virgin-plus&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;Virgin Plus was offering a $34/month 50GB plan that would come with 5G but their checkout wasn&amp;rsquo;t working. If their checkout was working, I would&amp;rsquo;ve gone with them since I did even have the public mobile website open. The only reason Virgin Mobile comes second is because they have agents that you can talk to very easily unlike Fido and Koodo.&lt;/p&gt;
+&lt;p&gt;Subsidiary of Bell.&lt;/p&gt;
+&lt;h3 id=&#34;4-koodo&#34; &gt;4. Koodo
+&lt;span&gt;
+    &lt;a href=&#34;#4-koodo&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;Although I was switching away from Koodo, Koodo&amp;rsquo;s own boxing day deal was also $34/month 50GB and unlike Fido I knew you would get 5G. It&amp;rsquo;s just unfortunate that Koodo did not call me back like they did in the summer otherwise if they upgraded my plan for FREE I wouldn&amp;rsquo;t have even written this blog post. I can also vouch that Koodo&amp;rsquo;s online checkout works.&lt;/p&gt;
+&lt;p&gt;Koodo is owned by Telus, so that&amp;rsquo;s hilarious.&lt;/p&gt;
+&lt;h3 id=&#34;5-fido&#34; &gt;5. Fido
+&lt;span&gt;
+    &lt;a href=&#34;#5-fido&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;Fido was also offering the $34/month 50GB boxing day deal however Fido&amp;rsquo;s website is a joke. It doesn&amp;rsquo;t work, and when it does, it just breaks again. I was unable to click continue to checkout after entering my card details in, so I ended up on Virgin Mobile&amp;rsquo;s page and we all know how that went. I also found out that Fido&amp;rsquo;s plan might not even include 5G servicing.&lt;/p&gt;
+&lt;p&gt;Subsidiary of Rogers&lt;/p&gt;
+&lt;h3 id=&#34;rogers--telus--bell&#34; &gt;Rogers / Telus / Bell
+&lt;span&gt;
+    &lt;a href=&#34;#rogers--telus--bell&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;The&lt;/p&gt;
+&lt;h2 id=&#34;for-families&#34; &gt;For Families
+&lt;span&gt;
+    &lt;a href=&#34;#for-families&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;I pay for my phone phone plan, so this doesn&amp;rsquo;t count&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Linux [Desktop] Tips</title>
+      <link>https://blog.elijahlopez.ca/posts/linux-tips/</link>
+      <pubDate>Tue, 27 Jun 2023 10:56:19 -0400</pubDate>
+      
+      <guid>https://blog.elijahlopez.ca/posts/linux-tips/</guid>
+      <description>&lt;div&gt;
+    &lt;h2&gt;Table of Contents&lt;/h2&gt;
+    &lt;nav id=&#34;TableOfContents&#34;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&#34;#which-distro-should-i-use&#34;&gt;Which Distro Should I Use?&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#webcam-application&#34;&gt;Webcam Application&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#how-to-install-packages-from-aur&#34;&gt;How to Install Packages from AUR&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#how-to-install-yay&#34;&gt;How to Install yay&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#gpg-keyserver-receive-failed-no-route-to-host&#34;&gt;gpg: keyserver receive failed: No route to host&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#how-to-install-visual-studio-code-in-manjaro&#34;&gt;How to install Visual Studio Code in Manjaro&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#vscode-fix-zsh-font&#34;&gt;VSCode Fix ZSH Font&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#how-to-install-fira-code-nerd-font-on-arch&#34;&gt;How to Install Fira Code Nerd Font on Arch&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#setting-default-browser-for-electron-apps&#34;&gt;Setting Default Browser for Electron Apps&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#how-to-fix-sudo-password-not-accepted&#34;&gt;How to fix Sudo Password Not Accepted&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#virtual-terminal&#34;&gt;Virtual Terminal&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#x-server-restart&#34;&gt;X-Server Restart&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#how-to-setup-onedrive-on-linux&#34;&gt;How to setup OneDrive on Linux&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#linux-how-to-read-a-file-in-the-terminal&#34;&gt;Linux How to Read a File in the Terminal&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#how-to-install-an-appimage-on-manjaro&#34;&gt;How to Install an AppImage on Manjaro&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#linux-append-line-to-system-file&#34;&gt;Linux Append Line to System File&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#steam&#34;&gt;Steam&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#native-or-flatpak&#34;&gt;Native or Flatpak&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#steam-scale-ui-on-linux-or-manjaro&#34;&gt;Steam Scale UI on Linux or Manjaro&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#how-to-pin-or-favourite-games-on-steam-linux&#34;&gt;How to Pin or Favourite Games on Steam Linux&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#how-to-force-close-apps-on-linux&#34;&gt;How to Force Close Apps on Linux&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#version-glibc_238-not-found&#34;&gt;version GLIBC_2.38 Not Found&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#failed-to-start-light-display-manager-error&#34;&gt;Failed to Start Light Display Manager Error&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#how-to-enable-wi-fi-in-ttyttl&#34;&gt;How to Enable Wi-Fi in TTY/TTL&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#how-to-install-python-310-on-manjaro-or-arch&#34;&gt;How to Install Python 3.10 on Manjaro (or Arch)&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#how-to-reduce-firefox-scroll-speed-or-sensitivity&#34;&gt;How to Reduce Firefox Scroll Speed or Sensitivity&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#fix-touchpad-after-waking-from-sleep&#34;&gt;Fix Touchpad after Waking From Sleep&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#black-screens-on-monitors&#34;&gt;Black Screens on Monitors&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#app-images&#34;&gt;App Images&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#how-to-resize-partition&#34;&gt;How to Resize Partition?&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#adding-aliases&#34;&gt;Adding Aliases&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#how-to-connect-xbox-one-controller-over-bluetooth&#34;&gt;How to Connect XBox One Controller Over Bluetooth&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#how-to-play-epic-games-or-gog-launcher-games&#34;&gt;How to Play Epic Games or GOG Launcher Games&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#how-to-disabled-reboot-required-after-updating-via-kde-discover&#34;&gt;How to disabled &amp;lsquo;Reboot Required&amp;rsquo; After Updating via KDE Discover&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;which-distro-should-i-use&#34; &gt;Which Distro Should I Use?
+&lt;span&gt;
+    &lt;a href=&#34;#which-distro-should-i-use&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://fedoraproject.org/spins/kde/&#34;&gt;Fedora KDE&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The best distro is functionally the best, stable (for general and niches like gaming and content creation), and has better performance than the alternatives.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;For functionality, KDE is the best; fractional scaling.&lt;/li&gt;
+&lt;li&gt;For stability, we choose anything but Arch. A perfect example is this comment explaining that when things break, he doesn&amp;rsquo;t consider it broken &lt;a href=&#34;https://www.reddit.com/r/archlinux/comments/11t3wc1/comment/jchsx4e&#34;&gt;if he has to use the internet (arch wiki) to fix the problem&lt;/a&gt;. My definition of broken is that the issue cannot be fixed by restarting your computer.&lt;/li&gt;
+&lt;li&gt;For performance, we want to avoid Ubuntu-based distros that use snaps&lt;/li&gt;
+&lt;li&gt;We are left with distros that support KDE out of the box: Namely, Debian based (excluding Ubuntu) and Fedora based.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;So why Fedora instead of Debian? Well because it&amp;rsquo;s more up to date and it&amp;rsquo;s also not confusing to download unlike Debian.&lt;/p&gt;
+&lt;p&gt;There&amp;rsquo;s also CachyOS, but I need to test it out first before recommending it since it is built on top of Arch and I have experience of that being an unpleasant experience if you aren&amp;rsquo;t updating constantly.&lt;/p&gt;
+&lt;h2 id=&#34;webcam-application&#34; &gt;Webcam Application
+&lt;span&gt;
+    &lt;a href=&#34;#webcam-application&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;KDE: kamoso (via Discover)&lt;/p&gt;
+&lt;p&gt;Gnome: Cheese&lt;/p&gt;
+&lt;h2 id=&#34;how-to-install-packages-from-aur&#34; &gt;How to Install Packages from AUR
+&lt;span&gt;
+    &lt;a href=&#34;#how-to-install-packages-from-aur&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;You can either do &lt;code&gt;pamac build $PKGNAME&lt;/code&gt; or use &lt;code&gt;yay -s $PACKAGENAME&lt;/code&gt; which requires installing yay as shown above.&lt;/p&gt;
+&lt;p&gt;In the next section is an example on how to install visual studio code.&lt;/p&gt;
+&lt;p&gt;The following is a one-liner way to install packages in yay to skip the prompts.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#24909d&#34;&gt;echo&lt;/span&gt; y | &lt;span style=&#34;color:#40ffff&#34;&gt;LANG&lt;/span&gt;=C yay --provides=&lt;span style=&#34;color:#24909d&#34;&gt;false&lt;/span&gt; --answerdiff=None --answerclean=None --mflags &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;--noconfirm&amp;#34;&lt;/span&gt; -S &lt;span style=&#34;color:#40ffff&#34;&gt;$list_of_packages&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;how-to-install-yay&#34; &gt;How to Install yay
+&lt;span&gt;
+    &lt;a href=&#34;#how-to-install-yay&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;Yet Another Yogurt (yay) helps you install packages from AUR using the command &lt;code&gt;yay -S&lt;/code&gt; instead of entering in commands to clone and build the package.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-zsh&#34; data-lang=&#34;zsh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;pacman -S --needed --noconfirm git base-devel
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git clone https://aur.archlinux.org/yay.git
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#24909d&#34;&gt;cd&lt;/span&gt; yay
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;makepkg -si
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#24909d&#34;&gt;cd&lt;/span&gt; ..
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;rm yay -rf
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;gpg-keyserver-receive-failed-no-route-to-host&#34; &gt;gpg: keyserver receive failed: No route to host
+&lt;span&gt;
+    &lt;a href=&#34;#gpg-keyserver-receive-failed-no-route-to-host&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;gpg --server hkp://keys.gnupg.net --recv-key KEY_GOES_HERE
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;If the above fails with &amp;ldquo;gpg: keyserver receive failed: Server indicated a failure&amp;rdquo;,&lt;/p&gt;
+&lt;p&gt;Use &lt;code&gt;sudo nano /etc/resolv.conf&lt;/code&gt; and add Cloudflare&amp;rsquo;s DNS&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-conf&#34; data-lang=&#34;conf&#34;&gt;nameserver 1.1.1.1  # Cloudflare
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;how-to-install-visual-studio-code-in-manjaro&#34; &gt;How to install Visual Studio Code in Manjaro
+&lt;span&gt;
+    &lt;a href=&#34;#how-to-install-visual-studio-code-in-manjaro&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;To install vscode, &lt;code&gt;yay -S visual-studio-code-bin&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;vscode-fix-zsh-font&#34; &gt;VSCode Fix ZSH Font
+&lt;span&gt;
+    &lt;a href=&#34;#vscode-fix-zsh-font&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo pacman -Su ttf-meslo-nerd-font-powerlevel10k ttf-firacode-nerd --noconfirm
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Set Terminal › Integrated: Font Family to &lt;code&gt;firaCode Nerd Font, monospace&lt;/code&gt; or &lt;code&gt;MesloLGS NF, monospace&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;how-to-install-fira-code-nerd-font-on-arch&#34; &gt;How to Install Fira Code Nerd Font on Arch
+&lt;span&gt;
+    &lt;a href=&#34;#how-to-install-fira-code-nerd-font-on-arch&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://github.com/tonsky/FiraCode/wiki/Linux-instructions#installing-with-a-package-manager&#34;&gt;Official install instructions&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Suppose you want to install a package on Arch. The first step would be to search for what you want using &lt;code&gt;pacman -Ss a query&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;gt; pacman -Ss fira code
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;extra/texlive-fontsextra 2023.66594-15 (texlive)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    TeX Live - Additional fonts
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;extra/texlive-latexextra 2023.66594-15 (texlive)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    TeX Live - LaTeX additional packages
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;extra/ttf-fira-code 6.2-2
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    Monospaced font with programming ligatures
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;extra/ttf-firacode-nerd 3.0.2-1 (nerd-fonts)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    Patched font Fira (Fura) Code from nerd fonts library
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;extra/woff-fira-code 6.2-2
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    Monospaced font with programming ligatures
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;extra/woff2-fira-code 6.2-2
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    Monospaced font with programming ligatures
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Next install the Fira Code Nerd Font.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo pacman -S ttf-firacode-nerd --noconfirm
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;To use this font in Visual Studio Code, set the editor font family to &lt;code&gt;firaCode Nerd Font, &#39;Cascadia Code&#39;, Consolas, &#39;Courier New&#39;, monospace&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Set the terminal font-family to &lt;code&gt;firaCode Nerd Font, monospace&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;setting-default-browser-for-electron-apps&#34; &gt;Setting Default Browser for Electron Apps
+&lt;span&gt;
+    &lt;a href=&#34;#setting-default-browser-for-electron-apps&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;xdg-mime default brave.desktop x-scheme-handler/http
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;xdg-mime default brave.desktop x-scheme-handler/https
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;how-to-fix-sudo-password-not-accepted&#34; &gt;How to fix Sudo Password Not Accepted
+&lt;span&gt;
+    &lt;a href=&#34;#how-to-fix-sudo-password-not-accepted&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-zsh&#34; data-lang=&#34;zsh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;systemctl start systemd-homed
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;pacman -S pambase --noconfirm   &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# optional&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;virtual-terminal&#34; &gt;Virtual Terminal
+&lt;span&gt;
+    &lt;a href=&#34;#virtual-terminal&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Ctrl + Alt + F4 to go to virtual terminal&lt;/li&gt;
+&lt;li&gt;Ctrl + Alt + F1 to go back to desktop&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;x-server-restart&#34; &gt;X-Server Restart
+&lt;span&gt;
+    &lt;a href=&#34;#x-server-restart&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;Ctrl + Alt + Backspace (unconfirmed)&lt;/p&gt;
+&lt;h2 id=&#34;how-to-setup-onedrive-on-linux&#34; &gt;How to setup OneDrive on Linux
+&lt;span&gt;
+    &lt;a href=&#34;#how-to-setup-onedrive-on-linux&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/jstaf/onedriver&#34;&gt;jstaf/onedriver&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;For Arch, use &lt;code&gt;sudo pamac build onedriver&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;yay onedrive-abraunegg
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Note: If asked regarding a provider for &amp;rsquo;d-runtime&amp;rsquo; and &amp;rsquo;d-compiler&amp;rsquo;, select &amp;rsquo;liblphobos&amp;rsquo; and &amp;rsquo;ldc&#39;&lt;/p&gt;
+&lt;p&gt;Run &lt;code&gt;onedrive&lt;/code&gt; to setup account.&lt;/p&gt;
+&lt;p&gt;Increase number of inotify watchers (number of files that can be monitored)&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#24909d&#34;&gt;echo&lt;/span&gt; fs.inotify.max_user_watches=&lt;span style=&#34;color:#3677a9&#34;&gt;524288&lt;/span&gt; | sudo tee /etc/sysctl.d/40-max-user-watches.conf &amp;amp;&amp;amp; sudo sysctl --system
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Enable the system service&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo systemctl &lt;span style=&#34;color:#24909d&#34;&gt;enable&lt;/span&gt; onedrive@&lt;span style=&#34;color:#40ffff&#34;&gt;$USER&lt;/span&gt;.service
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo systemctl start onedrive@&lt;span style=&#34;color:#40ffff&#34;&gt;$USER&lt;/span&gt;.service
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;journalctl -u onedrive@&lt;span style=&#34;color:#40ffff&#34;&gt;$USER&lt;/span&gt; &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# scroll to bottom to check if syncing works&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;linux-how-to-read-a-file-in-the-terminal&#34; &gt;Linux How to Read a File in the Terminal
+&lt;span&gt;
+    &lt;a href=&#34;#linux-how-to-read-a-file-in-the-terminal&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Use &lt;code&gt;less&lt;/code&gt; to read line by line (arrow up and down keys)&lt;/li&gt;
+&lt;li&gt;Use &lt;code&gt;more&lt;/code&gt; to read page by page (arrow up and down keys)&lt;/li&gt;
+&lt;li&gt;Use &lt;code&gt;cat&lt;/code&gt; to output entire file (useful for piping &lt;code&gt;|&lt;/code&gt; commands)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;how-to-install-an-appimage-on-manjaro&#34; &gt;How to Install an AppImage on Manjaro
+&lt;span&gt;
+    &lt;a href=&#34;#how-to-install-an-appimage-on-manjaro&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;First install &lt;code&gt;appimagelauncher&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo pacman -S appimagelauncher
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Next double click on the downloaded AppImage&lt;/p&gt;
+&lt;h2 id=&#34;linux-append-line-to-system-file&#34; &gt;Linux Append Line to System File
+&lt;span&gt;
+    &lt;a href=&#34;#linux-append-line-to-system-file&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;To append a line to a system file, do not use &lt;code&gt;&amp;gt;&amp;gt;&lt;/code&gt;. Instead use &lt;code&gt;commandForOutputGoesHere | sudo tee -a /path/to/file&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;steam&#34; &gt;Steam
+&lt;span&gt;
+    &lt;a href=&#34;#steam&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;h3 id=&#34;native-or-flatpak&#34; &gt;Native or Flatpak
+&lt;span&gt;
+    &lt;a href=&#34;#native-or-flatpak&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;Native. Anyone who says Flatpak hasn&amp;rsquo;t played enough games. For example when playing Forza Horizon 6, I got a &amp;ldquo;PATH TOO LONG&amp;rdquo; error.&lt;/p&gt;
+&lt;h3 id=&#34;steam-scale-ui-on-linux-or-manjaro&#34; &gt;Steam Scale UI on Linux or Manjaro
+&lt;span&gt;
+    &lt;a href=&#34;#steam-scale-ui-on-linux-or-manjaro&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;Before we get started, reminder to prefer using &lt;code&gt;Steam (Runtime)&lt;/code&gt; instead of &lt;code&gt;Steam (Native)&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;If you have root access, run the following command so that steam will be properly scaled
+no matter how it is launched (steam desktop shortcut, terminal, game desktop shortcut).&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#24909d&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;STEAM_FORCE_DESKTOPUI_SCALING=&amp;#39;1.5&amp;#39;&amp;#34;&lt;/span&gt; | sudo tee -a /etc/environment
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;If you do not have root access, edit your login shell (&lt;code&gt;~/.profile&lt;/code&gt;) instead.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#24909d&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;STEAM_FORCE_DESKTOPUI_SCALING=&amp;#39;1.5&amp;#39;&amp;#34;&lt;/span&gt; | sudo tee -a ~/.profile
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Test 1.5 out by using &lt;code&gt;source /path/to/file &amp;amp;&amp;amp; steam&lt;/code&gt;. If 1.5 isn&amp;rsquo;t right for you, use nano to edit your file:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;sudo nano /etc/environment&lt;/code&gt; or &lt;code&gt;nano ~/.profile&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Now log out and log back in so that your system will source from either of the files that you edited.&lt;/p&gt;
+&lt;details&gt;&lt;summary&gt;Alternatively, you could edit every single one of your game desktop entries in addition to your steam shortcuts,&lt;/summary&gt;
+&lt;p&gt;To fix scaling, simply run&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo nano /usr/share/applications/steam.desktop
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;If you have &lt;code&gt;gedit&lt;/code&gt;, you can use that instead.&lt;/p&gt;
+&lt;p&gt;Next scroll to the &lt;strong&gt;first&lt;/strong&gt; Exec for the desktop entry, and  add &lt;code&gt;-forcedesktopscaling=1.5&lt;/code&gt; like below&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-desktop&#34; data-lang=&#34;desktop&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;Exec&lt;/span&gt;=&lt;span style=&#34;color:#ed9d13&#34;&gt;/usr/bin/steam-runtime -forcedesktopscaling=1.5 %U&lt;/span&gt;&lt;span style=&#34;color:#666&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Save the file and restart steam (the next section has a command for shutting down apps by program name).&lt;/p&gt;
+&lt;p&gt;You will also have to add this argument to all game shortcuts.&lt;/p&gt;
+&lt;/details&gt;
+&lt;h2 id=&#34;how-to-pin-or-favourite-games-on-steam-linux&#34; &gt;How to Pin or Favourite Games on Steam Linux
+&lt;span&gt;
+    &lt;a href=&#34;#how-to-pin-or-favourite-games-on-steam-linux&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;Copy the desktop file to your local applications directory.
+This will let you pin / favourite the game to your start menu.
+You can choose to delete the original shortcut afterwards.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;mkdir ~/.local/share/applications
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo cp ~/Desktop/Game.desktop ~/.local/share/applications
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;how-to-force-close-apps-on-linux&#34; &gt;How to Force Close Apps on Linux
+&lt;span&gt;
+    &lt;a href=&#34;#how-to-force-close-apps-on-linux&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;killall steam
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;version-glibc_238-not-found&#34; &gt;version GLIBC_2.38 Not Found
+&lt;span&gt;
+    &lt;a href=&#34;#version-glibc_238-not-found&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;Man I tried to show my friend today how my Manjaro system was running and of course it breaks.&lt;/p&gt;
+&lt;p&gt;Manjaro fucking sucks. Let&amp;rsquo;s get that straight. I tried running a pacman command and it doesn&amp;rsquo;t upgrade my system. I did something and everything broke.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;pacman
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;pacman: /usr/lib/libc.so.6: version &lt;span style=&#34;color:#ed9d13&#34;&gt;`&lt;/span&gt;GLIBC_2.38&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#39; not found (required by pacman)
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;pacman: /usr/lib/libc.so.6: version `GLIBC_2.38&amp;#39;&lt;/span&gt; not found (required by /usr/lib/libalpm.so.13)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;To fix this issue,&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Download &lt;a href=&#34;https://pkgbuild.com/~morganamilo/pacman-static/x86_64/bin/&#34;&gt;pacman-static&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;`cd ~/Downloads &amp;amp;&amp;amp; chmod +x ./pacman-static``&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;sudo pacman -Syu glibc-locales --overwrite /usr/lib/locale/\*/\* --noconfirm&lt;/code&gt; &lt;a href=&#34;https://forum.manjaro.org/t/stable-update-2023-10-09-mesa-grub-glibc-thunderbird-kde-frameworks-renaming/149302/2&#34;&gt;reference&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;sudo ./pacman-static -Syu --noconfirm&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;sudo pacman-mirrors -f5&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Hey hey hey, we fixed it.&lt;/p&gt;
+&lt;p&gt;My laptop&amp;rsquo;s battery drained so when I started it up again I got the error in the following section.&lt;/p&gt;
+&lt;h2 id=&#34;failed-to-start-light-display-manager-error&#34; &gt;Failed to Start Light Display Manager Error
+&lt;span&gt;
+    &lt;a href=&#34;#failed-to-start-light-display-manager-error&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;In the lightdm logs, you&amp;rsquo;ll see the following.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;failed to start seat: seat0
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;First step is to get terminal access&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Ctrl + Alt + F2&lt;/li&gt;
+&lt;li&gt;Enter your username and then your password&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;sudo pacman -Syu --noconfirm&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;nmtui    &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# connect to a wifi network if you are using wifi&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo pacman -S lightdm-gtk-greeter --noconfirm
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo pacman -Syu
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo systemctl start lightdm
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;how-to-enable-wi-fi-in-ttyttl&#34; &gt;How to Enable Wi-Fi in TTY/TTL
+&lt;span&gt;
+    &lt;a href=&#34;#how-to-enable-wi-fi-in-ttyttl&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;Ctrl + Alt + F2&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;nmtui&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;how-to-install-python-310-on-manjaro-or-arch&#34; &gt;How to Install Python 3.10 on Manjaro (or Arch)
+&lt;span&gt;
+    &lt;a href=&#34;#how-to-install-python-310-on-manjaro-or-arch&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;Try this first.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;yay -S python310
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;It didn&amp;rsquo;t work for me, so this is how I did it.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#24909d&#34;&gt;cd&lt;/span&gt; ~/Downloads
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git clone https://aur.archlinux.org/python310.git
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#24909d&#34;&gt;cd&lt;/span&gt; python310
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;makepkg -si
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt;# the directory is 360 MB, so only if that&amp;#39;s a lot for your system, remove it&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#24909d&#34;&gt;cd&lt;/span&gt; ..
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;rm -rf python310
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This will take a LONG time&amp;hellip;but it works.&lt;/p&gt;
+&lt;p&gt;Music Caster runs on Linux again!&lt;/p&gt;
+&lt;h2 id=&#34;how-to-reduce-firefox-scroll-speed-or-sensitivity&#34; &gt;How to Reduce Firefox Scroll Speed or Sensitivity
+&lt;span&gt;
+    &lt;a href=&#34;#how-to-reduce-firefox-scroll-speed-or-sensitivity&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;The scroll speed on Firefox is too sensitive. To reduce it,&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Go to about:config&lt;/li&gt;
+&lt;li&gt;Search for &lt;code&gt;mousewheel.default.delta_multiplier_y&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Set to 75 or change until satisfactory&lt;/li&gt;
+&lt;li&gt;You can test the scroll speed on this post itself&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;fix-touchpad-after-waking-from-sleep&#34; &gt;Fix Touchpad after Waking From Sleep
+&lt;span&gt;
+    &lt;a href=&#34;#fix-touchpad-after-waking-from-sleep&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://blog.elijahlopez.ca/posts/linux-touchpad-not-working/&#34;&gt;See my other post&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;black-screens-on-monitors&#34; &gt;Black Screens on Monitors
+&lt;span&gt;
+    &lt;a href=&#34;#black-screens-on-monitors&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;When dual-booting Windows and Fedora, after a few weeks I started encountering a problem where after 5-15 minutes my displays would go Black, audio still worked, however my NVIDIA 5070 Ti would start spinning at 100%.&lt;/p&gt;
+&lt;p&gt;I first thought this was a wayland problem, so tried KDE plasma x11 and still encountered the same problem. I then thought it was a KDE/Fedora problem so I booted into Windows. To my surprised, I encountered the same problem after 10-15minutes.&lt;/p&gt;
+&lt;p&gt;After searching I found some advice to turn off GSYNC. So boot into Windows and turn off GSYNC.&lt;/p&gt;
+&lt;p&gt;I speculate the problem stems from using one GSYNC supported monitor with a non-GSYNC supported monitor. There must be some sort of NVIDIA driver bug that didn&amp;rsquo;t account for a setup so when the GPU tries to leverage GSYNC (variable refresh rate), it tries to do so on all monitors instead of just the supported monitor. And maybe the supported monitor doesn&amp;rsquo;t support it properly either. So the failure comes from being unable to rectify when GSYNC support isn&amp;rsquo;t working? I&amp;rsquo;m not too sure, I didn&amp;rsquo;t bother testing using only one monitor.&lt;/p&gt;
+&lt;h2 id=&#34;app-images&#34; &gt;App Images
+&lt;span&gt;
+    &lt;a href=&#34;#app-images&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;Install &lt;a href=&#34;https://github.com/TheAssassin/AppImageLauncher/releases&#34;&gt;AppImageLauncher&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;To install on Fedora, we need to download an RPM file corresponding to our CPU architecture. Most PCs are x86_64, so you are look for x86_64*rpm or something.&lt;/p&gt;
+&lt;h2 id=&#34;how-to-resize-partition&#34; &gt;How to Resize Partition?
+&lt;span&gt;
+    &lt;a href=&#34;#how-to-resize-partition&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;I don&amp;rsquo;t recommend using GPARTED Live. Instead you can boot into the same Live ISO that you used to install Linux, and from there, you can install gparted through Discover (or whatever the software store is on your distro). From there, you can simply resize (expand). You&amp;rsquo;ll see a warning but from experience, grub will work fine even if the free space you are allocating preceeds the partition you want to expand.&lt;/p&gt;
+&lt;h2 id=&#34;adding-aliases&#34; &gt;Adding Aliases
+&lt;span&gt;
+    &lt;a href=&#34;#adding-aliases&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;Sometimes you need to use the command line for long ass commands.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;nano ~/.bash_aliases
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#24909d&#34;&gt;alias&lt;/span&gt; &lt;span style=&#34;color:#40ffff&#34;&gt;x&lt;/span&gt;=&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;command&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;nano ~/.bashrc
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;. ~/.bash_aliases
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;how-to-connect-xbox-one-controller-over-bluetooth&#34; &gt;How to Connect XBox One Controller Over Bluetooth
+&lt;span&gt;
+    &lt;a href=&#34;#how-to-connect-xbox-one-controller-over-bluetooth&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;Install &lt;code&gt;xboxdr&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;how-to-play-epic-games-or-gog-launcher-games&#34; &gt;How to Play Epic Games or GOG Launcher Games
+&lt;span&gt;
+    &lt;a href=&#34;#how-to-play-epic-games-or-gog-launcher-games&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;Install &lt;a href=&#34;https://heroicgameslauncher.com/&#34;&gt;Heroic&lt;/a&gt;, an Open Source Epic Games and GOG Launcher&lt;/p&gt;
+&lt;p&gt;If some games don&amp;rsquo;t work with Heroic, you can do the following&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;sudo -H nano /etc/environment&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;USE_FAKE_EPIC_EXE=true&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;how-to-disabled-reboot-required-after-updating-via-kde-discover&#34; &gt;How to disabled &amp;lsquo;Reboot Required&amp;rsquo; After Updating via KDE Discover
+&lt;span&gt;
+    &lt;a href=&#34;#how-to-disabled-reboot-required-after-updating-via-kde-discover&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;To update without requiring to reboot:&lt;/p&gt;
+&lt;p&gt;Click Settings &amp;gt; Three Dots Top Right &amp;gt; Configure Updates &amp;gt; Apply System Updates Immediately&lt;/p&gt;
+&lt;p&gt;Very helpful for people who have encrypted disks since an update reboot requires entering our decryption password twice.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Linux USB Formatting Issues</title>
+      <link>https://blog.elijahlopez.ca/posts/linux-usb-formatting-issues/</link>
+      <pubDate>Sun, 24 Jul 2022 21:03:20 -0400</pubDate>
+      
+      <guid>https://blog.elijahlopez.ca/posts/linux-usb-formatting-issues/</guid>
+      <description>&lt;p&gt;When trying to test out multiple Linux distros on multiple
+USB sticks, I ran into this horrible error. The creators of Balena Etcher
+simply do not care about users who soft brick their USBs. Rufus and Balena
+developers simply say that their software cannot hard brick the USB,
+which is a good thing but they provide 0 support in fixing the issue.&lt;/p&gt;
+&lt;p&gt;I am here to share my findings since solutions found online are in parts.&lt;/p&gt;
+&lt;p&gt;Operating System: Windows&lt;/p&gt;
+&lt;p&gt;How do you fix the error and other errors like:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;the volume was created successfully but not formatted&lt;/li&gt;
+&lt;li&gt;Please Insert Disk Into Removable Disk&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Like my other Linux tutorial on how to move a partition in Windows, a partition tool is very useful.
+The &lt;a href=&#34;https://www.partitionwizard.com/free-partition-manager.html&#34;&gt;MiniTool Parition Wizard&lt;/a&gt; was very handy.
+Open this tool up, right click the USB or drive you want to fix, and click wipe drive and fill the drive with 0s.
+This should take 10 minutes.&lt;/p&gt;
+&lt;p&gt;Afterwards, you can either format the drive in Windows or run Balena Etcher to flash another ISO.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>MacOS is an Dysfunctional Operating System</title>
+      <link>https://blog.elijahlopez.ca/posts/macos-sucks/</link>
+      <pubDate>Thu, 12 May 2022 17:21:36 -0400</pubDate>
+      
+      <guid>https://blog.elijahlopez.ca/posts/macos-sucks/</guid>
+      <description>&lt;p&gt;Here are some reasons MacOS is not as superb as people say it is. Of course, Linux and Windows have their own problems too. The order for desktop OS&amp;rsquo;s are MacOS &amp;lt; Linux Desktop &amp;lt; Windows. This article is not about why Windows &amp;gt; Linux, so please refrain from commenting about Linux. If you are a Mac user and are offended, Windows also sucks a) the Settings app does not include everything found in the control panel, and the control panel uses the same UI interface since Windows 7 and b) requires installing third party apps like TaskbarX, EarTrumpet, QuickLook, and ditto to improve the UX and c) there&amp;rsquo;s no effort to bring Linux functionality to Windows (e.g. bash, posix kernel, preinstalled GNU coreutils, PATH limit and editable as a file).&lt;/p&gt;
+&lt;h2 id=&#34;hidden-files&#34; &gt;Hidden Files
+&lt;span&gt;
+    &lt;a href=&#34;#hidden-files&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;So you want to see hidden files?
+You go to finder settings but can&amp;rsquo;t find it. So you then Google it. Turns out you were supposed to memorize the very intuitive keyboard shortcut (command + shift + period or simply command + &amp;gt;).&lt;/p&gt;
+&lt;h2 id=&#34;removing-many-files-via-command-line&#34; &gt;Removing Many Files via Command Line
+&lt;span&gt;
+    &lt;a href=&#34;#removing-many-files-via-command-line&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;rm -R folder requires sudo even if I own the files.&lt;/p&gt;
+&lt;h2 id=&#34;homebrew-does-not-modify-path&#34; &gt;Homebrew does not modify PATH
+&lt;span&gt;
+    &lt;a href=&#34;#homebrew-does-not-modify-path&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;Homebrew does not permanently ass packages to path. You have to create a shell config yourself with the export path shenanigans. Stackoverflow doesn&amp;rsquo;t even bother giving you the one liner to do this. They make you create a file yourself and add it rather than a simple &lt;code&gt;echo &amp;quot;export PATH=PATH:...&amp;quot; &amp;gt;&amp;gt; ~/.zshrc&lt;/code&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;updating-macos-breaks-git&#34; &gt;Updating macOS Breaks git
+&lt;span&gt;
+    &lt;a href=&#34;#updating-macos-breaks-git&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;Another reason is that every time you update MacOS, you will get the following error when trying to use git.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://apple.stackexchange.com/questions/254380/why-am-i-getting-an-invalid-active-developer-path-when-attempting-to-use-git-a#254381&#34;&gt;https://apple.stackexchange.com/questions/254380/why-am-i-getting-an-invalid-active-developer-path-when-attempting-to-use-git-a#254381&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The error is &amp;ldquo;invalid developer path.&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;Every time you update, you have to agree to Apple&amp;rsquo;s XCodes terms of service in order to use git, which isn&amp;rsquo;t made by Apple but simply
+preinstalled by them. Don&amp;rsquo;t want to install XCode? Too bad, the Command line tools themselves is 130MB.&lt;/p&gt;
+&lt;h2 id=&#34;notes-app&#34; &gt;Notes App
+&lt;span&gt;
+    &lt;a href=&#34;#notes-app&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;This app is atrocious. Google made the right decision to only deploy a web version of Keep because if Apple can&amp;rsquo;t make a functional app for their own Operating System that doesn&amp;rsquo;t require rebooting your laptop to fix its unresponsiveness, then how could Google ever make a desktop app that meets expectations?&lt;/p&gt;
+&lt;h2 id=&#34;status-icons-can-be-forced-into-hiding&#34; &gt;Status Icons can be Forced into Hiding
+&lt;span&gt;
+    &lt;a href=&#34;#status-icons-can-be-forced-into-hiding&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://developer.apple.com/design/human-interface-guidelines/the-menu-bar#Menu-bar-extras&#34;&gt;Apple Developer - Menu bar extras&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;When necessary, the system hides menu bar extras to make room for app menus. Similarly, if there are too many menu bar extras, the system may hide some to avoid crowding app menus.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Forget Linux distros. On Windows, status icons by default don&amp;rsquo;t pollute the menu bar compared to macOS, and they also aren&amp;rsquo;t forced into hiding. The fact that status icons can simply be &lt;a href=&#34;https://bg3.wiki/wiki/Banishment&#34;&gt;banished&lt;/a&gt; is indicative that macOS is not a thoughtfully designed OS. It&amp;rsquo;s an operating system that is aesthetic without the function. The one place Apple&amp;rsquo;s Mac&amp;rsquo;s excel at is the hardware, but since hardware of all OEMs is continuously improving, why would I bother with an M-series chip? Especially with the AMD Strix and Intel Lunar Lake CPUs coming out now (2024). I&amp;rsquo;d argue that the &amp;ldquo;new&amp;rdquo; Snapdragon Elite X chip belong in an Android tablet, because the Surface Pro 11 is stupidly priced as being more expensive than a Macbook Air M3 for 1TB of storage and 16GB of RAM. Nobody wants your stupid Copilot PCs Microsoft. Just change your name to AiSoft!&lt;/p&gt;
+&lt;h2 id=&#34;command-tab-isnt-efficient&#34; &gt;Command Tab Isn&amp;rsquo;t Efficient
+&lt;span&gt;
+    &lt;a href=&#34;#command-tab-isnt-efficient&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;One of the issues with macOS is that it assumes its users will never need to use different instances of the same app for different tasks. There&amp;rsquo;s an incorrect assumption that if I three windows of one app open, that all three are related to the same task. When I want to switch from the browser to one of these windows, I can&amp;rsquo;t just use Command Tab, I also have to then use Command tilde and cycle through another window I don&amp;rsquo;t need to use. It&amp;rsquo;s also difficult to know how many windows I have of the same app! For this, you need to swipe up with three fingers. On Windows, the equivalent is Windows Tab. Option tab does nothing on macOS. Even then, the windows are scattered all over the place, so you need to take your time to count.&lt;/p&gt;
+&lt;p&gt;Oh and if you minimize one window of an app, this Option trick doesn&amp;rsquo;t even work! The window cannot be restored without using your touchpad, you just end up on the window that has not been minimized! Who came up with this garbage system? Even if there&amp;rsquo;s another keyboard shortcut for that, that&amp;rsquo;s another keyboard shortcut that didn&amp;rsquo;t need to exist. Command tilde should&amp;rsquo;ve worked.&lt;/p&gt;
+&lt;h2 id=&#34;restoring-a-window-is-a-pain&#34; &gt;Restoring a Window is a Pain
+&lt;span&gt;
+    &lt;a href=&#34;#restoring-a-window-is-a-pain&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;I have to use the Option key which feels absolutely unnatural because I&amp;rsquo;m using the second finger from the left.&lt;/p&gt;
+&lt;h2 id=&#34;vpn-network-speeds&#34; &gt;VPN Network Speeds
+&lt;span&gt;
+    &lt;a href=&#34;#vpn-network-speeds&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;A VPN I use, Obscura VPN, has to work with macOS&amp;rsquo;s system network extension, which is a black box that provides the VPN with packets to tunnel. Due to this necessity, when the app was released on Windows and Linux, VPN speeds were faster over a wi-fi connection on a Windows laptop than a 1gbps ethernet connection.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Open-Debate Platform</title>
+      <link>https://blog.elijahlopez.ca/posts/open-debate-platform/</link>
+      <pubDate>Fri, 18 Mar 2022 22:58:03 -0400</pubDate>
+      
+      <guid>https://blog.elijahlopez.ca/posts/open-debate-platform/</guid>
+      <description>&lt;p&gt;I wasn&amp;rsquo;t able to put all the details from my mind into this document, but hopefully
+the spirit can be conveyed even if the technical design may be incomplete.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Democracy cannot guarantee truth, but can be used to guide discussion &amp;hellip; under a set of rules.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;open-debate-platform&#34; &gt;Open-Debate Platform
+&lt;span&gt;
+    &lt;a href=&#34;#open-debate-platform&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;Open-debate platform (ODP) or open-source debate, strongly inspired by open-sourcecode platforms, is about like minded users cooperating informally in order to produce formal arguments in a structured and multiple opinion debate. A debate in this context is simply a question asking for answers. The purpose is to converge and display answers. It&amp;rsquo;s about helping people
+finding the truth without bias. If people want to know the best language to learn, they will probably be greeted with &amp;ldquo;English&amp;rdquo;
+but if they don&amp;rsquo;t agree that the reasons apply to them, they can look at the next alternative and so on. The platform
+allows for efficient analysis of all opinions and arguments. Parts of the implementation follow. I say parts, because there might be race conditions, but the purpose of this document is to communicate the spirit of ODP so that technical solutions can be used and created to preserve and scale this spirit.&lt;/p&gt;
+&lt;details&gt;
+&lt;summary&gt;Controversy and Extremism&lt;/summary&gt;
+Controversy and extremism is expected on a platform like this. The entire point is for an open discussion to
+stamp out objectively wrong opinions. For example, murder is wrong; An argument pertaining to killing
+would most likely delve into the definition of murder. However, the platform converges upon arguments that are
+able to defend their position.
+&lt;p&gt;Even though extremism will be present on the platform, uncivil discourse is not to be tolerated.
+Civil discussion does not involve calls to genocide or targeting of innocent people. Such a statement would be suppressed,
+however arguing whether such things are okay will be permitted. There is a difference between debating something
+that is immoral vs. actually acting immorally. Since these arguments don&amp;rsquo;t actually dictate behavior, the ODP
+does not have to follow any argument that is able to defend its position.&lt;/p&gt;
+&lt;/details&gt;
+&lt;p&gt;An ODP can be structured more easily digitally than physically. So the specs are made with that in mind.
+Of course, a paper system could replicate this although with unsustainable logistics and so would need to cut some corners.&lt;/p&gt;
+&lt;h2 id=&#34;specs&#34; &gt;Specs
+&lt;span&gt;
+    &lt;a href=&#34;#specs&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;With the spec, some features improve usability and user experience and are not required for the basic
+implementation of an ODP. The basic is simply a platform that allows for the interactions described in the previous paragraphs.
+One way to accomplish that is given below.&lt;/p&gt;
+&lt;h3 id=&#34;digital-platform&#34; &gt;Digital Platform
+&lt;span&gt;
+    &lt;a href=&#34;#digital-platform&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Most likely a website&lt;/li&gt;
+&lt;li&gt;The website that acts as a host and a gatherer. A gather type system is decentralized but could take lot of technical effort to get right.&lt;/li&gt;
+&lt;li&gt;The digital platform is run by an unbiased &lt;a href=&#34;#operator&#34;&gt;operator&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;A biased operator invalidates ODP&lt;/li&gt;
+&lt;li&gt;People can become &lt;a href=&#34;#user&#34;&gt;users&lt;/a&gt; by logging in with email or using public-private key signing&lt;/li&gt;
+&lt;li&gt;Users to able to ask &lt;a href=&#34;#questions&#34;&gt;questions&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;The platform would have an ability to search and explore questions&lt;/li&gt;
+&lt;li&gt;The platform supports a routing protocol like TOR and can be run with JavaScript disabled&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;operator&#34; &gt;Operator
+&lt;span&gt;
+    &lt;a href=&#34;#operator&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;An operator is an entity that runs the ODP. Operators are to remove calls to harm. Harm is defined as anything equal to or more than a call to chastise people who haven&amp;rsquo;t acted uncivil in a &lt;strong&gt;formal&lt;/strong&gt; setting. Formality does matter. Unbiased means not using their opinion an a question to censor other opinions. For example, an operator might be pro-Monero, however that does not give them the right to impede and censor civil arguments by pro-bitcoin and pro-ethereum parties.&lt;/p&gt;
+&lt;h3 id=&#34;user&#34; &gt;User
+&lt;span&gt;
+    &lt;a href=&#34;#user&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;A user has the ability to interact with the platform and create questions, &lt;a href=&#34;#argument&#34;&gt;arguments&lt;/a&gt;, upvote argument points, and comment in &lt;a href=&#34;#discussions&#34;&gt;discussions&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;A user that creates an argument is also its &lt;a href=&#34;#User::Author&#34;&gt;author&lt;/a&gt; and one of its &lt;a href=&#34;#User::Maintainer&#34;&gt;maintainer&lt;/a&gt;.
+A user can become a maintainer but not an author if they accept a maintainer invite from the author.&lt;/p&gt;
+&lt;p&gt;A user cannot be an argument maintainer for a topic and also upvote another argument for the same topic.&lt;/p&gt;
+&lt;h3 id=&#34;argument&#34; &gt;Argument
+&lt;span&gt;
+    &lt;a href=&#34;#argument&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;For each question, there are responses; also called arguments.
+Ultimately, users are responsible for siding with an argument, the platform is just a tool to facilitate open debate as the name conveys.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;An argument has at least one reason&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;An argument has rebuttals for the arguments next popular and next least popular argument&amp;rsquo;s points.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;details&gt;&lt;summary&gt;rebuttal considerations&lt;/summary&gt;
+  Replies are to be made to at least 1 rebuttal within 2 weeks or the point/rebuttal will be marked as &#34;failed to defend point/rebuttal&#34;.
+  Hence, points/rebuttals can be shown to the user sorted by points/rebuttals defended &amp;rarr; ongoing &amp;rarr; failed to defend.
+&lt;p&gt;This time window feature is very important in order to force discourse. It&amp;rsquo;s very easy to make 1 rebuttal and never respond again. Every response to a rebuttal must address the rebuttal fully. Not addressing a rebuttal fully makes the rebuttal valid. In that way, points and rebuttals can follow a thread type of structure to allow multiple replies and rebuttals per point rather than batching all rebuttals for a point into one. For less popular arguments, operators are allowed to be lenient about the forced rebuttal rule. I&amp;rsquo;d say if there are more than 5 argument, the bottom 50% won&amp;rsquo;t need to comply with the forced discussion. This is because it&amp;rsquo;s more likely these projects are arguing with bad faith characters and so the operator can use their own prioritization method for rule violation reports.&lt;/p&gt;
+  &lt;/details&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;For each question, arguments should be sorted by number of upvotes. Upvotes are not an actual indication of quality, only of popularity.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;No more than 10 maintainers&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;When users click an argument, they should be shown the list of points for that argument and rebuttals to those points by the other two projects. Arguments can also rebut other arguments that are more popular or less popular, but it does not force the other argument to reply. Replying to rebuttals is required for arguments that are beside each other in popularity.&lt;/p&gt;
+&lt;details&gt;
+&lt;summary&gt;Rogue Behavior Considerations&lt;/summary&gt;
+Arguments can be recreated (forked) in case of rogue or dormant maintainers. Since people can change
+their minds, even if they decide to mess up the old argument they were supporting, history can be restored by a maintainer
+in the same argument or by a proponent through forks.
+If done correctly, each point has an associated history and id for each point in history.
+Then, the upvotes can be restored as long as the users have no upvoted something new, and that point id does not exist
+in any older forks. This way, the damage of griefing is reduced. These are all technical discussions though that uphold the
+spirit of ODP.
+&lt;/details&gt;
+&lt;details&gt;
+&lt;summary&gt;Bad faith considerations&lt;/summary&gt;
+It is up to operators how to deal with arguing in circles; if people are arguing in circles it is best to close the rebuttal. Arguing in circles usually indicates one party is not acting in good faith. Rebuttals can be reported as irrelevant and will shadow ban
+the user. Shadow ban in this context means that the user will see the platform as if their action was valid.
+&lt;/details&gt;
+&lt;h3 id=&#34;discussions&#34; &gt;Discussions
+&lt;span&gt;
+    &lt;a href=&#34;#discussions&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;Discussions are informal communication features. They should be included for each argument, and each arguments merge requests.
+Responses in discussions are called comments.&lt;/p&gt;
+&lt;p&gt;Argument discussions can be moderated &lt;strong&gt;with bias&lt;/strong&gt; by the arguments &lt;a href=&#34;#User::Maintainer&#34;&gt;maintainers&lt;/a&gt; themselves since their role is to improve
+discussion pertaining to their argument, not the question being answered. Comments are informal, so they can only be from proponents
+of said argument. This should reduce the number of bad actors as proponents have to upvote the argument itself. The maintainers
+are there to clean up remains.&lt;/p&gt;
+&lt;h3 id=&#34;userauthor&#34; &gt;User::Author
+&lt;span&gt;
+    &lt;a href=&#34;#userauthor&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;A user that started the argument. They have the power to delete the argument if there
+are less than 3 proponents of the argument. All authors are considered a maintainer.&lt;/p&gt;
+&lt;h3 id=&#34;usermaintainer&#34; &gt;User::Maintainer
+&lt;span&gt;
+    &lt;a href=&#34;#usermaintainer&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;A maintainer is a user who has the ability to edit. Authors are considered maintainers but
+not vice versa. To make a user a maintainer of an argument requires 75% of maintainers to vote.
+There can only be up to 10 maintainers including the author.&lt;/p&gt;
+&lt;p&gt;Arguments should have a change history so even if a &lt;a href=&#34;#User::Maintainer&#34;&gt;maintainer&lt;/a&gt; goes rogue, damage should be easily reversible.
+If all maintainers go rogue, the author can request operator intervention to kick out the rogue maintainers. Or if the author goes rogue, the maintainers can request an operator intervention. This is where operator neutrality becomes important although not required since arguments can be &amp;ldquo;forked&amp;rdquo;, and the rogue argument basically left to die.&lt;/p&gt;
+&lt;h3 id=&#34;question&#34; &gt;Question
+&lt;span&gt;
+    &lt;a href=&#34;#question&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;A question can also be referred to as a topic.&lt;/p&gt;
+&lt;p&gt;Users can ask subjective questions about topics, but questions that spark debate should be prioritized. Think &amp;ldquo;what is &lt;strong&gt;a&lt;/strong&gt; good ice cream flavor&amp;rdquo; vs. &amp;ldquo;what is the &lt;strong&gt;best&lt;/strong&gt; ice cream flavor&amp;rdquo;. There is a difference, the former seeks to get a good sample, but the latter seeks to find the best answer.&lt;/p&gt;
+&lt;p&gt;A question is a duplicate if it conveys the same message or is equal ignoring case and non-grammatic symbols. If it is the latter,
+the question can be disallowed from creation, but the former should be marked as duplicate. Duplicate questions should be searchable but not prioritized. A question marked as a duplicate should allow the question creator to argue that the question was incorrectly marked as a duplicate.&lt;/p&gt;
+&lt;details&gt;
+&lt;summary&gt;Censorship considerations&lt;/summary&gt;
+Many times on Stackoverflow, questions are marked as duplicate incorrectly on Stackoverflow where as actual duplicates fly by the radar.
+These questions are not technical at all, only discussion prompts, so it is imperative to not censor valid questions.
+&lt;/details&gt;
+&lt;h3 id=&#34;merge-request&#34; &gt;Merge Request
+&lt;span&gt;
+    &lt;a href=&#34;#merge-request&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;A merge request is a request by a user to add a point or rebuttal to an argument. Merge requests can only be
+merged be maintainers and should support informal discussions.&lt;/p&gt;
+&lt;h3 id=&#34;reason-or-point&#34; &gt;Reason or Point
+&lt;span&gt;
+    &lt;a href=&#34;#reason-or-point&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;A single reason that supports the arguments thesis. A point can have upvotes but every
+edit or deletion resets the upvote to 0 and thus removes proponents of the argument.
+An argument&amp;rsquo;s star count is equal to the sum of upvotes of its reasons which is also the number of proponents.&lt;/p&gt;
+&lt;h3 id=&#34;usercontributor&#34; &gt;User::Contributor
+&lt;span&gt;
+    &lt;a href=&#34;#usercontributor&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;A user is considered a contributor if one of their changes in in the argument even if has been overwritten&lt;/p&gt;
+&lt;h3 id=&#34;userproponent&#34; &gt;User::Proponent
+&lt;span&gt;
+    &lt;a href=&#34;#userproponent&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;A user is considered a proponent of an argument if they&amp;rsquo;ve upvoted a reason of the argument or are a maintainer for an argument.
+Only reasoning points of the argument can be upvoted and a user is no longer a proponent if the point they upvoted
+gets modified or deleted.&lt;/p&gt;
+&lt;h2 id=&#34;platform-logistics&#34; &gt;Platform Logistics
+&lt;span&gt;
+    &lt;a href=&#34;#platform-logistics&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;A platform would be created by an operator. The operator has to make a legally bound contract
+with all participants that stipulates that the operator will not manipulate or censor civil arguments and should also provide
+visitors and a link to download the platform source code (any license allowed). This holds the operator accountable for abuse.
+Abuse would either be easily detectable or non-harmful to the goal of figuring out the best arguments. Platforms
+can compete with each other.&lt;/p&gt;
+&lt;p&gt;If an operator deleted a comment, an argument, an arguments points, it is pretty noticeable and easy to prove using archive websites.
+Vote inflating is possible, but that is why the operator needs to show the UI in terms of rebuttals. Operators that can be shown
+to not follow the specs mentioned in this article won&amp;rsquo;t be considered an open-debate platform. If required, I can test out
+a platform and classify or declassify it as an open-debate platform.&lt;/p&gt;
+&lt;h2 id=&#34;remarks&#34; &gt;Remarks
+&lt;span&gt;
+    &lt;a href=&#34;#remarks&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;I&amp;rsquo;m not sure when I&amp;rsquo;ll be able to implement this, but I&amp;rsquo;m leaving this here for someone to pursue. My goal with this is to improve unity and reduce polarizations. We need to stop with the harassment of people that hold an opinion. An opinion is much different from
+an action and we need to make that distinction by showing our tolerance for opposing opinions.&lt;/p&gt;
+&lt;p&gt;There are people who think it&amp;rsquo;s okay for the tolerant to be intolerant of the intolerant but that&amp;rsquo;s contradictory. The best way
+to debate against someone who promotes intolerance is to tell them that they are only able to promote intolerance because of the tolerant society. If society operated as it did in the past where tolerance is just the intolerance of the majority, then have have learned nothing!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Linux Desktop Sucks!</title>
+      <link>https://blog.elijahlopez.ca/posts/linux-desktop-sucks/</link>
+      <pubDate>Sat, 26 Feb 2022 12:44:37 -0500</pubDate>
+      
+      <guid>https://blog.elijahlopez.ca/posts/linux-desktop-sucks/</guid>
+      <description>&lt;div&gt;
+    &lt;h2&gt;Table of Contents&lt;/h2&gt;
+    &lt;nav id=&#34;TableOfContents&#34;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&#34;#introduction&#34;&gt;Introduction&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#linux-mint&#34;&gt;Linux Mint&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#bricked-my-8tb-hard-drive&#34;&gt;Bricked my 8TB Hard Drive&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#bluetooth-headphones&#34;&gt;Bluetooth (Headphones)&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#dual-boot-menu&#34;&gt;Dual Boot Menu&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#dual-boot-time&#34;&gt;Dual Boot Time&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#nvidia-driver-installation&#34;&gt;NVIDIA Driver Installation&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#external-monitor-scale-cannot-be-different&#34;&gt;External Monitor Scale Cannot be Different&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#wake-from-sleep-shows-clipped-login-ui&#34;&gt;Wake From Sleep shows Clipped Login UI&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#slow-internet-speeds-requiring-two-restarts-to-fix&#34;&gt;Slow Internet Speeds Requiring Two Restarts to Fix&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#horrible-gaming-performance&#34;&gt;Horrible Gaming Performance&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#manjaro-kde-specific-issues&#34;&gt;Manjaro KDE Specific Issues&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#black-screen-bug&#34;&gt;Black Screen Bug&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#plugging-or-unplugging-power-puts-laptop-to-sleep&#34;&gt;Plugging or Unplugging Power Puts Laptop to Sleep&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#inefficient-upgrading&#34;&gt;Inefficient Upgrading&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#unintuitive-appearance-settings&#34;&gt;Unintuitive Appearance Settings&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#webcam&#34;&gt;Webcam&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#nautilis-sucks&#34;&gt;Nautilis Sucks&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#zorin-os&#34;&gt;Zorin OS&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#firefox-home-page-overwritten-on-every-login&#34;&gt;Firefox Home Page Overwritten on Every Login&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#nobara-kde&#34;&gt;Nobara KDE&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#fedora-kde-active&#34;&gt;Fedora KDE (ACTIVE)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#other-issues&#34;&gt;Other Issues&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#canonical-and-snap-sucks&#34;&gt;Canonical and Snap Sucks&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#no-ctrl-for-tabbing&#34;&gt;No Ctrl for Tabbing&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#poor-cloud-storage-support&#34;&gt;Poor Cloud Storage Support&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#poor-installation-tutorials&#34;&gt;Poor Installation Tutorials&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#cant-shutdowneasily&#34;&gt;Can&amp;rsquo;t Shutdown Easily&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#installing-custom-programs-is-aheadache&#34;&gt;Installing Custom Programs is a HEADACHE&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#how-can-linux-distros-gainusers&#34;&gt;How Can Linux Distros Gain Users?&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;introduction&#34; &gt;Introduction
+&lt;span&gt;
+    &lt;a href=&#34;#introduction&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;For over a decade, I&amp;rsquo;ve been distro hopping, moving through: Raspian (~2014) on an RPI, Ubuntu GNOME (~2016), Manjaro KDE (2020 &amp;amp; 2022-2023), Fedora GNOME, Zorin (2021), Mint (2024 - 2026), Nobara (2024), and Fedora KDE (2026 - PRESENT).&lt;/p&gt;
+&lt;p&gt;Of these distro&amp;rsquo;s, Fedora KDE was the best. Aside from the double password experience when using disk-encryption (TPM 2 setup was a PITA and did not work), issues I ran into were app-specific rather than defects of the distro.&lt;/p&gt;
+&lt;p&gt;For users who require an OS that &amp;ldquo;just works&amp;rdquo;, Fedora KDE isn&amp;rsquo;t there yet. The choice remains between &lt;a href=&#34;https://blog.elijahlopez.ca/posts/windows-vs-mac/&#34;&gt;windows and mac&lt;/a&gt; depending on a users&amp;rsquo; workflow, although I lean towards Windows (x64), especially because Linux can be installed with a higher probability of driver support.&lt;/p&gt;
+&lt;p&gt;So that&amp;rsquo;s not to say that Linux is recommendable to people who want a stress-free &amp;ldquo;just works&amp;rdquo; life. Regarding that, I still believe Windows is the crown jewel. With the macOS Neo, it basically comes down to the OS and workflow usage. Meaning, what would a user need. Based on &lt;a href=&#34;https://blog.elijahlopez.ca/posts/what-cant-an-ipad-do-that-a-macbook-can-do.md&#34;&gt;What Can&amp;rsquo;t an iPad do That a Macbook Can Do?&lt;/a&gt;, we know there&amp;rsquo;s a bunch of features that require having access to a computer.&lt;/p&gt;
+&lt;p&gt;There&amp;rsquo;s a lot of UX issues with Linux and for some reasons forums will victim blame instead of actually improving the experience.&lt;/p&gt;
+&lt;h2 id=&#34;linux-mint&#34; &gt;Linux Mint
+&lt;span&gt;
+    &lt;a href=&#34;#linux-mint&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;I installed Linux Mint alongside Windows 11 on my laptop for work purposes. Running Linux Mint in a Virtual Machine is slow, ugly, and not as convenient as I thought it was. Why dual boot? Well I need a lot of services: OneDrive, Mega, GitHub Desktop, and video games. I also want an experience where the issues are minor. I think Windows 11 downgraded a lot of components to be more like macOS and Linux which is why I will be making some videos on why Windows 11 sucks, but this article is about my Linux experience.&lt;/p&gt;
+&lt;h3 id=&#34;bricked-my-8tb-hard-drive&#34; &gt;Bricked my 8TB Hard Drive
+&lt;span&gt;
+    &lt;a href=&#34;#bricked-my-8tb-hard-drive&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;My almost 4 year old hard drive got corrupted in just a few months of using it with my Linux Mint laptop. It was an NTFS file system. I had to reformat it on Windows, and a scan showed zero bad sectors. There were still people who blamed the issue on Windows. It was clearly Mint&amp;rsquo;s fault since the drive was fine, and it was probably file system corruption which was definitely Mint&amp;rsquo;s fault since Mint was the default boot.&lt;/p&gt;
+&lt;h3 id=&#34;bluetooth-headphones&#34; &gt;Bluetooth (Headphones)
+&lt;span&gt;
+    &lt;a href=&#34;#bluetooth-headphones&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;There are three issues I have with bluetooth on Linux Mint.. The first time I connected my headphones to the laptop, it was pretty smooth. Now that I want to use connect my headphones to the laptop after having used them with my phone, the laptop is going &amp;ldquo;Connected&amp;rdquo; right after double tapping, and then it fails to connect resulting in a disconnect.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;It doesn&amp;rsquo;t work. The error I after the UI has told me my headphones have connected is &amp;ldquo;Connection Failed: br-connection-unknown.&amp;rdquo; I had to remove the device and add it again for my headphones to connect.&lt;/li&gt;
+&lt;li&gt;One if the straight up lie that the laptop is connected to the headphones after a single double click. Stop telling the user that we have connected when we haven&amp;rsquo;t!&lt;/li&gt;
+&lt;li&gt;The bluetooth icon in the taskbar doesn&amp;rsquo;t open a tray UI like Date, Battery, Music, WiFi icon. It&amp;rsquo;s actually not part of the desktop, but as a user application. What??&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;dual-boot-menu&#34; &gt;Dual Boot Menu
+&lt;span&gt;
+    &lt;a href=&#34;#dual-boot-menu&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;First off, the default dual boot menu is ugly. GRUB is still not configured to scale on monitors that have a higher resolution than 1080p. I have been using 1440p laptop screens since 2017. That&amp;rsquo;s 7 years now. I&amp;rsquo;ll have to customize this, but it is an annoyance.&lt;/p&gt;
+&lt;p&gt;Refind was recommended to install but guess what, I got a scary red error: &amp;ldquo;Secure Boot violation. Invalid signature&amp;rdquo;. Searching for help yields a single reddit comment replying to post on r/linux4&lt;strong&gt;NOOBS&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;You need to create a local signing key, register it using the MOK utility, then sign the rEFInd binary using that signing key. You can access the full manual at &lt;a href=&#34;http://www.rodsbooks.com/refind/secureboot.html&#34;&gt;http://www.rodsbooks.com/refind/secureboot.html&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;How is this noob-friendly advice?&lt;/p&gt;
+&lt;p&gt;I uninstalled refind and yet I got the same error. Good thing I took a Timeshift yesterday which also backed up the boot drive. Good thing I don&amp;rsquo;t use this stupid distro as a daily driver where it can mess with my cloud files.&lt;/p&gt;
+&lt;h3 id=&#34;dual-boot-time&#34; &gt;Dual Boot Time
+&lt;span&gt;
+    &lt;a href=&#34;#dual-boot-time&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;For some reason Linux and Windows have different ways of storing time and no one on the Linux side thought about changing the way time works if installed alongside Windows. I really don&amp;rsquo;t want to have to adjust my time settings every time I boot back into Windows. I&amp;rsquo;ll probably just not adjust the time on the Linux side and let it be.&lt;/p&gt;
+&lt;h3 id=&#34;nvidia-driver-installation&#34; &gt;NVIDIA Driver Installation
+&lt;span&gt;
+    &lt;a href=&#34;#nvidia-driver-installation&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;When installing NVIDIA drivers for Linux Mint, we are told to enter a password for Secure Boot and that we would have to enter this after rebooting but a reboot does not actually make us enter the password&amp;hellip;unless we selected &amp;ldquo;Enroll MOK.&amp;rdquo; It would be helpful if the drivers app gave better instructions.&lt;/p&gt;
+&lt;h3 id=&#34;external-monitor-scale-cannot-be-different&#34; &gt;External Monitor Scale Cannot be Different
+&lt;span&gt;
+    &lt;a href=&#34;#external-monitor-scale-cannot-be-different&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;I have my laptop connected to two external monitors. The scale on all three displays has to be the same for the UI to fit 100%. On Windows I can set the scale to different values for each monitor without any problem. On Linux Mint, fractional scaling is still experimental.&lt;/p&gt;
+&lt;h3 id=&#34;wake-from-sleep-shows-clipped-login-ui&#34; &gt;Wake From Sleep shows Clipped Login UI
+&lt;span&gt;
+    &lt;a href=&#34;#wake-from-sleep-shows-clipped-login-ui&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://blog.elijahlopez.ca/images/linux/linux-mint-clipped-login-ui.webp&#34; alt=&#34;ALT: all of my three displays are black but my left monitor shows the clipped UI&#34;&gt;&lt;/p&gt;
+&lt;p&gt;I can still login by simply typing my password and pressing enter but this is such a subpar experience. Windows 11 has its issues but it is never a simple issue. The worst Windows 11 does is run the anti-virus on a folder I did not exempt.&lt;/p&gt;
+&lt;h3 id=&#34;slow-internet-speeds-requiring-two-restarts-to-fix&#34; &gt;Slow Internet Speeds Requiring Two Restarts to Fix
+&lt;span&gt;
+    &lt;a href=&#34;#slow-internet-speeds-requiring-two-restarts-to-fix&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;I once noticed the internet speed was randomly really bad. It should be 700mbps+, even on wifi. I restarted my laptop and nothing changed.&lt;/p&gt;
+&lt;h3 id=&#34;horrible-gaming-performance&#34; &gt;Horrible Gaming Performance
+&lt;span&gt;
+    &lt;a href=&#34;#horrible-gaming-performance&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;One day, my friend was over and I put on Stray, a Platinum game on protondb. The performance was akin to thermal throttling. I already had a laptop cooler, albeit on the lowest fan speed. Turns out that was a waste of money since thermal throttling kicked in earlier on Linux Mint. But it doesn&amp;rsquo;t end there. Even after I figured out it was Linux-specific thermal throttling, I ran the game with a higher laptop cooler fan and it would still stutter and have a slight but noticeable performance hit. This is a game that my laptop can run at 4k resolution max settings on my TV.&lt;/p&gt;
+&lt;p&gt;This was the final nail in the coffin to nuke my Mint install. All I wanted was a gaming console via a gaming laptop. HTPC so to speak. Why is a distro embarrassing in front of others?&lt;/p&gt;
+&lt;h2 id=&#34;manjaro-kde-specific-issues&#34; &gt;Manjaro KDE Specific Issues
+&lt;span&gt;
+    &lt;a href=&#34;#manjaro-kde-specific-issues&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;I had to daily drive Manjaro KDE for 3 weeks on my Razer Blade Stealth, and over that time I encountered a plethora of issues and I&amp;rsquo;ve documented &lt;a href=&#34;https://blog.elijahlopez.ca/posts/manjaro-kde-tips&#34;&gt;some solutions&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The Razer Blade stealth has a 6th generation laptop i5 processor and 8GB of RAM. I&amp;rsquo;m not sure if
+it&amp;rsquo;s because of the SSD speeds, but the laptop freezes either due to 100% memory or 99% CPU. VS Code freezes so often without even running an application.&lt;/p&gt;
+&lt;p&gt;I do believe Firefox is highly optimized on Linux as it never crashed. However, if you have 10+ tabs open, good bye.&lt;/p&gt;
+&lt;h3 id=&#34;black-screen-bug&#34; &gt;Black Screen Bug
+&lt;span&gt;
+    &lt;a href=&#34;#black-screen-bug&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;I&amp;rsquo;ll start with this as it is the reason why I will not recommend Manjaro for people interested in free (as in beer) software.&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;m logged in as my parents&amp;rsquo; user and now I log out and log into my account. The desktop splashscreen shows up and then boom black screen.&lt;/p&gt;
+&lt;p&gt;Maybe it&amp;rsquo;s a fluke, so I just create a thread to leave a paper trail. I use a physical power down and then log in without issues.&lt;/p&gt;
+&lt;p&gt;4 hours later, my parents are logged in, but I want to test something out myself. I turn on the laptop and click switch user, meaning that my parents are not
+logged out. The desktop splashscreen loads and I get the black screen again.&lt;/p&gt;
+&lt;p&gt;Manjaro is 11 years old. There is no excuse for this workflow to not work. There is no excuse because I go out of my way to make sure
+my music player runs for everyone&amp;rsquo;s workflow not just my own.&lt;/p&gt;
+&lt;h3 id=&#34;plugging-or-unplugging-power-puts-laptop-to-sleep&#34; &gt;Plugging or Unplugging Power Puts Laptop to Sleep
+&lt;span&gt;
+    &lt;a href=&#34;#plugging-or-unplugging-power-puts-laptop-to-sleep&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;As the subsection states, charging my laptop while it is on, puts it into the sleep state. I wish I was joking.
+How is this bug even possible in 2023. It makes zero sense why Manjaro can&amp;rsquo;t even handle the plugging of a power cord.&lt;/p&gt;
+&lt;h3 id=&#34;inefficient-upgrading&#34; &gt;Inefficient Upgrading
+&lt;span&gt;
+    &lt;a href=&#34;#inefficient-upgrading&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;Pacman manager so not specifically Manjaro.&lt;/p&gt;
+&lt;p&gt;I turn on the laptop after a couple months and the network folder no longer works. There were 2.1GB worth of updates so I decided to start upgrading.&lt;/p&gt;
+&lt;p&gt;After all the packages were downloading, for a couple minutes there were network errors due to the package manager hitting &lt;code&gt;http://mirror.ragenetwork.de&lt;/code&gt; &amp;ldquo;name or service not known&amp;rdquo; errors. Why are packages not installed while downloading new packages? It&amp;rsquo;s inefficient.&lt;/p&gt;
+&lt;p&gt;Only after the packages were installed and a restart completed did the network drive start to work.&lt;/p&gt;
+&lt;h3 id=&#34;unintuitive-appearance-settings&#34; &gt;Unintuitive Appearance Settings
+&lt;span&gt;
+    &lt;a href=&#34;#unintuitive-appearance-settings&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;So I click appearance from the settings app and there is no option to change the wallpaper. Pretty dumb!&lt;/p&gt;
+&lt;h3 id=&#34;webcam&#34; &gt;Webcam
+&lt;span&gt;
+    &lt;a href=&#34;#webcam&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;The webcam does not work. Glitches with green.&lt;/p&gt;
+&lt;h2 id=&#34;nautilis-sucks&#34; &gt;Nautilis Sucks
+&lt;span&gt;
+    &lt;a href=&#34;#nautilis-sucks&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;I can&amp;rsquo;t create new files in the directory through a right click menu. I can&amp;rsquo;t access the right click menu if I&amp;rsquo;m using list mode and the folder is full of files. On Windows, a right click is applied on the folder if the file is not selected, but on Nautilis, too bad so sad, did you mean to right click a file? It&amp;rsquo;s not a big deal since the right click menu in Nautlis is only useful for accessing properties since its other features can be done using keyboard shortcuts (Ctrl +C, Ctrl + V, Ctrl +Shift+N).&lt;/p&gt;
+&lt;h2 id=&#34;zorin-os&#34; &gt;Zorin OS
+&lt;span&gt;
+    &lt;a href=&#34;#zorin-os&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;h3 id=&#34;firefox-home-page-overwritten-on-every-login&#34; &gt;Firefox Home Page Overwritten on Every Login
+&lt;span&gt;
+    &lt;a href=&#34;#firefox-home-page-overwritten-on-every-login&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;On Zorin OS, the home page is overwritten on every log in to &lt;a href=&#34;https://start.zorin.com/&#34;&gt;https://start.zorin.com/&lt;/a&gt; which uses Google primarily. Are they even paid by Google to do that?&lt;/p&gt;
+&lt;h2 id=&#34;nobara-kde&#34; &gt;Nobara KDE
+&lt;span&gt;
+    &lt;a href=&#34;#nobara-kde&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;When the laptop wakes from sleep, the cursor cannot be moved by the touchpad anymore. Online search yielded to disable &amp;ldquo;suspend&amp;rdquo; or &amp;ldquo;modern standby&amp;rdquo; but I couldn&amp;rsquo;t find those settings in the BIOS menu of a 2016 laptop (razer blade stealth).&lt;/p&gt;
+&lt;p&gt;Had to disable secure boot so I see a tpm error on every boot and need to press enter.&lt;/p&gt;
+&lt;p&gt;2026 EDIT: lol this isn&amp;rsquo;t even a thing anymore. The trendiest OS these days are Bazzite and CatchyOS for gamers.&lt;/p&gt;
+&lt;h2 id=&#34;fedora-kde-active&#34; &gt;Fedora KDE (ACTIVE)
+&lt;span&gt;
+    &lt;a href=&#34;#fedora-kde-active&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;I like this distro the most out of all the distro. Mainly because it uses KDE by default and doesn&amp;rsquo;t require an insane commitment.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;PITA to setup TPM disk auto-decryption (decided that home dir encryption is better than full disk decryption double password)&lt;/li&gt;
+&lt;li&gt;Clock needs to be manually installed lol.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Application Issues:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;LocalSend drag n drop does not work&lt;/li&gt;
+&lt;li&gt;Signal voice memo does not work&lt;/li&gt;
+&lt;li&gt;Steam: PATH TOO LONG ERROR when trying to play Forza Horizon 6 via the Flatpak version of Steam&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;other-issues&#34; &gt;Other Issues
+&lt;span&gt;
+    &lt;a href=&#34;#other-issues&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;h3 id=&#34;canonical-and-snap-sucks&#34; &gt;Canonical and Snap Sucks
+&lt;span&gt;
+    &lt;a href=&#34;#canonical-and-snap-sucks&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;I cannot believe Ubuntu is promoted to newbies when snaps are the default distribution model. Snaps literally make apps slower. Gigabytes of wasted storage
+for slower apps. A linux desktop experience should rival Windows, it should not make you say &amp;ldquo;it&amp;rsquo;s okay because it&amp;rsquo;s not Windows.&amp;rdquo;
+The mentality that we need to live a worse life just because we get a free experience is the worst mentality ever.&lt;/p&gt;
+&lt;h3 id=&#34;no-ctrl-for-tabbing&#34; &gt;No Ctrl for Tabbing
+&lt;span&gt;
+    &lt;a href=&#34;#no-ctrl-for-tabbing&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;If Linux desktop is all about customization, why is it so damn difficult to replace Alt with Ctrl? Windows predates Linux, so this Alt + # shortcut should
+not be forced upon users. At least on Firefox there&amp;rsquo;s an extension to give us the behaviour that Chrome supports.&lt;/p&gt;
+&lt;h3 id=&#34;poor-cloud-storage-support&#34; &gt;Poor Cloud Storage Support
+&lt;span&gt;
+    &lt;a href=&#34;#poor-cloud-storage-support&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;Coming from Windows, I use OneDrive and MEGA. I do care about OneDrive since
+it has my personal files that I need backed up to the cloud. Where is the OneDrive support without using rsync which
+doesn&amp;rsquo;t work half the time? Also, for information, Mega and OneDrive work on macOS. Sure you can argue it&amp;rsquo;s up to the app developers, but there&amp;rsquo;s so many distros and packaging is a pain in the ass as a developer myself. I had to resort to distributing Python scripts because it was so annoying to distribute apps without requiring system permissions to install.&lt;/p&gt;
+&lt;h3 id=&#34;poor-installation-tutorials&#34; &gt;Poor Installation Tutorials
+&lt;span&gt;
+    &lt;a href=&#34;#poor-installation-tutorials&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;Just look at any tutorial for flashing an ISO. Generic tutorials tell you to use Rufus, an ugly and non-intuitive UI. Fedora has their own flash tool which looks nice but does not work on other distros.&lt;/p&gt;
+&lt;p&gt;I only found out about balenaEtcher, the most intuitive ISO flash tool by pure luck when searching for something other than flashing ISOs.&lt;/p&gt;
+&lt;p&gt;With Debian, the tutorials tell you to use free-[software] ISO and make it too complicated just to download the non-free-[software] ISO. Then there is the language used to describe ISO&amp;rsquo;s. CD: an ISO that lets you install Debian and requires internet. DVD: live distro no requiring an internet connection. I&amp;rsquo;ll get some guy in the comments nitpicking my interpretation but the Debian explanation is not succinct at all.&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;m speaking from the point of a practical user who also programs. I love keyboard shortcuts, automation, and aesthetic design. I used to dual boot Zorin OS and Windows on my laptop. I found that Zorin OS looked the nicest (at the time) but I also realized that the only reason I was able to install it was luck. I flashed the Zorin OS 15 ISO in 2020 and only had motivation to dual boot in 2021 when Zorin OS 16 was out. When I tried to install Zorin OS 15, I ran into an issue so instead of giving up I could just try installing 16 as the problem may have been patched.&lt;/p&gt;
+&lt;h3 id=&#34;cant-shutdowneasily&#34; &gt;Can&amp;rsquo;t Shutdown Easily
+&lt;span&gt;
+    &lt;a href=&#34;#cant-shutdowneasily&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;A great and Windows comparable Linux distro should require minimal changes and should have a tips section. For example it&amp;rsquo;s faster to shutdown using &amp;ldquo;Alt + F2 → poweroff&amp;rdquo; than it is to use your mouse or searching (not in the menu) for shutdown, clicking enter, pressing the right key, and pressing enter. Why is the default click cancel instead of Shut down? On Windows it&amp;rsquo;s just Alt + F4 on the desktop and an Enter.&lt;/p&gt;
+&lt;p&gt;One last head ache is the inability to launch commands from the address bar… I want the best of GUI and command line, not just a GUI and not just a terminal.&lt;/p&gt;
+&lt;h3 id=&#34;installing-custom-programs-is-aheadache&#34; &gt;Installing Custom Programs is a HEADACHE
+&lt;span&gt;
+    &lt;a href=&#34;#installing-custom-programs-is-aheadache&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h3&gt;&lt;p&gt;Applies to: Fedora&lt;/p&gt;
+&lt;p&gt;On Windows, installers don&amp;rsquo;t even need administrative privileges to install programs and they still show up in the startup menu, but lets look at the worst case, where the application is shipped as an archive which is equivalent on Linux when the application is not available on a centralized location.&lt;/p&gt;
+&lt;p&gt;The example I&amp;rsquo;ll be using is Discord. On Linux, first let&amp;rsquo;s download the .tar.gz, which will automatically be downloaded to the Downloads folder as intended. Yes on Debian, there is a .deb .
+On Windows the procedure for installing via zips, is extracting to a folder, moving that folder to a location like C:/CustomPrograms, creating a shortcut of the program (context menu), and moving the shortcut to Start Menu/Programs.&lt;/p&gt;
+&lt;p&gt;On Linux, we are lucky that Discord came with the shortcut equivalent of discord.desktop . I found out that the Linux equivalent for the application menu is /usr/share/applications.&lt;/p&gt;
+&lt;p&gt;Now that we can open up the file explorer easily (Super + E), where is the root folder (This PC on Windows) / ? For no reason, the root directory is not pinned on the left tab of the file explorer. You can do Ctrl + L, /, Enter to get to the root folder. It is much quicker to just type /usr/share/applications in the address bar but root access isn&amp;rsquo;t just required for this one folder.&lt;/p&gt;
+&lt;p&gt;I do not have the permission to paste files into the directory. So let me get this straight. By default, I have to get permission from myself (sudo) just to create a shortcut on the application menu? And not just that, Nautilis won&amp;rsquo;t even ask me for permission but will just tell me it lacks the permission? &amp;ldquo;Ask and you shall receive&amp;rdquo;, but I guess the author never heard of that one. They do this in the same of security, but I say I should be able to drink wine out of both the cup of Freedom and Security.&lt;/p&gt;
+&lt;p&gt;A normal user would simply give up at this point, torrent Windows (if money is a problem) and use it.&lt;/p&gt;
+&lt;h2 id=&#34;how-can-linux-distros-gainusers&#34; &gt;How Can Linux Distros Gain Users?
+&lt;span&gt;
+    &lt;a href=&#34;#how-can-linux-distros-gainusers&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;By ditching this philosophy that open source software can&amp;rsquo;t benefit from proprietary companies. By proprietary, I mean OEM&amp;rsquo;s.&lt;/p&gt;
+&lt;p&gt;Supporting QHD displays where users want to use 150% DPI rather than 100% or 200% DPI.&lt;/p&gt;
+&lt;p&gt;Linux Distros are not OEM ready and until they are not, they will never going to take off. Dell only released a developer laptop running Ubuntu, not a laptop for all users.
+My OEM strategy would be as follows:
+Make sure Wine is installed and auto configures upon first run. By auto configure I mean that wine should scale with the resolution and not use its own default resolution.
+Make sure word files and etc are editable by default and still save as docx. Improve the UI for LibreOffice.
+Make sure browsers work with the same shortcuts.
+Make sure users can install software from online with ease. Add a right click menu on tar files that will &amp;ldquo;install&amp;rdquo; the binaries in a tar.gz.
+Make sure keyboard shortcuts work and that nautilus works better not less than windows explorer. Windows explorer includes a shell, and is not just a file explorer!
+Make sure the store is not filled with duo are software. There were two versions of vs code when I tried to install vs code.&lt;/p&gt;
+&lt;p&gt;Fix grub so that it scales by the resolution of the software. I tried to edit grub but the font size never changed. The booting experience is arcane.&lt;/p&gt;
+&lt;p&gt;What else? Don&amp;rsquo;t disregard any users&amp;rsquo; opinion. Every opinion is valid and only when the feature/change would hurt other users can you actually disregard an opinion after careful thought.&lt;/p&gt;
+&lt;p&gt;Making it easier to support Linux as a developer.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

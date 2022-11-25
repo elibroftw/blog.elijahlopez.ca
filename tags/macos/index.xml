@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Macos on ELL&#39;s Blog</title>
+    <link>https://blog.elijahlopez.ca/tags/macos/</link>
+    <description>ELL&#39;s Blog (Macos)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 08 Aug 2024 09:44:21 -0400</lastBuildDate>
+    
+    <atom:link href="https://blog.elijahlopez.ca/tags/macos/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Swift - How to Get Logs</title>
+      <link>https://blog.elijahlopez.ca/posts/how-to-get-logs-in-swift/</link>
+      <pubDate>Thu, 08 Aug 2024 09:44:21 -0400</pubDate>
+      
+      <guid>https://blog.elijahlopez.ca/posts/how-to-get-logs-in-swift/</guid>
+      <description>&lt;p&gt;Here is the following code if you need to get your app&amp;rsquo;s logs as well as system logs through Applications code. The docs will tell you that the &lt;code&gt;.system&lt;/code&gt; scope requires administration, but the reality is that by using the &lt;code&gt;local&lt;/code&gt; log store, you can still get the system logs. &lt;a href=&#34;https://mjtsai.com/blog/2021/12/10/oslogstore-on-monterey/&#34;&gt;OSLogStore on Monterey by Michael Tsai&lt;/a&gt;.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Quinn “The Eskimo!” @ Developer Technical Support @ Apple&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;https://developer.apple.com/documentation/oslog/oslogstore/local()&#34;&gt;OSLogStore.local()&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Gaining access to the local unified logging system requires permission from the system. The caller must be run by an admin account and have the com.apple.logging.local-store entitlement.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;The docs here are actually outdated since you do not need that entitlement. Note that using the &lt;code&gt;.system&lt;/code&gt; scope won&amp;rsquo;t work with sandboxed apps.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-swift&#34; data-lang=&#34;swift&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;color:#447fcf;text-decoration:underline&#34;&gt;AppKit&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;color:#447fcf;text-decoration:underline&#34;&gt;Foundation&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;color:#447fcf;text-decoration:underline&#34;&gt;OSLog&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;color:#447fcf;text-decoration:underline&#34;&gt;ZipArchive&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;let&lt;/span&gt; &lt;span style=&#34;color:#40ffff&#34;&gt;utcDateFormat&lt;/span&gt;: DateFormatter = {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#40ffff&#34;&gt;f&lt;/span&gt; = DateFormatter()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    f.dateFormat = &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;yyyy-MM-dd&amp;#39;T&amp;#39;HH:mm:ss&amp;#39;Z&amp;#39;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    f.timeZone = TimeZone.gmt
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;return&lt;/span&gt; f
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;let&lt;/span&gt; &lt;span style=&#34;color:#40ffff&#34;&gt;logStore&lt;/span&gt;: OSLogStore
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;do&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    logStore = &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;try&lt;/span&gt; OSLogStore.local()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    fileName = &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;system.log&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;} &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;catch&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;self&lt;/span&gt;.writeError(name: &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;system-logs&amp;#34;&lt;/span&gt;, error: error)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    logStore = &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;try&lt;/span&gt; OSLogStore(scope: .currentProcessIdentifier)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    fileName = &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;client.log&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;let&lt;/span&gt; &lt;span style=&#34;color:#40ffff&#34;&gt;logEntries&lt;/span&gt; = &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;try&lt;/span&gt; logStore.getEntries(
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    at: logStore.position(date: &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;self&lt;/span&gt;.logStartTimestamp),
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    matching: NSPredicate(format: &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;&amp;#34;&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;        process CONTAINS[c] &amp;#34;&lt;/span&gt;APP_NAME&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34; || subsystem CONTAINS[c] &amp;#34;&lt;/span&gt;APP_NAME&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;        || process CONTAINS[c] &amp;#34;&lt;/span&gt;neagent&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;        || process CONTAINS[c] &amp;#34;&lt;/span&gt;nesessionmanager&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;        || subsystem CONTAINS[c] &amp;#34;&lt;/span&gt;com.apple.networkextension&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;    &amp;#34;&amp;#34;&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;let&lt;/span&gt; &lt;span style=&#34;color:#40ffff&#34;&gt;file&lt;/span&gt; = &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;try&lt;/span&gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;self&lt;/span&gt;.openFile(name: fileName)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;for&lt;/span&gt; entry &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;in&lt;/span&gt; logEntries {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;if&lt;/span&gt; entry.date &amp;gt; &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;self&lt;/span&gt;.bundleTimestamp {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;break&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// &lt;/span&gt;&lt;span style=&#34;color:#e50808;background-color:#520000;font-weight:bold&#34;&gt;TODO:&lt;/span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt; Buffering?&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;let&lt;/span&gt; &lt;span style=&#34;color:#40ffff&#34;&gt;date&lt;/span&gt; = utcDateFormat.string(from: entry.date)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// &lt;/span&gt;&lt;span style=&#34;color:#e50808;background-color:#520000;font-weight:bold&#34;&gt;TODO:&lt;/span&gt;&lt;span style=&#34;color:#999;font-style:italic&#34;&gt; Structured data.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;let&lt;/span&gt; &lt;span style=&#34;color:#40ffff&#34;&gt;formatted&lt;/span&gt; = &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;\(&lt;/span&gt;date&lt;span style=&#34;color:#ed9d13&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;: &lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;\(&lt;/span&gt;entry.composedMessage&lt;span style=&#34;color:#ed9d13&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#999;font-style:italic&#34;&gt;// This is safe because String is unicode.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;let&lt;/span&gt; &lt;span style=&#34;color:#40ffff&#34;&gt;data&lt;/span&gt; = formatted.data(using: &lt;span style=&#34;color:#24909d&#34;&gt;String&lt;/span&gt;.Encoding.utf8)!
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;try&lt;/span&gt; file.write(contentsOf: data)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6ab825;font-weight:bold&#34;&gt;try&lt;/span&gt; file.close()
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;references&#34; &gt;References
+&lt;span&gt;
+    &lt;a href=&#34;#references&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://steipete.com/posts/logging-in-swift/&#34;&gt;Peter Steinberger; Logging in Swift; August 27, 2021&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://developer.apple.com/documentation/oslog/oslogstore/local()&#34;&gt;Apple Developer; OSLogStore.local() Description&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://mjtsai.com/blog/2021/12/10/oslogstore-on-monterey/&#34;&gt;Michael Tsai; OSLogStore on Monterey; December 10, 2021&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>When an iPad Isn&#39;t Enough</title>
+      <link>https://blog.elijahlopez.ca/posts/macbook-pros-over-an-ipad/</link>
+      <pubDate>Tue, 07 May 2024 12:28:28 -0400</pubDate>
+      
+      <guid>https://blog.elijahlopez.ca/posts/macbook-pros-over-an-ipad/</guid>
+      <description>&lt;p&gt;Here is a compilation of tasks that an iPad can&amp;rsquo;t do that a Macbook / computer can do. For some tasks, I&amp;rsquo;ve added examples and implications.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;File management and file type support (PSD?) is lacking
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.reddit.com/r/ipad/comments/11kavgf/comment/jb69nvd/&#34;&gt;Apparently, difficult to backup files to an external drive&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;From my own experience trying to copy files from an external SSD, I ended up duplicating a 10+ files because to copy files from an external drive to the iPad in the files app, you need to click the share button first! Why is duplicating files easier than copying files to another folder?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Website that require you to use a browser with the Chromium engine&lt;/li&gt;
+&lt;li&gt;Can&amp;rsquo;t format a drive (as if iPad users would be in this situation)&lt;/li&gt;
+&lt;li&gt;Can&amp;rsquo;t run some software that is available for macOS&lt;/li&gt;
+&lt;li&gt;Any type of development: XCode, VSCode (albeit web version exist), running scripts/docker images
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.reddit.com/r/ipad/comments/11kavgf/comment/jb9wbd9/&#34;&gt;someone&amp;rsquo;s setup for Python&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Playing from multiple audio sources
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.reddit.com/r/ipad/comments/1106m1x/comment/j87tdyv/&#34;&gt;Can&amp;rsquo;t play on iPad speakers when connected to monitor&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Google apps don&amp;rsquo;t work well (why aren&amp;rsquo;t these people paying for Office if they are fine with paying the premium for Apple products?)&lt;/li&gt;
+&lt;li&gt;Window management / multi-tasking&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.reddit.com/r/ipad/comments/11kavgf/comment/jb6scqn/&#34;&gt;Apparently, text apps are missing the equation editor feature on iPad&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Printer support is not feature-parity&lt;/li&gt;
+&lt;li&gt;Zip file (I&amp;rsquo;m really surprised that people are reporting this as a problem)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.reddit.com/r/ipad/comments/11kavgf/comment/jbcffge/&#34;&gt;Attaching multiple files at once to an Email&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Can&amp;rsquo;t flash/burn an external drive (unconfirmed)&lt;/li&gt;
+&lt;li&gt;No Firefox extensions&lt;/li&gt;
+&lt;li&gt;I won&amp;rsquo;t &amp;ldquo;ding&amp;rdquo; it, but if video editing is a must, it&amp;rsquo;s good to test all the features out before the return window closes&lt;/li&gt;
+&lt;li&gt;Camera placement (you don&amp;rsquo;t look like you are paying attention to the call). Apparently this isn&amp;rsquo;t an issue anymore.&lt;/li&gt;
+&lt;li&gt;Allegedly no multi-user support? I find this really hard to believe since Android has had this feature for over a decade now&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.reddit.com/r/ipad/comments/1106m1x/comment/j87zl55/&#34;&gt;Java-based apps&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.reddit.com/r/ipad/comments/1106m1x/comment/j88gdg3/&#34;&gt;Serious PDF editing&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Using external displays when the primary device is closed (&amp;ldquo;clamshell&amp;rdquo; mode)
+&lt;ul&gt;
+&lt;li&gt;The workaround is to disable locking the iPad when the cover is closed (the iPad screen will remain on so it&amp;rsquo;s not real &amp;ldquo;clamshell&amp;rdquo; mode)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://blog.elijahlopez.ca/posts/desktop-games-on-app-store#macos-games&#34;&gt;macOS Games&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Windows vs. Mac</title>
+      <link>https://blog.elijahlopez.ca/posts/windows-vs-mac/</link>
+      <pubDate>Wed, 27 Mar 2024 14:06:32 -0400</pubDate>
+      
+      <guid>https://blog.elijahlopez.ca/posts/windows-vs-mac/</guid>
+      <description>&lt;p&gt;macOS does have its merits especially considering their superior integration of custom ARM silicon AND the recently announced MacBook Neo. Dave2D made a wonderful video &lt;a href=&#34;https://www.youtube.com/watch?v=Z5XOhPfIgho&#34;&gt;Apple MacBook Neo vs Dell XPS 13&lt;/a&gt;. I am more shocked at how Apple is not maximizing shareholder value by making their hardware more accessible to non-Apple OS. Being able to run Android on an iPhone or Windows on a Macbook would enable Apple to earn revenue and profits from every single company that makes money just because Windows is required.&lt;/p&gt;
+&lt;p&gt;Additionally, after using a surface laptop which has ARM CPUs, it&amp;rsquo;s a great development laptop, but some apps like PotPlayer perform worse. So from my perspective Windows on ARM is not there yet and I would recommend Windows x64 for performance junkies.&lt;/p&gt;
+&lt;h2 id=&#34;battery-life&#34; &gt;Battery Life
+&lt;span&gt;
+    &lt;a href=&#34;#battery-life&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;For those looking at battery life, here are the comparisons for each category of performance.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;MacBook Air vs Surface laptop vs HP OmniBook 5 14 (default, where battery life and webcam quality matters)&lt;/li&gt;
+&lt;li&gt;MacBook Neo vs Dell XPS 13 (entry)&lt;/li&gt;
+&lt;li&gt;MacBook Pro vs Dell XPS 14 (pro) vs Framework Laptop 13 Pro vs Yoga Slim 7x (Snapdragon X2 Elite)
+&lt;ul&gt;
+&lt;li&gt;pro tasks: Video editing*, 3D applications, &lt;a href=&#34;https://www.nvidia.com/en-us/accelerated-applications/?filter=eyJ3b3JrbG9hZHMiOlsiQ29udGVudCBDcmVhdGlvbiAvIFJlbmRlcmluZyJdfQ==&#34;&gt;creative applications&lt;/a&gt;, AI. Gaming doesn&amp;rsquo;t count because of the (low) price point.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;software&#34; &gt;Software
+&lt;span&gt;
+    &lt;a href=&#34;#software&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;You generally need to pay for good software on macOS, but the software is really good and UX friendly. Take for example &lt;a href=&#34;https://mac.getutm.app/&#34;&gt;UTM&lt;/a&gt;. Windows comes with Hyper-V out of the box, which is pretty good too, but that&amp;rsquo;s a microsoft app, not a free-market app.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;wanting-macbook-graphics-performance-without-macos&#34; &gt;Wanting Macbook Graphics Performance Without MacOS
+&lt;span&gt;
+    &lt;a href=&#34;#wanting-macbook-graphics-performance-without-macos&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://blog.elijahlopez.ca/posts/macos-sucks&#34;&gt;I&amp;rsquo;m not a fan of the operating system&lt;/a&gt; but I wanted equivalent performance when rendering. I hated the render performance of my old laptop with its integrated graphics. That&amp;rsquo;s when I realized mobile i5&amp;rsquo;s are a sham. I made sure to look for a laptop with a graphics card and I&amp;rsquo;m content it will last a long time.&lt;/p&gt;
+&lt;h2 id=&#34;limited-external-monitor-support&#34; &gt;Limited External Monitor Support
+&lt;span&gt;
+    &lt;a href=&#34;#limited-external-monitor-support&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;Even if you pay a boatload of money, the base M-series chip, in my case the M2, only supports one external monitor! Compare that to my Razer Blade: even though it&amp;rsquo;s best to connect to one monitor with the dedicated GPU (dGPU), and the other monitor via the integrated GPU (iGPU), if there was no dGPU, the regular iGPU would still be able to connect to two external monitors. That means that the Macbook air is limited to two screens, whereas the Razer Blade is limited to at least 4 screens (2 through USB C / iGPU, 1 through HDMI / dGPU). In recent (2024) gaming laptops like the Zephyrus, both the HDMI port and one of the USB C ports are both connected to the dGPU, meaning you can make use of the entire monitor&amp;rsquo;s specs without any performance hinderance. Regardless, the AMD integrated GPUs perform much better than the integrated Intel GPUs, at least until more ARC technology enabled CPUs &lt;a href=&#34;https://www.acer.com/us-en/laptops/swift/swift-go-16#filterHeader&#34;&gt;show up&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;mouse-and-touchpad-sync&#34; &gt;Mouse and touchpad Sync
+&lt;span&gt;
+    &lt;a href=&#34;#mouse-and-touchpad-sync&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;Mac developers are actually stupid. First of all, natural scrolling is disabled by default! That means if you scroll up, the page goes up instead of acting like a page of paper where scrolling up moves the screen down. When you enable natural scrolling, then your mouse behaves the wrong way as well! With natural scrolling enabled, the scroll wheel of the mouse is inverted! That means when you scroll the scroll wheel down, the page goes up instead of down. How frustrating. Apple fans love to praise Apple about how &amp;ldquo;intuitive&amp;rdquo; their Operating System is, but the reality is that Apple products are for simple people. The OS is made stupid simple, that only stupid simple people would find it useful. Clearly I am not wrong as Generation Z and Alpha are having trouble using computers, which can use 100% of Excel features, which guess what? Is required by the workplace.&lt;/p&gt;
+&lt;p&gt;I should really be thanking Apple for making it easier to compete with businesses and get employed. In the age of Apple supremacy, people who are locked into the eco-system are at a disadvantage when it comes to getting paid.&lt;/p&gt;
+&lt;h2 id=&#34;linux-support&#34; &gt;Linux Support
+&lt;span&gt;
+    &lt;a href=&#34;#linux-support&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://asahilinux.org/&#34;&gt;Asahi Linux&lt;/a&gt; aims to bring Linux on Apple Silicon. The most recent chip it supports is M2 (which I have luckily), but even then the following features are missing as of 2026-09-13:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;USB-C Displays&lt;/li&gt;
+&lt;li&gt;Thunderbolt / USB4/&lt;/li&gt;
+&lt;li&gt;Touch ID&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;video-games&#34; &gt;Video Games
+&lt;span&gt;
+    &lt;a href=&#34;#video-games&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;At the end of the day, if cost is a concern, a console makes the most sense and this point is moot. Therefore, this point only makes sense for those wanting to PC games without building a desktop.&lt;/p&gt;
+&lt;p&gt;Although the M5 (Pro) can compete with desktops, it lacks in GPU. Money can be spent on a GPU rather than upgrading to an M5 Pro, and then to play &lt;a href=&#34;https://blog.elijahlopez.ca/posts/desktop-games-on-app-store#games-not-on-apple&#34;&gt;non-apple supported games&lt;/a&gt;, you&amp;rsquo;d need to have a CrossOver subscription. This becomes too expensive to game on a MacBook. Fortunately, since this category is gaming, we can broaden the comparison to MacBook plus console versus Notebook plus Console versus Notebook plus eGPU.&lt;/p&gt;
+&lt;p&gt;From my experience of previously daily driving a Razer Blade 14, I would prefer an eGPU rather than a a gaming laptop, because day-to-day battery life matters a lot more than the time spent gaming, which is usually done at home with a power connection. An eGPU also allows you to upgrade the GPU before upgrading the laptop (CPU bump). A laptop in my experience can last 3-4 years. I only upgraded from my Razer Blade 14 because it was a gaming laptop which struggled to play CyberPunk 2077 2.0 and could not put out 60 frames on Battlefield 6. So for gaming, go with Notebook + eGPU or a dedicated PC or a console (which is the biggest win considering GTA VI releases first on console).&lt;/p&gt;
+&lt;p&gt;Console Player&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;MacBook Neo + PS5 + PlayStation Plus (for multiplayer games)
+&lt;ul&gt;
+&lt;li&gt;$700 + $600&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;XPS 13 + PS5
+&lt;ul&gt;
+&lt;li&gt;$700 + $600&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;x64 Notebook + eGPU&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;$1250 + $550 + $280 = $2,080; $780 premium&lt;/li&gt;
+&lt;li&gt;GPU: RX 9070 $550&lt;/li&gt;
+&lt;li&gt;eGPU: AOOSTAR AG03 $280&lt;/li&gt;
+&lt;li&gt;Laptop Comparables
+&lt;ul&gt;
+&lt;li&gt;ThinkBook 14 Gen 9 Intel (Ultra 7 355); $1,249.99&lt;/li&gt;
+&lt;li&gt;XPS 13 (Ultra 7 355); $1,499.99&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.lenovo.com/us/en/p/laptops/thinkbook/thinkbook-series/lenovo-thinkbook-14-gen-9-14-inch-intel/21ux000hus&#34;&gt;ThinkBook 14 Gen 9 Intel (14″)&lt;/a&gt; (Ultra 5 325);&lt;/li&gt;
+&lt;li&gt;ThinkPad X1 Carbon (Ultra 5 335 vPro)&lt;/li&gt;
+&lt;li&gt;ThinkPad X9 (Ultra 5 338H)&lt;/li&gt;
+&lt;li&gt;Snapdragon X2 Elite&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;on-local-ai&#34; &gt;On Local AI
+&lt;span&gt;
+    &lt;a href=&#34;#on-local-ai&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;The M5 has gotten the necessary improvements that target running models locally (NPU). So a dGPU is not an advantage over a MacBook here.&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;m also less concerned about needing portable VRAM. Once AI is so good and useful that everyone would be running it, the most cost effective solution is running it at home on a box and connecting non-GPU devices to it whenever you need it. On top of that, there are useful LLMs that are small enough to run on non-GPU hardware.&lt;/p&gt;
+&lt;h2 id=&#34;recommend-laptop-specs&#34; &gt;Recommend Laptop Specs
+&lt;span&gt;
+    &lt;a href=&#34;#recommend-laptop-specs&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;I&amp;rsquo;ve dabbled with gaming laptops, PCs, and even an ARM surface laptop, and I think the most ideal configuration is actually just a battery-life focused laptop that you can connect an eGPU to. The eGPU is more important for non-gaming tasks as a console can be a dedicated gaming device.&lt;/p&gt;
+&lt;p&gt;When buying a non-Apple laptop, 32GB of RAM is a minimum. For Apple computers, 16GB of RAM is minimum.&lt;/p&gt;
+&lt;p&gt;Some laptops I&amp;rsquo;d consider at varying price points:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Entry level: MacBook Neo or XPS 13&lt;/li&gt;
+&lt;li&gt;Work
+&lt;ul&gt;
+&lt;li&gt;At this point, I&amp;rsquo;m assuming you&amp;rsquo;re compiling programs, rendering videos, CAD, blender, etc..&lt;/li&gt;
+&lt;li&gt;32GB RAM (non-Apple) / 16GB RAM (Apple)&lt;/li&gt;
+&lt;li&gt;1TB storage&lt;/li&gt;
+&lt;li&gt;nice to have add-ons: eGPU or upgrading to the Pro variant of Apple silicon&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Niche Work (no compromises so battery life not important)
+&lt;ul&gt;
+&lt;li&gt;Chips: M5 Pro / Max, Snapdragon X2 Extreme, Intel Ultra 7&lt;/li&gt;
+&lt;li&gt;Optional dGPU&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>How to Install Ruby on MacOS</title>
+      <link>https://blog.elijahlopez.ca/posts/how-to-install-ruby-on-macos/</link>
+      <pubDate>Mon, 05 Feb 2024 21:28:03 -0500</pubDate>
+      
+      <guid>https://blog.elijahlopez.ca/posts/how-to-install-ruby-on-macos/</guid>
+      <description>&lt;p&gt;This is how you install Ruby on MacOS and you don&amp;rsquo;t have to reopen the terminal.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-zsh&#34; data-lang=&#34;zsh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;brew install ruby-install chruby
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ruby-install -V
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#24909d&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;# enable chruby&amp;#34;&lt;/span&gt; &amp;gt;&amp;gt; ~/.zshrc
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#24909d&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;source /usr/local/share/chruby/chruby.sh&amp;#34;&lt;/span&gt; &amp;gt;&amp;gt; ~/.zshrc
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#24909d&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;source /usr/local/share/chruby/auto.sh&amp;#34;&lt;/span&gt; &amp;gt;&amp;gt; ~/.zshrc
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#24909d&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color:#ed9d13&#34;&gt;&amp;#34;chruby ruby-3.3.0&amp;#34;&lt;/span&gt; &amp;gt;&amp;gt; ~/.zshrc
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;. ~/.zshrc
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ruby-install ruby
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Can you believe you have to read this blog post to install ruby? Neither can I. I had to install ruby myself because of some bug in cocoapods 0.15.0 that prevented me from building my react-native application for iOS and when I used &lt;code&gt;sudo gem install cocoapods -v 1.14.3&lt;/code&gt; it complained about my ruby version! All the other tutorials are written by LOW IQ individuals and wasted more time than it took to write this blog post.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>MacOS is an Dysfunctional Operating System</title>
+      <link>https://blog.elijahlopez.ca/posts/macos-sucks/</link>
+      <pubDate>Thu, 12 May 2022 17:21:36 -0400</pubDate>
+      
+      <guid>https://blog.elijahlopez.ca/posts/macos-sucks/</guid>
+      <description>&lt;p&gt;Here are some reasons MacOS is not as superb as people say it is. Of course, Linux and Windows have their own problems too. The order for desktop OS&amp;rsquo;s are MacOS &amp;lt; Linux Desktop &amp;lt; Windows. This article is not about why Windows &amp;gt; Linux, so please refrain from commenting about Linux. If you are a Mac user and are offended, Windows also sucks a) the Settings app does not include everything found in the control panel, and the control panel uses the same UI interface since Windows 7 and b) requires installing third party apps like TaskbarX, EarTrumpet, QuickLook, and ditto to improve the UX and c) there&amp;rsquo;s no effort to bring Linux functionality to Windows (e.g. bash, posix kernel, preinstalled GNU coreutils, PATH limit and editable as a file).&lt;/p&gt;
+&lt;h2 id=&#34;hidden-files&#34; &gt;Hidden Files
+&lt;span&gt;
+    &lt;a href=&#34;#hidden-files&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;So you want to see hidden files?
+You go to finder settings but can&amp;rsquo;t find it. So you then Google it. Turns out you were supposed to memorize the very intuitive keyboard shortcut (command + shift + period or simply command + &amp;gt;).&lt;/p&gt;
+&lt;h2 id=&#34;removing-many-files-via-command-line&#34; &gt;Removing Many Files via Command Line
+&lt;span&gt;
+    &lt;a href=&#34;#removing-many-files-via-command-line&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;rm -R folder requires sudo even if I own the files.&lt;/p&gt;
+&lt;h2 id=&#34;homebrew-does-not-modify-path&#34; &gt;Homebrew does not modify PATH
+&lt;span&gt;
+    &lt;a href=&#34;#homebrew-does-not-modify-path&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;Homebrew does not permanently ass packages to path. You have to create a shell config yourself with the export path shenanigans. Stackoverflow doesn&amp;rsquo;t even bother giving you the one liner to do this. They make you create a file yourself and add it rather than a simple &lt;code&gt;echo &amp;quot;export PATH=PATH:...&amp;quot; &amp;gt;&amp;gt; ~/.zshrc&lt;/code&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;updating-macos-breaks-git&#34; &gt;Updating macOS Breaks git
+&lt;span&gt;
+    &lt;a href=&#34;#updating-macos-breaks-git&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;Another reason is that every time you update MacOS, you will get the following error when trying to use git.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://apple.stackexchange.com/questions/254380/why-am-i-getting-an-invalid-active-developer-path-when-attempting-to-use-git-a#254381&#34;&gt;https://apple.stackexchange.com/questions/254380/why-am-i-getting-an-invalid-active-developer-path-when-attempting-to-use-git-a#254381&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The error is &amp;ldquo;invalid developer path.&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;Every time you update, you have to agree to Apple&amp;rsquo;s XCodes terms of service in order to use git, which isn&amp;rsquo;t made by Apple but simply
+preinstalled by them. Don&amp;rsquo;t want to install XCode? Too bad, the Command line tools themselves is 130MB.&lt;/p&gt;
+&lt;h2 id=&#34;notes-app&#34; &gt;Notes App
+&lt;span&gt;
+    &lt;a href=&#34;#notes-app&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;This app is atrocious. Google made the right decision to only deploy a web version of Keep because if Apple can&amp;rsquo;t make a functional app for their own Operating System that doesn&amp;rsquo;t require rebooting your laptop to fix its unresponsiveness, then how could Google ever make a desktop app that meets expectations?&lt;/p&gt;
+&lt;h2 id=&#34;status-icons-can-be-forced-into-hiding&#34; &gt;Status Icons can be Forced into Hiding
+&lt;span&gt;
+    &lt;a href=&#34;#status-icons-can-be-forced-into-hiding&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;&lt;a href=&#34;https://developer.apple.com/design/human-interface-guidelines/the-menu-bar#Menu-bar-extras&#34;&gt;Apple Developer - Menu bar extras&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;When necessary, the system hides menu bar extras to make room for app menus. Similarly, if there are too many menu bar extras, the system may hide some to avoid crowding app menus.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Forget Linux distros. On Windows, status icons by default don&amp;rsquo;t pollute the menu bar compared to macOS, and they also aren&amp;rsquo;t forced into hiding. The fact that status icons can simply be &lt;a href=&#34;https://bg3.wiki/wiki/Banishment&#34;&gt;banished&lt;/a&gt; is indicative that macOS is not a thoughtfully designed OS. It&amp;rsquo;s an operating system that is aesthetic without the function. The one place Apple&amp;rsquo;s Mac&amp;rsquo;s excel at is the hardware, but since hardware of all OEMs is continuously improving, why would I bother with an M-series chip? Especially with the AMD Strix and Intel Lunar Lake CPUs coming out now (2024). I&amp;rsquo;d argue that the &amp;ldquo;new&amp;rdquo; Snapdragon Elite X chip belong in an Android tablet, because the Surface Pro 11 is stupidly priced as being more expensive than a Macbook Air M3 for 1TB of storage and 16GB of RAM. Nobody wants your stupid Copilot PCs Microsoft. Just change your name to AiSoft!&lt;/p&gt;
+&lt;h2 id=&#34;command-tab-isnt-efficient&#34; &gt;Command Tab Isn&amp;rsquo;t Efficient
+&lt;span&gt;
+    &lt;a href=&#34;#command-tab-isnt-efficient&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;One of the issues with macOS is that it assumes its users will never need to use different instances of the same app for different tasks. There&amp;rsquo;s an incorrect assumption that if I three windows of one app open, that all three are related to the same task. When I want to switch from the browser to one of these windows, I can&amp;rsquo;t just use Command Tab, I also have to then use Command tilde and cycle through another window I don&amp;rsquo;t need to use. It&amp;rsquo;s also difficult to know how many windows I have of the same app! For this, you need to swipe up with three fingers. On Windows, the equivalent is Windows Tab. Option tab does nothing on macOS. Even then, the windows are scattered all over the place, so you need to take your time to count.&lt;/p&gt;
+&lt;p&gt;Oh and if you minimize one window of an app, this Option trick doesn&amp;rsquo;t even work! The window cannot be restored without using your touchpad, you just end up on the window that has not been minimized! Who came up with this garbage system? Even if there&amp;rsquo;s another keyboard shortcut for that, that&amp;rsquo;s another keyboard shortcut that didn&amp;rsquo;t need to exist. Command tilde should&amp;rsquo;ve worked.&lt;/p&gt;
+&lt;h2 id=&#34;restoring-a-window-is-a-pain&#34; &gt;Restoring a Window is a Pain
+&lt;span&gt;
+    &lt;a href=&#34;#restoring-a-window-is-a-pain&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;I have to use the Option key which feels absolutely unnatural because I&amp;rsquo;m using the second finger from the left.&lt;/p&gt;
+&lt;h2 id=&#34;vpn-network-speeds&#34; &gt;VPN Network Speeds
+&lt;span&gt;
+    &lt;a href=&#34;#vpn-network-speeds&#34;&gt;
+        &lt;svg viewBox=&#34;0 0 28 23&#34; height=&#34;100%&#34; width=&#34;19&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34; fill=&#34;none&#34; stroke-linecap=&#34;round&#34; stroke-miterlimit=&#34;10&#34; stroke-width=&#34;2&#34;/&gt;&lt;/svg&gt;
+    &lt;/a&gt;
+&lt;/span&gt;
+&lt;/h2&gt;&lt;p&gt;A VPN I use, Obscura VPN, has to work with macOS&amp;rsquo;s system network extension, which is a black box that provides the VPN with packets to tunnel. Due to this necessity, when the app was released on Windows and Linux, VPN speeds were faster over a wi-fi connection on a Windows laptop than a 1gbps ethernet connection.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

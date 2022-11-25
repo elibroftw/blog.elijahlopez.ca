@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>C# on ELL Blog</title><link>https://blog.elijahlopez.ca/tags/c</link><description>ELL Blog (C#)</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 17 Feb 2023 21:59:46 -0500</lastBuildDate><atom:link href="https://blog.elijahlopez.ca/tags/c" rel="self" type="application/rss+xml"/><item><title>Uno Platform Logging</title><link>https://blog.elijahlopez.ca/posts/uno-platform-logging/</link><pubDate>Fri, 17 Feb 2023 21:59:46 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/uno-platform-logging/</guid><description>&lt;p>Note that you will need to run with debugging (F5) for some logging and breakpoints/tracepoints to work.&lt;/p>
+&lt;p>If you want to log regardless of debugging, then using the info function may work for you better.&lt;/p>
+&lt;h2 id="tracepoints" >Tracepoints
+&lt;span>
+&lt;a href="#tracepoints">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>First, if you simply need to debug something, try using
+&lt;a href="https://learn.microsoft.com/en-us/visualstudio/debugger/using-tracepoints?view=vs-2022">Visual Studio Tracepoints&lt;/a> which is nothing but a breakpoint as shown below (use curly braces to print variables). Click the the light grey part on the extreme left, add an action, and voila.&lt;/p>
+&lt;p>&lt;img src="https://blog.elijahlopez.ca/images/c-sharp/visual-studio-breakpoint.png" alt="breakpoint screenshot">&lt;/p>
+&lt;h2 id="logging" >Logging
+&lt;span>
+&lt;a href="#logging">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>In your &lt;code>Page.xaml.cs&lt;/code>, add the differences&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-cs" data-lang="cs">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">using&lt;/span> &lt;span style="color:#447fcf;text-decoration:underline">Uno.Extensions&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">using&lt;/span> &lt;span style="color:#447fcf;text-decoration:underline">Uno.Logging&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">public&lt;/span> &lt;span style="color:#6ab825;font-weight:bold">sealed&lt;/span> &lt;span style="color:#6ab825;font-weight:bold">partial&lt;/span> &lt;span style="color:#6ab825;font-weight:bold">class&lt;/span> &lt;span style="color:#447fcf;text-decoration:underline">YourPage&lt;/span> : Page {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">private&lt;/span> &lt;span style="color:#6ab825;font-weight:bold">static&lt;/span> ILogger _logger { &lt;span style="color:#6ab825;font-weight:bold">get&lt;/span>; } = &lt;span style="color:#6ab825;font-weight:bold">typeof&lt;/span>(YourPage).Log();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">private&lt;/span> &lt;span style="color:#6ab825;font-weight:bold">void&lt;/span> ButtonClick(&lt;span style="color:#6ab825;font-weight:bold">object&lt;/span> sender, RoutedEventArgs e) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> _logger.LogTrace(&lt;span style="color:#ed9d13">&amp;#34;wont show up, cause we set the LogLevel to be Debug in the next step&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> _logger.Debug(&lt;span style="color:#ed9d13">&amp;#34;asd&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> _logger.Error(&lt;span style="color:#ed9d13">&amp;#34;qwe&amp;#34;&lt;/span>, &lt;span style="color:#6ab825;font-weight:bold">new&lt;/span> Exception(&lt;span style="color:#ed9d13">&amp;#34;zxc&amp;#34;&lt;/span>));
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>In &lt;code>App.xaml.cs&lt;/code> and &lt;code>AppHead.xaml.cs&lt;/code>, in &lt;code>InitializeLogging&lt;/code> above the default filters, modify the first line of code below. I have provided this code in context and it works regardless of where the page is located in your project. For
+example, the page this blog post is based on is located in a Views directory.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-cs" data-lang="cs">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">// Custom filters&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>builder.AddFilter(&lt;span style="color:#ed9d13">&amp;#34;YourProject.YourPage&amp;#34;&lt;/span>, LogLevel.Debug);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">// Default filters for Uno Platform namespaces [THIS IS ALREADY IN THE FILE]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>builder.AddFilter(&lt;span style="color:#ed9d13">&amp;#34;Uno&amp;#34;&lt;/span>, LogLevel.Warning);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>builder.AddFilter(&lt;span style="color:#ed9d13">&amp;#34;Windows&amp;#34;&lt;/span>, LogLevel.Warning);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>builder.AddFilter(&lt;span style="color:#ed9d13">&amp;#34;Microsoft&amp;#34;&lt;/span>, LogLevel.Warning);
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>This blog post is adapted from &lt;a href="https://github.com/unoplatform/uno/discussions/11348#discussioncomment-5005121">this GitHub discussion&lt;/a>&lt;/p></description></item></channel></rss>
