@@ -145,9 +145,8 @@ def monitor_xmr_payments(run_file: str):
                     if transfer['confirmations'] >= transfer['suggested_confirmations_threshold'] and transfer['confirmations'] > transfer.get('unlock_time', 0):
                         balance['xmr_confirmed'] += transfer['amount']
                         # check if confirmation resulted in order payment being fulfilled
-                        # tolerate 2 cent buffer due to transaction fee
-                        xmr_buffer = usd_to_xmr(0.02, as_atomic=True)
-                        if balance['xmr_confirmed'] >= order['total_xmr_atomic'] - xmr_buffer:
+                        # no need for buffer since fees are taken in addition to amount being sent
+                        if balance['xmr_confirmed'] >= order['total_xmr_atomic']:
                             # payment confirmed, therefore, we can update the database
                             Db.orders.find_one_and_update({'_id': order['_id']}, {'$set': {
                                 'xmr_received': round(balance['xmr_received'] / 1e12, 12),
