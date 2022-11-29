@@ -544,8 +544,7 @@ in the &lt;code>toX&lt;/code> snippets.&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> order = address_idx_orders[addr_idx]
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">if&lt;/span> xmr_received &amp;gt; order[&lt;span style="color:#ed9d13">&amp;#39;xmr_received&amp;#39;&lt;/span>] &lt;span style="color:#6ab825;font-weight:bold">or&lt;/span> xmr_confirmed &amp;gt; order[&lt;span style="color:#ed9d13">&amp;#39;xmr_confirmed&amp;#39;&lt;/span>]:
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic"># update xmr_* values for order&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> xmr_buffer = usd_to_xmr(&lt;span style="color:#3677a9">0.02&lt;/span>, as_atomic=&lt;span style="color:#6ab825;font-weight:bold">True&lt;/span>)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> enough_xmr_sent = xmr_received &amp;gt;= order[&lt;span style="color:#ed9d13">&amp;#39;total_xmr_atomic&amp;#39;&lt;/span>] - xmr_buffer
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> enough_xmr_sent = xmr_received &amp;gt;= order[&lt;span style="color:#ed9d13">&amp;#39;total_xmr_atomic&amp;#39;&lt;/span>]
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Db.orders.update_one({&lt;span style="color:#ed9d13">&amp;#39;_id&amp;#39;&lt;/span>: order[&lt;span style="color:#ed9d13">&amp;#39;_id&amp;#39;&lt;/span>]}, {&lt;span style="color:#ed9d13">&amp;#39;$set&amp;#39;&lt;/span>: {
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#39;xmr_received&amp;#39;&lt;/span>: xmr_received,
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#39;xmr_confirmed&amp;#39;&lt;/span>: xmr_confirmed,

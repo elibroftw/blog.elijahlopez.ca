@@ -134,8 +134,7 @@ Table of Contents Preface Introduction Supporting Monero Payment Method My Proce
 </span></span><span style=display:flex><span>                order = address_idx_orders[addr_idx]
 </span></span><span style=display:flex><span>                <span style=color:#6ab825;font-weight:700>if</span> xmr_received &gt; order[<span style=color:#ed9d13>&#39;xmr_received&#39;</span>] <span style=color:#6ab825;font-weight:700>or</span> xmr_confirmed &gt; order[<span style=color:#ed9d13>&#39;xmr_confirmed&#39;</span>]:
 </span></span><span style=display:flex><span>                    <span style=color:#999;font-style:italic># update xmr_* values for order</span>
-</span></span><span style=display:flex><span>                    xmr_buffer = usd_to_xmr(<span style=color:#3677a9>0.02</span>, as_atomic=<span style=color:#6ab825;font-weight:700>True</span>)
-</span></span><span style=display:flex><span>                    enough_xmr_sent = xmr_received &gt;= order[<span style=color:#ed9d13>&#39;total_xmr_atomic&#39;</span>] - xmr_buffer
+</span></span><span style=display:flex><span>                    enough_xmr_sent = xmr_received &gt;= order[<span style=color:#ed9d13>&#39;total_xmr_atomic&#39;</span>]
 </span></span><span style=display:flex><span>                    Db.orders.update_one({<span style=color:#ed9d13>&#39;_id&#39;</span>: order[<span style=color:#ed9d13>&#39;_id&#39;</span>]}, {<span style=color:#ed9d13>&#39;$set&#39;</span>: {
 </span></span><span style=display:flex><span>                        <span style=color:#ed9d13>&#39;xmr_received&#39;</span>: xmr_received,
 </span></span><span style=display:flex><span>                        <span style=color:#ed9d13>&#39;xmr_confirmed&#39;</span>: xmr_confirmed,
