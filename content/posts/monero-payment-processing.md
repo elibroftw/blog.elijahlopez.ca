@@ -166,8 +166,7 @@ def monitor_xmr_payments(run_file: str):
                 order = address_idx_orders[addr_idx]
                 if xmr_received > order['xmr_received'] or xmr_confirmed > order['xmr_confirmed']:
                     # update xmr_* values for order
-                    xmr_buffer = usd_to_xmr(0.02, as_atomic=True)
-                    enough_xmr_sent = xmr_received >= order['total_xmr_atomic'] - xmr_buffer
+                    enough_xmr_sent = xmr_received >= order['total_xmr_atomic']
                     Db.orders.update_one({'_id': order['_id']}, {'$set': {
                         'xmr_received': xmr_received,
                         'xmr_confirmed': xmr_confirmed,
