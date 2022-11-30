@@ -10,7 +10,18 @@ tags: [
 ]
 ---
 
-I'm only in the mood for writing down my thoughts, so I apologize for the upcoming messyness.
+I'm only in the mood for writing down my thoughts, so I apologize for the upcoming messiness.
+
+## Optimizing states that use objects
+
+Do you use objects for some states to bundle data? So do I! Did you know that if you update
+a key in the state with the same value, the object changes and so react triggers a re-render?
+
+Well I only found out today when the hover CSS of one my views was lagging!
+
+I used the profile and turns out my custom hook that used a state object was triggering a render when the component was simply idling.
+
+I added an if statement inside the setState function to return the same state if the new value is already in the previous/current state!
 
 ## Use React Fragments Instead of div
 
