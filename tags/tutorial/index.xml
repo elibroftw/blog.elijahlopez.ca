@@ -15,7 +15,18 @@ enough to fill in the gaps, but when security is in fact a concern, a library mi
 &lt;p>If you have &lt;code>cat&lt;/code> installed, you can use the command &lt;code>cat domain.crt .ca-bundle &amp;gt; chain.crt&lt;/code>. On Windows, you can rename the file extensions or use Quicklook to read the contents of the file and copy paste them to a new text file.&lt;/p>
 &lt;p>Lastly, you need to add the certificate (and possibly the private key) to your webserver.&lt;/p>
 &lt;p>If you are using Heroku, you can go to settings, and click edit endpoint details under &amp;ldquo;Add certificate&amp;rdquo;. Test out requests again.&lt;/p>
-&lt;p>I hope this fixed your issue, as a lot of my time was wasted because of poor Heroku docs the first time I added certificates. They did not emphasize combining the certificates.&lt;/p></description></item><item><title>ReactJS Tips</title><link>https://blog.elijahlopez.ca/posts/reactjs-tips/</link><pubDate>Fri, 23 Sep 2022 19:57:18 -0400</pubDate><guid>https://blog.elijahlopez.ca/posts/reactjs-tips/</guid><description>&lt;p>I&amp;rsquo;m only in the mood for writing down my thoughts, so I apologize for the upcoming messyness.&lt;/p>
+&lt;p>I hope this fixed your issue, as a lot of my time was wasted because of poor Heroku docs the first time I added certificates. They did not emphasize combining the certificates.&lt;/p></description></item><item><title>ReactJS Tips</title><link>https://blog.elijahlopez.ca/posts/reactjs-tips/</link><pubDate>Fri, 23 Sep 2022 19:57:18 -0400</pubDate><guid>https://blog.elijahlopez.ca/posts/reactjs-tips/</guid><description>&lt;p>I&amp;rsquo;m only in the mood for writing down my thoughts, so I apologize for the upcoming messiness.&lt;/p>
+&lt;h2 id="optimizing-states-that-use-objects" >Optimizing states that use objects
+&lt;span>
+&lt;a href="#optimizing-states-that-use-objects">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>Do you use objects for some states to bundle data? So do I! Did you know that if you update
+a key in the state with the same value, the object changes and so react triggers a re-render?&lt;/p>
+&lt;p>Well I only found out today when the hover CSS of one my views was lagging!&lt;/p>
+&lt;p>I used the profile and turns out my custom hook that used a state object was triggering a render when the component was simply idling.&lt;/p>
+&lt;p>I added an if statement inside the setState function to return the same state if the new value is already in the previous/current state!&lt;/p>
 &lt;h2 id="use-react-fragments-instead-of-div" >Use React Fragments Instead of div
 &lt;span>
 &lt;a href="#use-react-fragments-instead-of-div">

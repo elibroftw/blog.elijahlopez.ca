@@ -306,7 +306,18 @@ since the second monitor will be used for gaming or watching videos.&lt;/p>
 &lt;/h2>&lt;p>&lt;a href="https://marketplace.visualstudio.com/items?itemName=Gruntfuggly.todo-tree">Download&lt;/a>&lt;/p>
 &lt;p>If you&amp;rsquo;re a lazy programmer who only implements the most important parts and litters the project with TODOs for later,
 this extension helps you go through all the TODOs you wrote so that you can go through them in order.
-Of course, a project Ctrl + Shift + F might be satisfiable.&lt;/p></description></item><item><title>ReactJS Tips</title><link>https://blog.elijahlopez.ca/posts/reactjs-tips/</link><pubDate>Fri, 23 Sep 2022 19:57:18 -0400</pubDate><guid>https://blog.elijahlopez.ca/posts/reactjs-tips/</guid><description>&lt;p>I&amp;rsquo;m only in the mood for writing down my thoughts, so I apologize for the upcoming messyness.&lt;/p>
+Of course, a project Ctrl + Shift + F might be satisfiable.&lt;/p></description></item><item><title>ReactJS Tips</title><link>https://blog.elijahlopez.ca/posts/reactjs-tips/</link><pubDate>Fri, 23 Sep 2022 19:57:18 -0400</pubDate><guid>https://blog.elijahlopez.ca/posts/reactjs-tips/</guid><description>&lt;p>I&amp;rsquo;m only in the mood for writing down my thoughts, so I apologize for the upcoming messiness.&lt;/p>
+&lt;h2 id="optimizing-states-that-use-objects" >Optimizing states that use objects
+&lt;span>
+&lt;a href="#optimizing-states-that-use-objects">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>Do you use objects for some states to bundle data? So do I! Did you know that if you update
+a key in the state with the same value, the object changes and so react triggers a re-render?&lt;/p>
+&lt;p>Well I only found out today when the hover CSS of one my views was lagging!&lt;/p>
+&lt;p>I used the profile and turns out my custom hook that used a state object was triggering a render when the component was simply idling.&lt;/p>
+&lt;p>I added an if statement inside the setState function to return the same state if the new value is already in the previous/current state!&lt;/p>
 &lt;h2 id="use-react-fragments-instead-of-div" >Use React Fragments Instead of div
 &lt;span>
 &lt;a href="#use-react-fragments-instead-of-div">
