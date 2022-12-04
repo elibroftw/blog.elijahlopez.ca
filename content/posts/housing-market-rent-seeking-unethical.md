@@ -7,13 +7,16 @@ tags: [
     "politics",
     "opinion",
 ]
+hidden: true
 ---
 
 Buying houses (living spaces) for the purpose of financial gain is unethical, _at least when there is a housing shortage_, like in Ontario. In order to answer why is it unethical I'll lay out some steps.
 
 Unethical behavior is behaviour that is a deviation away from morally correct action and towards morally incorrect action. What has morality got to do with buying or owning investment properties during a housing shortage?
 
-Housing exists to house people. People need shelter to live, breathe, and rest. It is a human principle to have full rights (ownership) of a space or to be compensated in lieu of such space. If this concept isn't accepted, then I don't know what to say except that it is victim blaming **all** homelessness.
+Housing exists to house people. People need shelter to live, breathe, and rest. It is a human principle to have full rights (ownership) of a space or to be compensated in lieu of such space. If this concept isn't accepted, then I don't know what to say except that it is victim blaming **all** homeless people.
+
+I will improve the reasoning behind this fundamental concept in the future.
 
 ## Morality of Market Rent Price
 
