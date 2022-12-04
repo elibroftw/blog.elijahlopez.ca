@@ -2,6 +2,7 @@
 title: "Handling Disrespect"
 date: 2022-11-19T22:21:06-05:00
 draft: false
+hidden: true
 ---
 
 One of the worst, awkward, or embarassing things is when someone disrespects you.
