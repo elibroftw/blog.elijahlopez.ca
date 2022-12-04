@@ -7,6 +7,7 @@ tags: [
     "opinion",
     "politics",
 ]
+hidden: true
 ---
 
 This article will be the one stop shop for my thoughts on Canada.
@@ -99,13 +100,11 @@ we start to visually age. So at 30, we want to be living our ideal life.
 
 ### Living Situation
 
-I haven't made up my mind on whether to have children or not, but in the off chance that I
-do, I'd probably have 2 children. Therefore, an ideal _house_ will have 3-4 bedrooms.
-The extra one is for guests. I think there should also be 3 washrooms.
+Ideally in the future, I'll have 4 children: 2 biological + 2 adopted. Therefore, an ideal _house_ will have 4 or 5 bedrooms. I think there should also be 3.5 bathrooms.
 
-One should plan out the general location where they want to build a family right after marriage[^marriage] because then you won't be locked into a location because of work, family, or friends. I'm pretty sure this is one of the biggest factors preventing people from moving to affordable locations. The other factors are activities which we'll get to now. Personally, I would love to live in New Brunswick, but I'll try to cater to all. If you want nightlife, you'll have to lower your bedroom and washroom numbers.
+One should plan out the general location where they want to build a family right after marriage[^marriage] because then you won't be locked into a location because of work, family, or friends. I'm pretty sure this is one of the biggest factors preventing people from moving to affordable locations. The other factors are activities which we'll get to now. Personally, I do not have an ideal place in mind, just not in the suburbs. If you want nightlife, you'll have to lower your bedroom and washroom numbers.
 
-[^marriage]: By marriage I mean the unification of partners in a relationship rather than the legal sense
+[^marriage]: By marriage I mean the unification of partners in a relationship rather than the legal status
 
 ### Activities
 
