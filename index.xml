@@ -1,4 +1,194 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ELL Blog</title><link>https://blog.elijahlopez.ca/</link><description>ELL Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 21 Nov 2022 16:36:44 -0500</lastBuildDate><atom:link href="https://blog.elijahlopez.ca/index.xml" rel="self" type="application/rss+xml"/><item><title>Housing Market Rent-Seeking is Unethical</title><link>https://blog.elijahlopez.ca/posts/housing-market-rent-seeking-unethical/</link><pubDate>Mon, 21 Nov 2022 16:36:44 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/housing-market-rent-seeking-unethical/</guid><description>&lt;p>Buying houses (living spaces) for the purpose of financial gain is unethical, &lt;em>at least when there is a housing shortage&lt;/em>, like in Ontario. In order to answer why is it unethical I&amp;rsquo;ll lay out some steps.&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ELL Blog</title><link>https://blog.elijahlopez.ca/</link><description>ELL Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 03 Dec 2022 12:58:50 -0500</lastBuildDate><atom:link href="https://blog.elijahlopez.ca/index.xml" rel="self" type="application/rss+xml"/><item><title>Monero Development: Windows Onboarding</title><link>https://blog.elijahlopez.ca/posts/monero-dev-windows/</link><pubDate>Sat, 03 Dec 2022 12:58:50 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/monero-dev-windows/</guid><description>&lt;p>This is a straightforward guide to start developing on the monero project (monero, monero-gui, etc.) on Windows without using a Linux [virtual] machine.
+Although I have a Linux machine, I am maximally productive on Windows as it is my primary OS.&lt;/p>
+&lt;h2 id="prerequisites" >Prerequisites
+&lt;span>
+&lt;a href="#prerequisites">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;ul>
+&lt;li>&lt;a href="https://www.msys2.org/#installation">MSYS2&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://code.visualstudio.com/download">Visual Studio Code&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://git-scm.com/downloads">Git&lt;/a>&lt;/li>
+&lt;li>Optional: &lt;a href="https://desktop.github.com/">GitHub Desktop&lt;/a>&lt;/li>
+&lt;li>Optional: &lt;a href="https:/github.com/">GitHub Account&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>Install these simultaneously.&lt;/p>
+&lt;h2 id="forking-a-monero-project" >Forking a Monero Project
+&lt;span>
+&lt;a href="#forking-a-monero-project">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>Since this is a development onboarding guide and not simply a building guide, &lt;a href="https://docs.github.com/en/get-started/quickstart/fork-a-repo#forking-a-repository">fork the project&lt;/a> if you want to contribute through a GitHub account.&lt;/p>
+&lt;p>If you are interested in contributing without a GitHub account, you can skip this step.&lt;/p>
+&lt;h2 id="cloning-the-project" >Cloning the Project
+&lt;span>
+&lt;a href="#cloning-the-project">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>Use git or GitHub Desktop to clone your fork. Clone the original repository if you want to contribute anonymously.&lt;/p>
+&lt;p>Replace the URL below the URL to your fork.
+If you are copy pasting terminal commands, paste into notepad before pasting into your terminal because it&amp;rsquo;s a good habit to catch a clipboard jacking attack.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>git clone --recursive https://github.com/monero-project/monero-gui.git
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;code>--recursive&lt;/code> is used so that submodules are cloned as well. Otherwise, you&amp;rsquo;d have to do it when the build fails.&lt;/p>
+&lt;h2 id="setting-up-vscode" >Setting Up VSCode
+&lt;span>
+&lt;a href="#setting-up-vscode">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>I use VS Code when working on the &lt;code>monero-gui&lt;/code> project.
+I use VS Code for most projects, even for writing this blog!
+The exceptions being: Python, Windows C++ development, .NET development, Java.&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>Open the &lt;code>monero-gui&lt;/code> directory in VSCode&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Install &lt;a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools-extension-pack">C++ Extension Pack&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Install &lt;a href="https://marketplace.visualstudio.com/items?itemName=jeff-hykin.better-cpp-syntax">Better C++ Syntax&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Add &lt;code>MSYS2&lt;/code> as a terminal profile in user &lt;code>settings.json&lt;/code>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-json" data-lang="json">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">// if this setting already exists, add the MSYS2 portion
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">// rather than overwriting any existing profiles
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">&lt;/span>&lt;span style="color:#ed9d13">&amp;#34;terminal.integrated.profiles.windows&amp;#34;&lt;/span>&lt;span style="color:#a61717;background-color:#e3d2d2">:&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">&amp;#34;MSYS2&amp;#34;&lt;/span>: {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">&amp;#34;path&amp;#34;&lt;/span>: &lt;span style="color:#ed9d13">&amp;#34;C:\\msys64\\usr\\bin\\bash.exe&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">&amp;#34;args&amp;#34;&lt;/span>: [
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;--login&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;-i&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">&amp;#34;env&amp;#34;&lt;/span>: {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">&amp;#34;MSYSTEM&amp;#34;&lt;/span>: &lt;span style="color:#ed9d13">&amp;#34;MINGW64&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">&amp;#34;CHERE_INVOKING&amp;#34;&lt;/span>: &lt;span style="color:#ed9d13">&amp;#34;1&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Set MSYS2 as the default terminal profile on Windows in the &lt;code>workspace&lt;/code> settings&lt;/p>
+&lt;p>&lt;img src="https://blog.elijahlopez.ca/images/vs-code/setting-default-profile.jpg" alt="Setting default terminal profile">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Open an &lt;code>MSYS2&lt;/code> Terminal in VS Code&lt;/p>
+&lt;ul>
+&lt;li>I use a custom keyboard shortcut &lt;code>Ctrl + T&lt;/code> for toggling the terminal and &lt;code>Ctrl + Shift + T&lt;/code> to create a new default profile terminal&lt;/li>
+&lt;li>Ensure that the terminal you opened is MSYS2 (bash) and not CMD or PS (there will be a $ sign if you indeed opened MSYS2 64bit)&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="installing-msys2-dependencies" >Installing MSYS2 Dependencies
+&lt;span>
+&lt;a href="#installing-msys2-dependencies">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>In the Windows instructions for the Monero project you are interested in, you may see that &lt;code>pacman&lt;/code> is used to install dependencies. Pacman is the default package manager on &lt;em>Arch btw&lt;/em>.
+However, the installing process is not guaranteed to work. Especially if you already have MSYS2 installed like I had.&lt;/p>
+&lt;p>Run these commands in a bash window, either the one we opened up in the previous step or one you opened externally.
+Note that the dependencies take storage space upwards of 6GB+. I&amp;rsquo;ve included &lt;code>--noconfirm&lt;/code> so that you can play Pacman on Google while these commands are running.&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>Upgrade dependencies&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>pacman -Syu --noconfirm &lt;span style="color:#999;font-style:italic"># upgrade existing database and packages&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic"># the terminal may close automatically&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Install Monero dependencies&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>pacman -S mingw-w64-x86_64-toolchain make mingw-w64-x86_64-cmake mingw-w64-x86_64-boost mingw-w64-x86_64-openssl mingw-w64-x86_64-zeromq mingw-w64-x86_64-libsodium mingw-w64-x86_64-hidapi mingw-w64-x86_64-protobuf-c mingw-w64-x86_64-libusb mingw-w64-x86_64-libgcrypt mingw-w64-x86_64-unbound mingw-w64-x86_64-doxygen mingw-w64-x86_64-libunwind --noconfirm
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>If you are reading this far into the future, ensure that the list of dependencies installed is a merger of the ones I have listed and the ones listed in the project&amp;rsquo;s &lt;code>README.md&lt;/code>. When I was writing this article, builds were failing for 2+ hours due to missing packages and an unsupported &lt;code>debug-static-win64&lt;/code> build target.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Install Qt5&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>pacman -S mingw-w64-x86_64-qt5 --noconfirm
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Install ccache for faster rebuilds (ccache fails for some reason)&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>pacman -S ccache
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;/ol>
+&lt;h2 id="building" >Building
+&lt;span>
+&lt;a href="#building">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;ol>
+&lt;li>
+&lt;p>Set the default number of jobs for &lt;code>make&lt;/code> to CPU cores + 1
+To avoid entering in &lt;code>-jN&lt;/code> every time you build, use the following command so that make uses -j &lt;a href="https://stackoverflow.com/a/2500791/7732434">CPU cores + 1&lt;/a> by default.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#24909d">echo&lt;/span> &lt;span style="color:#ed9d13">&amp;#34;alias make=\&amp;#34;/usr/bin/make -j&lt;/span>&lt;span style="color:#6ab825;font-weight:bold">$((&lt;/span>&lt;span style="color:#ed9d13">`&lt;/span>nproc&lt;span style="color:#ed9d13">`&lt;/span> + &lt;span style="color:#3677a9">1&lt;/span>&lt;span style="color:#6ab825;font-weight:bold">))&lt;/span>&lt;span style="color:#ed9d13">\&amp;#34;&amp;#34;&lt;/span> &amp;gt;&amp;gt; ~/.profile
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#24909d">source&lt;/span> ~/.profile &lt;span style="color:#999;font-style:italic"># you do not need to run this in new terminal sessions&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Build using &lt;code>make release-win64&lt;/code>. Debug builds on Windows are either unsupported or are not advised. This may take 5 minutes.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>If the build fails due to a missing library, try each of the following
+a) &lt;code>pacman -S mingw-w64-x86_64-name&lt;/code> (where name is the libname with and without lib)
+b) Search for the library (with and without the lib prefix) on &lt;a href="https://packages.msys2.org/search">packages.msys2.org&lt;/a>. Click on relevant search results and install the binary package starting with &lt;code>mingw-w64-x86_64&lt;/code>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>To install a release build, the project&amp;rsquo;s &lt;code>README.md&lt;/code> will most likely say &lt;code>cd build/release &amp;amp;&amp;amp; make deploy&lt;/code>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;del>Debugging?&lt;/del>
+&lt;del>I&amp;rsquo;ve hardly ever needed to use a debugger when finding a bug so I can&amp;rsquo;t give out best practices on it, even more so on how to use VSCode debugging through a custom terminal. The best I can offer is pointing you to this &lt;a href="https://stackoverflow.com/a/1745964/7732434">StackOverFlow Answer&lt;/a>&lt;/del>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="contributing-anonymously" >Contributing Anonymously
+&lt;span>
+&lt;a href="#contributing-anonymously">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>If you want to contribute anonymously, I suggest you git commit on a separate branch than the default one.
+After you&amp;rsquo;ve committed your changes, run the following from your branch.&lt;/p>
+&lt;p>&lt;code>git format-patch master --stdout &amp;gt; PATCH_NAME.patch&lt;/code>&lt;/p>
+&lt;p>Here I&amp;rsquo;ve assumed that the default branch is master, but it is entirely possible when working on other projects that the default branch is not master.
+Default branch names I&amp;rsquo;ve seen are &lt;code>dev&lt;/code> and &lt;code>main&lt;/code>.&lt;/p>
+&lt;p>After you&amp;rsquo;ve created a patch, you can post it on &lt;a href="irc://irc.libera.chat/#monero-dev">monero-dev IRC&lt;/a> or &lt;a href="https://matrix.to/#/!VDQXWJoFsesLtbGdTT:monero.social">monero-dev matrix&lt;/a>. Funny thing, my house has these Plume devices which blocks matrix.to links, so I&amp;rsquo;m running a VPN a lot of the time now.&lt;/p>
+&lt;h2 id="git-situations" >Git Situations
+&lt;span>
+&lt;a href="#git-situations">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>I will provide some git basics that I use regularly. I use GitHub Desktop + VS Code, so I am not a git guru. I will assume you already know how to commit your code changes and push them to your github fork.&lt;/p>
+&lt;p>I use the &lt;a href="https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph">Git Graph&lt;/a> extension to avoid the CLI for rebasing, squashing commits, and other actions
+where GitHub Desktop is inadequate.&lt;/p>
+&lt;h3 id="resolving-merge-conflicts-or-syncing-with-original-repo" >Resolving Merge Conflicts or Syncing with Original Repo
+&lt;span>
+&lt;a href="#resolving-merge-conflicts-or-syncing-with-original-repo">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Suppose you are developing a feature and now your forked repo is many commits behind the upstream target branch. Or your pull request cannot be merged due to at least one conflict (a conflict arises when git cannot determine whose change should be respected because there are exclusive commits in two different branches that changed the same thing).&lt;/p>
+&lt;p>Solution: rebase. A rebase is when you sandwich exclusive commits from another branch between the shared commits in your branch and your branches exclusive commits.&lt;/p>
+&lt;ol>
+&lt;li>Ensure you are on the branch with your changes. Use &lt;code>git checkout branchName&lt;/code> if you aren&amp;rsquo;t.&lt;/li>
+&lt;li>&lt;code>git remote add upstream ORIGINAL_REPO_LINK&lt;/code> (CLI)&lt;/li>
+&lt;li>&lt;code>git rebase upstream/master&lt;/code> (CLI)&lt;/li>
+&lt;li>Resolve conflicts (IDE like VSCode or CLI editor)&lt;/li>
+&lt;li>Commit and force push (UI or CLI)&lt;/li>
+&lt;/ol>
+&lt;p>If you did not fork the repo, life is a bit easier as you just need to start at step 3 but with the command &lt;code>git rebase master&lt;/code>&lt;/p>
+&lt;h3 id="squashing-commits" >Squashing Commits
+&lt;span>
+&lt;a href="#squashing-commits">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Suppose you went on a commit rampage just for one feature. Everything works, so one commit is more elegant than many commits.
+To perform a squash, reset your branch to the commit you don&amp;rsquo;t want to squash. Commit your changes and force push. Make sure
+the commit you are resetting to is on the same branch. Otherwise you are performing a rebase and might need to resolve a merge conflict.&lt;/p></description></item><item><title>Housing Market Rent-Seeking is Unethical</title><link>https://blog.elijahlopez.ca/posts/housing-market-rent-seeking-unethical/</link><pubDate>Mon, 21 Nov 2022 16:36:44 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/housing-market-rent-seeking-unethical/</guid><description>&lt;p>Buying houses (living spaces) for the purpose of financial gain is unethical, &lt;em>at least when there is a housing shortage&lt;/em>, like in Ontario. In order to answer why is it unethical I&amp;rsquo;ll lay out some steps.&lt;/p>
 &lt;p>Unethical behavior is behaviour that is a deviation away from morally correct action and towards morally incorrect action. What has morality got to do with buying or owning investment properties during a housing shortage?&lt;/p>
 &lt;p>Housing exists to house people. People need shelter to live, breathe, and rest. It is a human principle to have full rights (ownership) of a space or to be compensated in lieu of such space. If this concept isn&amp;rsquo;t accepted, then I don&amp;rsquo;t know what to say except that it is victim blaming &lt;strong>all&lt;/strong> homelessness.&lt;/p>
 &lt;h2 id="morality-of-market-rent-price" >Morality of Market Rent Price
@@ -5187,7 +5377,7 @@ After installing these two modules, copy the snippet at the bottom of the articl
 &lt;/span>
 &lt;/h2>&lt;p>&lt;code>GUID&lt;/code>: include the &amp;lsquo;{&amp;rsquo; and &amp;lsquo;}&amp;rsquo; into the string if applicable
 &lt;code>addon_files&lt;/code>: a list of source files of the add-on (relative path&lt;/p>
-&lt;script type="application/javascript" src="https://gist.github.com/elibroftw/1a94149a2f6232d062b666c4ee9ea530.js">&lt;/script></description></item><item><title>VS Code Remote SSH Tutorial</title><link>https://blog.elijahlopez.ca/posts/vs-code-remote-ssh/</link><pubDate>Fri, 11 Sep 2020 18:23:50 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/vs-code-remote-ssh/</guid><description>&lt;p>In this tutorial we&amp;rsquo;ll integrate SSH into VS Code in a way that won&amp;rsquo;t require entering a password every time.&lt;/p>
+&lt;script type="application/javascript" src="https://gist.github.com/elibroftw/1a94149a2f6232d062b666c4ee9ea530.js">&lt;/script></description></item><item><title>VS Code Remote SSH Tutorial</title><link>https://blog.elijahlopez.ca/posts/vscode-remote-ssh/</link><pubDate>Fri, 11 Sep 2020 18:23:50 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/vscode-remote-ssh/</guid><description>&lt;p>In this tutorial we&amp;rsquo;ll integrate SSH into VS Code in a way that won&amp;rsquo;t require entering a password every time.&lt;/p>
 &lt;h2 id="generating-an-ssh-key" >Generating an SSH key
 &lt;span>
 &lt;a href="#generating-an-ssh-key">
@@ -5262,7 +5452,7 @@ if you aren&amp;rsquo;t doing anything abnormal on your computer.&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>If all goes well, you should be able to connect without having to enter a password
-&lt;img src="https://blog.elijahlopez.ca/images/vs-code-remote-ssh/connected-example.png" alt="VS Code SSH">&lt;/p>
+&lt;img src="https://blog.elijahlopez.ca/images/vs-code/connected-example.png" alt="VS Code SSH">&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>Tip: add multiple folders in the remote server to a workspace&lt;/p>
