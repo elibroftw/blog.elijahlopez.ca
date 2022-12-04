@@ -539,7 +539,340 @@ aren&amp;rsquo;t straight forward!&lt;/p>
 &lt;li>Run &lt;code>asb --testnet start&lt;/code> in a new terminal window and press enter for everything. Do not use Ctrl or Alt.&lt;/li>
 &lt;li>A wallet will be created in 10 seconds&lt;/li>
 &lt;li>If you close the ASB and want to start it again, restart the RPC to avoid a &amp;ldquo;wallet already exists error&amp;rdquo; from the ASB&lt;/li>
-&lt;/ol></description></item><item><title>How to Buy Monero in Canada</title><link>https://blog.elijahlopez.ca/posts/how-to-buy-monero-in-canada/</link><pubDate>Fri, 25 Feb 2022 22:56:02 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/how-to-buy-monero-in-canada/</guid><description>&lt;p>I&amp;rsquo;ll be testing all of these methods except LocalMonero since the actual fee there is at least 20% as of 2022/4/21.
+&lt;/ol></description></item><item><title>Monero vs "Privacy Coins"</title><link>https://blog.elijahlopez.ca/posts/monero-vs-privacy-coins/</link><pubDate>Sat, 26 Feb 2022 12:48:07 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/monero-vs-privacy-coins/</guid><description>&lt;div>
+&lt;h2>Table of Contents&lt;/h2>
+&lt;nav id="TableOfContents">
+&lt;ul>
+&lt;li>&lt;a href="#preface">Preface&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#zcash">ZCash&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#a-privacy-coin-without-privacy-users">A Privacy Coin without Privacy Users&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#wallet-experience">Wallet Experience&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#horrendous-developertesting-experience">Horrendous Developer/Testing Experience&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="#leadership-of-a-cryptocurrency">Leadership? Of a cryptocurrency?&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#a-counter-argument-to-zooko">A Counter-Argument to Zooko&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#oxen">Oxen&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#secret-network">Secret Network&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#grin">Grin&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#beam">Beam&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#firo">Firo&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#dero">Dero&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#pirate-chain">Pirate Chain&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#particl-part">Particl (PART)&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#conclusion">Conclusion&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/nav>
+&lt;/div>
+&lt;h2 id="preface" >Preface
+&lt;span>
+&lt;a href="#preface">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>Unlike my last article about why Monero is the best crypto as a currency because of its privacy vs. layer 2 solutions, this article is a deep dive on why I continue to choose Monero and not its privacy-related competitors.&lt;/p>
+&lt;p>There is a cultural noticable difference in culture and attitude amongst Monero and other coins. In r/monero, there is always a discussion going on.
+In these other privacy coin subreddits however, there is so many posts about price and going to the moon.&lt;/p>
+&lt;p>I value quality, so if I make any argumentative mistakes in the article, I will correct them if I am notified.
+I have multiple reasons, so if one or two are technically incorrect, my argument will hold.&lt;/p>
+&lt;ol>
+&lt;li>Monero is the FIRST privacy coin that was NOT PRE-MINED.&lt;/li>
+&lt;li>Monero is the &lt;strong>most used&lt;/strong> &lt;em>privacy&lt;/em> crypto&lt;/li>
+&lt;li>Monero is actively improved/developed&lt;/li>
+&lt;li>Monero Changes for the Better
+&lt;ul>
+&lt;li>non-premined ByteCoin fork, and after that: introduction of Stealth addresses, Ring-CT, Bulletproofs(+)&lt;/li>
+&lt;li>RandomX (innovation) ASIC resistance mining algorithm avoids using hard forks&lt;/li>
+&lt;li>Monero is superior today than Monero 5 years ago, and Monero in 5 years will be superior to Monero today&lt;/li>
+&lt;li>Atomic swaps (infrastructure)&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Monero&amp;rsquo;s researchers actively create / think of attacks on Monero&amp;rsquo;s privacy so that the protocol can be improved to defend against these attacks.&lt;/li>
+&lt;li>Censorship free, there is even a post called Sketicism Sunday on r/monero!&lt;/li>
+&lt;/ol>
+&lt;h2 id="zcash" >ZCash
+&lt;span>
+&lt;a href="#zcash">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>I start with ZCash since it is made to seem as the runner up to Monero. By comparing Monero to ZCash,
+all other coins should make a case that they are better than ZCash before trying to spread Monero FUD.
+It&amp;rsquo;s only fair that the lesser used and known privacy cryptos figure out who the runner up to Monero is.
+Otherwise, it&amp;rsquo;ll be impossibe to do an unbiased comparison of them all to Monero in the future when thousands of people think
+they are the next Satoshi. A similar scheme can be used for political ideologies, economic policies, etc.&lt;/p>
+&lt;p>We won&amp;rsquo;t use trusted setup as an argument for this section, even though as of 2022/2/26,
+the Halo Arc update that was supposed to remove trusted setup is 28+ days overdue.
+What is unavailable is the technical aspects of how the trusted setup will be removed or what replaces it to ensure privacy.&lt;/p>
+&lt;h3 id="a-privacy-coin-without-privacy-users" >A Privacy Coin without Privacy Users
+&lt;span>
+&lt;a href="#a-privacy-coin-without-privacy-users">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>The best privacy would be the best at being untraceable and at protecting users&amp;rsquo; holdings and their multiple identities.
+In 2020, a &lt;a href="https://eprint.iacr.org/2020/593.pdf">team of researchers (PDF)&lt;/a> concluded that 99.9% of ZCash transactions are Traceable.
+In the abstract, researchers say &amp;ldquo;strict security and anonymity requirements, … makes the coin effectively untraceable, as shown by &lt;em>Monero&lt;/em>.&amp;rdquo;
+What does this mean? Optional privacy is junk. If you decide to use shielded transactions on ZCash,
+you&amp;rsquo;ve made a target of yourself since your transactions stick out like a sore thumb!
+You don&amp;rsquo;t have privacy if you&amp;rsquo;re the only users. I&amp;rsquo;ll say this again at the end of this article.&lt;/p>
+&lt;p>Most ZCash users don&amp;rsquo;t use shielded addresses and even the miners don&amp;rsquo;t follow the advice of Electric Coin Company to use sheilded addresses.
+Mining pools get to decide whether miners get to use shielded addreses. Another case of optional privacy simply not working!&lt;/p>
+&lt;p>&lt;a href="https://explorer.zcha.in/transactions/537a4edc34ea030216ef0c04e0a977e5efeda53aa497c41560c4ac658a5f5192">Transparent to shielded transactions&lt;/a> don&amp;rsquo;t even hide the amount sent to a shielded address.&lt;/p>
+&lt;p>The consequence of this is that users have to conciously remember to use different transaprent addresses for people/entities who refuse
+to send ZEC to shielded addresses.&lt;/p>
+&lt;h3 id="wallet-experience" >Wallet Experience
+&lt;span>
+&lt;a href="#wallet-experience">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>From this picture below, how would the user know if they are sending from a shielded address? They don&amp;rsquo;t know! This hurts the privayc of ZEC users. It hinders privacy without even improving UX.&lt;/p>
+&lt;p>&lt;img src="https://blog.elijahlopez.ca/images/crypto/zcash-wallet-1.png" alt="ZCash Wallet 1">&lt;/p>
+&lt;p>Each address is it&amp;rsquo;s own account, and so no sub-addresses are possible.&lt;/p>
+&lt;p>&lt;img src="https://blog.elijahlopez.ca/images/crypto/zcash-wallet-2.png" alt="ZCash Wallet 2">&lt;/p>
+&lt;p>Compare this to Monero. Each account has infinitely generated subaddresses and the balance is shown on an account basis.&lt;/p>
+&lt;p>&lt;img src="https://blog.elijahlopez.ca/images/crypto/monero-wallet-1.png" alt="Monero Wallet 1">&lt;/p>
+&lt;p>&lt;img src="https://blog.elijahlopez.ca/images/crypto/monero-wallet-2.png" alt="Monero Wallet 1">&lt;/p>
+&lt;p>The Zecwallet Lite also does not store the wallet encrypted.
+I was never asked to create a pass code to decrypt the wallet so anyone who uses ZCash on a computer can have their ZCash stolen if their laptop/computer/storage is accessed by a third party.
+I don&amp;rsquo;t know about you, but privacy goes hand in hand with (operating and informational) security. There even is a wallet encryption option, but just like privacy, security is off by default!
+To think that these people sponsor Edward Snowden who has the spine to go against the USA but has no spine to scrutizine this project.&lt;/p>
+&lt;p>When sending Monero, users do not have to think about if they are sending from the &amp;ldquo;right&amp;rdquo; account since each account&amp;rsquo;s primary address shows up as a stealth address in the Ring-CT in the block of the blockchain.
+Recipients can&amp;rsquo;t make judgments about your level of care to privacy if you decide to donate with a primary account or other account.
+Unlike ZCash, where the recipient will know whether you made a shielded transaction or not, and then make you a target (assuming an all Monero ecosystem or an all ZCash ecosystem).&lt;/p>
+&lt;p>ZCash users say ZCash is better because it uses zk-snarks to avoid large transactions sizes. We&amp;rsquo;ll see what happens when we combine this with optional privacy.&lt;/p>
+&lt;h3 id="horrendous-developertesting-experience" >Horrendous Developer/Testing Experience
+&lt;span>
+&lt;a href="#horrendous-developertesting-experience">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>There is also no wallet for Stagenet/testnet, so testing ZCash will be a problem.
+Here is the &lt;a href="https://zcash.readthedocs.io/en/latest/rtd_pages/testnet_guide.html">ZCash testnet&lt;/a> in case someone or even myself in the future wants to find
+more practical issues with ZCash.&lt;/p>
+&lt;p>I was trying to test out ZCash transactions, but ran into major troubles.
+First of all, the ZCash GUI wallets don&amp;rsquo;t support testnet.
+Secondly, the CLI does not support for on Windows.
+Thirdly, because I have WSL, their &lt;code>zcash-cli&lt;/code> says it requires a &lt;code>zcash.conf&lt;/code> even though the file exists in same directory as the binary!&lt;/p>
+&lt;p>I was trying to test out ZCash because to confirm that creating sheilded transactions are incredibly slow.
+There are no demos online showing the time it takes to generate a simple shielded transaction.&lt;/p>
+&lt;p>For Monero, below is a video I made demoing a Monero transaction with one receiving address.
+The relevant portions took only 10 seconds! Most of the time was spent entering an address, an amount,
+entering my password, moving the GUI, and me talking.&lt;/p>
+&lt;div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+&lt;iframe src="https://www.youtube.com/embed/_Sqn7aaR1oM" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video">&lt;/iframe>
+&lt;/div>
+&lt;p>Searching online for Zcash demos yields some guy using two webapps and a CLI to send ZEC to many receivers.
+He cut the waiting process.&lt;/p>
+&lt;h2 id="leadership-of-a-cryptocurrency" >Leadership? Of a cryptocurrency?
+&lt;span>
+&lt;a href="#leadership-of-a-cryptocurrency">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>Yes, ZCash is basically a publiclly traded company, except the owners of ZEC have no power
+over the owners of the Codebase.&lt;/p>
+&lt;p>There is a developer tax of 10% on the total capped supply.&lt;/p>
+&lt;p>No single company owns 10% of the total money of the world, yet ZCash founders think it&amp;rsquo;s reasonable or they think ZCash isn&amp;rsquo;t a global currency.
+Users have to pay a tax to keep ZCash in development?
+Where&amp;rsquo;s the Linux tax then to use Linux? Linus Torvald should be the richest man alive if this was an ethical thing to do!&lt;/p>
+&lt;p>Lastly, ZEC does not use an ASIC resistant PoW algorithm and will become PoS in the future as indicated by its CEO!
+Yes, ZEC is a product of centralization, not decentralization. It&amp;rsquo;s CEO had drunkenly admitted to being against privacy for all (criminals here).&lt;/p>
+&lt;blockquote class="twitter-tweet">&lt;p lang="en" dir="ltr">… At least for as long as criminals want to cash out to fiat (years? decades?). …&lt;/p>&amp;mdash; zooko❤ⓩ🛡🦓🦓🦓 (@zooko) &lt;a href="https://twitter.com/zooko/status/863202964416077824?ref_src=twsrc%5Etfw">May 13, 2017&lt;/a>&lt;/blockquote>
+&lt;script async src="https://platform.twitter.com/widgets.js" charset="utf-8">&lt;/script>
+&lt;p>It&amp;rsquo;s funny how ZCash pays Edward Snowden, a criminal to the USA, to support ZCash, which would turn around and oust him if he used it in the US.
+ZCash&amp;rsquo;s philosophy is &amp;ldquo;if a state doesn&amp;rsquo;t like you, we don&amp;rsquo;t like you, unless you are an influencer.&amp;rdquo; I had no idea that it&amp;rsquo;s even possible to be a double hypocrite.&lt;/p>
+&lt;p>How it can be done is a question but before you think of banning criminals from having privacy, first think about how that&amp;rsquo;s even possible.
+And then think about if you would&amp;rsquo;ve been a criminal if you had just been living in a different country, such as an authoritarian one.
+Venezuela, China, Saudi Arabia, Russia, not that any of these are extreme authoritarianism.&lt;/p>
+&lt;h2 id="a-counter-argument-to-zooko" >A Counter-Argument to Zooko
+&lt;span>
+&lt;a href="#a-counter-argument-to-zooko">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>The solution to the narrow problem below is random amounts of churning, at least until Seraphis comes and increases the ring signature.&lt;/p>
+&lt;p>Zooko believes Monero&amp;rsquo;s privacy obfuscation does not work because of the posioned outputs attack.
+In essence, bad actor A sends to an anonymous address owned by person B, and person B sends monero with this stealth address in the ring signature to bad actor C without anonymity.
+If this occurs at least 2 times or with another bad actor, then the bad actors can derive the identity of the anonymous person.&lt;/p>
+&lt;p>The thing is, this attack is not full proof because users can send Monero to themselves (churning).
+Each churn would increase the distance between the bad actors, and increases the anonymity set.
+At a certain point, which requires more research to determine, there would be siginificant doubt
+whether the stealth address included 5 transactions deep is the same user as the one sending the monero.
+And if the stealth address is included in someone elses transaction to the bad actor, consider all
+accusations void!&lt;/p>
+&lt;p>The assumptions that Zooko makes are:&lt;/p>
+&lt;ol>
+&lt;li>User does not churn&lt;/li>
+&lt;li>Users are sending Monero without anonymity to bad actors
+&lt;ul>
+&lt;li>selling of XMR for fiat one exchanges&lt;/li>
+&lt;li>buying goods and services from businesses who don&amp;rsquo;t respecct user privacy&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>User is being targetted by state actors, which Zooko says he supports in his drunken tweets as I mentioned previously.&lt;/li>
+&lt;/ol>
+&lt;p>When it comes to privacy, how privacy tools are used greatly affects the privacy achieved.&lt;/p>
+&lt;h2 id="oxen" >Oxen
+&lt;span>
+&lt;a href="#oxen">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>A PoS fork of Monero, so it&amp;rsquo;s not good money. However they are trying to innovate in terms of DApps unlike other projects listed here.&lt;/p>
+&lt;h2 id="secret-network" >Secret Network
+&lt;span>
+&lt;a href="#secret-network">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>It&amp;rsquo;s a PoS. If you&amp;rsquo;ve seen my previous Cryptocurrency article, you&amp;rsquo;ll know why PoW &amp;gt; PoS.
+Secret Network has not demonstrated that they are private at all.
+&lt;a href="https://explorer.secret.dev/tx/0x250f41c1b7988a57ad79503d412c99e1dfba04edb110b0237b7e9e2c31d03645/internal-transactions">Here&lt;/a> is a random transaction I found on their blockchain explorer.&lt;/p>
+&lt;p>We see the sender address, the receiver address, the value of the tranaction, the balances of both the
+&lt;a href="https://explorer.secret.dev/address/0xF070515d7a05ED5f7b2C50106F615E8275e1b9D2/transactions">receiver&lt;/a> and the &lt;a href="https://explorer.secret.dev/address/0x53d77827bE168aB2a911B5A14D0f16D1C5657196/transactions">sender&lt;/a>,
+and by extension transaction history as well. I&amp;rsquo;ve said it before and I&amp;rsquo;ll say it again; Any transparent transactions hurt the privacy of all users.&lt;/p>
+&lt;p>Secret Network claims to be private, but the blockchain explorer says otherwise. I have more bad news.&lt;/p>
+&lt;p>Let&amp;rsquo;s open their &lt;a href="https://scrt.network/">website&lt;/a>. It looks nice, I&amp;rsquo;ll give them that. However, suppose
+I&amp;rsquo;m interested in owning SCRT. I scroll down and see &amp;ldquo;Get Started.&amp;rdquo; I click that, and see Store SCRT. I click it,
+and scroll down to the bottom. Then I see 4 options avaialble. Keplr is promoted, so I click the link. Guess what?
+All four option &amp;ldquo;links&amp;rdquo; take me to the top of the page! Anyways, I decided to search up Keplr. Guess what again?
+Keplr only has a Chrome wallet.&lt;/p>
+&lt;p>So you expect people who care about privacy to use a browser to transact privately and not just that,
+a specific browser. Chrome! The bare minimum for any crypto project is a working GUI wallet that doesn&amp;rsquo;t require additional dependencies.
+I thought Monero&amp;rsquo;s GUI lacks some UX, but amongst the privacy competition, I now realize it ranks at the top.&lt;/p>
+&lt;h2 id="grin" >Grin
+&lt;span>
+&lt;a href="#grin">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;ul>
+&lt;li>Like the Lightning Network, users need to actively exchange data in order to receive. Want to receive donations? You&amp;rsquo;ll need to use a website to facilitate the transaction. They did this in the name of scale. But this is a huge downside. Scale is not an issue in Monero, and if it does become an issue, then we can talk about solutions. YouTube itself has managed to stay stable and it stores Petabytes of information. Scale is a relative term and until Monero is over 1TB in size, scale is a non-problem.&lt;/li>
+&lt;li>Since it is mimblewimble by default, it is just the successor to Litecoin, and not anything special. If mimblewimble was that good, even Litecoin would be considered as private. In terms of the privacy hierarchy, Grin is at the same level of ZCash, maybe a bit worse since no&lt;/li>
+&lt;/ul>
+&lt;h2 id="beam" >Beam
+&lt;span>
+&lt;a href="#beam">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>Someting like beam competes with Grin. At this point, I&amp;rsquo;ve given up having to do the homework of people for them.
+Monero is #1. The burden of proof is on all other cryptos to prove they are better than Grin, ZCash, and Secret Network.
+If they can&amp;rsquo;t or don&amp;rsquo;t do that, users shouldn&amp;rsquo;t even pay these projects a piece of mind. Refer to the introduction of this article.&lt;/p>
+&lt;h2 id="firo" >Firo
+&lt;span>
+&lt;a href="#firo">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>Very disingenious. On their home page, they spit out jargon like Lelantus and Lelantus Spark without explanation.
+This is an argument because of its failure to adhere to their privacy standards tagline.&lt;/p>
+&lt;ul>
+&lt;li>No stealth addresses
+&lt;ul>
+&lt;li>What you give out is what gets put into the chain, this is bad when combined with the next point&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Transaction Data is visible
+&lt;ul>
+&lt;li>Amounts, receiver address, sender address are compltely visible&lt;/li>
+&lt;li>&lt;a href="https://explorer.firo.org/tx/1d78dcade7ed4274b018df96e136c4256992491679a0c448a1380327748f2c77">Proof transaction&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Dev (Scam) Tax
+&lt;ul>
+&lt;li>&lt;a href="https://www.reddit.com/r/FiroProject/comments/n70pve/comment/gxang90/?utm_source=share&amp;amp;utm_medium=web2x&amp;amp;context=3">https://www.reddit.com/r/FiroProject/comments/n70pve/comment/gxang90/?utm_source=share&amp;amp;utm_medium=web2x&amp;amp;context=3&lt;/a>&lt;/li>
+&lt;li>A project that forces users to donate, is no open-source project at all!&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Hybrid Consensus
+&lt;ul>
+&lt;li>Firo uses their own FiroPoW algorithm that is optimized for GPUs.
+&lt;ul>
+&lt;li>CPUs are definitely more accessible than GPUs so coins like Firo make the cost of GPUs go up for people who buy them to game and not to mine.&lt;/li>
+&lt;li>CPUs are much more in abundence and anyone can start mining on their already owned devices.&lt;/li>
+&lt;li>Their reasoning is to sap ETH miners and they throw shade for being anti-botnet which is not true. Botnets are the problem, not what botnets are used for!&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Masternodes (PoS) are used to mititgate 51% attacks.
+&lt;ul>
+&lt;li>The rich get richer by using masternodes which requires $3,000&lt;/li>
+&lt;li>Why use Firo as money, when I can run a masternode for $3,000+ and pay off my $5/month digital ocean droplet with the rewards?&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>They are either not private at all, or not private by default.
+They are definitely disingenious to say the least in claiming that FIRO is setting privacy standards.
+More like Firo is failing to meet the privacy standards.&lt;/p>
+&lt;p>Privacy is serious, you should not be sweeping these probles under the bed as if they don&amp;rsquo;t exist.&lt;/p>
+&lt;h2 id="dero" >Dero
+&lt;span>
+&lt;a href="#dero">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>&lt;strong>&lt;a href="https://github.com/deroproject/documentation/blob/master/premine.md">Premined&lt;/a>&lt;/strong>&lt;/p>
+&lt;p>Monero has come a long way with consenting donations. No project, that aims to be the best, should force users to subsidize its development.&lt;/p>
+&lt;p>DERO cannot to be trusted at all.
+They used bulletproof technology before the technology was already audited and
+the PR person at the time just said &lt;a href="https://www.reddit.com/r/CryptoCurrency/comments/8pnt1u/dero_creates_a_new_type_of_dag/e0cvb87/">&amp;ldquo;our devs looked at it okayed it.&amp;rdquo;&lt;/a>&lt;/p>
+&lt;p>Furthermore, there is no GUI wallet.&lt;/p>
+&lt;p>As for their community, they argue from a position of bad faith:&lt;/p>
+&lt;p>&lt;a href="https://www.reddit.com/r/CryptoCurrency/comments/8pnt1u/dero_creates_a_new_type_of_dag/e0cvb87/?utm_term=30496568983&amp;amp;context=3&amp;amp;utm_medium=comment_embed&amp;amp;utm_source=embed&amp;amp;utm_name=null">https://www.reddit.com/r/CryptoCurrency/comments/8pnt1u/dero_creates_a_new_type_of_dag/e0cvb87/?utm_term=30496568983&amp;amp;context=3&amp;amp;utm_medium=comment_embed&amp;amp;utm_source=embed&amp;amp;utm_name=null&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://twitter.com/Serena_Fox_CP/status/1010026987321098240?ref_src=twsrc%5Etfw%7Ctwcamp%5Etweetembed%7Ctwterm%5E1010026987321098240%7Ctwgr%5E%7Ctwcon%5Es1_&amp;amp;ref_url=https%3A%2F%2Fcdn.embedly.com%2Fwidgets%2Fmedia.html%3Ftype%3Dtext2Fhtmlkey%3Da19fcc184b9711e1b4764040d3dc5c07schema%3Dtwitterurl%3Dhttps3A%2F%2Ftwitter.com%2Fserena_fox_cp%2Fstatus%2F1010026987321098240image%3Dhttps3A%2F%2Fi.embed.ly%2F1%2Fimage3Furl3Dhttps253A252F252Fabs.twimg.com252Ferrors252Flogo46x38.png26key3Da19fcc184b9711e1b4764040d3dc5c07">https://twitter.com/Serena_Fox_CP/status/1010026987321098240?ref_src=twsrc%5Etfw%7Ctwcamp%5Etweetembed%7Ctwterm%5E1010026987321098240%7Ctwgr%5E%7Ctwcon%5Es1_&amp;amp;ref_url=https%3A%2F%2Fcdn.embedly.com%2Fwidgets%2Fmedia.html%3Ftype%3Dtext2Fhtmlkey%3Da19fcc184b9711e1b4764040d3dc5c07schema%3Dtwitterurl%3Dhttps3A%2F%2Ftwitter.com%2Fserena_fox_cp%2Fstatus%2F1010026987321098240image%3Dhttps3A%2F%2Fi.embed.ly%2F1%2Fimage3Furl3Dhttps253A252F252Fabs.twimg.com252Ferrors252Flogo46x38.png26key3Da19fcc184b9711e1b4764040d3dc5c07&lt;/a>&lt;/p>
+&lt;p>This PR lady is just as dead as the project. Anyone that mentions DERO is either arrogant or has malicious intent.
+That can be said for many of these coins: DERO, Priate Chain, Grin, SecretCoin, ZCash.
+Disingenious is the middle name of many people.&lt;/p>
+&lt;h2 id="pirate-chain" >Pirate Chain
+&lt;span>
+&lt;a href="#pirate-chain">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>This is also a fork of Monero. There&amp;rsquo;s not enough information available to comment on Pirate Chain except for&lt;/p>
+&lt;p>&amp;ldquo;This software is based on zcash and considered experimental and is continuously undergoing heavy development.&amp;rdquo;&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://github.com/PirateNetwork/pirate#tech-specification">source&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>It uses the same algorithm as ZCash which is &lt;a href="https://shop.bitmain.com/product/detail?pid=00020220215091827599V8Y4J7Ls065B">not ASIC-resistant&lt;/a>.&lt;/p>
+&lt;p>It&amp;rsquo;s simply not popular enough to warrant a discussion and it should be them to argue against Monero.
+Their only argue is usually zk-snarks, but trusting zk-snarks is risky. There is no indication if Pirate
+used a trusted setup or not. In security, strong guarantees are required not probabilities.&lt;/p>
+&lt;p>I also tried to test their sketchy wallet, but it required me to download the blockchain. Yeah no thank you.
+If Monero can be used without a local blockchain, then I shouldn&amp;rsquo;t need to download the blockchain to test a coin that does not even have a tenth of Monero&amp;rsquo;s usage.&lt;/p>
+&lt;h2 id="particl-part" >Particl (PART)
+&lt;span>
+&lt;a href="#particl-part">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>Privacy except at certain times&lt;/p>
+&lt;h2 id="conclusion" >Conclusion
+&lt;span>
+&lt;a href="#conclusion">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>Cryptocurrency is a tool. and similar to religion, there are many of them.
+In religion, there&amp;rsquo;s something called Pascal&amp;rsquo;s Wager. ThereminTrees has a good video on the fallacy.&lt;/p>
+&lt;div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+&lt;iframe src="https://www.youtube.com/embed/fZpJ7yUPwdU" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video">&lt;/iframe>
+&lt;/div>
+&lt;p>Essentially, there isn&amp;rsquo;t enough time for you to do an unbiased research on all religions to figure out
+the best one. But we are presented with this same problem for cryptocurrency but &lt;a href="https://blog.elijahlopez.ca/posts/converging-opinions">I have a solution&lt;/a>.&lt;/p>
+&lt;p>Compared to Monero, these other privacy coins are used 1000x less. The burden of proof is on them to prove
+that they are better than Grin, ZCash, and Secret Network before asking to argue against Monero.
+Every redundant coin comes at the expense of collective privacy.&lt;/p>
+&lt;p>It&amp;rsquo;s unreasonable to ask Monero developers and experts to spend their time rebuttling your arguments
+when the cryptos both have the same goal. And if you can prove the coin to be better than Monero to me,
+good luck trying to do it with Bitcoin maxis. I have an open mind; why else would I even try to use ZCash and Secret Network?&lt;/p>
+&lt;p>Lastly, I hope for people to contribute to a single digital cash project rather than start their own.
+It&amp;rsquo;s sad enough that people think the upgrades to Monero are not needed.&lt;/p></description></item><item><title>How to Buy Monero in Canada</title><link>https://blog.elijahlopez.ca/posts/how-to-buy-monero-in-canada/</link><pubDate>Fri, 25 Feb 2022 22:56:02 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/how-to-buy-monero-in-canada/</guid><description>&lt;p>I&amp;rsquo;ll be testing all of these methods except LocalMonero since the actual fee there is at least 20% as of 2022/4/21.
 Testing is done by using converting the received XMR to CAD using the currency pair rates at the start of each new pair transaction.&lt;/p>
 &lt;h2 id="fixed-float-xlmxmr" >Fixed Float (XLM:XMR)
 &lt;span>
