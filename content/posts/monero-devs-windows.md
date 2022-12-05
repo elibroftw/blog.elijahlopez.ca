@@ -26,7 +26,7 @@ Install these simultaneously.
 
 ## Forking a Monero Repository
 
-Since this not simply a building guide and if you want to contribute through a GitHub account,
+If you want to contribute through a GitHub account,
 you will need to fork the [monero](https://github.com/monero-project/monero) or [monero-gui](https://github.com/monero-project/monero-gui) repository.
 If you are new to GitHub, see: [fork a repo](https://docs.github.com/en/get-started/quickstart/fork-a-repo#forking-a-repository)
 
@@ -47,13 +47,13 @@ git clone --recursive https://github.com/monero-project/monero-gui.git
 
 ## Setting Up VSCode
 
-I use VS Code when working on the `monero-gui` project and for most projects. Even for writing this blog!
+I use VS Code when working on the `monero-gui` project and for most projects, even this blog!
 The exceptions being: Python, Windows C++ development, .NET development, Java.
 
 1. Open the `monero-gui` directory in VSCode
 2. Install [C++ Extension Pack](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools-extension-pack)
 3. Install [Better C++ Syntax](https://marketplace.visualstudio.com/items?itemName=jeff-hykin.better-cpp-syntax)
-4. Add `MSYS2` as a terminal profile in user `settings.json`
+4. Add MSYS2 64-bit as a terminal profile in user `settings.json`
 
     ```json
     // if this setting already exists, add the MSYS2 portion
@@ -79,12 +79,12 @@ The exceptions being: Python, Windows C++ development, .NET development, Java.
 
     ![Setting default terminal profile](/images/vs-code/setting-default-profile.jpg)
 
-6. Open an `MSYS2` Terminal in VS Code
+6. Open an MSYS2 Terminal in VS Code
 
     - I use a custom keyboard shortcut `Ctrl + T` for toggling the terminal and `Ctrl + Shift + T` to create a new default profile terminal
     - Ensure that the terminal you opened is MSYS2 (bash) and not CMD or PS (there will be a $ sign if you indeed opened MSYS2 64bit)
 
-## Installing MSYS2 Dependencies
+## Installing MSYS2 64-bit Dependencies
 
 In the Windows instructions for the Monero project you are interested in, you may see that `pacman` is used to install dependencies. Pacman is the default package manager on _Arch btw_.
 However, the installing process is not guaranteed to work for `monero-gui` since the `README.md` is missing the `-Syu` command. If you already have MSYS2 installed like I had, you'd run into issues.
@@ -105,8 +105,9 @@ Note that the dependencies take a bit of storage. I think I used a couple GBs (m
     pacman -S mingw-w64-x86_64-toolchain make mingw-w64-x86_64-cmake mingw-w64-x86_64-boost mingw-w64-x86_64-openssl mingw-w64-x86_64-zeromq mingw-w64-x86_64-libsodium mingw-w64-x86_64-hidapi mingw-w64-x86_64-protobuf-c mingw-w64-x86_64-libusb mingw-w64-x86_64-libgcrypt mingw-w64-x86_64-unbound mingw-w64-x86_64-doxygen mingw-w64-x86_64-libunwind mingw-w64-x86_64-ccache mingw-w64-x86_64-pcre --noconfirm
     ```
 
-    If you are reading this far into the future, ensure that the list of dependencies installed is a merger of the ones I have listed and the ones listed in the project's `README.md`. When I was writing this article, builds were failing for 2+ hours due to missing packages and an unsupported `debug-static-win64` build target.
-    I also included `ccache` in here, however I do not know why it doesn't work for me for building the `monero-gui` project.
+    If you are reading this far into the future, ensure that the list of dependencies installed is a merger of the ones I have listed and the ones listed in the project's `README.md`
+     When I was writing this article, builds were failing for 2+ hours due to missing packages and an unsupported `debug-static-win64` build target.
+    I also included `ccache` in here, however I do not know why it doesn't work for me when building the `monero-gui` project.
 
 3. Install Qt5
 
@@ -153,7 +154,7 @@ After you've committed your changes, run the following from your branch.
 
 Here I've assumed that the default branch is master, but it is entirely possible when working on other projects where the default branch is not master. Default branch names I've seen are `dev` and `main`.
 
-After you've created a patch, you can post it on [monero-dev IRC](irc://irc.libera.chat/#monero-dev) or [monero-dev matrix](https://matrix.to/#/!VDQXWJoFsesLtbGdTT:monero.social). Funny thing. My house has these Plume devices which blocks matrix.to links, so I'm running a VPN a lot of the time now.
+After you've created a patch, you can post it on [monero-gui IRC](irc://irc.libera.chat/#monero-gui) or [monero-gui matrix](https://matrix.to/#/#monero-gui:monero.social). Funny thing. My house has these Plume devices which blocks matrix.to links, so I'm running a VPN a lot of the time now.
 
 ## Git Situations
 
