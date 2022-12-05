@@ -125,6 +125,7 @@ Note that the dependencies take a bit of storage. I think I used a couple GBs (m
     ```
 
 2. Optionally enable console mode for GUI projects by commenting out `set(EXECUTABLE_FLAG WIN32)` from `src/CMakeLists.txt` (thanks @selsta)
+    - Run `build/release/bin/monero-wallet-gui.exe` in the VSCode terminal after a build (next step)
 
 3. For the `monero-gui` build with `make release-win64`. For `monero` try `make debug-static-win64` first. This process may take 5 minutes.
     - `monero-gui` debug builds on Windows are either unsupported or are not advised
@@ -137,8 +138,8 @@ Note that the dependencies take a bit of storage. I think I used a couple GBs (m
     - Search for the library (with and without the lib prefix) on [packages.msys2.org](https://packages.msys2.org/search). Click on relevant search results and install the binary package starting with `mingw-w64-x86_64`
     - `make clean` before building
 
-5. ~~Debugging~~
-    ~~It's really hard to do this on Windows and VSCode, especially through an msys2 debugging terminal. The best I can offer is pointing you to [this StackOverFlow Answer](https://stackoverflow.com/a/1745964/7732434)~~
+5. Debugging (not GUI)
+    It's really hard to do this on Windows and VSCode, especially through an msys2 debugging terminal. The best I can offer is pointing you to [this StackOverFlow Answer](https://stackoverflow.com/a/1745964/7732434)
 
 6. For a `monero-gui` full build, use `cd build/release && make deploy` after running `make release-win64`
     - If the build fails due to DLL copy error, follow the troubleshooting instructions in step 4 and let me know what worked so that I can update this article
