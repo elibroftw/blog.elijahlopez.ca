@@ -33,6 +33,7 @@ If you are like me, you can follow the tutorial that [forks my site](#forking-my
 7. Edit the About section in https://github.com/USERNAME/blog/ and change the website to `https://USERNAME.github.io` or a domain
 8. Clone your repo using `git clone --recurse-submodules -j8 https://github.com/USERNAME/blog.git` or GitHub desktop
 9. Delete `content/posts` and `static/images`
+    - Add your own `favicon.ico` to `static/images`
 10. Edit `config.yaml` and replace my information with yours
     - set `baseUrl` to the one shown by GitHub
     - change the `author`, `email`, `utterancesRepo`, and `social`
@@ -53,6 +54,7 @@ If you are like me, you can follow the tutorial that [forks my site](#forking-my
 5. Add the theme using `git submodule add GitHubURL.git themes/themeName`
 6. Read the theme instructions for basic configuration (i.e. `config.yaml` or `config.toml`)
 7. Edit `config.yaml` or `config.toml`
+    - Also add your own `favicon.ico` to `static/images`
 8. Use `hugo new content/posts/POST.md` to create a new post
     - Alternative: use the hugo helpers, "Hugo: create content" command
 9. Use `hugo serve -D` when drafting the post and see your changes at [http://localhost:1313/](http://localhost:1313/)
