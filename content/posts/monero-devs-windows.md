@@ -124,16 +124,18 @@ Note that the dependencies take storage space upwards of 6GB+. I've included `--
     source ~/.profile  #  you do not need to run this in new terminal sessions
     ```
 
-2. Build using  `make release-win64`. Debug builds on Windows are either unsupported or are not advised. This may take 5 minutes.
+2. Optionally enable console mode for GUI projects by removing `set(EXECUTABLE_FLAG WIN32)` from `src/CMakeLists.txt` (thanks @selsta)
 
-3. If the build fails due to a missing library, try each of the following
+3. Build using  `make release-win64`. This may take 5 minutes. Debug builds on Windows are either unsupported or are not advised.
+
+4. If the build fails due to a missing library, try each of the following
     a) `pacman -S mingw-w64-x86_64-name` (where name is the libname with and without lib)
     b) Search for the library (with and without the lib prefix) on [packages.msys2.org](https://packages.msys2.org/search). Click on relevant search results and install the binary package starting with `mingw-w64-x86_64`
 
-4. Although this is enough to debug your code, as per the `README.md`, a full build requires running `cd build/release && make deploy` after `make release-win64`
+5. Although this is enough to debug your code, as per the `README.md`, a full build requires running `cd build/release && make deploy` after `make release-win64`
 
-5. ~~Debugging?~~
-    ~~I've hardly ever needed to use a debugger when finding a bug so I can't give out best practices on it, even more so on how to use VSCode debugging through a custom terminal. The best I can offer is pointing you to this [StackOverFlow Answer](https://stackoverflow.com/a/1745964/7732434)~~
+6. ~~Debugging~~
+    ~~It's really hard to do this on Windows and VSCode, especially through an msys2 debugging terminal. The best I can offer is pointing you to [this StackOverFlow Answer](https://stackoverflow.com/a/1745964/7732434)~~
 
 ## Contributing Anonymously
 
