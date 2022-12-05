@@ -126,7 +126,10 @@ To avoid entering in &lt;code>-jN&lt;/code> every time you build, use the follow
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#24909d">source&lt;/span> ~/.profile &lt;span style="color:#999;font-style:italic"># you do not need to run this in new terminal sessions&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
 &lt;li>
-&lt;p>Build using &lt;code>make release-win64&lt;/code>. Debug builds on Windows are either unsupported or are not advised. This may take 5 minutes.&lt;/p>
+&lt;p>Optionally enable console mode for GUI projects by removing &lt;code>set(EXECUTABLE_FLAG WIN32)&lt;/code> from &lt;code>src/CMakeLists.txt&lt;/code> (thanks @selsta)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Build using &lt;code>make release-win64&lt;/code>. This may take 5 minutes. Debug builds on Windows are either unsupported or are not advised.&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>If the build fails due to a missing library, try each of the following
@@ -137,8 +140,8 @@ b) Search for the library (with and without the lib prefix) on &lt;a href="https
 &lt;p>Although this is enough to debug your code, as per the &lt;code>README.md&lt;/code>, a full build requires running &lt;code>cd build/release &amp;amp;&amp;amp; make deploy&lt;/code> after &lt;code>make release-win64&lt;/code>&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>&lt;del>Debugging?&lt;/del>
-&lt;del>I&amp;rsquo;ve hardly ever needed to use a debugger when finding a bug so I can&amp;rsquo;t give out best practices on it, even more so on how to use VSCode debugging through a custom terminal. The best I can offer is pointing you to this &lt;a href="https://stackoverflow.com/a/1745964/7732434">StackOverFlow Answer&lt;/a>&lt;/del>&lt;/p>
+&lt;p>&lt;del>Debugging&lt;/del>
+&lt;del>It&amp;rsquo;s really hard to do this on Windows and VSCode, especially through an msys2 debugging terminal. The best I can offer is pointing you to &lt;a href="https://stackoverflow.com/a/1745964/7732434">this StackOverFlow Answer&lt;/a>&lt;/del>&lt;/p>
 &lt;/li>
 &lt;/ol>
 &lt;h2 id="contributing-anonymously" >Contributing Anonymously
