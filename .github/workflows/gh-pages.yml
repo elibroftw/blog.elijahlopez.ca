@@ -30,7 +30,7 @@ jobs:
         id: vars
         run: |
           rm -rf public
-          echo "name=commit_msg::$(git log -1 --pretty=%B)" >> $GITHUB_OUTPUT
+          echo "commit_msg=$(git log -1 --pretty=%B)" >> $GITHUB_OUTPUT
           git worktree add public gh-pages
 
       - uses: actions/cache@v3
