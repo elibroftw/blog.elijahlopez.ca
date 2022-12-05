@@ -36,19 +36,18 @@ If you are interested in contributing without a GitHub account, you can skip thi
 
 Use git or GitHub Desktop to clone your fork. Clone the original repository if you want to contribute anonymously.
 
-Replace the URL below the URL to your fork.
+Replace the URL below with the URL of your fork.
 If you are copy pasting terminal commands, paste into notepad before pasting into your terminal because it's a good habit to catch a clipboard jacking attack.
 
 ```bash
 git clone --recursive https://github.com/monero-project/monero-gui.git
 ```
 
-`--recursive` is used so that submodules are cloned as well. Otherwise, you'd have to do it when the build fails.
+`--recursive` is used so that submodules are cloned as well. Otherwise, you'd have to update those submodules when the build fails.
 
 ## Setting Up VSCode
 
-I use VS Code when working on the `monero-gui` project.
-I use VS Code for most projects, even for writing this blog!
+I use VS Code when working on the `monero-gui` project and for most projects. Even for writing this blog!
 The exceptions being: Python, Windows C++ development, .NET development, Java.
 
 1. Open the `monero-gui` directory in VSCode
@@ -76,7 +75,7 @@ The exceptions being: Python, Windows C++ development, .NET development, Java.
         }
     ```
 
-5. Set MSYS2 as the default terminal profile on Windows in the `workspace` settings
+5. Set MSYS2 as the default terminal profile for Windows in the VSCode `workspace` settings
 
     ![Setting default terminal profile](/images/vs-code/setting-default-profile.jpg)
 
@@ -88,10 +87,10 @@ The exceptions being: Python, Windows C++ development, .NET development, Java.
 ## Installing MSYS2 Dependencies
 
 In the Windows instructions for the Monero project you are interested in, you may see that `pacman` is used to install dependencies. Pacman is the default package manager on _Arch btw_.
-However, the installing process is not guaranteed to work. Especially if you already have MSYS2 installed like I had.
+However, the installing process is not guaranteed to work for `monero-gui` since the `README.md` is missing the `-Syu` command. If you already have MSYS2 installed like I had, you'd run into issues.
 
-Run these commands in a bash window, either the one we opened up in the previous step or one you opened externally.
-Note that the dependencies take storage space upwards of 6GB+. I've included `--noconfirm` so that you can play Pacman on Google while these commands are running.
+Run the following commands in an MSYS2 64-bit bash window. I suggest using the one we opened up in the previous step or you can open one externally if you don't use VSCode.
+Note that the dependencies take a bit of storage. I think I used a couple GBs (my perspective is that I have 4+ drives). I've included `--noconfirm` so that you can play Pacman on Google while these commands are running.
 
 1. Upgrade dependencies
 
@@ -107,6 +106,7 @@ Note that the dependencies take storage space upwards of 6GB+. I've included `--
     ```
 
     If you are reading this far into the future, ensure that the list of dependencies installed is a merger of the ones I have listed and the ones listed in the project's `README.md`. When I was writing this article, builds were failing for 2+ hours due to missing packages and an unsupported `debug-static-win64` build target.
+    I also included `ccache` in here, however I do not know why it doesn't work for me for building the `monero-gui` project.
 
 3. Install Qt5
 
@@ -116,25 +116,23 @@ Note that the dependencies take storage space upwards of 6GB+. I've included `--
 
 ## Building
 
-1. Set the default number of jobs for `make` to CPU cores + 1
-    To avoid entering in `-jN` every time you build, use the following command so that make uses -j [CPU cores + 1](https://stackoverflow.com/a/2500791/7732434) by default.
+1. Set the default number of jobs for `make` to [CPU cores + 1](https://stackoverflow.com/a/2500791/7732434)
+    To avoid entering in `-jN` every time you build, run the following command.
 
     ```sh
     echo "alias make=\"/usr/bin/make -j$((`nproc` + 1))\"" >> ~/.profile
-    source ~/.profile  #  you do not need to run this in new terminal sessions
+    source ~/.profile  #  you do not need to run this in subsequent terminals
     ```
 
-2. Optionally enable console mode for GUI projects by removing `set(EXECUTABLE_FLAG WIN32)` from `src/CMakeLists.txt` (thanks @selsta)
+2. Optionally enable console mode for GUI projects by commenting out `set(EXECUTABLE_FLAG WIN32)` from `src/CMakeLists.txt` (thanks @selsta)
 
-3. Build using  `make release-win64`. This may take 5 minutes. Debug builds on Windows are either unsupported or are not advised.
+3. Build with `make release-win64`. This may take 5 minutes. Debug builds on Windows are either unsupported or are not advised (I broke my head trying to make it work on my machine and so gave up)
 
 4. If the build fails due to a missing library, try each of the following
     a) `pacman -S mingw-w64-x86_64-name` (where name is the libname with and without lib)
     b) Search for the library (with and without the lib prefix) on [packages.msys2.org](https://packages.msys2.org/search). Click on relevant search results and install the binary package starting with `mingw-w64-x86_64`
 
-5. Although this is enough to debug your code, as per the `README.md`, a full build requires running `cd build/release && make deploy` after `make release-win64`
-
-6. ~~Debugging~~
+5. ~~Debugging~~
     ~~It's really hard to do this on Windows and VSCode, especially through an msys2 debugging terminal. The best I can offer is pointing you to [this StackOverFlow Answer](https://stackoverflow.com/a/1745964/7732434)~~
 
 ## Contributing Anonymously
@@ -144,15 +142,14 @@ After you've committed your changes, run the following from your branch.
 
 `git format-patch master --stdout > PATCH_NAME.patch`
 
-Here I've assumed that the default branch is master, but it is entirely possible when working on other projects that the default branch is not master.
-Default branch names I've seen are `dev` and `main`.
+Here I've assumed that the default branch is master, but it is entirely possible when working on other projects where the default branch is not master. Default branch names I've seen are `dev` and `main`.
 
-After you've created a patch, you can post it on [monero-dev IRC](irc://irc.libera.chat/#monero-dev) or [monero-dev matrix](https://matrix.to/#/!VDQXWJoFsesLtbGdTT:monero.social). Funny thing, my house has these Plume devices which blocks matrix.to links, so I'm running a VPN a lot of the time now.
+After you've created a patch, you can post it on [monero-dev IRC](irc://irc.libera.chat/#monero-dev) or [monero-dev matrix](https://matrix.to/#/!VDQXWJoFsesLtbGdTT:monero.social). Funny thing. My house has these Plume devices which blocks matrix.to links, so I'm running a VPN a lot of the time now.
 
 ## Git Situations
 
-I will assume you already know how to commit your code changes and push them to your github fork. So I will provide some git commands for common occurrences.
-I use GitHub Desktop + VS Code, so I am not a git guru.
+I will assume you can figure out yourself how to commit your code changes and push them to your GitHub fork.
+However, I will provide some git commands to use for common occurrences. I am not a git guru so I use GitHub Desktop + VS Code most of the time.
 
 I use the [Git Graph](https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph) extension to avoid the CLI for rebasing, squashing commits, and other actions
 where GitHub Desktop is inadequate.
@@ -161,9 +158,9 @@ where GitHub Desktop is inadequate.
 
 Suppose you are developing a feature and now your forked repo is many commits behind the upstream target branch. Or your pull request cannot be merged due to at least one conflict (a conflict arises when git cannot determine whose change should be respected because there are exclusive commits in two different branches that changed the same thing).
 
-Solution: rebase. A rebase is when you sandwich exclusive commits from another branch between the shared commits in your branch and your branches exclusive commits.
+Solution: rebase. A rebase is when you sandwich exclusive commits from another branch between the shared commits within your branch and your exclusive commits.
 
-1. Ensure you are on the branch with your changes. Use `git checkout branchName` if you aren't.
+1. Ensure you are on the branch with your commits. Use `git checkout branchName` if you aren't.
 2. `git remote add upstream ORIGINAL_REPO_LINK` (CLI)
 3. `git rebase upstream/master` (CLI)
 4. Resolve conflicts (IDE like VSCode or CLI editor)
