@@ -151,7 +151,8 @@ After you've created a patch, you can post it on [monero-dev IRC](irc://irc.libe
 
 ## Git Situations
 
-I will provide some git basics that I use regularly. I use GitHub Desktop + VS Code, so I am not a git guru. I will assume you already know how to commit your code changes and push them to your github fork.
+I will assume you already know how to commit your code changes and push them to your github fork. So I will provide some git commands for common occurrences.
+I use GitHub Desktop + VS Code, so I am not a git guru.
 
 I use the [Git Graph](https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph) extension to avoid the CLI for rebasing, squashing commits, and other actions
 where GitHub Desktop is inadequate.
