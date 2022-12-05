@@ -45,7 +45,7 @@ The person who lost out on purchasing the property you own is not guaranteed to 
 
 ~~We know that land is artificially scarce and its causing a shortage of shelter. Let's call the demand for housing ownership for the purpose of living D<sub>1</sub> and the supply of housing for the purpose of living S<sub>1</sub>. After adding the demand for housing ownership for the purposes of investing, we find that the market price has increased! All because of investors. Now I'm not saying that all developments are for the purposes of long-term residents, but I know for a fact that some tenants can afford rent but are not getting approved. So why is increasing the demand and price for rent unethical? Well if there's a housing shortage and demand for investing exists, then the people who could afford to buy the would be market price are priced out and any investor who is receiving a subsidized rent or isn't renting at all is taking forcing people to lose their wealth so that the land lords wealth increases. New wealth was created with the construction of the property, not with the transfer of the equity from the bank to the land lord. So using rent to help make those payments is nothing but a wealth transfer from the poor to the land lord. This demand is present even with a sales tax!~~
 
-Some people do need to rent so land lording is required. Figuring out the reasonable rent is the real challenge and how much is too much is the real challenge.
+Some people do need to rent so land lording is required. Figuring out the reasonable rent is the real challenge and how much is too much is another challenge.
 
 ### Policy Scenario
 
@@ -55,7 +55,7 @@ I have thought abut it over and over and although it would be for the best, if p
 
 ## Conclusion
 
-In short, I'm sorry you had to read this all. It was a journey of me articulating what exactly is unethical and what can be done and it turns out not much because the reality is renters are renting in areas they don't even want to ideally live in which just takes away from those who do want to live in the city but have to rent too and thus developers focus more on rental units than condos. Then the property taxes are higher on those buildings than single family homes, and overall the situation is one that was created because of a refusal to go through with the wants.
+In short, I'm sorry you had to read this all. It was a journey of me articulating what exactly is unethical and what can be done and it turns out not much. The reality is that some renters are renting in areas they don't even want to ideally live in which just takes away from those who do want to live in the city but have to rent too and thus developers focus more on rental units than condos. Then the property taxes are higher on those buildings than single family homes, and overall the situation is one that was created because of a refusal to go through with the wants.
 
 I guess all in all, although it is unethical, any policy would end up causing more harm than not.
 

@@ -321,5 +321,9 @@ Thus, max transactions per day is within the range [730,593, 1,069,161]
 
 Monero offers fungibility, all aspects of financial privacy without requiring users to know of specific techniques, and an ASIC-resistant proof-of-work system. These three important topics might make Monero the best cryptocurrency as of today, but its open-minded and always-improving technology is why it will continue to be the best. Monero is digital cash, not a Security.
 
-If you enjoyed this article and want to support my future works, feel free to donate anonymously: monero:84PR6SkYd5zaFLKDjAFrQfbaAg2c7SV3q3XDZ15QCpEZUggrN4YzY7n8m9XC3deXjo41yWHTm1LrsUpPTYGnRQbD9Cwp8En
+If you enjoyed this article and want to support my future works, feel free to donate _anonymously_.
+[84PR6SkYd5zaFLKDjAFrQfbaAg2c7SV3q3XDZ15QCpEZUggrN4YzY7n8m9XC3deXjo41yWHTm1LrsUpPTYGnRQbD9Cwp8En](monero:84PR6SkYd5zaFLKDjAFrQfbaAg2c7SV3q3XDZ15QCpEZUggrN4YzY7n8m9XC3deXjo41yWHTm1LrsUpPTYGnRQbD9Cwp8En)
+
+![monero:84PR6SkYd5zaFLKDjAFrQfbaAg2c7SV3q3XDZ15QCpEZUggrN4YzY7n8m9XC3deXjo41yWHTm1LrsUpPTYGnRQbD9Cwp8En](https://elijahlopez.ca/static/images/monero.png)
+
 Thanks to Monero, I only have one wallet that has multiple addresses and I don't need to worry about someone curious spying on the amount of Monero I lost in a boating accident.
