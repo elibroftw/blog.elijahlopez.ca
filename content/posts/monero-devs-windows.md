@@ -9,6 +9,7 @@ tags: [
     "tutorial",
     "vscode",
 ]
+aliases: ['/posts/monero-dev-windows/']
 ---
 
 This is a straightforward guide to start developing on the monero project (monero, monero-gui, etc.) on Windows without using a Linux \[virtual] machine.
