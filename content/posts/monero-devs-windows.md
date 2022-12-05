@@ -102,7 +102,7 @@ Note that the dependencies take a bit of storage. I think I used a couple GBs (m
 2. Install Monero dependencies
 
     ```bash
-    pacman -S mingw-w64-x86_64-toolchain make mingw-w64-x86_64-cmake mingw-w64-x86_64-boost mingw-w64-x86_64-openssl mingw-w64-x86_64-zeromq mingw-w64-x86_64-libsodium mingw-w64-x86_64-hidapi mingw-w64-x86_64-protobuf-c mingw-w64-x86_64-libusb mingw-w64-x86_64-libgcrypt mingw-w64-x86_64-unbound mingw-w64-x86_64-doxygen mingw-w64-x86_64-libunwind mingw-w64-x86_64-ccache --noconfirm
+    pacman -S mingw-w64-x86_64-toolchain make mingw-w64-x86_64-cmake mingw-w64-x86_64-boost mingw-w64-x86_64-openssl mingw-w64-x86_64-zeromq mingw-w64-x86_64-libsodium mingw-w64-x86_64-hidapi mingw-w64-x86_64-protobuf-c mingw-w64-x86_64-libusb mingw-w64-x86_64-libgcrypt mingw-w64-x86_64-unbound mingw-w64-x86_64-doxygen mingw-w64-x86_64-libunwind mingw-w64-x86_64-ccache mingw-w64-x86_64-pcre --noconfirm
     ```
 
     If you are reading this far into the future, ensure that the list of dependencies installed is a merger of the ones I have listed and the ones listed in the project's `README.md`. When I was writing this article, builds were failing for 2+ hours due to missing packages and an unsupported `debug-static-win64` build target.
@@ -126,14 +126,22 @@ Note that the dependencies take a bit of storage. I think I used a couple GBs (m
 
 2. Optionally enable console mode for GUI projects by commenting out `set(EXECUTABLE_FLAG WIN32)` from `src/CMakeLists.txt` (thanks @selsta)
 
-3. Build with `make release-win64`. This may take 5 minutes. Debug builds on Windows are either unsupported or are not advised (I broke my head trying to make it work on my machine and so gave up)
+3. For the `monero-gui` build with `make release-win64`. For `monero` try `make debug-static-win64` first. This process may take 5 minutes.
+    - `monero-gui` debug builds on Windows are either unsupported or are not advised
+    - I broke my head trying to make it work on my machine and so gave up
+    - If you try a debug build, you might need to `make clean` if the release won't build
 
-4. If the build fails due to a missing library, try each of the following
-    a) `pacman -S mingw-w64-x86_64-name` (where name is the libname with and without lib)
-    b) Search for the library (with and without the lib prefix) on [packages.msys2.org](https://packages.msys2.org/search). Click on relevant search results and install the binary package starting with `mingw-w64-x86_64`
+4. If a build fails due to a missing library, try each of the following
+
+    - `pacman -S mingw-w64-x86_64-name` (where name is the libname with and without lib)
+    - Search for the library (with and without the lib prefix) on [packages.msys2.org](https://packages.msys2.org/search). Click on relevant search results and install the binary package starting with `mingw-w64-x86_64`
+    - `make clean` before building
 
 5. ~~Debugging~~
     ~~It's really hard to do this on Windows and VSCode, especially through an msys2 debugging terminal. The best I can offer is pointing you to [this StackOverFlow Answer](https://stackoverflow.com/a/1745964/7732434)~~
+
+6. For a `monero-gui` full build, use `cd build/release && make deploy` after running `make release-win64`
+    - If the build fails due to DLL copy error, follow the troubleshooting instructions in step 4 and let me know what worked so that I can update this article
 
 ## Contributing Anonymously
 
