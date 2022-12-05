@@ -103,7 +103,7 @@ Note that the dependencies take a bit of storage. I think I used a couple GBs (m
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
 &lt;li>
 &lt;p>Install Monero dependencies&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>pacman -S mingw-w64-x86_64-toolchain make mingw-w64-x86_64-cmake mingw-w64-x86_64-boost mingw-w64-x86_64-openssl mingw-w64-x86_64-zeromq mingw-w64-x86_64-libsodium mingw-w64-x86_64-hidapi mingw-w64-x86_64-protobuf-c mingw-w64-x86_64-libusb mingw-w64-x86_64-libgcrypt mingw-w64-x86_64-unbound mingw-w64-x86_64-doxygen mingw-w64-x86_64-libunwind mingw-w64-x86_64-ccache --noconfirm
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>pacman -S mingw-w64-x86_64-toolchain make mingw-w64-x86_64-cmake mingw-w64-x86_64-boost mingw-w64-x86_64-openssl mingw-w64-x86_64-zeromq mingw-w64-x86_64-libsodium mingw-w64-x86_64-hidapi mingw-w64-x86_64-protobuf-c mingw-w64-x86_64-libusb mingw-w64-x86_64-libgcrypt mingw-w64-x86_64-unbound mingw-w64-x86_64-doxygen mingw-w64-x86_64-libunwind mingw-w64-x86_64-ccache mingw-w64-x86_64-pcre --noconfirm
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>If you are reading this far into the future, ensure that the list of dependencies installed is a merger of the ones I have listed and the ones listed in the project&amp;rsquo;s &lt;code>README.md&lt;/code>. When I was writing this article, builds were failing for 2+ hours due to missing packages and an unsupported &lt;code>debug-static-win64&lt;/code> build target.
 I also included &lt;code>ccache&lt;/code> in here, however I do not know why it doesn&amp;rsquo;t work for me for building the &lt;code>monero-gui&lt;/code> project.&lt;/p>
 &lt;/li>
@@ -129,16 +129,30 @@ To avoid entering in &lt;code>-jN&lt;/code> every time you build, run the follow
 &lt;p>Optionally enable console mode for GUI projects by commenting out &lt;code>set(EXECUTABLE_FLAG WIN32)&lt;/code> from &lt;code>src/CMakeLists.txt&lt;/code> (thanks @selsta)&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>Build with &lt;code>make release-win64&lt;/code>. This may take 5 minutes. Debug builds on Windows are either unsupported or are not advised (I broke my head trying to make it work on my machine and so gave up)&lt;/p>
+&lt;p>For the &lt;code>monero-gui&lt;/code> build with &lt;code>make release-win64&lt;/code>. For &lt;code>monero&lt;/code> try &lt;code>make debug-static-win64&lt;/code> first. This process may take 5 minutes.&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>monero-gui&lt;/code> debug builds on Windows are either unsupported or are not advised&lt;/li>
+&lt;li>I broke my head trying to make it work on my machine and so gave up&lt;/li>
+&lt;li>If you try a debug build, you might need to &lt;code>make clean&lt;/code> if the release won&amp;rsquo;t build&lt;/li>
+&lt;/ul>
 &lt;/li>
 &lt;li>
-&lt;p>If the build fails due to a missing library, try each of the following
-a) &lt;code>pacman -S mingw-w64-x86_64-name&lt;/code> (where name is the libname with and without lib)
-b) Search for the library (with and without the lib prefix) on &lt;a href="https://packages.msys2.org/search">packages.msys2.org&lt;/a>. Click on relevant search results and install the binary package starting with &lt;code>mingw-w64-x86_64&lt;/code>&lt;/p>
+&lt;p>If a build fails due to a missing library, try each of the following&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>pacman -S mingw-w64-x86_64-name&lt;/code> (where name is the libname with and without lib)&lt;/li>
+&lt;li>Search for the library (with and without the lib prefix) on &lt;a href="https://packages.msys2.org/search">packages.msys2.org&lt;/a>. Click on relevant search results and install the binary package starting with &lt;code>mingw-w64-x86_64&lt;/code>&lt;/li>
+&lt;li>&lt;code>make clean&lt;/code> before building&lt;/li>
+&lt;/ul>
 &lt;/li>
 &lt;li>
 &lt;p>&lt;del>Debugging&lt;/del>
 &lt;del>It&amp;rsquo;s really hard to do this on Windows and VSCode, especially through an msys2 debugging terminal. The best I can offer is pointing you to &lt;a href="https://stackoverflow.com/a/1745964/7732434">this StackOverFlow Answer&lt;/a>&lt;/del>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>For a &lt;code>monero-gui&lt;/code> full build, use &lt;code>cd build/release &amp;amp;&amp;amp; make deploy&lt;/code> after running &lt;code>make release-win64&lt;/code>&lt;/p>
+&lt;ul>
+&lt;li>If the build fails due to DLL copy error, follow the troubleshooting instructions in step 4 and let me know what worked so that I can update this article&lt;/li>
+&lt;/ul>
 &lt;/li>
 &lt;/ol>
 &lt;h2 id="contributing-anonymously" >Contributing Anonymously
