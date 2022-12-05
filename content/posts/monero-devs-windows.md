@@ -154,7 +154,14 @@ After you've committed your changes, run the following from your branch.
 
 Here I've assumed that the default branch is master, but it is entirely possible when working on other projects where the default branch is not master. Default branch names I've seen are `dev` and `main`.
 
-After you've created a patch, you can post it on [monero-gui IRC](irc://irc.libera.chat/#monero-gui) or [monero-gui matrix](https://matrix.to/#/#monero-gui:monero.social). Funny thing. My house has these Plume devices which blocks matrix.to links, so I'm running a VPN a lot of the time now.
+After you've created a patch, you can post it on #monero-dev or #monero-gui.
+
+- [monero-dev matrix](https://matrix.to/#/#monero-dev:monero.social)
+- [monero-gui matrix](https://matrix.to/#/#monero-gui:monero.social)
+- [monero-dev IRC](irc://irc.libera.chat/#monero-dev)
+- [monero-gui IRC](irc://irc.libera.chat/#monero-gui)
+
+Funny thing. My house has these Plume devices which blocks matrix.to links, so I'm running a VPN a lot of the time now.
 
 ## Git Situations
 
