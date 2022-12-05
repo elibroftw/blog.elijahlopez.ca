@@ -183,3 +183,10 @@ If you did not fork the repo, life is a bit easier as you can skip step 2 and us
 Suppose you went on a commit rampage just for one feature. Everything works, so one commit is more elegant than many commits.
 To perform a squash, reset your branch to the commit you don't want to squash. Commit your changes and force push. Make sure
 the commit you are resetting to is on the same branch. Otherwise you are performing a rebase and might need to resolve a merge conflict.
+
+## Conclusion
+
+I hope this was helpful. I spent 8+ hours writing and debugging over two days. Feel free to donate some Monero.
+[84PR6SkYd5zaFLKDjAFrQfbaAg2c7SV3q3XDZ15QCpEZUggrN4YzY7n8m9XC3deXjo41yWHTm1LrsUpPTYGnRQbD9Cwp8En](monero:84PR6SkYd5zaFLKDjAFrQfbaAg2c7SV3q3XDZ15QCpEZUggrN4YzY7n8m9XC3deXjo41yWHTm1LrsUpPTYGnRQbD9Cwp8En)
+
+![monero:84PR6SkYd5zaFLKDjAFrQfbaAg2c7SV3q3XDZ15QCpEZUggrN4YzY7n8m9XC3deXjo41yWHTm1LrsUpPTYGnRQbD9Cwp8En](https://elijahlopez.ca/static/images/monero.png)
