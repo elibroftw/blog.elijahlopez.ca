@@ -124,7 +124,7 @@ entering my password, moving the GUI, and me talking.
 Searching online for Zcash demos yields some guy using two webapps and a CLI to send ZEC to many receivers.
 He cut the waiting process.
 
-## Leadership? Of a cryptocurrency?
+### Leadership? Of a cryptocurrency?
 
 Yes, ZCash is basically a publicly traded company, except the owners of ZEC have no power
 over the owners of the Codebase.
@@ -147,7 +147,7 @@ How it can be done is a question but before you think of banning criminals from 
 And then think about if you would've been a criminal if you had just been living in a different country, such as an authoritarian one.
 Venezuela, China, Saudi Arabia, Russia, not that any of these are extreme authoritarianism.
 
-## A Counter-Argument to Zooko
+### A Counter-Argument to Zooko
 
 The solution to the narrow problem below is random amounts of churning, at least until Seraphis comes and increases the ring signature.
 
