@@ -78,6 +78,13 @@ The exceptions being: Python, Windows C++ development, .NET development, Java.&l
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
 &lt;li>
+&lt;p>Add workspace settings as seen in my &lt;a href="https://github.com/elibroftw/monero-gui/tree/master/.vscode">monero-gui fork&lt;/a>&lt;/p>
+&lt;ul>
+&lt;li>You will most likely only need to change the &amp;ldquo;release-win64&amp;rdquo; in &lt;code>tasks.json&lt;/code> if you are working on monero and not monero-gui.&lt;/li>
+&lt;li>I hope to merge these settings into upstream so that everyone debugging on their machines will have an easy time&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
 &lt;p>Set MSYS2 as the default terminal profile for Windows in the VSCode &lt;code>workspace&lt;/code> settings&lt;/p>
 &lt;p>&lt;img src="https://blog.elijahlopez.ca/images/vs-code/setting-default-profile.jpg" alt="Setting default terminal profile">&lt;/p>
 &lt;/li>
@@ -117,7 +124,30 @@ I also included &lt;code>ccache&lt;/code> in here, however I do not know why it 
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>pacman -S mingw-w64-x86_64-qt5 --noconfirm
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
 &lt;/ol>
-&lt;h2 id="building" >Building
+&lt;h2 id="building-setup" >Building Setup
+&lt;span>
+&lt;a href="#building-setup">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;h3 id="anti-virus" >Anti-Virus
+&lt;span>
+&lt;a href="#anti-virus">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>I noticed that when building, Windows anti-virus would spike. So I recommend excluding the project folder as well as the msys2 folder from Windows Security or whatever anti-virus software you are running.&lt;/p>
+&lt;h3 id="default-number-of-jobs-for-make" >Default Number of Jobs for Make
+&lt;span>
+&lt;a href="#default-number-of-jobs-for-make">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>We want to avoid entering in &lt;code>-jN&lt;/code> every time we build, but what should N be? I use CPU cores - 1 so that
+I can still use my browser and other apps while building. You can run the following to set that so.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#24909d">echo&lt;/span> &lt;span style="color:#ed9d13">&amp;#34;alias make=\&amp;#34;/usr/bin/make -j&lt;/span>&lt;span style="color:#6ab825;font-weight:bold">$((&lt;/span>&lt;span style="color:#ed9d13">`&lt;/span>nproc&lt;span style="color:#ed9d13">`&lt;/span> &amp;gt; &lt;span style="color:#3677a9">1&lt;/span> ? &lt;span style="color:#6ab825;font-weight:bold">$((&lt;/span>&lt;span style="color:#ed9d13">`&lt;/span>nproc&lt;span style="color:#ed9d13">`&lt;/span> - &lt;span style="color:#3677a9">1&lt;/span>&lt;span style="color:#6ab825;font-weight:bold">))&lt;/span> : &lt;span style="color:#3677a9">1&lt;/span> &lt;span style="color:#6ab825;font-weight:bold">))&lt;/span>&lt;span style="color:#ed9d13">\&amp;#34;&amp;#34;&lt;/span> &amp;gt;&amp;gt; ~/.profile
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#24909d">source&lt;/span> ~/.profile &lt;span style="color:#999;font-style:italic"># you do not need to run this in subsequent terminals&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="building" >Building
 &lt;span>
 &lt;a href="#building">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
@@ -125,36 +155,26 @@ I also included &lt;code>ccache&lt;/code> in here, however I do not know why it 
 &lt;/span>
 &lt;/h2>&lt;ol>
 &lt;li>
-&lt;p>Set the default number of jobs for &lt;code>make&lt;/code> to &lt;a href="https://stackoverflow.com/a/2500791/7732434">CPU cores + 1&lt;/a>
-To avoid entering in &lt;code>-jN&lt;/code> every time you build, run the following command.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#24909d">echo&lt;/span> &lt;span style="color:#ed9d13">&amp;#34;alias make=\&amp;#34;/usr/bin/make -j&lt;/span>&lt;span style="color:#6ab825;font-weight:bold">$((&lt;/span>&lt;span style="color:#ed9d13">`&lt;/span>nproc&lt;span style="color:#ed9d13">`&lt;/span> + &lt;span style="color:#3677a9">1&lt;/span>&lt;span style="color:#6ab825;font-weight:bold">))&lt;/span>&lt;span style="color:#ed9d13">\&amp;#34;&amp;#34;&lt;/span> &amp;gt;&amp;gt; ~/.profile
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#24909d">source&lt;/span> ~/.profile &lt;span style="color:#999;font-style:italic"># you do not need to run this in subsequent terminals&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
-&lt;li>
 &lt;p>Optionally enable console mode for GUI projects by commenting out &lt;code>set(EXECUTABLE_FLAG WIN32)&lt;/code> from &lt;code>src/CMakeLists.txt&lt;/code> (thanks @selsta)&lt;/p>
 &lt;ul>
 &lt;li>Run &lt;code>build/release/bin/monero-wallet-gui.exe&lt;/code> in the VSCode terminal after a build (next step)&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;li>
-&lt;p>For the &lt;code>monero-gui&lt;/code> build with &lt;code>make release-win64&lt;/code>. For &lt;code>monero&lt;/code> try &lt;code>make debug-static-win64&lt;/code> first. This process may take 5 minutes.&lt;/p>
+&lt;p>Run the build command (5 minutes)&lt;/p>
 &lt;ul>
-&lt;li>&lt;code>monero-gui&lt;/code> debug builds on Windows are either unsupported or are not advised&lt;/li>
-&lt;li>I broke my head trying to make it work on my machine and so gave up&lt;/li>
-&lt;li>If you try a debug build, you might need to &lt;code>make clean&lt;/code> if the release won&amp;rsquo;t build&lt;/li>
+&lt;li>For &lt;code>monero-gui&lt;/code>, you can either use the VSCode debugger (workspace settings) or run &lt;code>make release-win64&lt;/code>. The debug builds weren&amp;rsquo;t working for me.&lt;/li>
+&lt;li>For &lt;code>monero&lt;/code>, same as above but try using &lt;code>debug-static-win64&lt;/code> instead (need to edit &lt;code>.vscode/tasks.json[0] &amp;gt; windows &amp;gt; args[0]&lt;/code>)&lt;/li>
+&lt;li>If the debug build failed, you might need to &lt;code>make clean&lt;/code> for the release build to work&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;li>
-&lt;p>If a build fails due to a missing library, try each of the following&lt;/p>
+&lt;p>If the release build fails due to a missing library, try each of the following&lt;/p>
 &lt;ul>
 &lt;li>&lt;code>pacman -S mingw-w64-x86_64-name&lt;/code> (where name is the libname with and without lib)&lt;/li>
 &lt;li>Search for the library (with and without the lib prefix) on &lt;a href="https://packages.msys2.org/search">packages.msys2.org&lt;/a>. Click on relevant search results and install the binary package starting with &lt;code>mingw-w64-x86_64&lt;/code>&lt;/li>
 &lt;li>&lt;code>make clean&lt;/code> before building&lt;/li>
 &lt;/ul>
-&lt;/li>
-&lt;li>
-&lt;p>Debugging (not GUI)
-It&amp;rsquo;s really hard to do this on Windows and VSCode, especially through an msys2 debugging terminal. The best I can offer is pointing you to &lt;a href="https://code.visualstudio.com/docs/cpp/launch-json-reference">VSCode C++ launch JSON&lt;/a> and &lt;a href="https://stackoverflow.com/a/1745964/7732434">this StackOverFlow Answer&lt;/a>&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>For a &lt;code>monero-gui&lt;/code> full build, use &lt;code>cd build/release &amp;amp;&amp;amp; make deploy&lt;/code> after running &lt;code>make release-win64&lt;/code>&lt;/p>
