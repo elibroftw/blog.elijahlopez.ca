@@ -14,10 +14,12 @@ aliases: ['/posts/monero-dev-windows/']
 
 This is a straightforward guide to start developing on the monero project (monero, monero-gui, etc.) on Windows without using a Linux \[virtual] machine.
 Although I have a Linux machine, I am maximally productive on Windows as it is my primary OS.
+When copy pasting terminal commands, paste into notepad before pasting into your terminal because it's a good habit to catch a clipboard jacking attack.
 
 ## Prerequisites
 
 - [MSYS2](https://www.msys2.org/#installation)
+  - Use `Get-FileHash -Path .\INSTALLER -Algorithm SHA256` and compare the hashes to verify the installer
 - [Visual Studio Code](https://code.visualstudio.com/download)
 - [Git](https://git-scm.com/downloads)
 - Optional: [GitHub Desktop](https://desktop.github.com/)
@@ -38,7 +40,6 @@ If you are interested in contributing without a GitHub account, you can skip thi
 Use git or GitHub Desktop to clone your fork. Clone the original repository if you want to contribute anonymously.
 
 Replace the URL below with the URL of your fork.
-If you are copy pasting terminal commands, paste into notepad before pasting into your terminal because it's a good habit to catch a clipboard jacking attack.
 
 ```bash
 git clone --recursive https://github.com/monero-project/monero-gui.git
