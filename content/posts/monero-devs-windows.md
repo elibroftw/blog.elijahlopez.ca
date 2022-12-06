@@ -113,8 +113,7 @@ Note that the dependencies take a bit of storage. I think I used a couple GBs (m
     ```
 
     If you are reading this far into the future, ensure that the list of dependencies installed is a merger of the ones I have listed and the ones listed in the project's `README.md`
-     When I was writing this article, builds were failing for 2+ hours due to missing packages and an unsupported `debug-static-win64` build target.
-    I also included `ccache` in here, however I do not know why it doesn't work for me when building the `monero-gui` project.
+    When I was writing this article, build failures were common for 3+ hours due to missing packages, an unsupported `debug-static-win64` build target, and ccache working suddenly.
 
 3. Install Qt5
 
@@ -148,11 +147,15 @@ source ~/.profile  #  you do not need to run this in subsequent terminals
     - For `monero`, same as above but try using `debug-static-win64` instead (need to edit `.vscode/tasks.json[0] > windows > args[0]`)
     - If the debug build failed, you might need to `make clean` for the release build to work
 
-3. If the release build fails due to a missing library, try each of the following
+3. Troubleshooting failures
 
-    - `pacman -S mingw-w64-x86_64-name` (where name is the libname with and without lib)
-    - Search for the library (with and without the lib prefix) on [packages.msys2.org](https://packages.msys2.org/search). Click on relevant search results and install the binary package starting with `mingw-w64-x86_64`
-    - `make clean` before building
+    - build failed because of missing library
+        - build release after a make clean
+        - `pacman -S mingw-w64-x86_64-name` (where name is the libname with and without lib)
+        - Search for the library (with and without the lib prefix) on [packages.msys2.org](https://packages.msys2.org/search). Click on relevant search results and install the binary package starting with `mingw-w64-x86_64`
+        - `make clean` before building
+    - executable crashes
+        - clear ccache with `ccache --clear`
 
 4. For a `monero-gui` full build, use `cd build/release && make deploy` after running `make release-win64`
     - If the build fails due to DLL copy error, follow the troubleshooting instructions in step 4 and let me know what worked so that I can update this article
