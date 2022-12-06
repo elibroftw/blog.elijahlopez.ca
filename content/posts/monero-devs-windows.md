@@ -142,7 +142,7 @@ Note that the dependencies take a bit of storage. I think I used a couple GBs (m
     - `make clean` before building
 
 5. Debugging (not GUI)
-    It's really hard to do this on Windows and VSCode, especially through an msys2 debugging terminal. The best I can offer is pointing you to [this StackOverFlow Answer](https://stackoverflow.com/a/1745964/7732434)
+    It's really hard to do this on Windows and VSCode, especially through an msys2 debugging terminal. The best I can offer is pointing you to [VSCode C++ launch JSON](https://code.visualstudio.com/docs/cpp/launch-json-reference) and [this StackOverFlow Answer](https://stackoverflow.com/a/1745964/7732434)
 
 6. For a `monero-gui` full build, use `cd build/release && make deploy` after running `make release-win64`
     - If the build fails due to DLL copy error, follow the troubleshooting instructions in step 4 and let me know what worked so that I can update this article
@@ -152,7 +152,7 @@ Note that the dependencies take a bit of storage. I think I used a couple GBs (m
 If you want to contribute anonymously, I suggest you git commit on a separate branch than the default one.
 After you've committed your changes, run the following from your branch.
 
-`git format-patch master --stdout > PATCH_NAME.patch`
+`git format-patch master --stdout > ~/Downloads/PATCH_NAME.patch`
 
 Here I've assumed that the default branch is master, but it is entirely possible when working on other projects where the default branch is not master. Default branch names I've seen are `dev` and `main`.
 
