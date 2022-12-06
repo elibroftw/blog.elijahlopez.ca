@@ -154,7 +154,7 @@ To avoid entering in &lt;code>-jN&lt;/code> every time you build, run the follow
 &lt;/li>
 &lt;li>
 &lt;p>Debugging (not GUI)
-It&amp;rsquo;s really hard to do this on Windows and VSCode, especially through an msys2 debugging terminal. The best I can offer is pointing you to &lt;a href="https://stackoverflow.com/a/1745964/7732434">this StackOverFlow Answer&lt;/a>&lt;/p>
+It&amp;rsquo;s really hard to do this on Windows and VSCode, especially through an msys2 debugging terminal. The best I can offer is pointing you to &lt;a href="https://code.visualstudio.com/docs/cpp/launch-json-reference">VSCode C++ launch JSON&lt;/a> and &lt;a href="https://stackoverflow.com/a/1745964/7732434">this StackOverFlow Answer&lt;/a>&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>For a &lt;code>monero-gui&lt;/code> full build, use &lt;code>cd build/release &amp;amp;&amp;amp; make deploy&lt;/code> after running &lt;code>make release-win64&lt;/code>&lt;/p>
@@ -171,7 +171,7 @@ It&amp;rsquo;s really hard to do this on Windows and VSCode, especially through 
 &lt;/span>
 &lt;/h2>&lt;p>If you want to contribute anonymously, I suggest you git commit on a separate branch than the default one.
 After you&amp;rsquo;ve committed your changes, run the following from your branch.&lt;/p>
-&lt;p>&lt;code>git format-patch master --stdout &amp;gt; PATCH_NAME.patch&lt;/code>&lt;/p>
+&lt;p>&lt;code>git format-patch master --stdout &amp;gt; ~/Downloads/PATCH_NAME.patch&lt;/code>&lt;/p>
 &lt;p>Here I&amp;rsquo;ve assumed that the default branch is master, but it is entirely possible when working on other projects where the default branch is not master. Default branch names I&amp;rsquo;ve seen are &lt;code>dev&lt;/code> and &lt;code>main&lt;/code>.&lt;/p>
 &lt;p>After you&amp;rsquo;ve created a patch, you can post it on #monero-dev or #monero-gui.&lt;/p>
 &lt;ul>
