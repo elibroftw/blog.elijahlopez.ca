@@ -77,7 +77,12 @@ The exceptions being: Python, Windows C++ development, .NET development, Java.
         }
     ```
 
-5. Set MSYS2 as the default terminal profile for Windows in the VSCode `workspace` settings
+5. Add workspace settings as seen in my [monero-gui fork](https://github.com/elibroftw/monero-gui/tree/master/.vscode)
+
+    - You will most likely only need to change the "release-win64" in `tasks.json` if you are working on monero and not monero-gui.
+    - I hope to merge these settings into upstream so that everyone debugging on their machines will have an easy time
+
+6. Set MSYS2 as the default terminal profile for Windows in the VSCode `workspace` settings
 
     ![Setting default terminal profile](/images/vs-code/setting-default-profile.jpg)
 
@@ -117,34 +122,39 @@ Note that the dependencies take a bit of storage. I think I used a couple GBs (m
     pacman -S mingw-w64-x86_64-qt5 --noconfirm
     ```
 
+## Building Setup
+
+### Anti-Virus
+
+I noticed that when building, Windows anti-virus would spike. So I recommend excluding the project folder as well as the msys2 folder from Windows Security or whatever anti-virus software you are running.
+
+### Default Number of Jobs for Make
+
+We want to avoid entering in `-jN` every time we build, but what should N be? I use CPU cores - 1 so that
+I can still use my browser and other apps while building. You can run the following to set that so.
+
+```sh
+echo "alias make=\"/usr/bin/make -j$((`nproc` > 1 ? $((`nproc` - 1)) : 1 ))\"" >> ~/.profile
+source ~/.profile  #  you do not need to run this in subsequent terminals
+```
+
 ## Building
 
-1. Set the default number of jobs for `make` to [CPU cores + 1](https://stackoverflow.com/a/2500791/7732434)
-    To avoid entering in `-jN` every time you build, run the following command.
-
-    ```sh
-    echo "alias make=\"/usr/bin/make -j$((`nproc` + 1))\"" >> ~/.profile
-    source ~/.profile  #  you do not need to run this in subsequent terminals
-    ```
-
-2. Optionally enable console mode for GUI projects by commenting out `set(EXECUTABLE_FLAG WIN32)` from `src/CMakeLists.txt` (thanks @selsta)
+1. Optionally enable console mode for GUI projects by commenting out `set(EXECUTABLE_FLAG WIN32)` from `src/CMakeLists.txt` (thanks @selsta)
     - Run `build/release/bin/monero-wallet-gui.exe` in the VSCode terminal after a build (next step)
 
-3. For the `monero-gui` build with `make release-win64`. For `monero` try `make debug-static-win64` first. This process may take 5 minutes.
-    - `monero-gui` debug builds on Windows are either unsupported or are not advised
-    - I broke my head trying to make it work on my machine and so gave up
-    - If you try a debug build, you might need to `make clean` if the release won't build
+2. Run the build command (5 minutes)
+    - For `monero-gui`, you can either use the VSCode debugger (workspace settings) or run `make release-win64`. The debug builds weren't working for  me.
+    - For `monero`, same as above but try using `debug-static-win64` instead (need to edit `.vscode/tasks.json[0] > windows > args[0]`)
+    - If the debug build failed, you might need to `make clean` for the release build to work
 
-4. If a build fails due to a missing library, try each of the following
+3. If the release build fails due to a missing library, try each of the following
 
     - `pacman -S mingw-w64-x86_64-name` (where name is the libname with and without lib)
     - Search for the library (with and without the lib prefix) on [packages.msys2.org](https://packages.msys2.org/search). Click on relevant search results and install the binary package starting with `mingw-w64-x86_64`
     - `make clean` before building
 
-5. Debugging (not GUI)
-    It's really hard to do this on Windows and VSCode, especially through an msys2 debugging terminal. The best I can offer is pointing you to [VSCode C++ launch JSON](https://code.visualstudio.com/docs/cpp/launch-json-reference) and [this StackOverFlow Answer](https://stackoverflow.com/a/1745964/7732434)
-
-6. For a `monero-gui` full build, use `cd build/release && make deploy` after running `make release-win64`
+4. For a `monero-gui` full build, use `cd build/release && make deploy` after running `make release-win64`
     - If the build fails due to DLL copy error, follow the troubleshooting instructions in step 4 and let me know what worked so that I can update this article
 
 ## Contributing Anonymously
