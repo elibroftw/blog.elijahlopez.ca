@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on ELL Blog</title><link>https://blog.elijahlopez.ca/posts/</link><description>ELL Blog (Posts)</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 03 Dec 2022 12:58:50 -0500</lastBuildDate><atom:link href="https://blog.elijahlopez.ca/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Monero Onboarding for Windows Developers</title><link>https://blog.elijahlopez.ca/posts/monero-devs-windows/</link><pubDate>Sat, 03 Dec 2022 12:58:50 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/monero-devs-windows/</guid><description>&lt;p>This is a straightforward guide to start developing on the monero project (monero, monero-gui, etc.) on Windows without using a Linux [virtual] machine.
-Although I have a Linux machine, I am maximally productive on Windows as it is my primary OS.&lt;/p>
+Although I have a Linux machine, I am maximally productive on Windows as it is my primary OS.
+When copy pasting terminal commands, paste into notepad before pasting into your terminal because it&amp;rsquo;s a good habit to catch a clipboard jacking attack.&lt;/p>
 &lt;h2 id="prerequisites" >Prerequisites
 &lt;span>
 &lt;a href="#prerequisites">
@@ -7,7 +8,11 @@ Although I have a Linux machine, I am maximally productive on Windows as it is m
 &lt;/a>
 &lt;/span>
 &lt;/h2>&lt;ul>
-&lt;li>&lt;a href="https://www.msys2.org/#installation">MSYS2&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.msys2.org/#installation">MSYS2&lt;/a>
+&lt;ul>
+&lt;li>Use &lt;code>Get-FileHash -Path .\INSTALLER -Algorithm SHA256&lt;/code> and compare the hashes to verify the installer&lt;/li>
+&lt;/ul>
+&lt;/li>
 &lt;li>&lt;a href="https://code.visualstudio.com/download">Visual Studio Code&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://git-scm.com/downloads">Git&lt;/a>&lt;/li>
 &lt;li>Optional: &lt;a href="https://desktop.github.com/">GitHub Desktop&lt;/a>&lt;/li>
@@ -31,8 +36,7 @@ If you are new to GitHub, see: &lt;a href="https://docs.github.com/en/get-starte
 &lt;/a>
 &lt;/span>
 &lt;/h2>&lt;p>Use git or GitHub Desktop to clone your fork. Clone the original repository if you want to contribute anonymously.&lt;/p>
-&lt;p>Replace the URL below with the URL of your fork.
-If you are copy pasting terminal commands, paste into notepad before pasting into your terminal because it&amp;rsquo;s a good habit to catch a clipboard jacking attack.&lt;/p>
+&lt;p>Replace the URL below with the URL of your fork.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>git clone --recursive https://github.com/monero-project/monero-gui.git
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;code>--recursive&lt;/code> is used so that submodules are cloned as well. Otherwise, you&amp;rsquo;d have to update those submodules when the build fails.&lt;/p>
 &lt;h2 id="setting-up-vscode" >Setting Up VSCode
