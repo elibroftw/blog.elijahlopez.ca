@@ -116,8 +116,7 @@ Note that the dependencies take a bit of storage. I think I used a couple GBs (m
 &lt;p>Install Monero dependencies&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>pacman -S mingw-w64-x86_64-toolchain make mingw-w64-x86_64-cmake mingw-w64-x86_64-boost mingw-w64-x86_64-openssl mingw-w64-x86_64-zeromq mingw-w64-x86_64-libsodium mingw-w64-x86_64-hidapi mingw-w64-x86_64-protobuf-c mingw-w64-x86_64-libusb mingw-w64-x86_64-libgcrypt mingw-w64-x86_64-unbound mingw-w64-x86_64-doxygen mingw-w64-x86_64-libunwind mingw-w64-x86_64-ccache mingw-w64-x86_64-pcre --noconfirm
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>If you are reading this far into the future, ensure that the list of dependencies installed is a merger of the ones I have listed and the ones listed in the project&amp;rsquo;s &lt;code>README.md&lt;/code>
-When I was writing this article, builds were failing for 2+ hours due to missing packages and an unsupported &lt;code>debug-static-win64&lt;/code> build target.
-I also included &lt;code>ccache&lt;/code> in here, however I do not know why it doesn&amp;rsquo;t work for me when building the &lt;code>monero-gui&lt;/code> project.&lt;/p>
+When I was writing this article, build failures were common for 3+ hours due to missing packages, an unsupported &lt;code>debug-static-win64&lt;/code> build target, and ccache working suddenly.&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>Install Qt5&lt;/p>
@@ -169,11 +168,21 @@ I can still use my browser and other apps while building. You can run the follow
 &lt;/ul>
 &lt;/li>
 &lt;li>
-&lt;p>If the release build fails due to a missing library, try each of the following&lt;/p>
+&lt;p>Troubleshooting failures&lt;/p>
 &lt;ul>
+&lt;li>build failed because of missing library
+&lt;ul>
+&lt;li>build release after a make clean&lt;/li>
 &lt;li>&lt;code>pacman -S mingw-w64-x86_64-name&lt;/code> (where name is the libname with and without lib)&lt;/li>
 &lt;li>Search for the library (with and without the lib prefix) on &lt;a href="https://packages.msys2.org/search">packages.msys2.org&lt;/a>. Click on relevant search results and install the binary package starting with &lt;code>mingw-w64-x86_64&lt;/code>&lt;/li>
 &lt;li>&lt;code>make clean&lt;/code> before building&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>executable crashes
+&lt;ul>
+&lt;li>clear ccache with &lt;code>ccache --clear&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;li>
