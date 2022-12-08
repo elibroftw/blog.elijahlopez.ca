@@ -1,4 +1,216 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ELL Blog</title><link>https://blog.elijahlopez.ca/</link><description>ELL Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 03 Dec 2022 12:58:50 -0500</lastBuildDate><atom:link href="https://blog.elijahlopez.ca/index.xml" rel="self" type="application/rss+xml"/><item><title>Monero Onboarding for Windows Developers</title><link>https://blog.elijahlopez.ca/posts/monero-devs-windows/</link><pubDate>Sat, 03 Dec 2022 12:58:50 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/monero-devs-windows/</guid><description>&lt;p>This is a straightforward guide to start developing on the monero project (monero, monero-gui, etc.) on Windows without using a Linux [virtual] machine.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ELL Blog</title><link>https://blog.elijahlopez.ca/</link><description>ELL Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 06 Dec 2022 17:23:13 -0500</lastBuildDate><atom:link href="https://blog.elijahlopez.ca/index.xml" rel="self" type="application/rss+xml"/><item><title>Rust Json Manipulation</title><link>https://blog.elijahlopez.ca/posts/rust-json-manipulation/</link><pubDate>Tue, 06 Dec 2022 17:23:13 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/rust-json-manipulation/</guid><description>&lt;p>We&amp;rsquo;ll be doing this in the context of &lt;code>rocket&lt;/code>.
+If you are doing this outside the context of rocket replace &lt;code>rocket::serde::json&lt;/code> with &lt;code>serde_json&lt;/code> and add &lt;code>serde_json&lt;/code> to you &lt;code>Cargo.toml&lt;/code> file.&lt;/p>
+&lt;details>
+&lt;summary>Cargo.toml&lt;/summary>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-toml" data-lang="toml">&lt;span style="display:flex;">&lt;span>[dependencies]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>rocket = { version = &lt;span style="color:#ed9d13">&amp;#34;0.5.0-rc.2&amp;#34;&lt;/span>, features = [&lt;span style="color:#ed9d13">&amp;#34;json&amp;#34;&lt;/span>] }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>serde = { version = &lt;span style="color:#ed9d13">&amp;#34;1.0&amp;#34;&lt;/span>, features = [&lt;span style="color:#ed9d13">&amp;#34;derive&amp;#34;&lt;/span>] }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic"># serde_json = &amp;#34;1.0&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/details>
+&lt;h2 id="arbitrary-json" >Arbitrary JSON
+&lt;span>
+&lt;a href="#arbitrary-json">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-rs" data-lang="rs">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">use&lt;/span>&lt;span style="color:#666"> &lt;/span>rocket::serde::json::{json,&lt;span style="color:#666"> &lt;/span>Value,&lt;span style="color:#666"> &lt;/span>Json};&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">&lt;/span>&lt;span style="color:#cd2828;font-weight:bold">#[get(&lt;/span>&lt;span style="color:#ed9d13">&amp;#34;/&amp;#34;&lt;/span>&lt;span style="color:#cd2828;font-weight:bold">)]&lt;/span>&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">&lt;/span>&lt;span style="color:#6ab825;font-weight:bold">fn&lt;/span> &lt;span style="color:#447fcf">index&lt;/span>()&lt;span style="color:#666"> &lt;/span>-&amp;gt; &lt;span style="color:#24909d">Option&lt;/span>&amp;lt;Value&amp;gt;&lt;span style="color:#666"> &lt;/span>{&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#999;font-style:italic">// Returns JSON if json manipulation succeeds, else 404
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">&lt;/span>&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#999;font-style:italic">// Assume that this response is from an API request
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">&lt;/span>&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">let&lt;/span>&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">mut&lt;/span>&lt;span style="color:#666"> &lt;/span>response&lt;span style="color:#666"> &lt;/span>=&lt;span style="color:#666"> &lt;/span>json!({&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#ed9d13">&amp;#34;names&amp;#34;&lt;/span>: [&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666"> &lt;/span>{&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#ed9d13">&amp;#34;first&amp;#34;&lt;/span>: &lt;span style="color:#ed9d13">&amp;#34;Elijah&amp;#34;&lt;/span>,&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#ed9d13">&amp;#34;last&amp;#34;&lt;/span>: &lt;span style="color:#ed9d13">&amp;#34;Lopez&amp;#34;&lt;/span>,&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666"> &lt;/span>}&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666"> &lt;/span>]&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#999;font-style:italic">// Assume there are a lot of extra fields we do not care about and thus to save time we do not bother with Structuring
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">&lt;/span>&lt;span style="color:#666"> &lt;/span>});&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#999;font-style:italic">// Let&amp;#39;s add a name
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">&lt;/span>&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#999;font-style:italic">// if the Structure already has a precise defintion, use Structs with the #[Serialize] macro to avoid .do_something()?
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">&lt;/span>&lt;span style="color:#666"> &lt;/span>response.as_object_mut()?[&lt;span style="color:#ed9d13">&amp;#34;name&amp;#34;&lt;/span>].as_array_mut()?.push(&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666"> &lt;/span>json!({&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#999;font-style:italic">// Disclosure: I made this name up. Turns out she is an actress.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">&lt;/span>&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#ed9d13">&amp;#34;first&amp;#34;&lt;/span>: &lt;span style="color:#ed9d13">&amp;#34;Rachel&amp;#34;&lt;/span>,&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#ed9d13">&amp;#34;last&amp;#34;&lt;/span>: &lt;span style="color:#ed9d13">&amp;#34;Mathews&amp;#34;&lt;/span>&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666"> &lt;/span>})&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666"> &lt;/span>);&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666"> &lt;/span>response&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">&lt;/span>}&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="defined-struct-and-json" >Defined Struct and Json
+&lt;span>
+&lt;a href="#defined-struct-and-json">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>Assume that the API we are using only has a names field and that our endpoint just adds a name to that API.
+Since the API response is very simple, we might as well create a Struct.&lt;/p>
+&lt;p>I tried to fiddle with using just &amp;amp;str for the Struct fields but got a lot of life time errors so I went with Cow (clone on write)
+which takes care of cloning whenever we need to mutate a field.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-rs" data-lang="rs">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">use&lt;/span>&lt;span style="color:#666"> &lt;/span>rocket::response::status::NotFound;&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">&lt;/span>&lt;span style="color:#6ab825;font-weight:bold">use&lt;/span>&lt;span style="color:#666"> &lt;/span>rocket::serde::json::{json,&lt;span style="color:#666"> &lt;/span>Value,&lt;span style="color:#666"> &lt;/span>Json};&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">&lt;/span>&lt;span style="color:#6ab825;font-weight:bold">use&lt;/span>&lt;span style="color:#666"> &lt;/span>serde::{Serialize,&lt;span style="color:#666"> &lt;/span>Deserialize};&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">&lt;/span>&lt;span style="color:#6ab825;font-weight:bold">use&lt;/span>&lt;span style="color:#666"> &lt;/span>std::borrow::Cow;&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">&lt;/span>&lt;span style="color:#cd2828;font-weight:bold">#[derive(Serialize, Deserialize, Clone)]&lt;/span>&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">&lt;/span>&lt;span style="color:#6ab825;font-weight:bold">struct&lt;/span> &lt;span style="color:#447fcf;text-decoration:underline">Name&lt;/span>&amp;lt;&amp;#39;&lt;span style="color:#bbb">r&lt;/span>&amp;gt;&lt;span style="color:#666"> &lt;/span>{&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666"> &lt;/span>first: &lt;span style="color:#447fcf;text-decoration:underline">Cow&lt;/span>&amp;lt;&amp;#39;&lt;span style="color:#bbb">r&lt;/span>,&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">str&lt;/span>&amp;gt;,&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666"> &lt;/span>last: &lt;span style="color:#447fcf;text-decoration:underline">Cow&lt;/span>&amp;lt;&amp;#39;&lt;span style="color:#bbb">r&lt;/span>,&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">str&lt;/span>&amp;gt;&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">&lt;/span>}&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">&lt;/span>&lt;span style="color:#cd2828;font-weight:bold">#[derive(Serialize, Deserialize, Clone)]&lt;/span>&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">&lt;/span>&lt;span style="color:#6ab825;font-weight:bold">struct&lt;/span> &lt;span style="color:#447fcf;text-decoration:underline">Names&lt;/span>&amp;lt;&amp;#39;&lt;span style="color:#bbb">r&lt;/span>&amp;gt;(&lt;span style="color:#24909d">Vec&lt;/span>&amp;lt;Name&amp;lt;&amp;#39;&lt;span style="color:#bbb">r&lt;/span>&amp;gt;&amp;gt;);&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">&lt;/span>&lt;span style="color:#cd2828;font-weight:bold">#[get(&lt;/span>&lt;span style="color:#ed9d13">&amp;#34;/get-api&amp;#34;&lt;/span>&lt;span style="color:#cd2828;font-weight:bold">)]&lt;/span>&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">&lt;/span>&lt;span style="color:#6ab825;font-weight:bold">async&lt;/span>&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">fn&lt;/span> &lt;span style="color:#447fcf">new_index&lt;/span>(client: &lt;span style="color:#6ab825">&amp;amp;&lt;/span>&lt;span style="color:#447fcf;text-decoration:underline">State&lt;/span>&amp;lt;Client&amp;gt;)&lt;span style="color:#666"> &lt;/span>-&amp;gt; &lt;span style="color:#24909d">Result&lt;/span>&amp;lt;Json&amp;lt;Names&amp;lt;&amp;#39;&lt;span style="color:#24909d">_&lt;/span>&amp;gt;&amp;gt;,&lt;span style="color:#666"> &lt;/span>NotFound&amp;lt;&lt;span style="color:#24909d">String&lt;/span>&amp;gt;&amp;gt;&lt;span style="color:#666"> &lt;/span>{&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#999;font-style:italic">// make a request
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">&lt;/span>&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">let&lt;/span>&lt;span style="color:#666"> &lt;/span>response&lt;span style="color:#666"> &lt;/span>=&lt;span style="color:#666"> &lt;/span>client.get(&lt;span style="color:#ed9d13">&amp;#34;url that returns a list of names&amp;#34;&lt;/span>).send().&lt;span style="color:#6ab825;font-weight:bold">await&lt;/span>.map_err(|e|&lt;span style="color:#666"> &lt;/span>NotFound(e.to_string()))?;&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">let&lt;/span>&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">mut&lt;/span>&lt;span style="color:#666"> &lt;/span>names&lt;span style="color:#666"> &lt;/span>=&lt;span style="color:#666"> &lt;/span>response.json::&amp;lt;Names&amp;lt;&amp;#39;&lt;span style="color:#24909d">_&lt;/span>&amp;gt;&amp;gt;().&lt;span style="color:#6ab825;font-weight:bold">await&lt;/span>.map_err(|e|&lt;span style="color:#666"> &lt;/span>NotFound(e.to_string()))?;&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666"> &lt;/span>names.&lt;span style="color:#3677a9">0.&lt;/span>push(&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666"> &lt;/span>Name&lt;span style="color:#666"> &lt;/span>{&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666"> &lt;/span>first: &lt;span style="color:#ed9d13">&amp;#34;Rachel&amp;#34;&lt;/span>.into(),&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666"> &lt;/span>last: &lt;span style="color:#ed9d13">&amp;#34;Matthews&amp;#34;&lt;/span>.into()&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666"> &lt;/span>}&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666"> &lt;/span>);&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#24909d">Ok&lt;/span>(Json(names))&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">&lt;/span>}&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">&lt;/span>&lt;span style="color:#cd2828;font-weight:bold">#[post(&lt;/span>&lt;span style="color:#ed9d13">&amp;#34;/post-api&amp;#34;&lt;/span>&lt;span style="color:#cd2828;font-weight:bold">, data = &lt;/span>&lt;span style="color:#ed9d13">&amp;#34;&amp;lt;names&amp;gt;&amp;#34;&lt;/span>&lt;span style="color:#cd2828;font-weight:bold">)]&lt;/span>&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">&lt;/span>&lt;span style="color:#6ab825;font-weight:bold">fn&lt;/span> &lt;span style="color:#447fcf">post_index&lt;/span>(&lt;span style="color:#6ab825;font-weight:bold">mut&lt;/span>&lt;span style="color:#666"> &lt;/span>names: &lt;span style="color:#447fcf;text-decoration:underline">Json&lt;/span>&amp;lt;Names&amp;lt;&amp;#39;&lt;span style="color:#24909d">_&lt;/span>&amp;gt;&amp;gt;)&lt;span style="color:#666"> &lt;/span>-&amp;gt; &lt;span style="color:#447fcf;text-decoration:underline">Json&lt;/span>&amp;lt;Names&amp;lt;&amp;#39;&lt;span style="color:#24909d">_&lt;/span>&amp;gt;&amp;gt;&lt;span style="color:#666"> &lt;/span>{&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666"> &lt;/span>names.&lt;span style="color:#3677a9">0.0.&lt;/span>push(&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666"> &lt;/span>Name&lt;span style="color:#666"> &lt;/span>{&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666"> &lt;/span>first: &lt;span style="color:#ed9d13">&amp;#34;Rachel&amp;#34;&lt;/span>.into(),&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666"> &lt;/span>last: &lt;span style="color:#ed9d13">&amp;#34;Matthews&amp;#34;&lt;/span>.into()&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666"> &lt;/span>}&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666"> &lt;/span>);&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666"> &lt;/span>names&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">&lt;/span>}&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>TODO: use &lt;a href="https://api.sampleapis.com/coffee/hot">https://api.sampleapis.com/coffee/hot&lt;/a> for a more complex example&lt;/p></description></item><item><title>Rust How to Make a Request</title><link>https://blog.elijahlopez.ca/posts/rust-how-to-make-a-request/</link><pubDate>Tue, 06 Dec 2022 16:56:25 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/rust-how-to-make-a-request/</guid><description>&lt;p>Add this to your &lt;a href="https://blog.elijahlopez.ca/posts/rust-getting-started.md">&lt;code>Cargo.toml&lt;/code>&lt;/a> file&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-toml" data-lang="toml">&lt;span style="display:flex;">&lt;span>[dependencies]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>reqwest = { version = &lt;span style="color:#ed9d13">&amp;#34;0.11.13&amp;#34;&lt;/span>, features = [&lt;span style="color:#ed9d13">&amp;#34;json&amp;#34;&lt;/span>] }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>serde_json = &lt;span style="color:#ed9d13">&amp;#34;1.0&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>If you need to make a synchronous request, use the blocking feature and create a blocking client.
+JSON is useful when you need to parse a JSON response with something like &lt;code>serde_json::Value&lt;/code> or a Struct with the Deserialize derivation.&lt;/p>
+&lt;p>You should design your code to reuse clients as much as possible. In this code the&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-rs" data-lang="rs">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">use&lt;/span>&lt;span style="color:#666"> &lt;/span>serde_json::Value;&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">&lt;/span>&lt;span style="color:#6ab825;font-weight:bold">use&lt;/span>&lt;span style="color:#666"> &lt;/span>reqwest;&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">&lt;/span>&lt;span style="color:#6ab825;font-weight:bold">use&lt;/span>&lt;span style="color:#666"> &lt;/span>reqwest::Client;&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">&lt;/span>&lt;span style="color:#999;font-style:italic">// when making requests, try to use an existing client instead of creating a client or using the get method
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">&lt;/span>&lt;span style="color:#6ab825;font-weight:bold">async&lt;/span>&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">fn&lt;/span> &lt;span style="color:#447fcf">make_request&lt;/span>(client: &lt;span style="color:#6ab825">&amp;amp;&lt;/span>&lt;span style="color:#447fcf;text-decoration:underline">Client&lt;/span>)&lt;span style="color:#666"> &lt;/span>-&amp;gt; &lt;span style="color:#24909d">Result&lt;/span>&amp;lt;Value,&lt;span style="color:#666"> &lt;/span>reqwest::Error&amp;gt;&lt;span style="color:#666"> &lt;/span>{&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">let&lt;/span>&lt;span style="color:#666"> &lt;/span>url&lt;span style="color:#666"> &lt;/span>=&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#ed9d13">&amp;#34;https://api.sampleapis.com/coffee/hot&amp;#34;&lt;/span>;&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">let&lt;/span>&lt;span style="color:#666"> &lt;/span>response&lt;span style="color:#666"> &lt;/span>=&lt;span style="color:#666"> &lt;/span>client.get(url).send().&lt;span style="color:#6ab825;font-weight:bold">await&lt;/span>?;&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">let&lt;/span>&lt;span style="color:#666"> &lt;/span>hot_coffees&lt;span style="color:#666"> &lt;/span>=&lt;span style="color:#666"> &lt;/span>response.json::&amp;lt;Value&amp;gt;().&lt;span style="color:#6ab825;font-weight:bold">await&lt;/span>;&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666"> &lt;/span>hot_coffees&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">&lt;/span>}&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">&lt;/span>&lt;span style="color:#999;font-style:italic">// build a client with a user-agent since Client::new does not add a user-agent by default
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">// use a more sophisticated user-agent if you want to mimic a browser
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">&lt;/span>&lt;span style="color:#6ab825;font-weight:bold">let&lt;/span>&lt;span style="color:#666"> &lt;/span>client&lt;span style="color:#666"> &lt;/span>=&lt;span style="color:#666"> &lt;/span>Client::builder().user_agent(&lt;span style="color:#ed9d13">&amp;#34;reqwest&amp;#34;&lt;/span>).build().unwrap();&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="making-reqwest-within-rocket-backend" >Making Reqwest Within Rocket Backend
+&lt;span>
+&lt;a href="#making-reqwest-within-rocket-backend">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>If you want to make outgoing requests while processing an incoming request in Rocket, you may want to use &lt;code>State&lt;/code>. Here is an example.&lt;/p>
+&lt;details>
+&lt;summary>Cargo.toml&lt;/summary>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-toml" data-lang="toml">&lt;span style="display:flex;">&lt;span>[dependencies]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>rocket = { version = &lt;span style="color:#ed9d13">&amp;#34;0.5.0-rc.2&amp;#34;&lt;/span>, features = [&lt;span style="color:#ed9d13">&amp;#34;json&amp;#34;&lt;/span>] }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>reqwest = { version = &lt;span style="color:#ed9d13">&amp;#34;0.11.13&amp;#34;&lt;/span>, features = [&lt;span style="color:#ed9d13">&amp;#34;json&amp;#34;&lt;/span>] }
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/details>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-rs" data-lang="rs">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">use&lt;/span>&lt;span style="color:#666"> &lt;/span>serde_json::Value;&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">&lt;/span>&lt;span style="color:#6ab825;font-weight:bold">use&lt;/span>&lt;span style="color:#666"> &lt;/span>rocket::State;&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">&lt;/span>&lt;span style="color:#6ab825;font-weight:bold">use&lt;/span>&lt;span style="color:#666"> &lt;/span>rocket::response::status::NotFound;&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">&lt;/span>&lt;span style="color:#6ab825;font-weight:bold">use&lt;/span>&lt;span style="color:#666"> &lt;/span>reqwest;&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">&lt;/span>&lt;span style="color:#6ab825;font-weight:bold">use&lt;/span>&lt;span style="color:#666"> &lt;/span>reqwest::Client;&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">&lt;/span>&lt;span style="color:#cd2828;font-weight:bold">#[get(&lt;/span>&lt;span style="color:#ed9d13">&amp;#34;/&amp;#34;&lt;/span>&lt;span style="color:#cd2828;font-weight:bold">)]&lt;/span>&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">&lt;/span>&lt;span style="color:#6ab825;font-weight:bold">async&lt;/span>&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">fn&lt;/span> &lt;span style="color:#447fcf">index&lt;/span>(client: &lt;span style="color:#6ab825">&amp;amp;&lt;/span>&lt;span style="color:#447fcf;text-decoration:underline">State&lt;/span>&amp;lt;Client&amp;gt;)&lt;span style="color:#666"> &lt;/span>-&amp;gt; &lt;span style="color:#24909d">Result&lt;/span>&amp;lt;Value,&lt;span style="color:#666"> &lt;/span>NotFound&amp;lt;&lt;span style="color:#24909d">String&lt;/span>&amp;gt;&amp;gt;&lt;span style="color:#666"> &lt;/span>{&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">let&lt;/span>&lt;span style="color:#666"> &lt;/span>url&lt;span style="color:#666"> &lt;/span>=&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#ed9d13">&amp;#34;https://api.sampleapis.com/coffee/hot&amp;#34;&lt;/span>;&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">let&lt;/span>&lt;span style="color:#666"> &lt;/span>response&lt;span style="color:#666"> &lt;/span>=&lt;span style="color:#666"> &lt;/span>client.get(url).send().&lt;span style="color:#6ab825;font-weight:bold">await&lt;/span>.map_err(|e|&lt;span style="color:#666"> &lt;/span>Status::NotFound(e.to_string()))?;&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666"> &lt;/span>response.json::&amp;lt;Value&amp;gt;().&lt;span style="color:#6ab825;font-weight:bold">await&lt;/span>.map_err(|e|&lt;span style="color:#666"> &lt;/span>Status::NotFound(e.to_string()))&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#999;font-style:italic">// `result.map_err` is for E -&amp;gt; F whereas `result.or_else` can turn an error into an ok
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">&lt;/span>}&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">&lt;/span>&lt;span style="color:#cd2828;font-weight:bold">#[launch]&lt;/span>&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">&lt;/span>&lt;span style="color:#6ab825;font-weight:bold">fn&lt;/span> &lt;span style="color:#447fcf">rocket&lt;/span>()&lt;span style="color:#666"> &lt;/span>-&amp;gt; &lt;span style="color:#447fcf;text-decoration:underline">_&lt;/span>&lt;span style="color:#666"> &lt;/span>{&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">let&lt;/span>&lt;span style="color:#666"> &lt;/span>client&lt;span style="color:#666"> &lt;/span>=&lt;span style="color:#666"> &lt;/span>reqwest::Client::builder().user_agent(&lt;span style="color:#ed9d13">&amp;#34;reqwest&amp;#34;&lt;/span>).build().unwrap();&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666"> &lt;/span>rocket::build()&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666"> &lt;/span>.manage(client)&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666"> &lt;/span>.mount(&lt;span style="color:#ed9d13">&amp;#34;/&amp;#34;&lt;/span>,&lt;span style="color:#666"> &lt;/span>routes![index])&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">&lt;/span>}&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>I also recommend reading &lt;a href="https://blog.elijahlopez.ca/posts/rust-json-manipulation.md">json manipulation in Rust&lt;/a>.&lt;/p></description></item><item><title>Rust Getting Started</title><link>https://blog.elijahlopez.ca/posts/rust-getting-started/</link><pubDate>Tue, 06 Dec 2022 16:55:43 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/rust-getting-started/</guid><description>&lt;h2 id="installation" >Installation
+&lt;span>
+&lt;a href="#installation">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>You can install rust from &lt;a href="https://www.rust-lang.org/tools/install">here&lt;/a>. If you are on Windows, click the 64-BIT installer. I don&amp;rsquo;t know why programming
+languages promote 32-BIT over 64-BIT, but that&amp;rsquo;s why I&amp;rsquo;m here.&lt;/p>
+&lt;h2 id="agenda" >Agenda
+&lt;span>
+&lt;a href="#agenda">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>Last year I read Rust by example and it was not helpful at all at quantifying what you really need to know.
+My expectations is that a novice -&amp;gt; beginner means that you are capable of producing a rust &lt;strong>project&lt;/strong> not file that someone else can compile.
+Let&amp;rsquo;s skip over how to create single file projects in Rust. That&amp;rsquo;s easy, just create a &lt;code>sample.rs&lt;/code> file and use Code Runner in VS Code or &lt;code>rustc sample.rs&lt;/code>.
+This is good for someone who is printing hello world into the console but it is a horrible way to go about things.&lt;/p>
+&lt;h2 id="ide" >IDE
+&lt;span>
+&lt;a href="#ide">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>It doesn&amp;rsquo;t matter which IDE you use, coding in Rust is difficult either way.&lt;/p>
+&lt;h2 id="cargo" >Cargo
+&lt;span>
+&lt;a href="#cargo">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>Start your Rust journey by creating your very own Rust playground project. In your projects directory (wherever that may be), run&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>cargo init rust-playground
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>If cargo doesn&amp;rsquo;t work for you, you probably didn&amp;rsquo;t install Rust correctly or you didn&amp;rsquo;t restart your terminal.&lt;/p>
+&lt;p>Anyways, what is cargo used for? Well it&amp;rsquo;s used for managing Rust projects. Things like: building your project, using other people&amp;rsquo;s libraries in your code, and installing packages globally.&lt;/p>
+&lt;p>There&amp;rsquo;s more to it but this tutorial is teaching you essential basics for when things inevitably go wrong.&lt;/p>
+&lt;h2 id="writing-code" >Writing Code
+&lt;span>
+&lt;a href="#writing-code">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>Rust does things differently. Often you will need to read documentation. The auto complete features are complete garbage as well so you need to read a lot just to write one statement.&lt;/p>
+&lt;h3 id="how-to-print-to-console" >How to print to console?
+&lt;span>
+&lt;a href="#how-to-print-to-console">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Rust has these things called macros to allow for sporadic or dynamic parameters. Thus to print something use&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-rs" data-lang="rs">&lt;span style="display:flex;">&lt;span>println!(&lt;span style="color:#ed9d13">&amp;#34;this is a &amp;amp;str. What&amp;#39;s a &amp;amp;str...?&amp;#34;&lt;/span>)&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="compiling" >Compiling
+&lt;span>
+&lt;a href="#compiling">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>cargo run
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>If you see errors, use &lt;code>cargo run 2&amp;gt;cargo.log&lt;/code> so that you have an easier time reading the errors on subsequent builds.&lt;/p>
+&lt;p>For release builds, use &lt;code>--release&lt;/code>&lt;/p>
+&lt;h2 id="next-steps" >Next Steps
+&lt;span>
+&lt;a href="#next-steps">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>To learn Rust, start reading &lt;a href="https://doc.rust-lang.org/book/ch02-00-guessing-game-tutorial.html#setting-up-a-new-project">The Rust Programming Language Chapter 02&lt;/a>&lt;/p></description></item><item><title>Monero Onboarding for Windows Developers</title><link>https://blog.elijahlopez.ca/posts/monero-devs-windows/</link><pubDate>Sat, 03 Dec 2022 12:58:50 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/monero-devs-windows/</guid><description>&lt;p>This is a straightforward guide to start developing on the monero project (monero, monero-gui, etc.) on Windows without using a Linux [virtual] machine.
 Although I have a Linux machine, I am maximally productive on Windows as it is my primary OS.
 When copy pasting terminal commands, paste into notepad before pasting into your terminal because it&amp;rsquo;s a good habit to catch a clipboard jacking attack.&lt;/p>
 &lt;h2 id="prerequisites" >Prerequisites
@@ -180,7 +392,10 @@ I can still use my browser and other apps while building. You can run the follow
 &lt;/li>
 &lt;li>executable crashes
 &lt;ul>
-&lt;li>still figuring this out&lt;/li>
+&lt;li>
+&lt;p>still figuring this out&lt;/p>
+&lt;p>&lt;del>&lt;code>sh~~ ~~/usr/bin/strace build/release/bin/monero-wallet-gui.exe 2&amp;gt;&amp;amp;1 \~~ ~~| tee out.log \~~ ~~| grep -a -E '^--- Process .* loaded .*\.dll' \~~ ~~| cut -d' ' -f 5- \~~ ~~| sed 's/\.dll.*/.dll/' \~~ ~~| sort -u~~ ~~&lt;/code>&lt;/del>&lt;/p>
+&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;/ul>
