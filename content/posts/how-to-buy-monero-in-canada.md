@@ -41,10 +41,18 @@ Make sure to set the limit order one cent less than market with **post** selecte
 
 The etransfer deposit fee took the largest chunk! I'll have to test the other methods to compare.
 
+### TODO: USDT -> XMR
+
+Next time I buy Monero, I'll try this method.
+
 ### XLM -> USD -> XMR
 
-Depositing XLM only incurs network fees. Selling to USD has a 0.16% fee for a post limit order, and a post limit order on XMR is another 0.16%.
-That's 0.34% as a 2x maker and 0.52% as a 2x taker.
+Bought for C$0.119274 (1% margin), sold for US$0.089 (lucky), monero for $137.95.
+
+Buying XLM on Newton costed me a margin of 1%. I'm thoroughly disappointed with Newton. I'll try USDT methods.
+
+Transferring XLM to Kraken was free. Selling to USD has a 0.16% fee for a post limit order, and a post limit order on XMR is another 0.16%.
+So this method would result in fees of 1.32% for makers to 2.03% for takers.
 
 ### USD -> XMR
 
@@ -55,7 +63,7 @@ it's not practical as like I said before, you need to have USD beforehand withou
 ## Local Monero
 
 [Local Monero](https://localmonero.co/?rc=nde2) is less private than FixedFloat and more than exchanges but costs way more (20%+ via CAD, 4.4%+ via XLM),
-requires greater level of trust, and takes a longer time than exchanges ignoring the inital KYC time.
+requires greater level of trust, and takes a longer time than exchanges ignoring the initial KYC time.
 
 - [Local Monero TOR](http://nehdddktmhvqklsnkjqcbpmb63htee2iznpcbs5tgzctipxykpj6yrid.onion/?rc=nde2)
 - [Local Monero I2P](http://lm.i2p/?rc=nde2)
