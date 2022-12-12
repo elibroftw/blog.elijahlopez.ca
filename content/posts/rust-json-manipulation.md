@@ -54,6 +54,12 @@ fn index() -> Option<Value> {
     );
     response
 }
+
+#[launch]
+fn rocket() -> _ {
+    rocket::build()
+        .mount("/", routes![index])
+}
 ```
 
 ## Defined Struct and Json
@@ -102,6 +108,12 @@ fn post_index(mut names: Json<Names<'_>>) -> Json<Names<'_>> {
         }
     );
     names
+}
+
+#[launch]
+fn rocket() -> _ {
+    rocket::build()
+        .mount("/", routes![new_index, post_index])
 }
 ```
 
