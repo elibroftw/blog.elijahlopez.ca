@@ -543,8 +543,7 @@ log-level=0
 &lt;/span>
 &lt;/h2>&lt;p>Each account index actually corresponds to the view wallet history on each server. If those wallets ever get replaced, the servers need to be assigned new account numbers. You can avoid this pitfall by adding a database check to see if the address was in use, but I didn&amp;rsquo;t do that for performance reasons. It&amp;rsquo;s better to have a table in your database for
 determining which account index was last assigned t a server, and then use a script that increase this number whenever a view-wallet needs to be transferred onto a server. This way, you avoid having to remember the pitfall.&lt;/p>
-&lt;p>monero-wallet-rpc would need to be manually updated, but
-since it the scanning largely depends on the actualy daemon, which I have an update script for, this issue is not that bad.&lt;/p>
+&lt;p>&lt;code>monero-wallet-rpc&lt;/code> would need to be manually updated, but since the scanning largely depends on the daemon, which I have an update script for, this issue is not as severe.&lt;/p>
 &lt;p>When I get back to prioritizing the ecommerce store, I will a) add more items to sell b) automation.&lt;/p>
 &lt;h2 id="micro-service-approach" >Micro-Service Approach
 &lt;span>
@@ -577,8 +576,8 @@ since it the scanning largely depends on the actualy daemon, which I have an upd
 &lt;/a>
 &lt;/span>
 &lt;/h3>&lt;ul>
-&lt;li>allows using the same architecture accross a multitude of apps&lt;/li>
-&lt;li>good for entreprise&lt;/li>
+&lt;li>allows using the same architecture across a multitude of apps&lt;/li>
+&lt;li>good for enterprise&lt;/li>
 &lt;li>decouples processing from application code&lt;/li>
 &lt;li>long-term perfection&lt;/li>
 &lt;/ul>
@@ -604,21 +603,34 @@ since it the scanning largely depends on the actualy daemon, which I have an upd
 the &lt;a href="https://github.com/comit-network/xmr-btc-swap/blob/master/docs/asb/README.md">docs&lt;/a>
 aren&amp;rsquo;t straight forward!&lt;/p>
 &lt;ol>
-&lt;li>Download &lt;a href="https://github.com/comit-network/xmr-btc-swap/releases/latest">ASB and Swap zips&lt;/a>&lt;/li>
-&lt;li>Extract to &lt;code>C:\Users\%USERNAME%\Documents\Monero&lt;/code> or &lt;code>~/Documents/Monero&lt;/code>&lt;/li>
-&lt;li>Run the monero-rpc-wallet (pre-req: add monero install location to PATH)
+&lt;li>
+&lt;p>Download &lt;a href="https://github.com/comit-network/xmr-btc-swap/releases/latest">ASB and Swap zips&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Extract to &lt;code>C:\Users\%USERNAME%\Documents\Monero&lt;/code> or &lt;code>~/Documents/Monero&lt;/code>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Run the monero-rpc-wallet (pre-req: add monero install location to PATH)&lt;/p>
 &lt;ul>
 &lt;li>&lt;a href="https://monero.fail/?nettype=stagenet">Find stagenet node&lt;/a>&lt;/li>
 &lt;li>Use port 28088 if mainnet/production&lt;/li>
 &lt;li>Security risk: rpc-login is disabled&lt;/li>
 &lt;li>wallet-dir: directory of an existing wallet (match to stagenet or mainnet)&lt;/li>
 &lt;/ul>
-&lt;pre tabindex="0">&lt;code>C:\Users\maste\Documents\Monero&amp;gt;monero-wallet-rpc --stagenet --daemon-host http://stagenet.melo.tools:38081 --rpc-bind-port 38083 --disable-rpc-login --wallet-dir wallets/stagenet_one
-&lt;/code>&lt;/pre>&lt;/li>
-&lt;li>Make sure this guide is readable with your terminal open&lt;/li>
-&lt;li>Run &lt;code>asb --testnet start&lt;/code> in a new terminal window and press enter for everything. Do not use Ctrl or Alt.&lt;/li>
-&lt;li>A wallet will be created in 10 seconds&lt;/li>
-&lt;li>If you close the ASB and want to start it again, restart the RPC to avoid a &amp;ldquo;wallet already exists error&amp;rdquo; from the ASB&lt;/li>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>C:&lt;span style="color:#ed9d13">\U&lt;/span>sers&lt;span style="color:#ed9d13">\m&lt;/span>aste&lt;span style="color:#ed9d13">\D&lt;/span>ocuments&lt;span style="color:#ed9d13">\M&lt;/span>onero&amp;gt;monero-wallet-rpc --stagenet --daemon-host http://stagenet.melo.tools:38081 --rpc-bind-port &lt;span style="color:#3677a9">38083&lt;/span> --disable-rpc-login --wallet-dir wallets/stagenet_one
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Make sure this guide is readable with your terminal open&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Run &lt;code>asb --testnet start&lt;/code> in a new terminal window and press enter for everything. Do not use Ctrl or Alt.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>A wallet will be created in 10 seconds&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>If you close the ASB and want to start it again, restart the RPC to avoid a &amp;ldquo;wallet already exists error&amp;rdquo; from the ASB&lt;/p>
+&lt;/li>
 &lt;/ol></description></item><item><title>Monero vs "Privacy Coins"</title><link>https://blog.elijahlopez.ca/posts/monero-vs-privacy-coins/</link><pubDate>Sat, 26 Feb 2022 12:48:07 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/monero-vs-privacy-coins/</guid><description>&lt;div>
 &lt;h2>Table of Contents&lt;/h2>
 &lt;nav id="TableOfContents">
@@ -654,7 +666,7 @@ aren&amp;rsquo;t straight forward!&lt;/p>
 &lt;/a>
 &lt;/span>
 &lt;/h2>&lt;p>Unlike my last article about why Monero is the best crypto as a currency because of its privacy vs. layer 2 solutions, this article is a deep dive on why I continue to choose Monero and not its privacy-related competitors.&lt;/p>
-&lt;p>There is a cultural noticable difference in culture and attitude amongst Monero and other coins. In r/monero, there is always a discussion going on.
+&lt;p>There is a cultural noticeable difference in culture and attitude amongst Monero and other coins. In r/monero, there is always a discussion going on.
 In these other privacy coin subreddits however, there is so many posts about price and going to the moon.&lt;/p>
 &lt;p>I value quality, so if I make any argumentative mistakes in the article, I will correct them if I am notified.
 I have multiple reasons, so if one or two are technically incorrect, my argument will hold.&lt;/p>
@@ -1215,15 +1227,15 @@ It does not support smart contracts, but there is another crypto in the works th
 &lt;/h3>&lt;ul>
 &lt;li>balance cannot be calculated out without consent&lt;/li>
 &lt;li>transaction amounts, parties, and times cannot be figured by outside parties&lt;/li>
-&lt;li>each piece or whole is indiffertential from another (fungible)
+&lt;li>each atomic unit of Monero is indifferent from another (fungible)
 &lt;ul>
 &lt;li>where cash suffers is that cash that has any trace of cocaine can be confiscated under civil forfeiture&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;li>cannot be stolen unless encryption is broken
 &lt;ul>
-&lt;li>you should always store your Monero seed in a KeePassX database on two seperate devices&lt;/li>
-&lt;li>if you are worried about transfering your money upon, there are ways other than a will to send a password to a person&lt;/li>
+&lt;li>you should always store your Monero seed in a KeePassX database on two separate devices&lt;/li>
+&lt;li>if you are worried about transferring your money upon, there are ways other than a will to send a password to a person&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;li>digitally accessible
@@ -1414,7 +1426,7 @@ ETH that has gone through Tornado Cash.&lt;/p>
 &lt;/a>
 &lt;/span>
 &lt;/h2>&lt;p>Coins that all into this category include, LTC, GRIN, BEAM.&lt;/p>
-&lt;p>From &lt;a href="https://medium.com/dragonfly-research/breaking-mimblewimble-privacy-model-84bcd67bfe52">&amp;ldquo;Breaking Mimblewimble’s Privacy Model&amp;rdquo;&lt;/a>, we see that there is a serious flaw in Mimblewimble that isn&amp;rsquo;t emphasized enough and its consequences aren&amp;rsquo;t communicated clearly. I highly suggest reading it, but I will simplify it. MimblewWimble works by aggregating multiple individual transactions into on big transaction / CoinJoin on the blockchain. However, since the CoinJoin has to be built one transaction at a time, a sniffer/malicious node that is connected to all other nodes in the network, can simply pick up transactions before the aggergation is finished and unwind the final coinjoin to see the sender and receiver (amounts are safe, but privacy is both identity and amount, not just amount). Privacy isn&amp;rsquo;t real if its simply gatekept; Privcay is real when the technology is unable to be used against itself.&lt;/p>
+&lt;p>From &lt;a href="https://medium.com/dragonfly-research/breaking-mimblewimble-privacy-model-84bcd67bfe52">&amp;ldquo;Breaking Mimblewimble’s Privacy Model&amp;rdquo;&lt;/a>, we see that there is a serious flaw in Mimblewimble that isn&amp;rsquo;t emphasized enough and its consequences aren&amp;rsquo;t communicated clearly. I highly suggest reading it, but I will simplify it. MimblewWimble works by aggregating multiple individual transactions into on big transaction / CoinJoin on the blockchain. However, since the CoinJoin has to be built one transaction at a time, a sniffer/malicious node that is connected to all other nodes in the network, can simply pick up transactions before the aggregation is finished and unwind the final coinjoin to see the sender and receiver (amounts are safe, but privacy is both identity and amount, not just amount). Privacy isn&amp;rsquo;t real if there&amp;rsquo;s a gate to access it; Privacy is real when the technology is unable to be used against itself.&lt;/p>
 &lt;h2 id="consensus-algorithm" >Consensus Algorithm
 &lt;span>
 &lt;a href="#consensus-algorithm">

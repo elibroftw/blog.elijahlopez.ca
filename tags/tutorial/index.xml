@@ -993,8 +993,7 @@ log-level=0
 &lt;/span>
 &lt;/h2>&lt;p>Each account index actually corresponds to the view wallet history on each server. If those wallets ever get replaced, the servers need to be assigned new account numbers. You can avoid this pitfall by adding a database check to see if the address was in use, but I didn&amp;rsquo;t do that for performance reasons. It&amp;rsquo;s better to have a table in your database for
 determining which account index was last assigned t a server, and then use a script that increase this number whenever a view-wallet needs to be transferred onto a server. This way, you avoid having to remember the pitfall.&lt;/p>
-&lt;p>monero-wallet-rpc would need to be manually updated, but
-since it the scanning largely depends on the actualy daemon, which I have an update script for, this issue is not that bad.&lt;/p>
+&lt;p>&lt;code>monero-wallet-rpc&lt;/code> would need to be manually updated, but since the scanning largely depends on the daemon, which I have an update script for, this issue is not as severe.&lt;/p>
 &lt;p>When I get back to prioritizing the ecommerce store, I will a) add more items to sell b) automation.&lt;/p>
 &lt;h2 id="micro-service-approach" >Micro-Service Approach
 &lt;span>
@@ -1027,8 +1026,8 @@ since it the scanning largely depends on the actualy daemon, which I have an upd
 &lt;/a>
 &lt;/span>
 &lt;/h3>&lt;ul>
-&lt;li>allows using the same architecture accross a multitude of apps&lt;/li>
-&lt;li>good for entreprise&lt;/li>
+&lt;li>allows using the same architecture across a multitude of apps&lt;/li>
+&lt;li>good for enterprise&lt;/li>
 &lt;li>decouples processing from application code&lt;/li>
 &lt;li>long-term perfection&lt;/li>
 &lt;/ul>
@@ -1184,7 +1183,7 @@ you make a stagenet wallet if you have already used a mainnet wallet.&lt;/p>
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
-&lt;/h2>&lt;p>Now you can open the stagenet wallet from your GUI&lt;/p></description></item><item><title>Bash &amp; Linux Helpers</title><link>https://blog.elijahlopez.ca/posts/bash-helpers/</link><pubDate>Mon, 14 Feb 2022 14:06:30 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/bash-helpers/</guid><description>&lt;p>It seems that many article tutorials on &lt;code>bash&lt;/code> are ugly, are unoptimal, and are no straight forward.
+&lt;/h2>&lt;p>Now you can open the stagenet wallet from your GUI&lt;/p></description></item><item><title>Bash &amp; Linux Helpers</title><link>https://blog.elijahlopez.ca/posts/bash-helpers/</link><pubDate>Mon, 14 Feb 2022 14:06:30 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/bash-helpers/</guid><description>&lt;p>It seems that many article tutorials on &lt;code>bash&lt;/code> are ugly, are suboptimal, and are no straight forward.
 My goal is for this file to be a reference file whenever I need to do scripting after a long time.
 One important concept in bash, is that an exit code of 0 indicates True, not False. Which seems counterintuitive if you program in
 any non-scripting language like C/C++ or Python.&lt;/p>
@@ -1664,7 +1663,7 @@ The video has an example of opening a project in VSCode that was made in Visual 
 &lt;/div></description></item><item><title>Creating a Blog With GitHub Pages and Hugo</title><link>https://blog.elijahlopez.ca/posts/hugo-tutorial/</link><pubDate>Fri, 17 Dec 2021 22:18:47 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/hugo-tutorial/</guid><description>&lt;p>I created this blog using Hugo and host it on GitHub Pages. In this tutorial, I&amp;rsquo;ll teach you to do the same.
 The resources I had used to create a working blog left out some important details that I will include in my tutorial.
 I&amp;rsquo;ve also done the brunt of the work to perfect the theme and workflow.
-If you are like me, you can follow the tutorial that &lt;a href="#forking-my-site">forks my site&lt;/a> rather than making a blog site &lt;a href="#from-scratch">from scratch&lt;/a>.&lt;/p>
+If you are like me, you can follow the tutorial that &lt;a href="#forking-my-blog">forks my site&lt;/a> rather than making a blog site &lt;a href="#from-scratch">from scratch&lt;/a>.&lt;/p>
 &lt;h2 id="prerequisites" >Prerequisites
 &lt;span>
 &lt;a href="#prerequisites">
@@ -1776,8 +1775,7 @@ Here is a quick proof of concept using &lt;code>ThreadPoolExecutor&lt;/code>.&lt
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
-&lt;/h2>&lt;p>We&amp;rsquo;re going to be using the Firefox Add-ons API to upload your add-on so you will need some API keys. You can get your API keys from &lt;a href="https://addons.mozilla.org/developers/addon/api/key/">here&lt;/a>. 
-Place the pair of API keys into a .env file like so:&lt;/p>
+&lt;/h2>&lt;p>We&amp;rsquo;re going to be using the Firefox Add-ons API to upload your add-on so you will need some API keys. You can get your API keys from &lt;a href="https://addons.mozilla.org/developers/addon/api/key/">here&lt;/a>. Enter the pair of API keys into a &lt;code>.env&lt;/code> file like so:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>jwt-issuer=string
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>jwt-secret=string
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="third-party-libraries" >Third Party Libraries
