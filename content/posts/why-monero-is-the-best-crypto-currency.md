@@ -42,11 +42,11 @@ It does not support smart contracts, but there is another crypto in the works th
 
 - balance cannot be calculated out without consent
 - transaction amounts, parties, and times cannot be figured by outside parties
-- each piece or whole is indiffertential from another (fungible)
+- each atomic unit of Monero is indifferent from another (fungible)
   - where cash suffers is that cash that has any trace of cocaine can be confiscated under civil forfeiture
 - cannot be stolen unless encryption is broken
-  - you should always store your Monero seed in a KeePassX database on two seperate devices
-  - if you are worried about transfering your money upon, there are ways other than a will to send a password to a person
+  - you should always store your Monero seed in a KeePassX database on two separate devices
+  - if you are worried about transferring your money upon, there are ways other than a will to send a password to a person
 - digitally accessible
   - it is as easy to send large amounts of XMR as it is small amounts
 - flat transaction fees
@@ -196,7 +196,7 @@ Ethereum has one thing over Monero which is smart contracts but just because the
 
 Coins that all into this category include, LTC, GRIN, BEAM.
 
-From ["Breaking Mimblewimble’s Privacy Model"](https://medium.com/dragonfly-research/breaking-mimblewimble-privacy-model-84bcd67bfe52), we see that there is a serious flaw in Mimblewimble that isn't emphasized enough and its consequences aren't communicated clearly. I highly suggest reading it, but I will simplify it. MimblewWimble works by aggregating multiple individual transactions into on big transaction / CoinJoin on the blockchain. However, since the CoinJoin has to be built one transaction at a time, a sniffer/malicious node that is connected to all other nodes in the network, can simply pick up transactions before the aggergation is finished and unwind the final coinjoin to see the sender and receiver (amounts are safe, but privacy is both identity and amount, not just amount). Privacy isn't real if its simply gatekept; Privcay is real when the technology is unable to be used against itself.
+From ["Breaking Mimblewimble’s Privacy Model"](https://medium.com/dragonfly-research/breaking-mimblewimble-privacy-model-84bcd67bfe52), we see that there is a serious flaw in Mimblewimble that isn't emphasized enough and its consequences aren't communicated clearly. I highly suggest reading it, but I will simplify it. MimblewWimble works by aggregating multiple individual transactions into on big transaction / CoinJoin on the blockchain. However, since the CoinJoin has to be built one transaction at a time, a sniffer/malicious node that is connected to all other nodes in the network, can simply pick up transactions before the aggregation is finished and unwind the final coinjoin to see the sender and receiver (amounts are safe, but privacy is both identity and amount, not just amount). Privacy isn't real if there's a gate to access it; Privacy is real when the technology is unable to be used against itself.
 
 ## Consensus Algorithm
 

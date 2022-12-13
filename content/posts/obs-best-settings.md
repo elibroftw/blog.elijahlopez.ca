@@ -1,7 +1,7 @@
 ---
 title: "OBS Best Settings and Trouble Shooting"
 date: 2022-02-19T13:53:14-05:00
-draft: false
+draft: true
 ---
 
 ## OBS Windows Washed Out Colors Fix

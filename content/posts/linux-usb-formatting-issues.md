@@ -14,7 +14,7 @@ simply do not care about users who soft brick their USBs. Rufus and Balena
 developers simply say that their software cannot hard brick the USB,
 which is a good thing but they provide 0 support in fixing the issue.
 
-I am here to share my findings since solutios found online are in parts.
+I am here to share my findings since solutions found online are in parts.
 
 Operating System: Windows
 
@@ -23,7 +23,7 @@ How do you fix the error and other errors like:
 - the volume was created successfully but not formatted
 - Please Insert Disk Into Removable Disk
 
-Like my other Linux tutorial on how to move a parititon in Windows, a parition tool is very useful.
+Like my other Linux tutorial on how to move a partition in Windows, a partition tool is very useful.
 The [MiniTool Parition Wizard](https://www.partitionwizard.com/free-partition-manager.html) was very handy.
 Open this tool up, right click the USB or drive you want to fix, and click wipe drive and fill the drive with 0s.
 This should take 10 minutes.

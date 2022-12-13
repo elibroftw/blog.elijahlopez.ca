@@ -8,18 +8,18 @@ tags: [
 ---
 
 This article is from a developer point of view, not a user point of view.
-The audience of this article are beginner to intermediate developers and is introductory, not argumenatiative.
+The audience of this article are beginner to intermediate developers and is introductory, not argumentative.
 Do not expect to be convinced if you are pro 32-bit software because Windows decided to support 32-bit software.
 From a user point of view, 64-bit computers and software is better because then you can have 100 browser tabs open
 
 ### 1. No 4GiB Memory Limit
 
 If your application needs more than 4GiB memory, then you definitely need a 32-bit application.
-And if you don't need more than 4GiB of memory, you might not want to develop 32-bit development habits because if you do need 4GB in the future, its better for your habits to already work out, that it is to keep in the back of your mind that you need to switch to targetting 64-bit.
+And if you don't need more than 4GiB of memory, you might not want to develop 32-bit development habits because if you do need 4GB in the future, its better for your habits to already work out, that it is to keep in the back of your mind that you need to switch to targeting 64-bit.
 
 ### 2. 64-bit Users get 64-bit Applications
 
-By shipping only 64-bit distrubtions, and only one legacy 32-bit application, most users won't be recommended the wrong architecture.
+By shipping only 64-bit distributions, and only one legacy 32-bit application, most users won't be recommended the wrong architecture.
 For example, VLC recommended their 32-bit distribution on my 64-bit computer! Some of my video files are around 20GB so of course 64-bit would be best.
 
 ### 3. Linux: Seamless Installation for Users
@@ -30,7 +30,7 @@ Most systems are 64-bit and 32-bit users can continue using legacy software with
 ### 4. 64-bit is the Default
 
 In Visual Studio 2022, the default target architecture is 64-bit. It used to be 32-bit.
-Most users run 64-bit systems, so the default compiler or intrepetor you install, like Python, will also be 64-bit in 2021.
+Most users run 64-bit systems, so the default compiler or interpreter you install, like Python, will also be 64-bit in 2021.
 
 ### 5. Future Proof & 32-bit Compilers
 
@@ -39,7 +39,7 @@ Most users run 64-bit systems, so the default compiler or intrepetor you install
 My personal grife is a Python project. Over two years ago, I made a music player for Windows, [Music Caster](https://github.com/elibroftw/music-caster/). The relevant details are Python 3.7 64-bit, PyInstaller, and a fork of portaudio that only compiled for 64-bit.
 After some time, a user asked me to support 32-bit. Me being naive at the time agreed because I fell prey to the 32-bit supports more users reasoning.
 
-To support 32-bit applications, I had to uninsatll my existing instllation and then install the 32-bit version of Python. I went with Python 3.8 since Python 3.9 hadn't come out yet. I wish it was that simple, but there's more. I had to figure out how to compile the 32-bit version of the portaudio library. Then another year later, I've decided to future proof my application, so the journey back from 32-bit Python was just as hard.
+To support 32-bit applications, I had to uninstall my existing installation and then install the 32-bit version of Python. I went with Python 3.8 since Python 3.9 hadn't come out yet. I wish it was that simple, but there's more. I had to figure out how to compile the 32-bit version of the portaudio library. Then another year later, I've decided to future proof my application, so the journey back from 32-bit Python was just as hard.
 
 Lesson of the day is to never use a 3.X.0 Python distribution or learn Rust while you are using Python.
 

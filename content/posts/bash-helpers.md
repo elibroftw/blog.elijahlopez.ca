@@ -10,7 +10,7 @@ tags: [
 ]
 ---
 
-It seems that many article tutorials on `bash` are ugly, are unoptimal, and are no straight forward.
+It seems that many article tutorials on `bash` are ugly, are suboptimal, and are no straight forward.
 My goal is for this file to be a reference file whenever I need to do scripting after a long time.
 One important concept in bash, is that an exit code of 0 indicates True, not False. Which seems counterintuitive if you program in
 any non-scripting language like C/C++ or Python.

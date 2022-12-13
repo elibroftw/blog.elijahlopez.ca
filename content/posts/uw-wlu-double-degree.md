@@ -46,7 +46,7 @@ WLU has higher scholarship values than UW. The amount changes each year. For exa
 
 ### Preparing for University?
 
-I did not prepare at all. I spent my time lifeguarding as well as working on my [music player, Music Caster](https://github.com/elibroftw/music-caster).
+I did not prepare at all. I spent my time life-guarding as well as working on my [music player, Music Caster](https://github.com/elibroftw/music-caster).
 I will share some advice.
 
 - The first two weeks do not represent the semester at all
@@ -55,7 +55,7 @@ I will share some advice.
   - WLU-based students should pay more attention to this course, as I noticed more of them struggle with the math courses than their UW counterparts
     - This does not mean imply UW students are smarter than WLU students
 - Be ready to wake up before 8 AM for the 9:30 AM classes
-  - Take into account transporation time
+  - Take into account transportation time
 - For BU 111, install the [Python Programming Language](https://python.org/download)
   - It's superior to the native calculator application [operators: +, -, /, // (integer divide), * (multiply)]
   - Take a look at [Number Crunching Automation](https://github.com/elibroftw/number-crunching-automation) for some useful functions
@@ -67,7 +67,7 @@ I will share some advice.
   - Pick up residence keys/pass
   - Pick up orientation kit
   - If you took a picture of yourself for the Onecard, pick that up here too
-    - If you forget, you can go to that Starbucks area with the seats and you'll see a photobooth that'll have your card
+    - If you forget, you can go to that Starbucks area with the seats and you'll see a photo-booth that'll have your card
 
 ### UW Advanced Courses
 
