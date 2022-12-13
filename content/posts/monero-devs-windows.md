@@ -7,7 +7,8 @@ tags: [
     "cryptocurrency",
     "programming",
     "tutorial",
-    "vscode",
+    "vscode",,
+    "c++"
 ]
 aliases: ['/posts/monero-dev-windows/']
 ---
