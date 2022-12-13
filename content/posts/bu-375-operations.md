@@ -9,19 +9,19 @@ tags: [
 
 <!-- markdownlint-disable MD033 -->
 
-This document are my notes and midterm review for the BU 375 Operations course taught at Wilfrid Laurier University. While studying for the midterm, I discovered my own formulae shortcuts, undoubtly due to "blind teaching syndrome" (I made that term up).
+This document are my notes and midterm review for the BU 375 Operations course taught at Wilfrid Laurier University. While studying for the midterm, I discovered my own formulae shortcuts, undoubtedly due to "blind teaching syndrome" (I made that term up).
 So let's begin. I'll add a divider to let you know what is part of the midterm.
 
 {{< toc >}}
 
 ## Appendix
 
-It's better to have the appendix at the top rather than the bottom, as people know where to find the nitty gritties.
+It's better to have the appendix at the top rather than the bottom, so that people know where to get the values for some examples.
 
 ### Control Factors
 
 Out with the ugly table, and in with the new!
-It's absurd that at $500+ per course and hundreds of students, universities do not collaborate with eachother to make course curriculum/content, do not strive for perfect function (notes) and rarely place importance on aesthetics.
+It's absurd that at $500+ per course and hundreds of students, universities do not collaborate with each other to make course curriculum/content, do not strive for perfect function (notes) and rarely place importance on aesthetics.
 
 <!-- <sub>2</sub> produces x2
 x<sup>2</sup> p -->
@@ -76,7 +76,7 @@ x<sup>2</sup> p -->
 
 #### Primary Areas
 
-- Operatios
+- Operations
 - Marketing
   - research, packaging
 - Finance and Accounting
@@ -103,7 +103,7 @@ x<sup>2</sup> p -->
 
 - Thinking big
 - Foreign markets, production, purchasing, partnerships
-- Iterests: cost, international, reliability
+- Interests: cost, international, reliability
 
 ### Missing Statement
 
@@ -133,7 +133,7 @@ Differentiating criteria (aesthetic)
 
 ### Strategy
 
-- direction for acheiving a ission
+- direction for achieving a mission
 - consistency
 - dependent on organization size
   - formal (larger)
@@ -142,15 +142,15 @@ Differentiating criteria (aesthetic)
 #### Formulation
 
 - Primary task
-- Core competenciese (competitive advantage)
-- Order qualifiers & winneres
+- Core competencies (competitive advantage)
+- Order qualifiers & winners
 - Positioning (how to compete)
 - Deployment
 
-### Positioning / Competitivness
+### Positioning / Competitiveness
 
 - common goals
-- collabortation
+- collaboration
 - expertise
 - learning from past experiences
 - cost
@@ -158,7 +158,7 @@ Differentiating criteria (aesthetic)
   - trades off with quality sometimes
 - quality (reducing defects)
 - flexibility
-  - ability to change internal processes to accomodate needs
+  - ability to change internal processes to accommodate needs
   - trades off with speed
 - speed / delivery
   - based on context
@@ -177,10 +177,10 @@ Fitness for use, design. (PDCA) plan, act check, do.
 
 ### Products
 
-performance, features, relaibility, conformance (to the design), durability, serviceablility, aesthetics, safety,
+performance, features, reliability, conformance (to the design), durability, serviceability, aesthetics, safety,
 perceptions
 
-### Serivces
+### Services
 
 Time, completeness, courtesy, consistency, accessibility, accuracy, responsiveness, HARDER TO EVALUATE
 
@@ -201,7 +201,7 @@ Time, completeness, courtesy, consistency, accessibility, accuracy, responsivene
 
 ### Six Sigma
 
-- Decreas process variation
+- Decrease process variation
 
 ### Tools
 
@@ -244,7 +244,7 @@ where Specific Input could be Labor, Materials, Capital.
 
 <img class=equation-tall src="https://latex.codecogs.com/svg.image?\frac{Output}{All\,\,Inputs}">
 
-To calculate multifactor productivity, use a subset of inputs.
+To calculate multi-factor productivity, use a subset of inputs.
 
 ### Yield
 
@@ -273,7 +273,7 @@ Even for this one, I have my own method, but I'll include the original in case s
 ## Statistical Analysis
 
 - A type I Alpha error is an error that wasn't supposed to fall outside the control limits. False-positive.
-- A type II Beta error is an error that should've falled outside the control limits.
+- A type II Beta error is an error that should've fallen outside the control limits.
 - Variations are either random or assignable.
 - `n` refers to sample size or number of observations, and `k` refers to the number of samples.
 - `z` refers to the sigma count; either 2 or 3
@@ -309,7 +309,7 @@ A chart used for checking if process variability is in control.
 
 <!-- Ctrl + F sigma -->
 
-In the case σ is unknown, use the control factors table along with thse formulas:
+In the case σ is unknown, use the control factors table along with these formulas:
 
 <img class=equation src="https://latex.codecogs.com/svg.image?UCL=\bar{\bar x}+A_2\bar R, LCL=\bar{\bar x}-A_2\bar R">
 
@@ -329,7 +329,7 @@ To improve reliability,
 - increase backup components
 - increase individual component reliability
 
-To calculate the relaibility of a process, use these two functions.
+To calculate the reliability of a process, use these two functions.
 
 #### Series
 
@@ -387,7 +387,7 @@ End of Midterm Review
 - Chain of organizations and facilities, with varying activities
 - Multi-tiered
 - Activities
-  - forecasting, purchasing, product/proces design, manufacturing, quality assurance, inventory management, distribution
+  - forecasting, purchasing, product/process design, manufacturing, quality assurance, inventory management, distribution
 
 ### Supply Chain Process
 
@@ -404,7 +404,7 @@ End of Midterm Review
 ### Supply Chain Management (SCM)
 
 - Create maximum value for the end customer
-- perfecting coordination and collabortaion of components
+- perfecting coordination and collaboration of components
 - To provide enough supply at the right price, time, and place
 - Systemic approach to manage entire flow of information, materials, and services from raw-materials to customers
 - Competition becomes between supply chains rather than companies
@@ -413,7 +413,7 @@ End of Midterm Review
 
 - Supply chain members farther down the line get information after the members
 nearer to customers.
-- importance of transparency accrorss members
+- importance of transparency across members
 - Safety stock issues
 - Lack of accurate demand information
 - Order batching results in less orders but larger quantities
@@ -445,7 +445,7 @@ whether to anticipate more orders if batch ordering occurs.
 - Coordinated workflow, production, and operations, procurement
 - Adopt new business models and tech
 - Collaborative Planning, Forecasting, Replenishment (CPFR)
-- Entreprise Resource Planning (ERP)
+- Enterprise Resource Planning (ERP)
 
 ### Information Technology
 
@@ -469,7 +469,7 @@ Average aggregate inventory value is the sum of average inventory times value fo
 
 Fill Rate = fraction of orders filled within a specific time period.
 
-- low inventory turnover indicatest that a large amount of inventory is required to satisfy demand
+- low inventory turnover indicates that a large amount of inventory is required to satisfy demand
 
 ### SCOR Model
 
@@ -515,8 +515,8 @@ budget, schedule, resources.
 ### Work Breakdown Structure
 
 1. Identify **major components** of the project
-2. Break down the major components into **subcomponents**
-3. Break down subcomponents into **work packages**
+2. Break down the major components into **sub-components**
+3. Break down sub-components into **work packages**
 
 ### Responsibility Assignment Matrix (RAM)
 
@@ -529,11 +529,11 @@ used to develop RAM
 
 ### CPM & PERT
 
-- Critcal Path Method (CPM) has deterministic task times
+- Critical Path Method (CPM) has deterministic task times
 - Program Evaluation and Review Technique (PERT) has probabilistic task times
 - network path: starting node to finishing node sequence
 - critical path: longest network path; determines project duration
-- critical activities: activites on the critical path
+- critical activities: activities on the critical path
 - slack time: allowable slippage for a path
 
 To calculate expected time of a single activity, use
@@ -585,7 +585,7 @@ design.
   - scheduling
 - Finance
   - plant/equipment investment
-  - budgetery planning
+  - budgetary planning
 - Marketing
   - new product introduction
   - sales-force allocation
@@ -607,7 +607,7 @@ design.
 
 - Time-Series methods
   - use historical data to project into the future
-  - naive method, moving average, weighted moving average, exeponential smoothing
+  - naive method, moving average, weighted moving average, exponential smoothing
 - Associative models
   - independent casual variables
 

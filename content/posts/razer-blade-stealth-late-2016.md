@@ -23,7 +23,7 @@ I purchased the Razer Blade Stealth 12.5" in April/May 2017 for CAD$1,500 includ
 It came with $150 of razerstore credits which I spent on a Kraken V2 Headset since my desktop lack a microphone and headphones.
 
 This review takes place in July 2022, so the laptop has lasted more than 5 years. I'm upgrading
-to the Razer Blade 14 which has more desktop related specs along with alledgedly better battery life.
+to the Razer Blade 14 which has more desktop related specs along with allegedly better battery life.
 
 ### Specs
 
@@ -31,12 +31,12 @@ The specs is predominantly why this laptop is not suited for productivity and ma
 
 - CPU: i5-7200u (dual core)
 - GPU: integrated graphics
-- Stoarge: 128 GB
+- Storage: 128 GB
 - RAM: 8GB
 - Battery: ???
 - Left side ports: USB C charging, USB 3, audio jack
 - Right side ports: HDMI, USB 3
-- Chasis: aluminmum
+- Chassis: aluminum
 - Color: black
 - Keyboard: RGB lightning but does not light up symbols on the functions keys.
 
@@ -54,7 +54,7 @@ It's lasted 5 years even with low storage and required only $100 for a battery r
 to stressing the laptop for hours per day without a CPU limit. Currently, I have the CPU
 limited to 90% to prevent high temperatures. The CPU itself is not a pentium so that's another
 plus, although it is a mobile i5. Build quality is amazing. The laptop has no plastic and
-the trackpad is not trash. The only knicks present are on the sharp
+the trackpad is not trash. The only nicks present are on the sharp
 edges of the laptop lid, most likely due to letting other people touch or move your laptop.
 Pro-tip: never let anyone touch your laptop. You'd think moving a laptop would be done
 carefully by everyone, but no.
@@ -138,15 +138,15 @@ Geekbench 5 results are 500 for single core and 590 for multi core.
 
 Without perfect lighting, you will not look the same as you do in person. If I want
 a laptop to last until 2032, it will need to have a 1080p webcam. This is not compromisable
-which is why I chose the Razer Blade 14 isntead of its Asus equivalanet. Your loss Asus.
+which is why I chose the Razer Blade 14 instead of its Asus equivalanet. Your loss Asus.
 It's 2022. Gaming laptops are at the level of Macbook Pro's, and that means although Intel
-suceeded at improving performance significantly, their 13th gen chips should focus entirely
+succeeded at improving performance significantly, their 13th gen chips should focus entirely
 on power efficiency.
 
 ### Storage
 
 128 GB storage is enough for non-developers and non-photo/video people. I wasn't as
-knowledeable at programming in 2017 as I am today, which is why that 128 GB got absolutely
+knowledgeable at programming in 2017 as I am today, which is why that 128 GB got absolutely
 eaten and requires cleaning up the computer every 2 months or so; If I didn't
 have to do this, I wouldn't have found out that VSCode does not clean up after
 itself and creates many folders that aren't required for it to function.
@@ -166,4 +166,4 @@ Snap and flatpak take up so much storage, poor OneDrive integration. Therefore,
 my plan is to install Manjaro + KDE, improve the keyboard shortcuts, and if I don't like it, I
 will install the CuteFish desktop environment. Linux is the future, but I want to make that
 future 10 years, and not never. The best way for Linux to succeed, is to make transitioning from
-Windows as seamleses as possible, and that meaens I will need to create a OneDrive client in 2023 or 2024.
+Windows as seamless as possible, and that means I will need to create a OneDrive client in 2023 or 2024.

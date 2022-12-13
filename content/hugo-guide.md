@@ -12,7 +12,7 @@ tags: [
 hidden: true
 ---
 
-DISCLAIMER: If you aren't from my hugo tutorial, please read my [Hugo tutorial/posts/hugo-tutorial/#prerequisites)
+DISCLAIMER: If you aren't from my hugo tutorial, please read my [Hugo tutorial](/posts/hugo-tutorial/#prerequisites)
 
 <!-- table of contents -->
 
@@ -45,6 +45,7 @@ cd blog
 6. To deploy your edits, if you have my pre-commit hook enabled, run `git add . && git commit -m "Created/Edited POST" && git push`
     - I suggest using a GUI like VS Code or GitHub Desktop as there is less typing involved
 7. TECHNICAL: The pre-commit hook updates the theme and builds your posts before committing
+
     ```bash
     git submodule update --remote --merge
     hugo -d docs

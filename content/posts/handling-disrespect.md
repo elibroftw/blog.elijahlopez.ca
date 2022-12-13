@@ -5,14 +5,14 @@ draft: false
 hidden: true
 ---
 
-One of the worst, awkward, or embarassing things is when someone disrespects you.
+One of the worst, awkward, or embarrassing things is when someone disrespects you.
 You know it is wrong of them to do it, so what should you do?
 
 ## Behind Your Back
 
-A person has disrespected you behind your back. This scenario is not as bad as it may seem. If someone spreads a rumour about you, is it your fault if others believe it? No. Would you deserve backlash for it? No. Simply dispell the rumour to each person who confronts you and if they don't side with you, then there's no reason to tolerate them. Why tolerate those who aren't on the right side?
+A person has disrespected you behind your back. This scenario is not as bad as it may seem. If someone spreads a rumour about you, is it your fault if others believe it? No. Would you deserve backlash for it? No. Simply dispel the rumour to each person who confronts you and if they don't side with you, then there's no reason to tolerate them. Why tolerate those who aren't on the right side?
 
-If this situation occured with anyone you don't rely upon, do not tolerate them. Some disrespects are in the moment. For someone to disrespect you behind your back, they had to be thinking of it for a long time.
+If this situation occurred with anyone you don't rely upon, do not tolerate them. Some disrespects are in the moment. For someone to disrespect you behind your back, they had to be thinking of it for a long time.
 
 ## In Person
 
@@ -44,7 +44,7 @@ that being disrespectful by default is straight up incorrect. Let's assume they 
 At this point, the person has shown their arrogance. They are worthy of being disrespected back.
 It's possible they will learn their mistake with time, however life is not baseball. Two strikes is all it takes to be out.
 
-If this interaction occured online, there is no need to tolerate this individual.
+If this interaction occurred online, there is no need to tolerate this individual.
 
 Likewise, if they are a stranger or someone you don't have to deal with often, there's no point in continuing the conversation.
 They aren't worthy of your time.

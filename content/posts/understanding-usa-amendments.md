@@ -14,7 +14,7 @@ tags: [
 The language used in the Bill of Rights of the USA is 200+ years old. It is not clear that everyone in the present day would
 understand what some of the terms even means, and then we need to understand the background and the context as well.
 
-This is an attempty at doing that.
+This is my attempt at doing just that.
 
 ## Amendment I
 

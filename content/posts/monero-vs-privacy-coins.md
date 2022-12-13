@@ -14,7 +14,7 @@ tags: [
 
 Unlike my last article about why Monero is the best crypto as a currency because of its privacy vs. layer 2 solutions, this article is a deep dive on why I continue to choose Monero and not its privacy-related competitors.
 
-There is a cultural noticable difference in culture and attitude amongst Monero and other coins. In r/monero, there is always a discussion going on.
+There is a cultural noticeable difference in culture and attitude amongst Monero and other coins. In r/monero, there is always a discussion going on.
 In these other privacy coin subreddits however, there is so many posts about price and going to the moon.
 
 I value quality, so if I make any argumentative mistakes in the article, I will correct them if I am notified.

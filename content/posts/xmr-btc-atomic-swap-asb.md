@@ -20,9 +20,11 @@ aren't straight forward!
     - Use port 28088 if mainnet/production
     - Security risk: rpc-login is disabled
     - wallet-dir: directory of an existing wallet (match to stagenet or mainnet)
-    ```
+
+    ```sh
     C:\Users\maste\Documents\Monero>monero-wallet-rpc --stagenet --daemon-host http://stagenet.melo.tools:38081 --rpc-bind-port 38083 --disable-rpc-login --wallet-dir wallets/stagenet_one
     ```
+
 4. Make sure this guide is readable with your terminal open
 5. Run `asb --testnet start` in a new terminal window and press enter for everything. Do not use Ctrl or Alt.
 6. A wallet will be created in 10 seconds

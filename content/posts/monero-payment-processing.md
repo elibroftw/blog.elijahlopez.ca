@@ -267,8 +267,7 @@ monero_rpc_cmd.extend((os.environ['XMR_WALLET_PW'], '--daemon-address', MAINNET_
 Each account index actually corresponds to the view wallet history on each server. If those wallets ever get replaced, the servers need to be assigned new account numbers. You can avoid this pitfall by adding a database check to see if the address was in use, but I didn't do that for performance reasons. It's better to have a table in your database for
 determining which account index was last assigned t a server, and then use a script that increase this number whenever a view-wallet needs to be transferred onto a server. This way, you avoid having to remember the pitfall.
 
-monero-wallet-rpc would need to be manually updated, but
-since it the scanning largely depends on the actualy daemon, which I have an update script for, this issue is not that bad.
+`monero-wallet-rpc` would need to be manually updated, but since the scanning largely depends on the daemon, which I have an update script for, this issue is not as severe.
 
 When I get back to prioritizing the ecommerce store, I will a) add more items to sell b) automation.
 
@@ -291,8 +290,8 @@ A non-custodian processing service does not exist as far as I know, so I might c
 
 ### Pros
 
-- allows using the same architecture accross a multitude of apps
-- good for entreprise
+- allows using the same architecture across a multitude of apps
+- good for enterprise
 - decouples processing from application code
 - long-term perfection
 

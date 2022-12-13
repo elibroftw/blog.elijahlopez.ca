@@ -13,8 +13,7 @@ If you're like me, you always want to speed up aspects of your life especially r
 
 ## Prerequisites
 
-We're going to be using the Firefox Add-ons API to upload your add-on so you will need some API keys. You can get your API keys from [here](https://addons.mozilla.org/developers/addon/api/key/). 
-Place the pair of API keys into a .env file like so:
+We're going to be using the Firefox Add-ons API to upload your add-on so you will need some API keys. You can get your API keys from [here](https://addons.mozilla.org/developers/addon/api/key/). Enter the pair of API keys into a `.env` file like so:
 
 ```bash
 jwt-issuer=string

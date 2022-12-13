@@ -21,6 +21,6 @@ Leta start with the basics. If I had a mentee who I believe was smart, I'd want 
 
 - Learning Java but forced to use eclipse, not taught about maven nor grade.
 - learning python but data structures like dict and set are ignored and use cases are ignored
-- learning c++ and bash for scripting; pytgon was ignored, c++ only taught make, not CMake, not cross platform code, no dependency management, so I taught myself vcpkg a year later, and will learn about Conan later
+- learning c++ and bash for scripting; python was ignored, c++ only taught make, not CMake, not cross platform code, no dependency management, so I taught myself vcpkg a year later, and will learn about Conan later
 
 Haskell for functional programming
