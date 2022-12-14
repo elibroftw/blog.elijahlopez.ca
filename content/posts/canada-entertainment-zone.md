@@ -3,6 +3,9 @@ title: "New Brunswick Entertainment Zone"
 date: 2022-12-13T21:16:04-05:00
 draft: false
 hidden: true
+tags: [
+  "canada"
+]
 ---
 
 One of my visions is to develop an entertainment zone in one of cheapest areas of Canada which isn't covered in snow for a lot of time.
