@@ -18,12 +18,12 @@ Please refer to the table of contents to read sections that are interesting to y
 ## Housing Affordability
 
 Let us start off with one of the biggest issues facing Canadians under the age of 40.
-The best way to deal with housing affordability is to make homes affordable for those that don't own a home. This means reducing the demand from non-primrary home buyers and increasing housing supply.
+The best way to deal with housing affordability is to make homes affordable for those that don't own a home. This means reducing the demand from non-primary home buyers and increasing housing supply.
 
-Domestic speculation is a probelm in Canada. Temporarily banning foreign buyers or taxing vacancy is not going to bring affordability. It doesn't go far enough. You have to ban foreign ownership itself.
+Domestic speculation is a problem in Canada. Temporarily banning foreign buyers or taxing vacancy is not going to bring affordability. It doesn't go far enough. You have to ban foreign ownership itself.
 Why do we even let foreign buyers purchase residential homes in the first place? That itself should be taxable. Call it a foreign ownership tax.
 
-As a Canadian citizen, I would expect to not be able to purchase a US home, unless I have a green card or was a dual citizen, even if I have work permit. That is not the case, but that's because the US econmy is 10x Canada's. Likewise, foreigners who **cannot** reside in Canada, should not be able to buy properties in Canada.
+As a Canadian citizen, I would expect to not be able to purchase a US home, unless I have a green card or was a dual citizen, even if I have work permit. That is not the case, but that's because the US economy is 10x Canada's. Likewise, foreigners who **cannot** reside in Canada, should not be able to buy properties in Canada.
 
 I do not think housing should be something where land lords can live off the rent they make. That is absurd, and thus companies should not be allowed to buy residential properties either. If companies own residential properties, it should be because of reasons like developing the property itself.
 
@@ -31,7 +31,7 @@ As for undeveloped land, we could say that development of the land has to be sta
 
 ### Reducing Demand - Major Speculation Tax
 
-To reduce demand, we will add a buyers (speculation) tax on non-primary home purchases for homes transactions that are more than $150,000. There's no reason to own more homes than people in your immediate family. For clarification on the definition of an immediate family, a couple for each kid over 18 can buy one additional home without this tax (to a max of 4 = 2 biological children + 2 adopted children). This policy can be tweaked a bit so for example, the total budget for non-primary houses can be $500,000 instead of $150,000 which might allow allow people to allocate it towards a condo rather than a cottage. The condo could be rented out to short-term residents. If the budget is too low, there might be no land lords which would force short-term tenants to either get a loan gaurantor or live in a basement.
+To reduce demand, we will add a buyers (speculation) tax on non-primary home purchases for homes transactions that are more than $150,000. There's no reason to own more homes than people in your immediate family. For clarification on the definition of an immediate family, a couple for each kid over 18 can buy one additional home without this tax (to a max of 4 = 2 biological children + 2 adopted children). This policy can be tweaked a bit so for example, the total budget for non-primary houses can be $500,000 instead of $150,000 which might allow allow people to allocate it towards a condo rather than a cottage. The condo could be rented out to short-term residents. If the budget is too low, there might be no land lords which would force short-term tenants to either get a loan guarantor or live in a basement.
 
 I propose this speculation tax to start at 50% and to modify it the next year. If it's too low, we'll make it 100%. If prices dramatically fall, we will get hated by property owners but at least the U40 population will vote for us again. If even a 100% tax is too low, we can further reduce the 150k threshold so that most couples would have to use their secondary home allowance itself as the other tax-free property. For example a secondary property could be a storage area, a cottage, or a simple office.
 
@@ -43,7 +43,7 @@ I'm up for debate on whether to include properties that were inherited.
 
 This buyers tax should be implemented federally. People who are buying homes in multiple provinces are definitely upper middle class or rich. Therefore, a 50% or even 100% tax is not a problem if they are buying to live rather than to rent. Imagine a multi millionaire; that 500k property now costs 1M, so it's not a problem.
 
-Lastly, governments should play around trying to reduce rent-seeking behaviour without short-term tenants being unable to live because there are no land lords. For example, to accomodate the demand of students, a [supply side policy could be enacted to incenticize efficient land use 2km around universities](#increasing-supply---land-value-tax) combined with a tax exclusion on properties near the university if the parent has a student that goes to the university. This would allow parents to buy a property of 5 units and rent out 4 of them to students who's parents cannot afford to buy a property around the university. Universities or provincial governments would provide a guide for parents of student ineligible for the provincial university grants; So if there are 50,000 students and only 10% have parents who can afford to buy a secondary property, then 40,000 students are basically taken care of. Although I hope that parents wouldn't partake in the price gouging of their childs' peers, this tax exclusion can be taken away if something like that starts occuring.
+Lastly, governments should play around trying to reduce rent-seeking behavior without short-term tenants being unable to live because there are no land lords. For example, to accommodate the demand of students, a [supply side policy could be enacted to incenticize efficient land use 2km around universities](#increasing-supply---land-value-tax) combined with a tax exclusion on properties near the university if the parent has a student that goes to the university. This would allow parents to buy a property of 5 units and rent out 4 of them to students who's parents cannot afford to buy a property around the university. Universities or provincial governments would provide a guide for parents of student ineligible for the provincial university grants; So if there are 50,000 students and only 10% have parents who can afford to buy a secondary property, then 40,000 students are basically taken care of. Although I hope that parents wouldn't partake in price gouging of peers of their children, this tax exclusion can be taken away if something like that starts occurring.
 
 ### Reducing Demand - Corporations Ban
 
@@ -207,15 +207,15 @@ but I hope to formalize the algorithm and system in the future.
 
 TODO: split into different types of taxes (income, property, sales, sin, capital gains, tax ethics, duties/tariffs, etc.)
 
-The government goal should be to use taxes to create a sustainable environment for innovation and wealth. Taxes should be used wisely with the end goal of lowering taxes. Governments should create self-sustainable nationlised businesses where the nature is a priviledge rather than a need. Things like health care should remain nationalized, but private health care should also be allowed as it is in Quebec. Not sure why courts in Canada think that private health care access takes away from Canadians who are using the public health care system, but hey I'm not a judge and they aren't economists.
+The government goal should be to use taxes to create a sustainable environment for innovation and wealth. Taxes should be used wisely with the end goal of lowering taxes. Governments should create self-sustainable nationalized businesses where the nature is a privilege rather than a need. Things like health care should remain nationalized, but private health care should also be allowed as it is in Quebec. Not sure why courts in Canada think that private health care access takes away from Canadians who are using the public health care system, but hey I'm not a judge and they aren't economists.
 
 #### Sales Tax
 
-Should not exist. There are so many exceptions and the CRA does not do a good job at exempting everything. For example, the CRA reqeuires you to have a phone number
-in order to login because of 2FA, but phone plans and phones have salex tax. These are necessities and a sales tax is regressive[^regressive] in this case.
+Should not exist. There are so many exceptions and the CRA does not do a good job at exempting everything. For example, the CRA requires you to have a phone number
+in order to login because of 2FA, but phone plans and phones have sales tax. These are necessities and a sales tax is regressive[^regressive] in this case.
 There are simply too many cases of figuring out what is a necessity and what isn't. Not to mention that on top of federal sales tax, each province has its
 own sales tax rules. Therefore a national business needs to report to so many different provinces or join something like US's nexus. So then implementing a
-sales tax fattens the government (additional beauracracy).
+sales tax fattens the government (additional bureaucracy).
 
 #### Tariffs
 
@@ -239,7 +239,7 @@ and a higher risk of failing.
 
 So what is "so good." Good question, I will leave this as an exercise for the reader. Just kidding; This is a TODO since like I said in the introduction,
 this article is a collection of my thoughts on Canada that come to mind. I also try to keep it as articulate and cohesive as possible,
-rather than vomit words. I aswell try to add my quirks and humor where I can.
+rather than vomit words. I also try to add my quirks and humor where I can.
 
 ### National Defence
 
@@ -250,14 +250,14 @@ and air-defence (e.g. Iron Dome).
 
 #### Airforce
 
-An airforce is crucical. A single aircraft can devastate many land units, so an air-defence system is just as crucial. An airforce should be as mobile
+An airforce is crucial. A single aircraft can devastate many land units, so an air-defence system is just as crucial. An airforce should be as mobile
 as possible and should be not be crippled with one attack. In other words, there should be multiple air-bases and the location of these bases need to completely
 classified or opaqued, but the existence of them should be stated. This is an equal balance between government secrets in the name of national defence. Some
 governments, like the USA, take it too far and classify even operations. An operation should be classified until it's over. Then it should be made as transparent as possible.
 
 #### Navy
 
-A Navy is useful for shipping as well as long-lasting operations. It's also useful to for saving the fuel of aircrafts and keeping a moving aircraft base.
+A Navy is useful for shipping as well as long-lasting operations. It's also useful to for saving the aircraft fuel and keeping a moving aircraft base.
 That is, instead of having fixed aircraft bases, we can have mobile bases. Hypothetically, aircraft carriers reduce the need of fixed airbases and thus
 we could save money while improving the reliability of the air-force.
 
@@ -296,10 +296,10 @@ As mentioned before, we will use the [Represenative Proportional Voting](/posts/
 
 ### Improving Disability Benefits
 
-This issue is getting out of hand. On a pronvincial level, it's an expenditure spiral;
+This issue is getting out of hand. On a provincial level, it's an expenditure spiral;
 in other words, the province with the best benefits attracts disabled people (rightfully) from other provinces
 and in the long-run, would end up paying more for the program than other provinces. Therefore, disability **benefits**
-should be solely within the jurisdiction of the Federal government. Accesibility doesn't seem like an issue so I won't comment on that.
+should be solely within the jurisdiction of the Federal government. Accessibility doesn't seem like an issue so I won't comment on that.
 
 Now, let us create a comprehensive plan for disabled people in Canada. I'm waiting on getting data on Ontario's disability benefits,
 but after that I will continue this section.
@@ -314,19 +314,19 @@ This is such a hot topic. People are quick to jump to their feet and march for t
 but aren't willing to start a discussion on what we should do in 2022. The indigenous issue has existed for over a century.
 For goodness sake, the indigenous are still referred to as Indians in formally! Anyways, getting back on topic...
 
-We need to think about the issue differently. That is take the total population of each province, and divide the pronvince's land size by this number.
+We need to think about the issue differently. That is take the total population of each province, and divide the province's land size by this number.
 
 <img class=equation-tall src="https://latex.codecogs.com/svg.image?landPerCapita=\frac{province\,\,size}{province\,\,population}">
 
-Now that we have the land per capita, we multiply it by the Indigenous population in each province to get the land the indegenous are owed.
+Now that we have the land per capita, we multiply it by the Indigenous population in each province to get the land the indigenous are owed.
 This is the land that is owed, so then we partition hunting land in each province equal to land owed minus land presently occupied as reserves.
 This ensures that a) current reserves don't go away, b) no more than land owed. This calculation isn't required at the moment since I'm
 not even in politics!
 
 So we've given the indigenous people the land they are owed, but that's not enough. They need to be given more freedom and more rights.
-We shall negotatite with the Indenous and decide something important. Does the Indigenous people want government investment into infrastructure,
+We shall negotiate with the Indigenous and decide something important. Does the Indigenous people want government investment into infrastructure,
 or do they want to manage their land themselves? If the former, then they will have to pay only income taxes at half the rate for 250 years (not arbitrary, but it is rounded). If the latter,
-they can invite the private industry themselves to invest in infrastructure like fiber optics and tellecommunication towers. I have no clue
+they can invite the private industry themselves to invest in infrastructure like fiber optics and telecommunication towers. I have no clue
 how the Indigenous people want to live, but since each province's population gets to decide, I'm sure at least one would choose the nomad style.
 They are free to change their mind from no-support to having government support, but not the other way around.
 
@@ -347,7 +347,7 @@ the reserves are so poorly maintained.
 
 ### Improving the Tax System
 
-Filing taxes for Canadian corporations is attrocious. I use my parents' accountant for income tax but in the future I will
+Filing taxes for Canadian corporations is atrocious. I use my parents' accountant for income tax but in the future I will
 have to do it myself and then I'll comment on that process.
 
 It is very clear why corporations avoid taxes if the CRA is trying to invade the corporations' privacy rather than just ask politely for
@@ -382,3 +382,13 @@ My policy would be that if you are caught in a DUI with hard evidence, unless it
 your license should be suspended for an entire year. No jail, no felony, no record, but a license suspension. Well there would be one record which would be "got caught drunk driving" for potential future instances.
 
 A second offence would result in a 10 year license suspension.
+
+### The Canadian Dream
+
+This part is a draft.
+
+As a Canadian my vision is that each Canadian is entitled to be a land owner. Each Canadian deserves without cost a piece of land. After that condition is met, it would be fine to not forcefully redistribute that land henceforth. As in children inherit their parents land. If each person is given land, and each couple had two kids, there will never be a problem. Simply give land to your kids when they get married if their partner won't inherit land themselves, you give your land. Say your oldest son and their oldest daughter both get married. The negotiation should be last name changed for land. As in in the future when I'm married and now we own two land pieces, if my eldest son and another couples eldest daughter want to get married and both were born after the decree of land distribution, then the only thing tradeable is last name for land. I believe that no one in marriage should change their last name in modern times but if land was distributed fairly, it would be the only thing to negotiate. So if my son changes his last name, then the land the couple lives on comes from the other family. Vice versa as well. This is the fairest way to live in my opinion. And if neither wants to budge then the couples get 0 land. Because then what would the youngest children get? Obviously one big issue is that what if you have given land and now you have a child without land to give to? Well they are free to choose whoever they want, but if they choose someone without land, they should be prepared to rent for life. It would be incredibly say
+
+I do hope that the culture of the future ensures that children are 1 year apart and that they get married at the same time to sort out these details. This would be ideal. And BTW the spare piece of land gets rented out to non married people until your children get married.
+
+In today's western world, it's tradition a woman changes her last name to the man's but there is 0 logic to it. Only in my scenario does it make sense for people to trade last names. It was like this in the past too. Woman changed their last name because their family wouldn't needs to supply the land for the new couple to live on. However, women's rights means that the land is not guaranteed to be inherited by the oldest child.
