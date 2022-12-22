@@ -1,7 +1,7 @@
 ---
 title: "Ethics of Taxes"
 date: 2022-12-13T21:41:47-05:00
-draft: false
+hidden: true
 ---
 
 Warning: this is a brain dump without editing
