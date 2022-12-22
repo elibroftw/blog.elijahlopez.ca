@@ -4887,7 +4887,6 @@ If the total votes for the party exceeded 100,000 (assuming one seat represents 
 &lt;/ul>
 &lt;/li>
 &lt;li>&lt;a href="#fungibility">Fungibility&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#on-zcash">On ZCash&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#privacy">Privacy&lt;/a>
 &lt;ul>
 &lt;li>&lt;a href="#tumblers">Tumblers&lt;/a>&lt;/li>
@@ -4897,9 +4896,10 @@ If the total votes for the party exceeded 100,000 (assuming one seat represents 
 &lt;li>&lt;a href="#bch--cashfusion-">BCH + CashFusion 💵&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#eth--aztec-protocol">ETH + Aztec Protocol&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#eth--tornado-cash">ETH + Tornado 🌪 Cash&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#mimblewimble">MimbleWimble&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;/li>
-&lt;li>&lt;a href="#mimblewimble">MimbleWimble&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#on-zcash">On ZCash&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#consensus-algorithm">Consensus Algorithm&lt;/a>
 &lt;ul>
 &lt;li>&lt;a href="#proof-of-stake-pos-vs-delegated-proof-of-stake-dpos">Proof-of-Stake (PoS) vs Delegated Proof-of-Stake (DPoS)&lt;/a>&lt;/li>
@@ -4950,7 +4950,7 @@ If the total votes for the party exceeded 100,000 (assuming one seat represents 
 It is long in order to be thorough, as well as includes common responses/tactics.&lt;/p>
 &lt;p>The intended target audience is an open-minded reader interested in cryptocurrency as well as fellow Monero users who continuously answer questions such as &amp;ldquo;why does Monero (not) do X?.&amp;rdquo;
 I am open to debate, but I will say that when it comes to cryptoCURRENCY, privacy is a must.&lt;/p>
-&lt;p>I will be comparing Monero&amp;rsquo;s features to those fund in Bitcoin (BTC), Ethereum (ETH), Stellar (XLM), and ZCash (ZEC).
+&lt;p>I will be comparing Monero&amp;rsquo;s features to those found in Bitcoin (BTC), Ethereum (ETH), Stellar (XLM), and ZCash (ZEC).
 I will also talk about layer 2 solutions: BTC&amp;rsquo;s Lightning, BCH&amp;rsquo;s CashFusion, ETH&amp;rsquo;s Tornado Cash.&lt;/p>
 &lt;p>For all other cryptos/solutions, one can use the transitive property: If Monero &amp;gt; X and X &amp;gt; Y, then Monero &amp;gt; Y.&lt;/p>
 &lt;p>I will start with a brief introduction to Monero, since privacy was not simple to implement.&lt;/p>
@@ -5017,17 +5017,6 @@ It does not support smart contracts, but there is another crypto in the works th
 &lt;/h2>&lt;p>Culpable cryptos: Most except Monero, its forks, and possibly some mimblewimble coins&lt;/p>
 &lt;p>For a crypto to be money, it has to be fungible. If crypto is not fungible, users are at risk of being denied service for not being &amp;ldquo;right.&amp;rdquo; The definition of right would be dependent on the receiver and could even be legislated by governments. Transaction histories allow this to happen and there&amp;rsquo;s no guarantee you aren&amp;rsquo;t being watched for maybe transacting with someone who had the &amp;ldquo;wrong&amp;rdquo; coins. This is an issue with all cryptocurrencies except for Monero. With ZEC, since transactions are public by default, and most transactions on the blockchain are public, having the option for public transactions means that receivers can simply refute any transaction that isn&amp;rsquo;t public. This is true for exchanges. Exchange use t-addresses for ZEC, not the shielded ones.&lt;/p>
 &lt;p>Now you may say not having fungibility prevents money laundering and duly hurts criminals (does it really though?), but what about the undue harm to individuals? The definition of a criminal is different in every country. According to &lt;a href="https://www.humandignitytrust.org/lgbt-the-law/map-of-criminalisation/">Humanity Dignity Trust&lt;/a>, engaging in homosexual activities is a crime in 71 countries. We actively hurt marginalized groups when we promote non-fungible cryptos. If you and your same-sex partner shared crypto together, an authoritative government can easily suspect you of sleeping together, since sharing bank/money accounts is more common among partners than friends. If you like to argue in bad faith by saying maybe they are just father-son, you&amp;rsquo;d be lying to yourself if you think governments making homosexuality a crime is going to think half of the people sharing an account with the same-sex is just a rich parent.&lt;/p>
-&lt;h2 id="on-zcash" >On ZCash
-&lt;span>
-&lt;a href="#on-zcash">
-&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
-&lt;/a>
-&lt;/span>
-&lt;/h2>&lt;p>Now is a good time to dismantle ZCash. Z-cash offers privacy optionally and not even by default. That is the only reason it is on more exchanges than Monero. To my knowledge, no exchange that supports ZCash and not Monero allows shielded deposits (50% sure) and withdrawals. Additionally, transparent transactions are the default, most transactions on the blockchain were transparent ones, and users have to trust that ZCash was set up without any bad actors. Transactions being transparent by default make shielded transactions stick out. This leads to discrimination and suspicion of users that use shielded transactions. In addition to these issues, ZCash gives 10% of the total supply to their own founders. This goes against equitable decentralization and democracy.&lt;/p>
-&lt;p>Furthermore, ZCash does not protect transaction values for even transparent -&amp;gt; shielded addresses. Having two types of addresses means that senders can discriminate against shielded address users. This two type system means that common behaviours such as transacting in short periods of time can be susceptible to blockchain analysis and has been traced before by even an &lt;a href="https://twitter.com/The8Connor/status/1284900368116330497">individual&lt;/a>. &amp;ldquo;having unshielded TX inherently make shielded ones less private&amp;rdquo; - &lt;a href="https://www.reddit.com/r/CryptoCurrency/comments/hubbvg/comment/fym8yn9/?utm_source=share&amp;amp;utm_medium=web2x&amp;amp;context=3">u/lol_VEVO&lt;/a>&lt;/p>
-&lt;p>Adding more insult to privacy advocates, the founder - Zooka - once (drunkenly) tweeted that they would add privacy by default and that they would take it away from criminals. Needing to trust the setup does make it possible… The fact that the founder holds this opinion shows us that ZCash isn&amp;rsquo;t interested in privacy as a human right, only privacy for those who hold the right opinion. By the way, the definition of criminal varies from country to country as I said in the last section. I&amp;rsquo;m attacking the vision of ZCash&amp;rsquo;s leader which is fair game.&lt;/p>
-&lt;p>In the Monero community, one of Monero&amp;rsquo;s paid workers was also working for another crypto project. There is more to this story, but the conflict of interest was brought up in the community and the worker resigned.&lt;/p>
-&lt;p>The general fund was also questioned and a general fund report was created.&lt;/p>
 &lt;h2 id="privacy" >Privacy
 &lt;span>
 &lt;a href="#privacy">
@@ -5128,7 +5117,7 @@ observers can tell that a privacy preserving protocol was used and can thus disc
 With Monero, people have to either accept it for what it is or not accept it at all. All or nothing
 works; just like https and encryption works. Encryption is an all or nothing thing.&lt;/p>
 &lt;p>So how does &lt;a href="https://aztec.network/">Aztec&lt;/a> work? It uses rollups meaning that it leverages the
-base layer of Ethereum for security, and it guarantees privacy after shielding. You can send shielded amounts to other accounta aliases and even layer 1 accounts, however the details of receiving are a bit unknown. I&amp;rsquo;ll have to do some actual practical research to see its limitations as protocol, but since it is a protocol and not actual currency, it&amp;rsquo;s only a matter of time until
+base layer of Ethereum for security, and it guarantees privacy after shielding. You can send shielded amounts to other account aliases and even layer 1 accounts, however the details of receiving are a bit unknown. I&amp;rsquo;ll have to do some actual practical research to see its limitations as protocol, but since it is a protocol and not actual currency, it&amp;rsquo;s only a matter of time until
 it too is sanctioned. It was released in 2021 which is why it was not included in the first publishing of this article.&lt;/p>
 &lt;p>An overview of its issues:&lt;/p>
 &lt;ul>
@@ -5163,14 +5152,25 @@ it too is sanctioned. It was released in 2021 which is why it was not included i
 ETH that has gone through Tornado Cash.&lt;/p>
 &lt;p>Ethereum has one thing over Monero which is smart contracts but just because they are called smart, does not mean they are used in a very smart way. DAO exploit resulted in a hard fork because it affects the founders, then there&amp;rsquo;s the Polygon exploit, and the Indexed Finance exploit. Even after being audited, smart contracts can be exploited. DeFi is simply less secure at the moment compared to proprietary banking systems that are at least insured up to $100,000 per person. It&amp;rsquo;s open-source minus the community inspection. I do hope DeFi improves in the coming years but a question for the reader is why Ethereum and not Solana, Cardano, Stellar? Should Ethereum really move away from proof-of-work? Let&amp;rsquo;s find out in the next subsection.&lt;/p>
 &lt;p>Ethereum has one thing over Monero which is smart contracts but just because they are called smart, does not mean they are used in a very smart way. DAO exploit resulted in a hard fork because it affects the founders, then there&amp;rsquo;s the Polygon exploit, and the Indexed Finance exploit. Even after being audited, smart contracts can be exploited. DeFi is simply less secure at the moment compared to proprietary banking systems that are at least insured up to $100,000 per person. It&amp;rsquo;s open-source minus the community inspection. I do hope DeFi improves in the coming years but a question for the reader is why Ethereum and not Solana, Cardano, Stellar? Should Ethereum really move away from proof-of-work? Let&amp;rsquo;s find out in the next subsection.&lt;/p>
-&lt;h2 id="mimblewimble" >MimbleWimble
+&lt;h3 id="mimblewimble" >MimbleWimble
 &lt;span>
 &lt;a href="#mimblewimble">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
-&lt;/h2>&lt;p>Coins that all into this category include, LTC, GRIN, BEAM.&lt;/p>
+&lt;/h3>&lt;p>Coins that all into this category include, LTC, GRIN, BEAM.&lt;/p>
 &lt;p>From &lt;a href="https://medium.com/dragonfly-research/breaking-mimblewimble-privacy-model-84bcd67bfe52">&amp;ldquo;Breaking Mimblewimble’s Privacy Model&amp;rdquo;&lt;/a>, we see that there is a serious flaw in Mimblewimble that isn&amp;rsquo;t emphasized enough and its consequences aren&amp;rsquo;t communicated clearly. I highly suggest reading it, but I will simplify it. MimblewWimble works by aggregating multiple individual transactions into on big transaction / CoinJoin on the blockchain. However, since the CoinJoin has to be built one transaction at a time, a sniffer/malicious node that is connected to all other nodes in the network, can simply pick up transactions before the aggregation is finished and unwind the final coinjoin to see the sender and receiver (amounts are safe, but privacy is both identity and amount, not just amount). Privacy isn&amp;rsquo;t real if there&amp;rsquo;s a gate to access it; Privacy is real when the technology is unable to be used against itself.&lt;/p>
+&lt;h2 id="on-zcash" >On ZCash
+&lt;span>
+&lt;a href="#on-zcash">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>Now is a good time to dismantle ZCash. Z-cash offers privacy optionally and not even by default. That is the only reason it is on more exchanges than Monero. To my knowledge, no exchange that supports ZCash and not Monero allows shielded deposits (50% sure) and withdrawals. Additionally, transparent transactions are the default, most transactions on the blockchain were transparent ones, and users have to trust that ZCash was set up without any bad actors. Transactions being transparent by default make shielded transactions stick out. This leads to discrimination and suspicion of users that use shielded transactions. In addition to these issues, ZCash gives 10% of the total supply to their own founders. This goes against equitable decentralization and democracy.&lt;/p>
+&lt;p>Furthermore, ZCash does not protect transaction values for even transparent -&amp;gt; shielded addresses. Having two types of addresses means that senders can discriminate against shielded address users. This two type system means that common behaviours such as transacting in short periods of time can be susceptible to blockchain analysis and has been traced before by even an &lt;a href="https://twitter.com/The8Connor/status/1284900368116330497">individual&lt;/a>. &amp;ldquo;having unshielded TX inherently make shielded ones less private&amp;rdquo; - &lt;a href="https://www.reddit.com/r/CryptoCurrency/comments/hubbvg/comment/fym8yn9/?utm_source=share&amp;amp;utm_medium=web2x&amp;amp;context=3">u/lol_VEVO&lt;/a>&lt;/p>
+&lt;p>Adding more insult to privacy advocates, the founder - Zooka - once (drunkenly) tweeted that they would add privacy by default and that they would take it away from criminals. Needing to trust the setup does make it possible… The fact that the founder holds this opinion shows us that ZCash isn&amp;rsquo;t interested in privacy as a human right, only privacy for those who hold the right opinion. By the way, the definition of criminal varies from country to country as I said in the last section. I&amp;rsquo;m attacking the vision of ZCash&amp;rsquo;s leader which is fair game.&lt;/p>
+&lt;p>In the Monero community, one of Monero&amp;rsquo;s paid workers was also working for another crypto project. There is more to this story, but the conflict of interest was brought up in the community and the worker resigned.&lt;/p>
+&lt;p>The general fund was also questioned and a general fund report was created.&lt;/p>
 &lt;h2 id="consensus-algorithm" >Consensus Algorithm
 &lt;span>
 &lt;a href="#consensus-algorithm">
