@@ -16,6 +16,12 @@ for every bite you take. I consider this breakfast *heavy* meaning that I don't 
 
 ## Fast Food
 
+### Right Wingers
+
+For now I really liked the Shawarma Specialty Pizza.
+
+The wings also provide good value but I found the sauces lacking.
+
 ### Costco
 
 Hot dog, no sauce + soda. This is such a value meal, you could
