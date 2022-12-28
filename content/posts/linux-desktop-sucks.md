@@ -1,12 +1,59 @@
 ---
-title: "Issues With Linux"
+title: "Linux Desktop Sucks!"
 date: 2022-02-26T12:44:37-05:00
-draft: true
+draft: false
 ---
 
-I've used Raspian (~2014), Ubuntu GNOME (~2016), Manjaro KDE (2020), Fedora, Zorin (2021).
+First of all, I know a lot of Linux fans will get offended and resort to cheap shots and blame the user. If you are one of those people, you are not at all helpful.
+
+I've used Raspian (~2014), Ubuntu GNOME (~2016), Manjaro KDE (2020 & 2022), Fedora, Zorin (2021).
 
 My definition of a reason is: An issue/problem requiring a convoluted process to solve; Also something so simple that shouldn't have required me to use the terminal in order to unlock (fractional scaling should be allowed and not a tick box or a command).
+
+The next distro I will try is Linux Mint as it is supposed to be the most user friendly distro.
+
+## Manjaro KDE Specific Issues
+
+### Black screen bug
+
+I'll start with this as it is the reason why I will not recommend Manjaro for people interested in free (as in beer) software.
+
+I'm logged in as my parents' user and now I log out and log into my account. The desktop splashscreen shows up and then boom black screen.
+
+Maybe it's a fluke, so I just create a thread to leave a paper trail. I use a physical power down and then log in without issues.
+
+4 hours later, my parents are logged in, but I want to test something out myself. I turn on the laptop and click switch user, meaning that my parents are not
+logged out. The desktop splashscreen loads and I get the black screen again.
+
+Manjaro is 11 years old. There is no excuse for this workflow to not work. There is no excuse because I go out of my way to make sure
+my music player runs for everyone's workflow not just my own.
+
+### Inefficient Upgrading
+
+Pacman manager so not specifically Manjaro.
+
+So I turn on the laptop after a couple months and the network folder no longer works. There were 2.1GB worth of updates so I decided to start upgrading.
+After all the packages were downloading, for a couple minutes there were network errors due to the package manager hitting `http://mirror.ragenetwork.de` Name or service not known
+errors. Why are packages not installed while downloading new packages? That's inefficient.
+
+Only after the packages were installed and a restart completed did the network drive start to work.
+
+### Unintuitive Appearance Settings
+
+So I click appearance from the settings app and there is no option to change the wallpaper. Pretty dumb!
+
+## Other Issues
+
+### Canonical and Snap Sucks
+
+I cannot believe Ubuntu is promoted to newbies when snaps are the default distribution model. Snaps literally make apps slower. Gigabytes of wasted storage
+for slower apps. A linux desktop experience should rival Windows, it should not make you say "it's okay because it's not Windows."
+The mentality that we need to live a worse life just because we get a free experience is the worst mentality ever.
+
+### No Ctrl for Tabbing
+
+If linux is all about customization, why is it so damn difficult to replace Alt with Ctrl? Windows predates Linux, so this Alt + # shortcut should
+not be forced upon users.
 
 ## Poor Cloud Storage Support
 
