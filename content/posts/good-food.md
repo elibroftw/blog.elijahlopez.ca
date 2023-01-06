@@ -58,9 +58,29 @@ in thinking more is better, as the whopper is definitely the best thing they hav
 in second, although some places put less mayo than others. Therefore, I recommend the whopper, but if they ever put less mayo in it,
 I think you should tell them to put more mayo next time you're there. This is a problem with Mcdoanlds as well.
 
-## Dine-in Restaurants
+## Dine-in or Take Out Restaurants
+
+### Chawla's
+
+[Brampton, Ontario](https://www.chawlascuisine.com/menus)
+
+My family recently had a get together at our house and we ordered food from this place. Appetizers were
+gobi 65, tandoori chicken. Dinner was butter chicken and a vegetarian dish (possibly vegetarian kofta).
+
+The butter chicken was the best I have had in many years.
+
+The tandoori chicken actually tasted the same as it does in India which was incredible.
+
+## Cheers Restaurant
+
+[Welland, Ontario](www.cheerswelland.com)
+
+Best fish and chips. The first time they had perch and it was made extremely well.
+The second time, even though they didn't have perch, the food was still delicious.
 
 ### Piper Arms Pub
+
+Waterloo, Ontario
 
 The best restaurant I've ever eaten at. Your $20-40 is well spent at this place. You really get
 what you pay for. I suggest getting 7-up as the drink as its topless. I think they have diet pepsi,
@@ -77,6 +97,8 @@ fries that I could'nt finish which is understandable since I wasn't hungry when 
 parmesean for the wings seasoning/sauce which is rare in the market (only Sultan's in Burlington offered something like that).
 
 ### Famoso Neapolitan Pizzeria
+
+Waterloo, Ontario
 
 I went here with a friend and their pasta with the meatballs did not dissapoint me. I had water for the drink.
 The seating was awkward thought, we were at a table in the middle of the restaurant a meter or two away from the entrance
