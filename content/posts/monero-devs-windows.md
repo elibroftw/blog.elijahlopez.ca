@@ -155,17 +155,11 @@ source ~/.profile  #  you do not need to run this in subsequent terminals
         - `pacman -S mingw-w64-x86_64-name` (where name is the libname with and without lib)
         - Search for the library (with and without the lib prefix) on [packages.msys2.org](https://packages.msys2.org/search). Click on relevant search results and install the binary package starting with `mingw-w64-x86_64`
         - `make clean` before building
-    - executable crashes
-        - still figuring this out
+    - runtime error from Qt failing to load plugin?
+        - make clean
+        - uninstall all qt packages using `pacman -R $(pacman -Qq | grep qt)`
+        - install qt using `pacman -S mingw-w64-x86_64-qt5 --noconfirm`
 
-            ~~```sh~~
-            ~~/usr/bin/strace build/release/bin/monero-wallet-gui.exe 2>&1 \~~
-            ~~| tee out.log \~~
-            ~~| grep -a -E '^--- Process .* loaded .*\.dll' \~~
-            ~~| cut -d' ' -f 5- \~~
-            ~~| sed 's/\.dll.*/.dll/' \~~
-            ~~| sort -u~~
-            ~~```~~
 
 4. For a `monero-gui` full build, use `cd build/release && make deploy` after running `make release-win64`
     - If the build fails due to DLL copy error, follow the troubleshooting instructions in step 4 and let me know what worked so that I can update this article
