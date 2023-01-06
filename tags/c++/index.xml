@@ -178,12 +178,11 @@ I can still use my browser and other apps while building. You can run the follow
 &lt;li>&lt;code>make clean&lt;/code> before building&lt;/li>
 &lt;/ul>
 &lt;/li>
-&lt;li>executable crashes
+&lt;li>runtime error from Qt failing to load plugin?
 &lt;ul>
-&lt;li>
-&lt;p>still figuring this out&lt;/p>
-&lt;p>&lt;del>&lt;code>sh~~ ~~/usr/bin/strace build/release/bin/monero-wallet-gui.exe 2&amp;gt;&amp;amp;1 \~~ ~~| tee out.log \~~ ~~| grep -a -E '^--- Process .* loaded .*\.dll' \~~ ~~| cut -d' ' -f 5- \~~ ~~| sed 's/\.dll.*/.dll/' \~~ ~~| sort -u~~ ~~&lt;/code>&lt;/del>&lt;/p>
-&lt;/li>
+&lt;li>make clean&lt;/li>
+&lt;li>uninstall all qt packages using &lt;code>pacman -R $(pacman -Qq | grep qt)&lt;/code>&lt;/li>
+&lt;li>install qt using &lt;code>pacman -S mingw-w64-x86_64-qt5 --noconfirm&lt;/code>&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;/ul>
