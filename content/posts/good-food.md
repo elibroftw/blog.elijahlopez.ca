@@ -51,6 +51,13 @@ if its a good eat-out breakfast.
 The quality has diminished, however their beef/chicken shawrma poutine used to be good. I recommend eating there instead of takeout
 as the food taste & quality varies strongly with time. Fries can get soggy extremely quickly. I don't like their wraps that much.
 
+
+### Zesty Pita
+
+I was craving beef on rice instead of fries and this place delivered. I feel that rice may be healthier than fries
+so will try eating these mixes with a rice base instead of a fries base. The food here was more expensive than Pita Halal
+but I liked it either way. The beef tasted slightly like mutton.
+
 ## Burger King
 
 Before, I used to always get their features like the roadhouse king or the bacon king. I was naive
@@ -71,7 +78,7 @@ The butter chicken was the best I have had in many years.
 
 The tandoori chicken actually tasted the same as it does in India which was incredible.
 
-## Cheers Restaurant
+### Cheers Restaurant
 
 [Welland, Ontario](www.cheerswelland.com)
 
