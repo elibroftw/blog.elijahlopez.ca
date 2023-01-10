@@ -1,5 +1,5 @@
 ---
-title: "Cs 350 Operating Systems"
+title: "CS 350 Operating Systems"
 date: 2023-01-10T14:56:10-05:00
 draft: false
 tags: [
@@ -30,4 +30,3 @@ tags: [
 - Disks, File systems, Network file systems
 - Protection & Security
 - Unix referenced as an example
-
