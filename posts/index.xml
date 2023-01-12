@@ -113,7 +113,169 @@ access for a database.&lt;/p>
 &lt;/h3>&lt;blockquote>
 &lt;p>A database instance is a database (real data) that conforms to a given schema
 ) i.e., the information stored in the database at a particular moment&lt;/p>
-&lt;/blockquote></description></item><item><title>CS 350 Operating Systems</title><link>https://blog.elijahlopez.ca/posts/cs-350-operating-systems/</link><pubDate>Tue, 10 Jan 2023 14:56:10 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/cs-350-operating-systems/</guid><description>&lt;p>&lt;a href="https://student.cs.uwaterloo.ca/~cs350/">Course website&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;h3 id="levels" >Levels
+&lt;span>
+&lt;a href="#levels">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Physical&lt;/li>
+&lt;li>Virtual&lt;/li>
+&lt;li>External&lt;/li>
+&lt;/ul>
+&lt;h2 id="the-relational-model" >The Relational Model
+&lt;span>
+&lt;a href="#the-relational-model">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>A database is a collection of relations (tables). Each relation
+has a set of attributes (columns). Each attribute has a name and an atomic (indivisible) domain (type). Each relation has a set of tuples (rows).
+Duplicate tuples are not allowed. Two tuples are duplicates if all their attributes agree.&lt;/p>
+&lt;h3 id="data-model" >Data Model
+&lt;span>
+&lt;a href="#data-model">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>structure&lt;/li>
+&lt;li>operations&lt;/li>
+&lt;li>constraints&lt;/li>
+&lt;/ul>
+&lt;h3 id="schema-and-instance" >Schema and Instance
+&lt;span>
+&lt;a href="#schema-and-instance">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;pre tabindex="0">&lt;code class="language-schema" data-lang="schema">author(aid:int, name:string)
+publication(pubid:int, title:string)
+journal(pubid, volume)
+&lt;/code>&lt;/pre>&lt;p>A database can be displayed tabularly with a table for each relation.1&lt;/p>
+&lt;h3 id="integrity-constraints" >Integrity Constraints
+&lt;span>
+&lt;a href="#integrity-constraints">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Tuple-Level&lt;/p>
+&lt;ul>
+&lt;li>Domain restrictions (e.g. type string)&lt;/li>
+&lt;li>Restricting possible values (e.g. &lt;code>[&amp;quot;Winter&amp;quot;, &amp;quot;Summer&amp;quot;, &amp;quot;Fall&amp;quot;]&lt;/code>)&lt;/li>
+&lt;/ul>
+&lt;p>Relation-level&lt;/p>
+&lt;ul>
+&lt;li>Superkey: attributes where tuples will never agree on&lt;/li>
+&lt;li>Candidate key: minimal superkey (minimal set of attributes that unique identify the tuple)&lt;/li>
+&lt;li>Primary key: designated candidate key&lt;/li>
+&lt;/ul>
+&lt;p>Database-level&lt;/p>
+&lt;ul>
+&lt;li>Foreign key: an attribute of this relation is the primary key for another relation (Relation one is &lt;em>referencing&lt;/em> and the second relation is &lt;em>referenced&lt;/em> )&lt;/li>
+&lt;li>Foreign key constraints: Foreign key must match the primary key value of a tuple in the &lt;code>referenced&lt;/code> relation&lt;/li>
+&lt;li>Referential integrity constraints: foreign key cannot be a primary key in the referencing relation&lt;/li>
+&lt;/ul>
+&lt;h2 id="the-relational-algebra" >The Relational Algebra
+&lt;span>
+&lt;a href="#the-relational-algebra">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>Consists of a set of operators&lt;/p>
+&lt;h3 id="operators" >Operators
+&lt;span>
+&lt;a href="#operators">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>one or two relations as inputs&lt;/li>
+&lt;li>single output relation in terms of the input relation(s)&lt;/li>
+&lt;li>can be composed to express the definition of a new relation in terms of existing relations&lt;/li>
+&lt;/ul>
+&lt;h3 id="selection" >Selection
+&lt;span>
+&lt;a href="#selection">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>subset of tuples of a relation and thus schema is the same&lt;/p>
+&lt;ul>
+&lt;li>Find teachers who are in the physics department&lt;/li>
+&lt;li>conditions include any column of R, comparisons, boolean algebra&lt;/li>
+&lt;li>select applies to single row at a time, not many&lt;/li>
+&lt;/ul>
+&lt;h3 id="projection" >Projection
+&lt;span>
+&lt;a href="#projection">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Returns a subset of a relation but only of the specified attributes&lt;/li>
+&lt;li>Duplicates are eliminated&lt;/li>
+&lt;/ul>
+&lt;h3 id="cross-product" >Cross Product
+&lt;span>
+&lt;a href="#cross-product">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Result has attributes of both input relations&lt;/li>
+&lt;li>Result is the tuple for each possible pair from relation one and relation two&lt;/li>
+&lt;/ul>
+&lt;h3 id="conditional-join" >Conditional Join
+&lt;span>
+&lt;a href="#conditional-join">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Perform cross product but join pairs only if the boolean involving attributes from both relations is true&lt;/li>
+&lt;/ul>
+&lt;h3 id="natural-join" >Natural Join
+&lt;span>
+&lt;a href="#natural-join">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>If both relations have the same attribute, then the join will only filter out
+tuples that don&amp;rsquo;t have those attributes matching. During the first cross product, duplicate attributes are renamed (e.g. ID, ID -&amp;gt; ID, ID_1) but at the end the duplicated attributes are thrown out.&lt;/p>
+&lt;h3 id="set-based-relational-operators" >Set-Based Relational Operators
+&lt;span>
+&lt;a href="#set-based-relational-operators">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Union: Same number of fields and corresponding fields have the same type&lt;/li>
+&lt;li>Difference: Returns stuff in first relation not present in second&lt;/li>
+&lt;li>Intersection: Return stuff in both rrelations&lt;/li>
+&lt;li>Division: Attributes of second relation must be a subset of the first. Inverse of product. Useful for all. Example (which tuples of X always references Y but returns a new tuple without the attributes in Y).&lt;/li>
+&lt;/ul>
+&lt;h3 id="algebraic-equivalences" >Algebraic Equivalences
+&lt;span>
+&lt;a href="#algebraic-equivalences">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;h3 id="relational-completeness" >Relational Completeness
+&lt;span>
+&lt;a href="#relational-completeness">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;h2 id="the-relational-calculus" >The Relational Calculus
+&lt;span>
+&lt;a href="#the-relational-calculus">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2></description></item><item><title>CS 350 Operating Systems</title><link>https://blog.elijahlopez.ca/posts/cs-350-operating-systems/</link><pubDate>Tue, 10 Jan 2023 14:56:10 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/cs-350-operating-systems/</guid><description>&lt;p>&lt;a href="https://student.cs.uwaterloo.ca/~cs350/">Course website&lt;/a>&lt;/p>
 &lt;h2 id="concepts" >Concepts
 &lt;span>
 &lt;a href="#concepts">
