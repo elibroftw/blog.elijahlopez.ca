@@ -113,3 +113,73 @@ To work locally, you will need docker.
 ### Submitting Assignments
 
 Use `cs350_submit`
+
+### Readelf
+
+You can use readelf to get metadata of a binary
+
+## Processes
+
+- A _process_ is an instance of a program running
+- Processes can spawn child processes
+- Utilizes CPU better (throughput), lower latency
+- Simplicity of programming
+- Own view of the machine with abstractions
+- Programs don't care which other programs are running
+- Pointers are only relevant to one process
+
+### Abstractions
+
+- address space
+- open files
+- virtual CPU
+
+### Sections
+
+Programs have sections such as data and text
+
+### Creating processes
+
+Posix system calls available in `unistd.h`
+
+```c
+int fork(void);
+```
+
+Creates a new process that is an exact copy of current one. Return process ID (PID) of new process to the parent. Returns 0 in child.
+
+```c
+int waitpid(int pid, int *stat, int opt);
+```
+
+wait for process with id pid (-1 for any), set stat to the exit value, and opt is 0 or WNOHANG. Returns PID or -1 on error.
+
+```c
+void exit(int status)
+```
+
+Current process ceases to exist.  non-zero is error by convention.
+
+```c
+int kill(int pid, int sig);
+```
+
+Sends signal sig to process pid. SIGTERM most common value, application can catch it for cleanup. SIGKILL stronger as it always kills the process. HUP stands for hang up or "reload configuration."
+
+```c
+int execve(char *prog, char **argv, char **envp);
+prog - absolute path of program run
+argv - arguments to pass to main
+envp - environment variables
+```
+
+Usually called through wrapper functions. Executes new program. Does not spawn that program. Replaces current program with that program.
+
+```c
+int execvp(char *prog, char **argv)
+// Searches PATH for prog
+int execlp(char *prog, char *arg, ...)l
+// List arguments one at a time, finish with NULL
+```
+
+[slide left off at](https://student.cs.uwaterloo.ca/~cs350/W23/notes/processes.pdf)
