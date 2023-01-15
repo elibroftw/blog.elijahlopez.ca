@@ -51,7 +51,6 @@ if its a good eat-out breakfast.
 The quality has diminished, however their beef/chicken shawrma poutine used to be good. I recommend eating there instead of takeout
 as the food taste & quality varies strongly with time. Fries can get soggy extremely quickly. I don't like their wraps that much.
 
-
 ### Zesty Pita
 
 I was craving beef on rice instead of fries and this place delivered. I feel that rice may be healthier than fries
