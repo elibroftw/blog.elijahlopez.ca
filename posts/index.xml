@@ -269,13 +269,219 @@ tuples that don&amp;rsquo;t have those attributes matching. During the first cro
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
-&lt;/h3>&lt;h2 id="the-relational-calculus" >The Relational Calculus
+&lt;/h3>&lt;h3 id="the-relational-calculus" >The Relational Calculus
 &lt;span>
 &lt;a href="#the-relational-calculus">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
-&lt;/h2></description></item><item><title>CS 350 Operating Systems</title><link>https://blog.elijahlopez.ca/posts/cs-350-operating-systems/</link><pubDate>Tue, 10 Jan 2023 14:56:10 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/cs-350-operating-systems/</guid><description>&lt;p>&lt;a href="https://student.cs.uwaterloo.ca/~cs350/">Course website&lt;/a>&lt;/p>
+&lt;/h3>&lt;h2 id="sql---structured-query-language" >SQL - Structured Query Language
+&lt;span>
+&lt;a href="#sql---structured-query-language">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>KEYWORD (statements is implied)&lt;/p>
+&lt;ul>
+&lt;li>SQL Data Manipulation Language (DML)
+&lt;ul>
+&lt;li>SELECT for queries&lt;/li>
+&lt;li>INSERT, UPDATE, DELETE modify the instance of a table&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>SQL Data Definition Language (DDL)
+&lt;ul>
+&lt;li>CREATE, DROP modify the database schema&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>SQL Data Control Language (DCL)
+&lt;ul>
+&lt;li>GRANT, REVOKE enforce the security model&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>Schema used for Examples&lt;/p>
+&lt;p>&lt;img src="https://blog.elijahlopez.ca/images/cs-348/database-examples-schema.png" alt="database schema">&lt;/p>
+&lt;h3 id="data-types" >Data Types
+&lt;span>
+&lt;a href="#data-types">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>integer or int (32 bit or 4 byte)&lt;/li>
+&lt;li>smallint (16 bit or 2 bytes)&lt;/li>
+&lt;li>numeric(p, q): p digit numbers with q digits to the right&lt;/li>
+&lt;li>real, double precision:&lt;/li>
+&lt;li>float(n): user-specified precision of at least n digits&lt;/li>
+&lt;li>char(n): fixed length character strings (n is length)&lt;/li>
+&lt;li>varchar(n): variable length character to a max length of n&lt;/li>
+&lt;li>date: describes year, month, day&lt;/li>
+&lt;li>time: describes an hour, minute, second&lt;/li>
+&lt;li>timestamp: describes a date and time&lt;/li>
+&lt;li>interval: allows date/time computations&lt;/li>
+&lt;/ul>
+&lt;h3 id="tables" >Tables
+&lt;span>
+&lt;a href="#tables">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sql" data-lang="sql">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">create&lt;/span>&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">table&lt;/span>&lt;span style="color:#666"> &lt;/span>r&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666"> &lt;/span>(A1&lt;span style="color:#666"> &lt;/span>D1,&lt;span style="color:#666"> &lt;/span>...,&lt;span style="color:#666"> &lt;/span>An,&lt;span style="color:#666"> &lt;/span>Dn),&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666"> &lt;/span>(integrity-&lt;span style="color:#6ab825;font-weight:bold">constraint&lt;/span>-&lt;span style="color:#3677a9">1&lt;/span>),&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666"> &lt;/span>...&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666"> &lt;/span>(integrity-&lt;span style="color:#6ab825;font-weight:bold">constraint&lt;/span>-k),&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>r: relation, A: attribute, D: data type&lt;/p>
+&lt;p>integrity-contraints:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sql" data-lang="sql">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">primary&lt;/span>&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">key&lt;/span>&lt;span style="color:#666"> &lt;/span>(A1,&lt;span style="color:#666"> &lt;/span>...,&lt;span style="color:#666"> &lt;/span>An&lt;span style="color:#666"> &lt;/span>)&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">&lt;/span>&lt;span style="color:#6ab825;font-weight:bold">foreign&lt;/span>&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">key&lt;/span>&lt;span style="color:#666"> &lt;/span>(Am,&lt;span style="color:#666"> &lt;/span>...,&lt;span style="color:#666"> &lt;/span>An&lt;span style="color:#666"> &lt;/span>)&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">references&lt;/span>&lt;span style="color:#666"> &lt;/span>r2&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="queries" >Queries
+&lt;span>
+&lt;a href="#queries">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>SQL allows duplicate tuples in relations as well as in query results. need to use
+the &lt;code>distinct&lt;/code> keyword after select.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sql" data-lang="sql">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">SELECT&lt;/span>&lt;span style="color:#666"> &lt;/span>[&lt;span style="color:#6ab825;font-weight:bold">distinct&lt;/span>]&lt;span style="color:#666"> &lt;/span>dept_name,&lt;span style="color:#666"> &lt;/span>salary&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">from&lt;/span>&lt;span style="color:#666"> &lt;/span>instructor&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>[OPTIONAL]&lt;/p>
+&lt;p>To return all attributes, use an asterisk (*)&lt;/p>
+&lt;h4 id="arithmetic-expressions" >Arithmetic Expressions
+&lt;span>
+&lt;a href="#arithmetic-expressions">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;p>You can operate on the data through the select call itself. For example, if we wanted the monthly salary instead of an annual one:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sql" data-lang="sql">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">select&lt;/span>&lt;span style="color:#666"> &lt;/span>ID,&lt;span style="color:#666"> &lt;/span>name,&lt;span style="color:#666"> &lt;/span>salary/&lt;span style="color:#3677a9">12&lt;/span>&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">as&lt;/span>&lt;span style="color:#666"> &lt;/span>monthly_salary&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">from&lt;/span>&lt;span style="color:#666"> &lt;/span>instructor&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="filtering-where" >Filtering (Where)
+&lt;span>
+&lt;a href="#filtering-where">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sql" data-lang="sql">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">select&lt;/span>&lt;span style="color:#666"> &lt;/span>name&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">from&lt;/span>&lt;span style="color:#666"> &lt;/span>instructor&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">where&lt;/span>&lt;span style="color:#666"> &lt;/span>dept_name&lt;span style="color:#666"> &lt;/span>=&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#a61717;background-color:#e3d2d2">’&lt;/span>Comp.&lt;span style="color:#666"> &lt;/span>Sci.&lt;span style="color:#a61717;background-color:#e3d2d2">’&lt;/span>&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>logical connectives: and, or, and not&lt;/li>
+&lt;li>comparison operations: &amp;lt;, &amp;lt;=, &amp;gt;, &amp;gt;=, =, and &amp;lt;&amp;gt; (inequality)&lt;/li>
+&lt;li>comparisons can be applied to results of arithmetic expressions&lt;/li>
+&lt;/ul>
+&lt;h4 id="select-cross-product" >Select Cross Product
+&lt;span>
+&lt;a href="#select-cross-product">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;p>Performs Cross product by specifying multiple relations&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sql" data-lang="sql">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">select&lt;/span>&lt;span style="color:#666"> &lt;/span>*&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">from&lt;/span>&lt;span style="color:#666"> &lt;/span>instructor,&lt;span style="color:#666"> &lt;/span>teaches&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Use where to join and remove duplicate attributes.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sql" data-lang="sql">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">select&lt;/span>&lt;span style="color:#666"> &lt;/span>*&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">from&lt;/span>&lt;span style="color:#666"> &lt;/span>instructor,&lt;span style="color:#666"> &lt;/span>teaches&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">where&lt;/span>&lt;span style="color:#666"> &lt;/span>(instructor.ID&lt;span style="color:#666"> &lt;/span>=&lt;span style="color:#666"> &lt;/span>teaches.ID&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">and&lt;/span>&lt;span style="color:#666"> &lt;/span>instructord.dept_name&lt;span style="color:#666"> &lt;/span>=&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#ed9d13">&amp;#39;Comp. Sci&amp;#39;&lt;/span>&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">and&lt;/span>&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">year&lt;/span>&lt;span style="color:#666"> &lt;/span>=&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#3677a9">2017&lt;/span>)&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="from-inner-join" >FROM Inner Join
+&lt;span>
+&lt;a href="#from-inner-join">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sql" data-lang="sql">&lt;span style="display:flex;">&lt;span>...&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">from&lt;/span>&lt;span style="color:#666"> &lt;/span>instructor&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">inner&lt;/span>&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">join&lt;/span>&lt;span style="color:#666"> &lt;/span>teaches&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">on&lt;/span>&lt;span style="color:#666"> &lt;/span>instructor.ID&lt;span style="color:#666"> &lt;/span>=&lt;span style="color:#666"> &lt;/span>teaches.ID...&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="from-natural-join-clause" >FROM Natural Join Clause
+&lt;span>
+&lt;a href="#from-natural-join-clause">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sql" data-lang="sql">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">select&lt;/span>&lt;span style="color:#666"> &lt;/span>*&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">from&lt;/span>&lt;span style="color:#666"> &lt;/span>instructor&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">natural&lt;/span>&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">join&lt;/span>&lt;span style="color:#666"> &lt;/span>teaches&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Be careful since this does it to all attributes&lt;/p>
+&lt;h4 id="select-as" >SELECT as
+&lt;span>
+&lt;a href="#select-as">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;p>Renaming the attribute in the query result&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sql" data-lang="sql">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">select&lt;/span>&lt;span style="color:#666"> &lt;/span>T.ID,&lt;span style="color:#666"> &lt;/span>T.name&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">from&lt;/span>&lt;span style="color:#666"> &lt;/span>instructor&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">as&lt;/span>&lt;span style="color:#666"> &lt;/span>T,&lt;span style="color:#666"> &lt;/span>instructor&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">as&lt;/span>&lt;span style="color:#666"> &lt;/span>S&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">where&lt;/span>&lt;span style="color:#666"> &lt;/span>T.salary&lt;span style="color:#666"> &lt;/span>&amp;gt;&lt;span style="color:#666"> &lt;/span>S.salary&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">and&lt;/span>&lt;span style="color:#666"> &lt;/span>S.ID&lt;span style="color:#666"> &lt;/span>=&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#ed9d13">&amp;#39;12121&amp;#39;&lt;/span>&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="string-operations" >String Operations
+&lt;span>
+&lt;a href="#string-operations">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;ul>
+&lt;li>&amp;lsquo;5&amp;quot;6&amp;rsquo; (allows double quotes)&lt;/li>
+&lt;li>&amp;lsquo;Datebase&amp;rsquo; = &amp;lsquo;database&amp;rsquo; (false)&lt;/li>
+&lt;li>DBMS might not differentitae (MYSQL)&lt;/li>
+&lt;li>concat&lt;/li>
+&lt;li>to upper or to lower&lt;/li>
+&lt;li>string length, extracting substrings, etc.&lt;/li>
+&lt;/ul>
+&lt;h4 id="where-like" >WHERE like
+&lt;span>
+&lt;a href="#where-like">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;ul>
+&lt;li>%: match any substring&lt;/li>
+&lt;li>_: match any charater (one)&lt;/li>
+&lt;li>escape using &lt;code>escape '%'&lt;/code> or &lt;code>escape '_'&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sql" data-lang="sql">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">WHERE&lt;/span>&lt;span style="color:#666"> &lt;/span>attribute&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">like&lt;/span>&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#ed9d13">&amp;#39;%pattern%&amp;#39;&lt;/span>&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="order" >ORDER
+&lt;span>
+&lt;a href="#order">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sql" data-lang="sql">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">select&lt;/span>&lt;span style="color:#666"> &lt;/span>name&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">from&lt;/span>&lt;span style="color:#666"> &lt;/span>instructor&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">order&lt;/span>&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">by&lt;/span>&lt;span style="color:#666"> &lt;/span>name&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">asc&lt;/span>&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#999;font-style:italic">-- default is asc
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">&lt;/span>&lt;span style="color:#6ab825;font-weight:bold">select&lt;/span>&lt;span style="color:#666"> &lt;/span>name&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">from&lt;/span>&lt;span style="color:#666"> &lt;/span>instructor&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">order&lt;/span>&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">by&lt;/span>&lt;span style="color:#666"> &lt;/span>dept_name,&lt;span style="color:#666"> &lt;/span>name&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">desc&lt;/span>&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="union" >Union
+&lt;span>
+&lt;a href="#union">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sql" data-lang="sql">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">select&lt;/span>&lt;span style="color:#666"> &lt;/span>course_id&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">&lt;/span>&lt;span style="color:#6ab825;font-weight:bold">from&lt;/span>&lt;span style="color:#666"> &lt;/span>section&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">&lt;/span>&lt;span style="color:#6ab825;font-weight:bold">where&lt;/span>&lt;span style="color:#666"> &lt;/span>semester=&lt;span style="color:#a61717;background-color:#e3d2d2">’&lt;/span>Fall&lt;span style="color:#a61717;background-color:#e3d2d2">’&lt;/span>&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">and&lt;/span>&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">year&lt;/span>=&lt;span style="color:#3677a9">2017&lt;/span>&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">&lt;/span>&lt;span style="color:#6ab825;font-weight:bold">union&lt;/span>&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">&lt;/span>&lt;span style="color:#6ab825;font-weight:bold">select&lt;/span>&lt;span style="color:#666"> &lt;/span>course_id&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">&lt;/span>&lt;span style="color:#6ab825;font-weight:bold">from&lt;/span>&lt;span style="color:#666"> &lt;/span>section&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">&lt;/span>&lt;span style="color:#6ab825;font-weight:bold">where&lt;/span>&lt;span style="color:#666"> &lt;/span>semester=&lt;span style="color:#a61717;background-color:#e3d2d2">’&lt;/span>Spring&lt;span style="color:#a61717;background-color:#e3d2d2">’&lt;/span>&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">and&lt;/span>&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">year&lt;/span>=&lt;span style="color:#3677a9">2018&lt;/span>&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">&lt;/span>&lt;span style="color:#999;font-style:italic">-- union all
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">&lt;/span>&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">&lt;/span>&lt;span style="color:#6ab825;font-weight:bold">select&lt;/span>&lt;span style="color:#666"> &lt;/span>course_id&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">&lt;/span>&lt;span style="color:#6ab825;font-weight:bold">from&lt;/span>&lt;span style="color:#666"> &lt;/span>section&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">&lt;/span>&lt;span style="color:#6ab825;font-weight:bold">where&lt;/span>&lt;span style="color:#666"> &lt;/span>semester=&lt;span style="color:#a61717;background-color:#e3d2d2">’&lt;/span>Fall&lt;span style="color:#a61717;background-color:#e3d2d2">’&lt;/span>&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">and&lt;/span>&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">year&lt;/span>=&lt;span style="color:#3677a9">2017&lt;/span>&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">&lt;/span>&lt;span style="color:#6ab825;font-weight:bold">union&lt;/span>&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">all&lt;/span>&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">&lt;/span>&lt;span style="color:#6ab825;font-weight:bold">select&lt;/span>&lt;span style="color:#666"> &lt;/span>course_id&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">&lt;/span>&lt;span style="color:#6ab825;font-weight:bold">from&lt;/span>&lt;span style="color:#666"> &lt;/span>section&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">&lt;/span>&lt;span style="color:#6ab825;font-weight:bold">where&lt;/span>&lt;span style="color:#666"> &lt;/span>semester=&lt;span style="color:#a61717;background-color:#e3d2d2">’&lt;/span>Spring&lt;span style="color:#a61717;background-color:#e3d2d2">’&lt;/span>&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">and&lt;/span>&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">year&lt;/span>=&lt;span style="color:#3677a9">2018&lt;/span>&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="aggregate-pt-1" >Aggregate Pt. 1
+&lt;span>
+&lt;a href="#aggregate-pt-1">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;ul>
+&lt;li>avg: average value&lt;/li>
+&lt;li>min: minimum value&lt;/li>
+&lt;li>max: maximum value&lt;/li>
+&lt;li>sum: sum of values&lt;/li>
+&lt;li>count: number of values
+&lt;ul>
+&lt;li>count (*) to count number of tuples
+Usage &lt;code>SELECT count(attribute), ...&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>Group by: group tuples into another attribute.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sql" data-lang="sql">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">select&lt;/span>&lt;span style="color:#666"> &lt;/span>dept_name,&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">avg&lt;/span>(salary)&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">group&lt;/span>&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">by&lt;/span>&lt;span style="color:#666"> &lt;/span>dept_name&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">having&lt;/span>&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">avg&lt;/span>(salary)&lt;span style="color:#666"> &lt;/span>&amp;gt;&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#3677a9">25000&lt;/span>&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>The having condition applies on each group and not on the aggregation. The having applies before the select returns but after the grouping.&lt;/p>
+&lt;p>Null: null indicates unknown or missing data.&lt;/p>
+&lt;p>Comparing null with anything else always results in unknown even with null.&lt;/p>
+&lt;p>Unknown always takes precedence.&lt;/p>
+&lt;p>Use &lt;code>is null&lt;/code> for a null comparison&lt;/p></description></item><item><title>CS 350 Operating Systems</title><link>https://blog.elijahlopez.ca/posts/cs-350-operating-systems/</link><pubDate>Tue, 10 Jan 2023 14:56:10 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/cs-350-operating-systems/</guid><description>&lt;p>&lt;a href="https://student.cs.uwaterloo.ca/~cs350/">Course website&lt;/a>&lt;/p>
 &lt;div>
 &lt;h2>Table of Contents&lt;/h2>
 &lt;nav id="TableOfContents">
