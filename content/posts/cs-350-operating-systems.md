@@ -9,6 +9,8 @@ tags: [
 
 [Course website](https://student.cs.uwaterloo.ca/~cs350/)
 
+{{< toc >}}
+
 ## Concepts
 
 - Operating Systems
@@ -36,7 +38,7 @@ tags: [
 ### Submitting
 
 ```sh
-cs350_submit <assign_dir> <assign_num_type>
+cs350_submit <assign_dir> ASST0
 cs350_submit ASSTUSER0 ASSTUSER0
 ```
 
@@ -182,4 +184,77 @@ int execlp(char *prog, char *arg, ...)l
 // List arguments one at a time, finish with NULL
 ```
 
+```c
+int dup2(int oldfd, int newfd);
+// closes newfd if it was a valid descriptor
+// makes newfd an exact copy of oldfd
+// same offset on both
+```
+
+```c
+int fcntl(int fd, F_SETFD, int val);
+// sets close on exec flag if val = 1, clears if val = 0
+// sets file descriptor non-inheritable by new program
+```
+
 [slide left off at](https://student.cs.uwaterloo.ca/~cs350/W23/notes/processes.pdf)
+
+```c
+perror(char * arg)
+```
+
+Error friendly print
+
+### PIpes
+
+```c
+int pipe(it fds[2]);
+// returns two file descriptors in fds[0] and fds[1]
+// writes to fds[1] will be read on fds[0]
+// fds[0] returns EOF after last copy of fds[1] closes
+// -1 is error, 0 is success
+```
+
+pipesh.c
+
+Use dup2 to read from the pipe\[1] and write from the pipe\[0] while maintaining the stdout and stdin. stderr is 2.
+
+### Implementing Processes
+
+- Process Control Block (PCB) is kept for each process
+- `proc` in Unix, `task_struct` in Linux, `struct thread` in OS/161
+- Tracks state of process
+  - new and terminated at beginning & end of life
+  - running
+  - ready - can run, but kernel has chosen different process to run
+  - waiting
+- Information necessary to run (registers, virtual memory mapping, etc, open files)
+- Other data like credentials, signal mask, controlling terminal, priority, accounting stats, debugged, binary emulation, ...
+
+### Scheduling
+
+- FIFO/Round-Robin?
+- Priority, give some threads a better shot at the CPU
+
+### Preemption
+
+- Can preempt a process when kernel gets control
+- Vector controls through system calls and etc.
+- Periodic timer
+- Device interrupt
+- Changing the running process is called context switch
+
+### Context Switch
+
+- Saving program counter and integer registers (Always)
+- Special registers
+- Condition codes
+- Change virtual address translations
+
+Non-negligible cost
+
+- Save/restore floating point registers expensive
+- Flushing TLB (memory translation hardware)
+  - HW Optimization 1: Don't flush kernel's own data from TLB
+  - HW Optimization 2: use tag to avoid flushing any data
+- Cache misses
