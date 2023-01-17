@@ -161,4 +161,194 @@ tuples that don't have those attributes matching. During the first cross product
 
 ### Relational Completeness
 
-## The Relational Calculus
+### The Relational Calculus
+
+## SQL - Structured Query Language
+
+KEYWORD (statements is implied)
+
+- SQL Data Manipulation Language (DML)
+  - SELECT for queries
+  - INSERT, UPDATE, DELETE modify the instance of a table
+- SQL Data Definition Language (DDL)
+  - CREATE, DROP modify the database schema
+- SQL Data Control Language (DCL)
+  - GRANT, REVOKE enforce the security model
+
+Schema used for Examples
+
+![database schema](/images/cs-348/database-examples-schema.png)
+
+### Data Types
+
+- integer or int (32 bit or 4 byte)
+- smallint (16 bit or 2 bytes)
+- numeric(p, q): p digit numbers with q digits to the right
+- real, double precision:
+- float(n): user-specified precision of at least n digits
+- char(n): fixed length character strings (n is length)
+- varchar(n): variable length character to a max length of n
+- date: describes year, month, day
+- time: describes an hour, minute, second
+- timestamp: describes a date and time
+- interval: allows date/time computations
+
+### Tables
+
+```sql
+create table r
+  (A1 D1, ..., An, Dn),
+  (integrity-constraint-1),
+  ...
+  (integrity-constraint-k),
+```
+
+r: relation, A: attribute, D: data type
+
+integrity-contraints:
+
+```sql
+primary key (A1, ..., An )
+foreign key (Am, ..., An ) references r2
+```
+
+### Queries
+
+SQL allows duplicate tuples in relations as well as in query results. need to use
+the `distinct` keyword after select.
+
+```sql
+SELECT [distinct] dept_name, salary from instructor
+```
+
+\[OPTIONAL]
+
+To return all attributes, use an asterisk (*)
+
+#### Arithmetic Expressions
+
+You can operate on the data through the select call itself. For example, if we wanted the monthly salary instead of an annual one:
+
+```sql
+select ID, name, salary/12 as monthly_salary from instructor
+```
+
+#### Filtering (Where)
+
+```sql
+select name from instructor where dept_name = ’Comp. Sci.’
+```
+
+- logical connectives: and, or, and not
+- comparison operations:  <, <=, >, >=, =, and <> (inequality)
+- comparisons can be applied to results of arithmetic expressions
+
+#### Select Cross Product
+
+Performs Cross product by specifying multiple relations
+
+```sql
+select * from instructor, teaches
+```
+
+Use where to join and remove duplicate attributes.
+
+```sql
+select * from instructor, teaches where (instructor.ID = teaches.ID and instructord.dept_name = 'Comp. Sci' and year = 2017)
+```
+
+#### FROM Inner Join
+
+```sql
+... from instructor inner join teaches on instructor.ID = teaches.ID...
+```
+
+#### FROM Natural Join Clause
+
+```sql
+select * from instructor natural join teaches
+```
+
+Be careful since this does it to all attributes
+
+#### SELECT as
+
+Renaming the attribute in the query result
+
+```sql
+select T.ID, T.name from instructor as T, instructor as S where T.salary > S.salary and S.ID = '12121'
+```
+
+#### String Operations
+
+- '5"6' (allows double quotes)
+- 'Datebase' = 'database' (false)
+- DBMS might not differentitae (MYSQL)
+- concat
+- to upper or to lower
+- string length, extracting substrings, etc.
+
+#### WHERE like
+
+- %: match any substring
+- _: match any charater (one)
+- escape using `escape '%'` or `escape '_'`
+
+```sql
+WHERE attribute like '%pattern%'
+```
+
+#### ORDER
+
+```sql
+select name from instructor order by name asc   -- default is asc
+select name from instructor order by dept_name, name  desc
+```
+
+#### Union
+
+```sql
+select course_id
+from section
+where semester=’Fall’ and year=2017
+union
+select course_id
+from section
+where semester=’Spring’ and year=2018
+
+-- union all
+
+select course_id
+from section
+where semester=’Fall’ and year=2017
+union all
+select course_id
+from section
+where semester=’Spring’ and year=2018
+```
+
+#### Aggregate Pt. 1
+
+- avg: average value
+- min: minimum value
+- max: maximum value
+- sum: sum of values
+- count: number of values
+  - count (*) to count number of tuples
+Usage `SELECT count(attribute), ...`
+
+Group by: group tuples into another attribute.
+
+```sql
+select dept_name, avg(salary) group by dept_name having avg(salary) > 25000
+```
+
+ The having condition applies on each group and not on the aggregation. The having applies before the select returns but after the grouping.
+
+Null: null indicates unknown or missing data.
+
+Comparing null with anything else always results in unknown even with null.
+
+Unknown always takes precedence.
+
+Use `is null` for a null comparison
