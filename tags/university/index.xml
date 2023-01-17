@@ -276,6 +276,43 @@ tuples that don&amp;rsquo;t have those attributes matching. During the first cro
 &lt;/a>
 &lt;/span>
 &lt;/h2></description></item><item><title>CS 350 Operating Systems</title><link>https://blog.elijahlopez.ca/posts/cs-350-operating-systems/</link><pubDate>Tue, 10 Jan 2023 14:56:10 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/cs-350-operating-systems/</guid><description>&lt;p>&lt;a href="https://student.cs.uwaterloo.ca/~cs350/">Course website&lt;/a>&lt;/p>
+&lt;div>
+&lt;h2>Table of Contents&lt;/h2>
+&lt;nav id="TableOfContents">
+&lt;ul>
+&lt;li>&lt;a href="#concepts">Concepts&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#course-topics">Course Topics&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#assigment-helpers">Assigment Helpers&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#submitting">Submitting&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#how-to-add-to-path">How to add to PATH&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#pro-tip">Pro tip&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#custom-directory-for-os161">Custom Directory for OS/161&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#finding-stuff-in-the-kernal-code">Finding stuff in the kernal code&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#building-the-kernel">Building the kernel&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#add-the-simulator-to-root">Add the simulator to root&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#running-the-kernel-on-a-simulator">Running the kernel on a simulator&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#debugging">Debugging&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#working-locally">Working locally&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#submitting-assignments">Submitting Assignments&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#readelf">Readelf&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="#processes">Processes&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#abstractions">Abstractions&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#sections">Sections&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#creating-processes">Creating processes&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#pipes">PIpes&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#implementing-processes">Implementing Processes&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#scheduling">Scheduling&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#preemption">Preemption&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#context-switch">Context Switch&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/nav>
+&lt;/div>
 &lt;h2 id="concepts" >Concepts
 &lt;span>
 &lt;a href="#concepts">
@@ -320,7 +357,7 @@ tuples that don&amp;rsquo;t have those attributes matching. During the first cro
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
-&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>cs350_submit &amp;lt;assign_dir&amp;gt; &amp;lt;assign_num_type&amp;gt;
+&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>cs350_submit &amp;lt;assign_dir&amp;gt; ASST0
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cs350_submit ASSTUSER0 ASSTUSER0
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="how-to-add-to-path" >How to add to PATH
 &lt;span>
@@ -471,7 +508,95 @@ it may be better to use grep.&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">// Searches PATH for prog
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">&lt;/span>&lt;span style="color:#6ab825;font-weight:bold">int&lt;/span> &lt;span style="color:#447fcf">execlp&lt;/span>(&lt;span style="color:#6ab825;font-weight:bold">char&lt;/span> *prog, &lt;span style="color:#6ab825;font-weight:bold">char&lt;/span> *arg, ...)l
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">// List arguments one at a time, finish with NULL
-&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;a href="https://student.cs.uwaterloo.ca/~cs350/W23/notes/processes.pdf">slide left off at&lt;/a>&lt;/p></description></item><item><title>BU 375 Operations</title><link>https://blog.elijahlopez.ca/posts/bu-375-operations/</link><pubDate>Sat, 04 Jun 2022 10:23:48 -0400</pubDate><guid>https://blog.elijahlopez.ca/posts/bu-375-operations/</guid><description>&lt;!-- markdownlint-disable MD033 -->
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-c" data-lang="c">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">int&lt;/span> &lt;span style="color:#447fcf">dup2&lt;/span>(&lt;span style="color:#6ab825;font-weight:bold">int&lt;/span> oldfd, &lt;span style="color:#6ab825;font-weight:bold">int&lt;/span> newfd);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">// closes newfd if it was a valid descriptor
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">// makes newfd an exact copy of oldfd
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">// same offset on both
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-c" data-lang="c">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">int&lt;/span> &lt;span style="color:#447fcf">fcntl&lt;/span>(&lt;span style="color:#6ab825;font-weight:bold">int&lt;/span> fd, F_SETFD, &lt;span style="color:#6ab825;font-weight:bold">int&lt;/span> val);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">// sets close on exec flag if val = 1, clears if val = 0
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">// sets file descriptor non-inheritable by new program
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;a href="https://student.cs.uwaterloo.ca/~cs350/W23/notes/processes.pdf">slide left off at&lt;/a>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-c" data-lang="c">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#447fcf">perror&lt;/span>(&lt;span style="color:#6ab825;font-weight:bold">char&lt;/span> * arg)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Error friendly print&lt;/p>
+&lt;h3 id="pipes" >PIpes
+&lt;span>
+&lt;a href="#pipes">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-c" data-lang="c">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">int&lt;/span> &lt;span style="color:#447fcf">pipe&lt;/span>(it fds[&lt;span style="color:#3677a9">2&lt;/span>]);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">// returns two file descriptors in fds[0] and fds[1]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">// writes to fds[1] will be read on fds[0]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">// fds[0] returns EOF after last copy of fds[1] closes
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">// -1 is error, 0 is success
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>pipesh.c&lt;/p>
+&lt;p>Use dup2 to read from the pipe[1] and write from the pipe[0] while maintaining the stdout and stdin. stderr is 2.&lt;/p>
+&lt;h3 id="implementing-processes" >Implementing Processes
+&lt;span>
+&lt;a href="#implementing-processes">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Process Control Block (PCB) is kept for each process&lt;/li>
+&lt;li>&lt;code>proc&lt;/code> in Unix, &lt;code>task_struct&lt;/code> in Linux, &lt;code>struct thread&lt;/code> in OS/161&lt;/li>
+&lt;li>Tracks state of process
+&lt;ul>
+&lt;li>new and terminated at beginning &amp;amp; end of life&lt;/li>
+&lt;li>running&lt;/li>
+&lt;li>ready - can run, but kernel has chosen different process to run&lt;/li>
+&lt;li>waiting&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Information necessary to run (registers, virtual memory mapping, etc, open files)&lt;/li>
+&lt;li>Other data like credentials, signal mask, controlling terminal, priority, accounting stats, debugged, binary emulation, &amp;hellip;&lt;/li>
+&lt;/ul>
+&lt;h3 id="scheduling" >Scheduling
+&lt;span>
+&lt;a href="#scheduling">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>FIFO/Round-Robin?&lt;/li>
+&lt;li>Priority, give some threads a better shot at the CPU&lt;/li>
+&lt;/ul>
+&lt;h3 id="preemption" >Preemption
+&lt;span>
+&lt;a href="#preemption">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Can preempt a process when kernel gets control&lt;/li>
+&lt;li>Vector controls through system calls and etc.&lt;/li>
+&lt;li>Periodic timer&lt;/li>
+&lt;li>Device interrupt&lt;/li>
+&lt;li>Changing the running process is called context switch&lt;/li>
+&lt;/ul>
+&lt;h3 id="context-switch" >Context Switch
+&lt;span>
+&lt;a href="#context-switch">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Saving program counter and integer registers (Always)&lt;/li>
+&lt;li>Special registers&lt;/li>
+&lt;li>Condition codes&lt;/li>
+&lt;li>Change virtual address translations&lt;/li>
+&lt;/ul>
+&lt;p>Non-negligible cost&lt;/p>
+&lt;ul>
+&lt;li>Save/restore floating point registers expensive&lt;/li>
+&lt;li>Flushing TLB (memory translation hardware)
+&lt;ul>
+&lt;li>HW Optimization 1: Don&amp;rsquo;t flush kernel&amp;rsquo;s own data from TLB&lt;/li>
+&lt;li>HW Optimization 2: use tag to avoid flushing any data&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Cache misses&lt;/li>
+&lt;/ul></description></item><item><title>BU 375 Operations</title><link>https://blog.elijahlopez.ca/posts/bu-375-operations/</link><pubDate>Sat, 04 Jun 2022 10:23:48 -0400</pubDate><guid>https://blog.elijahlopez.ca/posts/bu-375-operations/</guid><description>&lt;!-- markdownlint-disable MD033 -->
 &lt;p>This document are my notes and midterm review for the BU 375 Operations course taught at Wilfrid Laurier University. While studying for the midterm, I discovered my own formulae shortcuts, undoubtedly due to &amp;ldquo;blind teaching syndrome&amp;rdquo; (I made that term up).
 So let&amp;rsquo;s begin. I&amp;rsquo;ll add a divider to let you know what is part of the midterm.&lt;/p>
 &lt;div>
