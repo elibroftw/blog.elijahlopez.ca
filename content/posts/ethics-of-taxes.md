@@ -60,7 +60,7 @@ Some of these functions can be funded on a use case basis. For example, if there
 that costs the government more to provide than if people didn't drive cars, the people of that behaviour should be
 paying more for their fair share. This is different from luxury taxes where the government is not spending more to provide luxury cars than non-luxury cars
 whereas governments are spending money to provide roads used by drivers. If there were less drivers there would be less need to spend on roads.
-People who take public transporation are saving the government money, therefore a higher share of the cost of the roads should be paid by car owners rather
-than public transporation users. In other words, all roads should be tolled if reasonable public transport alternatives exist. So say the main highway that runs
+People who take public transportation are saving the government money, therefore a higher share of the cost of the roads should be paid by car owners rather
+than public transportation users. In other words, all roads should be tolled if reasonable public transport alternatives exist. So say the main highway that runs
 along the GO train. No I don't believe it should be taxed because public transport is slower by more than an hour. If public transportation can get you to a location with
 a time difference of no more than 30 minutes to an hour max, then a case for taxation can be made.

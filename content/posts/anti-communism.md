@@ -13,7 +13,7 @@ A post responding to this youtube video
 
 ## Socialism is when the government does stuff
 
-Like SSS says, the left says peddles this narrative to make socialism seem easily integratable.
+Like SSS says, the left says peddles this narrative to make socialism seem easily integrable.
 It's not an anti-communist talking about, it is a socialist talking point.
 
 ### Socialism 101
@@ -27,7 +27,7 @@ haven't achieved the state of communism.
 
 ## Communism would create a hivemind dystopia
 
-Has anyone actually said this? I guess you could argue communism tries to create a hivemind but is not 100% achieveable.
+Has anyone actually said this? I guess you could argue communism tries to create a hivemind but is not 100% achievable.
 
 ### Communists want to "free" the masses
 
@@ -49,7 +49,7 @@ Argument: communism solves everything!
 
 Counter-examples:
 
-- In 2020 capitlism = more than enough food. 2022: food shortage.
+- In 2020 capitalism = more than enough food. 2022: food shortage.
 - US collects $1T per year in taxes, $3.2T = wealth of all billionaires, malaria costs $10B tops to solve, US donates $10B/yr to the UN.
   - If the US can't solve malaria globally with $10B (not to mention military spending), then what good would $3.2T do?
   - Not to mention the debt each country has. If we wanted to solve malaria, why don't we just take $10B in debt and solve it?
@@ -74,20 +74,20 @@ Incentives:
 - Necessity
 - Companionship
 
-arugment is that the human nature argument is generalizing humans, but that is actually not what it is.
+argument is that the human nature argument is generalizing humans, but that is actually not what it is.
 The human nature argument is that people don't think the same, and their opposing beliefs get in the way.
 It is not human nature of humans, but rather the human nature of <u>a</u> human.
 
-## Why live in Capitlism? Go to X country
+## Why live in Capitalism? Go to X country
 
 I concur that this is a poor argument, although no English speaking communist country
 exists. I highly doubt that communists would go to a communist country when they don't
 even speak the same language.
 
 Okay, we will ask a person to name the best country in the world. If it is communist (get them to clarify),
-ask them honestly why they don't move there? Most liekly, they will say money or language (culture).
-If money, ask them how much money they need to save up (proof by contradiction to get hipocrisy). Otherwise,
-ask them the country that they think is the most communist that they could assimilate to and then procede to do
+ask them honestly why they don't move there? Most likely, they will say money or language (culture).
+If money, ask them how much money they need to save up (proof by contradiction to get hypocrisy). Otherwise,
+ask them the country that they think is the most communist that they could assimilate to and then proceed to do
 the same questioning.
 
 ## Horseshoe Theory
@@ -100,12 +100,12 @@ and far-right are obviously at the same level (i.e. there is a slope)
 
 ## Authoritarianism
 
-Generalization intervensions as capitlism wanting to protect capital rather than a) national interests b) the pre-existing notion that communism would be bad.
+Generalization interventions as capitalism wanting to protect capital rather than a) national interests b) the pre-existing notion that communism would be bad.
 
 SSS blames capitalism for anything communism does that isn't stateless. Apparently the guerillas in South America are peaceful and aren't killing
-innocent civilians. It actually capitalism that is making the guerila groups kill innocent people.
+innocent civilians. It actually capitalism that is making the guerilla groups kill innocent people.
 
-"All capitlists cry when China defends itself" 😂😂😂😂
+"All capitalists cry when China defends itself" 😂😂😂😂
 
 ### "Communism was actually popular"
 
@@ -118,7 +118,7 @@ that is completely different than saying 80% of the entire USSR wanted to stay i
 
 > The administration could continue to support Gorbachev in hopes of preventing Soviet disintegration.
 
-Who is telling the truth? Is this website also part of the conspiracy that everything that happens is because of capitlism?
+Who is telling the truth? Is this website also part of the conspiracy that everything that happens is because of capitalism?
 
 SSS ignores the existence of food banks and welfare systems.
 

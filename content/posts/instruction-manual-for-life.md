@@ -4,7 +4,7 @@ date: 2022-02-15T10:48:38-05:00
 draft: true
 ---
 
-This is an ongoing article on how to raise a child (not necessarily yours) and how to grow as a person. As a child grows, they generally become or should become more self-aware and cosncious. Maturity means that they are able to think more than one-step ahead for 99% of actions. Being an adult does not imply you are mature. Maturity is also not about never having fun or never laughing.
+This is an ongoing article on how to raise a child (not necessarily yours) and how to grow as a person. As a child grows, they generally become or should become more self-aware and conscious. Maturity means that they are able to think more than one-step ahead for 99% of actions. Being an adult does not imply you are mature. Maturity is also not about never having fun or never laughing.
 
 For me, this was probably at the start of grade 11. I distinctly remember not trying at all in Grade 12 chemistry during the summer going into Grade 11. However, once in Grade 11, I got serious about most of my courses.
 
@@ -27,7 +27,7 @@ You may have a choice in what you want to do, but you need to be aware of how it
 
 With that said, I would go for Computer Science at a community college.
 
-It is not about what you want to do. You can want to do something, but we don't live in a fatasy so you need to be rooted in reality.
+It is not about what you want to do. You can want to do something, but we don't live in a fantasy so you need to be rooted in reality.
 
 You do not have to go to University, and if your degree won't get you a median paying job ($55,000) you should definitely go to (Community) College. Even at this salary, you should be thinking about ways to increase your economic situation.
 
@@ -98,7 +98,7 @@ The person in question:
 ## 13th year of life
 
 I think this is when you start doing your life guarding course. Only do life guarding course if you are born before July.
-The programs disciminate based on age rather than birth year, so you'd end up as a life guard for only half the required time!
+The programs discriminate based on age rather than birth year, so you'd end up as a life guard for only half the required time!
 
 However, you can volunteer at the community centre for swimming programs without any courses.
 

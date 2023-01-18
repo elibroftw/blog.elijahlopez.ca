@@ -23,7 +23,7 @@ Analysis: By tying infrastructure $ to # houses built for specific cities, citie
 
 Poilievre's last point is to sell ~5,500 federal buildings and transform them into housing to create MM and MM[^sideNote1] of places to live, and this is an obvious hyperbole. It's impossible to put a fine number but if we assumed each of these buildings were to be replaced by an apartment, we could see 132 * 5,500 = 742,000 housing units. The 132 units per apartment building comes from Quora so the total units is ball park figure but better than a hyperbole.
 
-In conclusion, I myself had not thought of this policy and it's great Poilievre came up with something new that can be summarized as bullying (my words not his) or incentivizing cities into submission rather than trying to impede their municipal rights. This is a heck of a lot more practical than simply stating "we will increase contruction permit approvals." The policies I had come up with to address housing affordability can be found [here](/posts/canada/#housing-affordability).
+In conclusion, I myself had not thought of this policy and it's great Poilievre came up with something new that can be summarized as bullying (my words not his) or incentivize cities into submission rather than trying to impede their municipal rights. This is a heck of a lot more practical than simply stating "we will increase construction permit approvals." The policies I had come up with to address housing affordability can be found [here](/posts/canada/#housing-affordability).
 
 ## Repealing Bill C-69
 
@@ -35,7 +35,7 @@ EVERY PROPOSAL!!!!
 
 Even without any funding by corporations, being against this bill has merit. Poilevre is arguing from a point of improving energy independence, however I feel that the benefits are much more broader and not just restricted to energy. The bill supposedly impeding pipelines does have some merit as presently any pipeline proposal could be declined simply because the Minister of Environment doesn't want it approved or stalled by the Governor in Council.
 
-Now for something interesting I found. It seems that even before the LPC, an assessment for an impact assessment was required. This [Uranium Millennium Mine Project](https://iaac-aeic.gc.ca/050/evaluations/proj/49928) has been under assessment since 2013. Apparently the proposal was started in 2009, and the last change was made in 2019. This is outrageous for both CPC and LPC if a Uranium mining project has been stalled for this long. Cameco, a Canadian copany, has been losing revenue year over year!
+Now for something interesting I found. It seems that even before the LPC, an assessment for an impact assessment was required. This [Uranium Millennium Mine Project](https://iaac-aeic.gc.ca/050/evaluations/proj/49928) has been under assessment since 2013. Apparently the proposal was started in 2009, and the last change was made in 2019. This is outrageous for both CPC and LPC if a Uranium mining project has been stalled for this long. Cameco, a Canadian company, has been losing revenue year over year!
 
 ## Sources
 
