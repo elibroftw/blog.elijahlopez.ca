@@ -1,8 +1,9 @@
 ---
 title: "Male Grooming Tips"
 date: 2022-05-10T20:48:46-04:00
-draft: true
+draft: false
 hidden: true
+aliases: ['/posts/grooming-tips/']
 ---
 
 This is a work in progress.
