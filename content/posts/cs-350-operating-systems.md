@@ -33,13 +33,19 @@ tags: [
 - Protection & Security
 - Unix referenced as an example
 
-## Assigment Helpers
+## Assignment Helpers
 
 ### Submitting
 
+File hierarchy
+
+- cs350 (CWD)
+  - os161
+  - userspace
+
 ```sh
-cs350_submit <assign_dir> ASST0
-cs350_submit ASSTUSER0 ASSTUSER0
+cs350_submit os161/os161-1.99/kern/compile/ASST0
+cs350_submit userspace/ASSTUSER0 ASSTUSER0
 ```
 
 ### How to add to PATH
