@@ -12,7 +12,7 @@ After thinking about abortion for a good couple hours, I was finally able to for
 </details>
 
 There will always be haters and this is not an echo chamber for any side, however some opinions are going to be confronted more than others.
-I have made made a short guide for people of different polticial leanings.
+I have made made a short guide for people of different political leanings.
 
 - For right-leaning people who are religious and aren't open to changing their mind, read from [target reader](#target-reader).
 - For right-leaning people who aren't open to changing their mind, read from [obligations](#obligations).
@@ -28,7 +28,7 @@ Classical liberals, libertarian-right, property rights advocates, gun rights adv
 
 It's incredibly hard to write in a way to reach out to the religious and close minded, but I'll do my best.
 By religious and close minded, I mean the people who use religious texts as evidence or proof or command to do certain actions or think certain ways
-rather than thinking deeper into why the text would say certain things or if its even valid anymore. This is not a critque of religion, so I will move on.
+rather than thinking deeper into why the text would say certain things or if its even valid anymore. This is not a critique of religion, so I will move on.
 My arguments are based on property & privacy rights as my hint strongly implies, rather than arguing the temper tantrum inducing "human life starts at conception."
 
 ## Obligations
@@ -44,7 +44,7 @@ If there is moral obligation to help homeless people past one meal, should that
 obligation be forced by the government?
 
 If that obligation is to be forced by the government, then what other moral obligations should
-be forced by the government? Should the governmetn force the donation of organs upon death?
+be forced by the government? Should the government force the donation of organs upon death?
 
 Should the government force the obligation to perform free labour since you are a plumber when
 your neighbours sink bursts?
@@ -56,17 +56,17 @@ I propose three questions. When does a human have a moral obligation, when shoul
 Well for abortion, the woman and doctor don't have a moral obligation. My proof is by contradiction. Buying a homeless person
 a meal is much easier than carrying a growing thing inside your body for even one month. Imagine if men were not allowed to ejaculate
 unless they were having sexual intercourse with their married spouse. If you do in fact believe in that nonsense, you should
-read up on what Human Rights are because you will never understand the other side until you can understand why religous beliefs, if
+read up on what Human Rights are because you will never understand the other side until you can understand why religious beliefs, if
 codified, would be against human rights (which are universal and not legislative).
 
 As for when the government should dictate an obligation is to ensure the well being of the population without infringing the rights of the minority.
 In self-defence, the minority are the criminals. When talking about animal cruelty, pets are the minority. Therefore, being human is not a consideration to having rights.
-Does a fetus have rights if it was not a human? Interesting question. Yes, but those rights are not supreme and are the same (or similar) to an unwanted person in anothers home.
+Does a fetus have rights if it was not a human? Interesting question. Yes, but those rights are not supreme and are the same (or similar) to an unwanted person in another's home.
 If the removal of such a person leads to their death, so be it. A person should not have to wait 9 months for the removal of another.
 Foreseeing a rebuttal, my opinion on squatting is irrelevant since squatters  don't have the same rights when they squat in a primary residence.
 
 If someone was in your primary residence, they would be trespassing. A fetus is trespassing the moment the
-woman decides it was unwanted just like a heckler at a comedy show. Consent, priviledge, and permission are all revokable. The intruder of your home
+woman decides it was unwanted just like a heckler at a comedy show. Consent, privilege, and permission are all revokable. The intruder of your home
 would be detained and if that resulted in their death because they are sensitive to any touch, that would be on them and not the police officers that
 removed them. This world would simply not function if the people in it were incapable of handling any obstacles. Likewise in the case of abortion,
 abortion is not the act of killing a fetus, but it is the act of moving them outside of property. It is that move that results in the death of the fetus,

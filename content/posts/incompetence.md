@@ -68,6 +68,6 @@ June 21st 2022
 
 I closed my BMO account and got a bank draft of my account balance minus $10. I go to CIBC and the lady there tells me the funds would've been put on hold and that
 since my business account doesn't even have ID, I need to speak to my business advisor. But I don't have a business advisor since
-I openeded up the account online. I end up going on a wild goose chase for another hour and then decided to just go
+I onended up the account online. I end up going on a wild goose chase for another hour and then decided to just go
 with RBC since they have the best UI and I already personal bank with them. They charge a monthly fee of $6, but at least
-I know I'm getting COMPETENT service. I opened and verfied my account with just a phone call and some emails.
+I know I'm getting COMPETENT service. I opened and verified my account with just a phone call and some emails.

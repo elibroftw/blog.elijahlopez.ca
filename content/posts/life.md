@@ -23,7 +23,7 @@ those Christians from Hollywood media who whips their own backs. Self-harm is no
 prevent ourselves from breaking our own rules.
 
 Laws may be meant to be broken, but your own code is something you should NEVER bend. In no circumstances, should
-your rules be broken or bent. If you have even a single strict rule, it will be tempting to break it on a whim. This is what we want to avoid! Although breaking your rules is never okay, it is fine to spend some time, at least an hour, contemplating whether your rules help you achieve your goals and good desires and modifying them as necessirly. This is indeed similar to a moderator moderating themselves. It requires immense self-control, and this article is for people who are capable of self-control, but CHOOSE to not exert it. I say good desires, because gambling is in my opinion
+your rules be broken or bent. If you have even a single strict rule, it will be tempting to break it on a whim. This is what we want to avoid! Although breaking your rules is never okay, it is fine to spend some time, at least an hour, contemplating whether your rules help you achieve your goals and good desires and modifying them as necessarily. This is indeed similar to a moderator moderating themselves. It requires immense self-control, and this article is for people who are capable of self-control, but CHOOSE to not exert it. I say good desires, because gambling is in my opinion
 a bad desire. Even a person against gambling can succumb to the desire to gamble! I know I'm using this gambling
 example, but it truly is an easy one since I'm against gambling, but think people should be allowed to partake in it.
 
@@ -43,7 +43,7 @@ Conscious life is precious. It is scarce, unique, and allows us to experience th
 
 Life is precious, but what are the goals? Well, the primary goal is to survive. This is evident pretty clear and we are given reproductive organs to ensure something survives beyond our death.
 
-Surviving is the primary goal, but what are the secondaries? This is where objectivity starts to fade out of play. We can begin my analyzing which state of mind is the most ideal; what mindset contributes to the perfect life the most?  For sake of simplicity, I will reduce the set of minds to happiness, moderate stress (about what though), or contentness.
+Surviving is the primary goal, but what are the secondaries? This is where objectivity starts to fade out of play. We can begin my analyzing which state of mind is the most ideal; what mindset contributes to the perfect life the most?  For sake of simplicity, I will reduce the set of minds to happiness, moderate stress (about what though), or contentedness.
 
 If you are always happy, this emotion will be numbed and you will have even higher standards for being happy.
 This is wrong since at a certain point, you will lose your humanity.

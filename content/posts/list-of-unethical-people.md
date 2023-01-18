@@ -7,8 +7,7 @@ hidden: true
 
 This is a list of unethical people. The definition of unethical is acting significantly less ethical than me in a position of power. This is not a list of people whose actions cannot cause much harm. I believe in forgiveness, so anyone who authentically regrets thinking their actions were not unethical will be removed upon request. Anyone with more than 2 infractions is undeserving of forgiveness.
 
-This is not a list of people whose political leaning or opinion I am against. Each person
-on this list is linked because of a reason.
+This is not a list of people whose political leaning or opinion I am against. Each person on this list is linked because of a reason.
 
 Stars before a name represent total infractions. Lack of a stars does not mean the name will show up later on this page.
 
@@ -18,7 +17,7 @@ Stars before a name represent total infractions. Lack of a stars does not mean t
 
 The main culprit here is Mitch McConnell for introducing the amendment that would've allowed the FBI to spy in the first place.
 
-The right to privacy is a human right, not something that the government should think is a priviledge. Policies such as this force people to lose trust in authorities, become paranoid, and start using TOR and VPNs. The world should not be better because privacy preserving tools exist. The world should've already been good without these tools.
+The right to privacy is a human right, not something that the government should think is a privilege. Policies such as this force people to lose trust in authorities, become paranoid, and start using TOR and VPNs. The world should not be better because privacy preserving tools exist. The world should've already been good without these tools.
 
 - Thomas R. Carper (D-DE)
 - Robert P., Jr. Casey (D-PA)

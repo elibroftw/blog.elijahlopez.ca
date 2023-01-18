@@ -6,14 +6,13 @@ draft: true
 ---
 
 I support the right to practice and wear whatever you want but I denounce the
-brainwashing of children. Religious indoctrination is immoral and unethical, especially
-when children are forced into belief. [How to ~~Raise~~ Indoctrinate a Muslim Child](https://www.wikihow.com/Raise-a-Muslim-Child).
+brainwashing of children. Religious indoctrination is immoral and unethical, especially when children are forced into belief. [How to ~~Raise~~ Indoctrinate a Muslim Child](https://www.wikihow.com/Raise-a-Muslim-Child).
 The other thing, is the unjust circumcision of boys. It is genital mutilation, the baby feels pain,
 and it is irreversible. These boys will never know the feeling of the penis with all its nerves.
-It is simply infathomable to not have the foreskin. Most men choose not to get a circumcision when they
-are old enough to get the surgery. People rationlize circumcision by claiming it ensures hygene,
-but hygene comes from showering often and genital mutilation is harmful unless the outcome is more harm.
-If you aren't showering often, you're unhygenic no matter if you lack your foreskin. It is the parents
+It is simply unfathomable to not have the foreskin. Most men choose not to get a circumcision when they
+are old enough to get the surgery. People rationalize circumcision by claiming it ensures hygiene,
+but hygiene comes from showering often and genital mutilation is harmful unless the outcome is more harm.
+If you aren't showering often, you're unhygienic no matter if you lack your foreskin. It is the parents
 responsibility to keep their young child clean, and being ignorant of the human anatomy is not an excuse
 in the 21st century.
 
