@@ -263,13 +263,20 @@ select * from instructor, teaches where (instructor.ID = teaches.ID and instruct
 ... from instructor inner join teaches on instructor.ID = teaches.ID...
 ```
 
+If attributes have the same name, then both will show up with a `relation.` prefix
+
 #### FROM Natural Join Clause
 
 ```sql
 select * from instructor natural join teaches
 ```
 
-Be careful since this does it to all attributes
+Be careful since this does it to all attributes. For specific attributes,
+use `using`
+
+```sql
+select * from T join S using(A)
+```
 
 #### SELECT as
 
@@ -352,3 +359,17 @@ Comparing null with anything else always results in unknown even with null.
 Unknown always takes precedence.
 
 Use `is null` for a null comparison
+
+### Subqueries
+
+Use ( ) to use a temorary relation
+
+#### Table Subqueries
+
+```sql
+select dept_name, avg_salary
+from (
+  select dept_name, avg(salary) as avg_salary from instructor group by dept_name
+) where avg_salary > 42000
+```
+
