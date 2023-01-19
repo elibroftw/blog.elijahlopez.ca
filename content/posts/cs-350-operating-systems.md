@@ -264,3 +264,40 @@ Non-negligible cost
   - HW Optimization 1: Don't flush kernel's own data from TLB
   - HW Optimization 2: use tag to avoid flushing any data
 - Cache misses
+
+## Threads
+
+- Multi-threaded programs share the address space.
+- Typically oe kernel thread for every process
+
+### POSIX Thread API
+
+```c
+int pthread_create(pthread_t *thr, pthread_attr_t *attr, void *(*fn)(void *), void *arg);
+// create a new thread identified by thr with optional attributes, run fn with arg
+void pthread_exit(void *return_value);
+// destroy current thread and return a pointer
+int pthread_join(pthread_t thread, void **return_value);
+// Wait for thread thread to exit and receive the return value
+void pthread_yield();
+// tell the OS scheduler to run another thread or process
+```
+
+and more
+
+### Limitations of Kernel Threads
+
+- syscalls take 100 cycles, function calls take 2 cycles
+- fixed-size stack within kernel
+
+### Go Language Routines
+
+- lightweight, 100k go routines is practical
+
+### Implementing threads in OS/161
+
+```c
+int thread_fork(const char *name, struct proc *proc,
+  void (*entrypoint)(void *data1, unsigned long data2), void *data1, unsigned long data2)
+// wrapper for pthread_create wrapper, does not call process fork
+```
