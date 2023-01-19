@@ -516,6 +516,14 @@ Usage &lt;code>SELECT count(attribute), ...&lt;/code>&lt;/li>
 &lt;li>&lt;a href="#context-switch">Context Switch&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;/li>
+&lt;li>&lt;a href="#threads">Threads&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#posix-thread-api">POSIX Thread API&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#limitations-of-kernel-threads">Limitations of Kernel Threads&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#go-language-routines">Go Language Routines&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#implementing-threads-in-os161">Implementing threads in OS/161&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
 &lt;/ul>
 &lt;/nav>
 &lt;/div>
@@ -811,7 +819,61 @@ it may be better to use grep.&lt;/p>
 &lt;/ul>
 &lt;/li>
 &lt;li>Cache misses&lt;/li>
-&lt;/ul></description></item><item><title>Tauri Custom Titlebar (React)</title><link>https://blog.elijahlopez.ca/posts/tauri-custom-titlebar/</link><pubDate>Sat, 24 Dec 2022 10:45:01 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/tauri-custom-titlebar/</guid><description>&lt;p>This tutorial is based on Part 12 of my Tauri &amp;amp; ReactJS series.&lt;/p>
+&lt;/ul>
+&lt;h2 id="threads" >Threads
+&lt;span>
+&lt;a href="#threads">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;ul>
+&lt;li>Multi-threaded programs share the address space.&lt;/li>
+&lt;li>Typically oe kernel thread for every process&lt;/li>
+&lt;/ul>
+&lt;h3 id="posix-thread-api" >POSIX Thread API
+&lt;span>
+&lt;a href="#posix-thread-api">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-c" data-lang="c">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">int&lt;/span> &lt;span style="color:#447fcf">pthread_create&lt;/span>(&lt;span style="color:#6ab825;font-weight:bold">pthread_t&lt;/span> *thr, &lt;span style="color:#6ab825;font-weight:bold">pthread_attr_t&lt;/span> *attr, &lt;span style="color:#6ab825;font-weight:bold">void&lt;/span> *(*fn)(&lt;span style="color:#6ab825;font-weight:bold">void&lt;/span> *), &lt;span style="color:#6ab825;font-weight:bold">void&lt;/span> *arg);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">// create a new thread identified by thr with optional attributes, run fn with arg
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">&lt;/span>&lt;span style="color:#6ab825;font-weight:bold">void&lt;/span> &lt;span style="color:#447fcf">pthread_exit&lt;/span>(&lt;span style="color:#6ab825;font-weight:bold">void&lt;/span> *return_value);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">// destroy current thread and return a pointer
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">&lt;/span>&lt;span style="color:#6ab825;font-weight:bold">int&lt;/span> &lt;span style="color:#447fcf">pthread_join&lt;/span>(&lt;span style="color:#6ab825;font-weight:bold">pthread_t&lt;/span> &lt;span style="color:#6ab825;font-weight:bold">thread&lt;/span>, &lt;span style="color:#6ab825;font-weight:bold">void&lt;/span> **return_value);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">// Wait for thread thread to exit and receive the return value
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">&lt;/span>&lt;span style="color:#6ab825;font-weight:bold">void&lt;/span> &lt;span style="color:#447fcf">pthread_yield&lt;/span>();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">// tell the OS scheduler to run another thread or process
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>and more&lt;/p>
+&lt;h3 id="limitations-of-kernel-threads" >Limitations of Kernel Threads
+&lt;span>
+&lt;a href="#limitations-of-kernel-threads">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>syscalls take 100 cycles, function calls take 2 cycles&lt;/li>
+&lt;li>fixed-size stack within kernel&lt;/li>
+&lt;/ul>
+&lt;h3 id="go-language-routines" >Go Language Routines
+&lt;span>
+&lt;a href="#go-language-routines">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>lightweight, 100k go routines is practical&lt;/li>
+&lt;/ul>
+&lt;h3 id="implementing-threads-in-os161" >Implementing threads in OS/161
+&lt;span>
+&lt;a href="#implementing-threads-in-os161">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-c" data-lang="c">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">int&lt;/span> &lt;span style="color:#447fcf">thread_fork&lt;/span>(&lt;span style="color:#6ab825;font-weight:bold">const&lt;/span> &lt;span style="color:#6ab825;font-weight:bold">char&lt;/span> *name, &lt;span style="color:#6ab825;font-weight:bold">struct&lt;/span> proc *proc,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">void&lt;/span> (*entrypoint)(&lt;span style="color:#6ab825;font-weight:bold">void&lt;/span> *data1, &lt;span style="color:#6ab825;font-weight:bold">unsigned&lt;/span> &lt;span style="color:#6ab825;font-weight:bold">long&lt;/span> data2), &lt;span style="color:#6ab825;font-weight:bold">void&lt;/span> *data1, &lt;span style="color:#6ab825;font-weight:bold">unsigned&lt;/span> &lt;span style="color:#6ab825;font-weight:bold">long&lt;/span> data2)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">// wrapper for pthread_create wrapper, does not call process fork
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Tauri Custom Titlebar (React)</title><link>https://blog.elijahlopez.ca/posts/tauri-custom-titlebar/</link><pubDate>Sat, 24 Dec 2022 10:45:01 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/tauri-custom-titlebar/</guid><description>&lt;p>This tutorial is based on Part 12 of my Tauri &amp;amp; ReactJS series.&lt;/p>
 &lt;div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
 &lt;iframe src="https://www.youtube.com/embed/zONyCMTUwsI" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video">&lt;/iframe>
 &lt;/div>
