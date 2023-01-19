@@ -384,15 +384,18 @@ the &lt;code>distinct&lt;/code> keyword after select.&lt;/p>
 &lt;/a>
 &lt;/span>
 &lt;/h4>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sql" data-lang="sql">&lt;span style="display:flex;">&lt;span>...&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">from&lt;/span>&lt;span style="color:#666"> &lt;/span>instructor&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">inner&lt;/span>&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">join&lt;/span>&lt;span style="color:#666"> &lt;/span>teaches&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">on&lt;/span>&lt;span style="color:#666"> &lt;/span>instructor.ID&lt;span style="color:#666"> &lt;/span>=&lt;span style="color:#666"> &lt;/span>teaches.ID...&lt;span style="color:#666">
-&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="from-natural-join-clause" >FROM Natural Join Clause
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>If attributes have the same name, then both will show up with a &lt;code>relation.&lt;/code> prefix&lt;/p>
+&lt;h4 id="from-natural-join-clause" >FROM Natural Join Clause
 &lt;span>
 &lt;a href="#from-natural-join-clause">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
 &lt;/h4>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sql" data-lang="sql">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">select&lt;/span>&lt;span style="color:#666"> &lt;/span>*&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">from&lt;/span>&lt;span style="color:#666"> &lt;/span>instructor&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">natural&lt;/span>&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">join&lt;/span>&lt;span style="color:#666"> &lt;/span>teaches&lt;span style="color:#666">
-&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Be careful since this does it to all attributes&lt;/p>
-&lt;h4 id="select-as" >SELECT as
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Be careful since this does it to all attributes. For specific attributes,
+use &lt;code>using&lt;/code>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sql" data-lang="sql">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">select&lt;/span>&lt;span style="color:#666"> &lt;/span>*&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">from&lt;/span>&lt;span style="color:#666"> &lt;/span>T&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">join&lt;/span>&lt;span style="color:#666"> &lt;/span>S&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">using&lt;/span>(A)&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="select-as" >SELECT as
 &lt;span>
 &lt;a href="#select-as">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
@@ -481,7 +484,25 @@ Usage &lt;code>SELECT count(attribute), ...&lt;/code>&lt;/li>
 &lt;p>Null: null indicates unknown or missing data.&lt;/p>
 &lt;p>Comparing null with anything else always results in unknown even with null.&lt;/p>
 &lt;p>Unknown always takes precedence.&lt;/p>
-&lt;p>Use &lt;code>is null&lt;/code> for a null comparison&lt;/p></description></item><item><title>CS 350 Operating Systems</title><link>https://blog.elijahlopez.ca/posts/cs-350-operating-systems/</link><pubDate>Tue, 10 Jan 2023 14:56:10 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/cs-350-operating-systems/</guid><description>&lt;p>&lt;a href="https://student.cs.uwaterloo.ca/~cs350/">Course website&lt;/a>&lt;/p>
+&lt;p>Use &lt;code>is null&lt;/code> for a null comparison&lt;/p>
+&lt;h3 id="subqueries" >Subqueries
+&lt;span>
+&lt;a href="#subqueries">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Use ( ) to use a temorary relation&lt;/p>
+&lt;h4 id="table-subqueries" >Table Subqueries
+&lt;span>
+&lt;a href="#table-subqueries">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sql" data-lang="sql">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">select&lt;/span>&lt;span style="color:#666"> &lt;/span>dept_name,&lt;span style="color:#666"> &lt;/span>avg_salary&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">&lt;/span>&lt;span style="color:#6ab825;font-weight:bold">from&lt;/span>&lt;span style="color:#666"> &lt;/span>(&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">select&lt;/span>&lt;span style="color:#666"> &lt;/span>dept_name,&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">avg&lt;/span>(salary)&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">as&lt;/span>&lt;span style="color:#666"> &lt;/span>avg_salary&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">from&lt;/span>&lt;span style="color:#666"> &lt;/span>instructor&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">group&lt;/span>&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">by&lt;/span>&lt;span style="color:#666"> &lt;/span>dept_name&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">&lt;/span>)&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">where&lt;/span>&lt;span style="color:#666"> &lt;/span>avg_salary&lt;span style="color:#666"> &lt;/span>&amp;gt;&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#3677a9">42000&lt;/span>&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>CS 350 Operating Systems</title><link>https://blog.elijahlopez.ca/posts/cs-350-operating-systems/</link><pubDate>Tue, 10 Jan 2023 14:56:10 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/cs-350-operating-systems/</guid><description>&lt;p>&lt;a href="https://student.cs.uwaterloo.ca/~cs350/">Course website&lt;/a>&lt;/p>
 &lt;div>
 &lt;h2>Table of Contents&lt;/h2>
 &lt;nav id="TableOfContents">
