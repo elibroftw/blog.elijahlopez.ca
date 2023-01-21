@@ -42,26 +42,19 @@ File hierarchy
 - cs350 (CWD)
   - os161
   - userspace
+  - cs350_cli.py
 
 ```sh
 cs350_submit os161/os161-1.99/kern/compile/ASST0 ASST0
 cs350_submit userspace/ASSTUSER0 ASSTUSER0
 ```
 
-```py
-#!/usr/bin/python3
-import argparse
-import subprocess
+<details>
+<summary>cs350_cli.py</summary>
 
-parser = argparse.ArgumentParser()
-parser.add_argument('assignment')
-args = parser.parse_args()
+{{< gist elibroftw 36d18406d6be775e2c52af9d19571c42 >}}
 
-p = subprocess.Popen(['cs350_submit', f'os161/os161-1.99/kern/compile/ASST{args.assignment}', f'ASST{args.assignment}'], stdin=subprocess.DEVNULL)
-p.wait()
-p = subprocess.Popen(['cs350_submit', f'userspace/ASSTUSER{args.assignment}', f'ASSTUSER{args.assignment}'], stdin=subprocess.DEVNULL)
-p.wait()
-```
+</details>
 
 ### How to add to PATH
 
