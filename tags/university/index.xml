@@ -598,24 +598,17 @@ Usage &lt;code>SELECT count(attribute), ...&lt;/code>&lt;/li>
 &lt;ul>
 &lt;li>os161&lt;/li>
 &lt;li>userspace&lt;/li>
+&lt;li>cs350_cli.py&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;/ul>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>cs350_submit os161/os161-1.99/kern/compile/ASST0 ASST0
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cs350_submit userspace/ASSTUSER0 ASSTUSER0
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-py" data-lang="py">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">#!/usr/bin/python3&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">import&lt;/span> &lt;span style="color:#447fcf;text-decoration:underline">argparse&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">import&lt;/span> &lt;span style="color:#447fcf;text-decoration:underline">subprocess&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>parser = argparse.ArgumentParser()
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>parser.add_argument(&lt;span style="color:#ed9d13">&amp;#39;assignment&amp;#39;&lt;/span>)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>args = parser.parse_args()
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>p = subprocess.Popen([&lt;span style="color:#ed9d13">&amp;#39;cs350_submit&amp;#39;&lt;/span>, &lt;span style="color:#ed9d13">f&lt;/span>&lt;span style="color:#ed9d13">&amp;#39;os161/os161-1.99/kern/compile/ASST&lt;/span>&lt;span style="color:#ed9d13">{&lt;/span>args.assignment&lt;span style="color:#ed9d13">}&lt;/span>&lt;span style="color:#ed9d13">&amp;#39;&lt;/span>, &lt;span style="color:#ed9d13">f&lt;/span>&lt;span style="color:#ed9d13">&amp;#39;ASST&lt;/span>&lt;span style="color:#ed9d13">{&lt;/span>args.assignment&lt;span style="color:#ed9d13">}&lt;/span>&lt;span style="color:#ed9d13">&amp;#39;&lt;/span>], stdin=subprocess.DEVNULL)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>p.wait()
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>p = subprocess.Popen([&lt;span style="color:#ed9d13">&amp;#39;cs350_submit&amp;#39;&lt;/span>, &lt;span style="color:#ed9d13">f&lt;/span>&lt;span style="color:#ed9d13">&amp;#39;userspace/ASSTUSER&lt;/span>&lt;span style="color:#ed9d13">{&lt;/span>args.assignment&lt;span style="color:#ed9d13">}&lt;/span>&lt;span style="color:#ed9d13">&amp;#39;&lt;/span>, &lt;span style="color:#ed9d13">f&lt;/span>&lt;span style="color:#ed9d13">&amp;#39;ASSTUSER&lt;/span>&lt;span style="color:#ed9d13">{&lt;/span>args.assignment&lt;span style="color:#ed9d13">}&lt;/span>&lt;span style="color:#ed9d13">&amp;#39;&lt;/span>], stdin=subprocess.DEVNULL)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>p.wait()
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="how-to-add-to-path" >How to add to PATH
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;details>
+&lt;summary>cs350_cli.py&lt;/summary>
+&lt;script type="application/javascript" src="https://gist.github.com/elibroftw/36d18406d6be775e2c52af9d19571c42.js">&lt;/script>
+&lt;/details>
+&lt;h3 id="how-to-add-to-path" >How to add to PATH
 &lt;span>
 &lt;a href="#how-to-add-to-path">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
