@@ -1,4 +1,111 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ELL Blog</title><link>https://blog.elijahlopez.ca/</link><description>ELL Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 10 Jan 2023 16:02:06 -0500</lastBuildDate><atom:link href="https://blog.elijahlopez.ca/index.xml" rel="self" type="application/rss+xml"/><item><title>CS 348 Intro to Database Management</title><link>https://blog.elijahlopez.ca/posts/cs-348-intro-to-database-management/</link><pubDate>Tue, 10 Jan 2023 16:02:06 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/cs-348-intro-to-database-management/</guid><description>&lt;h2 id="objectives" >Objectives
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ELL Blog</title><link>https://blog.elijahlopez.ca/</link><description>ELL Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 21 Jan 2023 14:49:20 -0500</lastBuildDate><atom:link href="https://blog.elijahlopez.ca/index.xml" rel="self" type="application/rss+xml"/><item><title>Starting Systemd Services Without Root</title><link>https://blog.elijahlopez.ca/posts/starting-systemd-services-without-root/</link><pubDate>Sat, 21 Jan 2023 14:49:20 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/starting-systemd-services-without-root/</guid><description>&lt;p>Google and StackExchange do not give a straight forward and properly explained answer on how to do this, so I used &lt;a href="https://chat.openai.com/chat">ChatGPT&lt;/a>
+to figure out how and have summarized my findings for you.&lt;/p>
+&lt;h2 id="assumptions" >Assumptions
+&lt;span>
+&lt;a href="#assumptions">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;ul>
+&lt;li>You need this so that a program running without user interaction can call &lt;code>systemctl&lt;/code> without sudo&lt;/li>
+&lt;li>The program on the server that needs to call the service is run under the same &lt;code>$USER&lt;/code> that you ssh into the server as&lt;/li>
+&lt;li>The service is called &lt;code>my_service&lt;/code> and the path to the service file is &lt;code>/etc/systemd/system/my_service.service&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;h2 id="sudoers-file" >Sudoers File
+&lt;span>
+&lt;a href="#sudoers-file">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>To allow a non-root user, say &lt;code>maste&lt;/code>, to run the service without root, we need to edit the &lt;code>sudoers&lt;/code> file. What is this file? &lt;code>/etc/sudoers&lt;/code> is a rule list with permissions for regular users to be able to run commands as another user (like the root user).&lt;/p>
+&lt;p>We need to add the following rule (replace &lt;code>{{ your_user }}&lt;/code>).&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>{{ your_user }} &lt;span style="color:#40ffff">ALL&lt;/span>=(ALL) NOPASSWD: /usr/bin/systemctl start my_service, /usr/bin/systemctl stop my_service, /usr/bin/systemctl restart my_service, /usr/bin/systemctl reload my_service
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>It is a bit too much work having to add this rule manually (using &lt;code>visudo&lt;/code>) on every additional server or every time we
+need to allow a new service to be run. So here is a bash function (python incoming in the future) to do so with
+safety to avoid polluting the file with duplicates.&lt;/p>
+&lt;p>The following two script are from my &lt;a href="https://github.com/elibroftw/devops-utilities">devops utilities repository&lt;/a> which
+I will slowly add utility scripts to.&lt;/p>
+&lt;h3 id="modifying-sudoers-via-bash" >Modifying sudoers Via Bash
+&lt;span>
+&lt;a href="#modifying-sudoers-via-bash">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;details>
+&lt;summary>Bash Function&lt;/summary>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cd2828;font-weight:bold">#!/bin/bash
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cd2828;font-weight:bold">&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>systemd_services_without_root() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic"># usage `systemd_services_without_root monerod monero-wallet-rpc-prod monero-wallet-rpc-dev lenerva.com dev.lenerva.com`&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">for&lt;/span> service in &lt;span style="color:#ed9d13">&amp;#34;&lt;/span>&lt;span style="color:#40ffff">$@&lt;/span>&lt;span style="color:#ed9d13">&amp;#34;&lt;/span>; &lt;span style="color:#6ab825;font-weight:bold">do&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic"># allow user to start/stop/restart/reload the service&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#40ffff">sudoer_rule&lt;/span>=&lt;span style="color:#ed9d13">&amp;#34;&lt;/span>&lt;span style="color:#40ffff">$USER&lt;/span>&lt;span style="color:#ed9d13"> ALL=(ALL) NOPASSWD: /usr/bin/systemctl start &lt;/span>&lt;span style="color:#40ffff">$service&lt;/span>&lt;span style="color:#ed9d13">, /usr/bin/systemctl stop &lt;/span>&lt;span style="color:#40ffff">$service&lt;/span>&lt;span style="color:#ed9d13">, /usr/bin/systemctl restart &lt;/span>&lt;span style="color:#40ffff">$service&lt;/span>&lt;span style="color:#ed9d13">, /usr/bin/systemctl reload &lt;/span>&lt;span style="color:#40ffff">$service&lt;/span>&lt;span style="color:#ed9d13">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic"># Check if the rule already exists in the sudoers file&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">if&lt;/span> ! grep -q &lt;span style="color:#ed9d13">&amp;#34;&lt;/span>&lt;span style="color:#40ffff">$sudoer_rule&lt;/span>&lt;span style="color:#ed9d13">&amp;#34;&lt;/span> /etc/sudoers; &lt;span style="color:#6ab825;font-weight:bold">then&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic"># Append the rule to the sudoers file&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#24909d">echo&lt;/span> &lt;span style="color:#ed9d13">&amp;#34;&lt;/span>&lt;span style="color:#40ffff">$sudoer_rule&lt;/span>&lt;span style="color:#ed9d13">&amp;#34;&lt;/span> | sudo tee -a /etc/sudoers &amp;gt; /dev/null
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#24909d">echo&lt;/span> &lt;span style="color:#ed9d13">&amp;#34;SUCCESS: sudoers file modified to allow &lt;/span>&lt;span style="color:#40ffff">$USER&lt;/span>&lt;span style="color:#ed9d13"> to start/stop/restart/reload &lt;/span>&lt;span style="color:#40ffff">$service&lt;/span>&lt;span style="color:#ed9d13">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">else&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#24909d">echo&lt;/span> &lt;span style="color:#ed9d13">&amp;#34;INFO: rule for &lt;/span>&lt;span style="color:#40ffff">$service&lt;/span>&lt;span style="color:#ed9d13"> already exists in the sudoers file&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">fi&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">done&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/details>
+&lt;h3 id="modifying-sudoers-via-python" >Modifying sudoers Via Python
+&lt;span>
+&lt;a href="#modifying-sudoers-via-python">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;details>
+&lt;summary>Python Function&lt;/summary>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-py" data-lang="py">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">#!/usr/bin/python3&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">import&lt;/span> &lt;span style="color:#447fcf;text-decoration:underline">getpass&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">import&lt;/span> &lt;span style="color:#447fcf;text-decoration:underline">platform&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">def&lt;/span> &lt;span style="color:#447fcf">systemd_services_without_root&lt;/span>(*services):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">if&lt;/span> platform.system() == &lt;span style="color:#ed9d13">&amp;#39;Windows&amp;#39;&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#24909d">print&lt;/span>(&lt;span style="color:#ed9d13">&amp;#39;ERROR: allow_services_without_root is not currently supported on Windows&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">return&lt;/span> &lt;span style="color:#3677a9">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> user = getpass.getuser()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> new_rules = &lt;span style="color:#24909d">set&lt;/span>()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">for&lt;/span> service &lt;span style="color:#6ab825;font-weight:bold">in&lt;/span> services:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> commands = &lt;span style="color:#ed9d13">&amp;#39;, &amp;#39;&lt;/span>.join((&lt;span style="color:#ed9d13">f&lt;/span>&lt;span style="color:#ed9d13">&amp;#39;/usr/bin/systemctl &lt;/span>&lt;span style="color:#ed9d13">{&lt;/span>unit_cmd&lt;span style="color:#ed9d13">}&lt;/span>&lt;span style="color:#ed9d13"> &lt;/span>&lt;span style="color:#ed9d13">{&lt;/span>service&lt;span style="color:#ed9d13">}&lt;/span>&lt;span style="color:#ed9d13">&amp;#39;&lt;/span> &lt;span style="color:#6ab825;font-weight:bold">for&lt;/span> unit_cmd &lt;span style="color:#6ab825;font-weight:bold">in&lt;/span> (&lt;span style="color:#ed9d13">&amp;#39;start&amp;#39;&lt;/span>, &lt;span style="color:#ed9d13">&amp;#39;stop&amp;#39;&lt;/span>, &lt;span style="color:#ed9d13">&amp;#39;restart&amp;#39;&lt;/span>, &lt;span style="color:#ed9d13">&amp;#39;reload&amp;#39;&lt;/span>)))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> new_rules.add(&lt;span style="color:#ed9d13">f&lt;/span>&lt;span style="color:#ed9d13">&amp;#39;&lt;/span>&lt;span style="color:#ed9d13">{&lt;/span>user&lt;span style="color:#ed9d13">}&lt;/span>&lt;span style="color:#ed9d13"> ALL=(ALL) NOPASSWD: &lt;/span>&lt;span style="color:#ed9d13">{&lt;/span>commands&lt;span style="color:#ed9d13">}&lt;/span>&lt;span style="color:#ed9d13">\n&lt;/span>&lt;span style="color:#ed9d13">&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">with&lt;/span> &lt;span style="color:#24909d">open&lt;/span>(&lt;span style="color:#ed9d13">&amp;#39;/etc/sudoers&amp;#39;&lt;/span>, &lt;span style="color:#ed9d13">&amp;#39;r+&amp;#39;&lt;/span>, encoding=&lt;span style="color:#ed9d13">&amp;#39;utf-8&amp;#39;&lt;/span>) &lt;span style="color:#6ab825;font-weight:bold">as&lt;/span> f:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> existing_rules = &lt;span style="color:#24909d">set&lt;/span>(f.readlines())
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> rules_to_add = &lt;span style="color:#24909d">set&lt;/span>()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">for&lt;/span> new_rule &lt;span style="color:#6ab825;font-weight:bold">in&lt;/span> new_rules:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">if&lt;/span> new_rule &lt;span style="color:#6ab825;font-weight:bold">in&lt;/span> existing_rules:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#24909d">print&lt;/span>(&lt;span style="color:#ed9d13">f&lt;/span>&lt;span style="color:#ed9d13">&amp;#39;INFO: rule for &lt;/span>&lt;span style="color:#ed9d13">{&lt;/span>service&lt;span style="color:#ed9d13">}&lt;/span>&lt;span style="color:#ed9d13"> already exists in /etc/sudoers&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> rules_to_add.add(new_rule)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">for&lt;/span> rule &lt;span style="color:#6ab825;font-weight:bold">in&lt;/span> rules_to_add:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> f.write(rule)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#24909d">print&lt;/span>(&lt;span style="color:#ed9d13">f&lt;/span>&lt;span style="color:#ed9d13">&amp;#39;SUCCESS: /etc/sudoers modified to allow &lt;/span>&lt;span style="color:#ed9d13">{&lt;/span>user&lt;span style="color:#ed9d13">}&lt;/span>&lt;span style="color:#ed9d13"> to start/stop/restart/reload &lt;/span>&lt;span style="color:#ed9d13">{&lt;/span>service&lt;span style="color:#ed9d13">}&lt;/span>&lt;span style="color:#ed9d13">&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">return&lt;/span> &lt;span style="color:#3677a9">0&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/details>
+&lt;h2 id="application" >Application
+&lt;span>
+&lt;a href="#application">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;ul>
+&lt;li>Informing gunicorn to use new application code via automated python cronjob (reload).&lt;/li>
+&lt;/ul>
+&lt;h3 id="python-example" >Python Example
+&lt;span>
+&lt;a href="#python-example">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-py" data-lang="py">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">import&lt;/span> &lt;span style="color:#447fcf;text-decoration:underline">subprocess&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>subprocess.Popen([&lt;span style="color:#ed9d13">&amp;#34;systemctl&amp;#34;&lt;/span>, &lt;span style="color:#ed9d13">&amp;#34;reload&amp;#34;&lt;/span>, &lt;span style="color:#ed9d13">&amp;#34;my_service&amp;#34;&lt;/span>]).wait()
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>CS 348 Intro to Database Management</title><link>https://blog.elijahlopez.ca/posts/cs-348-intro-to-database-management/</link><pubDate>Tue, 10 Jan 2023 16:02:06 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/cs-348-intro-to-database-management/</guid><description>&lt;h2 id="objectives" >Objectives
 &lt;span>
 &lt;a href="#objectives">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
