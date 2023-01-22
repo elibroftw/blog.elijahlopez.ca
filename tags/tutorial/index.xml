@@ -35,17 +35,18 @@ I will slowly add utility scripts to.&lt;/p>
 &lt;summary>Bash Function&lt;/summary>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cd2828;font-weight:bold">#!/bin/bash
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cd2828;font-weight:bold">&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>systemd_services_without_root() {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic"># usage `systemd_services_without_root monerod monero-wallet-rpc-prod monero-wallet-rpc-dev lenerva.com dev.lenerva.com`&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>allow_services_without_root() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic"># usage `allow_services_without_root monerod monero-wallet-rpc-prod monero-wallet-rpc-dev lenerva.com dev.lenerva.com`&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#40ffff">user&lt;/span>=&lt;span style="color:#6ab825;font-weight:bold">$(&lt;/span>logname&lt;span style="color:#6ab825;font-weight:bold">)&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">for&lt;/span> service in &lt;span style="color:#ed9d13">&amp;#34;&lt;/span>&lt;span style="color:#40ffff">$@&lt;/span>&lt;span style="color:#ed9d13">&amp;#34;&lt;/span>; &lt;span style="color:#6ab825;font-weight:bold">do&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic"># allow user to start/stop/restart/reload the service&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#40ffff">sudoer_rule&lt;/span>=&lt;span style="color:#ed9d13">&amp;#34;&lt;/span>&lt;span style="color:#40ffff">$USER&lt;/span>&lt;span style="color:#ed9d13"> ALL=(ALL) NOPASSWD: /usr/bin/systemctl start &lt;/span>&lt;span style="color:#40ffff">$service&lt;/span>&lt;span style="color:#ed9d13">, /usr/bin/systemctl stop &lt;/span>&lt;span style="color:#40ffff">$service&lt;/span>&lt;span style="color:#ed9d13">, /usr/bin/systemctl restart &lt;/span>&lt;span style="color:#40ffff">$service&lt;/span>&lt;span style="color:#ed9d13">, /usr/bin/systemctl reload &lt;/span>&lt;span style="color:#40ffff">$service&lt;/span>&lt;span style="color:#ed9d13">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#40ffff">sudoer_rule&lt;/span>=&lt;span style="color:#ed9d13">&amp;#34;&lt;/span>&lt;span style="color:#40ffff">$user&lt;/span>&lt;span style="color:#ed9d13"> ALL=(ALL) NOPASSWD: /usr/bin/systemctl start &lt;/span>&lt;span style="color:#40ffff">$service&lt;/span>&lt;span style="color:#ed9d13">, /usr/bin/systemctl stop &lt;/span>&lt;span style="color:#40ffff">$service&lt;/span>&lt;span style="color:#ed9d13">, /usr/bin/systemctl restart &lt;/span>&lt;span style="color:#40ffff">$service&lt;/span>&lt;span style="color:#ed9d13">, /usr/bin/systemctl reload &lt;/span>&lt;span style="color:#40ffff">$service&lt;/span>&lt;span style="color:#ed9d13">&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic"># Check if the rule already exists in the sudoers file&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">if&lt;/span> ! grep -q &lt;span style="color:#ed9d13">&amp;#34;&lt;/span>&lt;span style="color:#40ffff">$sudoer_rule&lt;/span>&lt;span style="color:#ed9d13">&amp;#34;&lt;/span> /etc/sudoers; &lt;span style="color:#6ab825;font-weight:bold">then&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic"># Append the rule to the sudoers file&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#24909d">echo&lt;/span> &lt;span style="color:#ed9d13">&amp;#34;&lt;/span>&lt;span style="color:#40ffff">$sudoer_rule&lt;/span>&lt;span style="color:#ed9d13">&amp;#34;&lt;/span> | sudo tee -a /etc/sudoers &amp;gt; /dev/null
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#24909d">echo&lt;/span> &lt;span style="color:#ed9d13">&amp;#34;SUCCESS: sudoers file modified to allow &lt;/span>&lt;span style="color:#40ffff">$USER&lt;/span>&lt;span style="color:#ed9d13"> to start/stop/restart/reload &lt;/span>&lt;span style="color:#40ffff">$service&lt;/span>&lt;span style="color:#ed9d13">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#24909d">echo&lt;/span> &lt;span style="color:#ed9d13">&amp;#34;SUCCESS: sudoers file modified to allow &lt;/span>&lt;span style="color:#40ffff">$user&lt;/span>&lt;span style="color:#ed9d13"> to start/stop/restart/reload &lt;/span>&lt;span style="color:#40ffff">$service&lt;/span>&lt;span style="color:#ed9d13">&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">else&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#24909d">echo&lt;/span> &lt;span style="color:#ed9d13">&amp;#34;INFO: rule for &lt;/span>&lt;span style="color:#40ffff">$service&lt;/span>&lt;span style="color:#ed9d13"> already exists in the sudoers file&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">fi&lt;/span>
@@ -62,7 +63,6 @@ I will slowly add utility scripts to.&lt;/p>
 &lt;summary>Python Function&lt;/summary>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-py" data-lang="py">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">#!/usr/bin/python3&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">import&lt;/span> &lt;span style="color:#447fcf;text-decoration:underline">getpass&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">import&lt;/span> &lt;span style="color:#447fcf;text-decoration:underline">platform&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
@@ -70,7 +70,7 @@ I will slowly add utility scripts to.&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">if&lt;/span> platform.system() == &lt;span style="color:#ed9d13">&amp;#39;Windows&amp;#39;&lt;/span>:
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#24909d">print&lt;/span>(&lt;span style="color:#ed9d13">&amp;#39;ERROR: allow_services_without_root is not currently supported on Windows&amp;#39;&lt;/span>)
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">return&lt;/span> &lt;span style="color:#3677a9">1&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> user = getpass.getuser()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> user = os.getlogin()
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> new_rules = {}
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">for&lt;/span> service &lt;span style="color:#6ab825;font-weight:bold">in&lt;/span> services:
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> commands = &lt;span style="color:#ed9d13">&amp;#39;, &amp;#39;&lt;/span>.join((&lt;span style="color:#ed9d13">f&lt;/span>&lt;span style="color:#ed9d13">&amp;#39;/usr/bin/systemctl &lt;/span>&lt;span style="color:#ed9d13">{&lt;/span>unit_cmd&lt;span style="color:#ed9d13">}&lt;/span>&lt;span style="color:#ed9d13"> &lt;/span>&lt;span style="color:#ed9d13">{&lt;/span>service&lt;span style="color:#ed9d13">}&lt;/span>&lt;span style="color:#ed9d13">&amp;#39;&lt;/span> &lt;span style="color:#6ab825;font-weight:bold">for&lt;/span> unit_cmd &lt;span style="color:#6ab825;font-weight:bold">in&lt;/span> (&lt;span style="color:#ed9d13">&amp;#39;start&amp;#39;&lt;/span>, &lt;span style="color:#ed9d13">&amp;#39;stop&amp;#39;&lt;/span>, &lt;span style="color:#ed9d13">&amp;#39;restart&amp;#39;&lt;/span>, &lt;span style="color:#ed9d13">&amp;#39;reload&amp;#39;&lt;/span>)))
@@ -95,7 +95,7 @@ I will slowly add utility scripts to.&lt;/p>
 &lt;/a>
 &lt;/span>
 &lt;/h2>&lt;ul>
-&lt;li>Informing gunicorn to use new application code via automated python cronjob (reload).&lt;/li>
+&lt;li>Restarting gunicorn workers&lt;/li>
 &lt;/ul>
 &lt;h3 id="python-example" >Python Example
 &lt;span>
@@ -104,7 +104,7 @@ I will slowly add utility scripts to.&lt;/p>
 &lt;/a>
 &lt;/span>
 &lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-py" data-lang="py">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">import&lt;/span> &lt;span style="color:#447fcf;text-decoration:underline">subprocess&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>subprocess.Popen([&lt;span style="color:#ed9d13">&amp;#34;systemctl&amp;#34;&lt;/span>, &lt;span style="color:#ed9d13">&amp;#34;reload&amp;#34;&lt;/span>, &lt;span style="color:#ed9d13">&amp;#34;my_service&amp;#34;&lt;/span>]).wait()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>subprocess.Popen([&lt;span style="color:#ed9d13">&amp;#34;systemctl&amp;#34;&lt;/span>, &lt;span style="color:#ed9d13">&amp;#34;restart&amp;#34;&lt;/span>, &lt;span style="color:#ed9d13">&amp;#34;my_service&amp;#34;&lt;/span>]).wait()
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Tauri Custom Titlebar (React)</title><link>https://blog.elijahlopez.ca/posts/tauri-custom-titlebar/</link><pubDate>Sat, 24 Dec 2022 10:45:01 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/tauri-custom-titlebar/</guid><description>&lt;p>This tutorial is based on Part 12 of my Tauri &amp;amp; ReactJS series.&lt;/p>
 &lt;div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
 &lt;iframe src="https://www.youtube.com/embed/zONyCMTUwsI" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video">&lt;/iframe>
