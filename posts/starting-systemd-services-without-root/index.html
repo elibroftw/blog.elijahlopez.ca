@@ -53,7 +53,7 @@ I will slowly add utility scripts to.</p><h3 id=modifying-sudoers-via-bash>Modif
 </span></span><span style=display:flex><span>                <span style=color:#24909d>print</span>(<span style=color:#ed9d13>f</span><span style=color:#ed9d13>&#39;INFO: rule for </span><span style=color:#ed9d13>{</span>service<span style=color:#ed9d13>}</span><span style=color:#ed9d13> already exists in /etc/sudoers&#39;</span>)
 </span></span><span style=display:flex><span>            <span style=color:#6ab825;font-weight:700>else</span>:
 </span></span><span style=display:flex><span>                rules_to_add[service] = new_rule
-</span></span><span style=display:flex><span>        <span style=color:#6ab825;font-weight:700>for</span> service, rule <span style=color:#6ab825;font-weight:700>in</span> new_rules.items():
+</span></span><span style=display:flex><span>        <span style=color:#6ab825;font-weight:700>for</span> service, rule <span style=color:#6ab825;font-weight:700>in</span> rules_to_add.items():
 </span></span><span style=display:flex><span>            f.write(rule)
 </span></span><span style=display:flex><span>            <span style=color:#24909d>print</span>(<span style=color:#ed9d13>f</span><span style=color:#ed9d13>&#39;SUCCESS: /etc/sudoers modified to allow </span><span style=color:#ed9d13>{</span>user<span style=color:#ed9d13>}</span><span style=color:#ed9d13> to start/stop/restart/reload </span><span style=color:#ed9d13>{</span>service<span style=color:#ed9d13>}</span><span style=color:#ed9d13>&#39;</span>)
 </span></span><span style=display:flex><span>    <span style=color:#6ab825;font-weight:700>return</span> <span style=color:#3677a9>0</span>
