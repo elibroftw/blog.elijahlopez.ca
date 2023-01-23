@@ -11,21 +11,20 @@ to figure out how and have summarized my findings for you.&lt;/p>
 &lt;li>The program on the server that needs to call the service is run under the same &lt;code>$USER&lt;/code> that you ssh into the server as&lt;/li>
 &lt;li>The service is called &lt;code>my_service&lt;/code> and the path to the service file is &lt;code>/etc/systemd/system/my_service.service&lt;/code>&lt;/li>
 &lt;/ul>
-&lt;h2 id="sudoers-file" >Sudoers File
+&lt;h2 id="sudoers" >Sudoers
 &lt;span>
-&lt;a href="#sudoers-file">
+&lt;a href="#sudoers">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
-&lt;/h2>&lt;p>To allow a non-root user, say &lt;code>maste&lt;/code>, to run the service without root, we need to edit the &lt;code>sudoers&lt;/code> file. What is this file? &lt;code>/etc/sudoers&lt;/code> is a rule list with permissions for regular users to be able to run commands as another user (like the root user).&lt;/p>
-&lt;p>We need to add the following rule (replace &lt;code>{{ your_user }}&lt;/code>).&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>{{ your_user }} &lt;span style="color:#40ffff">ALL&lt;/span>=(ALL) NOPASSWD: /usr/bin/systemctl start my_service, /usr/bin/systemctl stop my_service, /usr/bin/systemctl restart my_service, /usr/bin/systemctl reload my_service
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>It is a bit too much work having to add this rule manually (using &lt;code>visudo&lt;/code>) on every additional server or every time we
-need to allow a new service to be run. So here is a bash function (python incoming in the future) to do so with
+&lt;/h2>&lt;p>To allow a non-root user, say &lt;code>maste&lt;/code>, to run the service without root, we need to edit the &lt;code>sudoers&lt;/code>. What is &lt;code>sudoers&lt;/code>? &lt;code>/etc/sudoers&lt;/code> is a rule list with permissions for regular users to be able to run commands as another user (like the root user). There also exists a directory &lt;code>/etc/sudoers.d&lt;/code> where each file is treated like a rule list. We will need to create a new file in this directory with the the following rule (replace &lt;code>{{ your_user }}&lt;/code>).&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>{{ your_user }} &lt;span style="color:#40ffff">ALL&lt;/span>=(ALL) NOPASSWD: /usr/bin/systemctl start my_service, /usr/bin/systemctl stop my_service, /usr/bin/systemctl restart my_service, /usr/bin/systemctl reload my_service, /usr/bin/systemctl status my_service
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>After this, &lt;strong>we will still need to use sudo&lt;/strong>, however, a password will not need to be entered.&lt;/p>
+&lt;p>It is a bit too much work having to add this rule manually (using &lt;code>visudo&lt;/code>) on every additional server or every time we need to allow a new service to be run. So here is a bash function (python incoming in the future) to do so with
 safety to avoid polluting the file with duplicates.&lt;/p>
 &lt;p>The following two script are from my &lt;a href="https://github.com/elibroftw/devops-utilities">devops utilities repository&lt;/a> which
 I will slowly add utility scripts to.&lt;/p>
-&lt;h3 id="modifying-sudoers-via-bash" >Modifying sudoers Via Bash
+&lt;h3 id="modifying-sudoers-via-bash" >Modifying sudoers via Bash
 &lt;span>
 &lt;a href="#modifying-sudoers-via-bash">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
@@ -53,7 +52,7 @@ I will slowly add utility scripts to.&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">done&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/details>
-&lt;h3 id="modifying-sudoers-via-python" >Modifying sudoers Via Python
+&lt;h3 id="modifying-sudoers-via-python" >Modifying sudoers via Python
 &lt;span>
 &lt;a href="#modifying-sudoers-via-python">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
