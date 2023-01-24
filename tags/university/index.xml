@@ -718,6 +718,15 @@ a primary key on the student table, there would be a infinite tuples added.&lt;/
 &lt;li>&lt;a href="#implementing-threads-in-os161">Implementing threads in OS/161&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;/li>
+&lt;li>&lt;a href="#concurrency">Concurrency&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#sequential-consistency">Sequential Consistency&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#x86-consistency">x86 Consistency&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#x86-atomicity">x86 Atomicity&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#petersons-solution">Peterson&amp;rsquo;s Solution&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#mutexes">Mutexes&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
 &lt;/ul>
 &lt;/nav>
 &lt;/div>
@@ -1072,7 +1081,93 @@ it may be better to use grep.&lt;/p>
 &lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-c" data-lang="c">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">int&lt;/span> &lt;span style="color:#447fcf">thread_fork&lt;/span>(&lt;span style="color:#6ab825;font-weight:bold">const&lt;/span> &lt;span style="color:#6ab825;font-weight:bold">char&lt;/span> *name, &lt;span style="color:#6ab825;font-weight:bold">struct&lt;/span> proc *proc,
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">void&lt;/span> (*entrypoint)(&lt;span style="color:#6ab825;font-weight:bold">void&lt;/span> *data1, &lt;span style="color:#6ab825;font-weight:bold">unsigned&lt;/span> &lt;span style="color:#6ab825;font-weight:bold">long&lt;/span> data2), &lt;span style="color:#6ab825;font-weight:bold">void&lt;/span> *data1, &lt;span style="color:#6ab825;font-weight:bold">unsigned&lt;/span> &lt;span style="color:#6ab825;font-weight:bold">long&lt;/span> data2)
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">// wrapper for pthread_create wrapper, does not call process fork
-&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>BU 375 Operations</title><link>https://blog.elijahlopez.ca/posts/bu-375-operations/</link><pubDate>Sat, 04 Jun 2022 10:23:48 -0400</pubDate><guid>https://blog.elijahlopez.ca/posts/bu-375-operations/</guid><description>&lt;!-- markdownlint-disable MD033 -->
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="concurrency" >Concurrency
+&lt;span>
+&lt;a href="#concurrency">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>Data races occur without synchronization&lt;/p>
+&lt;p>Options:&lt;/p>
+&lt;ul>
+&lt;li>Atomic instructions: instantaneously modify a value&lt;/li>
+&lt;li>Locks: prevent concurrent execution&lt;/li>
+&lt;/ul>
+&lt;h3 id="sequential-consistency" >Sequential Consistency
+&lt;span>
+&lt;a href="#sequential-consistency">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Execution as if all operations were executed in some sequential order and that the operations of each processor occurred in the order specified by the program.&lt;/p>
+&lt;p>Requirements for sequential consistency are maintaining program order on individual processors and ensuring writes are atomic.&lt;/p>
+&lt;ul>
+&lt;li>Sequential consistency complicates write buffers since CPUs use many caches.&lt;/li>
+&lt;li>We want to group writes to the same location (coalescing)&lt;/li>
+&lt;li>Complicates non-blocking reads&lt;/li>
+&lt;li>Thwarting of compiler optimizations&lt;/li>
+&lt;/ul>
+&lt;p>Does not solve the problem of atomicity since modifying a value is 3 lines of code.&lt;/p>
+&lt;h3 id="x86-consistency" >x86 Consistency
+&lt;span>
+&lt;a href="#x86-consistency">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Different choice for how to write like (cache, write cache and memory, write to memory only, uncacheable).&lt;/p>
+&lt;h3 id="x86-atomicity" >x86 Atomicity
+&lt;span>
+&lt;a href="#x86-atomicity">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>&lt;code>lock&lt;/code> - prefix to make a memory instruction atomic (locks bus for duration of instruction)
+&lt;ul>
+&lt;li>can avoid locking if memory already exclusively cached&lt;/li>
+&lt;li>all lock instructions totally ordered&lt;/li>
+&lt;li>other memory instructions cannot be re-ordered w. locked ones&lt;/li>
+&lt;li>locks are always ordered&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;code>xchg&lt;/code>&lt;/li>
+&lt;li>&lt;code>cmpxchg&lt;/code>&lt;/li>
+&lt;li>&lt;code>lfence&lt;/code>&lt;/li>
+&lt;li>&lt;code>sfence&lt;/code>&lt;/li>
+&lt;li>&lt;code>mfence&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;h3 id="petersons-solution" >Peterson&amp;rsquo;s Solution
+&lt;span>
+&lt;a href="#petersons-solution">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Assuming sequential consistency&lt;/li>
+&lt;li>Assume two threads&lt;/li>
+&lt;li>&lt;code>int not_turn&lt;/code>&lt;/li>
+&lt;li>&lt;code>bool wants[2]&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-c" data-lang="c">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">for&lt;/span> (;;) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> wants[i] = &lt;span style="color:#24909d">true&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> not_turn = i;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">while&lt;/span>(wants[&lt;span style="color:#3677a9">1&lt;/span>-i] &amp;amp;&amp;amp; not_turn == i)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic">// other thread wants in and not our turn
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">&lt;/span> &lt;span style="color:#447fcf">Critical_section&lt;/span>();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> wants[i] = &lt;span style="color:#24909d">false&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#447fcf">Remainder_section&lt;/span>();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="mutexes" >Mutexes
+&lt;span>
+&lt;a href="#mutexes">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Thread packages typically provide &lt;em>mutexes&lt;/em>:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-c" data-lang="c">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">void&lt;/span> &lt;span style="color:#447fcf">mutex_init&lt;/span>(&lt;span style="color:#6ab825;font-weight:bold">mutex_t&lt;/span> *m, &lt;span style="color:#a61717;background-color:#e3d2d2">\&lt;/span>ldots);
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>All global data should be protected by a mutex.
+If mutexes are used properly, then we get sequential consistency.&lt;/p>
+&lt;p>Want to wrap all shared memory writes with a mutex lock and unlock.&lt;/p></description></item><item><title>BU 375 Operations</title><link>https://blog.elijahlopez.ca/posts/bu-375-operations/</link><pubDate>Sat, 04 Jun 2022 10:23:48 -0400</pubDate><guid>https://blog.elijahlopez.ca/posts/bu-375-operations/</guid><description>&lt;!-- markdownlint-disable MD033 -->
 &lt;p>This document are my notes and midterm review for the BU 375 Operations course taught at Wilfrid Laurier University. While studying for the midterm, I discovered my own formulae shortcuts, undoubtedly due to &amp;ldquo;blind teaching syndrome&amp;rdquo; (I made that term up).
 So let&amp;rsquo;s begin. I&amp;rsquo;ll add a divider to let you know what is part of the midterm.&lt;/p>
 &lt;div>
