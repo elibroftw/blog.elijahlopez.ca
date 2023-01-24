@@ -309,3 +309,75 @@ int thread_fork(const char *name, struct proc *proc,
   void (*entrypoint)(void *data1, unsigned long data2), void *data1, unsigned long data2)
 // wrapper for pthread_create wrapper, does not call process fork
 ```
+
+## Concurrency
+
+Data races occur without synchronization
+
+Options:
+
+- Atomic instructions: instantaneously modify a value
+- Locks: prevent concurrent execution
+
+### Sequential Consistency
+
+Execution as if all operations were executed in some sequential order and that the operations of each  processor occurred in the order specified by the program.
+
+Requirements for sequential consistency are maintaining program order on individual processors and ensuring writes are atomic.
+
+- Sequential consistency complicates write buffers since CPUs use many caches.
+- We want to group writes to the same location (coalescing)
+- Complicates non-blocking reads
+- Thwarting of compiler optimizations
+
+Does not solve the problem of atomicity since modifying a value is 3 lines of code.
+
+### x86 Consistency
+
+Different choice for how to write like (cache, write cache and memory, write to memory only, uncacheable).
+
+### x86 Atomicity
+
+- `lock` - prefix to make a memory instruction atomic (locks bus for duration of instruction)
+  - can avoid locking if memory already exclusively cached
+  - all lock instructions totally ordered
+  - other memory instructions cannot be re-ordered w. locked ones
+  - locks are always ordered
+- `xchg`
+- `cmpxchg`
+- `lfence`
+- `sfence`
+- `mfence`
+
+### Peterson's Solution
+
+- Assuming sequential consistency
+- Assume two threads
+- `int not_turn`
+- `bool wants[2]`
+
+```c
+for (;;) {
+  wants[i] = true;
+  not_turn = i;
+  while(wants[1-i] && not_turn == i)
+    // other thread wants in and not our turn
+  Critical_section();
+  wants[i] = false;
+  Remainder_section();
+}
+```
+
+### Mutexes
+
+Thread packages typically provide _mutexes_:
+
+```c
+void mutex_init(mutex_t *m, \ldots);
+
+```
+
+All global data should be protected by a mutex.
+If mutexes are used properly, then we get sequential consistency.
+
+Want to wrap all shared memory writes with a mutex lock and unlock.
