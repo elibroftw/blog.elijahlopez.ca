@@ -373,3 +373,202 @@ from (
 ) where avg_salary > 42000
 ```
 
+```sql
+select max (tot_salary) from (
+  select dept_name, sum(salary) as tot_salary from instructor group by dept_name
+)
+```
+
+#### Scalar Subqueries
+
+A query that returns a single tuple.
+
+```sql
+select name from instructor where salary >
+   (select avg(salary) from instructor)
+```
+
+#### Set Membership
+
+Subquery can also be a hardcoded set
+
+```sql
+x in (subquery) /* intersect */
+x not in (subquery) /* except */
+select distinct name from instructor where name in (’Mozart’, ’Einstein’)
+select distinct name from instructor where name not in (’Mozart’, ’Einstein’)
+```
+
+<> means not equal
+
+#### All Clause
+
+```sql
+select name from instructor where salary >
+  all (select salary from instructor where dept_name = 'Comp. Sci.')
+```
+
+#### Some (at least one) Clause
+
+```sql
+select name from instructor where salary >
+  some (select salary from instructor where dept_name = 'Comp. Sci.')
+```
+
+#### Exists Clause
+
+Can also use not exists
+
+```sql
+select course_id from section as S where semester = 'Fall' and year = 2017 and
+  exists (select * from section as T where semester = 'Spring' and year= 2018
+  and S.course_id = T.course_id)
+```
+
+#### Test Non-Empty Relations
+
+Triple query.
+
+Assert inner query is non-empty (not exists) where inner query does a search based on condition 1 which also asserts it satisfies condition 2 which could be another query.
+
+Find all students who have taken all courses offered in the Biology department.
+
+return student if for all biology courses available student has taken that course. -> return students where the following relation is empty (all bio courses except the ones the student has taken)
+
+#### Unique
+
+Returns true if subquery contains no duplicates (one find). Add `not` before  `unique` for "at least twice"
+
+<details>
+<summary>find all courses that were offered at most once in 2017</summary>
+
+For all courses, find unique instances where the course was offered in 2017
+
+```sql
+select * from course as T where unique
+  (select * from course as R where T.course_id = R.course_id and R.year = 2017)
+```
+
+</details>
+
+#### Correlated Subqueries
+
+For each tuple obtained from the outer query, compute the
+inner query
+
+```sql
+select name, salary, (select avg(salary)
+  from instructor where dept_name = S.dept_name) as dept_avg
+  from instructor as S
+
+select name, salary, dept_avg from instructor T,
+  lateral (select avg(salary) as dept_avg from instructor S
+              where T.dept_name = S.dept_name)
+```
+
+#### With Clause
+
+with temp_relation (list_of_attributes) as (subquery)
+
+Find all departments where the total salary is greater than the
+average of the total salary at all departments
+
+```sql
+with dept_total (dept_name, value) as (select dept_name, sum(salary)
+            from instructor group by dept_name),
+        dept_total_avg (value) as (select avg(value) from dept_total)
+
+select dept_name from dept_total, dept_total_avg
+    where dept_total.value > dept_total_avg.value
+```
+
+### Data Modifications
+
+```sql
+alter table r add attribute data_typ
+```
+
+Existing tuples in `r` will have `null` as the value for the new attribute
+
+```sql
+alter table r drop A
+```
+
+- Not supported on many databases like `SQLite`
+
+```sql
+alter table r rename column old_name to new_name
+```
+
+```sql
+alter table r modify A data_typ
+```
+
+#### Deleting a Table
+
+```sql
+drop table instructor
+```
+
+#### Removing all from Table
+
+```sql
+delete from instructor
+```
+
+```sql
+delete from instructor where dept_name= ’Finance’
+```
+
+<details><summary>Delete instructors who earn less than the average</summary>
+
+```sql
+delete from instructor where salary < (select avg(salary) from instructor)
+```
+
+</details>
+
+<br>
+
+#### Insertion
+
+```sql
+insert into course values (’CS-437’, ’Database Systems’, ’Comp. Sci.’, 4)
+
+insert into course (course_id, title, dept_name, credits) values (’CS-437’, ’Database Systems’, ’Comp. Sci.’, 4)
+
+insert into student values (’3003’, ’Green’, ’Finance’, null)
+insert into student values (’3003’, ’Green’, ’Finance’) /* omitted values will be null */
+```
+
+Inserting into new table from another based on some condition. Note that without
+a primary key on the student table, there would be a infinite tuples added.
+
+```sql
+insert into instructor
+select ID, name, dept_name, 18000
+from student
+where dept_name = ’Music’ and total_cred > 144
+```
+
+#### Updates
+
+```sql
+update instructor set salary = salary * 1.05;
+
+update instructor set salary = salary * 1.05 where salary < 70000;
+
+update instructor set salary = salary * 1.05 where salary < (select avg (salary) from instructor);
+```
+
+Update instructor salaries based on how much they make (multiple queries):
+
+```sql
+update instructor set salary = salary * 1.03 where salary > 100000;
+update instructor set salary = salary * 1.05 where salary <= 100000;
+/* alternative using case */
+update instructor set salary = case
+    when salary <= 100000 then salary * 1.05
+     else salary * 1.03
+  end
+```
