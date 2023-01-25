@@ -454,7 +454,7 @@ select * from course as T where unique
 #### Correlated Subqueries
 
 For each tuple obtained from the outer query, compute the
-inner query
+inner query. Need to use the `lateral` prefix to do so.
 
 ```sql
 select name, salary, (select avg(salary)
@@ -510,7 +510,9 @@ alter table r modify A data_typ
 drop table instructor
 ```
 
-#### Removing all from Table
+#### Removing from Table
+
+Remove all:
 
 ```sql
 delete from instructor
@@ -545,10 +547,8 @@ Inserting into new table from another based on some condition. Note that without
 a primary key on the student table, there would be a infinite tuples added.
 
 ```sql
-insert into instructor
-select ID, name, dept_name, 18000
-from student
-where dept_name = ’Music’ and total_cred > 144
+insert into instructor select ID, name, dept_name, 18000 from student
+  where dept_name = ’Music’ and total_cred > 144
 ```
 
 #### Updates
@@ -571,4 +571,26 @@ update instructor set salary = case
     when salary <= 100000 then salary * 1.05
      else salary * 1.03
   end
+```
+
+## SQL Intermediate Topics
+
+### Check Constraints
+
+```sql
+create table department (
+  ...
+  budget numeric (12,2) check (budget > 0),
+  ...
+)
+```
+
+### Foreign Key Contraints
+
+```sql
+create table instructor (
+  ...
+  dept_name varchar(20)
+  ...
+  foreign key (dept_name) references department )
 ```
