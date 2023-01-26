@@ -809,7 +809,66 @@ a primary key on the student table, there would be a infinite tuples added.&lt;/
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666"> &lt;/span>dept_name&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#24909d">varchar&lt;/span>(&lt;span style="color:#3677a9">20&lt;/span>)&lt;span style="color:#666">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666"> &lt;/span>...&lt;span style="color:#666">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">foreign&lt;/span>&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">key&lt;/span>&lt;span style="color:#666"> &lt;/span>(dept_name)&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">references&lt;/span>&lt;span style="color:#666"> &lt;/span>department&lt;span style="color:#666"> &lt;/span>)&lt;span style="color:#666">
-&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>CS 350 Operating Systems</title><link>https://blog.elijahlopez.ca/posts/cs-350-operating-systems/</link><pubDate>Tue, 10 Jan 2023 14:56:10 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/cs-350-operating-systems/</guid><description>&lt;p>&lt;a href="https://student.cs.uwaterloo.ca/~cs350/">Course website&lt;/a>&lt;/p>
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="deleting-in-referenced-relation" >Deleting in Referenced Relation
+&lt;span>
+&lt;a href="#deleting-in-referenced-relation">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>When creating a table, we can use the &lt;code>references R on delete set null&lt;/code>&lt;/p>
+&lt;p>Cascade: &lt;code>on delete cascade&lt;/code> rows referencing key also get deleted&lt;/p>
+&lt;h3 id="views" >Views
+&lt;span>
+&lt;a href="#views">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>virtual table&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sql" data-lang="sql">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">create&lt;/span>&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">view&lt;/span>&lt;span style="color:#666"> &lt;/span>faculty&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">as&lt;/span>&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">select&lt;/span>&lt;span style="color:#666"> &lt;/span>ID,&lt;span style="color:#666"> &lt;/span>name,&lt;span style="color:#666"> &lt;/span>dept_name&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">from&lt;/span>&lt;span style="color:#666"> &lt;/span>instructor&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>We can use views to hide data&lt;/p>
+&lt;h4 id="modifying-views" >Modifying Views
+&lt;span>
+&lt;a href="#modifying-views">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sql" data-lang="sql">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">create&lt;/span>&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">view&lt;/span>&lt;span style="color:#666"> &lt;/span>instructor_info&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">as&lt;/span>&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">select&lt;/span>&lt;span style="color:#666"> &lt;/span>ID,&lt;span style="color:#666"> &lt;/span>name,&lt;span style="color:#666"> &lt;/span>building&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">from&lt;/span>&lt;span style="color:#666"> &lt;/span>instructor,&lt;span style="color:#666"> &lt;/span>department&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">where&lt;/span>&lt;span style="color:#666"> &lt;/span>instructor.dept_name&lt;span style="color:#666"> &lt;/span>=&lt;span style="color:#666"> &lt;/span>department.dept_name;&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">&lt;/span>&lt;span style="color:#999;font-style:italic">-- insert into instructor_info values(&amp;#39;69987&amp;#39;, &amp;#39;White&amp;#39;, &amp;#39;Taylor&amp;#39;); -- won&amp;#39;t work
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="updateable-views" >Updateable Views
+&lt;span>
+&lt;a href="#updateable-views">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;h3 id="access-control" >Access Control
+&lt;span>
+&lt;a href="#access-control">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;h4 id="roles" >Roles
+&lt;span>
+&lt;a href="#roles">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;h3 id="indexes" >Indexes
+&lt;span>
+&lt;a href="#indexes">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>An index is an auxiliary persistent data structure
+&lt;ul>
+&lt;li>Search tree (e.g., B+-tree), lookup table (e.g., hash table), etc&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sql" data-lang="sql">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">create&lt;/span>&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">index&lt;/span>&lt;span style="color:#666"> &lt;/span>ins_name_index&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">on&lt;/span>&lt;span style="color:#666"> &lt;/span>instructor&lt;span style="color:#666"> &lt;/span>(name);&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">&lt;/span>&lt;span style="color:#6ab825;font-weight:bold">create&lt;/span>&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">unique&lt;/span>&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">index&lt;/span>&lt;span style="color:#666"> &lt;/span>ins_name_index&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">on&lt;/span>&lt;span style="color:#666"> &lt;/span>instructor&lt;span style="color:#666"> &lt;/span>(name);&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">&lt;/span>&lt;span style="color:#6ab825;font-weight:bold">drop&lt;/span>&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">index&lt;/span>&lt;span style="color:#666"> &lt;/span>ins_name_index&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Typically the index already exists on primary key and unique constraints.&lt;/p></description></item><item><title>CS 350 Operating Systems</title><link>https://blog.elijahlopez.ca/posts/cs-350-operating-systems/</link><pubDate>Tue, 10 Jan 2023 14:56:10 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/cs-350-operating-systems/</guid><description>&lt;p>&lt;a href="https://student.cs.uwaterloo.ca/~cs350/">Course website&lt;/a>&lt;/p>
 &lt;div>
 &lt;h2>Table of Contents&lt;/h2>
 &lt;nav id="TableOfContents">
@@ -859,6 +918,9 @@ a primary key on the student table, there would be a infinite tuples added.&lt;/
 &lt;li>&lt;a href="#x86-atomicity">x86 Atomicity&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#petersons-solution">Peterson&amp;rsquo;s Solution&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#mutexes">Mutexes&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#condition-variables">Condition Variables&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#ordering-requirements">Ordering requirements&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#mips-spinlocks">MIPS Spinlocks&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;/ul>
@@ -1080,8 +1142,7 @@ it may be better to use grep.&lt;/p>
 &lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-c" data-lang="c">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">int&lt;/span> &lt;span style="color:#447fcf">fcntl&lt;/span>(&lt;span style="color:#6ab825;font-weight:bold">int&lt;/span> fd, F_SETFD, &lt;span style="color:#6ab825;font-weight:bold">int&lt;/span> val);
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">// sets close on exec flag if val = 1, clears if val = 0
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">// sets file descriptor non-inheritable by new program
-&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;a href="https://student.cs.uwaterloo.ca/~cs350/W23/notes/processes.pdf">slide left off at&lt;/a>&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-c" data-lang="c">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#447fcf">perror&lt;/span>(&lt;span style="color:#6ab825;font-weight:bold">char&lt;/span> * arg)
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-c" data-lang="c">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#447fcf">perror&lt;/span>(&lt;span style="color:#6ab825;font-weight:bold">char&lt;/span> * arg)
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Error friendly print&lt;/p>
 &lt;h3 id="pipes" >PIpes
 &lt;span>
@@ -1297,11 +1358,41 @@ it may be better to use grep.&lt;/p>
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
-&lt;/h3>&lt;p>Thread packages typically provide &lt;em>mutexes&lt;/em>:&lt;/p>
+&lt;/h3>&lt;p>A mutex is a mutual exclusion lock. Thread packages typically provide &lt;em>mutexes&lt;/em>:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-c" data-lang="c">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">void&lt;/span> &lt;span style="color:#447fcf">mutex_init&lt;/span>(&lt;span style="color:#6ab825;font-weight:bold">mutex_t&lt;/span> *m, &lt;span style="color:#a61717;background-color:#e3d2d2">\&lt;/span>ldots);
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>All global data should be protected by a mutex.
 If mutexes are used properly, then we get sequential consistency.&lt;/p>
-&lt;p>Want to wrap all shared memory writes with a mutex lock and unlock.&lt;/p></description></item><item><title>Tauri Custom Titlebar (React)</title><link>https://blog.elijahlopez.ca/posts/tauri-custom-titlebar/</link><pubDate>Sat, 24 Dec 2022 10:45:01 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/tauri-custom-titlebar/</guid><description>&lt;p>This tutorial is based on Part 12 of my Tauri &amp;amp; ReactJS series.&lt;/p>
+&lt;p>Want to wrap all shared memory writes with a mutex lock and unlock.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-c" data-lang="c">&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="condition-variables" >Condition Variables
+&lt;span>
+&lt;a href="#condition-variables">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Instead of calling &lt;code>thread_yield&lt;/code>, we can sleep until a condition is met.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-c" data-lang="c">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">int&lt;/span> &lt;span style="color:#447fcf">pthread_cond_init&lt;/span>(&lt;span style="color:#6ab825;font-weight:bold">pthread_cond_t&lt;/span> *, &lt;span style="color:#a61717;background-color:#e3d2d2">\&lt;/span>ldots);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">int&lt;/span> &lt;span style="color:#447fcf">pthread_cond_wait&lt;/span>(&lt;span style="color:#6ab825;font-weight:bold">pthread_cond_t&lt;/span> *c, &lt;span style="color:#6ab825;font-weight:bold">pthread_mutex_t&lt;/span> *m);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">// unlock&amp;#39;s m atomically and re-acquires it upon signal
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">&lt;/span>&lt;span style="color:#6ab825;font-weight:bold">int&lt;/span> &lt;span style="color:#447fcf">pthread_cond_signal&lt;/span>(&lt;span style="color:#6ab825;font-weight:bold">pthread_cond_t&lt;/span> *c);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">int&lt;/span> &lt;span style="color:#447fcf">pthread_cond_broadcast&lt;/span>(&lt;span style="color:#6ab825;font-weight:bold">pthread_cond_t&lt;/span> *c);
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Use a while loop with these conditions to avoid race conditions of being beat out by another consumer.&lt;/p>
+&lt;h3 id="ordering-requirements" >Ordering requirements
+&lt;span>
+&lt;a href="#ordering-requirements">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-c" data-lang="c">&lt;span style="display:flex;">&lt;span>v-&amp;gt;val++;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">// this tells the compiler not to reorder
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">&lt;/span>&lt;span style="color:#6ab825;font-weight:bold">asm&lt;/span> &lt;span style="color:#447fcf">volatile&lt;/span> (&lt;span style="color:#ed9d13">&amp;#34;sfence&amp;#34;&lt;/span> ::: &lt;span style="color:#ed9d13">&amp;#34;memory&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>v-&amp;gt;lock = &lt;span style="color:#3677a9">0&lt;/span>;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="mips-spinlocks" >MIPS Spinlocks
+&lt;span>
+&lt;a href="#mips-spinlocks">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3></description></item><item><title>Tauri Custom Titlebar (React)</title><link>https://blog.elijahlopez.ca/posts/tauri-custom-titlebar/</link><pubDate>Sat, 24 Dec 2022 10:45:01 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/tauri-custom-titlebar/</guid><description>&lt;p>This tutorial is based on Part 12 of my Tauri &amp;amp; ReactJS series.&lt;/p>
 &lt;div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
 &lt;iframe src="https://www.youtube.com/embed/zONyCMTUwsI" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video">&lt;/iframe>
 &lt;/div>
