@@ -594,3 +594,47 @@ create table instructor (
   ...
   foreign key (dept_name) references department )
 ```
+
+### Deleting in Referenced Relation
+
+When creating a table, we can use the `references R on delete set null`
+
+Cascade: `on delete cascade` rows referencing key also get deleted
+
+### Views
+
+virtual table
+
+```sql
+create view faculty as select ID, name, dept_name from instructor
+```
+
+We can use views to hide data
+
+#### Modifying Views
+
+```sql
+create view instructor_info as select ID, name, building from instructor, department where instructor.dept_name = department.dept_name;
+-- insert into instructor_info values('69987', 'White', 'Taylor'); -- won't work
+```
+
+#### Updateable Views
+
+### Access Control
+
+#### Roles
+
+### Indexes
+
+- An index is an auxiliary persistent data structure
+  - Search tree (e.g., B+-tree), lookup table (e.g., hash table), etc
+
+```sql
+create index ins_name_index on instructor (name);
+create unique index ins_name_index on instructor (name);
+drop index ins_name_index
+```
+
+Typically the index already exists on primary key and unique constraints.
+
+
