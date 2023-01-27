@@ -12,6 +12,21 @@ aliases: ['/posts/vs-code-remote-ssh/']
 
 In this tutorial we'll integrate SSH into VS Code in a way that won't require entering a password every time.
 
+<details><summary>Troubleshooting on Windows</summary>
+
+Visual Studio Code is incredibly wasteful on Windows. The developers have no respect for users'
+devices. If one of your devices can't connect to the remote-ssh server two times in a row without any
+obvious reasons, then you should first [download VSCode](https://code.visualstudio.com/download) but
+before re-installing, remove VSCode from your device including `%APPDATA%\Code` and `%USERPROFILE%\.vscode`.
+
+It would be a good idea to either use VSCode's sync feature or save a copy of your `settings.json` as well as taking
+a note of the extensions you have installed.
+
+After re-installing VsCode, my computer could connect to the ssh-server in 0.5 seconds. In the end, totally worth it
+since I removed 4GB worth of files related to vscode even after it had been uninstalled from my computer.
+
+</details>
+
 ## Generating an SSH key
 
 If you're on Windows, you will need to install the OpenSSH feature from Settings or you can use WSL to be able to use `ssh-keygen`.

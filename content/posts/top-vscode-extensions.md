@@ -126,13 +126,6 @@ If you need to ssh often to do some programming, I suggest using this extension 
 
 > Sets the DISPLAY variable when in a remote workspace so that GUI applications can be run from VS Code.
 
-## Select Line Status Bar
-
-[Download](https://marketplace.visualstudio.com/items?itemName=tomoki1207.selectline-statusbar)
-
-For those who want to compare which implementation is more concise, this extension comes ini handy.
-The lines selected count shows up in the bottom right.
-
 ## vscode-pdf
 
 [Download](https://marketplace.visualstudio.com/items?itemName=tomoki1207.pdf)
@@ -140,11 +133,3 @@ The lines selected count shows up in the bottom right.
 I'm not sure if this extension is buggy, but I used this extension extensively when doing programming assignments to avoid
 alt-tabbing. I usually split my editor into two panels and have pdfs open on the right panel. Even with two monitors, I'd still use this extension
 since the second monitor will be used for gaming or watching videos.
-
-## Todo Tree
-
-[Download](https://marketplace.visualstudio.com/items?itemName=Gruntfuggly.todo-tree)
-
-If you're a lazy programmer who only implements the most important parts and litters the project with TODOs for later,
-this extension helps you go through all the TODOs you wrote so that you can go through them in order.
-Of course, a project Ctrl + Shift + F might be satisfiable.
