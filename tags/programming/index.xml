@@ -960,15 +960,6 @@ due to how bash/sh interprets differently because of missing quotation marks.&lt
 &lt;blockquote>
 &lt;p>Sets the DISPLAY variable when in a remote workspace so that GUI applications can be run from VS Code.&lt;/p>
 &lt;/blockquote>
-&lt;h2 id="select-line-status-bar" >Select Line Status Bar
-&lt;span>
-&lt;a href="#select-line-status-bar">
-&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
-&lt;/a>
-&lt;/span>
-&lt;/h2>&lt;p>&lt;a href="https://marketplace.visualstudio.com/items?itemName=tomoki1207.selectline-statusbar">Download&lt;/a>&lt;/p>
-&lt;p>For those who want to compare which implementation is more concise, this extension comes ini handy.
-The lines selected count shows up in the bottom right.&lt;/p>
 &lt;h2 id="vscode-pdf" >vscode-pdf
 &lt;span>
 &lt;a href="#vscode-pdf">
@@ -978,17 +969,7 @@ The lines selected count shows up in the bottom right.&lt;/p>
 &lt;/h2>&lt;p>&lt;a href="https://marketplace.visualstudio.com/items?itemName=tomoki1207.pdf">Download&lt;/a>&lt;/p>
 &lt;p>I&amp;rsquo;m not sure if this extension is buggy, but I used this extension extensively when doing programming assignments to avoid
 alt-tabbing. I usually split my editor into two panels and have pdfs open on the right panel. Even with two monitors, I&amp;rsquo;d still use this extension
-since the second monitor will be used for gaming or watching videos.&lt;/p>
-&lt;h2 id="todo-tree" >Todo Tree
-&lt;span>
-&lt;a href="#todo-tree">
-&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
-&lt;/a>
-&lt;/span>
-&lt;/h2>&lt;p>&lt;a href="https://marketplace.visualstudio.com/items?itemName=Gruntfuggly.todo-tree">Download&lt;/a>&lt;/p>
-&lt;p>If you&amp;rsquo;re a lazy programmer who only implements the most important parts and litters the project with TODOs for later,
-this extension helps you go through all the TODOs you wrote so that you can go through them in order.
-Of course, a project Ctrl + Shift + F might be satisfiable.&lt;/p></description></item><item><title>ReactJS Tips</title><link>https://blog.elijahlopez.ca/posts/reactjs-tips/</link><pubDate>Fri, 23 Sep 2022 19:57:18 -0400</pubDate><guid>https://blog.elijahlopez.ca/posts/reactjs-tips/</guid><description>&lt;p>I&amp;rsquo;m only in the mood for writing down my thoughts, so I apologize for the upcoming messiness.&lt;/p>
+since the second monitor will be used for gaming or watching videos.&lt;/p></description></item><item><title>ReactJS Tips</title><link>https://blog.elijahlopez.ca/posts/reactjs-tips/</link><pubDate>Fri, 23 Sep 2022 19:57:18 -0400</pubDate><guid>https://blog.elijahlopez.ca/posts/reactjs-tips/</guid><description>&lt;p>I&amp;rsquo;m only in the mood for writing down my thoughts, so I apologize for the upcoming messiness.&lt;/p>
 &lt;h2 id="optimizing-states-that-use-objects" >Optimizing states that use objects
 &lt;span>
 &lt;a href="#optimizing-states-that-use-objects">
@@ -2238,6 +2219,16 @@ After installing these two modules, copy the snippet at the bottom of the articl
 &lt;/h2>&lt;p>&lt;code>GUID&lt;/code>: include the &amp;lsquo;{&amp;rsquo; and &amp;lsquo;}&amp;rsquo; into the string if applicable
 &lt;code>addon_files&lt;/code>: a list of source files of the add-on (relative path&lt;/p>
 &lt;script type="application/javascript" src="https://gist.github.com/elibroftw/1a94149a2f6232d062b666c4ee9ea530.js">&lt;/script></description></item><item><title>VS Code Remote SSH Tutorial</title><link>https://blog.elijahlopez.ca/posts/vscode-remote-ssh/</link><pubDate>Fri, 11 Sep 2020 18:23:50 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/vscode-remote-ssh/</guid><description>&lt;p>In this tutorial we&amp;rsquo;ll integrate SSH into VS Code in a way that won&amp;rsquo;t require entering a password every time.&lt;/p>
+&lt;details>&lt;summary>Troubleshooting on Windows&lt;/summary>
+&lt;p>Visual Studio Code is incredibly wasteful on Windows. The developers have no respect for users'
+devices. If one of your devices can&amp;rsquo;t connect to the remote-ssh server two times in a row without any
+obvious reasons, then you should first &lt;a href="https://code.visualstudio.com/download">download VSCode&lt;/a> but
+before re-installing, remove VSCode from your device including &lt;code>%APPDATA%\Code&lt;/code> and &lt;code>%USERPROFILE%\.vscode&lt;/code>.&lt;/p>
+&lt;p>It would be a good idea to either use VSCode&amp;rsquo;s sync feature or save a copy of your &lt;code>settings.json&lt;/code> as well as taking
+a note of the extensions you have installed.&lt;/p>
+&lt;p>After re-installing VsCode, my computer could connect to the ssh-server in 0.5 seconds. In the end, totally worth it
+since I removed 4GB worth of files related to vscode even after it had been uninstalled from my computer.&lt;/p>
+&lt;/details>
 &lt;h2 id="generating-an-ssh-key" >Generating an SSH key
 &lt;span>
 &lt;a href="#generating-an-ssh-key">
