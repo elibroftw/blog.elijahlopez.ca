@@ -58,7 +58,11 @@ cs350_submit userspace/ASSTUSER0 ASSTUSER0
 
 ### How to add to PATH
 
-In your `.bashrc`, add `PATH="$PATH:path"`
+In your `.bashrc`, add `PATH="$PATH:path"`. For some reason, my `.bashrc` file keeps getting wiped.
+
+```sh
+PATH="$PATH:/u/cs350/sys161/bin:/u/cs350/bin"
+```
 
 ### Pro tip
 
@@ -408,4 +412,3 @@ v->lock = 0;
 ```
 
 ### MIPS Spinlocks
-
