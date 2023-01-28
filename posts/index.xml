@@ -919,6 +919,7 @@ a primary key on the student table, there would be a infinite tuples added.&lt;/
 &lt;li>&lt;a href="#petersons-solution">Peterson&amp;rsquo;s Solution&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#mutexes">Mutexes&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#condition-variables">Condition Variables&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#semaphores">Semaphores&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#ordering-requirements">Ordering requirements&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#mips-spinlocks">MIPS Spinlocks&lt;/a>&lt;/li>
 &lt;/ul>
@@ -1377,7 +1378,19 @@ If mutexes are used properly, then we get sequential consistency.&lt;/p>
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">&lt;/span>&lt;span style="color:#6ab825;font-weight:bold">int&lt;/span> &lt;span style="color:#447fcf">pthread_cond_signal&lt;/span>(&lt;span style="color:#6ab825;font-weight:bold">pthread_cond_t&lt;/span> *c);
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">int&lt;/span> &lt;span style="color:#447fcf">pthread_cond_broadcast&lt;/span>(&lt;span style="color:#6ab825;font-weight:bold">pthread_cond_t&lt;/span> *c);
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Use a while loop with these conditions to avoid race conditions of being beat out by another consumer.&lt;/p>
-&lt;h3 id="ordering-requirements" >Ordering requirements
+&lt;h3 id="semaphores" >Semaphores
+&lt;span>
+&lt;a href="#semaphores">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Fancy mutex where if s is 0, sem_wait will block.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-c" data-lang="c">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">int&lt;/span> &lt;span style="color:#447fcf">sem_init&lt;/span>(&lt;span style="color:#6ab825;font-weight:bold">sem_t&lt;/span> *s, ..., &lt;span style="color:#6ab825;font-weight:bold">unsigned&lt;/span> &lt;span style="color:#6ab825;font-weight:bold">int&lt;/span> n); &lt;span style="color:#999;font-style:italic">// proc_count_mutex = sem_create(&amp;#34;proc_count_mutex&amp;#34;,1);
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#447fcf">sem_wait&lt;/span>(&lt;span style="color:#6ab825;font-weight:bold">sem_t&lt;/span> *s) (originally called P) &lt;span style="color:#999;font-style:italic">// P(sem_t *s)
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#447fcf">sem_signal&lt;/span>(&lt;span style="color:#6ab825;font-weight:bold">sem_t&lt;/span> *s) &lt;span style="color:#999;font-style:italic">// V(sem_t *s)
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="ordering-requirements" >Ordering requirements
 &lt;span>
 &lt;a href="#ordering-requirements">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
