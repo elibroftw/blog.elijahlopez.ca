@@ -207,6 +207,7 @@ int dup2(int oldfd, int newfd);
 // closes newfd if it was a valid descriptor
 // makes newfd an exact copy of oldfd
 // same offset on both
+// stdin is 0, stdout is 1, stderr is 2.
 ```
 
 ```c
@@ -221,7 +222,7 @@ perror(char * arg)
 
 Error friendly print
 
-### PIpes
+### Pipes
 
 ```c
 int pipe(it fds[2]);
