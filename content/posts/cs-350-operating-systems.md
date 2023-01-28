@@ -402,6 +402,18 @@ int pthread_cond_broadcast(pthread_cond_t *c);
 
 Use a while loop with these conditions to avoid race conditions of being beat out by another consumer.
 
+### Semaphores
+
+Fancy mutex where if s is 0, sem_wait will block.
+
+```c
+int sem_init(sem_t *s, ..., unsigned int n); // proc_count_mutex = sem_create("proc_count_mutex",1);
+
+sem_wait(sem_t *s) (originally called P)  // P(sem_t *s)
+
+sem_signal(sem_t *s)  // V(sem_t *s)
+```
+
 ### Ordering requirements
 
 ```c
