@@ -257,6 +257,16 @@ tuples that don&amp;rsquo;t have those attributes matching. During the first cro
 &lt;li>Intersection: Return stuff in both rrelations&lt;/li>
 &lt;li>Division: Attributes of second relation must be a subset of the first. Inverse of product. Useful for all. Example (which tuples of X always references Y but returns a new tuple without the attributes in Y).&lt;/li>
 &lt;/ul>
+&lt;h3 id="finding-the-maximums-of-a-relation" >Finding the maximums of a relation
+&lt;span>
+&lt;a href="#finding-the-maximums-of-a-relation">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>To do this, we find all values in the relation that are smaller than values in itself.
+Now that we have all the smaller values, we just need to remove them from the original table.
+We are left with values equal to the maximum.&lt;/p>
+&lt;p>project val (T) - project t1.val (T t1 join T t2 if t1.val &amp;lt; t2.val)&lt;/p>
 &lt;h3 id="algebraic-equivalences" >Algebraic Equivalences
 &lt;span>
 &lt;a href="#algebraic-equivalences">
@@ -480,7 +490,7 @@ Usage &lt;code>SELECT count(attribute), ...&lt;/code>&lt;/li>
 &lt;/li>
 &lt;/ul>
 &lt;p>Group by: group tuples into another attribute.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sql" data-lang="sql">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">select&lt;/span>&lt;span style="color:#666"> &lt;/span>dept_name,&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">avg&lt;/span>(salary)&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">group&lt;/span>&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">by&lt;/span>&lt;span style="color:#666"> &lt;/span>dept_name&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">having&lt;/span>&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">avg&lt;/span>(salary)&lt;span style="color:#666"> &lt;/span>&amp;gt;&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#3677a9">25000&lt;/span>&lt;span style="color:#666">
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sql" data-lang="sql">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">select&lt;/span>&lt;span style="color:#666"> &lt;/span>dept_name,&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">avg&lt;/span>(salary)&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">from&lt;/span>&lt;span style="color:#666"> &lt;/span>instructor&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">group&lt;/span>&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">by&lt;/span>&lt;span style="color:#666"> &lt;/span>dept_name&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">having&lt;/span>&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">avg&lt;/span>(salary)&lt;span style="color:#666"> &lt;/span>&amp;gt;&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#3677a9">25000&lt;/span>&lt;span style="color:#666">
 &lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>The having condition applies on each group and not on the aggregation. The having applies before the select returns but after the grouping.&lt;/p>
 &lt;p>Null: null indicates unknown or missing data.&lt;/p>
 &lt;p>Comparing null with anything else always results in unknown even with null.&lt;/p>
