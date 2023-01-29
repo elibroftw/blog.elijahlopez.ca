@@ -157,6 +157,14 @@ tuples that don't have those attributes matching. During the first cross product
 - Intersection: Return stuff in both rrelations
 - Division: Attributes of second relation must be a subset of the first. Inverse of product. Useful for all. Example (which tuples of X always references Y but returns a new tuple without the attributes in Y).
 
+### Finding the maximums of a relation
+
+To do this, we find all values in the relation that are smaller than values in itself.
+Now that we have all the smaller values, we just need to remove them from the original table.
+We are left with values equal to the maximum.
+
+project val (T) -  project t1.val (T t1 join T t2 if t1.val < t2.val)
+
 ### Algebraic Equivalences
 
 ### Relational Completeness
@@ -349,7 +357,7 @@ Usage `SELECT count(attribute), ...`
 Group by: group tuples into another attribute.
 
 ```sql
-select dept_name, avg(salary) group by dept_name having avg(salary) > 25000
+select dept_name, avg(salary) from instructor group by dept_name having avg(salary) > 25000
 ```
 
  The having condition applies on each group and not on the aggregation. The having applies before the select returns but after the grouping.
