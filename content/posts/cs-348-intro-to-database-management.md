@@ -636,3 +636,14 @@ drop index ins_name_index
 ```
 
 Typically the index already exists on primary key and unique constraints.
+
+### SQL Relational Division
+
+TODO: double check if this is correct.
+
+Assumes `model` is distinct (primary key). If model was not distinct, you would have to add the distinct keyword in the subquery as well
+as the ending count.
+
+```sql
+SELECT maker FROM (SELECT maker, model FROM Product A join Printer B USING(model) WHERE color=True) group by maker HAVING COUNT(*) = (SELECT COUNT(*) FROM Printer WHERE color=true)
+```
