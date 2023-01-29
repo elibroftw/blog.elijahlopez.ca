@@ -1,11 +1,12 @@
 ---
-title: "Vscode Aspnet Rest Api Launch Configuration"
+title: "ASP.NET WEB API launch.json for Visual Studio Code"
 date: 2023-01-29T13:03:33-05:00
 draft: false
 tags: [
     "programming",
     "tutorial",
     "c#",
+    "asp.net",
     "vscode",
 ]
 ---
