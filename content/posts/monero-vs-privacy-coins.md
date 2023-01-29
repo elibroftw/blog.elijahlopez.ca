@@ -188,15 +188,9 @@ I've said it before and I'll say it again; Transparent transactions on the block
 
 Secret Network claims to be private, but the blockchain explorer says otherwise. I have more bad news.
 
-Let's open their [website](https://scrt.network/). It looks nice, I'll give them that. However, suppose
-I'm interested in owning SCRT. I scroll down and see "Get Started." I click that, and see Store SCRT. I click it,
-and scroll down to the bottom. Then I see 4 options available. Keplr is promoted, so I click the link. Guess what?
-All four option "links" take me to the top of the page! Anyways, I decided to search up Keplr. Guess what again?
-Keplr only has a Chrome wallet.
+Let's open their [website](https://scrt.network/). It looks nice, I'll give them that. However, suppose I'm interested in owning SCRT. I go to the page with the wallets and Keplr doesn't support Firefox, neither does Cosmostation, and the second option requires signing up! Privacy but you need to use Chrome? Privacy is interlinked with freedom. You simply can't have one without the other and claim supremacy.
 
-So you expect people who care about privacy to use a browser to transact privately and not just that, a specific browser. Chrome! I use Firefox!
-The bare minimum for any crypto project is a working desktop GUI wallet that doesn't require additional dependencies.
-I thought Monero's GUI lacks some UX, but amongst the competition, it ranks at the top.
+The bare minimum for any crypto project is a working desktop GUI wallet that doesn't require additional dependencies. I thought Monero's GUI lacks some UX, but amongst the competition, it ranks at the top.
 
 ## MimbleWimble (Grin, Litecoin)
 
