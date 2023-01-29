@@ -1,4 +1,66 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on ELL Blog</title><link>https://blog.elijahlopez.ca/posts/</link><description>ELL Blog (Posts)</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 29 Jan 2023 13:03:33 -0500</lastBuildDate><atom:link href="https://blog.elijahlopez.ca/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Vscode Aspnet Rest Api Launch Configuration</title><link>https://blog.elijahlopez.ca/posts/vscode-aspnet-rest-api-launch-configuration/</link><pubDate>Sun, 29 Jan 2023 13:03:33 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/vscode-aspnet-rest-api-launch-configuration/</guid><description>&lt;p>Suppose you want to &lt;em>debug&lt;/em> your ASP.NET application on Visual Studio as well Visual Studio Code.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on ELL Blog</title><link>https://blog.elijahlopez.ca/posts/</link><description>ELL Blog (Posts)</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 29 Jan 2023 14:05:19 -0500</lastBuildDate><atom:link href="https://blog.elijahlopez.ca/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>ASP.NET Serialize Enum as String</title><link>https://blog.elijahlopez.ca/posts/aspnet-serialize-enum-as-string/</link><pubDate>Sun, 29 Jan 2023 14:05:19 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/aspnet-serialize-enum-as-string/</guid><description>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-c#" data-lang="c#">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">using&lt;/span> &lt;span style="color:#447fcf;text-decoration:underline">System.Text.Json.Serialization&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">namespace&lt;/span> &lt;span style="color:#447fcf;text-decoration:underline">MyApi.Models&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">public&lt;/span> &lt;span style="color:#6ab825;font-weight:bold">enum&lt;/span> LoginErrors {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> InvalidEmail,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> TooManyRequests,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">public&lt;/span> &lt;span style="color:#6ab825;font-weight:bold">class&lt;/span> &lt;span style="color:#447fcf;text-decoration:underline">StartLoginResponse&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic">// this right here:&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> [JsonConverter(typeof(JsonStringEnumConverter))]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">public&lt;/span> LoginErrors? Error { &lt;span style="color:#6ab825;font-weight:bold">get&lt;/span>; &lt;span style="color:#6ab825;font-weight:bold">set&lt;/span>; }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>ASP.NET Optional Json Fields</title><link>https://blog.elijahlopez.ca/posts/aspnet-optional-json-fields/</link><pubDate>Sun, 29 Jan 2023 14:03:20 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/aspnet-optional-json-fields/</guid><description>&lt;p>Also featured: enum to string.&lt;/p>
+&lt;details>
+&lt;summary>Fields&lt;/summary>
+&lt;p>Since System.Text.Json is only&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Field&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Always&lt;/td>
+&lt;td>Property is always ignored.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Never&lt;/td>
+&lt;td>Property is always serialized and deserialized, regardless of IgnoreNullValues configuration.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>WhenWritingDefault&lt;/td>
+&lt;td>Property is ignored only if it equals the default value for its type.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>WhenWritingNull&lt;/td>
+&lt;td>Property is ignored if its value is null. This is applied only to reference-type properties and fields.&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>For readers in a decade or so, see &lt;a href="https://learn.microsoft.com/en-us/dotnet/api/system.text.json.serialization.jsonignorecondition#fields">JsonIgnoreCondition&lt;/a>&lt;/p>
+&lt;/details>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-c#" data-lang="c#">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">using&lt;/span> &lt;span style="color:#447fcf;text-decoration:underline">System.Text.Json.Serialization&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">namespace&lt;/span> &lt;span style="color:#447fcf;text-decoration:underline">MyApi.Models&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">public&lt;/span> &lt;span style="color:#6ab825;font-weight:bold">enum&lt;/span> LoginErrors {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> InvalidEmail,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> TooManyRequests,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">public&lt;/span> &lt;span style="color:#6ab825;font-weight:bold">class&lt;/span> &lt;span style="color:#447fcf;text-decoration:underline">StartLoginResponse&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> [JsonConverter(typeof(JsonStringEnumConverter))]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic">// this right here:&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">public&lt;/span> LoginErrors? Error { &lt;span style="color:#6ab825;font-weight:bold">get&lt;/span>; &lt;span style="color:#6ab825;font-weight:bold">set&lt;/span>; }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>ASP.NET WEB API launch.json for Visual Studio Code</title><link>https://blog.elijahlopez.ca/posts/vscode-aspnet-rest-api-launch-configuration/</link><pubDate>Sun, 29 Jan 2023 13:03:33 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/vscode-aspnet-rest-api-launch-configuration/</guid><description>&lt;p>Suppose you want to &lt;em>debug&lt;/em> your ASP.NET application on Visual Studio as well Visual Studio Code.
 Sure you can use the run feature of the Solution Explorer extension in Visual Studio Code, but that&amp;rsquo;s not really a VS Code native feeling.&lt;/p>
 &lt;ol>
 &lt;li>Rename or delete eyour &lt;code>.vscode/launch.json&lt;/code> file.&lt;/li>
