@@ -179,6 +179,8 @@ Schema used for Examples
 
 ![database schema](/images/cs-348/database-examples-schema.png)
 
+[SQL interpreter](https://www.db-book.com/university-lab-dir/sqljs.html)
+
 ### Data Types
 
 - integer or int (32 bit or 4 byte)
