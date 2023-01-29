@@ -99,7 +99,7 @@ A database can be displayed tabularly with a table for each relation.1
 Tuple-Level
 
 - Domain restrictions (e.g. type string)
-- Restricting possible values (e.g. `["Winter", "Summer", "Fall"]`)
+- Value restriction: only allow subset of values (e.g. `["Winter", "Summer", "Fall"]`)
 
 Relation-level
 
@@ -636,5 +636,3 @@ drop index ins_name_index
 ```
 
 Typically the index already exists on primary key and unique constraints.
-
-
