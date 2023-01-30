@@ -31,17 +31,17 @@ For readers in a decade or so, see [JsonIgnoreCondition](https://learn.microsoft
 ```c#
 using System.Text.Json.Serialization;
 
-namespace MyApi.Models {
-    public enum LoginErrors {
-        InvalidEmail,
-        TooManyRequests,
-    }
+namespace MyApi.Models;
 
-    public class StartLoginResponse {
-        [JsonConverter(typeof(JsonStringEnumConverter))]
-        // this right here:
-        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
-        public LoginErrors? Error { get; set; }
-    }
+public enum LoginErrors {
+    InvalidEmail,
+    TooManyRequests,
+}
+
+public class StartLoginResponse {
+    [JsonConverter(typeof(JsonStringEnumConverter))]
+    // this right here:
+    [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+    public LoginErrors? Error { get; set; }
 }
 ```

@@ -13,17 +13,17 @@ tags: [
 ```c#
 using System.Text.Json.Serialization;
 
-namespace MyApi.Models {
-    public enum LoginErrors {
-        InvalidEmail,
-        TooManyRequests,
-    }
+namespace MyApi.Models;
 
-    public class StartLoginResponse {
-        // this right here:
-        [JsonConverter(typeof(JsonStringEnumConverter))]
-        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
-        public LoginErrors? Error { get; set; }
-    }
+public enum LoginErrors {
+    InvalidEmail,
+    TooManyRequests,
+}
+
+public class StartLoginResponse {
+    // this right here:
+    [JsonConverter(typeof(JsonStringEnumConverter))]
+    [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+    public LoginErrors? Error { get; set; }
 }
 ```
