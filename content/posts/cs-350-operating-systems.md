@@ -398,6 +398,7 @@ int pthread_cond_init(pthread_cond_t *, \ldots);
 int pthread_cond_wait(pthread_cond_t *c, pthread_mutex_t *m);
 // unlock's m atomically and re-acquires it upon signal
 int pthread_cond_signal(pthread_cond_t *c);
+// wake all threads up
 int pthread_cond_broadcast(pthread_cond_t *c);
 ```
 
@@ -425,3 +426,17 @@ v->lock = 0;
 ```
 
 ### MIPS Spinlocks
+
+```c
+void spinlock_acquire {
+  ...
+  while(1) {
+    if (spinlock_data_get(&lk->lk_lock) != 0)
+      continue; // saves CPU cycles
+    if (spinlock_data_testandset(&lk->lk_lock) != 0)
+      continue;
+    break;
+  }
+  lk->lk_holder = mycpu;
+}
+```
