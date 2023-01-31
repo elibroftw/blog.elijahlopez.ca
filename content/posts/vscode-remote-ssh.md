@@ -79,6 +79,7 @@ type path\to\id_algo.pub | ssh USER@HOST "cat >> .ssh/authorized_keys"
       IdentityFile "C:\Users\maste\.ssh\id_ed25519"
       # Linux/MacOS: IdentityFile "/Users/USER/.ssh/id_ed25519"
       # PreferredAuthentications publickey
+      # to set up a ProxyJump see next section
     ```
 
 5. From the command palette, use "Remote-SSH: Connect Current Window to Host..." and select the host you just added
@@ -86,3 +87,20 @@ type path\to\id_algo.pub | ssh USER@HOST "cat >> .ssh/authorized_keys"
 7. If all goes well, you should be able to connect without having to enter a password
 ![VS Code SSH](/images/vs-code/connected-example.png)
 8. Tip: add multiple folders in the remote server to a workspace
+
+## Proxy Jump Setup
+
+Suppose we want to SSH into an environment but through another one (proxy) first. To do this in VSCode, we add the following configuration
+
+```sh
+Host hostOne
+    User e5lopez
+    HostName linux.student.cs.uwaterloo.ca
+    IdentityFile "C:\Users\maste\.ssh\id_ed25519"
+
+Host hostTwo
+    ProxyJump hostOne
+    HostName ugster504.student.cs.uwaterloo.ca
+    User e5lopez
+    ForwardAgent yes
+```
