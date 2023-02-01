@@ -657,3 +657,79 @@ as the ending count.
 ```sql
 SELECT maker FROM (SELECT maker, model FROM Product A join Printer B USING(model) WHERE color=True) group by maker HAVING COUNT(*) = (SELECT COUNT(*) FROM Printer WHERE color=true)
 ```
+
+## SQL Drivers
+
+### Prepared Statements
+
+Compile once and reuse multiple times. Avoids SQL Injection.
+
+### Metadata Features
+
+## Functions and Procedures
+
+```sql
+create function func_name(param_decls)
+returns return_type
+create procedure proc_name(param_decls)
+call proc_name(params)
+set variable = call func_name(params)
+```
+
+Procedures do not have return values, rather they use out parameters. Additionally, parameters can modify whereas functions are read only. Procedures can call other procedures and functions but functions cannot call functions nor procedures. You can use functions as if they are tables/views but
+
+## Triggers
+
+Event-Condition-Action
+
+```sql
+create trigger timeslot_check after insert on section
+referencing new row as nrow
+for each row
+/*time_slot_id not present in time_slot */
+when (nrow.time_slot_id not in (select time_slot_id from time_slot))
+begin
+  rollback
+end;
+```
+
+- Can be before or after
+- For each statement is also possible but only applies to after triggers
+  - Useful for SQL statements that update a larger number of rows
+
+## Ranking
+
+```sql
+select ID, rank() over (order by (GPA) desc) as s_rank from student_grade order by s_rank;
+
+select ID, dept_name, rank() over (partition by dept_name order by (GPA) desc) as dept_rank from student_grade order by dept_name, dept_rank;
+```
+
+## Windowing (Moving)
+
+```sql
+select year, avg(num_credits) over (order by year rows 2 preceding) as avg_total_credits from tot_credits;
+```
+
+```sql
+select year, avg(num_credits) over (order by year rows unbounded preceding) as avg_total_credits from tot_credits;
+```
+
+```sql
+select dept_name, year, avg(num_credits) over (partition by dept_name order by year rows between 2 preceding and current row) as avg_total_credits from tot_credits_depth;
+```
+
+## Pivoting
+
+- a cross-tabulation view of tables
+
+## Rollup and Cube
+
+- multidimensional data aggregation
+
+## Recursion
+
+```sql
+with recursive rec_prereq(course_id, prereq_id) as (select course_id, prereq_id from prereq union select rec_prereq.course_id, prereq.prereq_id from rec_prereq, prereq where rec_prereq.prereq_id = prereq.course_id) select * from rec_prereq;
+```
+
