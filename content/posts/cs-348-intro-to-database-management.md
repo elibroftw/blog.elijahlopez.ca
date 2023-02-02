@@ -733,3 +733,35 @@ select dept_name, year, avg(num_credits) over (partition by dept_name order by y
 with recursive rec_prereq(course_id, prereq_id) as (select course_id, prereq_id from prereq union select rec_prereq.course_id, prereq.prereq_id from rec_prereq, prereq where rec_prereq.prereq_id = prereq.course_id) select * from rec_prereq;
 ```
 
+## Entity-Relationship Model
+
+### Database Design
+
+#### Understand the real-world domain being modeled
+
+- E-R model
+
+#### Translate the specification to the data model of DBMS
+
+- The relational model
+
+### Complex Attributes
+
+- Primary key: underlined
+- Composite attributes can be shown by indenting the individual attributes that make it up (nestable)
+- Use brackets for multi-valued attributes
+- Use ( ) suffix to state that the attribute is derived
+
+### Mapping Cardinality
+
+#### Participation
+
+Use a double line to show that all values are participating and use single line for partial participation.
+
+### Primary Keys in E-R Model
+
+#### Weak Entity Sets
+
+A weak entity set is one whose existence is dependent on another entity,
+called its identifying entity. An entity set that is not a weak entity set is
+termed a strong entity set.
