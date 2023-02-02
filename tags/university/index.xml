@@ -880,7 +880,76 @@ as the ending count.&lt;/p>
 &lt;/a>
 &lt;/span>
 &lt;/h2>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sql" data-lang="sql">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">with&lt;/span>&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">recursive&lt;/span>&lt;span style="color:#666"> &lt;/span>rec_prereq(course_id,&lt;span style="color:#666"> &lt;/span>prereq_id)&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">as&lt;/span>&lt;span style="color:#666"> &lt;/span>(&lt;span style="color:#6ab825;font-weight:bold">select&lt;/span>&lt;span style="color:#666"> &lt;/span>course_id,&lt;span style="color:#666"> &lt;/span>prereq_id&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">from&lt;/span>&lt;span style="color:#666"> &lt;/span>prereq&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">union&lt;/span>&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">select&lt;/span>&lt;span style="color:#666"> &lt;/span>rec_prereq.course_id,&lt;span style="color:#666"> &lt;/span>prereq.prereq_id&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">from&lt;/span>&lt;span style="color:#666"> &lt;/span>rec_prereq,&lt;span style="color:#666"> &lt;/span>prereq&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">where&lt;/span>&lt;span style="color:#666"> &lt;/span>rec_prereq.prereq_id&lt;span style="color:#666"> &lt;/span>=&lt;span style="color:#666"> &lt;/span>prereq.course_id)&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">select&lt;/span>&lt;span style="color:#666"> &lt;/span>*&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">from&lt;/span>&lt;span style="color:#666"> &lt;/span>rec_prereq;&lt;span style="color:#666">
-&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>CS 350 Operating Systems</title><link>https://blog.elijahlopez.ca/posts/cs-350-operating-systems/</link><pubDate>Tue, 10 Jan 2023 14:56:10 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/cs-350-operating-systems/</guid><description>&lt;p>&lt;a href="https://student.cs.uwaterloo.ca/~cs350/">Course website&lt;/a>&lt;/p>
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="entity-relationship-model" >Entity-Relationship Model
+&lt;span>
+&lt;a href="#entity-relationship-model">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;h3 id="database-design" >Database Design
+&lt;span>
+&lt;a href="#database-design">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;h4 id="understand-the-real-world-domain-being-modeled" >Understand the real-world domain being modeled
+&lt;span>
+&lt;a href="#understand-the-real-world-domain-being-modeled">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;ul>
+&lt;li>E-R model&lt;/li>
+&lt;/ul>
+&lt;h4 id="translate-the-specification-to-the-data-model-of-dbms" >Translate the specification to the data model of DBMS
+&lt;span>
+&lt;a href="#translate-the-specification-to-the-data-model-of-dbms">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;ul>
+&lt;li>The relational model&lt;/li>
+&lt;/ul>
+&lt;h3 id="complex-attributes" >Complex Attributes
+&lt;span>
+&lt;a href="#complex-attributes">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Primary key: underlined&lt;/li>
+&lt;li>Composite attributes can be shown by indenting the individual attributes that make it up (nestable)&lt;/li>
+&lt;li>Use brackets for multi-valued attributes&lt;/li>
+&lt;li>Use ( ) suffix to state that the attribute is derived&lt;/li>
+&lt;/ul>
+&lt;h3 id="mapping-cardinality" >Mapping Cardinality
+&lt;span>
+&lt;a href="#mapping-cardinality">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;h4 id="participation" >Participation
+&lt;span>
+&lt;a href="#participation">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;p>Use a double line to show that all values are participating and use single line for partial participation.&lt;/p>
+&lt;h3 id="primary-keys-in-e-r-model" >Primary Keys in E-R Model
+&lt;span>
+&lt;a href="#primary-keys-in-e-r-model">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;h4 id="weak-entity-sets" >Weak Entity Sets
+&lt;span>
+&lt;a href="#weak-entity-sets">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;p>A weak entity set is one whose existence is dependent on another entity,
+called its identifying entity. An entity set that is not a weak entity set is
+termed a strong entity set.&lt;/p></description></item><item><title>CS 350 Operating Systems</title><link>https://blog.elijahlopez.ca/posts/cs-350-operating-systems/</link><pubDate>Tue, 10 Jan 2023 14:56:10 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/cs-350-operating-systems/</guid><description>&lt;p>&lt;a href="https://student.cs.uwaterloo.ca/~cs350/">Course website&lt;/a>&lt;/p>
 &lt;div>
 &lt;h2>Table of Contents&lt;/h2>
 &lt;nav id="TableOfContents">
@@ -934,6 +1003,11 @@ as the ending count.&lt;/p>
 &lt;li>&lt;a href="#semaphores">Semaphores&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#ordering-requirements">Ordering requirements&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#mips-spinlocks">MIPS Spinlocks&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#atomic">Atomic&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#multicore-caches">Multicore Caches&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#more-deadlocks">More Deadlocks&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#solving-deadlocks">Solving Deadlocks&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#wait-channels">Wait Channels&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;/ul>
@@ -1430,6 +1504,71 @@ If mutexes are used properly, then we get sequential consistency.&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">break&lt;/span>;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> lk-&amp;gt;lk_holder = mycpu;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="atomic" >Atomic
+&lt;span>
+&lt;a href="#atomic">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>To implement mutexes you need atomics. Atomics guarantee
+something will be written before the next line. (fences)&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-c" data-lang="c">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#447fcf">_Atomic&lt;/span>(&lt;span style="color:#6ab825;font-weight:bold">int&lt;/span>) variable_name = &lt;span style="color:#3677a9">1&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#447fcf">atomic_fetch_add_explicit&lt;/span>(&amp;amp;variable_name, &lt;span style="color:#3677a9">1&lt;/span>, memory_order_relaxed);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#447fcf">atomic_fetch_add_explicit&lt;/span>(&amp;amp;variable_name, -&lt;span style="color:#3677a9">1&lt;/span>, memory_order_relaxed);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#447fcf">atomic_thread_fence&lt;/span>(memory_order_release);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#447fcf">atomic_store_explicit&lt;/span>(&amp;amp;variable_name, &lt;span style="color:#3677a9">0&lt;/span>, memory_order_relaxed);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">int&lt;/span> x = &lt;span style="color:#447fcf">atomic_load_explicit&lt;/span>(&amp;amp;variable_name);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#447fcf">atomic_thread_fence&lt;/span>(memory_order_acquire);
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="multicore-caches" >Multicore Caches
+&lt;span>
+&lt;a href="#multicore-caches">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Cache = performance but presents an opportunity for cores to disagree about memory.&lt;/p>
+&lt;p>Avoid false sharing: avoid placing data used by different threads in the same cache line.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-c" data-lang="c">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">int&lt;/span> lock;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">char&lt;/span> _uused[bytes]; &lt;span style="color:#999;font-style:italic">// before C11 / C++ 11 manual padding
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">&lt;/span>&lt;span style="color:#447fcf">alignas&lt;/span>(&lt;span style="color:#3677a9">64&lt;/span>) &lt;span style="color:#6ab825;font-weight:bold">struct&lt;/span> foo f; &lt;span style="color:#999;font-style:italic">// C11 / C++ 11
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Avoid contending on cache lines.&lt;/p>
+&lt;h3 id="more-deadlocks" >More Deadlocks
+&lt;span>
+&lt;a href="#more-deadlocks">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Both threads must lock and unlock in the same order&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-c" data-lang="c">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#447fcf">lock&lt;/span>(a);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#447fcf">lock&lt;/span>(b);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#447fcf">unlock&lt;/span>(b);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#447fcf">unlock&lt;/span>(a);
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="solving-deadlocks" >Solving Deadlocks
+&lt;span>
+&lt;a href="#solving-deadlocks">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Avoid circular graphs&lt;/li>
+&lt;li>Predefine an order in which each lock should be acquired&lt;/li>
+&lt;li>You can use the address of the lock to determine locking order&lt;/li>
+&lt;/ul>
+&lt;h3 id="wait-channels" >Wait Channels
+&lt;span>
+&lt;a href="#wait-channels">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-c" data-lang="c">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">void&lt;/span> &lt;span style="color:#447fcf">wchan_sleep&lt;/span>(&lt;span style="color:#6ab825;font-weight:bold">struct&lt;/span> wchan *wc);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">void&lt;/span> &lt;span style="color:#447fcf">wchan_wakeall&lt;/span>(&lt;span style="color:#6ab825;font-weight:bold">struct&lt;/span> wchan *wc):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">void&lt;/span> &lt;span style="color:#447fcf">wchan_wakeone&lt;/span>(&lt;span style="color:#6ab825;font-weight:bold">struct&lt;/span> wchan *wc);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">void&lt;/span> &lt;span style="color:#447fcf">wchan_lock&lt;/span>(&lt;span style="color:#6ab825;font-weight:bold">struct&lt;/span> wchan *wc);
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-c" data-lang="c">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#447fcf">V&lt;/span>(&lt;span style="color:#6ab825;font-weight:bold">struct&lt;/span> semaphore *sem) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#447fcf">spinlock_acquire&lt;/span>(&amp;amp;sem-&amp;gt;sem_lock)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> sem-&amp;gt;count++;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#447fcf">wchan_wakeone&lt;/span>(sem-&amp;gt;sem_wchan);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#447fcf">spinlock_release&lt;/span>(&amp;amp;sem-&amp;gt;sem_lock);
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>BU 375 Operations</title><link>https://blog.elijahlopez.ca/posts/bu-375-operations/</link><pubDate>Sat, 04 Jun 2022 10:23:48 -0400</pubDate><guid>https://blog.elijahlopez.ca/posts/bu-375-operations/</guid><description>&lt;!-- markdownlint-disable MD033 -->
 &lt;p>This document are my notes and midterm review for the BU 375 Operations course taught at Wilfrid Laurier University. While studying for the midterm, I discovered my own formulae shortcuts, undoubtedly due to &amp;ldquo;blind teaching syndrome&amp;rdquo; (I made that term up).
