@@ -440,3 +440,67 @@ void spinlock_acquire {
   lk->lk_holder = mycpu;
 }
 ```
+
+### Atomic
+
+To implement mutexes you need atomics. Atomics guarantee
+something will be written before the next line. (fences)
+
+```c
+_Atomic(int) variable_name = 1;
+atomic_fetch_add_explicit(&variable_name, 1, memory_order_relaxed);
+atomic_fetch_add_explicit(&variable_name, -1, memory_order_relaxed);
+atomic_thread_fence(memory_order_release);
+atomic_store_explicit(&variable_name, 0, memory_order_relaxed);
+int  x = atomic_load_explicit(&variable_name);
+atomic_thread_fence(memory_order_acquire);
+```
+
+### Multicore Caches
+
+Cache = performance but presents an opportunity for cores to disagree about memory.
+
+Avoid false sharing: avoid placing data used by different threads in the same cache line.
+
+```c
+int lock;
+char _uused[bytes]; // before C11 / C++ 11 manual padding
+alignas(64) struct foo f;  // C11 / C++ 11
+```
+
+Avoid contending on cache lines.
+
+### More Deadlocks
+
+Both threads must lock and unlock in the same order
+
+```c
+lock(a);
+lock(b);
+unlock(b);
+unlock(a);
+```
+
+### Solving Deadlocks
+
+- Avoid circular graphs
+- Predefine an order in which each lock should be acquired
+- You can use the address of the lock to determine locking order
+
+### Wait Channels
+
+```c
+void wchan_sleep(struct wchan *wc);
+void wchan_wakeall(struct wchan *wc):
+void wchan_wakeone(struct wchan *wc);
+void wchan_lock(struct wchan *wc);
+```
+
+```c
+V(struct semaphore *sem) {
+  spinlock_acquire(&sem->sem_lock)
+  sem->count++;
+  wchan_wakeone(sem->sem_wchan);
+  spinlock_release(&sem->sem_lock);
+}
+```
