@@ -88,6 +88,35 @@ One of the effects of climate change is higher temperatures. However, we do not 
 Stop using the darkest colors for roofs, cars, and roads. Those surfaces simply do not need to absorb so much heat. Black cars? Try red, blue, yellow, orange, white, hell even grey. I'll remember that
 the first car I buy will be orange or red. We need more stamped asphalt so that walking looks more like a priority in comparison to driving.
 
+### Replacing Concrete
+
+To make cement, coal / fossil fuels must be burned, therefore we need an alternative.
+
+I propose Mass Timber or Ferrock. I don't believe Ferrock (steel dust and ground up glass) can scale to the level of cement which is where Mass Timber comes into play.
+
+We can see that Timber works. [Ascent MKE](https://www.fs.usda.gov/inside-fs/delivering-mission/apply/worlds-tallest-timber-building-opens) is proof that we can build
+sustainable condos that further improve the quality of life of individuals. Maybe one day I'll ask for innovation grants from my government of Canada so that I can pursue my dreams
+of bringing such aesthetics into this world.
+
+### Steel Industry
+
+According to [The Narwhal](https://thenarwhal.ca/steel-coal-mining-hydrogen/), SSAB, a Swedish based steel-maker, is planning on producing steel using clean hydrogen rather than coal and they have
+even made a sample.
+
+### Transportation
+
+Electric cars does not go far enough. We need electric high speed trains that connect multiple cities so that we can reduce the consumption of asphalt that goes into the expansion of roads
+as well as the maintenance. Unnecessary driving is unsustainable. People should not have to drive 1 hour to work just because the neighbourhood around their work sucks.
+
+Hydrogen fuel cell technology in buses, airplanes, boats, yachts, and cruise ships.
+
+Nuclear reactors for cargo ships. Electric cars will not solve climate change.
+
+### Energy
+
+We need to replace everything with nuclear reactors. Wind and solar are land inefficient. They will never work without government subsidies or high costs. Nuclear is more efficient, has a smaller footprint, has been around
+for 50+ years, is abundant, and is arguably cheaper. Wind and solar can be used for places that are land locked. Turbine is also an option but I think it's so inefficient which is why no one mentions it.
+
 ### Brain Dump
 
 This is a brain dump of my thoughts from months ago.
@@ -149,3 +178,10 @@ Problem/Solution C: reducing effectivness of greenhouse gases
 Problem/Solution D: Technologically shipping CO2 from the air into space
 
 Problem/Solution E: removing water vapor from the air
+
+## Conclusion
+
+I'm confident climate change is causing and will cause more emotional damage than physical damage. I also believe people focus too much
+on climate change than problems affecting people presenting. For example, why do I feel like Canada doesn't want me to live here? It feels wrong
+to pay an absurd amount of money to buy a condo. If population growth is desired, why punish those that are adding to the population count? Should I just commute two hours
+a day? Should I rather live in Windsor?
