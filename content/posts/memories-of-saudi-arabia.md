@@ -21,6 +21,7 @@ These are some of my oldest memories somewhere from 2005-2006. According to my d
 - Floating face up at the pool at school
 - I think I was surprised when I spoke a language other than English (either Hindi or Marathi) with someone in my class. I don't speak Marathi or Hindi today, I can understand both 75%.
 - I probably have more memories, but these are all I could recall in the moment. It's good to write this all down since it's possible to forget it all!
+- Firecrackers (the 9 pack one as well as the poppers that stay on the ground) on the roof.
 
 ## The Mosque
 
@@ -43,3 +44,12 @@ We had a birthday party for me or something with cake at restaurant. I'd like to
 ## Pictures
 
 We took formal pictures, we still have those pictures with us
+
+## Origami Paper Boats
+
+Sometimes it would rain so much that an inch of water would be on the roads. My dad and I would make these paper boats and then go on the island part that seperates the two roads and we'd place our
+boats on the partially flooded roads.
+
+## Firetruck Incident
+
+There was a fire across from our apartments and we all woke up at night due to the fire fighter vehicle sirens.
