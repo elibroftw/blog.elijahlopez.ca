@@ -765,3 +765,30 @@ Use a double line to show that all values are participating and use single line 
 A weak entity set is one whose existence is dependent on another entity,
 called its identifying entity. An entity set that is not a weak entity set is
 termed a strong entity set.
+
+### Removing Redundant Attributes in Entity Sets
+
+- identifying entity sets
+- adding attributes to entity sets
+- forming the relationship sets among the various entity sets
+
+### Specialization
+
+#### Overlapping Specialization
+
+Use separate arrows
+
+#### Disjoint Specialization
+
+One arrow from multiple tables
+
+#### Completeness Constraints
+
+Total specialization: Each entity in the higher-level entity set must be present in at least one lower-level entity set. Requires annotating an arrow.
+
+Partial specialization (default): Membership of a lower-level entity set is not required
+
+### Common Mistakes
+
+- use of primary key of an entity set as an **attribute** of another entity set instead of using a relatioship
+-
