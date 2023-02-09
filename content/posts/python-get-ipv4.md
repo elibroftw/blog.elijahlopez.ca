@@ -14,13 +14,13 @@ The Windows version returns the LAN IPv4 address, even if connected to a VPN.
 ```py
 import platform
 import re
+from subprocess import check_output
 
 ipv4_pattern = re.compile(r'IPv4 Address.*:\s*(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})')
 
 def get_ipv4():
     if platform.system() == 'Windows':
-        import subprocess
-        ipconfig_output = subprocess.getoutput('ipconfig')
+        ipconfig_output = check_output(['ipconfig'], shell=True, text=True, encoding='iso8859-2')
         # match IPv4 pattern and return last match which is most likely the LAN adapter
         return ipv4_pattern.findall(ipconfig_output)[-1]
     else:
