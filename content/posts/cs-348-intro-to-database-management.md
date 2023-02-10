@@ -792,3 +792,10 @@ Partial specialization (default): Membership of a lower-level entity set is not 
 
 - use of primary key of an entity set as an **attribute** of another entity set instead of using a relatioship
 -
+
+## E-R Diagram to Relational Tables
+
+- Each entity set maps to a new table
+- Each relationship set maps to a new table
+- Each simple and single-valued attribute maps to a new column
+- 
