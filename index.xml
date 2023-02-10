@@ -1,4 +1,40 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ELL Blog</title><link>https://blog.elijahlopez.ca/</link><description>ELL Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 04 Feb 2023 01:30:27 -0500</lastBuildDate><atom:link href="https://blog.elijahlopez.ca/index.xml" rel="self" type="application/rss+xml"/><item><title>Python Get LAN IPv4 Address</title><link>https://blog.elijahlopez.ca/posts/python-get-ipv4/</link><pubDate>Sat, 04 Feb 2023 01:30:27 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/python-get-ipv4/</guid><description>&lt;p>The Windows version returns the LAN IPv4 address, even if connected to a VPN.&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ELL Blog</title><link>https://blog.elijahlopez.ca/</link><description>ELL Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 10 Feb 2023 18:34:17 -0500</lastBuildDate><atom:link href="https://blog.elijahlopez.ca/index.xml" rel="self" type="application/rss+xml"/><item><title>How to convert xlsx to csv with Python</title><link>https://blog.elijahlopez.ca/posts/python-xlsx-to-csv/</link><pubDate>Fri, 10 Feb 2023 18:34:17 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/python-xlsx-to-csv/</guid><description>&lt;p>If you search this question online, you&amp;rsquo;ll get the slowest answer ever which is to use pandas or xlrd. But I will show you a method
+which works on Windows and only requires you have excel installed.&lt;/p>
+&lt;p>When I first needed this done, the fastest way was to call a VBS script in Python, but today when I was
+taking a look at the tiny script, I decided to translate the VB to Python and this is what I got.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-py" data-lang="py">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">import&lt;/span> &lt;span style="color:#447fcf;text-decoration:underline">argparse&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">import&lt;/span> &lt;span style="color:#447fcf;text-decoration:underline">os&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>CSV_FORMAT = &lt;span style="color:#3677a9">6&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">def&lt;/span> &lt;span style="color:#447fcf">xlsx_to_csv&lt;/span>(in_file: &lt;span style="color:#24909d">str&lt;/span>, dest_file: &lt;span style="color:#24909d">str&lt;/span>, sheet=&lt;span style="color:#3677a9">1&lt;/span>):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">import&lt;/span> &lt;span style="color:#447fcf;text-decoration:underline">win32com.client&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> in_file = os.path.abspath(in_file)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> dest_file = os.path.abspath(dest_file)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> xl = win32com.client.Dispatch(&lt;span style="color:#ed9d13">&amp;#39;Excel.Application&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> oBook = xl.Workbooks.Open(in_file)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> oBook.Worksheets(sheet).Activate
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">if&lt;/span> os.path.exists(dest_file):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> os.remove(dest_file)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> oBook.SaveAs(dest_file, CSV_FORMAT)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> oBook.Close(&lt;span style="color:#6ab825;font-weight:bold">False&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> xl.Quit()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">if&lt;/span> __name__ == &lt;span style="color:#ed9d13">&amp;#39;__main__&amp;#39;&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> parser = argparse.ArgumentParser(description=&lt;span style="color:#ed9d13">&amp;#39;Data Science Utilities&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> subparsers = parser.add_subparsers(title=&lt;span style="color:#ed9d13">&amp;#39;subcommands&amp;#39;&lt;/span>, description=&lt;span style="color:#ed9d13">&amp;#39;valid subcommands&amp;#39;&lt;/span>, help=&lt;span style="color:#ed9d13">&amp;#39;additional help&amp;#39;&lt;/span>, dest=&lt;span style="color:#ed9d13">&amp;#39;subcommand&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> xlsx_converter = subparsers.add_parser(&lt;span style="color:#ed9d13">&amp;#39;tocsv&amp;#39;&lt;/span>, help=&lt;span style="color:#ed9d13">&amp;#39;convert an xlsx file to a csv file&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> xlsx_converter.add_argument(&lt;span style="color:#ed9d13">&amp;#39;xlsx_in_file&amp;#39;&lt;/span>, &lt;span style="color:#24909d">type&lt;/span>=&lt;span style="color:#24909d">str&lt;/span>, help=&lt;span style="color:#ed9d13">&amp;#39;input xlsx file&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> xlsx_converter.add_argument(&lt;span style="color:#ed9d13">&amp;#39;csv_out_file&amp;#39;&lt;/span>, &lt;span style="color:#24909d">type&lt;/span>=&lt;span style="color:#24909d">str&lt;/span>, help=&lt;span style="color:#ed9d13">&amp;#39;output csv file&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> args = parser.parse_args()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">if&lt;/span> args.subcommand == &lt;span style="color:#ed9d13">&amp;#39;tocsv&amp;#39;&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> xlsx_to_csv(args.xlsx_in_file, args.csv_out_file)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> parser.print_help()
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Python Get LAN IPv4 Address</title><link>https://blog.elijahlopez.ca/posts/python-get-ipv4/</link><pubDate>Sat, 04 Feb 2023 01:30:27 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/python-get-ipv4/</guid><description>&lt;p>The Windows version returns the LAN IPv4 address, even if connected to a VPN.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-py" data-lang="py">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">import&lt;/span> &lt;span style="color:#447fcf;text-decoration:underline">platform&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">import&lt;/span> &lt;span style="color:#447fcf;text-decoration:underline">re&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">from&lt;/span> &lt;span style="color:#447fcf;text-decoration:underline">subprocess&lt;/span> &lt;span style="color:#6ab825;font-weight:bold">import&lt;/span> check_output
