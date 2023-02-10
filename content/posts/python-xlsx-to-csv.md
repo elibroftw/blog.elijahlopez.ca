@@ -9,6 +9,8 @@ tags: [
 ]
 ---
 
+Try using https://github.com/dilshod/xlsx2csv first.
+
 If you search this question online, you'll get the slowest answer ever which is to use pandas or xlrd. But I will show you a method
 which works on Windows and only requires you have excel installed.
 
