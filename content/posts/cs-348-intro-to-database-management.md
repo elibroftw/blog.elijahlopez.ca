@@ -798,4 +798,46 @@ Partial specialization (default): Membership of a lower-level entity set is not 
 - Each entity set maps to a new table
 - Each relationship set maps to a new table
 - Each simple and single-valued attribute maps to a new column
-- 
+
+## Schema Refinement: Dependencies
+
+### Example
+
+Similar to a question in assignment 2
+
+See [slides](https://learn.uwaterloo.ca/d2l/le/content/868878/viewContent/4839309/View)
+
+### Single-Table Schema
+
+- update problems (how to update values of a single column)
+- insert problems (adding new subset of tuple)
+- delete problems
+- likely increases space requirements
+
+### Too many Tables
+
+If there are too many tables, the information of relationships is lost
+
+### Functional Dependencies
+
+#### Reflexivity
+
+SIN, EName -> EName
+
+#### Augmentation
+
+If X is a subset of Y, then X -> Y.
+
+SIN, Z -> EName, Z
+
+#### Transitivity
+
+X -> Y, Y -> Z => X -> Z
+
+#### Union Rule
+
+X -> Y, X -> Z => X => YZ
+
+#### Decomposition
+
+X -> YZ => X -> Y, X -> Z
