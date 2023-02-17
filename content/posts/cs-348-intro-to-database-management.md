@@ -818,7 +818,9 @@ See [slides](https://learn.uwaterloo.ca/d2l/le/content/868878/viewContent/483930
 
 If there are too many tables, the information of relationships is lost
 
-### Functional Dependencies
+### Functional Dependencies: Armstrong's Axioms
+
+Two ways, first is armstrong's axioms
 
 #### Reflexivity
 
@@ -841,3 +843,33 @@ X -> Y, X -> Z => X => YZ
 #### Decomposition
 
 X -> YZ => X -> Y, X -> Z
+
+### Function Dependencies: Attribute Closure
+
+https://littleflowercollege.edu.in/upload/e_contents/files/187d8c7967172ef5cc75d9b2a709d6cf.pdf ?
+
+### Schema Decomposition
+
+#### Lossless Decomposition
+
+A decomposition {R1, R2} of R is lossless if and only if the common attributes
+of R1 and R2 form a superkey for either schema, that is
+
+#### Dependency-preserving Decompositions
+
+If we have functional dependencies, we should be able to still prove those dependencies valid without having to join.
+
+#### Boyce-Codd Normal Form (BCNF) Decomposition
+
+> Informally, a relation schema R is in BCNF if and only if
+any group of attributes in R that functionally determines
+any other attributes in R functionally determines all attributes in R ,
+i.e., that group of attributes is a superkey of R
+
+#### Third Normal Form (3NF)
+
+Minimal cover:
+
+1. every RHS of a dependency in F is a single attrabute
+2. there does not exist X -> A in F such that set F - {X -> A} is equivalent to F. (no redundant FD)
+3. no extraneous attributes in the LHS of a FD in F
