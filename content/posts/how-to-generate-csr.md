@@ -10,10 +10,10 @@ tags: [
 https://www.ssldragon.com/blog/how-to-install-an-ssl-certificate-on-heroku/
 
 ```sh
-openssl req -newkey rsa:2048 -keyout elijahlopez.ca.key -out elijahlopez.ca.csr -config .\elijahlopez.ca.csr.conf
+openssl req -newkey rsa:4096 -keyout elijahlopez.ca.key -out elijahlopez.ca.csr -config .\elijahlopez.ca.csr.conf
 ```
 
-Here is a pretty and succint guide on creating a Certificate Signing Request (CSR).
+Here is a pretty and succinct guide on creating a Certificate Signing Request (CSR).
 
 For the tutorial, replace all `{ Sample value }` with your values.
 
