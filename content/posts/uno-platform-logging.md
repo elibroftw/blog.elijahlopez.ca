@@ -9,6 +9,9 @@ tags: [
 ]
 ---
 
+First, if you simply need to debug something, try using
+[Visual Studio Tracepoints](https://learn.microsoft.com/en-us/visualstudio/debugger/using-tracepoints?view=vs-2022)
+
 In your `Page.xaml.cs`, add the differences
 
 ```cs
