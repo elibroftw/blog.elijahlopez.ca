@@ -29,7 +29,6 @@ def get_ipv4():
         # get the default network interface
         default_iface = netifaces.gateways()['default'][netifaces.AF_INET][1]
         iface_data = netifaces.ifaddresses(default_iface)
-
         # get the IP address from the default interface
         return iface_data[netifaces.AF_INET][0]['addr']
 ```

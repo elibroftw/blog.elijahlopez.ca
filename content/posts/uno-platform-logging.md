@@ -5,7 +5,7 @@ draft: false
 tags: [
     'c#',
     'uno-platform',
-    'mobile-development',
+    'mobile',
 ]
 ---
 
