@@ -185,7 +185,7 @@ something will be written before the next line. (fences)</p><div class=highlight
 </span></span><span style=display:flex><span>  <span style=color:#447fcf>spinlock_release</span>(&amp;sem-&gt;sem_lock);
 </span></span><span style=display:flex><span>}
 </span></span></code></pre></div><details><summary>Mutex Lock Implementation</summary><div class=highlight><pre tabindex=0 style=color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-c data-lang=c><span style=display:flex><span><span style=color:#6ab825;font-weight:700>struct</span> lock {
-</span></span><span style=display:flex><span>  <span style=color:#6ab825;font-weight:700>struct</span> * wchan wc;
+</span></span><span style=display:flex><span>  <span style=color:#6ab825;font-weight:700>struct</span> wchan *wc;
 </span></span><span style=display:flex><span>  <span style=color:#6ab825;font-weight:700>struct</span> spinlock lock;
 </span></span><span style=display:flex><span>  <span style=color:#6ab825;font-weight:700>int</span> state;
 </span></span><span style=display:flex><span>}
