@@ -526,7 +526,7 @@ V(struct semaphore *sem) {
 
 ```c
 struct lock {
-  struct * wchan wc;
+  struct wchan *wc;
   struct spinlock lock;
   int state;
 }
