@@ -868,6 +868,11 @@ any group of attributes in R that functionally determines
 any other attributes in R functionally determines all attributes in R ,
 i.e., that group of attributes is a superkey of R
 
+Algorithm:
+
+- Find a BCNF violation
+- Decompose the relation into two relations, one being the premise + consequence, the other being premise + attributes not determined
+
 #### Third Normal Form (3NF)
 
 Minimal cover:
