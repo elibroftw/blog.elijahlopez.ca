@@ -8,6 +8,17 @@ aliases: ['/posts/grooming-tips/']
 
 This is a work in progress.
 
+## Face and Acne
+
+Wash face with cleansing Gel two times a day, including once before sleep. After washing your face, dry it lightly and apply moisturizer.
+Do not wash or touch your face as your day goes unless it gets messy. Washing your face will irritate your skin.
+
+For a midday shower, I'm not sure what the call is on whether to wash your face, wash your face with soap, or wash your face with cleansing gel.
+
+## Hair
+
+Shampoo + Condition hair every other day. Let shampoo simmer in your hair for 2-5 minutes before rinsing it off as your hair won't feel soft otherwise
+
 ## Facial-Hair Shaving
 
 - A warm shower before shaving softens the hair follicles
