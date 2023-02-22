@@ -760,6 +760,8 @@ Use a double line to show that all values are participating and use single line 
 
 ### Primary Keys in E-R Model
 
+![Primary Keys for Relationship Sets](/images/cs-348/keys_for_er_sets)
+
 #### Weak Entity Sets
 
 A weak entity set is one whose existence is dependent on another entity,
