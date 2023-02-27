@@ -877,6 +877,6 @@ Algorithm:
 
 Minimal cover:
 
-1. every RHS of a dependency in F is a single attrabute
-2. there does not exist X -> A in F such that set F - {X -> A} is equivalent to F. (no redundant FD)
-3. no extraneous attributes in the LHS of a FD in F
+1. Every RHS of a dependency in F is a single attribute
+2. There does not exist an FD X -> A in F such that the set F - {X -> A} = F. (no redundant FD)
+3. There are no redundant attributes in the LHS set of a FD in F
