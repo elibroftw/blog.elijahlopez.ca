@@ -880,3 +880,10 @@ Minimal cover:
 1. Every RHS of a dependency in F is a single attribute
 2. There does not exist an FD X -> A in F such that the set F - {X -> A} = F. (no redundant FD)
 3. There are no redundant attributes in the LHS set of a FD in F
+
+## Transactions
+
+### The Need For Transactions
+
+A database is a shared resource that is accessed by many users and processes.
+If data is accessed or modified concurrently, the information may be outdated or one of the modifications will be lost.
