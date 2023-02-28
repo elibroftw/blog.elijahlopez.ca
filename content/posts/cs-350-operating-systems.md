@@ -599,3 +599,41 @@ Space inside a segment that was allocated for the stack.
 - Pages eliminates external fragmentation and pages are small enough that internal fragmentation is .5 pages per "segment".
 
 ![pages table](images/cs-350/pages.png)
+
+### MMUs
+
+Memory Management Units
+
+### Hardware Managed MMU
+
+- Hardware reloads TLB with pages from a page tables
+- Typically hardware page tables are Radix Trees
+- Requires complex hardware
+
+#### x86 Paging
+
+[Slides](https://student.cs.uwaterloo.ca/~cs350/W23/notes/vm_hardware.pdf)
+
+### Software Managed MMU
+
+- Simpler hardware and asks software to reload pages
+- Requires fast exception handling and optimized software
+- Enables more flexibility in the TLB (e.g. variable page sizes)
+- TLB fields: Virtual page, Pid, Page frame, NC, D\[irty], V, Global
+
+TLB Instructions
+
+- twlbwr: write a random slot
+- tlbwi: write a specific slot
+- tlbr: read a specific slot
+- tlbp: probe a slot containing an address
+
+Registers needed to be  loaded
+
+- c0_entryhi: high bits of TLB entry
+- c0_entrylo: low bits of TLB entry
+- c0_index: TLB Index
+
+Global bit
+
+-
