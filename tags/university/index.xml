@@ -1143,7 +1143,21 @@ i.e., that group of attributes is a superkey of R&lt;/p>
 &lt;li>Every RHS of a dependency in F is a single attribute&lt;/li>
 &lt;li>There does not exist an FD X -&amp;gt; A in F such that the set F - {X -&amp;gt; A} = F. (no redundant FD)&lt;/li>
 &lt;li>There are no redundant attributes in the LHS set of a FD in F&lt;/li>
-&lt;/ol></description></item><item><title>CS 350 Operating Systems</title><link>https://blog.elijahlopez.ca/posts/cs-350-operating-systems/</link><pubDate>Tue, 10 Jan 2023 14:56:10 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/cs-350-operating-systems/</guid><description>&lt;p>&lt;a href="https://student.cs.uwaterloo.ca/~cs350/">Course website&lt;/a>&lt;/p>
+&lt;/ol>
+&lt;h2 id="transactions" >Transactions
+&lt;span>
+&lt;a href="#transactions">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;h3 id="the-need-for-transactions" >The Need For Transactions
+&lt;span>
+&lt;a href="#the-need-for-transactions">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>A database is a shared resource that is accessed by many users and processes.
+If data is accessed or modified concurrently, the information may be outdated or one of the modifications will be lost.&lt;/p></description></item><item><title>CS 350 Operating Systems</title><link>https://blog.elijahlopez.ca/posts/cs-350-operating-systems/</link><pubDate>Tue, 10 Jan 2023 14:56:10 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/cs-350-operating-systems/</guid><description>&lt;p>&lt;a href="https://student.cs.uwaterloo.ca/~cs350/">Course website&lt;/a>&lt;/p>
 &lt;div>
 &lt;h2>Table of Contents&lt;/h2>
 &lt;nav id="TableOfContents">
@@ -1212,6 +1226,9 @@ i.e., that group of attributes is a superkey of R&lt;/p>
 &lt;ul>
 &lt;li>&lt;a href="#segmentation">Segmentation&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#paging">Paging&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#mmus">MMUs&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#hardware-managed-mmu">Hardware Managed MMU&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#software-managed-mmu">Software Managed MMU&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;/ul>
@@ -1890,7 +1907,61 @@ something will be written before the next line. (fences)&lt;/p>
 &lt;/li>
 &lt;li>Pages eliminates external fragmentation and pages are small enough that internal fragmentation is .5 pages per &amp;ldquo;segment&amp;rdquo;.&lt;/li>
 &lt;/ul>
-&lt;p>&lt;img src="images/cs-350/pages.png" alt="pages table">&lt;/p></description></item><item><title>BU 375 Operations</title><link>https://blog.elijahlopez.ca/posts/bu-375-operations/</link><pubDate>Sat, 04 Jun 2022 10:23:48 -0400</pubDate><guid>https://blog.elijahlopez.ca/posts/bu-375-operations/</guid><description>&lt;!-- markdownlint-disable MD033 -->
+&lt;p>&lt;img src="images/cs-350/pages.png" alt="pages table">&lt;/p>
+&lt;h3 id="mmus" >MMUs
+&lt;span>
+&lt;a href="#mmus">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Memory Management Units&lt;/p>
+&lt;h3 id="hardware-managed-mmu" >Hardware Managed MMU
+&lt;span>
+&lt;a href="#hardware-managed-mmu">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Hardware reloads TLB with pages from a page tables&lt;/li>
+&lt;li>Typically hardware page tables are Radix Trees&lt;/li>
+&lt;li>Requires complex hardware&lt;/li>
+&lt;/ul>
+&lt;h4 id="x86-paging" >x86 Paging
+&lt;span>
+&lt;a href="#x86-paging">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;p>&lt;a href="https://student.cs.uwaterloo.ca/~cs350/W23/notes/vm_hardware.pdf">Slides&lt;/a>&lt;/p>
+&lt;h3 id="software-managed-mmu" >Software Managed MMU
+&lt;span>
+&lt;a href="#software-managed-mmu">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Simpler hardware and asks software to reload pages&lt;/li>
+&lt;li>Requires fast exception handling and optimized software&lt;/li>
+&lt;li>Enables more flexibility in the TLB (e.g. variable page sizes)&lt;/li>
+&lt;li>TLB fields: Virtual page, Pid, Page frame, NC, D[irty], V, Global&lt;/li>
+&lt;/ul>
+&lt;p>TLB Instructions&lt;/p>
+&lt;ul>
+&lt;li>twlbwr: write a random slot&lt;/li>
+&lt;li>tlbwi: write a specific slot&lt;/li>
+&lt;li>tlbr: read a specific slot&lt;/li>
+&lt;li>tlbp: probe a slot containing an address&lt;/li>
+&lt;/ul>
+&lt;p>Registers needed to be loaded&lt;/p>
+&lt;ul>
+&lt;li>c0_entryhi: high bits of TLB entry&lt;/li>
+&lt;li>c0_entrylo: low bits of TLB entry&lt;/li>
+&lt;li>c0_index: TLB Index&lt;/li>
+&lt;/ul>
+&lt;p>Global bit&lt;/p>
+&lt;ul>
+&lt;li>&lt;/li>
+&lt;/ul></description></item><item><title>BU 375 Operations</title><link>https://blog.elijahlopez.ca/posts/bu-375-operations/</link><pubDate>Sat, 04 Jun 2022 10:23:48 -0400</pubDate><guid>https://blog.elijahlopez.ca/posts/bu-375-operations/</guid><description>&lt;!-- markdownlint-disable MD033 -->
 &lt;p>This document are my notes and midterm review for the BU 375 Operations course taught at Wilfrid Laurier University. While studying for the midterm, I discovered my own formulae shortcuts, undoubtedly due to &amp;ldquo;blind teaching syndrome&amp;rdquo; (I made that term up).
 So let&amp;rsquo;s begin. I&amp;rsquo;ll add a divider to let you know what is part of the midterm.&lt;/p>
 &lt;div>
