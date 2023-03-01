@@ -28,7 +28,17 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>ASP.NET Serialize Enum as String</title><link>https://blog.elijahlopez.ca/posts/aspnet-serialize-enum-as-string/</link><pubDate>Sun, 29 Jan 2023 14:05:19 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/aspnet-serialize-enum-as-string/</guid><description>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-c#" data-lang="c#">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">using&lt;/span> &lt;span style="color:#447fcf;text-decoration:underline">System.Text.Json.Serialization&lt;/span>;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>ASP.NET Serialize Enum as String</title><link>https://blog.elijahlopez.ca/posts/aspnet-serialize-enum-as-string/</link><pubDate>Sun, 29 Jan 2023 14:05:19 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/aspnet-serialize-enum-as-string/</guid><description>&lt;p>ASP.NET:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-cs" data-lang="cs">&lt;span style="display:flex;">&lt;span>builder.Services.AddControllersWithViews(options =&amp;gt; {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> options.Conventions.Add(&lt;span style="color:#6ab825;font-weight:bold">new&lt;/span> RouteTokenTransformerConvention(
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">new&lt;/span> SlugifyParameterTransformer()));
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }).AddJsonOptions(options =&amp;gt; {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> options.JsonSerializerOptions.PropertyNamingPolicy = JsonNamingPolicy.CamelCase; &lt;span style="color:#999;font-style:italic">// JSON response is in camelCase&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> options.JsonSerializerOptions.DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull; &lt;span style="color:#999;font-style:italic">// null not serialized&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> options.JsonSerializerOptions.Converters.Add(&lt;span style="color:#6ab825;font-weight:bold">new&lt;/span> JsonStringEnumConverter()); &lt;span style="color:#999;font-style:italic">// enums to string&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> });
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-c#" data-lang="c#">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">using&lt;/span> &lt;span style="color:#447fcf;text-decoration:underline">System.Text.Json.Serialization&lt;/span>;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">namespace&lt;/span> &lt;span style="color:#447fcf;text-decoration:underline">MyApi.Models&lt;/span>;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
@@ -43,7 +53,17 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">public&lt;/span> LoginErrors? Error { &lt;span style="color:#6ab825;font-weight:bold">get&lt;/span>; &lt;span style="color:#6ab825;font-weight:bold">set&lt;/span>; }
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>ASP.NET Optional Json Fields</title><link>https://blog.elijahlopez.ca/posts/aspnet-optional-json-fields/</link><pubDate>Sun, 29 Jan 2023 14:03:20 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/aspnet-optional-json-fields/</guid><description>&lt;p>Also featured: enum to string.&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>ASP.NET Optional Json Fields</title><link>https://blog.elijahlopez.ca/posts/aspnet-optional-json-fields/</link><pubDate>Sun, 29 Jan 2023 14:03:20 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/aspnet-optional-json-fields/</guid><description>&lt;p>ASP.NET:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-cs" data-lang="cs">&lt;span style="display:flex;">&lt;span>builder.Services.AddControllersWithViews(options =&amp;gt; {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> options.Conventions.Add(&lt;span style="color:#6ab825;font-weight:bold">new&lt;/span> RouteTokenTransformerConvention(
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">new&lt;/span> SlugifyParameterTransformer()));
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }).AddJsonOptions(options =&amp;gt; {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> options.JsonSerializerOptions.PropertyNamingPolicy = JsonNamingPolicy.CamelCase; &lt;span style="color:#999;font-style:italic">// JSON response is in camelCase&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> options.JsonSerializerOptions.DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull; &lt;span style="color:#999;font-style:italic">// null not serialized&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> options.JsonSerializerOptions.Converters.Add(&lt;span style="color:#6ab825;font-weight:bold">new&lt;/span> JsonStringEnumConverter()); &lt;span style="color:#999;font-style:italic">// enums to string&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> });
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Also featured: enum to string.&lt;/p>
 &lt;details>
 &lt;summary>Fields&lt;/summary>
 &lt;p>Since System.Text.Json is only&lt;/p>
