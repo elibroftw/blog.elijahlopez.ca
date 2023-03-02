@@ -1729,6 +1729,7 @@ If data is accessed or modified concurrently, the information may be outdated or
 &lt;li>&lt;a href="#mmus">MMUs&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#hardware-managed-mmu">Hardware Managed MMU&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#software-managed-mmu">Software Managed MMU&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#increasing-virtual-memory-by-paging">Increasing Virtual Memory by Paging&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;/ul>
@@ -2461,7 +2462,66 @@ something will be written before the next line. (fences)&lt;/p>
 &lt;p>Global bit&lt;/p>
 &lt;ul>
 &lt;li>&lt;/li>
-&lt;/ul></description></item><item><title>Tauri Custom Titlebar (React)</title><link>https://blog.elijahlopez.ca/posts/tauri-custom-titlebar/</link><pubDate>Sat, 24 Dec 2022 10:45:01 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/tauri-custom-titlebar/</guid><description>&lt;p>This tutorial is based on Part 12 of my Tauri &amp;amp; ReactJS series.&lt;/p>
+&lt;/ul>
+&lt;h3 id="increasing-virtual-memory-by-paging" >Increasing Virtual Memory by Paging
+&lt;span>
+&lt;a href="#increasing-virtual-memory-by-paging">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Use disk to simulate larger virtual than physical mem&lt;/li>
+&lt;li>Disk is much slower than memory so find 20% hot to put into memory and 80% cold into disk&lt;/li>
+&lt;li>How to resume after a page fault&lt;/li>
+&lt;/ul>
+&lt;p>Restarting Instructions&lt;/p>
+&lt;ul>
+&lt;li>Faulting virtual address (In %c0_vaddr reg on MIPS)&lt;/li>
+&lt;li>Address of instruction that caused fault (%c0_epc reg)&lt;/li>
+&lt;li>Read or write, fetch, user access or kernel access?&lt;/li>
+&lt;li>Hardware must allow resuming after a fault&lt;/li>
+&lt;li>Idempotent instructions are easy
+&lt;ul>
+&lt;li>A simple load or store instruction can be re-executed&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>Superpages&lt;/p>
+&lt;ul>
+&lt;li>Large mappings&lt;/li>
+&lt;li>2/4 MB mappings&lt;/li>
+&lt;li>Sometimes more pages in L2 cache than TLB entries&lt;/li>
+&lt;/ul>
+&lt;p>FIFO Eviction&lt;/p>
+&lt;ul>
+&lt;li>Evict oldest fetched page in system&lt;/li>
+&lt;/ul>
+&lt;p>LRU Page replacement&lt;/p>
+&lt;ul>
+&lt;li>Worse for looping over memory (better to use MRU eviction then)&lt;/li>
+&lt;li>Stamping timer is too expensive as it doubles memory traffic&lt;/li>
+&lt;li>Keeping a doubly-linked list is annoying&lt;/li>
+&lt;li>Better to approximate&lt;/li>
+&lt;/ul>
+&lt;h4 id="clock-algorithm" >Clock Algorithm
+&lt;span>
+&lt;a href="#clock-algorithm">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;ul>
+&lt;li>Do FIFO but skipped accessed pages&lt;/li>
+&lt;li>Keep pages in circular FIFO list&lt;/li>
+&lt;li>Scan all and find a page that isn&amp;rsquo;t set and evict&lt;/li>
+&lt;li>Runs when there is very low memory&lt;/li>
+&lt;/ul>
+&lt;p>When there is larger memory, use two clock hands at a fixed size. The first
+hands clears and the second hand picks evicted pages.&lt;/p>
+&lt;p>Can take advantage of hardware dirty bit to prefer clean pages over dirty page. A dirty page has
+to be written to the disk.&lt;/p>
+&lt;p>Or use n-bit accessed count instead of just A bit. On sweep, count = (A &amp;laquo; (n - 1) | (count &amp;raquo; 1)). Evict the page with the lowest count.&lt;/p>
+&lt;p>Random eviction avoids belady and double swaps by hypervisors, and is simple to implement.&lt;/p>
+&lt;p>Databases are workload specific.&lt;/p></description></item><item><title>Tauri Custom Titlebar (React)</title><link>https://blog.elijahlopez.ca/posts/tauri-custom-titlebar/</link><pubDate>Sat, 24 Dec 2022 10:45:01 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/tauri-custom-titlebar/</guid><description>&lt;p>This tutorial is based on Part 12 of my Tauri &amp;amp; ReactJS series.&lt;/p>
 &lt;div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
 &lt;iframe src="https://www.youtube.com/embed/zONyCMTUwsI" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video">&lt;/iframe>
 &lt;/div>
@@ -2869,19 +2929,19 @@ which takes care of cloning whenever we need to mutate a field.&lt;/p>
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">&lt;/span>&lt;span style="color:#6ab825;font-weight:bold">use&lt;/span>&lt;span style="color:#666"> &lt;/span>std::borrow::Cow;&lt;span style="color:#666">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">&lt;/span>&lt;span style="color:#cd2828;font-weight:bold">#[derive(Serialize, Deserialize, Clone)]&lt;/span>&lt;span style="color:#666">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">&lt;/span>&lt;span style="color:#6ab825;font-weight:bold">struct&lt;/span> &lt;span style="color:#447fcf;text-decoration:underline">Name&lt;/span>&amp;lt;&amp;#39;&lt;span style="color:#bbb">r&lt;/span>&amp;gt;&lt;span style="color:#666"> &lt;/span>{&lt;span style="color:#666">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666"> &lt;/span>first: &lt;span style="color:#447fcf;text-decoration:underline">Cow&lt;/span>&amp;lt;&amp;#39;&lt;span style="color:#bbb">r&lt;/span>,&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">str&lt;/span>&amp;gt;,&lt;span style="color:#666">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666"> &lt;/span>last: &lt;span style="color:#447fcf;text-decoration:underline">Cow&lt;/span>&amp;lt;&amp;#39;&lt;span style="color:#bbb">r&lt;/span>,&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">str&lt;/span>&amp;gt;&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">&lt;/span>&lt;span style="color:#6ab825;font-weight:bold">struct&lt;/span> &lt;span style="color:#447fcf;text-decoration:underline">Name&lt;/span>&amp;lt;&lt;span style="color:#bbb">&amp;#39;r&lt;/span>&amp;gt;&lt;span style="color:#666"> &lt;/span>{&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666"> &lt;/span>first: &lt;span style="color:#447fcf;text-decoration:underline">Cow&lt;/span>&amp;lt;&lt;span style="color:#bbb">&amp;#39;r&lt;/span>,&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">str&lt;/span>&amp;gt;,&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666"> &lt;/span>last: &lt;span style="color:#447fcf;text-decoration:underline">Cow&lt;/span>&amp;lt;&lt;span style="color:#bbb">&amp;#39;r&lt;/span>,&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">str&lt;/span>&amp;gt;&lt;span style="color:#666">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">&lt;/span>}&lt;span style="color:#666">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">&lt;/span>&lt;span style="color:#cd2828;font-weight:bold">#[derive(Serialize, Deserialize, Clone)]&lt;/span>&lt;span style="color:#666">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">&lt;/span>&lt;span style="color:#6ab825;font-weight:bold">struct&lt;/span> &lt;span style="color:#447fcf;text-decoration:underline">Names&lt;/span>&amp;lt;&amp;#39;&lt;span style="color:#bbb">r&lt;/span>&amp;gt;(&lt;span style="color:#24909d">Vec&lt;/span>&amp;lt;Name&amp;lt;&amp;#39;&lt;span style="color:#bbb">r&lt;/span>&amp;gt;&amp;gt;);&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">&lt;/span>&lt;span style="color:#6ab825;font-weight:bold">struct&lt;/span> &lt;span style="color:#447fcf;text-decoration:underline">Names&lt;/span>&amp;lt;&lt;span style="color:#bbb">&amp;#39;r&lt;/span>&amp;gt;(&lt;span style="color:#24909d">Vec&lt;/span>&amp;lt;Name&amp;lt;&lt;span style="color:#bbb">&amp;#39;r&lt;/span>&amp;gt;&amp;gt;);&lt;span style="color:#666">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">&lt;/span>&lt;span style="color:#cd2828;font-weight:bold">#[get(&lt;/span>&lt;span style="color:#ed9d13">&amp;#34;/get-api&amp;#34;&lt;/span>&lt;span style="color:#cd2828;font-weight:bold">)]&lt;/span>&lt;span style="color:#666">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">&lt;/span>&lt;span style="color:#6ab825;font-weight:bold">async&lt;/span>&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">fn&lt;/span> &lt;span style="color:#447fcf">new_index&lt;/span>(client: &lt;span style="color:#6ab825">&amp;amp;&lt;/span>&lt;span style="color:#447fcf;text-decoration:underline">State&lt;/span>&amp;lt;Client&amp;gt;)&lt;span style="color:#666"> &lt;/span>-&amp;gt; &lt;span style="color:#24909d">Result&lt;/span>&amp;lt;Json&amp;lt;Names&amp;lt;&amp;#39;&lt;span style="color:#24909d">_&lt;/span>&amp;gt;&amp;gt;,&lt;span style="color:#666"> &lt;/span>NotFound&amp;lt;&lt;span style="color:#24909d">String&lt;/span>&amp;gt;&amp;gt;&lt;span style="color:#666"> &lt;/span>{&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">&lt;/span>&lt;span style="color:#6ab825;font-weight:bold">async&lt;/span>&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">fn&lt;/span> &lt;span style="color:#447fcf">new_index&lt;/span>(client: &lt;span style="color:#6ab825">&amp;amp;&lt;/span>&lt;span style="color:#447fcf;text-decoration:underline">State&lt;/span>&amp;lt;Client&amp;gt;)&lt;span style="color:#666"> &lt;/span>-&amp;gt; &lt;span style="color:#24909d">Result&lt;/span>&amp;lt;Json&amp;lt;Names&amp;lt;&lt;span style="color:#24909d">&amp;#39;_&lt;/span>&amp;gt;&amp;gt;,&lt;span style="color:#666"> &lt;/span>NotFound&amp;lt;&lt;span style="color:#24909d">String&lt;/span>&amp;gt;&amp;gt;&lt;span style="color:#666"> &lt;/span>{&lt;span style="color:#666">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#999;font-style:italic">// make a request
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">&lt;/span>&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">let&lt;/span>&lt;span style="color:#666"> &lt;/span>response&lt;span style="color:#666"> &lt;/span>=&lt;span style="color:#666"> &lt;/span>client.get(&lt;span style="color:#ed9d13">&amp;#34;url that returns a list of names&amp;#34;&lt;/span>).send().&lt;span style="color:#6ab825;font-weight:bold">await&lt;/span>.map_err(|e|&lt;span style="color:#666"> &lt;/span>NotFound(e.to_string()))?;&lt;span style="color:#666">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">let&lt;/span>&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">mut&lt;/span>&lt;span style="color:#666"> &lt;/span>names&lt;span style="color:#666"> &lt;/span>=&lt;span style="color:#666"> &lt;/span>response.json::&amp;lt;Names&amp;lt;&amp;#39;&lt;span style="color:#24909d">_&lt;/span>&amp;gt;&amp;gt;().&lt;span style="color:#6ab825;font-weight:bold">await&lt;/span>.map_err(|e|&lt;span style="color:#666"> &lt;/span>NotFound(e.to_string()))?;&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">let&lt;/span>&lt;span style="color:#666"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">mut&lt;/span>&lt;span style="color:#666"> &lt;/span>names&lt;span style="color:#666"> &lt;/span>=&lt;span style="color:#666"> &lt;/span>response.json::&amp;lt;Names&amp;lt;&lt;span style="color:#24909d">&amp;#39;_&lt;/span>&amp;gt;&amp;gt;().&lt;span style="color:#6ab825;font-weight:bold">await&lt;/span>.map_err(|e|&lt;span style="color:#666"> &lt;/span>NotFound(e.to_string()))?;&lt;span style="color:#666">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666"> &lt;/span>names.&lt;span style="color:#3677a9">0.&lt;/span>push(&lt;span style="color:#666">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666"> &lt;/span>Name&lt;span style="color:#666"> &lt;/span>{&lt;span style="color:#666">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666"> &lt;/span>first: &lt;span style="color:#ed9d13">&amp;#34;Rachel&amp;#34;&lt;/span>.into(),&lt;span style="color:#666">
@@ -2892,7 +2952,7 @@ which takes care of cloning whenever we need to mutate a field.&lt;/p>
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">&lt;/span>}&lt;span style="color:#666">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">&lt;/span>&lt;span style="color:#cd2828;font-weight:bold">#[post(&lt;/span>&lt;span style="color:#ed9d13">&amp;#34;/post-api&amp;#34;&lt;/span>&lt;span style="color:#cd2828;font-weight:bold">, data = &lt;/span>&lt;span style="color:#ed9d13">&amp;#34;&amp;lt;names&amp;gt;&amp;#34;&lt;/span>&lt;span style="color:#cd2828;font-weight:bold">)]&lt;/span>&lt;span style="color:#666">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">&lt;/span>&lt;span style="color:#6ab825;font-weight:bold">fn&lt;/span> &lt;span style="color:#447fcf">post_index&lt;/span>(&lt;span style="color:#6ab825;font-weight:bold">mut&lt;/span>&lt;span style="color:#666"> &lt;/span>names: &lt;span style="color:#447fcf;text-decoration:underline">Json&lt;/span>&amp;lt;Names&amp;lt;&amp;#39;&lt;span style="color:#24909d">_&lt;/span>&amp;gt;&amp;gt;)&lt;span style="color:#666"> &lt;/span>-&amp;gt; &lt;span style="color:#447fcf;text-decoration:underline">Json&lt;/span>&amp;lt;Names&amp;lt;&amp;#39;&lt;span style="color:#24909d">_&lt;/span>&amp;gt;&amp;gt;&lt;span style="color:#666"> &lt;/span>{&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">&lt;/span>&lt;span style="color:#6ab825;font-weight:bold">fn&lt;/span> &lt;span style="color:#447fcf">post_index&lt;/span>(&lt;span style="color:#6ab825;font-weight:bold">mut&lt;/span>&lt;span style="color:#666"> &lt;/span>names: &lt;span style="color:#447fcf;text-decoration:underline">Json&lt;/span>&amp;lt;Names&amp;lt;&lt;span style="color:#24909d">&amp;#39;_&lt;/span>&amp;gt;&amp;gt;)&lt;span style="color:#666"> &lt;/span>-&amp;gt; &lt;span style="color:#447fcf;text-decoration:underline">Json&lt;/span>&amp;lt;Names&amp;lt;&lt;span style="color:#24909d">&amp;#39;_&lt;/span>&amp;gt;&amp;gt;&lt;span style="color:#666"> &lt;/span>{&lt;span style="color:#666">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666"> &lt;/span>names.&lt;span style="color:#3677a9">0.0.&lt;/span>push(&lt;span style="color:#666">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666"> &lt;/span>Name&lt;span style="color:#666"> &lt;/span>{&lt;span style="color:#666">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666"> &lt;/span>first: &lt;span style="color:#ed9d13">&amp;#34;Rachel&amp;#34;&lt;/span>.into(),&lt;span style="color:#666">
