@@ -637,3 +637,54 @@ Registers needed to be  loaded
 Global bit
 
 -
+
+### Increasing Virtual Memory by Paging
+
+- Use disk to simulate larger virtual than physical mem
+- Disk is much slower than memory so find 20% hot to put into memory and 80% cold into disk
+- How to resume after a page fault
+
+Restarting Instructions
+
+- Faulting virtual address (In %c0_vaddr reg on MIPS)
+- Address of instruction that caused fault (%c0_epc reg)
+- Read or write, fetch, user access or kernel access?
+- Hardware must allow resuming after a fault
+- Idempotent instructions are easy
+  - A simple load or store instruction can be re-executed
+
+Superpages
+
+- Large mappings
+- 2/4 MB mappings
+- Sometimes more pages in L2 cache than TLB entries
+
+FIFO Eviction
+
+- Evict oldest fetched page in system
+
+LRU Page replacement
+
+- Worse for looping over memory (better to use MRU eviction then)
+- Stamping timer is too expensive as it doubles memory traffic
+- Keeping a doubly-linked list is annoying
+- Better to approximate
+
+#### Clock Algorithm
+
+- Do FIFO but skipped accessed pages
+- Keep pages in circular FIFO list
+- Scan all and find a page that isn't set and evict
+- Runs when there is very low memory
+
+When there is larger memory, use two clock hands at a fixed size. The first
+hands clears and the second hand picks evicted pages.
+
+Can take advantage of hardware dirty bit to prefer clean pages over dirty page. A dirty page has
+to be written to the disk.
+
+Or use n-bit accessed count instead of just A bit. On sweep, count = (A << (n - 1) | (count >> 1)). Evict the page with the lowest count.
+
+Random eviction avoids belady and double swaps by hypervisors, and is simple to implement.
+
+Databases are workload specific.
