@@ -117,6 +117,8 @@ Database-level
 
 Consists of a set of operators
 
+<!-- TODO -->
+
 ### Operators
 
 - one or two relations as inputs
@@ -156,6 +158,10 @@ tuples that don't have those attributes matching. During the first cross product
 - Difference: Returns stuff in first relation not present in second
 - Intersection: Return stuff in both rrelations
 - Division: Attributes of second relation must be a subset of the first. Inverse of product. Useful for all. Example (which tuples of X always references Y but returns a new tuple without the attributes in Y).
+
+### Summary of Relational Operators
+
+![summary of relational operators](/images/cs-348/relation-operators.png)
 
 ### Finding the maximums of a relation
 
