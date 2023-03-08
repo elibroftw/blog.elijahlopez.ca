@@ -893,3 +893,9 @@ Minimal cover:
 
 A database is a shared resource that is accessed by many users and processes.
 If data is accessed or modified concurrently, the information may be outdated or one of the modifications will be lost.
+
+Step 1: check if both transaction histories are over the same set of transactions
+
+Step 2: check if all conflicting pairs (reads and writes for same attribute from different transactions) are in the same order (< or >).
+
+### SQL Isolation Levels
