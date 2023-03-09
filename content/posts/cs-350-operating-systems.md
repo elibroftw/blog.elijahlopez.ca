@@ -7,7 +7,8 @@ tags: [
 ]
 ---
 
-[Course website](https://student.cs.uwaterloo.ca/~cs350/)
+- [Course website](https://student.cs.uwaterloo.ca/~cs350/)
+- [Past midterms](https://student.cs.uwaterloo.ca/~cs350/common/old-exams/)
 
 {{< toc >}}
 
@@ -639,6 +640,11 @@ Global bit
 -
 
 ### Increasing Virtual Memory by Paging
+
+The number of pages for a memory system is the size of the memory divided by the size of each page.
+
+To translate a virtual address to a physical address, we replace the starting bits of the virtual address that corresponds to the
+virtual page number, and replace it with the frame number.
 
 - Use disk to simulate larger virtual than physical mem
 - Disk is much slower than memory so find 20% hot to put into memory and 80% cold into disk
