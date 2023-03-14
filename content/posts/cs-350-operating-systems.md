@@ -694,3 +694,20 @@ Or use n-bit accessed count instead of just A bit. On sweep, count = (A << (n - 
 Random eviction avoids belady and double swaps by hypervisors, and is simple to implement.
 
 Databases are workload specific.
+
+#### Other Page Replacement Algorithms
+
+- Random eviction
+  - Used in hypervisors to avoid double swap
+- LFU
+- MFU
+- Specific policies
+- Naïve paging
+
+### Thrashing
+
+Process uses more memory than system has
+
+- working set
+  - How  much memory for process is required
+- page fault frequency
