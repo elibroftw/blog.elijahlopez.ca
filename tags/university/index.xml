@@ -1250,6 +1250,7 @@ If data is accessed or modified concurrently, the information may be outdated or
 &lt;li>&lt;a href="#hardware-managed-mmu">Hardware Managed MMU&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#software-managed-mmu">Software Managed MMU&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#increasing-virtual-memory-by-paging">Increasing Virtual Memory by Paging&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#thrashing">Thrashing&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;/ul>
@@ -2044,7 +2045,39 @@ hands clears and the second hand picks evicted pages.&lt;/p>
 to be written to the disk.&lt;/p>
 &lt;p>Or use n-bit accessed count instead of just A bit. On sweep, count = (A &amp;laquo; (n - 1) | (count &amp;raquo; 1)). Evict the page with the lowest count.&lt;/p>
 &lt;p>Random eviction avoids belady and double swaps by hypervisors, and is simple to implement.&lt;/p>
-&lt;p>Databases are workload specific.&lt;/p></description></item><item><title>BU 375 Operations</title><link>https://blog.elijahlopez.ca/posts/bu-375-operations/</link><pubDate>Sat, 04 Jun 2022 10:23:48 -0400</pubDate><guid>https://blog.elijahlopez.ca/posts/bu-375-operations/</guid><description>&lt;!-- markdownlint-disable MD033 -->
+&lt;p>Databases are workload specific.&lt;/p>
+&lt;h4 id="other-page-replacement-algorithms" >Other Page Replacement Algorithms
+&lt;span>
+&lt;a href="#other-page-replacement-algorithms">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;ul>
+&lt;li>Random eviction
+&lt;ul>
+&lt;li>Used in hypervisors to avoid double swap&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>LFU&lt;/li>
+&lt;li>MFU&lt;/li>
+&lt;li>Specific policies&lt;/li>
+&lt;li>Naïve paging&lt;/li>
+&lt;/ul>
+&lt;h3 id="thrashing" >Thrashing
+&lt;span>
+&lt;a href="#thrashing">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Process uses more memory than system has&lt;/p>
+&lt;ul>
+&lt;li>working set
+&lt;ul>
+&lt;li>How much memory for process is required&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>page fault frequency&lt;/li>
+&lt;/ul></description></item><item><title>BU 375 Operations</title><link>https://blog.elijahlopez.ca/posts/bu-375-operations/</link><pubDate>Sat, 04 Jun 2022 10:23:48 -0400</pubDate><guid>https://blog.elijahlopez.ca/posts/bu-375-operations/</guid><description>&lt;!-- markdownlint-disable MD033 -->
 &lt;p>This document are my notes and midterm review for the BU 375 Operations course taught at Wilfrid Laurier University. While studying for the midterm, I discovered my own formulae shortcuts, undoubtedly due to &amp;ldquo;blind teaching syndrome&amp;rdquo; (I made that term up).
 So let&amp;rsquo;s begin. I&amp;rsquo;ll add a divider to let you know what is part of the midterm.&lt;/p>
 &lt;div>
