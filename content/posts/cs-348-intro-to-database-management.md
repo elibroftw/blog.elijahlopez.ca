@@ -889,7 +889,11 @@ Minimal cover:
 
 ## Transactions
 
-### The Need For Transactions
+### Transaction
+
+A transaction i consists of r_i[x] and w_i[y] and c_i
+
+### Execution History
 
 A database is a shared resource that is accessed by many users and processes.
 If data is accessed or modified concurrently, the information may be outdated or one of the modifications will be lost.
@@ -898,4 +902,19 @@ Step 1: check if both transaction histories are over the same set of transaction
 
 Step 2: check if all conflicting pairs (reads and writes for same attribute from different transactions) are in the same order (< or >).
 
+### Serial Execution HIstories
+
+For a given transaction history, a transactions operations must be consecutive and operations from different transactions may not be interleaved.
+
 ### SQL Isolation Levels
+
+## Indexing
+
+- Tables of a database are stored in blocks (containing multiple rows) on disks
+  - Caching is used (memory buffer pool, writing dirty blocks to disk)
+- Sequential reads are faster than random reads
+- Indexes can be used to reduce number of blocks read from possibly all to just a few to access a specific row
+- Indexes can be used to speed up the access of a range of rows
+- Primary keys are always indexed
+
+### Index Structure
