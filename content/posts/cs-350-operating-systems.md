@@ -7,7 +7,9 @@ tags: [
 ]
 ---
 
-- [Course website](https://student.cs.uwaterloo.ca/~cs350/)
+<!-- <img class=equation-tall src="https://latex.codecogs.com/svg.image?QI="> -->
+
+- [Course website](https://student.cs.uwaterloo.ca/~cs350/reading.shtml)
 - [Past midterms](https://student.cs.uwaterloo.ca/~cs350/common/old-exams/)
 
 {{< toc >}}
@@ -249,9 +251,9 @@ Use dup2 to read from the pipe\[1] and write from the pipe\[0] while maintaining
 - Information necessary to run (registers, virtual memory mapping, etc, open files)
 - Other data like credentials, signal mask, controlling terminal, priority, accounting stats, debugged, binary emulation, ...
 
-### Scheduling
+### Thread Scheduling
 
-- FIFO/Round-Robin?
+- FIFO / Round-Robin?
 - Priority, give some threads a better shot at the CPU
 
 ### Preemption
@@ -711,3 +713,81 @@ Process uses more memory than system has
 - working set
   - How  much memory for process is required
 - page fault frequency
+
+## Scheduling
+
+### CPU Scheduling
+
+Transition States
+
+- new -- admit --> ready -- scheduler dispatch --> running -- exit -- I/O or event wait --> waiting
+- running -- exit --> Terminated
+- waiting -- I/O or event completion --> ready
+
+#### Scheduling Decisions
+
+1. Switches from running to waiting state
+2. Switches from running to ready state
+3. Switches from new/waiting to ready
+4. Exits
+
+- Non-preemptive schedules use 1 & 4 only
+- Preemptive schedulers run at all four points
+
+### First Come First Served
+
+If P1 = 24, P2 = 3, P3 = 3,
+
+- Then throughput = 3 / 30 = 0.1 jobs / sec.
+- Turnaround time: (end times of (24 + 27 + 30) / 3) = 27
+
+### Shortest Job First
+
+- Attempts to minimize turnaround time, but ends up minimizing waiting time and response time
+- With preemption, it is called shortest-remaining-time-first.
+- Requires estimating burst time because future cannot be predicted
+- Can lead to unfairness and starvation
+
+### Round Robin
+
+- Preempts job after some time and move it to the back of a FIFO
+- Disadvantages
+  - Context switching
+    - Saving and restoring registers
+    - Switching address spaces
+    - Cache, buffer cache, & TLB misses
+  - Slower than FCFS
+
+### Time Quantum
+
+- 10-100msec
+- want larger than context switch cost (why?)
+- majority of bursts should be less than quantum (why?)
+- not too large that it's basically FCFS
+
+### Priority Scheduling
+
+- Give a CPU to the process with highest priority
+- SJF is priority but using CPU burst time
+- Starvation - low priority processes may never execute
+- Increase a processors priority as it waits
+
+### Multilevel Feedback Queue
+
+- Priorities of 0 to 127 and grouped into 32 run queues
+- With each queue, run round robin
+- Favour interactive jobs
+- Run highest priority non-empty queue
+
+#### Process Priority
+
+- `p_nice`: user-settable weighting factor
+- `p_estcpu` - per-process CPU usage
+  - Incremented whenever timer interrupt found proc. running
+  - Decayed every second while process runnable
+  `p_estcpu` = (2 \* load) / (2 \* load + 1) \* p\_estcpu + p\_nice
+  - Load is sampled average of length of run queue plus short-term sleep queue over last minute
+- Run queue determined by `p_usrpri/4`
+  - `p_usrpri` = 50 + (p\_estcpu / 4) + 2 \* p\_nice
+- For sleeping threads, update `p_estcpu` on wake using `p_slptime` to avoid unnecessary computes
+  - Decay: `p_estcpu` = (2 \* load) / (2 \* load + 1) ^ `p_slptime` * `p_estcpu`

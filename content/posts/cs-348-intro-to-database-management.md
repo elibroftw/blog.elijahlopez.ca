@@ -7,6 +7,8 @@ tags: [
 ]
 ---
 
+{{< toc >}}
+
 ## Objectives
 
 ### Viewpoints
@@ -918,3 +920,60 @@ For a given transaction history, a transactions operations must be consecutive a
 - Primary keys are always indexed
 
 ### Index Structure
+
+## Transaction Processing
+
+### Concurrency Control - Isolation
+
+- Pessimistic - assume conflicts will occur and prevent them
+  - Two-phase locking (2PL)
+  - Timestamp ordering
+- Optimistic - assume that conflicts are rare and run transactions and fix problems that occur
+
+#### Locking
+
+Shared (read) locks and exclusive (write) locks.
+
+- a transaction that wants to read an object must acquire a shared lock (S mode) on that object
+- a transaction that wants to modify an object must acquire an exclusive lock on that object
+- object can be locked by multiple shared or only once as exclusive
+- not enough for transactions that were meant to preserve a condition such as two objects being the same value
+
+### Two-Phase Locking
+
+In phase one, transaction obtain locks and do not release locks. The lock point is when the final lock has been obtained.
+In phase two, transactions release locks and do not obtain locks. Two phase locking guarantees a conflict-serializable schedule.
+
+#### Cascading Aborts
+
+If a transaction has read uncommitted data read by a transaction that has aborted, it must abort itself.
+
+#### Deadlocks
+
+Gradual lock release?
+
+### Recovery - Atomicity and Durability
+
+#### Naïve Approaches
+
+- Force (writes must be reflected on disk when a transaction commits)
+- No Steal (flush to disk only at commit)
+
+### Logging
+
+- Write to disk just before (WAL: write ahead logging) an object is modified
+
+```txt
+<T_i, start>
+<T_i, X, old_value, new-value>
+<T_i, commit> or <T_i, abort>
+```
+
+#### Checkpointing
+
+Shortens the amount of log that need to be undone or redone
+when a failure occurs
+
+1. Output onto stable storage all log records currently residing in main memory
+2. Output to the disk all modified buffer blocks
+3. Output onto stable storage a log record of the form \<checkpoint L\>, where L is a list of transactions active at the time of the checkpoint
