@@ -1,4 +1,14 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on ELL Blog</title><link>https://blog.elijahlopez.ca/posts/</link><description>ELL Blog (Posts)</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 22 Feb 2023 23:58:11 -0500</lastBuildDate><atom:link href="https://blog.elijahlopez.ca/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>How to Disable Real Time Protection Permanently</title><link>https://blog.elijahlopez.ca/posts/disable-real-time-protection-permanently/</link><pubDate>Wed, 22 Feb 2023 23:58:11 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/disable-real-time-protection-permanently/</guid><description>&lt;p>As a developer who dabbles with web development, Real-Time protection ramps up CPU usage unnecessarily.&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on ELL Blog</title><link>https://blog.elijahlopez.ca/posts/</link><description>ELL Blog (Posts)</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 15 Mar 2023 23:26:23 -0400</lastBuildDate><atom:link href="https://blog.elijahlopez.ca/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>USDC De-pegging is/was Panic Selling</title><link>https://blog.elijahlopez.ca/posts/usdc-depegging-panic-selling/</link><pubDate>Wed, 15 Mar 2023 23:26:23 -0400</pubDate><guid>https://blog.elijahlopez.ca/posts/usdc-depegging-panic-selling/</guid><description>&lt;p>On Friday night, &lt;a href="https://www.circle.com/en/usdc">USDC&lt;/a>, a virtual currency that is supposed to be stabilized at a 1:1 ratio with the USD lost its peg due to a combination of two news events. Circle, the company that issues USDC and allows redemption of it for USD stated that it had 3.3B (8.175% of 40B) of its cash &amp;amp; cash equivalents in &lt;a href="https://en.wikipedia.org/wiki/Silicon_Valley_Bank">Silicon Valley Bank (SVB)&lt;/a>, the bank that collapsed last week. The second event was &lt;a href="https://twitter.com/coinbase/status/1634399032767307776">Coinbase&lt;/a> freezing redemptions with plans to recommence Monday.&lt;/p>
+&lt;p>Panic selling immediately started and USDC lost its peg even more than 8.175%. All because investors were so pessimistic and worried that all 3.3B would be unrecoverable! I know this is coming after FDIC has made all depositors whole, but I will walk you through my thought process. Even if the 3.3B was unrecoverable, the peg would be 0.9125, not the 0.88 that was seen during the morning of Saturday.&lt;/p>
+&lt;p>Well when I woke up and I read the news, immediately started thinking of what the actual level of risk was. Well you see, the day before I was reading up on the SVB situation and my mind was figuring out the cause of the situation. The cause isn&amp;rsquo;t political like some charlestons may have you believe. Some people like to blame political jargon but not all issues are political, some is just incompetence! The incompetence being placing most of the depositors assets in a 10 year mortgage backed security with a 1.5% yield when interest rates were at their lowest. The cfo or investment manager at SVB did not anticipate interest rate increases once the inflation rates for 2022 stated coming in. Not only did they not factor in interest rate increases, they waited until multiple raises to realize that the unrealized losses and some realize losses that they don&amp;rsquo;t have enough cash to cover withdrawals! Anyways, the key detail is that the yield was 1.5%, maturity is 8 years now, and that the yield on comparable fixed income securities would be 3.7 to 4%. Fixed income market prices have an inverse proportion to yields, so if we use a bond price calculator to figure out relative prices, we see that in the worst case, SVB has a 730/880 = ~17.7% unrealized loss.&lt;/p>
+&lt;p>Using this information, in the worst case, circle would be out ~0.58B, not 3.3B out of the 40B or so assets they have. Some of these assets were in short term fixed income itself paying 0.4%. Thus the fair price in my mind wasn&amp;rsquo;t 91 cents but rather 99 cents and since redemption would starts back on Monday, this was a pure reward play which I would say is a once in a lifetime opportunity, but I&amp;rsquo;ll admit I sold my gme calls one day before they popped in 2021, so clearly these high reward low risk opportunities open up frequently.&lt;/p>
+&lt;p>Lastly, since I had crypto on me, I could leverage kucoins 10x leverage and expect a 98% return in 2 days. Alas, my mind was more preoccupied with being right than making money.&lt;/p>
+&lt;p>Let me know your thoughts on this analysis of mine, I&amp;rsquo;m open to criticism. I&amp;rsquo;ll admit, the unrealized loss figures might be off, but the opportunity only lasted for 1 to 2 hours and I did not have the luxury to spend all that time finding all the information.&lt;/p>
+&lt;details>&lt;summary>Blaming "diversity"&lt;/summary>
+&lt;p>Some people, WSJ included, like to point out that the bank failed because of diversity initiatives. This is very disingenuous.
+First of all, management is 100% white in terms of race and not a single woman on management is in a position that is not stereotypically dominated by men. Second of all, diversity has nothing to do with intelligence! Diversity doesn&amp;rsquo;t reduce critical thinking (unless it is done wrong) and it doesn&amp;rsquo;t improve critical thinking unless cultural differences or differing experiences are taken advantage of. The only way diversity could have caused this bank failure is if there was a culture that promoted minimizing shareholder valuation.&lt;/p>
+&lt;p>This whole situation is like that movie Margin Call, except the person working in risk is non-existent (Chief of Risk was vacant for 8 months while interest rates were being raised). Clearly, the people to blame for SVB&amp;rsquo;s collapse is management and then the board, although can the board really be blamed when it is management that was supposed to manage the company properly?&lt;/p>
+&lt;/details></description></item><item><title>How to Disable Real Time Protection Permanently</title><link>https://blog.elijahlopez.ca/posts/disable-real-time-protection-permanently/</link><pubDate>Wed, 22 Feb 2023 23:58:11 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/disable-real-time-protection-permanently/</guid><description>&lt;p>As a developer who dabbles with web development, Real-Time protection ramps up CPU usage unnecessarily.&lt;/p>
 &lt;p>First check if you have &lt;code>gpedit.msc&lt;/code> installed (by searching the start menu or by using Win + R)&lt;/p>
 &lt;h3 id="installing-group-policy-editor" >Installing Group Policy Editor
 &lt;span>
@@ -1658,9 +1668,16 @@ i.e., that group of attributes is a superkey of R&lt;/p>
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
-&lt;/h2>&lt;h3 id="the-need-for-transactions" >The Need For Transactions
+&lt;/h2>&lt;h3 id="transaction" >Transaction
 &lt;span>
-&lt;a href="#the-need-for-transactions">
+&lt;a href="#transaction">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>A transaction i consists of r_i[x] and w_i[y] and c_i&lt;/p>
+&lt;h3 id="execution-history" >Execution History
+&lt;span>
+&lt;a href="#execution-history">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
@@ -1668,9 +1685,39 @@ i.e., that group of attributes is a superkey of R&lt;/p>
 If data is accessed or modified concurrently, the information may be outdated or one of the modifications will be lost.&lt;/p>
 &lt;p>Step 1: check if both transaction histories are over the same set of transactions&lt;/p>
 &lt;p>Step 2: check if all conflicting pairs (reads and writes for same attribute from different transactions) are in the same order (&amp;lt; or &amp;gt;).&lt;/p>
+&lt;h3 id="serial-execution-histories" >Serial Execution HIstories
+&lt;span>
+&lt;a href="#serial-execution-histories">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>For a given transaction history, a transactions operations must be consecutive and operations from different transactions may not be interleaved.&lt;/p>
 &lt;h3 id="sql-isolation-levels" >SQL Isolation Levels
 &lt;span>
 &lt;a href="#sql-isolation-levels">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;h2 id="indexing" >Indexing
+&lt;span>
+&lt;a href="#indexing">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;ul>
+&lt;li>Tables of a database are stored in blocks (containing multiple rows) on disks
+&lt;ul>
+&lt;li>Caching is used (memory buffer pool, writing dirty blocks to disk)&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Sequential reads are faster than random reads&lt;/li>
+&lt;li>Indexes can be used to reduce number of blocks read from possibly all to just a few to access a specific row&lt;/li>
+&lt;li>Indexes can be used to speed up the access of a range of rows&lt;/li>
+&lt;li>Primary keys are always indexed&lt;/li>
+&lt;/ul>
+&lt;h3 id="index-structure" >Index Structure
+&lt;span>
+&lt;a href="#index-structure">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>

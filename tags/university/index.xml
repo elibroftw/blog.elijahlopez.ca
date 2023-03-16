@@ -1158,9 +1158,16 @@ i.e., that group of attributes is a superkey of R&lt;/p>
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
-&lt;/h2>&lt;h3 id="the-need-for-transactions" >The Need For Transactions
+&lt;/h2>&lt;h3 id="transaction" >Transaction
 &lt;span>
-&lt;a href="#the-need-for-transactions">
+&lt;a href="#transaction">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>A transaction i consists of r_i[x] and w_i[y] and c_i&lt;/p>
+&lt;h3 id="execution-history" >Execution History
+&lt;span>
+&lt;a href="#execution-history">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
@@ -1168,9 +1175,39 @@ i.e., that group of attributes is a superkey of R&lt;/p>
 If data is accessed or modified concurrently, the information may be outdated or one of the modifications will be lost.&lt;/p>
 &lt;p>Step 1: check if both transaction histories are over the same set of transactions&lt;/p>
 &lt;p>Step 2: check if all conflicting pairs (reads and writes for same attribute from different transactions) are in the same order (&amp;lt; or &amp;gt;).&lt;/p>
+&lt;h3 id="serial-execution-histories" >Serial Execution HIstories
+&lt;span>
+&lt;a href="#serial-execution-histories">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>For a given transaction history, a transactions operations must be consecutive and operations from different transactions may not be interleaved.&lt;/p>
 &lt;h3 id="sql-isolation-levels" >SQL Isolation Levels
 &lt;span>
 &lt;a href="#sql-isolation-levels">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;h2 id="indexing" >Indexing
+&lt;span>
+&lt;a href="#indexing">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;ul>
+&lt;li>Tables of a database are stored in blocks (containing multiple rows) on disks
+&lt;ul>
+&lt;li>Caching is used (memory buffer pool, writing dirty blocks to disk)&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Sequential reads are faster than random reads&lt;/li>
+&lt;li>Indexes can be used to reduce number of blocks read from possibly all to just a few to access a specific row&lt;/li>
+&lt;li>Indexes can be used to speed up the access of a range of rows&lt;/li>
+&lt;li>Primary keys are always indexed&lt;/li>
+&lt;/ul>
+&lt;h3 id="index-structure" >Index Structure
+&lt;span>
+&lt;a href="#index-structure">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
