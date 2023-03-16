@@ -508,7 +508,133 @@ I will slowly add utility scripts to.&lt;/p>
 &lt;/span>
 &lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-py" data-lang="py">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">import&lt;/span> &lt;span style="color:#447fcf;text-decoration:underline">subprocess&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>subprocess.Popen([&lt;span style="color:#ed9d13">&amp;#34;systemctl&amp;#34;&lt;/span>, &lt;span style="color:#ed9d13">&amp;#34;restart&amp;#34;&lt;/span>, &lt;span style="color:#ed9d13">&amp;#34;my_service&amp;#34;&lt;/span>]).wait()
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>CS 348 Intro to Database Management</title><link>https://blog.elijahlopez.ca/posts/cs-348-intro-to-database-management/</link><pubDate>Tue, 10 Jan 2023 16:02:06 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/cs-348-intro-to-database-management/</guid><description>&lt;h2 id="objectives" >Objectives
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>CS 348 Intro to Database Management</title><link>https://blog.elijahlopez.ca/posts/cs-348-intro-to-database-management/</link><pubDate>Tue, 10 Jan 2023 16:02:06 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/cs-348-intro-to-database-management/</guid><description>&lt;div>
+&lt;h2>Table of Contents&lt;/h2>
+&lt;nav id="TableOfContents">
+&lt;ul>
+&lt;li>&lt;a href="#objectives">Objectives&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#viewpoints">Viewpoints&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#sub-objectives">Sub-objectives&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="#file-processing-systems">File-Processing Systems&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#disadvantages-with-file-processing-systems">Disadvantages with File-Processing Systems&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="#databases">Databases&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#database-definition">Database Definition&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#database-management-system-dbms">Database Management System (DBMS)&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#scheme-definition">Scheme Definition&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#database-instance-definition">Database Instance Definition&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#levels">Levels&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="#the-relational-model">The Relational Model&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#data-model">Data Model&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#schema-and-instance">Schema and Instance&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#integrity-constraints">Integrity Constraints&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="#the-relational-algebra">The Relational Algebra&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#operators">Operators&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#selection">Selection&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#projection">Projection&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#cross-product">Cross Product&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#conditional-join">Conditional Join&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#natural-join">Natural Join&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#set-based-relational-operators">Set-Based Relational Operators&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#summary-of-relational-operators">Summary of Relational Operators&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#finding-the-maximums-of-a-relation">Finding the maximums of a relation&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#algebraic-equivalences">Algebraic Equivalences&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#relational-completeness">Relational Completeness&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#the-relational-calculus">The Relational Calculus&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="#sql---structured-query-language">SQL - Structured Query Language&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#data-types">Data Types&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#tables">Tables&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#queries">Queries&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#subqueries">Subqueries&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#data-modifications">Data Modifications&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="#sql-intermediate-topics">SQL Intermediate Topics&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#check-constraints">Check Constraints&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#foreign-key-contraints">Foreign Key Contraints&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#deleting-in-referenced-relation">Deleting in Referenced Relation&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#views">Views&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#access-control">Access Control&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#indexes">Indexes&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#sql-relational-division">SQL Relational Division&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="#sql-drivers">SQL Drivers&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#prepared-statements">Prepared Statements&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#metadata-features">Metadata Features&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="#functions-and-procedures">Functions and Procedures&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#triggers">Triggers&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#ranking">Ranking&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#windowing-moving">Windowing (Moving)&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#pivoting">Pivoting&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#rollup-and-cube">Rollup and Cube&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#recursion">Recursion&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#entity-relationship-model">Entity-Relationship Model&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#database-design">Database Design&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#complex-attributes">Complex Attributes&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#mapping-cardinality">Mapping Cardinality&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#primary-keys-in-e-r-model">Primary Keys in E-R Model&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#removing-redundant-attributes-in-entity-sets">Removing Redundant Attributes in Entity Sets&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#specialization">Specialization&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#common-mistakes">Common Mistakes&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="#e-r-diagram-to-relational-tables">E-R Diagram to Relational Tables&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#schema-refinement-dependencies">Schema Refinement: Dependencies&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#example">Example&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#single-table-schema">Single-Table Schema&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#too-many-tables">Too many Tables&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#functional-dependencies-armstrongs-axioms">Functional Dependencies: Armstrong&amp;rsquo;s Axioms&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#function-dependencies-attribute-closure">Function Dependencies: Attribute Closure&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#schema-decomposition">Schema Decomposition&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="#transactions">Transactions&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#transaction">Transaction&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#execution-history">Execution History&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#serial-execution-histories">Serial Execution HIstories&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#sql-isolation-levels">SQL Isolation Levels&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="#indexing">Indexing&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#index-structure">Index Structure&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="#transaction-processing">Transaction Processing&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#concurrency-control---isolation">Concurrency Control - Isolation&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#two-phase-locking">Two-Phase Locking&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#recovery---atomicity-and-durability">Recovery - Atomicity and Durability&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#logging">Logging&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/nav>
+&lt;/div>
+&lt;h2 id="objectives" >Objectives
 &lt;span>
 &lt;a href="#objectives">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
@@ -1721,8 +1847,105 @@ If data is accessed or modified concurrently, the information may be outdated or
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
-&lt;/h3></description></item><item><title>CS 350 Operating Systems</title><link>https://blog.elijahlopez.ca/posts/cs-350-operating-systems/</link><pubDate>Tue, 10 Jan 2023 14:56:10 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/cs-350-operating-systems/</guid><description>&lt;ul>
-&lt;li>&lt;a href="https://student.cs.uwaterloo.ca/~cs350/">Course website&lt;/a>&lt;/li>
+&lt;/h3>&lt;h2 id="transaction-processing" >Transaction Processing
+&lt;span>
+&lt;a href="#transaction-processing">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;h3 id="concurrency-control---isolation" >Concurrency Control - Isolation
+&lt;span>
+&lt;a href="#concurrency-control---isolation">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Pessimistic - assume conflicts will occur and prevent them
+&lt;ul>
+&lt;li>Two-phase locking (2PL)&lt;/li>
+&lt;li>Timestamp ordering&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Optimistic - assume that conflicts are rare and run transactions and fix problems that occur&lt;/li>
+&lt;/ul>
+&lt;h4 id="locking" >Locking
+&lt;span>
+&lt;a href="#locking">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;p>Shared (read) locks and exclusive (write) locks.&lt;/p>
+&lt;ul>
+&lt;li>a transaction that wants to read an object must acquire a shared lock (S mode) on that object&lt;/li>
+&lt;li>a transaction that wants to modify an object must acquire an exclusive lock on that object&lt;/li>
+&lt;li>object can be locked by multiple shared or only once as exclusive&lt;/li>
+&lt;li>not enough for transactions that were meant to preserve a condition such as two objects being the same value&lt;/li>
+&lt;/ul>
+&lt;h3 id="two-phase-locking" >Two-Phase Locking
+&lt;span>
+&lt;a href="#two-phase-locking">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>In phase one, transaction obtain locks and do not release locks. The lock point is when the final lock has been obtained.
+In phase two, transactions release locks and do not obtain locks. Two phase locking guarantees a conflict-serializable schedule.&lt;/p>
+&lt;h4 id="cascading-aborts" >Cascading Aborts
+&lt;span>
+&lt;a href="#cascading-aborts">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;p>If a transaction has read uncommitted data read by a transaction that has aborted, it must abort itself.&lt;/p>
+&lt;h4 id="deadlocks" >Deadlocks
+&lt;span>
+&lt;a href="#deadlocks">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;p>Gradual lock release?&lt;/p>
+&lt;h3 id="recovery---atomicity-and-durability" >Recovery - Atomicity and Durability
+&lt;span>
+&lt;a href="#recovery---atomicity-and-durability">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;h4 id="naïve-approaches" >Naïve Approaches
+&lt;span>
+&lt;a href="#na%c3%afve-approaches">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;ul>
+&lt;li>Force (writes must be reflected on disk when a transaction commits)&lt;/li>
+&lt;li>No Steal (flush to disk only at commit)&lt;/li>
+&lt;/ul>
+&lt;h3 id="logging" >Logging
+&lt;span>
+&lt;a href="#logging">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Write to disk just before (WAL: write ahead logging) an object is modified&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-txt" data-lang="txt">&lt;span style="display:flex;">&lt;span>&amp;lt;T_i, start&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;T_i, X, old_value, new-value&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;T_i, commit&amp;gt; or &amp;lt;T_i, abort&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="checkpointing" >Checkpointing
+&lt;span>
+&lt;a href="#checkpointing">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;p>Shortens the amount of log that need to be undone or redone
+when a failure occurs&lt;/p>
+&lt;ol>
+&lt;li>Output onto stable storage all log records currently residing in main memory&lt;/li>
+&lt;li>Output to the disk all modified buffer blocks&lt;/li>
+&lt;li>Output onto stable storage a log record of the form &amp;lt;checkpoint L&amp;gt;, where L is a list of transactions active at the time of the checkpoint&lt;/li>
+&lt;/ol></description></item><item><title>CS 350 Operating Systems</title><link>https://blog.elijahlopez.ca/posts/cs-350-operating-systems/</link><pubDate>Tue, 10 Jan 2023 14:56:10 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/cs-350-operating-systems/</guid><description>&lt;!-- &lt;img class=equation-tall src="https://latex.codecogs.com/svg.image?QI="> -->
+&lt;ul>
+&lt;li>&lt;a href="https://student.cs.uwaterloo.ca/~cs350/reading.shtml">Course website&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://student.cs.uwaterloo.ca/~cs350/common/old-exams/">Past midterms&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;div>
@@ -1754,7 +1977,7 @@ If data is accessed or modified concurrently, the information may be outdated or
 &lt;li>&lt;a href="#creating-processes">Creating processes&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#pipes">Pipes&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#implementing-processes">Implementing Processes&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#scheduling">Scheduling&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#thread-scheduling">Thread Scheduling&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#preemption">Preemption&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#context-switch">Context Switch&lt;/a>&lt;/li>
 &lt;/ul>
@@ -1798,6 +2021,17 @@ If data is accessed or modified concurrently, the information may be outdated or
 &lt;li>&lt;a href="#software-managed-mmu">Software Managed MMU&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#increasing-virtual-memory-by-paging">Increasing Virtual Memory by Paging&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#thrashing">Thrashing&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="#scheduling">Scheduling&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#cpu-scheduling">CPU Scheduling&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#first-come-first-served">First Come First Served&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#shortest-job-first">Shortest Job First&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#round-robin">Round Robin&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#time-quantum">Time Quantum&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#priority-scheduling">Priority Scheduling&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#multilevel-feedback-queue">Multilevel Feedback Queue&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;/ul>
@@ -2056,14 +2290,14 @@ it may be better to use grep.&lt;/p>
 &lt;li>Information necessary to run (registers, virtual memory mapping, etc, open files)&lt;/li>
 &lt;li>Other data like credentials, signal mask, controlling terminal, priority, accounting stats, debugged, binary emulation, &amp;hellip;&lt;/li>
 &lt;/ul>
-&lt;h3 id="scheduling" >Scheduling
+&lt;h3 id="thread-scheduling" >Thread Scheduling
 &lt;span>
-&lt;a href="#scheduling">
+&lt;a href="#thread-scheduling">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
 &lt;/h3>&lt;ul>
-&lt;li>FIFO/Round-Robin?&lt;/li>
+&lt;li>FIFO / Round-Robin?&lt;/li>
 &lt;li>Priority, give some threads a better shot at the CPU&lt;/li>
 &lt;/ul>
 &lt;h3 id="preemption" >Preemption
@@ -2624,6 +2858,147 @@ to be written to the disk.&lt;/p>
 &lt;/ul>
 &lt;/li>
 &lt;li>page fault frequency&lt;/li>
+&lt;/ul>
+&lt;h2 id="scheduling" >Scheduling
+&lt;span>
+&lt;a href="#scheduling">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;h3 id="cpu-scheduling" >CPU Scheduling
+&lt;span>
+&lt;a href="#cpu-scheduling">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Transition States&lt;/p>
+&lt;ul>
+&lt;li>new &amp;ndash; admit &amp;ndash;&amp;gt; ready &amp;ndash; scheduler dispatch &amp;ndash;&amp;gt; running &amp;ndash; exit &amp;ndash; I/O or event wait &amp;ndash;&amp;gt; waiting&lt;/li>
+&lt;li>running &amp;ndash; exit &amp;ndash;&amp;gt; Terminated&lt;/li>
+&lt;li>waiting &amp;ndash; I/O or event completion &amp;ndash;&amp;gt; ready&lt;/li>
+&lt;/ul>
+&lt;h4 id="scheduling-decisions" >Scheduling Decisions
+&lt;span>
+&lt;a href="#scheduling-decisions">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;ol>
+&lt;li>Switches from running to waiting state&lt;/li>
+&lt;li>Switches from running to ready state&lt;/li>
+&lt;li>Switches from new/waiting to ready&lt;/li>
+&lt;li>Exits&lt;/li>
+&lt;/ol>
+&lt;ul>
+&lt;li>Non-preemptive schedules use 1 &amp;amp; 4 only&lt;/li>
+&lt;li>Preemptive schedulers run at all four points&lt;/li>
+&lt;/ul>
+&lt;h3 id="first-come-first-served" >First Come First Served
+&lt;span>
+&lt;a href="#first-come-first-served">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>If P1 = 24, P2 = 3, P3 = 3,&lt;/p>
+&lt;ul>
+&lt;li>Then throughput = 3 / 30 = 0.1 jobs / sec.&lt;/li>
+&lt;li>Turnaround time: (end times of (24 + 27 + 30) / 3) = 27&lt;/li>
+&lt;/ul>
+&lt;h3 id="shortest-job-first" >Shortest Job First
+&lt;span>
+&lt;a href="#shortest-job-first">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Attempts to minimize turnaround time, but ends up minimizing waiting time and response time&lt;/li>
+&lt;li>With preemption, it is called shortest-remaining-time-first.&lt;/li>
+&lt;li>Requires estimating burst time because future cannot be predicted&lt;/li>
+&lt;li>Can lead to unfairness and starvation&lt;/li>
+&lt;/ul>
+&lt;h3 id="round-robin" >Round Robin
+&lt;span>
+&lt;a href="#round-robin">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Preempts job after some time and move it to the back of a FIFO&lt;/li>
+&lt;li>Disadvantages
+&lt;ul>
+&lt;li>Context switching
+&lt;ul>
+&lt;li>Saving and restoring registers&lt;/li>
+&lt;li>Switching address spaces&lt;/li>
+&lt;li>Cache, buffer cache, &amp;amp; TLB misses&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Slower than FCFS&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="time-quantum" >Time Quantum
+&lt;span>
+&lt;a href="#time-quantum">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>10-100msec&lt;/li>
+&lt;li>want larger than context switch cost (why?)&lt;/li>
+&lt;li>majority of bursts should be less than quantum (why?)&lt;/li>
+&lt;li>not too large that it&amp;rsquo;s basically FCFS&lt;/li>
+&lt;/ul>
+&lt;h3 id="priority-scheduling" >Priority Scheduling
+&lt;span>
+&lt;a href="#priority-scheduling">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Give a CPU to the process with highest priority&lt;/li>
+&lt;li>SJF is priority but using CPU burst time&lt;/li>
+&lt;li>Starvation - low priority processes may never execute&lt;/li>
+&lt;li>Increase a processors priority as it waits&lt;/li>
+&lt;/ul>
+&lt;h3 id="multilevel-feedback-queue" >Multilevel Feedback Queue
+&lt;span>
+&lt;a href="#multilevel-feedback-queue">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Priorities of 0 to 127 and grouped into 32 run queues&lt;/li>
+&lt;li>With each queue, run round robin&lt;/li>
+&lt;li>Favour interactive jobs&lt;/li>
+&lt;li>Run highest priority non-empty queue&lt;/li>
+&lt;/ul>
+&lt;h4 id="process-priority" >Process Priority
+&lt;span>
+&lt;a href="#process-priority">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;ul>
+&lt;li>&lt;code>p_nice&lt;/code>: user-settable weighting factor&lt;/li>
+&lt;li>&lt;code>p_estcpu&lt;/code> - per-process CPU usage
+&lt;ul>
+&lt;li>Incremented whenever timer interrupt found proc. running&lt;/li>
+&lt;li>Decayed every second while process runnable
+&lt;code>p_estcpu&lt;/code> = (2 * load) / (2 * load + 1) * p_estcpu + p_nice&lt;/li>
+&lt;li>Load is sampled average of length of run queue plus short-term sleep queue over last minute&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Run queue determined by &lt;code>p_usrpri/4&lt;/code>
+&lt;ul>
+&lt;li>&lt;code>p_usrpri&lt;/code> = 50 + (p_estcpu / 4) + 2 * p_nice&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>For sleeping threads, update &lt;code>p_estcpu&lt;/code> on wake using &lt;code>p_slptime&lt;/code> to avoid unnecessary computes
+&lt;ul>
+&lt;li>Decay: &lt;code>p_estcpu&lt;/code> = (2 * load) / (2 * load + 1) ^ &lt;code>p_slptime&lt;/code> * &lt;code>p_estcpu&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;/li>
 &lt;/ul></description></item><item><title>Tauri Custom Titlebar (React)</title><link>https://blog.elijahlopez.ca/posts/tauri-custom-titlebar/</link><pubDate>Sat, 24 Dec 2022 10:45:01 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/tauri-custom-titlebar/</guid><description>&lt;p>This tutorial is based on Part 12 of my Tauri &amp;amp; ReactJS series.&lt;/p>
 &lt;div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
 &lt;iframe src="https://www.youtube.com/embed/zONyCMTUwsI" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video">&lt;/iframe>
