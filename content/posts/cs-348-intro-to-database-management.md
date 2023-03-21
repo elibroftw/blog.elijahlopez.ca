@@ -977,3 +977,21 @@ when a failure occurs
 1. Output onto stable storage all log records currently residing in main memory
 2. Output to the disk all modified buffer blocks
 3. Output onto stable storage a log record of the form \<checkpoint L\>, where L is a list of transactions active at the time of the checkpoint
+
+## Data Analytics: Warehousing and Mining
+
+### Data Warehouses
+
+#### Creating and Maintaining a Warehouse
+
+- Extract: queries
+- Clean: delete or repair tuples
+- Transform: reorg
+- Load: populate the warhouse tables
+
+#### Warehouse Schemas
+
+- Fact tables
+- Dimension tables: additional tables for each fact tables
+- Measure attributes: value based
+- Dimension attributes: relation based

@@ -9,7 +9,8 @@ tags: [
 
 <!-- <img class=equation-tall src="https://latex.codecogs.com/svg.image?QI="> -->
 
-- [Course website](https://student.cs.uwaterloo.ca/~cs350/reading.shtml)
+<!-- - [Course website](https://student.cs.uwaterloo.ca/~cs350/) -->
+- [Course website](https://student.cs.uwaterloo.ca/~cs350/W23/reading.shtml)
 - [Past midterms](https://student.cs.uwaterloo.ca/~cs350/common/old-exams/)
 
 {{< toc >}}
@@ -791,3 +792,18 @@ If P1 = 24, P2 = 3, P3 = 3,
   - `p_usrpri` = 50 + (p\_estcpu / 4) + 2 \* p\_nice
 - For sleeping threads, update `p_estcpu` on wake using `p_slptime` to avoid unnecessary computes
   - Decay: `p_estcpu` = (2 \* load) / (2 \* load + 1) ^ `p_slptime` * `p_estcpu`
+
+### Priority Donation
+
+If lower priotity has a lock that medium priority wants, then the lower priority has the same priority as the medium.
+
+If H waits on a lock held by M, then the priotity of M and L both go up, whereas if H waits on just the lock held by L, only L gets a priority bump to H.
+
+### Borrowed Virtual Time Scheduler
+
+- run process with lowest effective virtual time
+- Ei = Ai - (warpi ? Wi : 0)
+- Ej = Ei - C / wi where C is the context switch cost (ignore when j just became runnable)
+- Ai += t / wi
+
+![BVT example](/images/cs-350/bvt-example.png)
