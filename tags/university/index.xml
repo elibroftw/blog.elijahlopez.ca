@@ -121,6 +121,11 @@
 &lt;li>&lt;a href="#logging">Logging&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;/li>
+&lt;li>&lt;a href="#data-analytics-warehousing-and-mining">Data Analytics: Warehousing and Mining&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#data-warehouses">Data Warehouses&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
 &lt;/ul>
 &lt;/nav>
 &lt;/div>
@@ -1433,9 +1438,46 @@ when a failure occurs&lt;/p>
 &lt;li>Output onto stable storage all log records currently residing in main memory&lt;/li>
 &lt;li>Output to the disk all modified buffer blocks&lt;/li>
 &lt;li>Output onto stable storage a log record of the form &amp;lt;checkpoint L&amp;gt;, where L is a list of transactions active at the time of the checkpoint&lt;/li>
-&lt;/ol></description></item><item><title>CS 350 Operating Systems</title><link>https://blog.elijahlopez.ca/posts/cs-350-operating-systems/</link><pubDate>Tue, 10 Jan 2023 14:56:10 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/cs-350-operating-systems/</guid><description>&lt;!-- &lt;img class=equation-tall src="https://latex.codecogs.com/svg.image?QI="> -->
+&lt;/ol>
+&lt;h2 id="data-analytics-warehousing-and-mining" >Data Analytics: Warehousing and Mining
+&lt;span>
+&lt;a href="#data-analytics-warehousing-and-mining">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;h3 id="data-warehouses" >Data Warehouses
+&lt;span>
+&lt;a href="#data-warehouses">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;h4 id="creating-and-maintaining-a-warehouse" >Creating and Maintaining a Warehouse
+&lt;span>
+&lt;a href="#creating-and-maintaining-a-warehouse">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;ul>
+&lt;li>Extract: queries&lt;/li>
+&lt;li>Clean: delete or repair tuples&lt;/li>
+&lt;li>Transform: reorg&lt;/li>
+&lt;li>Load: populate the warhouse tables&lt;/li>
+&lt;/ul>
+&lt;h4 id="warehouse-schemas" >Warehouse Schemas
+&lt;span>
+&lt;a href="#warehouse-schemas">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;ul>
+&lt;li>Fact tables&lt;/li>
+&lt;li>Dimension tables: additional tables for each fact tables&lt;/li>
+&lt;li>Measure attributes: value based&lt;/li>
+&lt;li>Dimension attributes: relation based&lt;/li>
+&lt;/ul></description></item><item><title>CS 350 Operating Systems</title><link>https://blog.elijahlopez.ca/posts/cs-350-operating-systems/</link><pubDate>Tue, 10 Jan 2023 14:56:10 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/cs-350-operating-systems/</guid><description>&lt;!-- &lt;img class=equation-tall src="https://latex.codecogs.com/svg.image?QI="> -->
+&lt;!-- - [Course website](https://student.cs.uwaterloo.ca/~cs350/) -->
 &lt;ul>
-&lt;li>&lt;a href="https://student.cs.uwaterloo.ca/~cs350/reading.shtml">Course website&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://student.cs.uwaterloo.ca/~cs350/W23/reading.shtml">Course website&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://student.cs.uwaterloo.ca/~cs350/common/old-exams/">Past midterms&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;div>
@@ -1522,6 +1564,8 @@ when a failure occurs&lt;/p>
 &lt;li>&lt;a href="#time-quantum">Time Quantum&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#priority-scheduling">Priority Scheduling&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#multilevel-feedback-queue">Multilevel Feedback Queue&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#priority-donation">Priority Donation&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#borrowed-virtual-time-scheduler">Borrowed Virtual Time Scheduler&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;/ul>
@@ -2489,7 +2533,28 @@ to be written to the disk.&lt;/p>
 &lt;li>Decay: &lt;code>p_estcpu&lt;/code> = (2 * load) / (2 * load + 1) ^ &lt;code>p_slptime&lt;/code> * &lt;code>p_estcpu&lt;/code>&lt;/li>
 &lt;/ul>
 &lt;/li>
-&lt;/ul></description></item><item><title>BU 375 Operations</title><link>https://blog.elijahlopez.ca/posts/bu-375-operations/</link><pubDate>Sat, 04 Jun 2022 10:23:48 -0400</pubDate><guid>https://blog.elijahlopez.ca/posts/bu-375-operations/</guid><description>&lt;!-- markdownlint-disable MD033 -->
+&lt;/ul>
+&lt;h3 id="priority-donation" >Priority Donation
+&lt;span>
+&lt;a href="#priority-donation">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>If lower priotity has a lock that medium priority wants, then the lower priority has the same priority as the medium.&lt;/p>
+&lt;p>If H waits on a lock held by M, then the priotity of M and L both go up, whereas if H waits on just the lock held by L, only L gets a priority bump to H.&lt;/p>
+&lt;h3 id="borrowed-virtual-time-scheduler" >Borrowed Virtual Time Scheduler
+&lt;span>
+&lt;a href="#borrowed-virtual-time-scheduler">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>run process with lowest effective virtual time&lt;/li>
+&lt;li>Ei = Ai - (warpi ? Wi : 0)&lt;/li>
+&lt;li>Ej = Ei - C / wi where C is the context switch cost (ignore when j just became runnable)&lt;/li>
+&lt;li>Ai += t / wi&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="https://blog.elijahlopez.ca/images/cs-350/bvt-example.png" alt="BVT example">&lt;/p></description></item><item><title>BU 375 Operations</title><link>https://blog.elijahlopez.ca/posts/bu-375-operations/</link><pubDate>Sat, 04 Jun 2022 10:23:48 -0400</pubDate><guid>https://blog.elijahlopez.ca/posts/bu-375-operations/</guid><description>&lt;!-- markdownlint-disable MD033 -->
 &lt;p>This document are my notes and midterm review for the BU 375 Operations course taught at Wilfrid Laurier University. While studying for the midterm, I discovered my own formulae shortcuts, undoubtedly due to &amp;ldquo;blind teaching syndrome&amp;rdquo; (I made that term up).
 So let&amp;rsquo;s begin. I&amp;rsquo;ll add a divider to let you know what is part of the midterm.&lt;/p>
 &lt;div>
