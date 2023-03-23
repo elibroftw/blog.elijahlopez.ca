@@ -807,3 +807,7 @@ If H waits on a lock held by M, then the priotity of M and L both go up, whereas
 - Ai += t / wi
 
 ![BVT example](/images/cs-350/bvt-example.png)
+
+## I/O and Disks
+
+### Memory and I/O buses
