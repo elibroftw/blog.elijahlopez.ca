@@ -811,3 +811,44 @@ If H waits on a lock held by M, then the priotity of M and L both go up, whereas
 ## I/O and Disks
 
 ### Memory and I/O buses
+
+## Filesystem
+
+### Files: name bytes on disk
+
+- File system: translate name & offset to disk blocks
+- Want to reduce number of disk accesses for operations
+- File system  metadata
+  - An inonde that points to the inode array.
+
+### Common Patterns
+
+- Sequential
+  - Processed in sequential order
+- Random access
+  - Access any block in a file without passing predecessors (skipping)
+- Keyed access
+  - Search for block with particular values
+
+## Hard and soft links
+
+- Each inode has a count of hard links
+-
+
+## Fast File System
+
+- Cluster related objects together
+-
+
+### Metadata Synchronously
+
+If we create a directory entry and crash during the middle of creating a directory entry and an IO block, what happens?
+
+- Block on disk
+- Inode
+- Directory entry pointing to an inode
+
+To ensure things work correctly, we need to flush to disk before the pointer pointing to the inode gets flushed. Therefore, we need to write out the data first, then create the inode, and then create the directory entry pointing to it. When deleting, first delete the directory entry, and then the inode.
+
+Log inode and dir entry to a log first. On crash, re-execute the log to copy back the file system. This is 2x the IO writes.
+1GB sized journals. 
