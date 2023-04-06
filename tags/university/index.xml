@@ -1573,6 +1573,18 @@ when a failure occurs&lt;/p>
 &lt;li>&lt;a href="#memory-and-io-buses">Memory and I/O buses&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;/li>
+&lt;li>&lt;a href="#filesystem">Filesystem&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#files-name-bytes-on-disk">Files: name bytes on disk&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#common-patterns">Common Patterns&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="#hard-and-soft-links">Hard and soft links&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#fast-file-system">Fast File System&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#metadata-synchronously">Metadata Synchronously&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
 &lt;/ul>
 &lt;/nav>
 &lt;/div>
@@ -2572,7 +2584,85 @@ to be written to the disk.&lt;/p>
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
-&lt;/h3></description></item><item><title>BU 375 Operations</title><link>https://blog.elijahlopez.ca/posts/bu-375-operations/</link><pubDate>Sat, 04 Jun 2022 10:23:48 -0400</pubDate><guid>https://blog.elijahlopez.ca/posts/bu-375-operations/</guid><description>&lt;!-- markdownlint-disable MD033 -->
+&lt;/h3>&lt;h2 id="filesystem" >Filesystem
+&lt;span>
+&lt;a href="#filesystem">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;h3 id="files-name-bytes-on-disk" >Files: name bytes on disk
+&lt;span>
+&lt;a href="#files-name-bytes-on-disk">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>File system: translate name &amp;amp; offset to disk blocks&lt;/li>
+&lt;li>Want to reduce number of disk accesses for operations&lt;/li>
+&lt;li>File system metadata
+&lt;ul>
+&lt;li>An inonde that points to the inode array.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="common-patterns" >Common Patterns
+&lt;span>
+&lt;a href="#common-patterns">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Sequential
+&lt;ul>
+&lt;li>Processed in sequential order&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Random access
+&lt;ul>
+&lt;li>Access any block in a file without passing predecessors (skipping)&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Keyed access
+&lt;ul>
+&lt;li>Search for block with particular values&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="hard-and-soft-links" >Hard and soft links
+&lt;span>
+&lt;a href="#hard-and-soft-links">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;ul>
+&lt;li>Each inode has a count of hard links&lt;/li>
+&lt;li>&lt;/li>
+&lt;/ul>
+&lt;h2 id="fast-file-system" >Fast File System
+&lt;span>
+&lt;a href="#fast-file-system">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;ul>
+&lt;li>Cluster related objects together&lt;/li>
+&lt;li>&lt;/li>
+&lt;/ul>
+&lt;h3 id="metadata-synchronously" >Metadata Synchronously
+&lt;span>
+&lt;a href="#metadata-synchronously">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>If we create a directory entry and crash during the middle of creating a directory entry and an IO block, what happens?&lt;/p>
+&lt;ul>
+&lt;li>Block on disk&lt;/li>
+&lt;li>Inode&lt;/li>
+&lt;li>Directory entry pointing to an inode&lt;/li>
+&lt;/ul>
+&lt;p>To ensure things work correctly, we need to flush to disk before the pointer pointing to the inode gets flushed. Therefore, we need to write out the data first, then create the inode, and then create the directory entry pointing to it. When deleting, first delete the directory entry, and then the inode.&lt;/p>
+&lt;p>Log inode and dir entry to a log first. On crash, re-execute the log to copy back the file system. This is 2x the IO writes.
+1GB sized journals.&lt;/p></description></item><item><title>BU 375 Operations</title><link>https://blog.elijahlopez.ca/posts/bu-375-operations/</link><pubDate>Sat, 04 Jun 2022 10:23:48 -0400</pubDate><guid>https://blog.elijahlopez.ca/posts/bu-375-operations/</guid><description>&lt;!-- markdownlint-disable MD033 -->
 &lt;p>This document are my notes and midterm review for the BU 375 Operations course taught at Wilfrid Laurier University. While studying for the midterm, I discovered my own formulae shortcuts, undoubtedly due to &amp;ldquo;blind teaching syndrome&amp;rdquo; (I made that term up).
 So let&amp;rsquo;s begin. I&amp;rsquo;ll add a divider to let you know what is part of the midterm.&lt;/p>
 &lt;div>
