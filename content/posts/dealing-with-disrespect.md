@@ -1,8 +1,9 @@
 ---
-title: "Handling Disrespect"
+title: "Dealing With Disrespect"
 date: 2022-11-19T22:21:06-05:00
 draft: false
 hidden: true
+aliases: ['/posts/handling-disrespect/']
 ---
 
 One of the worst, awkward, or embarrassing things is when someone disrespects you.
