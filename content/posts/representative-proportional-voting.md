@@ -119,6 +119,8 @@ Since this is a in hindsight analysis, numbers for some parties will be under-re
 that some people probably vote Conservative instead of PPC so that the Liberals don't win. Therefore, under RPV, we could expect the bigger parties to lose even more seats to the smaller parties. This logic does extend to the Green party, so we could see Green party getting more seats than the NDP. RPV would do away with strategic voting to the point where it would be ignorant to vote for a party other than the one you actually support. A more proportional system
 would also promote bootstrapping of parties as support can be nation wide rather than concentrated in one riding.
 
+Under the RPV system, 99% of voters ended up represented and the 1% although divided, their votes do matter in aggregate. For example, the Free Party had just under the threshold to get a seat. Every vote really does matter under RPV compared to FPTP where voting was a waste of time in hindsight. Only under an RPV system could I ever support a policy that forced citizens to check in to a polling station to vote or explicitly abstain from voting. There would be almost no reason to not vote under RPV as it would be in direct opposition to your interests.
+
 ### Reproducing The Results
 
 Reproduction is very important. My Python code, the CSV file listing both FPTP and RPV results, and a JSON for further analysis can be found on [GitHub](https://github.com/elibroftw/representative-proportional-voting)
