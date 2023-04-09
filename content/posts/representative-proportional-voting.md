@@ -99,7 +99,7 @@ Vote distribution for all parties (that got at least one vote) in the 2021 Canad
 
 ### RPV Results
 
-The Hare quota is 50,322.
+The Hare quota is 50,322. There were 87 seat changes from the FPTP results.
 
 | Party                                     | Seats | Seats % |
 | ------------------------------------- | -------- |----------- |
