@@ -40,7 +40,7 @@ It is simply amazing that computer science can even be applied to politics. I've
         - For each party that has unassigned seats, assign a seat to an unelected riding with the highest percentage voting for that party.
 6. Use a list or graph of all ridings with their assigned representative to keep track of seat assignment / election results.
 
-## 2021 General Elections FPTP Versus RPV
+## 44th 2021 General Elections FPTP Versus RPV
 
 I actually wrote the first draft of this article in Nov-2021, however to make it publishable, I wanted to show how the 2021 election would be different if RPV was used rather than FPTP.
 To do this, I made a Python script that downloaded 2021 election polling data, transformed that data to be useful, implemented the RPV algorithm, and lastly summarized the results for consumption.
