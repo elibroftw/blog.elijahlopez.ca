@@ -3,6 +3,7 @@ title: "USDC De-pegging is/was Panic Selling"
 date: 2023-03-15T23:26:23-04:00
 draft: false
 tags: [
+    "opinion",
     "finance"
 ]
 ---
