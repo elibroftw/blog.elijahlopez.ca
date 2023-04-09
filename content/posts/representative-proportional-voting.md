@@ -51,7 +51,7 @@ Vote distribution for all parties (that got at least one vote) in the 2021 Canad
 
 - There were 338 districts in this election.
 - Total number of votes counted was 17,034,224
-- Total votes that went to a party is 17,008,6
+- Total votes that went to a party is 17,008,619
 
 | Party                                     | Votes        | Vote % |
 | ------------------------------------- | ------------- | -----------
