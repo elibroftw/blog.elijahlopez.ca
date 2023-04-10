@@ -140,6 +140,8 @@ One is objectively better than the other. Crypto is still in its infancy, so it'
 
 ### ETH + Aztec Protocol
 
+/4/9/2023: Well well well, zk.money has been [sunset](https://medium.com/aztec-protocol/sunsetting-aztec-connect-a786edce5cae) so we'll see what the Noir protocol the Aztec team is working on now.
+
 9/29/2022: Well I was right, the lack of ETH fungibility is proof that layer two solutions
 have a serious flaw and can make you a criminal or sanctioned just for wanting privacy. Tornado Cash being sanctioned means its worse even legally than using Monero. So now I will discuss an alternative [for now, as censorship is already brewing](https://twitter.com/aztecnetwork/status/1560710567249096704?s=20&t=-EDlvVlsKLdgAxGjJSfHJA). It's only a matter of time before the next popular privacy protocol gets sanctioned, so again, the main argument is that layer 2 protocols simply lack fungibility because
 observers can tell that a privacy preserving protocol was used and can thus discriminate your coins.
