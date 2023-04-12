@@ -64,7 +64,7 @@ It is simply amazing that computer science can even be applied to politics. I've
     - Allocate seats to whichever party has the highest seat priority until total seats have been allocated.
     - The seat priority is calculated using <img class=equation-tall src="https://latex.codecogs.com/svg.image?A_n^2=\frac{V^2}{n(n+1)}"> where V is the the number of votes that party received, and n is the number of seats that party has been allocated so far.
 5. Assign seats based on highest proportion of votes per riding.
-    - Sort parties in **ascending** order based on number of seats allocated.
+    - Sort parties in **ascending** order based on number of seats allocated and prefer parties with higher votes to break ties
     - Iterate over the parties in the previous order until all parties have had their seats assigned to a riding.
         - For each party that has unassigned seats, assign a seat to an unelected riding with the highest percentage voting for that party.
 6. Use a list or graph of all ridings with their assigned representative to keep track of seat assignment / election results.
