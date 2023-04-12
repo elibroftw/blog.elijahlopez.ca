@@ -23,7 +23,7 @@ I've included this table at the top to highlight how ineffective the current ele
 
 ## Introduction
 
-The 2021 Canadian general elections had just passed and I was curious as to how proportional the election results were. I noticed that the Liberals were over-represented. I then began a thought experiment on what an ideal democratic electoral process would look like for Canadian parliamentary elections. When the Liberal party led by Justin Trudeau came into power in 2015, one of their promises was electoral reform of the  First Past the Post system currently in use. However, as the last elections have shown us, the Liberal party is substantially benefitting from First Past the Post and it is not strategic for them to follow through on their first campaign promise.
+The 2021 Canadian general elections had just passed and I was curious as to how proportional the election results were. I noticed that the Liberals were over-represented. I then began a thought experiment on what an ideal democratic electoral process would look like for Canadian parliamentary elections. When the Liberal party led by Justin Trudeau came into power in 2015, one of their promises was electoral reform of the First Past the Post system currently in use. However, as the last elections have shown us, the Liberal party is substantially benefitting from First Past the Post and it is not strategic for them to follow through on their first campaign promise.
 
 ### Party List Proportional Representation
 
