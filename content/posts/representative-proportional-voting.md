@@ -17,7 +17,7 @@ This article describes and demonstrates a novel solution for electoral reform th
 |Conservative|119|35.21%|115 **-**|34.02%|33.74%|
 |Liberal|160|47.34%|111 -|32.84%|32.62%|
 
-I've included this table at the top to highlight how ineffective the current electoral system is at giving voters a voice. From a numerical point of view, by analyzing each district, FPTP resulted in **52.15% of all votes (8,883,902), NOT GOING TOWARDS AN ELECTED MP SITTING  IN THE HOUSE OF COMMONS!**. In contrast, under RPV, 99% votes went towards an elected candidate.
+I've included this table at the top to highlight how ineffective the current electoral system is at giving voters a voice. From a numerical point of view, by analyzing each district, FPTP resulted in **52.15% of all votes (8,883,902), NOT GOING TOWARDS AN ELECTED MP SITTING  IN THE HOUSE OF COMMONS!**. In contrast, under RPV, 99% of votes went towards an elected candidate.
 
 {{< toc >}}
 
