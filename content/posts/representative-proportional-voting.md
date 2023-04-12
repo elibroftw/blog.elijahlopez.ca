@@ -6,6 +6,17 @@ tags: [
 ]
 ---
 
+The main point of this article is to demonstrate that we need and are capable of having more democratic elections where every valid vote cast does actually contribute to forming the house of commons. Here are the results of the 2021 Canadian general election compared to if the Representative Proportional Voting (RPV) electoral system described in this article was used. The electoral system currently used in Canada is [First Past the Post (FPTP)](https://www.elections.ca/content.aspx?section=res&dir=ces&document=part1&lang=e#p13).
+
+|Party|FPTP Seats|FPTP Seats %|RPV Seats|RPV Seats %|Vote %|
+|:-|:-|:-|:-|:-|:-|
+|People's Party - PPC|0|0%|17 +|5.03%|4.94%|
+|Green Party|2|0.59%|8 +|2.37%|2.33%|
+|NDP-New Democratic Party|25|7.40%|61+|18.05%|17.82%|
+|Bloc Québécois|32|9.47%|26 -|7.69%|7.64%|
+|Conservative|119|35.21%|115 **-**|34.02%|33.74%|
+|Liberal|160|47.34%|111 -|32.84%|32.62%|
+
 {{< toc >}}
 
 ## Introduction
