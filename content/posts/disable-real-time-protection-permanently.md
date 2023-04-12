@@ -9,9 +9,9 @@ tags: [
 
 As a developer who dabbles with web development, Real-Time protection ramps up CPU usage unnecessarily.
 
-First check if you have `gpedit.msc` installed (by searching the start menu or by using Win + R)
-
 ### Installing Group Policy Editor
+
+First check if you have `gpedit.msc` installed (by searching the start menu or by using Win + R)
 
 1. Install gpedit.msc by downloading [gpedit-enalber.bat](https://www.majorgeeks.com/files/details/add_gpedit_msc_with_powershell.html).
 2. Extract the zip from the previous step
