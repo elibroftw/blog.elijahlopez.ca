@@ -6,7 +6,7 @@ tags: [
 ]
 ---
 
-This article describes and demonstrates a novel solution for electoral reform that is practical to implement and is more effective in holding democratic elections where every vote cast contributes to forming a governing body. Below is the summary results of the 2021 Canadian general election compared to if the Representative Proportional Voting (RPV) electoral system described in this article was used. The electoral system currently used in Canada is [First Past the Post (FPTP)](https://www.elections.ca/content.aspx?section=res&dir=ces&document=part1&lang=e#p13).
+This article describes and demonstrates a novel solution for electoral reform called Representative Proportional Voting (RPV), that is practical to implement and is more effective in holding elections where every vote contributes to the formation of a government body. Below is the overall results of the 2021 Canadian general election under the present [First Past the Post (FPTP)](https://www.elections.ca/content.aspx?section=res&dir=ces&document=part1&lang=e#p13) electoral system compared to Representative Proportional Voting (RPV).
 
 |Party|FPTP Seats|FPTP Seats %|RPV Seats|RPV Seats %|Vote %|
 |:-|:-|:-|:-|:-|:-|
