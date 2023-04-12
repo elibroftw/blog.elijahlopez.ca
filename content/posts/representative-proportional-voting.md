@@ -6,7 +6,7 @@ tags: [
 ]
 ---
 
-The main point of this article is to demonstrate that we need and are capable of having more democratic elections where every valid vote cast does actually contribute to forming the house of commons. Here are the results of the 2021 Canadian general election compared to if the Representative Proportional Voting (RPV) electoral system described in this article was used. The electoral system currently used in Canada is [First Past the Post (FPTP)](https://www.elections.ca/content.aspx?section=res&dir=ces&document=part1&lang=e#p13).
+This article describes and demonstrates a novel solution for electoral reform that is practical to implement and is more effective at holding democratic elections where every vote cast contributes to forming a governing body. Below is the summary results of the 2021 Canadian general election compared to if the Representative Proportional Voting (RPV) electoral system described in this article was used. The electoral system currently used in Canada is [First Past the Post (FPTP)](https://www.elections.ca/content.aspx?section=res&dir=ces&document=part1&lang=e#p13).
 
 |Party|FPTP Seats|FPTP Seats %|RPV Seats|RPV Seats %|Vote %|
 |:-|:-|:-|:-|:-|:-|
@@ -17,23 +17,37 @@ The main point of this article is to demonstrate that we need and are capable of
 |Conservative|119|35.21%|115 **-**|34.02%|33.74%|
 |Liberal|160|47.34%|111 -|32.84%|32.62%|
 
+I've included this table at the top for to highlight how ineffective the current electoral system is at giving voters a voice. As you read on, you'll see that unlike First Past the Post, Representative Proportional Voting results in a 99% representation of voters and gives 100% of voters a voice.
+
 {{< toc >}}
 
 ## Introduction
 
-The 2021 Canadian general elections had just passed and I was curious as to how proportional the election results were. I noticed that the Liberals were over-represented. I then began a thought experiment on what an ideal democratic electoral process would look like for Canadian parliamentary elections. When the Liberal party came into power, one of their promises was electoral reform of the present first past the post system. However, now that the Liberal party is substantially benefitting from first past the post, it is not strategic for them to follow through on their initial promise. A lot of Canadians demand electoral reform without suggestions, while others use "local representation matters" as a critique against common proportional voting systems (party-list proportional representation). Others try to assert that ranked ballots are the be it end all for democracy, but I digress. Ranked ballots work great when it's just for one specific task, such as mayor or a university student association, but if it were applied to federal elections we would still not have proportional results. Rather, we would see the NDP gaining seats from the LPC and maybe the CPC gaining 2% more votes per district (riding and district are interchangeable). As the title of this article states, I will outline a novel electoral system called the Representative Proportional Voting (RPV) which adapts the existing first past the post in a way that rewards popular independent representatives and ensures that every vote counts and is important. This new technique is applicable to provincial/territorial & federal elections
+The 2021 Canadian general elections had just passed and I was curious as to how proportional the election results were. I noticed that the Liberals were over-represented. I then began a thought experiment on what an ideal democratic electoral process would look like for Canadian parliamentary elections. When the Liberal party led by Justin Trudeau came into power in 2015, one of their promises was electoral reform of the  first-past-the-post system currently in use. However, as the last elections have shown us, the Liberal party is substantially benefitting from first-past-the-post and it is not strategic for them to follow through on their first campaign promise.
+
+### Party List Proportional Representation
+
+A lot of Canadians demand electoral reform without suggestions as to how, while others critique common proportional voting system (e.g. party-list) for lacking "local representation." There are also others asserting or even bringing up ranked ballots as the holy grail for democracy, but I digress.
+
+### Ranked Ballots
+
+Ranked ballots work great when it's just for one localized governance, such as mayor or a university student association. If it were applied to federal elections we would still not have proportional results. Rather, we would see an amalgamation of parties most closely aligned (vote A if not vote B). Ranked voting is strategic voting and minority voters would still be **unrepresented**.
 
 ## RPV Overview
 
-How it works is that an independent candidate will win a riding automatically if they win the first past the post vote for that riding, however a party-affiliated candidate that gets even more than 50% of the votes is not guaranteed to be elected for that riding (but still probable). Rather, for all ridings where an independent candidate did not get the popular vote, the seats are distributed equivalent to how voters voted for each party. In this manner, a party that got even 1% of all votes and never won a popular vote in any riding would be elected. The ridings they would be elected to are the ridings that had the most support for said party. The one downside is that the couple of ridings with the most competitive elections will results in the smaller parties being voted in, which I feel is a valid tradeoff since the current situation is that your vote was meaningless if the representative of the other party got more votes. With my propose voting system, your vote will matter and appear to have mattered even in hindsight. So the three upsides are that independent MPs are favoured, every vote counts (on a federal basis rather than only getting one candidate past the post), and the democratically elected body is proportional to how voters voted federally.
+As the title of this article states, I will outline a novel electoral system called the Representative Proportional Voting (RPV) which adapts the existing First Past the Post in a way that rewards popular independent representatives and ensures that every vote counts and is important. This new technique is applicable to provincial/territorial & federal elections
 
-To incentivize and protect independent candidates, we give independents priority when picking representatives for each riding. If they were included in the [Huntington-Hill](https://en.wikipedia.org/wiki/Huntington-Hill_method) method, even if the district voted more than 50% for the independent candidate, they would no't be allocated any seat whatsoever! That's why I kept the same voting procedures.
+How it works is that an independent candidate will win a riding automatically if they win the First Past the Post vote for that riding, however a party-affiliated candidate that gets even more than 50% of the votes is not guaranteed to be elected for that riding (but still probable). Rather, for all ridings where an independent candidate did not get the popular vote, the seats are pooled and distributed proportional to how voters voted for each party. In this manner, a party that got even 1% of all votes and never won a popular vote in any riding would be elected. The ridings they would be elected to are the ridings that had the most support for said party.
 
-One criticism I'll probably see are people still complaining about local presentation. Local representation will only happen if there is enthusiastic support. No candidate should be entitled to represent a riding without 50% of support and a ranked ballot is not guaranteed to lead to federal wide policies voters want. Therefore, the RPV is a valid compromise. I will now dive into the technicalities as well as the practical results if RPV was the technique used in the last election.
+One possible criticism is that there will be a couple of ridings with competitive results where the smaller parties win.  This is a valid tradeoff since the current situation is that your vote would be meaningless if the representative of the other party got even one more vote than the party-affiliated representative you voted for. With my proposed RPV, all votes will matter even in hindsight. So the upsides are that: independent representatives are favoured, one of the running candidates will win the riding, every vote counts towards the governing body rather than only for a singular riding, and the democratically elected body is proportional to how voters voted.
+
+To incentivize and protect independent candidates, we give independents priority when picking representatives for each riding. If they were included in the [Huntington-Hill](https://en.wikipedia.org/wiki/Huntington-Hill_method) method, even if they won FPTP, it's still possible a seat would not be allocated to them since party-affiliated candidates would have. This is why I kept the same voting procedures / logistics.
+
+I'll probably hear people complaining about a non-FPTP candidate winning. No candidate should be entitled to represent a riding without 50% of support and a ranked ballot is not guaranteed to reflect the federal wide policies voters want. Therefore, RPV is a valid Canadian-centred compromise. I will now dive into the technicalities as well as the practical results if RPV was the system used in the last election.
 
 ## RPV Algorithm
 
-It is simply amazing that computer science can even be applied to politics. I've outlined the algorithm for RPV below. It incorporates many concepts such as FTP, Huntington-Hill (used for electoral college map in the U.S.A.), and
+It is simply amazing that computer science can even be applied to politics. I've outlined the algorithm for RPV below. It incorporates many concepts such as FPTP, Huntington-Hill (fun fact is that it is used for the electoral college points in the U.S.A.), Hare Quota, and even ranked ballots (for niche situations).
 
 1. Just like how it is presently, each person will vote for a candidate in their riding.
     - Voters voting an independent candidate are allowed to rank their preferences for independent candidates with their final preference optionally being a party-affiliated candidate. This ensures that their vote won't be lost in the next steps.
@@ -52,8 +66,9 @@ It is simply amazing that computer science can even be applied to politics. I've
 
 ## 44th 2021 General Elections FPTP Versus RPV
 
-I actually wrote the first draft of this article in Nov-2021, however to make it publishable, I wanted to show how the 2021 election would be different if RPV was used rather than FPTP.
-To do this, I made a Python script that downloaded 2021 election polling data, transformed that data to be useful, implemented the RPV algorithm, and lastly summarized the results for consumption.
+I wrote the first draft of this article in Nov-2021, however I wanted to show how the 2021 election would be different if RPV was used rather than FPTP before I shared RPV to everyone.
+
+Methodology: I wrote Python code that downloaded 2021 election polling data, transformed that data to be useful, implemented the RPV algorithm, supplied data to the algorithm, and lastly summarized the results for consumption.
 
 ### Vote Distribution
 
@@ -120,37 +135,38 @@ The Hare quota is 50,322. There were 87 seat changes from the FPTP results.
 | Liberal                                   | 111   | 32.84% |
 | Conservative                         | 115   | 34.02% |
 
-It's clear that under my proposed system, we can get a 99% representative government body where the 1% that went unrepresented voted for parties that got less than ~50,000 votes (Hare Quota).
-For the list of ridings that would have a different representative, you can download the CSV of the compiled results [here](https://github.com/elibroftw/representative-proportional-voting/releases/download/2021/districts.csv).
+It's clear that under RPV, we can get a 99% representative government body where the 1% that went unrepresented voted for parties that got less than ~50,000 votes (Hare Quota).
+For the list of ridings that would have a different representative, you can download [a CSV of the compiled results](https://github.com/elibroftw/representative-proportional-voting/releases/download/2021/districts.csv).
 
-Some notable things is that all elected parties got more seats than proportional because of that 1% that went to very unpopular parties. The liberals lose 49 seats, NDP doubles their seat count, and the PPC ends up getting more than double the seats than what Green would get. This sort of system would force the Liberals, Conservatives, BQ to address the needs of all Canadians rather than just the ones who are grouped up in one riding.
+Some notable points are that all elected parties would have more seats than the proportional vote because 1% of votes went to very unpopular parties. The liberals lose 49 seats, NDP doubles their seat count, and the PPC ends up getting more than double the seats than what Green would get. This sort of system would force all parties to reach out to every voter even in districts that are considered wins.
 
-Since this is a in hindsight analysis, numbers for some parties will be under-represented even though they won more seats. For example, it is common for voters to vote Liberals just so that the Conservatives don't win and I know
-that some people probably vote Conservative instead of PPC so that the Liberals don't win. Therefore, under RPV, we could expect the bigger parties to lose even more seats to the smaller parties. This logic does extend to the Green party, so we could see Green party getting more seats than the NDP. RPV would do away with strategic voting to the point where it would be ignorant to vote for a party other than the one you actually support. A more proportional system
-would also promote bootstrapping of parties as support can be nation wide rather than concentrated in one riding.
+Since this is a post-election analysis, numbers for some parties will be under-represented even though they won more seats. For example, it is common for voters to vote Liberals just so that the Conservatives don't win and it's possible some people voted Conservative instead of PPC so that the Liberals don't win. Therefore, under RPV, we could reasonably expect bigger parties to lose even more seats to smaller parties. This logic does extend to parties on the same side of the spectrum such as the Green party. As seen in the CSV provided, we could see Green party getting seats that would have been NDP under FPTP.
 
-Under the RPV system, 99% of voters ended up represented and the 1% although divided, their votes do matter in aggregate. For example, the Free Party had just under the threshold to get a seat. Every vote really does matter under RPV compared to FPTP where voting was a waste of time in hindsight. Only under an RPV system could I ever support a policy that forced citizens to check in to a polling station to vote or explicitly abstain from voting. There would be almost no reason to not vote under RPV as it would be in direct opposition to your interests.
+RPV would do away with strategic voting to the point where it would be ignorant to vote for a party other than the one you genuinely support. A greater proportional system
+would also promote bootstrapping of parties as support only needs to be nation wide to win a seat rather than concentrated in one riding.
+
+Under the RPV system, 99% of voters ended up represented. The votes of the 1%, although divided, do matter in aggregate. For example, the Free Party had just under the threshold to get a seat. Every vote really does matter under RPV compared to FPTP, where voting might have seemed like a waste of time in hindsight. Only under an RPV system would I ever support a policy that forced citizens to check into a polling station to vote or explicitly abstain from voting. There would be almost no subjective reasons to avoid voting under RPV as it would be in direct opposition to your interests.
 
 ### Reproducing The Results
 
-Reproduction is very important. My Python code, the CSV file listing both FPTP and RPV results, and a JSON for further analysis can be found on [GitHub](https://github.com/elibroftw/representative-proportional-voting)
+Reproduction is very important. My Python code, the CSV file listing both FPTP and RPV results, and a JSON for further analysis can be found on [GitHub](https://github.com/elibroftw/representative-proportional-voting).
 
 ## Conclusion
 
-We want peoples' votes to count so one party edging out the other party by a couple percent should not guarantee a win and does not guarantee a win under RPV. I spent probably over 12 hours on this article so I really hope you enjoyed it and opened your mind up.  I hope this article was clear as I did give it another breath of life today (April 8th 2023). If not, feel free to ask questions. This article was an overview and a demonstration of what RPV could do for democracy in Canada, and maybe even the world. If I was/am ever an MP or MPP, I would propose to use this method for all provincial/territorial and federal elections.
+We want to give every voter a voice so one party edging out the other party by a couple percent is unreasonable to guarantee a win and does not guarantee a win under RPV. I hope you enjoyed this article and that it opened your mind, and feel free to ask questions. This article was an overview and a demonstration of what RPV could do for democracy in Canada, and maybe even the world. If I was/am ever an MP or MPP, I would propose to use this method for all provincial/territorial and federal elections.
 
 ## Extensions
 
-One criticism that I can see for my own method is that independent candidates are given a relatively unfair advantage to win their riding. However, an independent candidate will most likely lack the financial and labour resources
-that party-affiliated candidates will have. Our country is considered a democracy even with the FPTP electoral system, so allowing independent candidates to make use of it in a reformed electoral system is really not a valid argument if the majority of Canadians haven't experienced something better than first past the system in the _first_ place, especially when results are more democratic anyways.
+One criticism that I can see for my own method is that independent candidates are given a relatively unfair advantage to win their riding. However, an independent candidate will most likely lack the financial + labour + social resources
+that party-affiliated candidates will have. Our country is considered a democracy even with the FPTP electoral system, so allowing independent candidates to make use of it in a reformed electoral system is really not a good argument especially when results are more democratic anyways. The majority of Canadians have not experienced something better than First Past the Post in the _first_ place.
 
-The CSV file I provided can be used to draw a colored map as well as note down which parties lost to which parties the most. For example, Conservatives went down 4 seats in total, but if you look at the CSV, half the seats lost were to the PPC and the other half to the NDP. They gained most of these seats back from the Liberals and some from teh Bloc Québécois. Absolutely 0 seats were lost to the Liberals. Another example is that the NDP lost two seats to the Green party and one seat to the PPC. That one seat is the only seat the PPC gained from a party other than the Conservatives.
+The CSV file provided can be used to draw a colored map of each riding as well as to summarize which parties traded seats. For example, Conservatives went down 4 seats in total, but if you look at the CSV, half the seats lost were to the PPC and the other half to the NDP. They gained most of these seats back from the Liberals and some from the Bloc Québécois. Zero seats were lost to the Liberals. Another example is that the NDP lost two seats to the Green party and one seat to the PPC. That one seat is the only seat the PPC gained from a party other than the Conservatives.
 
 My hypothesis is that this type of system would force the mainstream parties to invite smaller parties to debates. Otherwise the smaller party voters would simply not watch the debates and vote for the smaller party anyways.
-We know that the PPC got votes even with the backdrop of strategic voting, but only under FPTP does 5% round down to 0%. In a proportional system, all parties got more.
+We know that the PPC got votes even with the backdrop of strategic voting, but only under FPTP does 5% round down to 0%. In a proportional system, all parties had more seats proportional than voters' choices.
 
-There is also the system countries like Norway use, however my main point of my system is to make electoral reform easy, simple, and effective with minimal tradeoffs.
+There is also a system countries like Norway use, however the main point is to make electoral reform easy, simple, and effective with minimal tradeoffs.
 
-## Tricks
+## Electoral Misconduct
 
-Like with every law and system, there will be people trying to bend it. One such situation I could forsee are candidates running as an independents but supported by a party through advertisements/funding. Elections Canada would be tasked at ensuring such _faltugiri_ (a non-english word, hard to explain its definition, infer what it means) would not be occurring and the party would have their funding for that riding (as in the number votes used to appropriate funds) split equally amongst the other parties in that riding. The so called independent candidate would be barred from running for an election. I'm not sure if its possible, but such a scheme should also result in criminal charges. It is anti-democratic and would be equivalent to treason as you are trying to defraud an entire riding that is part of the federal or provincial/territorial body.
+Like with every law and system, there will be people trying to bend it. One such situation I could forsee far into the future are candidates running as an independents but supported by a party through advertisements/funding. Elections Canada would be tasked at ensuring such ~~_faltugiri_~~ horsing around would  be met with major fines.
