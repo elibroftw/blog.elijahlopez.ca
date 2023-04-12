@@ -6,7 +6,7 @@ tags: [
 ]
 ---
 
-This article describes and demonstrates a novel solution for electoral reform that is practical to implement and is more effective at holding democratic elections where every vote cast contributes to forming a governing body. Below is the summary results of the 2021 Canadian general election compared to if the Representative Proportional Voting (RPV) electoral system described in this article was used. The electoral system currently used in Canada is [First Past the Post (FPTP)](https://www.elections.ca/content.aspx?section=res&dir=ces&document=part1&lang=e#p13).
+This article describes and demonstrates a novel solution for electoral reform that is practical to implement and is more effective in holding democratic elections where every vote cast contributes to forming a governing body. Below is the summary results of the 2021 Canadian general election compared to if the Representative Proportional Voting (RPV) electoral system described in this article was used. The electoral system currently used in Canada is [First Past the Post (FPTP)](https://www.elections.ca/content.aspx?section=res&dir=ces&document=part1&lang=e#p13).
 
 |Party|FPTP Seats|FPTP Seats %|RPV Seats|RPV Seats %|Vote %|
 |:-|:-|:-|:-|:-|:-|
@@ -27,19 +27,19 @@ The 2021 Canadian general elections had just passed and I was curious as to how 
 
 ### Party List Proportional Representation
 
-A lot of Canadians demand electoral reform without suggestions as to how, while others critique common proportional voting system (e.g. party-list) for lacking "local representation." There are also others asserting or even bringing up ranked ballots as the holy grail for democracy, but I digress.
+A lot of Canadians demand electoral reform without suggestions as to how, while others criticize common proportional voting system (e.g. party-list) for lacking "local representation." There are also others asserting or even bringing up ranked ballots as the holy grail for democracy, but I digress.
 
 ### Ranked Ballots
 
-Ranked ballots work great when it's just for one localized governance, such as mayor or a university student association. If it were applied to federal elections we would still not have proportional results. Rather, we would see an amalgamation of parties most closely aligned (vote A if not vote B). Ranked voting is strategic voting and minority voters would still be **unrepresented**.
+Ranked ballots work great when it's just for one localized governance, such as mayor or a university student association. If it were applied to federal elections we would still not have proportional representation. Rather, we would see an amalgamation of parties most closely aligned (vote A if not vote B). Ranked voting is strategic voting and minority voters would still be **unrepresented**.
 
 ## RPV Overview
 
 As the title of this article states, I will outline a novel electoral system called the Representative Proportional Voting (RPV) which adapts the existing First Past the Post in a way that rewards popular independent representatives and ensures that every vote counts and is important. This new technique is applicable to provincial/territorial & federal elections
 
-How it works is that an independent candidate will win a riding automatically if they win the First Past the Post vote for that riding, however a party-affiliated candidate that gets even more than 50% of the votes is not guaranteed to be elected for that riding (but still probable). Rather, for all ridings where an independent candidate did not get the popular vote, the seats are pooled and distributed proportional to how voters voted for each party. In this manner, a party that got even 1% of all votes and never won a popular vote in any riding would be elected. The ridings they would be elected to are the ridings that had the most support for said party.
+How it works is that an independent candidate will win a riding automatically if they win the First Past the Post vote for that riding, however a party-affiliated candidate that gets more than 50% of the votes is not guaranteed to be elected for that riding (but still probable). Rather, for all ridings where an independent candidate did not get the popular vote, the seats are pooled and distributed proportional to how voters voted for each party. In this manner, a party that got even 1% of all votes and never won a popular vote in any riding would be elected. The ridings they would be elected to are the ridings that had the most support for said party.
 
-One possible criticism is that there will be a couple of ridings with competitive results where the smaller parties win.  This is a valid tradeoff since the current situation is that your vote would be meaningless if the representative of the other party got even one more vote than the party-affiliated representative you voted for. With my proposed RPV, all votes will matter even in hindsight. So the upsides are that: independent representatives are favoured, one of the running candidates will win the riding, every vote counts towards the governing body rather than only for a singular riding, and the democratically elected body is proportional to how voters voted.
+One possible criticism is that there will be ridings where the candidate that is elected didn't get second or third either. This is a valid tradeoff since the current situation is that your vote would be meaningless if the representative of the other party got even one more vote than the party-affiliated representative you voted for. With my proposed RPV, all votes will matter even in hindsight. So the upsides are that: independent representatives are favoured, one of the running candidates will win the riding, every vote counts towards the governing body rather than only for a singular riding, and the democratically elected body is proportional to how voters voted.
 
 To incentivize and protect independent candidates, we give independents priority when picking representatives for each riding. If they were included in the [Huntington-Hill](https://en.wikipedia.org/wiki/Huntington-Hill_method) method, even if they won FPTP, it's still possible a seat would not be allocated to them since party-affiliated candidates would have. This is why I kept the same voting procedures / logistics.
 
