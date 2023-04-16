@@ -3,7 +3,8 @@ title: "Representative Proportional Voting"
 # date: 2021-11-19T11:58:17-04:00   # idea first conceptualized
 date: 2023-04-12T17:14:32-04:00
 tags: [
-  "canada",
+  'canada',
+  'politics'
 ]
 ---
 
