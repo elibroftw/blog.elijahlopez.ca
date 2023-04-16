@@ -2,7 +2,9 @@
 title: "Oneplus 6T Review"
 date: 2022-07-28T20:15:28-04:00
 tags: [
-  "review"
+  'review',
+  'mobile',
+  'android',
 ]
 ---
 
@@ -15,3 +17,7 @@ Anyways, let's move on to the phone itself. My favorite part is always software 
 Moving on, let's talk about navigation. One gripe I have is the inability to use the same app transition that is found on pixels. The buttery smooth one found on other Android 12 devices. I had to stop using Nova launcher because 3rd party launchers, and for oneplus the default one as well, was never supported with this feature. In terms fo performance, the oneplus 6t can handle games like Cod fine, although the phone's temperature gets hot and battery life is reduced significantly after an hour or two. I'm more of a pc gamer so i prefer AAA games than mobile. I'd say I play a mobile game every two months. I really dislike the state of mobile gaming, most games are designed to waste your time, and it's obvious. In comparison to AAA games where games are explicitly designed to be fun, and this fun keeps you playing.
 
 Since it's relevant, the geekbench 5 score is 294 for single core and 1056 for multi core. 1000 is the baseline for the i3-8100 and my old razer Blade Stealth (i5-7200u) scores 500 for single core and 590 for multi core. My phone's scores are significantly under average as geekbench would report the oneplus 6T to have a single score around 1000. Not sure how a 4 year old 8 series snapdragon can equal the desktop performance of an i3-8100, but that's what geekbench said. This performance lackluster is present when I have multiple tabs open in Firefox or basically push any software to its limit, even google keep, and sync for reddit. Ram management breaks at certain times where entire pages in Firefox will reload when swiping between tabs. When I run the camera, everything in ram is lost. If I open the camera app, all the other apps are no longer saved and end up refreshing. I made sure to copy this review before opening the camera to double check. Yep this form was cleared. Camera quality & everything else is fine. Top of volume rocker rarely works. Wish phones were built for 5 years, and not 3.
+
+EDIT 2023/4/15:
+
+The phone has been glitching. The camera is slow, the audio freezes. Either it's due to the oneplus buds pro or something else. Anyways, I'm getting a new phone. The OnePlus 11 5G seems too expensive, and the OnePlus 10T is a bit bigger as my dad already has it. It seems to lack the ringer so that's a bumper. The pixel on the other hand has top notch software image processing which beats the processing done by iPhones. It is also smaller or just as big as the OnePlus 6T. It's already annoying using my phone with one hand, so I can't wait to have a phone that's a tiny bit smaller and easier to hold. The software support will be 3 android updates which will be amazing. So I will get android 14, 15, and 16; not to mention my OnePlus 6T is running Android 11 right now! So I haven't experienced android 12 nor Android 13. Seems like Android 12 added one handed mode, so I'll have that too.
