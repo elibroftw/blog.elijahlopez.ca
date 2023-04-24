@@ -1488,7 +1488,7 @@ when a failure occurs&lt;/p>
 &lt;li>&lt;a href="#course-topics">Course Topics&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#assignment-helpers">Assignment Helpers&lt;/a>
 &lt;ul>
-&lt;li>&lt;a href="#submitting">Submitting&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#cs-350-cli">CS 350 CLI&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#how-to-add-to-path">How to add to PATH&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#pro-tip">Pro tip&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#custom-directory-for-os161">Custom Directory for OS/161&lt;/a>&lt;/li>
@@ -1654,9 +1654,9 @@ when a failure occurs&lt;/p>
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
-&lt;/h2>&lt;h3 id="submitting" >Submitting
+&lt;/h2>&lt;h3 id="cs-350-cli" >CS 350 CLI
 &lt;span>
-&lt;a href="#submitting">
+&lt;a href="#cs-350-cli">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
@@ -1670,12 +1670,23 @@ when a failure occurs&lt;/p>
 &lt;/ul>
 &lt;/li>
 &lt;/ul>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>cs350_submit os161/os161-1.99/kern/compile/ASST0 ASST0
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cs350_submit userspace/ASSTUSER0 ASSTUSER0
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;details>
-&lt;summary>cs350_cli.py&lt;/summary>
-&lt;script type="application/javascript" src="https://gist.github.com/elibroftw/36d18406d6be775e2c52af9d19571c42.js">&lt;/script>
-&lt;/details>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic"># setup new machine&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>./cs350_cli.py configure
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic"># configure new assignment&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>./cs350_cli.py new &lt;span style="color:#3677a9">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic"># build and run the kernel for an assignment&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>./cs350_cli.py build &lt;span style="color:#3677a9">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>./cs350_cli.py run [uint]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic"># gdb requires you to run the following in two different terminals&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>./cs350_cli.py debug &lt;span style="color:#3677a9">2&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>./cs350_cli.py debug attach &lt;span style="color:#3677a9">2&lt;/span> --breakpoints file.c:30 file2.c:50
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic"># submit and see grade later&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>./cs350_cli.py submit &lt;span style="color:#3677a9">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic"># internally calls:&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic"># cs350_submit os161/os161-1.99/kern/compile/ASST0 ASST0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic"># cs350_submit userspace/ASSTUSER0 ASSTUSER0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>./cs350_cli.py grade &lt;span style="color:#3677a9">0&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;a href="https://gist.github.com/elibroftw/36d18406d6be775e2c52af9d19571c42">cs350_cli.py&lt;/a>&lt;/p>
 &lt;h3 id="how-to-add-to-path" >How to add to PATH
 &lt;span>
 &lt;a href="#how-to-add-to-path">
