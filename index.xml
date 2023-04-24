@@ -2556,6 +2556,7 @@ when a failure occurs&lt;/p>
 &lt;ul>
 &lt;li>&lt;a href="#cpu-scheduling">CPU Scheduling&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#first-come-first-served">First Come First Served&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#bursts-of-computation-and-io">Bursts of Computation and I/O&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#shortest-job-first">Shortest Job First&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#round-robin">Round Robin&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#time-quantum">Time Quantum&lt;/a>&lt;/li>
@@ -2563,6 +2564,8 @@ when a failure occurs&lt;/p>
 &lt;li>&lt;a href="#multilevel-feedback-queue">Multilevel Feedback Queue&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#priority-donation">Priority Donation&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#borrowed-virtual-time-scheduler">Borrowed Virtual Time Scheduler&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#sleep--wakeup">Sleep / Wakeup&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#real-time-threads">Real-time Threads&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;li>&lt;a href="#io">I/O&lt;/a>
@@ -3470,9 +3473,18 @@ to be written to the disk.&lt;/p>
 &lt;/span>
 &lt;/h3>&lt;p>If P1 = 24, P2 = 3, P3 = 3,&lt;/p>
 &lt;ul>
-&lt;li>Then throughput = 3 / 30 = 0.1 jobs / sec.&lt;/li>
-&lt;li>Turnaround time: (end times of (24 + 27 + 30) / 3) = 27&lt;/li>
+&lt;li>&lt;strong>Throughput&lt;/strong> = jobs / total time = 3 / 30 = 0.1 jobs / sec.&lt;/li>
+&lt;li>&lt;strong>Turnaround time&lt;/strong> = sum of end times / jobs = (24 + 27 + 30) / 3 = 27&lt;/li>
+&lt;li>long periods where no I/O is issued and CPU held&lt;/li>
+&lt;li>poor I/O device utilization&lt;/li>
 &lt;/ul>
+&lt;h3 id="bursts-of-computation-and-io" >Bursts of Computation and I/O
+&lt;span>
+&lt;a href="#bursts-of-computation-and-io">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Jobs are both compute and I/O waiting. Therefore overlap I/O and compute from multiple jobs.&lt;/p>
 &lt;h3 id="shortest-job-first" >Shortest Job First
 &lt;span>
 &lt;a href="#shortest-job-first">
@@ -3480,9 +3492,23 @@ to be written to the disk.&lt;/p>
 &lt;/a>
 &lt;/span>
 &lt;/h3>&lt;ul>
-&lt;li>Attempts to minimize turnaround time, but ends up minimizing waiting time and response time&lt;/li>
-&lt;li>With preemption, it is called shortest-remaining-time-first.&lt;/li>
-&lt;li>Requires estimating burst time because future cannot be predicted&lt;/li>
+&lt;li>Schedule the job whose next CPU burst is the shortest&lt;/li>
+&lt;li>Attempts to minimize turnaround time
+&lt;ul>
+&lt;li>Ends up &lt;strong>minimizing waiting time&lt;/strong> and &lt;strong>response time&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>With preemption, it is called shortest-remaining-time-first
+&lt;ul>
+&lt;li>preemption means if a new job that has shorter CPU burst length, replace the job&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Requires estimating burst time because future cannot be predicted
+&lt;ul>
+&lt;li>Exponentially weighted average&lt;/li>
+&lt;li>T&lt;sub>n+1&lt;/sub> = alpha * t&lt;sub>n&lt;/sub> + (1 - alpha) * T&lt;sub>n&lt;/sub>&lt;/li>
+&lt;/ul>
+&lt;/li>
 &lt;li>Can lead to unfairness and starvation&lt;/li>
 &lt;/ul>
 &lt;h3 id="round-robin" >Round Robin
@@ -3492,7 +3518,7 @@ to be written to the disk.&lt;/p>
 &lt;/a>
 &lt;/span>
 &lt;/h3>&lt;ul>
-&lt;li>Preempts job after some time and move it to the back of a FIFO&lt;/li>
+&lt;li>Preempts job after some time (quantum) and move it to the back of a FIFO&lt;/li>
 &lt;li>Disadvantages
 &lt;ul>
 &lt;li>Context switching
@@ -3514,8 +3540,8 @@ to be written to the disk.&lt;/p>
 &lt;/span>
 &lt;/h3>&lt;ul>
 &lt;li>10-100msec&lt;/li>
-&lt;li>want larger than context switch cost (why?)&lt;/li>
-&lt;li>majority of bursts should be less than quantum (why?)&lt;/li>
+&lt;li>want larger than context switch cost so that context switching isn&amp;rsquo;t completely suboptimal&lt;/li>
+&lt;li>majority of bursts should be less than quantum, otherwise way too much switching&lt;/li>
 &lt;li>not too large that it&amp;rsquo;s basically FCFS&lt;/li>
 &lt;/ul>
 &lt;h3 id="priority-scheduling" >Priority Scheduling
@@ -3549,26 +3575,20 @@ to be written to the disk.&lt;/p>
 &lt;/a>
 &lt;/span>
 &lt;/h4>&lt;ul>
-&lt;li>&lt;code>p_nice&lt;/code>: user-settable weighting factor&lt;/li>
-&lt;li>&lt;code>p_estcpu&lt;/code> - per-process CPU usage
+&lt;li>&lt;em>p&lt;sub>nice&lt;/sub>&lt;/em>: user-settable weighting factor&lt;/li>
+&lt;li>&lt;em>p&lt;sub>estcpu&lt;/sub>&lt;/em>: per-process CPU usage
 &lt;ul>
 &lt;li>Incremented whenever timer interrupt found proc. running&lt;/li>
 &lt;li>Decayed every second while process runnable
-&lt;code>p_estcpu&lt;/code> = (2 * load) / (2 * load + 1) * p_estcpu + p_nice&lt;/li>
+&lt;img class=equation-tall src="https://latex.codecogs.com/svg.image?p_{estcpu}=\frac{2\times load}{2 \times load + 1}\times p_{estcpu} + p_{nice}">&lt;/li>
 &lt;li>Load is sampled average of length of run queue plus short-term sleep queue over last minute&lt;/li>
 &lt;/ul>
 &lt;/li>
-&lt;li>Run queue determined by &lt;code>p_usrpri/4&lt;/code>
-&lt;ul>
-&lt;li>&lt;code>p_usrpri&lt;/code> = 50 + (p_estcpu / 4) + 2 * p_nice&lt;/li>
+&lt;li>Run queue determined by &lt;em>p&lt;sub>usrpri&lt;/sub>&lt;/em> / 4
+&lt;img class=equation-tall src="https://latex.codecogs.com/svg.image?p_{usrpri}=50 + \frac{p_{estcpu}}{4} + 2 \times p_{nice}\leq127">&lt;/li>
+&lt;li>For sleeping threads, update &lt;em>p&lt;sub>estcpu&lt;/sub>&lt;/em> when runnable using &lt;em>p&lt;sub>slptime&lt;/sub>&lt;/em> to avoid unnecessary computes:&lt;/li>
 &lt;/ul>
-&lt;/li>
-&lt;li>For sleeping threads, update &lt;code>p_estcpu&lt;/code> on wake using &lt;code>p_slptime&lt;/code> to avoid unnecessary computes
-&lt;ul>
-&lt;li>Decay: &lt;code>p_estcpu&lt;/code> = (2 * load) / (2 * load + 1) ^ &lt;code>p_slptime&lt;/code> * &lt;code>p_estcpu&lt;/code>&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;/ul>
+&lt;img class=equation-tall src="https://latex.codecogs.com/svg.image?p_{estcpu}=\frac{2\times load}{2 \times load + 1}^{p_{slptime}}\times p_{estcpu}">
 &lt;h3 id="priority-donation" >Priority Donation
 &lt;span>
 &lt;a href="#priority-donation">
@@ -3584,12 +3604,50 @@ to be written to the disk.&lt;/p>
 &lt;/a>
 &lt;/span>
 &lt;/h3>&lt;ul>
-&lt;li>run process with lowest effective virtual time&lt;/li>
-&lt;li>Ei = Ai - (warpi ? Wi : 0)&lt;/li>
-&lt;li>Ej = Ei - C / wi where C is the context switch cost (ignore when j just became runnable)&lt;/li>
-&lt;li>Ai += t / wi&lt;/li>
+&lt;li>Run process with lowest effective virtual time (E)&lt;/li>
+&lt;li>Use weights to get each processes fraction of CPU (seconds per virtual time tick while process has CPU)&lt;/li>
+&lt;li>track actual virtual time A&lt;sub>i&lt;/sub> += t / w&lt;sub>i&lt;/sub>&lt;/li>
+&lt;li>E&lt;sub>i&lt;/sub> = A&lt;sub>i&lt;/sub> - (warp&lt;sub>i&lt;/sub> ? W&lt;sub>i&lt;/sub> : 0)
+&lt;ul>
+&lt;li>W&lt;sub>i&lt;/sub> is warp factor (thread precedence)&lt;/li>
 &lt;/ul>
+&lt;/li>
+&lt;li>Run j if E&lt;sub>j&lt;/sub> &amp;lt;= E&lt;sub>i&lt;/sub> - C / w&lt;sub>i&lt;/sub>
+&lt;ul>
+&lt;li>C is the context switch cost&lt;/li>
+&lt;li>Ignore context switch if j has just become runnable to avoid affecting response time&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>BVT example&lt;/p>
 &lt;p>&lt;img src="https://blog.elijahlopez.ca/images/cs-350/bvt-example.png" alt="BVT example">&lt;/p>
+&lt;h3 id="sleep--wakeup" >Sleep / Wakeup
+&lt;span>
+&lt;a href="#sleep--wakeup">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Increase actual time after wakeup (decreases priority)
+&lt;ul>
+&lt;li>Otherwise starvation could occur on wakeup&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Scheduler Virtual Time (SVT) is the minimum A for all runnable threads&lt;/li>
+&lt;li>When waking up a process, set A to max{A_&lt;sub>i&lt;/sub>, SVT}&lt;/li>
+&lt;li>Set A when voluntary sleep and not OS&amp;rsquo;s doing (network ping is not OS&amp;rsquo;s doing)&lt;/li>
+&lt;li>Processes won&amp;rsquo;t get more than their fair share by using this method&lt;/li>
+&lt;/ul>
+&lt;h3 id="real-time-threads" >Real-time Threads
+&lt;span>
+&lt;a href="#real-time-threads">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Some tasks like watching videos, should always be respected when they need CPU, so that&amp;rsquo;s why a Warp factor exists as shown before&lt;/li>
+&lt;li>When process i has warp enabled, then as long as it doesn&amp;rsquo;t hold CPU for too long (L&lt;sub>i&lt;/sub>), it&amp;rsquo;s priority for the CPU is boosted when it needs to&lt;/li>
+&lt;/ul>
 &lt;h2 id="io" >I/O
 &lt;span>
 &lt;a href="#io">
@@ -4260,10 +4318,7 @@ to be written to the disk.&lt;/p>
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
-&lt;/h3>&lt;ul>
-&lt;li>&lt;a href="https://web.stanford.edu/~ouster/cgi-bin/papers/lfs.pdf">paper&lt;/a>&lt;/li>
-&lt;li>&lt;/li>
-&lt;/ul>
+&lt;/h3>&lt;p>&lt;a href="https://web.stanford.edu/~ouster/cgi-bin/papers/lfs.pdf">paper&lt;/a>&lt;/p>
 &lt;h3 id="metadata-synchronously" >Metadata Synchronously
 &lt;span>
 &lt;a href="#metadata-synchronously">
