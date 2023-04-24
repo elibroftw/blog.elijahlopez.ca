@@ -39,7 +39,7 @@ tags: [
 
 ## Assignment Helpers
 
-### Submitting
+### CS 350 CLI
 
 File hierarchy
 
@@ -49,16 +49,25 @@ File hierarchy
   - cs350_cli.py
 
 ```sh
-cs350_submit os161/os161-1.99/kern/compile/ASST0 ASST0
-cs350_submit userspace/ASSTUSER0 ASSTUSER0
+# setup new machine
+./cs350_cli.py configure
+# configure new assignment
+./cs350_cli.py new 1
+# build and run the kernel for an assignment
+./cs350_cli.py build 1
+./cs350_cli.py run [uint]
+# gdb requires you to run the following in two different terminals
+./cs350_cli.py debug 2
+./cs350_cli.py debug attach 2 --breakpoints file.c:30 file2.c:50
+# submit and see grade later
+./cs350_cli.py submit 0
+# internally calls:
+#   cs350_submit os161/os161-1.99/kern/compile/ASST0 ASST0
+#   cs350_submit userspace/ASSTUSER0 ASSTUSER0
+./cs350_cli.py grade 0
 ```
 
-<details>
-<summary>cs350_cli.py</summary>
-
-{{< gist elibroftw 36d18406d6be775e2c52af9d19571c42 >}}
-
-</details>
+[cs350_cli.py](https://gist.github.com/elibroftw/36d18406d6be775e2c52af9d19571c42)
 
 ### How to add to PATH
 
