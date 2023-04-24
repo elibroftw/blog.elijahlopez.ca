@@ -283,19 +283,22 @@ Non-negligible cost
 ## Threads
 
 - Multi-threaded programs share the address space.
-- Typically oe kernel thread for every process
+- Typically one kernel thread for every process
 
 ### POSIX Thread API
 
 ```c
-int pthread_create(pthread_t *thr, pthread_attr_t *attr, void *(*fn)(void *), void *arg);
 // create a new thread identified by thr with optional attributes, run fn with arg
-void pthread_exit(void *return_value);
+int pthread_create(pthread_t *thr, pthread_attr_t *attr, void *(*fn)(void *), void *arg);
+
 // destroy current thread and return a pointer
-int pthread_join(pthread_t thread, void **return_value);
+void pthread_exit(void *return_value);
+
 // Wait for thread thread to exit and receive the return value
-void pthread_yield();
+int pthread_join(pthread_t thread, void **return_value);
+
 // tell the OS scheduler to run another thread or process
+void pthread_yield();
 ```
 
 and more
@@ -380,37 +383,122 @@ for (;;) {
 A mutex is a mutual exclusion lock. Thread packages typically provide _mutexes_:
 
 ```c
-void mutex_init(mutex_t *m, \ldots);
+int pthread_mutex_init(pthread_mutex_t  *m, pthread_mutexattr_t attr);
+int pthread_mutex_destroy(pthread_mutex_t *m)
+int pthread_mutex_lock (pthread_mutex_t  *m);
+int pthread_mutex_unlock(pthread_mutex_t *m)
 
+// return 0 if successful, otherwise -1 (errno == EBUSY)
+int pthread_mutex_trylock (pthread_mutex_t  *m);
 ```
 
-All global data should be protected by a mutex.
-If mutexes are used properly, then we get sequential consistency.
+Only one thread acquires m at a time, others wait. All global data should be protected by a mutex. If mutexes are used properly, then we get behavior equivalent to sequential consistency.
 
 Want to wrap all shared memory writes with a mutex lock and unlock.
 
 ```c
+// Improved Producer
+mutex_t mutex = MUTEX_INITIALIZER;
+void producer (void *ignored) {
+  for (;;) {
+    item *nextProduced = produce_item ();
+    mutex_lock (&mutex);
+    while (count == BUFFER_SIZE) {  // remember to do while and not if
+      mutex_unlock (&mutex);              // allow other threads to lock
+      thread_yield ();
+      mutex_lock (&mutex);
+    }
+    buffer [in] = nextProduced;
+    in = (in + 1) % BUFFER_SIZE;
+    count++;
+    mutex_unlock (&mutex);
+  }
+}
 
+// Improved Consumer
+void consumer (void *ignored) {
+  for (;;) {
+    mutex_lock (&mutex);
+    while (count == 0) {
+      mutex_unlock (&mutex);
+      thread_yield ();
+      mutex_lock (&mutex);
+  }
+  item *nextConsumed = buffer[out];
+  out = (out + 1) % BUFFER_SIZE;
+  count--;
+  mutex_unlock (&mutex);
+  consume_item (nextConsumed);
+  }
+}
 ```
 
 ### Condition Variables
 
-Instead of calling `thread_yield`, we can sleep until a condition is met.
+Busy-waiting in application is a bad idea, since it consumes CPU. Instead of calling `thread_yield`, we can sleep until a condition is met.
 
 ```c
-int pthread_cond_init(pthread_cond_t *, \ldots);
-int pthread_cond_wait(pthread_cond_t *c, pthread_mutex_t *m);
+int pthread_cond_init(pthread_cond_t *, ...);
+
 // unlock's m atomically and re-acquires it upon signal
+int pthread_cond_wait(pthread_cond_t *c, pthread_mutex_t *m);
+
+// wake a single thread up
 int pthread_cond_signal(pthread_cond_t *c);
-// wake all threads up
+
+// wake all threads up (one at a time though)
 int pthread_cond_broadcast(pthread_cond_t *c);
+```
+
+```c
+mutex_t mutex = MUTEX_INITIALIZER;
+cond_t nonempty = COND_INITIALIZER;
+cond_t nonfull = COND_INITIALIZER;
+// CV Producer
+void producer (void *ignored) {
+  for (;;) {
+    item *nextProduced = produce_item ();
+    mutex_lock(&mutex);
+
+    // remember to use WHILE to avoid race conditions
+    while (count == BUFFER_SIZE)
+      cond_wait(&nonfull, &mutex);
+
+    buffer [in] = nextProduced;
+    in = (in + 1) % BUFFER_SIZE;
+    count++;
+    cond_signal(&nonempty);
+    mutex_unlock(&mutex);
+  }
+}
+
+// CV Consumer
+void consumer (void *ignored) {
+  for (;;) {
+    mutex_lock (&mutex);
+    // remember to use WHILE to avoid race conditions
+    while (count == 0)
+      cond_wait (&nonempty, &mutex);
+    item *nextConsumed = buffer[out];
+    out = (out + 1) % BUFFER_SIZE;
+    count--;
+    cond_signal (&nonfull);
+    mutex_unlock (&mutex);
+    consume_item (nextConsumed);
+  }
+}
 ```
 
 Use a while loop with these conditions to avoid race conditions of being beat out by another consumer.
 
 ### Semaphores
 
-Fancy mutex where if s is 0, sem_wait will block.
+- A Semaphore is initialized with an integer N.
+- `sem_wait` will return only N more times
+than `sem_signal` called
+  - first N calls to `sem_wait` do not block
+
+Fancy mutex where if n == 0, sem_wait will block.
 
 ```c
 int sem_init(sem_t *s, ..., unsigned int n); // proc_count_mutex = sem_create("proc_count_mutex",1);
@@ -419,6 +507,8 @@ sem_wait(sem_t *s) (originally called P)  // P(sem_t *s)
 
 sem_signal(sem_t *s)  // V(sem_t *s)
 ```
+
+## Synchronization
 
 ### Ordering requirements
 
