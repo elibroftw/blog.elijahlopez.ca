@@ -808,18 +808,287 @@ If H waits on a lock held by M, then the priotity of M and L both go up, whereas
 
 ![BVT example](/images/cs-350/bvt-example.png)
 
-## I/O and Disks
+## I/O
+
+Realistic PC Architecture
+
+![realistic older PC architecture](/images/cs-350/pc-architecture.png)
+
+I/O Bus PCI Example. Peripheral Component Interconnect Express (PCIe).
+
+![PCI I/O bus example](/images/cs-350/pci-io-bus.png)
 
 ### Memory and I/O buses
+
+- CPU has a bus to the Memory
+- Devices have an I/O bus to the Memory
+- Devices can appear to be Memory
+
+### Memory Types
+
+RAM stands for Random Access Memory.
+
+- Static RAM (SRAM)
+  - 4-6 transistors per bit
+  - very fast, cache slower memory
+  - two NOT gates
+- Dynamic RAM (DRAM)
+  - 1 transistor per bit
+  - Capacitor + gate (charge indicates value)
+  - Slower comparator since charge leaks
+  - Re-write charge after reading
+- Video RAM (VRAM)
+  - Write and read at the same time (dual ported)
+
+### Device Communication
+
+- Memory-mapped devices
+  - Physical addresses correspond to device registers
+  - load/store to get status/send instructions
+  - 2<sup>16</sup> port numbers
+  - per-range access control not useful
+  - OS has to map physical to virtual without caching
+  - physical address assigned at boot
+- Device memory
+  - OS can write to the device through I/O bus
+- Special I/O Instruction
+  - Some CPUs have special I/O instructions
+  - OS can allow user with finer granuality than a page
+- DMA (direct memory access)
+  - Overlaps unrelated computation with moving data over I/O bus
+  - Typically then need to “poke” card by writing to device register
+  - Keep list of buffer locatioons in memory
+  - use the CPU only to transfer control, not for data transfer
+  - Network Interface Card (NIC)
+    - Bus interface logic uses memory to move packets to and from buffers in main memory
+  - Steps
+    1. Tell device driver to transfer data to buffer at address X
+    2. Driver tells device controller to transfer bytes to buffer X
+    3. DMA transfer initiated for bytes C until C = 0; memory address increases and C decreases
+    4. DMA interrupts CPU to signal completion
+
+### Driver Architecture
+
+- Entry points provided to kernel: Reset, ioctl, output, interrupt, read, write, strategy
+- Need to synchronise
+  - Polling sucks because either CPU is blocked or high latency
+  - Card should interrupt CPU
+    - CPU asks card what occured
+    - High network packet arrival rate can prevent progress = mix of both
+
+```c
+void sendbyte(uint8_t byte) {
+  /* Wait until BSY bit is 1. */
+  while ((inb (0x379) & 0x80) == 0) delay();
+
+  /* Put the byte we wish to send on pins D7-0. */
+  outb(0x378, byte);
+  /* Pulse STR (strobe) line to inform the printer
+  * that a byte is available */
+  uint8_t ctrlval = inb(0x37a);
+  outb(0x37a, ctrlval | 0x01);
+  delay();
+  outb(0x37a, ctrlval);
+}
+```
+
+## Disks (I/O Subtopic)
+
+- Stack of magnetic platters
+  - Each platter is divided into [_concentric_](https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/WA_80_cm_archery_target.svg/1200px-WA_80_cm_archery_target.svg.png) tracks and each track has sectors
+  - A stack of tracks with a fixed raidus is called a cylinder
+- Disk arm assembly
+  - Arms rotate around pivot, all move together
+  - Arms contain disk heads–one for each cylinder
+  - Heads read and write data to platters
+  - One head active at a time
+
+![disk anatomy](/images/cs-350/disk-anatomy.png)
+
+### Disk Positioning System
+
+- Move head to specific track
+  - Keep it there by resisting physical shocks, imperfect tracks, etc.
+- Seeking
+  1. speedup - accelerate arm to max speed or hafl way point
+  2. coast - at max speed (for long seeks)
+  3. slowdown - stops arm near destination
+  4. settle - adjusts head to actual desired track
+- Settle dominates very short seeks (~1ms)
+- Short seeks dominated by speedup (acceleration of 40Gs)
+
+### Seeking
+
+- Head adjustments
+- Settles take longer for writes because a checksum can be used to retry a read, but a write needs to be perfect otherwise another track got written to
+- Disk keeps table of pivot motor power
+  - Maps seek distance to power and time
+  - Table set by periodic “thermal recalibration”
+    - Recalibration hurts audio-video
+- Average seek time can be anything from seeking a third of the disk to a third of the time required to seek entire disk
+
+### Sectors
+
+- Disk interface presents linear array of sectors
+- 512 bytes written atomically
+- Disk handles mapping logical sector number to physical sector
+  - Zoning: puts more sectors on longer tracks
+  - Track skewing: sector 0 pos. varies by track to speed up sequential access across tracks
+  - Sparing: flawed sectors remapped elsewhere
+- OS assumes disk is blackbox
+  - Larger logical sector \# difference = larger seek
+  - Can build table to estimate times through emperical tests
+
+### Disk Interface
+
+- Controls hardware, mediates access
+- Connected to computer by bus that can be contended by multiple devices
+- Command queueing
+- Disk cache for read-ahead
+- Write caching is possible but unstable data
+
+### Buses
+
+- SCSI
+  - Devices: host adapters & SCSI (bus) controllers
+  - Service Delivery Subsystem connects devices (SCSI bus)
+- SCSI-2 bus (SDS) connects up to 8 devices
+  - Controllers can have > 1 logical units (LUNs)
+  - Controller built into disk
+  - Bridge controller can manage multiple devices
+- Device is either initiator or target
+  - Traditionally host adapter was initiator, controller the target
+  - Controllers can be initiators
+  - 1 initiaor and at least one target
+
+### SCSI Requests
+
+A request is a command from initiator to target
+
+- Commmand
+  - Target gets control of bus but can disconnect and then reconnect
+  - Task identifier: initiator ID, target ID, LUN, tag
+  - Command descriptor block: read 10 blocks at pos. N
+  - Task attribute: simple ordered, head of queue
+  - Optional: output/input buffer, sense data
+  - Status byte: good, check condition, intermediate
+- Execution
+  - Each Logical unit maintains a queue of tasks { dormant, blocked, enabled, ended }
+  - Simple tasks are dormant until no ordered/head of queue
+  - Ordered tasks dormant until no HoQ/more recent ordered
+  - HoQ tasks begin in enabled state
+- Initatior can manage tasks
+  - Abort/terminate, reset
+- Linked commands
+  - Atomic read-modify-write implementation
+  - Intermediate commands return a status of intermediate
+
+### SCSI Exceptions
+
+- Stop executing most commands
+- Return "check conditon" status
+- Simple device implementation
+
+### Disk Performance
+
+- Ordering is huge issue
+- Sequential much faster than random
+- Power fail leads to inconsistent state
+- Order for crashes
+- Order requests to minimize seek times
+
+### Disk Scheduling
+
+#### First Come First Serve (FCFS)
+
+- Process disk requests as they come in
+- Increases average latency
+- Cannot exploit request locality
+
+#### Shortest Positioning Time First (SPTF)
+
+- Pick requests with shortest seek time
+- higher throughput and exploits locality
+- starvation (longer seeks never get a chance)
+- don't know which request will be fastest
+- Improve with aged SPTF
+  - Serve lowest priorities, adjust by wait time
+  - T<sub>effective</sub>=  T<sub>pos</sub> - W * T<sub>wait</sub>
+
+#### Elevator Scheduling (SCAN)
+
+- Sweep across disk, servicing all requests passed
+- Seeks must be in the same direction
+- Switch directions if no further requests
+- Bounded waiting
+- Biased towards middle cylinders
+- Could miss an optimization SPTF would catch
+- CSCAN: only sweep in one direction (common in Unix)
+  - LOOK/CLOOK in textbook
+  - After reaching disk end, jump to start of disk
+
+#### VSCAN(r)
+
+- SPTF and SCAN
+- T<sub>effective</sub> = T<sub>pos</sub> + r * T<sub>max</sub>
+- 0 <= r <= 1
+- r determines how much same direction seeking is rewarded (0 = SPTF, 1 = SCAN)
+
+### Flash Memory
+
+- Solid state
+- Stores charge
+  - Charge wears off (Phone off for a year will cause data loss)
+- Better heat and power consumption
+- Limited overwrites
+- Flash Translation Layer to protect physical block = performance impact
+- Random write are expensive
+
+#### NOR flash
+
+- Can execute code in flash itself
+- Faster smaller unit reads
+- Slower erases
+
+#### Single-level cell (SLC) vs. Multi-level cell (MLC)
+
+- MLC encodes multiple bits in voltage level
+- MLC slower to write than SLC
+- MLC is basically more dense at write latency cost
+
+#### NAND flash
+
+- Higher density
+- Faster erase/write
+- More errors needing error correction
+- 2112-byte pages
+- Blocks contain 64 (SLC) or 128 (MLC) pages
+- Blocks divided into 2-4 planes
+  - All planes contend for same package pins
+  - Block access in parallel
+- Limited to reading one page at at ime
+  - 25 micro seconds
+- Must erase whole block before programming
+  - 2ms
 
 ## Filesystem
 
 ### Files: name bytes on disk
 
 - File system: translate name & offset to disk blocks
-- Want to reduce number of disk accesses for operations
+- Want to reduce number of disk accesses for operations (group related things)
 - File system  metadata
   - An inonde that points to the inode array.
+
+### Mappings
+
+- File metadata (inode): map byte offset to disk block address
+- Directory: map name to disk address or file \#
+
+### Intuitions
+
+- perfomance related to disk accesses
+- each disk access takes time because of the rotataional delay
 
 ### Common Patterns
 
@@ -830,14 +1099,84 @@ If H waits on a lock held by M, then the priotity of M and L both go up, whereas
 - Keyed access
   - Search for block with particular values
 
-## Hard and soft links
+### DOS FS
+
+- File Allocation Table (FAT)
+- Each directory has a mapping of filenames to index in FAT
+- FAT contains next block.
+- FAT is small enough to be cached is cheaper than disk access.
+
+### Indexed files
+
+- requires large chunks of contiguous space space
+- array of block pointers per file
+- free list for allocations
+
+### Multi-level indexed files
+
+- 14 block pointers
+- first couple pointer point to blocks
+- other pointers point to more and more indirect blocks
+
+### Directories
+
+- Approach 1: known disk location; {name, inumber}, unique names
+- Approach 2: Single directory per user
+- Approach 3: Hierarchical name spaces, graph
+
+- Root directory is always inode 2
+- Special names in FS: (Root: "/"), (Current: "."), (Parent: "..")
+- Special names not in FS: (User dir: "~"), globbing
+- Use cd to change directory, and ls to list names in current directory
+
+### Hard and soft links
 
 - Each inode has a count of hard links
--
+- Use `ln source synonym`  to create a link
+- Inode for has special symlink bit set and contains target name (automatically translated by file system)
 
-## Fast File System
+### Fast File System (FFS)
 
-- Cluster related objects together
+- Original file system
+  - was slow and required inodes for directories as well
+  - blocks too smal (512 bytes)
+  - index too large
+  - poor clustering of related blobs, inodes far from datablocks, poor enumeration
+  - lacked atomic file updating
+  - uses a free list (linked list) of free blocks which gets jumbled and slow to find adjacent blocks
+- Cluster related objects together and seperate unrealted items
+- With bigger block sizes, split unused large portions into _fragments_ when there is a need to allocate smaller files
+- Fixed-size fragments allows the file system to allocate files in a more organized manner, which reduces fragmentation and improve performance
+- Uses bit-map of free blocks which is much easier to find contiguous blocks and can be stored in memory, time increases only when fewer free blocks
+
+#### Clustering in FFS Using Cylinder Groups
+
+- Group at least one consequtive cylinder into a _cylinder group_
+- Order of retrieval is can access any block in a cylinder without a seek, and the next fastest place is an adjacent cylinder
+- Put related data in the same cylinder group and unrealted items in another group
+  - Different directories are placed in different cylinder groups
+- Tries to put sequential blocks in adjacent sectors
+- Tries to keep same inode in same cylinder as file data
+- Tries to keep all inodes for a dir in the same cylinder group
+- Each cylinder group is a mini-Unix file system with a starting super block
+
+#### Bitmap
+
+As said before, a bitmap is used in place of a free list to make it much simpler to find contiguous free blocks. It can also be stored in memory as it is small.
+
+- If a 4GB disk has 4KB blocks, how big is the map? Each bit represents a 4KB blocks, so 4,000,000 KB / 4,000 KB = 1,000 bits = 125 bytes
+- Keep 10% reserved without informing user
+- Only allow root to allocate from the 10%
+
+#### FFS Next Steps
+
+- Contiguous blocks are named with a single pointer and length (ext2fs)
+- Writes were done synchronously
+- Make writes async with write-ordering or logging/journaling
+
+### Log-Structured File System
+
+- [paper](https://web.stanford.edu/~ouster/cgi-bin/papers/lfs.pdf)
 -
 
 ### Metadata Synchronously
@@ -851,4 +1190,4 @@ If we create a directory entry and crash during the middle of creating a directo
 To ensure things work correctly, we need to flush to disk before the pointer pointing to the inode gets flushed. Therefore, we need to write out the data first, then create the inode, and then create the directory entry pointing to it. When deleting, first delete the directory entry, and then the inode.
 
 Log inode and dir entry to a log first. On crash, re-execute the log to copy back the file system. This is 2x the IO writes.
-1GB sized journals. 
+1GB sized journals.
