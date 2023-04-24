@@ -7,7 +7,28 @@ tags: [
 ]
 ---
 I started my double degree BCS and BBA journey in Fall 2019.
-Here are some things you should know about the program plus the environment.
+Here are some things you should know about the program plus the University environment.
+I'll start with the tips so that this post is useful for everyone.
+
+{{< toc >}}
+
+## University Life Tips
+
+### Connecting to eduroam
+
+This is a pain in the ass every time I get a new device because I have to Google for it instead of pulling up my blog. Even more so with my Pixel 7.
+
+For normal connections, the username follows `lope3800@wlu.ca` with the same password you use to login to your email.
+
+If you are running AOSP 11+, like the Google Pixel 7, this is what you need to set. If you want to use your University of Waterloo identification, just use `waitIAM@uwaterloo.ca`.
+
+- EAP method: PEAP
+- Phase 2 authentication: MSCHAPV2
+- CA certificate: trust on first use
+- Do not verify
+- Identify: lope3800@wlu.ca
+- Password: same as @mylaurier.ca password
+- Advanced > Privacy > Use device MAC :(
 
 ## Homeschool Differences
 
@@ -44,7 +65,7 @@ WLU has higher scholarship values than UW. The amount changes each year. For exa
     - WaterlooWorks has more tech-related jobs
     - I'm unsure if WaterlooWorks has the same accounting, legal, analyst jobs that Navigator has
 
-### Preparing for University?
+## How to Prepare for University
 
 I did not prepare at all. I spent my time life-guarding as well as working on my [music player, Music Caster](https://github.com/elibroftw/music-caster).
 I will share some advice.
