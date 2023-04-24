@@ -1533,11 +1533,16 @@ when a failure occurs&lt;/p>
 &lt;/li>
 &lt;li>&lt;a href="#synchronization">Synchronization&lt;/a>
 &lt;ul>
+&lt;li>&lt;a href="#motivation">Motivation&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#ordering-requirements">Ordering requirements&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#mips-spinlocks">MIPS Spinlocks&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#atomic">Atomic&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#atomics-c11">Atomics C11&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#cache-coherence">Cache Coherence&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#multicore-caches">Multicore Caches&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#more-deadlocks">More Deadlocks&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#3-state-coherence-protocol-msi">3-State Coherence Protocol (MSI)&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#core-and-bus-actions">Core and Bus Actions&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#multithreaded-design">Multithreaded Design&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#deadlocks">Deadlocks&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#solving-deadlocks">Solving Deadlocks&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#wait-channels">Wait Channels&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#system-calls">System Calls&lt;/a>&lt;/li>
@@ -2174,13 +2179,44 @@ than &lt;code>sem_signal&lt;/code> called
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
-&lt;/h2>&lt;h3 id="ordering-requirements" >Ordering requirements
+&lt;/h2>&lt;h3 id="motivation" >Motivation
+&lt;span>
+&lt;a href="#motivation">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;img class=equation-tall src="https://latex.codecogs.com/svg.image?T(n)=T(1)(B+\frac{1}{n}(1-B))">
+&lt;ul>
+&lt;li>
+&lt;p>Amdahl&amp;rsquo;s law&lt;/p>
+&lt;ul>
+&lt;li>T(1): the time one core takes to complete the task&lt;/li>
+&lt;li>B: the fraction of the job that must be serial&lt;/li>
+&lt;li>n: number of cores
+&lt;ul>
+&lt;li>Imagine if n was infinity&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Ultimate limit on parallel speedup&lt;/li>
+&lt;li>Synchronization increases serial section size&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Locking basics&lt;/p>
+&lt;ul>
+&lt;li>Lock whenever critical section is required and at least one is writing&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="ordering-requirements" >Ordering requirements
 &lt;span>
 &lt;a href="#ordering-requirements">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
-&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-c" data-lang="c">&lt;span style="display:flex;">&lt;span>v-&amp;gt;val++;
+&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-c" data-lang="c">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">while&lt;/span> (&lt;span style="color:#447fcf">test_and_set&lt;/span> (&amp;amp;v-&amp;gt;lock))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ; &lt;span style="color:#999;font-style:italic">// ensure lock is acquired before writing
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">&lt;/span>v-&amp;gt;val++;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">// this tells the compiler not to reorder
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">&lt;/span>&lt;span style="color:#6ab825;font-weight:bold">asm&lt;/span> &lt;span style="color:#447fcf">volatile&lt;/span> (&lt;span style="color:#ed9d13">&amp;#34;sfence&amp;#34;&lt;/span> ::: &lt;span style="color:#ed9d13">&amp;#34;memory&amp;#34;&lt;/span>);
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>v-&amp;gt;lock = &lt;span style="color:#3677a9">0&lt;/span>;
@@ -2193,22 +2229,25 @@ than &lt;code>sem_signal&lt;/code> called
 &lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-c" data-lang="c">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">void&lt;/span> spinlock_acquire {
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ...
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">while&lt;/span>(&lt;span style="color:#3677a9">1&lt;/span>) {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">if&lt;/span> (&lt;span style="color:#447fcf">spinlock_data_get&lt;/span>(&amp;amp;lk-&amp;gt;lk_lock) != &lt;span style="color:#3677a9">0&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic">// first check if the lock is busy to reduce coherence traffic
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">&lt;/span> &lt;span style="color:#6ab825;font-weight:bold">if&lt;/span> (&lt;span style="color:#447fcf">spinlock_data_get&lt;/span>(&amp;amp;lk-&amp;gt;lk_lock) != &lt;span style="color:#3677a9">0&lt;/span>)
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">continue&lt;/span>; &lt;span style="color:#999;font-style:italic">// saves CPU cycles
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">&lt;/span> &lt;span style="color:#999;font-style:italic">// attempt to acquire lock
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">&lt;/span> &lt;span style="color:#6ab825;font-weight:bold">if&lt;/span> (&lt;span style="color:#447fcf">spinlock_data_testandset&lt;/span>(&amp;amp;lk-&amp;gt;lk_lock) != &lt;span style="color:#3677a9">0&lt;/span>)
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">continue&lt;/span>;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">break&lt;/span>;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> lk-&amp;gt;lk_holder = mycpu;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="atomic" >Atomic
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="atomics-c11" >Atomics C11
 &lt;span>
-&lt;a href="#atomic">
+&lt;a href="#atomics-c11">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
-&lt;/h3>&lt;p>To implement mutexes you need atomics. Atomics guarantee
-something will be written before the next line. (fences)&lt;/p>
+&lt;/h3>&lt;p>Portable support for atomics.&lt;/p>
+&lt;p>To implement mutexes you need atomics. Atomics guarantee
+something will be written before the next line. (fences). With an Atomic type, all standard ops become sequentially consistent. There&amp;rsquo;s also a variety of memory ordering from no memory ordering to full sequential consistency.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-c" data-lang="c">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#447fcf">_Atomic&lt;/span>(&lt;span style="color:#6ab825;font-weight:bold">int&lt;/span>) variable_name = &lt;span style="color:#3677a9">1&lt;/span>;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#447fcf">atomic_fetch_add_explicit&lt;/span>(&amp;amp;variable_name, &lt;span style="color:#3677a9">1&lt;/span>, memory_order_relaxed);
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#447fcf">atomic_fetch_add_explicit&lt;/span>(&amp;amp;variable_name, -&lt;span style="color:#3677a9">1&lt;/span>, memory_order_relaxed);
@@ -2216,25 +2255,122 @@ something will be written before the next line. (fences)&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#447fcf">atomic_store_explicit&lt;/span>(&amp;amp;variable_name, &lt;span style="color:#3677a9">0&lt;/span>, memory_order_relaxed);
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">int&lt;/span> x = &lt;span style="color:#447fcf">atomic_load_explicit&lt;/span>(&amp;amp;variable_name);
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#447fcf">atomic_thread_fence&lt;/span>(memory_order_acquire);
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="multicore-caches" >Multicore Caches
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#447fcf">_Atomic&lt;/span>(&lt;span style="color:#6ab825;font-weight:bold">int&lt;/span>) packet_count;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">void&lt;/span> &lt;span style="color:#447fcf">recv_packet&lt;/span>(...) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ...
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#447fcf">atomic_fetch_add_explicit&lt;/span>(&amp;amp;packet_count, &lt;span style="color:#3677a9">1&lt;/span>, memory_order_relaxed);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ...
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">struct&lt;/span> message msg_buf;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#447fcf">_Atomic&lt;/span>(_Bool) msg_ready;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">void&lt;/span> &lt;span style="color:#447fcf">send&lt;/span>(&lt;span style="color:#6ab825;font-weight:bold">struct&lt;/span> message *m) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> msg_buf = *m;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#447fcf">atomic_thread_fence&lt;/span>(memory_order_release);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#447fcf">atomic_store_explicit&lt;/span>(&amp;amp;msg_ready, &lt;span style="color:#3677a9">1&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> memory_order_relaxed);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">struct&lt;/span> message *&lt;span style="color:#447fcf">recv&lt;/span>(&lt;span style="color:#6ab825;font-weight:bold">void&lt;/span>) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> _Bool ready = &lt;span style="color:#447fcf">atomic_load_explicit&lt;/span>(&amp;amp;msg_ready,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> memory_order_relaxed);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">if&lt;/span> (!ready)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">return&lt;/span> &lt;span style="color:#24909d">NULL&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#447fcf">atomic_thread_fence&lt;/span>(memory_order_acquire);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">return&lt;/span> &amp;amp;msg_buf;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Spinlock example. The atomic_flag is a special type without support for loads and store. Implemented lock free.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-c" data-lang="c">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">void&lt;/span> &lt;span style="color:#447fcf">spin_lock&lt;/span>(atomic_flag *lock) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">while&lt;/span>(&lt;span style="color:#447fcf">atomic_flag_test_and_set_explicit&lt;/span>(lock, memory_order_acquire)) {}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">void&lt;/span> &lt;span style="color:#447fcf">spin_unlock&lt;/span>(atomic_flag *lock) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#447fcf">atomic_flag_clear_explicit&lt;/span>(lock, memory_order_release);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="cache-coherence" >Cache Coherence
+&lt;span>
+&lt;a href="#cache-coherence">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>coherence means accesses to single memory location&lt;/li>
+&lt;li>consistency means ordering between multiple locations&lt;/li>
+&lt;/ul>
+&lt;h3 id="multicore-caches" >Multicore Caches
 &lt;span>
 &lt;a href="#multicore-caches">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
-&lt;/h3>&lt;p>Cache = performance but presents an opportunity for cores to disagree about memory.&lt;/p>
-&lt;p>Avoid false sharing: avoid placing data used by different threads in the same cache line.&lt;/p>
+&lt;/h3>&lt;p>Cache = performance but presents an opportunity for cores to disagree about memory. Cache is divided into chunks of bytes called cache lines. Bus or network is used.&lt;/p>
+&lt;h3 id="3-state-coherence-protocol-msi" >3-State Coherence Protocol (MSI)
+&lt;span>
+&lt;a href="#3-state-coherence-protocol-msi">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Cache lines have 3 states&lt;/p>
+&lt;ul>
+&lt;li>Modified
+&lt;ul>
+&lt;li>One cache has a copy needs to be written back to memory&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Shared
+&lt;ul>
+&lt;li>At least one cache have a valid copy&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Invalid
+&lt;ul>
+&lt;li>No data&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="core-and-bus-actions" >Core and Bus Actions
+&lt;span>
+&lt;a href="#core-and-bus-actions">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Read (load)
+&lt;ul>
+&lt;li>Cacheline enters shared state as data is read without modification intent and could come from cache or memory&lt;/li>
+&lt;li>Write (store)
+&lt;ul>
+&lt;li>Invalidates other cache copies&lt;/li>
+&lt;li>Cacheline in shared&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Evict
+&lt;ul>
+&lt;li>Writeback contents to memory if not dirty&lt;/li>
+&lt;li>Discard if in shared state&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="multithreaded-design" >Multithreaded Design
+&lt;span>
+&lt;a href="#multithreaded-design">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Avoid false sharing: avoid placing data used by different threads in the same cache line.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-c" data-lang="c">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">int&lt;/span> lock;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">char&lt;/span> _uused[bytes]; &lt;span style="color:#999;font-style:italic">// before C11 / C++ 11 manual padding
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">&lt;/span>&lt;span style="color:#447fcf">alignas&lt;/span>(&lt;span style="color:#3677a9">64&lt;/span>) &lt;span style="color:#6ab825;font-weight:bold">struct&lt;/span> foo f; &lt;span style="color:#999;font-style:italic">// C11 / C++ 11
 &lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Avoid contending on cache lines.&lt;/p>
-&lt;h3 id="more-deadlocks" >More Deadlocks
+&lt;h3 id="deadlocks" >Deadlocks
 &lt;span>
-&lt;a href="#more-deadlocks">
+&lt;a href="#deadlocks">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
-&lt;/h3>&lt;p>Both threads must lock and unlock in the same order&lt;/p>
+&lt;/h3>&lt;p>Both threads must lock and unlock in the same order.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-c" data-lang="c">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#447fcf">lock&lt;/span>(a);
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#447fcf">lock&lt;/span>(b);
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#447fcf">unlock&lt;/span>(b);
