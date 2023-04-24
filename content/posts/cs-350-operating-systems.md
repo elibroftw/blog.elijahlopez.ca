@@ -509,9 +509,26 @@ sem_signal(sem_t *s)  // V(sem_t *s)
 
 ## Synchronization
 
+### Motivation
+
+<img class=equation-tall src="https://latex.codecogs.com/svg.image?T(n)=T(1)(B+\frac{1}{n}(1-B))">
+
+- Amdahl's law
+  - T(1): the time one core takes to complete the task
+  - B: the fraction of the job that must be serial
+  - n: number of cores
+    - Imagine if n was infinity
+  - Ultimate limit on parallel speedup
+  - Synchronization increases serial section size
+
+- Locking basics
+  - Lock whenever critical section is required and at least one is writing
+
 ### Ordering requirements
 
 ```c
+while (test_and_set (&v->lock))
+  ; // ensure lock is acquired before writing
 v->val++;
 // this tells the compiler not to reorder
 asm volatile ("sfence" ::: "memory");
@@ -524,8 +541,10 @@ v->lock = 0;
 void spinlock_acquire {
   ...
   while(1) {
+    // first check if the lock is busy to reduce coherence traffic
     if (spinlock_data_get(&lk->lk_lock) != 0)
       continue; // saves CPU cycles
+    // attempt to acquire lock
     if (spinlock_data_testandset(&lk->lk_lock) != 0)
       continue;
     break;
@@ -534,10 +553,12 @@ void spinlock_acquire {
 }
 ```
 
-### Atomic
+### Atomics C11
+
+Portable support for atomics.
 
 To implement mutexes you need atomics. Atomics guarantee
-something will be written before the next line. (fences)
+something will be written before the next line. (fences). With an Atomic type, all standard ops become sequentially consistent. There's also a variety of memory ordering from no memory ordering to full sequential consistency.
 
 ```c
 _Atomic(int) variable_name = 1;
@@ -547,25 +568,90 @@ atomic_thread_fence(memory_order_release);
 atomic_store_explicit(&variable_name, 0, memory_order_relaxed);
 int  x = atomic_load_explicit(&variable_name);
 atomic_thread_fence(memory_order_acquire);
+
+_Atomic(int) packet_count;
+void recv_packet(...) {
+  ...
+  atomic_fetch_add_explicit(&packet_count, 1, memory_order_relaxed);
+  ...
+}
+
+struct message msg_buf;
+_Atomic(_Bool) msg_ready;
+
+void send(struct message *m) {
+  msg_buf = *m;
+  atomic_thread_fence(memory_order_release);
+  atomic_store_explicit(&msg_ready, 1,
+  memory_order_relaxed);
+}
+struct message *recv(void) {
+  _Bool ready = atomic_load_explicit(&msg_ready,
+  memory_order_relaxed);
+  if (!ready)
+    return NULL;
+  atomic_thread_fence(memory_order_acquire);
+  return &msg_buf;
+}
 ```
+
+Spinlock example. The atomic_flag is a special type without support for loads and store. Implemented lock free.
+
+```c
+void spin_lock(atomic_flag *lock) {
+  while(atomic_flag_test_and_set_explicit(lock, memory_order_acquire)) {}
+}
+void spin_unlock(atomic_flag *lock) {
+  atomic_flag_clear_explicit(lock, memory_order_release);
+}
+```
+
+### Cache Coherence
+
+- coherence means accesses to single memory location
+- consistency means ordering between multiple locations
 
 ### Multicore Caches
 
-Cache = performance but presents an opportunity for cores to disagree about memory.
+Cache = performance but presents an opportunity for cores to disagree about memory. Cache is divided into chunks of bytes called cache lines. Bus or network is used.
+
+### 3-State Coherence Protocol (MSI)
+
+Cache lines have 3 states
+
+- Modified
+  - One cache has a copy needs to be written back to memory
+- Shared
+  - At least one cache have a valid copy
+- Invalid
+  - No data
+
+### Core and Bus Actions
+
+- Read (load)
+  - Cacheline enters shared state as data is read without modification intent and could come from cache or memory
+  - Write (store)
+    - Invalidates other cache copies
+    - Cacheline in shared
+  - Evict
+    - Writeback contents to memory if not dirty
+    - Discard if in shared state
+
+### Multithreaded Design
 
 Avoid false sharing: avoid placing data used by different threads in the same cache line.
 
 ```c
 int lock;
-char _uused[bytes]; // before C11 / C++ 11 manual padding
+char _uused[bytes];        // before C11 / C++ 11 manual padding
 alignas(64) struct foo f;  // C11 / C++ 11
 ```
 
 Avoid contending on cache lines.
 
-### More Deadlocks
+### Deadlocks
 
-Both threads must lock and unlock in the same order
+Both threads must lock and unlock in the same order.
 
 ```c
 lock(a);
