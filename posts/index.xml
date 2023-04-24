@@ -2565,20 +2565,41 @@ when a failure occurs&lt;/p>
 &lt;li>&lt;a href="#borrowed-virtual-time-scheduler">Borrowed Virtual Time Scheduler&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;/li>
-&lt;li>&lt;a href="#io-and-disks">I/O and Disks&lt;/a>
+&lt;li>&lt;a href="#io">I/O&lt;/a>
 &lt;ul>
 &lt;li>&lt;a href="#memory-and-io-buses">Memory and I/O buses&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#memory-types">Memory Types&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#device-communication">Device Communication&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#driver-architecture">Driver Architecture&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="#disks-io-subtopic">Disks (I/O Subtopic)&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#disk-positioning-system">Disk Positioning System&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#seeking">Seeking&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#sectors">Sectors&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#disk-interface">Disk Interface&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#buses">Buses&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#scsi-requests">SCSI Requests&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#scsi-exceptions">SCSI Exceptions&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#disk-performance">Disk Performance&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#disk-scheduling">Disk Scheduling&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#flash-memory">Flash Memory&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;li>&lt;a href="#filesystem">Filesystem&lt;/a>
 &lt;ul>
 &lt;li>&lt;a href="#files-name-bytes-on-disk">Files: name bytes on disk&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#mappings">Mappings&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#intuitions">Intuitions&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#common-patterns">Common Patterns&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;/li>
+&lt;li>&lt;a href="#dos-fs">DOS FS&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#indexed-files">Indexed files&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#multi-level-indexed-files">Multi-level indexed files&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#directories">Directories&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#hard-and-soft-links">Hard and soft links&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#fast-file-system">Fast File System&lt;/a>
-&lt;ul>
+&lt;li>&lt;a href="#fast-file-system-ffs">Fast File System (FFS)&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#log-structured-file-system">Log-Structured File System&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#metadata-synchronously">Metadata Synchronously&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;/li>
@@ -3569,19 +3590,469 @@ to be written to the disk.&lt;/p>
 &lt;li>Ai += t / wi&lt;/li>
 &lt;/ul>
 &lt;p>&lt;img src="https://blog.elijahlopez.ca/images/cs-350/bvt-example.png" alt="BVT example">&lt;/p>
-&lt;h2 id="io-and-disks" >I/O and Disks
+&lt;h2 id="io" >I/O
 &lt;span>
-&lt;a href="#io-and-disks">
+&lt;a href="#io">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
-&lt;/h2>&lt;h3 id="memory-and-io-buses" >Memory and I/O buses
+&lt;/h2>&lt;p>Realistic PC Architecture&lt;/p>
+&lt;p>&lt;img src="https://blog.elijahlopez.ca/images/cs-350/pc-architecture.png" alt="realistic older PC architecture">&lt;/p>
+&lt;p>I/O Bus PCI Example. Peripheral Component Interconnect Express (PCIe).&lt;/p>
+&lt;p>&lt;img src="https://blog.elijahlopez.ca/images/cs-350/pci-io-bus.png" alt="PCI I/O bus example">&lt;/p>
+&lt;h3 id="memory-and-io-buses" >Memory and I/O buses
 &lt;span>
 &lt;a href="#memory-and-io-buses">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
-&lt;/h3>&lt;h2 id="filesystem" >Filesystem
+&lt;/h3>&lt;ul>
+&lt;li>CPU has a bus to the Memory&lt;/li>
+&lt;li>Devices have an I/O bus to the Memory&lt;/li>
+&lt;li>Devices can appear to be Memory&lt;/li>
+&lt;/ul>
+&lt;h3 id="memory-types" >Memory Types
+&lt;span>
+&lt;a href="#memory-types">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>RAM stands for Random Access Memory.&lt;/p>
+&lt;ul>
+&lt;li>Static RAM (SRAM)
+&lt;ul>
+&lt;li>4-6 transistors per bit&lt;/li>
+&lt;li>very fast, cache slower memory&lt;/li>
+&lt;li>two NOT gates&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Dynamic RAM (DRAM)
+&lt;ul>
+&lt;li>1 transistor per bit&lt;/li>
+&lt;li>Capacitor + gate (charge indicates value)&lt;/li>
+&lt;li>Slower comparator since charge leaks&lt;/li>
+&lt;li>Re-write charge after reading&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Video RAM (VRAM)
+&lt;ul>
+&lt;li>Write and read at the same time (dual ported)&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="device-communication" >Device Communication
+&lt;span>
+&lt;a href="#device-communication">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Memory-mapped devices
+&lt;ul>
+&lt;li>Physical addresses correspond to device registers&lt;/li>
+&lt;li>load/store to get status/send instructions&lt;/li>
+&lt;li>2&lt;sup>16&lt;/sup> port numbers&lt;/li>
+&lt;li>per-range access control not useful&lt;/li>
+&lt;li>OS has to map physical to virtual without caching&lt;/li>
+&lt;li>physical address assigned at boot&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Device memory
+&lt;ul>
+&lt;li>OS can write to the device through I/O bus&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Special I/O Instruction
+&lt;ul>
+&lt;li>Some CPUs have special I/O instructions&lt;/li>
+&lt;li>OS can allow user with finer granuality than a page&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>DMA (direct memory access)
+&lt;ul>
+&lt;li>Overlaps unrelated computation with moving data over I/O bus&lt;/li>
+&lt;li>Typically then need to “poke” card by writing to device register&lt;/li>
+&lt;li>Keep list of buffer locatioons in memory&lt;/li>
+&lt;li>use the CPU only to transfer control, not for data transfer&lt;/li>
+&lt;li>Network Interface Card (NIC)
+&lt;ul>
+&lt;li>Bus interface logic uses memory to move packets to and from buffers in main memory&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Steps
+&lt;ol>
+&lt;li>Tell device driver to transfer data to buffer at address X&lt;/li>
+&lt;li>Driver tells device controller to transfer bytes to buffer X&lt;/li>
+&lt;li>DMA transfer initiated for bytes C until C = 0; memory address increases and C decreases&lt;/li>
+&lt;li>DMA interrupts CPU to signal completion&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="driver-architecture" >Driver Architecture
+&lt;span>
+&lt;a href="#driver-architecture">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Entry points provided to kernel: Reset, ioctl, output, interrupt, read, write, strategy&lt;/li>
+&lt;li>Need to synchronise
+&lt;ul>
+&lt;li>Polling sucks because either CPU is blocked or high latency&lt;/li>
+&lt;li>Card should interrupt CPU
+&lt;ul>
+&lt;li>CPU asks card what occured&lt;/li>
+&lt;li>High network packet arrival rate can prevent progress = mix of both&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-c" data-lang="c">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">void&lt;/span> &lt;span style="color:#447fcf">sendbyte&lt;/span>(&lt;span style="color:#6ab825;font-weight:bold">uint8_t&lt;/span> byte) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic">/* Wait until BSY bit is 1. */&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">while&lt;/span> ((&lt;span style="color:#447fcf">inb&lt;/span> (&lt;span style="color:#3677a9">0x379&lt;/span>) &amp;amp; &lt;span style="color:#3677a9">0x80&lt;/span>) == &lt;span style="color:#3677a9">0&lt;/span>) &lt;span style="color:#447fcf">delay&lt;/span>();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic">/* Put the byte we wish to send on pins D7-0. */&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#447fcf">outb&lt;/span>(&lt;span style="color:#3677a9">0x378&lt;/span>, byte);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic">/* Pulse STR (strobe) line to inform the printer
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic"> * that a byte is available */&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">uint8_t&lt;/span> ctrlval = &lt;span style="color:#447fcf">inb&lt;/span>(&lt;span style="color:#3677a9">0x37a&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#447fcf">outb&lt;/span>(&lt;span style="color:#3677a9">0x37a&lt;/span>, ctrlval | &lt;span style="color:#3677a9">0x01&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#447fcf">delay&lt;/span>();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#447fcf">outb&lt;/span>(&lt;span style="color:#3677a9">0x37a&lt;/span>, ctrlval);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="disks-io-subtopic" >Disks (I/O Subtopic)
+&lt;span>
+&lt;a href="#disks-io-subtopic">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;ul>
+&lt;li>Stack of magnetic platters
+&lt;ul>
+&lt;li>Each platter is divided into &lt;a href="https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/WA_80_cm_archery_target.svg/1200px-WA_80_cm_archery_target.svg.png">&lt;em>concentric&lt;/em>&lt;/a> tracks and each track has sectors&lt;/li>
+&lt;li>A stack of tracks with a fixed raidus is called a cylinder&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Disk arm assembly
+&lt;ul>
+&lt;li>Arms rotate around pivot, all move together&lt;/li>
+&lt;li>Arms contain disk heads–one for each cylinder&lt;/li>
+&lt;li>Heads read and write data to platters&lt;/li>
+&lt;li>One head active at a time&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="https://blog.elijahlopez.ca/images/cs-350/disk-anatomy.png" alt="disk anatomy">&lt;/p>
+&lt;h3 id="disk-positioning-system" >Disk Positioning System
+&lt;span>
+&lt;a href="#disk-positioning-system">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Move head to specific track
+&lt;ul>
+&lt;li>Keep it there by resisting physical shocks, imperfect tracks, etc.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Seeking
+&lt;ol>
+&lt;li>speedup - accelerate arm to max speed or hafl way point&lt;/li>
+&lt;li>coast - at max speed (for long seeks)&lt;/li>
+&lt;li>slowdown - stops arm near destination&lt;/li>
+&lt;li>settle - adjusts head to actual desired track&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>Settle dominates very short seeks (~1ms)&lt;/li>
+&lt;li>Short seeks dominated by speedup (acceleration of 40Gs)&lt;/li>
+&lt;/ul>
+&lt;h3 id="seeking" >Seeking
+&lt;span>
+&lt;a href="#seeking">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Head adjustments&lt;/li>
+&lt;li>Settles take longer for writes because a checksum can be used to retry a read, but a write needs to be perfect otherwise another track got written to&lt;/li>
+&lt;li>Disk keeps table of pivot motor power
+&lt;ul>
+&lt;li>Maps seek distance to power and time&lt;/li>
+&lt;li>Table set by periodic “thermal recalibration”
+&lt;ul>
+&lt;li>Recalibration hurts audio-video&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Average seek time can be anything from seeking a third of the disk to a third of the time required to seek entire disk&lt;/li>
+&lt;/ul>
+&lt;h3 id="sectors" >Sectors
+&lt;span>
+&lt;a href="#sectors">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Disk interface presents linear array of sectors&lt;/li>
+&lt;li>512 bytes written atomically&lt;/li>
+&lt;li>Disk handles mapping logical sector number to physical sector
+&lt;ul>
+&lt;li>Zoning: puts more sectors on longer tracks&lt;/li>
+&lt;li>Track skewing: sector 0 pos. varies by track to speed up sequential access across tracks&lt;/li>
+&lt;li>Sparing: flawed sectors remapped elsewhere&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>OS assumes disk is blackbox
+&lt;ul>
+&lt;li>Larger logical sector # difference = larger seek&lt;/li>
+&lt;li>Can build table to estimate times through emperical tests&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="disk-interface" >Disk Interface
+&lt;span>
+&lt;a href="#disk-interface">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Controls hardware, mediates access&lt;/li>
+&lt;li>Connected to computer by bus that can be contended by multiple devices&lt;/li>
+&lt;li>Command queueing&lt;/li>
+&lt;li>Disk cache for read-ahead&lt;/li>
+&lt;li>Write caching is possible but unstable data&lt;/li>
+&lt;/ul>
+&lt;h3 id="buses" >Buses
+&lt;span>
+&lt;a href="#buses">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>SCSI
+&lt;ul>
+&lt;li>Devices: host adapters &amp;amp; SCSI (bus) controllers&lt;/li>
+&lt;li>Service Delivery Subsystem connects devices (SCSI bus)&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>SCSI-2 bus (SDS) connects up to 8 devices
+&lt;ul>
+&lt;li>Controllers can have &amp;gt; 1 logical units (LUNs)&lt;/li>
+&lt;li>Controller built into disk&lt;/li>
+&lt;li>Bridge controller can manage multiple devices&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Device is either initiator or target
+&lt;ul>
+&lt;li>Traditionally host adapter was initiator, controller the target&lt;/li>
+&lt;li>Controllers can be initiators&lt;/li>
+&lt;li>1 initiaor and at least one target&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="scsi-requests" >SCSI Requests
+&lt;span>
+&lt;a href="#scsi-requests">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>A request is a command from initiator to target&lt;/p>
+&lt;ul>
+&lt;li>Commmand
+&lt;ul>
+&lt;li>Target gets control of bus but can disconnect and then reconnect&lt;/li>
+&lt;li>Task identifier: initiator ID, target ID, LUN, tag&lt;/li>
+&lt;li>Command descriptor block: read 10 blocks at pos. N&lt;/li>
+&lt;li>Task attribute: simple ordered, head of queue&lt;/li>
+&lt;li>Optional: output/input buffer, sense data&lt;/li>
+&lt;li>Status byte: good, check condition, intermediate&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Execution
+&lt;ul>
+&lt;li>Each Logical unit maintains a queue of tasks { dormant, blocked, enabled, ended }&lt;/li>
+&lt;li>Simple tasks are dormant until no ordered/head of queue&lt;/li>
+&lt;li>Ordered tasks dormant until no HoQ/more recent ordered&lt;/li>
+&lt;li>HoQ tasks begin in enabled state&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Initatior can manage tasks
+&lt;ul>
+&lt;li>Abort/terminate, reset&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Linked commands
+&lt;ul>
+&lt;li>Atomic read-modify-write implementation&lt;/li>
+&lt;li>Intermediate commands return a status of intermediate&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="scsi-exceptions" >SCSI Exceptions
+&lt;span>
+&lt;a href="#scsi-exceptions">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Stop executing most commands&lt;/li>
+&lt;li>Return &amp;ldquo;check conditon&amp;rdquo; status&lt;/li>
+&lt;li>Simple device implementation&lt;/li>
+&lt;/ul>
+&lt;h3 id="disk-performance" >Disk Performance
+&lt;span>
+&lt;a href="#disk-performance">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Ordering is huge issue&lt;/li>
+&lt;li>Sequential much faster than random&lt;/li>
+&lt;li>Power fail leads to inconsistent state&lt;/li>
+&lt;li>Order for crashes&lt;/li>
+&lt;li>Order requests to minimize seek times&lt;/li>
+&lt;/ul>
+&lt;h3 id="disk-scheduling" >Disk Scheduling
+&lt;span>
+&lt;a href="#disk-scheduling">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;h4 id="first-come-first-serve-fcfs" >First Come First Serve (FCFS)
+&lt;span>
+&lt;a href="#first-come-first-serve-fcfs">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;ul>
+&lt;li>Process disk requests as they come in&lt;/li>
+&lt;li>Increases average latency&lt;/li>
+&lt;li>Cannot exploit request locality&lt;/li>
+&lt;/ul>
+&lt;h4 id="shortest-positioning-time-first-sptf" >Shortest Positioning Time First (SPTF)
+&lt;span>
+&lt;a href="#shortest-positioning-time-first-sptf">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;ul>
+&lt;li>Pick requests with shortest seek time&lt;/li>
+&lt;li>higher throughput and exploits locality&lt;/li>
+&lt;li>starvation (longer seeks never get a chance)&lt;/li>
+&lt;li>don&amp;rsquo;t know which request will be fastest&lt;/li>
+&lt;li>Improve with aged SPTF
+&lt;ul>
+&lt;li>Serve lowest priorities, adjust by wait time&lt;/li>
+&lt;li>T&lt;sub>effective&lt;/sub>= T&lt;sub>pos&lt;/sub> - W * T&lt;sub>wait&lt;/sub>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h4 id="elevator-scheduling-scan" >Elevator Scheduling (SCAN)
+&lt;span>
+&lt;a href="#elevator-scheduling-scan">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;ul>
+&lt;li>Sweep across disk, servicing all requests passed&lt;/li>
+&lt;li>Seeks must be in the same direction&lt;/li>
+&lt;li>Switch directions if no further requests&lt;/li>
+&lt;li>Bounded waiting&lt;/li>
+&lt;li>Biased towards middle cylinders&lt;/li>
+&lt;li>Could miss an optimization SPTF would catch&lt;/li>
+&lt;li>CSCAN: only sweep in one direction (common in Unix)
+&lt;ul>
+&lt;li>LOOK/CLOOK in textbook&lt;/li>
+&lt;li>After reaching disk end, jump to start of disk&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h4 id="vscanr" >VSCAN(r)
+&lt;span>
+&lt;a href="#vscanr">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;ul>
+&lt;li>SPTF and SCAN&lt;/li>
+&lt;li>T&lt;sub>effective&lt;/sub> = T&lt;sub>pos&lt;/sub> + r * T&lt;sub>max&lt;/sub>&lt;/li>
+&lt;li>0 &amp;lt;= r &amp;lt;= 1&lt;/li>
+&lt;li>r determines how much same direction seeking is rewarded (0 = SPTF, 1 = SCAN)&lt;/li>
+&lt;/ul>
+&lt;h3 id="flash-memory" >Flash Memory
+&lt;span>
+&lt;a href="#flash-memory">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Solid state&lt;/li>
+&lt;li>Stores charge
+&lt;ul>
+&lt;li>Charge wears off (Phone off for a year will cause data loss)&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Better heat and power consumption&lt;/li>
+&lt;li>Limited overwrites&lt;/li>
+&lt;li>Flash Translation Layer to protect physical block = performance impact&lt;/li>
+&lt;li>Random write are expensive&lt;/li>
+&lt;/ul>
+&lt;h4 id="nor-flash" >NOR flash
+&lt;span>
+&lt;a href="#nor-flash">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;ul>
+&lt;li>Can execute code in flash itself&lt;/li>
+&lt;li>Faster smaller unit reads&lt;/li>
+&lt;li>Slower erases&lt;/li>
+&lt;/ul>
+&lt;h4 id="single-level-cell-slc-vs-multi-level-cell-mlc" >Single-level cell (SLC) vs. Multi-level cell (MLC)
+&lt;span>
+&lt;a href="#single-level-cell-slc-vs-multi-level-cell-mlc">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;ul>
+&lt;li>MLC encodes multiple bits in voltage level&lt;/li>
+&lt;li>MLC slower to write than SLC&lt;/li>
+&lt;li>MLC is basically more dense at write latency cost&lt;/li>
+&lt;/ul>
+&lt;h4 id="nand-flash" >NAND flash
+&lt;span>
+&lt;a href="#nand-flash">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;ul>
+&lt;li>Higher density&lt;/li>
+&lt;li>Faster erase/write&lt;/li>
+&lt;li>More errors needing error correction&lt;/li>
+&lt;li>2112-byte pages&lt;/li>
+&lt;li>Blocks contain 64 (SLC) or 128 (MLC) pages&lt;/li>
+&lt;li>Blocks divided into 2-4 planes
+&lt;ul>
+&lt;li>All planes contend for same package pins&lt;/li>
+&lt;li>Block access in parallel&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Limited to reading one page at at ime
+&lt;ul>
+&lt;li>25 micro seconds&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Must erase whole block before programming
+&lt;ul>
+&lt;li>2ms&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="filesystem" >Filesystem
 &lt;span>
 &lt;a href="#filesystem">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
@@ -3595,12 +4066,32 @@ to be written to the disk.&lt;/p>
 &lt;/span>
 &lt;/h3>&lt;ul>
 &lt;li>File system: translate name &amp;amp; offset to disk blocks&lt;/li>
-&lt;li>Want to reduce number of disk accesses for operations&lt;/li>
+&lt;li>Want to reduce number of disk accesses for operations (group related things)&lt;/li>
 &lt;li>File system metadata
 &lt;ul>
 &lt;li>An inonde that points to the inode array.&lt;/li>
 &lt;/ul>
 &lt;/li>
+&lt;/ul>
+&lt;h3 id="mappings" >Mappings
+&lt;span>
+&lt;a href="#mappings">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>File metadata (inode): map byte offset to disk block address&lt;/li>
+&lt;li>Directory: map name to disk address or file #&lt;/li>
+&lt;/ul>
+&lt;h3 id="intuitions" >Intuitions
+&lt;span>
+&lt;a href="#intuitions">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>perfomance related to disk accesses&lt;/li>
+&lt;li>each disk access takes time because of the rotataional delay&lt;/li>
 &lt;/ul>
 &lt;h3 id="common-patterns" >Common Patterns
 &lt;span>
@@ -3625,24 +4116,152 @@ to be written to the disk.&lt;/p>
 &lt;/ul>
 &lt;/li>
 &lt;/ul>
-&lt;h2 id="hard-and-soft-links" >Hard and soft links
+&lt;h3 id="dos-fs" >DOS FS
+&lt;span>
+&lt;a href="#dos-fs">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>File Allocation Table (FAT)&lt;/li>
+&lt;li>Each directory has a mapping of filenames to index in FAT&lt;/li>
+&lt;li>FAT contains next block.&lt;/li>
+&lt;li>FAT is small enough to be cached is cheaper than disk access.&lt;/li>
+&lt;/ul>
+&lt;h3 id="indexed-files" >Indexed files
+&lt;span>
+&lt;a href="#indexed-files">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>requires large chunks of contiguous space space&lt;/li>
+&lt;li>array of block pointers per file&lt;/li>
+&lt;li>free list for allocations&lt;/li>
+&lt;/ul>
+&lt;h3 id="multi-level-indexed-files" >Multi-level indexed files
+&lt;span>
+&lt;a href="#multi-level-indexed-files">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>14 block pointers&lt;/li>
+&lt;li>first couple pointer point to blocks&lt;/li>
+&lt;li>other pointers point to more and more indirect blocks&lt;/li>
+&lt;/ul>
+&lt;h3 id="directories" >Directories
+&lt;span>
+&lt;a href="#directories">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>
+&lt;p>Approach 1: known disk location; {name, inumber}, unique names&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Approach 2: Single directory per user&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Approach 3: Hierarchical name spaces, graph&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Root directory is always inode 2&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Special names in FS: (Root: &amp;ldquo;/&amp;rdquo;), (Current: &amp;ldquo;.&amp;rdquo;), (Parent: &amp;ldquo;..&amp;rdquo;)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Special names not in FS: (User dir: &amp;ldquo;~&amp;rdquo;), globbing&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Use cd to change directory, and ls to list names in current directory&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="hard-and-soft-links" >Hard and soft links
 &lt;span>
 &lt;a href="#hard-and-soft-links">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
-&lt;/h2>&lt;ul>
+&lt;/h3>&lt;ul>
 &lt;li>Each inode has a count of hard links&lt;/li>
-&lt;li>&lt;/li>
+&lt;li>Use &lt;code>ln source synonym&lt;/code> to create a link&lt;/li>
+&lt;li>Inode for has special symlink bit set and contains target name (automatically translated by file system)&lt;/li>
 &lt;/ul>
-&lt;h2 id="fast-file-system" >Fast File System
+&lt;h3 id="fast-file-system-ffs" >Fast File System (FFS)
 &lt;span>
-&lt;a href="#fast-file-system">
+&lt;a href="#fast-file-system-ffs">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
-&lt;/h2>&lt;ul>
-&lt;li>Cluster related objects together&lt;/li>
+&lt;/h3>&lt;ul>
+&lt;li>Original file system
+&lt;ul>
+&lt;li>was slow and required inodes for directories as well&lt;/li>
+&lt;li>blocks too smal (512 bytes)&lt;/li>
+&lt;li>index too large&lt;/li>
+&lt;li>poor clustering of related blobs, inodes far from datablocks, poor enumeration&lt;/li>
+&lt;li>lacked atomic file updating&lt;/li>
+&lt;li>uses a free list (linked list) of free blocks which gets jumbled and slow to find adjacent blocks&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Cluster related objects together and seperate unrealted items&lt;/li>
+&lt;li>With bigger block sizes, split unused large portions into &lt;em>fragments&lt;/em> when there is a need to allocate smaller files&lt;/li>
+&lt;li>Fixed-size fragments allows the file system to allocate files in a more organized manner, which reduces fragmentation and improve performance&lt;/li>
+&lt;li>Uses bit-map of free blocks which is much easier to find contiguous blocks and can be stored in memory, time increases only when fewer free blocks&lt;/li>
+&lt;/ul>
+&lt;h4 id="clustering-in-ffs-using-cylinder-groups" >Clustering in FFS Using Cylinder Groups
+&lt;span>
+&lt;a href="#clustering-in-ffs-using-cylinder-groups">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;ul>
+&lt;li>Group at least one consequtive cylinder into a &lt;em>cylinder group&lt;/em>&lt;/li>
+&lt;li>Order of retrieval is can access any block in a cylinder without a seek, and the next fastest place is an adjacent cylinder&lt;/li>
+&lt;li>Put related data in the same cylinder group and unrealted items in another group
+&lt;ul>
+&lt;li>Different directories are placed in different cylinder groups&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Tries to put sequential blocks in adjacent sectors&lt;/li>
+&lt;li>Tries to keep same inode in same cylinder as file data&lt;/li>
+&lt;li>Tries to keep all inodes for a dir in the same cylinder group&lt;/li>
+&lt;li>Each cylinder group is a mini-Unix file system with a starting super block&lt;/li>
+&lt;/ul>
+&lt;h4 id="bitmap" >Bitmap
+&lt;span>
+&lt;a href="#bitmap">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;p>As said before, a bitmap is used in place of a free list to make it much simpler to find contiguous free blocks. It can also be stored in memory as it is small.&lt;/p>
+&lt;ul>
+&lt;li>If a 4GB disk has 4KB blocks, how big is the map? Each bit represents a 4KB blocks, so 4,000,000 KB / 4,000 KB = 1,000 bits = 125 bytes&lt;/li>
+&lt;li>Keep 10% reserved without informing user&lt;/li>
+&lt;li>Only allow root to allocate from the 10%&lt;/li>
+&lt;/ul>
+&lt;h4 id="ffs-next-steps" >FFS Next Steps
+&lt;span>
+&lt;a href="#ffs-next-steps">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;ul>
+&lt;li>Contiguous blocks are named with a single pointer and length (ext2fs)&lt;/li>
+&lt;li>Writes were done synchronously&lt;/li>
+&lt;li>Make writes async with write-ordering or logging/journaling&lt;/li>
+&lt;/ul>
+&lt;h3 id="log-structured-file-system" >Log-Structured File System
+&lt;span>
+&lt;a href="#log-structured-file-system">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>&lt;a href="https://web.stanford.edu/~ouster/cgi-bin/papers/lfs.pdf">paper&lt;/a>&lt;/li>
 &lt;li>&lt;/li>
 &lt;/ul>
 &lt;h3 id="metadata-synchronously" >Metadata Synchronously
