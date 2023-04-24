@@ -1531,6 +1531,10 @@ when a failure occurs&lt;/p>
 &lt;li>&lt;a href="#mutexes">Mutexes&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#condition-variables">Condition Variables&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#semaphores">Semaphores&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="#synchronization">Synchronization&lt;/a>
+&lt;ul>
 &lt;li>&lt;a href="#ordering-requirements">Ordering requirements&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#mips-spinlocks">MIPS Spinlocks&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#atomic">Atomic&lt;/a>&lt;/li>
@@ -1919,7 +1923,7 @@ it may be better to use grep.&lt;/p>
 &lt;/span>
 &lt;/h2>&lt;ul>
 &lt;li>Multi-threaded programs share the address space.&lt;/li>
-&lt;li>Typically oe kernel thread for every process&lt;/li>
+&lt;li>Typically one kernel thread for every process&lt;/li>
 &lt;/ul>
 &lt;h3 id="posix-thread-api" >POSIX Thread API
 &lt;span>
@@ -1927,15 +1931,18 @@ it may be better to use grep.&lt;/p>
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
-&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-c" data-lang="c">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">int&lt;/span> &lt;span style="color:#447fcf">pthread_create&lt;/span>(&lt;span style="color:#6ab825;font-weight:bold">pthread_t&lt;/span> *thr, &lt;span style="color:#6ab825;font-weight:bold">pthread_attr_t&lt;/span> *attr, &lt;span style="color:#6ab825;font-weight:bold">void&lt;/span> *(*fn)(&lt;span style="color:#6ab825;font-weight:bold">void&lt;/span> *), &lt;span style="color:#6ab825;font-weight:bold">void&lt;/span> *arg);
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">// create a new thread identified by thr with optional attributes, run fn with arg
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">&lt;/span>&lt;span style="color:#6ab825;font-weight:bold">void&lt;/span> &lt;span style="color:#447fcf">pthread_exit&lt;/span>(&lt;span style="color:#6ab825;font-weight:bold">void&lt;/span> *return_value);
+&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-c" data-lang="c">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">// create a new thread identified by thr with optional attributes, run fn with arg
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">&lt;/span>&lt;span style="color:#6ab825;font-weight:bold">int&lt;/span> &lt;span style="color:#447fcf">pthread_create&lt;/span>(&lt;span style="color:#6ab825;font-weight:bold">pthread_t&lt;/span> *thr, &lt;span style="color:#6ab825;font-weight:bold">pthread_attr_t&lt;/span> *attr, &lt;span style="color:#6ab825;font-weight:bold">void&lt;/span> *(*fn)(&lt;span style="color:#6ab825;font-weight:bold">void&lt;/span> *), &lt;span style="color:#6ab825;font-weight:bold">void&lt;/span> *arg);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">// destroy current thread and return a pointer
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">&lt;/span>&lt;span style="color:#6ab825;font-weight:bold">int&lt;/span> &lt;span style="color:#447fcf">pthread_join&lt;/span>(&lt;span style="color:#6ab825;font-weight:bold">pthread_t&lt;/span> &lt;span style="color:#6ab825;font-weight:bold">thread&lt;/span>, &lt;span style="color:#6ab825;font-weight:bold">void&lt;/span> **return_value);
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">&lt;/span>&lt;span style="color:#6ab825;font-weight:bold">void&lt;/span> &lt;span style="color:#447fcf">pthread_exit&lt;/span>(&lt;span style="color:#6ab825;font-weight:bold">void&lt;/span> *return_value);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">// Wait for thread thread to exit and receive the return value
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">&lt;/span>&lt;span style="color:#6ab825;font-weight:bold">void&lt;/span> &lt;span style="color:#447fcf">pthread_yield&lt;/span>();
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">&lt;/span>&lt;span style="color:#6ab825;font-weight:bold">int&lt;/span> &lt;span style="color:#447fcf">pthread_join&lt;/span>(&lt;span style="color:#6ab825;font-weight:bold">pthread_t&lt;/span> &lt;span style="color:#6ab825;font-weight:bold">thread&lt;/span>, &lt;span style="color:#6ab825;font-weight:bold">void&lt;/span> **return_value);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">// tell the OS scheduler to run another thread or process
-&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>and more&lt;/p>
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">&lt;/span>&lt;span style="color:#6ab825;font-weight:bold">void&lt;/span> &lt;span style="color:#447fcf">pthread_yield&lt;/span>();
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>and more&lt;/p>
 &lt;h3 id="limitations-of-kernel-threads" >Limitations of Kernel Threads
 &lt;span>
 &lt;a href="#limitations-of-kernel-threads">
@@ -2047,23 +2054,102 @@ it may be better to use grep.&lt;/p>
 &lt;/a>
 &lt;/span>
 &lt;/h3>&lt;p>A mutex is a mutual exclusion lock. Thread packages typically provide &lt;em>mutexes&lt;/em>:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-c" data-lang="c">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">void&lt;/span> &lt;span style="color:#447fcf">mutex_init&lt;/span>(&lt;span style="color:#6ab825;font-weight:bold">mutex_t&lt;/span> *m, &lt;span style="color:#a61717;background-color:#e3d2d2">\&lt;/span>ldots);
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>All global data should be protected by a mutex.
-If mutexes are used properly, then we get sequential consistency.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-c" data-lang="c">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">int&lt;/span> &lt;span style="color:#447fcf">pthread_mutex_init&lt;/span>(&lt;span style="color:#6ab825;font-weight:bold">pthread_mutex_t&lt;/span> *m, &lt;span style="color:#6ab825;font-weight:bold">pthread_mutexattr_t&lt;/span> attr);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">int&lt;/span> &lt;span style="color:#447fcf">pthread_mutex_destroy&lt;/span>(&lt;span style="color:#6ab825;font-weight:bold">pthread_mutex_t&lt;/span> *m)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">int&lt;/span> &lt;span style="color:#447fcf">pthread_mutex_lock&lt;/span> (&lt;span style="color:#6ab825;font-weight:bold">pthread_mutex_t&lt;/span> *m);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">int&lt;/span> &lt;span style="color:#447fcf">pthread_mutex_unlock&lt;/span>(&lt;span style="color:#6ab825;font-weight:bold">pthread_mutex_t&lt;/span> *m)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">// return 0 if successful, otherwise -1 (errno == EBUSY)
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">&lt;/span>&lt;span style="color:#6ab825;font-weight:bold">int&lt;/span> &lt;span style="color:#447fcf">pthread_mutex_trylock&lt;/span> (&lt;span style="color:#6ab825;font-weight:bold">pthread_mutex_t&lt;/span> *m);
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Only one thread acquires m at a time, others wait. All global data should be protected by a mutex. If mutexes are used properly, then we get behavior equivalent to sequential consistency.&lt;/p>
 &lt;p>Want to wrap all shared memory writes with a mutex lock and unlock.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-c" data-lang="c">&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="condition-variables" >Condition Variables
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-c" data-lang="c">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">// Improved Producer
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">&lt;/span>&lt;span style="color:#6ab825;font-weight:bold">mutex_t&lt;/span> mutex = MUTEX_INITIALIZER;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">void&lt;/span> &lt;span style="color:#447fcf">producer&lt;/span> (&lt;span style="color:#6ab825;font-weight:bold">void&lt;/span> *ignored) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">for&lt;/span> (;;) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> item *nextProduced = &lt;span style="color:#447fcf">produce_item&lt;/span> ();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#447fcf">mutex_lock&lt;/span> (&amp;amp;mutex);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">while&lt;/span> (count == BUFFER_SIZE) { &lt;span style="color:#999;font-style:italic">// remember to do while and not if
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">&lt;/span> &lt;span style="color:#447fcf">mutex_unlock&lt;/span> (&amp;amp;mutex); &lt;span style="color:#999;font-style:italic">// allow other threads to lock
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">&lt;/span> &lt;span style="color:#447fcf">thread_yield&lt;/span> ();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#447fcf">mutex_lock&lt;/span> (&amp;amp;mutex);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> buffer [in] = nextProduced;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> in = (in + &lt;span style="color:#3677a9">1&lt;/span>) % BUFFER_SIZE;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> count++;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#447fcf">mutex_unlock&lt;/span> (&amp;amp;mutex);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">// Improved Consumer
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">&lt;/span>&lt;span style="color:#6ab825;font-weight:bold">void&lt;/span> &lt;span style="color:#447fcf">consumer&lt;/span> (&lt;span style="color:#6ab825;font-weight:bold">void&lt;/span> *ignored) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">for&lt;/span> (;;) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#447fcf">mutex_lock&lt;/span> (&amp;amp;mutex);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">while&lt;/span> (count == &lt;span style="color:#3677a9">0&lt;/span>) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#447fcf">mutex_unlock&lt;/span> (&amp;amp;mutex);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#447fcf">thread_yield&lt;/span> ();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#447fcf">mutex_lock&lt;/span> (&amp;amp;mutex);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> item *nextConsumed = buffer[out];
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> out = (out + &lt;span style="color:#3677a9">1&lt;/span>) % BUFFER_SIZE;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> count--;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#447fcf">mutex_unlock&lt;/span> (&amp;amp;mutex);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#447fcf">consume_item&lt;/span> (nextConsumed);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="condition-variables" >Condition Variables
 &lt;span>
 &lt;a href="#condition-variables">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
-&lt;/h3>&lt;p>Instead of calling &lt;code>thread_yield&lt;/code>, we can sleep until a condition is met.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-c" data-lang="c">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">int&lt;/span> &lt;span style="color:#447fcf">pthread_cond_init&lt;/span>(&lt;span style="color:#6ab825;font-weight:bold">pthread_cond_t&lt;/span> *, &lt;span style="color:#a61717;background-color:#e3d2d2">\&lt;/span>ldots);
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">int&lt;/span> &lt;span style="color:#447fcf">pthread_cond_wait&lt;/span>(&lt;span style="color:#6ab825;font-weight:bold">pthread_cond_t&lt;/span> *c, &lt;span style="color:#6ab825;font-weight:bold">pthread_mutex_t&lt;/span> *m);
+&lt;/h3>&lt;p>Busy-waiting in application is a bad idea, since it consumes CPU. Instead of calling &lt;code>thread_yield&lt;/code>, we can sleep until a condition is met.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-c" data-lang="c">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">int&lt;/span> &lt;span style="color:#447fcf">pthread_cond_init&lt;/span>(&lt;span style="color:#6ab825;font-weight:bold">pthread_cond_t&lt;/span> *, ...);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">// unlock&amp;#39;s m atomically and re-acquires it upon signal
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">&lt;/span>&lt;span style="color:#6ab825;font-weight:bold">int&lt;/span> &lt;span style="color:#447fcf">pthread_cond_wait&lt;/span>(&lt;span style="color:#6ab825;font-weight:bold">pthread_cond_t&lt;/span> *c, &lt;span style="color:#6ab825;font-weight:bold">pthread_mutex_t&lt;/span> *m);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">// wake a single thread up
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">&lt;/span>&lt;span style="color:#6ab825;font-weight:bold">int&lt;/span> &lt;span style="color:#447fcf">pthread_cond_signal&lt;/span>(&lt;span style="color:#6ab825;font-weight:bold">pthread_cond_t&lt;/span> *c);
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">// wake all threads up
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">// wake all threads up (one at a time though)
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">&lt;/span>&lt;span style="color:#6ab825;font-weight:bold">int&lt;/span> &lt;span style="color:#447fcf">pthread_cond_broadcast&lt;/span>(&lt;span style="color:#6ab825;font-weight:bold">pthread_cond_t&lt;/span> *c);
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-c" data-lang="c">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">mutex_t&lt;/span> mutex = MUTEX_INITIALIZER;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">cond_t&lt;/span> nonempty = COND_INITIALIZER;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">cond_t&lt;/span> nonfull = COND_INITIALIZER;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">// CV Producer
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">&lt;/span>&lt;span style="color:#6ab825;font-weight:bold">void&lt;/span> &lt;span style="color:#447fcf">producer&lt;/span> (&lt;span style="color:#6ab825;font-weight:bold">void&lt;/span> *ignored) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">for&lt;/span> (;;) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> item *nextProduced = &lt;span style="color:#447fcf">produce_item&lt;/span> ();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#447fcf">mutex_lock&lt;/span>(&amp;amp;mutex);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic">// remember to use WHILE to avoid race conditions
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">&lt;/span> &lt;span style="color:#6ab825;font-weight:bold">while&lt;/span> (count == BUFFER_SIZE)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#447fcf">cond_wait&lt;/span>(&amp;amp;nonfull, &amp;amp;mutex);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> buffer [in] = nextProduced;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> in = (in + &lt;span style="color:#3677a9">1&lt;/span>) % BUFFER_SIZE;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> count++;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#447fcf">cond_signal&lt;/span>(&amp;amp;nonempty);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#447fcf">mutex_unlock&lt;/span>(&amp;amp;mutex);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">// CV Consumer
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">&lt;/span>&lt;span style="color:#6ab825;font-weight:bold">void&lt;/span> &lt;span style="color:#447fcf">consumer&lt;/span> (&lt;span style="color:#6ab825;font-weight:bold">void&lt;/span> *ignored) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">for&lt;/span> (;;) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#447fcf">mutex_lock&lt;/span> (&amp;amp;mutex);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic">// remember to use WHILE to avoid race conditions
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">&lt;/span> &lt;span style="color:#6ab825;font-weight:bold">while&lt;/span> (count == &lt;span style="color:#3677a9">0&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#447fcf">cond_wait&lt;/span> (&amp;amp;nonempty, &amp;amp;mutex);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> item *nextConsumed = buffer[out];
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> out = (out + &lt;span style="color:#3677a9">1&lt;/span>) % BUFFER_SIZE;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> count--;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#447fcf">cond_signal&lt;/span> (&amp;amp;nonfull);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#447fcf">mutex_unlock&lt;/span> (&amp;amp;mutex);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#447fcf">consume_item&lt;/span> (nextConsumed);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Use a while loop with these conditions to avoid race conditions of being beat out by another consumer.&lt;/p>
 &lt;h3 id="semaphores" >Semaphores
 &lt;span>
@@ -2071,13 +2157,28 @@ If mutexes are used properly, then we get sequential consistency.&lt;/p>
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
-&lt;/h3>&lt;p>Fancy mutex where if s is 0, sem_wait will block.&lt;/p>
+&lt;/h3>&lt;ul>
+&lt;li>A Semaphore is initialized with an integer N.&lt;/li>
+&lt;li>&lt;code>sem_wait&lt;/code> will return only N more times
+than &lt;code>sem_signal&lt;/code> called
+&lt;ul>
+&lt;li>first N calls to &lt;code>sem_wait&lt;/code> do not block&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>Fancy mutex where if n == 0, sem_wait will block.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-c" data-lang="c">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">int&lt;/span> &lt;span style="color:#447fcf">sem_init&lt;/span>(&lt;span style="color:#6ab825;font-weight:bold">sem_t&lt;/span> *s, ..., &lt;span style="color:#6ab825;font-weight:bold">unsigned&lt;/span> &lt;span style="color:#6ab825;font-weight:bold">int&lt;/span> n); &lt;span style="color:#999;font-style:italic">// proc_count_mutex = sem_create(&amp;#34;proc_count_mutex&amp;#34;,1);
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#447fcf">sem_wait&lt;/span>(&lt;span style="color:#6ab825;font-weight:bold">sem_t&lt;/span> *s) (originally called P) &lt;span style="color:#999;font-style:italic">// P(sem_t *s)
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#447fcf">sem_signal&lt;/span>(&lt;span style="color:#6ab825;font-weight:bold">sem_t&lt;/span> *s) &lt;span style="color:#999;font-style:italic">// V(sem_t *s)
-&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="ordering-requirements" >Ordering requirements
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="synchronization" >Synchronization
+&lt;span>
+&lt;a href="#synchronization">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;h3 id="ordering-requirements" >Ordering requirements
 &lt;span>
 &lt;a href="#ordering-requirements">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
