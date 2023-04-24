@@ -46,28 +46,8 @@ File hierarchy
 - cs350 (CWD)
   - os161
   - userspace
-  - cs350_cli.py
-
-```sh
-# setup new machine
-./cs350_cli.py configure
-# configure new assignment
-./cs350_cli.py new 1
-# build and run the kernel for an assignment
-./cs350_cli.py build 1
-./cs350_cli.py run [uint]
-# gdb requires you to run the following in two different terminals
-./cs350_cli.py debug 2
-./cs350_cli.py debug attach 2 --breakpoints file.c:30 file2.c:50
-# submit and see grade later
-./cs350_cli.py submit 0
-# internally calls:
-#   cs350_submit os161/os161-1.99/kern/compile/ASST0 ASST0
-#   cs350_submit userspace/ASSTUSER0 ASSTUSER0
-./cs350_cli.py grade 0
-```
-
-[cs350_cli.py](https://gist.github.com/elibroftw/36d18406d6be775e2c52af9d19571c42)
+    - ASSTUSERX
+  - [cs350_cli.py](https://gist.github.com/elibroftw/36d18406d6be775e2c52af9d19571c42)
 
 ### How to add to PATH
 
@@ -77,20 +57,9 @@ In your `.bashrc`, add `PATH="$PATH:path"`. For some reason, my `.bashrc` file k
 PATH="$PATH:/u/cs350/sys161/bin:/u/cs350/bin"
 ```
 
-### Pro tip
-
-Use three terminals. First terminal for running the SO. Second terminal for building the kernel, a third for using grep on the entire OS, and optionally a fourth terminal if you need to debug.
-
-### Custom Directory for OS/161
-
-```sh
-./configure --ostree="$PWD/../root" --toolprefix=cs350-
-```
-
 ### Finding stuff in the kernal code
 
-Since you may not have vscode open for the kernel but your entire linux environment,
-it may be better to use grep.
+Since you may not have vscode open for the kernel but your entire linux environment, grep may be more efficient.
 
 ```sh
 grep -rnw . -e 'pattern'
@@ -98,42 +67,56 @@ grep -rnw . -e 'pattern'
 
 This is the command assumes you are in the os161-X.YZ directory.
 
+### Setting up on a new Machine
+
+Works even if a custom directory is used for OS/161
+
+```sh
+# setup new machine
+./cs350_cli.py configure
+```
+
+This will copy the sys161.conf file. You will need to edit the CPUs and memory line. I recommend editing one of the commented out lines to have 4 CPUs and 4MB of memory and another one to be 4 CPUs with 2MB of memory.
+
 ### Building the kernel
 
 ```sh
+# configure new assignment (run once per assignment)
+./cs350_cli.py new 1
+# build the kernel for an assignment
+./cs350_cli.py build 1
+```
+
+If you don't use the script I wrote, you can ~~do the following~~ read the source code or the course guide and figure out how to build the kernel manually. I'm purposely not providing the commands as I never used them after I wrote my script.
+
+<!-- ```sh
 ./config ASSTX  # run whenever adding or removing kernel files from kern.conf
 # build the kernel
 cd ../compile/ASSTX
 bmake depend
 bmake
 bmake install
-```
-
-### Add the simulator to root
-
-```sh
-cp /u/cs350/sys161/sys161.conf sys161.conf
-```
+``` -->
 
 ### Running the kernel on a simulator
 
 ```sh
-sys161 kernel-ASST0
+# run the last built? kernel or the one you choose
+./cs350_cli.py run [uint]
 ```
 
 ### Debugging
 
 ```sh
-sys161 -w kernel-ASSTX
+# gdb requires you to run the following in two different terminals
+./cs350_cli.py debug 2
+# second terminal. The everything before --breakpoints is mandatory
+./cs350_cli.py debug attach 2 --breakpoints file.c:30 file2.c:50
 ```
 
-And in second shell, run
+In the second terminal, either spam the enter key or enter c to continue code execution as GDB pauses program.
 
 ```sh
-cs350-gdb kernel-ASSTX
-(gdb> dir ../os161-1.99/kern/compile/ASSTX
-(gdb) target remote unix:.sockets/gdb
-# set breakpoints before continuing
 (gdb) c
 ```
 
@@ -145,7 +128,14 @@ To work locally, you will need docker.
 
 ### Submitting Assignments
 
-Use `cs350_submit`
+```sh
+# submit and see grade later
+./cs350_cli.py submit 0
+# internally calls:
+#   cs350_submit os161/os161-1.99/kern/compile/ASST0 ASST0
+#   cs350_submit userspace/ASSTUSER0 ASSTUSER0
+./cs350_cli.py grade 0
+```
 
 ### Readelf
 
