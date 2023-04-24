@@ -739,19 +739,30 @@ Transition States
 
 If P1 = 24, P2 = 3, P3 = 3,
 
-- Then throughput = 3 / 30 = 0.1 jobs / sec.
-- Turnaround time: (end times of (24 + 27 + 30) / 3) = 27
+- **Throughput** = jobs / total time = 3 / 30 = 0.1 jobs / sec.
+- **Turnaround time** = sum of end times / jobs  = (24 + 27 + 30) / 3 = 27
+- long periods where no I/O is issued and CPU held
+- poor I/O device utilization
+
+### Bursts of Computation and I/O
+
+Jobs are both compute and I/O waiting. Therefore overlap I/O and compute from multiple jobs.
 
 ### Shortest Job First
 
-- Attempts to minimize turnaround time, but ends up minimizing waiting time and response time
-- With preemption, it is called shortest-remaining-time-first.
+- Schedule the job whose next CPU burst is the shortest
+- Attempts to minimize turnaround time
+  - Ends up **minimizing waiting time** and **response time**
+- With preemption, it is called shortest-remaining-time-first
+  - preemption means if a new job that has shorter CPU burst length, replace the job
 - Requires estimating burst time because future cannot be predicted
+  - Exponentially weighted average
+  - T<sub>n+1</sub> = alpha * t<sub>n</sub> + (1 - alpha) * T<sub>n</sub>
 - Can lead to unfairness and starvation
 
 ### Round Robin
 
-- Preempts job after some time and move it to the back of a FIFO
+- Preempts job after some time (quantum) and move it to the back of a FIFO
 - Disadvantages
   - Context switching
     - Saving and restoring registers
@@ -762,8 +773,8 @@ If P1 = 24, P2 = 3, P3 = 3,
 ### Time Quantum
 
 - 10-100msec
-- want larger than context switch cost (why?)
-- majority of bursts should be less than quantum (why?)
+- want larger than context switch cost so that context switching isn't completely suboptimal
+- majority of bursts should be less than quantum, otherwise way too much switching
 - not too large that it's basically FCFS
 
 ### Priority Scheduling
@@ -782,16 +793,17 @@ If P1 = 24, P2 = 3, P3 = 3,
 
 #### Process Priority
 
-- `p_nice`: user-settable weighting factor
-- `p_estcpu` - per-process CPU usage
+- _p<sub>nice</sub>_: user-settable weighting factor
+- _p<sub>estcpu</sub>_: per-process CPU usage
   - Incremented whenever timer interrupt found proc. running
   - Decayed every second while process runnable
-  `p_estcpu` = (2 \* load) / (2 \* load + 1) \* p\_estcpu + p\_nice
+  <img class=equation-tall src="https://latex.codecogs.com/svg.image?p_{estcpu}=\frac{2\times load}{2 \times load + 1}\times p_{estcpu} + p_{nice}">
   - Load is sampled average of length of run queue plus short-term sleep queue over last minute
-- Run queue determined by `p_usrpri/4`
-  - `p_usrpri` = 50 + (p\_estcpu / 4) + 2 \* p\_nice
-- For sleeping threads, update `p_estcpu` on wake using `p_slptime` to avoid unnecessary computes
-  - Decay: `p_estcpu` = (2 \* load) / (2 \* load + 1) ^ `p_slptime` * `p_estcpu`
+- Run queue determined by _p<sub>usrpri</sub>_ / 4
+    <img class=equation-tall src="https://latex.codecogs.com/svg.image?p_{usrpri}=50 + \frac{p_{estcpu}}{4} + 2 \times p_{nice}\leq127">
+- For sleeping threads, update _p<sub>estcpu</sub>_ when runnable using _p<sub>slptime</sub>_ to avoid unnecessary computes:
+
+<img class=equation-tall src="https://latex.codecogs.com/svg.image?p_{estcpu}=\frac{2\times load}{2 \times load + 1}^{p_{slptime}}\times p_{estcpu}">
 
 ### Priority Donation
 
@@ -801,12 +813,32 @@ If H waits on a lock held by M, then the priotity of M and L both go up, whereas
 
 ### Borrowed Virtual Time Scheduler
 
-- run process with lowest effective virtual time
-- Ei = Ai - (warpi ? Wi : 0)
-- Ej = Ei - C / wi where C is the context switch cost (ignore when j just became runnable)
-- Ai += t / wi
+- Run process with lowest effective virtual time (E)
+- Use weights to get each processes fraction of CPU (seconds per virtual time tick while process has CPU)
+- track actual virtual time A<sub>i</sub> += t / w<sub>i</sub>
+- E<sub>i</sub> = A<sub>i</sub> - (warp<sub>i</sub> ? W<sub>i</sub> : 0)
+  - W<sub>i</sub> is warp factor (thread precedence)
+- Run j if E<sub>j</sub> <= E<sub>i</sub> - C / w<sub>i</sub>
+  - C is the context switch cost
+  - Ignore context switch if j has just become runnable to avoid affecting response time
+
+BVT example
 
 ![BVT example](/images/cs-350/bvt-example.png)
+
+### Sleep / Wakeup
+
+- Increase actual time after wakeup (decreases priority)
+  - Otherwise starvation could occur on wakeup
+- Scheduler Virtual Time (SVT) is the minimum A for all runnable threads
+- When waking up a process, set A to max{A_<sub>i</sub>, SVT}
+- Set A when voluntary sleep and not OS's doing (network ping is not OS's doing)
+- Processes won't get more than their fair share by using this method
+
+### Real-time Threads
+
+- Some tasks like watching videos, should always be respected when they need CPU, so that's why a Warp factor exists as shown before
+- When process i has warp enabled, then as long as it doesn't hold CPU for too long (L<sub>i</sub>), it's priority for the CPU is boosted when it needs to
 
 ## I/O
 
@@ -1176,8 +1208,7 @@ As said before, a bitmap is used in place of a free list to make it much simpler
 
 ### Log-Structured File System
 
-- [paper](https://web.stanford.edu/~ouster/cgi-bin/papers/lfs.pdf)
--
+[paper](https://web.stanford.edu/~ouster/cgi-bin/papers/lfs.pdf)
 
 ### Metadata Synchronously
 
