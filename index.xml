@@ -2504,8 +2504,6 @@ when a failure occurs&lt;/p>
 &lt;li>&lt;a href="#creating-processes">Creating processes&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#pipes">Pipes&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#implementing-processes">Implementing Processes&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#thread-scheduling">Thread Scheduling&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#preemption">Preemption&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#context-switch">Context Switch&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;/li>
@@ -2542,20 +2540,43 @@ when a failure occurs&lt;/p>
 &lt;li>&lt;a href="#deadlocks">Deadlocks&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#solving-deadlocks">Solving Deadlocks&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#wait-channels">Wait Channels&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#system-calls">System Calls&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#interrupts">Interrupts&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#exceptions">Exceptions&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#system-call-numbering">System Call Numbering&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;/li>
-&lt;li>&lt;a href="#virtual-memory">Virtual Memory&lt;/a>
+&lt;li>&lt;a href="#system-calls">System Calls&lt;/a>
 &lt;ul>
+&lt;li>&lt;a href="#privilege-modes">Privilege Modes&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#mode-transitions">Mode Transitions&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#system-call-handling">System Call Handling&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#hardware-handling-in-mips-r3000">Hardware Handling in MIPS R3000&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#mips-review">MIPS Review&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#application-binary-interface">Application Binary Interface&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#execution-contexts">Execution Contexts&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#preemption">Preemption&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#process-context-switch">Process Context Switch&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="#virtual-memory-hardware">Virtual Memory Hardware&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#sharing-memory-issues">Sharing Memory Issues&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#virtual-memory-goals">Virtual Memory Goals&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#virtual-memory-advantages">Virtual Memory Advantages&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#load-time-linking">Load-time Linking&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#base--bound-register">base + bound register&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#segmentation">Segmentation&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#fragmentation">Fragmentation&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#paging">Paging&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#mmus">MMUs&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#hardware-managed-mmu">Hardware Managed MMU&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#tlb">TLB&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#os">OS&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#software-managed-mmu">Software Managed MMU&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="#virtual-memory-os">Virtual Memory OS&lt;/a>
+&lt;ul>
 &lt;li>&lt;a href="#increasing-virtual-memory-by-paging">Increasing Virtual Memory by Paging&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#page-buffering">Page Buffering&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#page-allocation">Page Allocation&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#thrashing">Thrashing&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;/li>
@@ -2613,6 +2634,13 @@ when a failure occurs&lt;/p>
 &lt;li>&lt;a href="#metadata-synchronously">Metadata Synchronously&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;/li>
+&lt;li>&lt;a href="#the-slab-allocator">The Slab Allocator&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#object-caching">Object Caching&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#questions">Questions&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="#the-fast-file-system">The Fast File System&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;/nav>
 &lt;/div>
@@ -2866,29 +2894,6 @@ bmake install
 &lt;/li>
 &lt;li>Information necessary to run (registers, virtual memory mapping, etc, open files)&lt;/li>
 &lt;li>Other data like credentials, signal mask, controlling terminal, priority, accounting stats, debugged, binary emulation, &amp;hellip;&lt;/li>
-&lt;/ul>
-&lt;h3 id="thread-scheduling" >Thread Scheduling
-&lt;span>
-&lt;a href="#thread-scheduling">
-&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
-&lt;/a>
-&lt;/span>
-&lt;/h3>&lt;ul>
-&lt;li>FIFO / Round-Robin?&lt;/li>
-&lt;li>Priority, give some threads a better shot at the CPU&lt;/li>
-&lt;/ul>
-&lt;h3 id="preemption" >Preemption
-&lt;span>
-&lt;a href="#preemption">
-&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
-&lt;/a>
-&lt;/span>
-&lt;/h3>&lt;ul>
-&lt;li>Can preempt a process when kernel gets control&lt;/li>
-&lt;li>Vector controls through system calls and etc.&lt;/li>
-&lt;li>Periodic timer&lt;/li>
-&lt;li>Device interrupt&lt;/li>
-&lt;li>Changing the running process is called context switch&lt;/li>
 &lt;/ul>
 &lt;h3 id="context-switch" >Context Switch
 &lt;span>
@@ -3382,6 +3387,8 @@ something will be written before the next line. (fences). With an Atomic type, a
 &lt;li>Avoid circular graphs&lt;/li>
 &lt;li>Predefine an order in which each lock should be acquired&lt;/li>
 &lt;li>You can use the address of the lock to determine locking order&lt;/li>
+&lt;li>When there is a circularity, use a system wide lock or a partial ordering&lt;/li>
+&lt;li>Can assert locking order statically (VMware ESX)&lt;/li>
 &lt;/ul>
 &lt;h3 id="wait-channels" >Wait Channels
 &lt;span>
@@ -3389,16 +3396,20 @@ something will be written before the next line. (fences). With an Atomic type, a
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
-&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-c" data-lang="c">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">void&lt;/span> &lt;span style="color:#447fcf">wchan_sleep&lt;/span>(&lt;span style="color:#6ab825;font-weight:bold">struct&lt;/span> wchan *wc);
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">// blocks calling thread on wait channel wc
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">&lt;/span>&lt;span style="color:#6ab825;font-weight:bold">void&lt;/span> &lt;span style="color:#447fcf">wchan_wakeall&lt;/span>(&lt;span style="color:#6ab825;font-weight:bold">struct&lt;/span> wchan *wc):
+&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-c" data-lang="c">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">// blocks calling thread on wait channel wc
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">&lt;/span>&lt;span style="color:#6ab825;font-weight:bold">void&lt;/span> &lt;span style="color:#447fcf">wchan_sleep&lt;/span>(&lt;span style="color:#6ab825;font-weight:bold">struct&lt;/span> wchan *wc);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">// wakes all threads sleeping on the wait channel
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">&lt;/span>&lt;span style="color:#6ab825;font-weight:bold">void&lt;/span> &lt;span style="color:#447fcf">wchan_wakeone&lt;/span>(&lt;span style="color:#6ab825;font-weight:bold">struct&lt;/span> wchan *wc);
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">&lt;/span>&lt;span style="color:#6ab825;font-weight:bold">void&lt;/span> &lt;span style="color:#447fcf">wchan_wakeall&lt;/span>(&lt;span style="color:#6ab825;font-weight:bold">struct&lt;/span> wchan *wc):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">// unblocks one threads sleeping on the wait channel
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">&lt;/span>&lt;span style="color:#6ab825;font-weight:bold">void&lt;/span> &lt;span style="color:#447fcf">wchan_lock&lt;/span>(&lt;span style="color:#6ab825;font-weight:bold">struct&lt;/span> wchan *wc);
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">&lt;/span>&lt;span style="color:#6ab825;font-weight:bold">void&lt;/span> &lt;span style="color:#447fcf">wchan_wakeone&lt;/span>(&lt;span style="color:#6ab825;font-weight:bold">struct&lt;/span> wchan *wc);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">// lock wait channel operations
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">// prevents a race between sleep and wakeone
-&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-c" data-lang="c">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#447fcf">P&lt;/span>(&lt;span style="color:#6ab825;font-weight:bold">struct&lt;/span> semaphore *sem) {
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">&lt;/span>&lt;span style="color:#6ab825;font-weight:bold">void&lt;/span> &lt;span style="color:#447fcf">wchan_lock&lt;/span>(&lt;span style="color:#6ab825;font-weight:bold">struct&lt;/span> wchan *wc);
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-c" data-lang="c">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">// wait
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">&lt;/span>&lt;span style="color:#447fcf">P&lt;/span>(&lt;span style="color:#6ab825;font-weight:bold">struct&lt;/span> semaphore *sem) {
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#447fcf">spinlock_acquire&lt;/span>(&amp;amp;sem-&amp;gt;sem_lock);
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">while&lt;/span> (sem-&amp;gt;sem_count == &lt;span style="color:#3677a9">0&lt;/span>) {
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#447fcf">wchan_lock&lt;/span>(sem-&amp;gt;sem_wchan);
@@ -3410,7 +3421,8 @@ something will be written before the next line. (fences). With an Atomic type, a
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#447fcf">spinlock_release&lt;/span>(&amp;amp;sem-&amp;gt;sem_lock);
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#447fcf">V&lt;/span>(&lt;span style="color:#6ab825;font-weight:bold">struct&lt;/span> semaphore *sem) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">// signal
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">&lt;/span>&lt;span style="color:#447fcf">V&lt;/span>(&lt;span style="color:#6ab825;font-weight:bold">struct&lt;/span> semaphore *sem) {
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#447fcf">spinlock_acquire&lt;/span>(&amp;amp;sem-&amp;gt;sem_lock)
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> sem-&amp;gt;count++;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#447fcf">wchan_wakeone&lt;/span>(sem-&amp;gt;sem_wchan);
@@ -3442,51 +3454,456 @@ something will be written before the next line. (fences). With an Atomic type, a
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#447fcf">spinlock_release&lt;/span>(&amp;amp;l-&amp;gt;lock);
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/details>
-&lt;h3 id="system-calls" >System Calls
+&lt;h2 id="system-calls" >System Calls
 &lt;span>
 &lt;a href="#system-calls">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
+&lt;/h2>&lt;p>System Calls: Application programmer interface (API) that
+programmers use to interact with the operating system. They are also a class of exceptions.&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Unprivileged code&lt;/p>
+&lt;ul>
+&lt;li>Application&lt;/li>
+&lt;li>Syscall Library&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Privileged&lt;/p>
+&lt;ul>
+&lt;li>Kernel&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>sysctl(): Exposes operating system configuration&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>ioctl(): Controlling devices&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="privilege-modes" >Privilege Modes
+&lt;span>
+&lt;a href="#privilege-modes">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Kernel / Privileged Mode - Operating System
+&lt;ul>
+&lt;li>Access all privileged CPU features&lt;/li>
+&lt;li>Setup and mange interrupts&lt;/li>
+&lt;li>Controls the system call interface&lt;/li>
+&lt;li>Modify the TLB (virtual memory &amp;hellip; future lecture)&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>User Mode - Applications
+&lt;ul>
+&lt;li>Cannot read/write kernel memory&lt;/li>
+&lt;li>Cannot directly call kernel functions&lt;/li>
+&lt;li>System library is also kernel memory so library is secure&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="mode-transitions" >Mode Transitions
+&lt;span>
+&lt;a href="#mode-transitions">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
 &lt;/h3>&lt;p>Kernel Mode can only be entered through well defined entry points.&lt;/p>
-&lt;h3 id="interrupts" >Interrupts
+&lt;h4 id="interrupts" >Interrupts
 &lt;span>
 &lt;a href="#interrupts">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
-&lt;/h3>&lt;p>Generated by external devices needing to signal&lt;/p>
-&lt;h3 id="exceptions" >Exceptions
+&lt;/h4>&lt;ul>
+&lt;li>Generated by external devices needing to signal&lt;/li>
+&lt;li>Signal processor through pin or bus message&lt;/li>
+&lt;li>Processor executes interrupt handler and preempts running program&lt;/li>
+&lt;li>Non-maskable interrupts (NMI) are urgent system requests that cannot be disabled&lt;/li>
+&lt;/ul>
+&lt;h4 id="exceptions" >Exceptions
 &lt;span>
 &lt;a href="#exceptions">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
-&lt;/h3>&lt;p>Caused by processor. E.g. divide by zero, page faults, CPU errors.&lt;/p>
-&lt;h3 id="system-call-numbering" >System Call Numbering
+&lt;/h4>&lt;ul>
+&lt;li>Caused by processor. E.g. divide by zero, page faults, CPU errors&lt;/li>
+&lt;li>Also called faults&lt;/li>
+&lt;li>Program errors: Divide-by-zero, illegal instructions&lt;/li>
+&lt;li>Operating System Requests: Page Faults&lt;/li>
+&lt;li>Hardware Errors: System check (bad memory or CPU failures)&lt;/li>
+&lt;li>CPU stops at instruction that triggered the exception&lt;/li>
+&lt;li>Control is transferred to a fixed location where the exception handler is located in privledged mode&lt;/li>
+&lt;/ul>
+&lt;h4 id="mips-exception-vectors" >MIPS Exception Vectors
+&lt;span>
+&lt;a href="#mips-exception-vectors">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;p>interrupt (0), system call (8), or other exception&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-c" data-lang="c">&lt;span style="display:flex;">&lt;span>EX_IRQ &lt;span style="color:#3677a9">0&lt;/span> &lt;span style="color:#999;font-style:italic">/* Interrupt */&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>EX_MOD &lt;span style="color:#3677a9">1&lt;/span> &lt;span style="color:#999;font-style:italic">/* TLB Modify (write to read-only page) */&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>EX_TLBL &lt;span style="color:#3677a9">2&lt;/span> &lt;span style="color:#999;font-style:italic">/* TLB miss on load */&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>EX_TLBS &lt;span style="color:#3677a9">3&lt;/span> &lt;span style="color:#999;font-style:italic">/* TLB miss on store */&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>EX_ADEL &lt;span style="color:#3677a9">4&lt;/span> &lt;span style="color:#999;font-style:italic">/* Address error on load */&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>EX_ADES &lt;span style="color:#3677a9">5&lt;/span> &lt;span style="color:#999;font-style:italic">/* Address error on store */&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>EX_IBE &lt;span style="color:#3677a9">6&lt;/span> &lt;span style="color:#999;font-style:italic">/* Bus error on instruction fetch */&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>EX_DBE &lt;span style="color:#3677a9">7&lt;/span> &lt;span style="color:#999;font-style:italic">/* Bus error on data load or store */&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>EX_SYS &lt;span style="color:#3677a9">8&lt;/span> &lt;span style="color:#999;font-style:italic">/* Syscall */&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>EX_BP &lt;span style="color:#3677a9">9&lt;/span> &lt;span style="color:#999;font-style:italic">/* Breakpoint */&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>EX_RI &lt;span style="color:#3677a9">10&lt;/span> &lt;span style="color:#999;font-style:italic">/* Illegal instruction */&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>EX_CPU &lt;span style="color:#3677a9">11&lt;/span> &lt;span style="color:#999;font-style:italic">/* Coprocessor unusable */&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>EX_OVF &lt;span style="color:#3677a9">12&lt;/span> &lt;span style="color:#999;font-style:italic">/* Arithmetic overflow */&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="system-call-handling" >System Call Handling
+&lt;span>
+&lt;a href="#system-call-handling">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>EX_SYS (8) exception&lt;/li>
+&lt;/ul>
+&lt;ol>
+&lt;li>Application loads the arguments into CPU registers&lt;/li>
+&lt;li>Load the system call number into register $v0&lt;/li>
+&lt;li>Executes syscall instruction to trigger EX_SYS exception&lt;/li>
+&lt;li>Kernel processes the system call through the exception handler&lt;/li>
+&lt;/ol>
+&lt;ul>
+&lt;li>kernel stack&lt;/li>
+&lt;li>create trapframe of the program state&lt;/li>
+&lt;li>exception type&lt;/li>
+&lt;li>type of system call&lt;/li>
+&lt;li>run kernel function&lt;/li>
+&lt;li>restore state from trapframe&lt;/li>
+&lt;/ul>
+&lt;ol start="5">
+&lt;li>Returns to userspace using rfe, return from exception instruction&lt;/li>
+&lt;/ol>
+&lt;h3 id="hardware-handling-in-mips-r3000" >Hardware Handling in MIPS R3000
+&lt;span>
+&lt;a href="#hardware-handling-in-mips-r3000">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Fixed location exception handlers&lt;/li>
+&lt;li>0x8000_00&lt;strong>00&lt;/strong> User TLB Handler (virtual memory)
+&lt;ul>
+&lt;li>So frequent, handler is hand optimized assembly&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>0x8000_00&lt;strong>80&lt;/strong> general exception handler&lt;/li>
+&lt;li>First 512MB of memory is for the OS&lt;/li>
+&lt;/ul>
+&lt;h4 id="mips-coprocessor" >MIPS Coprocessor
+&lt;span>
+&lt;a href="#mips-coprocessor">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;ul>
+&lt;li>MIPS CP0: system control coprocessor
+&lt;ul>
+&lt;li>System Control Coprocessor (CP0) contains exception handling information&lt;/li>
+&lt;li>c0_status&lt;/li>
+&lt;li>c0_cause&lt;/li>
+&lt;li>c0_epc&lt;/li>
+&lt;li>c0_vaddr (fault associated address)&lt;/li>
+&lt;li>c0_contex&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>MIPS CP1 floating point coprocessor&lt;/li>
+&lt;/ul>
+&lt;h3 id="mips-review" >MIPS Review
+&lt;span>
+&lt;a href="#mips-review">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>caller-saved registers&lt;/li>
+&lt;li>t0-t9: temporary registers&lt;/li>
+&lt;li>a0-a3: argument registers&lt;/li>
+&lt;li>v0-v1: return values&lt;/li>
+&lt;li>s0-s7: callee-saved registers&lt;/li>
+&lt;li>jal: jump and link to $ra&lt;/li>
+&lt;li>jr $ra: return from function&lt;/li>
+&lt;li>registers are saved per-thread stack (stacks are not shared, memories are&amp;hellip;)&lt;/li>
+&lt;/ul>
+&lt;h3 id="application-binary-interface" >Application Binary Interface
+&lt;span>
+&lt;a href="#application-binary-interface">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>System call number in v0&lt;/li>
+&lt;li>First four arguments in a0, a1, a2, a3&lt;/li>
+&lt;li>Remaining arguments passed on the stack&lt;/li>
+&lt;li>Success/fail in a3 and return value/error code in v0&lt;/li>
+&lt;/ul>
+&lt;h4 id="system-call-numbering" >System Call Numbering
 &lt;span>
 &lt;a href="#system-call-numbering">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
-&lt;/h3>&lt;h2 id="virtual-memory" >Virtual Memory
+&lt;/h4>&lt;p>Defined in &lt;code>kern/include/kern/syscall.h&lt;/code>&lt;/p>
+&lt;h3 id="execution-contexts" >Execution Contexts
 &lt;span>
-&lt;a href="#virtual-memory">
+&lt;a href="#execution-contexts">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
-&lt;/h2>&lt;h3 id="segmentation" >Segmentation
+&lt;/h3>&lt;p>The environment where functions execute including their
+arguments, local variables, memory.&lt;/p>
+&lt;ul>
+&lt;li>Three types of contexts: Application, kernel, interrupt.&lt;/li>
+&lt;li>Context transitions
+&lt;ul>
+&lt;li>Context switch: a transition between contexts&lt;/li>
+&lt;li>Thread switch: a transition between threads&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h4 id="application-stack" >Application Stack
+&lt;span>
+&lt;a href="#application-stack">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;p>Stack made up of frames that contain locals, arguments, and spilled registers. _start frame.&lt;/p>
+&lt;h4 id="context-switch-user-to-kernel" >Context Switch User to Kernel
+&lt;span>
+&lt;a href="#context-switch-user-to-kernel">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;ul>
+&lt;li>common_exception saves trapframe of the application context to the kernel stack&lt;/li>
+&lt;li>mips_trap decodes the trapframe and the syscall&lt;/li>
+&lt;li>syscall decodes arguments and calls sys_write&lt;/li>
+&lt;li>syscall stores return value and error into trapframe&lt;/li>
+&lt;li>common_exception restores the application context&lt;/li>
+&lt;/ul>
+&lt;h3 id="preemption" >Preemption
+&lt;span>
+&lt;a href="#preemption">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Can preempt a process when kernel gets control&lt;/li>
+&lt;li>Vector controls through system calls and etc.&lt;/li>
+&lt;li>Periodic timer&lt;/li>
+&lt;li>Device interrupt&lt;/li>
+&lt;li>Changing the running process is called context switch&lt;/li>
+&lt;li>Processes can vector control to kernel through exceptions and I/O&lt;/li>
+&lt;li>Changing the running process is called a context switch&lt;/li>
+&lt;/ul>
+&lt;h3 id="process-context-switch" >Process Context Switch
+&lt;span>
+&lt;a href="#process-context-switch">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Process Control Block&lt;/li>
+&lt;li>Save state into first processes&amp;rsquo; PCB&lt;/li>
+&lt;li>Reload state from other processes&amp;rsquo; PCB&lt;/li>
+&lt;li>Save state into other processes&amp;rsquo; PCB&lt;/li>
+&lt;li>Reload state from first processes&amp;rsquo;s PCB&lt;/li>
+&lt;/ul>
+&lt;h4 id="timer-interrupt" >Timer Interrupt
+&lt;span>
+&lt;a href="#timer-interrupt">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;ul>
+&lt;li>Like before, except EX_IRQ from timer means&lt;/li>
+&lt;li>mainbus_interrupt&lt;/li>
+&lt;li>timer_interrupt&lt;/li>
+&lt;li>thread_yield to pick next thread&lt;/li>
+&lt;li>thread_switch to save kernel thread state and restore thread state&lt;/li>
+&lt;li>switchframe&lt;/li>
+&lt;/ul>
+&lt;h2 id="virtual-memory-hardware" >Virtual Memory Hardware
+&lt;span>
+&lt;a href="#virtual-memory-hardware">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;h3 id="sharing-memory-issues" >Sharing Memory Issues
+&lt;span>
+&lt;a href="#sharing-memory-issues">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Protection
+&lt;ul>
+&lt;li>Bug in one process corrupts memory in another&lt;/li>
+&lt;li>Need to also protect against observing other&amp;rsquo;s memory&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Transparency
+&lt;ul>
+&lt;li>A process shouldn’t require particular physical memory bits&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Resource exhaustion
+&lt;ul>
+&lt;li>Sum of all processors sizes &amp;gt; physical memory&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="virtual-memory-goals" >Virtual Memory Goals
+&lt;span>
+&lt;a href="#virtual-memory-goals">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Applications don&amp;rsquo;t see physical memory, only virutal addresses&lt;/li>
+&lt;li>The Memory-Management Unit (hardware) relocates each load
+&lt;ul>
+&lt;li>The MMU is usually patrt of the CPU&lt;/li>
+&lt;li>Accessed w. privileged instructions (e.g., load bound reg)&lt;/li>
+&lt;li>Translates from virtual to physical addresses&lt;/li>
+&lt;li>Gives per-process view of memory called address space&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Prevents one app from messing with another’s memory&lt;/li>
+&lt;li>Allows programs to see more memory than exists (relocate memory accesses to disk)&lt;/li>
+&lt;/ul>
+&lt;h3 id="virtual-memory-advantages" >Virtual Memory Advantages
+&lt;span>
+&lt;a href="#virtual-memory-advantages">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Can re-locate program while running&lt;/li>
+&lt;li>Partially run in memory and on disk&lt;/li>
+&lt;li>Idle processes&amp;rsquo; memory written to disk so that other processes can read&lt;/li>
+&lt;/ul>
+&lt;h3 id="load-time-linking" >Load-time Linking
+&lt;span>
+&lt;a href="#load-time-linking">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Linker patches addresses of symbols like printf&lt;/li>
+&lt;li>How to enforce protection&lt;/li>
+&lt;li>How to move once already in memory (Consider: data pointers)&lt;/li>
+&lt;li>What if no contiguous free region fits program?&lt;/li>
+&lt;/ul>
+&lt;h3 id="base--bound-register" >base + bound register
+&lt;span>
+&lt;a href="#base--bound-register">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Two special privileged registers: base and bound&lt;/li>
+&lt;li>When loading/storing,
+&lt;ul>
+&lt;li>Check 0 ≤ virtual address &amp;lt; bound, else trap to kernel&lt;/li>
+&lt;li>Physical address = virtual address + base&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>To move proces in memory, change base register&lt;/li>
+&lt;li>OS must reload base and bound register on context switch&lt;/li>
+&lt;li>Need to segment memory to avoid
+&lt;ul>
+&lt;li>expensive process growth&lt;/li>
+&lt;li>sharing code/data&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="segmentation" >Segmentation
 &lt;span>
 &lt;a href="#segmentation">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
-&lt;/h3>&lt;p>Seg base bounds rw&lt;/p>
-&lt;p>0 0x4000 0x6ff 10&lt;/p>
-&lt;p>1 0x0000 0x4ff 11&lt;/p>
-&lt;p>2 0x3000 0xfff 11&lt;/p>
-&lt;p>Exercises: 0x0240, 0x1108, 0x265c, 0x3002, 0x1600&lt;/p>
+&lt;/h3>&lt;p>Each process has may base/bound regs. Address space is built from many segments. Share/protect memory at segment granularity. Segment is specified in a virtual address.&lt;/p>
+&lt;ul>
+&lt;li>Segment table
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>[Seg]&lt;/th>
+&lt;th>base&lt;/th>
+&lt;th>bounds&lt;/th>
+&lt;th>rw&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>0&lt;/td>
+&lt;td>0x4000&lt;/td>
+&lt;td>0x6ff&lt;/td>
+&lt;td>10&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>1&lt;/td>
+&lt;td>0x0000&lt;/td>
+&lt;td>0x4ff&lt;/td>
+&lt;td>11&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>2&lt;/td>
+&lt;td>0x3000&lt;/td>
+&lt;td>0xfff&lt;/td>
+&lt;td>11&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>3&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>00&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;/li>
+&lt;li>Virtual address indicates segment and an offset
+&lt;ul>
+&lt;li>top bits of addr corresponds to 0-index row/segment in segment table, low bits select offset&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;details>
+&lt;summary>segment exercises: 0x0240, 0x1108, 0x265c, 0x3002, 0x1600&lt;/summary>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-c" data-lang="c">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#3677a9">0x0240&lt;/span> --&amp;gt; &lt;span style="color:#3677a9">0x4240&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#3677a9">0x1108&lt;/span> --&amp;gt; &lt;span style="color:#3677a9">0x0108&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#3677a9">0x265c&lt;/span> --&amp;gt; &lt;span style="color:#3677a9">0x365c&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#3677a9">0x3002&lt;/span> --&amp;gt; EXCEPTION
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#3677a9">0x1600&lt;/span> --&amp;gt; OUT OF BOUNDS SINCE &lt;span style="color:#3677a9">0x0600&lt;/span> &amp;gt; &lt;span style="color:#3677a9">0x04ff&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/details>
 &lt;p>If the segment is invalid (not in table or has invalid rw bits), an exception is thrown.&lt;/p>
+&lt;ul>
+&lt;li>Requires translation hardware which could limit performance&lt;/li>
+&lt;li>Segments not exactly transparent to program&lt;/li>
+&lt;li>Segments need contiguous bytes of physical memory&lt;/li>
+&lt;li>Leads to fragmentation&lt;/li>
+&lt;/ul>
+&lt;h3 id="fragmentation" >Fragmentation
+&lt;span>
+&lt;a href="#fragmentation">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>The inability to use free memory.&lt;/p>
 &lt;h4 id="external-fragmentation" >External Fragmentation
 &lt;span>
 &lt;a href="#external-fragmentation">
@@ -3500,7 +3917,7 @@ something will be written before the next line. (fences). With an Atomic type, a
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
-&lt;/h4>&lt;p>Space inside a segment that was allocated for the stack.&lt;/p>
+&lt;/h4>&lt;p>Space inside a segment that was allocated for the stack; internal waste.&lt;/p>
 &lt;h3 id="paging" >Paging
 &lt;span>
 &lt;a href="#paging">
@@ -3513,9 +3930,25 @@ something will be written before the next line. (fences). With an Atomic type, a
 &lt;li>Map virtual pages to physical pages. Each process has separate mapping&lt;/li>
 &lt;/ul>
 &lt;/li>
-&lt;li>Pages eliminates external fragmentation and pages are small enough that internal fragmentation is .5 pages per &amp;ldquo;segment&amp;rdquo;.&lt;/li>
+&lt;li>Certain operations give control back to OS
+&lt;ul>
+&lt;li>writes to read-only pages&lt;/li>
+&lt;li>invalid pages&lt;/li>
+&lt;li>OS can change mapping&lt;/li>
 &lt;/ul>
-&lt;p>&lt;img src="images/cs-350/pages.png" alt="pages table">&lt;/p>
+&lt;/li>
+&lt;li>Accessed and dirty bits&lt;/li>
+&lt;li>Cache control&lt;/li>
+&lt;li>Pages eliminates external fragmentation and pages are small enough that average internal fragmentation is .5 pages per &amp;ldquo;segment&amp;rdquo;&lt;/li>
+&lt;li>Pages have a fixed size. X KB
+&lt;ul>
+&lt;li>log2(X) = bits required for the page offset&lt;/li>
+&lt;li>Least significant 12 bits are the offset when page size is 4KB&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Each process has a page table that maps Virtual Page Numbers to Physical Page Numbers&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="https://blog.elijahlopez.ca/images/cs-350/pages.png" alt="pages table">&lt;/p>
 &lt;h3 id="mmus" >MMUs
 &lt;span>
 &lt;a href="#mmus">
@@ -3533,14 +3966,52 @@ something will be written before the next line. (fences). With an Atomic type, a
 &lt;li>Hardware reloads TLB with pages from a page tables&lt;/li>
 &lt;li>Typically hardware page tables are Radix Trees&lt;/li>
 &lt;li>Requires complex hardware&lt;/li>
+&lt;li>Examples: x86, ARM64, IBM POWER9+&lt;/li>
 &lt;/ul>
-&lt;h4 id="x86-paging" >x86 Paging
+&lt;h4 id="intel-x86-paging" >Intel x86 Paging
 &lt;span>
-&lt;a href="#x86-paging">
+&lt;a href="#intel-x86-paging">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
-&lt;/h4>&lt;p>&lt;a href="https://student.cs.uwaterloo.ca/~cs350/W23/notes/vm_hardware.pdf">Slides&lt;/a>&lt;/p>
+&lt;/h4>&lt;ul>
+&lt;li>Control registers are priviledged&lt;/li>
+&lt;li>bits in a control register (%cr0)&lt;/li>
+&lt;li>4KB pages&lt;/li>
+&lt;li>%c43 points to 4KB page directory&lt;/li>
+&lt;li>1024 page directory entries
+&lt;ul>
+&lt;li>physical address of a page table&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>page table has 1024 entries
+&lt;ul>
+&lt;li>virtual 4K page per entry&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="tlb" >TLB
+&lt;span>
+&lt;a href="#tlb">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>x86 CPUs started using translation lookaside buffer (TLB) in caches to speedup page table lookup to avoid 3 memory references per load/store (page directory, page table, physical page access).&lt;/li>
+&lt;li>requires flushing on context switch to avoid returning invalid page&lt;/li>
+&lt;li>now each entry has a process ID to avoid flushing&lt;/li>
+&lt;/ul>
+&lt;h3 id="os" >OS
+&lt;span>
+&lt;a href="#os">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>OS lives in same address space of process&lt;/li>
+&lt;li>Permission bits&lt;/li>
+&lt;li>Map kernel in boot loader&lt;/li>
+&lt;/ul>
 &lt;h3 id="software-managed-mmu" >Software Managed MMU
 &lt;span>
 &lt;a href="#software-managed-mmu">
@@ -3551,7 +4022,8 @@ something will be written before the next line. (fences). With an Atomic type, a
 &lt;li>Simpler hardware and asks software to reload pages&lt;/li>
 &lt;li>Requires fast exception handling and optimized software&lt;/li>
 &lt;li>Enables more flexibility in the TLB (e.g. variable page sizes)&lt;/li>
-&lt;li>TLB fields: Virtual page, Pid, Page frame, NC, D[irty], V, Global&lt;/li>
+&lt;li>TLB fields: Virtual page, Pid, Page frame, NC (no cache), D[irty], V(alid), Global (ignore PID)&lt;/li>
+&lt;li>64 64-bit entries&lt;/li>
 &lt;/ul>
 &lt;p>TLB Instructions&lt;/p>
 &lt;ul>
@@ -3566,11 +4038,24 @@ something will be written before the next line. (fences). With an Atomic type, a
 &lt;li>c0_entrylo: low bits of TLB entry&lt;/li>
 &lt;li>c0_index: TLB Index&lt;/li>
 &lt;/ul>
-&lt;p>Global bit&lt;/p>
-&lt;ul>
-&lt;li>&lt;/li>
+&lt;h4 id="tlb-exceptions" >TLB Exceptions
+&lt;span>
+&lt;a href="#tlb-exceptions">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;ul>
+&lt;li>UTLB Miss: Generated when the accessing useg without matching TLB entry&lt;/li>
+&lt;li>TLB Miss: Generated when the accessing kseg2 without matching entry&lt;/li>
+&lt;li>TLB Mod: Generated when writing to read-only page&lt;/li>
 &lt;/ul>
-&lt;h3 id="increasing-virtual-memory-by-paging" >Increasing Virtual Memory by Paging
+&lt;h2 id="virtual-memory-os" >Virtual Memory OS
+&lt;span>
+&lt;a href="#virtual-memory-os">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;h3 id="increasing-virtual-memory-by-paging" >Increasing Virtual Memory by Paging
 &lt;span>
 &lt;a href="#increasing-virtual-memory-by-paging">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
@@ -3602,12 +4087,22 @@ virtual page number, and replace it with the frame number.&lt;/p>
 &lt;li>2/4 MB mappings&lt;/li>
 &lt;li>Sometimes more pages in L2 cache than TLB entries&lt;/li>
 &lt;/ul>
-&lt;p>FIFO Eviction&lt;/p>
-&lt;ul>
+&lt;h4 id="fifo-eviction" >FIFO Eviction
+&lt;span>
+&lt;a href="#fifo-eviction">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;ul>
 &lt;li>Evict oldest fetched page in system&lt;/li>
 &lt;/ul>
-&lt;p>LRU Page replacement&lt;/p>
-&lt;ul>
+&lt;h4 id="lru-page-replacement" >LRU Page replacement
+&lt;span>
+&lt;a href="#lru-page-replacement">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;ul>
 &lt;li>Worse for looping over memory (better to use MRU eviction then)&lt;/li>
 &lt;li>Stamping timer is too expensive as it doubles memory traffic&lt;/li>
 &lt;li>Keeping a doubly-linked list is annoying&lt;/li>
@@ -3620,15 +4115,17 @@ virtual page number, and replace it with the frame number.&lt;/p>
 &lt;/a>
 &lt;/span>
 &lt;/h4>&lt;ul>
-&lt;li>Do FIFO but skipped accessed pages&lt;/li>
+&lt;li>Do FIFO but skip accessed pages&lt;/li>
 &lt;li>Keep pages in circular FIFO list&lt;/li>
-&lt;li>Scan all and find a page that isn&amp;rsquo;t set and evict&lt;/li>
-&lt;li>Runs when there is very low memory&lt;/li>
+&lt;li>Scan all and find a page that isn&amp;rsquo;t set and Evict
+&lt;ul>
+&lt;li>If A = 1, set A = 0. If A = 0, evict&lt;/li>
 &lt;/ul>
-&lt;p>When there is larger memory, use two clock hands at a fixed size. The first
-hands clears and the second hand picks evicted pages.&lt;/p>
-&lt;p>Can take advantage of hardware dirty bit to prefer clean pages over dirty page. A dirty page has
-to be written to the disk.&lt;/p>
+&lt;/li>
+&lt;li>Runs when there is very low memory&lt;/li>
+&lt;li>When there is larger memory, use two clock hands at a fixed size. The first hands clears and the second hand picks evicted pages&lt;/li>
+&lt;li>Can take advantage of hardware dirty bit to prefer clean pages over dirty page. A dirty page has to be written to the disk&lt;/li>
+&lt;/ul>
 &lt;p>Or use n-bit accessed count instead of just A bit. On sweep, count = (A &amp;laquo; (n - 1) | (count &amp;raquo; 1)). Evict the page with the lowest count.&lt;/p>
 &lt;p>Random eviction avoids belady and double swaps by hypervisors, and is simple to implement.&lt;/p>
 &lt;p>Databases are workload specific.&lt;/p>
@@ -3647,22 +4144,43 @@ to be written to the disk.&lt;/p>
 &lt;li>LFU&lt;/li>
 &lt;li>MFU&lt;/li>
 &lt;li>Specific policies&lt;/li>
-&lt;li>Naïve paging&lt;/li>
+&lt;li>Naïve paging: 2 disk I/Os per fault&lt;/li>
 &lt;/ul>
-&lt;h3 id="thrashing" >Thrashing
+&lt;h3 id="page-buffering" >Page Buffering
+&lt;span>
+&lt;a href="#page-buffering">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Keep pool of free page frames. On fault, evict victim page, and read into free page so that execution can continue while writing out evicted page which is then added to the page pool.&lt;/p>
+&lt;h3 id="page-allocation" >Page Allocation
+&lt;span>
+&lt;a href="#page-allocation">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;h3 id="thrashing" >Thrashing
 &lt;span>
 &lt;a href="#thrashing">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
-&lt;/h3>&lt;p>Process uses more memory than system has&lt;/p>
+&lt;/h3>&lt;p>Threashing is when an application is in a constantly swapping pages in and out preventing the application from making forward progress at any reasonable rate.&lt;/p>
+&lt;p>Process uses more memory than system has&lt;/p>
 &lt;ul>
 &lt;li>working set
 &lt;ul>
-&lt;li>How much memory for process is required&lt;/li>
+&lt;li>How much cache/memory for process is required&lt;/li>
+&lt;li>Only run processes that meet requirements&lt;/li>
 &lt;/ul>
 &lt;/li>
-&lt;li>page fault frequency&lt;/li>
+&lt;li>page fault frequency
+&lt;ul>
+&lt;li>PFF = page faults / instructions executed&lt;/li>
+&lt;li>PFF &amp;gt; threshold = more memory? Swap out if no more memory&lt;/li>
+&lt;li>PFF &amp;lt; threshdold = take away memory&lt;/li>
+&lt;/ul>
+&lt;/li>
 &lt;/ul>
 &lt;h2 id="scheduling" >Scheduling
 &lt;span>
@@ -4566,7 +5084,66 @@ to be written to the disk.&lt;/p>
 &lt;/ul>
 &lt;p>To ensure things work correctly, we need to flush to disk before the pointer pointing to the inode gets flushed. Therefore, we need to write out the data first, then create the inode, and then create the directory entry pointing to it. When deleting, first delete the directory entry, and then the inode.&lt;/p>
 &lt;p>Log inode and dir entry to a log first. On crash, re-execute the log to copy back the file system. This is 2x the IO writes.
-1GB sized journals.&lt;/p></description></item><item><title>Tauri Custom Titlebar (React)</title><link>https://blog.elijahlopez.ca/posts/tauri-custom-titlebar/</link><pubDate>Sat, 24 Dec 2022 10:45:01 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/tauri-custom-titlebar/</guid><description>&lt;p>This tutorial is based on Part 12 of my Tauri &amp;amp; ReactJS series.&lt;/p>
+1GB sized journals.&lt;/p>
+&lt;h2 id="the-slab-allocator" >The Slab Allocator
+&lt;span>
+&lt;a href="#the-slab-allocator">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>&lt;a href="https://rcs.uwaterloo.ca/~ali/readings/bonwick.pdf">bonwick.pdf&lt;/a>&lt;/p>
+&lt;h3 id="object-caching" >Object Caching
+&lt;span>
+&lt;a href="#object-caching">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Allocating an object and destroying it repeatedly is time consuming and wasteful and can be improved upon by using a cache. Use a cached object if it in the cache and upon freeing, return the object to the cache. Better to do this in the central allocator since the OS has more insight into overall memory usage and it avoids bloating the size of the kernel code.&lt;/p>
+&lt;h3 id="questions" >Questions
+&lt;span>
+&lt;a href="#questions">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Question 1 (4)&lt;/p>
+&lt;p>How does the slab allocator improve the worst-case runtime?&lt;/p>
+&lt;p>In the worst case, there are lots of objects that are big in size.
+Objects are cached in the slab allocator meaning that repeatedly allocating and freeing objects will not result in wasteful constructions and destructions. Rather with the cache, the object is simply initialized just once and is retrieved from the cache or put back into the cache. The client can also decide when to create and destroy the cache itself for many objects.&lt;/p>
+&lt;p>Secondly, this object caching mechanism allows the slab allocator to take up pages for the same object type and use reference counting to free these pages rather than complex data structures that are non-constant in runtime. Therefore, allocations and reclaiming memory is fast as well. When objects are of the same time, they have the same lifetime distribution meaning less chance of pages being held meaning faster memory allocations when there are many applications running and competing for memory.&lt;/p>
+&lt;p>Question 2 (4)&lt;/p>
+&lt;p>How does the slab allocator improve the best-case runtime?&lt;/p>
+&lt;p>In the best case, there are only allocations of small objects at the beginning and frees at the end. The slab layout offers a stub at the end of each slab for containing information about the buffers it has available. The interfaces are extremely lightweight meaning that little memory allocations.&lt;/p>
+&lt;p>The slab allocator improves the best-case runtime, because as written in 5.3 (2), cache utilization is better. The Slab allocator gives each slab an offset so that buffers are distributed evenly throughout the cache rather than heavily loading the same cache lines. Without the offset, the same lines of the cache would be read since each buffer is of the same object type. The offset alleviates this cache loading and thus improves the miss rate which thus improve runtime even in the best cases.&lt;/p>
+&lt;p>Question 3 (3)&lt;/p>
+&lt;p>List the three largest sources of improved OS performance when using a slab allocator?&lt;/p>
+&lt;ul>
+&lt;li>Object-cache interface&lt;/li>
+&lt;li>Memory management via slabs (no limits, faster counting, same type buffers to reduce fragmentation)&lt;/li>
+&lt;li>Slab coloring to improve cache utilization&lt;/li>
+&lt;/ul>
+&lt;h2 id="the-fast-file-system" >The Fast File System
+&lt;span>
+&lt;a href="#the-fast-file-system">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>&lt;a href="https://rcs.uwaterloo.ca/~ali/readings/ffs.pdf">ffs.pdf&lt;/a>&lt;/p>
+&lt;p>512 bytes -&amp;gt; 1024 resulted in 2x performance&lt;/p>
+&lt;ul>
+&lt;li>each disk transfer accessed twice the amount of data&lt;/li>
+&lt;li>direct blocks contained twice as much data -&amp;gt; most files don’t need indirect blocks
+Randomization of data blocks causes deteriorated performance due to seeking before access
+Super-block is at the start of each partition and contains critical data and is replicated. &lt;/li>
+&lt;/ul>
+&lt;p>Question 1 (4)&lt;/p>
+&lt;p>How does the performance benefits of cylinder groups change with number of cylinder groups? How would you size the cylinder groups on a modern multi-terabyte disk?&lt;/p>
+&lt;p>The more cylinder groups, the more times the OS can group related data together. This means that bigger files can be stored and be read more efficiently (single pass). For sizing the cylinder groups on a multi-terabyte disk, we can expect files that are many gigabytes in size and so need enough groups to distribute these big files across many groups. We need 10MB cylinder groups to allocate a 100GB file on a 1TB system (1TB / 100GB ~= 10 MB). Reasoning is “The heuristic solution chosen is to redirect block allocation to a different cylinder group when a file exceeds 48 kilobytes, and at every megabyte thereafter.”&lt;/p>
+&lt;p>Question 2 (4)&lt;/p>
+&lt;p>One can repair most POSIX file systems through the fsck command. Typically, the computer detects an unclean unmount through the superblock and repairs the file system before the computer starts up by running fsck. If we want to optimize the computer startup time, we need to run fsck in the background and the file system must be &amp;lsquo;correct enough&amp;rsquo; to allow the computer to operate on it. Describe at least one precondition all file system writes must adhere to, to allow one to repair the file system in the background after the computer has booted.&lt;/p>
+&lt;p>Writes must not corrupt the filesystem. For writes to not corrupt the filesystem, at all times, all inodes must point to valid data, and all directory entries must point to valid inodes. Therefore, writes must be done in the order of disk, then inode creation, then directory entry. This ensures that corrupt or random garbage data is not being read or pointed to by a directory entry or inode. This way, fsck can fix any broken pointers in the background while the computer boots fine.&lt;/p>
+&lt;p>Quesion 3 (2)&lt;/p>
+&lt;p>If you don&amp;rsquo;t want to use fragments, how can you reduce the space wasted by very small files (i.e., less than 56 Bytes).&lt;/p>
+&lt;p>Dedicate end portions of each cylinder group for very small files. So blocks of 56 at the very of end of each group. Then whenever a file needs to be read or written, the OS should try reading from the end of the group rather than the front. Prevent bigger files from writing into these blocks. Since each cylinder group will have a fixed size, the OS should be able to calculate which blocks are of size 4096 and which blocks are of a smaller size, and then prevent writing multiple smaller blocks unless necessary. In essence, dedicated blocks for very small files at the end of each cylinder group where the OS knows beforehand the change in block sizes will enable reducing wasted space without using fragments.&lt;/p></description></item><item><title>Tauri Custom Titlebar (React)</title><link>https://blog.elijahlopez.ca/posts/tauri-custom-titlebar/</link><pubDate>Sat, 24 Dec 2022 10:45:01 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/tauri-custom-titlebar/</guid><description>&lt;p>This tutorial is based on Part 12 of my Tauri &amp;amp; ReactJS series.&lt;/p>
 &lt;div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
 &lt;iframe src="https://www.youtube.com/embed/zONyCMTUwsI" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video">&lt;/iframe>
 &lt;/div>
