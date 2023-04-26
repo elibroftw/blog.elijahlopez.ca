@@ -123,7 +123,26 @@
 &lt;/li>
 &lt;li>&lt;a href="#data-analytics-warehousing-and-mining">Data Analytics: Warehousing and Mining&lt;/a>
 &lt;ul>
+&lt;li>&lt;a href="#online-transactional-processing-oltp">Online Transactional Processing (OLTP)&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#data-analytics">Data Analytics&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#data-warehouses">Data Warehouses&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="#big-data">Big Data&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#mapreduce">MapReduce&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#hadoop">Hadoop&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#apache-spark">Apache Spark&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="#nosql-systems">NoSQL Systems&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#cap-theorem">CAP Theorem&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#key-value-stores">Key-Value Stores&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#amazon-dynamodb">Amazon DynamoDB&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#mongodb">MongoDB&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#google-bigtable">Google BigTable&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#graph-dbmss">Graph DBMSs&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;/ul>
@@ -1445,7 +1464,35 @@ when a failure occurs&lt;/p>
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
-&lt;/h2>&lt;h3 id="data-warehouses" >Data Warehouses
+&lt;/h2>&lt;h3 id="online-transactional-processing-oltp" >Online Transactional Processing (OLTP)
+&lt;span>
+&lt;a href="#online-transactional-processing-oltp">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>simple queries&lt;/li>
+&lt;li>many short transactions making small changes&lt;/li>
+&lt;li>Systems tuned to maximize throughput of concurrent transactions&lt;/li>
+&lt;/ul>
+&lt;h3 id="data-analytics" >Data Analytics
+&lt;span>
+&lt;a href="#data-analytics">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>the processing of data to infer patterns, correlations, or
+models for prediction. Used to make business decisions.&lt;/p>
+&lt;ol>
+&lt;li>Gather data
+&lt;ul>
+&lt;li>Extraction-transform-load&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Generate aggregates and reports summarizing data&lt;/li>
+&lt;li>Build predictive models&lt;/li>
+&lt;/ol>
+&lt;h3 id="data-warehouses" >Data Warehouses
 &lt;span>
 &lt;a href="#data-warehouses">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
@@ -1461,7 +1508,7 @@ when a failure occurs&lt;/p>
 &lt;li>Extract: queries&lt;/li>
 &lt;li>Clean: delete or repair tuples&lt;/li>
 &lt;li>Transform: reorg&lt;/li>
-&lt;li>Load: populate the warhouse tables&lt;/li>
+&lt;li>Load: populate the warehouse tables&lt;/li>
 &lt;/ul>
 &lt;h4 id="warehouse-schemas" >Warehouse Schemas
 &lt;span>
@@ -1474,6 +1521,235 @@ when a failure occurs&lt;/p>
 &lt;li>Dimension tables: additional tables for each fact tables&lt;/li>
 &lt;li>Measure attributes: value based&lt;/li>
 &lt;li>Dimension attributes: relation based&lt;/li>
+&lt;/ul>
+&lt;h2 id="big-data" >Big Data
+&lt;span>
+&lt;a href="#big-data">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>Very large volumes of data being collected. Web logs were an early source of data.&lt;/p>
+&lt;h3 id="mapreduce" >MapReduce
+&lt;span>
+&lt;a href="#mapreduce">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Map
+&lt;ul>
+&lt;li>User-defined functions&lt;/li>
+&lt;li>Process input key/value pairs&lt;/li>
+&lt;li>Intermediate key/value pairs&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Reduce
+&lt;ul>
+&lt;li>User-defined functions&lt;/li>
+&lt;li>Intermediate key/value as inputs&lt;/li>
+&lt;li>Merges values for a key&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="hadoop" >Hadoop
+&lt;span>
+&lt;a href="#hadoop">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Develoepd by Yahoo!&lt;/li>
+&lt;li>Hadoop distributed file system (HDFS)
+&lt;ul>
+&lt;li>Multiple data nodes&lt;/li>
+&lt;li>Name nodes store list of block identifiers and machines that have a copy of the block&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="apache-spark" >Apache Spark
+&lt;span>
+&lt;a href="#apache-spark">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Better for iterative computations&lt;/li>
+&lt;li>Fault-tolerant and scalable&lt;/li>
+&lt;/ul>
+&lt;h4 id="reliable-distributed-dataset-rdd" >Reliable Distributed Dataset (RDD)
+&lt;span>
+&lt;a href="#reliable-distributed-dataset-rdd">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;ul>
+&lt;li>Resilient: if data in memory is lost, recreate&lt;/li>
+&lt;li>Distributed: stored in memory across cluster&lt;/li>
+&lt;li>Dataset: from a file on HDFS or programmatic&lt;/li>
+&lt;/ul>
+&lt;p>Lineage information retained to reconstruct lost data. Lineage is stored as an object and stored persistently.&lt;/p>
+&lt;h4 id="caching" >Caching
+&lt;span>
+&lt;a href="#caching">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;h4 id="transformation-and-action" >Transformation and Action
+&lt;span>
+&lt;a href="#transformation-and-action">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;h2 id="nosql-systems" >NoSQL Systems
+&lt;span>
+&lt;a href="#nosql-systems">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>Many new application do not require full machinery that relational DBMS&amp;rsquo;s provide; more so web-based.&lt;/p>
+&lt;ul>
+&lt;li>Specialized
+&lt;ul>
+&lt;li>Column (BigTable)&lt;/li>
+&lt;li>Key-value (DyanmoDB)&lt;/li>
+&lt;li>document (MongoDB)&lt;/li>
+&lt;li>graph (Neo4J)
+&lt;ul>
+&lt;li>Graph DBMSs are transitioning from NoSQL systems to systems implemented
+on top of RDBMSs&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Objectives
+&lt;ul>
+&lt;li>Simplicity (schema-less)&lt;/li>
+&lt;li>Scalability and performance&lt;/li>
+&lt;li>Flexibility for the programmer&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="cap-theorem" >CAP Theorem
+&lt;span>
+&lt;a href="#cap-theorem">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Distributed data store, only 2 of 3 are ensured&lt;/p>
+&lt;ul>
+&lt;li>Consistency
+&lt;ul>
+&lt;li>All clients always have the same view of data&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Availability
+&lt;ul>
+&lt;li>Each client can always read and write&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Partition tolerance
+&lt;ul>
+&lt;li>System works well despite network partitions&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>Example, two nodes can&amp;rsquo;t communicate with each other, a write is done one node one and a read is done on node 2. What should node 2 do? Return inconsistent data or stay unavailable.&lt;/p>
+&lt;p>NoSQL trades consistency for higher availability.&lt;/p>
+&lt;ul>
+&lt;li>Database community value consistency (ACID)&lt;/li>
+&lt;li>Distributed systems value uptime&lt;/li>
+&lt;/ul>
+&lt;h4 id="strong-vs-eventual-consistency" >Strong vs. Eventual Consistency
+&lt;span>
+&lt;a href="#strong-vs-eventual-consistency">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;ul>
+&lt;li>Strong (ACID)
+&lt;ul>
+&lt;li>All nodes hold the same values&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Eventual
+&lt;ul>
+&lt;li>Nodes may hold different values but will catch up&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="key-value-stores" >Key-Value Stores
+&lt;span>
+&lt;a href="#key-value-stores">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Key = unique id, Value = text, binary data, structured data, etc.&lt;/p>
+&lt;ul>
+&lt;li>Simple queries
+&lt;ul>
+&lt;li>Put(key, value): inserts a (key, value) pair&lt;/li>
+&lt;li>get(key): returns value associated with key&lt;/li>
+&lt;li>get_range(key1, key2): { (key, value) }&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="amazon-dynamodb" >Amazon DynamoDB
+&lt;span>
+&lt;a href="#amazon-dynamodb">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Data model (key, structured value)
+&lt;ul>
+&lt;li>Simple queries on key and attributes&lt;/li>
+&lt;li>key is hash or hash and range&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="mongodb" >MongoDB
+&lt;span>
+&lt;a href="#mongodb">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>JSON documents&lt;/li>
+&lt;li>db.collection.function (JSON expression)&lt;/li>
+&lt;/ul>
+&lt;h3 id="google-bigtable" >Google BigTable
+&lt;span>
+&lt;a href="#google-bigtable">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Distributed, multi-dimensional, persistent, sparse, sorted map&lt;/li>
+&lt;li>Data model: { row and column }&lt;/li>
+&lt;li>Transactional atomicity only for single row update&lt;/li>
+&lt;/ul>
+&lt;h3 id="graph-dbmss" >Graph DBMSs
+&lt;span>
+&lt;a href="#graph-dbmss">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Many applications (Fraud detection, recommendation engines, AI knowledge gaps, social networks)&lt;/li>
+&lt;/ul>
+&lt;h4 id="neo4j" >Neo4J
+&lt;span>
+&lt;a href="#neo4j">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;ul>
+&lt;li>Property graphs
+&lt;ul>
+&lt;li>Vertices, edges, labels, and properties&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Linked list on disk&lt;/li>
 &lt;/ul></description></item><item><title>CS 350 Operating Systems</title><link>https://blog.elijahlopez.ca/posts/cs-350-operating-systems/</link><pubDate>Tue, 10 Jan 2023 14:56:10 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/cs-350-operating-systems/</guid><description>&lt;!-- &lt;img class=equation-tall src="https://latex.codecogs.com/svg.image?QI="> -->
 &lt;!-- - [Course website](https://student.cs.uwaterloo.ca/~cs350/) -->
 &lt;ul>
