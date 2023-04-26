@@ -908,6 +908,12 @@ Step 2: check if all conflicting pairs (reads and writes for same attribute from
 
 For a given transaction history, a transactions operations must be consecutive and operations from different transactions may not be interleaved.
 
+#### Serial History
+
+Example:
+
+T<sub>1</sub>, T<sub>2</sub>, T<sub>3</sub>
+
 ### SQL Isolation Levels
 
 ## Indexing
