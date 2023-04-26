@@ -980,6 +980,22 @@ when a failure occurs
 
 ## Data Analytics: Warehousing and Mining
 
+### Online Transactional Processing (OLTP)
+
+- simple queries
+- many short transactions making small changes
+- Systems tuned to maximize throughput of concurrent transactions
+
+### Data Analytics
+
+the processing of data to infer patterns, correlations, or
+models for prediction. Used to make business decisions.
+
+1. Gather data
+    - Extraction-transform-load
+2. Generate aggregates and reports summarizing data
+3. Build predictive models
+
 ### Data Warehouses
 
 #### Creating and Maintaining a Warehouse
@@ -987,7 +1003,7 @@ when a failure occurs
 - Extract: queries
 - Clean: delete or repair tuples
 - Transform: reorg
-- Load: populate the warhouse tables
+- Load: populate the warehouse tables
 
 #### Warehouse Schemas
 
@@ -995,3 +1011,119 @@ when a failure occurs
 - Dimension tables: additional tables for each fact tables
 - Measure attributes: value based
 - Dimension attributes: relation based
+
+## Big Data
+
+Very large volumes of data being collected. Web logs were an early source of data.
+
+### MapReduce
+
+- Map
+  - User-defined functions
+  - Process input key/value pairs
+  - Intermediate key/value pairs
+- Reduce
+  - User-defined functions
+  - Intermediate key/value as inputs
+  - Merges values for a key
+
+### Hadoop
+
+- Develoepd by Yahoo!
+- Hadoop distributed file system (HDFS)
+  - Multiple data nodes
+  - Name nodes store list of block identifiers and machines that have a copy of the block
+
+### Apache Spark
+
+- Better for iterative computations
+- Fault-tolerant and scalable
+
+#### Reliable Distributed Dataset (RDD)
+
+- Resilient: if data in memory is lost, recreate
+- Distributed: stored in memory across cluster
+- Dataset: from a file on HDFS or programmatic
+
+Lineage information retained to reconstruct lost data. Lineage is stored as an object and stored persistently.
+
+#### Caching
+
+#### Transformation and Action
+
+## NoSQL Systems
+
+Many new application do not require full machinery that relational DBMS's provide; more so web-based.
+
+- Specialized
+  - Column (BigTable)
+  - Key-value (DyanmoDB)
+  - document (MongoDB)
+  - graph (Neo4J)
+    - Graph DBMSs are transitioning from NoSQL systems to systems implemented
+on top of RDBMSs
+- Objectives
+  - Simplicity (schema-less)
+  - Scalability and performance
+  - Flexibility for the programmer
+
+### CAP Theorem
+
+Distributed data store, only 2 of 3 are ensured
+
+- Consistency
+  - All clients always have the same view of data
+- Availability
+  - Each client can always read and write
+- Partition tolerance
+  - System works well despite network partitions
+
+Example, two nodes can't communicate with each other, a write is done one node one and a read is done on node 2. What should node 2 do? Return inconsistent data or stay unavailable.
+
+NoSQL trades consistency for higher availability.
+
+- Database community value consistency (ACID)
+- Distributed systems value uptime
+
+#### Strong vs. Eventual Consistency
+
+- Strong (ACID)
+  - All nodes hold the same values
+- Eventual
+  - Nodes may hold different values but will catch up
+
+### Key-Value Stores
+
+Key = unique id, Value = text, binary data, structured data, etc.
+
+- Simple queries
+  - Put(key, value): inserts a (key, value) pair
+  - get(key): returns value associated with key
+  - get_range(key1, key2): { (key, value) }
+
+### Amazon DynamoDB
+
+- Data model (key, structured value)
+  - Simple queries on key and attributes
+  - key is hash or hash and range
+
+### MongoDB
+
+- JSON documents
+- db.collection.function (JSON expression)
+
+### Google BigTable
+
+- Distributed, multi-dimensional, persistent, sparse, sorted map
+- Data model: { row and column }
+- Transactional atomicity only for single row update
+
+### Graph DBMSs
+
+- Many applications (Fraud detection, recommendation engines, AI knowledge gaps, social networks)
+
+#### Neo4J
+
+- Property graphs
+  - Vertices, edges, labels, and properties
+- Linked list on disk
