@@ -7,9 +7,7 @@ tags: [
 ]
 ---
 
-<!-- https://blog.elijahlopez/posts/how-to-root-pixelexperience-rom/ -->
-
-This is a more explicit guide than the one found on [XDA](https://forum.xda-developers.com/t/guide-installing-pixelexperience-11-root-step-by-step.4300237/) and is here for me to reference as I will be getting a new phone and will thus give my OnePlus 6T a breath of fresh air.
+Installing the PixelExperience ROM took me more than 4 hours of my time and took a week total from the time I first tried installing the ROM. The biggest factor is the lack of instructions in the original post on XDA, an assumption that the user knows how to boot an image, and the use of other ROM instructions. I have put everything together here for you and me to extend our phone's life.
 
 {{< toc >}}
 
@@ -28,13 +26,13 @@ Make sure to backup everything. Some things to back up:
 Download [platform tools](https://developer.android.com/tools/releases/platform-tools) and extract it to a folder `android/platform-tools`. This folder should be added
 to your PATH environment variable. My [Windows guide for adding a directory to Path](content\posts\windows-add-to-PATH-environment-variable.md)
 
-Open a terminal window in the folder that will contain all android ROM related files. For me, this would be "...android\oneplus-6T-fajita".
+Open a terminal window in the folder that will contain all android ROM related files. For me, this would be `"...android\oneplus-6T-fajita"`.
 
 To open a terminal window, either search up cmd or windows terminal from Windows search.
 
 ## Upgrading to the Latest OxygenOS Firmware
 
-You need to be running the latest firmware, else the recovery image won't work properly. This means upgrading every single time you unbrick the phone. It's better to download once and reuse rather than make the phone download every time you unbrick your phone.
+You need to be running the latest firmware, else the recovery image might not work properly. This only applies if you soft-bricked your phone and unbricked it using my instructions. It's better to download the Stock ROM once on your PC and reuse it rather than make your phone download every time you reset your phone to OOS 10.
 
 [OxygenOS 11.1.2.2](https://www.oneplus.com/support/softwareupgrade/details?code=PM1574156215016)
 
@@ -116,7 +114,7 @@ Like before, enable USB debugging.
 10. `adb sideload copy-partitions.zip`
 11. On phone, select "Install anyways"
 12. Select "Apply from ADB" again
-13. `adb sideload PixelExperience_Plus_fajita-13.0-20230419-2046-OFFICIAL.zip`
+13. `adb sideload PixelExperience_Plus_fajita-13.0-20230419-2046-OFFICIAL.zip` (different filename for you)
 14. Select "Install anyways"
 15. To go back, you can press the up arrow key first and then the power key
 16. Factory reset (Format data)
@@ -124,21 +122,23 @@ Like before, enable USB debugging.
 
 ## Rooting
 
-1. Download the [PixelExperience Plus ROM](https://get.pixelexperience.org/devices) for your device
-2. Inside the `payload-dumper` folder, run `python -m pip install -r requirements.txt`
-3. Extract the rom.zip in another folder and run `python payload_dumper.py path_to_payload.bin`
-4. Copy `payload_dump/output/boot.img` to your phone's device
+1. Inside the `payload-dumper` folder, run `python -m pip install -r requirements.txt`
+2. Extract the PixelExperience.zip in another folder (e.g. `oneplus-6T-fajita/`) and run `python payload_dumper.py path/to/payload.bin`
+3. Copy `payload_dump/output/boot.img` to your phone's device
     - `adb push boot.img /sdcard/Download`
-5. Follow [Magisk instructions](https://topjohnwu.github.io/Magisk/install.html#getting-started) to patch the boot image
-    - Check ramdisk and if there is a separate vbmeta partition
-    - Patch boot.img with [Magisk app](https://github.com/topjohnwu/Magisk/releases/latest)
+4. Follow [Magisk instructions](https://topjohnwu.github.io/Magisk/install.html#getting-started) to patch the boot image
+    - On your phone, patch `boot.img` with the [Magisk app](https://github.com/topjohnwu/Magisk/releases/latest) you need to install
+        - Click "Install" beside Magisk,
+        - Method is "Select and Patch a File"
+        - "LET'S GO"
+    - Open a terminal in your oneplus-6T-fajita folder
     - `adb pull boot.img /sdcard/magisk_patched_[random_strings].img`
-6. Reboot into recovery
-7. Flash the new boot.img
+5. Reboot into recovery (enabled advanced restart in phone settings)
+6. Flash the patched boot image
     - `fastboot flash boot path_to_magisk_patched_[random_strings].img`
-    - If you have a separate `vbmeta` partition, your data might be wiped:
-        - `fastboot flash vbmeta --disable-verity --disable-verification vbmeta.img`
-8. Reboot and launch Magisk app to bootstrap the Magisk app and reboot again
+7. Reboot, launch Magisk app and beside "App" click install
+8. Install Root Checker from Google Play Store
+    - In Root Chcker, Click "verify root" and see if there is a popup from Magisk
 
 ## Troubleshooting
 
@@ -167,11 +167,6 @@ This error occurs when the TWRP version you flashed is incompatible with the And
 
 ## Resources
 
-<!--  -->
-
-<!--  -->
-<!--  -->
-<!--  -->
-1. https://github.com/snnbyyds/PE-retrofit_dynamic_partitions-Migration/blob/main/README.md
-2. https://gist.github.com/jabashque/226406e5210bed057817a89608b20311
-3. https://sourceforge.net/projects/oneplus-6-series/files/
+1. [PixelExperience First Time Install](https://github.com/snnbyyds/PE-retrofit_dynamic_partitions-Migration/blob/main/README.md)
+2. [Evolution-X Install Instructions](https://gist.github.com/jabashque/226406e5210bed057817a89608b20311)
+3. [Recovery Files for OnePlus 6](https://sourceforge.net/projects/oneplus-6-series/files/)
