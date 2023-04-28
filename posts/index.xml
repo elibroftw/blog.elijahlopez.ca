@@ -42,7 +42,12 @@ All other reasons are outdated; Android had a late start plus Google &amp;amp; S
 &lt;li>&lt;a href="#flashing-the-rom">Flashing the ROM&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;/li>
-&lt;li>&lt;a href="#rooting">Rooting&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#rooting">Rooting&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#passing-safetynet">Passing Safetynet&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#youtube-revanced">YouTube ReVanced&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
 &lt;li>&lt;a href="#troubleshooting">Troubleshooting&lt;/a>
 &lt;ul>
 &lt;li>&lt;a href="#to-get-out-of-crashdump-and-into-bootloader">To get out of CrashDump and into bootloader&lt;/a>&lt;/li>
@@ -86,7 +91,7 @@ to your PATH environment variable. My &lt;a href="content%5Cposts%5Cwindows-add-
 &lt;/h2>&lt;p>You need to be running the latest firmware, else the recovery image might not work properly. This only applies if you soft-bricked your phone and unbricked it using my instructions. It&amp;rsquo;s better to download the Stock ROM once on your PC and reuse it rather than make your phone download every time you reset your phone to OOS 10.&lt;/p>
 &lt;p>&lt;a href="https://www.oneplus.com/support/softwareupgrade/details?code=PM1574156215016">OxygenOS 11.1.2.2&lt;/a>&lt;/p>
 &lt;p>&lt;code>adb push OnePlus6TOxygen_34.J.62_OTA_0620_all_2111252336_f6eda340d7af4e3e.zip /sdcard&lt;/code>&lt;/p>
-&lt;p>To perform a local upgrade, go to Settings &amp;gt; System &amp;gt; System updates &amp;gt; Cog (top right) &amp;gt; Local upgrade.&lt;/p>
+&lt;p>To perform a local upgrade, go to Settings &amp;gt; System &amp;gt; System updates &amp;gt; ⚙️ (top right) &amp;gt; Local upgrade.&lt;/p>
 &lt;h2 id="unlocking-the-bootloader" >Unlocking the bootloader
 &lt;span>
 &lt;a href="#unlocking-the-bootloader">
@@ -258,6 +263,33 @@ to your PATH environment variable. My &lt;a href="content%5Cposts%5Cwindows-add-
 &lt;/ul>
 &lt;/li>
 &lt;/ol>
+&lt;h3 id="passing-safetynet" >Passing Safetynet
+&lt;span>
+&lt;a href="#passing-safetynet">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ol>
+&lt;li>Go to Magisk settings ⚙️&lt;/li>
+&lt;li>Install &lt;a href="https://github.com/Magisk-Modules-Repo/MagiskHidePropsConf/releases/latest">MagiskHide Props Config&lt;/a>&lt;/li>
+&lt;li>Install &lt;a href="https://github.com/kdrag0n/safetynet-fix/releases/latest">Universal SafetyNet Fix&lt;/a>&lt;/li>
+&lt;li>Restart&lt;/li>
+&lt;li>In Settings, configure DenyList and add apps that you need to bypass
+&lt;ul>
+&lt;li>Show System apps&lt;/li>
+&lt;li>Denny all Google apps except for YouTube&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ol>
+&lt;h3 id="youtube-revanced" >YouTube ReVanced
+&lt;span>
+&lt;a href="#youtube-revanced">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>&lt;a href="https://revancedextended.com/">ReVanced Extended&lt;/a>&lt;/li>
+&lt;/ul>
 &lt;h2 id="troubleshooting" >Troubleshooting
 &lt;span>
 &lt;a href="#troubleshooting">
