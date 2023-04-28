@@ -27,8 +27,7 @@
 &lt;li>Max performance, although it&amp;rsquo;s irrelevant since a phone can&amp;rsquo;t replace a laptop/desktop. And even then, I read that macbook pro users were getting poor battery life when programming, so you&amp;rsquo;d be paying more for less.
 All other reasons are outdated; Android had a late start plus Google &amp;amp; Snapdragon didn&amp;rsquo;t prioritize the right features properly. I&amp;rsquo;d say android caught up with Apple software wise after Nougat came out (2017), overtook Iphone&amp;rsquo;s aesthetics in 2019 (apple went with face ID, while android went with fingerprint in display and smaller notch), and since last year overtook iPhone in pictures (pixel 7). I can commend Apple on being innovative and speedy, but they don&amp;rsquo;t have a long-term vision since they aren&amp;rsquo;t idealists but rather elitists. Even Google is elitist, but open-source ensures that their biases can be corrected.&lt;/li>
 &lt;/ol>
-&lt;p>At the end of the day, the MacBook vs Windows debate falls on the shoulder of AMD&amp;rsquo;s silicon. If AMD can push out a chip with as much power as Apple Silicon with the same power efficiency, the tide will turn faster.&lt;/p></description></item><item><title>How to Install and Root PixelExperience ROM for OnePlus 6T</title><link>https://blog.elijahlopez.ca/posts/how-to-install-pixelexperience-rom/</link><pubDate>Sat, 15 Apr 2023 22:49:46 -0400</pubDate><guid>https://blog.elijahlopez.ca/posts/how-to-install-pixelexperience-rom/</guid><description>&lt;!-- https://blog.elijahlopez/posts/how-to-root-pixelexperience-rom/ -->
-&lt;p>This is a more explicit guide than the one found on &lt;a href="https://forum.xda-developers.com/t/guide-installing-pixelexperience-11-root-step-by-step.4300237/">XDA&lt;/a> and is here for me to reference as I will be getting a new phone and will thus give my OnePlus 6T a breath of fresh air.&lt;/p>
+&lt;p>At the end of the day, the MacBook vs Windows debate falls on the shoulder of AMD&amp;rsquo;s silicon. If AMD can push out a chip with as much power as Apple Silicon with the same power efficiency, the tide will turn faster.&lt;/p></description></item><item><title>How to Install and Root PixelExperience ROM for OnePlus 6T</title><link>https://blog.elijahlopez.ca/posts/how-to-install-pixelexperience-rom/</link><pubDate>Sat, 15 Apr 2023 22:49:46 -0400</pubDate><guid>https://blog.elijahlopez.ca/posts/how-to-install-pixelexperience-rom/</guid><description>&lt;p>Installing the PixelExperience ROM took me more than 4 hours of my time and took a week total from the time I first tried installing the ROM. The biggest factor is the lack of instructions in the original post on XDA, an assumption that the user knows how to boot an image, and the use of other ROM instructions. I have put everything together here for you and me to extend our phone&amp;rsquo;s life.&lt;/p>
 &lt;div>
 &lt;h2>Table of Contents&lt;/h2>
 &lt;nav id="TableOfContents">
@@ -76,7 +75,7 @@ All other reasons are outdated; Android had a late start plus Google &amp;amp; S
 &lt;/span>
 &lt;/h2>&lt;p>Download &lt;a href="https://developer.android.com/tools/releases/platform-tools">platform tools&lt;/a> and extract it to a folder &lt;code>android/platform-tools&lt;/code>. This folder should be added
 to your PATH environment variable. My &lt;a href="content%5Cposts%5Cwindows-add-to-PATH-environment-variable.md">Windows guide for adding a directory to Path&lt;/a>&lt;/p>
-&lt;p>Open a terminal window in the folder that will contain all android ROM related files. For me, this would be &amp;ldquo;&amp;hellip;android\oneplus-6T-fajita&amp;rdquo;.&lt;/p>
+&lt;p>Open a terminal window in the folder that will contain all android ROM related files. For me, this would be &lt;code>&amp;quot;...android\oneplus-6T-fajita&amp;quot;&lt;/code>.&lt;/p>
 &lt;p>To open a terminal window, either search up cmd or windows terminal from Windows search.&lt;/p>
 &lt;h2 id="upgrading-to-the-latest-oxygenos-firmware" >Upgrading to the Latest OxygenOS Firmware
 &lt;span>
@@ -84,7 +83,7 @@ to your PATH environment variable. My &lt;a href="content%5Cposts%5Cwindows-add-
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
-&lt;/h2>&lt;p>You need to be running the latest firmware, else the recovery image won&amp;rsquo;t work properly. This means upgrading every single time you unbrick the phone. It&amp;rsquo;s better to download once and reuse rather than make the phone download every time you unbrick your phone.&lt;/p>
+&lt;/h2>&lt;p>You need to be running the latest firmware, else the recovery image might not work properly. This only applies if you soft-bricked your phone and unbricked it using my instructions. It&amp;rsquo;s better to download the Stock ROM once on your PC and reuse it rather than make your phone download every time you reset your phone to OOS 10.&lt;/p>
 &lt;p>&lt;a href="https://www.oneplus.com/support/softwareupgrade/details?code=PM1574156215016">OxygenOS 11.1.2.2&lt;/a>&lt;/p>
 &lt;p>&lt;code>adb push OnePlus6TOxygen_34.J.62_OTA_0620_all_2111252336_f6eda340d7af4e3e.zip /sdcard&lt;/code>&lt;/p>
 &lt;p>To perform a local upgrade, go to Settings &amp;gt; System &amp;gt; System updates &amp;gt; Cog (top right) &amp;gt; Local upgrade.&lt;/p>
@@ -204,7 +203,7 @@ to your PATH environment variable. My &lt;a href="content%5Cposts%5Cwindows-add-
 &lt;p>Select &amp;ldquo;Apply from ADB&amp;rdquo; again&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>&lt;code>adb sideload PixelExperience_Plus_fajita-13.0-20230419-2046-OFFICIAL.zip&lt;/code>&lt;/p>
+&lt;p>&lt;code>adb sideload PixelExperience_Plus_fajita-13.0-20230419-2046-OFFICIAL.zip&lt;/code> (different filename for you)&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>Select &amp;ldquo;Install anyways&amp;rdquo;&lt;/p>
@@ -226,9 +225,8 @@ to your PATH environment variable. My &lt;a href="content%5Cposts%5Cwindows-add-
 &lt;/a>
 &lt;/span>
 &lt;/h2>&lt;ol>
-&lt;li>Download the &lt;a href="https://get.pixelexperience.org/devices">PixelExperience Plus ROM&lt;/a> for your device&lt;/li>
 &lt;li>Inside the &lt;code>payload-dumper&lt;/code> folder, run &lt;code>python -m pip install -r requirements.txt&lt;/code>&lt;/li>
-&lt;li>Extract the rom.zip in another folder and run &lt;code>python payload_dumper.py path_to_payload.bin&lt;/code>&lt;/li>
+&lt;li>Extract the PixelExperience.zip in another folder (e.g. &lt;code>oneplus-6T-fajita/&lt;/code>) and run &lt;code>python payload_dumper.py path/to/payload.bin&lt;/code>&lt;/li>
 &lt;li>Copy &lt;code>payload_dump/output/boot.img&lt;/code> to your phone&amp;rsquo;s device
 &lt;ul>
 &lt;li>&lt;code>adb push boot.img /sdcard/Download&lt;/code>&lt;/li>
@@ -236,23 +234,29 @@ to your PATH environment variable. My &lt;a href="content%5Cposts%5Cwindows-add-
 &lt;/li>
 &lt;li>Follow &lt;a href="https://topjohnwu.github.io/Magisk/install.html#getting-started">Magisk instructions&lt;/a> to patch the boot image
 &lt;ul>
-&lt;li>Check ramdisk and if there is a separate vbmeta partition&lt;/li>
-&lt;li>Patch boot.img with &lt;a href="https://github.com/topjohnwu/Magisk/releases/latest">Magisk app&lt;/a>&lt;/li>
+&lt;li>On your phone, patch &lt;code>boot.img&lt;/code> with the &lt;a href="https://github.com/topjohnwu/Magisk/releases/latest">Magisk app&lt;/a> you need to install
+&lt;ul>
+&lt;li>Click &amp;ldquo;Install&amp;rdquo; beside Magisk,&lt;/li>
+&lt;li>Method is &amp;ldquo;Select and Patch a File&amp;rdquo;&lt;/li>
+&lt;li>&amp;ldquo;LET&amp;rsquo;S GO&amp;rdquo;&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Open a terminal in your oneplus-6T-fajita folder&lt;/li>
 &lt;li>&lt;code>adb pull boot.img /sdcard/magisk_patched_[random_strings].img&lt;/code>&lt;/li>
 &lt;/ul>
 &lt;/li>
-&lt;li>Reboot into recovery&lt;/li>
-&lt;li>Flash the new boot.img
+&lt;li>Reboot into recovery (enabled advanced restart in phone settings)&lt;/li>
+&lt;li>Flash the patched boot image
 &lt;ul>
 &lt;li>&lt;code>fastboot flash boot path_to_magisk_patched_[random_strings].img&lt;/code>&lt;/li>
-&lt;li>If you have a separate &lt;code>vbmeta&lt;/code> partition, your data might be wiped:
+&lt;/ul>
+&lt;/li>
+&lt;li>Reboot, launch Magisk app and beside &amp;ldquo;App&amp;rdquo; click install&lt;/li>
+&lt;li>Install Root Checker from Google Play Store
 &lt;ul>
-&lt;li>&lt;code>fastboot flash vbmeta --disable-verity --disable-verification vbmeta.img&lt;/code>&lt;/li>
+&lt;li>In Root Chcker, Click &amp;ldquo;verify root&amp;rdquo; and see if there is a popup from Magisk&lt;/li>
 &lt;/ul>
 &lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>Reboot and launch Magisk app to bootstrap the Magisk app and reboot again&lt;/li>
 &lt;/ol>
 &lt;h2 id="troubleshooting" >Troubleshooting
 &lt;span>
@@ -301,14 +305,10 @@ to your PATH environment variable. My &lt;a href="content%5Cposts%5Cwindows-add-
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
-&lt;/h2>&lt;!-- -->
-&lt;!-- -->
-&lt;!-- -->
-&lt;!-- -->
-&lt;ol>
-&lt;li>&lt;a href="https://github.com/snnbyyds/PE-retrofit_dynamic_partitions-Migration/blob/main/README.md">https://github.com/snnbyyds/PE-retrofit_dynamic_partitions-Migration/blob/main/README.md&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://gist.github.com/jabashque/226406e5210bed057817a89608b20311">https://gist.github.com/jabashque/226406e5210bed057817a89608b20311&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://sourceforge.net/projects/oneplus-6-series/files/">https://sourceforge.net/projects/oneplus-6-series/files/&lt;/a>&lt;/li>
+&lt;/h2>&lt;ol>
+&lt;li>&lt;a href="https://github.com/snnbyyds/PE-retrofit_dynamic_partitions-Migration/blob/main/README.md">PixelExperience First Time Install&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://gist.github.com/jabashque/226406e5210bed057817a89608b20311">Evolution-X Install Instructions&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://sourceforge.net/projects/oneplus-6-series/files/">Recovery Files for OnePlus 6&lt;/a>&lt;/li>
 &lt;/ol></description></item><item><title>Representative Proportional Voting</title><link>https://blog.elijahlopez.ca/posts/representative-proportional-voting/</link><pubDate>Wed, 12 Apr 2023 17:14:32 -0400</pubDate><guid>https://blog.elijahlopez.ca/posts/representative-proportional-voting/</guid><description>&lt;p>This article describes and demonstrates a novel solution for electoral reform called Representative Proportional Voting (RPV) - similar to the open-list proportional representation system used by Finland - that it is practical to implement. It is also more effective in holding elections where every vote contributes to the formation of a government body. Below is the overall results of the 2021 Canadian general election under the presently used &lt;a href="https://www.elections.ca/content.aspx?section=res&amp;amp;dir=ces&amp;amp;document=part1&amp;amp;lang=e#p13">First Past the Post (FPTP)&lt;/a> electoral system compared to Representative Proportional Voting (RPV).&lt;/p>
 &lt;table>
 &lt;thead>
