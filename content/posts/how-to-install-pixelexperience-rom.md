@@ -38,7 +38,7 @@ You need to be running the latest firmware, else the recovery image might not wo
 
 `adb push OnePlus6TOxygen_34.J.62_OTA_0620_all_2111252336_f6eda340d7af4e3e.zip /sdcard`
 
-To perform a local upgrade, go to Settings > System > System updates > Cog (top right) > Local upgrade.
+To perform a local upgrade, go to Settings > System > System updates > ⚙️ (top right) > Local upgrade.
 
 ## Unlocking the bootloader
 
@@ -139,6 +139,20 @@ Like before, enable USB debugging.
 7. Reboot, launch Magisk app and beside "App" click install
 8. Install Root Checker from Google Play Store
     - In Root Chcker, Click "verify root" and see if there is a popup from Magisk
+
+### Passing Safetynet
+
+1. Go to Magisk settings ⚙️
+2. Install [MagiskHide Props Config](https://github.com/Magisk-Modules-Repo/MagiskHidePropsConf/releases/latest)
+3. Install [Universal SafetyNet Fix](https://github.com/kdrag0n/safetynet-fix/releases/latest)
+4. Restart
+5. In Settings, configure DenyList and add apps that you need to bypass
+    - Show System apps
+    - Denny all Google apps except for YouTube
+
+### YouTube ReVanced
+
+- [ReVanced Extended](https://revancedextended.com/)
 
 ## Troubleshooting
 
