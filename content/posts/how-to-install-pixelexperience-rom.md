@@ -1,13 +1,12 @@
 ---
-title: "How to Root PixelExperience ROM for OnePlus 6T"
+title: "How to Install and Root PixelExperience ROM for OnePlus 6T"
 date: 2023-04-15T22:49:46-04:00
-hidden: true
 tags: [
     'mobile',
     'android',
 ]
 ---
-<!-- https://droidwin.com/how-to-boot-any-oneplus-device-to-edl-mode/ -->
+
 <!-- https://blog.elijahlopez/posts/how-to-root-pixelexperience-rom/ -->
 
 This is a more explicit guide than the one found on [XDA](https://forum.xda-developers.com/t/guide-installing-pixelexperience-11-root-step-by-step.4300237/) and is here for me to reference as I will be getting a new phone and will thus give my OnePlus 6T a breath of fresh air.
@@ -33,6 +32,16 @@ Open a terminal window in the folder that will contain all android ROM related f
 
 To open a terminal window, either search up cmd or windows terminal from Windows search.
 
+## Upgrading to the Latest OxygenOS Firmware
+
+You need to be running the latest firmware, else the recovery image won't work properly. This means upgrading every single time you unbrick the phone. It's better to download once and reuse rather than make the phone download every time you unbrick your phone.
+
+[OxygenOS 11.1.2.2](https://www.oneplus.com/support/softwareupgrade/details?code=PM1574156215016)
+
+`adb push OnePlus6TOxygen_34.J.62_OTA_0620_all_2111252336_f6eda340d7af4e3e.zip /sdcard`
+
+To perform a local upgrade, go to Settings > System > System updates > Cog (top right) > Local upgrade.
+
 ## Unlocking the bootloader
 
 This will wipe your device, so again, backup everything.
@@ -53,12 +62,13 @@ This will wipe your device, so again, backup everything.
 
 ### Downloads for ROM Installation
 
-- [the recommended TWRP](https://sourceforge.net/projects/sn-roms/files/TWRP/)
-- [PixelExperience Plus ROM](https://get.pixelexperience.org/devices)
+- `copy_partitions.zip`, `vbmeta.img`, `boot.img`, `super_empty.img` from [evolution-x](https://sourceforge.net/projects/evolution-x/files/fajita/)
+- [The Recommended TWRP](https://sourceforge.net/projects/sn-roms/files/TWRP/)
+- [PixelExperience Plus ROM ZIP](https://get.pixelexperience.org/devices)
 - [Python](https://www.python.org/) and add this to your Path environment variable
 - Download or `git clone` [payload_dumper](https://github.com/vm03/payload_dumper) and extract its contents to a folder like `android/payload_dumper`
 
-### Flashing Instructions
+### Flashing the ROM
 
 Like before, enable USB debugging.
 
@@ -69,37 +79,78 @@ Like before, enable USB debugging.
 >    - A popup should come up asking for USB debugging permissions
 
 1. `adb reboot bootloader`
-2. `fastboot flash boot TWRP-3.7.0_12-fajita-2.img`
-3. `fastboot reboot recovery`
-4. Install the PixelExperience zip
+2. Flash the new retrofit dynamic partitions boot image & recovery
 
-<!-- https://wiki.pixelexperience.org/devices/fajita/install/ -->
+    ```sh
+    fastboot flash vbmeta_a vbmeta.img
+    fastboot flash vbmeta_b vbmeta.img
+    fastboot flash boot_a boot.img
+    fastboot flash boot_b boot.img
+    ```
+
+3. Erase the old android partitions with the following
+
+    ```sh
+    fastboot erase system_a
+    fastboot erase system_b
+    fastboot erase odm_a
+    fastboot erase odm_b
+    fastboot erase vendor_a
+    fastboot erase vendor_b
+    ```
+
+4. From the bootloader, use volume buttons, and click "Recovery Mode" to boot into recovery
+5. Volume down 3 times to Advanced and click power button.
+6. Click power button to enter fastboot
+7. Initialize the retrofit super partitions for each slot
+
+    ```sh
+    fastboot wipe-super super_empty.img
+    fastboot set_active other
+    fastboot wipe-super super_empty.img
+    fastboot set_active other
+    ```
+
+8. Now enter recovery
+9. Apply update > Apply from ADB
+10. `adb sideload copy-partitions.zip`
+11. On phone, select "Install anyways"
+12. Select "Apply from ADB" again
+13. `adb sideload PixelExperience_Plus_fajita-13.0-20230419-2046-OFFICIAL.zip`
+14. Select "Install anyways"
+15. To go back, you can press the up arrow key first and then the power key
+16. Factory reset (Format data)
+17. Reboot to system (go back first)
+
+## Rooting
 
 1. Download the [PixelExperience Plus ROM](https://get.pixelexperience.org/devices) for your device
-2. Download the latest [TWRP](https://dl.twrp.me/fajita/) you can find for your device. OnePlus 6T
- including the recovery image (this sii he first thing you will flash)
-3. Flash the PixelExperience ROM. Won't share details on how to do that, just follow an install guide. For example, this is the install guide for [Oneplus 6T fajita](https://wiki.pixelexperience.org/devices/fajita/install/). These instructions are very poor for noobs like me, so here are a few helpful commands.
-    - Reboot into the bootloader: `adb reboot bootloader`
-    - Flashing the recovery image (rename to yours): `fastboot flash boot PixelExperience_Plus_fajita-13.0-20230419-2046-OFFICIAL.img`
-    - Reboot into "recovery": `fastboot reboot recovery`
-4. Install [Python](https://www.python.org/) and make sure it is added to PATH. You can check if Python is on PATH if typing `python --version` in a new terminal (powershell or CMD on Windows) results in the output "Python 3.X.Y".
-5. Download or `git clone` [payload_dumper](https://github.com/vm03/payload_dumper) and extract its contents to a folder like `android/payload_dumper`
-6. Inside the extracted folder, run `python -m pip install -r requirements.txt`
-7. Extract the rom.zip in another folder and run `python payload_dumper.py path_to_payload.bin`
-8. Copy boot.img to your phone's device
+2. Inside the `payload-dumper` folder, run `python -m pip install -r requirements.txt`
+3. Extract the rom.zip in another folder and run `python payload_dumper.py path_to_payload.bin`
+4. Copy `payload_dump/output/boot.img` to your phone's device
     - `adb push boot.img /sdcard/Download`
-9. Follow [Magisk instructions](https://topjohnwu.github.io/Magisk/install.html#getting-started) to patch the boot image
+5. Follow [Magisk instructions](https://topjohnwu.github.io/Magisk/install.html#getting-started) to patch the boot image
     - Check ramdisk and if there is a separate vbmeta partition
     - Patch boot.img with [Magisk app](https://github.com/topjohnwu/Magisk/releases/latest)
     - `adb pull boot.img /sdcard/magisk_patched_[random_strings].img`
-10. Reboot into recovery
-11. Flash the new boot.img
+6. Reboot into recovery
+7. Flash the new boot.img
     - `fastboot flash boot path_to_magisk_patched_[random_strings].img`
     - If you have a separate `vbmeta` partition, your data might be wiped:
         - `fastboot flash vbmeta --disable-verity --disable-verification vbmeta.img`
-12. Reboot and launch Magisk app to bootstrap the Magisk app and reboot again
+8. Reboot and launch Magisk app to bootstrap the Magisk app and reboot again
 
-## Unbricking your Phone
+## Troubleshooting
+
+### To get out of CrashDump and into bootloader
+
+This error occurs when the TWRP version you flashed is incompatible with the Android version running on the phone. For example, a \_12 TWRP version is incompatible with Android 11 and a \_11 TWRP version is incompatible with Android 12.
+
+1. Hold Pwr+Vol Up until phone buzzes and then immediately
+2. Hold Pwr+Vol Up+Vol Down to boot bootloader (let go when you read fastboot mode)
+3. Flash the correct TWRP boot image version for your device
+
+### Unbricking your Phone
 
 1. Download MSMDownloadTool and extract to a folder
     - [download link one](https://androidfilehost.com/?fid=17248734326145733776)
@@ -113,3 +164,14 @@ Like before, enable USB debugging.
 7. While holding the buttons, connect the phone to the PC
 8. Press start in MSM Download Tool
 9. Takes 10-20 minutes
+
+## Resources
+
+<!--  -->
+
+<!--  -->
+<!--  -->
+<!--  -->
+1. https://github.com/snnbyyds/PE-retrofit_dynamic_partitions-Migration/blob/main/README.md
+2. https://gist.github.com/jabashque/226406e5210bed057817a89608b20311
+3. https://sourceforge.net/projects/oneplus-6-series/files/
