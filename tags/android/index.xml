@@ -1,4 +1,286 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>android on ELL Blog</title><link>https://blog.elijahlopez.ca/tags/android/</link><description>ELL Blog (android)</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 15 Apr 2023 22:49:46 -0400</lastBuildDate><atom:link href="https://blog.elijahlopez.ca/tags/android/index.xml" rel="self" type="application/rss+xml"/><item><title>Oneplus 6T Review</title><link>https://blog.elijahlopez.ca/posts/oneplus-6t/</link><pubDate>Thu, 28 Jul 2022 20:15:28 -0400</pubDate><guid>https://blog.elijahlopez.ca/posts/oneplus-6t/</guid><description>&lt;p>I submitted this review to OnePlus for a chance to review their Oneplus 10T.&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>android on ELL Blog</title><link>https://blog.elijahlopez.ca/tags/android/</link><description>ELL Blog (android)</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 15 Apr 2023 22:49:46 -0400</lastBuildDate><atom:link href="https://blog.elijahlopez.ca/tags/android/index.xml" rel="self" type="application/rss+xml"/><item><title>How to Install and Root PixelExperience ROM for OnePlus 6T</title><link>https://blog.elijahlopez.ca/posts/how-to-install-pixelexperience-rom/</link><pubDate>Sat, 15 Apr 2023 22:49:46 -0400</pubDate><guid>https://blog.elijahlopez.ca/posts/how-to-install-pixelexperience-rom/</guid><description>&lt;!-- https://blog.elijahlopez/posts/how-to-root-pixelexperience-rom/ -->
+&lt;p>This is a more explicit guide than the one found on &lt;a href="https://forum.xda-developers.com/t/guide-installing-pixelexperience-11-root-step-by-step.4300237/">XDA&lt;/a> and is here for me to reference as I will be getting a new phone and will thus give my OnePlus 6T a breath of fresh air.&lt;/p>
+&lt;div>
+&lt;h2>Table of Contents&lt;/h2>
+&lt;nav id="TableOfContents">
+&lt;ul>
+&lt;li>&lt;a href="#back-up-your-data">Back up your data&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#platform-tools">Platform tools&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#upgrading-to-the-latest-oxygenos-firmware">Upgrading to the Latest OxygenOS Firmware&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#unlocking-the-bootloader">Unlocking the bootloader&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#flashing-the-pixelexperience-rom-corrected">Flashing the PixelExperience ROM Corrected&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#downloads-for-rom-installation">Downloads for ROM Installation&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#flashing-the-rom">Flashing the ROM&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="#rooting">Rooting&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#troubleshooting">Troubleshooting&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#to-get-out-of-crashdump-and-into-bootloader">To get out of CrashDump and into bootloader&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#unbricking-your-phone">Unbricking your Phone&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="#resources">Resources&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/nav>
+&lt;/div>
+&lt;h2 id="back-up-your-data" >Back up your data
+&lt;span>
+&lt;a href="#back-up-your-data">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>Make sure to backup everything. Some things to back up:&lt;/p>
+&lt;ul>
+&lt;li>Pictures folder&lt;/li>
+&lt;li>DCIM/Camera folder&lt;/li>
+&lt;li>Your two factor authenticator app (to google)&lt;/li>
+&lt;li>Backup your google 2FA keycodes so that you can login to google with ease if you are away from home&lt;/li>
+&lt;li>Backup your contacts to a VCF file&lt;/li>
+&lt;/ul>
+&lt;h2 id="platform-tools" >Platform tools
+&lt;span>
+&lt;a href="#platform-tools">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>Download &lt;a href="https://developer.android.com/tools/releases/platform-tools">platform tools&lt;/a> and extract it to a folder &lt;code>android/platform-tools&lt;/code>. This folder should be added
+to your PATH environment variable. My &lt;a href="content%5Cposts%5Cwindows-add-to-PATH-environment-variable.md">Windows guide for adding a directory to Path&lt;/a>&lt;/p>
+&lt;p>Open a terminal window in the folder that will contain all android ROM related files. For me, this would be &amp;ldquo;&amp;hellip;android\oneplus-6T-fajita&amp;rdquo;.&lt;/p>
+&lt;p>To open a terminal window, either search up cmd or windows terminal from Windows search.&lt;/p>
+&lt;h2 id="upgrading-to-the-latest-oxygenos-firmware" >Upgrading to the Latest OxygenOS Firmware
+&lt;span>
+&lt;a href="#upgrading-to-the-latest-oxygenos-firmware">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>You need to be running the latest firmware, else the recovery image won&amp;rsquo;t work properly. This means upgrading every single time you unbrick the phone. It&amp;rsquo;s better to download once and reuse rather than make the phone download every time you unbrick your phone.&lt;/p>
+&lt;p>&lt;a href="https://www.oneplus.com/support/softwareupgrade/details?code=PM1574156215016">OxygenOS 11.1.2.2&lt;/a>&lt;/p>
+&lt;p>&lt;code>adb push OnePlus6TOxygen_34.J.62_OTA_0620_all_2111252336_f6eda340d7af4e3e.zip /sdcard&lt;/code>&lt;/p>
+&lt;p>To perform a local upgrade, go to Settings &amp;gt; System &amp;gt; System updates &amp;gt; Cog (top right) &amp;gt; Local upgrade.&lt;/p>
+&lt;h2 id="unlocking-the-bootloader" >Unlocking the bootloader
+&lt;span>
+&lt;a href="#unlocking-the-bootloader">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>This will wipe your device, so again, backup everything.&lt;/p>
+&lt;ol>
+&lt;li>Enable developer options by clicking &amp;ldquo;About phone&amp;rdquo; and then &amp;ldquo;build number&amp;rdquo; at least 5 times until you see a toast notification informing you that developer options are enabled&lt;/li>
+&lt;li>To get to developer options, click System (a menu before the above step) first and then &amp;ldquo;Developer options&amp;rdquo;&lt;/li>
+&lt;li>Enable &amp;ldquo;OEM unlocking&amp;rdquo; and &amp;ldquo;USB debugging&amp;rdquo;&lt;/li>
+&lt;li>Connect your device to your PC
+&lt;ul>
+&lt;li>A popup should come up asking for USB debugging permissions&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>run &lt;code>adb reboot bootloader&lt;/code>&lt;/li>
+&lt;li>Once your phone shows the green &amp;ldquo;START&amp;rdquo; text, run &lt;code>fastboot oem unlock&lt;/code>&lt;/li>
+&lt;li>On your phone, select &amp;ldquo;UNLOCK THE BOOTLOADER&amp;rdquo;
+&lt;ul>
+&lt;li>Press the volume down key twice on your phone and then press the power key&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Wait 5 minutes for your phone to wipe and boot&lt;/li>
+&lt;li>Skip setup so that you can access your phone&amp;rsquo;s settings and re do steps 1 to 4&lt;/li>
+&lt;/ol>
+&lt;h2 id="flashing-the-pixelexperience-rom-corrected" >Flashing the PixelExperience ROM Corrected
+&lt;span>
+&lt;a href="#flashing-the-pixelexperience-rom-corrected">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;h3 id="downloads-for-rom-installation" >Downloads for ROM Installation
+&lt;span>
+&lt;a href="#downloads-for-rom-installation">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>&lt;code>copy_partitions.zip&lt;/code>, &lt;code>vbmeta.img&lt;/code>, &lt;code>boot.img&lt;/code>, &lt;code>super_empty.img&lt;/code> from &lt;a href="https://sourceforge.net/projects/evolution-x/files/fajita/">evolution-x&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://sourceforge.net/projects/sn-roms/files/TWRP/">The Recommended TWRP&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://get.pixelexperience.org/devices">PixelExperience Plus ROM ZIP&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.python.org/">Python&lt;/a> and add this to your Path environment variable&lt;/li>
+&lt;li>Download or &lt;code>git clone&lt;/code> &lt;a href="https://github.com/vm03/payload_dumper">payload_dumper&lt;/a> and extract its contents to a folder like &lt;code>android/payload_dumper&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;h3 id="flashing-the-rom" >Flashing the ROM
+&lt;span>
+&lt;a href="#flashing-the-rom">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Like before, enable USB debugging.&lt;/p>
+&lt;blockquote>
+&lt;ol>
+&lt;li>Enable developer options by clicking &amp;ldquo;About phone&amp;rdquo; and then &amp;ldquo;build number&amp;rdquo; at least 5 times until you see a toast notification informing you that developer options are enabled&lt;/li>
+&lt;li>To get to developer options, click System (a menu before the above step) first and then &amp;ldquo;Developer options&amp;rdquo;&lt;/li>
+&lt;li>Enable &amp;ldquo;OEM unlocking&amp;rdquo; and &amp;ldquo;USB debugging&amp;rdquo;&lt;/li>
+&lt;li>Connect your device to your PC
+&lt;ul>
+&lt;li>A popup should come up asking for USB debugging permissions&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ol>
+&lt;/blockquote>
+&lt;ol>
+&lt;li>
+&lt;p>&lt;code>adb reboot bootloader&lt;/code>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Flash the new retrofit dynamic partitions boot image &amp;amp; recovery&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>fastboot flash vbmeta_a vbmeta.img
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>fastboot flash vbmeta_b vbmeta.img
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>fastboot flash boot_a boot.img
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>fastboot flash boot_b boot.img
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Erase the old android partitions with the following&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>fastboot erase system_a
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>fastboot erase system_b
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>fastboot erase odm_a
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>fastboot erase odm_b
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>fastboot erase vendor_a
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>fastboot erase vendor_b
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>From the bootloader, use volume buttons, and click &amp;ldquo;Recovery Mode&amp;rdquo; to boot into recovery&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Volume down 3 times to Advanced and click power button.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click power button to enter fastboot&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Initialize the retrofit super partitions for each slot&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>fastboot wipe-super super_empty.img
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>fastboot set_active other
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>fastboot wipe-super super_empty.img
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>fastboot set_active other
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Now enter recovery&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Apply update &amp;gt; Apply from ADB&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>adb sideload copy-partitions.zip&lt;/code>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>On phone, select &amp;ldquo;Install anyways&amp;rdquo;&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Select &amp;ldquo;Apply from ADB&amp;rdquo; again&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>adb sideload PixelExperience_Plus_fajita-13.0-20230419-2046-OFFICIAL.zip&lt;/code>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Select &amp;ldquo;Install anyways&amp;rdquo;&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>To go back, you can press the up arrow key first and then the power key&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Factory reset (Format data)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Reboot to system (go back first)&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="rooting" >Rooting
+&lt;span>
+&lt;a href="#rooting">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;ol>
+&lt;li>Download the &lt;a href="https://get.pixelexperience.org/devices">PixelExperience Plus ROM&lt;/a> for your device&lt;/li>
+&lt;li>Inside the &lt;code>payload-dumper&lt;/code> folder, run &lt;code>python -m pip install -r requirements.txt&lt;/code>&lt;/li>
+&lt;li>Extract the rom.zip in another folder and run &lt;code>python payload_dumper.py path_to_payload.bin&lt;/code>&lt;/li>
+&lt;li>Copy &lt;code>payload_dump/output/boot.img&lt;/code> to your phone&amp;rsquo;s device
+&lt;ul>
+&lt;li>&lt;code>adb push boot.img /sdcard/Download&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Follow &lt;a href="https://topjohnwu.github.io/Magisk/install.html#getting-started">Magisk instructions&lt;/a> to patch the boot image
+&lt;ul>
+&lt;li>Check ramdisk and if there is a separate vbmeta partition&lt;/li>
+&lt;li>Patch boot.img with &lt;a href="https://github.com/topjohnwu/Magisk/releases/latest">Magisk app&lt;/a>&lt;/li>
+&lt;li>&lt;code>adb pull boot.img /sdcard/magisk_patched_[random_strings].img&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Reboot into recovery&lt;/li>
+&lt;li>Flash the new boot.img
+&lt;ul>
+&lt;li>&lt;code>fastboot flash boot path_to_magisk_patched_[random_strings].img&lt;/code>&lt;/li>
+&lt;li>If you have a separate &lt;code>vbmeta&lt;/code> partition, your data might be wiped:
+&lt;ul>
+&lt;li>&lt;code>fastboot flash vbmeta --disable-verity --disable-verification vbmeta.img&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Reboot and launch Magisk app to bootstrap the Magisk app and reboot again&lt;/li>
+&lt;/ol>
+&lt;h2 id="troubleshooting" >Troubleshooting
+&lt;span>
+&lt;a href="#troubleshooting">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;h3 id="to-get-out-of-crashdump-and-into-bootloader" >To get out of CrashDump and into bootloader
+&lt;span>
+&lt;a href="#to-get-out-of-crashdump-and-into-bootloader">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>This error occurs when the TWRP version you flashed is incompatible with the Android version running on the phone. For example, a _12 TWRP version is incompatible with Android 11 and a _11 TWRP version is incompatible with Android 12.&lt;/p>
+&lt;ol>
+&lt;li>Hold Pwr+Vol Up until phone buzzes and then immediately&lt;/li>
+&lt;li>Hold Pwr+Vol Up+Vol Down to boot bootloader (let go when you read fastboot mode)&lt;/li>
+&lt;li>Flash the correct TWRP boot image version for your device&lt;/li>
+&lt;/ol>
+&lt;h3 id="unbricking-your-phone" >Unbricking your Phone
+&lt;span>
+&lt;a href="#unbricking-your-phone">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ol>
+&lt;li>Download MSMDownloadTool and extract to a folder
+&lt;ul>
+&lt;li>&lt;a href="https://androidfilehost.com/?fid=17248734326145733776">download link one&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://androidfilehost.com/?fid=1395089523397966003">download link alternative&lt;/a>&lt;/li>
+&lt;li>I keep all my android ROM related files in a folder called &lt;code>android/device-name&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Download and install &lt;a href="https://droidwin.com/download-install-qualcomm-hs-usb-qdloader-9008-drivers/#Download_Qualcomm_HS-USB_QDLoader_9008_Drivers">Qualcomm HS-USB QDLoader 9008 Drivers&lt;/a>&lt;/li>
+&lt;li>Reboot PC&lt;/li>
+&lt;li>Open MSM Download Tool&lt;/li>
+&lt;li>Power off and disconnect phone&lt;/li>
+&lt;li>Hold volume up and down buttons on phone&lt;/li>
+&lt;li>While holding the buttons, connect the phone to the PC&lt;/li>
+&lt;li>Press start in MSM Download Tool&lt;/li>
+&lt;li>Takes 10-20 minutes&lt;/li>
+&lt;/ol>
+&lt;h2 id="resources" >Resources
+&lt;span>
+&lt;a href="#resources">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;!-- -->
+&lt;!-- -->
+&lt;!-- -->
+&lt;!-- -->
+&lt;ol>
+&lt;li>&lt;a href="https://github.com/snnbyyds/PE-retrofit_dynamic_partitions-Migration/blob/main/README.md">https://github.com/snnbyyds/PE-retrofit_dynamic_partitions-Migration/blob/main/README.md&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://gist.github.com/jabashque/226406e5210bed057817a89608b20311">https://gist.github.com/jabashque/226406e5210bed057817a89608b20311&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://sourceforge.net/projects/oneplus-6-series/files/">https://sourceforge.net/projects/oneplus-6-series/files/&lt;/a>&lt;/li>
+&lt;/ol></description></item><item><title>Oneplus 6T Review</title><link>https://blog.elijahlopez.ca/posts/oneplus-6t/</link><pubDate>Thu, 28 Jul 2022 20:15:28 -0400</pubDate><guid>https://blog.elijahlopez.ca/posts/oneplus-6t/</guid><description>&lt;p>I submitted this review to OnePlus for a chance to review their Oneplus 10T.&lt;/p>
 &lt;p>The oneplus 6T was a phone I purchased out of need at the start of 2018 when my oneplus 3&amp;rsquo;s display went out of commission due to a major drop. That phone was only two years olds at the time and I had already replaced the display once before and the device performance was slow already. My current oneplus 6t I have dropped multiple times, however the display is in top shape and I&amp;rsquo;ve never had a major drop as before. I&amp;rsquo;m still using the same screen protector and currently don&amp;rsquo;t even use a case. I find that oneplus doesn&amp;rsquo;t inform you that their phones ship with a semi case so I ended up having 3 cases since I also ordered the heavy duty one from oneplus. The first case was the malleable plastic that wraps around the phone. The second one was the matte black friction case for better grip and the third was the one I added on which was a thick layer to the case. All three cases made the phone bulkier and heavier. The thicker case ended up tearing at the corners after a couple years and the grip case ended up having pieces broken at the top not to mention it catches hold of the threads in my pocket.&lt;/p>
 &lt;p>Anyways, let&amp;rsquo;s move on to the phone itself. My favorite part is always software in all tech because tech hardware exists to run software and if the software, especially the os, is unproductive or lacking, then it defeats the entire productivity benefit that software is supposed to give us. Oneplus has the best mobile OS hands down. They didn&amp;rsquo;t dealing their os for a target audience, they designed their os for everyone and every case. Just the other day I was at a family friend&amp;rsquo;s house and my mom needed to connect to the wifi. My friend who&amp;rsquo;s house it is opened up a book and tried the password from there but it was wrong. My quick thinking told him to share the wifi and all that showed up was a qr code. My mom uses an iPhone so that&amp;rsquo;s obviously useless, however I knew that my phone, the handy oneplus 6t, shares a qr code AND the actual password itself. These are the minor and small ux improvements that I appreciate.&lt;/p>
 &lt;p>Moving on, let&amp;rsquo;s talk about navigation. One gripe I have is the inability to use the same app transition that is found on pixels. The buttery smooth one found on other Android 12 devices. I had to stop using Nova launcher because 3rd party launchers, and for oneplus the default one as well, was never supported with this feature. In terms fo performance, the oneplus 6t can handle games like Cod fine, although the phone&amp;rsquo;s temperature gets hot and battery life is reduced significantly after an hour or two. I&amp;rsquo;m more of a pc gamer so i prefer AAA games than mobile. I&amp;rsquo;d say I play a mobile game every two months. I really dislike the state of mobile gaming, most games are designed to waste your time, and it&amp;rsquo;s obvious. In comparison to AAA games where games are explicitly designed to be fun, and this fun keeps you playing.&lt;/p>
