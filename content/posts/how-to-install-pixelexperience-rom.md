@@ -152,7 +152,7 @@ Like before, enable USB debugging.
 
 ### YouTube ReVanced
 
-- [ReVanced Extended](https://revancedextended.com/)
+[Download ReVanced Manager](https://github.com/revanced/revanced-manager/releases/latest)
 
 ## Troubleshooting
 
