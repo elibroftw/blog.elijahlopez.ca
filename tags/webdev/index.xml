@@ -367,9 +367,9 @@ div as a way to organize your JSX or to return JSX without keys, then I suggest 
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#6ab825;font-weight:bold">p&lt;/span>&amp;gt;Works without key prop&amp;lt;/&lt;span style="color:#6ab825;font-weight:bold">p&lt;/span>&amp;gt;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;/&amp;gt;
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>If you need to add a key prop to the Fragment, use &lt;code>&amp;lt;React.Fragment key=?&amp;gt;&lt;/code> instead.&lt;/p>
-&lt;h2 id="define-props-in-component-paramaters" >Define Props in Component Paramaters
+&lt;h2 id="define-props-in-component-parameters" >Define Props in Component Parameters
 &lt;span>
-&lt;a href="#define-props-in-component-paramaters">
+&lt;a href="#define-props-in-component-parameters">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
@@ -493,7 +493,23 @@ found out that useRef isn&amp;rsquo;t just something to use to refer to stuff, b
 &lt;/a>
 &lt;/span>
 &lt;/h2>&lt;p>i18n.changeLanguage persists already between app reloads and relaunches, so you do not need
-to wrap the values change. I was using localForage even though it was completely unnecessary.&lt;/p></description></item><item><title>JavaScript Snippets</title><link>https://blog.elijahlopez.ca/posts/javascript-snippets/</link><pubDate>Mon, 29 Aug 2022 14:21:28 -0400</pubDate><guid>https://blog.elijahlopez.ca/posts/javascript-snippets/</guid><description>&lt;p>Here are some snippets that would&amp;rsquo;ve saved me many minutes of my time.&lt;/p>
+to wrap the values change. I was using localForage even though it was completely unnecessary.&lt;/p>
+&lt;h2 id="ignoring-variables-from-array-deconstruct" >Ignoring Variables From Array DeConstruct
+&lt;span>
+&lt;a href="#ignoring-variables-from-array-deconstruct">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-jsx" data-lang="jsx">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">const&lt;/span> [, forceUpdate] = useReducer(x =&amp;gt; x + &lt;span style="color:#3677a9">1&lt;/span>, &lt;span style="color:#3677a9">0&lt;/span>);
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="forcing-a-state-update" >Forcing a State Update
+&lt;span>
+&lt;a href="#forcing-a-state-update">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>When there is a data change, maybe you need to force the hooks to refetch.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-jsx" data-lang="jsx">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">const&lt;/span> [, forceUpdate] = useReducer(x =&amp;gt; x + &lt;span style="color:#3677a9">1&lt;/span>, &lt;span style="color:#3677a9">0&lt;/span>);
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>JavaScript Snippets</title><link>https://blog.elijahlopez.ca/posts/javascript-snippets/</link><pubDate>Mon, 29 Aug 2022 14:21:28 -0400</pubDate><guid>https://blog.elijahlopez.ca/posts/javascript-snippets/</guid><description>&lt;p>Here are some snippets that would&amp;rsquo;ve saved me many minutes of my time.&lt;/p>
 &lt;h2 id="yyyymmddhhmm-to-date" >YYYYMMDDHHMM to Date
 &lt;span>
 &lt;a href="#yyyymmddhhmm-to-date">
