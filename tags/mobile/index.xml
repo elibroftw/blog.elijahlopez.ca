@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>mobile on ELL Blog</title><link>https://blog.elijahlopez.ca/tags/mobile/</link><description>ELL Blog (mobile)</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 15 Apr 2023 22:49:46 -0400</lastBuildDate><atom:link href="https://blog.elijahlopez.ca/tags/mobile/index.xml" rel="self" type="application/rss+xml"/><item><title>How to Install and Root PixelExperience ROM for OnePlus 6T</title><link>https://blog.elijahlopez.ca/posts/how-to-install-pixelexperience-rom/</link><pubDate>Sat, 15 Apr 2023 22:49:46 -0400</pubDate><guid>https://blog.elijahlopez.ca/posts/how-to-install-pixelexperience-rom/</guid><description>&lt;p>Installing the PixelExperience ROM took me more than 4 hours of my time and took a week total from the time I first tried installing the ROM. The biggest factor is the lack of instructions in the original post on XDA, an assumption that the user knows how to boot an image, and the use of other ROM instructions. I have put everything together here for you and me to extend our phone&amp;rsquo;s life.&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>mobile on ELL Blog</title><link>https://blog.elijahlopez.ca/tags/mobile/</link><description>ELL Blog (mobile)</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 15 Apr 2023 22:49:46 -0400</lastBuildDate><atom:link href="https://blog.elijahlopez.ca/tags/mobile/index.xml" rel="self" type="application/rss+xml"/><item><title>How to Install and Root PixelExperience ROM for OnePlus 6T</title><link>https://blog.elijahlopez.ca/posts/how-to-install-pixelexperience-rom/</link><pubDate>Sat, 15 Apr 2023 22:49:46 -0400</pubDate><guid>https://blog.elijahlopez.ca/posts/how-to-install-pixelexperience-rom/</guid><description>&lt;p>Installing the PixelExperience ROM took me more than 4 hours of my time and took a week total from the time I first tried installing the ROM. Some feedback for Android Custom ROM developers and tutorial writers/youtubers are: link to instructions in the original XDA post, do not assume that the user knows how to &amp;ldquo;enter&amp;rdquo; a recovery image, write thorough instructions rather than one portion of it, and stop promoting incorrect and unhelpful instructions. I have put everything I&amp;rsquo;ve learned together here for you and me to extend our phone&amp;rsquo;s life.&lt;/p>
 &lt;div>
 &lt;h2>Table of Contents&lt;/h2>
 &lt;nav id="TableOfContents">
@@ -11,10 +11,13 @@
 &lt;ul>
 &lt;li>&lt;a href="#downloads-for-rom-installation">Downloads for ROM Installation&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#flashing-the-rom">Flashing the ROM&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#updating-the-rom">Updating the ROM&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;li>&lt;a href="#rooting">Rooting&lt;/a>
 &lt;ul>
+&lt;li>&lt;a href="#downloads-for-rooting">Downloads for Rooting&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#installing-magisk">Installing Magisk&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#passing-safetynet">Passing Safetynet&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#youtube-revanced">YouTube ReVanced&lt;/a>&lt;/li>
 &lt;/ul>
@@ -103,10 +106,7 @@ to your PATH environment variable. My &lt;a href="content%5Cposts%5Cwindows-add-
 &lt;/span>
 &lt;/h3>&lt;ul>
 &lt;li>&lt;code>copy_partitions.zip&lt;/code>, &lt;code>vbmeta.img&lt;/code>, &lt;code>boot.img&lt;/code>, &lt;code>super_empty.img&lt;/code> from &lt;a href="https://sourceforge.net/projects/evolution-x/files/fajita/">evolution-x&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://sourceforge.net/projects/sn-roms/files/TWRP/">The Recommended TWRP&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://get.pixelexperience.org/devices">PixelExperience Plus ROM ZIP&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://www.python.org/">Python&lt;/a> and add this to your Path environment variable&lt;/li>
-&lt;li>Download or &lt;code>git clone&lt;/code> &lt;a href="https://github.com/vm03/payload_dumper">payload_dumper&lt;/a> and extract its contents to a folder like &lt;code>android/payload_dumper&lt;/code>&lt;/li>
 &lt;/ul>
 &lt;h3 id="flashing-the-rom" >Flashing the ROM
 &lt;span>
@@ -194,13 +194,36 @@ to your PATH environment variable. My &lt;a href="content%5Cposts%5Cwindows-add-
 &lt;p>Reboot to system (go back first)&lt;/p>
 &lt;/li>
 &lt;/ol>
+&lt;h3 id="updating-the-rom" >Updating the ROM
+&lt;span>
+&lt;a href="#updating-the-rom">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>We&amp;rsquo;ll get to this in the future.&lt;/p>
 &lt;h2 id="rooting" >Rooting
 &lt;span>
 &lt;a href="#rooting">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
-&lt;/h2>&lt;ol>
+&lt;/h2>&lt;h3 id="downloads-for-rooting" >Downloads for Rooting
+&lt;span>
+&lt;a href="#downloads-for-rooting">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>&lt;a href="https://www.python.org/">Python&lt;/a> and add this to your Path environment variable&lt;/li>
+&lt;li>Download or &lt;code>git clone&lt;/code> &lt;a href="https://github.com/vm03/payload_dumper">payload_dumper&lt;/a> and extract its contents to a folder like &lt;code>android/payload_dumper&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;h3 id="installing-magisk" >Installing Magisk
+&lt;span>
+&lt;a href="#installing-magisk">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ol>
 &lt;li>Inside the &lt;code>payload-dumper&lt;/code> folder, run &lt;code>python -m pip install -r requirements.txt&lt;/code>&lt;/li>
 &lt;li>Extract the PixelExperience.zip in another folder (e.g. &lt;code>oneplus-6T-fajita/&lt;/code>) and run &lt;code>python payload_dumper.py path/to/payload.bin&lt;/code>&lt;/li>
 &lt;li>Copy &lt;code>payload_dump/output/boot.img&lt;/code> to your phone&amp;rsquo;s device
@@ -306,7 +329,7 @@ to your PATH environment variable. My &lt;a href="content%5Cposts%5Cwindows-add-
 &lt;/a>
 &lt;/span>
 &lt;/h3>&lt;p>&lt;a href="https://github.com/revanced/revanced-manager/releases/latest">Download ReVanced Manager&lt;/a>&lt;/p>
-&lt;p>Will update these instructions in the future for rooted users. For now don&amp;rsquo;t install with root.&lt;/p>
+&lt;p>The root install does not remove ads from the home screen, but it&amp;rsquo;s not that big of a deal.&lt;/p>
 &lt;h2 id="troubleshooting" >Troubleshooting
 &lt;span>
 &lt;a href="#troubleshooting">
@@ -358,6 +381,7 @@ to your PATH environment variable. My &lt;a href="content%5Cposts%5Cwindows-add-
 &lt;li>&lt;a href="https://github.com/snnbyyds/PE-retrofit_dynamic_partitions-Migration/blob/main/README.md">PixelExperience First Time Install&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://gist.github.com/jabashque/226406e5210bed057817a89608b20311">Evolution-X Install Instructions&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://sourceforge.net/projects/oneplus-6-series/files/">Recovery Files for OnePlus 6&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://sourceforge.net/projects/sn-roms/files/TWRP/">The Recommended TWRP&lt;/a>&lt;/li>
 &lt;/ol></description></item><item><title>Uno Platform Logging</title><link>https://blog.elijahlopez.ca/posts/uno-platform-logging/</link><pubDate>Fri, 17 Feb 2023 21:59:46 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/uno-platform-logging/</guid><description>&lt;p>Note that you will need to run with debugging (F5) for some logging and breakpoints/tracepoints to work.&lt;/p>
 &lt;p>If you want to log regardless of debugging, then using the info function may work for you better.&lt;/p>
 &lt;h2 id="tracepoints" >Tracepoints
