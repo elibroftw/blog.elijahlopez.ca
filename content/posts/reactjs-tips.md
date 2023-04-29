@@ -37,7 +37,7 @@ div as a way to organize your JSX or to return JSX without keys, then I suggest 
 
 If you need to add a key prop to the Fragment, use `<React.Fragment key=?>` instead.
 
-## Define Props in Component Paramaters
+## Define Props in Component Parameters
 
 Instead of using an all encompassing `props` parameter, use this object destructuring technique
 
@@ -165,3 +165,17 @@ Instead of passing down two props for each state, I was now passing one ref, and
 
 i18n.changeLanguage persists already between app reloads and relaunches, so you do not need
 to wrap the values change. I was using localForage even though it was completely unnecessary.
+
+## Ignoring Variables From Array DeConstruct
+
+```jsx
+const [, forceUpdate] = useReducer(x => x + 1, 0);
+```
+
+## Forcing a State Update
+
+When there is a data change, maybe you need to force the hooks to refetch.
+
+```jsx
+const [, forceUpdate] = useReducer(x => x + 1, 0);
+```

@@ -196,7 +196,16 @@ We'll get to this in the future.
 
 ### YouTube ReVanced
 
-[Download ReVanced Manager](https://github.com/revanced/revanced-manager/releases/latest)
+1. [Download ReVanced Manager](https://github.com/revanced/revanced-manager/releases/latest)
+2. Open the manager
+3. Patchcher
+4. Select YouTube application
+5. Check if current version matches recommended. If not install the recommended version from [apkpure](https://apkpure.com/youtube/com.google.android.youtube/versions)
+6. Close and reopen the manager
+7. Select Patcher > YouTube > Selected patches > Recommended > Uncheck microG
+8. Done.
+9. Click patch and wait for 10 seconds
+10. Click install root
 
 The root install does not remove ads from the home screen, but it's not that big of a deal.
 
