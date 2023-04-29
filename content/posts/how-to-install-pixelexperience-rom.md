@@ -7,7 +7,7 @@ tags: [
 ]
 ---
 
-Installing the PixelExperience ROM took me more than 4 hours of my time and took a week total from the time I first tried installing the ROM. The biggest factor is the lack of instructions in the original post on XDA, an assumption that the user knows how to boot an image, and the use of other ROM instructions. I have put everything together here for you and me to extend our phone's life.
+Installing the PixelExperience ROM took me more than 4 hours of my time and took a week total from the time I first tried installing the ROM. Some feedback for Android Custom ROM developers and tutorial writers/youtubers are: link to instructions in the original XDA post, do not assume that the user knows how to "enter" a recovery image, write thorough instructions rather than one portion of it, and stop promoting incorrect and unhelpful instructions. I have put everything I've learned together here for you and me to extend our phone's life.
 
 {{< toc >}}
 
@@ -61,10 +61,7 @@ This will wipe your device, so again, backup everything.
 ### Downloads for ROM Installation
 
 - `copy_partitions.zip`, `vbmeta.img`, `boot.img`, `super_empty.img` from [evolution-x](https://sourceforge.net/projects/evolution-x/files/fajita/)
-- [The Recommended TWRP](https://sourceforge.net/projects/sn-roms/files/TWRP/)
 - [PixelExperience Plus ROM ZIP](https://get.pixelexperience.org/devices)
-- [Python](https://www.python.org/) and add this to your Path environment variable
-- Download or `git clone` [payload_dumper](https://github.com/vm03/payload_dumper) and extract its contents to a folder like `android/payload_dumper`
 
 ### Flashing the ROM
 
@@ -120,15 +117,27 @@ Like before, enable USB debugging.
 16. Factory reset (Format data)
 17. Reboot to system (go back first)
 
+### Updating the ROM
+
+We'll get to this in the future.
+
 ## Rooting
+
+### Downloads for Rooting
+
+- [Python](https://www.python.org/) and add this to your Path environment variable
+- Download or `git clone` [payload_dumper](https://github.com/vm03/payload_dumper) and extract its contents to a folder like `android/payload_dumper`
+
+### Installing Magisk
 
 1. Inside the `payload-dumper` folder, run `python -m pip install -r requirements.txt`
 2. Extract the PixelExperience.zip in another folder (e.g. `oneplus-6T-fajita/`) and run `python payload_dumper.py path/to/payload.bin`
 3. Copy `payload_dump/output/boot.img` to your phone's device
     - `adb push boot.img /sdcard/Download`
 4. Follow [Magisk instructions](https://topjohnwu.github.io/Magisk/install.html#getting-started) to patch the boot image
-    - On your phone, patch `boot.img` with the [Magisk app](https://github.com/topjohnwu/Magisk/releases/latest) you need to install
-        - Click "Install" beside Magisk,
+    - Download and install the [Magisk app](https://github.com/topjohnwu/Magisk/releases/latest)
+    - On your phone, patch `boot.img` with the Magisk app
+        - Click "Install" beside Magisk
         - Method is "Select and Patch a File"
         - "LET'S GO"
     - Open a terminal in your oneplus-6T-fajita folder
@@ -140,18 +149,20 @@ Like before, enable USB debugging.
 8. Install Root Checker from Google Play Store
     - In Root Chcker, Click "verify root" and see if there is a popup from Magisk
 
-### Passing Safetynet
+### Passing Play Integrity / SafetyNet Attestation
 
-1. Go to Magisk settings ⚙️
-2. Install [MagiskHide Props Config](https://github.com/Magisk-Modules-Repo/MagiskHidePropsConf/releases/latest)
-3. Install [Universal SafetyNet Fix](https://github.com/kdrag0n/safetynet-fix/releases/latest)
-4. In Settings, configure DenyList and add apps that you need to bypass
+1. To your phone, download [MagiskHide Props Config](https://github.com/Magisk-Modules-Repo/MagiskHidePropsConf/releases/latest)
+2. To your phone, download [Universal SafetyNet Fix](https://github.com/Displax/safetynet-fix/releases/latest)
+    - In case these instructions don't work in the future, see if the [original fork has a more recent release](https://github.com/kdrag0n/safetynet-fix/releases/latest)
+3. Open the Magisk app, click modules, install the two zip files from storage, and reboot only after installing the second zip
+4. After reboot, open Magisk, click ⚙️ (top right), configure DenyList and add apps that you need to bypass
     - Show System apps
-    - Denny all Google apps except for YouTube
+    - Deny all Google apps except for YouTube by searching "google"
+    - Deny any apps that require safety checks like some banking apps
 5. Enable denylist
-6. Restart
+6. Restart phone
 7. Install [Termux](https://play.google.com/store/apps/details?id=com.termux)
-8. Edit props
+8. Edit props (just in case)
 
     ```sh
     su  # GRANT ACCESS TEMPORARILY
@@ -166,20 +177,28 @@ Like before, enable USB debugging.
     props
     1. Edit Device fingerprint
     f     # certified fingerprint
-    7    # Google
-    15   # Pixel XL`
-    7   # Android 10
+    21    # OnePLus
+    9       # 6T
+    2       # Android 10
     y
     e   # don't reboot yet
     ```
 
-9. In Magisk settings, click hide the Magisk app.
-10. Reboot
-11. Clear all data of Google Play Services through the phone's settings
+9. In Magisk settings ⚙️, click hide the Magisk app and rename to "Manager" or whatever is easy for you to remember
+10. Clear all data of Google Play Services, Google Play Store, and Google Wallet through the phone's settings
+11. Confirm that the three apps above are on the deny list of Magisk
+12. Restart phone
+13. Open Google Wallet app / banking app
+14. Check integrity status with the [Play Integrity API Checker](https://play.google.com/store/apps/details?id=gr.nikolasspyr.integritycheck)
+    - First two lines should be green
+    - Third line should be red, DO NOT LOCK THE BOOT LOADER
+15. Check integrity status with the [YASNAC - SafetyNet Checker](https://play.google.com/store/apps/details?id=rikka.safetynetchecker)
 
 ### YouTube ReVanced
 
 [Download ReVanced Manager](https://github.com/revanced/revanced-manager/releases/latest)
+
+The root install does not remove ads from the home screen, but it's not that big of a deal.
 
 ## Troubleshooting
 
@@ -206,8 +225,10 @@ This error occurs when the TWRP version you flashed is incompatible with the And
 8. Press start in MSM Download Tool
 9. Takes 10-20 minutes
 
-## Resources
+## References and Other Links
 
 1. [PixelExperience First Time Install](https://github.com/snnbyyds/PE-retrofit_dynamic_partitions-Migration/blob/main/README.md)
 2. [Evolution-X Install Instructions](https://gist.github.com/jabashque/226406e5210bed057817a89608b20311)
 3. [Recovery Files for OnePlus 6](https://sourceforge.net/projects/oneplus-6-series/files/)
+4. [The Recommended TWRP](https://sourceforge.net/projects/sn-roms/files/TWRP/)
+5. [Universal Safetney Fix GitHub Issue](https://github.com/kdrag0n/safetynet-fix/issues/248)
