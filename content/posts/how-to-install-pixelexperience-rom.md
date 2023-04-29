@@ -145,10 +145,37 @@ Like before, enable USB debugging.
 1. Go to Magisk settings ⚙️
 2. Install [MagiskHide Props Config](https://github.com/Magisk-Modules-Repo/MagiskHidePropsConf/releases/latest)
 3. Install [Universal SafetyNet Fix](https://github.com/kdrag0n/safetynet-fix/releases/latest)
-4. Restart
-5. In Settings, configure DenyList and add apps that you need to bypass
+4. In Settings, configure DenyList and add apps that you need to bypass
     - Show System apps
     - Denny all Google apps except for YouTube
+5. Enable denylist
+6. Restart
+7. Install [Termux](https://play.google.com/store/apps/details?id=com.termux)
+8. Edit props
+
+    ```sh
+    su  # GRANT ACCESS TEMPORARILY
+    props
+    2. Force BASIC key attestation
+    d
+    7   # Google
+    5   # Google Nexus 6P. Don't know why this worked?
+    y    # confirm prop changes
+    e    # don't reboot
+    # editing device fingerprint might not be needed
+    props
+    1. Edit Device fingerprint
+    f     # certified fingerprint
+    7    # Google
+    15   # Pixel XL`
+    7   # Android 10
+    y
+    e   # don't reboot yet
+    ```
+
+9. In Magisk settings, click hide the Magisk app.
+10. Reboot
+11. Clear all data of Google Play Services through the phone's settings
 
 ### YouTube ReVanced
 
