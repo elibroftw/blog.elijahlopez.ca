@@ -40,8 +40,9 @@ Anyways, the video was harder to watch a second time since it goes against every
 
 <details><summary>Transcription</summary>
 
-This isn't exactly what happened, but it's useful as a guideline to watch the speech I referenced.
+This isn't exactly what was said, but it's useful as a guideline to watch the speech I referenced.
 
+```txt
 [00:00.000 --> 00:06.000]  Because I drew a boundary. I drew a boundary. No, no, you just did it. You just did it.
 [00:06.000 --> 00:10.000]  I drew a boundary in abuse of control. You were not taking the car.
 [00:10.000 --> 00:16.000]  Because if you refuse to do rightful things, then I will go pick up the grocery.
@@ -128,5 +129,6 @@ This isn't exactly what happened, but it's useful as a guideline to watch the sp
 [03:18.000 --> 03:20.000]  Are you committed enough to do the medication?
 [03:20.000 --> 03:22.000]  Walk the dog front and closed.
 [03:22.000 --> 03:24.000]  Take care.
+```
 
 </details>
