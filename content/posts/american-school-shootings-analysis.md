@@ -35,48 +35,34 @@ This should be mandated federally, not at the state level. If states are free to
 gun laws are useless, because crossing state lines is not illegal. Laws on products should be applied federally, not on the state level.
 Otherwise, there is more state-state smuggling than country-country smuggling.
 
-If these policies were implemented two decades ago, the Uvalde, Texas shooting would not have occured when it did because the shooter would not
-be able to purchase any fire arms at 18 while they were still in school.
+If these policies were implemented two decades ago, the Uvalde, Texas shooting would not have occurred when it did because the shooter would not be able to purchase any fire arms at 18 while they were still in school.
 
-Even after all this, we could still improve gun laws by ensuring that the education ciriculum is up to standard. Maybe even bake in gun safety into the cirriculum. The second amendment exists, and so it
-is the education leaders' job to ensure that it is respected and integrated for a safer society.
+Even after all this, we could still improve gun laws by ensuring that the education curriculum is up to standard. Maybe even bake in gun safety into the curriculum. The second amendment exists, and so it is the education leaders' job to ensure that it is respected and integrated for a safer society.
 
 ## Sandy Hook Elementary School Shooting
 
-This used to be the butt of dark jokes, however given the ridiciulous prevalence of school shootings in recent years, school shooting jokes aren't even dark humor anymore.
+This used to be the butt of dark jokes, however given the ridiculous prevalence of school shootings in recent years, school shooting jokes aren't even dark humor anymore.
 
 On December 14, 2012, 20 year old Adam Lanza was able to kill many students, most in first grade, simply because the door was not locked. Teachers were not trained in lock down scenarios, otherwise they would've locked the doors, put down the curtain for the doors, turn off the light, and hide children. It's better to hide in the corners, but since there are windows to the doors, it may be prudent that the teacher is next to the door. Someone should at the very least be near the door in case the shooter is smart enough to shoot the glass and try to unlocked the door. I'd argue that putting a desk against the door should be part of lock down procedures.
 
-This event teaches us that parents are largely responsible in how a child behaves and acts. If not for parents, children could end up as criminals as early as 12. In this case, parents were unable to deal with their son's autism which was causing him to have a shitty time in school with no friends. One of the key components of any humans life is a social one. We are social beings after all. How was Adam to gain any friends? I have no idea how kids with autism that inhibits their ability to function. From [New Yorker](https://www.newyorker.com/magazine/2014/03/17/the-reckoning), it seems that Adam was doing absolutely nothing from 2010-2012 when I'd argue behaviour deviated from a standard Aspie. In this article, Peter the father does not elaborate on whether Adam ended up taking any courses at Norwalk Community College. Adam wanted to take five, however Peter says he pushed back and said Adam should take two. These parents had Adam take German for Christ sakes at a previous college. After this argument in September 2010, Peter never saw his son again. Neither did the brother Ryan.
+This event teaches us that parents are largely responsible in how a child behaves and acts. If not for parents, children could end up as criminals as early as 12. In this case, parents were unable to deal with their son's autism which was causing him to have a shitty time in school with no friends. One of the key components of any humans life is a social one. We are social beings after all. How was Adam to gain any friends? I have no idea how kids with autism that inhibits their ability to function. From [New Yorker](https://www.newyorker.com/magazine/2014/03/17/the-reckoning), it seems that Adam was doing absolutely nothing from 2010-2012 when I'd argue behavior deviated from a standard Aspie. In this article, Peter the father does not elaborate on whether Adam ended up taking any courses at Norwalk Community College. Adam wanted to take five, however Peter says he pushed back and said Adam should take two. These parents had Adam take German for Christ sakes at a previous college. After this argument in September 2010, Peter never saw his son again. Neither did the brother Ryan.
 
 > Adam had stopped speaking to his mother and communicated only through e-mail.
 
 Ridiculous. The mother is to be blamed. If your child isn't even communicating to you, and it's his fault and not yours, you should be actively solving the issue, not hiding the issue.
-Poor parenting is never going to go away, however when visitation rights are taken away, something has gone wrong.
-It's insane that even family court outcomes end up affecting school shootings.
-It's evident there is a bias in the USA courts for the child to be given to the mother than the father, and it seems that even this issue needs to be prioritized over other issues (like women's rights other than abortion rights).
-I strongly believe neither Republicans nor Democrats give any care to the state of the family court.
-Republicans cater towards the right-wing Christians and Democrats cater towards moderate Christians.
-Both act like women are victims and need an upper hand in the courts for divorces.
-This exists in Canada as well, however the children aren't going as batshit insane.
+Poor parenting is never going to go away, however when visitation rights are taken away, something has gone wrong. It's insane that even family court outcomes end up affecting school shootings. It's evident there is a bias in the USA courts for the child to be given to the mother than the father, and it seems that even this issue needs to be prioritized over other issues (like women's rights other than abortion rights). I strongly believe neither Republicans nor Democrats give any care to the state of the family court. Republicans cater towards the right-wing Christians and Democrats cater towards moderate Christians. Both act like women are victims and need an upper hand in the courts for divorces. This exists in Canada as well, however the children aren't going as batshit insane.
 
 ## Conclusion
 
-I think these two tragic events highlight two different problems in America. Lack of sensible gun control combined with lack of lock down proceures and lack of proper parenting abilities. I definitely could've analyzed the Sandy Hook situation a bit more, but this is all that I had on my mind at the moment.
+I think these two tragic events highlight two different problems in America. Lack of sensible gun control combined with lack of lock down procedures and lack of proper parenting abilities. I definitely could've analyzed the Sandy Hook situation a bit more, but this is all that I had on my mind at the moment.
 
 ## Alcoholism
 
 I do believe alcoholism and under age drinking is a problem, so the drinking age should be lowered to 18 and better education material should be included. Schools shouldn't behave as if children are not drinking alcohol. Children have been drinking alcohol since they were 13.
-Just like drugs, children and adult think its cool to drink as if its better than any other activity and non-alcoholic drinks humans partake in.
-I don't have a need to consume ridiculous amounts of alcohol and would never want to black out.
-The fact that it's not common sense to not black out from drinking, highlights a deeper issue of alcohol abuse and negligence of self health.
+Just like drugs, children and adult think its cool to drink as if its better than any other activity and non-alcoholic drinks humans partake in. I don't have a need to consume ridiculous amounts of alcohol and would never want to black out. The fact that it's not common sense to not black out from drinking, highlights a deeper issue of alcohol abuse and negligence of self health.
 Either it is caused by frail mental health (which in turn is caused by the social environment).
 Sorry about the rant, however I dislike using talking points which I am against without declaring I am against that talking point.
 
 ## Birth Year
 
-I believe in strong rights to privacy. So strong in fact, I do not believe governments are entitled to know the birth day of individuals, only their birth year.
-It is ridiculous to claim a person born in December lacks the maturity of someone born in January of the same year even though academically they are indifferent.
-If I lead a country, one of the things I'd do is make all age related laws based on birth year rather than birth day and phase out birth days from ID cards going forward. Replacing existing ID cards would be a waste of money, but it should be allowed if a citizen wants ID without a birth day.
-Hopefully one day, society can mature enough to realize the birth day is irrelevant unless the society is authoritarian in nature.
-Some people will claim for some things it is relevant, but then wouldn't it be better to increase the age by 1 year? Since cannabis affects the mind until 18, state that cannabis should be illegal until 19 as that does not discriminate based on a birth day.
+I believe in strong rights to privacy. So strong in fact, I do not believe governments are entitled to know the birth day of individuals, only their birth year. It is ridiculous to claim a person born in December lacks the maturity of someone born in January of the same year even though academically they are indifferent. If I lead a country, one of the things I'd do is make all age related laws based on birth year rather than birth day and phase out birth days from ID cards going forward. Replacing existing ID cards would be a waste of money, but it should be allowed if a citizen wants ID without a birth day. Hopefully one day, society can mature enough to realize the birth day is irrelevant unless the society is authoritarian in nature. Some people will claim for some things it is relevant, but then wouldn't it be better to increase the age by 1 year? Since cannabis affects the mind until 18, state that cannabis should be illegal until 19 as that does not discriminate based on a birth day.
