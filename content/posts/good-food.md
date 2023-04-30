@@ -66,14 +66,18 @@ I think you should tell them to put more mayo next time you're there. This is a 
 
 ## Dine-in or Take Out Restaurants
 
-### Chawla's
+### Chawla's Cuisine
 
 [Brampton, Ontario](https://www.chawlascuisine.com/menus)
+
+Best food I've had in my life.
 
 My family recently had a get together at our house and we ordered food from this place. Appetizers were
 gobi 65, tandoori chicken. Dinner was butter chicken and a vegetarian dish (possibly vegetarian kofta).
 
-The butter chicken was the best I have had in many years.
+- Chicken tikka masala
+- Butter chicken
+- Szhezuan chow mein
 
 The tandoori chicken actually tasted the same as it does in India which was incredible.
 
