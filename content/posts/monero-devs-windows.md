@@ -78,7 +78,7 @@ The exceptions being: Python, Windows C++ development, .NET development, Java.
         }
     ```
 
-5. Add workspace settings as seen in my [monero-gui fork](https://github.com/elibroftw/monero-gui/tree/vs-code-ide-settings/.vscode)
+5. Add workspace settings as seen in my [monero-gui fork](https://github.dev/elibroftw/monero-gui/tree/vs-code-ide-settings/.vscode) (copy the .vscode folder)
 
     - You will most likely only need to change the "release-win64" in `tasks.json` if you are working on monero and not monero-gui.
     - I hope to merge these settings into upstream so that everyone debugging on their machines will have an easy time
