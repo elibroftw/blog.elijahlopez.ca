@@ -96,6 +96,7 @@ The project is called &ldquo;SttApi&rdquo; so replace that with your own project
 </span></span><span style=display:flex><span>    <span style=color:#6ab825;font-weight:700>private</span> <span style=color:#6ab825;font-weight:700>string</span> GenerateToken(<span style=color:#6ab825;font-weight:700>string</span> email) {
 </span></span><span style=display:flex><span>        <span style=color:#6ab825;font-weight:700>var</span> claims = <span style=color:#6ab825;font-weight:700>new</span>[] { <span style=color:#6ab825;font-weight:700>new</span> Claim(JwtRegisteredClaimNames.Email, email), <span style=color:#6ab825;font-weight:700>new</span> Claim(ClaimTypes.Role, <span style=color:#ed9d13>&#34;User&#34;</span>) };
 </span></span><span style=display:flex><span>        <span style=color:#6ab825;font-weight:700>var</span> token = <span style=color:#6ab825;font-weight:700>new</span> JwtSecurityToken(jwtIssuer, jwtAudience, claims, signingCredentials: credentials);
+</span></span><span style=display:flex><span>        <span style=color:#999;font-style:italic>// client needs to save JWT as well incldue it in the Authorization Bearer Token header of subsequent requests</span>
 </span></span><span style=display:flex><span>        <span style=color:#6ab825;font-weight:700>return</span> jwtSecurityTokenHandler.WriteToken(token);
 </span></span><span style=display:flex><span>    }
 </span></span><span style=display:flex><span>}
