@@ -1,5 +1,5 @@
 ---
-title: "ASP.NET Kebab Case Routes"
+title: "ASP.NET Core Kebab Case Routes"
 date: 2023-01-29T14:37:16-05:00
 draft: false
 tags: [
