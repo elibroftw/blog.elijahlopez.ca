@@ -1,4 +1,121 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>asp.net on ELL Blog</title><link>https://blog.elijahlopez.ca/tags/asp.net/</link><description>ELL Blog (asp.net)</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 29 Jan 2023 14:37:16 -0500</lastBuildDate><atom:link href="https://blog.elijahlopez.ca/tags/asp.net/index.xml" rel="self" type="application/rss+xml"/><item><title>ASP.NET Kebab Case Routes</title><link>https://blog.elijahlopez.ca/posts/aspnet-kebab-case-routes/</link><pubDate>Sun, 29 Jan 2023 14:37:16 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/aspnet-kebab-case-routes/</guid><description>&lt;p>See &lt;a href="https://learn.microsoft.com/en-us/aspnet/core/mvc/controllers/routing#use-a-parameter-transformer-to-customize-token-replacement">docs&lt;/a> for the latest way to do it. Here is how you would do it for ASP.NET Core 7.0:&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>asp.net on ELL Blog</title><link>https://blog.elijahlopez.ca/tags/asp.net/</link><description>ELL Blog (asp.net)</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 03 May 2023 13:14:55 -0400</lastBuildDate><atom:link href="https://blog.elijahlopez.ca/tags/asp.net/index.xml" rel="self" type="application/rss+xml"/><item><title>ASP.NET Core JWT Authorization</title><link>https://blog.elijahlopez.ca/posts/aspnet-jwt-authorization/</link><pubDate>Wed, 03 May 2023 13:14:55 -0400</pubDate><guid>https://blog.elijahlopez.ca/posts/aspnet-jwt-authorization/</guid><description>&lt;p>Don&amp;rsquo;t feel like explaining my code, so just copy and modify it for yourself as I can assure you it&amp;rsquo;s one of the cleanest you can find.&lt;/p>
+&lt;p>I removed my login handling code since you can do that yourself. My login code was send login code to email via postmark and verify it. I was also using a MongoDB database.&lt;/p>
+&lt;p>The project is called &amp;ldquo;SttApi&amp;rdquo; so replace that with your own project name.&lt;/p>
+&lt;details>&lt;summary>appsettings.json&lt;/summary>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-json" data-lang="json">&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a61717;background-color:#e3d2d2">...&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">&amp;#34;Jwt&amp;#34;&lt;/span>: {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">&amp;#34;Key&amp;#34;&lt;/span>: &lt;span style="color:#ed9d13">&amp;#34;Generate 22-length secret using Python secrets or something&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">&amp;#34;Issuer&amp;#34;&lt;/span>: &lt;span style="color:#ed9d13">&amp;#34;https://localhost:44355/&amp;#34;&lt;/span>, &lt;span style="color:#999;font-style:italic">// url of the project, am using development settings
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">&lt;/span> &lt;span style="color:#6ab825;font-weight:bold">&amp;#34;Audience&amp;#34;&lt;/span>: &lt;span style="color:#ed9d13">&amp;#34;https://localhost:44355/&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;details>&lt;summary>Program.cs&lt;/summary>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-cs" data-lang="cs">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">using&lt;/span> &lt;span style="color:#447fcf;text-decoration:underline">Microsoft.AspNetCore.Authentication.JwtBearer&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">using&lt;/span> &lt;span style="color:#447fcf;text-decoration:underline">Microsoft.IdentityModel.Tokens&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">// ---------------- OTHER CODE ----------------&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">public&lt;/span> &lt;span style="color:#6ab825;font-weight:bold">static&lt;/span> &lt;span style="color:#6ab825;font-weight:bold">void&lt;/span> Main(&lt;span style="color:#6ab825;font-weight:bold">string&lt;/span>[] args) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">var&lt;/span> builder = WebApplication.CreateBuilder(args);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic">// ---------------- OTHER CODE ----------------&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic">//JWT Authentication&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =&amp;gt; {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> options.TokenValidationParameters = &lt;span style="color:#6ab825;font-weight:bold">new&lt;/span> TokenValidationParameters {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ValidateIssuer = &lt;span style="color:#6ab825;font-weight:bold">true&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ValidateAudience = &lt;span style="color:#6ab825;font-weight:bold">true&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ValidateLifetime = &lt;span style="color:#6ab825;font-weight:bold">true&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ValidateIssuerSigningKey = &lt;span style="color:#6ab825;font-weight:bold">true&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ValidIssuer = builder.Configuration[&lt;span style="color:#ed9d13">&amp;#34;Jwt:Issuer&amp;#34;&lt;/span>],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ValidAudience = builder.Configuration[&lt;span style="color:#ed9d13">&amp;#34;Jwt:Audience&amp;#34;&lt;/span>],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> IssuerSigningKey = &lt;span style="color:#6ab825;font-weight:bold">new&lt;/span> SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration[&lt;span style="color:#ed9d13">&amp;#34;Jwt:Key&amp;#34;&lt;/span>]))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> };
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> });
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic">// ---------------- OTHER CODE ----------------&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">var&lt;/span> app = builder.Build();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic">// ---------------- OTHER CODE ----------------&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">// ---------------- OTHER CODE ----------------&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/details>
+&lt;details>&lt;summary>AuthController.cs&lt;/summary>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-cs" data-lang="cs">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">// Controllers/AuthController.cs&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">using&lt;/span> &lt;span style="color:#447fcf;text-decoration:underline">System.IdentityModel.Tokens.Jwt&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">using&lt;/span> &lt;span style="color:#447fcf;text-decoration:underline">System.Linq&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">using&lt;/span> &lt;span style="color:#447fcf;text-decoration:underline">System.Security.Claims&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">using&lt;/span> &lt;span style="color:#447fcf;text-decoration:underline">System.Text&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">using&lt;/span> &lt;span style="color:#447fcf;text-decoration:underline">Microsoft.AspNetCore.Authorization&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">using&lt;/span> &lt;span style="color:#447fcf;text-decoration:underline">Microsoft.AspNetCore.Mvc&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">using&lt;/span> &lt;span style="color:#447fcf;text-decoration:underline">Microsoft.IdentityModel.Tokens&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">using&lt;/span> &lt;span style="color:#447fcf;text-decoration:underline">SttApi.Models&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">using&lt;/span> &lt;span style="color:#447fcf;text-decoration:underline">SttApi.Services&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">// Controller for handling user signup and login with code sent to email&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">// https://learn.microsoft.com/en-ca/aspnet/core/tutorials/first-mongo-app?WT.mc_id=dotnet-35129-website&amp;amp;view=aspnetcore-7.0&amp;amp;tabs=visual-studio&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">// https://learn.microsoft.com/en-ca/aspnet/core/tutorials/first-web-api?view=aspnetcore-7.0&amp;amp;tabs=visual-studio&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">namespace&lt;/span> &lt;span style="color:#447fcf;text-decoration:underline">SttApi.Controllers&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">[ApiController]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">[Route(&amp;#34;[controller]&lt;/span>/[action]&lt;span style="color:#ed9d13">&amp;#34;)]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ed9d13">&lt;/span>&lt;span style="color:#6ab825;font-weight:bold">public&lt;/span> &lt;span style="color:#6ab825;font-weight:bold">class&lt;/span> &lt;span style="color:#447fcf;text-decoration:underline">AuthController&lt;/span> : ControllerBase {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">private&lt;/span> &lt;span style="color:#6ab825;font-weight:bold">readonly&lt;/span> SigningCredentials credentials;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">private&lt;/span> &lt;span style="color:#6ab825;font-weight:bold">readonly&lt;/span> &lt;span style="color:#6ab825;font-weight:bold">string&lt;/span> jwtIssuer;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">private&lt;/span> &lt;span style="color:#6ab825;font-weight:bold">readonly&lt;/span> &lt;span style="color:#6ab825;font-weight:bold">string&lt;/span> jwtAudience;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">private&lt;/span> &lt;span style="color:#6ab825;font-weight:bold">readonly&lt;/span> JwtSecurityTokenHandler jwtSecurityTokenHandler;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">public&lt;/span> AuthController(IConfiguration config) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> jwtIssuer = config[&lt;span style="color:#ed9d13">&amp;#34;Jwt:Issuer&amp;#34;&lt;/span>];
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> jwtAudience = config[&lt;span style="color:#ed9d13">&amp;#34;Jwt:Audience&amp;#34;&lt;/span>];
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> jwtSecurityTokenHandler = &lt;span style="color:#6ab825;font-weight:bold">new&lt;/span> JwtSecurityTokenHandler();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">var&lt;/span> securityKey = &lt;span style="color:#6ab825;font-weight:bold">new&lt;/span> SymmetricSecurityKey(Encoding.UTF8.GetBytes(config[&lt;span style="color:#ed9d13">&amp;#34;Jwt:Key&amp;#34;&lt;/span>]));
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> credentials = &lt;span style="color:#6ab825;font-weight:bold">new&lt;/span> SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> [HttpPost]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">public&lt;/span> &lt;span style="color:#6ab825;font-weight:bold">string&lt;/span> Login() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic">// LOGIN VERIFICATION CODE GOES HERE&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic">// in general you will have to add a RequestBody parameter (just a Class)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic">// and you will need to make the return type another class&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic">// you will also most likely need to return Task&amp;lt;ResponseType&amp;gt; because of await/async usages&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic">// and JsonWebToken will be just a field of that type&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">return&lt;/span> GenerateToken(&lt;span style="color:#ed9d13">&amp;#34;email&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cd2828;font-weight:bold">#if DEBUG&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> [HttpGet]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> [Authorize(Roles = &amp;#34;User&amp;#34;)]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">public&lt;/span> &lt;span style="color:#6ab825;font-weight:bold">string&lt;/span> TestAuthorization() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">var&lt;/span> email = User.FindFirstValue(JwtRegisteredClaimNames.Email);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">return&lt;/span> &lt;span style="color:#ed9d13">$&amp;#34;Your email is {email}&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a61717;background-color:#e3d2d2">#&lt;/span>endif
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">private&lt;/span> &lt;span style="color:#6ab825;font-weight:bold">string&lt;/span> GenerateToken(&lt;span style="color:#6ab825;font-weight:bold">string&lt;/span> email) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">var&lt;/span> claims = &lt;span style="color:#6ab825;font-weight:bold">new&lt;/span>[] { &lt;span style="color:#6ab825;font-weight:bold">new&lt;/span> Claim(JwtRegisteredClaimNames.Email, email), &lt;span style="color:#6ab825;font-weight:bold">new&lt;/span> Claim(ClaimTypes.Role, &lt;span style="color:#ed9d13">&amp;#34;User&amp;#34;&lt;/span>) };
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">var&lt;/span> token = &lt;span style="color:#6ab825;font-weight:bold">new&lt;/span> JwtSecurityToken(jwtIssuer, jwtAudience, claims, signingCredentials: credentials);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">return&lt;/span> jwtSecurityTokenHandler.WriteToken(token);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/details>
+&lt;h2 id="gate-keeping-routes-and-reading-user-claims" >Gate-keeping Routes and Reading User Claims
+&lt;span>
+&lt;a href="#gate-keeping-routes-and-reading-user-claims">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>I&amp;rsquo;m making this separate because it&amp;rsquo;s a common issue and the following way is the best way to get a claim. You can use &lt;code>[Authorize(Roles = &amp;quot;...&amp;quot;)]&lt;/code> in order to gate keep a single route or all routes of a controller (put the macro before the controller in the latter case).&lt;/p>
+&lt;p>This is a method I have in my auth controller for faster debugging since I&amp;rsquo;m doing backend and frontend for a new project.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-cs" data-lang="cs">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cd2828;font-weight:bold">#if DEBUG&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> [HttpGet]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> [Authorize(Roles = &amp;#34;User&amp;#34;)]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">public&lt;/span> &lt;span style="color:#6ab825;font-weight:bold">string&lt;/span> TestAuthorization() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">var&lt;/span> email = User.FindFirstValue(JwtRegisteredClaimNames.Email);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">return&lt;/span> &lt;span style="color:#ed9d13">$&amp;#34;Your email is {email}&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a61717;background-color:#e3d2d2">#&lt;/span>endif
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>ASP.NET Core Kebab Case Routes</title><link>https://blog.elijahlopez.ca/posts/aspnet-kebab-case-routes/</link><pubDate>Sun, 29 Jan 2023 14:37:16 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/aspnet-kebab-case-routes/</guid><description>&lt;p>See &lt;a href="https://learn.microsoft.com/en-us/aspnet/core/mvc/controllers/routing#use-a-parameter-transformer-to-customize-token-replacement">docs&lt;/a> for the latest way to do it. Here is how you would do it for ASP.NET Core 7.0:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-c#" data-lang="c#">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">// EXISTING IMPORTS&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">using&lt;/span> &lt;span style="color:#447fcf;text-decoration:underline">System.Text.RegularExpressions&lt;/span>;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
@@ -28,7 +145,7 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>ASP.NET Serialize Enum as String</title><link>https://blog.elijahlopez.ca/posts/aspnet-serialize-enum-as-string/</link><pubDate>Sun, 29 Jan 2023 14:05:19 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/aspnet-serialize-enum-as-string/</guid><description>&lt;h2 id="aspnet-backend" >ASP.NET Backend
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>ASP.NET Core Serialize Enum as String</title><link>https://blog.elijahlopez.ca/posts/aspnet-serialize-enum-as-string/</link><pubDate>Sun, 29 Jan 2023 14:05:19 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/aspnet-serialize-enum-as-string/</guid><description>&lt;h2 id="aspnet-backend" >ASP.NET Backend
 &lt;span>
 &lt;a href="#aspnet-backend">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
@@ -95,7 +212,7 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">public&lt;/span> LoginErrors? Error { &lt;span style="color:#6ab825;font-weight:bold">get&lt;/span>; &lt;span style="color:#6ab825;font-weight:bold">set&lt;/span>; }
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>ASP.NET Optional Json Fields</title><link>https://blog.elijahlopez.ca/posts/aspnet-optional-json-fields/</link><pubDate>Sun, 29 Jan 2023 14:03:20 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/aspnet-optional-json-fields/</guid><description>&lt;p>Also featured in this article is enum to string converter.&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>ASP.NET Core Optional Json Fields</title><link>https://blog.elijahlopez.ca/posts/aspnet-optional-json-fields/</link><pubDate>Sun, 29 Jan 2023 14:03:20 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/aspnet-optional-json-fields/</guid><description>&lt;p>Also featured in this article is enum to string converter.&lt;/p>
 &lt;h2 id="aspnet-backend" >ASP.NET Backend
 &lt;span>
 &lt;a href="#aspnet-backend">
