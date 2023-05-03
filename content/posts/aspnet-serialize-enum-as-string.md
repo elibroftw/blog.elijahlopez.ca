@@ -1,5 +1,5 @@
 ---
-title: "ASP.NET Serialize Enum as String"
+title: "ASP.NET Core Serialize Enum as String"
 date: 2023-01-29T14:05:19-05:00
 draft: false
 tags: [

@@ -1,5 +1,5 @@
 ---
-title: "ASP.NET Optional Json Fields"
+title: "ASP.NET Core Optional Json Fields"
 date: 2023-01-29T14:03:20-05:00
 draft: false
 tags: [
