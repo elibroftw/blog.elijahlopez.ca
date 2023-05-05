@@ -19,3 +19,7 @@ Well I found out today. The boilerplate and code redundancy is beyond comprehens
 Tomorrow is a new day and I'm determined to get work done. I have some react native libraries saved, and I'm going to go through with it. Is is the mobile SDK's making my life hard or is the frameworks that have the poor developer experience? We'll find out tomorrow (next paragraph)!
 
 Well tomorrow is here, and the verdict on React Native is:
+
+Expo is complete dog shit. The React Native Expo scaffold command promoted by the official documentation doesn't even produce a compilable app. It's absolutely dumb. I encountered this sort of broken official docs last year too when I was [getting started with Tauri](https://www.youtube.com/playlist?list=PLmWYh0f8jKSjt9VC5sq2T3mFETasG2p2L). One thing I absolutely despise about other developers in this industry is that they want to be authoritarian and retain full control of their repositories while simultaneously being unavailable.
+
+React Native CLI on the other hand did compile, but the verdict for that is:
