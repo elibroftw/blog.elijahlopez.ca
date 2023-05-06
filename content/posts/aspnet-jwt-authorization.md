@@ -29,6 +29,8 @@ The project is called "SttApi" so replace that with your own project name.
 }
 ```
 
+</details>
+
 <details><summary>Program.cs</summary>
 
 ```cs
