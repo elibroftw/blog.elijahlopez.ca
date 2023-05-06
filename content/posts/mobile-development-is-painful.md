@@ -2,6 +2,9 @@
 title: "Mobile Development Is Painful"
 date: 2023-05-04T23:55:07-04:00
 draft: false
+tags: [
+    "opinion",
+]
 ---
 
 I've been tasked at creating a mobile app for both iPhone and Android and I have zero experience. I tried to do something with Flutter in 2020, however back then I gave up when Flutter couldn't do background tasks.
