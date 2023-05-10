@@ -73,6 +73,6 @@ Thanks ChatGPT:
 
 - co-founder of the Electronic Frontier Foundation.
 - Verifiability and trust are only two requirements from a currency (bitcoin). Other requirements, which are intimately related, are value and supply
-- Apparently 2% depreciation of the currency is good for economic growth (uncited by everyone)
-   - the idea that apolitical money will replace political money is "delutional"
+- Apparently 2% depreciation of the currency is good for economic growth (not cited by anyone who pushes 2%)
+  - the idea that apolitical money will replace political money is "delusional"
 - basically a statist
