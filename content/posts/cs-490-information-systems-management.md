@@ -4,6 +4,8 @@ date: 2023-05-09T13:02:11-04:00
 draft: false
 ---
 
+Why are we building things.
+
 System: components
 
 Ahmed Ibrahim: DC 2133 (Tuesday, Thursday after lecture)
@@ -38,3 +40,70 @@ What are we doing after we build a system.
 #### Success
 
 Correct tech, tools, processes, people, networks
+
+### Problems with Manual reservations
+
+- Difficult to match passenger names to seats
+- Resulted in poorly managed inventory (i.e., seats on a fight)
+  - Over-booking: dissatisfied customers
+  - Under-booking: lost revenue
+- Aircraft with greater seating capacity and greater frequency of use on the horizon
+  - More inventory and passengers to keep track of
+
+- Introduction of Sabre:
+  - Reduced man power
+  - American airlines - IBM
+  - Remote terminals
+
+### Waves of Innovation
+
+- cut costs
+- generate revenue
+- business survival
+
+### Software Architecture
+
+- architecture (conceptual)
+  - blueprint
+  - implementation independent
+- infrastructure (physical)
+  - implementation dependent
+  - physical material
+
+#### Reference Architecture
+
+- captures main components
+- high level abstraction
+- common vocabulary
+- comparative
+
+#### Architectural Styles
+
+- broad perspective on how to structure our
+software application
+
+- Component-based
+- Layered
+- Pipes and filters
+- Microkernel
+- Client/server
+- Event-driven
+- Repository
+
+#### Monolithic
+
+- tightly coupled
+- single large code base
+- less scalable
+
+#### Service-Oriented Architecture (SOA)
+
+- reusable and interoperable via service interfaces
+- common interface standards
+
+#### Microservice Architecture
+
+- single-function modules with well-defined interfaces and actions
+- small teams own entire life cycle of the service
+- The term “micro” refers to the sizing of a service which must be
+manageable by a single development team (5 to 10 developers).
