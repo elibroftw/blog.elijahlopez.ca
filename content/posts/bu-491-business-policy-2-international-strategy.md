@@ -4,6 +4,8 @@ date: 2023-05-09T15:55:38-04:00
 draft: false
 ---
 
+Bruce Everitt
+
 ## Expanding Abroad
 
 ### Multi-national Entreprise (MNE)
@@ -75,3 +77,67 @@ Foreign direct investment (FDI):
   - domestic then international, domestic first view
 
 [What Three Global Giants Teach Us About International Expansion](https://velocityglobal.com/blog/what-three-global-giants-teach-us-about-international-expansion)
+
+## Understanding the international context
+
+### PEST(EL)
+
+What could happen going forward. Conclusions: want to take the probability into account to determine whether to make a decision. Identity current and future trends, summarize on supply, demand, and competition to link to Porter's 5 forces.
+
+- Political
+- Economical
+- Socio-cultural
+- Technological
+- Environmental
+- Legal
+
+International context:
+
+- Global integration and coordination
+  - Factor costs
+  - Economies of scale and scope
+  - Liberalized environment for trade
+- Local differentiation and responsiveness
+  - Cultural differences
+  - Countries current situation plus government demands
+
+World of opportunities: https://www.hofstede-insights.com/country-comparison-tool
+
+### Multinational Company vs. Host Government
+
+### Increased need for rapid and coordinated
+
+- Shortening product life-cycles
+- Increased cost of R&D
+- Emergence of global technology standards
+- Competitors’ ability to develop and diffuse innovation globally
+
+### Deglobalization
+
+[Are Businesses Ready for Deglobalization?](https://hbr.org/2019/12/are-businesses-ready-for-deglobalization)
+
+- Splinternet
+  > Such a technological fragmentation \[(censorships of web platforms by different countries)] would disrupt global supply chains \[(in which manner?)] — which enable global corporations to gain a competitive edge by selecting the most cost-effective solution at each stage of the production process. And the move away from such centralized procurement \[(what is the procurement and what makes it centralized?)] raises the costs of and reduces the efficiency gains from shared global services \[(like what?)].
+- War for talent
+- Corporate Finances and Regulatory Regimes
+
+### Political Risks
+
+- corruption indexes
+- http://www.transparency.org/gcb2013
+- Understand
+  - risk appetite
+  - shared understanding
+  - reduce blind spots
+- Analyze
+  - how to get good information
+  - ensure rigorous analysis
+  - integration
+- Mitigate
+  - reduce exposure
+  - system and team for timely warning and action
+  - limiting damage when something bad happens
+- Respond
+  - Capitalizing on near misses???
+  - Effective reaction
+  - Continuous learning mechanisms
