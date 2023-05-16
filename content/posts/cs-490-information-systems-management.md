@@ -107,3 +107,7 @@ software application
 - small teams own entire life cycle of the service
 - The term “micro” refers to the sizing of a service which must be
 manageable by a single development team (5 to 10 developers).
+
+## Architecting A Solution
+
+

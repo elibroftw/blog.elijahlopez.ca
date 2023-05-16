@@ -76,3 +76,11 @@ Thanks ChatGPT:
 - Apparently 2% depreciation of the currency is good for economic growth (not cited by anyone who pushes 2%)
   - the idea that apolitical money will replace political money is "delusional"
 - basically a statist
+
+## Week 2
+
+[Trust, authenticity, and discursive power in cyberspace](https://dl.acm.org/doi/10.1145/504729.504748)
+
+There exist challenges of verifying authenticity in an environment characterized
+by anonymity, pseudonyms, and digital manipulation are explored,
+shedding light on the potential for deception and manipulation.
