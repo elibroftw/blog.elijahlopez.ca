@@ -88,3 +88,56 @@ decisions.
   - deemed resident since it is incorporated in Canada after April 26, 1965.
 
 ## Employment Income
+
+Court determines whether individual is an employee or an independent contractor.
+
+- Economic reality test
+  - control
+    - who gives instructions on how to do the work
+  - ownership of tools
+  - chance of profit/risk of loss
+
+### Wiebe Door Services Ltd. v. M.N.R
+
+- Workers have their own trucks and tools
+- Work is guaranteed for one year
+- Contractors can refuse to work
+- Workers are responsible for defects
+- Some specialized equipment exists
+
+### Structure
+
+sec 5 basic inclusion + sec 6 beefits + allowance
++ sec 7 stock option benefits - sec 8 deductions allowed.
+
+sec 5: salary, wages, and other remuneration including gratuities received.
+
+Payroll example
+
+```text
+Salary gross                                118,000
+  Payroll deductions:
+    Income tax withheld         17,000  # not deductive
+    Registered Pension plan  2,000  # deductible
+    CPP                                   3,500 # not deductible but credit
+    EI                                          953 # not deductible but credit
+    Union dues                            500 # deductible
+Net salary                                        84,047
+```
+
+### Employee Benefits \[sec 6(1)(a)]
+
+- include all benefits except
+  - retirement plans
+  - insurances
+  - social club membership that benefit employer
+    - workshops
+    - training
+    - employer paid financial counselling is included
+    - non-cash holiday gifts under $500 is excluded
+    - computers that benefit the employer
+
+Examples: fitness memberships to reduce overtime stress, tuition costs,
+gift certificates with value from $100 - $500.
+
+not taxable, taxable, taxable.
