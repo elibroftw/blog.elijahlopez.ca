@@ -2,6 +2,9 @@
 title: "BU 491 Business Policy 2 International Strategy"
 date: 2023-05-09T15:55:38-04:00
 draft: false
+tags: [
+    "university",
+]
 ---
 
 Bruce Everitt
@@ -141,3 +144,5 @@ World of opportunities: https://www.hofstede-insights.com/country-comparison-too
   - Capitalizing on near misses???
   - Effective reaction
   - Continuous learning mechanisms
+
+## Sher-Wood Hockey Sticks
