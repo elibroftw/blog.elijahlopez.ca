@@ -50,6 +50,7 @@ Applies to both individuals and corporations.
 - carrying business in Canada
   - permanent place
 - disposing of a taxable canadian property, at any time in the year or a previous year
+- interest income from canadian bonds do not count
 
 ### Residency: Corporations
 
