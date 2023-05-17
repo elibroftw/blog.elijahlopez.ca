@@ -44,7 +44,7 @@ Taxable income\[Sec 2(2)] is the taxpayer's income for the year plus additions a
 
 ### Non-resident \[sec 2(3)]
 
-Applies to both individuals nad corporations.
+Applies to both individuals and corporations.
 
 - taxed on income from being employed in Canada
 - carrying business in Canada
