@@ -2,6 +2,9 @@
 title: "CS 492 Social Implications of Computing"
 date: 2023-05-09T12:26:05-04:00
 draft: false
+tags: [
+    "university",
+]
 ---
 
 [course website](https://student.cs.uwaterloo.ca/~cs492/23Spublic_html/)
