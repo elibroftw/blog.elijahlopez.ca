@@ -2,6 +2,9 @@
 title: "CS 490 Information Systems Management"
 date: 2023-05-09T13:02:11-04:00
 draft: false
+tags: [
+    "university",
+]
 ---
 
 Why are we building things.
@@ -109,5 +112,3 @@ software application
 manageable by a single development team (5 to 10 developers).
 
 ## Architecting A Solution
-
-

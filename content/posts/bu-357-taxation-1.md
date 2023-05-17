@@ -2,6 +2,9 @@
 title: "BU 357 Taxation 1"
 date: 2023-05-09T15:01:54-04:00
 draft: false
+tags: [
+    "university",
+]
 ---
 
 ## Structure of the Act
