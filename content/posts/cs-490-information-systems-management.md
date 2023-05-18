@@ -112,3 +112,25 @@ software application
 manageable by a single development team (5 to 10 developers).
 
 ## Architecting A Solution
+
+### Three Tier
+
+- Presentation logic
+- Application logic
+- Data access logic & storage
+
+### Zero Client
+
+No persistent storage, firmware loads OS into memory on power on.
+
+- cost-effective
+- low power consumption
+
+### Practice #3: A Weather Application
+
+- Many ways, most preferably the 3-tier system.
+- Hybrid, weather data on server, peer - to - peer other
+
+### How to Find a Solution
+
+First ask, what have you tried already and why didn't it work?
