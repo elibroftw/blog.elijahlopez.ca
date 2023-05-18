@@ -145,3 +145,123 @@ Examples: fitness memberships to reduce overtime stress, tuition costs,
 gift certificates with value from $100 - $500.
 
 not taxable, taxable, taxable.
+
+### Housing loss/cost benefits
+
+Employer paid for the loss of employee's home sale
+
+- Eligible housing loss
+  - work location moved and you have to move for work
+  - at least 40km closer
+- One-half of any amount above $15,000 is a taxable benefit
+
+### Automobiles
+
+Taxable benefit is equal to
+
+1. Standby charge benefit \[sec 6(1)(e),6(2)]
+    - automobile provided by employer-owned
+      - A = B if primarily non-work (>= 50%) use else less of personal km and B
+      - B = 1,667 x number of months available
+      - C = Cost of the car including sales tax
+      - D = months available in the year
+      <img class=equation-tall src="https://latex.codecogs.com/svg.image?\frac{A}{B}\times0.02\times{C}\times{D}">
+
+    - leased
+      <img class=equation-tall src="https://latex.codecogs.com/svg.image?\frac{A}{B}\times\frac{2}{3}\times{E-F}">
+2. Plus operating cost benefit
+    - employer pays operating cost
+
+    <img class=equation-tall src="https://latex.codecogs.com/svg.image?0.29\times{personal\_km}">
+
+    OR
+
+    half of standby charge if primarily for work.
+3. Subtract reimbursed amount
+
+Example
+
+```txt
+Mitch’s employer provides him an employer-owned car throughout the
+year.
+Capital cost of the car (include sales taxes). . . . .. . . . . . $38,772
+Capital cost allowance claimed by the employer . . . . . . 6,375
+Operating costs paid by the employer . . . . . . . . . . . . . . 4,250
+Kilometres (as calculated from Mitch’s log):
+Employment. . . 8,000km Personal . . . 10,000km
+Amount reimbursed by Mitch to the company for the personal use at 14
+cents per km = 10,000km x 14 cents . . . . . . $ 1,400
+Discuss the benefits that are included in Mitch’s employment income.
+What if Mitch drove 10,000km for work and 8,000km for personal?
+```
+
+<details><summary>Answer</summary>
+
+```py
+# Standby charge
+>>> C = 38772
+>>> D = 12
+>>> benefit = 0.02 * C * D
+>>> 9305.28
+# Operating cost benefit
+>>> benefit / 2
+4652.64
+>>> benefit / 2 - 1400
+3252.64
+>>> op_benefit = 0.29 * 10000
+>>> op_benefit
+2900.0
+>>> benefit + op_benefit - 1400
+>>> 10805
+
+# 10km for work instead
+>>> B = 1667 * 12
+>>> A = min(B, 8000)
+>>> benefit = A/B * (0.02 * C * D)
+>>> benefit
+3721.37
+>>> op_benefit = min(0.5 * benefit, 0.29 * 8000)
+>>> op_benefit
+1860.68
+>>> benefit + op_benefit - 0.14 * 8000
+>>> 4462.05
+```
+
+</details>
+
+### Employee loans \[sec 6(9),80.4]
+
+- low-interest or interest free loans provided by employers are taxable benefits
+- taxable benefit is `principal amounts * (prescribed rate - interest rate paid)`
+- prescribed rate is the annual rate of the 3-month T-bill which is disclosed every quarter. Use the average of the quarters that the loan was taken from.
+
+For home loans:
+
+(i) the prescribed rate in each quarter the loan
+was outstanding
+(ii) The prescribed rate in effect at the time the
+loan was granted
+
+Example
+
+```txt
+Mr. Maple borrowed $30,000 from his
+employer on Feb. 1 at an annual rate of 1%, to
+purchase common shares of a public firm.
+Interest was payable monthly. The prescribed
+rates are: Q1 3%, Q2 2%, Q3 3%, Q4 4%
+Calculate the taxable benefit of the loan.
+• What if the loan was used to buy a home?
+```
+
+<details><summary>Answer</summary>
+
+```py
+>>> q1 = 30000 * (0.03 - 0.01) / 12 * 2
+>>> avg_i = (0.02 + 0.03 + 0.04) / 3
+>>> q3_4 = 30000 * (avg_i - 0.01) / 12 * 9
+>>> q1 + q3_4
+>>> 550
+```
+
+</details>

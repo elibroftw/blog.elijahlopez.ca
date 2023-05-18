@@ -118,4 +118,8 @@ although I'd want to try their pizza out next time. So I guess, it's not a first
 
 ### Beertown Public House
 
-TODO
+- BT Brisket
+  - Big portioning
+  - If you leave the fat for last, don't eat it
+- Raspberry Sorbet
+  - For $6 + tax, you get a dessert than you can savour and that won't leave you feeling sick the way ice cream does.
