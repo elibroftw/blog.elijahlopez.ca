@@ -370,17 +370,50 @@ taking a look at the tiny script, I decided to translate the VB to Python and th
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">public&lt;/span> LoginErrors? Error { &lt;span style="color:#6ab825;font-weight:bold">get&lt;/span>; &lt;span style="color:#6ab825;font-weight:bold">set&lt;/span>; }
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>ASP.NET WEB API launch.json for Visual Studio Code</title><link>https://blog.elijahlopez.ca/posts/vscode-aspnet-rest-api-launch-configuration/</link><pubDate>Sun, 29 Jan 2023 13:03:33 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/vscode-aspnet-rest-api-launch-configuration/</guid><description>&lt;p>Suppose you want to &lt;em>debug&lt;/em> your ASP.NET application on Visual Studio as well Visual Studio Code.
-Sure you can use the run feature of the Solution Explorer extension in Visual Studio Code, but that&amp;rsquo;s not really a VS Code native feeling.&lt;/p>
-&lt;ol>
-&lt;li>Rename or delete eyour &lt;code>.vscode/launch.json&lt;/code> file.&lt;/li>
-&lt;li>Go to Run and Debug tab&lt;/li>
-&lt;li>Press &amp;ldquo;Generate&amp;rdquo;&lt;/li>
-&lt;li>Go to &lt;code>launch.json&lt;/code>&lt;/li>
-&lt;li>Add &lt;code>&amp;quot;uriFormat&amp;quot;: &amp;quot;%s/swagger&amp;quot;&lt;/code> undere &lt;code>serverReadyAction&lt;/code>&lt;/li>
-&lt;li>Add &lt;code>&amp;quot;ASPNETCORE_URLS&amp;quot;: &amp;quot;https://localhost:7065&amp;quot;&lt;/code> under &lt;code>env&lt;/code>&lt;/li>
-&lt;li>Press F5 and enjoy&lt;/li>
-&lt;/ol></description></item><item><title>Tauri Custom Titlebar (React)</title><link>https://blog.elijahlopez.ca/posts/tauri-custom-titlebar/</link><pubDate>Sat, 24 Dec 2022 10:45:01 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/tauri-custom-titlebar/</guid><description>&lt;p>This tutorial is based on Part 12 of my Tauri &amp;amp; ReactJS series.&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>ASP.NET WEB API launch.json for Visual Studio Code</title><link>https://blog.elijahlopez.ca/posts/vscode-aspnet-rest-api-launch-configuration/</link><pubDate>Sun, 29 Jan 2023 13:03:33 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/vscode-aspnet-rest-api-launch-configuration/</guid><description>&lt;p>Suppose you want to be able to work on your ASP.NET application in Visual Studio as well as Visual Studio Code. Sure you can use the run feature of the Solution Explorer extension in Visual Studio Code, but that&amp;rsquo;s not a native feeling.&lt;/p>
+&lt;p>Create the following file:&lt;/p>
+&lt;details>&lt;summary>.vscode/launch.json&lt;/summary>
+&lt;pre tabindex="0">&lt;code class="language-jsonc" data-lang="jsonc">{
+&amp;#34;version&amp;#34;: &amp;#34;0.2.0&amp;#34;,
+&amp;#34;configurations&amp;#34;: [
+{
+// Use IntelliSense to find out which attributes exist for C# debugging
+// Use hover for the description of the existing attributes
+// For further information visit https://github.com/OmniSharp/omnisharp-vscode/blob/master/debugger-launchjson.md
+&amp;#34;name&amp;#34;: &amp;#34;.NET Core Launch (web)&amp;#34;,
+&amp;#34;type&amp;#34;: &amp;#34;coreclr&amp;#34;,
+&amp;#34;request&amp;#34;: &amp;#34;launch&amp;#34;,
+&amp;#34;preLaunchTask&amp;#34;: &amp;#34;build&amp;#34;,
+&amp;#34;program&amp;#34;: &amp;#34;dotnet&amp;#34;,
+// alternative program: if you have changed target frameworks, make sure to update the program path.
+// &amp;#34;program&amp;#34;: &amp;#34;${workspaceFolder}/SttApi/bin/Debug/net7.0/SttApi.dll&amp;#34;,
+&amp;#34;args&amp;#34;: [&amp;#34;watch&amp;#34;],
+&amp;#34;cwd&amp;#34;: &amp;#34;${workspaceFolder}/SttApi&amp;#34;,
+&amp;#34;stopAtEntry&amp;#34;: false,
+&amp;#34;console&amp;#34;: &amp;#34;integratedTerminal&amp;#34;,
+// Enable launching a web browser when ASP.NET Core starts. For more information: https://aka.ms/VSCode-CS-LaunchJson-WebBrowser
+&amp;#34;serverReadyAction&amp;#34;: {
+&amp;#34;action&amp;#34;: &amp;#34;openExternally&amp;#34;,
+&amp;#34;pattern&amp;#34;: &amp;#34;\\bNow listening on:\\s+(https?://\\S+)&amp;#34;,
+&amp;#34;uriFormat&amp;#34;: &amp;#34;%s/swagger&amp;#34;
+},
+&amp;#34;env&amp;#34;: {
+&amp;#34;ASPNETCORE_ENVIRONMENT&amp;#34;: &amp;#34;Development&amp;#34;,
+&amp;#34;ASPNETCORE_URLS&amp;#34;: &amp;#34;http://localhost:5284&amp;#34;
+},
+&amp;#34;sourceFileMap&amp;#34;: {
+&amp;#34;/Views&amp;#34;: &amp;#34;${workspaceFolder}/Views&amp;#34;
+}
+},
+{
+&amp;#34;name&amp;#34;: &amp;#34;.NET Core Attach&amp;#34;,
+&amp;#34;type&amp;#34;: &amp;#34;coreclr&amp;#34;,
+&amp;#34;request&amp;#34;: &amp;#34;attach&amp;#34;
+}
+]
+}
+&lt;/code>&lt;/pre>&lt;/details>
+&lt;p>Press F5 and enjoy.&lt;/p></description></item><item><title>Tauri Custom Titlebar (React)</title><link>https://blog.elijahlopez.ca/posts/tauri-custom-titlebar/</link><pubDate>Sat, 24 Dec 2022 10:45:01 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/tauri-custom-titlebar/</guid><description>&lt;p>This tutorial is based on Part 12 of my Tauri &amp;amp; ReactJS series.&lt;/p>
 &lt;div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
 &lt;iframe src="https://www.youtube.com/embed/zONyCMTUwsI" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video">&lt;/iframe>
 &lt;/div>
