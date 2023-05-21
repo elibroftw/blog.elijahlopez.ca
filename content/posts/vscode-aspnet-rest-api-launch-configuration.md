@@ -17,7 +17,7 @@ Create the following file:
 
 <details><summary>.vscode/launch.json</summary>
 
-```jsonc
+```json
 {
     "version": "0.2.0",
     "configurations": [
