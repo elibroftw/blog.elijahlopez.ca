@@ -2851,46 +2851,46 @@ boats on the partially flooded roads.&lt;/p>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>ASP.NET WEB API launch.json for Visual Studio Code</title><link>https://blog.elijahlopez.ca/posts/vscode-aspnet-rest-api-launch-configuration/</link><pubDate>Sun, 29 Jan 2023 13:03:33 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/vscode-aspnet-rest-api-launch-configuration/</guid><description>&lt;p>Suppose you want to be able to work on your ASP.NET application in Visual Studio as well as Visual Studio Code. Sure you can use the run feature of the Solution Explorer extension in Visual Studio Code, but that&amp;rsquo;s not a native feeling.&lt;/p>
 &lt;p>Create the following file:&lt;/p>
 &lt;details>&lt;summary>.vscode/launch.json&lt;/summary>
-&lt;pre tabindex="0">&lt;code class="language-jsonc" data-lang="jsonc">{
-&amp;#34;version&amp;#34;: &amp;#34;0.2.0&amp;#34;,
-&amp;#34;configurations&amp;#34;: [
-{
-// Use IntelliSense to find out which attributes exist for C# debugging
-// Use hover for the description of the existing attributes
-// For further information visit https://github.com/OmniSharp/omnisharp-vscode/blob/master/debugger-launchjson.md
-&amp;#34;name&amp;#34;: &amp;#34;.NET Core Launch (web)&amp;#34;,
-&amp;#34;type&amp;#34;: &amp;#34;coreclr&amp;#34;,
-&amp;#34;request&amp;#34;: &amp;#34;launch&amp;#34;,
-&amp;#34;preLaunchTask&amp;#34;: &amp;#34;build&amp;#34;,
-&amp;#34;program&amp;#34;: &amp;#34;dotnet&amp;#34;,
-// alternative program: if you have changed target frameworks, make sure to update the program path.
-// &amp;#34;program&amp;#34;: &amp;#34;${workspaceFolder}/SttApi/bin/Debug/net7.0/SttApi.dll&amp;#34;,
-&amp;#34;args&amp;#34;: [&amp;#34;watch&amp;#34;],
-&amp;#34;cwd&amp;#34;: &amp;#34;${workspaceFolder}/SttApi&amp;#34;,
-&amp;#34;stopAtEntry&amp;#34;: false,
-&amp;#34;console&amp;#34;: &amp;#34;integratedTerminal&amp;#34;,
-// Enable launching a web browser when ASP.NET Core starts. For more information: https://aka.ms/VSCode-CS-LaunchJson-WebBrowser
-&amp;#34;serverReadyAction&amp;#34;: {
-&amp;#34;action&amp;#34;: &amp;#34;openExternally&amp;#34;,
-&amp;#34;pattern&amp;#34;: &amp;#34;\\bNow listening on:\\s+(https?://\\S+)&amp;#34;,
-&amp;#34;uriFormat&amp;#34;: &amp;#34;%s/swagger&amp;#34;
-},
-&amp;#34;env&amp;#34;: {
-&amp;#34;ASPNETCORE_ENVIRONMENT&amp;#34;: &amp;#34;Development&amp;#34;,
-&amp;#34;ASPNETCORE_URLS&amp;#34;: &amp;#34;http://localhost:5284&amp;#34;
-},
-&amp;#34;sourceFileMap&amp;#34;: {
-&amp;#34;/Views&amp;#34;: &amp;#34;${workspaceFolder}/Views&amp;#34;
-}
-},
-{
-&amp;#34;name&amp;#34;: &amp;#34;.NET Core Attach&amp;#34;,
-&amp;#34;type&amp;#34;: &amp;#34;coreclr&amp;#34;,
-&amp;#34;request&amp;#34;: &amp;#34;attach&amp;#34;
-}
-]
-}
-&lt;/code>&lt;/pre>&lt;/details>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-json" data-lang="json">&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">&amp;#34;version&amp;#34;&lt;/span>: &lt;span style="color:#ed9d13">&amp;#34;0.2.0&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">&amp;#34;configurations&amp;#34;&lt;/span>: [
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic">// Use IntelliSense to find out which attributes exist for C# debugging
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">&lt;/span> &lt;span style="color:#999;font-style:italic">// Use hover for the description of the existing attributes
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">&lt;/span> &lt;span style="color:#999;font-style:italic">// For further information visit https://github.com/OmniSharp/omnisharp-vscode/blob/master/debugger-launchjson.md
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">&lt;/span> &lt;span style="color:#6ab825;font-weight:bold">&amp;#34;name&amp;#34;&lt;/span>: &lt;span style="color:#ed9d13">&amp;#34;.NET Core Launch (web)&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">&amp;#34;type&amp;#34;&lt;/span>: &lt;span style="color:#ed9d13">&amp;#34;coreclr&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">&amp;#34;request&amp;#34;&lt;/span>: &lt;span style="color:#ed9d13">&amp;#34;launch&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">&amp;#34;preLaunchTask&amp;#34;&lt;/span>: &lt;span style="color:#ed9d13">&amp;#34;build&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">&amp;#34;program&amp;#34;&lt;/span>: &lt;span style="color:#ed9d13">&amp;#34;dotnet&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic">// alternative program: if you have changed target frameworks, make sure to update the program path.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">&lt;/span> &lt;span style="color:#999;font-style:italic">// &amp;#34;program&amp;#34;: &amp;#34;${workspaceFolder}/SttApi/bin/Debug/net7.0/SttApi.dll&amp;#34;,
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">&lt;/span> &lt;span style="color:#6ab825;font-weight:bold">&amp;#34;args&amp;#34;&lt;/span>: [&lt;span style="color:#ed9d13">&amp;#34;watch&amp;#34;&lt;/span>],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">&amp;#34;cwd&amp;#34;&lt;/span>: &lt;span style="color:#ed9d13">&amp;#34;${workspaceFolder}/SttApi&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">&amp;#34;stopAtEntry&amp;#34;&lt;/span>: &lt;span style="color:#6ab825;font-weight:bold">false&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">&amp;#34;console&amp;#34;&lt;/span>: &lt;span style="color:#ed9d13">&amp;#34;integratedTerminal&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic">// Enable launching a web browser when ASP.NET Core starts. For more information: https://aka.ms/VSCode-CS-LaunchJson-WebBrowser
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">&lt;/span> &lt;span style="color:#6ab825;font-weight:bold">&amp;#34;serverReadyAction&amp;#34;&lt;/span>: {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">&amp;#34;action&amp;#34;&lt;/span>: &lt;span style="color:#ed9d13">&amp;#34;openExternally&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">&amp;#34;pattern&amp;#34;&lt;/span>: &lt;span style="color:#ed9d13">&amp;#34;\\bNow listening on:\\s+(https?://\\S+)&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">&amp;#34;uriFormat&amp;#34;&lt;/span>: &lt;span style="color:#ed9d13">&amp;#34;%s/swagger&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> },
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">&amp;#34;env&amp;#34;&lt;/span>: {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">&amp;#34;ASPNETCORE_ENVIRONMENT&amp;#34;&lt;/span>: &lt;span style="color:#ed9d13">&amp;#34;Development&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">&amp;#34;ASPNETCORE_URLS&amp;#34;&lt;/span>: &lt;span style="color:#ed9d13">&amp;#34;http://localhost:5284&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> },
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">&amp;#34;sourceFileMap&amp;#34;&lt;/span>: {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">&amp;#34;/Views&amp;#34;&lt;/span>: &lt;span style="color:#ed9d13">&amp;#34;${workspaceFolder}/Views&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> },
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">&amp;#34;name&amp;#34;&lt;/span>: &lt;span style="color:#ed9d13">&amp;#34;.NET Core Attach&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">&amp;#34;type&amp;#34;&lt;/span>: &lt;span style="color:#ed9d13">&amp;#34;coreclr&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">&amp;#34;request&amp;#34;&lt;/span>: &lt;span style="color:#ed9d13">&amp;#34;attach&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/details>
 &lt;p>Press F5 and enjoy.&lt;/p></description></item><item><title>Starting Systemd Services Without Root</title><link>https://blog.elijahlopez.ca/posts/starting-systemd-services-without-root/</link><pubDate>Sat, 21 Jan 2023 14:49:20 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/starting-systemd-services-without-root/</guid><description>&lt;p>Google and StackExchange do not give a straight forward and properly explained answer on how to do this, so I used &lt;a href="https://chat.openai.com/chat">ChatGPT&lt;/a>
 to figure out how and have summarized my findings for you.&lt;/p>
 &lt;h2 id="assumptions" >Assumptions
