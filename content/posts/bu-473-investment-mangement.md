@@ -2,6 +2,9 @@
 title: "BU 473 Investment Mangement"
 date: 2023-05-09T15:25:11-04:00
 draft: false
+tags: [
+    "university",
+]
 ---
 
 ## Asset Classes and Financial Instruments

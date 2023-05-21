@@ -2,6 +2,11 @@
 title: "Corruption in Canada"
 date: 2023-05-17T22:29:02-04:00
 draft: false
+tags: [
+    "canada",
+    "opinion",
+    "politics",
+]
 ---
 
 Just a list of topics and links that show how corrupt Canada can be at times.

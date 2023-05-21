@@ -2,6 +2,9 @@
 title: "Internet Pornography is Degenerating The Human Brain"
 date: 2023-05-11T12:40:02-04:00
 draft: false
+tags: [
+    "opinion",
+]
 ---
 
 One of the biggest social problems arising from the digital revolution and accessibility of computers and the internet is porn addiction. This problem is mostly prevalent in young men (Logue, 2015) and can start during childhood (Dignify, 2015). Before the digital age of computers and the internet, pornography was limited to drawings, physical pictures, video tapes, and magazines like Playboy. The internet and computerization allowed for faster, cheaper, and easier distribution and consumption. Rather than require an 18+ ID, porn could suddenly be accessed without any acknowledgment of mental issues or simply required pressing “OK’ to any age confirmation popup. Computerization meant that the internet and its entire database was at consumers’ fingertips meaning that pornography would also be at their fingertips. This digitalization and accessibility also meant that more pornography can be distributed and consumed in centralized locations (websites) and thus rather than be limited to a few selections of material, consumers can choose an essentially unlimited amount of content to consume!
