@@ -198,6 +198,7 @@ example, the page this blog post is based on is located in a Views directory.&lt
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">new&lt;/span> SlugifyParameterTransformer()));
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }).AddJsonOptions(options =&amp;gt; {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> options.JsonSerializerOptions.NumberHandling = JsonNumberHandling.AllowReadingFromString;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> options.JsonSerializerOptions.PropertyNamingPolicy = JsonNamingPolicy.CamelCase; &lt;span style="color:#999;font-style:italic">// JSON response is in camelCase&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> options.JsonSerializerOptions.DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull; &lt;span style="color:#999;font-style:italic">// null not serialized&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> options.JsonSerializerOptions.Converters.Add(&lt;span style="color:#6ab825;font-weight:bold">new&lt;/span> JsonStringEnumConverter()); &lt;span style="color:#999;font-style:italic">// enums to string&lt;/span>
@@ -266,6 +267,7 @@ example, the page this blog post is based on is located in a Views directory.&lt
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">new&lt;/span> SlugifyParameterTransformer()));
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }).AddJsonOptions(options =&amp;gt; {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> options.JsonSerializerOptions.NumberHandling = JsonNumberHandling.AllowReadingFromString;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> options.JsonSerializerOptions.PropertyNamingPolicy = JsonNamingPolicy.CamelCase; &lt;span style="color:#999;font-style:italic">// JSON response is in camelCase&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> options.JsonSerializerOptions.DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull; &lt;span style="color:#999;font-style:italic">// null not serialized&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> options.JsonSerializerOptions.Converters.Add(&lt;span style="color:#6ab825;font-weight:bold">new&lt;/span> JsonStringEnumConverter()); &lt;span style="color:#999;font-style:italic">// enums to string&lt;/span>
