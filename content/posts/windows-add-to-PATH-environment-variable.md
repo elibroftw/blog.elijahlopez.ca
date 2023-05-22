@@ -1,7 +1,11 @@
 ---
-title: "How to Add to PATH Environment Variable on Windows "
+title: "How to Add to PATH Environment Variable on Windows"
 date: 2023-04-21T20:02:38-04:00
 draft: false
+tags: [
+  'windows',
+  'tutorial'
+]
 ---
 
 In this concise guide, you will learn how to add a directory to the Path environment variable on Windows.
