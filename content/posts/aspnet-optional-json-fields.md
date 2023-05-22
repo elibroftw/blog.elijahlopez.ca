@@ -20,6 +20,7 @@ builder.Services.AddControllersWithViews(options => {
                                          new SlugifyParameterTransformer()));
 
         }).AddJsonOptions(options => {
+            options.JsonSerializerOptions.NumberHandling = JsonNumberHandling.AllowReadingFromString;
             options.JsonSerializerOptions.PropertyNamingPolicy = JsonNamingPolicy.CamelCase;               // JSON response is in  camelCase
             options.JsonSerializerOptions.DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull;  // null not serialized
             options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());                        // enums to string
