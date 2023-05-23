@@ -134,12 +134,14 @@ Net salary                                        84,047
 - include all benefits except
   - retirement plans
   - insurances
+  - mental health
+  - discounts for all employees where the price paid is still more than the cost
   - social club membership that benefit employer
     - workshops
     - training
-    - employer paid financial counselling is included
-    - non-cash holiday gifts under $500 is excluded
-    - computers that benefit the employer
+- employer paid financial counselling is included
+- non-cash holiday gifts (tangible) under $500 is excluded
+- computers that benefit the employer
 
 Examples: fitness memberships to reduce overtime stress, tuition costs,
 gift certificates with value from $100 - $500.
@@ -263,5 +265,31 @@ Calculate the taxable benefit of the loan.
 >>> q1 + q3_4
 >>> 550
 ```
+
+</details>
+
+### Allowance \[sec 6(1)(b)]
+
+- Fixed, specified taxable amount paid above salary to cover certain expenses
+- In rare reasonable cases, the allowance is tax exempt
+- For example, traveling expenses for traveling by car
+
+### Employment Insurance benefits \[se 6(1)(f)]
+
+- Include payment from insurance plan net of contributions
+- if the employer pays all or any portion of the premium
+- Applied to: group sickness, accident, disability insurance plans
+
+<details><summary>Answer for Anita</summary>
+
+$90,000 + ($1,600 - $350) + $424 + $1,000 + $2,000 + $200 + $56.67 + 16,880 + 400
+
+- retirement planning is tax exempt
+- workshop is tax exempt since employer benefits
+- loan benefit = 8000 \* (0.01 \* 2.5 / 12 + 0.02 \* 3 / 12) = $56.67
+- automobile benefit = 0.02 \* 38,500 \* 12 + 0.29 \* 16,000 + 250 \* 12 = 16,880
+- market price minus actually paid is a benefit
+
+
 
 </details>
