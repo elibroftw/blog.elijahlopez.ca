@@ -28,7 +28,7 @@
 &lt;/a>
 &lt;/span>
 &lt;/h2>&lt;p>You can try using &lt;code>yt-dlp&lt;/code> before resorting to &lt;code>python -m yt_dlp&lt;/code> like I did. In my case I installed yt-dlp with Python&amp;rsquo;s pip because yt-dlp is embedded in my music player, &lt;a href="https://github.com/elibroftw/music-caster/#readme">Music Caster&lt;/a>.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>python -m yt_dlp &amp;lt;url&amp;gt; -x -f bestaudio --audio-format mp3 --embed-thumbnail --embed-metadata -o &lt;span style="color:#ed9d13">&amp;#34;%(title)s.%(ext)s&amp;#34;&lt;/span>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>python -m yt_dlp &amp;lt;URL&amp;gt; -xciw -f &lt;span style="color:#ed9d13">&amp;#34;bestaudio/best&amp;#34;&lt;/span> --audio-quality &lt;span style="color:#3677a9">0&lt;/span> --audio-format mp3 --embed-thumbnail --embed-metadata -o &lt;span style="color:#ed9d13">&amp;#34;%(title)s.%(ext)s&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>If the video doesn&amp;rsquo;t have the artist in the title, use the following output template instead: &lt;code>-o &amp;quot;%(creator,uploader,channel)s - %(title)s.%(ext)s&amp;quot;&lt;/code>&lt;/p>
 &lt;h3 id="example" >Example
 &lt;span>
@@ -37,8 +37,8 @@
 &lt;/a>
 &lt;/span>
 &lt;/h3>&lt;p>If you are using yt-dlp on youtube videos, you can either supply the URL or just the ID.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>python -m yt_dlp UTwB8iJOux0 -x -f bestaudio --audio-format mp3 --embed-thumbnail --embed-metadata -o &lt;span style="color:#ed9d13">&amp;#34;%(title)s.%(ext)s&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic"># python -m yt_dlp https://www.youtube.com/watch?v=UTwB8iJOux0&amp;amp;pp=ygUVc2V3ZXJzbHZ0IGFsbCB0aGUgam95 -x -f bestaudio --audio-format mp3 --embed-thumbnail --embed-metadata -o &amp;#34;%(title)s.%(ext)s&amp;#34;&lt;/span>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>python -m yt_dlp UTwB8iJOux0 -xciw -f &lt;span style="color:#ed9d13">&amp;#34;bestaudio/best&amp;#34;&lt;/span> --audio-quality &lt;span style="color:#3677a9">0&lt;/span> --audio-format mp3 --embed-thumbnail --embed-metadata -o &lt;span style="color:#ed9d13">&amp;#34;%(title)s.%(ext)s&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic"># python -m yt_dlp https://www.youtube.com/watch?v=UTwB8iJOux0&amp;amp;pp=ygUVc2V3ZXJzbHZ0IGFsbCB0aGUgam95 -xciw -f &amp;#34;bestaudio/best&amp;#34; --audio-format mp3 --embed-thumbnail --embed-metadata -o &amp;#34;%(title)s.%(ext)s&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;details>&lt;summary>terminal output&lt;/summary>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>[youtube] Extracting URL: UTwB8iJOux0
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>[youtube] UTwB8iJOux0: Downloading webpage
