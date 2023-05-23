@@ -1,4 +1,69 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>tutorial on ELL Blog</title><link>https://blog.elijahlopez.ca/tags/tutorial/</link><description>ELL Blog (tutorial)</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 03 May 2023 13:14:55 -0400</lastBuildDate><atom:link href="https://blog.elijahlopez.ca/tags/tutorial/index.xml" rel="self" type="application/rss+xml"/><item><title>ASP.NET Core JWT Authorization</title><link>https://blog.elijahlopez.ca/posts/aspnet-jwt-authorization/</link><pubDate>Wed, 03 May 2023 13:14:55 -0400</pubDate><guid>https://blog.elijahlopez.ca/posts/aspnet-jwt-authorization/</guid><description>&lt;p>Don&amp;rsquo;t feel like explaining my code, so just copy and modify it for yourself as I can assure you it&amp;rsquo;s one of the cleanest you can find.&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>tutorial on ELL Blog</title><link>https://blog.elijahlopez.ca/tags/tutorial/</link><description>ELL Blog (tutorial)</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 22 May 2023 20:33:19 -0400</lastBuildDate><atom:link href="https://blog.elijahlopez.ca/tags/tutorial/index.xml" rel="self" type="application/rss+xml"/><item><title>yt-dlp Audio Download Tutorial</title><link>https://blog.elijahlopez.ca/posts/yt-dlp-audio-download/</link><pubDate>Mon, 22 May 2023 20:33:19 -0400</pubDate><guid>https://blog.elijahlopez.ca/posts/yt-dlp-audio-download/</guid><description>&lt;p>Since my &lt;a href="https://www.youtube.com/watch?v=Tq9qpA2QOTI">yt-dlp propaganda on YouTube is getting many views&lt;/a>, I thought I&amp;rsquo;d create this article and a future video on how to use yt-dlp to download audio from websites, primarily YouTube.&lt;/p>
+&lt;h2 id="installing-yt-dlp" >Installing yt-dlp
+&lt;span>
+&lt;a href="#installing-yt-dlp">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>Following the &lt;a href="https://github.com/yt-dlp/yt-dlp/wiki/Installation">official instructions&lt;/a>&lt;/p>
+&lt;h2 id="installing-ffmpeg" >Installing ffmpeg
+&lt;span>
+&lt;a href="#installing-ffmpeg">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;ul>
+&lt;li>Windows 10+: &lt;code>winget install ffmpeg&lt;/code>
+&lt;ul>
+&lt;li>If winget is not installed, you can install it &lt;a href="https://apps.microsoft.com/store/detail/app-installer/9NBLGGH4NNS1">from here&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="https://ffmpeg.org/download.html#build-linux">Linux&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://ffmpeg.org/download.html#build-mac">MacOS&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="downloading-audio" >Downloading Audio
+&lt;span>
+&lt;a href="#downloading-audio">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>Note that in my case, since I use yt-dlp in my music player, music caster, I installed yt-dlp with Python&amp;rsquo;s pip. You can try using &lt;code>yt-dlp&lt;/code> before resorting to &lt;code>python -m yt_dlp&lt;/code> like I did.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>python -m yt_dlp &amp;lt;url&amp;gt; -x -f bestaudio --audio-format mp3 --embed-thumbnail --embed-metadata -o &lt;span style="color:#ed9d13">&amp;#34;%(title)s.%(ext)s&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>If the video doesn&amp;rsquo;t have the artist in the title, prefix the output template with the following (no double quotes obviously): &lt;code>&amp;quot;%(creator,uploader,channel)s - &amp;quot;&lt;/code>&lt;/p>
+&lt;h3 id="example" >Example
+&lt;span>
+&lt;a href="#example">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>If you are using yt-dlp on youtube videos, you can either supply the URL or just the ID.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>python -m yt_dlp UTwB8iJOux0 -x -f bestaudio --audio-format mp3 --embed-thumbnail --embed-metadata -o &lt;span style="color:#ed9d13">&amp;#34;%(title)s.%(ext)s&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic"># python -m yt_dlp https://www.youtube.com/watch?v=UTwB8iJOux0&amp;amp;pp=ygUVc2V3ZXJzbHZ0IGFsbCB0aGUgam95 -x -f bestaudio --audio-format mp3 --embed-thumbnail --embed-metadata -o &amp;#34;%(title)s.%(ext)s&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;details>&lt;summary>terminal output&lt;/summary>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>[youtube] Extracting URL: UTwB8iJOux0
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>[youtube] UTwB8iJOux0: Downloading webpage
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>[youtube] UTwB8iJOux0: Downloading android player API JSON
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>[info] UTwB8iJOux0: Downloading &lt;span style="color:#3677a9">1&lt;/span> format(s): &lt;span style="color:#3677a9">251&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>[info] Downloading video thumbnail &lt;span style="color:#3677a9">41&lt;/span> ...
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>[info] Writing video thumbnail &lt;span style="color:#3677a9">41&lt;/span> to: Sewerslvt - all the joy In life was gone once you left.webp
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>[dashsegments] Total fragments: &lt;span style="color:#3677a9">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>[download] Destination: Sewerslvt - all the joy In life was gone once you left.webm
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>[download] 100% of 5.87MiB in 00:00:01 at 4.17MiB/s
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>[ExtractAudio] Destination: Sewerslvt - all the joy In life was gone once you left.mp3
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Deleting original file Sewerslvt - all the joy In life was gone once you left.webm (pass -k to keep)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>[Metadata] Adding metadata to &lt;span style="color:#ed9d13">&amp;#34;Sewerslvt - all the joy In life was gone once you left.mp3&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>[ThumbnailsConvertor] Converting thumbnail &lt;span style="color:#ed9d13">&amp;#34;Sewerslvt - all the joy In life was gone once you left.webp&amp;#34;&lt;/span> to png
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>[EmbedThumbnail] ffmpeg: Adding thumbnail to &lt;span style="color:#ed9d13">&amp;#34;Sewerslvt - all the joy In life was gone once you left.mp3&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/details>
+&lt;h2 id="metadata-editing" >Metadata Editing
+&lt;span>
+&lt;a href="#metadata-editing">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>&lt;img src="https://blog.elijahlopez.ca/images/yt-dlp/music-caster-metadata-before-edit.png" alt="Downloaded File Metadata in Music Caster">&lt;/p>
+&lt;p>yt-dlp is not smart enough to add all metadata nor the correct album cover, so if you are on Windows, you can use &lt;a href="https://github.com/elibroftw/music-caster/#readme">Music Caster&lt;/a> to further edit the metadata and add the correct cover art.&lt;/p>
+&lt;p>&lt;img src="https://blog.elijahlopez.ca/images/yt-dlp/music-caster-metadata-edited.png" alt="Metadata Edited in Music Caster">&lt;/p></description></item><item><title>ASP.NET Core JWT Authorization</title><link>https://blog.elijahlopez.ca/posts/aspnet-jwt-authorization/</link><pubDate>Wed, 03 May 2023 13:14:55 -0400</pubDate><guid>https://blog.elijahlopez.ca/posts/aspnet-jwt-authorization/</guid><description>&lt;p>Don&amp;rsquo;t feel like explaining my code, so just copy and modify it for yourself as I can assure you it&amp;rsquo;s one of the cleanest you can find.&lt;/p>
 &lt;p>I removed my login handling code since you can do that yourself. My login code was send login code to email via postmark and verify it. I was also using a MongoDB database.&lt;/p>
 &lt;p>The project is called &amp;ldquo;SttApi&amp;rdquo; so replace that with your own project name.&lt;/p>
 &lt;details>&lt;summary>appsettings.json&lt;/summary>
@@ -127,7 +192,7 @@
 &lt;li>Either double click the row with &lt;code>Path&lt;/code> or single click it and click edit. A new window should open up
 &lt;img src="https://blog.elijahlopez.ca/images/windows/user-path-variable-edit.png" alt="Windows 10 Path variable window">&lt;/li>
 &lt;li>Click &amp;ldquo;New&amp;rdquo;, paste the path to your directory without quotes, and press enter
-&lt;img src="https://blog.elijahlopez.ca/images/window/add-new-user-path-variable.png" alt="Windows 10 new directory to Path">&lt;/li>
+&lt;img src="https://blog.elijahlopez.ca/images/windows/add-new-user-path-variable.png" alt="Windows 10 new directory to Path">&lt;/li>
 &lt;li>Click Ok and then click Ok again.&lt;/li>
 &lt;/ol></description></item><item><title>How to Convert xlsx to csv With Python</title><link>https://blog.elijahlopez.ca/posts/python-xlsx-to-csv/</link><pubDate>Fri, 10 Feb 2023 18:34:17 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/python-xlsx-to-csv/</guid><description>&lt;p>Try using &lt;a href="https://github.com/dilshod/xlsx2csv">https://github.com/dilshod/xlsx2csv&lt;/a> first.&lt;/p>
 &lt;p>If you search this question online, you&amp;rsquo;ll get the slowest answer ever which is to use pandas or xlrd. But I will show you a method
