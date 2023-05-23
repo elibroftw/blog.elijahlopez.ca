@@ -18,5 +18,5 @@ In this concise guide, you will learn how to add a directory to the Path environ
 4. Either double click the row with `Path` or single click it and click edit. A new window should open up
 ![Windows 10 Path variable window](/images/windows/user-path-variable-edit.png)
 5. Click "New", paste the path to your directory without quotes, and press enter
-![Windows 10 new directory to Path](/images/window/add-new-user-path-variable.png)
+![Windows 10 new directory to Path](/images/windows/add-new-user-path-variable.png)
 6. Click Ok and then click Ok again.
