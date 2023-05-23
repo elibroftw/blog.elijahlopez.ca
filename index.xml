@@ -29,7 +29,7 @@
 &lt;/span>
 &lt;/h2>&lt;p>You can try using &lt;code>yt-dlp&lt;/code> before resorting to &lt;code>python -m yt_dlp&lt;/code> like I did. In my case I installed yt-dlp with Python&amp;rsquo;s pip because yt-dlp is embedded in my music player, &lt;a href="https://github.com/elibroftw/music-caster/#readme">Music Caster&lt;/a>.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>python -m yt_dlp &amp;lt;url&amp;gt; -x -f bestaudio --audio-format mp3 --embed-thumbnail --embed-metadata -o &lt;span style="color:#ed9d13">&amp;#34;%(title)s.%(ext)s&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>If the video doesn&amp;rsquo;t have the artist in the title, prefix the output template with the following (no double quotes obviously): &lt;code>&amp;quot;%(creator,uploader,channel)s - &amp;quot;&lt;/code>&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>If the video doesn&amp;rsquo;t have the artist in the title, use the following output template instead: &lt;code>-o &amp;quot;%(creator,uploader,channel)s - %(title)s.%(ext)s&amp;quot;&lt;/code>&lt;/p>
 &lt;h3 id="example" >Example
 &lt;span>
 &lt;a href="#example">
