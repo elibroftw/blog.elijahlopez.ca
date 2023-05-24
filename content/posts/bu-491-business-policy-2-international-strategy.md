@@ -150,7 +150,7 @@ World of opportunities: https://www.hofstede-insights.com/country-comparison-too
 ## American Factory
 
 - No context that GM literally failed
-- Chevlorlet S-10 was the first car made in 1982
+- Chevrolet S-10 was the first car made in 1982
 - Union Auto Workers Union
 - You can't smell Fuyao without F-U
 
