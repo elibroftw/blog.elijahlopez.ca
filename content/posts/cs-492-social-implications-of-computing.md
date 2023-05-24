@@ -87,3 +87,11 @@ Thanks ChatGPT:
 There exist challenges of verifying authenticity in an environment characterized
 by anonymity, pseudonyms, and digital manipulation are explored,
 shedding light on the potential for deception and manipulation.
+
+## Week 3
+
+['Terrifying': How a single line of computer code put thousands of innocent Turks in jail](https://www.cbc.ca/news/world/terrifying-how-a-single-line-of-computer-code-put-thousands-of-innocent-turks-in-jail-1.4495021)
+
+- Bylock
+
+every time I read these articles, I have to go down the rabbit hole.
