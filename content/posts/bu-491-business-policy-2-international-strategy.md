@@ -146,3 +146,44 @@ World of opportunities: https://www.hofstede-insights.com/country-comparison-too
   - Continuous learning mechanisms
 
 ## Sher-Wood Hockey Sticks
+
+## American Factory
+
+- No context that GM literally failed
+- Chevlorlet S-10 was the first car made in 1982
+- Union Auto Workers Union
+- You can't smell Fuyao without F-U
+
+- Is Fuyao an example of “How to take on the World”?
+  - Fuyao is a company for automobile glass, 70% of the market.
+  - Melding US and Chinese culture
+  - No union
+  - Used to be a GM motors plant, leaving 2,000 families unemployed and now 1,000 employees employed
+- What were the major issues that impacted the company performance?
+  - Americans had fat fingers LOL and were slow
+  - Water spots
+  - Draining the washer
+  - Americans afraid of heat
+- What do you think the company did well?
+  - Chinese national pride
+- What could the company have done better?
+  - Safety
+  - Again safety
+  - Thinking and planning operations efficiency before opening the plant
+- Was there anything that surprised you?
+  - GM was paying $29.4/hr in 2008...
+  - Fuyao was paying $12.84
+  - People lost their homes when they lost their jobs at GM
+  - This guy was eating two twinkies for lunch
+  - The Washington Post picking out the pro union worker out of 2,000 workers
+  - The U.S senator was bold to trash talk the company at their event
+  - The exact time there is an audit and video recording, the glass breaks
+  - Attendance counting at the Chinese plant
+  - Tens of millions of dollars were given by Dayton
+- What is your most important learning from this film?
+  - The rat race is not attractive
+  - Need to get into politics because that's where the good life is at it seems
+
+The anti-union consulting should be banned. It's classic union busting. Let unions fail naturally. Employers should not be able to pay consultants to avoid unions.
+
+Unionization failed 40% to 60%.
