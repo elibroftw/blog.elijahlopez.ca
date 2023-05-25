@@ -109,7 +109,7 @@ software application
 - single-function modules with well-defined interfaces and actions
 - small teams own entire life cycle of the service
 - The term “micro” refers to the sizing of a service which must be
-manageable by a single development team (5 to 10 developers).
+#manageable by a single development team (5 to 10 developers).
 
 ## Architecting A Solution
 
@@ -134,3 +134,29 @@ No persistent storage, firmware loads OS into memory on power on.
 ### How to Find a Solution
 
 First ask, what have you tried already and why didn't it work?
+
+### Revenue Model
+
+Common Revenue Models:
+• Direct Sales – This model involves selling products or services directly to customers.
+• Advertising – Companies generate revenue by displaying advertisements to their customers.
+• Subscription – Customers pay a recurring fee (monthly, yearly) to access and use a product or
+service.
+
+Freemium – This model offers a basic version of a product or service for free, but
+charges for additional features or premium versions.
+• Licensing or Royalties – Companies grant licenses to third parties to use their
+intellectual property (such as patents, trademarks, or copyrighted material) in
+exchange for royalties or licensing fees.
+• Affiliate Marketing – Companies earn a commission by promoting and selling other
+companies' products or services through affiliate links or referral programs.
+• Data Sales – Companies collect and analyze data from their customers and sell or
+license the insights or anonymized data to other businesses or researchers
+
+### Revenue Model and Design
+
+- advertising requires placement of ads in GUI
+- subscriptions and subscriptions requires compelling premium features
+- data sales requires a scheme to collect data
+- rapid user acquisition requires scalability and iterations
+
