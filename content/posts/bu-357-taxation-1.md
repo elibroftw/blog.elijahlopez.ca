@@ -290,6 +290,59 @@ $90,000 + ($1,600 - $350) + $424 + $1,000 + $2,000 + $200 + $56.67 + 16,880 + 40
 - automobile benefit = 0.02 \* 38,500 \* 12 + 0.29 \* 16,000 + 250 \* 12 = 16,880
 - market price minus actually paid is a benefit
 
+</details>
 
+### Stock Options
+
+- grant day
+  - FMV determined
+- exercise day
+  -taxable benefit is the difference
+- For CCPC, taxation occurs on selling day
+
+Dividend reduction (half of taxable benefit): option price was greater than fair market value on grant day or the CCPC shares were held for at least 2 years
+
+Capital gain on selling day = Price sold - EOD fair market price at exercise day
+
+An option was granted for 100 shares with a strike price of $12. On this grant day, shares were trading at $22. Next year, this option
+was exercised. Shares traded at $40 per share at the time. Three years later, all shares were sold at $66. What are the tax consequences.
+
+<details><summary>Answer</summary>
+
+In the second year, the taxable benefit is (40 - 12) \* 100 = \$2,800. In the fifth year, there is a capital gains of (66 - 40) \* 100= \$,600.
+
+If the company is CCPC, there is only the selling benefit of 66 - 22.
+
+</details>
+
+## Deductions \[sec 8]
+
+Must be specifically permitted
+
+1. salespersons' (commission based) expenses
+    - no capital expense
+    - no recreational deduction
+2. Traveling expenses
+3. professional and union dues
+4. works space in home
+    - used exclusively for earning income
+    - and used regularly for meeting customers or clients
+    - must earn employment income
+    - excess amount carried forward
+    - rent, utilities, repairs & maintenance, supplies, phone
+    - salesperson exclusive: property taxes, house insurance, limited to commissions
+5. contributions to RPP (registered pension plan)
+6. Use of automobile
+    - interest on car loan up to $300 per month
+    - operating vehicle expenses
+    - capital cost allowance, 30% and cost limited to 34,000 plus sales tax
+
+<details><summary>work space example answer</summary>
+
+So 20% is workspace. Computer not on the list.
+
+Non-Salesperson: 600 + 1000 + 1000 (work related expense) + 1000 +  400 = 3,000
+
+Salesperson with $15,000 commission: 400 (property taxes) + 40 (insurance) = 3,440
 
 </details>
