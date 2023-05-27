@@ -154,19 +154,20 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> [HttpGet]&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> [Authorize(Roles = &amp;#34;User&amp;#34;)]&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">public&lt;/span> &lt;span style="color:#6ab825;font-weight:bold">string&lt;/span> TestAuthorization() {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">var&lt;/span> email = User.FindFirstValue(JwtRegisteredClaimNames.Email);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">var&lt;/span> email = User.FindFirstValue(ClaimTypes.Email);
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">return&lt;/span> &lt;span style="color:#ed9d13">$&amp;#34;Your email is {email}&amp;#34;&lt;/span>;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a61717;background-color:#e3d2d2">#&lt;/span>endif
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">private&lt;/span> &lt;span style="color:#6ab825;font-weight:bold">string&lt;/span> GenerateToken(&lt;span style="color:#6ab825;font-weight:bold">string&lt;/span> email) {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">var&lt;/span> claims = &lt;span style="color:#6ab825;font-weight:bold">new&lt;/span>[] { &lt;span style="color:#6ab825;font-weight:bold">new&lt;/span> Claim(JwtRegisteredClaimNames.Email, email), &lt;span style="color:#6ab825;font-weight:bold">new&lt;/span> Claim(ClaimTypes.Role, &lt;span style="color:#ed9d13">&amp;#34;User&amp;#34;&lt;/span>) };
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">var&lt;/span> claims = &lt;span style="color:#6ab825;font-weight:bold">new&lt;/span>[] { &lt;span style="color:#6ab825;font-weight:bold">new&lt;/span> Claim(ClaimTypes.Email, email), &lt;span style="color:#6ab825;font-weight:bold">new&lt;/span> Claim(ClaimTypes.Role, &lt;span style="color:#ed9d13">&amp;#34;User&amp;#34;&lt;/span>) };
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">var&lt;/span> token = &lt;span style="color:#6ab825;font-weight:bold">new&lt;/span> JwtSecurityToken(jwtIssuer, jwtAudience, claims, signingCredentials: credentials);
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic">// client needs to save JWT as well incldue it in the Authorization Bearer Token header of subsequent requests&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">return&lt;/span> jwtSecurityTokenHandler.WriteToken(token);
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/details>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>DO NOT USE JwtRegisteredClaimNames AS YOU WILL SPEND OVER AN HOUR DEBUGGING ISSUES!!&lt;/p>
+&lt;/details>
 &lt;h2 id="gate-keeping-routes-and-reading-user-claims" >Gate-keeping Routes and Reading User Claims
 &lt;span>
 &lt;a href="#gate-keeping-routes-and-reading-user-claims">
@@ -179,7 +180,8 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> [HttpGet]&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> [Authorize(Roles = &amp;#34;User&amp;#34;)]&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">public&lt;/span> &lt;span style="color:#6ab825;font-weight:bold">string&lt;/span> TestAuthorization() {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">var&lt;/span> email = User.FindFirstValue(JwtRegisteredClaimNames.Email);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic">// JwtRegisteredClaimNames&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">var&lt;/span> email = User.FindFirstValue(ClaimTypes.Email);
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">return&lt;/span> &lt;span style="color:#ed9d13">$&amp;#34;Your email is {email}&amp;#34;&lt;/span>;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a61717;background-color:#e3d2d2">#&lt;/span>endif
