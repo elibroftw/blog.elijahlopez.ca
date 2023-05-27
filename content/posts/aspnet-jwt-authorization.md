@@ -116,19 +116,21 @@ public class AuthController : ControllerBase {
     [HttpGet]
     [Authorize(Roles = "User")]
     public string TestAuthorization() {
-        var email = User.FindFirstValue(JwtRegisteredClaimNames.Email);
+        var email = User.FindFirstValue(ClaimTypes.Email);
         return $"Your email is {email}";
     }
 #endif
 
     private string GenerateToken(string email) {
-        var claims = new[] { new Claim(JwtRegisteredClaimNames.Email, email), new Claim(ClaimTypes.Role, "User") };
+        var claims = new[] { new Claim(ClaimTypes.Email, email), new Claim(ClaimTypes.Role, "User") };
         var token = new JwtSecurityToken(jwtIssuer, jwtAudience, claims, signingCredentials: credentials);
         // client needs to save JWT as well incldue it in the Authorization Bearer Token header of subsequent requests
         return jwtSecurityTokenHandler.WriteToken(token);
     }
 }
 ```
+
+DO NOT USE JwtRegisteredClaimNames AS YOU WILL SPEND OVER AN HOUR DEBUGGING ISSUES!!
 
 </details>
 
@@ -143,7 +145,8 @@ This is a method I have in my auth controller for faster debugging since I'm doi
     [HttpGet]
     [Authorize(Roles = "User")]
     public string TestAuthorization() {
-        var email = User.FindFirstValue(JwtRegisteredClaimNames.Email);
+        // JwtRegisteredClaimNames
+        var email = User.FindFirstValue(ClaimTypes.Email);
         return $"Your email is {email}";
     }
 #endif
