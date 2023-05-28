@@ -14,6 +14,7 @@ aliases: ["/posts/aspnet-kebab-case"]
 See [docs](https://learn.microsoft.com/en-us/aspnet/core/mvc/controllers/routing#use-a-parameter-transformer-to-customize-token-replacement) for the latest way to do it. Here is how you would do it for ASP.NET Core 7.0:
 
 ```c#
+// Program.cs
 // EXISTING IMPORTS
 using System.Text.RegularExpressions;
 
@@ -23,8 +24,7 @@ public class Program {
     public static void Main(string[] args) {
         // replace builder.Services.AddControllers() with the following
         builder.Services.AddControllersWithViews(options => {
-            options.Conventions.Add(new RouteTokenTransformerConvention(
-                                            new SlugifyParameterTransformer()));
+            options.Conventions.Add(new RouteTokenTransformerConvention(new SlugifyParameterTransformer()));
         });
         // EXISTING CODE
     }
