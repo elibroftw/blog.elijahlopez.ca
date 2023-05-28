@@ -133,7 +133,7 @@ Net salary                                        84,047
 
 - include all benefits except
   - retirement plans
-  - group insurances
+  - group **sickness** or accident insurance plan, private health services plan, a supplementary unemployment benefits plan
   - mental health
   - discounts for all employees where the price paid is still more than the cost
   - social club membership that benefit employer
@@ -297,7 +297,7 @@ $90,000 + ($1,600 - $350) + $424 + $1,000 + $2,000 + $200 + $56.67 + 16,880 + 40
   -taxable benefit is the difference
 - For CCPC, taxation occurs on selling day
 
-Dividend reduction (half of taxable benefit): option price was greater than fair market value on grant day or the CCPC shares were held for at least 2 years
+Division C deduction (half of taxable benefit): option price was greater than fair market value on grant day or the CCPC shares were held for at least 2 years. You still have to report the full dollar amount benefit.
 
 Capital gain on selling day = Price sold - EOD fair market price at exercise day
 
