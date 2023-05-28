@@ -237,11 +237,8 @@ What if Mitch drove 10,000km for work and 8,000km for personal?
 - taxable benefit is `principal amounts * (prescribed rate - interest rate paid)`
 - prescribed rate is the annual rate of the 3-month T-bill which is disclosed every quarter. Use the average of the quarters that the loan was taken from.
 
-For home loans:
-
-(i) the prescribed rate in each quarter the loan
-was outstanding
-(ii) The prescribed rate in effect at the time the
+For home loans compare to the smaller of (i) the prescribed rate in each quarter the loan
+was outstanding and (ii) The prescribed rate in effect at the time the
 loan was granted
 
 Example
