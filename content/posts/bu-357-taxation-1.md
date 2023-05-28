@@ -133,7 +133,7 @@ Net salary                                        84,047
 
 - include all benefits except
   - retirement plans
-  - insurances
+  - group insurances
   - mental health
   - discounts for all employees where the price paid is still more than the cost
   - social club membership that benefit employer
