@@ -187,3 +187,74 @@ World of opportunities: https://www.hofstede-insights.com/country-comparison-too
 The anti-union consulting should be banned. It's classic union busting. Let unions fail naturally. Employers should not be able to pay consultants to avoid unions.
 
 Unionization failed 40% to 60%.
+
+## Worldwide Competitive Advantage
+
+Goals
+
+- Efficiency
+  - value of outputs / value of inputs
+- Flexibility
+- Learning
+
+## Building Multinational Flexibility
+
+The ability to manage risks and exploit opportunities arising from the diversity and volatility of the global environment.
+
+Diversity and Volatility
+
+- Macroeconomic (FX, price changes)
+- Political risks
+- Competitive risks (competitor's actions)
+
+Requirements
+
+- Scannning and responding to discontinuities
+- Selecitng mos attractive markets
+
+## Building Worldwide Learning
+
+- Capture external diversity
+- Leverage internal variety
+  - Worldwide human resources
+  - Opportunity to leverage central and local innovations
+  - Create true global innovation by linking sensing
+
+### Strategic Goals
+
+- National differences
+- Scale economies
+- Scope economies
+
+How to use these to our advantages?
+
+- Need to pick position and find niche in marketplace
+- Standardization
+
+### Traditional Strategic Postures
+
+- International strategy
+  - Home country
+- Multinational
+  - Differentiation (revenue at site)
+- Global
+  - Global efficiency
+
+### Managing differences
+
+- Adaption: customization increases market share
+- Aggregation: deliver economies of scale through regional or global operations
+- Arbitrage: exploitation of differences between national and regional markets
+
+- Competitive advantage: why globalize at all
+- Configuration: location of overseas operations
+- Coordination: how to connect international operations
+
+### Triple A Strategy
+
+- focus on one or two As
+- New elements need to fit well
+
+### Leading Change
+
+Why do transformation efforts fails?

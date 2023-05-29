@@ -241,3 +241,60 @@ Consider the following limit order. The last trade was at $50.
 
 a. market buy for 200 shares, what price will it be filled at?
 b. at what price would the next market order be filled?
+
+## Investment Companies
+
+- Mutual funds
+  - Record keeping and administration
+  - Pool everyone's money and invest
+  - Professional management
+  - Lower transaction costs
+  - Net Asset Value (market value - liabilities over shares outstanding)
+- Unit investment trusts
+- REITS
+  - Real Estate Investment Trusts
+- Hedge funds
+  - Private investors pool assets to be invested by fund managers
+- Closed-end funds
+  - Do not redeem or issue shares
+  - Constant shares outstanding
+  - Investors cash out by selling to new investors
+  - Priced at premium or discount to NAV
+- Open-end
+  - Stand ready to redeem or issue shares at NAV
+  - Priced at Net Asset Value
+
+### Mutual Fund Investment Policy
+
+- Money market funds
+  - Invest in money market securities such as commercial paper, repurchase agreements, or CDs
+- Equity funds
+  - Invest primarily in stock
+- Sector funds
+  - Concentrate on a particular industry or country
+- Bond funds
+  - Specialize in the fixed-income sector
+- International funds
+  - Global and emerging market
+- Balanced funds
+  - Designed to eb candidates for an individual's entire investment portfolio
+- Asset allocation and flexible funds
+  - Hold both stocks and bonds
+  - Engaged in market timing; not low-risk
+- Index funds
+  - Tries to match the performance of a broad market index
+- Liquid alternatives
+- ESG funds
+  - screened against environmental, social, and governance
+factors
+
+Fee Structure:
+
+1. Management Fees and Operating Expenses
+2. Front-end load
+3. Back-end load
+4. Trailing Commissions
+
+### Exchange Traded Funds
+
+- Mirrors an index
