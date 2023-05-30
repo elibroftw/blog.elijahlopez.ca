@@ -343,3 +343,66 @@ Non-Salesperson: 600 + 1000 + 1000 (work related expense) + 1000 +  400 = 3,000
 Salesperson with $15,000 commission: 400 (property taxes) + 40 (insurance) = 3,440
 
 </details>
+
+## Income from Business
+
+I. Business Income Defined and
+General Rules for Determining
+Business Income
+II. Deductions denied and allowed
+III. Salesperson’s expenses
+
+### Business income and general rules
+
+- Business” should be carried on with a profit or REOP
+- Profit is determined in accordance with well-established business practices
+
+### GAAP / IFRS and the Act
+
+Differences:
+
+- Amortization
+- Permanent differences
+- Non-arm's length transactions (related party transactions)
+  - Is the transaction value at market price?
+
+### Disallowed deductions
+
+1. Not for income earning purpose
+2. Capital expenditures
+3. Exempt income
+4. reserve
+5. Personal expense
+6. Not reasonable
+
+- payments on discounted bonds
+- use of recreational facilities
+- political contributions
+- allowance for an automobile above the limit
+
+Examples:
+
+- charitable donation if not for production income
+  - not fully deductible
+- accounting depreciation on fixed assets
+  - CCA
+- contingent liability with respect to an upcoming union negotiation
+  - balance sheet
+- appraisal fees to determine selling price of fixed assets
+  - add to the cost of the fixed asset
+- premium for life insurance oon company president
+  - exempt income
+
+Problem 12
+
+- Income: 64,300
+- Acc amortization: 4,000
+- CCA: (22,400)
+- Political donations: 1,000
+- Charitable donations: 8,000
+- Annual tennis club dues: 2,500
+- Meals and entertainment (50%): 1,700
+
+Ch 3 Problem 23
+
+Ned had unlimited use of the company's private swimming pool. The local pool charges annual fees of 1,800 per year before HST. Benefit = 1,800 (LOL).

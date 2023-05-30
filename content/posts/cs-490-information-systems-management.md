@@ -160,3 +160,41 @@ license the insights or anonymized data to other businesses or researchers
 - data sales requires a scheme to collect data
 - rapid user acquisition requires scalability and iterations
 
+### Internal Forces
+
+- supply-push to demand-pull
+  - respond to consume demand and pull products
+- self-service
+  - customers know what they want best
+- real-time working
+  - responding fast to the customer demands
+  - optimized as possible
+- anytime, anyplace information work
+  - remote / hybrid / mobile computing
+- Outsourcing and strategic alliances
+  - Use of IT to help manage work across the extended enterprise
+- Decease of hierarchy
+  - Equal playing field with shared authority
+  - Use of IT to facilitate information exchange
+
+## RAID
+
+Redundant array of independent disks. The OS thinks there is only one disk.
+
+### RAID 0
+
+Distributing data across at least 2 disks; each disk has different information.
+
+### RAID 1
+
+Data is the same on all devices
+
+### RAID 10
+
+Multiple groups of RAID 0s. Each group of disks gets different data.
+
+Or RAID 1 PLUS 0
+
+### RAID 5
+
+At least 3. Stripping with parity. Parity means if a disk fails, the parity can be used to generate the disk that fails. Parity is just enough information to recover the failed disk given that the other disks are available.
