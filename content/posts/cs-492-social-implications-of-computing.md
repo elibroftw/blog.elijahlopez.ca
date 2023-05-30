@@ -95,3 +95,29 @@ shedding light on the potential for deception and manipulation.
 - Bylock
 
 every time I read these articles, I have to go down the rabbit hole.
+
+## RPE 3
+
+### Team A
+
+- S
+
+### Team B
+
+- identity theft & data breaches
+  - UID is worse than status quo
+  - False sense of security
+  - Humans are the worst link for cyber security
+
+- > new procedures and policies, or $5B and the budget is $60B per year already
+- Facebook 2019 data breach
+- "Canada does not have the technology to build this"
+
+- single point of failure
+- political implications
+  -
+
+What if Universal IDs were not an identity thing, but a physical thing, and we had offline hashing and encryption comparison?
+
+- Roger's network going down
+- Prime target for hackers
