@@ -298,3 +298,44 @@ Fee Structure:
 ### Exchange Traded Funds
 
 - Mirrors an index
+- Trades like a stock
+- Lower costs
+- Tax efficiency
+
+### Hedge Fund Strategies
+
+- Directional
+  - Bets that one sector or another will outperform other sectors
+- Non-directional
+  - Buy one type and sell another
+  - market neutral
+- Statistical arbitrage
+  - etc
+
+High-Frequency Strategies
+
+- Electronic news feeds
+- Cross-market arbitrage
+- Electronic market making
+- Electronic "front running"
+
+Examples
+
+1. An open-end fund has a net asset value of $10.70 per share. It is sold with a front-end load of 6%. What is the offering price?
+
+- $10.70 after offering price, so offering price = 10.70 / 0.094 = 11.38
+
+2. The offering price is 12.30 with a front-end load of 5%. What is the NAV? NAV = 12.30 \* 0.95 = $11.69
+
+3. You purchased 1,000 shares at $20 with a front-end load of 4%. Securities increased in value by 12%. There is a 1.2% expense ratio. What is the rate of return?
+
+OFF = 20 / 0.96 = 20.83
+
+Final value = 20  \* 1.12 \* (1 - 0.012) = 22.13
+
+Rate of return = 22.13 / 20.83 - 1 = 6.24%
+
+4. Loaded-up fund has an expense ratio of 1.75%. Economy Fund has a front-end load of 2% but an expense ratio of 0.25%. Assume rate of return is 6% before any fees.
+
+- LU = 1000 \* 1.06 \* (1 - 0.0175) = 1041.45 -> 4.1%
+- EF = 1000 \* (1 - 0.98) \* 1.06 \* (1 - 0.0025) = 1036.20 -> 3.62%
