@@ -258,3 +258,40 @@ How to use these to our advantages?
 ### Leading Change
 
 Why do transformation efforts fails?
+
+## United Cereal
+
+- Lora Brill: United Cereal’s European vice president
+- March 2010
+- Healthy Berry Crunch, a new breakfast cereal that the French subsidiary wanted to launch
+- Started by Jed Thomson in 1910 at his grocery store in Kalamazoo, Michigan
+- main competitor is Kellogs
+- Local markets resulted in 25% higher SG&A expenses than in the US
+- National subsidiaries each lead by a  Country Manager (CM) because of major differences
+  - lead to contradictions in marketing
+- most CMs now favored product extensions over new product introductions, and many increasingly relied on cost reductions in their existing portfolios to maintain
+profits
+- Arne Olsen, a Norwegian appointed as UC’s European VP in 2002 - 2006
+- PodCafé debacle
+  - First launched in Germany, but three years later copycat products showed up in other countries
+
+1. If you were Lora Brill, would you authorize the launch of Healthy Berry
+Crunch in France?
+
+    Yes, because competitors are also doing it and the repurchase percentage consideration is more than 60%
+
+2. Is United Cereal a centralized or decentralized organization?
+
+    Centralized, they are working together to some extent.
+
+3. Should Healthy Berry Crunch become a Eurobrand? Why or why not?
+
+    No because the organization structure is not simple to covey and results in each VP taking on more responsibilities. Then there's the issue that each country would have to be on board and be capable of also launching products. Spain and Italy are not going to be able to keep up.
+
+4. What would you recommend if you were Lora?
+
+    Launch Healthy Berry Crunch and create a reorganization plan so that the next product can become the Eurobrand.
+
+5. How would you implement tour recommendation
+
+    The two issues is the organization structure with regards to Eurobrands and the budgets for each subsidiary. With regards to organization, there needs to be a straight forward approach as James Miller said. A European product structure where there is clear authority for decision making. This would also result in lower SG&A expenses as decision making is now a stream lined process.
