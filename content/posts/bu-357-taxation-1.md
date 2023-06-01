@@ -406,3 +406,68 @@ Problem 12
 Ch 3 Problem 23
 
 Ned had unlimited use of the company's private swimming pool. The local pool charges annual fees of 1,800 per year before HST. Benefit = 1,800 (LOL).
+
+## Deductions Specifically Permitted \[sec 20]
+
+- write-offs of capital expenditure
+- interest on borrowed money used for earing business income
+- deduct bonus on the accrual basis if paid within 180 days after the taxation year
+- Expenses of issuing shares or borrowing money
+  - equally over five years
+  - print and ad costs, filing fees, legal fees, transfer fees, commissions, etc. in relation to share issuance and borrowing
+  - refinancing costs such as rescheduling restructuring
+- Reserves
+  - For doubtful debts \[sec 20(1)(1)]
+  - Goods and services not rendered \[sec 20(1)(m)]
+  - Reserves for delayed payment revenues \[sec 20(1)(n)]
+    - Deducted for no more than 3 years
+    - When reserve is allowed, it must be added back to income in the following year
+      - New reserve can be deducted if it can be justified in the following year
+      - Reserve = % Unpaid Revenue \* Profit
+  - Manufacturer's warranty reserves \[sec 20(1)(m.1)]
+
+- Employer Contributiosn to RPP and DPSP
+  - limit =  MIN (18% of employment income, $30,780 for 2022)
+- Convention expenses (2 per year)
+  - Conferences
+- Representation expenses (licensing, permit, franchise)
+  - Fully deductible
+  - Deduct equally over 10 years
+  - Claim CCA
+- Other expenses fully deductible
+  - land scaping
+  - site investigation fees
+
+### Reserve for Delayed Payment Revenue
+
+Example
+
+- $160,000 revenue, cost of $4,000, $40,000 up front, 6 years of $20,000 annual payments.
+- Income = $156,000
+- without taking reserve, pay entire amount on $156,000
+- Y22 reserve = 120,000  \* 156,000 / 160,000 = 117,000
+  - Business Income = 39,000
+- Y23 reserve = 100,000  \* 156,000 / 160,000 = 97,500
+  - income = 117,000 - 97,500 = 19,500
+- Y24 reserve = 80,000  \* 156,000 / 160,000 = 78,000
+  - income = 97,500 - 78,000 = 19,500
+- Y25 income = 78,000 (3 years of reserve deductions met)
+
+### Work space in home
+
+20% of home is partitioned for self-employed work
+
+- utilities: 3,000
+- mortgage interest: 5,000
+- long distance call for work: 1,000
+- property taxes: 2,000
+- purchase of computer for work: 2,500
+- general upkeep and maintenance 5,000
+- contents and property insurance: 200
+- supplies for the office 400
+
+Calculate CCA of computer and prorate home expenses.
+
+Computer CCA can be 100% deductible if CCPC or individual.
+
+OR: 1.5 (accelerated) \* 2,500 \* 55%
