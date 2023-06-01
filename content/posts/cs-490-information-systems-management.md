@@ -198,3 +198,55 @@ Or RAID 1 PLUS 0
 ### RAID 5
 
 At least 3. Stripping with parity. Parity means if a disk fails, the parity can be used to generate the disk that fails. Parity is just enough information to recover the failed disk given that the other disks are available.
+
+### Storage Area Network
+
+- Fibre Channel Switch
+  - High performance to handle lots of data traffic
+  - Like a router but for fibre optics and wi-fi routing
+  - Wired connected to multiple RAID disks
+- Block-level storage
+  - Hard drives appear as locally attached devices
+
+### Practical Exercise
+
+500,000 TB storage capacity, Seagate 10TB drives. 0.7% annual failure rate (AFR)
+
+Design for 99.99% availability.
+
+- redundancy, fault-tolerance, load balancing, regular maintenance
+- RAID 10 to tolerate drive failure
+- Distributed storage to increase reliability and availability
+- Hot swappable driver - can replace drivers while system is running
+
+Availability: = Mean Time Between Failure / (MTBF + Mean Time To Repair)
+
+### Backup
+
+- Online backup (hot)
+- Instant, protects against at least one HD failure
+
+### Offline backup
+
+- Done end of day
+- Protect against complete failure
+
+### Archive
+
+- Full backups
+- Differential backups
+  - alters existing backup
+- Incremental backups
+  - Backup additions and alternations since the last incremental backup
+
+## Managing Corporate Information Resources
+
+### IT Infrastructure
+
+- Hardware
+- OS platform
+- Application platform
+- Data Management platform
+- Network platform
+- Internet platform
+- Service platform

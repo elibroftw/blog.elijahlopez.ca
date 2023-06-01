@@ -274,6 +274,8 @@ profits
 - Arne Olsen, a Norwegian appointed as UC’s European VP in 2002 - 2006
 - PodCafé debacle
   - First launched in Germany, but three years later copycat products showed up in other countries
+- Jorge Sanchez Division VP - Southern Europe
+- Jean-Luc Michel, Country Manager France
 
 1. If you were Lora Brill, would you authorize the launch of Healthy Berry
 Crunch in France?
@@ -282,11 +284,12 @@ Crunch in France?
 
 2. Is United Cereal a centralized or decentralized organization?
 
-    Centralized, they are working together to some extent.
+    - Centralized in terms of decision making and organization structure.
+    - Decentralized because of product adaptions in every nation
 
 3. Should Healthy Berry Crunch become a Eurobrand? Why or why not?
 
-    No because the organization structure is not simple to covey and results in each VP taking on more responsibilities. Then there's the issue that each country would have to be on board and be capable of also launching products. Spain and Italy are not going to be able to keep up.
+    No because the organization structure is not simple to covey and results in each VP taking on more responsibilities. Then there's the issue that each country would have to be on board and be capable of also launching products. Spain and Italy are not going to be able to keep up. The test cases were't done in every country either. If the overall goal is to prove that a Euro brand strategy is viable, then the first case product should be crystal clear.
 
 4. What would you recommend if you were Lora?
 
