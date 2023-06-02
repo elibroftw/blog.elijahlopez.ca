@@ -2,6 +2,10 @@
 title: "Ethics and Morality is Hard!"
 date: 2022-03-23T22:18:40-04:00
 draft: true
+tags: [
+  "opinion",
+  "morality"
+]
 ---
 
 ## Introduction
