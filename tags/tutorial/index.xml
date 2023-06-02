@@ -1,5 +1,98 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>tutorial on ELL Blog</title><link>https://blog.elijahlopez.ca/tags/tutorial/</link><description>ELL Blog (tutorial)</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 02 Jun 2023 12:49:14 -0400</lastBuildDate><atom:link href="https://blog.elijahlopez.ca/tags/tutorial/index.xml" rel="self" type="application/rss+xml"/><item><title>ASP.NET Swagger Dark Theme</title><link>https://blog.elijahlopez.ca/posts/aspnet-swagger-dark-theme/</link><pubDate>Fri, 02 Jun 2023 12:49:14 -0400</pubDate><guid>https://blog.elijahlopez.ca/posts/aspnet-swagger-dark-theme/</guid><description>&lt;p>&lt;em>For the SEO&lt;/em>: How to add dark theme to Swagger UI ASP.NET? Follow these instructions.&lt;/p>
-&lt;p>Create &lt;a href="https://github.com/elibroftw/SwaggerDark/blob/master/SwaggerDark.css">wwwroot/css/SwaggerDark.json&lt;/a> in your project. You need to create these folders if they do not exist. If you have guidelines for other frameworks, feel free to email me your code so I can add it to the &lt;a href="https://github.com/elibroftw/SwaggerDark/tree/master">README.md&lt;/a>&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>tutorial on ELL Blog</title><link>https://blog.elijahlopez.ca/tags/tutorial/</link><description>ELL Blog (tutorial)</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 02 Jun 2023 14:09:28 -0400</lastBuildDate><atom:link href="https://blog.elijahlopez.ca/tags/tutorial/index.xml" rel="self" type="application/rss+xml"/><item><title>ASP.NET Serve Embedded Resource</title><link>https://blog.elijahlopez.ca/posts/aspnet-serve-embedded-resource/</link><pubDate>Fri, 02 Jun 2023 14:09:28 -0400</pubDate><guid>https://blog.elijahlopez.ca/posts/aspnet-serve-embedded-resource/</guid><description>&lt;p>You really shouldn&amp;rsquo;t be serving static files from the server but rather a reverse proxy like NGINX or something like an S3 bucket. However, what if you are just doing some debugging? In that case, here are three examples of reading an embedded resource in different contexts.&lt;/p>
+&lt;p>The embedded resource that needs to be accessed are &lt;code>SttApi/Assets/SwaggerDark.css&lt;/code>
+and &lt;code>SttApi/Assets/getmakes.json&lt;/code> where SttApi is the project name.&lt;/p>
+&lt;p>First we need to make the resource embedded. You can either do this through the properties panel in Visual Studio or by manually editing the &lt;code>Proj/Proj.csproj&lt;/code> like so:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">&amp;lt;Project&lt;/span> &lt;span style="color:#bbb">Sdk=&lt;/span>&lt;span style="color:#ed9d13">&amp;#34;Microsoft.NET.Sdk.Web&amp;#34;&lt;/span>&lt;span style="color:#6ab825;font-weight:bold">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic">&amp;lt;!-- ... --&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">&amp;lt;ItemGroup&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic">&amp;lt;!-- other embedded resources --&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">&amp;lt;EmbeddedResource&lt;/span> &lt;span style="color:#bbb">Include=&lt;/span>&lt;span style="color:#ed9d13">&amp;#34;Assets/getmakes.json&amp;#34;&lt;/span> &lt;span style="color:#6ab825;font-weight:bold">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">&amp;lt;EmbeddedResource&lt;/span> &lt;span style="color:#bbb">Include=&lt;/span>&lt;span style="color:#ed9d13">&amp;#34;Assets/SwaggerDark.css&amp;#34;&lt;/span> &lt;span style="color:#6ab825;font-weight:bold">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">&amp;lt;/ItemGroup&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic">&amp;lt;!-- ... --&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">&amp;lt;/Project&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>At least on Windows, it doesn&amp;rsquo;t matter if the path separator is \ or /.&lt;/p>
+&lt;h3 id="example-1-programcs" >Example 1 Program.cs
+&lt;span>
+&lt;a href="#example-1-programcs">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-cs" data-lang="cs">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">// Program.cs&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">using&lt;/span> &lt;span style="color:#447fcf;text-decoration:underline">System.Reflection&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">// scope skipped for conciseness&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> app.MapGet(&lt;span style="color:#ed9d13">&amp;#34;/css/SwaggerDark.css&amp;#34;&lt;/span>, () =&amp;gt; {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">var&lt;/span> assembly = Assembly.GetExecutingAssembly();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">return&lt;/span> Results.Stream(assembly.GetManifestResourceStream(&lt;span style="color:#ed9d13">&amp;#34;SttApi.Assets.SwaggerDark.css&amp;#34;&lt;/span>)!, &lt;span style="color:#ed9d13">&amp;#34;text/css&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }).ExcludeFromDescription();
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="example-2-controllercs" >Example 2 Controller.cs
+&lt;span>
+&lt;a href="#example-2-controllercs">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-cs" data-lang="cs">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">// ExampleController.cs&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">using&lt;/span> &lt;span style="color:#447fcf;text-decoration:underline">System.Reflection&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">// scope skipped for conciseness&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> [HttpGet]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">public&lt;/span> IResult EmbeddedResource() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">var&lt;/span> assembly = Assembly.GetExecutingAssembly();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">return&lt;/span> Results.Stream(assembly.GetManifestResourceStream(&lt;span style="color:#ed9d13">&amp;#34;SttApi.Assets.SwaggerDark.css&amp;#34;&lt;/span>)!, &lt;span style="color:#ed9d13">&amp;#34;text/css&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="example-3-servicecs" >Example 3 Service.cs
+&lt;span>
+&lt;a href="#example-3-servicecs">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-cs" data-lang="cs">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">// ExampleService.cs&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">using&lt;/span> &lt;span style="color:#447fcf;text-decoration:underline">System.Reflection&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">// scope skipped for conciseness&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">var&lt;/span> assembly = Assembly.GetExecutingAssembly();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> IEnumerable&amp;lt;CarMake&amp;gt; carMakes = JsonSerializer.Deserialize&amp;lt;IEnumerable&amp;lt;CarMake&amp;gt;&amp;gt;(assembly.GetManifestResourceStream(&lt;span style="color:#ed9d13">&amp;#34;SttApi.Assets.getmakes.json&amp;#34;&lt;/span>)!)!;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>ASP.NET Swagger Dark Theme</title><link>https://blog.elijahlopez.ca/posts/aspnet-swagger-dark-theme/</link><pubDate>Fri, 02 Jun 2023 12:49:14 -0400</pubDate><guid>https://blog.elijahlopez.ca/posts/aspnet-swagger-dark-theme/</guid><description>&lt;p>&lt;em>For the SEO&lt;/em>: How to add dark theme to Swagger UI ASP.NET? Follow these instructions.&lt;/p>
+&lt;p>If you have guidelines for other frameworks, feel free to email me your code so I can add it to the &lt;a href="https://github.com/elibroftw/SwaggerDark/tree/master">README.md&lt;/a>&lt;/p>
+&lt;p>There&amp;rsquo;s two ways to accomplish this. One is to use serve static files and the other is to only serve the static file (through embedded resource). I&amp;rsquo;ll give instructions just in case.&lt;/p>
+&lt;h3 id="serving-from-an-embedded-resource" >Serving From an Embedded Resource
+&lt;span>
+&lt;a href="#serving-from-an-embedded-resource">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Create &lt;a href="https://github.com/elibroftw/SwaggerDark/blob/master/SwaggerDark.css">ProjectName/Assets/SwaggerDark.json&lt;/a> in your project. You need to create the asset folder if they do not exist.&lt;/p>
+&lt;p>In Program.cs:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-cs" data-lang="cs">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">using&lt;/span> &lt;span style="color:#447fcf;text-decoration:underline">System.Reflection&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">if&lt;/span> (app.Environment.IsDevelopment()) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> app.UseHttpLogging();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> app.UseSwagger();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> app.UseSwaggerUI(c =&amp;gt; {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> c.EnableTryItOutByDefault();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> c.InjectStylesheet(&lt;span style="color:#ed9d13">&amp;#34;/css/SwaggerDark.css&amp;#34;&lt;/span>); &lt;span style="color:#999;font-style:italic">// ADD THIS LINE&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> });
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic">// add this:&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> app.MapGet(&lt;span style="color:#ed9d13">&amp;#34;/css/SwaggerDark.css&amp;#34;&lt;/span>, () =&amp;gt; {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">var&lt;/span> assembly = Assembly.GetExecutingAssembly();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic">// SttApi to ProjectName&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">return&lt;/span> Results.Stream(assembly.GetManifestResourceStream(&lt;span style="color:#ed9d13">&amp;#34;SttApi.Assets.SwaggerDark.css&amp;#34;&lt;/span>)!, &lt;span style="color:#ed9d13">&amp;#34;text/css&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }).ExcludeFromDescription();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>In &lt;code>ProjectName/ProjectName.csproj&lt;/code>:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">&amp;lt;Project&lt;/span> &lt;span style="color:#bbb">Sdk=&lt;/span>&lt;span style="color:#ed9d13">&amp;#34;Microsoft.NET.Sdk.Web&amp;#34;&lt;/span>&lt;span style="color:#6ab825;font-weight:bold">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic">&amp;lt;!-- ... --&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">&amp;lt;ItemGroup&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic">&amp;lt;!-- other embedded resources --&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">&amp;lt;EmbeddedResource&lt;/span> &lt;span style="color:#bbb">Include=&lt;/span>&lt;span style="color:#ed9d13">&amp;#34;Assets/SwaggerDark.css&amp;#34;&lt;/span> &lt;span style="color:#6ab825;font-weight:bold">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">&amp;lt;/ItemGroup&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic">&amp;lt;!-- ... --&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">&amp;lt;/Project&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="serving-from-static-folder" >Serving From Static Folder
+&lt;span>
+&lt;a href="#serving-from-static-folder">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Create &lt;a href="https://github.com/elibroftw/SwaggerDark/blob/master/SwaggerDark.css">ProjectName/wwwroot/css/SwaggerDark.json&lt;/a> in your project. You need to create these folders if they do not exist. If you have guidelines for other frameworks, feel free to email me your code so I can add it to the &lt;a href="https://github.com/elibroftw/SwaggerDark/tree/master">README.md&lt;/a>&lt;/p>
 &lt;p>In Program.cs:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-cs" data-lang="cs">&lt;span style="display:flex;">&lt;span>app.UseStaticFiles(); &lt;span style="color:#999;font-style:italic">// ADD THIS LINE&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">if&lt;/span> (app.Environment.IsDevelopment()) {
@@ -10,8 +103,7 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> c.InjectStylesheet(&lt;span style="color:#ed9d13">&amp;#34;/css/SwaggerDark.css&amp;#34;&lt;/span>); &lt;span style="color:#999;font-style:italic">// ADD THIS LINE&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> });
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;a href="https://dev.to/amoenus/turn-swagger-theme-to-the-dark-mode-4l5f#comment-23pe0">Without enabling serving static files&lt;/a>&lt;/p>
-&lt;p>You will need to hard restart your app for the changes to take effect.&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>You may need to hard restart your app for the changes to take effect.&lt;/p>
 &lt;p>&lt;img src="https://raw.githubusercontent.com/Amoenus/SwaggerDark/master/SwaggerDark.png" alt="Screenshot 1 of Swagger Dark Theme" title="Swagger Dark Theme Screenshot 1">&lt;/p>
 &lt;p>&lt;img src="https://raw.githubusercontent.com/elibroftw/SwaggerDark/master/SwaggerDark2.png" alt="Screenshot 2 of Swagger Dark Theme" title="Swagger Dark Theme Screenshot 2">&lt;/p></description></item><item><title>ASP.NET Name Routes After Methods</title><link>https://blog.elijahlopez.ca/posts/aspnet-name-routes-after-methods/</link><pubDate>Sun, 28 May 2023 18:10:09 -0400</pubDate><guid>https://blog.elijahlopez.ca/posts/aspnet-name-routes-after-methods/</guid><description>&lt;p>Suppose you want to avoid using decorators for every public method you write and you just want the route to following the same convention as your methods in your controller.
 Adapt the following for your own use. The Route decorator indicates that the route for the following will be &lt;code>auth/request-token&lt;/code> if your API is using the &lt;a href="https://blog.elijahlopez.ca/posts/aspnet-kebab-case-routes">kebab-case route configuration&lt;/a>. If you aren&amp;rsquo;t using kebab-case routing, then the expected route below would be something like &lt;code>Auth/RequestToken&lt;/code>.&lt;/p>
