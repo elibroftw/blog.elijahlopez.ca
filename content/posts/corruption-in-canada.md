@@ -13,4 +13,16 @@ Just a list of topics and links that show how corrupt Canada can be at times.
 
 [Governors general billed over $88,000 in clothing to taxpayers since 2017: documents](https://nationalpost.com/news/politics/governors-general-billed-over-88000-in-clothing-to-taxpayers-since-2017-documents)
 
-The CEO of BC Housing Scandal was married to the CEO of Atira, which is a non-profit that gets funded by BC housing. On top of the eggregious conflict of interest that was allowed by the board of directors, Atira sometimes won contracts without any bidding involved.
+The CEO of BC Housing Scandal was married to the CEO of Atira, which is a non-profit that gets funded by BC housing. On top of the egregious conflict of interest that was allowed by the board of directors, Atira sometimes won contracts without any bidding involved.
+
+[Canada's beer smuggler is our new national hero](https://www.theglobeandmail.com/opinion%2Fgerard-comeau-beer-smuggler-and-our-new-national-hero/article37258839/)
+
+R v. Comeau
+
+In 2012, the police of New Brunswick conducted a sting operation that resulted in a $300 ticket. What for? Simply for "smuggling" alcohol across province lines. Comeau had purchased cheaper beer in Quebec and brought it back to New Brunswick.
+
+According to [Ipos](https://www.iedm.org/sites/default/files/web/pub_files/Ipsos_poll1117_en.pdf), 78% of 1,100 Canadians surveyed, think people should be allowed to buy any amount of alcohol from another province and bring it back home.
+
+This case is evidence that Canada is a broken democracy. Even when the majority of people want something, the minority in power will make decisions that go against the beliefs and values of Canadians under some excuse they inevitably come up with.
+
+First past the post can probably be blamed to some extent.
