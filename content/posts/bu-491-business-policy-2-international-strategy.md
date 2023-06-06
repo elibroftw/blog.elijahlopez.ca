@@ -298,3 +298,22 @@ Crunch in France?
 5. How would you implement tour recommendation
 
     The two issues is the organization structure with regards to Eurobrands and the budgets for each subsidiary. With regards to organization, there needs to be a straight forward approach as James Miller said. A European product structure where there is clear authority for decision making. This would also result in lower SG&A expenses as decision making is now a stream lined process.
+
+## Developing a Transnational Organization
+
+- Foreign product diversity vs Foreign Sales as a Percentage of Total Sales
+
+Global matrix structure has fallen out of favour.
+
+- Complex and bureaucratic
+- Dual reporting caused confusion
+
+### Administrative Heritage
+
+archetypes:
+
+a. European empire (multinational model)
+b. American empire (international model)
+c. Japanese empire (global model)
+
+### AI Article
