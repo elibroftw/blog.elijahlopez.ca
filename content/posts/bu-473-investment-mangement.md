@@ -339,3 +339,141 @@ Rate of return = 22.13 / 20.83 - 1 = 6.24%
 
 - LU = 1000 \* 1.06 \* (1 - 0.0175) = 1041.45 -> 4.1%
 - EF = 1000 \* (1 - 0.98) \* 1.06 \* (1 - 0.0025) = 1036.20 -> 3.62%
+
+## Risk & Return
+
+- Rate of return on zero-coupon bond; r = (100/Price) - 1
+  - r = (FV/PV)^(1/m) - 1
+- Annual Percentage (Posted) Rate (APR)
+- Effective annual rate (EAR):
+  - Takes into consideration the effects of compounding
+  - (1 + APR/n)^n - 1
+  - Example
+    - APR of 4.5%, m = 4
+    - 100((1 + 0.045/4)^4 - 1)  = 4.58%
+    - What if you want 4.58%?
+    - Bank A: 4.58% APR, m = 1
+    - Bank B: 4.5%, m = 4
+    - Bank C: APR if compound is 12?
+      - 12 \* (1.0458 ^ (1/12) - 1)  = 4.4867%
+    - Continuous compounding
+      - FV = euler's constant ^ (rt)
+      - For a EAR of 4.58%, ln (1 + 4.58%) = r -> r = 4.475%
+
+<img class=equation-tall src="https://latex.codecogs.com/svg.image?EAR=(1+\frac{APR}{n})^n">
+
+### Interest Rates and Inflation Rates
+
+- Nominal rate is the growth of your money = 11.5%
+- Next year, you get 1.115
+- Coffee is $1 today, but given an [Average annual rate of inflation](https://www.bankofcanada.ca/rates/related/inflation-calculator/) of 3.5%, the coffee will be 1.035.
+- You could buy 1 coffee now and 1.077 next year
+- Change in purchasing power = return return = 1.077 / 1 - 1 = 7.7%
+- Fisher equation: N approxEqal to real return + inflation
+- Return = (1 + N) / (1 + inf) - 1
+
+- Equilibrium rate of return
+
+### RIsk and Risk Premium
+
+- Holding Period Return = (enter price - enter price + dividend) / (enter price) = Capital Gain Yield + Dividend Yield
+- E(r) = sum of probability of state + return if state occurs
+- Variance:
+- Standard Deviation (STD)
+
+| State | Prob. of State | r in State | Weighted r | Var |
+| ------- | ----------------- | --------------- | ---------- | ------------ |
+| Excellent | .25  | 0.3100                | (25)(.31)  | (3.1% - 9.76%)^ (.25) |
+| Good | .45  | 0.1400                  | (.45)(.14)  | (14% - 9.76%)^ (.45) |
+| Poor | .25  | -0.0675                 | (.25)(-0.0675)  | (6.75% - 9.76%)^ (.25) |
+| Crash | .05 | -0.5200                  | (.05)(-.52)  | (-5% - 9.76%)^ (.05) |
+| Total | 1 | N/A | 9.76% | 0.038
+
+- STD = sqrt(0.038) = 19.49%
+- Based on a normal distribution, we can expect a return of 9.76% +- 19.49% 68% of the time.
+- Risk: likelihood of something happening and magnitude
+- STD gives us both the magnitude and the likelihood
+- Look at historical returns, and calculate the STD of those returns to get the
+
+- Skewness: positively skewed means a tail on the right
+- Kurtosis: how normally distributed data is (fatness of the curve)
+
+### Calculating the STD of a Stock Tutorial
+
+1. Download monthly data for 5 years from yahoo finance
+2. Keep only date and adjusted Close columns. Adjusted close factors dividends.
+3. Make a column called r and use the formula (=X4/X3-1)
+4. Calculate average of the rates
+5. Create a column called variance and use the formula (=(X3 - $AVERAGE$RATE)^2)
+    - Or use the VAR formula in Excel
+6. Calculate the variance which is the SUM of the column divided by the number of rates MINUS 1
+    - In a sample, 1 is subtracted to remove the bias to the mean
+7. Square root the variance to ge the standard deviation of the monthly return
+8. You can skip the manual calculations and use the VAR and STD formulas provide by Excel.
+9. You can get the SKEW of the data by using the SKEW function on the returns
+10. Manually calculating the SKEW
+    - Create a column and instead of squaring the deviation, cube it
+    - Divide by the number of rates MINUS 1, and then multiply by the standard deviation cubed
+11. Use =KURT to get the kurtosis of the rates
+    - 3 is NORMAL
+    - The lowe the Kurtosis the tighter in the middle
+
+### Risk Measures
+
+- Value at risk
+  - Loss that will be incurred in the event of an extreme adverse price change change with some given, usually low, probability. Typically, use 1st percentile
+  - -2.33 STD
+  - 9.76 - 2.33 \* 19.49 = -35.65%
+- Expected Shortfall (ES)
+- Lower partial standard deviation (LPSD)
+
+## Capital Allocation
+
+- Risk-averse investors consider only risk-free or speculative prospects with positive risk premiums
+- Portfolio is more attractive when its expected return is higher, and its risk is lower
+  - what happens when risk increases along with return
+
+### Utility Values
+
+- U = Utility Value
+- E(r) = Expected return
+- A = Index of the investor's risk aversion
+- Variance of returns
+- Scaling factor of 0.5 (half year)
+
+<img class=equation src="https://latex.codecogs.com/svg.image?U=E(r)-0.5A\sigma^2">
+
+### Investor Types
+
+- Risk-averse: want compensation for risk via a premium. A > 0;
+- Risk-neutral; A =0
+- Risk-lovers; A < 0
+
+### Mean-Variance Criterion
+
+- E(rA) >= E(rB)
+- STD_A <= STD_B
+
+### Capital Allocation Across Risky and Risk-Free Portfolios
+
+- Manipulate the % invested in risk-free vs risk portfolio
+
+Total market value: $300,000, risk-free: $90,000.
+
+- Equities: 113,400
+- Bonds: 96,600
+
+90 day T-bill is considered the risk-free asset.
+
+### One Risky Asset and a Risk-Free Asset Portfolios
+
+- Reward-to-volatility ratio (aka Sharpe ratio)
+  - Excess return vs. portfolio standard deviation
+
+y\* = ( E(rp) - rf )/ A std^2 = 41.3%
+
+Indifference curves + Capital Allocation Line
+
+To find the weighting to invest in the risky and risk-free portfolio.
+
+Now we get optimal allocation for any portfolio.
