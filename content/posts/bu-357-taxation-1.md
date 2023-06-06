@@ -496,5 +496,19 @@ Business Income: 40,300
 ### MIdterm Information
 
 - Q1: Multiple choices on chapter 2
+  - Definitions
+  - Residency
+    - Tax treatments
+    - Criteria
+      - Individual (common law full time resident, deemed full time resident, part time resident, non-resident)
+      - Corporation (deemed resident, non-resident)
 - Q2: employment income chapter 3
+  - Employee vs. self-employed
+  - Basic inclusion
+  - Benefits and allowance
+  - stock option, and deductions
 - Q3: business income chapter 4
+  - starting point: net earnings
+    - adjustments
+      - deductions denied
+      - deductions permitted
