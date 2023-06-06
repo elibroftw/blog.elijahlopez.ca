@@ -471,3 +471,30 @@ Calculate CCA of computer and prorate home expenses.
 Computer CCA can be 100% deductible if CCPC or individual.
 
 OR: 1.5 (accelerated) \* 2,500 \* 55%
+
+### Chapter 4 Example
+
+![Problem 8](/images/bu-357/problem-8.png)
+
+- Start at net income: 13,000
+- Add back any capital expenditures: 3,200 + 1,200
+- Add back accounting reserves (e.g. legal): 500
+- Add back recreational expenses: 3,000
+- Add back amortization expense: 8,000
+- Add back not-for-income producing purposes
+- Add back personal expenses: 1,200
+- Add back interest expense not related to business: 3,000
+- Add back half of meals and entertainment related to business: 4,000 \* 0.5
+  - Fundraising for charity results in 100% deduction
+  - Meals and entertainment is for employees: 100% deduction
+- Business income vs capital gain:
+  - Transaction is related to business and frequency of the transaction
+- Add gain on sale (13,000 - 7,800 = 5,200)
+
+Business Income: 40,300
+
+### MIdterm Information
+
+- Q1: Multiple choices on chapter 2
+- Q2: employment income chapter 3
+- Q3: business income chapter 4
