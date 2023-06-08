@@ -512,3 +512,92 @@ Business Income: 40,300
     - adjustments
       - deductions denied
       - deductions permitted
+
+### Depreciable property and CCA
+
+- Classes and accounts
+- Opening balance (Unappreciated Cost of Capital) \[A]
+- PLUS additional purchases \[B]
+- MINUS any disposals \[C]
+- MINUS CCA (applying CCA rate to the **balance**)
+- EQUALS UCC balance
+
+- CCA = CCA rate \* (A + 1.5 \* (B - C)) if B > C
+- CCA = CCA rate \* (A + B - C) if B <= C
+- Essentially, do not apply an acceleration on a negative value
+
+### Allowance
+
+- Depreciable property
+- CCA
+  - General rules
+    - ownership
+  - Specific properties
+
+### Classes and CCA Rates
+
+- The act assigns various types of assets for specific classes
+- Each class has a specific rate attached to it
+  - signifies the maximum deductible in a year
+
+### Common Classes
+
+- Class 1: 4% for buildings after 1987
+- Class 1 - Manufacturing Building (10%) on or after Mar. 19, 2007 for 90% usage
+- Class 1: Not-residential building on or after Mar. 19, 2007
+- Class 8 (20%): Miscellaneous tangibles such as furniture, fixtures, outdoor advertising signs, properties not included in other classes
+- Class 10 (30%: vehicles)
+- Class 10.1 (30%): passenger vehicles greater than $34,000 excluding tax
+- Class 12 (100%:): tools, instruments, kitchen utensils less than $500, uniforms, rental, computer software,
+- Class 13 (Leasehold interest): enhancements made by the tenant
+- Class 14: patents
+- Class 14.1 (5%): indefinite-term intangibles, no legal limited life, incorporation costs over $3,000
+- Class 53 (50%) - manufacturing machinery and equipment after 2016 and before 2026
+- Class 43 (30%): other manufacturing machinery and equipment
+- Class 50 (55%): computers and system software after March 18, 2007
+
+### Accelerated CCA (Reg. 1104)
+
+- CCA will be 150% for net additions
+- Applies to depreciable properties excluding class 12 acquired after 2018, phased out after 2023
+
+### CCA Example 1
+
+Class 8 (20%) assets with UCC of $80,000. Purchased $25,000 of class 8. There were disposals of 20,000 of costs of 35,000.
+
+A = 80,000, B = 25,000, C = MIN {20,000, 35,000}, CCA = 0.2 \* (80,000 + 1.5 \* (25,000 - 20,000)). Therefore UCC = 80,000 + 25,000 - 20,000 - 17,500 = 67,500
+
+What if the old assets was sold for 30,000?
+
+A = 80,000, B = 25,000, C = MIN {30,000, 35,000}, CCA = 0.2 \* (80,000 + 25,000 - 30,000). Therefore UCC = 80,000 + 25,000 - 30,000 - 15,000 = 60_000
+
+### Gains/Losses on Disposition
+
+- Terminal
+  - All assets are disposed of
+  - Positive balance in class
+- Recapture
+  - Negative balance in class
+- Capital gain
+  - Price > Original cost
+
+### Immediate Expensing (Optional)
+
+- 100% deduction
+- Eligible properties: all properties except class 1 and class 14.1
+- Purchased after April 19, 2021 by a CCPC
+- Purchased after Jan 1, 2022 by an individual business
+- Limit is $1.5m per year
+
+Revisiting the example: suppose company is a CCPC or a Canadian individual resident
+
+CCA = CCA rate \* (A - C) + B
+
+TODO: combine for mega formula with all types of shenanigans
+
+### Full expensing M&P machinery and equipment (optional)
+
+Applies to all types of corporation
+
+- Class 53 after November 20, 2019
+- Class 54/55 after March 15, 2019
