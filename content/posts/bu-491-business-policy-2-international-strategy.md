@@ -70,7 +70,7 @@ Foreign direct investment (FDI):
 
 ### Global Integration vs National Responsiveness
 
-- Transnational is both
+- Transnational is both global and multinational
   - everywhere
 - Global is integration
   - world is one unit
@@ -317,3 +317,41 @@ b. American empire (international model)
 c. Japanese empire (global model)
 
 ### AI Article
+
+### Beiersdorf AG
+
+- the last quarter of 2011 had ended with a loss.
+- local adaptation strategy
+- restructuring was focused on get closer to becoming
+the world’s best skin care company.
+- old ceo was Quaas
+- Markus Pinger left for obvious reasons since he did not become CEO
+- Heidenreich: strong-willed and dynamic but also risk-seeking and aggressive
+- Hamburg-based Global Research Center
+  - Can account for climates in Asia and Latin America, not just Germany / Europe
+
+1. What were the building blocks of the company’s success?
+
+- innovation driven
+- scientific and medical
+
+2. What internal and external factors led the company to restructuring?
+
+- recession leading to lower growth in consumers division and a decrease in overall revenue
+- inflation was 2.7% and consumer spending was up only 0.5%
+
+3. Did the restructuring effort address these issues? What do you think was
+done well? What still needs to be done?
+
+- not really
+- the restructuring efforts looked more like a cost/efficiency change leading
+to all executive board members leaving
+
+4. On April 27th 2012, Heidenreich was appointed the new CEO. Is he the right person to lead the change? What challenges did he face from his
+predecessor? How should he proceed?
+
+- Maybe.
+- worked at Hero
+- In his previous position at Hero, where he had been the CEO for seven years, Heidenreich convinced many investors of his ability to generate continuous profits and grow share prices
+- Hero had undergone major restructuring efforts and also had a majority shareholder
+-

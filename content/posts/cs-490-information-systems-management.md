@@ -250,3 +250,21 @@ Availability: = Mean Time Between Failure / (MTBF + Mean Time To Repair)
 - Network platform
 - Internet platform
 - Service platform
+
+## Strategic Planning
+
+- Planning helps a business identify its goals however technology changes very fast
+- Strategic focus: 3-5 years (business processes) led by senior management
+- Tactical focus: 1-2 years (resource allocation and project selection) led by middle managers
+- Operational focus: 6-12 months (project management, budget) professionals
+
+### Why Planning Is So Difficult
+
+1. Alignment of strategic business Goals and
+systems plans
+2. Technologies are rapidly changing
+3. Companies need IT portfolios rather than
+projects
+4. Infrastructure development is difficult to fund
+5. Responsibility needs to be joint
+
