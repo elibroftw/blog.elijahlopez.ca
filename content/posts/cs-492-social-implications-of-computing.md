@@ -115,9 +115,21 @@ every time I read these articles, I have to go down the rabbit hole.
 
 - single point of failure
 - political implications
-  -
-
 What if Universal IDs were not an identity thing, but a physical thing, and we had offline hashing and encryption comparison?
 
 - Roger's network going down
 - Prime target for hackers
+
+## RPE Misinformation
+
+- misinformation can turn into violence
+-
+
+- would art work be considered misinformation? A person shared a meme about voting by texting
+- this is already a criminal offense with regards to elections, should the laws be rolled out by industry or activity rather than a blanket rule for everything?
+- now we are using AI to detect misinformation? Would'nt that be misinforception
+
+- how would you go about implementing misinformation literacy education when people including us have not been forced to take a class on misinformation as well as the millions of people who are already working in the workplace.
+  - classrooms is okay
+
+- community notes are good however I usually see them on viral posts but not on tweets posted by popular users which don't go viral

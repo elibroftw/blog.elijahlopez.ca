@@ -26,3 +26,12 @@ According to [Ipos](https://www.iedm.org/sites/default/files/web/pub_files/Ipsos
 This case is evidence that Canada is a broken democracy. Even when the majority of people want something, the minority in power will make decisions that go against the beliefs and values of Canadians under some excuse they inevitably come up with.
 
 First past the post can probably be blamed to some extent.
+
+Mental illnesses cause forest fires
+
+- [Glendon woman charged with 32 counts of arson](https://www.lakelandtoday.ca/local-news/glendon-woman-charged-with-32-counts-of-arson-3844982)
+- https://twitter.com/s_guilbeault/status/1666498618394566695?s=20
+
+https://www.cbc.ca/news/canada/ottawa/phoenix-ibm-contract-union-pay-government-1.4295827
+
+[Chrysler owes Canada big time](https://www.reddit.com/r/canada/comments/143ft23/an_ontario_developer_charged_a_buyer_an_extra/jnb1duw/)
