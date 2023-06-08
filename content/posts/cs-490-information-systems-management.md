@@ -138,20 +138,15 @@ First ask, what have you tried already and why didn't it work?
 ### Revenue Model
 
 Common Revenue Models:
-• Direct Sales – This model involves selling products or services directly to customers.
-• Advertising – Companies generate revenue by displaying advertisements to their customers.
-• Subscription – Customers pay a recurring fee (monthly, yearly) to access and use a product or
-service.
 
-Freemium – This model offers a basic version of a product or service for free, but
+- Direct Sales – This model involves selling products or services directly to customers.
+- Advertising – Companies generate revenue by displaying advertisements to their customers.
+- Subscription – Customers pay a recurring fee (monthly, yearly) to access and use a product or service.
+- Freemium – This model offers a basic version of a product or service for free, but
 charges for additional features or premium versions.
-• Licensing or Royalties – Companies grant licenses to third parties to use their
-intellectual property (such as patents, trademarks, or copyrighted material) in
-exchange for royalties or licensing fees.
-• Affiliate Marketing – Companies earn a commission by promoting and selling other
-companies' products or services through affiliate links or referral programs.
-• Data Sales – Companies collect and analyze data from their customers and sell or
-license the insights or anonymized data to other businesses or researchers
+- Licensing or Royalties – Companies grant licenses to third parties to use their intellectual property (such as patents, trademarks, or copyrighted material) in exchange for royalties or licensing fees.
+- Affiliate Marketing – Companies earn a commission by promoting and selling other companies' products or services through affiliate links or referral programs.
+- Data Sales – Companies collect and analyze data from their customers and sell or license the insights or anonymized data to other businesses or researchers
 
 ### Revenue Model and Design
 
@@ -160,10 +155,38 @@ license the insights or anonymized data to other businesses or researchers
 - data sales requires a scheme to collect data
 - rapid user acquisition requires scalability and iterations
 
+### Triton Wear
+
+- accelerometers and gyroscopes
+  - stroke count, stroke rate, distance per stroke, and more
+- wearable device, mobile app, cloud infrastructure and analytics capability
+- User Interface
+  - Coach dashboard
+  - Athlete portal
+  - Integration and API for extending features
+- simply and seamless
+- quick setup
+- engaging
+- lots of data
+- accurate, consistent, reliable
+- focusing on the skills rather than the timing to maximize performance
+- automated data visualization progression
+
+### External Factors
+
+- internet
+- global marketplace
+- micro-markets
+- business ecosystems
+- decapitalization
+- faster business cycles
+- accountability and transparency
+- rising risks of IT
+
 ### Internal Forces
 
 - supply-push to demand-pull
-  - respond to consume demand and pull products
+  - respond to consumer demands and pull products
 - self-service
   - customers know what they want best
 - real-time working
@@ -177,9 +200,45 @@ license the insights or anonymized data to other businesses or researchers
   - Equal playing field with shared authority
   - Use of IT to facilitate information exchange
 
+### Strategies in the New Work Environment
+
+- leverage knowledge globally
+- organize for complexity
+- work electronically
+- handle continuous and discontinuous change
+
+### Management Hierarchy
+
+- Senior
+  - Executive Support Systems
+- Middle Management
+  - Management Information Systems (MIS)
+  - Decision Support Systems (DSS)
+- Operational Management
+  - Transaction Processing Systems
+
+### Information Workers
+
+- Procedure-based
+  - Efficiency focused
+  - Easily measurable
+- Knowledge-based
+  - Effectiveness
+  - Harder to define
+
+### Software Examples
+
+- Database Management System (DBMS)
+- Document/file managment system (DMS)
+- Content management system (CMS)
+  - Website support
+- Knowledge manager system
+- Customer relationship management (CRM)
+
 ## RAID
 
-Redundant array of independent disks. The OS thinks there is only one disk.
+- Redundant array of independent disks. The OS thinks there is only one disk.
+- Data Striping: unit one goes here, unit two goes there, unit three goes here as if there's one big disk; parallelism
 
 ### RAID 0
 
@@ -191,7 +250,7 @@ Data is the same on all devices
 
 ### RAID 10
 
-Multiple groups of RAID 0s. Each group of disks gets different data.
+Needs at least 4. Multiple groups of RAID 0s. Each group of disks gets different data.
 
 Or RAID 1 PLUS 0
 
@@ -219,7 +278,10 @@ Design for 99.99% availability.
 - Distributed storage to increase reliability and availability
 - Hot swappable driver - can replace drivers while system is running
 
-Availability: = Mean Time Between Failure / (MTBF + Mean Time To Repair)
+- Mean Time Between Failure = 1 / annual fail rate
+- Mean Time to Repair = 1 / 365
+
+Availability = Mean Time Between Failure / (MTBF + Mean Time To Repair)
 
 ### Backup
 
@@ -268,3 +330,59 @@ projects
 4. Infrastructure development is difficult to fund
 5. Responsibility needs to be joint
 
+### Approaches to Manage
+
+- Cost-centric view: minimizing IT infrastructure
+- Service-Centric view: prioritize delivering reliable and high-quality IT services to meet user needs, focusing on service availability, performance monitoring, and incident response
+- Innovation-Centric View: firms leverage IT infrastructure for innovation, seeking competitive advantage and business growth
+- Risk-Centric view: risk management, robust security measures, disaster recovery
+- Agility-Centric view: flexibility to respond quickly
+- Data-Centric view: data-driven decision
+- User-Centric view: end-user prioritization
+
+### Value Chain Model
+
+Multiple software systems for each  part of the process: warehouse, operations, ordering, servicing, outbound / shipping
+
+problem: integration between the systems
+
+- could not detect a small item is missing
+
+- system should analyze habits of suppliers, users, employees, customers.
+
+### Business Process (BP)
+
+- Collection of business functions
+- example: billing process in a physician clinic
+- IBM business process software
+
+### Integration Tools
+
+- Enterprise Resource Planning (ERP)
+  - Integration all areas of a company
+  - Microsoft dynamics and vision
+  - data accuracy and consistency
+  - decision-making
+  - improved collaboration
+  - customer satisfaction
+- Supply chain management system (SCM)
+- Customer relationship management systems (CRM)
+- Knowledge management systems (KMS)
+  - Confluence
+
+### Haarslev Industry
+
+- Problem: integration of acquired companies (lack of consolidation)
+- Microsoft Dynamics
+  - Global integration
+  - Unified business processes
+  - Enhanced process efficiency
+  - Adoption of best practices (RapidValue)
+  - Data Management
+  - Documentation and Customization
+
+### Tech Underlying To-Increase's ERP Solution
+
+- APIs
+- Mobile
+- Security
