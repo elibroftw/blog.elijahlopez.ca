@@ -1,4 +1,53 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on ELL Blog</title><link>https://blog.elijahlopez.ca/posts/</link><description>ELL Blog (Posts)</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 02 Jun 2023 14:09:28 -0400</lastBuildDate><atom:link href="https://blog.elijahlopez.ca/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>ASP.NET Serve Embedded Resource</title><link>https://blog.elijahlopez.ca/posts/aspnet-serve-embedded-resource/</link><pubDate>Fri, 02 Jun 2023 14:09:28 -0400</pubDate><guid>https://blog.elijahlopez.ca/posts/aspnet-serve-embedded-resource/</guid><description>&lt;p>You really shouldn&amp;rsquo;t be serving static files from the server but rather a reverse proxy like NGINX or something like an S3 bucket. However, what if you are just doing some debugging? In that case, here are three examples of reading an embedded resource in different contexts.&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on ELL Blog</title><link>https://blog.elijahlopez.ca/posts/</link><description>ELL Blog (Posts)</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 10 Jun 2023 09:23:46 -0400</lastBuildDate><atom:link href="https://blog.elijahlopez.ca/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Stop Paying for 1Password</title><link>https://blog.elijahlopez.ca/posts/stop-paying-for-1password/</link><pubDate>Sat, 10 Jun 2023 09:23:46 -0400</pubDate><guid>https://blog.elijahlopez.ca/posts/stop-paying-for-1password/</guid><description>&lt;p>So I applied for an internship position at 1Password which had Bonus points for&lt;/p>
+&lt;blockquote>
+&lt;p>Frontend web development experience with Javascript frameworks like React, Angular, or Vue.js
+Experience with TypeScript.
+Experience with Rust&lt;/p>
+&lt;/blockquote>
+&lt;p>This aligned with my work using Tauri. I thought being the first to make videos on Tauri would be commendable so I mentioned that in the additional details section of my application. Nope, still got a generic rejection email. I didn&amp;rsquo;t realize many university students were well acquainted with Rust and React.js, but clearly it much more than 10.&lt;/p>
+&lt;p>I was willing to have an open mind regarding 1Password before, but I doubt I&amp;rsquo;ll be working there, I will put on a salty performance and mention the reasons why 1Password is a waste of money.&lt;/p>
+&lt;h2 id="introducing-keepassxc" >Introducing KeepassXC
+&lt;span>
+&lt;a href="#introducing-keepassxc">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>KeepassXC can hold your passwords, notes, and attachments encrypted in a file. You can use it manually or some websites, or you can even install the KeepassXC browser extension to auto-fill. The app can start in the system tray on computer startup, and you can unlock the database the first time you need to use a password from the database. I&amp;rsquo;m sure you can even set a timeout so that your database won&amp;rsquo;t be unlocked if you accidentally forget to leave your computer sitting unlocked.&lt;/p>
+&lt;h3 id="how-to-use-on-mobile-and-desktop" >How to use on Mobile and Desktop?
+&lt;span>
+&lt;a href="#how-to-use-on-mobile-and-desktop">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>You may ask, but if the password database is on my desktop, won&amp;rsquo;t I need to transfer it every time? Yes if you want to bypass the cloud, but you can use cloud storage to keep the database in sync with your phone. And on your phone, in the cloud app, set the file&amp;rsquo;s availability to &amp;ldquo;always&amp;rdquo; and in the KeepassXC app, open the file directly from the cloud rather than downloading the database to your phone&amp;rsquo;s file system manually.&lt;/p>
+&lt;h3 id="free-as-in-beer" >FREE (as in Beer)
+&lt;span>
+&lt;a href="#free-as-in-beer">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>The basis of this article is that KeePassXC is free and does not have a profit interest in mind. 1Password is a corporation that can disappear at a moment&amp;rsquo;s notice, increase the price suddenly, or lock your account because your phone died and now your 2FA is missing. By the way, the best MFA app is called 2FAS Auth.&lt;/p>
+&lt;h3 id="free-as-in-freedom" >FREE (as in freedom)
+&lt;span>
+&lt;a href="#free-as-in-freedom">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>The other good part, is the KeePass and KeePassXC are open-source projects that are built and maintained by a developer community. Open-source projects are not always great in terms of usability and experience, but KeePassXC is a great example of open-source developers caring about end user experience, probably because it is a consumer facing product and not a developer facing library.&lt;/p>
+&lt;h2 id="browser" >Browser
+&lt;span>
+&lt;a href="#browser">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>In combination with KeePassXC, browser password saving is incredible too, as long as you remember to lock your computer when you are not using it (passwords are accessible only when you are logged into the computer).&lt;/p>
+&lt;h2 id="conclusion" >Conclusion
+&lt;span>
+&lt;a href="#conclusion">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>In conclusion, there&amp;rsquo;s no need to pay 1Password for password management. Yes, 1Password is raising the bar when it comes to employee treatment, but there&amp;rsquo;s absolutely no reason to be in the business of password management. The market for password managers is already diluted with Lastpass and Dashlane to make matters worse. 1Password has a lot of cash to keep itself floated, but I am of the opinion that 1Password will be no different than Dropbox. Early to market but the tiniest product moat.&lt;/p></description></item><item><title>ASP.NET Serve Embedded Resource</title><link>https://blog.elijahlopez.ca/posts/aspnet-serve-embedded-resource/</link><pubDate>Fri, 02 Jun 2023 14:09:28 -0400</pubDate><guid>https://blog.elijahlopez.ca/posts/aspnet-serve-embedded-resource/</guid><description>&lt;p>You really shouldn&amp;rsquo;t be serving static files from the server but rather a reverse proxy like NGINX or something like an S3 bucket. However, what if you are just doing some debugging? In that case, here are three examples of reading an embedded resource in different contexts.&lt;/p>
 &lt;p>The embedded resource that needs to be accessed are &lt;code>SttApi/Assets/SwaggerDark.css&lt;/code>
 and &lt;code>SttApi/Assets/getmakes.json&lt;/code> where SttApi is the project name.&lt;/p>
 &lt;p>First we need to make the resource embedded. You can either do this through the properties panel in Visual Studio or by manually editing the &lt;code>Proj/Proj.csproj&lt;/code> like so:&lt;/p>
@@ -1661,7 +1710,314 @@ factors&lt;/li>
 &lt;p>y* = ( E(rp) - rf )/ A std^2 = 41.3%&lt;/p>
 &lt;p>Indifference curves + Capital Allocation Line&lt;/p>
 &lt;p>To find the weighting to invest in the risky and risk-free portfolio.&lt;/p>
-&lt;p>Now we get optimal allocation for any portfolio.&lt;/p></description></item><item><title>BU 357 Taxation 1</title><link>https://blog.elijahlopez.ca/posts/bu-357-taxation-1/</link><pubDate>Tue, 09 May 2023 15:01:54 -0400</pubDate><guid>https://blog.elijahlopez.ca/posts/bu-357-taxation-1/</guid><description>&lt;h2 id="structure-of-the-act" >Structure of the Act
+&lt;p>Now we get optimal allocation for any portfolio.&lt;/p>
+&lt;h3 id="diversification-and-portfolio-risk" >Diversification and Portfolio Risk
+&lt;span>
+&lt;a href="#diversification-and-portfolio-risk">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Market risk
+&lt;ul>
+&lt;li>Market-wide risk source&lt;/li>
+&lt;li>Remains even after diversification&lt;/li>
+&lt;li>Also called systemic or non-diversifiable&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Firm-specific risk
+&lt;ul>
+&lt;li>Risk that can be eliminated by diversification&lt;/li>
+&lt;li>Also called non-systematic risk&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>Standard deviation cannot drop below a certain line due to market risk. Portfolio risk could be reduced to only 19.2%.
+At 20 stocks, the marginal benefit is very small. Between 20-40 securities, the marginal benefit is needless.&lt;/p>
+&lt;h3 id="two-risky-assets" >Two Risky Assets
+&lt;span>
+&lt;a href="#two-risky-assets">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Covariance of two assets = correlation * stdD * stdE&lt;/li>
+&lt;li>Variance of rp = wE^2rE^2 + wB^2rB^2 + 2COV(rb, re) wDwE&lt;/li>
+&lt;/ul>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>State&lt;/th>
+&lt;th>Prob. of State&lt;/th>
+&lt;th>r D&lt;/th>
+&lt;th>r E&lt;/th>
+&lt;th>COV(rD, RE)&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>B&lt;/td>
+&lt;td>25%&lt;/td>
+&lt;td>2%&lt;/td>
+&lt;td>-5%&lt;/td>
+&lt;td>.25*(2%- E(rd)) (5% - E(re))&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>N&lt;/td>
+&lt;td>50%&lt;/td>
+&lt;td>5%&lt;/td>
+&lt;td>15%&lt;/td>
+&lt;td>.25*(5%- E(rd)) (15% - E(re))&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>G&lt;/td>
+&lt;td>25%&lt;/td>
+&lt;td>8%&lt;/td>
+&lt;td>30%&lt;/td>
+&lt;td>.25*(8%- E(rd)) (30% - E(re))&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Total&lt;/td>
+&lt;td>1&lt;/td>
+&lt;td>E(rd)&lt;/td>
+&lt;td>E(re)&lt;/td>
+&lt;td>Cov(rd, re)&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>You need to covariance or the correlation to find the standard deviation.&lt;/p>
+&lt;ul>
+&lt;li>pDE = COV(Rd, re) / (rD * rE)&lt;/li>
+&lt;li>1.0 &amp;lt;= p &amp;lt;= 1.0&lt;/li>
+&lt;li>no diversification if pDE = 1&lt;/li>
+&lt;li>if pDE = -1, you can get the weights using wE = stdD / (stdD + stdE) = 1 - wD&lt;/li>
+&lt;/ul>
+&lt;h3 id="graphing-risk" >Graphing Risk
+&lt;span>
+&lt;a href="#graphing-risk">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Straight line between two assets if the correlation is 1&lt;/li>
+&lt;li>With perfect hedge (-1), there are two straight lines going to risk = 0&lt;/li>
+&lt;li>In between, risk is never 0 but a sideways parabola&lt;/li>
+&lt;li>Find std for the portfolio for every weighting to get a risk allocation&lt;/li>
+&lt;li>&lt;strong>Minimum variance portfolio&lt;/strong>: portfolio allocation with the lowest risk, but not the optimum
+-wE = ( rB^2 - COV(rB, rE) ) / (rB^2 + rE^2 - 2COV(rB, rE))&lt;/li>
+&lt;li>Calculate the slope of all portfolios
+&lt;ul>
+&lt;li>(Expected return of portfolio - risk free rate) / risk of portfolio * A&lt;/li>
+&lt;li>A = risk appetite&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Calculate the slope of the capital allocation line&lt;/li>
+&lt;li>&lt;strong>Tangent portfolio&lt;/strong> or &lt;strong>Optimum portfolio&lt;/strong>
+&lt;ul>
+&lt;li>Point where the capital allocation line is tangent to the weighting&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="minimum-variance-portfolio" >Minimum Variance Portfolio
+&lt;span>
+&lt;a href="#minimum-variance-portfolio">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;img class=equation src="https://latex.codecogs.com/svg.image?wA=\frac{r_B^2-COV(r_B,r_A)}{r_B^2+r_A^2-2COV(r_B,r_A)}">
+&lt;h3 id="chapter-7-problems" >Chapter 7 Problems
+&lt;span>
+&lt;a href="#chapter-7-problems">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ol>
+&lt;li>Three mutual funds: first is a stock fund, second is a long-term government and corporate bond fund, third is a T-bill fund with 8% yield. The covariance is 0.1 between the two risky funds.&lt;/li>
+&lt;/ol>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Fund&lt;/th>
+&lt;th>Expected Return&lt;/th>
+&lt;th>Standard Deviation&lt;/th>
+&lt;th>&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Stock&lt;/td>
+&lt;td>20%&lt;/td>
+&lt;td>30%&lt;/td>
+&lt;td>(25)(.31)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Bond&lt;/td>
+&lt;td>12%&lt;/td>
+&lt;td>15%&lt;/td>
+&lt;td>(25)(.31)&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>a. what are the investment proportions in the minimum-variance portfolio
+- Using the formula, we get wE =17.39% and wB = 82.61%
+b. what is the expected value and standard deviation of the minimum variance portfolio rate of return
+- Expected return is then 13.39%
+- Standard deviation (square root of portfolio variance) is then 13.92% (the formula uses covariance)
+c. what are the weights, expected return, and standard deviation of the optimal risky portfolio?
+- &lt;strong>wB = (Excess return of the bond * rE^2 - Excess return of equity * Cov(rE, rB)) / ( excess return of rB * rE^2 + excess return of equity * rB^2 - [excess return of B + excess return of E]Cov(rB, rE))&lt;/strong>
+- wB = 54.8%, wE = 45.2%
+- expected rp = 15.61%
+- STD(rp) = 16.54%
+- What if you wanted to use the risk free?
+- expected return of complete portfolio = 14%
+- expected return of complete portfolio = wFrF + wPrP
+- 14% = (1-wF)8% + wp15.61%
+- 14 - 8 / 15.61 - 8 = wp
+- wp = 78.84&lt;/p>
+&lt;h2 id="capital-asset-pricing-model-capm" >Capital Asset Pricing Model (CAPM)
+&lt;span>
+&lt;a href="#capital-asset-pricing-model-capm">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;ul>
+&lt;li>Capital Allocation Line becomes Capital Market Line or Securities Market Line&lt;/li>
+&lt;/ul>
+&lt;p>Assumptions&lt;/p>
+&lt;ol>
+&lt;li>Individual behaviour
+&lt;ul>
+&lt;li>Investors are rational, mean-variance optimizers&lt;/li>
+&lt;li>Their common planning horizon is a single period&lt;/li>
+&lt;li>Investors all use identical input lists, (homogenous expectations). Publicly available information.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Market structure
+&lt;ul>
+&lt;li>Publicly held and public exchanges&lt;/li>
+&lt;li>Investors can borrow or lend at a common risk-free rate, and they can take short positions on traded securities&lt;/li>
+&lt;li>No taxes&lt;/li>
+&lt;li>No transaction costs&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ol>
+&lt;h3 id="the-market-portfolio" >The Market Portfolio
+&lt;span>
+&lt;a href="#the-market-portfolio">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>
+&lt;p>Market weighted all securities (proxy = SP500 index)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Beta is the correlation with the market risk&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Required return of a stock = risk free + beta of the stock times the excess return of the market&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Beta = slope of the line of best fit or COV(individual, market) / variance of the market&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>required return goes up when a stock is sold because of the dividend discount model (dividend yield increases).&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>alpha is the difference between actual return and expected return&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>track alpha in order to determine if the model is actually working or not&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="extensions-of-the-capm" >Extensions of the CAPM
+&lt;span>
+&lt;a href="#extensions-of-the-capm">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ol>
+&lt;li>Identical input lists&lt;/li>
+&lt;li>ZEro-beta model&lt;/li>
+&lt;li>Labour income and other Nontraded assets&lt;/li>
+&lt;/ol>
+&lt;h3 id="chapter-9-problems" >Chapter 9 Problems
+&lt;span>
+&lt;a href="#chapter-9-problems">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ol>
+&lt;li>What must be the beta of a portfolio with expected return of a portfolio of 18%, if risk free is 6% and expected market return is 14%?&lt;/li>
+&lt;/ol>
+&lt;p>Beta = (18% - 6%) / (14% - 6%) = 1.5&lt;/p>
+&lt;ol start="2">
+&lt;li>
+&lt;p>T-bill rate is 4%, market risk premium is 6%. What is the fair return?&lt;/p>
+&lt;ul>
+&lt;li>$1 Discount store: 12% forecasted, 8% std, beta = 1.5
+&lt;ul>
+&lt;li>Fair return is 4% + 1.5 * 6% = 13%&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Everything $5: 11% expected, 10%, beta is 1.0
+&lt;ul>
+&lt;li>Fair return is 10%&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;/li>
+&lt;/ol>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Scenario&lt;/th>
+&lt;th>Market Return&lt;/th>
+&lt;th>Aggressive Stock&lt;/th>
+&lt;th>Defensive Stock&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>A&lt;/td>
+&lt;td>5%&lt;/td>
+&lt;td>-2%&lt;/td>
+&lt;td>6%&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>B&lt;/td>
+&lt;td>25%&lt;/td>
+&lt;td>38%&lt;/td>
+&lt;td>12%&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>What are the betas? Use rise over run to calculate the slope using the two scenarios as data points.
+- (38 - (-2)) / (25 - 5) = 2
+- (12 - 6)(25 - 5) = 6/20&lt;/p>
+&lt;p>What is the expected return on each stock if market returns are equally likely?
+- Give each scenario a 50% weighting&lt;/p>
+&lt;p>If the T-bill is 6%, and the market return is equally likely the be 5% 25%, draw the SML for this economy.
+- E(rm) = 15%
+- Draw a line from 6% to 25% when Beta is 1&lt;/p>
+&lt;p>Plot the two securities on the SML graph. What are the alphas of each? Characterize each company in the above table as underpriced, overpriced, or properly priced.
+- alpha is .3% for the defensive, -6% for the aggressive&lt;/p>
+&lt;h3 id="assignment-2" >Assignment 2
+&lt;span>
+&lt;a href="#assignment-2">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Outline strategy&lt;/li>
+&lt;li>Actively managed&lt;/li>
+&lt;li>Must have to modify at least twice
+&lt;ul>
+&lt;li>Propose modifications&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul></description></item><item><title>BU 357 Taxation 1</title><link>https://blog.elijahlopez.ca/posts/bu-357-taxation-1/</link><pubDate>Tue, 09 May 2023 15:01:54 -0400</pubDate><guid>https://blog.elijahlopez.ca/posts/bu-357-taxation-1/</guid><description>&lt;h2 id="structure-of-the-act" >Structure of the Act
 &lt;span>
 &lt;a href="#structure-of-the-act">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
