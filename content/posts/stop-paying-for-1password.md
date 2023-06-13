@@ -1,7 +1,7 @@
 ---
 title: "Stop Paying for 1Password"
 date: 2023-06-10T09:23:46-04:00
-draft: true
+draft: false
 tags: [
     'opinion'
 ]
