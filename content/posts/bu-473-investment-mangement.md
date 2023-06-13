@@ -477,3 +477,154 @@ Indifference curves + Capital Allocation Line
 To find the weighting to invest in the risky and risk-free portfolio.
 
 Now we get optimal allocation for any portfolio.
+
+### Diversification and Portfolio Risk
+
+- Market risk
+  - Market-wide risk source
+  - Remains even after diversification
+  - Also called systemic or non-diversifiable
+- Firm-specific risk
+  - Risk that can be eliminated by diversification
+  - Also called non-systematic risk
+
+Standard deviation cannot drop below a certain line due to market risk. Portfolio risk could be reduced to only 19.2%.
+At 20 stocks, the marginal benefit is very small. Between 20-40 securities, the marginal benefit is needless.
+
+### Two Risky Assets
+
+- Covariance of two assets = correlation \* stdD \* stdE
+- Variance of rp = wE^2rE^2 + wB^2rB^2 + 2COV(rb, re) wDwE
+
+| State | Prob. of State | r D | r E | COV(rD, RE) |
+| ------- | ----------------- | --------------- | ---------- | ------------ |
+| B | 25%  | 2% | -5% | .25\*(2%- E(rd)) (5% - E(re)) |
+| N | 50%  | 5% |  15% |.25\*(5%- E(rd)) (15% - E(re))  |
+| G | 25%  | 8% | 30%  |.25\*(8%- E(rd)) (30% - E(re))  |
+| Total | 1 | E(rd) | E(re) | Cov(rd, re)
+
+You need to covariance or the correlation to find the standard deviation.
+
+- pDE = COV(Rd, re) / (rD \* rE)
+- 1.0 <= p <= 1.0
+- no diversification if pDE = 1
+- if pDE = -1, you can get the weights using wE = stdD / (stdD + stdE) = 1 - wD
+
+### Graphing Risk
+
+- Straight line between two assets if the correlation is 1
+- With perfect hedge (-1), there are two straight lines going to risk = 0
+- In between, risk is never 0 but a sideways parabola
+- Find std for the portfolio for every weighting to get a risk allocation
+- **Minimum variance portfolio**: portfolio allocation with the lowest risk, but not the optimum
+  -wE = ( rB^2 - COV(rB, rE) ) / (rB^2 + rE^2 - 2COV(rB, rE))
+- Calculate the slope of all portfolios
+  - (Expected return of portfolio - risk free rate) / risk of portfolio \* A
+  - A = risk appetite
+- Calculate the slope of the capital allocation line
+- **Tangent portfolio** or **Optimum portfolio**
+  - Point where the capital allocation line is tangent to the weighting
+
+### Minimum Variance Portfolio
+
+<img class=equation src="https://latex.codecogs.com/svg.image?wA=\frac{r_B^2-COV(r_B,r_A)}{r_B^2+r_A^2-2COV(r_B,r_A)}">
+
+### Chapter 7 Problems
+
+1. Three mutual funds: first is a stock fund, second is a long-term government and corporate bond fund, third is a T-bill fund with 8% yield. The covariance is 0.1 between the two risky funds.
+
+| Fund | Expected Return |Standard Deviation |
+| ------- | ----------------- | --------------- | ---------- |
+| Stock | 20% | 30%        | (25)(.31)  |
+| Bond | 12%  | 15%        | (25)(.31)  |
+
+a. what are the investment proportions in the minimum-variance portfolio
+    - Using the formula, we get wE =17.39% and wB = 82.61%
+b. what is the expected value and standard deviation of the minimum variance portfolio rate of return
+    - Expected return is then 13.39%
+    - Standard deviation (square root of portfolio variance) is then 13.92% (the formula uses covariance)
+c. what are the weights, expected return, and standard deviation of the optimal risky portfolio?
+    - **wB = (Excess return of the bond \* rE^2 - Excess return of equity \* Cov(rE, rB)) / ( excess return of rB \* rE^2 + excess return of equity \* rB^2 - \[excess return of B + excess return of E]Cov(rB, rE))**
+    - wB = 54.8%, wE = 45.2%
+    - expected rp = 15.61%
+    - STD(rp) = 16.54%
+    - What if you wanted to use the risk free?
+    - expected return of complete portfolio = 14%
+    - expected return of complete portfolio = wFrF + wPrP
+    - 14% = (1-wF)8% + wp15.61%
+    - 14 - 8 / 15.61 - 8 = wp
+    - wp = 78.84
+
+## Capital Asset Pricing Model (CAPM)
+
+- Capital Allocation Line becomes Capital Market Line or Securities Market Line
+
+Assumptions
+
+1. Individual behaviour
+    - Investors are rational, mean-variance optimizers
+    - Their common planning horizon is a single period
+    - Investors all use identical input lists, (homogenous expectations). Publicly available information.
+2. Market structure
+    - Publicly held and public exchanges
+    - Investors can borrow or lend at a common risk-free rate, and they can take short positions on traded securities
+    - No taxes
+    - No transaction costs
+
+### The Market Portfolio
+
+- Market weighted all securities (proxy = SP500 index)
+
+- Beta is the correlation with the market risk
+- Required return of a stock = risk free + beta of the stock times the excess return of the market
+- Beta = slope of the line of best fit or COV(individual, market) / variance of the market
+
+- required return goes up when a stock is sold because of the dividend discount model (dividend yield increases).
+- alpha is the difference between actual return and expected return
+- track alpha in order to determine if the model is actually working or not
+
+### Extensions of the CAPM
+
+1. Identical input lists
+2. ZEro-beta model
+3. Labour income and other Nontraded assets
+
+### Chapter 9 Problems
+
+1. What must be the beta of a portfolio with expected return  of a portfolio of 18%, if risk free is 6% and expected market return is 14%?
+
+Beta = (18% - 6%) / (14% - 6%) = 1.5
+
+2.  T-bill rate is 4%, market risk premium is 6%. What is the fair return?
+    - $1 Discount store: 12%  forecasted, 8% std, beta = 1.5
+        - Fair return is 4% + 1.5 \* 6% = 13%
+    - Everything $5: 11% expected, 10%, beta is 1.0
+        - Fair return is 10%
+
+3.
+
+| Scenario | Market Return |Aggressive Stock|Defensive Stock|
+| ------- | ------- | ------- | ---------- |
+| A | 5% | -2% | 6%  |
+| B | 25%  | 38% |12%  |
+
+What are the betas? Use rise over run to calculate the slope using the two scenarios as data points.
+    - (38 - (-2)) / (25 - 5) = 2
+    - (12 - 6)(25 - 5) = 6/20
+
+What is the expected return on each stock if market returns are equally likely?
+    - Give each scenario a 50% weighting
+
+If the T-bill is 6%, and the market return is equally likely the be 5% 25%, draw the SML for this economy.
+    - E(rm) = 15%
+    - Draw a line from 6% to 25% when Beta is 1
+
+Plot the two securities on the SML graph. What are the alphas of each? Characterize each company in the above table as underpriced, overpriced, or properly priced.
+    - alpha is .3% for the defensive, -6% for the aggressive
+
+### Assignment 2
+
+- Outline strategy
+- Actively managed
+- Must have to modify at least twice
+  - Propose modifications
