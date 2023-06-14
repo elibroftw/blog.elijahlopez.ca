@@ -355,3 +355,202 @@ predecessor? How should he proceed?
 - In his previous position at Hero, where he had been the CEO for seven years, Heidenreich convinced many investors of his ability to generate continuous profits and grow share prices
 - Hero had undergone major restructuring efforts and also had a majority shareholder
 -
+
+## Worldwide Innovation and Learning
+
+Innovation comes in multiple forms:
+
+- New technology-based products
+- Organizational effectiveness breakthroughs
+- Pioneering marketing strategies
+- Leading-edge manufacturing processes
+- Logistics innovations
+
+- R&D expenditure globally more than doubled between 1992-2010
+- Worldwide patent application
+- Intangible asset valuations rose higher
+
+Competitive battles:
+
+- Sensing
+- Responding
+- Implementing
+
+Traditional innovation
+
+- Center-for-global
+  - HQ senses opportunities
+  - Dominate in international and global companies
+  - Problem: market insensitivity, imperialism, fading of competitive advantage
+- Local-for-local
+  - Distributed assets and resources allow local response
+  - multinational strategic model
+  - Duplication possible, reinventing the wheel
+- Locally leveraged
+  - Special resources and capabilities of each national subsidiary are available to other units as well
+- Globally linked
+  - Resources and capabilities of many unites (center and subsidiaries) pooled to jointly create and manage an activity
+
+### Making Transnational processes Feasible
+
+Three simplifying assumptions:
+
+1. Subsidiaries should be symmetrical
+2. HQ-subsidiary relationship is based on
+clear patterns of dependence or
+independence
+3. Corporate management exercises
+decision-making and control uniformly
+
+- From Symmetry to Differentiation
+  - Demands for integration and responsiveness need to be addressed separately for each business, function, and geographic region
+- From Dependence / Independence to Interdependence
+  - Implementation of an integrated network and inter-unit integration mechanisms
+- From Simple Control to Flexible Coordination
+  - Complex coordination of the flow of goods, resources, and knowledge: formalization, centralization, and socialization process
+
+Problems
+
+- Center-for-global innovation
+  - Risk of market insensitivity, imperialism
+- Local-for-local innovation
+  - Risk of duplication, reinventing the wheel
+- Locally leveraged innovation
+  - Threatened by not-invented-here (NIH)
+- Globally linked innovation
+  - High coordination costs
+
+[How GE is disrupting itself (HBR 2009)](https://ocul-wlu.primo.exlibrisgroup.com/permalink/01OCUL_WLU/s6kavd/cdi_proquest_miscellaneous_227775481)
+
+Reverse innovation is creating products in an emerging economy to meet the local needs and then bringing this product to a developed economy through adaption cannibalization of existing products. One example of reverse innovation is a $1,000 handheld electrocardio-gram device developed for rural India which also started being sold in the United States for different uses. Reverse innovation is the opposite of the standard glocalization approach taken by most manufacturing firms based in rich countries.
+
+[THE CHANGING FACE OF INNOVATION IN CHINA](https://ocul-wlu.primo.exlibrisgroup.com/permalink/01OCUL_WLU/s6kavd/cdi_proquest_journals_2074380396)
+
+The first step is to ensure local representation which I agree with however it also says "local R&D management style better suited to Chinese sensitivities" which in my opinion isn't a 100% guarantee or objectively better. Management style is subjective and so if anything, the style should be whichever one results in higher productivity. Sure it could be that being better suited to Chinese sensitivities is correct, or maybe the original management style was lacking already. There isn't only one management style in north america so obviously there isn't only one in China. The next step is to speed up the patenting when trade secrets is not strategic. I don't agree with this from a philosophical point of view because the government point of patents is to dissuade trade secrets but leveraging the patent policy because trade secrets is non-strategic goes against what the patent system was about. In these cases, the innovation should be multi-group just like the media codec VP9 vs. the proprietary H265. Innovation isn't just an individual corporation point of view, but a macro-economical point of view itself. If we told every individual to only look out for themselves, then there would be vast social problems and high crime rates because no one wants to work towards a greater cause. The last step is to integrate R&D and IP management competencies. Although I disagree with mass patenting, I can agree that when patents are acquired as originally intended, it's utility should be maximized rather than ignored; This can be done by the R&D department communicating with the IP management either through 1:1 or through a middle manager in charge of this task.
+
+[TedX Video](https://www.youtube.com/watch?v=ztna1lt_LZE)
+
+What is reverse innovation?
+
+- Develop products for markets in
+emerging economies
+- Sell in developed markets
+
+Example: the electrocardiogram device
+for rural India and the ultrasound
+machine for rural China
+
+Why is it important?
+• Many emerging markets are no longer small
+• They have high growth rates
+• Glocalization ignored faster growing middle or
+lower-end customer segment in emerging
+markets
+• Potential local new entrants can enter
+developed markets with low cost alternatives
+Reversed innovation isn’t optional, its oxygen!
+
+
+- decentralization
+- traditional centralized structures
+provide cost benefits
+-
+
+Project-level actions
+Establish Local Growth Teams (LGTs)
+1.Shift the power to where the growth is
+Authority to decide what to develop and
+how to produce, sell, and service
+2.Build new offerings from the ground up
+3.Build LGT from ground up
+4.Customize objectives, targets, measure
+5.report to someone high in the organization
+
+China
+
+Foreign companies must retool their R&D
+strategies to keep pace with newly
+innovative Chinese enterprises.
+
+Foreignness is becoming a liability
+• Intellectual property (IP) regime has
+strengthened
+• Risks with keeping and sharing advanced
+technology
+• Innovation transaction costs can jeopardize
+the lead
+• Time to market of innovative products and
+services
+
+Strike a balance between localization and
+the growing liability of foreignness;
+• Engage in cutting edge research when
+returns exceed global;
+• Focus talent, culture and operations toward
+faster time to market.
+
+### Answers
+
+Three important capabilities that are necessary for effective central innovation are: taking  in information from subsidiaries to the centralized head quarter through the use of creating linkages (taskforce focusing on a region, activities, meetings, etc.) that increase interaction between local managers and the central head quarters; ensuring that all functional tasks are linked to market needs through the use of direct consumer contact and feedback; and integrating value-chain functions by managing the transfer of responsibilities across development, production, and marketing. The goal of managing responsibility transfer is to reduce the loss of proximity from a centralized approach to development<->marketing rather than a decentralized approach where the functions are close to each other. Thus, the last capability is to ensure that research, production, and marketing remains as integrated in a centralized perspective as was by default in the local-for-local innovation.
+
+One capability to make local innovations efficient is to empower the local management. Local management referring to managers of the subsidiaries. Empowering local management means to hand over, or delegate, organization resources and decision making authority to the subsidiary managers. It could be as simple as investing assets into the subsidiary because then the innovation would be local led even if the starting direction was done by the central HQ.
+Another capability is to provide a link (collaboration) between the different federations so that knowledge and techniques can be shared without reinventing the wheel. Lastly, there needs to be cross-functional integration at all local subsidiaries to ensure that the ideas being generated are high quality.
+
+One capability necessary for making innovations feasible is to make each subsidiary differentiate itself where it needs to to avoid resource misallocation and competing ineffectively.  Therefore, integration and responsiveness needs to be tweaked separately for each subsidiary. A second capability is interdependence which requires the existence of roles in the organization that creates a network such that information is always relayed will reach someone in central or local regardless of where the information is coming from. There also needs to be integration between units so that units are not in conflict with each other. The last capability is to allow for flexibility in coordination and control. In other words, being stringent results in one way to do something even if it may not be optimal whereas flexibility means having sophisticated processes to deal with different issues in appropriate more caring manners.
+
+### P&G JAPAN: THE SK-II GLOBALIZATION PROJECT
+
+> In November 1999, Paolo de Cesare was preparing for a meeting with the Global Leadership Team (GLT) of P&G’s Beauty Care Global Business Unit (GBU) to present his analysis of whether SK-II, a prestige skin care line from Japan, should become a global P&G brand.
+
+> president of Max Factor Japan, the hub of P&G’s fast-growing cosmetics business in Asia
+
+proposal to expand SK-II into China and Europe.
+
+> Chairing the GLT meeting was Alan (“A. G.”) Lafley, head of P&G’s Beauty Care GBU, to which de Cesare reported
+
+> In 1985, as the first step in developing a program hecalled “Ichidai Hiyaku” (“The Great Flying Leap”), new country GM Durk Jager analyzed the causes of P&G’s spectacular failure in Japan. the company had not recognized the distinctive needs and habits of the very demanding Japanese consumer. (For instance, P&G Japan had built its laundry-detergent business around All Temperature Cheer, a product that ignored the Japanese practice of doing the laundry in tap water, not a range of water temperatures.)
+
+Increased R&D size
+
+1991 bubble burst causing 20% total decline.
+
+Implementing O2005, as it came to
+be called, he promised would bring 13% to 15%
+annual earnings growth and would result in $900
+million in annual savings starting in 2004. Implementation would be painful, he warned; in the first
+five years, it called for the closing of 10 plants and
+the loss of 15,000 jobs–13% of the worldwide
+workforce. The cost of the restructuring was estimated at $1.9 billion, with $1 billion of that total
+forecast for 1999 and 2000.
+
+“And if you are worried about oversight,” he said, “I am the portfolio manager.
+
+Lots of bureaucratic cutting.
+
+Reading: How to manage alliances better than one at a time (MIT Sloan
+Management Review, Spring 2010)
+
+Reading: Joint Ventures and Partnerships in a Downturn (Harvard Business Review
+September 2020)
+
+Case: Nora-Sakari: A Proposed JV In Malaysia
+
+Case: Silvio Napoli at Schindler India (A)
+
+Hard NOx (Dirty Money Documentary, Season 1)
+[Watch at home before coming to class]
+
+eading: The New Mission for Multinationals (MIT, 2015)
+Reading: The new frontiers (Harvard Business Review, July-August 2009)
+Reading: New business models in emerging markets (Harvard Business Review,
+January-February 2011)
+
+Case: Genicon - A Surgical Strike into Emerging Markets
+
+Reading: Reaching the rich world's poorest consumers (Harvard Business Review,
+September 2015)
+Reading: Is the bottom of the pyramid really for you? (Harvard Business Review,
+March 2011)
+
+Case: Danimal in South Africa - Management Innovation at the Bottom of the
+Pyramid
