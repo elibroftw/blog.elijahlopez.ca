@@ -1,5 +1,5 @@
 ---
-title: "BU 473 Investment Mangement"
+title: "BU 473 Investment Management"
 date: 2023-05-09T15:25:11-04:00
 draft: false
 tags: [
@@ -587,7 +587,7 @@ Assumptions
 
 1. Identical input lists
 2. ZEro-beta model
-3. Labour income and other Nontraded assets
+3. Labour income and other non-traded assets
 
 ### Chapter 9 Problems
 
