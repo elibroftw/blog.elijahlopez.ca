@@ -67,7 +67,7 @@ Applies to both individuals and corporations.
   - Taxes paid to foreign governments is a tax credit towards Canadian tax payable
   - vice-versa would be non-resident
 
-- Larry, a US resident, is a travelling salesman. In the
+- Larry, a US resident, is a traveling salesman. In the
 year, he stayed in Canada for business purposes from
 March 1st to September 15th. His house, his family
 and his supplies are all in the US.
@@ -111,8 +111,7 @@ Court determines whether individual is an employee or an independent contractor.
 
 ### Structure
 
-sec 5 basic inclusion + sec 6 beefits + allowance
-+ sec 7 stock option benefits - sec 8 deductions allowed.
+sec 5 basic inclusion + sec 6 benefits + allowance + sec 7 stock option benefits - sec 8 deductions allowed.
 
 sec 5: salary, wages, and other remuneration including gratuities received.
 
@@ -121,7 +120,7 @@ Payroll example
 ```text
 Salary gross                                118,000
   Payroll deductions:
-    Income tax withheld         17,000  # not deductive
+    Income tax withheld         17,000 # not deductible
     Registered Pension plan  2,000  # deductible
     CPP                                   3,500 # not deductible but credit
     EI                                          953 # not deductible but credit
@@ -271,7 +270,7 @@ Calculate the taxable benefit of the loan.
 - In rare reasonable cases, the allowance is tax exempt
 - For example, traveling expenses for traveling by car
 
-### Employment Insurance benefits \[se 6(1)(f)]
+### Employment Insurance benefits \[sec 6(1)(f)]
 
 - Include payment from insurance plan net of contributions
 - if the employer pays all or any portion of the premium
@@ -312,7 +311,7 @@ If the company is CCPC, there is only the selling benefit of 66 - 22.
 
 </details>
 
-## Deductions \[sec 8]
+## Deductions for Taxpayers \[sec 8]
 
 Must be specifically permitted
 
@@ -320,15 +319,15 @@ Must be specifically permitted
     - no capital expense
     - no recreational deduction
 2. Traveling expenses
-3. professional and union dues
-4. works space in home
+3. Professional and union dues
+4. Works space in home
     - used exclusively for earning income
     - and used regularly for meeting customers or clients
     - must earn employment income
     - excess amount carried forward
     - rent, utilities, repairs & maintenance, supplies, phone
     - salesperson exclusive: property taxes, house insurance, limited to commissions
-5. contributions to RPP (registered pension plan)
+5. Contributions to RPP (registered pension plan)
 6. Use of automobile
     - interest on car loan up to $300 per month
     - operating vehicle expenses
@@ -390,7 +389,7 @@ Examples:
   - balance sheet
 - appraisal fees to determine selling price of fixed assets
   - add to the cost of the fixed asset
-- premium for life insurance oon company president
+- premium for life insurance on company president
   - exempt income
 
 Problem 12
@@ -407,7 +406,7 @@ Ch 3 Problem 23
 
 Ned had unlimited use of the company's private swimming pool. The local pool charges annual fees of 1,800 per year before HST. Benefit = 1,800 (LOL).
 
-## Deductions Specifically Permitted \[sec 20]
+## Deductions Specifically Permitted From business or property \[sec 20]
 
 - write-offs of capital expenditure
 - interest on borrowed money used for earing business income
@@ -426,7 +425,7 @@ Ned had unlimited use of the company's private swimming pool. The local pool cha
       - Reserve = % Unpaid Revenue \* Profit
   - Manufacturer's warranty reserves \[sec 20(1)(m.1)]
 
-- Employer Contributiosn to RPP and DPSP
+- Employer Contributions to RPP and DPSP
   - limit =  MIN (18% of employment income, $30,780 for 2022)
 - Convention expenses (2 per year)
   - Conferences
@@ -601,3 +600,20 @@ Applies to all types of corporation
 
 - Class 53 after November 20, 2019
 - Class 54/55 after March 15, 2019
+
+### Midterm Studying
+
+Chapter 3, Problem 19
+
+<details><summary>answer</summary>
+
+48,000 (gross) + 40,000 (bonus) - 4,000 (RPP) - 2,200 \* 0.5 (client related meals) - 5,200 (traveling expense) - 7,800 (airfare) - 500 (taxi) - 3,500 (gifts) + 350 ( planning benefit) + 150 (life insurance premium)
+
+Car cost: 36,000
+
+- Standby Benefit = 0.02 \* 36,000 \* 12 = 8,640
+- Operational benefit = 9,900 \* 0.29 = 2,871
+- Reimbursement = 2,400
+- Automobile benefit = 8,640 + 2,871 - 2,400 = 9,111
+
+</details>

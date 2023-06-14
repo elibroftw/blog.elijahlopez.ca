@@ -315,6 +315,8 @@ Availability = Mean Time Between Failure / (MTBF + Mean Time To Repair)
 
 ## Strategic Planning
 
+- Defining an organization's direction
+- Allocation its resources to pursue this direction
 - Planning helps a business identify its goals however technology changes very fast
 - Strategic focus: 3-5 years (business processes) led by senior management
 - Tactical focus: 1-2 years (resource allocation and project selection) led by middle managers
@@ -386,3 +388,69 @@ problem: integration between the systems
 - APIs
 - Mobile
 - Security
+
+### Creating Video Games
+
+### Custom Intimacy
+
+- know your customers really well
+- understanding customers' needs, wants, preferences, and behaviours to anticipate before being asked
+
+### Operational Excellence
+
+- market is the total expenditure spent on a product or service
+
+### Stand-Out Firms
+
+- Stand-out form
+  - Firms that do better are said to have a competitive advantage
+  - Access to unique resource or they can use commonly available resource more efficiently
+
+### Strategic Planning Challenges
+
+- Technology comes outdated
+
+### Sense and Respond
+
+The "sense-and-respond" approach is a strategic approach that emphasizes agility, adaptability,
+and responsiveness to rapidly changing market conditions. Unlike traditional long-term planning,
+which relies on rigid strategies, the sense-and-respond approach focuses on continuous
+monitoring, sensing environmental changes, and quickly responding to them.
+
+- It emphasizes the importance of strategizing in areas where the action is most intense and speedy
+such as customer interactions and feedback, frontline operations, and market changes.
+
+- In the sense-and-respond approach, organizations actively gather data and information from
+various sources, which allows them to sense market trends, customer needs, and emerging
+opportunities or threats.
+
+### Eight Planning Techniques
+
+- Stages of growth
+  - roadmap
+  - assumes all organization are in the same stages in the same order
+- Critical success factor (CSFs)
+  - align resources effectively
+  - risk of oversimplification
+- Competitive Forces Model
+  - PRO: Helps organizations understand the competitive forces in their industry and formulate strategies accordingly
+  - CON: May not fully capture the dynamics in rapidly changing industries due to tech and social shifts
+- Three Emerging Forces (Digitization, Globalization, Deregulation)
+  - Anticpat eand adapt to major trends
+  - Overloops other important factors that are specific to industries or regions
+- Value Chain Analysis
+  - Understand where the organiztaion adds value and focus on improvement
+  - Comple xand time-consuming, so failure to capture non-linear or intangible value (e.g. patents)
+- Internet Value Matrix
+  - Helps companies identify opportunities for creating value online and understand their competitive position in the digital landscape
+  - CON: see slide for week 6
+- Linkage Analysis Planning
+  - Understanding relationships with other entities
+  - Complex and overlooks internal challenges
+- Scenario Planning
+  - long-term thinking to prepare for various scenarios
+  - time consuming and highly uncertain. Risk of bias
+
+### IBM in a Service-Oriented Architecture
+
+- TODO for slides
