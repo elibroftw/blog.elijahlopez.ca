@@ -36,11 +36,12 @@ Taxable income\[Sec 2(2)] is the taxpayer's income for the year plus additions a
   - Deemed
     - applies to foreigners who sojourned (temp. stay) for 183 days or more \[sec 250(1)(a)]
 - Part-time resident
-  - Clean break or fresh start
+  - Clean break away or fresh start (immigrant who moved to Canada)
   - Taxed on worldwide income for the part of the year while resident; taxed as non-resident for the part of the year while non-resident
   - fresh start: immigrant who moved to Canada
   - clean break: leaving the country for work
     - more ties given up, more likely to get clean break
+- Non-resident (follows)
 
 ### Non-resident \[sec 2(3)]
 
@@ -56,8 +57,8 @@ Applies to both individuals and corporations.
 
 - Deemed resident
   - incorporated in Canada after April 26, 1965 \[sec 250(4)(a)]
-  - HQ or control in Canada
   - Incorporated before April 26, 1965 and had carrying business in Canada
+  - HQ or control in Canada
 - Non-resident
 
 ### Exercises
@@ -132,7 +133,8 @@ Net salary                                        84,047
 
 - include all benefits except
   - retirement plans
-  - group **sickness** or accident insurance plan, private health services plan, a supplementary unemployment benefits plan
+  - retirement planning is tax exempt
+  - group **sickness** or accident insurance plan, private health services plan, a supplementary **unemployment benefits** plan
   - mental health
   - discounts for all employees where the price paid is still more than the cost
   - social club membership that benefit employer
@@ -142,8 +144,7 @@ Net salary                                        84,047
 - non-cash holiday gifts (tangible) under $500 is excluded
 - computers that benefit the employer
 
-Examples: fitness memberships to reduce overtime stress, tuition costs,
-gift certificates with value from $100 - $500.
+Examples: fitness memberships to reduce overtime stress, tuition costs, gift certificates with value from $100 - $500.
 
 not taxable, taxable, taxable.
 
@@ -155,6 +156,8 @@ Employer paid for the loss of employee's home sale
   - work location moved and you have to move for work
   - at least 40km closer
 - One-half of any amount above $15,000 is a taxable benefit
+
+All moving expense allowance are taxable
 
 ### Automobiles
 
@@ -178,7 +181,7 @@ Taxable benefit is equal to
     OR
 
     half of standby charge if primarily for work.
-3. Subtract reimbursed amount
+3. Subtract amount paid back to the company
 
 Example
 
@@ -321,7 +324,7 @@ Must be specifically permitted
 2. Traveling expenses
 3. Professional and union dues
 4. Works space in home
-    - used exclusively for earning income
+    - used **exclusively** for earning income
     - and used regularly for meeting customers or clients
     - must earn employment income
     - excess amount carried forward
@@ -330,7 +333,8 @@ Must be specifically permitted
 5. Contributions to RPP (registered pension plan)
 6. Use of automobile
     - interest on car loan up to $300 per month
-    - operating vehicle expenses
+    - operating vehicle expenses related to employment (%)
+    - lease expenses related to employment (%)
     - capital cost allowance, 30% and cost limited to 34,000 plus sales tax
 
 <details><summary>work space example answer</summary>
@@ -404,7 +408,7 @@ Problem 12
 
 Ch 3 Problem 23
 
-Ned had unlimited use of the company's private swimming pool. The local pool charges annual fees of 1,800 per year before HST. Benefit = 1,800 (LOL).
+Ned had unlimited use of the company's private swimming pool. The local pool charges annual fees of 1,800 per year before HST. There is no taxable benefit since the company is not paying on behalf of Ned.
 
 ## Deductions Specifically Permitted From business or property \[sec 20]
 
@@ -434,7 +438,7 @@ Ned had unlimited use of the company's private swimming pool. The local pool cha
   - Deduct equally over 10 years
   - Claim CCA
 - Other expenses fully deductible
-  - land scaping
+  - landscaping
   - site investigation fees
 
 ### Reserve for Delayed Payment Revenue
@@ -617,3 +621,56 @@ Car cost: 36,000
 - Automobile benefit = 8,640 + 2,871 - 2,400 = 9,111
 
 </details>
+
+Chapter 2, Problem 1
+
+a. part-time resident with fresh-start Mar 1
+b. non-resident
+c. part-time clean-break from canada as very little ties remain July 30
+d. common-law full time resident: education and family
+e. deemed full time resident since more than 183 days in Canada (sojourned)
+
+Chapter 2, Problem 5
+
+a. deemed resident because incorporated after April 26, 1965
+b. deemed resident because of control from canada
+c. non-resident because not really controlled by Canada
+
+Chapter 3, Problem 3
+
+1. taxable
+2. taxable
+3. tax deductible RPP contribution (company's contribution is tax free)
+4. relocation allowance is a taxable benefit
+5. fitness club is a taxable benefit because it benefit Rishma
+6. financial planning is also a taxable benefit
+7. not a taxable benefit, and the $200 is not deductible
+
+Chapter 3, Problem 23
+
+125,000 - 6,750 (RPP) + 90 (group life insurance) + 640 (public health) + 9,600 (allowances) + 1,400 (wife) + 0.2 \* 2568 + 1,200 \* 3 (rent paid) + 1,500 \* 0.5  (half of the amount above 15,000 for loss on house sale) + 15,000 (moving allowance) + 2,000 (interest rates) + 0 (swimming pool is owned by the company, so no taxable benefit) - 12,000 (travel expenses) - 7,200 \* 0.5 (meals) - (1,300 + 1,050 + 180 + 120) \* 22,500 / 36,000 - 10,200 \* 22,500 / 36,000
+
+Chapter 4, Problem 1
+
+1. The charity donations are a credit or something
+2. Okay
+3. Okay
+4. Okay
+5. Okay. equally over 5 years.
+6. Capitalized for software. Landscaping is okay.
+7. 50% for meals and entertainment. Picnic is 100% deductible
+8. Not deductible
+9. Not deductible since recreational?
+10. .61 up to 5,000 and .55 after
+
+Chapter 4, Problem 11
+
+-2,330 (net income) + 6,650 + 462 \* 0.5 + 460 + 380 + 15,500 (self salary)
+
+Chapter 4 Problem 15
+
+-11,500 + 3,800 (amortization) - CCA + 1,500 \* 0.5 + 1,800 \* 0.5 + 12,000 + 2,200 - 380 + 21,200 (capitalize) + 2,350 \* (5/18) + 1,400 (home office is non-exclusive) + 1,200 (can't do provisions)
+
+## Final Exam Studying
+
+Chapter 5, Problem 1
