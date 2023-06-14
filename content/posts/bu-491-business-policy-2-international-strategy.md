@@ -527,6 +527,10 @@ forecast for 1999 and 2000.
 
 Lots of bureaucratic cutting.
 
+Max Faxtor is the company they acquired.
+
+--
+
 Reading: How to manage alliances better than one at a time (MIT Sloan
 Management Review, Spring 2010)
 
