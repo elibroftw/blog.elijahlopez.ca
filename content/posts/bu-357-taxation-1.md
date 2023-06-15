@@ -131,35 +131,37 @@ Net salary                                        84,047
 
 ### Employee Benefits \[sec 6(1)(a)]
 
-- include all benefits except
+- all benefits are taxable except
   - retirement plans
-  - retirement planning is tax exempt
+  - retirement planning
+  - non-cash holiday gifts (tangible) under $500
   - group **sickness** or accident insurance plan, private health services plan, a supplementary **unemployment benefits** plan
   - mental health
-  - discounts for all employees where the price paid is still more than the cost
-  - social club membership that benefit employer
+  - discounts for **all** employees where the price paid is greater than the cost
+  - social club memberships that benefit employer
     - workshops
     - training
-- employer paid financial counselling is included
-- non-cash holiday gifts (tangible) under $500 is excluded
+- employer paid financial counselling is taxable
 - computers that benefit the employer
 
-Examples: fitness memberships to reduce overtime stress, tuition costs, gift certificates with value from $100 - $500.
+Examples:
 
-not taxable, taxable, taxable.
+- fitness memberships to reduce overtime stress: not taxable because of mental health
+- tuition costs: taxable
+- gift certificates with value from $100 - $500: taxable because cash benefit
 
 ### Housing loss/cost benefits
 
-Employer paid for the loss of employee's home sale
+All moving expense allowance are taxable however,  when the employer pays for the loss of employee's home sale:
 
 - Eligible housing loss
   - work location moved and you have to move for work
   - at least 40km closer
 - One-half of any amount above $15,000 is a taxable benefit
 
-All moving expense allowance are taxable
-
 ### Automobiles
+
+Formulas are given?
 
 Taxable benefit is equal to
 
@@ -174,13 +176,8 @@ Taxable benefit is equal to
     - leased
       <img class=equation-tall src="https://latex.codecogs.com/svg.image?\frac{A}{B}\times\frac{2}{3}\times{E-F}">
 2. Plus operating cost benefit
-    - employer pays operating cost
-
-    <img class=equation-tall src="https://latex.codecogs.com/svg.image?0.29\times{personal\_km}">
-
-    OR
-
-    half of standby charge if primarily for work.
+    - if the employer reimburses operating cost,
+      <img class=equation-tall src="https://latex.codecogs.com/svg.image?0.29\times{personal\_km}"> or half of standby charge if primarily for work.
 3. Subtract amount paid back to the company
 
 Example
@@ -239,9 +236,7 @@ What if Mitch drove 10,000km for work and 8,000km for personal?
 - taxable benefit is `principal amounts * (prescribed rate - interest rate paid)`
 - prescribed rate is the annual rate of the 3-month T-bill which is disclosed every quarter. Use the average of the quarters that the loan was taken from.
 
-For home loans compare to the smaller of (i) the prescribed rate in each quarter the loan
-was outstanding and (ii) The prescribed rate in effect at the time the
-loan was granted
+For home loans, the comparable interest rate is the lesser of the interest rate at the time of purchase and the going interest rate in each quarter the loan was outstanding
 
 Example
 
@@ -263,15 +258,17 @@ Calculate the taxable benefit of the loan.
 >>> q3_4 = 30000 * (avg_i - 0.01) / 12 * 9
 >>> q1 + q3_4
 >>> 550
+>>> # if home
+>>> 30_000 * (0.02 / 12 * 2 + 0.01 / 12 * 3 + 0.02 / 12 * 3 + 0.02 / 12 * 3)  # only Q4 comparable interest rate changes
 ```
 
 </details>
 
 ### Allowance \[sec 6(1)(b)]
 
-- Fixed, specified taxable amount paid above salary to cover certain expenses
-- In rare reasonable cases, the allowance is tax exempt
-- For example, traveling expenses for traveling by car
+- Allowances are a fixed, specified **taxable** amount paid above salary to cover certain expenses
+  - In rare reasonable cases, the allowance is tax exempt
+  - For example, **traveling expenses** for traveling by car
 
 ### Employment Insurance benefits \[sec 6(1)(f)]
 
@@ -279,22 +276,30 @@ Calculate the taxable benefit of the loan.
 - if the employer pays all or any portion of the premium
 - Applied to: group sickness, accident, disability insurance plans
 
-<details><summary>Answer for Anita</summary>
+<details><summary>Answer for Problem 20 on slide 37 (Anita Lee)</summary>
 
-$90,000 + ($1,600 - $350) + $424 + $1,000 + $2,000 + $200 + $56.67 + 16,880 + 400
+90000 + (1600 - 350) + 424 + 1000 + 2000 + 200 + 56.67 + 16880 + 400 = 112211
 
+- premium payroll deductions are not deductible
+- insurance payment is taxable net of contributions
 - retirement planning is tax exempt
-- workshop is tax exempt since employer benefits
-- loan benefit = 8000 \* (0.01 \* 2.5 / 12 + 0.02 \* 3 / 12) = $56.67
-- automobile benefit = 0.02 \* 38,500 \* 12 + 0.29 \* 16,000 + 250 \* 12 = 16,880
+- tuition is not tax exempt however workshop is tax exempt since employer benefits
+- director fee is income
+- cash gifts are always taxable
+- interest discount is a benefit
+  - loan benefit = 8000 \* (0.01 \* 2.5 / 12 + 0.02 \* 3 / 12) = $56.67
+- allowance is 100% taxable
+- automobile benefit = 0.02 \* 38,500 \* 12 + 0.29 \* 16,000 = 16,630
 - market price minus actually paid is a benefit
+- airline points is not taxable
+- merchandise discount was still above cost so no taxable benefit
 
 </details>
 
 ### Stock Options
 
 - grant day
-  - FMV determined
+  - Fair Market Value determined
 - exercise day
   -taxable benefit is the difference
 - For CCPC, taxation occurs on selling day
@@ -308,7 +313,7 @@ was exercised. Shares traded at $40 per share at the time. Three years later, al
 
 <details><summary>Answer</summary>
 
-In the second year, the taxable benefit is (40 - 12) \* 100 = \$2,800. In the fifth year, there is a capital gains of (66 - 40) \* 100= \$,600.
+In the second year, the taxable benefit is (40 - 12) \* 100 = $2,800. In the fifth year, there is a capital gains of (66 - 40) \* 100= $2,600.
 
 If the company is CCPC, there is only the selling benefit of 66 - 22.
 
@@ -322,42 +327,48 @@ Must be specifically permitted
     - no capital expense
     - no recreational deduction
 2. Traveling expenses
+    - transportation
+    - meals are 50%
+    - lodging
 3. Professional and union dues
 4. Works space in home
-    - used **exclusively** for earning income
-    - and used regularly for meeting customers or clients
+    - princal place of work OR
+      - workspace itself is used **exclusively** for earning income and used regularly for meeting customers or clients
     - must earn employment income
+    - allocate expenses between work and personal
     - excess amount carried forward
     - rent, utilities, repairs & maintenance, supplies, phone
     - salesperson exclusive: property taxes, house insurance, limited to commissions
 5. Contributions to RPP (registered pension plan)
-6. Use of automobile
+6. Use of automobile for employment purposes
+    - allocate between work and personal
     - interest on car loan up to $300 per month
     - operating vehicle expenses related to employment (%)
     - lease expenses related to employment (%)
+      - max of $900/month
     - capital cost allowance, 30% and cost limited to 34,000 plus sales tax
 
-<details><summary>work space example answer</summary>
+<details><summary>Slide 49 example</summary>
 
 So 20% is workspace. Computer not on the list.
 
-Non-Salesperson: 600 + 1000 + 1000 (work related expense) + 1000 +  400 = 3,000
+Non-Salesperson: 600 (utilities) + 1000 (mortgage interest) + 1000 (work related expense) + 1000 +  400 + 5,000 * 0.2 (maintenance) = 4,000
 
-Salesperson with $15,000 commission: 400 (property taxes) + 40 (insurance) = 3,440
+Salesperson with $15,000 commission: 400 (property taxes) + 40 (insurance) = 4,440
 
 </details>
 
 ## Income from Business
 
-I. Business Income Defined and
+1. Business Income Defined and
 General Rules for Determining
 Business Income
-II. Deductions denied and allowed
-III. Salesperson’s expenses
+2. Deductions denied and allowed
+3. Salesperson’s expenses
 
 ### Business income and general rules
 
-- Business” should be carried on with a profit or REOP
+- Business' should be carried on with a profit or REOP
 - Profit is determined in accordance with well-established business practices
 
 ### GAAP / IFRS and the Act
@@ -374,7 +385,7 @@ Differences:
 1. Not for income earning purpose
 2. Capital expenditures
 3. Exempt income
-4. reserve
+4. Reserves
 5. Personal expense
 6. Not reasonable
 
@@ -382,6 +393,7 @@ Differences:
 - use of recreational facilities
 - political contributions
 - allowance for an automobile above the limit
+- do not deduct income paid to yourself
 
 Examples:
 
@@ -394,9 +406,12 @@ Examples:
 - appraisal fees to determine selling price of fixed assets
   - add to the cost of the fixed asset
 - premium for life insurance on company president
-  - exempt income
+  - exempt income so not deductible
+- meals and entertainment are 50% deductible
+  - 100% if available to all employees six times maximum
+  - fund-raising events benefiting charity
 
-Problem 12
+<details><summary>Slide 60 Problem 12</summary>
 
 - Income: 64,300
 - Acc amortization: 4,000
@@ -405,6 +420,9 @@ Problem 12
 - Charitable donations: 8,000
 - Annual tennis club dues: 2,500
 - Meals and entertainment (50%): 1,700
+- Business income for tax purposes: $59,100
+
+</details>
 
 Ch 3 Problem 23
 
@@ -447,6 +465,9 @@ Example
 
 - $160,000 revenue, cost of $4,000, $40,000 up front, 6 years of $20,000 annual payments.
 - Income = $156,000
+
+<details><summary>answer</summary>
+
 - without taking reserve, pay entire amount on $156,000
 - Y22 reserve = 120,000  \* 156,000 / 160,000 = 117,000
   - Business Income = 39,000
@@ -456,26 +477,36 @@ Example
   - income = 97,500 - 78,000 = 19,500
 - Y25 income = 78,000 (3 years of reserve deductions met)
 
+</details>
+
 ### Work space in home
 
-20% of home is partitioned for self-employed work
+<details><summary>Slide 69 Work space in home</summary>
 
-- utilities: 3,000
-- mortgage interest: 5,000
-- long distance call for work: 1,000
-- property taxes: 2,000
-- purchase of computer for work: 2,500
-- general upkeep and maintenance 5,000
-- contents and property insurance: 200
-- supplies for the office 400
+ 20% of home is partitioned for self-employed work
+
+- utilities: 3,000 (20%)
+- mortgage interest: 5,000 (20%)
+- long distance call for work: 1,000 (100%)
+- property taxes: 2,000 (0%)
+- purchase of computer for work: 2,500 (CCA of 100% or 1.5 * 55%)
+- general upkeep and maintenance 5,000 (20%)
+- contents and property insurance: 200 (0%)
+- supplies for the office 400 (20%)
 
 Calculate CCA of computer and prorate home expenses.
 
 Computer CCA can be 100% deductible if CCPC or individual.
 
+$6,500
+
 OR: 1.5 (accelerated) \* 2,500 \* 55%
 
-### Chapter 4 Example
+$6063
+
+</details>
+
+<details><summary>Chapter 4, Problem 8</summary>
 
 ![Problem 8](/images/bu-357/problem-8.png)
 
@@ -496,7 +527,9 @@ OR: 1.5 (accelerated) \* 2,500 \* 55%
 
 Business Income: 40,300
 
-### MIdterm Information
+</details>
+
+### Midterm Information
 
 - Q1: Multiple choices on chapter 2
   - Definitions
@@ -607,9 +640,7 @@ Applies to all types of corporation
 
 ### Midterm Studying
 
-Chapter 3, Problem 19
-
-<details><summary>answer</summary>
+<details><summary>Chapter 3, Problem 19</summary>
 
 48,000 (gross) + 40,000 (bonus) - 4,000 (RPP) - 2,200 \* 0.5 (client related meals) - 5,200 (traveling expense) - 7,800 (airfare) - 500 (taxi) - 3,500 (gifts) + 350 ( planning benefit) + 150 (life insurance premium)
 
@@ -622,7 +653,7 @@ Car cost: 36,000
 
 </details>
 
-Chapter 2, Problem 1
+<details><summary>Chapter 2, Problem 1</summary>
 
 a. part-time resident with fresh-start Mar 1
 b. non-resident
@@ -630,13 +661,17 @@ c. part-time clean-break from canada as very little ties remain July 30
 d. common-law full time resident: education and family
 e. deemed full time resident since more than 183 days in Canada (sojourned)
 
-Chapter 2, Problem 5
+</details>
+
+<details><summary>Chapter 2, Problem 5</summary>
 
 a. deemed resident because incorporated after April 26, 1965
 b. deemed resident because of control from canada
 c. non-resident because not really controlled by Canada
 
-Chapter 3, Problem 3
+</details>
+
+<details><summary>Chapter 3, Problem 3</summary>
 
 1. taxable
 2. taxable
@@ -646,11 +681,15 @@ Chapter 3, Problem 3
 6. financial planning is also a taxable benefit
 7. not a taxable benefit, and the $200 is not deductible
 
-Chapter 3, Problem 23
+</details>
+
+<details><summary>Chapter 3, Problem 23</summary>
 
 125,000 - 6,750 (RPP) + 90 (group life insurance) + 640 (public health) + 9,600 (allowances) + 1,400 (wife) + 0.2 \* 2568 + 1,200 \* 3 (rent paid) + 1,500 \* 0.5  (half of the amount above 15,000 for loss on house sale) + 15,000 (moving allowance) + 2,000 (interest rates) + 0 (swimming pool is owned by the company, so no taxable benefit) - 12,000 (travel expenses) - 7,200 \* 0.5 (meals) - (1,300 + 1,050 + 180 + 120) \* 22,500 / 36,000 - 10,200 \* 22,500 / 36,000
 
-Chapter 4, Problem 1
+</summary>
+
+<details><summary>Chapter 4, Problem 1</summary>
 
 1. The charity donations are a credit or something
 2. Okay
@@ -663,13 +702,19 @@ Chapter 4, Problem 1
 9. Not deductible since recreational?
 10. .61 up to 5,000 and .55 after
 
-Chapter 4, Problem 11
+</details>
+
+<details><summary>Chapter 4, Problem 11</summary>
 
 -2,330 (net income) + 6,650 + 462 \* 0.5 + 460 + 380 + 15,500 (self salary)
 
-Chapter 4 Problem 15
+</details>
+
+<details><summary>Chapter 4 Problem 15</summary>
 
 -11,500 + 3,800 (amortization) - CCA + 1,500 \* 0.5 + 1,800 \* 0.5 + 12,000 + 2,200 - 380 + 21,200 (capitalize) + 2,350 \* (5/18) + 1,400 (home office is non-exclusive) + 1,200 (can't do provisions)
+
+</details>
 
 ## Final Exam Studying
 
