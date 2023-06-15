@@ -174,7 +174,7 @@ Taxable benefit is equal to
       <img class=equation-tall src="https://latex.codecogs.com/svg.image?\frac{A}{B}\times0.02\times{C}\times{D}">
 
     - leased
-      <img class=equation-tall src="https://latex.codecogs.com/svg.image?\frac{A}{B}\times\frac{2}{3}\times{E-F}">
+      <img class=equation-tall src="https://latex.codecogs.com/svg.image?\frac{A}{B}\times\frac{2}{3}\times{LeaseExcludingInsurance}">
 2. Plus operating cost benefit
     - if the employer reimburses operating cost,
       <img class=equation-tall src="https://latex.codecogs.com/svg.image?0.29\times{personal\_km}"> or half of standby charge if primarily for work.
