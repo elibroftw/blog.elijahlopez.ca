@@ -447,6 +447,8 @@ Ned had unlimited use of the company's private swimming pool. The local pool cha
       - Reserve = % Unpaid Revenue \* Profit
   - Manufacturer's warranty reserves \[sec 20(1)(m.1)]
 
+Therefore, if a deduction is not here, it probably is not deductible. An example would be legal costs in purchasing shares or life insurance premiums (exempt income test where the income earned for one thing is not taxable so therefore the contribution to said income is not tax-deductible either).
+
 - Employer Contributions to RPP and DPSP
   - limit =  MIN (18% of employment income, $30,780 for 2022)
 - Convention expenses (2 per year)
