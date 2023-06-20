@@ -529,10 +529,45 @@ Lots of bureaucratic cutting.
 
 Max Faxtor is the company they acquired.
 
---
+## Cross-border Collaboration
 
-Reading: How to manage alliances better than one at a time (MIT Sloan
-Management Review, Spring 2010)
+### Types of Arrangement
+
+- Cooperation or Agreement
+- Patent licensing
+- Franchising
+- R&D Consortia
+- Co-production / buyback
+- Joint Venture (equity participation)
+
+### Motivators
+
+- Capital
+- Technology exchange
+  - necessary resources are beyond scope of the firm
+- Global
+- Industry
+- Economies of scale and reduction of risk
+- Alliances as an alternative to mergers
+
+Honda blind sport detector. Might not be available. What if Honda used the patent
+instead and paid off any lawsuit?
+
+### Risks
+
+TODO
+
+### Cost of Strategic and Organizational Complexity
+
+### Building and Managing Collaborative Ventures
+
+- Pre-alliance
+- Post-alliance
+  - Managing the boundary
+  - Managing knowledge flows
+  - Providing strategic direction
+
+[Reading: How to manage alliances better than one at a time (MIT Sloan Management Review, Spring 2010)](https://ocul-wlu.primo.exlibrisgroup.com/permalink/01OCUL_WLU/s6kavd/cdi_hal_shs_oai_HAL_hal_02313047v1)
 
 Reading: Joint Ventures and Partnerships in a Downturn (Harvard Business Review
 September 2020)
