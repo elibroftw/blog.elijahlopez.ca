@@ -133,3 +133,23 @@ What if Universal IDs were not an identity thing, but a physical thing, and we h
   - classrooms is okay
 
 - community notes are good however I usually see them on viral posts but not on tweets posted by popular users which don't go viral
+
+## Week 8
+
+### Computer-Mediated Communication
+
+[Cellphones and Texting have Blown Up the Dating Culture](https://www.usatoday.com/story/news/nation/2013/07/18/mobile-dating-behavior-technology/2500359/)
+
+- safety because don't have to be face-to-face
+- less intimidating because not real time communication
+- texting makes rooms for games and shows no commitment unless explicitly stated
+
+[Can Blogs Revolutionize Progressive Politics?](https://inthesetimes.com/article/can-blogs-revolutionize-progressive-politics)
+
+- lots of buzzwords from this 2006 article: netroots
+  - online grassroots constituency
+  - wow RSS feeds are mentioned
+- https://mydd.com/ and https://www.mydd.com/ are two different blog pages
+- fact checking all the way back in 2006 but yet it took over a decade for insane fact checking
+
+### Video Games
