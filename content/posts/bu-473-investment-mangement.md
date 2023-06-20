@@ -263,6 +263,8 @@ b. at what price would the next market order be filled?
 - Open-end
   - Stand ready to redeem or issue shares at NAV
   - Priced at Net Asset Value
+  - NAVn = NAV_0\[(1 + r)(1 - MER)]^n
+    - Management Expense Ratio
 
 ### Mutual Fund Investment Policy
 
@@ -628,3 +630,46 @@ Plot the two securities on the SML graph. What are the alphas of each? Character
 - Actively managed
 - Must have to modify at least twice
   - Propose modifications
+
+## Arbitrage Pricing Theory and Factor Models
+
+- APT developed by Stephen Ross
+- Exploitation of mis-pricing for risk-free profits
+- Profit has to be made instantaneously and future profit should be 0
+- 80s, 2 second window
+- today, 1/20th of a second
+- well-diversified portfolios
+  - cannot rule out violation of the expected return-beta relationship for any particular asset
+- does not assume mean variance optimizers
+- uses an observable market index
+
+### Factors of MOdels of Security Returns
+
+- Excess Return (Ri) = E(Ri)  + Beta(iIR) + IR + ei + B(iGDP)
+- Betai = Factor sensitivity or factor loading or factor beta
+- F = Surprise in macro-economic factor (F could be positive or negative but has expected value of zero)
+- ei = Firm specific events (zero expected value)
+
+### Factor Models of Security Returns (continued)
+
+- Extra market sources of risk may arise from several sources
+
+### Different Expected Returns for Same Risk
+
+Example on slide 13.
+
+If C is below SML and D is on SML, what do you do?
+
+- Bp = .5 = wfBf + waBa
+- Bp = .5 = wf(0) + wa(1)
+- Therefore, 50% weights
+
+Want to ensure that future value profit is $0 by selling and buying today.
+
+### Multi-factor APT
+
+Fama-French Three Factor Model
+
+- Slide 17
+- Expansion of CAPM
+- Size matters
