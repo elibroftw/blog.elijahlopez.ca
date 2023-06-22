@@ -140,7 +140,13 @@ What if Universal IDs were not an identity thing, but a physical thing, and we h
 
 ### Ethics and Ethics Workshop
 
-### Video Games
+### Chat GPT
+
+[Meet Unstable Diffusion, the group trying to monetize AI porn generators](https://techcrunch.com/2022/11/17/meet-unstable-diffusion-the-group-trying-to-monetize-ai-porn-generators/)
+
+[Deepfake porn could be a growing problem amid AI race](https://www.theglobeandmail.com/business/technology/article-deepfake-porn-could-be-a-growing-problem-amid-ai-race/)
+
+[Microsoft Says New A.I. Shows Signs of Human Reasoning](https://www.nytimes.com/2023/05/16/technology/microsoft-ai-human-reasoning.html)
 
 ## Week 8
 
