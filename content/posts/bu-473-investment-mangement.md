@@ -7,6 +7,10 @@ tags: [
 ]
 ---
 
+Bruce Everitt
+
+{{< toc >}}
+
 ## Asset Classes and Financial Instruments
 
 Real Assets Versus Financial Assets
