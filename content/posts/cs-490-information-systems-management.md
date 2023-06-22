@@ -7,11 +7,13 @@ tags: [
 ]
 ---
 
-Why are we building things.
+{{< toc >}}
 
-System: components
+## Introduction
 
-Ahmed Ibrahim: DC 2133 (Tuesday, Thursday after lecture)
+- Why are we building things.
+- A system consists of components
+- Ahmed Ibrahim: DC 2133 (Tuesday, Thursday after lecture)
 
 ### The First System
 
@@ -301,18 +303,6 @@ Availability = Mean Time Between Failure / (MTBF + Mean Time To Repair)
 - Incremental backups
   - Backup additions and alternations since the last incremental backup
 
-## Managing Corporate Information Resources
-
-### IT Infrastructure
-
-- Hardware
-- OS platform
-- Application platform
-- Data Management platform
-- Network platform
-- Internet platform
-- Service platform
-
 ## Strategic Planning
 
 - Defining an organization's direction
@@ -332,6 +322,77 @@ projects
 4. Infrastructure development is difficult to fund
 5. Responsibility needs to be joint
 
+### Changing World of Planing
+
+- closest to the action
+  - organizational edge
+  - outside-in approach
+- strategic envelope
+  - top management
+  - set parameters
+  - open and regulation communication
+
+### Eight Planning Techniques
+
+- Stages of growth
+  - Early successes (adoption), Contagion, Control, Integration, Data administration, Maturity
+  - assumes all organization are in the same stages in the same order
+  - pro: roadmap. con: assumes all orgs go through same stages in same order
+- Critical success factor (CSFs)
+  - few key areas that must go right
+  - monitoring and building
+  - pro: resource alignment
+  - con: oversimplifying complex processes
+- Competitive Forces Model
+  - Porter's five force { threat of new entrants, threat of substitutes, supplier power, buyer power, competitive rivalry }
+  - pro: understanding competitive forces
+  - con: fails to capture tech and societal shifts
+- Three Emerging Forces (Digitization, Globalization, Deregulation)
+  - new business models
+  - telecommunications and transportation
+  - many industries
+  - pro: anticipate major trends
+  - con: overlook industry/region specific factors
+- Porter's Value Chain Analysis
+  - support activities { firm infrastructure, HR management, tech development, procurement }
+  - primary activities { inbound logistics, operations, outbound logistics, marketing & sales, service }
+  - information as a source of value itself instead of as support
+  - pro: value adding activity analysis
+  - con: complex and time-consuming and does not capture intangibles
+- E-Business Value Matrix
+  - new fundamentals { criticality to business = low, newness of idea = low }
+  - operational excellence { high, low  }
+  - rational experimentation { low, high }
+  - breakthrough strategy { high, high }
+  - pro: identify opportunities for digital/online
+  - con: no offline
+- Linkage Analysis Planning
+  - Examines the links between organizations in order to create a strategy for utilizing electronic channels
+  - pro: understand relationships
+  - con: complex and overlooks internals
+- Scenario Planning
+  - long-term thinking to prepare for various scenarios
+  - explore forces that could cause different scenarios of the future to happen
+  - time consuming and highly uncertain. Risk of bias
+  - define decision problem and time frame
+  - identify major known trends
+  - identify driving uncertainties
+  - construct scenarios
+  - pro: long-term thinking, flexibility
+  - con: time-consuming, uncertain, bias
+
+## Managing Corporate Information Resources
+
+### IT Infrastructure
+
+- Hardware
+- OS platform
+- Application platform
+- Data Management platform
+- Network platform
+- Internet platform
+- Service platform
+
 ### Approaches to Manage
 
 - Cost-centric view: minimizing IT infrastructure
@@ -344,19 +405,31 @@ projects
 
 ### Value Chain Model
 
-Multiple software systems for each  part of the process: warehouse, operations, ordering, servicing, outbound / shipping
+Multiple software systems for each part of the process: warehouse, operations, ordering, servicing, outbound / shipping
 
 problem: integration between the systems
 
 - could not detect a small item is missing
 
 - system should analyze habits of suppliers, users, employees, customers.
+- suppliers and their suppliers, firm, distributors, customers
+
+Enhancement through information systems
+
+- Automating and streamlining primary activities (production, delivery, customer service)
+- Optimizing support activities (procurement, logistics, human resources)
+- Gathering and analyzing customer data (develop new products that meet customers' needs)
+- Improving communication and collaboration (with stakeholders to enhance experience)
 
 ### Business Process (BP)
 
-- Collection of business functions
+- Collection of business functions related to each other
+  - organization specific
+  - specific business function or across many BF's
 - example: billing process in a physician clinic
 - IBM business process software
+- cross-functional
+  - order fulfillment process requires sales, accounting, manufacturing & production
 
 ### Integration Tools
 
@@ -367,6 +440,10 @@ problem: integration between the systems
   - decision-making
   - improved collaboration
   - customer satisfaction
+  - Data accuracy and consistency: no separate systems, reduces risk of errors
+  - Better decision-making: realt-time
+  - Improved collaboration: across different departments and locations
+  - Increased customer satisfaction: better manage customer orders, inventory, and deliveries
 - Supply chain management system (SCM)
 - Customer relationship management systems (CRM)
 - Knowledge management systems (KMS)
@@ -374,7 +451,13 @@ problem: integration between the systems
 
 ### Haarslev Industry
 
-- Problem: integration of acquired companies (lack of consolidation)
+- Problem
+  - business process integrations of acquired companies
+  - global expansion
+  - lack of consolidation of operations
+  - Many ERP systems
+  - Process driven operations
+    - no streamlined system to allow this
 - Microsoft Dynamics
   - Global integration
   - Unified business processes
@@ -382,16 +465,36 @@ problem: integration between the systems
   - Adoption of best practices (RapidValue)
   - Data Management
   - Documentation and Customization
+  - Key components
+    - Finance
+    - Supply chain management
+    - Sales
+    - Customer Service
+    - Marketing
+    - Field Service
+    - Business Central
 
-### Tech Underlying To-Increase's ERP Solution
+### To-Increase \[...Microsoft Dynamics]
 
-- APIs
-- Mobile
+- Database management system (DBMS)
+- Cloud computing: scalability
+- data analytics: insights and reports
+- artificial intelligence: forecasting, automation, decision-making enhancements
+- Internet of things: collect real-time data
+- APIs: integration with other systems and services
+- Mobile: accessibility
 - Security
+
+## Information Systems Strategic Planning
 
 ### Creating Video Games
 
-### Custom Intimacy
+- Strategic planning is a process that involves defining an organization's direction and making decisions on allocating its resources to pursue this direction
+- It involves setting goals, analyzing the competitive environment, creating a plan for achieving long-term success, putting it into action, and continually evaluating your process and its outcomes
+- Tim Hortons, quick coffee delivery and walk-through
+- McDonalds fully automated store
+
+### Customer Intimacy
 
 - know your customers really well
 - understanding customers' needs, wants, preferences, and behaviours to anticipate before being asked
@@ -399,6 +502,15 @@ problem: integration between the systems
 ### Operational Excellence
 
 - market is the total expenditure spent on a product or service
+- Strategic planning for operational excellence involves formulating and implementing a plan that aligns all operational activities with the organization's strategic objectives
+
+### Competitive Advantage
+
+- unique strengths or capabilities
+- Strategic planning for competitive advantage refers to determining how your
+organization can best leverage its strengths and capabilities to gain the upper
+hand over its competitors
+- goal is sustainable
 
 ### Stand-Out Firms
 
@@ -409,6 +521,19 @@ problem: integration between the systems
 ### Strategic Planning Challenges
 
 - Technology comes outdated
+- technology initiatives align with their overall strategic objectives
+- agility and adaptable is required
+
+### Limitations of Traditional Strategy-Making
+
+- rigid long-term planning based on predictable trends (infeasible)
+- rapid tech changes and shifts in consumer behaviour make trends less predictable
+- failing to plan effectively potentially disrupts business operations or missed opportunities
+
+### Moore's Law
+
+- transistors / microprocessor power / computing power doubles every 18 months
+- price of computing havens every 18 months
 
 ### Sense and Respond
 
@@ -424,33 +549,38 @@ such as customer interactions and feedback, frontline operations, and market cha
 various sources, which allows them to sense market trends, customer needs, and emerging
 opportunities or threats.
 
-### Eight Planning Techniques
-
-- Stages of growth
-  - roadmap
-  - assumes all organization are in the same stages in the same order
-- Critical success factor (CSFs)
-  - align resources effectively
-  - risk of oversimplification
-- Competitive Forces Model
-  - PRO: Helps organizations understand the competitive forces in their industry and formulate strategies accordingly
-  - CON: May not fully capture the dynamics in rapidly changing industries due to tech and social shifts
-- Three Emerging Forces (Digitization, Globalization, Deregulation)
-  - Anticpat eand adapt to major trends
-  - Overloops other important factors that are specific to industries or regions
-- Value Chain Analysis
-  - Understand where the organiztaion adds value and focus on improvement
-  - Comple xand time-consuming, so failure to capture non-linear or intangible value (e.g. patents)
-- Internet Value Matrix
-  - Helps companies identify opportunities for creating value online and understand their competitive position in the digital landscape
-  - CON: see slide for week 6
-- Linkage Analysis Planning
-  - Understanding relationships with other entities
-  - Complex and overlooks internal challenges
-- Scenario Planning
-  - long-term thinking to prepare for various scenarios
-  - time consuming and highly uncertain. Risk of bias
+Microsoft and Sun/Java.
 
 ### IBM in a Service-Oriented Architecture
 
-- TODO for slides
+- flexibility to innovate and adapt processes as per business requirements, using a service-oriented architecture.
+  - easy modification and reuse of system components
+  - execution of changes to business rules and workflow redirection without extensive IT involvement
+- real-time tracking and measurement of process effectiveness, customizable, real-time alerts
+- process efficiencies
+- tracks key performance indicators (KPIs)
+- Aligning Processes with Planning - modelling and managing processes (e.g. customer service)
+- Strategic Decision Making - evidence-based approach (monitoring and analytics)
+- Operational Efficiency - identification of issues or gaps in processes (bottlenecks, redundancies, inefficiencies)
+- Agility and Change Management
+
+### Komatsu
+
+- 52,000 invoices needed to be processed from suppliers MANUALLY
+- Microsoft Power automate and AI builder automated workflow
+  - Document processing AI model
+  - three weeks
+  - Automating for one supplier resulted in processing 1,100 invoices in three weeks; 300 hours saved
+  - blueprint for other suppliers
+- Citizen Developer Program
+  - empower employees to build business solutions
+  - aim to increase innovation
+- Future plans
+  - encouraging others to adopt similar solutions
+  - enabling employees to focus on more critical tasks.
+
+### System Development
+
+### Traditional Model
+
+### Waterfall MOdel
