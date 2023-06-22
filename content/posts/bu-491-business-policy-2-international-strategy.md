@@ -7,7 +7,7 @@ tags: [
 ]
 ---
 
-Bruce Everitt
+{{< toc >}}
 
 ## Expanding Abroad
 
@@ -573,6 +573,54 @@ Reading: Joint Ventures and Partnerships in a Downturn (Harvard Business Review
 September 2020)
 
 Case: Nora-Sakari: A Proposed JV In Malaysia
+
+- On Monday, March 11, 2013, Zainal Hashim, vice-chairman of Nora Holdings Sdn  Bhd (Nora). Meeting in Kuala Lumpur (KL), Malaysia
+  - Nora was a leading supplier of telecommunications (telecom) equipment in Malaysia
+- Negotiating with Sakari Oy2 (Sakari) of Finland
+  - leader in the manufacture and deployment of mobile broadband network infrastructure
+- Joint venture negotiation
+  - manufacture and commission 4G (fourth generation) mobile network equipment in Malaysia
+- In August 2012, TMB called for tenders to bid on a two-year project worth RM1 billion for building an LTE radio access network in various parts of the country.
+- Local tellecom's often needed partnerships with MNCs because they lacked the technological capabilities themselves
+- Sakari’s SK4LTE platform was criticized for failing to make any impact in the United States, one of the world’s largest and most important mobile markets.
+- WOS: wholly owned subsidiary legalized in Malyasis, however JV's still seen as more efficient
+
+- Negotiation
+  - Nora’s general manager for corporate planning division, an accountant, two engineers, and Marina Mohamed, a lawyer
+  - Kuusisto, Sakari’s vice-president. His team comprised Junttila, Hussein Ghazi, Aziz Majid, three engineers, and Julia Ruola, a lawyer. Ghazi was Sakari’s senior manager who was of Egyptian origin and also a Muslim who had worked for Sakari for more than 20 years, while Aziz, a Malay, had been Sakari’s manager for more than 12 years.
+- Nora’s capability in penetrating the Southeast Asian market. Other issues included Sakari’s concerns over the efficiency of Malaysian workers in manufacturing, maintaining product quality and ensuring prompt deliveries.
+
+1. Why have negotiations failed to result in an agreement?
+    - Zainal admitted making the mistake of applying the approach he often used when negotiating with companies based in North America or the United Kingdom
+    - Negotiators from the U.S. tend to be very open and often state their positions early and definitively
+    - Sakari negotiators are serious, reserved and ‘cold.’
+      - it was difficult to determine whether they are really interested in the deal or not.
+    - Equity Ownership
+      - Sakari proposed an equity split of 49 per cent for Sakari and 51 per cent for Nora. Nora, on the other hand, proposed a 30 per cent Sakari and 70 per cent Nora split
+      - foreign equity ownership rules of 30% liberalized by the Malaysian government effective July 1998
+      - Nora had concerns about its ability to exert control over the JV because it was intended as a key part of its longterm strategy to develop its own mobile broadband equipment and related high-tech products
+      - Nora wants a technology transfer, whereas Sakari wants that protected
+    - Royalty payments
+      - 5% of gross sales Sakari, 2% of net sales Nora
+    - Salaries
+      - Sakari's offer was exorbitant
+      - Take-it-or-lave it stance adopted by Nora
+      - Sakari would have to subsidize the difference (are they really being paid $300,000?)
+    - Arbitration
+
+2. What is motivation of each company?
+    - Sakari
+      - Growth, concerned about tech leakage
+    - Nora
+      - Sustainable technological knowledge gain
+3. As Zainal, what are your options to fulfill the TMB contract?
+    - Samsug, Sakari, NEC
+4. What criteria could be used to facilitate agreement between the
+companies?
+    - TEST
+For class, be prepared to act as part of the negotiation team for either company.
+You will be challenged to come up with an agreement that meets the objectives
+of both companies
 
 Case: Silvio Napoli at Schindler India (A)
 
