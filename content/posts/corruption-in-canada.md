@@ -35,3 +35,15 @@ Mental illnesses cause forest fires
 https://www.cbc.ca/news/canada/ottawa/phoenix-ibm-contract-union-pay-government-1.4295827
 
 [Chrysler owes Canada big time](https://www.reddit.com/r/canada/comments/143ft23/an_ontario_developer_charged_a_buyer_an_extra/jnb1duw/)
+
+[$576B in new measures since start of COVID pandemic: PBO report](https://nationalpost.com/news/politics/federal-government-has-spent-576b-in-new-measures-since-start-of-covid-pandemic-pbo-report)
+
+National Post does not even link to the report. They just pick out one number. Sure the government is in the wrong, but that doesn't mean you can't do a better job reporting on the issue.
+
+[Budget 2022: Issues for parliamentarians](https://www.pbo-dpb.ca/en/publications/RP-2223-001-S--budget-2022-issues-parliamentarians--budget-2022-considerations-parlementaires)
+
+If the economy is $1T, and the government is spending $1T, then 50% of the economy is done inefficiently. Canada is almost a communist country.
+
+## Platform
+
+The goal is to maximize net revenue recovered.
