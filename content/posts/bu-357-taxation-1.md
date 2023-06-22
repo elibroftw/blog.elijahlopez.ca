@@ -7,6 +7,8 @@ tags: [
 ]
 ---
 
+{{< toc >}}
+
 ## Structure of the Act
 
 - DivisionA - liability
@@ -640,7 +642,136 @@ Applies to all types of corporation
 - Class 53 after November 20, 2019
 - Class 54/55 after March 15, 2019
 
-### Midterm Studying
+### Class 10.1 Automobile
+
+- 30%
+- passenger vehicle costing $34,000 (plus tax)
+  - this is the max claim
+  - not pooled
+  - no recapturing or terminal loss
+  - CCA half-year rule on sale
+
+A car was purchased in March 2021 for $36,000 and sold in 2022 for $30,000 (ignore sales tax).
+
+<details><summary>Slide 88 Answer</summary>
+
+Ignoring accelerated investment incentive property (AIIP)
+
+2022-cca = 36,000 \* (1 - 0.5 \* 0.3) \* (0.5 \* 0.3) = 4,590
+
+</details>
+
+### Leasehold improvement (class 13)
+
+- CCA = Lesser of
+  - a fifth (1/5) of the cost
+  - cost divided by remaining years on lease PLUS the length of the next renewal term
+    - max 40
+
+Mr. E. Presley has been operating an automobile repair business.
+
+A warehouse was leased this year. The lease has a term of five years with five options for renewal of five years each. The lease period commences April 15. The cost of leasehold improvements was $70,000.
+
+CCA = MIN (70,000 / 5, 70,000 / 10) = 7,000
+
+### Limited-life intangibles (class 14)
+
+- Patents, licenses, franchises with limited life
+- Straight line method
+- CCA = cost \* (days owned in the year) / (total days of life)
+
+Mr. E. Presley has been operating an automobile repair business.
+
+The right to a licence to sell special racing car parts was purchased for $30,000. The licence is valid for a period of 15 years commencing June 1 this year. Compute CCA for Mr. Presley’s business for the taxation year ended September 30, 2022.
+
+June: 30 days, July: 31 days, Aug: 31 days, Sep: 30 days.
+
+CCA = 30,000 \* 122 / 5540 = 661 (includes leap years, rounded up)
+
+## Income from Property
+
+- Inclusions: interest, dividends, rental
+- Deductions
+
+### Property Interest Income
+
+- loans, deposits, and more
+- compensation for lending money
+- for corporations, accrue on a daily basis
+- for individuals, cash method or annual accrual method for no interest payment
+  - anniversary day
+  - a day before issuance every year from now
+
+John needs to know the interest income in 2022 related to his two short-term investments:
+
+1. $20,000 term deposit purchased on November 30, 2022 (interest at maturity in six months)
+      Accrued interest from December 1 to December 31, 2022…..$85
+
+    - no interest income
+
+2. $400,000 GIC purchased on November 1, 2021 (interest payable at maturity on October 31, 2024)
+      Accrued interest from November 1, 2021 to October 31, 2022…$16,000
+      Accrued interest from January 1, 2022 to December 31, 2022….$16,214
+
+    - Interest income of 16,000 + 16,214 - 16,214 / 12 \* 2
+
+### Property Dividend Income
+
+- From Canadian corporations, include dividend + gross up \[dividend tax credit = corporate tax].
+- Claim the tax credit when calculating the tax payable.
+- For CCPC with low corporate tax rate,
+  - 15% gross-up
+  - 10.38% of dividends is credited
+  - Example, income 100, corporate tax of 13
+    - taxable is $100 (87 \* 1.15)
+    - tax at 46% = $46
+    - tax credit of $13
+    - net personal tax = 33
+    - total taxes paid on corporate profits = $46
+- For public corporation or CCPC not taxed at a lower rate (eligible dividends)
+  - 38% gross-up
+  - 20.7% of dividend is credited
+- Dividends received from foreign companies do not get grossed up and have no tax credit
+
+Slide 102, Chapter 6 Problem 3
+
+- $200,000 in international income fund at 4%
+- $20,000 in Canadian dividend fund at 3%
+- 33% federal tax rate, 20% provincial
+- international net income = 200,000 \* 0.04 \* (1 - 0.53) = 2,760
+- canadian net income
+  - dividend = 200_000 \* (0.03) = 6,000
+  - gross-up = 6,000 \* 0.38 = 2,280
+  - tax = (6,000 + 2,280) \* 0.53 = 4388.40
+  - tax credit = 2,280
+  - net income = 6,000 - 4,388 + 2,280 = 3,892
+- Therefore, better to pick the Canadian fund at a lower yield
+
+### Property Rental Income
+
+- Rent - Expenses
+- Expenses
+  - Mortgage interest, insurance, property taxes, utility costs
+  - repairs, maintenance
+  - salaries, wages, property management fees
+  - CCA (class 1, 4%)
+    - Cannot incur rental loss
+    - Separate classes for buildings >= $50,000
+
+Jim owns two rental buildings which he purchased in 2021.
+Property A cost $ 40,000
+Property B cost $ 45,000
+After all expenses other than CCA, Jim's total rental income for the past two years was $1,000 in 2021 and $5,000 in 2022. Jim has chosen to deduct the maximum CCA for both years. What are the maximum CCAs?
+
+- CCA2021 =  (40,000 + 45,000) \* 0.04 = 3,400 round down to 1,000 to prevent rental loss.
+- UCC = 84,000
+- CCA2022 = 84,000 \* 0.04 = 3,360
+
+### Property Deductions
+
+
+
+## Problems
 
 <details><summary>Chapter 3, Problem 19</summary>
 
