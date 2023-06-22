@@ -11,6 +11,8 @@ tags: [
 
 [time table](https://student.cs.uwaterloo.ca/~cs492/23Spublic_html/timetable.html)
 
+{{< toc >}}
+
 ## Week 1
 
 [Neil Postman: Five Things We Need to Know About Technological Change](https://www.student.cs.uwaterloo.ca/~cs492/papers/neil-postman--five-things.html)
@@ -134,6 +136,12 @@ What if Universal IDs were not an identity thing, but a physical thing, and we h
 
 - community notes are good however I usually see them on viral posts but not on tweets posted by popular users which don't go viral
 
+## Week 7
+
+### Ethics and Ethics Workshop
+
+### Video Games
+
 ## Week 8
 
 ### Computer-Mediated Communication
@@ -153,3 +161,23 @@ What if Universal IDs were not an identity thing, but a physical thing, and we h
 - fact checking all the way back in 2006 but yet it took over a decade for insane fact checking
 
 ### Video Games
+
+[Video Game Addiction Symptoms, Causes and Effects](https://www.psychguides.com/guides/video-game-addiction-symptoms-causes-and-effects/)
+
+- 6 to 15 percent of all gamers exhibit signs that could be characterized as addiction
+
+[Is Internet Addiction a Real Thing?](https://www.newyorker.com/science/maria-konnikova/internet-addiction-real-thing)
+
+- Both behavioral and substance addictions are characterized by an inability to control how often or how intensely you engage in an activity
+- some genetic basis
+- brain’s reward circuitry
+- substantial overlap (substance abuse and gambling)
+
+[Not just a video game: the obsessive world of gaming and its young stars](https://www.cbc.ca/news/canada/not-just-a-video-game-the-obsessive-world-of-gaming-and-its-young-stars-1.809580)
+
+> When Steve and Angelika Crisp confiscated his console during Thanksgiving weekend, the teen threatened to run away from home — and did on Monday Oct. 13, 2008. His body was found three weeks later in a forest, with the cause of death determined to have been a blow to the chest likely caused by falling from a tree.
+
+- 15-year-old
+- Many kids are playing M-rated games
+- Can turn into a profession
+  - If kids can skip classes for professional sports, why not professional e-sports?
