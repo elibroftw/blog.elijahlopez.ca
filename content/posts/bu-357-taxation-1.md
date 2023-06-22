@@ -661,6 +661,20 @@ Ignoring accelerated investment incentive property (AIIP)
 
 </details>
 
+<details><summary>ESL Academy</summary>
+
+1. Market research: 30,000
+2. Programming for IT platform development: 75,000
+3. Allocation of salaries of designer and teachers for development of content: 105,000
+4. Allocation of salaries of desiger and teachers for development IT platform: 35,000
+5. Web hosting and IT support: 3000
+
+- What are current expenses?
+- What are capital expenses and so CCA can be claimed?
+  - Development (computer application software)
+
+</details>
+
 ### Leasehold improvement (class 13)
 
 - CCA = Lesser of
@@ -713,7 +727,7 @@ John needs to know the interest income in 2022 related to his two short-term inv
       Accrued interest from November 1, 2021 to October 31, 2022…$16,000
       Accrued interest from January 1, 2022 to December 31, 2022….$16,214
 
-    - Interest income of 16,000 + 16,214 - 16,214 / 12 \* 2
+    - Interest income of 16,000
 
 ### Property Dividend Income
 
@@ -725,7 +739,7 @@ John needs to know the interest income in 2022 related to his two short-term inv
   - Example, income 100, corporate tax of 13
     - taxable is $100 (87 \* 1.15)
     - tax at 46% = $46
-    - tax credit of $13
+    - tax credit of $13 (4.62% provincial)
     - net personal tax = 33
     - total taxes paid on corporate profits = $46
 - For public corporation or CCPC not taxed at a lower rate (eligible dividends)
@@ -738,7 +752,7 @@ Slide 102, Chapter 6 Problem 3
 - $200,000 in international income fund at 4%
 - $20,000 in Canadian dividend fund at 3%
 - 33% federal tax rate, 20% provincial
-- international net income = 200,000 \* 0.04 \* (1 - 0.53) = 2,760
+- international net income = 200,000 \* 0.04 \* (1 - 0.53) = 3,760
 - canadian net income
   - dividend = 200_000 \* (0.03) = 6,000
   - gross-up = 6,000 \* 0.38 = 2,280
@@ -768,8 +782,6 @@ After all expenses other than CCA, Jim's total rental income for the past two ye
 - CCA2022 = 84,000 \* 0.04 = 3,360
 
 ### Property Deductions
-
-
 
 ## Problems
 
