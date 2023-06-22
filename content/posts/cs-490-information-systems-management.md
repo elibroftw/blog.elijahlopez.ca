@@ -583,4 +583,10 @@ Microsoft and Sun/Java.
 
 ### Traditional Model
 
-### Waterfall MOdel
+### Waterfall Model
+
+### Incremental Development Challenges
+
+- not visible process
+- not cost-effective
+- system degrades as new increments are added
