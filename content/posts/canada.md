@@ -269,8 +269,7 @@ grade 12ers so that their 4 month summer can be spent learning how to be part of
 civilian population, we will be able to depend more on the power of patriotism, civil duty, and volunteerism. A person with even basic military education will
 be more willing than a 30 year old who has never shot a gun before.
 
-This training will not be as strict as the army and military is at the moment. I am strongly against force, so things like being forced to get a haircut, cost-savings
-on living quarters, and drill sargents are a big no. People should not be scared of the training, but rather take it calmly. The entire course should
+This training will not be as strict as the army and military is at the moment. I am strongly against force, so things like being forced to get a haircut, cost-savings on living quarters, and drill sargent's are a big no. People should not be scared of the training, but rather take it calmly. The entire course should
 be able to be completed in 3 months, there should be lots of free time mixed in so that people don't lose their minds. Since the program can be completed in 3
 months, an extra 2 weeks of bonus or specialized education should be added for people who completed the education on time while the people who lagged behind,
 can catch up on their basics. This is perfect because a) does not stop the progress of fast learners b) gives slower people more time to learn.
@@ -292,7 +291,7 @@ I won't go into the detail on why I chose this order, only my plan or solution f
 
 My first order of business is fixing the electoral system on all levels of government.  By making a system more democratic, parties are forced to collaborate in order to get work done. I want to set the example for what democracy looks like and all countries should look at Canada as being the most innovative and progressive in terms of democracy and fundamental human rights.
 
-As mentioned before, we will use the [Represenative Proportional Voting](/posts/representative-proportional-voting). A recap: MP and MPPs still exist, but are chosen based upon party confidence in each riding, and not winning the riding (independents are the exception).
+As mentioned before, we will use the [Representative Proportional Voting](/posts/representative-proportional-voting). A recap: MP and MPPs still exist, but are chosen based upon party confidence in each riding, and not winning the riding (independents are the exception).
 
 ### Improving Disability Benefits
 
