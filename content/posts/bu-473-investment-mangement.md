@@ -48,7 +48,7 @@ Financial Assets
 - The Money Market
   - T-Bill Yields
     - Bank-discount method
-    - Based on par value (Face value) as a denominator and 360 days I a year
+    - Based on par value (face value) as a denominator and 360 days in a year
     - Bond-equivalent yield
     - Yield is computed based on current price or the purchase price as a denominator and 365 days in a year
 - Commercial paper
@@ -181,7 +181,7 @@ Benefit when price goes down.
 
 ### Questions
 
-A t-bill has a bank discount yield of 6.81% based on teh ask price and 6.9% based on the bid price. The maturity of the bill is 60 days. Find the bid and ask prices of the bill.
+A t-bill has a bank discount yield of 6.81% based on the ask price and 6.9% based on the bid price. The maturity of the bill is 60 days. Find the bid and ask prices of the bill.
 
 Convert 6.81% and 6.9% for 60 days. 360 days in a year
 
@@ -211,7 +211,7 @@ Purchase 300 shares of GameStart at $40/share. Borrows $4,000 from her broker to
 a. What is the margin of Dei's account when she first purchases the stock?
 b. share price falls to $30 per share, what is the remaining margin (equity)
 on the account?
-c. margin requirement is 30%, will a marign call occur?
+c. margin requirement is 30%, will a margin call occur?
 d. What is the rate of return?
 
 <details><summary>answer</summary>
