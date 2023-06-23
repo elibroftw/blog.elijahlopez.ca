@@ -156,12 +156,15 @@ underwriter takes the risk
 
 ### Trading with Margin and Short Sales
 
+- Margin is collateral that is on the brokerage platform
+  - total funds is the collateral (equity) plus the debt
 - Initial margin is usually 50%
   - Maintenance margin
   - When equity is 30%, add more money
   - How far can a stock price fall before a margin call?
 
 - P = Purchase Price * (1 - initial margin) / (1 - maintenance margin)
+- P =(Sell Price * (1 + initial margin)) / (1 + maintenance margin)
 
 - equity required = initial margin *  value - value  + borrowed = 1,800
 - equity total required = 0.6 * value
@@ -179,29 +182,47 @@ Benefit when price goes down.
 - Someone trading on information not profitable
 - Most common is spouse of someone on legal team
 
+### Debt Yields
+
+- Bank Discount Yield
+  - Discount / Face Value \* 360 / Maturity Days
+- Price based on a bank discount yield
+  - Face value - face value \* yield \* (days / 360)
+  - If based on a bond yield, use 365 days
+- Holding period return
+  - The delta you get back divided by the price you paid for it
+- Effective annual yield
+  - The holding period return but compounded to a year (365)
+  - Suppose a holding period return is 3% for 90 days, what is the effective annual yield?
+  - (1 + 0.03) ^ (365 / 91) - 1 = 12.59%
+- Bond equivalent yield
+  - 365 day yield but linear instead of compounded
+  - Holding period return linearly increased to a year
+  - yield = 3% / (90 / 365)
+
 ### Questions
 
 A t-bill has a bank discount yield of 6.81% based on the ask price and 6.9% based on the bid price. The maturity of the bill is 60 days. Find the bid and ask prices of the bill.
 
 Convert 6.81% and 6.9% for 60 days. 360 days in a year
 
-- 1000 - 1000 * 0.0681 * 60 / 360 = 988.65
-- 1000 - 1000 * 0.069 * 60 / 360 = 988.5
+- 1000 - 1000 \* 0.0681 \* 60 / 360 = 988.65
+- 1000 - 1000 \* 0.069 \* 60 / 360 = 988.5
 - Therefore the bid-ask spread is just $0.15
 
 A u.s. treasury bill with 90-day maturity sells at a bank discount yield of 3%.
 
-a. what is the price of the bill?
-b. what is the 90-day holding period return of the bill?
-c. what is the bond-equivalent yield of the bill?
-d. what is the effective annual yield of the bill
+- a. what is the price of the bill?
+- b. what is the 90-day holding period return of the bill?
+- c. what is the bond-equivalent yield of the bill?
+- d. what is the effective annual yield of the bill
 
 <details><summary>answer</summary>
 
-a. 1000 - 1000 \* 0.03 \* 90 / 360 = 992.5
-b. 1000 / 992.5 = 0.756%
-c. 365 days instead of 360: yield = (1000 - 992.5) / 992.5 * 365 / 90 = 3.06%
-d. 1.00756 \*\* (365/90) - 1 = 3.1%
+- a. 1000 - 1000 \* 0.03 \* 90 / 360 = 992.5
+- b. 1000 / 992.5 - 1= 0.756%
+- c. 365 days instead of 360: yield = 0.756% * 365 / 90 = 3.06%
+- d. 1.00756 \*\* (365/90) - 1 = 3.1%
 
 </details>
 
@@ -209,7 +230,7 @@ Purchase 300 shares of GameStart at $40/share. Borrows $4,000 from her broker to
  help pay for the purchase. Interest rate on loan is 8%.
 
 a. What is the margin of Dei's account when she first purchases the stock?
-b. share price falls to $30 per share, what is the remaining margin (equity)
+b. share price falls to $30 per share at year end, what is the remaining margin (equity)
 on the account?
 c. margin requirement is 30%, will a margin call occur?
 d. What is the rate of return?
@@ -217,8 +238,8 @@ d. What is the rate of return?
 <details><summary>answer</summary>
 
 a. (300 \* 40 - 4,000) / 300 \* 40 = (12,000 - 4,000) / 12,000 = 66.7%
-b. 4000 \* 1.08 = 4680
-c. 4680 / 9000 = 48% > 30%, so no
+b. 30 \* 300 - 4,000 \* 1.08 = 4,680
+c. 4680 / 9000 = 52% > 30%, so no
 d. (4680 - 8000) / 8000 = -41.50%
 
 </details>
@@ -232,8 +253,8 @@ c. rate of return?
 
 <details><summary>answer</summary>
 
-a. Initial equity is 50% \* 4,000 = 20,000.
-Final equity is 20000 + (40 - 50 - 2) \* 1000 = 8,000
+a. Initial equity is 50% \* 40,000 = 20,000.
+Final equity is 20,000 + (40 - 50 - 2) \* 1000 = 8,000
 b. 8000 / (50 * 1000) = 16%, so yes
 c. (8000 - 20000) / 20000 = -60%
 
@@ -475,8 +496,9 @@ Total market value: $300,000, risk-free: $90,000.
 
 - Reward-to-volatility ratio (aka Sharpe ratio)
   - Excess return vs. portfolio standard deviation
+- Finding weight based on risk appetite
 
-y\* = ( E(rp) - rf )/ A std^2 = 41.3%
+<img class="equation-tall" src="https://latex.codecogs.com/svg.image?y*=\frac{E(rp) - rf}{A\sigma^2}">
 
 Indifference curves + Capital Allocation Line
 
@@ -500,7 +522,9 @@ At 20 stocks, the marginal benefit is very small. Between 20-40 securities, the 
 ### Two Risky Assets
 
 - Covariance of two assets = correlation \* stdD \* stdE
-- Variance of rp = wE^2rE^2 + wB^2rB^2 + 2COV(rb, re) wDwE
+- Variance of portfolio's rate of return
+
+<img class="equation-tall" src="https://latex.codecogs.com/svg.image?\sigma^2_{P}=w_E^2stdD^2+w_B^2stdE^+2">
 
 | State | Prob. of State | r D | r E | COV(rD, RE) |
 | ------- | ----------------- | --------------- | ---------- | ------------ |
@@ -523,7 +547,6 @@ You need to covariance or the correlation to find the standard deviation.
 - In between, risk is never 0 but a sideways parabola
 - Find std for the portfolio for every weighting to get a risk allocation
 - **Minimum variance portfolio**: portfolio allocation with the lowest risk, but not the optimum
-  -wE = ( rB^2 - COV(rB, rE) ) / (rB^2 + rE^2 - 2COV(rB, rE))
 - Calculate the slope of all portfolios
   - (Expected return of portfolio - risk free rate) / risk of portfolio \* A
   - A = risk appetite
@@ -533,7 +556,7 @@ You need to covariance or the correlation to find the standard deviation.
 
 ### Minimum Variance Portfolio
 
-<img class=equation src="https://latex.codecogs.com/svg.image?wA=\frac{r_B^2-COV(r_B,r_A)}{r_B^2+r_A^2-2COV(r_B,r_A)}">
+<img class="equation-tall" src="https://latex.codecogs.com/svg.image?wA=\frac{r_B^2-COV(r_B,r_A)}{r_B^2+r_A^2-2COV(r_B,r_A)}">
 
 ### Chapter 7 Problems
 
@@ -544,22 +567,23 @@ You need to covariance or the correlation to find the standard deviation.
 | Stock | 20% | 30%        | (25)(.31)  |
 | Bond | 12%  | 15%        | (25)(.31)  |
 
-a. what are the investment proportions in the minimum-variance portfolio
-    - Using the formula, we get wE =17.39% and wB = 82.61%
-b. what is the expected value and standard deviation of the minimum variance portfolio rate of return
-    - Expected return is then 13.39%
-    - Standard deviation (square root of portfolio variance) is then 13.92% (the formula uses covariance)
-c. what are the weights, expected return, and standard deviation of the optimal risky portfolio?
-    - **wB = (Excess return of the bond \* rE^2 - Excess return of equity \* Cov(rE, rB)) / ( excess return of rB \* rE^2 + excess return of equity \* rB^2 - \[excess return of B + excess return of E]Cov(rB, rE))**
-    - wB = 54.8%, wE = 45.2%
-    - expected rp = 15.61%
-    - STD(rp) = 16.54%
-    - What if you wanted to use the risk free?
-    - expected return of complete portfolio = 14%
-    - expected return of complete portfolio = wFrF + wPrP
-    - 14% = (1-wF)8% + wp15.61%
-    - 14 - 8 / 15.61 - 8 = wp
-    - wp = 78.84
+- a. what are the investment proportions in the minimum-variance portfolio
+  - Using the formula, we get wE =17.39% and wB = 82.61%
+- b. what is the expected value and standard deviation of the minimum variance portfolio rate of return
+  - Expected return is then 13.39%
+  - Standard deviation (square root of portfolio variance) is then 13.92% (the formula uses covariance)
+- c. what are the weights, expected return, and standard deviation of the optimal risky portfolio?
+  - **wB = (Excess return of the bond \* rE^2 - Excess return of equity \* Cov(rE, rB)) / ( excess return of rB \* rE^2 + excess return of equity \* rB^2 - \[excess return of B + excess return of E]Cov(rB, rE))** TODO
+  - wB = 54.8%, wE = 45.2%
+  - expected rp = 15.61%
+  - STD(rp) = 16.54%
+  - What if you wanted to use the risk free?
+  - expected return of complete portfolio = 14%
+  - expected return of complete portfolio = wFrF + wPrP
+  - 14% = (1-wp)8% + wp15.61%
+  - 14% = 8% + wp (15.61% - 8%)
+  - wp = (0.14 - 0.08) / (0.1561 - 0.08)
+  - wp = 0.7884
 
 ## Capital Asset Pricing Model (CAPM)
 
