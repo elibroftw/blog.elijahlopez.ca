@@ -1599,7 +1599,11 @@ With non-cumulative preferred shares, company does not have to pay the missed pa
 &lt;/ul>
 &lt;/li>
 &lt;li>
-&lt;p>The DOW is price-weighted and not value weighted.&lt;/p>
+&lt;p>The DOW is price-weighted and not value weighted and it&amp;rsquo;s divisor accounts for stock-splits&lt;/p>
+&lt;ul>
+&lt;li>price-weighted is where you take the sum of prices and divided it by a divisor (given)&lt;/li>
+&lt;li>the return of a price-weighted index is based of the index and not the individual returns&lt;/li>
+&lt;/ul>
 &lt;/li>
 &lt;li>
 &lt;p>Futures vs. Options&lt;/p>
@@ -1621,8 +1625,11 @@ With non-cumulative preferred shares, company does not have to pay the missed pa
 &lt;/a>
 &lt;/span>
 &lt;/h3>&lt;ul>
+&lt;li>Prospectus&lt;/li>
+&lt;li>Preliminary registration statement filed with the Securities and Exchange Commission&lt;/li>
 &lt;li>Initial Public Offerings
 &lt;ul>
+&lt;li>The primary market is where new securities are issued for the first time, while the secondary market is where previously issued securities are traded between investors.&lt;/li>
 &lt;li>Road show to publicize new offering&lt;/li>
 &lt;li>Bookbuilding to determine demand&lt;/li>
 &lt;li>Degree of investor interest provides valuable pricing information&lt;/li>
@@ -2081,30 +2088,16 @@ factors&lt;/li>
 &lt;/a>
 &lt;/span>
 &lt;/h3>&lt;ul>
-&lt;li>
-&lt;p>Nominal rate is the growth of your money = 11.5%&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>Next year, you get 1.115&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>Coffee is $1 today, but given an &lt;a href="https://www.bankofcanada.ca/rates/related/inflation-calculator/">Average annual rate of inflation&lt;/a> of 3.5%, the coffee will be 1.035.&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>You could buy 1 coffee now and 1.077 next year&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>Change in purchasing power = return return = 1.077 / 1 - 1 = 7.7%&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>Fisher equation: N approxEqal to real return + inflation&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>Return = (1 + N) / (1 + inf) - 1&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>Equilibrium rate of return&lt;/p>
-&lt;/li>
+&lt;li>Nominal rate is the growth of your money = 11.5%&lt;/li>
+&lt;li>Next year, you get 1.115&lt;/li>
+&lt;li>Coffee is $1 today, but given an &lt;a href="https://www.bankofcanada.ca/rates/related/inflation-calculator/">Average annual rate of inflation&lt;/a> of 3.5%, the coffee will be 1.035.&lt;/li>
+&lt;li>You could buy 1 coffee now and 1.077 next year&lt;/li>
+&lt;li>Change in purchasing power (PP) = 1.077 / 1 - 1 = 7.7%&lt;/li>
+&lt;li>Fisher equation: N approxEqal to real return + inflation&lt;/li>
+&lt;/ul>
+&lt;img class=equation-tall src="https://latex.codecogs.com/svg.image?PPGrowth=\frac{1 + N}{1 + inf}-1">
+&lt;ul>
+&lt;li>Equilibrium rate of return&lt;/li>
 &lt;/ul>
 &lt;h3 id="risk-and-risk-premium" >RIsk and Risk Premium
 &lt;span>
@@ -2514,12 +2507,13 @@ At 20 stocks, the marginal benefit is very small. Between 20-40 securities, the 
 &lt;li>Individual behaviour
 &lt;ul>
 &lt;li>Investors are rational, mean-variance optimizers&lt;/li>
-&lt;li>Their common planning horizon is a single period&lt;/li>
+&lt;li>Their common planning horizon is a single period (holding period is the same)&lt;/li>
 &lt;li>Investors all use identical input lists, (homogenous expectations). Publicly available information.&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;li>Market structure
 &lt;ul>
+&lt;li>Price takers&lt;/li>
 &lt;li>Publicly held and public exchanges&lt;/li>
 &lt;li>Investors can borrow or lend at a common risk-free rate, and they can take short positions on traded securities&lt;/li>
 &lt;li>No taxes&lt;/li>
@@ -2547,10 +2541,10 @@ At 20 stocks, the marginal benefit is very small. Between 20-40 securities, the 
 &lt;p>Beta = slope of the line of best fit or COV(individual, market) / variance of the market&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>required return goes up when a stock is sold because of the dividend discount model (dividend yield increases).&lt;/p>
+&lt;p>required return goes up when a stock is sold because of the dividend discount model (dividend yield increases)&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>alpha is the difference between actual return and expected return&lt;/p>
+&lt;p>alpha is the difference between actual return and required return&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>track alpha in order to determine if the model is actually working or not&lt;/p>
