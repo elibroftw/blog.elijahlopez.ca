@@ -106,7 +106,9 @@ Shares become voting at default payment to preferred shares
   - S&P/TSX 60 Index
   - S&P/TSX MidCap and SmallCap
   - S&P/TSX Venture Index
-- The DOW is price-weighted and not value weighted.
+- The DOW is price-weighted and not value weighted and it's divisor accounts for stock-splits
+  - price-weighted is where you take the sum of prices and divided it by a divisor (given)
+  - the return of a price-weighted index is based of the index and not the individual returns
 
 - Futures vs. Options
   - Future: obligation, option: right
@@ -115,7 +117,10 @@ Shares become voting at default payment to preferred shares
 
 ### How Firms Issue Securities
 
+- Prospectus
+- Preliminary registration statement filed with the Securities and Exchange Commission
 - Initial Public Offerings
+  - The primary market is where new securities are issued for the first time, while the secondary market is where previously issued securities are traded between investors.
   - Road show to publicize new offering
   - Bookbuilding to determine demand
   - Degree of investor interest provides valuable pricing information
@@ -395,9 +400,10 @@ Rate of return = 22.13 / 20.83 - 1 = 6.24%
 - Next year, you get 1.115
 - Coffee is $1 today, but given an [Average annual rate of inflation](https://www.bankofcanada.ca/rates/related/inflation-calculator/) of 3.5%, the coffee will be 1.035.
 - You could buy 1 coffee now and 1.077 next year
-- Change in purchasing power = return return = 1.077 / 1 - 1 = 7.7%
+- Change in purchasing power (PP) = 1.077 / 1 - 1 = 7.7%
 - Fisher equation: N approxEqal to real return + inflation
-- Return = (1 + N) / (1 + inf) - 1
+
+<img class=equation-tall src="https://latex.codecogs.com/svg.image?PPGrowth=\frac{1 + N}{1 + inf}-1">
 
 - Equilibrium rate of return
 
@@ -593,9 +599,10 @@ Assumptions
 
 1. Individual behaviour
     - Investors are rational, mean-variance optimizers
-    - Their common planning horizon is a single period
+    - Their common planning horizon is a single period (holding period is the same)
     - Investors all use identical input lists, (homogenous expectations). Publicly available information.
 2. Market structure
+    - Price takers
     - Publicly held and public exchanges
     - Investors can borrow or lend at a common risk-free rate, and they can take short positions on traded securities
     - No taxes
@@ -609,8 +616,8 @@ Assumptions
 - Required return of a stock = risk free + beta of the stock times the excess return of the market
 - Beta = slope of the line of best fit or COV(individual, market) / variance of the market
 
-- required return goes up when a stock is sold because of the dividend discount model (dividend yield increases).
-- alpha is the difference between actual return and expected return
+- required return goes up when a stock is sold because of the dividend discount model (dividend yield increases)
+- alpha is the difference between actual return and required return
 - track alpha in order to determine if the model is actually working or not
 
 ### Extensions of the CAPM
