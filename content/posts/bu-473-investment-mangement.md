@@ -562,7 +562,7 @@ You need to covariance or the correlation to find the standard deviation.
 
 ### Minimum Variance Portfolio
 
-<img class="equation-tall" src="https://latex.codecogs.com/svg.image?wA=\frac{r_B^2-COV(r_B,r_A)}{r_B^2+r_A^2-2COV(r_B,r_A)}">
+<img class="equation-tall" src="https://latex.codecogs.com/svg.image?wA=\frac{\sigma_B^2-COV(r_B,r_A)}{\sigma_B^2+\sigma_A^2-2COV(r_B,r_A)}">
 
 ### Chapter 7 Problems
 
