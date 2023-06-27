@@ -1,4 +1,56 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on ELL Blog</title><link>https://blog.elijahlopez.ca/posts/</link><description>ELL Blog (Posts)</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 10 Jun 2023 09:23:46 -0400</lastBuildDate><atom:link href="https://blog.elijahlopez.ca/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Stop Paying for 1Password</title><link>https://blog.elijahlopez.ca/posts/stop-paying-for-1password/</link><pubDate>Sat, 10 Jun 2023 09:23:46 -0400</pubDate><guid>https://blog.elijahlopez.ca/posts/stop-paying-for-1password/</guid><description>&lt;p>So I applied for an internship position at 1Password which had Bonus points for&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on ELL Blog</title><link>https://blog.elijahlopez.ca/posts/</link><description>ELL Blog (Posts)</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 27 Jun 2023 10:56:19 -0400</lastBuildDate><atom:link href="https://blog.elijahlopez.ca/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Manjaro KDE Tips</title><link>https://blog.elijahlopez.ca/posts/manjaro-kde-must-tips/</link><pubDate>Tue, 27 Jun 2023 10:56:19 -0400</pubDate><guid>https://blog.elijahlopez.ca/posts/manjaro-kde-must-tips/</guid><description>&lt;h3 id="how-to-install-yay" >How to Install yay
+&lt;span>
+&lt;a href="#how-to-install-yay">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Yet Another Yogurt (yay) helps you install packages from AUR using the command &lt;code>yay -S&lt;/code> instead of entering in commands to clone and build the package.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-zsh" data-lang="zsh">&lt;span style="display:flex;">&lt;span>pacman -S --needed git base-devel --noconfirm
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>git clone https://aur.archlinux.org/yay.git
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#24909d">cd&lt;/span> yay
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>makepkg -si
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#24909d">cd&lt;/span> ..
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>rm yay -rf
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="how-to-install-packages-from-aur" >How to Install Packages from AUR
+&lt;span>
+&lt;a href="#how-to-install-packages-from-aur">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>From the above, step you can use &lt;code>yay -s $PACKAGENAME&lt;/code>. In the next section is an example on how to install visual studio code.
+The following is a one-liner way to install.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#24909d">echo&lt;/span> y | &lt;span style="color:#40ffff">LANG&lt;/span>=C yay --noprovides --answerdiff None --answerclean None --mflags &lt;span style="color:#ed9d13">&amp;#34;--noconfirm&amp;#34;&lt;/span> &lt;span style="color:#40ffff">$PACKAGENAME&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="how-to-install-visual-studio-code-in-manajaro" >How to install Visual Studio Code in Manajaro
+&lt;span>
+&lt;a href="#how-to-install-visual-studio-code-in-manajaro">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>To install vscode, &lt;code>yay -S visual-studio-code-bin&lt;/code>&lt;/p>
+&lt;h3 id="how-to-fix-sudo-password-not-accepted" >How to fix Sudo Password Not Accepted
+&lt;span>
+&lt;a href="#how-to-fix-sudo-password-not-accepted">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-zsh" data-lang="zsh">&lt;span style="display:flex;">&lt;span>systemctl start systemd-homed
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>pacman -S pambase --noconfirm &lt;span style="color:#999;font-style:italic"># optional&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="setting-default-browser-for-electron-apps" >Setting Default Browser for Electron Apps
+&lt;span>
+&lt;a href="#setting-default-browser-for-electron-apps">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>xdg-mime default firefox.desktop x-scheme-handler/http
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>xdg-mime default firefox.desktop x-scheme-handler/https
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="vscode-fix-zsh-font" >VSCode Fix ZSH Font
+&lt;span>
+&lt;a href="#vscode-fix-zsh-font">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>sudo pacman -Su ttf-meslo-nerd-font-powerlevel10k
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Set Terminal › Integrated: Font Family to &lt;code>MesloLGS NF&lt;/code>&lt;/p></description></item><item><title>Stop Paying for 1Password</title><link>https://blog.elijahlopez.ca/posts/stop-paying-for-1password/</link><pubDate>Sat, 10 Jun 2023 09:23:46 -0400</pubDate><guid>https://blog.elijahlopez.ca/posts/stop-paying-for-1password/</guid><description>&lt;p>So I applied for an internship position at 1Password which had Bonus points for&lt;/p>
 &lt;blockquote>
 &lt;p>Frontend web development experience with Javascript frameworks like React, Angular, or Vue.js
 Experience with TypeScript.
@@ -3101,7 +3153,7 @@ At 20 stocks, the marginal benefit is very small. Between 20-40 securities, the 
 &lt;ul>
 &lt;li>&lt;a href="#business-income-and-general-rules">Business income and general rules&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#gaap--ifrs-and-the-act">GAAP / IFRS and the Act&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#disallowed-deductions">Disallowed deductions&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#disallowed-deductions-sec-18">Disallowed deductions [sec 18]&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;li>&lt;a href="#deductions-specifically-permitted-from-business-or-property-sec-20">Deductions Specifically Permitted From business or property [sec 20]&lt;/a>
@@ -3128,7 +3180,14 @@ At 20 stocks, the marginal benefit is very small. Between 20-40 securities, the 
 &lt;li>&lt;a href="#property-interest-income">Property Interest Income&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#property-dividend-income">Property Dividend Income&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#property-rental-income">Property Rental Income&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#tax-planning">Tax Planning&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#property-deductions">Property Deductions&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="#capital-gains-cg">Capital Gains (CG)&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#business-income-vs-capital-gains">Business Income vs. Capital Gains&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#example">Example&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;li>&lt;a href="#problems">Problems&lt;/a>&lt;/li>
@@ -3551,6 +3610,7 @@ decisions.&lt;/p>
 &lt;li>exercise day
 -taxable benefit is the difference&lt;/li>
 &lt;li>For CCPC, taxation occurs on selling day&lt;/li>
+&lt;li>Note that capital gains is not part of income from employment&lt;/li>
 &lt;/ul>
 &lt;p>Division C deduction (half of taxable benefit): option price was greater than fair market value on grant day or the CCPC shares were held for at least 2 years. You still have to report the full dollar amount benefit.&lt;/p>
 &lt;p>Capital gain on selling day = Price sold - EOD fair market price at exercise day&lt;/p>
@@ -3655,9 +3715,9 @@ Business Income&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;/ul>
-&lt;h3 id="disallowed-deductions" >Disallowed deductions
+&lt;h3 id="disallowed-deductions-sec-18" >Disallowed deductions [sec 18]
 &lt;span>
-&lt;a href="#disallowed-deductions">
+&lt;a href="#disallowed-deductions-sec-18">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
@@ -3730,7 +3790,8 @@ Business Income&lt;/li>
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
-&lt;/h2>&lt;ul>
+&lt;/h2>&lt;p>Even if not specifically permitted, it can be deducted if it is for income earning purposes.&lt;/p>
+&lt;ul>
 &lt;li>write-offs of capital expenditure&lt;/li>
 &lt;li>interest on borrowed money used for earing business income&lt;/li>
 &lt;li>deduct bonus on the accrual basis if paid within 180 days after the taxation year&lt;/li>
@@ -3739,6 +3800,7 @@ Business Income&lt;/li>
 &lt;li>equally over five years&lt;/li>
 &lt;li>print and ad costs, filing fees, legal fees, transfer fees, commissions, etc. in relation to share issuance and borrowing&lt;/li>
 &lt;li>refinancing costs such as rescheduling restructuring&lt;/li>
+&lt;li>20(1)(e) states that only 20% of financing expense is deductible&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;li>Reserves
@@ -3782,7 +3844,9 @@ Business Income&lt;/li>
 &lt;li>Other expenses fully deductible
 &lt;ul>
 &lt;li>landscaping&lt;/li>
-&lt;li>site investigation fees&lt;/li>
+&lt;li>site investigation&lt;/li>
+&lt;li>audit fees (income earning purposes)&lt;/li>
+&lt;li>training (income earning purposes)&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;/ul>
@@ -4258,7 +4322,7 @@ Accrued interest from January 1, 2022 to December 31, 2022….$16,214&lt;/p>
 &lt;li>salaries, wages, property management fees&lt;/li>
 &lt;li>CCA (class 1, 4%)
 &lt;ul>
-&lt;li>Cannot incur rental loss&lt;/li>
+&lt;li>CCA claimed cannot incur total rental loss (CCA limit across properties is the rental income before deduction)&lt;/li>
 &lt;li>Separate classes for buildings &amp;gt;= $50,000&lt;/li>
 &lt;/ul>
 &lt;/li>
@@ -4274,13 +4338,57 @@ After all expenses other than CCA, Jim&amp;rsquo;s total rental income for the p
 &lt;li>UCC = 84,000&lt;/li>
 &lt;li>CCA2022 = 84,000 * 0.04 = 3,360&lt;/li>
 &lt;/ul>
+&lt;h3 id="tax-planning" >Tax Planning
+&lt;span>
+&lt;a href="#tax-planning">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>given two choices, choose one with higher after-tax return&lt;/li>
+&lt;/ul>
 &lt;h3 id="property-deductions" >Property Deductions
 &lt;span>
 &lt;a href="#property-deductions">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
-&lt;/h3>&lt;h2 id="problems" >Problems
+&lt;/h3>&lt;h2 id="capital-gains-cg" >Capital Gains (CG)
+&lt;span>
+&lt;a href="#capital-gains-cg">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;ol>
+&lt;li>capital gains (CG) and losses (CL)&lt;/li>
+&lt;li>determining CG/CL&lt;/li>
+&lt;li>specific properties&lt;/li>
+&lt;/ol>
+&lt;h3 id="business-income-vs-capital-gains" >Business Income vs. Capital Gains
+&lt;span>
+&lt;a href="#business-income-vs-capital-gains">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>relation of transaction to business&lt;/li>
+&lt;li>adventure in nature of trade&lt;/li>
+&lt;li>nature of the assets&lt;/li>
+&lt;li>frequency and amount of transactions&lt;/li>
+&lt;li>holding period&lt;/li>
+&lt;li>articles of incorporation&lt;/li>
+&lt;/ul>
+&lt;h3 id="example" >Example
+&lt;span>
+&lt;a href="#example">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>a. Bill purchased land for $100,000, built and ran a restaurant, and then sold the land for $460,000 (CG applies)&lt;/li>
+&lt;li>b. Martha purchased land for $100,000 and sold land two years later for $300,000&lt;/li>
+&lt;/ul>
+&lt;h2 id="problems" >Problems
 &lt;span>
 &lt;a href="#problems">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
