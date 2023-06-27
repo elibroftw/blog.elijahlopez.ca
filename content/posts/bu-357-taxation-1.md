@@ -305,6 +305,7 @@ Calculate the taxable benefit of the loan.
 - exercise day
   -taxable benefit is the difference
 - For CCPC, taxation occurs on selling day
+- Note that capital gains is not part of income from employment
 
 Division C deduction (half of taxable benefit): option price was greater than fair market value on grant day or the CCPC shares were held for at least 2 years. You still have to report the full dollar amount benefit.
 
@@ -382,7 +383,7 @@ Differences:
 - Non-arm's length transactions (related party transactions)
   - Is the transaction value at market price?
 
-### Disallowed deductions
+### Disallowed deductions \[sec 18]
 
 1. Not for income earning purpose
 2. Capital expenditures
@@ -432,6 +433,8 @@ Ned had unlimited use of the company's private swimming pool. The local pool cha
 
 ## Deductions Specifically Permitted From business or property \[sec 20]
 
+Even if not specifically permitted, it can be deducted if it is for income earning purposes.
+
 - write-offs of capital expenditure
 - interest on borrowed money used for earing business income
 - deduct bonus on the accrual basis if paid within 180 days after the taxation year
@@ -439,6 +442,7 @@ Ned had unlimited use of the company's private swimming pool. The local pool cha
   - equally over five years
   - print and ad costs, filing fees, legal fees, transfer fees, commissions, etc. in relation to share issuance and borrowing
   - refinancing costs such as rescheduling restructuring
+  - 20(1)(e) states that only 20% of financing expense is deductible
 - Reserves
   - For doubtful debts \[sec 20(1)(1)]
   - Goods and services not rendered \[sec 20(1)(m)]
@@ -461,7 +465,9 @@ Therefore, if a deduction is not here, it probably is not deductible. An example
   - Claim CCA
 - Other expenses fully deductible
   - landscaping
-  - site investigation fees
+  - site investigation
+  - audit fees (income earning purposes)
+  - training (income earning purposes)
 
 ### Reserve for Delayed Payment Revenue
 
@@ -769,7 +775,7 @@ Slide 102, Chapter 6 Problem 3
   - repairs, maintenance
   - salaries, wages, property management fees
   - CCA (class 1, 4%)
-    - Cannot incur rental loss
+    - CCA claimed cannot incur total rental loss (CCA limit across properties is the rental income before deduction)
     - Separate classes for buildings >= $50,000
 
 Jim owns two rental buildings which he purchased in 2021.
@@ -781,7 +787,31 @@ After all expenses other than CCA, Jim's total rental income for the past two ye
 - UCC = 84,000
 - CCA2022 = 84,000 \* 0.04 = 3,360
 
+### Tax Planning
+
+- given two choices, choose one with higher after-tax return
+
 ### Property Deductions
+
+## Capital Gains (CG)
+
+1. capital gains (CG) and losses (CL)
+2. determining CG/CL
+3. specific properties
+
+### Business Income vs. Capital Gains
+
+- relation of transaction to business
+- adventure in nature of trade
+- nature of the assets
+- frequency and amount of transactions
+- holding period
+- articles of incorporation
+
+### Example
+
+- a. Bill purchased land for $100,000, built and ran a restaurant, and then sold the land for $460,000 (CG applies)
+- b. Martha purchased land for $100,000 and sold land two years later for $300,000
 
 ## Problems
 
