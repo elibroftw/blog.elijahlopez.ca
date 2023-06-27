@@ -10,8 +10,7 @@ tags: [
 ---
 
 I'm making this blog post and video to document (practical?) policies that I've heard/read Pierre Poilievre express.
-For each policy, I will include the excerpt as well as my analysis of it to connect the dots between stated policy and desired / expected results.
-This is evident in the first policy that incentivized me to create this blog post.
+For each policy, I will include the excerpt as well as my analysis of it to connect the dots between stated policy and desired / expected results. This is evident in the first policy that incentivized me to create this blog post.
 
 ## Housing Affordability
 
@@ -36,6 +35,10 @@ EVERY PROPOSAL!!!!
 Even without any funding by corporations, being against this bill has merit. Poilevre is arguing from a point of improving energy independence, however I feel that the benefits are much more broader and not just restricted to energy. The bill supposedly impeding pipelines does have some merit as presently any pipeline proposal could be declined simply because the Minister of Environment doesn't want it approved or stalled by the Governor in Council.
 
 Now for something interesting I found. It seems that even before the LPC, an assessment for an impact assessment was required. This [Uranium Millennium Mine Project](https://iaac-aeic.gc.ca/050/evaluations/proj/49928) has been under assessment since 2013. Apparently the proposal was started in 2009, and the last change was made in 2019. This is outrageous for both CPC and LPC if a Uranium mining project has been stalled for this long. Cameco, a Canadian company, has been losing revenue year over year!
+
+## Disability Benefits Will Continue With Employment
+
+Bill C-395 was sponsored by Poilievre  in 2018 as a private member's bill. The goal of this bill was to ensure that people with disability benefits could continuing receiving those benefits while working.
 
 ## Sources
 
