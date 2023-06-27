@@ -622,6 +622,35 @@ For class, be prepared to act as part of the negotiation team for either company
 You will be challenged to come up with an agreement that meets the objectives
 of both companies
 
+## Implementing Strategy
+
+### Geographical Subsidiary Manager
+
+- Role as a national defender and advocate
+- Need for national responsiveness
+
+### - How to respond to resistance to globalization
+
+- Determine if willing to take leadership role on dealing with underlying issues
+
+### Four MNE positions
+
+- Exploitive (take advantage of disadvantage)
+  - low-cost labour, subsidized investment
+  - expand regardless of economic, social, or cultural change
+  - no responsibility
+  - adversial relationship with NGOs
+- Transaction (doing deals, respecting laws)
+  - legally compliant
+  - non-oppressive
+  - does not pursue bottom line at all cost
+  - no inappropriate products promoted
+  - NGO relationship based on monitoring and challenging
+- Responsive (making a difference)
+  - TEST1
+- Transformative (leading broad change)
+  - TEST2
+
 Case: Silvio Napoli at Schindler India (A)
 
 Hard NOx (Dirty Money Documentary, Season 1)
