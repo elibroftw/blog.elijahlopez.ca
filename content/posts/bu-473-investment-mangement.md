@@ -708,3 +708,138 @@ Fama-French Three Factor Model
 - Slide 17
 - Expansion of CAPM
 - Size matters
+
+## Performance
+
+### Dollar-Weighted Return (IRR)
+
+### Multiperiod Returns
+
+- 0: -50
+- 1: -52
+- 1: $2 from initial purchase
+- 4: $4 dividend, sell both shares at $52/share
+
+-50 = -51/(1 + r)^2 + 112/(1+r)^2
+
+### Time-Weighted Return
+
+r1 = (53 - 50 + 2)/50 = 10%
+
+r2 = (54 - 52 + 2)/53 = 5.66%
+
+rg = (1.1 \* 1.0566)^(0.5) - 1 = 7.81%
+
+True picture of what occurred. Ethical standard.
+
+### Adjust Returns for Risk
+
+- Compare rates of return with those of other investment funds with similar risk characteristics
+  - Comparison universe
+- Sharpe Ratio (reward to volatility)
+- Treynor Measure
+  - Average return - Average risk free divided by weighted average Beta for portfolio
+- Jensen's Measure
+  - ap = rp - \r[rf + Bp(rm - rf)]
+- M SQUARE
+  - create an adjusted portfolio with treasury bills and subtract risk free
+  - use T-bills to reduce the standard deviation
+- Information Ratio
+  - alpha / (non-systematic risk)
+
+TODO: read slides
+
+## Efficient Markets
+
+- prices fully reflect **available** information
+
+### Random Walks
+
+- prices are just as likely to go up or down
+
+### Insider Information and Cumulative Abnormal Returns
+
+- Food for though. Instead of trading in information, can we predict which company will have news that come out?
+
+### CNBC Reports
+
+- midday reports
+  - positive news already has upticks before release
+  - negative news has some downticks, but will continue
+  - does not mean CNBC was first to give the news, but the graph was +- 15 minutes
+
+### Competition as Source of Efficiency
+
+- information
+  - Precious
+  - Strong competition assures prices reflect information
+  - Higher investment returns motivates information-gathering
+  - Diminutive marginal returns on research activity suggest only managers of the largest portfolios will find it useful pursuing
+
+### Technical Analysis
+
+### Fundamental Analysis
+
+- Assess form value that focuses on such determinants as earnings and dividends prospects, expectations for future interest rates, and risk evaluation
+- EMH predicts doomed to fail because price reflects available information
+  - Therefore, analyze information differently than others
+
+### Active vs Passive Management
+
+- Active Management
+  - Expensive strategy
+  - Suitable only for very large portfolios
+- Passive Management
+  - No attempt to outsmart the market
+  - Accept EMH
+  - Index Funds and ETFs
+  - Low-cost strategy
+  - Rebalancing
+    - When new stocks enter or old one leaves
+    - When there is excess cash like dividends
+
+### Event Studies
+
+- Friendly Takeover
+  - Acquirer has -3%
+  - +6% for acquired
+- Hostile
+  - Acquirer has +3%
+  - +20% for acquired
+
+Test Structure
+
+- Expected Return vs. Abnormal Return
+
+### Are Markets Efficient?
+
+- Magnitude issue
+- Select bias
+- Lucky event
+
+### Weak-Form Tests
+
+- Returns over short horizons
+  - momentum effect
+  - continues abnormal performance
+- returns over long horizons
+  - reversal effect is the tendency of return to the proper pricing
+
+### Post-Earnings Announcement Price Drift
+
+- 10-9 has positive drift
+- < 4 has negative drift
+
+### Anomalies
+
+- Book-to-market
+  - Book value divided by market value
+- P/E effect
+  - low-P/E provide higher returns
+    - Only works on growth companies though
+    - Good long term fund strategy
+    - 20 lowest y/y revenue growth
+- Neglected-firm effect
+  - lesser known firms have generated abnormal returns
+- Liquidity effect
+  - Illiquid stocks have a strong tendency to exhibit abnormally high returns
