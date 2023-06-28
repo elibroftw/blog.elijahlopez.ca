@@ -619,7 +619,9 @@ A = 80,000, B = 25,000, C = MIN {30,000, 35,000}, CCA = 0.2 \* (80,000 + 25,000 
 
 ### Gains/Losses on Disposition
 
-- Terminal
+- No capital loss
+- Terminal loss
+  - The left over in the asset after UCC minus disposition. (Can't have CCA on a sold asset).
   - All assets are disposed of
   - Positive balance in class
 - Recapture
@@ -650,6 +652,7 @@ Applies to all types of corporation
 
 ### Class 10.1 Automobile
 
+- CCA on additions is 34,000 instead of full amount
 - 30%
 - passenger vehicle costing $34,000 (plus tax)
   - this is the max claim
@@ -738,6 +741,7 @@ John needs to know the interest income in 2022 related to his two short-term inv
 ### Property Dividend Income
 
 - From Canadian corporations, include dividend + gross up \[dividend tax credit = corporate tax].
+  - purpose: restore dividend to pre-tax corporation income to better assess tax
 - Claim the tax credit when calculating the tax payable.
 - For CCPC with low corporate tax rate,
   - 15% gross-up
@@ -752,6 +756,7 @@ John needs to know the interest income in 2022 related to his two short-term inv
   - 38% gross-up
   - 20.7% of dividend is credited
 - Dividends received from foreign companies do not get grossed up and have no tax credit
+  - the total dividend gets included not the net of foreign withholding tax (that part will most likely get credited)
 
 Slide 102, Chapter 6 Problem 3
 

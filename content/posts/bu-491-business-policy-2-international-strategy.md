@@ -639,7 +639,7 @@ of both companies
   - low-cost labour, subsidized investment
   - expand regardless of economic, social, or cultural change
   - no responsibility
-  - adversial relationship with NGOs
+  - adversarial relationship with NGOs
 - Transaction (doing deals, respecting laws)
   - legally compliant
   - non-oppressive
@@ -651,7 +651,94 @@ of both companies
 - Transformative (leading broad change)
   - TEST2
 
-Case: Silvio Napoli at Schindler India (A)
+## Case: Silvio Napoli at Schindler India (A)
+
+- Silvio Napoli
+  - New Delhi
+  - First floor got floded (lmao the monsoon season)
+  - Luc Bonnard, vice chairman, board of directors of Schindler Holdings Ltd., the respected Swiss-based manufacturer of elevators and escalators.
+  - It was November 1998, and vice chairman Luc Bonnard was visiting
+New Delhi for the first time to review progress on
+the start-up of the company’s Indian subsidiary
+  - Napoli running this
+- Napoli, a 33-year-old Italian former semipro-
+fessional rugby player, had arrived in March
+with his pregnant wife and two young children
+- new from scratch
+- Since March, he had established offices in New Delhi and Mum-bai, hired five Indian top managers, and begun to implement the aggressive business plan he had written the previous year while head of corporate planning in Switzerland
+- $10m investment
+  - “core, standardized products,” with no allowance for customization.
+  - India has high import tariffs
+  - outsource manufacturing and logistics to local suppliers
+- Three problems
+  - order for a nonstandard product–calling for a glass rear wall in one of the supposedly standard elevators
+  - from a large increase in customs duties on imported elevator components,
+  - unanticipated rise in transfer prices for the “low-cost” components and materials imported from Schindler’s European factories
+  - requests for parts lists, design specifications, and engineering support not forthcoming from Schindler’s European plants
+- Eight months in India and he still had not installed a single elevator, while his plan showed first-year sales of 50 units.
+- tech leader in elevators
+- Alfred Schindler saw India as a second China
+- ECE in 1958 for local distribution
+- Bharat Bijlee Ltd. (BBL) in 1985
+  - 12% stake
+  - 10-15% market share
+  - ended in 1996
+- head of corporate planning
+- Executive committee: Alfred Schindler, Luc Bonnard, and Alfred
+Spöerri (CFO)
+- Swatch Project (1995)
+  - margins eroding
+  - new products were a vital source of profitable long-term maintenance and service contracts,
+  - develop standardized elevator at lower cost
+  - plants in Switzerland, France, and Spain
+  - S001 developed, halved the industry standard 20-30 week cycle time
+  - supply chain redesigned
+- Egon Zehnder for searching top management
+- On his first day in the Delhi office, Napoli got stuck in one of BBL’s elevators. As he recalled, it proved to be an omen of things to come
+- all types of characters started to approach me offering their services
+- With the exception of Mitsubishi, all multinational players relied on local manufacturing for the majority of their components.
+- Otis is the number one competitor
+- seven distinct phases: engineering, production, installation, service, repair, modernization, and replacement.
+- annual maintenance contracts covering routine maintenance and breakdown service were vital.
+- S001 for low-rise segment
+- S300P for mid-rise segment
+- safety-related parts imported, S300P imported, everything else outsourced to approved local suppliers
+  - maintenance would stay with Schindler
+- four orders came in for the S001 but with glass wall
+- S001 transfer prices were 30% above planned costs
+  - increased import duties on specific "noncore goods" (22% to 56%)
+- Each family has a security guard but since guards fall asleep, a man would whistle
+  - but then each family paid the man not to whistle in front of their house
+- no maintenance portfolio
+
+Consider the 3 roles of a country manager:
+
+- a Bicultural interpreter
+- b National Defender
+- c Frontline Implementer
+
+Do you believe Silvio was the right choice for the general manager in India? Explain.
+
+- M.K. Singh, Managing Director
+- bicultural interpreter: someone who can interpret both India and Swiss
+- National Defender: defends market share in India
+- Frontline Implementer: Related to elevators
+
+Therefore yes and no. They needed to pick someone who can understand customer needs that are not being fulfiled by existing competitors.
+The Hotel experience is good because of the customer, but do they need better elevators?? No elevator experience so don't know what kind of Elevator is best for Indian customers.
+
+As Luc Bonnard, how would you evaluate Silvio’s performance in the first 7 months?
+
+Got everything setup, but what is the next step? What happened in the last 6 months if 1 month was given as grace period?
+
+Should Schindler India accept the nonstandard glass wall elevator order?
+
+Yes, a business is supposed to be a loss maker in the first year. To get an understanding of the customers' needs.
+
+What should Silvio do about limited support with technical issues and transfer prices?
+
+technical, need to call someone directly to fix the problem. For transfer price, need to outsource as fast as possible or setup local plant.
+
 
 Hard NOx (Dirty Money Documentary, Season 1)
 [Watch at home before coming to class]
