@@ -19,8 +19,11 @@ rm yay -rf
 
 ### How to Install Packages from AUR
 
-From the above, step you can use `yay -s $PACKAGENAME`. In the next section is an example on how to install visual studio code.
-The following is a one-liner way to install.
+You can either do `pamac build $PKGNAME` or use `yay -s $PACKAGENAME` which requires installing yay as shown above.
+
+In the next section is an example on how to install visual studio code.
+
+The following is a one-liner way to install packages in yay to skip the prompts.
 
 ```sh
 echo y | LANG=C yay --noprovides --answerdiff None --answerclean None --mflags "--noconfirm" $PACKAGENAME
@@ -60,3 +63,8 @@ Set Terminal › Integrated: Font Family to `MesloLGS NF`
 ### X-Server Restart
 
 Ctrl + Alt + Backspace (unconfirmed)
+
+### How to setup OneDrive on Linux
+
+- [jstaf/onedriver](https://github.com/jstaf/onedriver)
+- For Arch, use `sudo pamac build onedriver`
