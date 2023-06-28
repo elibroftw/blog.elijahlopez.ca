@@ -51,3 +51,12 @@ sudo pacman -Su ttf-meslo-nerd-font-powerlevel10k
 ```
 
 Set Terminal › Integrated: Font Family to `MesloLGS NF`
+
+### Virtual Terminal
+
+- Ctrl + Alt + F4 to go to virtual terminal
+- Ctrl + Alt + F1 to go back to desktop
+
+### X-Server Restart
+
+Ctrl + Alt + Backspace (unconfirmed)
