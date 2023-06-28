@@ -672,8 +672,8 @@ with his pregnant wife and two young children
   - outsource manufacturing and logistics to local suppliers
 - Three problems
   - order for a nonstandard product–calling for a glass rear wall in one of the supposedly standard elevators
-  - from a large increase in customs duties on imported elevator components,
   - unanticipated rise in transfer prices for the “low-cost” components and materials imported from Schindler’s European factories
+    - a large increase in customs duties on imported elevator components,
   - requests for parts lists, design specifications, and engineering support not forthcoming from Schindler’s European plants
 - Eight months in India and he still had not installed a single elevator, while his plan showed first-year sales of 50 units.
 - tech leader in elevators
@@ -719,13 +719,18 @@ Consider the 3 roles of a country manager:
 
 Do you believe Silvio was the right choice for the general manager in India? Explain.
 
-- M.K. Singh, Managing Director
-- bicultural interpreter: someone who can interpret both India and Swiss
-- National Defender: defends market share in India
-- Frontline Implementer: Related to elevators
-
-Therefore yes and no. They needed to pick someone who can understand customer needs that are not being fulfiled by existing competitors.
-The Hotel experience is good because of the customer, but do they need better elevators?? No elevator experience so don't know what kind of Elevator is best for Indian customers.
+- Yes
+  - Made business plan
+  - Unproven business model
+  - Aggressive personality
+  - Corporate connections
+  - Upside potential
+- No
+  - No experience to execute
+  - Management style might not be suited
+  - Cultural mismatch
+  - Goal focused
+  - Family has to move to India
 
 As Luc Bonnard, how would you evaluate Silvio’s performance in the first 7 months?
 
@@ -739,6 +744,7 @@ What should Silvio do about limited support with technical issues and transfer p
 
 technical, need to call someone directly to fix the problem. For transfer price, need to outsource as fast as possible or setup local plant.
 
+## Midterm Questions
 
 Hard NOx (Dirty Money Documentary, Season 1)
 [Watch at home before coming to class]
