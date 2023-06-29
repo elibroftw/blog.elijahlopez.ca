@@ -304,7 +304,7 @@ Calculate the taxable benefit of the loan.
   - Fair Market Value determined
 - exercise day
   -taxable benefit is the difference
-- For CCPC, taxation occurs on selling day
+- For Canadian-controlled private corporation (CCPC), taxation occurs on selling day
 - Note that capital gains is not part of income from employment
 
 Division C deduction (half of taxable benefit): option price was greater than fair market value on grant day or the CCPC shares were held for at least 2 years. You still have to report the full dollar amount benefit.
@@ -817,6 +817,87 @@ After all expenses other than CCA, Jim's total rental income for the past two ye
 
 - a. Bill purchased land for $100,000, built and ran a restaurant, and then sold the land for $460,000 (CG applies)
 - b. Martha purchased land for $100,000 and sold land two years later for $300,000
+
+### Determining Capital Gains and Losses
+
+- Proceeds of disposition (POD)
+- less: adjusted cost base (ACB) (cost plus/minus adjustments)
+- less: disposition expenses
+- net amount
+- less: reserve
+- CG/CL
+- taxable capital gains = 1/2 \* CG
+- allowable capital loss = 1/2 \* CL
+- ACL is only deductible from TCG
+- ACL needs to be adjusted if the rate was different at the time of loss compared to the time of deduction
+
+### Reserve for unpaid proceeds
+
+Lesser of (unpaid proceeds / total proceeds) \* net amount AND 80% of net amount in year 1, 60% in year 2, 40% in year 3, and 20% in year 4, 0 after year 4.
+
+A parcel of land with a cost of $4,000 was sold in 2022 for $160,000. For the total proceeds of $160,000, $40,000 was paid at the time of sale in 2022, and $20,000 payable in each year from 2023 to 2028.
+
+- Reserve2022 = MIN { 120,000 / 160,000 \* 156,000 = 117,000, 80% \* 156,000 = 124,800 } = 117,000
+  - CG = 39,000, TCG = 0.5 * (39,000)  = 19,500
+- Reserve2023 = MIN { 100,000 / 160,000 \* 156,000 = 97,500, 60% \* 156,000 = 93,600 } = 93,600
+- Reserve2024 = MIN { 80,000 / 160,000 \* 156,000 = 78,000, 40% \* 156,000 = 62,400 } = 62,400
+- Reserve2025 = MIN { 60,000 / 160,000 \* 156,000 = 58,500, 40% \* 156,000 = 31,200 } = 31,200
+- proceeds minus cost minus reserve is carried forward to next years proceeds
+
+### Personal Use Property (PUP)
+
+- gains are taxable; losses are non-deductible
+  - applied to each item of personal property
+- minimum POD = $1,000
+- minimum cost basis of $1,000
+
+### Listed Personal Property (LPP)
+
+- PUP with investment value
+  - print, etching, drawing, painting, or sculpture, or other similar works of art
+  - Jewelry
+  - rare folio, rare manuscript, rare book
+  - stamp
+  - coin
+- Losses are recognized but only deductible against LPP
+  - unused losses carried backward 3 years, or forward 7 years
+
+- ACB; proceeds
+- Oil painting (2,500; 500)
+  - round up proceeds to $1,000
+  - investment value
+  - CL = -1,500 (LPP)
+- Rare coins (800; 1,200)
+  - investment
+  - round up ACB to 1000
+  - CG = 200 (LPP)
+- Piano (25,000; 14,000)
+  - no CL because no an investment (PUP)
+- Antique car (10,000; 15,000)
+  - CG of 5,000 (PUP)
+  - antique does not mean rare
+
+- LPP $0 taxable, carryforward = 1,300 \* 0.5 = 650
+- PUP = 5,000 \* 0.5 = 2,500 taxable
+
+### Allowable Business Investment Loss (ABIL)
+
+- disposition of shares or loans of a small business corporation (SBC)
+  - SBC is a CCPC with substantially all assets used to conduct active business
+- offset against all sources of income
+
+### Principal Residence \[sec 54]
+
+- owned and ordinarily inhabited for personal use
+- one principal residence per family unit
+- designation at sale
+- claim exemption against capital gains
+- (1 + years designated as principal residence) / (number of years owned) \* gain <= gain
+  - the 1+ accounts for selling and buying a house in the same year
+  - home should be owned for at least one year for the 1+
+  - I believe when proceeds over a million, the gain over 500,000 should be taxable
+
+### Maximize Exemption With Multiple Homes
 
 ## Problems
 
