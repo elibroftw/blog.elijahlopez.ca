@@ -16,6 +16,7 @@ The project is called &ldquo;SttApi&rdquo; so replace that with your own project
 </span></span><span style=display:flex><span>}
 </span></span></code></pre></div></details><details><summary>Program.cs</summary><div class=highlight><pre tabindex=0 style=color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-cs data-lang=cs><span style=display:flex><span><span style=color:#6ab825;font-weight:700>using</span> <span style=color:#447fcf;text-decoration:underline>Microsoft.AspNetCore.Authentication.JwtBearer</span>;
 </span></span><span style=display:flex><span><span style=color:#6ab825;font-weight:700>using</span> <span style=color:#447fcf;text-decoration:underline>Microsoft.IdentityModel.Tokens</span>;
+</span></span><span style=display:flex><span><span style=color:#6ab825;font-weight:700>using</span> <span style=color:#447fcf;text-decoration:underline>Microsoft.OpenApi.Models</span>;
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span><span style=color:#999;font-style:italic>//  ---------------- OTHER CODE ----------------</span>
 </span></span><span style=display:flex><span>
@@ -23,6 +24,26 @@ The project is called &ldquo;SttApi&rdquo; so replace that with your own project
 </span></span><span style=display:flex><span>        <span style=color:#6ab825;font-weight:700>var</span> builder = WebApplication.CreateBuilder(args);
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>        <span style=color:#999;font-style:italic>//  ---------------- OTHER CODE ----------------</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#999;font-style:italic>// Swagger UI Authorization</span>
+</span></span><span style=display:flex><span>        builder.Services.AddSwaggerGen(option =&gt; {
+</span></span><span style=display:flex><span>            option.AddSecurityDefinition(<span style=color:#ed9d13>&#34;Bearer&#34;</span>, <span style=color:#6ab825;font-weight:700>new</span> OpenApiSecurityScheme {
+</span></span><span style=display:flex><span>                In = ParameterLocation.Header,
+</span></span><span style=display:flex><span>                Description = <span style=color:#ed9d13>&#34;Please enter a valid token&#34;</span>,
+</span></span><span style=display:flex><span>                Name = <span style=color:#ed9d13>&#34;Authorization&#34;</span>,
+</span></span><span style=display:flex><span>                Type = SecuritySchemeType.Http,
+</span></span><span style=display:flex><span>                BearerFormat = <span style=color:#ed9d13>&#34;JWT&#34;</span>,
+</span></span><span style=display:flex><span>                Scheme = <span style=color:#ed9d13>&#34;Bearer&#34;</span>
+</span></span><span style=display:flex><span>            });
+</span></span><span style=display:flex><span>            option.AddSecurityRequirement(<span style=color:#6ab825;font-weight:700>new</span> OpenApiSecurityRequirement{{
+</span></span><span style=display:flex><span>                        <span style=color:#6ab825;font-weight:700>new</span> OpenApiSecurityScheme { Reference = <span style=color:#6ab825;font-weight:700>new</span> OpenApiReference {
+</span></span><span style=display:flex><span>                                Type=ReferenceType.SecurityScheme,
+</span></span><span style=display:flex><span>                                Id=<span style=color:#ed9d13>&#34;Bearer&#34;</span>
+</span></span><span style=display:flex><span>                            }},
+</span></span><span style=display:flex><span>                        <span style=color:#6ab825;font-weight:700>new</span> <span style=color:#6ab825;font-weight:700>string</span>[]{}
+</span></span><span style=display:flex><span>                    }
+</span></span><span style=display:flex><span>                });
+</span></span><span style=display:flex><span>        });
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>        <span style=color:#999;font-style:italic>//JWT Authentication</span>
 </span></span><span style=display:flex><span>        builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =&gt; {

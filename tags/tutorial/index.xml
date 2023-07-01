@@ -253,6 +253,7 @@ Adapt the following for your own use. The Route decorator indicates that the rou
 &lt;details>&lt;summary>Program.cs&lt;/summary>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-cs" data-lang="cs">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">using&lt;/span> &lt;span style="color:#447fcf;text-decoration:underline">Microsoft.AspNetCore.Authentication.JwtBearer&lt;/span>;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">using&lt;/span> &lt;span style="color:#447fcf;text-decoration:underline">Microsoft.IdentityModel.Tokens&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">using&lt;/span> &lt;span style="color:#447fcf;text-decoration:underline">Microsoft.OpenApi.Models&lt;/span>;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">// ---------------- OTHER CODE ----------------&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
@@ -260,6 +261,26 @@ Adapt the following for your own use. The Route decorator indicates that the rou
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">var&lt;/span> builder = WebApplication.CreateBuilder(args);
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic">// ---------------- OTHER CODE ----------------&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic">// Swagger UI Authorization&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> builder.Services.AddSwaggerGen(option =&amp;gt; {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> option.AddSecurityDefinition(&lt;span style="color:#ed9d13">&amp;#34;Bearer&amp;#34;&lt;/span>, &lt;span style="color:#6ab825;font-weight:bold">new&lt;/span> OpenApiSecurityScheme {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> In = ParameterLocation.Header,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Description = &lt;span style="color:#ed9d13">&amp;#34;Please enter a valid token&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Name = &lt;span style="color:#ed9d13">&amp;#34;Authorization&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Type = SecuritySchemeType.Http,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> BearerFormat = &lt;span style="color:#ed9d13">&amp;#34;JWT&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Scheme = &lt;span style="color:#ed9d13">&amp;#34;Bearer&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> });
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> option.AddSecurityRequirement(&lt;span style="color:#6ab825;font-weight:bold">new&lt;/span> OpenApiSecurityRequirement{{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">new&lt;/span> OpenApiSecurityScheme { Reference = &lt;span style="color:#6ab825;font-weight:bold">new&lt;/span> OpenApiReference {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Type=ReferenceType.SecurityScheme,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Id=&lt;span style="color:#ed9d13">&amp;#34;Bearer&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }},
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">new&lt;/span> &lt;span style="color:#6ab825;font-weight:bold">string&lt;/span>[]{}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> });
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> });
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic">//JWT Authentication&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =&amp;gt; {
