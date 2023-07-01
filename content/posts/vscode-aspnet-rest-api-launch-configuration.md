@@ -44,7 +44,9 @@ Create the following file:
             },
             "env": {
                 "ASPNETCORE_ENVIRONMENT": "Development",
-                "ASPNETCORE_URLS": "http://localhost:5284"
+                "ASPNETCORE_URLS": "http://localhost:5284",
+                // restart instead of prompt if a non-hot reloadable edit was made
+                "DOTNET_WATCH_RESTART_ON_RUDE_EDIT": "true"
             },
             "sourceFileMap": {
                 "/Views": "${workspaceFolder}/Views"
