@@ -88,7 +88,6 @@ public static void Main(string[] args) {
 
 <details><summary>AuthController.cs</summary>
 
-
 ```cs
 // Controllers/AuthController.cs
 using System.IdentityModel.Tokens.Jwt;
