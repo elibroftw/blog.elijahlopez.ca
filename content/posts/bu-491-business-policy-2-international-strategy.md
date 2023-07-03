@@ -43,7 +43,7 @@ For this course,
 
 CAGE framework
 
-Culture distance, Administrative / Political distance, Geographic distance, economic distance.
+Culture distance, Administrative / Political distance, Geographic distance, Economic distance.
 
 Packaging regulation may seem small, but still comes up.
 
@@ -67,19 +67,35 @@ Foreign direct investment (FDI):
 - incremental process of learning and increasing commitment to foreign market
 - perceived uncertainty and knowledge
 - gradually increasing internationalization after a long period of doing business exclusively in the home market
+- vs. born global approach (Facebook) vs. acquisition (Walmart ASDA UK)
 
 ### Global Integration vs National Responsiveness
 
-- Transnational is both global and multinational
-  - everywhere
-- Global is integration
-  - world is one unit
 - Multinational is responsiveness
   - portfolio of local opportunities, local adaptions
-- International is an in between
+  - national companies, each headed by their own entrepreneur
+  - inefficient manufacturing infrastructure within the company
+- Global is integration
+  - world is one unit
+- Transnational is both global and multinational
+  - everywhere
+- International is an in between of Global and multinational
   - domestic then international, domestic first view
 
 [What Three Global Giants Teach Us About International Expansion](https://velocityglobal.com/blog/what-three-global-giants-teach-us-about-international-expansion)
+
+### Sher-Wood Hockey Sticks: Global Sourcing
+
+- question is to move production of high-end composite sticks to China
+- losing market share
+- hockey stick
+  - lightness, responsiveness and “the feel.”
+  - wood, aluminum, or composite
+  - composite developed in mid 1990s
+  - case takes place in 2011
+  - strong positions if endorsed by pros
+- professional players had custom designs
+- onshoring, nearshoring, offshoring
 
 ## Understanding the international context
 
@@ -94,7 +110,7 @@ What could happen going forward. Conclusions: want to take the probability into 
 - Environmental
 - Legal
 
-International context:
+### International Context
 
 - Global integration and coordination
   - Factor costs
@@ -106,7 +122,11 @@ International context:
 
 World of opportunities: https://www.hofstede-insights.com/country-comparison-tool
 
-### Multinational Company vs. Host Government
+### Local Differentiation and Responsiveness
+
+General Motors is reported to have faced difficulties in selling the popular Chevrolet Nova in Mexico, where the product name sounded like “no va,” meaning “does not go” in Spanish.
+
+Cultural, government demands, pressure to localize
 
 ### Increased need for rapid and coordinated
 
@@ -114,6 +134,8 @@ World of opportunities: https://www.hofstede-insights.com/country-comparison-too
 - Increased cost of R&D
 - Emergence of global technology standards
 - Competitors’ ability to develop and diffuse innovation globally
+
+### Innovation and Learning
 
 ### Deglobalization
 
@@ -145,8 +167,6 @@ World of opportunities: https://www.hofstede-insights.com/country-comparison-too
   - Effective reaction
   - Continuous learning mechanisms
 
-## Sher-Wood Hockey Sticks
-
 ## American Factory
 
 - No context that GM literally failed
@@ -168,7 +188,7 @@ World of opportunities: https://www.hofstede-insights.com/country-comparison-too
   - Chinese national pride
 - What could the company have done better?
   - Safety
-  - Again safety
+  - employees local responsiveness
   - Thinking and planning operations efficiency before opening the plant
 - Was there anything that surprised you?
   - GM was paying $29.4/hr in 2008...
@@ -190,14 +210,20 @@ Unionization failed 40% to 60%.
 
 ## Worldwide Competitive Advantage
 
-Goals
+### Goals
 
 - Efficiency
   - value of outputs / value of inputs
 - Flexibility
+  - macroeconomic risks
+  - political risks
+  - competitive risks
+  - resource risks
+  - requires management to scan its broad environment to detect changes and discontinuities and then respond to the new situation in the context of the worldwide business.
 - Learning
+  - diverse operating environments lead to stimuli that developes diverse capabilities
 
-## Building Multinational Flexibility
+### Building Multinational Flexibility
 
 The ability to manage risks and exploit opportunities arising from the diversity and volatility of the global environment.
 
@@ -209,8 +235,8 @@ Diversity and Volatility
 
 Requirements
 
-- Scannning and responding to discontinuities
-- Selecitng mos attractive markets
+- Scanning and responding to discontinuities
+- Selecting mos attractive markets
 
 ## Building Worldwide Learning
 
@@ -267,7 +293,7 @@ Why do transformation efforts fails?
 - Started by Jed Thomson in 1910 at his grocery store in Kalamazoo, Michigan
 - main competitor is Kellogs
 - Local markets resulted in 25% higher SG&A expenses than in the US
-- National subsidiaries each lead by a  Country Manager (CM) because of major differences
+- National subsidiaries each lead by a Country Manager (CM) because of major differences
   - lead to contradictions in marketing
 - most CMs now favored product extensions over new product introductions, and many increasingly relied on cost reductions in their existing portfolios to maintain
 profits
@@ -313,18 +339,33 @@ Global matrix structure has fallen out of favour.
 archetypes:
 
 a. European empire (multinational model)
+      - portfolio management
 b. American empire (international model)
 c. Japanese empire (global model)
 
-### AI Article
+[Competing in teh age of AI](https://ocul-wlu.primo.exlibrisgroup.com/permalink/01OCUL_WLU/s6kavd/cdi_proquest_miscellaneous_2332077902)
+
+- ANT financial, 10x the customers of largest US banks, with one tenth the employees. Leverages AI to approve loans a
+- weak AI is enough
+  - perform tasks traditionally done by humans
+
+[Have you restructured for global success?](https://ocul-wlu.primo.exlibrisgroup.com/permalink/01OCUL_WLU/s6kavd/cdi_proquest_miscellaneous_895881498)
+
+- emerging markets are stars, developed world is cash-cow
+- emerging market talent-pool
+  - interoperability
+- leadership has to come from developed markets
+- upper echelon's theory: composition of top management affects strategic choices
+- emergin market entreprenuers are more ambitious
+- low-income and budgets
 
 ### Beiersdorf AG
 
+- Skin care, NIVEA
 - the last quarter of 2011 had ended with a loss.
 - local adaptation strategy
-- restructuring was focused on get closer to becoming
-the world’s best skin care company.
-- old ceo was Quaas
+- restructuring was focused on get closer to becoming the world’s best skin care company.
+- Old ceo was Quaas
 - Markus Pinger left for obvious reasons since he did not become CEO
 - Heidenreich: strong-willed and dynamic but also risk-seeking and aggressive
 - Hamburg-based Global Research Center
@@ -354,7 +395,6 @@ predecessor? How should he proceed?
 - worked at Hero
 - In his previous position at Hero, where he had been the CEO for seven years, Heidenreich convinced many investors of his ability to generate continuous profits and grow share prices
 - Hero had undergone major restructuring efforts and also had a majority shareholder
--
 
 ## Worldwide Innovation and Learning
 
@@ -450,11 +490,8 @@ markets
 developed markets with low cost alternatives
 Reversed innovation isn’t optional, its oxygen!
 
-
 - decentralization
-- traditional centralized structures
-provide cost benefits
--
+- traditional centralized structures provide cost benefits
 
 Project-level actions
 Establish Local Growth Teams (LGTs)
@@ -468,9 +505,7 @@ how to produce, sell, and service
 
 China
 
-Foreign companies must retool their R&D
-strategies to keep pace with newly
-innovative Chinese enterprises.
+Foreign companies must retool their R&D strategies to keep pace with newly innovative Chinese enterprises.
 
 Foreignness is becoming a liability
 • Intellectual property (IP) regime has
@@ -491,7 +526,7 @@ faster time to market.
 
 ### Answers
 
-Three important capabilities that are necessary for effective central innovation are: taking  in information from subsidiaries to the centralized head quarter through the use of creating linkages (taskforce focusing on a region, activities, meetings, etc.) that increase interaction between local managers and the central head quarters; ensuring that all functional tasks are linked to market needs through the use of direct consumer contact and feedback; and integrating value-chain functions by managing the transfer of responsibilities across development, production, and marketing. The goal of managing responsibility transfer is to reduce the loss of proximity from a centralized approach to development<->marketing rather than a decentralized approach where the functions are close to each other. Thus, the last capability is to ensure that research, production, and marketing remains as integrated in a centralized perspective as was by default in the local-for-local innovation.
+Three important capabilities that are necessary for effective central innovation are: taking in information from subsidiaries to the centralized head quarter through the use of creating **linkages** (taskforce focusing on a region, activities, meetings, etc.) that increase interaction between local managers and the central head quarters; ensuring that all functional tasks are linked to **market needs** through the use of direct consumer contact and feedback; and **integrating value-chain functions** by managing the transfer of responsibilities across development, production, and marketing. The goal of managing responsibility transfer is to reduce the loss of proximity from a centralized approach to development<->marketing rather than a decentralized approach where the functions are close to each other. Thus, the last capability is to ensure that research, production, and marketing remains as integrated in a centralized perspective as was by default in the local-for-local innovation.
 
 One capability to make local innovations efficient is to empower the local management. Local management referring to managers of the subsidiaries. Empowering local management means to hand over, or delegate, organization resources and decision making authority to the subsidiary managers. It could be as simple as investing assets into the subsidiary because then the innovation would be local led even if the starting direction was done by the central HQ.
 Another capability is to provide a link (collaboration) between the different federations so that knowledge and techniques can be shared without reinventing the wheel. Lastly, there needs to be cross-functional integration at all local subsidiaries to ensure that the ideas being generated are high quality.
@@ -550,18 +585,25 @@ Max Faxtor is the company they acquired.
 - Economies of scale and reduction of risk
 - Alliances as an alternative to mergers
 
-Honda blind sport detector. Might not be available. What if Honda used the patent
+Honda blind spot detector. Might not be available. What if Honda used the patent
 instead and paid off any lawsuit?
 
 ### Risks
 
-TODO
+- when one skill is easily observable and can be learned but the other is too complex
+- one way dependence in order to erode competitive position
+- takeover risk
 
 ### Cost of Strategic and Organizational Complexity
+
+- broad range of activities
 
 ### Building and Managing Collaborative Ventures
 
 - Pre-alliance
+  - Selection
+  - Escalating commitment
+  - Simplicity and Flexibility
 - Post-alliance
   - Managing the boundary
   - Managing knowledge flows
@@ -569,8 +611,9 @@ TODO
 
 [Reading: How to manage alliances better than one at a time (MIT Sloan Management Review, Spring 2010)](https://ocul-wlu.primo.exlibrisgroup.com/permalink/01OCUL_WLU/s6kavd/cdi_hal_shs_oai_HAL_hal_02313047v1)
 
-Reading: Joint Ventures and Partnerships in a Downturn (Harvard Business Review
-September 2020)
+[Reading: Joint Ventures and Partnerships in a Downturn (Harvard Business Review September 2020)](https://ocul-wlu.primo.exlibrisgroup.com/permalink/01OCUL_WLU/s6kavd/cdi_proquest_miscellaneous_2464403547)
+
+> Companies will need every tool they’ve got to survive the downturn and rev up their businesses as the economy rights itself. They’ll have to rewire operations, reallocate resources, and in some cases reinvent business models
 
 Case: Nora-Sakari: A Proposed JV In Malaysia
 
@@ -629,7 +672,7 @@ of both companies
 - Role as a national defender and advocate
 - Need for national responsiveness
 
-### - How to respond to resistance to globalization
+### How to respond to resistance to globalization
 
 - Determine if willing to take leadership role on dealing with underlying issues
 
@@ -647,9 +690,9 @@ of both companies
   - no inappropriate products promoted
   - NGO relationship based on monitoring and challenging
 - Responsive (making a difference)
-  - TEST1
+  - temp
 - Transformative (leading broad change)
-  - TEST2
+  - temp
 
 ## Case: Silvio Napoli at Schindler India (A)
 
@@ -744,12 +787,10 @@ What should Silvio do about limited support with technical issues and transfer p
 
 technical, need to call someone directly to fix the problem. For transfer price, need to outsource as fast as possible or setup local plant.
 
-## Midterm Questions
-
 Hard NOx (Dirty Money Documentary, Season 1)
 [Watch at home before coming to class]
 
-eading: The New Mission for Multinationals (MIT, 2015)
+Reading: The New Mission for Multinationals (MIT, 2015)
 Reading: The new frontiers (Harvard Business Review, July-August 2009)
 Reading: New business models in emerging markets (Harvard Business Review,
 January-February 2011)
