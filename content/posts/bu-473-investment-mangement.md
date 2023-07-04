@@ -843,3 +843,200 @@ Test Structure
   - lesser known firms have generated abnormal returns
 - Liquidity effect
   - Illiquid stocks have a strong tendency to exhibit abnormally high returns
+
+## Behavioural Finance and Technical Analysis
+
+Conventional Finance
+
+- Prices are correct and equal to intrinsic value
+- Resources are allocated efficiently
+- Consistent with Efficient Market Hypothesis
+
+Behavioural Finance
+
+- Irrational investors
+- Arbitrageurs are limited and therefore insufficient to force prices to match intrinsic value
+
+### Behavioural Biases
+
+- Framing
+  - Potential gains from low baseline levels
+- Mental accounting
+  - Segregation of certain decisions
+- Regret avoidance
+  - Regret unconventional decisions more
+- Affect and feelings
+  - Investors choosing stocks that matter to them more which drives up prices and drives down returns
+
+### Technical
+
+20-day moving average
+
+Relative strength index
+
+Security Price / Industry Price Index
+
+Bollinger band
+
+### Sentiment Indicators
+
+Confidence Index
+
+- Average yield on 10 top-rated corporate bonds divided by the average yield on 10 intermediate-grade corporate bonds.
+- Ratio will always be below 1, because intermediate-grade bonds are riskier than top-rated bonds.
+- Higher values are bullish since it indicates that intermediate-grade bonds are less relatively risky
+
+Short interest
+
+- shares short over shares outstanding
+
+Put/Call Ratio
+
+- Ratio of outstanding put options over outstanding call options
+- Rising ratio taken as a sign of broad investor pessimism
+
+It is possible to perceive patterns that really don't exist
+
+- Data mining
+
+## Bonds
+
+- borrowing arrangement
+- par value (Face value) paid at the maturity date
+- coupon rate (interest payment per dollar of par value)
+- bond indenture (the contract between issuer and borrower)
+
+### Treasury Bonds and Notes
+
+- Notes: 1 to 10 years
+- Bonds: 10  to 30 years
+- May be purchased directly from teh Treasury
+- $100 to $1,000
+
+### Accrued Interest and Quoted Bond Price
+
+- bond prices that are quoted on financial pages are not actually the prices that investors pay
+- quoted price is flat price
+- invoice or total price paid is called the dirty price
+- A semi-annual coupon bond with 8% coupon rate
+- Days passed since last coupon payment is 30
+- Accrued interest = $80/2 \* (30/182.5) = 6.58
+  - coupon rate \* par value \* (days / 365)
+- Invoice = 990 (quoted) + 6.58 = $996.58
+
+### Corporate Bonds
+
+- Callable bonds: let's the issuer buyback the bond
+- Convertible bonds: exchange each bond for a specified number of shares of the firm's stock
+- put bond: gives holder option to exchange for par value at some date or extend a number of years
+- floating-rate bond has interest rate that is reset periodically according to a specified market rate
+
+### Preferred stock
+
+- Promised cash flow stream
+- Does not result in bankruptcy
+- Dividends owed cumulate
+- Rarely gives holders full voting privileges in firm
+
+### International Bonds
+
+- Foreign bonds
+  - Issued by a borrower from a country other than the bond is sold
+  - Called Maples in Canada, Yankees in the U.S., Samurai bonds in Japan, Bulldog bonds in the U.K.
+- Eurobonds
+  - Denominated in the currency of the borrower but sold in foreign markets
+  - Not regulated by US
+
+### Innovation in the Bond Market
+
+- Inverse floaters are like floating-rate bonds, except coupon rate falls when the general level of interest rates rises
+- Asset-backed bonds use income from a specified group of assets to service debt
+- Catastrophe bonds (final payment contingent on a catastrophe)
+- Indexed bonds are tied to general price index
+  - Treasury Inflation Protected Securities (TIPS) Indexed Bonds
+  - Canada Real Return Bonds (RRBs)
+
+### Bond Pricing
+
+- Coupon / (1 + r)^t + Par value / (1 + r)^T
+- Steady: compound periods, maturity date, coupon rate, face value
+- Changing: price and yield to maturity
+  - Price and Face Value
+    - When price is above face value, coupon rate > yield
+  - Coupon rate and yield to maturity
+    - If yield > coupon rate, price is less than face value
+
+### Bond Risks
+
+- Default risk
+- Interest rate risk
+  - Price will drop because interest rates rise
+- Reinvestment risk
+  - If rates change, the reinvestment yields a different return
+
+### Bond Sensitivity to Yields
+
+Bond prices are less senstive at high interest rates and very voltaile at lower interest rates. Around par, a small increase in interest rate
+will have a large affect on price. Longer dated bonds are more sensitive.
+
+### Yield to Maturity Example
+
+8% semi-annual coupon, 30-year bond, $1,276.76. YTM is not the EAR.
+
+1276.76 = SUM {1..60} 40 / (1 + r)^60 + 1000 / (1 + r)^60
+
+### Yield to Call
+
+- low interest rates means price is flat since risk of repurchase is high
+- With high interest rates, the price of the callable bond converges to that of a normal bond since the risk of call is negligible
+
+### Realized Compound Return vs YTM
+
+- YTM assumes coupons are reinvested at the YTM
+- realized compound return is the compound rate of return assuming that coupon payments are reinvested until maturity
+- Forecasting the realized compound yield over various holding periods or investment horizons is **horizon analysis**
+- Prices of bonds with different coupon rates converge near maturity
+- HPR: can only be forecasted
+  - Investment period
+
+### Zero Coupon Bond
+
+Always trades at a discount since no coupon rate
+
+### Discriminant Analysis
+
+- Edward Altman used discriminant analysis to predict bankruptcy
+- Financial characteristics are used to assign a score
+- z = 3.1 (EBIT / Assets)  + 1 (Sales / Assets) + 0.42 ( Equity / Liabilities )
+- Scores between 1.23 and 2.90 are gray area
+- Scores above 2.90 are considered safe
+
+### Bond Indentures
+
+- Sinking fund
+  - calls for the issuer to periodically repurchase some proportion of the outstanding prior to maturity
+- Subordination clauses restrict the amount of additional borrowing by the firm
+- Dividend restrictions limit the payment of dividends by the firms
+- Collateral is a particular asset that the bondholder receive if the firm defaults
+
+### Default Risk and YTM
+
+- Promised YTD realized only if the firm meets obligation of the bond issue
+- Expected YTD must consider the possibility of a default
+- Default premium is a differential
+- CCC bond default probability is 34%
+
+### Credit default swaps (CDC)
+
+- Insurance policy on the default risk of a bond or a loan
+- Allows lenders to buy protection against default risk
+- Risk structure of interest rates and CDS prices ought to be tightly aligned
+- CDS contracts trade on corporate as well as sovereign debt
+
+### Collateralized Debt Obligations (CDO)
+
+- Major mechanism to reallocate credit risk in the fixed-income markets
+- Establish a legal entity; Structured Investment Vehicle
+- Loans are pooled and split into _tranches_
+- Mortgage backed CDOs were an investment disaster in 2007-2009
+- Obligations found in [Slide 14, page 39](https://mylearningspace.wlu.ca/d2l/le/content/493514/viewContent/3392549/View)
