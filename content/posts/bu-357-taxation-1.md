@@ -899,6 +899,52 @@ A parcel of land with a cost of $4,000 was sold in 2022 for $160,000. For the to
 
 ### Maximize Exemption With Multiple Homes
 
+Exercise 2
+
+Patel has only two residences he wishes to dispose of in 2022
+
+- Name; year purchased; cost; commissions; selling price
+- City home; 2007; 180,000; 12,000; 247,000
+  - 16 years; 55,000/16 gain per year
+- Cottage; 2012; 90,000; 6,000;; 164,000
+  - 11 years; **68,000/11** gain per year (higher than home)
+
+Exemption = (1 + ?) / 11 \* 68,000
+
+### Stock Dividends
+
+ACB is paid up capital
+
+### Superficial Losses (denied)
+
+- no intention of disposing of the asset; disposed and reacquired within 30 days
+- the denied losses are added to the ACB of the acquired asset
+
+Example. Taxpayer sold 500 shares of Corp. X for 8,000 on Dec 31, 2021 with ACB of 10,000. On Jan 5, 500 shares were reacquired for 7,500. Sold half of shares on July 20 at $21/share. What is TCG?
+
+ACB = 9,500/500 \* 250 = 4750. POD = 250 \* 21 = 5250. TCG = (5250 - 4750) / 2 = 250
+
+### Computation of Div. B income (NIFTP)
+
+- Aggregate income (worldwide)
+- Employment
+- Business
+- Property
+- Other
+- must be positive or zero
+
+Example
+
+- Employment: 35,000
+- Business 2,000
+- Property (3,000)
+- TaxabTaxable Capital Gains 3,000
+- Alllowwable capital losses (8,000)
+  - (include 2,000 allowable business investment losses)
+- RRSP contribution of 1000
+
+- Employment (35,000) + Business (2,000) + 3,000 TCG - 3,000 ACL - RRSP 1000 - 3000 property - 2000 ABIL
+
 ## Problems
 
 <details><summary>Chapter 3, Problem 19</summary>
@@ -980,3 +1026,19 @@ c. non-resident because not really controlled by Canada
 ## Final Exam Studying
 
 Chapter 5, Problem 1
+
+### Mr. A Capital Losses
+
+- Capital Gains:
+  - Shares 1850
+  - Persnal use propery: 770
+  - Listed personal property: 500
+- Capital losses
+  - Shares 750
+  - Personal-use property 1000
+  - Listed personal property 140
+  - Listed personal property losses from previous year 100
+
+ Taxable gains?
+
+0.5 \* ((1850 - 750) + 770 + (500 - 140 - 100))   = 1065

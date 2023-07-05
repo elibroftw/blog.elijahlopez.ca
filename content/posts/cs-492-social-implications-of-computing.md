@@ -187,3 +187,9 @@ What if Universal IDs were not an identity thing, but a physical thing, and we h
 - Many kids are playing M-rated games
 - Can turn into a profession
   - If kids can skip classes for professional sports, why not professional e-sports?
+
+## Week 9
+
+### Gender Balance
+
+### Security

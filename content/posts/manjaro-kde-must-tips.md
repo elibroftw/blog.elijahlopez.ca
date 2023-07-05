@@ -68,3 +68,27 @@ Ctrl + Alt + Backspace (unconfirmed)
 
 - [jstaf/onedriver](https://github.com/jstaf/onedriver)
 - For Arch, use `sudo pamac build onedriver`
+
+### Setting Up OneDrive
+
+```sh
+yay onedrive-abraunegg
+```
+
+Note: If asked regarding a provider for 'd-runtime' and 'd-compiler', select 'liblphobos' and 'ldc'
+
+Run `onedrive` to setup account.
+
+Increase number of inotify watchers (number of files that can be monitored)
+
+````sh
+echo fs.inotify.max_user_watches=524288 | sudo tee /etc/sysctl.d/40-max-user-watches.conf && sudo sysctl --system
+```
+
+Enable the system service
+
+```sh
+sudo systemctl enable onedrive@$USER.service
+sudo systemctl start onedrive@$USER.service
+journalctl -u onedrive@$USER # scroll to bottom to check if syncing works
+```
