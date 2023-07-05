@@ -890,6 +890,8 @@ Short interest
 
 - shares short over shares outstanding
 
+- share ratio = shares short / daily average trading volume
+
 Put/Call Ratio
 
 - Ratio of outstanding put options over outstanding call options
@@ -1040,3 +1042,4 @@ Always trades at a discount since no coupon rate
 - Loans are pooled and split into _tranches_
 - Mortgage backed CDOs were an investment disaster in 2007-2009
 - Obligations found in [Slide 14, page 39](https://mylearningspace.wlu.ca/d2l/le/content/493514/viewContent/3392549/View)
+A
