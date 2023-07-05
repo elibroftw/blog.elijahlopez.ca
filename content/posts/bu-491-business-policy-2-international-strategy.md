@@ -787,8 +787,38 @@ What should Silvio do about limited support with technical issues and transfer p
 
 technical, need to call someone directly to fix the problem. For transfer price, need to outsource as fast as possible or setup local plant.
 
-Hard NOx (Dirty Money Documentary, Season 1)
+### Hard NOx (Dirty Money Documentary, Episode 1 Season 1)
+
 [Watch at home before coming to class]
+
+Uncovered in 2015
+Open road emissions were 35x government testing facility (environment protection agency)
+Defeat devices reduced effectiveness of emissions control system when on the open road.
+2009-2015.
+Issued notice September 18 2015.
+Lawsuits on every country. 32B in total.
+
+Nitrogen oxide emissions.
+60 premature deaths.
+
+Started by Hitler. Counter culture.
+New CEO wanted to expand diesel sales from 2007 in the USA. Strategy 2018
+
+Portrayed itself as a company of ethical culture , good corporate governance  effective risk management and strong sustainability commitment
+
+Diesel is more efficient and less CO2 but produces NOx which harms lungs.
+
+Martin Wintercorn
+
+Cars so good people wanted to see how to share this tech to other companies.
+John German
+ICCT
+
+JRC
+2011-2012 report on EU diesel vehicles.
+
+2013 test Volkswagen clean. First in lab then on road. Car geeks university of Virginia .
+
 
 Reading: The New Mission for Multinationals (MIT, 2015)
 Reading: The new frontiers (Harvard Business Review, July-August 2009)
