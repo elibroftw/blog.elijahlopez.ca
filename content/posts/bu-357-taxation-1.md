@@ -798,7 +798,7 @@ After all expenses other than CCA, Jim's total rental income for the past two ye
 
 ### Property Deductions
 
-## Capital Gains (CG)
+## Chapter 7 Capital Gains (CG)
 
 1. capital gains (CG) and losses (CL)
 2. determining CG/CL
@@ -938,12 +938,92 @@ Example
 - Employment: 35,000
 - Business 2,000
 - Property (3,000)
-- TaxabTaxable Capital Gains 3,000
+- Taxable Capital Gains 3,000
 - Alllowwable capital losses (8,000)
   - (include 2,000 allowable business investment losses)
 - RRSP contribution of 1000
 
 - Employment (35,000) + Business (2,000) + 3,000 TCG - 3,000 ACL - RRSP 1000 - 3000 property - 2000 ABIL
+
+### Mr. A Capital Losses
+
+- Capital Gains:
+  - Shares 1850
+  - Personal use property: 770
+  - Listed personal property: 500
+- Capital losses
+  - Shares 750
+  - Personal-use property 1000
+  - Listed personal property 140
+  - Listed personal property losses from previous year 100
+
+ Taxable gains?
+
+0.5 \* (1850 + 770 + (500 - 140 - 100)) - 750 \* 0.5   = 1065
+
+## Chapter 8 Non-Arm's Length Transfers and Other Special Circumstances
+
+- Non-arm's length (NAL) rules
+  - prevent reduction of tax by selling price other than fair market value
+  - people related to each other (direct-line)
+  - government doesn't like income splitting
+  - income received on transferred property is attributed back to original owner
+  - exceptions:
+    - transferred or loaned at fair market value
+    - second-generation income
+      - income earned on profits of a company
+    - transferred to a related chid (18+)
+      - capital gains or losses
+
+- gift of $100,000 to his son, 21. The son earned $3,000 of interest income
+  - not attributable back
+- 100,000 loan to mother-in-law, 81. Mutual funds and earned $12,000
+  - the mutual fund is equivalent to transferred property
+  - the income made off the $12,000 would not be attributable back
+- $100,000 to wife spent on expenses. Earned $10,000 on her own $100,000
+  - income wasn't earned on the transferred cash (not property)
+  - the dividend was earned on her money
+
+### Selling to NAL \[sec 69]
+
+1. Sell price < FMV
+    - Deemed to sell at FMV
+    - Purchaser ACB = sell price
+2. Sell price > FMV
+    - Deemed to sell at sell price
+    - **ACB equal to FMV**
+3. Gifting
+    - Sales price to vendor = FMV
+    - Purchaser ACB = FMV
+
+### Transferred to Spouse
+
+- Sold at vendor's cost (rollover is automatic)
+- Can choose to use NAL
+- Property income and capital gains are attributed back unless transferred at FMV
+
+### Transferred to Children
+
+- to Under 18s
+  - NAL rule applies
+  - Property income is attributable unless transferred at FMV
+  - Capital gains not attributable back
+- 18+
+  - NAL rule
+  - property income and capital gains not attributable back
+
+### NAL Transfer Multiple Choice
+
+- ACB: 900,000
+- FMV: 1,000,000
+- shares given to 6 year old child
+
+Vendor will report $50,000 taxable gain on the transfer of shares. The ACB of the child is $1,000,000.
+
+- What if sold at $500,000 to child?
+- What if given to spouse?
+  - Either deemed to sell at FMV with ACB of FMV or rollover (no gain, and same ACB)
+
 
 ## Problems
 
@@ -1026,19 +1106,3 @@ c. non-resident because not really controlled by Canada
 ## Final Exam Studying
 
 Chapter 5, Problem 1
-
-### Mr. A Capital Losses
-
-- Capital Gains:
-  - Shares 1850
-  - Persnal use propery: 770
-  - Listed personal property: 500
-- Capital losses
-  - Shares 750
-  - Personal-use property 1000
-  - Listed personal property 140
-  - Listed personal property losses from previous year 100
-
- Taxable gains?
-
-0.5 \* ((1850 - 750) + 770 + (500 - 140 - 100))   = 1065
