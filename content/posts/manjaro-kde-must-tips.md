@@ -81,7 +81,7 @@ Run `onedrive` to setup account.
 
 Increase number of inotify watchers (number of files that can be monitored)
 
-````sh
+```sh
 echo fs.inotify.max_user_watches=524288 | sudo tee /etc/sysctl.d/40-max-user-watches.conf && sudo sysctl --system
 ```
 
@@ -92,3 +92,9 @@ sudo systemctl enable onedrive@$USER.service
 sudo systemctl start onedrive@$USER.service
 journalctl -u onedrive@$USER # scroll to bottom to check if syncing works
 ```
+
+### Reading a file from the terminal
+
+- Use `less` to read line by line (arrow up and down keys)
+- Use `more` to read page by page (arrow up and down keys)
+- Use `cat` to output entire file (useful for piping `|` commands)
