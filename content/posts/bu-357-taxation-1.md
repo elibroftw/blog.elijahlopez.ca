@@ -800,9 +800,16 @@ After all expenses other than CCA, Jim's total rental income for the past two ye
 
 ## Chapter 7 Capital Gains (CG)
 
-1. capital gains (CG) and losses (CL)
-2. determining CG/CL
-3. specific properties
+In summary,
+
+- taxable capital gains is from an investment not an adventure or business purposes
+- taxable capital gains is 50% of total capital gains.
+- personal use property is non-tax deductible
+  - needs to have proceeds over $1,000
+  - costs will be rounded up to $1,000
+- listed personal property is only tax-deductible against other LPP and carry-forwards (7) / carry-backwards (3)
+- allows reserves (subtract against gross) less of the business reserve rule or 80%-0% of net every year
+- principal residence rule allows a plus 1 when the house is owned for more than a year
 
 ### Business Income vs. Capital Gains
 
@@ -846,13 +853,14 @@ A parcel of land with a cost of $4,000 was sold in 2022 for $160,000. For the to
 
 ### Personal Use Property (PUP)
 
-- gains are taxable; losses are non-deductible
-  - applied to each item of personal property
-- minimum POD = $1,000
+- round up cost to $1,000 if proceeds are more than $1,000
+- each property gain is taxable and losses are not deductible
+- minimum proceeds of disposal = $1,000
 - minimum cost basis of $1,000
 
 ### Listed Personal Property (LPP)
 
+- round up proceeds to $1,000 if proceeds are less than $1,000
 - PUP with investment value
   - print, etching, drawing, painting, or sculpture, or other similar works of art
   - Jewelry
@@ -877,7 +885,7 @@ A parcel of land with a cost of $4,000 was sold in 2022 for $160,000. For the to
   - CG of 5,000 (PUP)
   - antique does not mean rare
 
-- LPP $0 taxable, carryforward = 1,300 \* 0.5 = 650
+- LPP $0 taxable, carry-forward = 1,300 \* 0.5 = 650
 - PUP = 5,000 \* 0.5 = 2,500 taxable
 
 ### Allowable Business Investment Loss (ABIL)
@@ -913,7 +921,8 @@ Exemption = (1 + ?) / 11 \* 68,000
 
 ### Stock Dividends
 
-ACB is paid up capital
+- ACB is paid up capital
+- Increases net income by ACB + 38% gross up
 
 ### Superficial Losses (denied)
 
@@ -939,7 +948,7 @@ Example
 - Business 2,000
 - Property (3,000)
 - Taxable Capital Gains 3,000
-- Alllowwable capital losses (8,000)
+- Allowable capital losses (8,000)
   - (include 2,000 allowable business investment losses)
 - RRSP contribution of 1000
 
