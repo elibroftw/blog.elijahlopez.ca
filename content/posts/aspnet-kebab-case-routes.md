@@ -5,7 +5,7 @@ draft: false
 tags: [
     "programming",
     "tutorial",
-    "c#",
+    "c-sharp",
     "asp.net",
 ]
 aliases: ["/posts/aspnet-kebab-case"]

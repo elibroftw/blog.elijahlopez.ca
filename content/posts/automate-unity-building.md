@@ -6,7 +6,7 @@ tags: [
     "tutorial",
     "programming",
     "python",
-    "c#",
+    "c-sharp",
 ]
 ---
 
