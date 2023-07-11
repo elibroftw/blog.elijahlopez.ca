@@ -819,11 +819,25 @@ JRC
 
 2013 test Volkswagen clean. First in lab then on road. Car geeks university of Virginia .
 
+## Emerging Markets
 
-Reading: The New Mission for Multinationals (MIT, 2015)
-Reading: The new frontiers (Harvard Business Review, July-August 2009)
-Reading: New business models in emerging markets (Harvard Business Review,
-January-February 2011)
+[The New Mission for Multinationals (MIT, 2015)](https://ocul-wlu.primo.exlibrisgroup.com/permalink/01OCUL_WLU/s6kavd/cdi_webofscience_primary_000356638700008)
+
+- foreignness into a virtue. For example, Coca-Cola, Levi Strauss and Disney can continue to sell a piece of American life-style, Prada can continue to clothe its foreign customers in Italian fashion sense
+- home team advantages
+  - deep customer and end-user engagement
+  - partnering with local suppliers
+  - fostering development of local talent pool
+- acquire a local company and maintain links
+- enter the market early
+
+[The new frontiers (Harvard Business Review, July-August 2009)](https://ocul-wlu.primo.exlibrisgroup.com/permalink/01OCUL_WLU/s6kavd/cdi_gale_businessinsightsgauss_A203890792)
+
+- China acquire more than 1,000 swedish businesses
+- top investor economies in Africa
+  - France, Netherlands, United States, UK
+
+[New business models in emerging markets (Harvard Business Review, January-February 2011)](https://ocul-wlu.primo.exlibrisgroup.com/permalink/01OCUL_WLU/s6kavd/cdi_proquest_miscellaneous_822411470)
 
 Case: Genicon - A Surgical Strike into Emerging Markets
 
