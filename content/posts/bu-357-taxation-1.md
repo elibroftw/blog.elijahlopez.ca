@@ -1033,6 +1033,102 @@ Vendor will report $50,000 taxable gain on the transfer of shares. The ACB of th
 - What if given to spouse?
   - Either deemed to sell at FMV with ACB of FMV or rollover (no gain, and same ACB)
 
+## Chapter 9 Other Sources of Income Deductions in Computing Income
+
+1. Other Income \[subdiv d]
+2 Other Deductions \[subdiv e]
+
+### Other Income Major Items \[sec 56]
+
+- pensions and deferred income plans
+- annuity payment
+- retiring allowances
+- social assistance, workers' compensations
+- support payments from former spouse
+
+### Other Deductions Major Items \[]
+
+- support payments to former spouse (alimony)
+- fees/expenses for objection or appeal of a tax assessment
+- RRSP contributions
+  - investments not taxed until withdrawn
+  - contribution is less of { 18% of prior year's earned income, $29,210 }
+  - less prior year's pension adjustment (DPSP is Deferred profit sharing plans)
+  - contribution room is carried forward
+- Moving expenses
+- Child care expenses
+
+### Other Tax-Assisted Plans
+
+- TFSA
+  - Contribution is not deductible; income is not taxable. Annual limit, unused room carried forward
+- RESP
+  - contribution is not deductible; income is taxable. max contribution of $50,000 over 31 years (35 if desirable)
+- FHSA (tax-free first home savings account)
+  - **contributions are deductible**; income is tax-free; unused contribution room cannot be carried forward, max of $8,000 per year, $40,000 lifetime max (5 years)
+    - must be used to buy first home otherwise taxed
+
+### Moving Expenses \[sec 62]
+
+- relocation to start business, employment, or attend university
+- if moving expense > income in new location, carry forward unclaimed portion and deduct in following years
+- deductible:
+  - meal $69/person/day without receipt
+  - transportation and storage of belongings
+  - temporary board and lodging (up to 15 days)
+  - costs of cancelling a lease for old residence
+  - selling costs of the old residence
+  - legal fees and land transfer taxes
+  - cost of maintaining old residence up to $5,000
+  - cost of revising legal documents
+
+Exercise
+
+Ken and Mary were living in Edmonton. Ken was an engineer and Mary was a self-employed consultant. On April 4, 2022, the couple moved
+from Edmonton to Toronto so that Ken could start a new position. Mary continued her business. Only one person can claim the moving deductions.
+
+- Return airfare for trip to find living accommodation in Feb 2022: $550
+  - Not deductible, since not actual move
+- Hotel and meals for three days during trip to find living accommodation (receipts kept): 500
+  - Not deductible, since not actual move
+- Airfare for the move to Toronto in April: $1,200
+- 20 days of moving and waiting
+  - hotel: 3,000 (prorate to 15 days)
+  - meals (not all receipts): 1,300
+    - higher of:
+      - 15 days of $69/person/day (2 \* 69 \* 15)
+      - receipts would get prorated
+- Legal fees and commissions of selling old home: 3,700
+- Loss on sale: 27,000
+  - not covered in moving expense, covered in other section
+  - PuP so can't claim capital loss
+- transporting household goods: 4,900
+- legal fees and land transfer tax on acquisition of new home in Toronto
+- Interior decorating of new home
+  - not deductible
+
+Ken received a salary of $87,000 from his employer, and Mary earned $125000 as a self-employed consultant in Toronto.
+
+Total moving expenses = 1200 (air april) + 2250 (hotel prorated) + 2070 (allowable meal) + 3700 (old home expenses) + 4900 (transporting) + 900 (legal new home expenses) = 15,020.
+
+### Child care expenses \[sec 63]
+
+- cost of babysitting, day care, or lodging at a boarding school
+- children under 16
+- less of
+  - 5,000 per child 7-16
+  - 8000 per child under 7
+  - 11,000 per disabled child
+  - 2/3 of earned income
+- claimed usually by lower income spouse
+  - applies even if lower income spouse is unemployed
+- unless
+  - lower income spouse is a student, in hospital, jail, marriage breakdown
+  - limit not exceeding (275 per disabled child + 200 per child under 7 + 125 per child 7 to 16) \* weeks in special situation
+
+- Homer & Marge have 3 kids aged 10, 8, 1. Homer earned 15,000 and Marge earned 40,000.
+- {15,000 \* 2 / 3 = $10,000, 5,000 \* 2 + 8,000 = 18,000 }
+- Therefore, the child care expense is $10,000
 
 ## Problems
 
