@@ -978,7 +978,7 @@ It is possible to perceive patterns that really don't exist
 
 ### Bond Sensitivity to Yields
 
-Bond prices are less senstive at high interest rates and very voltaile at lower interest rates. Around par, a small increase in interest rate
+Bond prices are less sensitive at high interest rates and very volatile at lower interest rates. Around par, a small increase in interest rate
 will have a large affect on price. Longer dated bonds are more sensitive.
 
 ### Yield to Maturity Example
@@ -1042,4 +1042,87 @@ Always trades at a discount since no coupon rate
 - Loans are pooled and split into _tranches_
 - Mortgage backed CDOs were an investment disaster in 2007-2009
 - Obligations found in [Slide 14, page 39](https://mylearningspace.wlu.ca/d2l/le/content/493514/viewContent/3392549/View)
-A
+
+## Fixed Income Term Structure
+
+### Yield Curve
+
+- Zero coupon bond yield plotted to maturity
+- inverted yield curve: short-term rates are higher than long-term
+  - higher risk for short-term
+- normal yield curve has higher long-term yields
+
+### Valuing Coupon Bonds
+
+- Discount based on zero-coupon bond yield for each year
+- Find a discount rate (ytm) that equals the future value
+
+### Forward Rates
+
+Forward rate calculation {a = maturity, b = years into the future}
+
+<img class=equation-tall src="https://latex.codecogs.com/svg.image?f_{a,b}=\left(\frac{(1+y_{a+b})^{a+b}}{1+y_a}\right)^\frac{1}{a}">
+
+For n > 1, since there is compounding, you need
+
+### Mortgage Rates
+
+Can apply to mortgage interest rates as well.
+
+Interest rates can be fixed at 1, 2, 3, etc. By forwarding rates, we can look at the best deal.
+
+What does the 1 year rate need to be 4 years from now, to be indifferent.
+
+Problems:
+
+- liquidity preference theory: forward rate is higher than expected rate
+
+### Interpreting the Term Structure
+
+- yield curve reflects expectations of future interest rates
+- forecasts are clouded by liquidity premium
+- upward sloping curve
+  - rates are expected to rise or liquidity premium to hold long term bond
+- yield predicts business cycle
+  - long-term rates tend to rise in anticipation of economic expansion
+  - inverted yield curve may indicate falling interest rates and signal a recession
+
+## Interest Rate Sensitivity
+
+### Short-term vs. Long-term
+
+short-term (2 year)
+
+| YTM | Zero | Zero % Change | 10% Annual Coupon | Coupon Bond % Change |
+| ------- | ------ | --------------------- | -------------- | ---------------------------------------------- |
+| 11%  | 811.62   |  -1.8 | 982.87                 | -1.71
+| 10%  | 826.45  |  N/A | 1000                    | N/A
+| 9%   | 841.68  |  1.8 | 1017.59                | 1.76
+
+Long-term (30y)
+
+| YTM | Zero | Zero % Change | 10% Annual Coupon | Coupon Bond % Change |
+| ------- | ------ | --------------------- | -------------- | ---------------------------------------------- |
+| 11%  | 4368   | -23.8                | 913.06          | -8.69
+| 10%  | 5731  |  N/A                  | 1000             | N/A
+| 9%  | 7537  | 31.5                    | 1102.74        | 10.3
+
+### Duration
+
+- weighted each time by the present value of cash flows at each time divided by the price
+- multiply each weight by the time
+- duration equals the maturity for a zero coupon bond
+- duration < maturity of a coupon bond
+- present value of a cash flow at a time divided by the price
+- modified duration is the duration discounted by the yield divided by the number of periods in a year
+  - modified duration goes back a period because of better results
+- expected price % change = -D \* (change in interest rate)
+- assets with the same duration are equally sensitive
+- divide duration by number of periods in a year
+
+### Convexity
+
+- sensitivity is different at each duration
+- investors like convexity because bond prices don't drop as much but can increase in price faster
+
+### Callable Bonds Duration and Convexity
