@@ -33,12 +33,13 @@ echo y | LANG=C yay --noprovides --answerdiff None --answerclean None --mflags "
 
 To install vscode, `yay -S visual-studio-code-bin`
 
-### How to fix Sudo Password Not Accepted
+### VSCode Fix ZSH Font
 
-```zsh
-systemctl start systemd-homed
-pacman -S pambase --noconfirm   # optional
+```sh
+sudo pacman -Su ttf-meslo-nerd-font-powerlevel10k
 ```
+
+Set Terminal › Integrated: Font Family to `MesloLGS NF, monospace`
 
 ### Setting Default Browser for Electron Apps
 
@@ -47,13 +48,12 @@ xdg-mime default firefox.desktop x-scheme-handler/http
 xdg-mime default firefox.desktop x-scheme-handler/https
 ```
 
-### VSCode Fix ZSH Font
+### How to fix Sudo Password Not Accepted
 
-```sh
-sudo pacman -Su ttf-meslo-nerd-font-powerlevel10k
+```zsh
+systemctl start systemd-homed
+pacman -S pambase --noconfirm   # optional
 ```
-
-Set Terminal › Integrated: Font Family to `MesloLGS NF`
 
 ### Virtual Terminal
 
@@ -98,3 +98,13 @@ journalctl -u onedrive@$USER # scroll to bottom to check if syncing works
 - Use `less` to read line by line (arrow up and down keys)
 - Use `more` to read page by page (arrow up and down keys)
 - Use `cat` to output entire file (useful for piping `|` commands)
+
+### How to Install an AppImage on Manjaro
+
+First install `appimagelauncher``
+
+```sh
+sudo pacman -S appimagelauncher
+```
+
+Next double click on the downloaded AppImage
