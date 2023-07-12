@@ -2,6 +2,9 @@
 title: "Manjaro KDE Tips"
 date: 2023-06-27T10:56:19-04:00
 draft: false
+tags: [
+    "linux",
+]
 ---
 
 ### How to Install yay
