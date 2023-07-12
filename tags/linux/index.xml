@@ -1,4 +1,144 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>linux on ELL Blog</title><link>https://blog.elijahlopez.ca/tags/linux/</link><description>ELL Blog (linux)</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 24 Jul 2022 21:03:20 -0400</lastBuildDate><atom:link href="https://blog.elijahlopez.ca/tags/linux/index.xml" rel="self" type="application/rss+xml"/><item><title>Linux USB Formatting Issues</title><link>https://blog.elijahlopez.ca/posts/linux-usb-formatting-issues/</link><pubDate>Sun, 24 Jul 2022 21:03:20 -0400</pubDate><guid>https://blog.elijahlopez.ca/posts/linux-usb-formatting-issues/</guid><description>&lt;p>When trying to test out multiple Linux distros on multiple
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>linux on ELL Blog</title><link>https://blog.elijahlopez.ca/tags/linux/</link><description>ELL Blog (linux)</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 27 Jun 2023 10:56:19 -0400</lastBuildDate><atom:link href="https://blog.elijahlopez.ca/tags/linux/index.xml" rel="self" type="application/rss+xml"/><item><title>Manjaro KDE Tips</title><link>https://blog.elijahlopez.ca/posts/manjaro-kde-must-tips/</link><pubDate>Tue, 27 Jun 2023 10:56:19 -0400</pubDate><guid>https://blog.elijahlopez.ca/posts/manjaro-kde-must-tips/</guid><description>&lt;h3 id="how-to-install-yay" >How to Install yay
+&lt;span>
+&lt;a href="#how-to-install-yay">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Yet Another Yogurt (yay) helps you install packages from AUR using the command &lt;code>yay -S&lt;/code> instead of entering in commands to clone and build the package.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-zsh" data-lang="zsh">&lt;span style="display:flex;">&lt;span>pacman -S --needed git base-devel --noconfirm
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>git clone https://aur.archlinux.org/yay.git
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#24909d">cd&lt;/span> yay
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>makepkg -si
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#24909d">cd&lt;/span> ..
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>rm yay -rf
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="how-to-install-packages-from-aur" >How to Install Packages from AUR
+&lt;span>
+&lt;a href="#how-to-install-packages-from-aur">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>You can either do &lt;code>pamac build $PKGNAME&lt;/code> or use &lt;code>yay -s $PACKAGENAME&lt;/code> which requires installing yay as shown above.&lt;/p>
+&lt;p>In the next section is an example on how to install visual studio code.&lt;/p>
+&lt;p>The following is a one-liner way to install packages in yay to skip the prompts.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#24909d">echo&lt;/span> y | &lt;span style="color:#40ffff">LANG&lt;/span>=C yay --noprovides --answerdiff None --answerclean None --mflags &lt;span style="color:#ed9d13">&amp;#34;--noconfirm&amp;#34;&lt;/span> &lt;span style="color:#40ffff">$PACKAGENAME&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="how-to-install-visual-studio-code-in-manajaro" >How to install Visual Studio Code in Manajaro
+&lt;span>
+&lt;a href="#how-to-install-visual-studio-code-in-manajaro">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>To install vscode, &lt;code>yay -S visual-studio-code-bin&lt;/code>&lt;/p>
+&lt;h3 id="vscode-fix-zsh-font" >VSCode Fix ZSH Font
+&lt;span>
+&lt;a href="#vscode-fix-zsh-font">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>sudo pacman -Su ttf-meslo-nerd-font-powerlevel10k ttf-firacode-nerd --noconfirm
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Set Terminal › Integrated: Font Family to &lt;code>firaCode Nerd Font, monospace&lt;/code> or &lt;code>MesloLGS NF, monospace&lt;/code>&lt;/p>
+&lt;h2 id="how-to-install-fira-code-nerd-font-on-arch" >How to Install Fira Code Nerd Font on Arch
+&lt;span>
+&lt;a href="#how-to-install-fira-code-nerd-font-on-arch">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>&lt;a href="https://github.com/tonsky/FiraCode/wiki/Linux-instructions#installing-with-a-package-manager">Official install instructions&lt;/a>&lt;/p>
+&lt;p>Suppose you want to install a package on Arch. The first step would be to search for what you want using &lt;code>pacman -Ss a query&lt;/code>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>&amp;gt; pacman -Ss fira code
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>extra/texlive-fontsextra 2023.66594-15 (texlive)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> TeX Live - Additional fonts
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>extra/texlive-latexextra 2023.66594-15 (texlive)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> TeX Live - LaTeX additional packages
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>extra/ttf-fira-code 6.2-2
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Monospaced font with programming ligatures
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>extra/ttf-firacode-nerd 3.0.2-1 (nerd-fonts)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Patched font Fira (Fura) Code from nerd fonts library
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>extra/woff-fira-code 6.2-2
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Monospaced font with programming ligatures
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>extra/woff2-fira-code 6.2-2
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Monospaced font with programming ligatures
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Next install the Fira Code Nerd Font.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>sudo pacman -S ttf-firacode-nerd --noconfirm
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>To use this font in Visual Studio Code, set the editor font family to &lt;code>firaCode Nerd Font, 'Cascadia Code', Consolas, 'Courier New', monospace&lt;/code>.&lt;/p>
+&lt;p>Set the terminal font-family to &lt;code>firaCode Nerd Font, monospace&lt;/code>&lt;/p>
+&lt;h3 id="setting-default-browser-for-electron-apps" >Setting Default Browser for Electron Apps
+&lt;span>
+&lt;a href="#setting-default-browser-for-electron-apps">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>xdg-mime default firefox.desktop x-scheme-handler/http
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>xdg-mime default firefox.desktop x-scheme-handler/https
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="how-to-fix-sudo-password-not-accepted" >How to fix Sudo Password Not Accepted
+&lt;span>
+&lt;a href="#how-to-fix-sudo-password-not-accepted">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-zsh" data-lang="zsh">&lt;span style="display:flex;">&lt;span>systemctl start systemd-homed
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>pacman -S pambase --noconfirm &lt;span style="color:#999;font-style:italic"># optional&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="virtual-terminal" >Virtual Terminal
+&lt;span>
+&lt;a href="#virtual-terminal">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Ctrl + Alt + F4 to go to virtual terminal&lt;/li>
+&lt;li>Ctrl + Alt + F1 to go back to desktop&lt;/li>
+&lt;/ul>
+&lt;h3 id="x-server-restart" >X-Server Restart
+&lt;span>
+&lt;a href="#x-server-restart">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Ctrl + Alt + Backspace (unconfirmed)&lt;/p>
+&lt;h3 id="how-to-setup-onedrive-on-linux" >How to setup OneDrive on Linux
+&lt;span>
+&lt;a href="#how-to-setup-onedrive-on-linux">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>&lt;a href="https://github.com/jstaf/onedriver">jstaf/onedriver&lt;/a>&lt;/li>
+&lt;li>For Arch, use &lt;code>sudo pamac build onedriver&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;h3 id="setting-up-onedrive" >Setting Up OneDrive
+&lt;span>
+&lt;a href="#setting-up-onedrive">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>yay onedrive-abraunegg
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Note: If asked regarding a provider for &amp;rsquo;d-runtime&amp;rsquo; and &amp;rsquo;d-compiler&amp;rsquo;, select &amp;rsquo;liblphobos&amp;rsquo; and &amp;rsquo;ldc'&lt;/p>
+&lt;p>Run &lt;code>onedrive&lt;/code> to setup account.&lt;/p>
+&lt;p>Increase number of inotify watchers (number of files that can be monitored)&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#24909d">echo&lt;/span> fs.inotify.max_user_watches=&lt;span style="color:#3677a9">524288&lt;/span> | sudo tee /etc/sysctl.d/40-max-user-watches.conf &amp;amp;&amp;amp; sudo sysctl --system
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Enable the system service&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>sudo systemctl &lt;span style="color:#24909d">enable&lt;/span> onedrive@&lt;span style="color:#40ffff">$USER&lt;/span>.service
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo systemctl start onedrive@&lt;span style="color:#40ffff">$USER&lt;/span>.service
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>journalctl -u onedrive@&lt;span style="color:#40ffff">$USER&lt;/span> &lt;span style="color:#999;font-style:italic"># scroll to bottom to check if syncing works&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="reading-a-file-from-the-terminal" >Reading a file from the terminal
+&lt;span>
+&lt;a href="#reading-a-file-from-the-terminal">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Use &lt;code>less&lt;/code> to read line by line (arrow up and down keys)&lt;/li>
+&lt;li>Use &lt;code>more&lt;/code> to read page by page (arrow up and down keys)&lt;/li>
+&lt;li>Use &lt;code>cat&lt;/code> to output entire file (useful for piping &lt;code>|&lt;/code> commands)&lt;/li>
+&lt;/ul>
+&lt;h3 id="how-to-install-an-appimage-on-manjaro" >How to Install an AppImage on Manjaro
+&lt;span>
+&lt;a href="#how-to-install-an-appimage-on-manjaro">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>First install `appimagelauncher``&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>sudo pacman -S appimagelauncher
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Next double click on the downloaded AppImage&lt;/p></description></item><item><title>Linux USB Formatting Issues</title><link>https://blog.elijahlopez.ca/posts/linux-usb-formatting-issues/</link><pubDate>Sun, 24 Jul 2022 21:03:20 -0400</pubDate><guid>https://blog.elijahlopez.ca/posts/linux-usb-formatting-issues/</guid><description>&lt;p>When trying to test out multiple Linux distros on multiple
 USB sticks, I ran into this horrible error. The creators of Balena Etcher
 simply do not care about users who soft brick their USBs. Rufus and Balena
 developers simply say that their software cannot hard brick the USB,
@@ -14,4 +154,165 @@ which is a good thing but they provide 0 support in fixing the issue.&lt;/p>
 The &lt;a href="https://www.partitionwizard.com/free-partition-manager.html">MiniTool Parition Wizard&lt;/a> was very handy.
 Open this tool up, right click the USB or drive you want to fix, and click wipe drive and fill the drive with 0s.
 This should take 10 minutes.&lt;/p>
-&lt;p>Afterwards, you can either format the drive in Windows or run Balena Etcher to flash another ISO.&lt;/p></description></item></channel></rss>
+&lt;p>Afterwards, you can either format the drive in Windows or run Balena Etcher to flash another ISO.&lt;/p></description></item><item><title>Bash &amp; Linux Helpers</title><link>https://blog.elijahlopez.ca/posts/bash-helpers/</link><pubDate>Mon, 14 Feb 2022 14:06:30 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/bash-helpers/</guid><description>&lt;p>It seems that many article tutorials on &lt;code>bash&lt;/code> are ugly, are suboptimal, and are no straight forward.
+My goal is for this file to be a reference file whenever I need to do scripting after a long time.
+One important concept in bash, is that an exit code of 0 indicates True, not False. Which seems counterintuitive if you program in
+any non-scripting language like C/C++ or Python.&lt;/p>
+&lt;h2 id="bash---argument-parsing-and-flags" >Bash - Argument Parsing and Flags
+&lt;span>
+&lt;a href="#bash---argument-parsing-and-flags">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>If you don&amp;rsquo;t get what&amp;rsquo;s going on, read my &lt;a href="https://blog.elijahlopez.ca/posts/bash-quickstart.md">bash quickstart article&lt;/a>&lt;/p>
+&lt;h3 id="concepts" >Concepts
+&lt;span>
+&lt;a href="#concepts">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>getopts is overkill, so here is an alternative.&lt;/li>
+&lt;li>&amp;ldquo;Booleans&amp;rdquo; using string comparison&lt;/li>
+&lt;li>Conditionals (if, elif, else, AND &amp;amp;&amp;amp;, OR ||)&lt;/li>
+&lt;li>For loop&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#40ffff">supplied_arg&lt;/span>=&lt;span style="color:#ed9d13">&amp;#34;default&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic"># iterate all arguments&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">for&lt;/span> arg in &lt;span style="color:#ed9d13">&amp;#34;&lt;/span>&lt;span style="color:#40ffff">$@&lt;/span>&lt;span style="color:#ed9d13">&amp;#34;&lt;/span>; &lt;span style="color:#6ab825;font-weight:bold">do&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic"># use [[ ]] to avoid double quoting variables&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">if&lt;/span> [[ &lt;span style="color:#40ffff">$last_arg&lt;/span> = &lt;span style="color:#ed9d13">&amp;#34;--supply&amp;#34;&lt;/span> ]]; &lt;span style="color:#6ab825;font-weight:bold">then&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#40ffff">supplied_arg&lt;/span>=&lt;span style="color:#ed9d13">&amp;#34;&lt;/span>&lt;span style="color:#40ffff">$arg&lt;/span>&lt;span style="color:#ed9d13">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#40ffff">last_arg&lt;/span>=&lt;span style="color:#ed9d13">&amp;#34;&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic"># OR ||&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">elif&lt;/span> [[ &lt;span style="color:#40ffff">$arg&lt;/span> = &lt;span style="color:#ed9d13">&amp;#34;--flag1&amp;#34;&lt;/span> ]] || [[ &lt;span style="color:#40ffff">$arg&lt;/span> = &lt;span style="color:#ed9d13">&amp;#34;--flag&amp;#34;&lt;/span> ]]; &lt;span style="color:#6ab825;font-weight:bold">then&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#40ffff">flag1&lt;/span>=&lt;span style="color:#24909d">true&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic"># elif, AND &amp;amp;&amp;amp;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">elif&lt;/span> [[ &lt;span style="color:#40ffff">$arg&lt;/span> = &lt;span style="color:#ed9d13">&amp;#34;--override&amp;#34;&lt;/span> ]] &amp;amp;&amp;amp; [[ ! &lt;span style="color:#40ffff">$supplied_arg&lt;/span> = &lt;span style="color:#ed9d13">&amp;#34;default&amp;#34;&lt;/span> ]]; &lt;span style="color:#6ab825;font-weight:bold">then&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic"># ignore the redundancy, this is to showcase &amp;amp;&amp;amp;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#40ffff">flag_override&lt;/span>=&lt;span style="color:#24909d">true&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">else&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic"># you can do something with these args here&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic"># wc -l &amp;#34;$arg&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic"># or you can set last_arg in order to parse `--something ARG`&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#40ffff">last_arg&lt;/span>=&lt;span style="color:#ed9d13">&amp;#34;&lt;/span>&lt;span style="color:#40ffff">$arg&lt;/span>&lt;span style="color:#ed9d13">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic"># end of if statement&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">fi&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic"># done loop (for or while)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">done&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic"># check if flag supplied&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">if&lt;/span> [ &lt;span style="color:#40ffff">flag1&lt;/span> = true]; &lt;span style="color:#6ab825;font-weight:bold">then&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#24909d">echo&lt;/span> &lt;span style="color:#ed9d13">&amp;#34;got --flag1 or --flag&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">else&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#40ffff">notGot&lt;/span>=&lt;span style="color:#ed9d13">&amp;#34;got neither --flag1 nor --flag&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">fi&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic"># flag not supplied (since variable was never set, we check ! = true rather than = false)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">if&lt;/span> [ ! &lt;span style="color:#40ffff">flag1&lt;/span> = &lt;span style="color:#24909d">true&lt;/span> ]; &lt;span style="color:#6ab825;font-weight:bold">then&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#24909d">echo&lt;/span> &lt;span style="color:#40ffff">$notGot&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">fi&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="linux---add-to-path" >Linux - Add to PATH
+&lt;span>
+&lt;a href="#linux---add-to-path">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;ul>
+&lt;li>A better approach than appending a statement to &lt;code>PATH=&amp;quot;$PATH:/new/path&amp;quot;&amp;gt;&amp;gt; ~/.bashrc&lt;/code>&lt;/li>
+&lt;li>TODO: add instructions&lt;/li>
+&lt;/ul>
+&lt;h2 id="linux---add-cronjob" >Linux - Add Cronjob
+&lt;span>
+&lt;a href="#linux---add-cronjob">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;ul>
+&lt;li>automated approach&lt;/li>
+&lt;li>adds the cronjob if not exists&lt;/li>
+&lt;li>prevents concurrent/overlap runs&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>add_cronjob() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic"># crontab will not set the working directory&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic"># create locks directory if it does not exist&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> mkdir -p ~/locks
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic"># my sample job uses flock to prevent overlapping runs&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic"># minute hour day month day_of_week&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic"># /X means divisible by X&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#40ffff">cronjob&lt;/span>=&lt;span style="color:#ed9d13">&amp;#34;*/1 * * * * flock -n ~/locks/auto_deploy_&lt;/span>&lt;span style="color:#40ffff">$PROJECT&lt;/span>&lt;span style="color:#ed9d13">.lock &lt;/span>&lt;span style="color:#40ffff">$PYTHON&lt;/span>&lt;span style="color:#ed9d13"> &lt;/span>&lt;span style="color:#6ab825;font-weight:bold">$(&lt;/span>&lt;span style="color:#24909d">pwd&lt;/span>&lt;span style="color:#6ab825;font-weight:bold">)&lt;/span>&lt;span style="color:#ed9d13">/cronjob.py&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic"># cronjob.py will set the working directory&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">if&lt;/span> ! crontab -l &amp;amp;&amp;gt;/dev/null; &lt;span style="color:#6ab825;font-weight:bold">then&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic"># crontab file does not exist&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#24909d">echo&lt;/span> &lt;span style="color:#ed9d13">&amp;#34;&lt;/span>&lt;span style="color:#40ffff">$cronjob&lt;/span>&lt;span style="color:#ed9d13">&amp;#34;&lt;/span> | crontab -
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#24909d">echo&lt;/span> &lt;span style="color:#ed9d13">&amp;#34;Created new crontab with job&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">elif&lt;/span> ! crontab -l 2&amp;gt;/dev/null | grep -Fq &lt;span style="color:#ed9d13">&amp;#34;&lt;/span>&lt;span style="color:#40ffff">$cronjob&lt;/span>&lt;span style="color:#ed9d13">&amp;#34;&lt;/span>; &lt;span style="color:#6ab825;font-weight:bold">then&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic"># job not found in crontab&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#24909d">echo&lt;/span> &lt;span style="color:#6ab825;font-weight:bold">$(&lt;/span>crontab -l ; &lt;span style="color:#24909d">echo&lt;/span> &lt;span style="color:#ed9d13">&amp;#34;&lt;/span>&lt;span style="color:#40ffff">$cronjob&lt;/span>&lt;span style="color:#ed9d13">&amp;#34;&lt;/span>&lt;span style="color:#6ab825;font-weight:bold">)&lt;/span> | crontab -
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#24909d">echo&lt;/span> &lt;span style="color:#ed9d13">&amp;#34;Added &lt;/span>&lt;span style="color:#40ffff">$cronjob&lt;/span>&lt;span style="color:#ed9d13"> ... to existing crontab&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">else&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#24909d">echo&lt;/span> &lt;span style="color:#ed9d13">&amp;#34;Job already exists in crontab&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">fi&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="linux---add-systemd-service" >Linux - Add Systemd Service
+&lt;span>
+&lt;a href="#linux---add-systemd-service">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;ul>
+&lt;li>I used lots of echos and tee [-a]&lt;/li>
+&lt;li>In order to work with spaces in an argument, I created strings with &lt;code>\'$VAR\'&lt;/code>&lt;/li>
+&lt;li>TODO: add code&lt;/li>
+&lt;/ul>
+&lt;h2 id="linux---auto-setup-certbot" >Linux - Auto Setup Certbot
+&lt;span>
+&lt;a href="#linux---auto-setup-certbot">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic"># Context:&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic"># define $DOMAIN (e.g. lenerva.com)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>install_certbot() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> sudo snap install core; sudo snap refresh core
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> sudo snap install --classic certbot
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> sudo ln -s /snap/bin/certbot /usr/bin/certbot
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> sudo certbot --nginx -d &lt;span style="color:#40ffff">$DOMAIN&lt;/span> -d www.&lt;span style="color:#40ffff">$DOMAIN&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="linux---auto-configure-nginx---gunicorn" >Linux - Auto Configure NGINX - Gunicorn
+&lt;span>
+&lt;a href="#linux---auto-configure-nginx---gunicorn">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>This works for me but it is possible to fail for you without editing &lt;code>/etc/nginx/nginx.conf&lt;/code> manually server name hashes to 128&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic"># Context:&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic"># define $DOMAIN beforehand (e.g. lenerva.com)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic"># define $PROJECT beforehand (e.g. my-project)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic"># pwd is currently the project root directory&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>configure_nginx() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic"># configure nginx&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> sudo apt install nginx -y
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> sudo mkdir -p /var/www/&lt;span style="color:#40ffff">$DOMAIN&lt;/span>/html
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> sudo chown -R &lt;span style="color:#ed9d13">&amp;#34;&lt;/span>&lt;span style="color:#40ffff">$USER&lt;/span>&lt;span style="color:#ed9d13">&amp;#34;&lt;/span>:&lt;span style="color:#ed9d13">&amp;#34;&lt;/span>&lt;span style="color:#40ffff">$USER&lt;/span>&lt;span style="color:#ed9d13">&amp;#34;&lt;/span> /var/www/&lt;span style="color:#40ffff">$DOMAIN&lt;/span>/html
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> sudo chmod -R &lt;span style="color:#3677a9">755&lt;/span> /var/www/&lt;span style="color:#40ffff">$DOMAIN&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#24909d">echo&lt;/span> &lt;span style="color:#ed9d13">&amp;#34;server {&amp;#34;&lt;/span> | sudo tee /etc/nginx/sites-available/&lt;span style="color:#40ffff">$PROJECT&lt;/span> &amp;gt;/dev/null
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#24909d">echo&lt;/span> &lt;span style="color:#ed9d13">&amp;#34; listen [::]:80;&amp;#34;&lt;/span> | sudo tee -a /etc/nginx/sites-available/&lt;span style="color:#40ffff">$PROJECT&lt;/span> &amp;gt;/dev/null
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#24909d">echo&lt;/span> &lt;span style="color:#ed9d13">&amp;#34; listen 80;&amp;#34;&lt;/span> | sudo tee -a /etc/nginx/sites-available/&lt;span style="color:#40ffff">$PROJECT&lt;/span> &amp;gt;/dev/null
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#24909d">echo&lt;/span> &lt;span style="color:#ed9d13">&amp;#34; location / {&amp;#34;&lt;/span> | sudo tee -a /etc/nginx/sites-available/&lt;span style="color:#40ffff">$PROJECT&lt;/span> &amp;gt;/dev/null
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#24909d">echo&lt;/span> &lt;span style="color:#ed9d13">&amp;#34; include proxy_params;&amp;#34;&lt;/span> | sudo tee -a /etc/nginx/sites-available/&lt;span style="color:#40ffff">$PROJECT&lt;/span> &amp;gt;/dev/null
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#24909d">echo&lt;/span> &lt;span style="color:#ed9d13">&amp;#34; proxy_pass http://unix:&lt;/span>&lt;span style="color:#6ab825;font-weight:bold">$(&lt;/span>&lt;span style="color:#24909d">pwd&lt;/span>&lt;span style="color:#6ab825;font-weight:bold">)&lt;/span>&lt;span style="color:#ed9d13">/gunicorn.sock;&amp;#34;&lt;/span> | sudo tee -a /etc/nginx/sites-available/&lt;span style="color:#40ffff">$PROJECT&lt;/span> &amp;gt;/dev/null
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#24909d">echo&lt;/span> &lt;span style="color:#ed9d13">&amp;#34; }&amp;#34;&lt;/span> | sudo tee -a /etc/nginx/sites-available/&lt;span style="color:#40ffff">$PROJECT&lt;/span> &amp;gt;/dev/null
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#24909d">echo&lt;/span> &lt;span style="color:#ed9d13">&amp;#34;}&amp;#34;&lt;/span> | sudo tee -a /etc/nginx/sites-available/&lt;span style="color:#40ffff">$PROJECT&lt;/span> &amp;gt;/dev/null
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> sudo ln -s &lt;span style="color:#ed9d13">&amp;#34;/etc/nginx/sites-available/&lt;/span>&lt;span style="color:#40ffff">$PROJECT&lt;/span>&lt;span style="color:#ed9d13">&amp;#34;&lt;/span> /etc/nginx/sites-enabled
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic"># TODO: if publishing script, also set max server name hashes to 128 in /etc/nginx/nginx.conf&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic"># uncomment below if it didn&amp;#39;t work&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic"># nano /etc/nginx/nginx.conf&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> sudo systemctl restart nginx
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic"># Firewall&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> sudo ufw allow &lt;span style="color:#ed9d13">&amp;#39;Nginx Full&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>
