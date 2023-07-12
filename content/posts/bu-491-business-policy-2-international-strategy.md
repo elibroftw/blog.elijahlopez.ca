@@ -839,7 +839,41 @@ JRC
 
 [New business models in emerging markets (Harvard Business Review, January-February 2011)](https://ocul-wlu.primo.exlibrisgroup.com/permalink/01OCUL_WLU/s6kavd/cdi_proquest_miscellaneous_822411470)
 
-Case: Genicon - A Surgical Strike into Emerging Markets
+### Case: GENICON - A Surgical Strike into Emerging Markets
+
+- manufactured and distributed medical devices used in laparoscopic surgery
+  - examine, diagnose and treat problems within the abdomen
+  - specialized surgical instruments are inserted through a number of small incisions
+  - hospitals favoured less expensive reusable and/or reprocessed devices instead of premium-priced disposable
+  - approx. half of surgeries performed in the U.S.A
+  - MEDICA tradeshow in German was very helpful
+  - 30 companies, tender was a license to sell, not a sale
+- January 2010
+- international distribution strategy
+- companies received contracts through Group purchasing organizations (GPOs) in the USA
+  - favoured largest companies, like Ethicon and Covidien, subsidiaries of Johnson & Johnson and Tyco respectively:
+- Promising countries: India, China, Brazil, Russia
+  - India
+    - $2.35B medical device market
+    - 11.3% growth
+    - GDP 1,106B
+  - China
+    - $12.6B medical devices with double digit growth; $20.6B by 2012
+    - downwards pressure on price
+  - Brazil: there were no import duties or value-added taxes on 42 medical devices.
+    - $3B medical devices
+  - Russia:  $39.4B healthcare expenditure, $2B medical device sector
+    - requires local distributor or Russian subsidiary
+
+1. Evaluate the potential of each market from a quantitative and qualitative standpoint.
+Which factors are most important in your decision?
+
+How big the market is. How profitable the market is. How easily accessible the market is; barriers to entry.
+
+2. What country is the best fit for Genicon?
+
+Brazil because there won't be downward price pressures and market is second largest of the four countries and there
+are low barriers to exporting to Brazil.
 
 Reading: Reaching the rich world's poorest consumers (Harvard Business Review,
 September 2015)
