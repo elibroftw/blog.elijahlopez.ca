@@ -36,10 +36,42 @@ To install vscode, `yay -S visual-studio-code-bin`
 ### VSCode Fix ZSH Font
 
 ```sh
-sudo pacman -Su ttf-meslo-nerd-font-powerlevel10k
+sudo pacman -Su ttf-meslo-nerd-font-powerlevel10k ttf-firacode-nerd --noconfirm
 ```
 
-Set Terminal › Integrated: Font Family to `MesloLGS NF, monospace`
+Set Terminal › Integrated: Font Family to `firaCode Nerd Font, monospace` or `MesloLGS NF, monospace`
+
+## How to Install Fira Code Nerd Font on Arch
+
+[Official install instructions](https://github.com/tonsky/FiraCode/wiki/Linux-instructions#installing-with-a-package-manager)
+
+Suppose you want to install a package on Arch. The first step would be to search for what you want using `pacman -Ss a query`
+
+```sh
+> pacman -Ss fira code
+extra/texlive-fontsextra 2023.66594-15 (texlive)
+    TeX Live - Additional fonts
+extra/texlive-latexextra 2023.66594-15 (texlive)
+    TeX Live - LaTeX additional packages
+extra/ttf-fira-code 6.2-2
+    Monospaced font with programming ligatures
+extra/ttf-firacode-nerd 3.0.2-1 (nerd-fonts)
+    Patched font Fira (Fura) Code from nerd fonts library
+extra/woff-fira-code 6.2-2
+    Monospaced font with programming ligatures
+extra/woff2-fira-code 6.2-2
+    Monospaced font with programming ligatures
+```
+
+Next install the Fira Code Nerd Font.
+
+```sh
+sudo pacman -S ttf-firacode-nerd --noconfirm
+```
+
+To use this font in Visual Studio Code, set the editor font family to `firaCode Nerd Font, 'Cascadia Code', Consolas, 'Courier New', monospace`.
+
+Set the terminal font-family to `firaCode Nerd Font, monospace`
 
 ### Setting Default Browser for Electron Apps
 
