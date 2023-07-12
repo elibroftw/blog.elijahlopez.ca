@@ -7,6 +7,7 @@ tags: [
     "programming",
     "devops",
     "bash",
+    "linux",
 ]
 ---
 
