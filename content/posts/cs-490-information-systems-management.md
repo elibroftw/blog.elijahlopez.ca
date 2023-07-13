@@ -843,3 +843,152 @@ Keep track with a graph
   - cannot start until other starts
 - start to finish
   - cannot finish until other has started
+
+## Managing Information Security
+
+- Protecting data from unauthorized access, use, disclosure, disruption, modification, or destruction.
+- Integrity: accurate and reliable and authorization
+- Availability: information is accessible by authorized individuals
+- Confidentiality: protection from the unauthorized
+- Protecting intellectual property, sensitive customer data, and internal communication are vital for maintaining trust, compliance, competitive advantage, and ultimately, business survival.
+
+### Security Threats
+
+- Software attacks like computer viruses, computer worms, malware, and ransomware
+  - Trojan: appears to be legitimate and not harmful but then does something unexpected (downloaded malicious file)
+  - Worms: replicate copies, standalone, do not need host program or human help to activate or propogate
+- Identity theft
+  - fraudulent acquisition and use of another's private information
+  - phishing
+  - data breaches
+  - Website spoofing: Man in the middle attack (certificate not valid)
+  - DNS Spoofing
+- Intellectual property (IP) theft
+  - underlying tech
+- Sabotage, information extortion, or equipment theft
+- Ransomware
+  - Sobeys hit with Black Basta
+
+- Advanced persistent threats (APTs) involve long-term targeted attacks on specific organizations.
+- Internet of things (IoT) creates new vulnerabilities, cloud storage
+
+### Security Management
+
+- Personnel security: authorization
+  - ensuring that only authorized individuals can access an organization's sensitive information and systems.
+  - background checks, security awareness training
+  - humans can be the weakest link
+- Application security: fixing security vulnerabilities
+  - vulnerability scanning, code review, and penetration testing
+- Operating system (OS) security: protect the OS
+  - anti-virus
+  - updating
+  - OS is the backbone
+- Network security: prevent and monitor misuse of network
+  - intrusion, modification, destruction, or unauthorized access.
+- Web services security: protocols and encryption
+  - secure communication
+- Facility security: physical security of the premises
+  - surveillance systems, secure access controls, and alarm systems.
+  - often overlooked
+
+### Equifax
+
+- Setting strict standards for data protection similar to PIPEDA
+  - regular audits
+  - encryption
+  - robust disaster recovery
+- Transparency
+- Accountability
+- Regular updates
+- Action
+- Support
+
+### Five Pillars
+
+- Authentication
+  - verify user
+- Identification
+  - Granting appropriate access
+  - Web cookie: read only be webserver for domain issuer
+    - Session: browser's temporary  subfolder
+    - Persistent: permanent in browser's subfolder
+    - First party: site visits
+    - Third party: come from website you aren't visiting (advertisements usually)
+- Privacy
+- Integrity
+  - Ensure trustworthiness of data (consistent, accurate, unaltered)
+  - Checksum (hash functions, message digests) fixed-size, unique output values from input data of any size
+    - verify integrity and authenticity of data by detecting any changes or tampering
+- Non-repudiation
+  - Ensure that no party can deny that their signature is on sent/received data
+  - provides assurance
+  - Digital signature
+    - cryptographic mechnism
+    - ensure sender is verified
+    - public-key cryptography
+      - private key used to sign, public key verifies
+      - only sender can use the private key
+    - Symmetric (SKE) vs. Asymmetric
+      - Symmetric: same key is used for encrypting and decrypting
+      - Asymmetric: pair of private and public keys
+        - often used for generating signatures
+    - Digital cert
+      - uses a trusted third party known as a certificate authority (CA).
+      - CA generates an encrypted digital certificate containing owner identification information and a copy of the owner’s public key
+
+### Technical Countermeasures
+
+- hardware or software tools and techniques used to protect information and data from security threats
+- Firewalls, Encryption/Decryption, Steganography and Virtual Private Networks (VPNs)
+- Firewall
+  - controls incoming and outgoing data transmissions
+  - allows authorized communication and denies unauthorized access
+
+### Steganography
+
+- Hides the existence of a message
+  - Hiding data in graphic images or sound file
+  - Concealed messages in tampered executable files
+  - Pictures embedded in video material
+
+### Virtual Private Network (VPN)
+
+- VPN technology creates a secure and encrypted connection between a user's device and the internet
+- route traffic through remote server operated by VPN provider
+- Need for inexpensive but secure connections between distant locations
+
+### Intranet
+
+- internal network
+- centralized hub
+- secure platform where employees can access important company news, updates, policies, and procedures
+- repository for documents
+
+### Management Countermeasures
+
+- Computer Auditing, Computer Monitoring, and Economic Evaluation of Security Measures.
+- Balance security with business needs
+- Computer auditing
+  - assess and inspect
+  - verify system logs, access controls, and data integrity measures
+  - reduces risks of data breaches
+- Computer Monitoring
+  - within an organization's network
+  - detect any irregular behavior
+
+### Examples
+
+- Cyberattacks on USA Energy Grid (CNN)
+- DDoS attack on Los Angeles County and Salt Lake City
+- DDoS using botnet
+- Performing a Cybersecurity Audit of an Electric Power Transmission Systems Operator
+- Meta's Threads App
+  - Potential trade secrets lawsuit by Twitter
+
+### Economic Evaluation of Security Measures
+
+- balance between lost and cost to fix
+- assess direct costs (purchases) and indirect (employee training, downtimes)
+
+### RIsk Management
