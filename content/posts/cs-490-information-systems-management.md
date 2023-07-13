@@ -579,20 +579,267 @@ Microsoft and Sun/Java.
   - encouraging others to adopt similar solutions
   - enabling employees to focus on more critical tasks.
 
-### System Development
+## Tools for Business Analysis
 
-### Traditional Model
+- Brainstorming, SWOT (Strengths, Weaknesses, Opportunities, Threats),  Porter's Competitive Forces Model, COPE analysis, PEST analysis (Political, Economic, Social, and Technological), STEER analysis (socio-cultural, technological, economic, ecological, regulatory), EPISTLE (environment, political, infomatic, social, technological, economic, legal)
 
-### Waterfall Model
+### SWOT Analysis
 
-### Incremental Development Challenges
+- Objectives of the business
 
-- not visible process
-- not cost-effective
-- system degrades as new increments are added
+### Porter's five force
 
-## Something
+- { threat of new entrants, threat of substitutes, supplier power, buyer power, competitive rivalry }
 
-## Project Management
+### VC Benchmarking
 
+- Compare VC or investments to industry benchmarks or standards
+- financial returns, investment strategy, portfolio composition, deal flow, and fund performance
+- evaluate success and effectiveness of VC firms in generating returns and to identify opportunities for improvement or best practices
 
+## Management Issues in Information Systems Development
+
+1. How does an org ensure that its IT resources support its business plan
+2. How does a systems project get authorized
+    - stakeholders
+    - project charter (objectives, scope, stakeholders, milestones, budget, and other key details)
+3. How to ensure compatibility and interoperability across different system development efforts
+4. How is a project controlled and reviewed
+
+### Systems Development
+
+- strategic alignment, effective communication, resource allocation, performance metrics, risk management
+
+### Baseline IT Plan
+
+- Based upon businesses multiyear strategic plan
+- Major IT initiatives
+- IT requirements
+
+### Steering Committee
+
+- Group of people responsible for making decisions and providing guidance on a specific project or initiative
+- Project initiative is aligned with the organization's goals and objectives
+
+### Development Process
+
+- System Development Lifecycle (SDLC) (structured set of activities)
+- Goal: deliver high-quality system that meets or exceeds customer expectations and is completed on time and within budget
+
+### System Process Descriptions
+
+- Products: outcomes
+- Roles: responsibilities of people involved
+- Pre and post conditions: conditions before starting and after a process is done
+
+### Traditional Waterfall Model
+
+- Separate and distinct phases of specification and development
+- lack of flexibility
+  - rigid sequences of phases
+- limited customer involvement
+  - initial requirements gathering does not involve customer
+- high risk of project failure
+  - assumes all requirements can be defined at the beginning
+- lack of detection of defects
+  - testing performed at later stages of the traditional model
+- limited visibility and feedback
+  - limited visibility of progress until later stages
+- long development cycles
+  - each phase needs to be completed before the next
+
+When to use
+
+- requirements unlikely to change
+- stricter control and more predictable budget and timeframe (government)
+- multiple rules and regulations must be followed when working on a project (healthcare projects)
+- well-know tech stack
+- mission-critical applications
+
+### Incremental Development
+
+- Specification, development, and validation are interleaved
+- Customer value delivered with each increment
+- Rapid delivery
+- Variable requirements are easy to accomodate
+- Process not visible, regular deliverables required
+- System structure degrades with each increment unless refactored
+
+- Useful for loosely coupled parts such as microservice or web services
+- Unclear business needs
+- R&D or introduction of new product
+
+- Quick and early working software
+- Flexible
+- Easier to test and debug during a smaller iteration
+- Easier to control risk
+
+- Not all requirements are gathered up front, leading to system architecture affecting problems
+- Pressure on user engagement
+- Feature creep: product requirements increase during development beyond expected initially
+
+### Project Kickoff
+
+- Requirements
+  - Gathering
+  - Analysis
+  - Specification (documenting)
+  - Evaluation (validation) -> re-evaluate (analysis)
+
+A requirement is a simple statement of what the system must do or what characteristics does it have. Requirements will describe
+
+- business requirements
+- user requirements
+  - what does the user expect the system to be able to perform
+  - tasks integral to business' operations
+- functional requirements (what software should do)
+
+- non-functional requirements or quality attributes (system characteristics)
+
+### System & Software Design
+
+- System's Architecture
+  - high-level roadmap
+  - relationships between requirements and its components
+  - must be regularly updated
+  - specific design decisions and priorities can be made within this framework
+- System Design
+  - Identify design goals
+  - System decomposition
+  - Hardware/Software mapping
+  - Persistent Data Management
+  - Version Control
+- System Decomposition
+  - Top-down representation breaking down complex functions
+
+### Development Methodologies
+
+- Structure
+  - Processes
+  - IO
+- Object-Oriented
+  - Collection of interacting objects
+
+### Software Testing Goals
+
+- Validation
+- Demonstrate software meets requirements
+- Defect discovery
+
+### Software Testing Strategies
+
+- Glass-box or white box testing
+  - Can see internal, try running all lines
+- Black-box testing
+  - Can't see the internal structure
+- Gray-box testing
+  - Tester has partial knowledge of internal workings
+  - Access to some internal details such as architecture, database structure or specific code segments
+
+### Software Testing Types
+
+- Unit testing
+  - testing individual components in isolation
+- Module testing
+  - test module according to requirements
+- Integration testing
+  - combine modules and group testing
+  - expose faults between integrated components
+- System testing
+  - test entire thing as per requirements
+- User acceptance testing
+  - final testing for release done by customer
+
+### Why do Systems Fail
+
+- Missing or Wrong or impossible  requirements
+- Fault design/code
+- Improperly implemented design
+- Want to fix errors sooner in process of (requirements, design, coding, development testing, acceptance testing, operation)
+
+### Development Management
+
+A project is an effort to reach a specific goal by completing a unique set of interconnected tasks and making good use of resources
+
+unique purpose, temporary, requires resources, involve uncertainty
+
+lifecycle
+
+- collection of logical stages or phases that maps the life of a project from its beginning to its end for a project
+- tangible and verifiable products of work
+
+### Project Lifecycle
+
+1. Project initiation: define project charter (objective & scope)
+2. Planning
+    - work breakdown structure
+    - time estimate for each task
+    - cost estimate for each task
+    - Graphically portray activities in network diagram
+    - Calculate schedule and budget
+3. Execute
+4. Close
+
+### Project Planning
+
+- Time-consuming
+- Revised regularly
+- Various plans developed to support master project plan
+
+### Common Types of Plans (FYI)
+
+- Quality plan
+- Validation plan
+- Configuration management plan
+- Self development plan
+- Risk management plan
+- Communication plan
+
+### Project Constraints
+
+- Schedule, budget, resources (triangle)
+- Estimate: (optimistic + 4 \* realistic + pessimistic) / 6
+  - Top-down macro (analogy, or math)
+  - Bottom-up micro (guess cost of the work breakdown)
+- Critical path is the longest amount of time it will take to complete the project
+
+### Monitoring and Control
+
+- baseline plan
+- monitor progress
+- measure actual progress and compare it to planned progress
+- take corrective action(s) if the project is behind schedule, overrunning the budget
+
+### Metrics Classification
+
+- product metrics
+  - software product characteristics
+  - size and complexity o the system
+  - quality and reliability of the system
+  - lines of code, FP, meat time to failure, number of errors
+- process metrics
+  - system development process characteristics
+  - processes, techniqes, tools (lead time, defect rate, productivity, compliance, cost variance)
+
+### Cumulative Budgets and Actual Cost
+
+Keep track with a graph
+
+### Project Closure
+
+- Handover deliverables to customer
+- Pass the project documentation to the business
+- Cancel supplier contracts
+- Release staff and equipment
+- Inform stakeholders of the closure of the project
+
+### Types of Dependency
+
+- Finish to start
+  - predecessor must finish
+- Finish to finish
+  - cannot finish until previous finishes
+- start to start
+  - cannot start until other starts
+- start to finish
+  - cannot finish until other has started
