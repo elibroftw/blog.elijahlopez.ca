@@ -1,5 +1,5 @@
 ---
-title: "SIM Swapping: Why SM 2FA Is Unsecure"
+title: "SIM Swapping: Why SMS 2FA Is Unsecure"
 date: 2023-07-09T19:38:38-04:00
 draft: false
 tags: [
