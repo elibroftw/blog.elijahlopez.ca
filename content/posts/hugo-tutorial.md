@@ -37,6 +37,7 @@ If you are like me, you can follow the tutorial that [forks my site](#forking-my
 10. Edit `config.yaml` and replace my information with yours
     - set `baseUrl` to the one shown by GitHub
     - change the `author`, `email`, `utterancesRepo`, and `social`
+    - install [Utterances](https://github.com/apps/utterances) to your github repository to enable comment section
 11. You can remove \# to enable certain features (the about section requires uses `content/about.md` and `content/about-subpage.md`)
 12. Read `content/hugo-guide.md` in your new repo to help you write, edit, and publish posts
 
@@ -62,6 +63,8 @@ If you are like me, you can follow the tutorial that [forks my site](#forking-my
 11. Add README.md with `git clone --recurse-submodules -j8 https://github.com/USERNAME/blog.git` clone instructions
 12. Commit and push to origin (GitHub)
 13. To update your themes, use `git submodule update --remote --merge`
+
+Look into [Utterances](https://github.com/apps/utterances) for comment section.
 
 ## Other Resources
 
