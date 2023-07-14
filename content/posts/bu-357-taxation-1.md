@@ -304,15 +304,14 @@ Calculate the taxable benefit of the loan.
   - Fair Market Value determined
 - exercise day
   -taxable benefit is the difference
-- For Canadian-controlled private corporation (CCPC), taxation occurs on selling day
+- For Canadian-controlled private corporations (CCPC), taxation occurs on selling day
 - Note that capital gains is not part of income from employment
 
 Division C deduction (half of taxable benefit): option price was greater than fair market value on grant day or the CCPC shares were held for at least 2 years. You still have to report the full dollar amount benefit.
 
 Capital gain on selling day = Price sold - EOD fair market price at exercise day
 
-An option was granted for 100 shares with a strike price of $12. On this grant day, shares were trading at $22. Next year, this option
-was exercised. Shares traded at $40 per share at the time. Three years later, all shares were sold at $66. What are the tax consequences.
+An option was granted for 100 shares with a strike price of $12. On this grant day, shares were trading at $22. Next year, this option was exercised. Shares traded at $40 per share at the time. Three years later, all shares were sold at $66. What are the tax consequences.
 
 <details><summary>Answer</summary>
 
@@ -1036,7 +1035,7 @@ Vendor will report $50,000 taxable gain on the transfer of shares. The ACB of th
 ## Chapter 9 Other Sources of Income Deductions in Computing Income
 
 1. Other Income \[subdiv d]
-2 Other Deductions \[subdiv e]
+2. Other Deductions \[subdiv e]
 
 ### Other Income Major Items \[sec 56]
 
@@ -1120,7 +1119,7 @@ Total moving expenses = 1200 (air april) + 2250 (hotel prorated) + 2070 (allowab
   - 8000 per child under 7
   - 11,000 per disabled child
   - 2/3 of earned income
-- claimed usually by lower income spouse
+- claimed usually by lower income spouse (if only one parent, use that parent's income)
   - applies even if lower income spouse is unemployed
 - unless
   - lower income spouse is a student, in hospital, jail, marriage breakdown
@@ -1129,6 +1128,41 @@ Total moving expenses = 1200 (air april) + 2250 (hotel prorated) + 2070 (allowab
 - Homer & Marge have 3 kids aged 10, 8, 1. Homer earned 15,000 and Marge earned 40,000.
 - {15,000 \* 2 / 3 = $10,000, 5,000 \* 2 + 8,000 = 18,000 }
 - Therefore, the child care expense is $10,000
+
+Problem on Slide 151 (todo for exam)
+
+## Chapter 10 Calculation of Taxable Income and Taxes Payable for Individuals
+
+1. Taxable income [Div. C]
+    - = Div. B NIFTP - Div. C Special Deduuctions
+2. Calculation of Tax for Individuals [Div. E]
+
+### Special Deductions
+
+- Stock options [sec 110(1)(d)]
+- Loss carryovers [sec 111]
+- Lifetime capital gain deduction [sec 110.6]
+- Social assistance; workers’ compensation [sec 110(1)(f)]
+
+### Loss Carryovers
+
+- Non-capital losses
+- Unused business, property, employment losses and ABILs
+- Carried backward 3 years and forward 20 years against any income
+- Net Capital loss
+  - carried back 3 years, forward indefinitely
+  - deductible against taxable capital gains
+  - on death deductible against any income
+- ABILs reclassified as net capital loss after 10 years of not being used
+
+### Lifetime Capital Gain Deduction
+
+- qualified small business corporation shares
+- qualified farm property
+
+Slide 158 example
+
+Capital gain of $12,000. Carry forward NCL of 2019 of $12,000.
 
 ## Problems
 
