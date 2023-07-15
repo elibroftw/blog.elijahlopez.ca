@@ -1,4 +1,34 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>tutorial on ELL Blog</title><link>https://blog.elijahlopez.ca/tags/tutorial/</link><description>ELL Blog (tutorial)</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 09 Jul 2023 11:12:03 -0400</lastBuildDate><atom:link href="https://blog.elijahlopez.ca/tags/tutorial/index.xml" rel="self" type="application/rss+xml"/><item><title>C# MongoDB Add Item to Dictionary</title><link>https://blog.elijahlopez.ca/posts/csharp-mongodb-add-item-to-dictionary/</link><pubDate>Sun, 09 Jul 2023 11:12:03 -0400</pubDate><guid>https://blog.elijahlopez.ca/posts/csharp-mongodb-add-item-to-dictionary/</guid><description>&lt;p>To add an item to a Dictionary field in a MongoDB collection - say &lt;code>JoinRequests&lt;/code> of the &lt;code>Ride&lt;/code> collection - treat the dictionary field an array and utilize the &lt;code>$addToSet&lt;/code> operator.&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>tutorial on ELL Blog</title><link>https://blog.elijahlopez.ca/tags/tutorial/</link><description>ELL Blog (tutorial)</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 15 Jul 2023 12:45:48 -0400</lastBuildDate><atom:link href="https://blog.elijahlopez.ca/tags/tutorial/index.xml" rel="self" type="application/rss+xml"/><item><title>ASP.NET Add Html to Web Api</title><link>https://blog.elijahlopez.ca/posts/aspnet-add-html-to-web-api/</link><pubDate>Sat, 15 Jul 2023 12:45:48 -0400</pubDate><guid>https://blog.elijahlopez.ca/posts/aspnet-add-html-to-web-api/</guid><description>&lt;p>Suppose you wanted to add html to your asp.net web api project, how would you go about it?&lt;/p>
+&lt;p>Sure you may just &lt;a href="https://stackoverflow.com/questions/26822277/return-html-from-asp-net-web-api">write the HTML&lt;/a> in the controller, but that&amp;rsquo;s not good enough if you want to return an actual webpage.&lt;/p>
+&lt;p>We need to integrate Razor pages to our application. In &lt;code>Program.cs&lt;/code>,&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-cs" data-lang="cs">&lt;span style="display:flex;">&lt;span>builder.Services.AddRazorPages(); &lt;span style="color:#999;font-style:italic">// add this&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>builder.Services.AddHttpContextAccessor(); &lt;span style="color:#999;font-style:italic">// add this&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">var&lt;/span> app = builder.Build();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>app.MapControllers();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>app.MapRazorPages(); &lt;span style="color:#999;font-style:italic">// add this, it doesn&amp;#39;t matter if it is before or after MapControllers&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>app.Run();
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Suppose we want to serve a page for website.com/about&lt;/p>
+&lt;p>In your project folder, create &lt;code>Pages/About.cshtml&lt;/code>&lt;/p>
+&lt;pre tabindex="0">&lt;code class="language-cshtml" data-lang="cshtml">@page
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+&amp;lt;!DOCTYPE html&amp;gt;
+&amp;lt;style&amp;gt;
+@Html.Raw(&amp;#34;@&amp;#34;)media only screen and (min-width: 950px) {
+.center {
+width: 30%;
+}
+}
+&amp;lt;/style&amp;gt;
+&amp;lt;a href=&amp;#34;@(HttpContextAccessor.HttpContext.Request.Path)@(HttpContextAccessor.HttpContext.Request.QueryString.ToUriComponent())&amp;#34;&amp;gt;This pages url&amp;lt;/a&amp;gt;
+&amp;lt;p&amp;gt;a get request query for field name: @HttpContextAccessor.HttpContext.Request.Query[&amp;#34;name&amp;#34;]&amp;lt;/p&amp;gt;
+&lt;/code>&lt;/pre>&lt;h3 id="how-to-escape--in-razor-pages-cshtml" >How to escape @ in Razor Pages (cshtml)
+&lt;span>
+&lt;a href="#how-to-escape--in-razor-pages-cshtml">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>To escape the @ in Razor pages, use &lt;code>@Html.Raw(&amp;quot;@&amp;quot;)&lt;/code>.&lt;/p></description></item><item><title>C# MongoDB Add Item to Dictionary</title><link>https://blog.elijahlopez.ca/posts/csharp-mongodb-add-item-to-dictionary/</link><pubDate>Sun, 09 Jul 2023 11:12:03 -0400</pubDate><guid>https://blog.elijahlopez.ca/posts/csharp-mongodb-add-item-to-dictionary/</guid><description>&lt;p>To add an item to a Dictionary field in a MongoDB collection - say &lt;code>JoinRequests&lt;/code> of the &lt;code>Ride&lt;/code> collection - treat the dictionary field an array and utilize the &lt;code>$addToSet&lt;/code> operator.&lt;/p>
 &lt;p>Here is an example.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-cs" data-lang="cs">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">using&lt;/span> &lt;span style="color:#447fcf;text-decoration:underline">Microsoft.Extensions.Options&lt;/span>;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">using&lt;/span> &lt;span style="color:#447fcf;text-decoration:underline">MongoDB.Driver&lt;/span>;
