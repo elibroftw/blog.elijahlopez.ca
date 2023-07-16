@@ -138,7 +138,28 @@
 &lt;/span>
 &lt;/h3>&lt;p>First install `appimagelauncher``&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>sudo pacman -S appimagelauncher
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Next double click on the downloaded AppImage&lt;/p></description></item><item><title>Linux USB Formatting Issues</title><link>https://blog.elijahlopez.ca/posts/linux-usb-formatting-issues/</link><pubDate>Sun, 24 Jul 2022 21:03:20 -0400</pubDate><guid>https://blog.elijahlopez.ca/posts/linux-usb-formatting-issues/</guid><description>&lt;p>When trying to test out multiple Linux distros on multiple
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Next double click on the downloaded AppImage&lt;/p>
+&lt;h3 id="steam-scale-ui-on-linux-or-manjaro" >Steam Scale UI on Linux or Manjaro
+&lt;span>
+&lt;a href="#steam-scale-ui-on-linux-or-manjaro">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Tip #1 is to run &lt;code>Steam (Runtime)&lt;/code> instead of &lt;code>Steam (Native)&lt;/code>. The latter of which is &lt;code>steam-native.desktop&lt;/code>&lt;/p>
+&lt;p>To fix scaling, simply run&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>sudo nano /usr/share/applications/steam.desktop
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>If you have &lt;code>gedit&lt;/code>, you can use that instead.&lt;/p>
+&lt;p>Next scroll to the &lt;strong>first&lt;/strong> Exec for the desktop entry, and add &lt;code>-forcedesktopscaling=1.5&lt;/code> like below&lt;/p>
+&lt;pre tabindex="0">&lt;code class="language-desktop" data-lang="desktop">Exec=/usr/bin/steam-runtime -forcedesktopscaling=1.5 %U
+&lt;/code>&lt;/pre>&lt;p>Save the file and restart steam (the next section has a command for shutting down apps by program name).&lt;/p>
+&lt;h3 id="how-to-force-close-apps-on-linux" >How to Force Close Apps on Linux
+&lt;span>
+&lt;a href="#how-to-force-close-apps-on-linux">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>killall steam
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Linux USB Formatting Issues</title><link>https://blog.elijahlopez.ca/posts/linux-usb-formatting-issues/</link><pubDate>Sun, 24 Jul 2022 21:03:20 -0400</pubDate><guid>https://blog.elijahlopez.ca/posts/linux-usb-formatting-issues/</guid><description>&lt;p>When trying to test out multiple Linux distros on multiple
 USB sticks, I ran into this horrible error. The creators of Balena Etcher
 simply do not care about users who soft brick their USBs. Rufus and Balena
 developers simply say that their software cannot hard brick the USB,
