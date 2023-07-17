@@ -143,3 +143,69 @@ sudo pacman -S appimagelauncher
 ```
 
 Next double click on the downloaded AppImage
+
+### Linux Append Line to System File
+
+To append a line to a system file, do not use `>>`. Instead use `commandForOutputGoesHere | sudo tee -a /path/to/file`
+
+### Steam Scale UI on Linux or Manjaro
+
+Before we get started, reminder to prefer using `Steam (Runtime)` instead of `Steam (Native)`
+
+If you have root access, run the following command so that steam will be properly scaled
+no matter how it is launched (steam desktop shortcut, terminal, game desktop shortcut).
+
+```sh
+echo "STEAM_FORCE_DESKTOPUI_SCALING='1.5'" | sudo tee -a /etc/environment
+```
+
+If you do not have root access, edit your login shell (`~/.profile`) instead.
+
+```sh
+echo "STEAM_FORCE_DESKTOPUI_SCALING='1.5'" | sudo tee -a ~/.profile
+```
+
+Test 1.5 out by using `source /path/to/file && steam`. If 1.5 isn't right for you, use nano to edit your file:
+
+ `sudo nano /etc/environment` or `nano ~/.profile`
+
+Now log out and log back in so that your system will source from either of the files that you edited.
+
+<details><summary>Alternatively, you could edit every single one of your game desktop entries in addition to your steam shortcuts,</summary>
+
+To fix scaling, simply run
+
+```sh
+sudo nano /usr/share/applications/steam.desktop
+```
+
+If you have `gedit`, you can use that instead.
+
+Next scroll to the **first** Exec for the desktop entry, and  add `-forcedesktopscaling=1.5` like below
+
+```desktop
+Exec=/usr/bin/steam-runtime -forcedesktopscaling=1.5 %U
+```
+
+Save the file and restart steam (the next section has a command for shutting down apps by program name).
+
+You will also have to add this argument to all game shortcuts.
+
+</details>
+
+### How to Pin or Favourite Games on Steam Linux
+
+Copy the desktop file to your local applications directory.
+This will let you pin / favourite the game to your start menu.
+You can choose to delete the original shortcut afterwards.
+
+```sh
+mkdir ~/.local/share/applications
+sudo cp ~/Desktop/Game.desktop ~/.local/share/applications
+```
+
+### How to Force Close Apps on Linux
+
+```sh
+killall steam
+```
