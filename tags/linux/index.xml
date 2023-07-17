@@ -154,13 +154,13 @@
 &lt;/span>
 &lt;/h3>&lt;p>Before we get started, reminder to prefer using &lt;code>Steam (Runtime)&lt;/code> instead of &lt;code>Steam (Native)&lt;/code>&lt;/p>
 &lt;p>If you have root access, run the following command so that steam will be properly scaled
-no matter how it is launched (steam desktop shortcut, terminal, game desktop shortcut).
-If 1.5 isn&amp;rsquo;t right for you, use &lt;code>sudo nano /etc/environment&lt;/code> to edit the file instead of rerunning the command.&lt;/p>
+no matter how it is launched (steam desktop shortcut, terminal, game desktop shortcut).&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#24909d">echo&lt;/span> &lt;span style="color:#ed9d13">&amp;#34;STEAM_FORCE_DESKTOPUI_SCALING=&amp;#39;1.5&amp;#39;&amp;#34;&lt;/span> | sudo tee -a /etc/environment
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>If you do not have root access, edit your login shell (&lt;code>~/.profile&lt;/code>) instead.
-If 1.5 isn&amp;rsquo;t right for you, use &lt;code>nano ~/.profile&lt;/code> to edit the file instead of rerunning the command.&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>If you do not have root access, edit your login shell (&lt;code>~/.profile&lt;/code>) instead.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#24909d">echo&lt;/span> &lt;span style="color:#ed9d13">&amp;#34;STEAM_FORCE_DESKTOPUI_SCALING=&amp;#39;1.5&amp;#39;&amp;#34;&lt;/span> | sudo tee -a ~/.profile
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Not log out and log back in so that your system will source from either of the files that you edited.&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Test 1.5 out by using &lt;code>source /path/to/file &amp;amp;&amp;amp; steam&lt;/code>. If 1.5 isn&amp;rsquo;t right for you, use nano to edit your file:&lt;/p>
+&lt;p>&lt;code>sudo nano /etc/environment&lt;/code> or &lt;code>nano ~/.profile&lt;/code>&lt;/p>
+&lt;p>Now log out and log back in so that your system will source from either of the files that you edited.&lt;/p>
 &lt;details>&lt;summary>Alternatively, you could edit every single one of your game desktop entries in addition to your steam shortcuts,&lt;/summary>
 &lt;p>To fix scaling, simply run&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>sudo nano /usr/share/applications/steam.desktop
