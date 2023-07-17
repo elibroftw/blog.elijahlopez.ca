@@ -244,21 +244,49 @@ Since this is an example, is it not for copy-pasting but rather to show you how 
 &lt;/h3>&lt;p>First install `appimagelauncher``&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>sudo pacman -S appimagelauncher
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Next double click on the downloaded AppImage&lt;/p>
+&lt;h3 id="linux-append-line-to-system-file" >Linux Append Line to System File
+&lt;span>
+&lt;a href="#linux-append-line-to-system-file">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>To append a line to a system file, do not use &lt;code>&amp;gt;&amp;gt;&lt;/code>. Instead use &lt;code>commandForOutputGoesHere | sudo tee -a /path/to/file&lt;/code>&lt;/p>
 &lt;h3 id="steam-scale-ui-on-linux-or-manjaro" >Steam Scale UI on Linux or Manjaro
 &lt;span>
 &lt;a href="#steam-scale-ui-on-linux-or-manjaro">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
-&lt;/h3>&lt;p>Tip #1 is to run &lt;code>Steam (Runtime)&lt;/code> instead of &lt;code>Steam (Native)&lt;/code>. The latter of which is &lt;code>steam-native.desktop&lt;/code>&lt;/p>
+&lt;/h3>&lt;p>Before we get started, reminder to prefer using &lt;code>Steam (Runtime)&lt;/code> instead of &lt;code>Steam (Native)&lt;/code>&lt;/p>
+&lt;p>If you have root access, run the following command so that steam will be properly scaled
+no matter how it is launched (steam desktop shortcut, terminal, game desktop shortcut).
+If 1.5 isn&amp;rsquo;t right for you, use &lt;code>sudo nano /etc/environment&lt;/code> to edit the file instead of rerunning the command.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#24909d">echo&lt;/span> &lt;span style="color:#ed9d13">&amp;#34;STEAM_FORCE_DESKTOPUI_SCALING=&amp;#39;1.5&amp;#39;&amp;#34;&lt;/span> | sudo tee -a /etc/environment
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>If you do not have root access, edit your login shell (&lt;code>~/.profile&lt;/code>) instead.
+If 1.5 isn&amp;rsquo;t right for you, use &lt;code>nano ~/.profile&lt;/code> to edit the file instead of rerunning the command.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#24909d">echo&lt;/span> &lt;span style="color:#ed9d13">&amp;#34;STEAM_FORCE_DESKTOPUI_SCALING=&amp;#39;1.5&amp;#39;&amp;#34;&lt;/span> | sudo tee -a ~/.profile
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Not log out and log back in so that your system will source from either of the files that you edited.&lt;/p>
+&lt;details>&lt;summary>Alternatively, you could edit every single one of your game desktop entries in addition to your steam shortcuts,&lt;/summary>
 &lt;p>To fix scaling, simply run&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>sudo nano /usr/share/applications/steam.desktop
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>If you have &lt;code>gedit&lt;/code>, you can use that instead.&lt;/p>
 &lt;p>Next scroll to the &lt;strong>first&lt;/strong> Exec for the desktop entry, and add &lt;code>-forcedesktopscaling=1.5&lt;/code> like below&lt;/p>
 &lt;pre tabindex="0">&lt;code class="language-desktop" data-lang="desktop">Exec=/usr/bin/steam-runtime -forcedesktopscaling=1.5 %U
 &lt;/code>&lt;/pre>&lt;p>Save the file and restart steam (the next section has a command for shutting down apps by program name).&lt;/p>
-&lt;p>You will also have to add this argument to all game shortcuts. Tip, use &lt;code>sudo cp ~/Desktop/Game.desktop /usr/share/applications/&lt;/code> to &amp;ldquo;install&amp;rdquo; the game system wide. From here, you can pin the game to your start menu / favourites.&lt;/p>
-&lt;h3 id="how-to-force-close-apps-on-linux" >How to Force Close Apps on Linux
+&lt;p>You will also have to add this argument to all game shortcuts.&lt;/p>
+&lt;/details>
+&lt;h3 id="how-to-pin-or-favourite-games-on-steam-linux" >How to Pin or Favourite Games on Steam Linux
+&lt;span>
+&lt;a href="#how-to-pin-or-favourite-games-on-steam-linux">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Copy the desktop file to your local applications directory.
+This will let you pin / favourite the game to your start menu.
+You can choose to delete the original shortcut afterwards.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>mkdir ~/.local/share/applications
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo cp ~/Desktop/Game.desktop ~/.local/share/applications
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="how-to-force-close-apps-on-linux" >How to Force Close Apps on Linux
 &lt;span>
 &lt;a href="#how-to-force-close-apps-on-linux">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
