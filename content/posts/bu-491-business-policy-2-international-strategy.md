@@ -875,10 +875,15 @@ How big the market is. How profitable the market is. How easily accessible the m
 Brazil because there won't be downward price pressures and market is second largest of the four countries and there
 are low barriers to exporting to Brazil.
 
-Reading: Reaching the rich world's poorest consumers (Harvard Business Review,
-September 2015)
-Reading: Is the bottom of the pyramid really for you? (Harvard Business Review,
-March 2011)
+[Reading: Reaching the rich world's poorest consumers (Harvard Business Review, September 2015)](https://ocul-wlu.primo.exlibrisgroup.com/permalink/01OCUL_WLU/s6kavd/cdi_proquest_miscellaneous_1654710069)
+
+- Five leading companies have adapted nonprofit business models to serve the bottom of the pyramid in France
+- Social businesses
+  - First, it seeks to alleviate social problems, including all forms of poverty.
+  - Second, it must be run sustainably—that is, it should not lose money.
+  - Third, profits—when they exist—are reinvested in the business rather than funneled back to shareholders
+
+[Reading: Is the bottom of the pyramid really for you? (Harvard Business Review, March 2011)](https://ocul-wlu.primo.exlibrisgroup.com/permalink/01OCUL_WLU/s6kavd/cdi_gale_infotracmisc_A251184659)
 
 Case: Danimal in South Africa - Management Innovation at the Bottom of the
 Pyramid
