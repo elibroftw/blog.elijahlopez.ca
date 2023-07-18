@@ -104,13 +104,7 @@
 &lt;li>&lt;a href="https://github.com/jstaf/onedriver">jstaf/onedriver&lt;/a>&lt;/li>
 &lt;li>For Arch, use &lt;code>sudo pamac build onedriver&lt;/code>&lt;/li>
 &lt;/ul>
-&lt;h3 id="setting-up-onedrive" >Setting Up OneDrive
-&lt;span>
-&lt;a href="#setting-up-onedrive">
-&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
-&lt;/a>
-&lt;/span>
-&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>yay onedrive-abraunegg
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>yay onedrive-abraunegg
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Note: If asked regarding a provider for &amp;rsquo;d-runtime&amp;rsquo; and &amp;rsquo;d-compiler&amp;rsquo;, select &amp;rsquo;liblphobos&amp;rsquo; and &amp;rsquo;ldc'&lt;/p>
 &lt;p>Run &lt;code>onedrive&lt;/code> to setup account.&lt;/p>
 &lt;p>Increase number of inotify watchers (number of files that can be monitored)&lt;/p>
@@ -119,9 +113,9 @@
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>sudo systemctl &lt;span style="color:#24909d">enable&lt;/span> onedrive@&lt;span style="color:#40ffff">$USER&lt;/span>.service
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo systemctl start onedrive@&lt;span style="color:#40ffff">$USER&lt;/span>.service
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>journalctl -u onedrive@&lt;span style="color:#40ffff">$USER&lt;/span> &lt;span style="color:#999;font-style:italic"># scroll to bottom to check if syncing works&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="reading-a-file-from-the-terminal" >Reading a file from the terminal
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="linux-how-to-read-a-file-in-the-terminal" >Linux How to Read a File in the Terminal
 &lt;span>
-&lt;a href="#reading-a-file-from-the-terminal">
+&lt;a href="#linux-how-to-read-a-file-in-the-terminal">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
@@ -136,7 +130,7 @@
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
-&lt;/h3>&lt;p>First install `appimagelauncher``&lt;/p>
+&lt;/h3>&lt;p>First install &lt;code>appimagelauncher&lt;/code>&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>sudo pacman -S appimagelauncher
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Next double click on the downloaded AppImage&lt;/p>
 &lt;h3 id="linux-append-line-to-system-file" >Linux Append Line to System File
