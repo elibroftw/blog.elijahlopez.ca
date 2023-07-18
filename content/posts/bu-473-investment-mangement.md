@@ -1126,3 +1126,33 @@ Long-term (30y)
 - investors like convexity because bond prices don't drop as much but can increase in price faster
 
 ### Callable Bonds Duration and Convexity
+
+### Intrinsic Value vs. Market Price
+
+If you require a return and the intrinsic value you calculate equal the market value, buy it because it does give you the required return.
+
+- IV > MV -> Buy
+- IV < MV -> Sell
+- IV = MV -> Buy
+
+### Dividend Growth Model
+
+P = D1 / (k - g)
+
+### Non-Linear Dividend Growth
+
+Discount each dividend back until a far enough period (D6) and discount that by a growth rate.
+
+### Present Value of Growth Opportunities
+
+P = E / k + Present Value of Growth Opportunity
+
+P0/E1 = (1 - b) / (k - ROE \* b)
+
+ROE \* b = sustainable growth rate
+
+P0/E1 = (1-b) / (rf + Beta \* mrp - b \* (NI/SE \* S/TA \* TA/NI))
+
+Use Dupont ratio to justify the P/E.
+
+Market EV definition = Market Cap + Debt - Cash

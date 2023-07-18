@@ -104,8 +104,6 @@ Ctrl + Alt + Backspace (unconfirmed)
 - [jstaf/onedriver](https://github.com/jstaf/onedriver)
 - For Arch, use `sudo pamac build onedriver`
 
-### Setting Up OneDrive
-
 ```sh
 yay onedrive-abraunegg
 ```
@@ -128,7 +126,7 @@ sudo systemctl start onedrive@$USER.service
 journalctl -u onedrive@$USER # scroll to bottom to check if syncing works
 ```
 
-### Reading a file from the terminal
+### Linux How to Read a File in the Terminal
 
 - Use `less` to read line by line (arrow up and down keys)
 - Use `more` to read page by page (arrow up and down keys)
@@ -136,7 +134,7 @@ journalctl -u onedrive@$USER # scroll to bottom to check if syncing works
 
 ### How to Install an AppImage on Manjaro
 
-First install `appimagelauncher``
+First install `appimagelauncher`
 
 ```sh
 sudo pacman -S appimagelauncher
