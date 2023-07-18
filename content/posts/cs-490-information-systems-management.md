@@ -992,3 +992,9 @@ Keep track with a graph
 - assess direct costs (purchases) and indirect (employee training, downtimes)
 
 ### RIsk Management
+
+## Centric
+
+### Information-Centric Decision Making
+
+- accurate, relevant, information and analytical tools to make decisions based on insights rather than intuition
