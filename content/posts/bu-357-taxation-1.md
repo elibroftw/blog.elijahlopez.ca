@@ -1129,7 +1129,9 @@ Total moving expenses = 1200 (air april) + 2250 (hotel prorated) + 2070 (allowab
 - {15,000 \* 2 / 3 = $10,000, 5,000 \* 2 + 8,000 = 18,000 }
 - Therefore, the child care expense is $10,000
 
-Problem on Slide 151 (todo for exam)
+Problem on Slide 151
+
+- See laurier email for work through
 
 ## Chapter 10 Calculation of Taxable Income and Taxes Payable for Individuals
 
@@ -1153,6 +1155,7 @@ Problem on Slide 151 (todo for exam)
   - carried back 3 years, forward indefinitely
   - deductible against taxable capital gains
   - on death deductible against any income
+  - conversion of rates over the year (3/4 -> 2/3 -> 1/2)
 - ABILs reclassified as net capital loss after 10 years of not being used
 
 ### Lifetime Capital Gain Deduction
@@ -1162,7 +1165,36 @@ Problem on Slide 151 (todo for exam)
 
 Slide 158 example
 
-Capital gain of $12,000. Carry forward NCL of 2019 of $12,000.
+Salary of 72,000 and taxable capital gains of 4,500. NonCapitalLoss of 28,000 from 2018 and NetCapitalLoss of 12,000 from 2019.
+Stock options of 2,000 shares at $4 per share (fair value on grant day) with fair market value of $10/share.
+
+- Therefore, employment income of 72,000 + (6 \* ) = 84,000
+- net income for tax purposes of 84,000 + 4,500 = 88,500
+- Less: Div C: 0.5 \* 12,000 = 6,000
+- Less: Net Capital Loss = 4,500
+- Less: non-capital loss = 28,000
+- taxable income = 50,000
+
+- Net capital loss balance = 12,000 - 4,500 = 7,500
+- Non capital loss balance = 0
+
+### Tax Calculation
+
+Add tax on base amount to (Taxable amount - Final income of previous ) \* tax rate
+
+### Tax Credit
+
+- Basic: 15% \*
+  - 14,398 for income < 155,625
+  - proportionally reduced for income between 155,625 and 221,708
+    - reduced credit = 14,398 - (net income - 155,625) \* (1,679 / 66,083)
+  - 12,719 for income > 221,708
+- Married or Equivalent to married
+  - Basic credit plus 15% \* tax payer's basic amount reduced by the spouses/ETM's Div. B income
+  - single, divorced, separated, widowed, supporting a relative, or under 18
+  - Example: you have taxable income of 120,000
+    - Married credit: 15% \* 14,398 + 15% * (14,398 - spouse div. B income)
+
 
 ## Problems
 
