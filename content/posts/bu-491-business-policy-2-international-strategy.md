@@ -885,5 +885,53 @@ are low barriers to exporting to Brazil.
 
 [Reading: Is the bottom of the pyramid really for you? (Harvard Business Review, March 2011)](https://ocul-wlu.primo.exlibrisgroup.com/permalink/01OCUL_WLU/s6kavd/cdi_gale_infotracmisc_A251184659)
 
-Case: Danimal in South Africa - Management Innovation at the Bottom of the
-Pyramid
+[Case: Danimal in South Africa - Management Innovation at the Bottom of the Pyramid](https://www.thecasesolutions.com/danimal-in-south-africa-management-innovation-at-the-bottom-of-the-pyramid-3172)
+
+- South African dairy industry
+- innovative product yogurt, Danimal
+  - introduced to evaluate the possibility of profitably serve this market
+  - creating brand awareness in the market at the base of the pyramid
+- micro-distributors, referred Danimamas: women that were the villagers, unemployed or underemployed persons
+- not a sustainable business model in terms of current profitability
+- The girl involved was really pro-Africa and wanted to know if it would work
+- long-term opportunity
+- started working on it in 2003 and it's now 2011
+- Change in senior leadership could ruin everything
+- R&D in the bottom of pyramid countries
+- lot of work done in country level to develop products that suit that particular country
+- yogurt was picked because there was excess capacity
+- joining other companies & NGOs
+  - build on women
+    - cash was an issue
+    - can tell employees who care and who don't care
+    - no second chance
+- Support initiatives to remove barriers
+  - tough to hold someone accountable for cash
+  - digital transactions were introduced to have more control and oversight
+- First create was free
+-
+
+### 12 Principles of Base of Pyramids
+
+Applying to the case
+
+1. Price/Performance
+    - 1 RADD
+    - sold directly
+2. Innovation requires hybrid solutions
+    -taget children
+    - build on plant
+    - diston
+3. Solutions must be scalable + trnsferable across countries / cultures
+4. Innovations must focus on cornering resources
+5.
+6.
+7.
+8.
+9. Product must work in hostile environment
+10. Research and interfaces is critical
+    - recon was done on how many friges there were. Where were the schools, banks, stores
+    - someone from south america had done it
+    - learn what the infrastructure of the country
+11. innovation must reach the consumer
+12. productionn innovators must focus on platform so new features can be incorporated
