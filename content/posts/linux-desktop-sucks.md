@@ -2,19 +2,30 @@
 title: "Linux Desktop Sucks!"
 date: 2022-02-26T12:44:37-05:00
 draft: false
+tags: [
+    'linux',
+    'opinion'
+]
 ---
 
 First of all, I know a lot of Linux fans will get offended and resort to cheap shots and blame the user. If you are one of those people, you are not at all helpful.
 
-I've used Raspian (~2014), Ubuntu GNOME (~2016), Manjaro KDE (2020 & 2022), Fedora, Zorin (2021).
-
-My definition of a reason is: An issue/problem requiring a convoluted process to solve; Also something so simple that shouldn't have required me to use the terminal in order to unlock (fractional scaling should be allowed and not a tick box or a command).
+I've used Raspian (~2014), Ubuntu GNOME (~2016), Manjaro KDE (2020 & 2022-2023), Fedora, Zorin (2021).
 
 The next distro I will try is Linux Mint as it is supposed to be the most user friendly distro.
 
+So what is a reason that Linux Desktop sucks? An issue/problem requiring a convoluted process to solve or is unsolvable; Also something so simple that shouldn't have required me to use the terminal in order to unlock (fractional scaling should be allowed and not a tick box or a command).
+
 ## Manjaro KDE Specific Issues
 
-### Black screen bug
+I had to daily drive Manjaro KDE for 3 weeks on my Razer Blade Stealth, and over that time I encountered a plethora of issues and I've documented [some solutions](/posts/manjaro-kde-tips).
+
+The Razer Blade stealth has a 6th generation laptop i5 processor and 8GB of RAM. I'm not sure if
+it's because of the SSD speeds, but the laptop freezes either due to 100% memory or 99% CPU. VS Code freezes so often without even running an application.
+
+I do believe Firefox is highly optimized on Linux as it never crashed. However, if you have 10+ tabs open, good bye.
+
+### Black Screen Bug
 
 I'll start with this as it is the reason why I will not recommend Manjaro for people interested in free (as in beer) software.
 
@@ -32,15 +43,19 @@ my music player runs for everyone's workflow not just my own.
 
 Pacman manager so not specifically Manjaro.
 
-So I turn on the laptop after a couple months and the network folder no longer works. There were 2.1GB worth of updates so I decided to start upgrading.
-After all the packages were downloading, for a couple minutes there were network errors due to the package manager hitting `http://mirror.ragenetwork.de` Name or service not known
-errors. Why are packages not installed while downloading new packages? That's inefficient.
+I turn on the laptop after a couple months and the network folder no longer works. There were 2.1GB worth of updates so I decided to start upgrading.
+
+After all the packages were downloading, for a couple minutes there were network errors due to the package manager hitting `http://mirror.ragenetwork.de` "name or service not known" errors. Why are packages not installed while downloading new packages? It's inefficient.
 
 Only after the packages were installed and a restart completed did the network drive start to work.
 
 ### Unintuitive Appearance Settings
 
 So I click appearance from the settings app and there is no option to change the wallpaper. Pretty dumb!
+
+### Webcam
+
+The webcam does not work. Glitches with green.
 
 ## Other Issues
 
