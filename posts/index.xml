@@ -1,4 +1,44 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on ELL Blog</title><link>https://blog.elijahlopez.ca/posts/</link><description>ELL Blog (Posts)</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 15 Jul 2023 12:45:48 -0400</lastBuildDate><atom:link href="https://blog.elijahlopez.ca/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>ASP.NET Add Html to Web Api</title><link>https://blog.elijahlopez.ca/posts/aspnet-add-html-to-web-api/</link><pubDate>Sat, 15 Jul 2023 12:45:48 -0400</pubDate><guid>https://blog.elijahlopez.ca/posts/aspnet-add-html-to-web-api/</guid><description>&lt;p>Suppose you wanted to add html to your asp.net web api project, how would you go about it?&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on ELL Blog</title><link>https://blog.elijahlopez.ca/posts/</link><description>ELL Blog (Posts)</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 22 Jul 2023 01:00:56 -0400</lastBuildDate><atom:link href="https://blog.elijahlopez.ca/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Tips for Distributing Python Apps</title><link>https://blog.elijahlopez.ca/posts/tips-for-distributing-python-apps/</link><pubDate>Sat, 22 Jul 2023 01:00:56 -0400</pubDate><guid>https://blog.elijahlopez.ca/posts/tips-for-distributing-python-apps/</guid><description>&lt;p>Here are some pillars for making Python app distribution better for end users. I was not able to follow some of these pillars when I distributed Music Caster, so I wrote them down for other methods I&amp;rsquo;d try if I were to go about doing it again.&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>Python apps should be able to be installed without requiring administrative privileges.&lt;/p>
+&lt;ul>
+&lt;li>pip&lt;/li>
+&lt;li>git + script&lt;/li>
+&lt;li>Inno/NSIS/Wix&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Distribute python code as opposed to compiled code&lt;/p>
+&lt;ul>
+&lt;li>obfuscate if you want to&lt;/li>
+&lt;li>install dependencies on user side or bundle in zip file&lt;/li>
+&lt;li>instruct user to install Python 3.X&lt;/li>
+&lt;li>create virtualenv on setup&lt;/li>
+&lt;li>TODO: look into &lt;a href="https://docs.pipenv.org/">pipenv&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Create start menu shortcuts for platforms&lt;/p>
+&lt;ul>
+&lt;li>Linux: &lt;code>~/.local/share/applications/my_app.desktop&lt;/code>&lt;/li>
+&lt;li>Windows: &lt;code>%appdata%\Microsoft\Windows\Start Menu\Programs&lt;/code>&lt;/li>
+&lt;li>MacOSX: ???&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Install to a common programs folder&lt;/p>
+&lt;ul>
+&lt;li>Linux: &lt;code>~/.local/bin&lt;/code>&lt;/li>
+&lt;li>Windows: &lt;code>%localappdata%\Programs&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Allow users to manually update by default and allow auto updating&lt;/p>
+&lt;p>When using a git based approach, git fetch to check for updates, and git reset to the latest v* tag when updating. Try not to update to latest commit since a commit does not imply code change or testing.&lt;/p>
+&lt;p>When using executables, use a server link or github API request combined with digital signed checksum (Tauri does this).&lt;/p>
+&lt;/li>
+&lt;/ol></description></item><item><title>ASP.NET Add Html to Web Api</title><link>https://blog.elijahlopez.ca/posts/aspnet-add-html-to-web-api/</link><pubDate>Sat, 15 Jul 2023 12:45:48 -0400</pubDate><guid>https://blog.elijahlopez.ca/posts/aspnet-add-html-to-web-api/</guid><description>&lt;p>Suppose you wanted to add html to your asp.net web api project, how would you go about it?&lt;/p>
 &lt;p>Sure you may just &lt;a href="https://stackoverflow.com/questions/26822277/return-html-from-asp-net-web-api">write the HTML&lt;/a> in the controller, but that&amp;rsquo;s not good enough if you want to return an actual webpage.&lt;/p>
 &lt;p>We need to integrate Razor pages to our application. In &lt;code>Program.cs&lt;/code>,&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-cs" data-lang="cs">&lt;span style="display:flex;">&lt;span>builder.Services.AddRazorPages(); &lt;span style="color:#999;font-style:italic">// add this&lt;/span>
@@ -103,7 +143,7 @@ Since this is an example, is it not for copy-pasting but rather to show you how 
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">if&lt;/span> &lt;span style="color:#6ab825;font-weight:bold">not&lt;/span> create_key:
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">with&lt;/span> suppress(&lt;span style="color:#bbb">FileNotFoundError&lt;/span>):
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> wr.DeleteValue(key, app_name)
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Manjaro KDE Tips</title><link>https://blog.elijahlopez.ca/posts/manjaro-kde-must-tips/</link><pubDate>Tue, 27 Jun 2023 10:56:19 -0400</pubDate><guid>https://blog.elijahlopez.ca/posts/manjaro-kde-must-tips/</guid><description>&lt;h3 id="how-to-install-yay" >How to Install yay
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Manjaro KDE Tips</title><link>https://blog.elijahlopez.ca/posts/manjaro-kde-tips/</link><pubDate>Tue, 27 Jun 2023 10:56:19 -0400</pubDate><guid>https://blog.elijahlopez.ca/posts/manjaro-kde-tips/</guid><description>&lt;h3 id="how-to-install-yay" >How to Install yay
 &lt;span>
 &lt;a href="#how-to-install-yay">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
@@ -6596,6 +6636,7 @@ c. non-resident because not really controlled by Canada&lt;/p>
 &lt;/li>
 &lt;li>&lt;a href="#managing-information-security">Managing Information Security&lt;/a>
 &lt;ul>
+&lt;li>&lt;a href="#what-is-information-security">What is Information Security?&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#security-threats">Security Threats&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#security-management">Security Management&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#equifax">Equifax&lt;/a>&lt;/li>
@@ -7923,10 +7964,11 @@ opportunities or threats.&lt;/p>
 &lt;/a>
 &lt;/span>
 &lt;/h3>&lt;ul>
-&lt;li>Structure
+&lt;li>Structured
 &lt;ul>
-&lt;li>Processes&lt;/li>
-&lt;li>IO&lt;/li>
+&lt;li>system is a set of processes&lt;/li>
+&lt;li>processes accept inputs and outputs&lt;/li>
+&lt;li>processes interact with data stores&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;li>Object-Oriented
@@ -8184,6 +8226,16 @@ opportunities or threats.&lt;/p>
 &lt;li>Availability: information is accessible by authorized individuals&lt;/li>
 &lt;li>Confidentiality: protection from the unauthorized&lt;/li>
 &lt;li>Protecting intellectual property, sensitive customer data, and internal communication are vital for maintaining trust, compliance, competitive advantage, and ultimately, business survival.&lt;/li>
+&lt;/ul>
+&lt;h3 id="what-is-information-security" >What is Information Security?
+&lt;span>
+&lt;a href="#what-is-information-security">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Information security aims to maintain the confidentiality, integrity, and availability of data in all its forms.&lt;/li>
+&lt;li>Another crucial objective is ensuring Business Continuity (the ability of the organization to continue operations even in the event of security breaches or disasters).&lt;/li>
 &lt;/ul>
 &lt;h3 id="security-threats" >Security Threats
 &lt;span>
@@ -19206,16 +19258,20 @@ It&amp;rsquo;s sad enough that people think the upgrades to Monero are not neede
 &lt;p>Feel free to donate some Monero.
 &lt;a href="monero:84PR6SkYd5zaFLKDjAFrQfbaAg2c7SV3q3XDZ15QCpEZUggrN4YzY7n8m9XC3deXjo41yWHTm1LrsUpPTYGnRQbD9Cwp8En">84PR6SkYd5zaFLKDjAFrQfbaAg2c7SV3q3XDZ15QCpEZUggrN4YzY7n8m9XC3deXjo41yWHTm1LrsUpPTYGnRQbD9Cwp8En&lt;/a>&lt;/p>
 &lt;p>&lt;img src="https://elijahlopez.ca/static/images/monero.png" alt="monero:84PR6SkYd5zaFLKDjAFrQfbaAg2c7SV3q3XDZ15QCpEZUggrN4YzY7n8m9XC3deXjo41yWHTm1LrsUpPTYGnRQbD9Cwp8En">&lt;/p></description></item><item><title>Linux Desktop Sucks!</title><link>https://blog.elijahlopez.ca/posts/linux-desktop-sucks/</link><pubDate>Sat, 26 Feb 2022 12:44:37 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/linux-desktop-sucks/</guid><description>&lt;p>First of all, I know a lot of Linux fans will get offended and resort to cheap shots and blame the user. If you are one of those people, you are not at all helpful.&lt;/p>
-&lt;p>I&amp;rsquo;ve used Raspian (~2014), Ubuntu GNOME (~2016), Manjaro KDE (2020 &amp;amp; 2022), Fedora, Zorin (2021).&lt;/p>
-&lt;p>My definition of a reason is: An issue/problem requiring a convoluted process to solve; Also something so simple that shouldn&amp;rsquo;t have required me to use the terminal in order to unlock (fractional scaling should be allowed and not a tick box or a command).&lt;/p>
+&lt;p>I&amp;rsquo;ve used Raspian (~2014), Ubuntu GNOME (~2016), Manjaro KDE (2020 &amp;amp; 2022-2023), Fedora, Zorin (2021).&lt;/p>
 &lt;p>The next distro I will try is Linux Mint as it is supposed to be the most user friendly distro.&lt;/p>
+&lt;p>So what is a reason that Linux Desktop sucks? An issue/problem requiring a convoluted process to solve or is unsolvable; Also something so simple that shouldn&amp;rsquo;t have required me to use the terminal in order to unlock (fractional scaling should be allowed and not a tick box or a command).&lt;/p>
 &lt;h2 id="manjaro-kde-specific-issues" >Manjaro KDE Specific Issues
 &lt;span>
 &lt;a href="#manjaro-kde-specific-issues">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
-&lt;/h2>&lt;h3 id="black-screen-bug" >Black screen bug
+&lt;/h2>&lt;p>I had to daily drive Manjaro KDE for 3 weeks on my Razer Blade Stealth, and over that time I encountered a plethora of issues and I&amp;rsquo;ve documented &lt;a href="https://blog.elijahlopez.ca/posts/manjaro-kde-tips">some solutions&lt;/a>.&lt;/p>
+&lt;p>The Razer Blade stealth has a 6th generation laptop i5 processor and 8GB of RAM. I&amp;rsquo;m not sure if
+it&amp;rsquo;s because of the SSD speeds, but the laptop freezes either due to 100% memory or 99% CPU. VS Code freezes so often without even running an application.&lt;/p>
+&lt;p>I do believe Firefox is highly optimized on Linux as it never crashed. However, if you have 10+ tabs open, good bye.&lt;/p>
+&lt;h3 id="black-screen-bug" >Black Screen Bug
 &lt;span>
 &lt;a href="#black-screen-bug">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
@@ -19235,9 +19291,8 @@ my music player runs for everyone&amp;rsquo;s workflow not just my own.&lt;/p>
 &lt;/a>
 &lt;/span>
 &lt;/h3>&lt;p>Pacman manager so not specifically Manjaro.&lt;/p>
-&lt;p>So I turn on the laptop after a couple months and the network folder no longer works. There were 2.1GB worth of updates so I decided to start upgrading.
-After all the packages were downloading, for a couple minutes there were network errors due to the package manager hitting &lt;code>http://mirror.ragenetwork.de&lt;/code> Name or service not known
-errors. Why are packages not installed while downloading new packages? That&amp;rsquo;s inefficient.&lt;/p>
+&lt;p>I turn on the laptop after a couple months and the network folder no longer works. There were 2.1GB worth of updates so I decided to start upgrading.&lt;/p>
+&lt;p>After all the packages were downloading, for a couple minutes there were network errors due to the package manager hitting &lt;code>http://mirror.ragenetwork.de&lt;/code> &amp;ldquo;name or service not known&amp;rdquo; errors. Why are packages not installed while downloading new packages? It&amp;rsquo;s inefficient.&lt;/p>
 &lt;p>Only after the packages were installed and a restart completed did the network drive start to work.&lt;/p>
 &lt;h3 id="unintuitive-appearance-settings" >Unintuitive Appearance Settings
 &lt;span>
@@ -19246,6 +19301,13 @@ errors. Why are packages not installed while downloading new packages? That&amp;
 &lt;/a>
 &lt;/span>
 &lt;/h3>&lt;p>So I click appearance from the settings app and there is no option to change the wallpaper. Pretty dumb!&lt;/p>
+&lt;h3 id="webcam" >Webcam
+&lt;span>
+&lt;a href="#webcam">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>The webcam does not work. Glitches with green.&lt;/p>
 &lt;h2 id="other-issues" >Other Issues
 &lt;span>
 &lt;a href="#other-issues">
