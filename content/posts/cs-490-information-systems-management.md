@@ -714,9 +714,10 @@ A requirement is a simple statement of what the system must do or what character
 
 ### Development Methodologies
 
-- Structure
-  - Processes
-  - IO
+- Structured
+  - system is a set of processes
+  - processes accept inputs and outputs
+  - processes interact with data stores
 - Object-Oriented
   - Collection of interacting objects
 
@@ -851,6 +852,11 @@ Keep track with a graph
 - Availability: information is accessible by authorized individuals
 - Confidentiality: protection from the unauthorized
 - Protecting intellectual property, sensitive customer data, and internal communication are vital for maintaining trust, compliance, competitive advantage, and ultimately, business survival.
+
+### What is Information Security?
+
+- Information security aims to maintain the confidentiality, integrity, and availability of data in all its forms.
+- Another crucial objective is ensuring Business Continuity (the ability of the organization to continue operations even in the event of security breaches or disasters).
 
 ### Security Threats
 
