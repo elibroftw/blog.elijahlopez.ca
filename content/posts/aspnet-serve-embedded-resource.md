@@ -1,5 +1,5 @@
 ---
-title: "ASP.NET Serve Embedded Resource"
+title: "ASP.NET Core Serve Embedded Resource"
 date: 2023-06-02T14:09:28-04:00
 tags: [
     "programming",

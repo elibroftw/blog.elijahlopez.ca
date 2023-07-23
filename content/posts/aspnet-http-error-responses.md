@@ -1,5 +1,5 @@
 ---
-title: "ASP.NET HTTP Error Responses Best Practice?"
+title: "ASP.NET Core HTTP Error Responses Best Practice?"
 date: 2023-07-01T17:29:24-04:00
 draft: false
 tags: [

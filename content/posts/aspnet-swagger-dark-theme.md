@@ -1,5 +1,5 @@
 ---
-title: "ASP.NET Swagger Dark Theme"
+title: "ASP.NET Core Swagger Dark Theme"
 date: 2023-06-02T12:49:14-04:00
 draft: false
 tags: [
