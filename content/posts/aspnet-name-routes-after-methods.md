@@ -1,5 +1,5 @@
 ---
-title: "ASP.NET Name Routes After Methods"
+title: "ASP.NET Core Name Routes After Methods"
 date: 2023-05-28T18:10:09-04:00
 draft: false
 tags: [

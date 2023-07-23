@@ -1,5 +1,5 @@
 ---
-title: "ASP.NET Add Html to Web Api"
+title: "ASP.NET Core Add HTML to Web Api"
 date: 2023-07-15T12:45:48-04:00
 draft: false
 tags: [
