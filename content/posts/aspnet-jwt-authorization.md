@@ -60,7 +60,7 @@ public static void Main(string[] args) {
                                 Type=ReferenceType.SecurityScheme,
                                 Id="Bearer"
                             }},
-                        new string[]{}
+                        Array.Empty<string>()
                     }
                 });
         });
