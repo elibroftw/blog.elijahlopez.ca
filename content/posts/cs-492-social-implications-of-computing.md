@@ -125,8 +125,6 @@ What if Universal IDs were not an identity thing, but a physical thing, and we h
 ## RPE Misinformation
 
 - misinformation can turn into violence
--
-
 - would art work be considered misinformation? A person shared a meme about voting by texting
 - this is already a criminal offense with regards to elections, should the laws be rolled out by industry or activity rather than a blanket rule for everything?
 - now we are using AI to detect misinformation? Would'nt that be misinforception
@@ -195,3 +193,28 @@ What if Universal IDs were not an identity thing, but a physical thing, and we h
 ### Security
 
 [Edward Snowden, Whistle-Blower](https://www.nytimes.com/2014/01/02/opinion/edward-snowden-whistle-blower.html)
+
+## Week 12
+
+### E-Voting, 3D Printing, Big Data
+
+[United States Case Study on E-Voting](https://cs.stanford.edu/people/eroberts/cs201/projects/2006-07/electronic-voting/index_files/page0004.html)
+
+Margin is in the hundreds, but millions of votes were lost due to technical malfunctions.
+
+France has remote internet voting
+
+Can vote remotely through the internet. I like this methodology since you cna set a bounty of $1 million which
+will deter black hat hackers. Such amount of money deters crimes, rewards security, and can ensure that more
+Canadians can vote. Voting would take less than 5 minutes, could be done through phones, and would be as secure
+as logging into your bank account or CRA account. SIN plus 2FA.
+
+[Untraceable 3D-printed 'ghost guns' on the rise in Canada](https://www.cbc.ca/news/canada/3d-printed-guns-canada-increase-1.6708049)
+
+- ghost gun
+- untraceable
+- used in crimes
+- 3D printed illegal parts, buy non-illegal part
+- silencers
+
+### Cryptocurrencies and Ransomware
