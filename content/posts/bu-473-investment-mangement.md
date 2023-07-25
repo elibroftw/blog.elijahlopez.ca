@@ -1151,8 +1151,200 @@ P0/E1 = (1 - b) / (k - ROE \* b)
 
 ROE \* b = sustainable growth rate
 
-P0/E1 = (1-b) / (rf + Beta \* mrp - b \* (NI/SE \* S/TA \* TA/NI))
+<img class=equation-tall src="https://latex.codecogs.com/svg.image?\frac{P_0}{E_1}=\frac{1-b}{r_f+\beta (MRP) - b(\frac{NI}{S}\times\frac{S}{TA}\times\frac{TA}{E})}">
+
+k = CAPM, b = retention rate, 1 - b = payout ratio
+
+Sustainable Growth = b \* ROE
 
 Use Dupont ratio to justify the P/E.
 
 Market EV definition = Market Cap + Debt - Cash
+
+## Financial Statement Analysis
+
+yoyo: when you say a something went up (not good)
+
+Time analysis:
+
+Why did a ratio go up?
+
+Net Interest Margin
+
+### Income Statement Ratios
+
+Gross Profit Margin = Sales - Costs / Sales
+
+EBITDA Margin = Cash Flow Margin
+
+Operating Margin = EBIT / Ssales
+
+Profit Margin = Profit / Sales
+
+TIE = EBIT / Interest
+
+Why change over time. Why different from competitors.
+
+Anomalies:
+
+- government support
+
+### Balance Sheet Ratios
+
+<img class=equation-tall src="https://latex.codecogs.com/svg.image?CurrentRatio=\frac{CurrentAssets}{CurrentLiabilities}=\frac{Cash+AR+Inv}{STD+AP}">
+
+- swapping short-term debt for long-term debt
+- possible that accounts receivable spikes due to a big sale
+- it went down because you collect faster
+
+<img class=equation-tall src="https://latex.codecogs.com/svg.image?QuickRatio=\frac{Current Assets - Inv}{Current Liabilities}">
+
+- based on liquidity
+- Sears took over a year to get rid of inventory
+
+<img class=equation-tall src="https://latex.codecogs.com/svg.image?DebtToEquity=\frac{Debt}{Equity}">
+
+- capital structure
+- leverage measure
+- could go up because: buyback shares with debt
+- just raised debt for long term assets
+
+### Return Ratios
+
+Return on Assets
+
+EBIT / Total Assets
+
+Return on Net Assets
+
+EBIT / Net Assets
+
+Return on Capital
+
+EBIT / (Long Term Debt + Equity)
+
+Return on Equity
+
+ROE = NI / S \* S / TA \* TA / E
+
+Equity Multiplier Leverage
+
+TA / E = (E + D) / E = 1 + D/E
+
+### Productivity Ratios
+
+Total Asset Turnover
+
+Sales / Total Assets
+
+Inventory turnover
+
+COGS / Inv
+
+Days Inventory
+
+365 / Inventory Turnover
+
+Walmart has a days inventory ratio of ~20.
+
+AR Turnover
+
+Sales / AR
+
+Days S/O
+
+AR / S \* 365
+
+Economic Value Added
+
+- Capitla = 1000
+- wacc = 5%
+- capital charge = 50
+- ROC = 75/1000 = 7.5%
+- EVA = (75 - 50) = 25
+- (ROC - wacc) \* Capital
+
+Price Per Equity
+
+## Options
+
+### The Option Contract
+
+- Call Option:
+  - gives its holder the right to purchase an asset at a specific price
+- Put option:
+  - gives its holder the right to sell an asset at a specific price
+- In the money occurs when exercise would produce positive cash flow
+  - call option strike price  < market price
+  - put option strike price  > market price
+
+### Call
+
+- x = 60, P = 3
+- Buyer
+- Payoff: max ( stock price - x, 0)
+- Profit: payoff - premium
+
+### Put
+
+- x = 60, P = 3
+- Buyer
+- Payoff: max ( x - stock price, 0)
+- Profit: payoff - premium
+
+### American vs. European
+
+American options can be exercised at any time whereas
+European options can only be exercised on the exercise day.
+
+### Types of Options
+
+- Index options
+- futures options
+- foreign currency options
+- interest rate options
+
+### Put-Call Parity
+
+- Put-call parity theorem is an equation representing the proper relation between put and call prices
+- violation implies arbitrage opportunities
+- sell high side, buy low side
+- invest cash from sell
+
+C + X / (1 + rf)^T = S0 + P
+
+Suppose C = 3, P = 3, X = 60, r = 5%, and stock price is 60.
+
+- Sell stock: + 60
+- Sell put: + 3
+- Buy call -3
+- Invest -57.14
+- Net: $2.85
+
+In a year or so, the investment becomes $60; You can either buy shares back at 60, your shares get called back at 60 because
+of the put.
+
+A good "risk-free" asset is CASH.TO
+
+Real example.
+
+Microsoft, 1 year expiry. OTM Call has premium (price) 30.48. Put has a premium of 43.50 with strike of 370.
+Strike price is 370. risk-free rate is 4%. Stock price is 345.
+
+- 30.48 + 370/1.04 = 345 + 43.5
+
+### Straddle
+
+A long straddle is established by buying both a call and a put on a stock, each with the same strike price and expiration date.
+
+A straddle is a bet on volatility. The cost of a straddle is the sum of the call and the put, P + C.
+Final stock price must depart from X by this cost for the straddle to provide a profit.
+
+_Strips_ and _straps_ are variations of the straddle.
+
+### Collars
+
+- [Examples](https://elijahlopezz.medium.com/options-strategies-wao-part-3-52480e01fb80)
+- butterfly
+- condor
+- limited downside
