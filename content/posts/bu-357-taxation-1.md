@@ -1195,6 +1195,60 @@ Add tax on base amount to (Taxable amount - Final income of previous ) \* tax ra
   - Example: you have taxable income of 120,000
     - Married credit: 15% \* 14,398 + 15% * (14,398 - spouse div. B income)
 
+### Medical Expense Credit
+
+### Impairment Tax Credit
+
+<details><summary>Problem 7 (Slide 170)</summary>
+
+</details>
+
+### Donation Credit
+
+### CPP and EI credits
+
+### Tuition credit
+
+### Dividend Tax Credit
+
+### Foreign Tax credit
+
+### Political Contributions
+
+75% of first $400, 50% of the next 350, and 33 1/3% of contributions over 750. Maximum $650 annually.
+
+### Chapter 10 Problems
+
+<details><summary>Chapter 10, Problem 5</summary>
+
+Div. B income
+
+- Mrs. Plant: $60,000 (58,000 in employment income)
+- Amanda: 7,000
+- Joan:
+  - Home <-> university $150
+  - 4,200 - 150 = 4,050
+- Courtney 2,800
+- Mr. Plant 5,000 + 100 (don't include 4,000 in dividends since it was first generation)
+
+Mrs. Plant credits:
+
+- Married credit  = 14,398 + 14,398 - 5,100 = 23,696
+- Employment
+  - CPP = 3500
+  - EI = 1287
+- Caregiver credit for Amanda = 2,350
+- Caregiver credit for Mr. Plant = 7,525
+- Tuition (Amanda) = 300 = 300
+- Tuition (Joan) = 3000 = 3000
+- Impairment (Amanda) = 8,870
+- Impairment (Mr. Plant) = 8,870
+- Total \* 15% = 60,351 \* 0.15 = 9,053
+- Dividend tax credit = 0.207 \* 4,000 = 828
+- Non-refundable credits = 9,881
+
+</details>
+
 
 ## Problems
 
