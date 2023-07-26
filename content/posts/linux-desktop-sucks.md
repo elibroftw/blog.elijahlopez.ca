@@ -39,6 +39,11 @@ logged out. The desktop splashscreen loads and I get the black screen again.
 Manjaro is 11 years old. There is no excuse for this workflow to not work. There is no excuse because I go out of my way to make sure
 my music player runs for everyone's workflow not just my own.
 
+### Plugging or Unplugging Power Puts Laptop to Sleep
+
+As the subsection states, charging my laptop while it is on, puts it into the sleep state. I wish I was joking.
+How is this bug even possible in 2023. It makes zero sense why Manjaro can't even handle the plugging of a power cord.
+
 ### Inefficient Upgrading
 
 Pacman manager so not specifically Manjaro.
