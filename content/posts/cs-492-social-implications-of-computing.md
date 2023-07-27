@@ -218,3 +218,19 @@ as logging into your bank account or CRA account. SIN plus 2FA.
 - silencers
 
 ### Cryptocurrencies and Ransomware
+
+Pros
+
+- Won't face restrictions to withdraw money
+- Can send unlimited money internationally with paying extra fees
+- Transfers are instant or are finalized within 30 minutes
+
+Cons
+
+- Criminals can use it for financing
+- Users might not be able to store it properly
+  - solved by crypto-banks that are insured similar to how fiat banks are insured
+- Price volatility
+  - Cryptocurrencies shouldn't be bought to make it big
+  - Rather buy for the purpose of using it as currency in the present or future
+- Technical jargon
