@@ -1249,6 +1249,58 @@ Mrs. Plant credits:
 
 </details>
 
+## Sales Tax (GST & HST)
+
+- GST/HST is a consumption tax on goods and services (supplies) in Canada
+- It is collected by business (registrants) who sell supplies
+- targets final stage
+  - refundable input tax credit applies on purchases
+  - goods and services must be purchased for commercial activities
+  - If ITC exceeds the tax, registrants receive refunds
+
+### Supplies
+
+- sales or rentals of goods
+- rendering of services
+- leases, sales, or other transfer of real properties
+- 3 categories of supplies
+  - taxable supplies
+    - subject to 5% of tax
+    - entitled to input tax credit
+    - subject to tax each time they are sold
+  - Zero-rated supplies
+    - 0% of tax
+    - entitled to input tax credit
+    - prescription drugs, medical devices, basic groceries, exported goods and services
+  - Exempt supply
+    - no GST/HST
+    - no input tax credit
+    - Examples: health care and child care services, educational services, most financial services
+
+- Clothing store sells pair of jeans ot a customer
+  - taxable
+- Consulting done for US private company (performed in the USA)
+  - zero-rated since exported
+- A Canadian bank charges a monthly fee for the chequing account.
+  - exempt
+
+Section 6.1.2. requires the new CPA to “assess reporting systems, data requirements and business processes to support reliable tax compliance.”
+
+Data analytics
+
+  - Big data refers to the increasing volume of data now available, as well as its variety and the speed at which it can be processed.
+  - Analytics is the means for extracting value from this data - the tool that generates insights and deeper understanding.
+
+Advantage
+
+- Access to tax information quickly; prepared for strategic tax planning; collect tax data
+
+Process for data analytics
+
+1. Define the question; gather information and data
+2. Analyze data and issues
+3. Communicate results
+
 
 ## Problems
 
