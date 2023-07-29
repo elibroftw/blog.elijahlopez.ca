@@ -16,7 +16,7 @@ There's two ways to accomplish this. One is to use serve static files and the ot
 
 ### Serving From an Embedded Resource
 
-Create [ProjectName/Assets/SwaggerDark.json](https://github.com/elibroftw/SwaggerDark/blob/master/SwaggerDark.css) in your project. You need to create the asset folder if they do not exist.
+Create [ProjectName/Assets/SwaggerDark.json](https://github.com/elibroftw/SwaggerDark/blob/master/SwaggerDark.css) in your project. You need to create the asset folder if it does not exist.
 
 In Program.cs:
 
