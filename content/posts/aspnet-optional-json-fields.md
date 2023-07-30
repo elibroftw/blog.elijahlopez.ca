@@ -24,6 +24,7 @@ builder.Services.AddControllersWithViews(options => {
             options.JsonSerializerOptions.PropertyNamingPolicy = JsonNamingPolicy.CamelCase;               // JSON response is in  camelCase
             options.JsonSerializerOptions.DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull;  // null not serialized
             options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());                        // enums to string
+            //  options.JsonSerializerOptions.IncludeFields = true;  // if you want to [de]serialize fields (i.e. get or set are omitted in the class)
         });
 ```
 
