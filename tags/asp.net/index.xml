@@ -422,8 +422,8 @@ Adapt the following for your own use. The Route decorator indicates that the rou
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> options.JsonSerializerOptions.NumberHandling = JsonNumberHandling.AllowReadingFromString;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> options.JsonSerializerOptions.PropertyNamingPolicy = JsonNamingPolicy.CamelCase; &lt;span style="color:#999;font-style:italic">// JSON response is in camelCase&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> options.JsonSerializerOptions.DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull; &lt;span style="color:#999;font-style:italic">// null not serialized&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> options.JsonSerializerOptions.IncludeFields = &lt;span style="color:#6ab825;font-weight:bold">true&lt;/span>; &lt;span style="color:#999;font-style:italic">// [de]serialize fields not just properties (i.e. when { get; set; } is omitted )&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> options.JsonSerializerOptions.Converters.Add(&lt;span style="color:#6ab825;font-weight:bold">new&lt;/span> JsonStringEnumConverter()); &lt;span style="color:#999;font-style:italic">// enums to string&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic">// options.JsonSerializerOptions.IncludeFields = true; // [de]serialize fields not just properties (i.e. when { get; set; } is omitted )&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> });
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="client-side" >Client Side
 &lt;span>
