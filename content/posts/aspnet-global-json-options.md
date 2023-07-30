@@ -1,7 +1,7 @@
 ---
 title: "ASP.NET Core Global Json Options"
 date: 2023-07-23T15:48:46-04:00
-draft: false
+draft: true
 tags: [
     "programming",
     "tutorial",
