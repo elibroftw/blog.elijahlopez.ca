@@ -38,17 +38,7 @@ I hope these instructions are clear enough for everyone else since Proton Mail d
 &lt;li>Enter 127.0.0.1:SMTPPORT for outgoing email server (e.g. 127.0.0.1:1027)&lt;/li>
 &lt;li>If you need to add other accounts, add accounts to mail but with a different email address and user name&lt;/li>
 &lt;/ol>
-&lt;p>If you need pictures, please comment and I will update the article to include pictures.&lt;/p></description></item><item><title>ASP.NET Core Global Json Options</title><link>https://blog.elijahlopez.ca/posts/aspnet-global-json-options/</link><pubDate>Sun, 23 Jul 2023 15:48:46 -0400</pubDate><guid>https://blog.elijahlopez.ca/posts/aspnet-global-json-options/</guid><description>&lt;p>When adding JSON options to an ASP.NET controller, these options do not apply to manual uses of the json serializer.
-Therefore, if you want to use the same options for other serializing or deserializing, you can use dependency injection.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-cs" data-lang="cs">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">using&lt;/span> &lt;span style="color:#447fcf;text-decoration:underline">Microsoft.AspNetCore.Mvc&lt;/span>;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">using&lt;/span> &lt;span style="color:#447fcf;text-decoration:underline">Microsoft.Extensions.Options&lt;/span>;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">namespace&lt;/span> &lt;span style="color:#447fcf;text-decoration:underline">Api.Services&lt;/span>;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">public&lt;/span> Constructor(IOptions&amp;lt;JsonOptions&amp;gt; jsonOptions) {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">var&lt;/span> serializerOptions = jsonOptions.Value.JsonSerializerOptions;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>If you don&amp;rsquo;t know how to set default Json serializer options for the controller, read &lt;a href="https://blog.elijahlopez.ca/posts/aspnet-optional-json-fields">ASP.NET Core Optional Json Fields&lt;/a>.&lt;/p></description></item><item><title>Tips for Distributing Python Apps</title><link>https://blog.elijahlopez.ca/posts/tips-for-distributing-python-apps/</link><pubDate>Sat, 22 Jul 2023 01:00:56 -0400</pubDate><guid>https://blog.elijahlopez.ca/posts/tips-for-distributing-python-apps/</guid><description>&lt;p>Here are some pillars for making Python app distribution better for end users. I was not able to follow some of these pillars when I distributed Music Caster, so I wrote them down for other methods I&amp;rsquo;d try if I were to go about doing it again.&lt;/p>
+&lt;p>If you need pictures, please comment and I will update the article to include pictures.&lt;/p></description></item><item><title>Tips for Distributing Python Apps</title><link>https://blog.elijahlopez.ca/posts/tips-for-distributing-python-apps/</link><pubDate>Sat, 22 Jul 2023 01:00:56 -0400</pubDate><guid>https://blog.elijahlopez.ca/posts/tips-for-distributing-python-apps/</guid><description>&lt;p>Here are some pillars for making Python app distribution better for end users. I was not able to follow some of these pillars when I distributed Music Caster, so I wrote them down for other methods I&amp;rsquo;d try if I were to go about doing it again.&lt;/p>
 &lt;ol>
 &lt;li>
 &lt;p>Python apps should be able to be installed without requiring administrative privileges.&lt;/p>
@@ -10939,6 +10929,7 @@ boats on the partially flooded roads.&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> options.JsonSerializerOptions.NumberHandling = JsonNumberHandling.AllowReadingFromString;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> options.JsonSerializerOptions.PropertyNamingPolicy = JsonNamingPolicy.CamelCase; &lt;span style="color:#999;font-style:italic">// JSON response is in camelCase&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> options.JsonSerializerOptions.DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull; &lt;span style="color:#999;font-style:italic">// null not serialized&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> options.JsonSerializerOptions.IncludeFields = &lt;span style="color:#6ab825;font-weight:bold">true&lt;/span>; &lt;span style="color:#999;font-style:italic">// [de]serialize fields not just properties (i.e. when { get; set; } is omitted )&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> options.JsonSerializerOptions.Converters.Add(&lt;span style="color:#6ab825;font-weight:bold">new&lt;/span> JsonStringEnumConverter()); &lt;span style="color:#999;font-style:italic">// enums to string&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> });
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="client-side" >Client Side
