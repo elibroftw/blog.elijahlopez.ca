@@ -47,10 +47,6 @@ Imagine wanting to scan a QR code but you have to rely on a single person who do
 
 Now I need `react-native-reanimated` on top of `react-native-vision-camera` and `vision-camera-code-scanner`...
 
-Please stop this endless cycle of bloatware. I'm so done with react native. My friend (todo: link) even told  me about how he stopped with React Native and went native.
-I had not heeded his advice because I thought it would not be as productive as React Native (since I know React already), but the way I see things now, I would not pick React Native
-for future projects. Any project that uses React Native becomes tech debt instantly.
-
 Expo is such a trap. It's a pain to remove.
 
 When I want to debug my mobile application?
@@ -86,6 +82,18 @@ What to do?
 - In one terminal: `npx react-native start`
 - In another terminal `npx react-native run-android`
 - `yarn add react-native` to upgrade react-native
+
+Okay so finally I want to get the QR code scanner working.
+
+1. `__scanCodes` not found. Easy fix, just change babel.config.js to use `__scanCodes` instead of `__scanQRCodes` which was there for some reason...
+    - Have to reset the cache
+2. ReferenceError: Property '_setGlobalConsole' doesn't exist
+    - Cool, just set the version of the "react-native-reanimated": "2.14.4" since the latest version (3+) has it removed...
+    - Have to wait for vision-camera v3 to come out
+
+Please stop this endless cycle of bloatware. I'm so done with react native. My friend (todo: link) even told  me about how he stopped with React Native and went native.
+I had not heeded his advice because I thought it would not be as productive as React Native (since I know React already), but the way I see things now, I would not pick React Native
+for future projects. Any project that uses React Native becomes tech debt instantly.
 
 ## A Note to Future Developers
 
