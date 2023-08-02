@@ -171,9 +171,6 @@ question on how to navigate views is still left unanswered. The support is abysm
 &lt;p>This is coming from the maintainer of the mainstream camera package for react native&amp;hellip;&lt;/p>
 &lt;p>Imagine wanting to scan a QR code but you have to rely on a single person who doesn&amp;rsquo;t want to give access to other people to maintain his/her project?&lt;/p>
 &lt;p>Now I need &lt;code>react-native-reanimated&lt;/code> on top of &lt;code>react-native-vision-camera&lt;/code> and &lt;code>vision-camera-code-scanner&lt;/code>&amp;hellip;&lt;/p>
-&lt;p>Please stop this endless cycle of bloatware. I&amp;rsquo;m so done with react native. My friend (todo: link) even told me about how he stopped with React Native and went native.
-I had not heeded his advice because I thought it would not be as productive as React Native (since I know React already), but the way I see things now, I would not pick React Native
-for future projects. Any project that uses React Native becomes tech debt instantly.&lt;/p>
 &lt;p>Expo is such a trap. It&amp;rsquo;s a pain to remove.&lt;/p>
 &lt;p>When I want to debug my mobile application?&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-text" data-lang="text">&lt;span style="display:flex;">&lt;span>An error occurred while launching the application. Error while executing command &amp;#39;c:\Users\maste\Documents\GitHub\SplitTheTank\node_modules\.bin\react-native.cmd run-android --no-packager&amp;#39; (error code 101) (error code 303)
@@ -198,6 +195,23 @@ for future projects. Any project that uses React Native becomes tech debt instan
 &lt;li>In another terminal &lt;code>npx react-native run-android&lt;/code>&lt;/li>
 &lt;li>&lt;code>yarn add react-native&lt;/code> to upgrade react-native&lt;/li>
 &lt;/ul>
+&lt;p>Okay so finally I want to get the QR code scanner working.&lt;/p>
+&lt;ol>
+&lt;li>&lt;code>__scanCodes&lt;/code> not found. Easy fix, just change babel.config.js to use &lt;code>__scanCodes&lt;/code> instead of &lt;code>__scanQRCodes&lt;/code> which was there for some reason&amp;hellip;
+&lt;ul>
+&lt;li>Have to reset the cache&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>ReferenceError: Property &amp;lsquo;_setGlobalConsole&amp;rsquo; doesn&amp;rsquo;t exist
+&lt;ul>
+&lt;li>Cool, just set the version of the &amp;ldquo;react-native-reanimated&amp;rdquo;: &amp;ldquo;2.14.4&amp;rdquo; since the latest version (3+) has it removed&amp;hellip;&lt;/li>
+&lt;li>Have to wait for vision-camera v3 to come out&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ol>
+&lt;p>Please stop this endless cycle of bloatware. I&amp;rsquo;m so done with react native. My friend (todo: link) even told me about how he stopped with React Native and went native.
+I had not heeded his advice because I thought it would not be as productive as React Native (since I know React already), but the way I see things now, I would not pick React Native
+for future projects. Any project that uses React Native becomes tech debt instantly.&lt;/p>
 &lt;h2 id="a-note-to-future-developers" >A Note to Future Developers
 &lt;span>
 &lt;a href="#a-note-to-future-developers">
