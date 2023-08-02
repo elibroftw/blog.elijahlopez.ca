@@ -51,6 +51,12 @@ Please stop this endless cycle of bloatware. I'm so done with react native. My f
 I had not heeded his advice because I thought it would not be as productive as React Native (since I know React already), but the way I see things now, I would not pick React Native
 for future projects. Any project that uses React Native becomes tech debt instantly.
 
+When I want to debug my mobile applicatin?
+
+```text
+An error occurred while launching the application. Error while executing command 'c:\Users\maste\Documents\GitHub\SplitTheTank\node_modules\.bin\react-native.cmd run-android --no-packager' (error code 101) (error code 303)
+```
+
 ## A Note to Future Developers
 
 Make two apps. It's much better. Learn both Swift and Kotlin. Write feature in Kotlin, write feature again in Swift. Less time wasted due to these react-native specific conflicts.
