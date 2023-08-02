@@ -51,7 +51,9 @@ Please stop this endless cycle of bloatware. I'm so done with react native. My f
 I had not heeded his advice because I thought it would not be as productive as React Native (since I know React already), but the way I see things now, I would not pick React Native
 for future projects. Any project that uses React Native becomes tech debt instantly.
 
-When I want to debug my mobile applicatin?
+Expo is such a trap. It's a pain to remove.
+
+When I want to debug my mobile application?
 
 ```text
 An error occurred while launching the application. Error while executing command 'c:\Users\maste\Documents\GitHub\SplitTheTank\node_modules\.bin\react-native.cmd run-android --no-packager' (error code 101) (error code 303)
@@ -72,9 +74,14 @@ A problem occurred evaluating settings 'SplitTheTank'.
 > Could not read script 'C:\Users\maste\Documents\GitHub\SplitTheTank\scripts\autolinking.gradle' as it does not exist.
 ```
 
+```txt
+Included build 'C:\Users\maste\Documents\GitHub\SplitTheTank\node_modules\react-native-gradle-plugin' does not exist.
+```
+
 What to do?
 
-- If you removed expo, remove the expo related lines in `settings.gradle`
+- If you want to remove expo modules, [do the opposite of the manual installation of expo modules](https://docs.expo.dev/bare/installing-expo-modules/#manual-installation)
+- If you upgraded react-native, follow [upgrade helper](https://react-native-community.github.io/upgrade-helper/?from=0.71.12&to=0.72.3)
 - Run `yarn` or `npm install` in the root folder.
 - In one terminal: `npx react-native start`
 - In another terminal `npx react-native run-android`
