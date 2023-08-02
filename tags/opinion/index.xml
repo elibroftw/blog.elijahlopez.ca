@@ -208,6 +208,29 @@ question on how to navigate views is still left unanswered. The support is abysm
 &lt;li>Have to wait for vision-camera v3 to come out&lt;/li>
 &lt;/ul>
 &lt;/li>
+&lt;li>What went wrong: A problem occurred evaluating project &amp;lsquo;:react-native-reanimated&amp;rsquo;. &amp;gt; Could not get unknown property &amp;lsquo;minor&amp;rsquo; for project &amp;lsquo;:react-native-reanimated&amp;rsquo; of type org.gradle.api.Project
+&lt;ul>
+&lt;li>This is peak React Native Monkey Patching. With promises of greatness, you are unable to update to the latest software because one package relies on an older version of another package
+which relies on an older version of react-native&lt;/li>
+&lt;li>okay, so I used 2.17.0 and got the warning/issue that is:
+Execution failed for task &amp;lsquo;:react-native-vision-camera:extractJNIFiles&amp;rsquo;. &amp;gt; Cannot expand ZIP &amp;lsquo;C:\Users\maste\Documents\GitHub\SplitTheTank\node_modules\react-native-reanimated\android\react-native-reanimated-72-hermes.aar&amp;rsquo; as it does not exist.&lt;/li>
+&lt;li>Had to remove &lt;code>node_modules/react-native-reanimated&lt;/code> and run &lt;code>yarn&lt;/code> again to reinstall the package.
+&lt;ul>
+&lt;li>The build finally worked&lt;/li>
+&lt;li>&lt;code>error: index.js: Cannot find module 'react-native-reanimated/plugin'&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Installed manually &lt;code>yarn add react-native-reanimated@2.17.0&lt;/code>
+&lt;ul>
+&lt;li>Same build error
+Execution failed for task &amp;lsquo;:react-native-vision-camera:extractJNIFiles&amp;rsquo;.
+Cannot expand ZIP &amp;lsquo;C:\Users\maste\Documents\GitHub\SplitTheTank\node_modules\react-native-reanimated\android\react-native-reanimated-72-hermes.aar&amp;rsquo; as it does not exist.&lt;/li>
+&lt;li>Let me just remove the entire &lt;code>node_modules&lt;/code> folder then&lt;/li>
+&lt;li>I give up&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
 &lt;/ol>
 &lt;p>Please stop this endless cycle of bloatware. I&amp;rsquo;m so done with react native. My friend (todo: link) even told me about how he stopped with React Native and went native.
 I had not heeded his advice because I thought it would not be as productive as React Native (since I know React already), but the way I see things now, I would not pick React Native
