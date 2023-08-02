@@ -176,7 +176,26 @@ I had not heeded his advice because I thought it would not be as productive as R
 for future projects. Any project that uses React Native becomes tech debt instantly.&lt;/p>
 &lt;p>When I want to debug my mobile applicatin?&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-text" data-lang="text">&lt;span style="display:flex;">&lt;span>An error occurred while launching the application. Error while executing command &amp;#39;c:\Users\maste\Documents\GitHub\SplitTheTank\node_modules\.bin\react-native.cmd run-android --no-packager&amp;#39; (error code 101) (error code 303)
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="a-note-to-future-developers" >A Note to Future Developers
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>want to run &lt;code>npx react-native run-android&lt;/code>?&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-text" data-lang="text">&lt;span style="display:flex;">&lt;span>Error: Command failed: gradlew.bat app:installDebug -PreactNativeDevServerPort=8081
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>FAILURE: Build failed with an exception.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>* Where:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Settings file &amp;#39;C:\Users\maste\Documents\GitHub\SplitTheTank\android\settings.gradle&amp;#39; line: 9
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>* What went wrong:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>A problem occurred evaluating settings &amp;#39;SplitTheTank&amp;#39;.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;gt; Could not read script &amp;#39;C:\Users\maste\Documents\GitHub\SplitTheTank\scripts\autolinking.gradle&amp;#39; as it does not exist.
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>What to do?&lt;/p>
+&lt;ul>
+&lt;li>If you removed expo, remove the expo related lines in &lt;code>settings.gradle&lt;/code>&lt;/li>
+&lt;li>Run &lt;code>yarn&lt;/code> or &lt;code>npm install&lt;/code> in the root folder.&lt;/li>
+&lt;li>In one terminal: &lt;code>npx react-native start&lt;/code>&lt;/li>
+&lt;li>In another terminal &lt;code>npx react-native run-android&lt;/code>&lt;/li>
+&lt;li>&lt;code>yarn add react-native&lt;/code> to upgrade react-native&lt;/li>
+&lt;/ul>
+&lt;h2 id="a-note-to-future-developers" >A Note to Future Developers
 &lt;span>
 &lt;a href="#a-note-to-future-developers">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
