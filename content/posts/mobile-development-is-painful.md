@@ -57,6 +57,29 @@ When I want to debug my mobile applicatin?
 An error occurred while launching the application. Error while executing command 'c:\Users\maste\Documents\GitHub\SplitTheTank\node_modules\.bin\react-native.cmd run-android --no-packager' (error code 101) (error code 303)
 ```
 
+want to run `npx react-native run-android`?
+
+```text
+Error: Command failed: gradlew.bat app:installDebug -PreactNativeDevServerPort=8081
+
+FAILURE: Build failed with an exception.
+
+* Where:
+Settings file 'C:\Users\maste\Documents\GitHub\SplitTheTank\android\settings.gradle' line: 9
+
+* What went wrong:
+A problem occurred evaluating settings 'SplitTheTank'.
+> Could not read script 'C:\Users\maste\Documents\GitHub\SplitTheTank\scripts\autolinking.gradle' as it does not exist.
+```
+
+What to do?
+
+- If you removed expo, remove the expo related lines in `settings.gradle`
+- Run `yarn` or `npm install` in the root folder.
+- In one terminal: `npx react-native start`
+- In another terminal `npx react-native run-android`
+- `yarn add react-native` to upgrade react-native
+
 ## A Note to Future Developers
 
 Make two apps. It's much better. Learn both Swift and Kotlin. Write feature in Kotlin, write feature again in Swift. Less time wasted due to these react-native specific conflicts.
