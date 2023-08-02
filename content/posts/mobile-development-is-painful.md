@@ -90,6 +90,20 @@ Okay so finally I want to get the QR code scanner working.
 2. ReferenceError: Property '_setGlobalConsole' doesn't exist
     - Cool, just set the version of the "react-native-reanimated": "2.14.4" since the latest version (3+) has it removed...
     - Have to wait for vision-camera v3 to come out
+3. What went wrong: A problem occurred evaluating project ':react-native-reanimated'. > Could not get unknown property 'minor' for project ':react-native-reanimated' of type org.gradle.api.Project
+    - This is peak React Native Monkey Patching. With promises of greatness, you are unable to update to the latest software because one package relies on an older version of another package
+        which relies on an older version of react-native
+    - okay, so I used 2.17.0 and got the warning/issue that is:
+        Execution failed for task ':react-native-vision-camera:extractJNIFiles'. > Cannot expand ZIP 'C:\Users\maste\Documents\GitHub\SplitTheTank\node_modules\react-native-reanimated\android\react-native-reanimated-72-hermes.aar' as it does not exist.
+    - Had to remove `node_modules/react-native-reanimated` and run `yarn` again to reinstall the package.
+        - The build finally worked
+        - `error: index.js: Cannot find module 'react-native-reanimated/plugin'`
+    - Installed manually `yarn add react-native-reanimated@2.17.0`
+        - Same build error
+        Execution failed for task ':react-native-vision-camera:extractJNIFiles'.
+        Cannot expand ZIP 'C:\Users\maste\Documents\GitHub\SplitTheTank\node_modules\react-native-reanimated\android\react-native-reanimated-72-hermes.aar' as it does not exist.
+        - Let me just remove the entire `node_modules` folder then
+        - I give up
 
 Please stop this endless cycle of bloatware. I'm so done with react native. My friend (todo: link) even told  me about how he stopped with React Native and went native.
 I had not heeded his advice because I thought it would not be as productive as React Native (since I know React already), but the way I see things now, I would not pick React Native
