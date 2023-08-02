@@ -4,6 +4,7 @@ date: 2023-05-04T23:55:07-04:00
 draft: false
 tags: [
     "opinion",
+    "mobile"
 ]
 ---
 
@@ -104,6 +105,10 @@ Okay so finally I want to get the QR code scanner working.
         Cannot expand ZIP 'C:\Users\maste\Documents\GitHub\SplitTheTank\node_modules\react-native-reanimated\android\react-native-reanimated-72-hermes.aar' as it does not exist.
         - Let me just remove the entire `node_modules` folder then
         - I give up
+    - upgrade to v3 again
+        - ERROR  TypeError: Cannot read property 'version' of undefined, js engine: hermes
+    - yarn add react-native-reanimated
+        - yarn start --reset-cache
 
 Please stop this endless cycle of bloatware. I'm so done with react native. My friend (todo: link) even told  me about how he stopped with React Native and went native.
 I had not heeded his advice because I thought it would not be as productive as React Native (since I know React already), but the way I see things now, I would not pick React Native
