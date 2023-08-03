@@ -32,7 +32,7 @@ Well tomorrow is here, and the verdict on React Native is: not ideal but can get
 
 Expo is complete dog shit. The React Native Expo scaffold command promoted by the official documentation doesn't even produce a compilable app. It's absolutely dumb. I encountered this sort of broken official docs last year too when I was [getting started with Tauri](https://www.youtube.com/playlist?list=PLmWYh0f8jKSjt9VC5sq2T3mFETasG2p2L). One thing I absolutely despise about other developers in this industry is that they want to be authoritarian and retain full control of their repositories while simultaneously being unavailable.
 
-React Native CLI on the other hand did compile, but the verdict for that is: works 60 of the time all the time.
+React Native CLI on the other hand did compile, but the verdict for that is: works 60% of the time all the time.
 
 You add a package to package.json in a React Native and when you hit build, you wait 60 seconds for the project to download required files before building only to encounter:
 
@@ -48,7 +48,7 @@ Imagine wanting to scan a QR code but you have to rely on a single person who do
 
 Now I need `react-native-reanimated` on top of `react-native-vision-camera` and `vision-camera-code-scanner`...
 
-Expo is such a trap. It's a pain to remove.
+Expo is such a trap. It's a pain to remove when you realize the expo module you wanted to use doesn't even work.
 
 When I want to debug my mobile application?
 
@@ -109,7 +109,12 @@ Okay so finally I want to get the QR code scanner working.
         - ERROR  TypeError: Cannot read property 'version' of undefined, js engine: hermes
     - yarn add react-native-reanimated
         - yarn start --reset-cache
-
+        - Back to step 2
+    - Let me try v3 release candidate
+        - Project with path ':react-native-worklets' could not be found in project ':react-native-vision-camera'
+        - yarn add @shopify/react-native-skia@0.1.175
+        - yarn add react-native-worklets@https://github.com/chrfalch/react-native-worklets#d62d76c
+    - Tesla has [react-native-camera-kit](https://github.com/teslamotors/react-native-camera-kit) which has QR Scanning out the box
 Please stop this endless cycle of bloatware. I'm so done with react native. My friend (todo: link) even told  me about how he stopped with React Native and went native.
 I had not heeded his advice because I thought it would not be as productive as React Native (since I know React already), but the way I see things now, I would not pick React Native
 for future projects. Any project that uses React Native becomes tech debt instantly.
