@@ -9444,7 +9444,7 @@ question on how to navigate views is still left unanswered. The support is abysm
 &lt;/a>
 &lt;/span>
 &lt;/h2>&lt;p>Expo is complete dog shit. The React Native Expo scaffold command promoted by the official documentation doesn&amp;rsquo;t even produce a compilable app. It&amp;rsquo;s absolutely dumb. I encountered this sort of broken official docs last year too when I was &lt;a href="https://www.youtube.com/playlist?list=PLmWYh0f8jKSjt9VC5sq2T3mFETasG2p2L">getting started with Tauri&lt;/a>. One thing I absolutely despise about other developers in this industry is that they want to be authoritarian and retain full control of their repositories while simultaneously being unavailable.&lt;/p>
-&lt;p>React Native CLI on the other hand did compile, but the verdict for that is: works 60 of the time all the time.&lt;/p>
+&lt;p>React Native CLI on the other hand did compile, but the verdict for that is: works 60% of the time all the time.&lt;/p>
 &lt;p>You add a package to package.json in a React Native and when you hit build, you wait 60 seconds for the project to download required files before building only to encounter:&lt;/p>
 &lt;p>The Android Gradle plugin supports only kotlin-android-extensions Gradle plugin version 1.6.20 and higher.&lt;/p>
 &lt;blockquote>
@@ -9454,7 +9454,7 @@ question on how to navigate views is still left unanswered. The support is abysm
 &lt;p>This is coming from the maintainer of the mainstream camera package for react native&amp;hellip;&lt;/p>
 &lt;p>Imagine wanting to scan a QR code but you have to rely on a single person who doesn&amp;rsquo;t want to give access to other people to maintain his/her project?&lt;/p>
 &lt;p>Now I need &lt;code>react-native-reanimated&lt;/code> on top of &lt;code>react-native-vision-camera&lt;/code> and &lt;code>vision-camera-code-scanner&lt;/code>&amp;hellip;&lt;/p>
-&lt;p>Expo is such a trap. It&amp;rsquo;s a pain to remove.&lt;/p>
+&lt;p>Expo is such a trap. It&amp;rsquo;s a pain to remove when you realize the expo module you wanted to use doesn&amp;rsquo;t even work.&lt;/p>
 &lt;p>When I want to debug my mobile application?&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-text" data-lang="text">&lt;span style="display:flex;">&lt;span>An error occurred while launching the application. Error while executing command &amp;#39;c:\Users\maste\Documents\GitHub\SplitTheTank\node_modules\.bin\react-native.cmd run-android --no-packager&amp;#39; (error code 101) (error code 303)
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>want to run &lt;code>npx react-native run-android&lt;/code>?&lt;/p>
@@ -9520,14 +9520,23 @@ Cannot expand ZIP &amp;lsquo;C:\Users\maste\Documents\GitHub\SplitTheTank\node_m
 &lt;li>yarn add react-native-reanimated
 &lt;ul>
 &lt;li>yarn start &amp;ndash;reset-cache&lt;/li>
+&lt;li>Back to step 2&lt;/li>
 &lt;/ul>
 &lt;/li>
+&lt;li>Let me try v3 release candidate
+&lt;ul>
+&lt;li>Project with path &amp;lsquo;:react-native-worklets&amp;rsquo; could not be found in project &amp;lsquo;:react-native-vision-camera&amp;rsquo;&lt;/li>
+&lt;li>yarn add @shopify/react-native-skia@0.1.175&lt;/li>
+&lt;li>yarn add react-native-worklets@https://github.com/chrfalch/react-native-worklets#d62d76c&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Tesla has &lt;a href="https://github.com/teslamotors/react-native-camera-kit">react-native-camera-kit&lt;/a> which has QR Scanning out the box
+Please stop this endless cycle of bloatware. I&amp;rsquo;m so done with react native. My friend (todo: link) even told me about how he stopped with React Native and went native.
+I had not heeded his advice because I thought it would not be as productive as React Native (since I know React already), but the way I see things now, I would not pick React Native
+for future projects. Any project that uses React Native becomes tech debt instantly.&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;/ol>
-&lt;p>Please stop this endless cycle of bloatware. I&amp;rsquo;m so done with react native. My friend (todo: link) even told me about how he stopped with React Native and went native.
-I had not heeded his advice because I thought it would not be as productive as React Native (since I know React already), but the way I see things now, I would not pick React Native
-for future projects. Any project that uses React Native becomes tech debt instantly.&lt;/p>
 &lt;h2 id="a-note-to-future-developers" >A Note to Future Developers
 &lt;span>
 &lt;a href="#a-note-to-future-developers">
