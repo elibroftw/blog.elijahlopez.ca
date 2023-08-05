@@ -8,9 +8,9 @@ This method is a much easier and hassle free experience than react-native-vision
 &lt;/span>
 &lt;/h2>&lt;p>First install the camera kit package by teslamotors:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>yarn add react-native-camera-kit
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="android" >Android
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="android-configuration" >Android Configuration
 &lt;span>
-&lt;a href="#android">
+&lt;a href="#android-configuration">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
@@ -32,9 +32,9 @@ This method is a much easier and hassle free experience than react-native-vision
 &lt;/h3>&lt;p>In &lt;code>AndroidManifest.xml&lt;/code>, add the following under &lt;code>&amp;lt;manifest ...&amp;gt;&lt;/code>&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">&amp;lt;uses-permission&lt;/span> &lt;span style="color:#bbb">android:name=&lt;/span>&lt;span style="color:#ed9d13">&amp;#34;android.permission.CAMERA&amp;#34;&lt;/span> &lt;span style="color:#6ab825;font-weight:bold">/&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">&amp;lt;uses-permission&lt;/span> &lt;span style="color:#bbb">android:name=&lt;/span>&lt;span style="color:#ed9d13">&amp;#34;android.permission.WRITE_EXTERNAL_STORAGE&amp;#34;&lt;/span>&lt;span style="color:#6ab825;font-weight:bold">/&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="ios" >iOS
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="ios-configuration" >iOS Configuration
 &lt;span>
-&lt;a href="#ios">
+&lt;a href="#ios-configuration">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
@@ -50,7 +50,540 @@ This method is a much easier and hassle free experience than react-native-vision
 &amp;lt;string&amp;gt;For taking photos&amp;lt;/string&amp;gt;
 &amp;lt;key&amp;gt;NSPhotoLibraryUsageDescription&amp;lt;/key&amp;gt;
 &amp;lt;string&amp;gt;For saving photos&amp;lt;/string&amp;gt;
-&lt;/code>&lt;/pre></description></item><item><title>ASP.NET Core Add HTML to Web Api</title><link>https://blog.elijahlopez.ca/posts/aspnet-add-html-to-web-api/</link><pubDate>Sat, 15 Jul 2023 12:45:48 -0400</pubDate><guid>https://blog.elijahlopez.ca/posts/aspnet-add-html-to-web-api/</guid><description>&lt;p>Suppose you wanted to add html to your asp.net web api project, how would you go about it?&lt;/p>
+&lt;/code>&lt;/pre>&lt;h2 id="usage" >Usage
+&lt;span>
+&lt;a href="#usage">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>&lt;a href="https://github.com/teslamotors/react-native-camera-kit#camera-props-optional">Additional props. You are advised to read them for more functionality.&lt;/a>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-jsx" data-lang="jsx">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">import&lt;/span> { Camera, CameraType } from &lt;span style="color:#ed9d13">&amp;#39;react-native-camera-kit&amp;#39;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">return&lt;/span> &amp;lt;&lt;span style="color:#6ab825;font-weight:bold">Camera&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#bbb">style&lt;/span>={{ height: &lt;span style="color:#ed9d13">&amp;#39;50%&amp;#39;&lt;/span> }}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#bbb">flashMode&lt;/span>=&lt;span style="color:#ed9d13">&amp;#39;auto&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#bbb">scanBarcode&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#bbb">onReadCode&lt;/span>={event =&amp;gt; {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> console.log(event.nativeEvent.codeStringValue);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> /&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;details>&lt;summary>Sample Event (very long)&lt;/summary>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-js" data-lang="js">&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;_dispatchInstances&amp;#34;&lt;/span>: {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;_debugHookTypes&amp;#34;&lt;/span>: &lt;span style="color:#6ab825;font-weight:bold">null&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;_debugNeedsRemount&amp;#34;&lt;/span>: &lt;span style="color:#6ab825;font-weight:bold">false&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;_debugOwner&amp;#34;&lt;/span>: {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;_debugHookTypes&amp;#34;&lt;/span>: [&lt;span style="color:#24909d">Array&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;_debugNeedsRemount&amp;#34;&lt;/span>: &lt;span style="color:#6ab825;font-weight:bold">false&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;_debugOwner&amp;#34;&lt;/span>: [FiberNode
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;_debugSource&amp;#34;&lt;/span>: &lt;span style="color:#6ab825;font-weight:bold">undefined&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;actualDuration&amp;#34;&lt;/span>: &lt;span style="color:#3677a9">0.9124748706817627&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;actualStartTime&amp;#34;&lt;/span>: &lt;span style="color:#3677a9">1280787844.218961&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;alternate&amp;#34;&lt;/span>: [FiberNode
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;child&amp;#34;&lt;/span>: [Circular
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;childLanes&amp;#34;&lt;/span>: &lt;span style="color:#3677a9">0&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;deletions&amp;#34;&lt;/span>: &lt;span style="color:#6ab825;font-weight:bold">null&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;dependencies&amp;#34;&lt;/span>: &lt;span style="color:#6ab825;font-weight:bold">null&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;elementType&amp;#34;&lt;/span>: [&lt;span style="color:#24909d">Object&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;flags&amp;#34;&lt;/span>: &lt;span style="color:#3677a9">5&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;index&amp;#34;&lt;/span>: &lt;span style="color:#3677a9">0&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;key&amp;#34;&lt;/span>: &lt;span style="color:#6ab825;font-weight:bold">null&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;lanes&amp;#34;&lt;/span>: &lt;span style="color:#3677a9">0&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;memoizedProps&amp;#34;&lt;/span>: [&lt;span style="color:#24909d">Object&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;memoizedState&amp;#34;&lt;/span>: [&lt;span style="color:#24909d">Object&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;mode&amp;#34;&lt;/span>: &lt;span style="color:#3677a9">2&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;pendingProps&amp;#34;&lt;/span>: [&lt;span style="color:#24909d">Object&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;ref&amp;#34;&lt;/span>: [&lt;span style="color:#24909d">Function&lt;/span> ref
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;return&amp;#34;&lt;/span>: [FiberNode
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;selfBaseDuration&amp;#34;&lt;/span>: &lt;span style="color:#3677a9">0.8537600040435791&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;sibling&amp;#34;&lt;/span>: &lt;span style="color:#6ab825;font-weight:bold">null&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;stateNode&amp;#34;&lt;/span>: &lt;span style="color:#6ab825;font-weight:bold">null&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;subtreeFlags&amp;#34;&lt;/span>: &lt;span style="color:#3677a9">4&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;tag&amp;#34;&lt;/span>: &lt;span style="color:#3677a9">11&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;treeBaseDuration&amp;#34;&lt;/span>: &lt;span style="color:#3677a9">0.8878579139709473&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;type&amp;#34;&lt;/span>: [&lt;span style="color:#24909d">Object&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;updateQueue&amp;#34;&lt;/span>: [&lt;span style="color:#24909d">Object&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> },
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;_debugSource&amp;#34;&lt;/span>: &lt;span style="color:#6ab825;font-weight:bold">undefined&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;actualDuration&amp;#34;&lt;/span>: &lt;span style="color:#3677a9">0.05257081985473633&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;actualStartTime&amp;#34;&lt;/span>: &lt;span style="color:#3677a9">1280787845.0774&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;alternate&amp;#34;&lt;/span>: {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;_debugHookTypes&amp;#34;&lt;/span>: &lt;span style="color:#6ab825;font-weight:bold">null&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;_debugNeedsRemount&amp;#34;&lt;/span>: &lt;span style="color:#6ab825;font-weight:bold">false&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;_debugOwner&amp;#34;&lt;/span>: [FiberNode
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;_debugSource&amp;#34;&lt;/span>: &lt;span style="color:#6ab825;font-weight:bold">undefined&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;actualDuration&amp;#34;&lt;/span>: &lt;span style="color:#3677a9">0.06669163703918457&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;actualStartTime&amp;#34;&lt;/span>: &lt;span style="color:#3677a9">1280787832.451261&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;alternate&amp;#34;&lt;/span>: [Circular
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;child&amp;#34;&lt;/span>: &lt;span style="color:#6ab825;font-weight:bold">null&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;childLanes&amp;#34;&lt;/span>: &lt;span style="color:#3677a9">0&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;deletions&amp;#34;&lt;/span>: &lt;span style="color:#6ab825;font-weight:bold">null&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;dependencies&amp;#34;&lt;/span>: &lt;span style="color:#6ab825;font-weight:bold">null&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;elementType&amp;#34;&lt;/span>: &lt;span style="color:#ed9d13">&amp;#34;CKCameraManager&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;flags&amp;#34;&lt;/span>: &lt;span style="color:#3677a9">4&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;index&amp;#34;&lt;/span>: &lt;span style="color:#3677a9">0&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;key&amp;#34;&lt;/span>: &lt;span style="color:#6ab825;font-weight:bold">null&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;lanes&amp;#34;&lt;/span>: &lt;span style="color:#3677a9">0&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;memoizedProps&amp;#34;&lt;/span>: [&lt;span style="color:#24909d">Object&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;memoizedState&amp;#34;&lt;/span>: &lt;span style="color:#6ab825;font-weight:bold">null&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;mode&amp;#34;&lt;/span>: &lt;span style="color:#3677a9">2&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;pendingProps&amp;#34;&lt;/span>: [&lt;span style="color:#24909d">Object&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;ref&amp;#34;&lt;/span>: [&lt;span style="color:#24909d">Object&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;return&amp;#34;&lt;/span>: [FiberNode
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;selfBaseDuration&amp;#34;&lt;/span>: &lt;span style="color:#3677a9">0.03959178924560547&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;sibling&amp;#34;&lt;/span>: &lt;span style="color:#6ab825;font-weight:bold">null&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;stateNode&amp;#34;&lt;/span>: [ReactNativeFiberHostComponent
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;subtreeFlags&amp;#34;&lt;/span>: &lt;span style="color:#3677a9">0&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;tag&amp;#34;&lt;/span>: &lt;span style="color:#3677a9">5&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;treeBaseDuration&amp;#34;&lt;/span>: &lt;span style="color:#3677a9">0.03959178924560547&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;type&amp;#34;&lt;/span>: &lt;span style="color:#ed9d13">&amp;#34;CKCameraManager&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;updateQueue&amp;#34;&lt;/span>: &lt;span style="color:#6ab825;font-weight:bold">null&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> },
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;child&amp;#34;&lt;/span>: &lt;span style="color:#6ab825;font-weight:bold">null&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;childLanes&amp;#34;&lt;/span>: &lt;span style="color:#3677a9">0&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;deletions&amp;#34;&lt;/span>: &lt;span style="color:#6ab825;font-weight:bold">null&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;dependencies&amp;#34;&lt;/span>: &lt;span style="color:#6ab825;font-weight:bold">null&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;elementType&amp;#34;&lt;/span>: &lt;span style="color:#ed9d13">&amp;#34;CKCameraManager&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;flags&amp;#34;&lt;/span>: &lt;span style="color:#3677a9">4&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;index&amp;#34;&lt;/span>: &lt;span style="color:#3677a9">0&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;key&amp;#34;&lt;/span>: &lt;span style="color:#6ab825;font-weight:bold">null&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;lanes&amp;#34;&lt;/span>: &lt;span style="color:#3677a9">0&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;memoizedProps&amp;#34;&lt;/span>: {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;cameraOptions&amp;#34;&lt;/span>: [&lt;span style="color:#24909d">Object&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;cameraType&amp;#34;&lt;/span>: &lt;span style="color:#ed9d13">&amp;#34;back&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;flashMode&amp;#34;&lt;/span>: &lt;span style="color:#ed9d13">&amp;#34;auto&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;frameColor&amp;#34;&lt;/span>: -&lt;span style="color:#3677a9">1&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;laserColor&amp;#34;&lt;/span>: -&lt;span style="color:#3677a9">65536&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;onReadCode&amp;#34;&lt;/span>: [&lt;span style="color:#24909d">Function&lt;/span> onReadCode
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;scanBarcode&amp;#34;&lt;/span>: &lt;span style="color:#6ab825;font-weight:bold">true&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;style&amp;#34;&lt;/span>: [&lt;span style="color:#24909d">Object&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;surfaceColor&amp;#34;&lt;/span>: &lt;span style="color:#6ab825;font-weight:bold">undefined&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> },
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;memoizedState&amp;#34;&lt;/span>: &lt;span style="color:#6ab825;font-weight:bold">null&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;mode&amp;#34;&lt;/span>: &lt;span style="color:#3677a9">2&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;pendingProps&amp;#34;&lt;/span>: {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;cameraOptions&amp;#34;&lt;/span>: [&lt;span style="color:#24909d">Object&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;cameraType&amp;#34;&lt;/span>: &lt;span style="color:#ed9d13">&amp;#34;back&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;flashMode&amp;#34;&lt;/span>: &lt;span style="color:#ed9d13">&amp;#34;auto&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;frameColor&amp;#34;&lt;/span>: -&lt;span style="color:#3677a9">1&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;laserColor&amp;#34;&lt;/span>: -&lt;span style="color:#3677a9">65536&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;onReadCode&amp;#34;&lt;/span>: [&lt;span style="color:#24909d">Function&lt;/span> onReadCode
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;scanBarcode&amp;#34;&lt;/span>: &lt;span style="color:#6ab825;font-weight:bold">true&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;style&amp;#34;&lt;/span>: [&lt;span style="color:#24909d">Object&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;surfaceColor&amp;#34;&lt;/span>: &lt;span style="color:#6ab825;font-weight:bold">undefined&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> },
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;ref&amp;#34;&lt;/span>: {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;current&amp;#34;&lt;/span>: [ReactNativeFiberHostComponent
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> },
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;return&amp;#34;&lt;/span>: {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;_debugHookTypes&amp;#34;&lt;/span>: [&lt;span style="color:#24909d">Array&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;_debugNeedsRemount&amp;#34;&lt;/span>: &lt;span style="color:#6ab825;font-weight:bold">false&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;_debugOwner&amp;#34;&lt;/span>: [FiberNode
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;_debugSource&amp;#34;&lt;/span>: &lt;span style="color:#6ab825;font-weight:bold">undefined&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;actualDuration&amp;#34;&lt;/span>: &lt;span style="color:#3677a9">0.9124748706817627&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;actualStartTime&amp;#34;&lt;/span>: &lt;span style="color:#3677a9">1280787844.218961&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;alternate&amp;#34;&lt;/span>: [FiberNode
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;child&amp;#34;&lt;/span>: [Circular
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;childLanes&amp;#34;&lt;/span>: &lt;span style="color:#3677a9">0&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;deletions&amp;#34;&lt;/span>: &lt;span style="color:#6ab825;font-weight:bold">null&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;dependencies&amp;#34;&lt;/span>: &lt;span style="color:#6ab825;font-weight:bold">null&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;elementType&amp;#34;&lt;/span>: [&lt;span style="color:#24909d">Object&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;flags&amp;#34;&lt;/span>: &lt;span style="color:#3677a9">5&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;index&amp;#34;&lt;/span>: &lt;span style="color:#3677a9">0&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;key&amp;#34;&lt;/span>: &lt;span style="color:#6ab825;font-weight:bold">null&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;lanes&amp;#34;&lt;/span>: &lt;span style="color:#3677a9">0&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;memoizedProps&amp;#34;&lt;/span>: [&lt;span style="color:#24909d">Object&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;memoizedState&amp;#34;&lt;/span>: [&lt;span style="color:#24909d">Object&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;mode&amp;#34;&lt;/span>: &lt;span style="color:#3677a9">2&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;pendingProps&amp;#34;&lt;/span>: [&lt;span style="color:#24909d">Object&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;ref&amp;#34;&lt;/span>: [&lt;span style="color:#24909d">Function&lt;/span> ref
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;return&amp;#34;&lt;/span>: [FiberNode
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;selfBaseDuration&amp;#34;&lt;/span>: &lt;span style="color:#3677a9">0.8537600040435791&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;sibling&amp;#34;&lt;/span>: &lt;span style="color:#6ab825;font-weight:bold">null&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;stateNode&amp;#34;&lt;/span>: &lt;span style="color:#6ab825;font-weight:bold">null&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;subtreeFlags&amp;#34;&lt;/span>: &lt;span style="color:#3677a9">4&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;tag&amp;#34;&lt;/span>: &lt;span style="color:#3677a9">11&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;treeBaseDuration&amp;#34;&lt;/span>: &lt;span style="color:#3677a9">0.8878579139709473&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;type&amp;#34;&lt;/span>: [&lt;span style="color:#24909d">Object&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;updateQueue&amp;#34;&lt;/span>: [&lt;span style="color:#24909d">Object&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> },
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;selfBaseDuration&amp;#34;&lt;/span>: &lt;span style="color:#3677a9">0.034097909927368164&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;sibling&amp;#34;&lt;/span>: &lt;span style="color:#6ab825;font-weight:bold">null&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;stateNode&amp;#34;&lt;/span>: {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;_children&amp;#34;&lt;/span>: [&lt;span style="color:#24909d">Array&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;_internalFiberInstanceHandleDEV&amp;#34;&lt;/span>: [Circular
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;_nativeTag&amp;#34;&lt;/span>: &lt;span style="color:#3677a9">269&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;viewConfig&amp;#34;&lt;/span>: [&lt;span style="color:#24909d">Object&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> },
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;subtreeFlags&amp;#34;&lt;/span>: &lt;span style="color:#3677a9">0&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;tag&amp;#34;&lt;/span>: &lt;span style="color:#3677a9">5&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;treeBaseDuration&amp;#34;&lt;/span>: &lt;span style="color:#3677a9">0.034097909927368164&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;type&amp;#34;&lt;/span>: &lt;span style="color:#ed9d13">&amp;#34;CKCameraManager&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;updateQueue&amp;#34;&lt;/span>: &lt;span style="color:#6ab825;font-weight:bold">null&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> },
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;_dispatchListeners&amp;#34;&lt;/span>: [&lt;span style="color:#24909d">Function&lt;/span> onReadCode
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;_targetInst&amp;#34;&lt;/span>: {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;_debugHookTypes&amp;#34;&lt;/span>: &lt;span style="color:#6ab825;font-weight:bold">null&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;_debugNeedsRemount&amp;#34;&lt;/span>: &lt;span style="color:#6ab825;font-weight:bold">false&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;_debugOwner&amp;#34;&lt;/span>: {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;_debugHookTypes&amp;#34;&lt;/span>: [&lt;span style="color:#24909d">Array&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;_debugNeedsRemount&amp;#34;&lt;/span>: &lt;span style="color:#6ab825;font-weight:bold">false&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;_debugOwner&amp;#34;&lt;/span>: [FiberNode
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;_debugSource&amp;#34;&lt;/span>: &lt;span style="color:#6ab825;font-weight:bold">undefined&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;actualDuration&amp;#34;&lt;/span>: &lt;span style="color:#3677a9">0.9124748706817627&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;actualStartTime&amp;#34;&lt;/span>: &lt;span style="color:#3677a9">1280787844.218961&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;alternate&amp;#34;&lt;/span>: [FiberNode
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;child&amp;#34;&lt;/span>: [Circular
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;childLanes&amp;#34;&lt;/span>: &lt;span style="color:#3677a9">0&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;deletions&amp;#34;&lt;/span>: &lt;span style="color:#6ab825;font-weight:bold">null&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;dependencies&amp;#34;&lt;/span>: &lt;span style="color:#6ab825;font-weight:bold">null&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;elementType&amp;#34;&lt;/span>: [&lt;span style="color:#24909d">Object&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;flags&amp;#34;&lt;/span>: &lt;span style="color:#3677a9">5&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;index&amp;#34;&lt;/span>: &lt;span style="color:#3677a9">0&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;key&amp;#34;&lt;/span>: &lt;span style="color:#6ab825;font-weight:bold">null&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;lanes&amp;#34;&lt;/span>: &lt;span style="color:#3677a9">0&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;memoizedProps&amp;#34;&lt;/span>: [&lt;span style="color:#24909d">Object&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;memoizedState&amp;#34;&lt;/span>: [&lt;span style="color:#24909d">Object&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;mode&amp;#34;&lt;/span>: &lt;span style="color:#3677a9">2&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;pendingProps&amp;#34;&lt;/span>: [&lt;span style="color:#24909d">Object&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;ref&amp;#34;&lt;/span>: [&lt;span style="color:#24909d">Function&lt;/span> ref
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;return&amp;#34;&lt;/span>: [FiberNode
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;selfBaseDuration&amp;#34;&lt;/span>: &lt;span style="color:#3677a9">0.8537600040435791&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;sibling&amp;#34;&lt;/span>: &lt;span style="color:#6ab825;font-weight:bold">null&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;stateNode&amp;#34;&lt;/span>: &lt;span style="color:#6ab825;font-weight:bold">null&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;subtreeFlags&amp;#34;&lt;/span>: &lt;span style="color:#3677a9">4&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;tag&amp;#34;&lt;/span>: &lt;span style="color:#3677a9">11&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;treeBaseDuration&amp;#34;&lt;/span>: &lt;span style="color:#3677a9">0.8878579139709473&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;type&amp;#34;&lt;/span>: [&lt;span style="color:#24909d">Object&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;updateQueue&amp;#34;&lt;/span>: [&lt;span style="color:#24909d">Object&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> },
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;_debugSource&amp;#34;&lt;/span>: &lt;span style="color:#6ab825;font-weight:bold">undefined&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;actualDuration&amp;#34;&lt;/span>: &lt;span style="color:#3677a9">0.05257081985473633&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;actualStartTime&amp;#34;&lt;/span>: &lt;span style="color:#3677a9">1280787845.0774&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;alternate&amp;#34;&lt;/span>: {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;_debugHookTypes&amp;#34;&lt;/span>: &lt;span style="color:#6ab825;font-weight:bold">null&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;_debugNeedsRemount&amp;#34;&lt;/span>: &lt;span style="color:#6ab825;font-weight:bold">false&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;_debugOwner&amp;#34;&lt;/span>: [FiberNode
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;_debugSource&amp;#34;&lt;/span>: &lt;span style="color:#6ab825;font-weight:bold">undefined&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;actualDuration&amp;#34;&lt;/span>: &lt;span style="color:#3677a9">0.06669163703918457&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;actualStartTime&amp;#34;&lt;/span>: &lt;span style="color:#3677a9">1280787832.451261&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;alternate&amp;#34;&lt;/span>: [Circular
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;child&amp;#34;&lt;/span>: &lt;span style="color:#6ab825;font-weight:bold">null&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;childLanes&amp;#34;&lt;/span>: &lt;span style="color:#3677a9">0&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;deletions&amp;#34;&lt;/span>: &lt;span style="color:#6ab825;font-weight:bold">null&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;dependencies&amp;#34;&lt;/span>: &lt;span style="color:#6ab825;font-weight:bold">null&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;elementType&amp;#34;&lt;/span>: &lt;span style="color:#ed9d13">&amp;#34;CKCameraManager&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;flags&amp;#34;&lt;/span>: &lt;span style="color:#3677a9">4&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;index&amp;#34;&lt;/span>: &lt;span style="color:#3677a9">0&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;key&amp;#34;&lt;/span>: &lt;span style="color:#6ab825;font-weight:bold">null&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;lanes&amp;#34;&lt;/span>: &lt;span style="color:#3677a9">0&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;memoizedProps&amp;#34;&lt;/span>: [&lt;span style="color:#24909d">Object&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;memoizedState&amp;#34;&lt;/span>: &lt;span style="color:#6ab825;font-weight:bold">null&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;mode&amp;#34;&lt;/span>: &lt;span style="color:#3677a9">2&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;pendingProps&amp;#34;&lt;/span>: [&lt;span style="color:#24909d">Object&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;ref&amp;#34;&lt;/span>: [&lt;span style="color:#24909d">Object&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;return&amp;#34;&lt;/span>: [FiberNode
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;selfBaseDuration&amp;#34;&lt;/span>: &lt;span style="color:#3677a9">0.03959178924560547&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;sibling&amp;#34;&lt;/span>: &lt;span style="color:#6ab825;font-weight:bold">null&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;stateNode&amp;#34;&lt;/span>: [ReactNativeFiberHostComponent
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;subtreeFlags&amp;#34;&lt;/span>: &lt;span style="color:#3677a9">0&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;tag&amp;#34;&lt;/span>: &lt;span style="color:#3677a9">5&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;treeBaseDuration&amp;#34;&lt;/span>: &lt;span style="color:#3677a9">0.03959178924560547&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;type&amp;#34;&lt;/span>: &lt;span style="color:#ed9d13">&amp;#34;CKCameraManager&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;updateQueue&amp;#34;&lt;/span>: &lt;span style="color:#6ab825;font-weight:bold">null&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> },
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;child&amp;#34;&lt;/span>: &lt;span style="color:#6ab825;font-weight:bold">null&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;childLanes&amp;#34;&lt;/span>: &lt;span style="color:#3677a9">0&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;deletions&amp;#34;&lt;/span>: &lt;span style="color:#6ab825;font-weight:bold">null&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;dependencies&amp;#34;&lt;/span>: &lt;span style="color:#6ab825;font-weight:bold">null&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;elementType&amp;#34;&lt;/span>: &lt;span style="color:#ed9d13">&amp;#34;CKCameraManager&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;flags&amp;#34;&lt;/span>: &lt;span style="color:#3677a9">4&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;index&amp;#34;&lt;/span>: &lt;span style="color:#3677a9">0&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;key&amp;#34;&lt;/span>: &lt;span style="color:#6ab825;font-weight:bold">null&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;lanes&amp;#34;&lt;/span>: &lt;span style="color:#3677a9">0&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;memoizedProps&amp;#34;&lt;/span>: {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;cameraOptions&amp;#34;&lt;/span>: [&lt;span style="color:#24909d">Object&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;cameraType&amp;#34;&lt;/span>: &lt;span style="color:#ed9d13">&amp;#34;back&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;flashMode&amp;#34;&lt;/span>: &lt;span style="color:#ed9d13">&amp;#34;auto&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;frameColor&amp;#34;&lt;/span>: -&lt;span style="color:#3677a9">1&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;laserColor&amp;#34;&lt;/span>: -&lt;span style="color:#3677a9">65536&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;onReadCode&amp;#34;&lt;/span>: [&lt;span style="color:#24909d">Function&lt;/span> onReadCode
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;scanBarcode&amp;#34;&lt;/span>: &lt;span style="color:#6ab825;font-weight:bold">true&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;style&amp;#34;&lt;/span>: [&lt;span style="color:#24909d">Object&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;surfaceColor&amp;#34;&lt;/span>: &lt;span style="color:#6ab825;font-weight:bold">undefined&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> },
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;memoizedState&amp;#34;&lt;/span>: &lt;span style="color:#6ab825;font-weight:bold">null&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;mode&amp;#34;&lt;/span>: &lt;span style="color:#3677a9">2&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;pendingProps&amp;#34;&lt;/span>: {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;cameraOptions&amp;#34;&lt;/span>: [&lt;span style="color:#24909d">Object&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;cameraType&amp;#34;&lt;/span>: &lt;span style="color:#ed9d13">&amp;#34;back&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;flashMode&amp;#34;&lt;/span>: &lt;span style="color:#ed9d13">&amp;#34;auto&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;frameColor&amp;#34;&lt;/span>: -&lt;span style="color:#3677a9">1&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;laserColor&amp;#34;&lt;/span>: -&lt;span style="color:#3677a9">65536&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;onReadCode&amp;#34;&lt;/span>: [&lt;span style="color:#24909d">Function&lt;/span> onReadCode
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;scanBarcode&amp;#34;&lt;/span>: &lt;span style="color:#6ab825;font-weight:bold">true&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;style&amp;#34;&lt;/span>: [&lt;span style="color:#24909d">Object&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;surfaceColor&amp;#34;&lt;/span>: &lt;span style="color:#6ab825;font-weight:bold">undefined&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> },
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;ref&amp;#34;&lt;/span>: {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;current&amp;#34;&lt;/span>: [ReactNativeFiberHostComponent
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> },
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;return&amp;#34;&lt;/span>: {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;_debugHookTypes&amp;#34;&lt;/span>: [&lt;span style="color:#24909d">Array&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;_debugNeedsRemount&amp;#34;&lt;/span>: &lt;span style="color:#6ab825;font-weight:bold">false&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;_debugOwner&amp;#34;&lt;/span>: [FiberNode
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;_debugSource&amp;#34;&lt;/span>: &lt;span style="color:#6ab825;font-weight:bold">undefined&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;actualDuration&amp;#34;&lt;/span>: &lt;span style="color:#3677a9">0.9124748706817627&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;actualStartTime&amp;#34;&lt;/span>: &lt;span style="color:#3677a9">1280787844.218961&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;alternate&amp;#34;&lt;/span>: [FiberNode
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;child&amp;#34;&lt;/span>: [Circular
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;childLanes&amp;#34;&lt;/span>: &lt;span style="color:#3677a9">0&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;deletions&amp;#34;&lt;/span>: &lt;span style="color:#6ab825;font-weight:bold">null&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;dependencies&amp;#34;&lt;/span>: &lt;span style="color:#6ab825;font-weight:bold">null&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;elementType&amp;#34;&lt;/span>: [&lt;span style="color:#24909d">Object&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;flags&amp;#34;&lt;/span>: &lt;span style="color:#3677a9">5&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;index&amp;#34;&lt;/span>: &lt;span style="color:#3677a9">0&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;key&amp;#34;&lt;/span>: &lt;span style="color:#6ab825;font-weight:bold">null&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;lanes&amp;#34;&lt;/span>: &lt;span style="color:#3677a9">0&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;memoizedProps&amp;#34;&lt;/span>: [&lt;span style="color:#24909d">Object&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;memoizedState&amp;#34;&lt;/span>: [&lt;span style="color:#24909d">Object&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;mode&amp;#34;&lt;/span>: &lt;span style="color:#3677a9">2&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;pendingProps&amp;#34;&lt;/span>: [&lt;span style="color:#24909d">Object&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;ref&amp;#34;&lt;/span>: [&lt;span style="color:#24909d">Function&lt;/span> ref
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;return&amp;#34;&lt;/span>: [FiberNode
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;selfBaseDuration&amp;#34;&lt;/span>: &lt;span style="color:#3677a9">0.8537600040435791&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;sibling&amp;#34;&lt;/span>: &lt;span style="color:#6ab825;font-weight:bold">null&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;stateNode&amp;#34;&lt;/span>: &lt;span style="color:#6ab825;font-weight:bold">null&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;subtreeFlags&amp;#34;&lt;/span>: &lt;span style="color:#3677a9">4&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;tag&amp;#34;&lt;/span>: &lt;span style="color:#3677a9">11&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;treeBaseDuration&amp;#34;&lt;/span>: &lt;span style="color:#3677a9">0.8878579139709473&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;type&amp;#34;&lt;/span>: [&lt;span style="color:#24909d">Object&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;updateQueue&amp;#34;&lt;/span>: [&lt;span style="color:#24909d">Object&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> },
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;selfBaseDuration&amp;#34;&lt;/span>: &lt;span style="color:#3677a9">0.034097909927368164&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;sibling&amp;#34;&lt;/span>: &lt;span style="color:#6ab825;font-weight:bold">null&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;stateNode&amp;#34;&lt;/span>: {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;_children&amp;#34;&lt;/span>: [&lt;span style="color:#24909d">Array&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;_internalFiberInstanceHandleDEV&amp;#34;&lt;/span>: [Circular
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;_nativeTag&amp;#34;&lt;/span>: &lt;span style="color:#3677a9">269&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;viewConfig&amp;#34;&lt;/span>: [&lt;span style="color:#24909d">Object&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> },
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;subtreeFlags&amp;#34;&lt;/span>: &lt;span style="color:#3677a9">0&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;tag&amp;#34;&lt;/span>: &lt;span style="color:#3677a9">5&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;treeBaseDuration&amp;#34;&lt;/span>: &lt;span style="color:#3677a9">0.034097909927368164&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;type&amp;#34;&lt;/span>: &lt;span style="color:#ed9d13">&amp;#34;CKCameraManager&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;updateQueue&amp;#34;&lt;/span>: &lt;span style="color:#6ab825;font-weight:bold">null&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> },
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;bubbles&amp;#34;&lt;/span>: &lt;span style="color:#6ab825;font-weight:bold">undefined&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;cancelable&amp;#34;&lt;/span>: &lt;span style="color:#6ab825;font-weight:bold">undefined&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;currentTarget&amp;#34;&lt;/span>: {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;_children&amp;#34;&lt;/span>: [],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;_internalFiberInstanceHandleDEV&amp;#34;&lt;/span>: {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;_debugHookTypes&amp;#34;&lt;/span>: &lt;span style="color:#6ab825;font-weight:bold">null&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;_debugNeedsRemount&amp;#34;&lt;/span>: &lt;span style="color:#6ab825;font-weight:bold">false&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;_debugOwner&amp;#34;&lt;/span>: [FiberNode
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;_debugSource&amp;#34;&lt;/span>: &lt;span style="color:#6ab825;font-weight:bold">undefined&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;actualDuration&amp;#34;&lt;/span>: &lt;span style="color:#3677a9">0.05257081985473633&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;actualStartTime&amp;#34;&lt;/span>: &lt;span style="color:#3677a9">1280787845.0774&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;alternate&amp;#34;&lt;/span>: [FiberNode
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;child&amp;#34;&lt;/span>: &lt;span style="color:#6ab825;font-weight:bold">null&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;childLanes&amp;#34;&lt;/span>: &lt;span style="color:#3677a9">0&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;deletions&amp;#34;&lt;/span>: &lt;span style="color:#6ab825;font-weight:bold">null&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;dependencies&amp;#34;&lt;/span>: &lt;span style="color:#6ab825;font-weight:bold">null&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;elementType&amp;#34;&lt;/span>: &lt;span style="color:#ed9d13">&amp;#34;CKCameraManager&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;flags&amp;#34;&lt;/span>: &lt;span style="color:#3677a9">4&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;index&amp;#34;&lt;/span>: &lt;span style="color:#3677a9">0&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;key&amp;#34;&lt;/span>: &lt;span style="color:#6ab825;font-weight:bold">null&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;lanes&amp;#34;&lt;/span>: &lt;span style="color:#3677a9">0&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;memoizedProps&amp;#34;&lt;/span>: [&lt;span style="color:#24909d">Object&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;memoizedState&amp;#34;&lt;/span>: &lt;span style="color:#6ab825;font-weight:bold">null&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;mode&amp;#34;&lt;/span>: &lt;span style="color:#3677a9">2&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;pendingProps&amp;#34;&lt;/span>: [&lt;span style="color:#24909d">Object&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;ref&amp;#34;&lt;/span>: [&lt;span style="color:#24909d">Object&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;return&amp;#34;&lt;/span>: [FiberNode
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;selfBaseDuration&amp;#34;&lt;/span>: &lt;span style="color:#3677a9">0.034097909927368164&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;sibling&amp;#34;&lt;/span>: &lt;span style="color:#6ab825;font-weight:bold">null&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;stateNode&amp;#34;&lt;/span>: [Circular
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;subtreeFlags&amp;#34;&lt;/span>: &lt;span style="color:#3677a9">0&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;tag&amp;#34;&lt;/span>: &lt;span style="color:#3677a9">5&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;treeBaseDuration&amp;#34;&lt;/span>: &lt;span style="color:#3677a9">0.034097909927368164&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;type&amp;#34;&lt;/span>: &lt;span style="color:#ed9d13">&amp;#34;CKCameraManager&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;updateQueue&amp;#34;&lt;/span>: &lt;span style="color:#6ab825;font-weight:bold">null&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> },
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;_nativeTag&amp;#34;&lt;/span>: &lt;span style="color:#3677a9">269&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;viewConfig&amp;#34;&lt;/span>: {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;NativeProps&amp;#34;&lt;/span>: [&lt;span style="color:#24909d">Object&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;bubblingEventTypes&amp;#34;&lt;/span>: [&lt;span style="color:#24909d">Object&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;directEventTypes&amp;#34;&lt;/span>: [&lt;span style="color:#24909d">Object&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;uiViewClassName&amp;#34;&lt;/span>: &lt;span style="color:#ed9d13">&amp;#34;CKCameraManager&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;validAttributes&amp;#34;&lt;/span>: [&lt;span style="color:#24909d">Object&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> },
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;defaultPrevented&amp;#34;&lt;/span>: &lt;span style="color:#6ab825;font-weight:bold">undefined&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;dispatchConfig&amp;#34;&lt;/span>: {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;registrationName&amp;#34;&lt;/span>: &lt;span style="color:#ed9d13">&amp;#34;onReadCode&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> },
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;eventPhase&amp;#34;&lt;/span>: &lt;span style="color:#6ab825;font-weight:bold">undefined&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;isDefaultPrevented&amp;#34;&lt;/span>: [&lt;span style="color:#24909d">Function&lt;/span> functionThatReturnsFalse
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;isPropagationStopped&amp;#34;&lt;/span>: [&lt;span style="color:#24909d">Function&lt;/span> functionThatReturnsFalse
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;isTrusted&amp;#34;&lt;/span>: &lt;span style="color:#6ab825;font-weight:bold">undefined&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;nativeEvent&amp;#34;&lt;/span>: {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;codeStringValue&amp;#34;&lt;/span>: &lt;span style="color:#ed9d13">&amp;#34;https://api.splitthetank.com/join?rideId=undefined&amp;amp;driver=xxelibroxx@gmail.com&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> },
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;target&amp;#34;&lt;/span>: {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;_children&amp;#34;&lt;/span>: [],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;_internalFiberInstanceHandleDEV&amp;#34;&lt;/span>: {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;_debugHookTypes&amp;#34;&lt;/span>: &lt;span style="color:#6ab825;font-weight:bold">null&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;_debugNeedsRemount&amp;#34;&lt;/span>: &lt;span style="color:#6ab825;font-weight:bold">false&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;_debugOwner&amp;#34;&lt;/span>: [FiberNode
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;_debugSource&amp;#34;&lt;/span>: &lt;span style="color:#6ab825;font-weight:bold">undefined&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;actualDuration&amp;#34;&lt;/span>: &lt;span style="color:#3677a9">0.05257081985473633&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;actualStartTime&amp;#34;&lt;/span>: &lt;span style="color:#3677a9">1280787845.0774&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;alternate&amp;#34;&lt;/span>: [FiberNode
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;child&amp;#34;&lt;/span>: &lt;span style="color:#6ab825;font-weight:bold">null&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;childLanes&amp;#34;&lt;/span>: &lt;span style="color:#3677a9">0&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;deletions&amp;#34;&lt;/span>: &lt;span style="color:#6ab825;font-weight:bold">null&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;dependencies&amp;#34;&lt;/span>: &lt;span style="color:#6ab825;font-weight:bold">null&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;elementType&amp;#34;&lt;/span>: &lt;span style="color:#ed9d13">&amp;#34;CKCameraManager&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;flags&amp;#34;&lt;/span>: &lt;span style="color:#3677a9">4&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;index&amp;#34;&lt;/span>: &lt;span style="color:#3677a9">0&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;key&amp;#34;&lt;/span>: &lt;span style="color:#6ab825;font-weight:bold">null&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;lanes&amp;#34;&lt;/span>: &lt;span style="color:#3677a9">0&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;memoizedProps&amp;#34;&lt;/span>: [&lt;span style="color:#24909d">Object&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;memoizedState&amp;#34;&lt;/span>: &lt;span style="color:#6ab825;font-weight:bold">null&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;mode&amp;#34;&lt;/span>: &lt;span style="color:#3677a9">2&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;pendingProps&amp;#34;&lt;/span>: [&lt;span style="color:#24909d">Object&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;ref&amp;#34;&lt;/span>: [&lt;span style="color:#24909d">Object&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;return&amp;#34;&lt;/span>: [FiberNode
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;selfBaseDuration&amp;#34;&lt;/span>: &lt;span style="color:#3677a9">0.034097909927368164&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;sibling&amp;#34;&lt;/span>: &lt;span style="color:#6ab825;font-weight:bold">null&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;stateNode&amp;#34;&lt;/span>: [Circular
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;subtreeFlags&amp;#34;&lt;/span>: &lt;span style="color:#3677a9">0&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;tag&amp;#34;&lt;/span>: &lt;span style="color:#3677a9">5&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;treeBaseDuration&amp;#34;&lt;/span>: &lt;span style="color:#3677a9">0.034097909927368164&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;type&amp;#34;&lt;/span>: &lt;span style="color:#ed9d13">&amp;#34;CKCameraManager&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;updateQueue&amp;#34;&lt;/span>: &lt;span style="color:#6ab825;font-weight:bold">null&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> },
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;_nativeTag&amp;#34;&lt;/span>: &lt;span style="color:#3677a9">269&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;viewConfig&amp;#34;&lt;/span>: {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;NativeProps&amp;#34;&lt;/span>: [&lt;span style="color:#24909d">Object&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;bubblingEventTypes&amp;#34;&lt;/span>: [&lt;span style="color:#24909d">Object&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;directEventTypes&amp;#34;&lt;/span>: [&lt;span style="color:#24909d">Object&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;uiViewClassName&amp;#34;&lt;/span>: &lt;span style="color:#ed9d13">&amp;#34;CKCameraManager&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;validAttributes&amp;#34;&lt;/span>: [&lt;span style="color:#24909d">Object&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> },
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;timeStamp&amp;#34;&lt;/span>: &lt;span style="color:#3677a9">1691248335537&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#34;type&amp;#34;&lt;/span>: &lt;span style="color:#6ab825;font-weight:bold">undefined&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/details></description></item><item><title>ASP.NET Core Add HTML to Web Api</title><link>https://blog.elijahlopez.ca/posts/aspnet-add-html-to-web-api/</link><pubDate>Sat, 15 Jul 2023 12:45:48 -0400</pubDate><guid>https://blog.elijahlopez.ca/posts/aspnet-add-html-to-web-api/</guid><description>&lt;p>Suppose you wanted to add html to your asp.net web api project, how would you go about it?&lt;/p>
 &lt;p>Sure you may just &lt;a href="https://stackoverflow.com/questions/26822277/return-html-from-asp-net-web-api">write the HTML&lt;/a> in the controller, but that&amp;rsquo;s not good enough if you want to return an actual webpage.&lt;/p>
 &lt;p>We need to integrate Razor pages to our application. In &lt;code>Program.cs&lt;/code>,&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-cs" data-lang="cs">&lt;span style="display:flex;">&lt;span>builder.Services.AddRazorPages(); &lt;span style="color:#999;font-style:italic">// add this&lt;/span>
