@@ -22528,4 +22528,71 @@ Here&amp;rsquo;s how to schedule a task&lt;/p>
 &lt;li>Test the task by clicking &amp;ldquo;Run&amp;rdquo; on the right panel.&lt;/li>
 &lt;/ol>
 &lt;p>If the task did not execute (or it did but not in the background) it may be that you didn&amp;rsquo;t follow the steps properly (e.g. I forgot to set the configure for).
-I hope you found this helpful. Leave a comment or email me if you have any issues.&lt;/p></description></item></channel></rss>
+I hope you found this helpful. Leave a comment or email me if you have any issues.&lt;/p></description></item><item><title/><link>https://blog.elijahlopez.ca/posts/react-native-qr-code-scanner/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://blog.elijahlopez.ca/posts/react-native-qr-code-scanner/</guid><description>&lt;h2 id="heading" >G&amp;mdash;
+title: &amp;ldquo;React Native QR Code Scanner (2023)&amp;rdquo;
+date: 2023-08-05T11:13:28-04:00
+draft: false
+tags: [
+&amp;ldquo;tutorial&amp;rdquo;,
+&amp;ldquo;programming&amp;rdquo;,
+&amp;ldquo;react-native&amp;rdquo;,
+&amp;ldquo;mobile&amp;rdquo;
+]
+&lt;span>
+&lt;a href="#heading">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>Shout out to Tesla motors. Although a recruiter that works there rejected me with the wrong name, they made a react native package that is simple to use.
+This method is a much easier and hassle free experience than react-native-vision-camera which does not work on the latest react-native: 0.72.&lt;/p>
+&lt;h2 id="package-installation" >Package Installation
+&lt;span>
+&lt;a href="#package-installation">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>First install the camera kit package by teslamotors:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>yarn add react-native-camera-kit
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="android" >Android
+&lt;span>
+&lt;a href="#android">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>If you are using VSCode, you will find &amp;ldquo;Ctrl + E&amp;rdquo; (if this doesn&amp;rsquo;t work on Mac, try Cmd + E) useful for opening up the files that you need to edit.&lt;/p>
+&lt;h3 id="adding-kotlin" >Adding Kotlin
+&lt;span>
+&lt;a href="#adding-kotlin">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Follow &lt;a href="https://github.com/teslamotors/react-native-camera-kit/blob/master/docs/kotlin.md#add-kotlin-support-for-Android">the tutorial provided by Tesla&lt;/a>&lt;/p>
+&lt;p>NOTE: the tutorial uses &lt;code>.&lt;/code> which is nothing but &lt;code>{&lt;/code> in the gradle files.&lt;/p>
+&lt;h3 id="android-camera-permissions" >Android Camera Permissions
+&lt;span>
+&lt;a href="#android-camera-permissions">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>In &lt;code>AndroidManifest.xml&lt;/code>, add the following under &lt;code>&amp;lt;manifest ...&amp;gt;&lt;/code>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">&amp;lt;uses-permission&lt;/span> &lt;span style="color:#bbb">android:name=&lt;/span>&lt;span style="color:#ed9d13">&amp;#34;android.permission.CAMERA&amp;#34;&lt;/span> &lt;span style="color:#6ab825;font-weight:bold">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">&amp;lt;uses-permission&lt;/span> &lt;span style="color:#bbb">android:name=&lt;/span>&lt;span style="color:#ed9d13">&amp;#34;android.permission.WRITE_EXTERNAL_STORAGE&amp;#34;&lt;/span>&lt;span style="color:#6ab825;font-weight:bold">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="ios" >iOS
+&lt;span>
+&lt;a href="#ios">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#24909d">cd&lt;/span> ios &amp;amp;&amp;amp; pod install &amp;amp;&amp;amp; &lt;span style="color:#24909d">cd&lt;/span> ..
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="ios-camera-permissions" >iOS Camera Permissions
+&lt;span>
+&lt;a href="#ios-camera-permissions">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>In &lt;code>Info.plist&lt;/code>, add the following under &lt;code>&amp;lt;dict&amp;gt;&lt;/code>&lt;/p>
+&lt;pre tabindex="0">&lt;code class="language-plist" data-lang="plist"> &amp;lt;key&amp;gt;NSCameraUsageDescription&amp;lt;/key&amp;gt;
+&amp;lt;string&amp;gt;For taking photos&amp;lt;/string&amp;gt;
+&amp;lt;key&amp;gt;NSPhotoLibraryUsageDescription&amp;lt;/key&amp;gt;
+&amp;lt;string&amp;gt;For saving photos&amp;lt;/string&amp;gt;
+&lt;/code>&lt;/pre></description></item></channel></rss>
