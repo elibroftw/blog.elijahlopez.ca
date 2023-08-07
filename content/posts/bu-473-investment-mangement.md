@@ -807,9 +807,23 @@ TODO: read slides
   - Acquirer has +3%
   - +20% for acquired
 
-Test Structure
+Many researchers have used a market model to estimate abnormal returns.
+
+rt = a + b \* rmt + et
+
+- rt: stock return
+- rmt: market rate of return
+- et: firm-specific events return
+- b: sensitivity to market return
+- a: average rate of return if market returns 0
+
+- et = rt - (a + brmt)
+- stock's return over and above prediction based on broad market movements
 
 - Expected Return vs. Abnormal Return
+
+Suppose that the analyst has estimated that a = .05% and b = .8. On a day that the
+market goes up by 1%, you would predict from Equation 11.1 that the stock should rise  by an expected value of .05% + .8 x 1% = .85%. If the stock actually rises by 2%, the analyst would infer that firm-specific news that day caused an additional stock return of 2% - .85% = 1.15%. This is the abnormal return for the day.
 
 ### Are Markets Efficient?
 
@@ -878,6 +892,8 @@ Security Price / Industry Price Index
 
 Bollinger band
 
+Breath: spread between number of stocks that advance and decline in prices. If advanced are outnumber declines, market is seen as stronger.
+
 ### Sentiment Indicators
 
 Confidence Index
@@ -898,6 +914,13 @@ Put/Call Ratio
 - Rising ratio taken as a sign of broad investor pessimism
 
 It is possible to perceive patterns that really don't exist
+
+Trin Ratio
+
+<img class=equation-tall src="https://latex.codecogs.com/svg.image?trin=\frac{Volume declining / Number declining}{Volume advancing / Number advancing}">
+
+Ratios above 1.0 are considered bearish because the falling stocks
+would then have higher average volume than the advancing stocks, indicating net selling pressure..
 
 - Data mining
 
