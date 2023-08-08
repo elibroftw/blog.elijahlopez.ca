@@ -3322,6 +3322,7 @@ With non-cumulative preferred shares, company does not have to pay the missed pa
 &lt;/li>
 &lt;li>Bond equivalent yield
 &lt;ul>
+&lt;li>Ignore effect of compounding (multiply annual holding period return)&lt;/li>
 &lt;li>365 day yield but linear instead of compounded&lt;/li>
 &lt;li>Holding period return linearly increased to a year&lt;/li>
 &lt;li>yield = 3% / (90 / 365)&lt;/li>
@@ -4799,7 +4800,7 @@ will have a large affect on price. Longer dated bonds are more sensitive.&lt;/p>
 &lt;/span>
 &lt;/h3>&lt;ul>
 &lt;li>YTM assumes coupons are reinvested at the YTM&lt;/li>
-&lt;li>realized compound return is the compound rate of return assuming that coupon payments are reinvested until maturity&lt;/li>
+&lt;li>Realized compound return is also a yield but is assumes that coupon payments are reinvested at the reinvestment rate&lt;/li>
 &lt;li>Forecasting the realized compound yield over various holding periods or investment horizons is &lt;strong>horizon analysis&lt;/strong>&lt;/li>
 &lt;li>Prices of bonds with different coupon rates converge near maturity&lt;/li>
 &lt;li>HPR: can only be forecasted
@@ -4808,7 +4809,20 @@ will have a large affect on price. Longer dated bonds are more sensitive.&lt;/p>
 &lt;/ul>
 &lt;/li>
 &lt;/ul>
-&lt;h3 id="zero-coupon-bond" >Zero Coupon Bond
+&lt;p>Example&lt;/p>
+&lt;ul>
+&lt;li>2-year bond that pays an annual 10% coupon with a reinvestment rate of 8%&lt;/li>
+&lt;li>Future Value = 1,000 + 100 + 100 * 1.08 = 1,208&lt;/li>
+&lt;li>Realized compound return: 1,000 * (1 + r)^2 = 1,208&lt;/li>
+&lt;li>Use log2 relationship to determine r&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-py" data-lang="py">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">import&lt;/span> &lt;span style="color:#447fcf;text-decoration:underline">math&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">def&lt;/span> &lt;span style="color:#447fcf">realized_compound_return&lt;/span>(years, future_value, par_value=&lt;span style="color:#3677a9">1000&lt;/span>):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">return&lt;/span> (&lt;span style="color:#3677a9">2&lt;/span> ** (math.log(future_value / par_value, &lt;span style="color:#3677a9">2&lt;/span>) / years) - &lt;span style="color:#3677a9">1&lt;/span>) * &lt;span style="color:#3677a9">100&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>realized_compound_return(&lt;span style="color:#3677a9">2&lt;/span>, &lt;span style="color:#3677a9">1208&lt;/span>) &lt;span style="color:#999;font-style:italic"># 9.909053312272704&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="zero-coupon-bond" >Zero Coupon Bond
 &lt;span>
 &lt;a href="#zero-coupon-bond">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
@@ -4911,8 +4925,12 @@ will have a large affect on price. Longer dated bonds are more sensitive.&lt;/p>
 &lt;/h3>&lt;ul>
 &lt;li>Discount based on zero-coupon bond yield for each year&lt;/li>
 &lt;li>Find a discount rate (ytm) that equals the future value&lt;/li>
+&lt;li>EXCEL: &lt;code>PV(C85,3*2,-50,-1000)&lt;/code>&lt;/li>
 &lt;/ul>
-&lt;h3 id="forward-rates" >Forward Rates
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-py" data-lang="py">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">def&lt;/span> &lt;span style="color:#447fcf">coupon_bond_price&lt;/span>(discount_rate, years, coupon_rate, coupon_freq, par_value=&lt;span style="color:#3677a9">1000&lt;/span>):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic"># discount_rate: AKA effective compound rate; T-bill yield; zero-coupon bond yield&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">return&lt;/span> npf.pv(discount_rate, years * coupon_freq, -par_value*coupon_rate/coupon_freq, -par_value)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="forward-rates" >Forward Rates
 &lt;span>
 &lt;a href="#forward-rates">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
