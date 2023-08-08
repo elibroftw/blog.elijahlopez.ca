@@ -201,6 +201,7 @@ Benefit when price goes down.
   - Suppose a holding period return is 3% for 90 days, what is the effective annual yield?
   - (1 + 0.03) ^ (365 / 91) - 1 = 12.59%
 - Bond equivalent yield
+  - Ignore effect of compounding (multiply annual holding period return)
   - 365 day yield but linear instead of compounded
   - Holding period return linearly increased to a year
   - yield = 3% / (90 / 365)
@@ -1018,11 +1019,27 @@ will have a large affect on price. Longer dated bonds are more sensitive.
 ### Realized Compound Return vs YTM
 
 - YTM assumes coupons are reinvested at the YTM
-- realized compound return is the compound rate of return assuming that coupon payments are reinvested until maturity
+- Realized compound return is also a yield but is assumes that coupon payments are reinvested at the reinvestment rate
 - Forecasting the realized compound yield over various holding periods or investment horizons is **horizon analysis**
 - Prices of bonds with different coupon rates converge near maturity
 - HPR: can only be forecasted
   - Investment period
+
+Example
+
+- 2-year bond that pays an annual 10% coupon with a reinvestment rate of 8%
+- Future Value = 1,000 + 100 + 100 \* 1.08 = 1,208
+- Realized compound return: 1,000 \* (1 + r)^2 = 1,208
+- Use log2 relationship to determine r
+
+```py
+import math
+
+def realized_compound_return(years, future_value, par_value=1000):
+    return (2 ** (math.log(future_value / par_value, 2) / years) - 1) * 100
+
+realized_compound_return(2, 1208)  # 9.909053312272704
+```
 
 ### Zero Coupon Bond
 
@@ -1079,6 +1096,13 @@ Always trades at a discount since no coupon rate
 
 - Discount based on zero-coupon bond yield for each year
 - Find a discount rate (ytm) that equals the future value
+- EXCEL: `PV(C85,3*2,-50,-1000)`
+
+```py
+def coupon_bond_price(discount_rate, years, coupon_rate, coupon_freq, par_value=1000):
+    # discount_rate: AKA effective compound rate; T-bill yield; zero-coupon bond yield
+    return npf.pv(discount_rate, years * coupon_freq, -par_value*coupon_rate/coupon_freq, -par_value)
+```
 
 ### Forward Rates
 
