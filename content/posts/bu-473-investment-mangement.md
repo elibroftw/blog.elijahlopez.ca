@@ -1154,8 +1154,14 @@ Long-term (30y)
 
 ### Duration
 
+1. Calculate the discounted cash flow for each time a cashflow is received
+2. Calculate the weights for each discounted cash flow as a percentage of the price (present value)
+3. Multiply each weight by the period in time (e.g. cash flow in period 2 multiplied by 2)
+4. Macaulay's duration is the sum of the time-weighted discounted cash flows in the previous step
+
 - weighted each time by the present value of cash flows at each time divided by the price
 - multiply each weight by the time
+
 - duration equals the maturity for a zero coupon bond
 - duration < maturity of a coupon bond
 - present value of a cash flow at a time divided by the price
@@ -1224,6 +1230,8 @@ EBITDA Margin = Cash Flow Margin
 
 Operating Margin = EBIT / Ssales
 
+Degree of operating leverage ( DOL)  = (percentage change in profits) / (percentage change in sales)
+
 Profit Margin = Profit / Sales
 
 TIE = EBIT / Interest
@@ -1278,6 +1286,10 @@ TA / E = (E + D) / E = 1 + D/E
 
 ### Productivity Ratios
 
+average collection period
+
+AR / Net Credit Sales \* 365
+
 Total Asset Turnover
 
 Sales / Total Assets
@@ -1310,6 +1322,18 @@ Economic Value Added
 - (ROC - wacc) \* Capital
 
 Price Per Equity
+
+Interest Coverage Ratio
+
+Dividing a company's earnings before interest and taxes (EBIT) by its interest expense
+
+TODO: use latex
+
+![ROE Breakdown](/images/bu-473/roe-breakdown.png)
+
+Compound Leverage Ratio
+
+![Dupont Ratio](https://media.wallstreetprep.com/uploads/2021/11/04025747/DuPont-Analysis-Formula-ROE-Ratios.jpg)
 
 ## Options
 
@@ -1349,6 +1373,24 @@ European options can only be exercised on the exercise day.
 - foreign currency options
 - interest rate options
 
+### Exotic Options
+
+- Asian
+  - Based on average stock price over a time period
+    - Payoff is the difference between that average and the strike price
+- Barrier
+  - depends on the price at expiration as well as if the price crossed a barrier
+  - knock-out: if the price falls to a certain extent, the option expires worthless
+  - knock-in: if the price does not fall to a certain extent, the option expires worthless
+- Lookback Options
+  - Depends on the minimum and maximum price of the underlying asset during the life time of the option
+  - Call option may provide payoff equal to maximum - strike
+- Currency-translated options
+  - asset or exercise prices denominated in a foreign currency
+  - quanto: fix exchange rate
+- digital options
+  - fixed payoff if a condition is satisfied
+
 ### Put-Call Parity
 
 - Put-call parity theorem is an equation representing the proper relation between put and call prices
@@ -1356,7 +1398,7 @@ European options can only be exercised on the exercise day.
 - sell high side, buy low side
 - invest cash from sell
 
-C + X / (1 + rf)^T = S0 + P
+<img class=equation-tall src="https://latex.codecogs.com/svg.image?C+\frac{X}{(1+r_f)^t}=S_0+P">
 
 Suppose C = 3, P = 3, X = 60, r = 5%, and stock price is 60.
 
