@@ -1027,18 +1027,16 @@ will have a large affect on price. Longer dated bonds are more sensitive.
 
 Example
 
-- 2-year bond that pays an annual 10% coupon with a reinvestment rate of 8%
+- 2-year bond selling at par value that pays an annual 10% coupon with a reinvestment rate of 8%
 - Future Value = 1,000 + 100 + 100 \* 1.08 = 1,208
 - Realized compound return: 1,000 \* (1 + r)^2 = 1,208
-- Use log2 relationship to determine r
 
 ```py
-import math
+def realized_compound_return(years, price, future_value):
+    # return (1+r)^years = future_value / price
+    return (future_value / price) ** (1/years) - 1
 
-def realized_compound_return(years, future_value, par_value=1000):
-    return (2 ** (math.log(future_value / par_value, 2) / years) - 1) * 100
-
-realized_compound_return(2, 1208)  # 9.909053312272704
+realized_compound_return(2, 1000, 1208)  * 100 # 9.909053312272697
 ```
 
 ### Zero Coupon Bond
@@ -1099,18 +1097,18 @@ Always trades at a discount since no coupon rate
 - EXCEL: `PV(C85,3*2,-50,-1000)`
 
 ```py
-def coupon_bond_price(discount_rate, years, coupon_rate, coupon_freq, par_value=1000):
-    # discount_rate: AKA effective compound rate; T-bill yield; zero-coupon bond yield
-    return npf.pv(discount_rate, years * coupon_freq, -par_value*coupon_rate/coupon_freq, -par_value)
+import numpy_financial as npf
+
+def coupon_bond_price(period_discount_rate, years, coupon_rate, coupon_freq, par_value=1000):
+    # period discount_rate: AKA effective compound rate; T-bill yield; zero-coupon bond yield
+    return npf.pv(period_discount_rate, years * coupon_freq, -par_value * coupon_rate / coupon_freq, -par_value)
 ```
 
-### Forward Rates
+### Spot & Forward Rates
 
-Forward rate calculation {a = maturity, b = years into the future}
+A forward rate is just one year period, but spot rates can be multiple. {a = maturity period in years, b = years into the future}. y_{x} = yield for period x.
 
-<img class=equation-tall src="https://latex.codecogs.com/svg.image?f_{a,b}=\left(\frac{(1+y_{a+b})^{a+b}}{1+y_a}\right)^\frac{1}{a}">
-
-For n > 1, since there is compounding, you need
+<img class=equation-tall src="https://latex.codecogs.com/svg.image?f_{a,b}=\left(\frac{(1+y_{a+b})^{a+b}}{(1+y_a)^b}\right)^\frac{1}{a}-1">
 
 ### Mortgage Rates
 
