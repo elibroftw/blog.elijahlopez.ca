@@ -1703,6 +1703,7 @@ are low barriers to exporting to Brazil.&lt;/p>
 &lt;li>&lt;a href="#put">Put&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#american-vs-european">American vs. European&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#types-of-options">Types of Options&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#exotic-options">Exotic Options&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#put-call-parity">Put-Call Parity&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#straddle">Straddle&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#collars">Collars&lt;/a>&lt;/li>
@@ -3789,20 +3790,43 @@ will have a large affect on price. Longer dated bonds are more sensitive.&lt;/p>
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
-&lt;/h3>&lt;ul>
-&lt;li>weighted each time by the present value of cash flows at each time divided by the price&lt;/li>
-&lt;li>multiply each weight by the time&lt;/li>
-&lt;li>duration equals the maturity for a zero coupon bond&lt;/li>
-&lt;li>duration &amp;lt; maturity of a coupon bond&lt;/li>
-&lt;li>present value of a cash flow at a time divided by the price&lt;/li>
-&lt;li>modified duration is the duration discounted by the yield divided by the number of periods in a year
+&lt;/h3>&lt;ol>
+&lt;li>Calculate the discounted cash flow for each time a cashflow is received&lt;/li>
+&lt;li>Calculate the weights for each discounted cash flow as a percentage of the price (present value)&lt;/li>
+&lt;li>Multiply each weight by the period in time (e.g. cash flow in period 2 multiplied by 2)&lt;/li>
+&lt;li>Macaulay&amp;rsquo;s duration is the sum of the time-weighted discounted cash flows in the previous step&lt;/li>
+&lt;/ol>
+&lt;ul>
+&lt;li>
+&lt;p>weighted each time by the present value of cash flows at each time divided by the price&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>multiply each weight by the time&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>duration equals the maturity for a zero coupon bond&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>duration &amp;lt; maturity of a coupon bond&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>present value of a cash flow at a time divided by the price&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>modified duration is the duration discounted by the yield divided by the number of periods in a year&lt;/p>
 &lt;ul>
 &lt;li>modified duration goes back a period because of better results&lt;/li>
 &lt;/ul>
 &lt;/li>
-&lt;li>expected price % change = -D * (change in interest rate)&lt;/li>
-&lt;li>assets with the same duration are equally sensitive&lt;/li>
-&lt;li>divide duration by number of periods in a year&lt;/li>
+&lt;li>
+&lt;p>expected price % change = -D * (change in interest rate)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>assets with the same duration are equally sensitive&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>divide duration by number of periods in a year&lt;/p>
+&lt;/li>
 &lt;/ul>
 &lt;h3 id="convexity" >Convexity
 &lt;span>
@@ -3879,6 +3903,7 @@ will have a large affect on price. Longer dated bonds are more sensitive.&lt;/p>
 &lt;/h3>&lt;p>Gross Profit Margin = Sales - Costs / Sales&lt;/p>
 &lt;p>EBITDA Margin = Cash Flow Margin&lt;/p>
 &lt;p>Operating Margin = EBIT / Ssales&lt;/p>
+&lt;p>Degree of operating leverage ( DOL) = (percentage change in profits) / (percentage change in sales)&lt;/p>
 &lt;p>Profit Margin = Profit / Sales&lt;/p>
 &lt;p>TIE = EBIT / Interest&lt;/p>
 &lt;p>Why change over time. Why different from competitors.&lt;/p>
@@ -3932,7 +3957,9 @@ will have a large affect on price. Longer dated bonds are more sensitive.&lt;/p>
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
-&lt;/h3>&lt;p>Total Asset Turnover&lt;/p>
+&lt;/h3>&lt;p>average collection period&lt;/p>
+&lt;p>AR / Net Credit Sales * 365&lt;/p>
+&lt;p>Total Asset Turnover&lt;/p>
 &lt;p>Sales / Total Assets&lt;/p>
 &lt;p>Inventory turnover&lt;/p>
 &lt;p>COGS / Inv&lt;/p>
@@ -3953,6 +3980,12 @@ will have a large affect on price. Longer dated bonds are more sensitive.&lt;/p>
 &lt;li>(ROC - wacc) * Capital&lt;/li>
 &lt;/ul>
 &lt;p>Price Per Equity&lt;/p>
+&lt;p>Interest Coverage Ratio&lt;/p>
+&lt;p>Dividing a company&amp;rsquo;s earnings before interest and taxes (EBIT) by its interest expense&lt;/p>
+&lt;p>TODO: use latex&lt;/p>
+&lt;p>&lt;img src="https://blog.elijahlopez.ca/images/bu-473/roe-breakdown.png" alt="ROE Breakdown">&lt;/p>
+&lt;p>Compound Leverage Ratio&lt;/p>
+&lt;p>&lt;img src="https://media.wallstreetprep.com/uploads/2021/11/04025747/DuPont-Analysis-Formula-ROE-Ratios.jpg" alt="Dupont Ratio">&lt;/p>
 &lt;h2 id="options" >Options
 &lt;span>
 &lt;a href="#options">
@@ -4027,6 +4060,47 @@ European options can only be exercised on the exercise day.&lt;/p>
 &lt;li>foreign currency options&lt;/li>
 &lt;li>interest rate options&lt;/li>
 &lt;/ul>
+&lt;h3 id="exotic-options" >Exotic Options
+&lt;span>
+&lt;a href="#exotic-options">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Asian
+&lt;ul>
+&lt;li>Based on average stock price over a time period
+&lt;ul>
+&lt;li>Payoff is the difference between that average and the strike price&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Barrier
+&lt;ul>
+&lt;li>depends on the price at expiration as well as if the price crossed a barrier&lt;/li>
+&lt;li>knock-out: if the price falls to a certain extent, the option expires worthless&lt;/li>
+&lt;li>knock-in: if the price does not fall to a certain extent, the option expires worthless&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Lookback Options
+&lt;ul>
+&lt;li>Depends on the minimum and maximum price of the underlying asset during the life time of the option&lt;/li>
+&lt;li>Call option may provide payoff equal to maximum - strike&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Currency-translated options
+&lt;ul>
+&lt;li>asset or exercise prices denominated in a foreign currency&lt;/li>
+&lt;li>quanto: fix exchange rate&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>digital options
+&lt;ul>
+&lt;li>fixed payoff if a condition is satisfied&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
 &lt;h3 id="put-call-parity" >Put-Call Parity
 &lt;span>
 &lt;a href="#put-call-parity">
@@ -4039,7 +4113,7 @@ European options can only be exercised on the exercise day.&lt;/p>
 &lt;li>sell high side, buy low side&lt;/li>
 &lt;li>invest cash from sell&lt;/li>
 &lt;/ul>
-&lt;p>C + X / (1 + rf)^T = S0 + P&lt;/p>
+&lt;img class=equation-tall src="https://latex.codecogs.com/svg.image?C+\frac{X}{(1+r_f)^t}=S_0+P">
 &lt;p>Suppose C = 3, P = 3, X = 60, r = 5%, and stock price is 60.&lt;/p>
 &lt;ul>
 &lt;li>Sell stock: + 60&lt;/li>
