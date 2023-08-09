@@ -106,7 +106,7 @@ Shares become voting at default payment to preferred shares
   - S&P/TSX 60 Index
   - S&P/TSX MidCap and SmallCap
   - S&P/TSX Venture Index
-- The DOW is price-weighted and not value weighted and it's divisor accounts for stock-splits
+- The DOW is **price-weighted** (not value weighted) and it's divisor accounts for stock-splits
   - price-weighted is where you take the sum of prices and divided it by a divisor (given)
   - the return of a price-weighted index is based of the index and not the individual returns
 
@@ -596,7 +596,10 @@ You need to covariance or the correlation to find the standard deviation.
 
 ## Capital Asset Pricing Model (CAPM)
 
-- Capital Allocation Line becomes Capital Market Line or Securities Market Line
+- Securities Market Line represents beta (risk) vs. return
+- Capital Allocation Line becomes Capital Market Line
+
+kinked capital allocation line: when borrowing rate is different (higher) than lending rate
 
 Assumptions
 
@@ -744,9 +747,11 @@ True picture of what occurred. Ethical standard.
   - Average return - Average risk free divided by weighted average Beta for portfolio
 - Jensen's Measure
   - ap = rp - \r[rf + Bp(rm - rf)]
-- M SQUARE
-  - create an adjusted portfolio with treasury bills and subtract risk free
-  - use T-bills to reduce the standard deviation
+- M<sup>2</sup>
+  - Leah Modigliani and her grandfather Franco Modigliani
+  - mix active portfolio with treasury bills until standard deviation equals that of the index the portfolio is being compared to
+  - If active portfolio has 1.5 times the standard deviation, add 1/3 bills and 2/3 active portfolio (or .5/1.5 in bills and 1/1.5 in portfolio)
+  - The M2 value is the risk-adjusted return minus the index return
 - Information Ratio
   - alpha / (non-systematic risk)
 
@@ -755,6 +760,12 @@ TODO: read slides
 ## Efficient Markets
 
 - prices fully reflect **available** information
+
+### Forms
+
+- Weak-form efficiency.
+- Semi-strong efficiency.
+- Strong-form efficiency.
 
 ### Random Walks
 
@@ -880,6 +891,7 @@ Behavioural Finance
   - Potential gains from low baseline levels
 - Mental accounting
   - Segregation of certain decisions
+  > Mental accounting effects also can help explain momentum in stock prices. The house money effect refers to gamblers' greater willingness to accept new bets if they currently are ahead. They think of (i.e., frame) the bet as being made with their "win- nings account," that is, with the casino's and not with their own money, and thus are more willing to accept risk. Analogously, after a stock market run-up, individuals may view investments as large ly funded out of a "capital gains account," become more toler- ant of ris k, discount future cash flows at a lower rate, and thus further push up prices.
 - Regret avoidance
   - Regret unconventional decisions more
 - Affect and feelings
@@ -982,6 +994,8 @@ would then have higher average volume than the advancing stocks, indicating net 
 - Catastrophe bonds (final payment contingent on a catastrophe)
 - Indexed bonds are tied to general price index
   - Treasury Inflation Protected Securities (TIPS) Indexed Bonds
+    - The par value of a TIPS bond reflects the change in inflation
+    - Par value of $1,000 today and inflation of 5% in the year results in a new par value of $1,050
   - Canada Real Return Bonds (RRBs)
 
 ### Bond Pricing
@@ -993,6 +1007,15 @@ would then have higher average volume than the advancing stocks, indicating net 
     - When price is above face value, coupon rate > yield
   - Coupon rate and yield to maturity
     - If yield > coupon rate, price is less than face value
+
+What if it weren't? Then there would be easy profits to be made. For example, if
+investment dealers ever noticed a bond selling for less than the amount at which the
+sum of its parts could be sold, they would buy the bond, strip it into stand-alone zero-
+coupon securities, sell off the stripped cash flows, and profit by the price difference . If the bond were selling for more than the sum of the values of its individual cash fl ows, they would run the process in reverse: buy the individual zero-coupon securities in the STRIPS market, **reconstitute** (i.e., reassemble) the cash flows into a coupon bond, and se ll the whole bond for more than the cost of the pieces. Bot h bond stripping and
+bond reconstitution offer opportunities for arbitrage- the exploitation of mispricing
+among two or more securities to clear a riskless economic profi t. Any violation of the
+Law of One Price, that identical cash flow bundles must sell for identical prices, gives
+rise to arbitrage opportunities.
 
 ### Bond Risks
 
@@ -1177,6 +1200,7 @@ Long-term (30y)
 
 - sensitivity is different at each duration
 - investors like convexity because bond prices don't drop as much but can increase in price faster
+- Add 0.5 \* Convexity \* (change in yield)^2
 
 ### Callable Bonds Duration and Convexity
 
@@ -1338,6 +1362,11 @@ TODO: use latex
 Compound Leverage Ratio = Interest Burden \* Leverage
 
 <img class=equation-tall src="https://latex.codecogs.com/svg.image?\frac{EBIT-I}{EBIT}\times\frac{Assets_avg}{Eqiuty_avg}">
+
+### Earnings management
+
+> Earnings management is the practice of using flexibility in accounting rules to improve the apparent profitability of the firm. We will have much to say on this topic in the next chapter on interpreting financial statements. A version of earnings management that became common in the 1990s was the reporting of "pro forma earnings" measures.
+
 
 ## Options
 

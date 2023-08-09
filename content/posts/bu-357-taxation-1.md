@@ -563,7 +563,7 @@ Business Income: 40,300
 - Classes and accounts
 - Opening balance (Unappreciated Cost of Capital) \[A]
 - PLUS additional purchases \[B]
-- MINUS any disposals \[C]
+- MINUS any disposals \[C] (min of disposal and the costs of disposals)
 - MINUS CCA (applying CCA rate to the **balance**)
 - EQUALS UCC balance
 
@@ -610,23 +610,22 @@ Business Income: 40,300
 
 Class 8 (20%) assets with UCC of $80,000. Purchased $25,000 of class 8. There were disposals of 20,000 of costs of 35,000.
 
-A = 80,000, B = 25,000, C = MIN {20,000, 35,000}, CCA = 0.2 \* (80,000 + 1.5 \* (25,000 - 20,000)). Therefore UCC = 80,000 + 25,000 - 20,000 - 17,500 = 67,500
+A = 80,000, B = 25,000, C = MIN {20,000, 35,000}, CCA = 0.2 \* (80,000 + 1.5 \* (25,000 - 20,000)) = 17,500. Therefore UCC = 80,000 + 25,000 - 20,000 - 17,500 = 67,500
 
 What if the old assets was sold for 30,000?
 
-A = 80,000, B = 25,000, C = MIN {30,000, 35,000}, CCA = 0.2 \* (80,000 + 25,000 - 30,000). Therefore UCC = 80,000 + 25,000 - 30,000 - 15,000 = 60_000
+A = 80,000, B = 25,000, C = MIN {30,000, 35,000}, CCA = 0.2 \* (80,000 + 25,000 - 30,000) = 15,000. Therefore UCC = 80,000 + 25,000 - 30,000 - 15,000 = 60,000
 
 ### Gains/Losses on Disposition
 
 - No capital loss
 - Terminal loss
-  - The left over in the asset after UCC minus disposition. (Can't have CCA on a sold asset).
-  - All assets are disposed of
-  - Positive balance in class
+  - When there is a positive balance in a class where all assets are disposed of
+  - The left over in the asset after UCC minus disposition. (CCA is not allowed on a sold asset).
 - Recapture
   - Negative balance in class
 - Capital gain
-  - Price > Original cost
+  - Selling price > original cost
 
 ### Immediate Expensing (Optional)
 
@@ -1288,8 +1287,8 @@ Section 6.1.2. requires the new CPA to “assess reporting systems, data require
 
 Data analytics
 
-  - Big data refers to the increasing volume of data now available, as well as its variety and the speed at which it can be processed.
-  - Analytics is the means for extracting value from this data - the tool that generates insights and deeper understanding.
+- Big data refers to the increasing volume of data now available, as well as its variety and the speed at which it can be processed.
+- Analytics is the means for extracting value from this data - the tool that generates insights and deeper understanding.
 
 Advantage
 
