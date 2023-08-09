@@ -205,6 +205,8 @@ Benefit when price goes down.
   - 365 day yield but linear instead of compounded
   - Holding period return linearly increased to a year
   - yield = 3% / (90 / 365)
+- Current yield
+  - Coupon Payment / Price
 
 ### Questions
 
@@ -1435,3 +1437,71 @@ _Strips_ and _straps_ are variations of the straddle.
 - butterfly
 - condor
 - limited downside
+
+## Futures
+
+Similar to options however with futures and forward contract, there is an obligation to follow through with the agreed-upon transaction.
+
+- Forward contracts call for future delivery at a currently agreed upon price
+  - Price holds
+- Futures contract obliges traders to purchase or sell an asset at an agreed-upon **futures price** at contract maturity
+  - Price may fluctuate
+- Zero-sum game
+- Profit is zero when spot price equals the initial futures price
+
+### Future Main Concepts
+
+- Marked to market every day
+- Maintenance margin
+- Convergence property (futures price and spot price converge at maturity)
+
+### Strategies
+
+- Speculators
+  - Bet whether price will go up or down
+- Hedgers
+  - Protect against price movements
+  - Long: protect against a higher spot price in the future
+  - Short: protect against spot prices going down in the future
+- Calendar spread
+  - Long position in a futures contract at one maturity and short in another
+
+### Spot-Futures Parity Theorem
+
+- Violation of the parity relationship gives rise to arbitrage opportunities
+- Investor holds $1,000 in a mutual fund for S&P500/TSX Index
+  - Dividends of $20
+- The futures contract with delivery in one year trades for $1,010
+- Since delivery doesn't include the delivery of the dividends, the investor can hedge
+
+A perfect hedge should return the risk less rate of return
+
+<img class=equation-tall src="https://latex.codecogs.com/svg.image?\frac{F_0+D-S_0}{S_0}=rf">
+
+<img class=equation-tall src="https://latex.codecogs.com/svg.image?F_0=S_0(1+r_f-\frac{D}{S_0})">
+
+### Arbitrage
+
+- Parity relationship also is called the cost-of-carry relationship
+- If the futures price is too high, short the futures and acquire the stock by borrowing the money at the risk-free rate
+- If the futures price is too low, go long futures, short the stock and invest the proceeds at the risk-free rate
+
+### Spreads
+
+When dividends do not exist, spot–futures parity states that the equilibrium futures price:
+
+<img class=equation src="https://latex.codecogs.com/svg.image?F_0=P_0(1+r_f)^T">
+
+![Future Spreads](/images/bu-473/future-spreads.png)
+
+### Futures Prices vs. Expected Spot Price
+
+When spot is unchanged:
+
+- Expectations hypothesis
+  - Future price = the spot price
+- Normal backwardation
+  - Future prices are less and then meet the spot price
+- Contango
+  - future prices are higher and then fall to spot
+- Modern portfolio theory
