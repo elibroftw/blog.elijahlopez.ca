@@ -2980,6 +2980,16 @@ are low barriers to exporting to Brazil.&lt;/p>
 &lt;li>&lt;a href="#collars">Collars&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;/li>
+&lt;li>&lt;a href="#futures">Futures&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#future-main-concepts">Future Main Concepts&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#strategies">Strategies&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#spot-futures-parity-theorem">Spot-Futures Parity Theorem&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#arbitrage">Arbitrage&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#spreads">Spreads&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#futures-prices-vs-expected-spot-price">Futures Prices vs. Expected Spot Price&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
 &lt;/ul>
 &lt;/nav>
 &lt;/div>
@@ -3327,6 +3337,11 @@ With non-cumulative preferred shares, company does not have to pay the missed pa
 &lt;li>365 day yield but linear instead of compounded&lt;/li>
 &lt;li>Holding period return linearly increased to a year&lt;/li>
 &lt;li>yield = 3% / (90 / 365)&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Current yield
+&lt;ul>
+&lt;li>Coupon Payment / Price&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;/ul>
@@ -5423,6 +5438,127 @@ Final stock price must depart from X by this cost for the straddle to provide a 
 &lt;li>butterfly&lt;/li>
 &lt;li>condor&lt;/li>
 &lt;li>limited downside&lt;/li>
+&lt;/ul>
+&lt;h2 id="futures" >Futures
+&lt;span>
+&lt;a href="#futures">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>Similar to options however with futures and forward contract, there is an obligation to follow through with the agreed-upon transaction.&lt;/p>
+&lt;ul>
+&lt;li>Forward contracts call for future delivery at a currently agreed upon price
+&lt;ul>
+&lt;li>Price holds&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Futures contract obliges traders to purchase or sell an asset at an agreed-upon &lt;strong>futures price&lt;/strong> at contract maturity
+&lt;ul>
+&lt;li>Price may fluctuate&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Zero-sum game&lt;/li>
+&lt;li>Profit is zero when spot price equals the initial futures price&lt;/li>
+&lt;/ul>
+&lt;h3 id="future-main-concepts" >Future Main Concepts
+&lt;span>
+&lt;a href="#future-main-concepts">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Marked to market every day&lt;/li>
+&lt;li>Maintenance margin&lt;/li>
+&lt;li>Convergence property (futures price and spot price converge at maturity)&lt;/li>
+&lt;/ul>
+&lt;h3 id="strategies" >Strategies
+&lt;span>
+&lt;a href="#strategies">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Speculators
+&lt;ul>
+&lt;li>Bet whether price will go up or down&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Hedgers
+&lt;ul>
+&lt;li>Protect against price movements&lt;/li>
+&lt;li>Long: protect against a higher spot price in the future&lt;/li>
+&lt;li>Short: protect against spot prices going down in the future&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Calendar spread
+&lt;ul>
+&lt;li>Long position in a futures contract at one maturity and short in another&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="spot-futures-parity-theorem" >Spot-Futures Parity Theorem
+&lt;span>
+&lt;a href="#spot-futures-parity-theorem">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Violation of the parity relationship gives rise to arbitrage opportunities&lt;/li>
+&lt;li>Investor holds $1,000 in a mutual fund for S&amp;amp;P500/TSX Index
+&lt;ul>
+&lt;li>Dividends of $20&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>The futures contract with delivery in one year trades for $1,010&lt;/li>
+&lt;li>Since delivery doesn&amp;rsquo;t include the delivery of the dividends, the investor can hedge&lt;/li>
+&lt;/ul>
+&lt;p>A perfect hedge should return the risk less rate of return&lt;/p>
+&lt;img class=equation-tall src="https://latex.codecogs.com/svg.image?\frac{F_0+D-S_0}{S_0}=rf">
+&lt;img class=equation-tall src="https://latex.codecogs.com/svg.image?F_0=S_0(1+r_f-\frac{D}{S_0})">
+&lt;h3 id="arbitrage" >Arbitrage
+&lt;span>
+&lt;a href="#arbitrage">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Parity relationship also is called the cost-of-carry relationship&lt;/li>
+&lt;li>If the futures price is too high, short the futures and acquire the stock by borrowing the money at the risk-free rate&lt;/li>
+&lt;li>If the futures price is too low, go long futures, short the stock and invest the proceeds at the risk-free rate&lt;/li>
+&lt;/ul>
+&lt;h3 id="spreads" >Spreads
+&lt;span>
+&lt;a href="#spreads">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>When dividends do not exist, spot–futures parity states that the equilibrium futures price:&lt;/p>
+&lt;img class=equation src="https://latex.codecogs.com/svg.image?F_0=P_0(1+r_f)^T">
+&lt;p>&lt;img src="https://blog.elijahlopez.ca/images/bu-473/future-spreads.png" alt="Future Spreads">&lt;/p>
+&lt;h3 id="futures-prices-vs-expected-spot-price" >Futures Prices vs. Expected Spot Price
+&lt;span>
+&lt;a href="#futures-prices-vs-expected-spot-price">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>When spot is unchanged:&lt;/p>
+&lt;ul>
+&lt;li>Expectations hypothesis
+&lt;ul>
+&lt;li>Future price = the spot price&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Normal backwardation
+&lt;ul>
+&lt;li>Future prices are less and then meet the spot price&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Contango
+&lt;ul>
+&lt;li>future prices are higher and then fall to spot&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Modern portfolio theory&lt;/li>
 &lt;/ul></description></item><item><title>BU 357 Taxation 1</title><link>https://blog.elijahlopez.ca/posts/bu-357-taxation-1/</link><pubDate>Tue, 09 May 2023 15:01:54 -0400</pubDate><guid>https://blog.elijahlopez.ca/posts/bu-357-taxation-1/</guid><description>&lt;div>
 &lt;h2>Table of Contents&lt;/h2>
 &lt;nav id="TableOfContents">
