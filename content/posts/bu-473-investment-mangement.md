@@ -1333,9 +1333,11 @@ TODO: use latex
 
 ![ROE Breakdown](/images/bu-473/roe-breakdown.png)
 
-Compound Leverage Ratio
-
 ![Dupont Ratio](https://media.wallstreetprep.com/uploads/2021/11/04025747/DuPont-Analysis-Formula-ROE-Ratios.jpg)
+
+Compound Leverage Ratio = Interest Burden \* Leverage
+
+<img class=equation-tall src="https://latex.codecogs.com/svg.image?\frac{EBIT-I}{EBIT}\times\frac{Assets_avg}{Eqiuty_avg}">
 
 ## Options
 
