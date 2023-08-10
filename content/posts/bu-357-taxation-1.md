@@ -298,16 +298,16 @@ Calculate the taxable benefit of the loan.
 
 </details>
 
-### Stock Options
+### Stock Options \[sec 7]
 
-- grant day
-  - Fair Market Value determined
-- exercise day
-  -taxable benefit is the difference
-- For Canadian-controlled private corporations (CCPC), taxation occurs on selling day
-- Note that capital gains is not part of income from employment
-
-Division C deduction (half of taxable benefit): option price was greater than fair market value on grant day or the CCPC shares were held for at least 2 years. You still have to report the full dollar amount benefit.
+- The benefit must be included in employment income
+  - On the sell date for CCPC
+  - On the exercise date for public corporations
+- Benefit = Fair Market Value at exercise date - Strike Price of Option
+  - Include division C deduction equal to one-half of the benefit if either
+    - the option was not in the money (strike price >= stock price) on grant day
+    - corporation is CCPC and the stock is held for 2 years
+- On selling, capital gains are (sell price - market price on exercise day)
 
 Capital gain on selling day = Price sold - EOD fair market price at exercise day
 
@@ -897,6 +897,7 @@ A parcel of land with a cost of $4,000 was sold in 2022 for $160,000. For the to
 - owned and ordinarily inhabited for personal use
 - one principal residence per family unit
 - designation at sale
+- capital gain is net of commissions
 - claim exemption against capital gains
 - (1 + years designated as principal residence) / (number of years owned) \* gain <= gain
   - the 1+ accounts for selling and buying a house in the same year
@@ -1049,9 +1050,9 @@ Vendor will report $50,000 taxable gain on the transfer of shares. The ACB of th
 - support payments to former spouse (alimony)
 - fees/expenses for objection or appeal of a tax assessment
 - RRSP contributions
+  - contribution is less of { **18% of prior year's earned income**, 2022 limit of $29,210 } MINUS prior year's pension adjustment (PA).
+  - DPSP is Deferred Profit Sharing Plans
   - investments not taxed until withdrawn
-  - contribution is less of { 18% of prior year's earned income, $29,210 }
-  - less prior year's pension adjustment (DPSP is Deferred profit sharing plans)
   - contribution room is carried forward
 - Moving expenses
 - Child care expenses
@@ -1062,6 +1063,7 @@ Vendor will report $50,000 taxable gain on the transfer of shares. The ACB of th
   - Contribution is not deductible; income is not taxable. Annual limit, unused room carried forward
 - RESP
   - contribution is not deductible; income is taxable. max contribution of $50,000 over 31 years (35 if desirable)
+  - useful since government matches 20% of contribution to a max contribution of 2,500
 - FHSA (tax-free first home savings account)
   - **contributions are deductible**; income is tax-free; unused contribution room cannot be carried forward, max of $8,000 per year, $40,000 lifetime max (5 years)
     - must be used to buy first home otherwise taxed
@@ -1114,23 +1116,80 @@ Total moving expenses = 1200 (air april) + 2250 (hotel prorated) + 2070 (allowab
 - cost of babysitting, day care, or lodging at a boarding school
 - children under 16
 - less of
+  - 8,000 per child under 7
   - 5,000 per child 7-16
-  - 8000 per child under 7
   - 11,000 per disabled child
   - 2/3 of earned income
-- claimed usually by lower income spouse (if only one parent, use that parent's income)
-  - applies even if lower income spouse is unemployed
+- claimable usually by lower income spouse (if only one parent, use that parent's income)
+  - if lower income spouse has an income of zero, then there is no benefit
 - unless
   - lower income spouse is a student, in hospital, jail, marriage breakdown
   - limit not exceeding (275 per disabled child + 200 per child under 7 + 125 per child 7 to 16) \* weeks in special situation
 
 - Homer & Marge have 3 kids aged 10, 8, 1. Homer earned 15,000 and Marge earned 40,000.
-- {15,000 \* 2 / 3 = $10,000, 5,000 \* 2 + 8,000 = 18,000 }
+- MIN {15,000 \* 2 / 3 = $10,000, 5,000 \* 2 + 8,000 = 18,000 } = 10,000
 - Therefore, the child care expense is $10,000
 
-Problem on Slide 151
+<details><summary>Problem 13 on Slide 151</summary>
 
-- See laurier email for work through
+- 2022
+- public corporation
+- kids aged 8 and 10.
+- Recap (from memory)
+  - 8,000 under 7
+  - 5,000 7-16
+  - 11,000 disabled
+
+- 150,000
+- 30,000
+- (6,000) (RPP)
+
+(1) lease of 18,400. Operating cost benefit = 0.29 * 10,000 = 2900 vs. 6131/2. $200 per month is paid for use of the car.
+Standby benefit = 2/3 * 18,400 * 10,000 / (1667*12) = 2/3 * 18,400 * 10,000 / 20,004 = 6132
+2900 + 6132 - 2400 = 6632
+
+(2) no benefit since options were not exercised
+
+(3) benefit of 850 - 500 since gift is over $500.
+
+(4) 1300 for fitness club membership. Omit $350 since it is private healthcare plan
+
+- 1800 interest income
+- 7500 CA public corporation dividend (also taxable on gross up of 7500 \* 0.38 = 2850)
+  - 20.7% of dividend is credited
+- 680 US corporation (net of 15%) dividend (taxable on 680 / 0.85)
+- annuity payment of 2000 minus capital portion 650 = 1350
+- Principal house 18800 (net of commissions)
+  - (1 + 2022 - 2011 + 1) / (2022 - 2009 + 1) = 13 / 14
+  - 2011 because the cottage got the +1
+  - (188000 - 90000) \* (1 - 13 / 14) \* 50% inclusion = 7,000 capital gains = 3,500 taxable capital gains
+- Minors
+  - 6% 2,000 five year bond
+  - $120 \* 2 taxable = 240
+- Expenditures
+  - Investment counsellor's fee 1,100 (deduct because it was for income earning purposes)
+  - Loan interest of 850 (deduct because it was for stocks which is for income earning purposes)
+  - Deduct Rental Loss of 3,500
+  - Deduct RRSP 14,000
+    - Max deductible; min(29210,0.18*170000)-7000 = 22,210
+    - carry forward 22210 - 14000 = 8210
+  - Deduct meals & entertainment of 0.5 * 8300 = 4150
+
+- Employment income: 150000+30000-6000+6632+350+1300-4150 = 178,132
+- Properties Income: 1800 + 7500 + 2850 + 800 + 240 - 1100 - 850 - 3500 = 7740
+- Other income:1,350 (annuity)
+- 3,500 (taxable CG)
+- (14,000) (RRSP)
+- (3200) business loss
+- NIFTP: 178,132 + 7740 + 1350 + 3500 - 14000 - 3200 = 173,522
+
+Irrelevant to NIFTP:
+
+tax credit on CPP: (3,500) (does not reduce income for tax purposes)
+tax credit on EI (953)
+income taxes deducted: (55,000) (to find payable amount after credits)
+
+</details>
 
 ## Chapter 10 Calculation of Taxable Income and Taxes Payable for Individuals
 
@@ -1148,14 +1207,18 @@ Problem on Slide 151
 ### Loss Carryovers
 
 - Non-capital losses
-- Unused business, property, employment losses and ABILs
-- Carried backward 3 years and forward 20 years against any income
+  - Deductible against everything
+  - Unused business, property, employment losses and ABILs
+  - Carried backward 3 years and forward 20 years against any income
 - Net Capital loss
+  - Deductible against taxable capital gains
   - carried back 3 years, forward indefinitely
-  - deductible against taxable capital gains
   - on death deductible against any income
   - conversion of rates over the year (3/4 -> 2/3 -> 1/2)
-- ABILs reclassified as net capital loss after 10 years of not being used
+  - 2/3 from 1988 to 1989, 3/4 from 1990 to 1999, 2/3 in 2000, 1/2 since 2001
+  - [inclusion rates](https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/about-your-tax-return/tax-return/completing-a-tax-return/personal-income/line-12700-capital-gains/you-calculate-your-capital-gain-loss/inclusion-rates-previous-years.html)
+  - to convert, divide by numerator and then multiply by the denominator and then multiply by recent rate
+- ABILs reclassified as net capital loss after 10 years of being unused
 
 ### Lifetime Capital Gain Deduction
 
@@ -1165,23 +1228,36 @@ Problem on Slide 151
 Slide 158 example
 
 Salary of 72,000 and taxable capital gains of 4,500. NonCapitalLoss of 28,000 from 2018 and NetCapitalLoss of 12,000 from 2019.
-Stock options of 2,000 shares at $4 per share (fair value on grant day) with fair market value of $10/share.
+Public corporation stock options of 2,000 shares at $4 per share (equal to fair value on grant day) exercised with fair market value of $10/share.
 
-- Therefore, employment income of 72,000 + (6 \* ) = 84,000
-- net income for tax purposes of 84,000 + 4,500 = 88,500
-- Less: Div C: 0.5 \* 12,000 = 6,000
+- Therefore, employment income of 72,000
+- Benefit of (10 - 4) \* 2000 = 12,000
+- Taxable capital gains of 4,500
+- Net income for tax purposes of 72,000 + 12,000 + 4,500 = 88,500
+- Less
+- Division C (option was not ITM) deduction of 12,000 \* 0.5 = 6,000
 - Less: Net Capital Loss = 4,500
-- Less: non-capital loss = 28,000
-- taxable income = 50,000
+- Less: Non-capital loss = 28,000
+- Taxable income = 88,500 - 6,000 - 4,500 - 28,000 = 50,000
 
 - Net capital loss balance = 12,000 - 4,500 = 7,500
 - Non capital loss balance = 0
 
+Example 2
+
+The Net Capital Loss in 1999 was 6,000. How to convert to 2022?
+
+Since it used to be 3/4 and now it is 1/2, we need to get back.
+
+6,000 / 3 \* 4 / 2 OR 6,000 \* 2 / 3 = 4,000
+
 ### Tax Calculation
 
-Add tax from base amount in income tax bracket table to (Taxable amount - final income of previous) \* tax rate
+Before deducting credits, calculate the federal tax. Add tax from base amount in income tax bracket table to (Taxable amount - final income of previous) \* tax rate.
 
 ### Tax Credit
+
+These credits are non-refundable meaning that federal tax cannot go under 0.
 
 - Basic: 15% \*
   - 14,398 for income < 155,625
@@ -1340,7 +1416,6 @@ Process for data analytics
 1. Define the question; gather information and data
 2. Analyze data and issues
 3. Communicate results
-
 
 ## Problems
 
