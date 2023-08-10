@@ -1179,7 +1179,7 @@ Stock options of 2,000 shares at $4 per share (fair value on grant day) with fai
 
 ### Tax Calculation
 
-Add tax on base amount to (Taxable amount - Final income of previous ) \* tax rate
+Add tax from base amount in income tax bracket table to (Taxable amount - final income of previous) \* tax rate
 
 ### Tax Credit
 
@@ -1194,9 +1194,36 @@ Add tax on base amount to (Taxable amount - Final income of previous ) \* tax ra
   - Example: you have taxable income of 120,000
     - Married credit: 15% \* 14,398 + 15% * (14,398 - spouse div. B income)
 
+### Age Amount
+
+- 15%
+- Reduced by 15% of net income excess of 39,826
+
+### Caregiver
+
+- <u title='not physically or mentally strong, especially through age or illness.'>infirm</u> adult dependent
+- 15%
+- less for spouse or minor
+
+### Pension Income
+
+- 15% of a max of 2,000 and pension income
+
+### Employment Credit
+
+- 15% of a max of 1,287 employment income
+
 ### Medical Expense Credit
 
+- Medical expenses paid for the taxpayer, spouse, and children that exceeds MIN(3% of net income, 2,479).
+- Medical expenses paid for other dependant
+- 15%
+
+Implications: small medical items are not taken care of, but large medical expenses results in a credit for the entirety
+
 ### Impairment Tax Credit
+
+Can be transferred to spouse if the impaired person cannot use it. 15%.
 
 <details><summary>Problem 7 (Slide 170)</summary>
 
@@ -1206,15 +1233,29 @@ Add tax on base amount to (Taxable amount - Final income of previous ) \* tax ra
 
 ### CPP and EI credits
 
+- 15% of CPP and EI (given) to a maximum
+  - Max EI of 953
+  - Max CPP of 3,500
+
 ### Tuition credit
+
+- Entire tuition is a credit (times 15%)
+- Transferrable up to 5,000
 
 ### Dividend Tax Credit
 
-### Foreign Tax credit
+- 20.7% of dividends paid from public corporations and others taxed at general tax rates
+- 10.38% of dividends paid from CCPC corporations with low tax rates
+- Can be transferred to spouse under certain conditions
 
-### Political Contributions
+### Foreign Tax credit \[sec 126]
 
-75% of first $400, 50% of the next 350, and 33 1/3% of contributions over 750. Maximum $650 annually.
+### Political Contributions \[sec 127(3)]
+
+- 75% of first $400
+- 50% of the next 350
+- 33 1/3% of contributions over 750.
+- Maximum $650 annually.
 
 ### Chapter 10 Problems
 
