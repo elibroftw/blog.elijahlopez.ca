@@ -1022,6 +1022,7 @@ rise to arbitrage opportunities.
 - Default risk
 - Interest rate risk
   - Price will drop because interest rates rise
+  - Offset my shorter maturity and higher coupon rate
 - Reinvestment risk
   - If rates change, the reinvestment yields a different return
 
