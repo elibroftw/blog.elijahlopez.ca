@@ -781,10 +781,7 @@ Slide 102, Chapter 6 Problem 3
     - CCA claimed cannot incur total rental loss (CCA limit across properties is the rental income before deduction)
     - Separate classes for buildings >= $50,000
 
-Jim owns two rental buildings which he purchased in 2021.
-Property A cost $ 40,000
-Property B cost $ 45,000
-After all expenses other than CCA, Jim's total rental income for the past two years was $1,000 in 2021 and $5,000 in 2022. Jim has chosen to deduct the maximum CCA for both years. What are the maximum CCAs?
+Jim owns two rental buildings which he purchased in 2021. Property A cost $40,000, Property B cost $45,000 After all expenses other than CCA, Jim's total rental income for the past two years was $1,000 in 2021 and $5,000 in 2022. Jim has chosen to deduct the maximum CCA for both years. What are the maximum CCAs?
 
 - CCA2021 =  (40,000 + 45,000) \* 0.04 = 3,400 round down to 1,000 to prevent rental loss.
 - UCC = 84,000
@@ -903,8 +900,11 @@ A parcel of land with a cost of $4,000 was sold in 2022 for $160,000. For the to
   - the 1+ accounts for selling and buying a house in the same year
   - home should be owned for at least one year for the 1+
   - I believe when proceeds over a million, the gain over 500,000 should be taxable
+  - The year the principal residence is sold can be the start another property is the principal residence (assuming only two properties and the one sold first was maxed out)
 
 ### Maximize Exemption With Multiple Homes
+
+Compare gain per year.
 
 Exercise 2
 
@@ -913,7 +913,7 @@ Patel has only two residences he wishes to dispose of in 2022
 - Name; year purchased; cost; commissions; selling price
 - City home; 2007; 180,000; 12,000; 247,000
   - 16 years; 55,000/16 gain per year
-- Cottage; 2012; 90,000; 6,000;; 164,000
+- Cottage; 2012; 90,000; 6,000; 164,000
   - 11 years; **68,000/11** gain per year (higher than home)
 
 Exemption = (1 + ?) / 11 \* 68,000
