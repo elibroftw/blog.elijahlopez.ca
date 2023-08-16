@@ -1,4 +1,66 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>mobile on ELL Blog</title><link>https://blog.elijahlopez.ca/tags/mobile/</link><description>ELL Blog (mobile)</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 05 Aug 2023 11:13:28 -0400</lastBuildDate><atom:link href="https://blog.elijahlopez.ca/tags/mobile/index.xml" rel="self" type="application/rss+xml"/><item><title>React Native QR Code Scanner (2023)</title><link>https://blog.elijahlopez.ca/posts/react-native-qr-code-scanner/</link><pubDate>Sat, 05 Aug 2023 11:13:28 -0400</pubDate><guid>https://blog.elijahlopez.ca/posts/react-native-qr-code-scanner/</guid><description>&lt;p>Shout out to Tesla motors. Although a recruiter that works there rejected me with the wrong name, they made a react native package that is simple to use.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>mobile on ELL Blog</title><link>https://blog.elijahlopez.ca/tags/mobile/</link><description>ELL Blog (mobile)</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 15 Aug 2023 21:15:51 -0400</lastBuildDate><atom:link href="https://blog.elijahlopez.ca/tags/mobile/index.xml" rel="self" type="application/rss+xml"/><item><title>How to Install MacOS Ventura (13) on VirtualBox Windows 11</title><link>https://blog.elijahlopez.ca/posts/how-to-install-macos-ventura-13-on-virtualbox/</link><pubDate>Tue, 15 Aug 2023 21:15:51 -0400</pubDate><guid>https://blog.elijahlopez.ca/posts/how-to-install-macos-ventura-13-on-virtualbox/</guid><description>&lt;p>For reference: my laptop is the Razer Blade 14 2022 with &lt;a href="https://www.amd.com/en/product/11541">AMD Ryzen 9 6900HX&lt;/a>. It supports AMD-V.&lt;/p>
+&lt;p>Disable &amp;ldquo;Memory integrity&amp;rdquo; under Core isolation in the Windows Security app. Restart computer. This will disable the Hyper-V hypervisor.
+You can do this anytime before starting the virtual machine. This was the roadblock that prevented me from running the virtual machine.&lt;/p>
+&lt;h3 id="creating-and-configuring-the-virtual-machine" >Creating and Configuring the Virtual Machine
+&lt;span>
+&lt;a href="#creating-and-configuring-the-virtual-machine">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Writing this tutorial so that you can have an easier time.&lt;/p>
+&lt;p>Download &lt;a href="https://www.virtualbox.org/wiki/Downloads">VirtualBox AND the Extension Pack&lt;/a>&lt;/p>
+&lt;ul>
+&lt;li>Install VirtualBox and then install the Extension Pack&lt;/li>
+&lt;/ul>
+&lt;p>&lt;a href="https://www.mediafire.com/file/dcji26zay7s3p8r/macOS+Ventura+ISO+for+VM+by+techrechard.com.iso/file">MacOS 13 ISO download&lt;/a>&lt;/p>
+&lt;p>Create a new Virtual machine, with the name &amp;ldquo;macOS 13&amp;rdquo;, and select file above for the ISO.&lt;/p>
+&lt;ul>
+&lt;li>Memory: 7840MB or 4618 MB depending on how much memory you need&lt;/li>
+&lt;li>Processors: 4&lt;/li>
+&lt;li>New Virtual Hard Drive Storage: 100GB&lt;/li>
+&lt;/ul>
+&lt;p>Click Setting (cog)&lt;/p>
+&lt;ul>
+&lt;li>Display: 128MB (max) Video Memory&lt;/li>
+&lt;li>USB: USB 3.0&lt;/li>
+&lt;/ul>
+&lt;p>Close VirtualBox&lt;/p>
+&lt;p>Then run these commands in an administrative command prompt&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#24909d">cd&lt;/span> C:&lt;span style="color:#ed9d13">\P&lt;/span>rogram Files&lt;span style="color:#ed9d13">\O&lt;/span>racle&lt;span style="color:#ed9d13">\V&lt;/span>irtualBox
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>VBoxManage modifyvm &lt;span style="color:#ed9d13">&amp;#34;macOS 13&amp;#34;&lt;/span> --cpuidset &lt;span style="color:#3677a9">00000001&lt;/span> 000106e5 &lt;span style="color:#3677a9">00100800&lt;/span> 0098e3fd bfebfbff
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>VBoxManage setextradata &lt;span style="color:#ed9d13">&amp;#34;macOS 13&amp;#34;&lt;/span> &lt;span style="color:#ed9d13">&amp;#34;VBoxInternal/Devices/efi/0/Config/DmiSystemProduct&amp;#34;&lt;/span> &lt;span style="color:#ed9d13">&amp;#34;iMac19,3&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>VBoxManage setextradata &lt;span style="color:#ed9d13">&amp;#34;macOS 13&amp;#34;&lt;/span> &lt;span style="color:#ed9d13">&amp;#34;VBoxInternal/Devices/efi/0/Config/DmiSystemVersion&amp;#34;&lt;/span> &lt;span style="color:#ed9d13">&amp;#34;1.0&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>VBoxManage setextradata &lt;span style="color:#ed9d13">&amp;#34;macOS 13&amp;#34;&lt;/span> &lt;span style="color:#ed9d13">&amp;#34;VBoxInternal/Devices/efi/0/Config/DmiBoardProduct&amp;#34;&lt;/span> &lt;span style="color:#ed9d13">&amp;#34;Iloveapple&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>VBoxManage setextradata &lt;span style="color:#ed9d13">&amp;#34;macOS 13&amp;#34;&lt;/span> &lt;span style="color:#ed9d13">&amp;#34;VBoxInternal/Devices/smc/0/Config/DeviceKey&amp;#34;&lt;/span> &lt;span style="color:#ed9d13">&amp;#34;ourhardworkbythesewordsguardedpleasedontsteal(c)AppleComputerInc&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>VBoxManage setextradata &lt;span style="color:#ed9d13">&amp;#34;macOS 13&amp;#34;&lt;/span> VBoxInternal2/EfiGraphicsResolution 1920x1080
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>On AMD systems,&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>VBoxManage modifyvm &lt;span style="color:#ed9d13">&amp;#34;macOS 13&amp;#34;&lt;/span> --cpu-profile &lt;span style="color:#ed9d13">&amp;#34;Intel Core i7-6700K&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>On Intel systems,&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>VBoxManage setextradata &lt;span style="color:#ed9d13">&amp;#34;macOS 13&amp;#34;&lt;/span> &lt;span style="color:#ed9d13">&amp;#34;VBoxInternal/Devices/smc/0/Config/GetKeyFromRealSMC&amp;#34;&lt;/span> &lt;span style="color:#3677a9">1&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>If you get an error,&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>VBoxManage setextradata &lt;span style="color:#ed9d13">&amp;#34;macOS 13&amp;#34;&lt;/span> &lt;span style="color:#ed9d13">&amp;#34;VBoxInternal/Devices/smc/0/Config/GetKeyFromRealSMC&amp;#34;&lt;/span> &lt;span style="color:#3677a9">0&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Open VirtualBox and press Start for macOS 13. Wait a couple minutes.&lt;/p>
+&lt;h3 id="install-mac-os-x" >Install Mac OS X
+&lt;span>
+&lt;a href="#install-mac-os-x">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ol>
+&lt;li>Select a language and then press the right arrow icon&lt;/li>
+&lt;li>Click Install macOS 13 beta&lt;/li>
+&lt;li>Click Continue&lt;/li>
+&lt;/ol>
+&lt;h3 id="troubleshooting" >Troubleshooting
+&lt;span>
+&lt;a href="#troubleshooting">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>A critical error has occurred while running the virtual machine&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://forums.virtualbox.org/viewtopic.php?f=1&amp;amp;t=62339">I have a 64bit host, but can&amp;rsquo;t install 64bit guests&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>React Native QR Code Scanner (2023)</title><link>https://blog.elijahlopez.ca/posts/react-native-qr-code-scanner/</link><pubDate>Sat, 05 Aug 2023 11:13:28 -0400</pubDate><guid>https://blog.elijahlopez.ca/posts/react-native-qr-code-scanner/</guid><description>&lt;p>Shout out to Tesla motors. Although a recruiter that works there rejected me with the wrong name, they made a react native package that is simple to use.
 This method is a much easier and hassle free experience than react-native-vision-camera which does not work on the latest react-native: 0.72.&lt;/p>
 &lt;h2 id="package-installation" >Package Installation
 &lt;span>
