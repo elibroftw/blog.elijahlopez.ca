@@ -1,5 +1,5 @@
 ---
-title: "How to Install MacOS Monterey (12) on VirtualBox Windows 11"
+title: "How to Install macOS 12 Monterey on VirtualBox Windows 11"
 date: 2023-08-15T21:15:51-04:00
 draft: true
 tags: [
@@ -24,10 +24,10 @@ Download [VirtualBox AND the Extension Pack](https://www.virtualbox.org/wiki/Dow
 
 - Install VirtualBox and then install the Extension Pack
 
-- [MacOS 12 ISO download](https://www.mediafire.com/file/4fcx0aeoehmbnmp/macOS+Monterey+by+Techrechard.com.iso/file)
-- [MacOS 13 ISO download](https://www.mediafire.com/file/dcji26zay7s3p8r/macOS+Ventura+ISO+for+VM+by+techrechard.com.iso/file)
+- [macOS 12 ISO download](https://www.mediafire.com/file/4fcx0aeoehmbnmp/macOS+Monterey+by+Techrechard.com.iso/file)
+- [macOS 13 ISO download](https://www.mediafire.com/file/dcji26zay7s3p8r/macOS+Ventura+ISO+for+VM+by+techrechard.com.iso/file)
 
-Create a new Virtual machine, with the name "macOS 13", and select file above for the ISO.
+Create a new Virtual machine, with the name "macOS 12", and select file above for the ISO.
 
 - Memory: 7840 MB
 - Processors: 4
@@ -44,43 +44,57 @@ Then run these commands in an administrative command prompt
 
 ```cmd
 cd C:\Program Files\Oracle\VirtualBox
-VBoxManage modifyvm "macOS 13" --cpuidset 00000001 000106e5 00100800 0098e3fd bfebfbff
-VBoxManage setextradata "macOS 13" "VBoxInternal/Devices/efi/0/Config/DmiSystemProduct" "iMac19,3"
-VBoxManage setextradata "macOS 13" "VBoxInternal/Devices/efi/0/Config/DmiSystemVersion" "1.0"
-VBoxManage setextradata "macOS 13" "VBoxInternal/Devices/efi/0/Config/DmiBoardProduct" "Iloveapple"
-VBoxManage setextradata "macOS 13" "VBoxInternal/Devices/smc/0/Config/DeviceKey" "ourhardworkbythesewordsguardedpleasedontsteal(c)AppleComputerInc"
-VBoxManage setextradata "macOS 13" VBoxInternal2/EfiGraphicsResolution 1920x1080
-VBoxManage setextradata "macOS 13" "VBoxInternal/TM/TSCMode" "RealTSCOffset"
+VBoxManage modifyvm "macOS 12" --cpuidset 00000001 000106e5 00100800 0098e3fd bfebfbff
+VBoxManage setextradata "macOS 12" "VBoxInternal/Devices/efi/0/Config/DmiSystemProduct" "iMac19,3"
+VBoxManage setextradata "macOS 12" "VBoxInternal/Devices/efi/0/Config/DmiSystemVersion" "1.0"
+VBoxManage setextradata "macOS 12" "VBoxInternal/Devices/efi/0/Config/DmiBoardProduct" "Iloveapple"
+VBoxManage setextradata "macOS 12" "VBoxInternal/Devices/smc/0/Config/DeviceKey" "ourhardworkbythesewordsguardedpleasedontsteal(c)AppleComputerInc"
+VBoxManage setextradata "macOS 12" VBoxInternal2/EfiGraphicsResolution 1920x1080
+VBoxManage setextradata "macOS 12" "VBoxInternal/TM/TSCMode" "RealTSCOffset"
 ```
 
 On AMD systems,
 
 ```cmd
-VBoxManage modifyvm "macOS 13" --cpu-profile "Intel Core i7-6700K"
+VBoxManage modifyvm "macOS 12" --cpu-profile "Intel Core i7-6700K"
 ```
 
 On Intel systems,
 
 ```cmd
-VBoxManage setextradata "macOS 13" "VBoxInternal/Devices/smc/0/Config/GetKeyFromRealSMC" 1
+VBoxManage setextradata "macOS 12" "VBoxInternal/Devices/smc/0/Config/GetKeyFromRealSMC" 1
 ```
 
 If you get an error,
 
 ```cmd
-VBoxManage setextradata "macOS 13" "VBoxInternal/Devices/smc/0/Config/GetKeyFromRealSMC" 0
+VBoxManage setextradata "macOS 12" "VBoxInternal/Devices/smc/0/Config/GetKeyFromRealSMC" 0
 ```
 
-Open VirtualBox and press Start for macOS 13. Wait a couple minutes.
+```cmd
+VBoxManage setextradata "macOS 12"  "VBoxInternal/Devices/efi/0/Config/DmiSystemFamily" "MacBook Pro"
+VBoxManage setextradata "macOS 12"  "VBoxInternal/Devices/efi/0/Config/DmiSystemProduct" "MacBookPro11,2"
+VBoxManage setextradata "macOS 12"  "VBoxInternal/Devices/efi/0/Config/DmiSystemSerial" "NO_DEVICE_SN"
+VBoxManage setextradata "macOS 12" "VBoxInternal/Devices/efi/0/Config/DmiSystemUuid" "CAFECAFE-CAFE-CAFE-CAFE-DECAFFDECAFF"
+VBoxManage setextradata "macOS 12" "VBoxInternal/Devices/efi/0/Config/DmiOEMVBoxVer" "${DmiOEMVBoxVer}"
+VBoxManage setextradata "macOS 12" "VBoxInternal/Devices/efi/0/Config/DmiOEMVBoxRev" "${DmiOEMVBoxRev}"
+VBoxManage setextradata "macOS 12" "VBoxInternal/Devices/efi/0/Config/DmiBIOSVersion" "string:MBP7.89"
+VBoxManage setextradata "macOS 12" "VBoxInternal/Devices/efi/0/Config/DmiBoardProduct" "Mac-3CBD00234E554E41"
+VBoxManage setextradata "macOS 12" "VBoxInternal/Devices/efi/0/Config/DmiBoardSerial" "NO_LOGIC_BOARD_SN"
+```
+
+Open VirtualBox and press Start for macOS 12. Wait a couple minutes.
+
+Follow [Fixing iMessage and other services with OpenCore](https://dortania.github.io/OpenCore-Post-Install/universal/iservices.html#using-gensmbios)
 
 ### Install Mac OS X
 
 1. Select a language and then press the right arrow icon
 2. Click Disk Utilty and then Continue
 3. On the left sidebar, click "VBOX HARDDISK Media" and then click Erase in the top right bar
-4. Enter "macOS HDD" as the name and click Erase, and then Done.
+4. Enter "macOS 12 HDD" as the name and click Erase, and then Done.
 5. Close the Disk Utility by click the red circle in the top left
-6. Click Install macOS 13 beta and then continue
+6. Click Install macOS 12 beta and then continue
 7. Click Continue, agree, and agree
 8. Click the HDD we just formatted and then click Continue
 9. The installation should take 40 minutes
