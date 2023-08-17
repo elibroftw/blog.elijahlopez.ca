@@ -1,7 +1,7 @@
 ---
-title: "How to Install MacOS Ventura (13) on VirtualBox Windows 11"
+title: "How to Install MacOS Monterey (12) on VirtualBox Windows 11"
 date: 2023-08-15T21:15:51-04:00
-draft: false
+draft: true
 tags: [
     'windows',
     'tutorial',
@@ -10,6 +10,8 @@ tags: [
 ---
 
 For reference: my laptop is the Razer Blade 14 2022 with [AMD Ryzen 9 6900HX](https://www.amd.com/en/product/11541). It supports AMD-V.
+
+Ventura (13) didn't work for me, so I will try Monterey (12).
 
 Disable "Memory integrity" under Core isolation in the Windows Security app. Restart computer. This will disable the Hyper-V hypervisor.
 You can do this anytime before starting the virtual machine. This was the roadblock that prevented me from running the virtual machine.
@@ -22,7 +24,8 @@ Download [VirtualBox AND the Extension Pack](https://www.virtualbox.org/wiki/Dow
 
 - Install VirtualBox and then install the Extension Pack
 
-[MacOS 13 ISO download](https://www.mediafire.com/file/dcji26zay7s3p8r/macOS+Ventura+ISO+for+VM+by+techrechard.com.iso/file)
+- [MacOS 12 ISO download](https://www.mediafire.com/file/4fcx0aeoehmbnmp/macOS+Monterey+by+Techrechard.com.iso/file)
+- [MacOS 13 ISO download](https://www.mediafire.com/file/dcji26zay7s3p8r/macOS+Ventura+ISO+for+VM+by+techrechard.com.iso/file)
 
 Create a new Virtual machine, with the name "macOS 13", and select file above for the ISO.
 
