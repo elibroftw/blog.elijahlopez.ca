@@ -119,6 +119,53 @@ Please stop this endless cycle of bloatware. I'm so done with react native. My f
 I had not heeded his advice because I thought it would not be as productive as React Native (since I know React already), but the way I see things now, I would not pick React Native
 for future projects. Any project that uses React Native becomes tech debt instantly.
 
+I'm going to document all my issues and solution for them
+
+### No Permission Handler Detected
+
+So I got my hands on someones Mac and oh boy they are not the m1s so they aren't that powerful. I'm glad
+I bought a "gaming" laptop because at least this baby can tear through compilations. Anyway, to fix this issue.
+
+1. Follow [react-native-permissions iOS setup](https://github.com/zoontek/react-native-permissions#ios)
+    - "reactNativePermissionsIOS" in package.json
+    - Edit `Info.plist`
+    - `pod install` in the subfolder
+2. If the above step did not work (always run in XCode, not VS Code), then run the following
+
+```sh
+rm -rf ~/Library/Developer/XCode/DerivedData
+```
+
+Also, if you don't have a Macbook, do not borrow a friends macbook unless they have an m1 or better CPU. With the amount of clean builds I've done, going to the Apple store and back would save you time since each build takes 10 minutes on some macbooks that are not even 4 years old.
+
+### CocoaPods Error: dependency were found, but they required a higher minimum deployment target
+
+> Specs satisfying the stripe-react-native (from ../node_modules/@stripe/stripe-react-native) dependency were found, but they required a higher minimum deployment target.
+
+If your `ios/Podfile` has the following:
+
+```ruby
+platform :ios, min_ios_version_supported
+```
+
+Modify it like so to avoid breaking your application when react-native updates its minium version past iOS 13.
+
+```ruby
+MIN_IOS_OVERRIDE = '13.0'
+if Gem::Version.new(MIN_IOS_OVERRIDE) > Gem::Version.new(min_ios_version_supported)
+    min_ios_version_supported = MIN_IOS_OVERRIDE
+end
+platform :ios, min_ios_version_supported
+```
+
+### react-native-vector-icons Icons are Missing
+
+- In XCode, delete (remove references) font folder with the react native vector icons
+- Readd fonts via group from the node_modules react native vector icons
+- Double Click the blue project in XCode
+- Go to Build Phases
+- Add the fonts to "Copy Bundle Resources"
+
 ## A Note to Future Developers
 
 Make two apps. It's much better. Learn both Swift and Kotlin. Write feature in Kotlin, write feature again in Swift. Less time wasted due to these react-native specific conflicts.
