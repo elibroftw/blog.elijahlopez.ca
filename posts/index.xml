@@ -10645,6 +10645,56 @@ for future projects. Any project that uses React Native becomes tech debt instan
 &lt;/ul>
 &lt;/li>
 &lt;/ol>
+&lt;p>I&amp;rsquo;m going to document all my issues and solution for them&lt;/p>
+&lt;h3 id="no-permission-handler-detected" >No Permission Handler Detected
+&lt;span>
+&lt;a href="#no-permission-handler-detected">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>So I got my hands on someones Mac and oh boy they are not the m1s so they aren&amp;rsquo;t that powerful. I&amp;rsquo;m glad
+I bought a &amp;ldquo;gaming&amp;rdquo; laptop because at least this baby can tear through compilations. Anyway, to fix this issue.&lt;/p>
+&lt;ol>
+&lt;li>Follow &lt;a href="https://github.com/zoontek/react-native-permissions#ios">react-native-permissions iOS setup&lt;/a>
+&lt;ul>
+&lt;li>&amp;ldquo;reactNativePermissionsIOS&amp;rdquo; in package.json&lt;/li>
+&lt;li>Edit &lt;code>Info.plist&lt;/code>&lt;/li>
+&lt;li>&lt;code>pod install&lt;/code> in the subfolder&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>If the above step did not work (always run in XCode, not VS Code), then run the following&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>rm -rf ~/Library/Developer/XCode/DerivedData
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Also, if you don&amp;rsquo;t have a Macbook, do not borrow a friends macbook unless they have an m1 or better CPU. With the amount of clean builds I&amp;rsquo;ve done, going to the Apple store and back would save you time since each build takes 10 minutes on some macbooks that are not even 4 years old.&lt;/p>
+&lt;h3 id="cocoapods-error-dependency-were-found-but-they-required-a-higher-minimum-deployment-target" >CocoaPods Error: dependency were found, but they required a higher minimum deployment target
+&lt;span>
+&lt;a href="#cocoapods-error-dependency-were-found-but-they-required-a-higher-minimum-deployment-target">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;blockquote>
+&lt;p>Specs satisfying the stripe-react-native (from ../node_modules/@stripe/stripe-react-native) dependency were found, but they required a higher minimum deployment target.&lt;/p>
+&lt;/blockquote>
+&lt;p>Add the following (before the existing code comment) to your &lt;code>Podfile&lt;/code>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-ruby" data-lang="ruby">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#40ffff">MIN_IOS_OVERRIDE&lt;/span> = &lt;span style="color:#ed9d13">&amp;#39;13.0&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">if&lt;/span> &lt;span style="color:#40ffff">Gem&lt;/span>::&lt;span style="color:#40ffff">Version&lt;/span>.new(&lt;span style="color:#40ffff">MIN_IOS_OVERRIDE&lt;/span>) &amp;gt; &lt;span style="color:#40ffff">Gem&lt;/span>::&lt;span style="color:#40ffff">Version&lt;/span>.new(min_ios_version_supported)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> min_ios_version_supported = &lt;span style="color:#40ffff">MIN_IOS_OVERRIDE&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">end&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic"># existing code&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>platform &lt;span style="color:#ed9d13">:ios&lt;/span>, min_ios_version_supported
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="react-native-vector-icons-icons-are-missing" >react-native-vector-icons Icons are Missing
+&lt;span>
+&lt;a href="#react-native-vector-icons-icons-are-missing">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>In XCode, delete (remove references) font folder with the react native vector icons&lt;/li>
+&lt;li>Readd fonts via group from the node_modules react native vector icons&lt;/li>
+&lt;li>Double Click the blue project in XCode&lt;/li>
+&lt;li>Go to Build Phases&lt;/li>
+&lt;li>Add the fonts to &amp;ldquo;Copy Bundle Resources&amp;rdquo;&lt;/li>
+&lt;/ul>
 &lt;h2 id="a-note-to-future-developers" >A Note to Future Developers
 &lt;span>
 &lt;a href="#a-note-to-future-developers">
