@@ -10675,12 +10675,13 @@ I bought a &amp;ldquo;gaming&amp;rdquo; laptop because at least this baby can te
 &lt;/h3>&lt;blockquote>
 &lt;p>Specs satisfying the stripe-react-native (from ../node_modules/@stripe/stripe-react-native) dependency were found, but they required a higher minimum deployment target.&lt;/p>
 &lt;/blockquote>
-&lt;p>Add the following (before the existing code comment) to your &lt;code>Podfile&lt;/code>&lt;/p>
+&lt;p>If your &lt;code>ios/Podfile&lt;/code> has the following:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-ruby" data-lang="ruby">&lt;span style="display:flex;">&lt;span>platform &lt;span style="color:#ed9d13">:ios&lt;/span>, min_ios_version_supported
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Modify it like so to avoid breaking your application when react-native updates its minium version past iOS 13.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-ruby" data-lang="ruby">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#40ffff">MIN_IOS_OVERRIDE&lt;/span> = &lt;span style="color:#ed9d13">&amp;#39;13.0&amp;#39;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">if&lt;/span> &lt;span style="color:#40ffff">Gem&lt;/span>::&lt;span style="color:#40ffff">Version&lt;/span>.new(&lt;span style="color:#40ffff">MIN_IOS_OVERRIDE&lt;/span>) &amp;gt; &lt;span style="color:#40ffff">Gem&lt;/span>::&lt;span style="color:#40ffff">Version&lt;/span>.new(min_ios_version_supported)
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> min_ios_version_supported = &lt;span style="color:#40ffff">MIN_IOS_OVERRIDE&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">end&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic"># existing code&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>platform &lt;span style="color:#ed9d13">:ios&lt;/span>, min_ios_version_supported
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="react-native-vector-icons-icons-are-missing" >react-native-vector-icons Icons are Missing
 &lt;span>
