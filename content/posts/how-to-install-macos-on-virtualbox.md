@@ -1,7 +1,7 @@
 ---
 title: "How to Install macOS 12 Monterey on VirtualBox Windows 11"
 date: 2023-08-15T21:15:51-04:00
-draft: true
+draft: false
 tags: [
     'windows',
     'tutorial',
@@ -98,6 +98,7 @@ Follow [Fixing iMessage and other services with OpenCore](https://dortania.githu
 7. Click Continue, agree, and agree
 8. Click the HDD we just formatted and then click Continue
 9. The installation should take 40 minutes
+10. Do not log into Apple ID until after you've gone through the setup
 
 ### Troubleshooting
 
