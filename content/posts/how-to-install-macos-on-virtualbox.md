@@ -40,47 +40,48 @@ Click Setting (cog)
 
 Close VirtualBox
 
-Then run these commands in an administrative command prompt
+Then run these commands in an administrative Powershell. If you are using Command Prompt, use `cd` instead of Set-Location.
 
-```cmd
-cd C:\Program Files\Oracle\VirtualBox
-VBoxManage modifyvm "macOS 12" --cpuidset 00000001 000106e5 00100800 0098e3fd bfebfbff
-VBoxManage setextradata "macOS 12" "VBoxInternal/Devices/efi/0/Config/DmiSystemProduct" "iMac19,3"
-VBoxManage setextradata "macOS 12" "VBoxInternal/Devices/efi/0/Config/DmiSystemVersion" "1.0"
-VBoxManage setextradata "macOS 12" "VBoxInternal/Devices/efi/0/Config/DmiBoardProduct" "Iloveapple"
-VBoxManage setextradata "macOS 12" "VBoxInternal/Devices/smc/0/Config/DeviceKey" "ourhardworkbythesewordsguardedpleasedontsteal(c)AppleComputerInc"
-VBoxManage setextradata "macOS 12" VBoxInternal2/EfiGraphicsResolution 1920x1080
-VBoxManage setextradata "macOS 12" "VBoxInternal/TM/TSCMode" "RealTSCOffset"
+```powershell
+Set-Location "C:\Program Files\Oracle\VirtualBox"
+.\VBoxManage.exe modifyvm "macOS 12" --cpuidset 00000001 000106e5 00100800 0098e3fd bfebfbff
+.\VBoxManage.exe setextradata "macOS 12" "VBoxInternal/Devices/efi/0/Config/DmiSystemProduct" "iMac19,3"
+.\VBoxManage.exe setextradata "macOS 12" "VBoxInternal/Devices/efi/0/Config/DmiSystemVersion" "1.0"
+.\VBoxManage.exe setextradata "macOS 12" "VBoxInternal/Devices/efi/0/Config/DmiBoardProduct" "Iloveapple"
+.\VBoxManage.exe setextradata "macOS 12" "VBoxInternal/Devices/smc/0/Config/DeviceKey" "ourhardworkbythesewordsguardedpleasedontsteal(c)AppleComputerInc"
+.\VBoxManage.exe setextradata "macOS 12" VBoxInternal2/EfiGraphicsResolution 1920x1080
+.\VBoxManage.exe setextradata "macOS 12" GUI/ScaleFactor 1.25
+.\VBoxManage.exe setextradata "macOS 12" "VBoxInternal/TM/TSCMode" "RealTSCOffset"
 ```
 
 On AMD systems,
 
-```cmd
-VBoxManage modifyvm "macOS 12" --cpu-profile "Intel Core i7-6700K"
+```powershell
+.\VBoxManage.exe modifyvm "macOS 12" --cpu-profile "Intel Core i7-6700K"
 ```
 
 On Intel systems,
 
-```cmd
-VBoxManage setextradata "macOS 12" "VBoxInternal/Devices/smc/0/Config/GetKeyFromRealSMC" 1
+```powershell
+.\VBoxManage.exe setextradata "macOS 12" "VBoxInternal/Devices/smc/0/Config/GetKeyFromRealSMC" 1
 ```
 
 If you get an error,
 
-```cmd
-VBoxManage setextradata "macOS 12" "VBoxInternal/Devices/smc/0/Config/GetKeyFromRealSMC" 0
+```powershell
+.\VBoxManage.exe setextradata "macOS 12" "VBoxInternal/Devices/smc/0/Config/GetKeyFromRealSMC" 0
 ```
 
-```cmd
-VBoxManage setextradata "macOS 12"  "VBoxInternal/Devices/efi/0/Config/DmiSystemFamily" "MacBook Pro"
-VBoxManage setextradata "macOS 12"  "VBoxInternal/Devices/efi/0/Config/DmiSystemProduct" "MacBookPro11,2"
-VBoxManage setextradata "macOS 12"  "VBoxInternal/Devices/efi/0/Config/DmiSystemSerial" "NO_DEVICE_SN"
-VBoxManage setextradata "macOS 12" "VBoxInternal/Devices/efi/0/Config/DmiSystemUuid" "CAFECAFE-CAFE-CAFE-CAFE-DECAFFDECAFF"
-VBoxManage setextradata "macOS 12" "VBoxInternal/Devices/efi/0/Config/DmiOEMVBoxVer" "${DmiOEMVBoxVer}"
-VBoxManage setextradata "macOS 12" "VBoxInternal/Devices/efi/0/Config/DmiOEMVBoxRev" "${DmiOEMVBoxRev}"
-VBoxManage setextradata "macOS 12" "VBoxInternal/Devices/efi/0/Config/DmiBIOSVersion" "string:MBP7.89"
-VBoxManage setextradata "macOS 12" "VBoxInternal/Devices/efi/0/Config/DmiBoardProduct" "Mac-3CBD00234E554E41"
-VBoxManage setextradata "macOS 12" "VBoxInternal/Devices/efi/0/Config/DmiBoardSerial" "NO_LOGIC_BOARD_SN"
+```powershell
+.\VBoxManage.exe setextradata "macOS 12"  "VBoxInternal/Devices/efi/0/Config/DmiSystemFamily" "MacBook Pro"
+.\VBoxManage.exe setextradata "macOS 12"  "VBoxInternal/Devices/efi/0/Config/DmiSystemProduct" "MacBookPro11,2"
+.\VBoxManage.exe setextradata "macOS 12"  "VBoxInternal/Devices/efi/0/Config/DmiSystemSerial" "NO_DEVICE_SN"
+.\VBoxManage.exe setextradata "macOS 12" "VBoxInternal/Devices/efi/0/Config/DmiSystemUuid" "CAFECAFE-CAFE-CAFE-CAFE-DECAFFDECAFF"
+.\VBoxManage.exe setextradata "macOS 12" "VBoxInternal/Devices/efi/0/Config/DmiOEMVBoxVer" "${DmiOEMVBoxVer}"
+.\VBoxManage.exe setextradata "macOS 12" "VBoxInternal/Devices/efi/0/Config/DmiOEMVBoxRev" "${DmiOEMVBoxRev}"
+.\VBoxManage.exe setextradata "macOS 12" "VBoxInternal/Devices/efi/0/Config/DmiBIOSVersion" "string:MBP7.89"
+.\VBoxManage.exe setextradata "macOS 12" "VBoxInternal/Devices/efi/0/Config/DmiBoardProduct" "Mac-3CBD00234E554E41"
+.\VBoxManage.exe setextradata "macOS 12" "VBoxInternal/Devices/efi/0/Config/DmiBoardSerial" "NO_LOGIC_BOARD_SN"
 ```
 
 Open VirtualBox and press Start for macOS 12. Wait a couple minutes.
@@ -89,7 +90,11 @@ Follow [Fixing iMessage and other services with OpenCore](https://dortania.githu
 
 ### Install Mac OS X
 
-1. Select a language and then press the right arrow icon
+ In the menu bar of VirtualBox: View > Virtual Screen 1 to set the scale smaller or bigger (my laptop is QHD which is why I scaled to 125%)
+
+ TIP: Right Ctrl is the escape key to escape the virtual machine and use the host machine
+
+1. Select a language and then press the     right arrow icon
 2. Click Disk Utilty and then Continue
 3. On the left sidebar, click "VBOX HARDDISK Media" and then click Erase in the top right bar
 4. Enter "macOS 12 HDD" as the name and click Erase, and then Done.
@@ -99,6 +104,11 @@ Follow [Fixing iMessage and other services with OpenCore](https://dortania.githu
 8. Click the HDD we just formatted and then click Continue
 9. The installation should take 40 minutes
 10. Do not log into Apple ID until after you've gone through the setup
+11. Right Ctrl + F to enter full screen
+
+### Installing Guest Additions
+
+[Stack Overflow](https://stackoverflow.com/questions/41691803/how-to-install-guest-addition-in-mac-os-as-guest-and-windows-machine-as-host)
 
 ### Troubleshooting
 
