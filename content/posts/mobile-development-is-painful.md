@@ -166,6 +166,66 @@ platform :ios, min_ios_version_supported
 - Go to Build Phases
 - Add the fonts to "Copy Bundle Resources"
 
+### App Crashes After Resuming From Background
+
+The issue has to do with react-native-screens so add the following to `MainActivity.java``
+
+```java
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(null);
+}
+```
+
+This is the error I got.
+
+<details><summary>Fatal Exception Log</summary>
+```log
+08-19 21:45:45.043  1900  1900 E AndroidRuntime: FATAL EXCEPTION: main
+08-19 21:45:45.043  1900  1900 E AndroidRuntime: Process: com.splitthetank, PID: 1900
+08-19 21:45:45.043  1900  1900 E AndroidRuntime: java.lang.RuntimeException: Unable to start activity ComponentInfo{com.splitthetank/com.splitthetank.MainActivity}: androidx.fragment.app.Fragment$InstantiationException: Unable to instantiate fragment com.swmansion.rnscreens.ScreenStackFragment: calling Fragment constructor caused an exception
+08-19 21:45:45.043  1900  1900 E AndroidRuntime: 	at android.app.ActivityThread.performLaunchActivity(ActivityThread.java:3644)
+08-19 21:45:45.043  1900  1900 E AndroidRuntime: 	at android.app.ActivityThread.handleLaunchActivity(ActivityThread.java:3781)
+08-19 21:45:45.043  1900  1900 E AndroidRuntime: 	at android.app.servertransaction.LaunchActivityItem.execute(LaunchActivityItem.java:101)
+08-19 21:45:45.043  1900  1900 E AndroidRuntime: 	at android.app.servertransaction.TransactionExecutor.executeCallbacks(TransactionExecutor.java:138)
+08-19 21:45:45.043  1900  1900 E AndroidRuntime: 	at android.app.servertransaction.TransactionExecutor.execute(TransactionExecutor.java:95)
+08-19 21:45:45.043  1900  1900 E AndroidRuntime: 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:2306)
+08-19 21:45:45.043  1900  1900 E AndroidRuntime: 	at android.os.Handler.dispatchMessage(Handler.java:106)
+08-19 21:45:45.043  1900  1900 E AndroidRuntime: 	at android.os.Looper.loopOnce(Looper.java:201)
+08-19 21:45:45.043  1900  1900 E AndroidRuntime: 	at android.os.Looper.loop(Looper.java:288)
+08-19 21:45:45.043  1900  1900 E AndroidRuntime: 	at android.app.ActivityThread.main(ActivityThread.java:7918)
+08-19 21:45:45.043  1900  1900 E AndroidRuntime: 	at java.lang.reflect.Method.invoke(Native Method)
+08-19 21:45:45.043  1900  1900 E AndroidRuntime: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:548)
+08-19 21:45:45.043  1900  1900 E AndroidRuntime: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:936)
+08-19 21:45:45.043  1900  1900 E AndroidRuntime: Caused by: androidx.fragment.app.Fragment$InstantiationException: Unable to instantiate fragment com.swmansion.rnscreens.ScreenStackFragment: calling Fragment constructor caused an exception
+08-19 21:45:45.043  1900  1900 E AndroidRuntime: 	at androidx.fragment.app.Fragment.instantiate(Fragment.java:631)
+08-19 21:45:45.043  1900  1900 E AndroidRuntime: 	at androidx.fragment.app.FragmentContainer.instantiate(FragmentContainer.java:57)
+08-19 21:45:45.043  1900  1900 E AndroidRuntime: 	at androidx.fragment.app.FragmentManager$3.instantiate(FragmentManager.java:483)
+08-19 21:45:45.043  1900  1900 E AndroidRuntime: 	at androidx.fragment.app.FragmentStateManager.<init>(FragmentStateManager.java:85)
+08-19 21:45:45.043  1900  1900 E AndroidRuntime: 	at androidx.fragment.app.FragmentManager.restoreSaveState(FragmentManager.java:2728)
+08-19 21:45:45.043  1900  1900 E AndroidRuntime: 	at androidx.fragment.app.FragmentController.restoreSaveState(FragmentController.java:198)
+08-19 21:45:45.043  1900  1900 E AndroidRuntime: 	at androidx.fragment.app.FragmentActivity$2.onContextAvailable(FragmentActivity.java:149)
+08-19 21:45:45.043  1900  1900 E AndroidRuntime: 	at androidx.activity.contextaware.ContextAwareHelper.dispatchOnContextAvailable(ContextAwareHelper.java:99)
+08-19 21:45:45.043  1900  1900 E AndroidRuntime: 	at androidx.activity.ComponentActivity.onCreate(ComponentActivity.java:322)
+08-19 21:45:45.043  1900  1900 E AndroidRuntime: 	at androidx.fragment.app.FragmentActivity.onCreate(FragmentActivity.java:273)
+08-19 21:45:45.043  1900  1900 E AndroidRuntime: 	at com.facebook.react.ReactActivity.onCreate(ReactActivity.java:45)
+08-19 21:45:45.043  1900  1900 E AndroidRuntime: 	at android.app.Activity.performCreate(Activity.java:8342)
+08-19 21:45:45.043  1900  1900 E AndroidRuntime: 	at android.app.Activity.performCreate(Activity.java:8321)
+08-19 21:45:45.043  1900  1900 E AndroidRuntime: 	at android.app.Instrumentation.callActivityOnCreate(Instrumentation.java:1417)
+08-19 21:45:45.043  1900  1900 E AndroidRuntime: 	at android.app.ActivityThread.performLaunchActivity(ActivityThread.java:3625)
+08-19 21:45:45.043  1900  1900 E AndroidRuntime: 	... 12 more
+08-19 21:45:45.043  1900  1900 E AndroidRuntime: Caused by: java.lang.reflect.InvocationTargetException
+08-19 21:45:45.043  1900  1900 E AndroidRuntime: 	at java.lang.reflect.Constructor.newInstance0(Native Method)
+08-19 21:45:45.043  1900  1900 E AndroidRuntime: 	at java.lang.reflect.Constructor.newInstance(Constructor.java:343)
+08-19 21:45:45.043  1900  1900 E AndroidRuntime: 	at androidx.fragment.app.Fragment.instantiate(Fragment.java:613)
+08-19 21:45:45.043  1900  1900 E AndroidRuntime: 	... 26 more
+08-19 21:45:45.043  1900  1900 E AndroidRuntime: Caused by: java.lang.IllegalStateException: Screen fragments should never be restored. Follow instructions from https://github.com/software-mansion/react-native-screens/issues/17#issuecomment-424704067 to properly configure your main activity.
+08-19 21:45:45.043  1900  1900 E AndroidRuntime: 	at com.swmansion.rnscreens.ScreenFragment.<init>(ScreenFragment.kt:54)
+08-19 21:45:45.043  1900  1900 E AndroidRuntime: 	at com.swmansion.rnscreens.ScreenStackFragment.<init>(ScreenStackFragment.kt:35)
+08-19 21:45:45.043  1900  1900 E AndroidRuntime: 	... 29 more
+```
+</details>
+
 ## A Note to Future Developers
 
 Make two apps. It's much better. Learn both Swift and Kotlin. Write feature in Kotlin, write feature again in Swift. Less time wasted due to these react-native specific conflicts.
