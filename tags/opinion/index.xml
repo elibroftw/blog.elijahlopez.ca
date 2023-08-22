@@ -305,6 +305,64 @@ I bought a &amp;ldquo;gaming&amp;rdquo; laptop because at least this baby can te
 &lt;li>Go to Build Phases&lt;/li>
 &lt;li>Add the fonts to &amp;ldquo;Copy Bundle Resources&amp;rdquo;&lt;/li>
 &lt;/ul>
+&lt;h3 id="app-crashes-after-resuming-from-background" >App Crashes After Resuming From Background
+&lt;span>
+&lt;a href="#app-crashes-after-resuming-from-background">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>The issue has to do with react-native-screens so add the following to `MainActivity.java``&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ffa500">@Override&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">protected&lt;/span> &lt;span style="color:#6ab825;font-weight:bold">void&lt;/span> &lt;span style="color:#447fcf">onCreate&lt;/span>(Bundle savedInstanceState) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">super&lt;/span>.&lt;span style="color:#bbb">onCreate&lt;/span>(&lt;span style="color:#6ab825;font-weight:bold">null&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>This is the error I got.&lt;/p>
+&lt;details>&lt;summary>Fatal Exception Log&lt;/summary>
+```log
+08-19 21:45:45.043 1900 1900 E AndroidRuntime: FATAL EXCEPTION: main
+08-19 21:45:45.043 1900 1900 E AndroidRuntime: Process: com.splitthetank, PID: 1900
+08-19 21:45:45.043 1900 1900 E AndroidRuntime: java.lang.RuntimeException: Unable to start activity ComponentInfo{com.splitthetank/com.splitthetank.MainActivity}: androidx.fragment.app.Fragment$InstantiationException: Unable to instantiate fragment com.swmansion.rnscreens.ScreenStackFragment: calling Fragment constructor caused an exception
+08-19 21:45:45.043 1900 1900 E AndroidRuntime: at android.app.ActivityThread.performLaunchActivity(ActivityThread.java:3644)
+08-19 21:45:45.043 1900 1900 E AndroidRuntime: at android.app.ActivityThread.handleLaunchActivity(ActivityThread.java:3781)
+08-19 21:45:45.043 1900 1900 E AndroidRuntime: at android.app.servertransaction.LaunchActivityItem.execute(LaunchActivityItem.java:101)
+08-19 21:45:45.043 1900 1900 E AndroidRuntime: at android.app.servertransaction.TransactionExecutor.executeCallbacks(TransactionExecutor.java:138)
+08-19 21:45:45.043 1900 1900 E AndroidRuntime: at android.app.servertransaction.TransactionExecutor.execute(TransactionExecutor.java:95)
+08-19 21:45:45.043 1900 1900 E AndroidRuntime: at android.app.ActivityThread$H.handleMessage(ActivityThread.java:2306)
+08-19 21:45:45.043 1900 1900 E AndroidRuntime: at android.os.Handler.dispatchMessage(Handler.java:106)
+08-19 21:45:45.043 1900 1900 E AndroidRuntime: at android.os.Looper.loopOnce(Looper.java:201)
+08-19 21:45:45.043 1900 1900 E AndroidRuntime: at android.os.Looper.loop(Looper.java:288)
+08-19 21:45:45.043 1900 1900 E AndroidRuntime: at android.app.ActivityThread.main(ActivityThread.java:7918)
+08-19 21:45:45.043 1900 1900 E AndroidRuntime: at java.lang.reflect.Method.invoke(Native Method)
+08-19 21:45:45.043 1900 1900 E AndroidRuntime: at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:548)
+08-19 21:45:45.043 1900 1900 E AndroidRuntime: at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:936)
+08-19 21:45:45.043 1900 1900 E AndroidRuntime: Caused by: androidx.fragment.app.Fragment$InstantiationException: Unable to instantiate fragment com.swmansion.rnscreens.ScreenStackFragment: calling Fragment constructor caused an exception
+08-19 21:45:45.043 1900 1900 E AndroidRuntime: at androidx.fragment.app.Fragment.instantiate(Fragment.java:631)
+08-19 21:45:45.043 1900 1900 E AndroidRuntime: at androidx.fragment.app.FragmentContainer.instantiate(FragmentContainer.java:57)
+08-19 21:45:45.043 1900 1900 E AndroidRuntime: at androidx.fragment.app.FragmentManager$3.instantiate(FragmentManager.java:483)
+08-19 21:45:45.043 1900 1900 E AndroidRuntime: at androidx.fragment.app.FragmentStateManager.&lt;init>(FragmentStateManager.java:85)
+08-19 21:45:45.043 1900 1900 E AndroidRuntime: at androidx.fragment.app.FragmentManager.restoreSaveState(FragmentManager.java:2728)
+08-19 21:45:45.043 1900 1900 E AndroidRuntime: at androidx.fragment.app.FragmentController.restoreSaveState(FragmentController.java:198)
+08-19 21:45:45.043 1900 1900 E AndroidRuntime: at androidx.fragment.app.FragmentActivity$2.onContextAvailable(FragmentActivity.java:149)
+08-19 21:45:45.043 1900 1900 E AndroidRuntime: at androidx.activity.contextaware.ContextAwareHelper.dispatchOnContextAvailable(ContextAwareHelper.java:99)
+08-19 21:45:45.043 1900 1900 E AndroidRuntime: at androidx.activity.ComponentActivity.onCreate(ComponentActivity.java:322)
+08-19 21:45:45.043 1900 1900 E AndroidRuntime: at androidx.fragment.app.FragmentActivity.onCreate(FragmentActivity.java:273)
+08-19 21:45:45.043 1900 1900 E AndroidRuntime: at com.facebook.react.ReactActivity.onCreate(ReactActivity.java:45)
+08-19 21:45:45.043 1900 1900 E AndroidRuntime: at android.app.Activity.performCreate(Activity.java:8342)
+08-19 21:45:45.043 1900 1900 E AndroidRuntime: at android.app.Activity.performCreate(Activity.java:8321)
+08-19 21:45:45.043 1900 1900 E AndroidRuntime: at android.app.Instrumentation.callActivityOnCreate(Instrumentation.java:1417)
+08-19 21:45:45.043 1900 1900 E AndroidRuntime: at android.app.ActivityThread.performLaunchActivity(ActivityThread.java:3625)
+08-19 21:45:45.043 1900 1900 E AndroidRuntime: ... 12 more
+08-19 21:45:45.043 1900 1900 E AndroidRuntime: Caused by: java.lang.reflect.InvocationTargetException
+08-19 21:45:45.043 1900 1900 E AndroidRuntime: at java.lang.reflect.Constructor.newInstance0(Native Method)
+08-19 21:45:45.043 1900 1900 E AndroidRuntime: at java.lang.reflect.Constructor.newInstance(Constructor.java:343)
+08-19 21:45:45.043 1900 1900 E AndroidRuntime: at androidx.fragment.app.Fragment.instantiate(Fragment.java:613)
+08-19 21:45:45.043 1900 1900 E AndroidRuntime: ... 26 more
+08-19 21:45:45.043 1900 1900 E AndroidRuntime: Caused by: java.lang.IllegalStateException: Screen fragments should never be restored. Follow instructions from https://github.com/software-mansion/react-native-screens/issues/17#issuecomment-424704067 to properly configure your main activity.
+08-19 21:45:45.043 1900 1900 E AndroidRuntime: at com.swmansion.rnscreens.ScreenFragment.&lt;init>(ScreenFragment.kt:54)
+08-19 21:45:45.043 1900 1900 E AndroidRuntime: at com.swmansion.rnscreens.ScreenStackFragment.&lt;init>(ScreenStackFragment.kt:35)
+08-19 21:45:45.043 1900 1900 E AndroidRuntime: ... 29 more
+```
+&lt;/details>
 &lt;h2 id="a-note-to-future-developers" >A Note to Future Developers
 &lt;span>
 &lt;a href="#a-note-to-future-developers">

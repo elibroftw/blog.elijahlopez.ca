@@ -33,30 +33,31 @@ You can do this anytime before starting the virtual machine. This was the roadbl
 &lt;li>USB: USB 3.0&lt;/li>
 &lt;/ul>
 &lt;p>Close VirtualBox&lt;/p>
-&lt;p>Then run these commands in an administrative command prompt&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-cmd" data-lang="cmd">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">cd&lt;/span> C:\Program Files\Oracle\VirtualBox
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>VBoxManage modifyvm &lt;span style="color:#ed9d13">&amp;#34;macOS 12&amp;#34;&lt;/span> --cpuidset 00000001 000106e5 00100800 0098e3fd bfebfbff
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>VBoxManage setextradata &lt;span style="color:#ed9d13">&amp;#34;macOS 12&amp;#34;&lt;/span> &lt;span style="color:#ed9d13">&amp;#34;VBoxInternal/Devices/efi/0/Config/DmiSystemProduct&amp;#34;&lt;/span> &lt;span style="color:#ed9d13">&amp;#34;iMac19,3&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>VBoxManage setextradata &lt;span style="color:#ed9d13">&amp;#34;macOS 12&amp;#34;&lt;/span> &lt;span style="color:#ed9d13">&amp;#34;VBoxInternal/Devices/efi/0/Config/DmiSystemVersion&amp;#34;&lt;/span> &lt;span style="color:#ed9d13">&amp;#34;1.0&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>VBoxManage setextradata &lt;span style="color:#ed9d13">&amp;#34;macOS 12&amp;#34;&lt;/span> &lt;span style="color:#ed9d13">&amp;#34;VBoxInternal/Devices/efi/0/Config/DmiBoardProduct&amp;#34;&lt;/span> &lt;span style="color:#ed9d13">&amp;#34;Iloveapple&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>VBoxManage setextradata &lt;span style="color:#ed9d13">&amp;#34;macOS 12&amp;#34;&lt;/span> &lt;span style="color:#ed9d13">&amp;#34;VBoxInternal/Devices/smc/0/Config/DeviceKey&amp;#34;&lt;/span> &lt;span style="color:#ed9d13">&amp;#34;ourhardworkbythesewordsguardedpleasedontsteal(c)AppleComputerInc&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>VBoxManage setextradata &lt;span style="color:#ed9d13">&amp;#34;macOS 12&amp;#34;&lt;/span> VBoxInternal2/EfiGraphicsResolution 1920x1080
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>VBoxManage setextradata &lt;span style="color:#ed9d13">&amp;#34;macOS 12&amp;#34;&lt;/span> &lt;span style="color:#ed9d13">&amp;#34;VBoxInternal/TM/TSCMode&amp;#34;&lt;/span> &lt;span style="color:#ed9d13">&amp;#34;RealTSCOffset&amp;#34;&lt;/span>
+&lt;p>Then run these commands in an administrative Powershell. If you are using Command Prompt, use &lt;code>cd&lt;/code> instead of Set-Location.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-powershell" data-lang="powershell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#24909d">Set-Location&lt;/span> &lt;span style="color:#ed9d13">&amp;#34;C:\Program Files\Oracle\VirtualBox&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>.\VBoxManage.exe modifyvm &lt;span style="color:#ed9d13">&amp;#34;macOS 12&amp;#34;&lt;/span> --cpuidset &lt;span style="color:#3677a9">00000001&lt;/span> &lt;span style="color:#3677a9">000106e5&lt;/span> &lt;span style="color:#3677a9">00100800&lt;/span> 0098e3fd bfebfbff
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>.\VBoxManage.exe setextradata &lt;span style="color:#ed9d13">&amp;#34;macOS 12&amp;#34;&lt;/span> &lt;span style="color:#ed9d13">&amp;#34;VBoxInternal/Devices/efi/0/Config/DmiSystemProduct&amp;#34;&lt;/span> &lt;span style="color:#ed9d13">&amp;#34;iMac19,3&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>.\VBoxManage.exe setextradata &lt;span style="color:#ed9d13">&amp;#34;macOS 12&amp;#34;&lt;/span> &lt;span style="color:#ed9d13">&amp;#34;VBoxInternal/Devices/efi/0/Config/DmiSystemVersion&amp;#34;&lt;/span> &lt;span style="color:#ed9d13">&amp;#34;1.0&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>.\VBoxManage.exe setextradata &lt;span style="color:#ed9d13">&amp;#34;macOS 12&amp;#34;&lt;/span> &lt;span style="color:#ed9d13">&amp;#34;VBoxInternal/Devices/efi/0/Config/DmiBoardProduct&amp;#34;&lt;/span> &lt;span style="color:#ed9d13">&amp;#34;Iloveapple&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>.\VBoxManage.exe setextradata &lt;span style="color:#ed9d13">&amp;#34;macOS 12&amp;#34;&lt;/span> &lt;span style="color:#ed9d13">&amp;#34;VBoxInternal/Devices/smc/0/Config/DeviceKey&amp;#34;&lt;/span> &lt;span style="color:#ed9d13">&amp;#34;ourhardworkbythesewordsguardedpleasedontsteal(c)AppleComputerInc&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>.\VBoxManage.exe setextradata &lt;span style="color:#ed9d13">&amp;#34;macOS 12&amp;#34;&lt;/span> VBoxInternal2/EfiGraphicsResolution 1920x1080
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>.\VBoxManage.exe setextradata &lt;span style="color:#ed9d13">&amp;#34;macOS 12&amp;#34;&lt;/span> GUI/ScaleFactor &lt;span style="color:#3677a9">1.25&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>.\VBoxManage.exe setextradata &lt;span style="color:#ed9d13">&amp;#34;macOS 12&amp;#34;&lt;/span> &lt;span style="color:#ed9d13">&amp;#34;VBoxInternal/TM/TSCMode&amp;#34;&lt;/span> &lt;span style="color:#ed9d13">&amp;#34;RealTSCOffset&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>On AMD systems,&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-cmd" data-lang="cmd">&lt;span style="display:flex;">&lt;span>VBoxManage modifyvm &lt;span style="color:#ed9d13">&amp;#34;macOS 12&amp;#34;&lt;/span> --cpu-profile &lt;span style="color:#ed9d13">&amp;#34;Intel Core i7-6700K&amp;#34;&lt;/span>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-powershell" data-lang="powershell">&lt;span style="display:flex;">&lt;span>.\VBoxManage.exe modifyvm &lt;span style="color:#ed9d13">&amp;#34;macOS 12&amp;#34;&lt;/span> --cpu-profile &lt;span style="color:#ed9d13">&amp;#34;Intel Core i7-6700K&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>On Intel systems,&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-cmd" data-lang="cmd">&lt;span style="display:flex;">&lt;span>VBoxManage setextradata &lt;span style="color:#ed9d13">&amp;#34;macOS 12&amp;#34;&lt;/span> &lt;span style="color:#ed9d13">&amp;#34;VBoxInternal/Devices/smc/0/Config/GetKeyFromRealSMC&amp;#34;&lt;/span> 1
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-powershell" data-lang="powershell">&lt;span style="display:flex;">&lt;span>.\VBoxManage.exe setextradata &lt;span style="color:#ed9d13">&amp;#34;macOS 12&amp;#34;&lt;/span> &lt;span style="color:#ed9d13">&amp;#34;VBoxInternal/Devices/smc/0/Config/GetKeyFromRealSMC&amp;#34;&lt;/span> &lt;span style="color:#3677a9">1&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>If you get an error,&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-cmd" data-lang="cmd">&lt;span style="display:flex;">&lt;span>VBoxManage setextradata &lt;span style="color:#ed9d13">&amp;#34;macOS 12&amp;#34;&lt;/span> &lt;span style="color:#ed9d13">&amp;#34;VBoxInternal/Devices/smc/0/Config/GetKeyFromRealSMC&amp;#34;&lt;/span> 0
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-cmd" data-lang="cmd">&lt;span style="display:flex;">&lt;span>VBoxManage setextradata &lt;span style="color:#ed9d13">&amp;#34;macOS 12&amp;#34;&lt;/span> &lt;span style="color:#ed9d13">&amp;#34;VBoxInternal/Devices/efi/0/Config/DmiSystemFamily&amp;#34;&lt;/span> &lt;span style="color:#ed9d13">&amp;#34;MacBook Pro&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>VBoxManage setextradata &lt;span style="color:#ed9d13">&amp;#34;macOS 12&amp;#34;&lt;/span> &lt;span style="color:#ed9d13">&amp;#34;VBoxInternal/Devices/efi/0/Config/DmiSystemProduct&amp;#34;&lt;/span> &lt;span style="color:#ed9d13">&amp;#34;MacBookPro11,2&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>VBoxManage setextradata &lt;span style="color:#ed9d13">&amp;#34;macOS 12&amp;#34;&lt;/span> &lt;span style="color:#ed9d13">&amp;#34;VBoxInternal/Devices/efi/0/Config/DmiSystemSerial&amp;#34;&lt;/span> &lt;span style="color:#ed9d13">&amp;#34;NO_DEVICE_SN&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>VBoxManage setextradata &lt;span style="color:#ed9d13">&amp;#34;macOS 12&amp;#34;&lt;/span> &lt;span style="color:#ed9d13">&amp;#34;VBoxInternal/Devices/efi/0/Config/DmiSystemUuid&amp;#34;&lt;/span> &lt;span style="color:#ed9d13">&amp;#34;CAFECAFE-CAFE-CAFE-CAFE-DECAFFDECAFF&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>VBoxManage setextradata &lt;span style="color:#ed9d13">&amp;#34;macOS 12&amp;#34;&lt;/span> &lt;span style="color:#ed9d13">&amp;#34;VBoxInternal/Devices/efi/0/Config/DmiOEMVBoxVer&amp;#34;&lt;/span> &lt;span style="color:#ed9d13">&amp;#34;${DmiOEMVBoxVer}&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>VBoxManage setextradata &lt;span style="color:#ed9d13">&amp;#34;macOS 12&amp;#34;&lt;/span> &lt;span style="color:#ed9d13">&amp;#34;VBoxInternal/Devices/efi/0/Config/DmiOEMVBoxRev&amp;#34;&lt;/span> &lt;span style="color:#ed9d13">&amp;#34;${DmiOEMVBoxRev}&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>VBoxManage setextradata &lt;span style="color:#ed9d13">&amp;#34;macOS 12&amp;#34;&lt;/span> &lt;span style="color:#ed9d13">&amp;#34;VBoxInternal/Devices/efi/0/Config/DmiBIOSVersion&amp;#34;&lt;/span> &lt;span style="color:#ed9d13">&amp;#34;string:MBP7.89&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>VBoxManage setextradata &lt;span style="color:#ed9d13">&amp;#34;macOS 12&amp;#34;&lt;/span> &lt;span style="color:#ed9d13">&amp;#34;VBoxInternal/Devices/efi/0/Config/DmiBoardProduct&amp;#34;&lt;/span> &lt;span style="color:#ed9d13">&amp;#34;Mac-3CBD00234E554E41&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>VBoxManage setextradata &lt;span style="color:#ed9d13">&amp;#34;macOS 12&amp;#34;&lt;/span> &lt;span style="color:#ed9d13">&amp;#34;VBoxInternal/Devices/efi/0/Config/DmiBoardSerial&amp;#34;&lt;/span> &lt;span style="color:#ed9d13">&amp;#34;NO_LOGIC_BOARD_SN&amp;#34;&lt;/span>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-powershell" data-lang="powershell">&lt;span style="display:flex;">&lt;span>.\VBoxManage.exe setextradata &lt;span style="color:#ed9d13">&amp;#34;macOS 12&amp;#34;&lt;/span> &lt;span style="color:#ed9d13">&amp;#34;VBoxInternal/Devices/smc/0/Config/GetKeyFromRealSMC&amp;#34;&lt;/span> &lt;span style="color:#3677a9">0&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-powershell" data-lang="powershell">&lt;span style="display:flex;">&lt;span>.\VBoxManage.exe setextradata &lt;span style="color:#ed9d13">&amp;#34;macOS 12&amp;#34;&lt;/span> &lt;span style="color:#ed9d13">&amp;#34;VBoxInternal/Devices/efi/0/Config/DmiSystemFamily&amp;#34;&lt;/span> &lt;span style="color:#ed9d13">&amp;#34;MacBook Pro&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>.\VBoxManage.exe setextradata &lt;span style="color:#ed9d13">&amp;#34;macOS 12&amp;#34;&lt;/span> &lt;span style="color:#ed9d13">&amp;#34;VBoxInternal/Devices/efi/0/Config/DmiSystemProduct&amp;#34;&lt;/span> &lt;span style="color:#ed9d13">&amp;#34;MacBookPro11,2&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>.\VBoxManage.exe setextradata &lt;span style="color:#ed9d13">&amp;#34;macOS 12&amp;#34;&lt;/span> &lt;span style="color:#ed9d13">&amp;#34;VBoxInternal/Devices/efi/0/Config/DmiSystemSerial&amp;#34;&lt;/span> &lt;span style="color:#ed9d13">&amp;#34;NO_DEVICE_SN&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>.\VBoxManage.exe setextradata &lt;span style="color:#ed9d13">&amp;#34;macOS 12&amp;#34;&lt;/span> &lt;span style="color:#ed9d13">&amp;#34;VBoxInternal/Devices/efi/0/Config/DmiSystemUuid&amp;#34;&lt;/span> &lt;span style="color:#ed9d13">&amp;#34;CAFECAFE-CAFE-CAFE-CAFE-DECAFFDECAFF&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>.\VBoxManage.exe setextradata &lt;span style="color:#ed9d13">&amp;#34;macOS 12&amp;#34;&lt;/span> &lt;span style="color:#ed9d13">&amp;#34;VBoxInternal/Devices/efi/0/Config/DmiOEMVBoxVer&amp;#34;&lt;/span> &lt;span style="color:#ed9d13">&amp;#34;&lt;/span>&lt;span style="color:#40ffff">${DmiOEMVBoxVer}&lt;/span>&lt;span style="color:#ed9d13">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>.\VBoxManage.exe setextradata &lt;span style="color:#ed9d13">&amp;#34;macOS 12&amp;#34;&lt;/span> &lt;span style="color:#ed9d13">&amp;#34;VBoxInternal/Devices/efi/0/Config/DmiOEMVBoxRev&amp;#34;&lt;/span> &lt;span style="color:#ed9d13">&amp;#34;&lt;/span>&lt;span style="color:#40ffff">${DmiOEMVBoxRev}&lt;/span>&lt;span style="color:#ed9d13">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>.\VBoxManage.exe setextradata &lt;span style="color:#ed9d13">&amp;#34;macOS 12&amp;#34;&lt;/span> &lt;span style="color:#ed9d13">&amp;#34;VBoxInternal/Devices/efi/0/Config/DmiBIOSVersion&amp;#34;&lt;/span> &lt;span style="color:#ed9d13">&amp;#34;string:MBP7.89&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>.\VBoxManage.exe setextradata &lt;span style="color:#ed9d13">&amp;#34;macOS 12&amp;#34;&lt;/span> &lt;span style="color:#ed9d13">&amp;#34;VBoxInternal/Devices/efi/0/Config/DmiBoardProduct&amp;#34;&lt;/span> &lt;span style="color:#ed9d13">&amp;#34;Mac-3CBD00234E554E41&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>.\VBoxManage.exe setextradata &lt;span style="color:#ed9d13">&amp;#34;macOS 12&amp;#34;&lt;/span> &lt;span style="color:#ed9d13">&amp;#34;VBoxInternal/Devices/efi/0/Config/DmiBoardSerial&amp;#34;&lt;/span> &lt;span style="color:#ed9d13">&amp;#34;NO_LOGIC_BOARD_SN&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Open VirtualBox and press Start for macOS 12. Wait a couple minutes.&lt;/p>
 &lt;p>Follow &lt;a href="https://dortania.github.io/OpenCore-Post-Install/universal/iservices.html#using-gensmbios">Fixing iMessage and other services with OpenCore&lt;/a>&lt;/p>
 &lt;h3 id="install-mac-os-x" >Install Mac OS X
@@ -65,7 +66,9 @@ You can do this anytime before starting the virtual machine. This was the roadbl
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
-&lt;/h3>&lt;ol>
+&lt;/h3>&lt;p>In the menu bar of VirtualBox: View &amp;gt; Virtual Screen 1 to set the scale smaller or bigger (my laptop is QHD which is why I scaled to 125%)&lt;/p>
+&lt;p>TIP: Right Ctrl is the escape key to escape the virtual machine and use the host machine&lt;/p>
+&lt;ol>
 &lt;li>Select a language and then press the right arrow icon&lt;/li>
 &lt;li>Click Disk Utilty and then Continue&lt;/li>
 &lt;li>On the left sidebar, click &amp;ldquo;VBOX HARDDISK Media&amp;rdquo; and then click Erase in the top right bar&lt;/li>
@@ -76,7 +79,15 @@ You can do this anytime before starting the virtual machine. This was the roadbl
 &lt;li>Click the HDD we just formatted and then click Continue&lt;/li>
 &lt;li>The installation should take 40 minutes&lt;/li>
 &lt;li>Do not log into Apple ID until after you&amp;rsquo;ve gone through the setup&lt;/li>
+&lt;li>Right Ctrl + F to enter full screen&lt;/li>
 &lt;/ol>
+&lt;h3 id="installing-guest-additions" >Installing Guest Additions
+&lt;span>
+&lt;a href="#installing-guest-additions">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>&lt;a href="https://stackoverflow.com/questions/41691803/how-to-install-guest-addition-in-mac-os-as-guest-and-windows-machine-as-host">Stack Overflow&lt;/a>&lt;/p>
 &lt;h3 id="troubleshooting" >Troubleshooting
 &lt;span>
 &lt;a href="#troubleshooting">
@@ -875,6 +886,64 @@ I bought a &amp;ldquo;gaming&amp;rdquo; laptop because at least this baby can te
 &lt;li>Go to Build Phases&lt;/li>
 &lt;li>Add the fonts to &amp;ldquo;Copy Bundle Resources&amp;rdquo;&lt;/li>
 &lt;/ul>
+&lt;h3 id="app-crashes-after-resuming-from-background" >App Crashes After Resuming From Background
+&lt;span>
+&lt;a href="#app-crashes-after-resuming-from-background">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>The issue has to do with react-native-screens so add the following to `MainActivity.java``&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ffa500">@Override&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">protected&lt;/span> &lt;span style="color:#6ab825;font-weight:bold">void&lt;/span> &lt;span style="color:#447fcf">onCreate&lt;/span>(Bundle savedInstanceState) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">super&lt;/span>.&lt;span style="color:#bbb">onCreate&lt;/span>(&lt;span style="color:#6ab825;font-weight:bold">null&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>This is the error I got.&lt;/p>
+&lt;details>&lt;summary>Fatal Exception Log&lt;/summary>
+```log
+08-19 21:45:45.043 1900 1900 E AndroidRuntime: FATAL EXCEPTION: main
+08-19 21:45:45.043 1900 1900 E AndroidRuntime: Process: com.splitthetank, PID: 1900
+08-19 21:45:45.043 1900 1900 E AndroidRuntime: java.lang.RuntimeException: Unable to start activity ComponentInfo{com.splitthetank/com.splitthetank.MainActivity}: androidx.fragment.app.Fragment$InstantiationException: Unable to instantiate fragment com.swmansion.rnscreens.ScreenStackFragment: calling Fragment constructor caused an exception
+08-19 21:45:45.043 1900 1900 E AndroidRuntime: at android.app.ActivityThread.performLaunchActivity(ActivityThread.java:3644)
+08-19 21:45:45.043 1900 1900 E AndroidRuntime: at android.app.ActivityThread.handleLaunchActivity(ActivityThread.java:3781)
+08-19 21:45:45.043 1900 1900 E AndroidRuntime: at android.app.servertransaction.LaunchActivityItem.execute(LaunchActivityItem.java:101)
+08-19 21:45:45.043 1900 1900 E AndroidRuntime: at android.app.servertransaction.TransactionExecutor.executeCallbacks(TransactionExecutor.java:138)
+08-19 21:45:45.043 1900 1900 E AndroidRuntime: at android.app.servertransaction.TransactionExecutor.execute(TransactionExecutor.java:95)
+08-19 21:45:45.043 1900 1900 E AndroidRuntime: at android.app.ActivityThread$H.handleMessage(ActivityThread.java:2306)
+08-19 21:45:45.043 1900 1900 E AndroidRuntime: at android.os.Handler.dispatchMessage(Handler.java:106)
+08-19 21:45:45.043 1900 1900 E AndroidRuntime: at android.os.Looper.loopOnce(Looper.java:201)
+08-19 21:45:45.043 1900 1900 E AndroidRuntime: at android.os.Looper.loop(Looper.java:288)
+08-19 21:45:45.043 1900 1900 E AndroidRuntime: at android.app.ActivityThread.main(ActivityThread.java:7918)
+08-19 21:45:45.043 1900 1900 E AndroidRuntime: at java.lang.reflect.Method.invoke(Native Method)
+08-19 21:45:45.043 1900 1900 E AndroidRuntime: at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:548)
+08-19 21:45:45.043 1900 1900 E AndroidRuntime: at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:936)
+08-19 21:45:45.043 1900 1900 E AndroidRuntime: Caused by: androidx.fragment.app.Fragment$InstantiationException: Unable to instantiate fragment com.swmansion.rnscreens.ScreenStackFragment: calling Fragment constructor caused an exception
+08-19 21:45:45.043 1900 1900 E AndroidRuntime: at androidx.fragment.app.Fragment.instantiate(Fragment.java:631)
+08-19 21:45:45.043 1900 1900 E AndroidRuntime: at androidx.fragment.app.FragmentContainer.instantiate(FragmentContainer.java:57)
+08-19 21:45:45.043 1900 1900 E AndroidRuntime: at androidx.fragment.app.FragmentManager$3.instantiate(FragmentManager.java:483)
+08-19 21:45:45.043 1900 1900 E AndroidRuntime: at androidx.fragment.app.FragmentStateManager.&lt;init>(FragmentStateManager.java:85)
+08-19 21:45:45.043 1900 1900 E AndroidRuntime: at androidx.fragment.app.FragmentManager.restoreSaveState(FragmentManager.java:2728)
+08-19 21:45:45.043 1900 1900 E AndroidRuntime: at androidx.fragment.app.FragmentController.restoreSaveState(FragmentController.java:198)
+08-19 21:45:45.043 1900 1900 E AndroidRuntime: at androidx.fragment.app.FragmentActivity$2.onContextAvailable(FragmentActivity.java:149)
+08-19 21:45:45.043 1900 1900 E AndroidRuntime: at androidx.activity.contextaware.ContextAwareHelper.dispatchOnContextAvailable(ContextAwareHelper.java:99)
+08-19 21:45:45.043 1900 1900 E AndroidRuntime: at androidx.activity.ComponentActivity.onCreate(ComponentActivity.java:322)
+08-19 21:45:45.043 1900 1900 E AndroidRuntime: at androidx.fragment.app.FragmentActivity.onCreate(FragmentActivity.java:273)
+08-19 21:45:45.043 1900 1900 E AndroidRuntime: at com.facebook.react.ReactActivity.onCreate(ReactActivity.java:45)
+08-19 21:45:45.043 1900 1900 E AndroidRuntime: at android.app.Activity.performCreate(Activity.java:8342)
+08-19 21:45:45.043 1900 1900 E AndroidRuntime: at android.app.Activity.performCreate(Activity.java:8321)
+08-19 21:45:45.043 1900 1900 E AndroidRuntime: at android.app.Instrumentation.callActivityOnCreate(Instrumentation.java:1417)
+08-19 21:45:45.043 1900 1900 E AndroidRuntime: at android.app.ActivityThread.performLaunchActivity(ActivityThread.java:3625)
+08-19 21:45:45.043 1900 1900 E AndroidRuntime: ... 12 more
+08-19 21:45:45.043 1900 1900 E AndroidRuntime: Caused by: java.lang.reflect.InvocationTargetException
+08-19 21:45:45.043 1900 1900 E AndroidRuntime: at java.lang.reflect.Constructor.newInstance0(Native Method)
+08-19 21:45:45.043 1900 1900 E AndroidRuntime: at java.lang.reflect.Constructor.newInstance(Constructor.java:343)
+08-19 21:45:45.043 1900 1900 E AndroidRuntime: at androidx.fragment.app.Fragment.instantiate(Fragment.java:613)
+08-19 21:45:45.043 1900 1900 E AndroidRuntime: ... 26 more
+08-19 21:45:45.043 1900 1900 E AndroidRuntime: Caused by: java.lang.IllegalStateException: Screen fragments should never be restored. Follow instructions from https://github.com/software-mansion/react-native-screens/issues/17#issuecomment-424704067 to properly configure your main activity.
+08-19 21:45:45.043 1900 1900 E AndroidRuntime: at com.swmansion.rnscreens.ScreenFragment.&lt;init>(ScreenFragment.kt:54)
+08-19 21:45:45.043 1900 1900 E AndroidRuntime: at com.swmansion.rnscreens.ScreenStackFragment.&lt;init>(ScreenStackFragment.kt:35)
+08-19 21:45:45.043 1900 1900 E AndroidRuntime: ... 29 more
+```
+&lt;/details>
 &lt;h2 id="a-note-to-future-developers" >A Note to Future Developers
 &lt;span>
 &lt;a href="#a-note-to-future-developers">
