@@ -121,6 +121,31 @@ for future projects. Any project that uses React Native becomes tech debt instan
 
 I'm going to document all my issues and solution for them
 
+### How to Change Android Status Bar and Gesture Navigation Color
+
+```sh
+yarn add react-native-navigation-bar-color
+```
+
+In `index.js`:
+
+```js
+import changeNavigationBarColor from 'react-native-navigation-bar-color';
+import { Platform, useColorScheme } from 'react-native';
+
+export default function Main() {
+    const [prefersDark, setDarkTheme] = useState(useColorScheme() !== 'light');
+    // obviously need to read dark from storage
+    useEffect(() => {
+        if (Platform.OS === 'android') {
+          if (theme.colors.surface.startsWith('#')) changeNavigationBarColor(theme.colors.surface, !prefersDark);
+          else console.error('theme.colors.surface color must be #HEX in order to set the bg color of the system navigation')
+        }
+  }, [prefersDark]);
+//   ...
+}
+```
+
 ### How to Request and Check for Permissions in react-native
 
 I'll give a brief overview
