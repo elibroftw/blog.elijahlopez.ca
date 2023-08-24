@@ -113,13 +113,43 @@ Okay so finally I want to get the QR code scanner working.
     - Let me try v3 release candidate
         - Project with path ':react-native-worklets' could not be found in project ':react-native-vision-camera'
         - yarn add @shopify/react-native-skia@0.1.175
-        - yarn add react-native-worklets@https://github.com/chrfalch/react-native-worklets#d62d76c
+        - yarn add react-native-worklets@<https://github.com/chrfalch/react-native-worklets#d62d76c>
     - Tesla has [react-native-camera-kit](https://github.com/teslamotors/react-native-camera-kit) which has QR Scanning out the box
 Please stop this endless cycle of bloatware. I'm so done with react native. My friend (todo: link) even told  me about how he stopped with React Native and went native.
 I had not heeded his advice because I thought it would not be as productive as React Native (since I know React already), but the way I see things now, I would not pick React Native
 for future projects. Any project that uses React Native becomes tech debt instantly.
 
 I'm going to document all my issues and solution for them
+
+### How to Request and Check for Permissions in react-native
+
+I'll give a brief overview
+
+- set iOS permissions in `package.json`
+- Add permission to AndroidManifest.xml and Info.plist
+- on macOS, you need to run `npx react-native setup-ios-permissions && npx pod-install`
+
+Mobile code
+
+```js
+import { PERMISSIONS, RESULTS, check, request } from 'react-native-permissions';
+// check (PERM) // compare to RESULTS.DENIED
+// request(PERM) // compare to logic
+
+let permission;
+if (Platform.OS === 'ios') permission = PERMISSIONS.IOS.LOCATION_WHEN_IN_USE;
+else if (Platform.OS === 'android') permission = PERMISSIONS.ANDROID.ACCESS_FINE_LOCATION;
+else permission = null;
+
+if (permission !== null) {
+    let locationPermResult = await check(permission);
+    if (locationPermResult === RESULTS.DENIED) locationPermResult = await request(permission);
+    if (locationPermResult === RESULTS.GRANTED || locationPermResult === RESULTS.LIMITED) {
+        // can ignore the LIMITED portion if your application requires full permissions
+    }
+}
+
+```
 
 ### No Permission Handler Detected
 
@@ -129,7 +159,7 @@ I bought a "gaming" laptop because at least this baby can tear through compilati
 1. Follow [react-native-permissions iOS setup](https://github.com/zoontek/react-native-permissions#ios)
     - "reactNativePermissionsIOS" in package.json
     - Edit `Info.plist`
-    - `pod install` in the subfolder
+    - `npx react-native setup-ios-permissions && npx pod-install`
 2. If the above step did not work (always run in XCode, not VS Code), then run the following
 
 ```sh
@@ -184,47 +214,61 @@ This is the error I got.
 08-19 21:45:45.043  1900  1900 E AndroidRuntime: FATAL EXCEPTION: main
 08-19 21:45:45.043  1900  1900 E AndroidRuntime: Process: com.splitthetank, PID: 1900
 08-19 21:45:45.043  1900  1900 E AndroidRuntime: java.lang.RuntimeException: Unable to start activity ComponentInfo{com.splitthetank/com.splitthetank.MainActivity}: androidx.fragment.app.Fragment$InstantiationException: Unable to instantiate fragment com.swmansion.rnscreens.ScreenStackFragment: calling Fragment constructor caused an exception
-08-19 21:45:45.043  1900  1900 E AndroidRuntime: 	at android.app.ActivityThread.performLaunchActivity(ActivityThread.java:3644)
-08-19 21:45:45.043  1900  1900 E AndroidRuntime: 	at android.app.ActivityThread.handleLaunchActivity(ActivityThread.java:3781)
-08-19 21:45:45.043  1900  1900 E AndroidRuntime: 	at android.app.servertransaction.LaunchActivityItem.execute(LaunchActivityItem.java:101)
-08-19 21:45:45.043  1900  1900 E AndroidRuntime: 	at android.app.servertransaction.TransactionExecutor.executeCallbacks(TransactionExecutor.java:138)
-08-19 21:45:45.043  1900  1900 E AndroidRuntime: 	at android.app.servertransaction.TransactionExecutor.execute(TransactionExecutor.java:95)
-08-19 21:45:45.043  1900  1900 E AndroidRuntime: 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:2306)
-08-19 21:45:45.043  1900  1900 E AndroidRuntime: 	at android.os.Handler.dispatchMessage(Handler.java:106)
-08-19 21:45:45.043  1900  1900 E AndroidRuntime: 	at android.os.Looper.loopOnce(Looper.java:201)
-08-19 21:45:45.043  1900  1900 E AndroidRuntime: 	at android.os.Looper.loop(Looper.java:288)
-08-19 21:45:45.043  1900  1900 E AndroidRuntime: 	at android.app.ActivityThread.main(ActivityThread.java:7918)
-08-19 21:45:45.043  1900  1900 E AndroidRuntime: 	at java.lang.reflect.Method.invoke(Native Method)
-08-19 21:45:45.043  1900  1900 E AndroidRuntime: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:548)
-08-19 21:45:45.043  1900  1900 E AndroidRuntime: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:936)
+08-19 21:45:45.043  1900  1900 E AndroidRuntime:  at android.app.ActivityThread.performLaunchActivity(ActivityThread.java:3644)
+08-19 21:45:45.043  1900  1900 E AndroidRuntime:  at android.app.ActivityThread.handleLaunchActivity(ActivityThread.java:3781)
+08-19 21:45:45.043  1900  1900 E AndroidRuntime:  at android.app.servertransaction.LaunchActivityItem.execute(LaunchActivityItem.java:101)
+08-19 21:45:45.043  1900  1900 E AndroidRuntime:  at android.app.servertransaction.TransactionExecutor.executeCallbacks(TransactionExecutor.java:138)
+08-19 21:45:45.043  1900  1900 E AndroidRuntime:  at android.app.servertransaction.TransactionExecutor.execute(TransactionExecutor.java:95)
+08-19 21:45:45.043  1900  1900 E AndroidRuntime:  at android.app.ActivityThread$H.handleMessage(ActivityThread.java:2306)
+08-19 21:45:45.043  1900  1900 E AndroidRuntime:  at android.os.Handler.dispatchMessage(Handler.java:106)
+08-19 21:45:45.043  1900  1900 E AndroidRuntime:  at android.os.Looper.loopOnce(Looper.java:201)
+08-19 21:45:45.043  1900  1900 E AndroidRuntime:  at android.os.Looper.loop(Looper.java:288)
+08-19 21:45:45.043  1900  1900 E AndroidRuntime:  at android.app.ActivityThread.main(ActivityThread.java:7918)
+08-19 21:45:45.043  1900  1900 E AndroidRuntime:  at java.lang.reflect.Method.invoke(Native Method)
+08-19 21:45:45.043  1900  1900 E AndroidRuntime:  at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:548)
+08-19 21:45:45.043  1900  1900 E AndroidRuntime:  at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:936)
 08-19 21:45:45.043  1900  1900 E AndroidRuntime: Caused by: androidx.fragment.app.Fragment$InstantiationException: Unable to instantiate fragment com.swmansion.rnscreens.ScreenStackFragment: calling Fragment constructor caused an exception
-08-19 21:45:45.043  1900  1900 E AndroidRuntime: 	at androidx.fragment.app.Fragment.instantiate(Fragment.java:631)
-08-19 21:45:45.043  1900  1900 E AndroidRuntime: 	at androidx.fragment.app.FragmentContainer.instantiate(FragmentContainer.java:57)
-08-19 21:45:45.043  1900  1900 E AndroidRuntime: 	at androidx.fragment.app.FragmentManager$3.instantiate(FragmentManager.java:483)
-08-19 21:45:45.043  1900  1900 E AndroidRuntime: 	at androidx.fragment.app.FragmentStateManager.<init>(FragmentStateManager.java:85)
-08-19 21:45:45.043  1900  1900 E AndroidRuntime: 	at androidx.fragment.app.FragmentManager.restoreSaveState(FragmentManager.java:2728)
-08-19 21:45:45.043  1900  1900 E AndroidRuntime: 	at androidx.fragment.app.FragmentController.restoreSaveState(FragmentController.java:198)
-08-19 21:45:45.043  1900  1900 E AndroidRuntime: 	at androidx.fragment.app.FragmentActivity$2.onContextAvailable(FragmentActivity.java:149)
-08-19 21:45:45.043  1900  1900 E AndroidRuntime: 	at androidx.activity.contextaware.ContextAwareHelper.dispatchOnContextAvailable(ContextAwareHelper.java:99)
-08-19 21:45:45.043  1900  1900 E AndroidRuntime: 	at androidx.activity.ComponentActivity.onCreate(ComponentActivity.java:322)
-08-19 21:45:45.043  1900  1900 E AndroidRuntime: 	at androidx.fragment.app.FragmentActivity.onCreate(FragmentActivity.java:273)
-08-19 21:45:45.043  1900  1900 E AndroidRuntime: 	at com.facebook.react.ReactActivity.onCreate(ReactActivity.java:45)
-08-19 21:45:45.043  1900  1900 E AndroidRuntime: 	at android.app.Activity.performCreate(Activity.java:8342)
-08-19 21:45:45.043  1900  1900 E AndroidRuntime: 	at android.app.Activity.performCreate(Activity.java:8321)
-08-19 21:45:45.043  1900  1900 E AndroidRuntime: 	at android.app.Instrumentation.callActivityOnCreate(Instrumentation.java:1417)
-08-19 21:45:45.043  1900  1900 E AndroidRuntime: 	at android.app.ActivityThread.performLaunchActivity(ActivityThread.java:3625)
-08-19 21:45:45.043  1900  1900 E AndroidRuntime: 	... 12 more
+08-19 21:45:45.043  1900  1900 E AndroidRuntime:  at androidx.fragment.app.Fragment.instantiate(Fragment.java:631)
+08-19 21:45:45.043  1900  1900 E AndroidRuntime:  at androidx.fragment.app.FragmentContainer.instantiate(FragmentContainer.java:57)
+08-19 21:45:45.043  1900  1900 E AndroidRuntime:  at androidx.fragment.app.FragmentManager$3.instantiate(FragmentManager.java:483)
+08-19 21:45:45.043  1900  1900 E AndroidRuntime:  at androidx.fragment.app.FragmentStateManager.<init>(FragmentStateManager.java:85)
+08-19 21:45:45.043  1900  1900 E AndroidRuntime:  at androidx.fragment.app.FragmentManager.restoreSaveState(FragmentManager.java:2728)
+08-19 21:45:45.043  1900  1900 E AndroidRuntime:  at androidx.fragment.app.FragmentController.restoreSaveState(FragmentController.java:198)
+08-19 21:45:45.043  1900  1900 E AndroidRuntime:  at androidx.fragment.app.FragmentActivity$2.onContextAvailable(FragmentActivity.java:149)
+08-19 21:45:45.043  1900  1900 E AndroidRuntime:  at androidx.activity.contextaware.ContextAwareHelper.dispatchOnContextAvailable(ContextAwareHelper.java:99)
+08-19 21:45:45.043  1900  1900 E AndroidRuntime:  at androidx.activity.ComponentActivity.onCreate(ComponentActivity.java:322)
+08-19 21:45:45.043  1900  1900 E AndroidRuntime:  at androidx.fragment.app.FragmentActivity.onCreate(FragmentActivity.java:273)
+08-19 21:45:45.043  1900  1900 E AndroidRuntime:  at com.facebook.react.ReactActivity.onCreate(ReactActivity.java:45)
+08-19 21:45:45.043  1900  1900 E AndroidRuntime:  at android.app.Activity.performCreate(Activity.java:8342)
+08-19 21:45:45.043  1900  1900 E AndroidRuntime:  at android.app.Activity.performCreate(Activity.java:8321)
+08-19 21:45:45.043  1900  1900 E AndroidRuntime:  at android.app.Instrumentation.callActivityOnCreate(Instrumentation.java:1417)
+08-19 21:45:45.043  1900  1900 E AndroidRuntime:  at android.app.ActivityThread.performLaunchActivity(ActivityThread.java:3625)
+08-19 21:45:45.043  1900  1900 E AndroidRuntime:  ... 12 more
 08-19 21:45:45.043  1900  1900 E AndroidRuntime: Caused by: java.lang.reflect.InvocationTargetException
-08-19 21:45:45.043  1900  1900 E AndroidRuntime: 	at java.lang.reflect.Constructor.newInstance0(Native Method)
-08-19 21:45:45.043  1900  1900 E AndroidRuntime: 	at java.lang.reflect.Constructor.newInstance(Constructor.java:343)
-08-19 21:45:45.043  1900  1900 E AndroidRuntime: 	at androidx.fragment.app.Fragment.instantiate(Fragment.java:613)
-08-19 21:45:45.043  1900  1900 E AndroidRuntime: 	... 26 more
+08-19 21:45:45.043  1900  1900 E AndroidRuntime:  at java.lang.reflect.Constructor.newInstance0(Native Method)
+08-19 21:45:45.043  1900  1900 E AndroidRuntime:  at java.lang.reflect.Constructor.newInstance(Constructor.java:343)
+08-19 21:45:45.043  1900  1900 E AndroidRuntime:  at androidx.fragment.app.Fragment.instantiate(Fragment.java:613)
+08-19 21:45:45.043  1900  1900 E AndroidRuntime:  ... 26 more
 08-19 21:45:45.043  1900  1900 E AndroidRuntime: Caused by: java.lang.IllegalStateException: Screen fragments should never be restored. Follow instructions from https://github.com/software-mansion/react-native-screens/issues/17#issuecomment-424704067 to properly configure your main activity.
-08-19 21:45:45.043  1900  1900 E AndroidRuntime: 	at com.swmansion.rnscreens.ScreenFragment.<init>(ScreenFragment.kt:54)
-08-19 21:45:45.043  1900  1900 E AndroidRuntime: 	at com.swmansion.rnscreens.ScreenStackFragment.<init>(ScreenStackFragment.kt:35)
-08-19 21:45:45.043  1900  1900 E AndroidRuntime: 	... 29 more
+08-19 21:45:45.043  1900  1900 E AndroidRuntime:  at com.swmansion.rnscreens.ScreenFragment.<init>(ScreenFragment.kt:54)
+08-19 21:45:45.043  1900  1900 E AndroidRuntime:  at com.swmansion.rnscreens.ScreenStackFragment.<init>(ScreenStackFragment.kt:35)
+08-19 21:45:45.043  1900  1900 E AndroidRuntime:  ... 29 more
 ```
 </details>
+
+### iOS Keyboard Overlapping Text Field
+
+```jsx
+import { KeyboardAvoidingView } from 'react-native';
+import { useHeaderHeight} from '@react-navigation/elements';    // if you are using react-navigation
+
+function AScreen() {
+    const headerHeight = useHeaderHeight();
+    return <KeyboardAvoidingView behavior={Platform.select({ ios: 'padding' })} keyboardVerticalOffset={headerHeight + 20}>
+        <Searchbar />  {/* from react-native-paper */}
+    </KeyboardAvoidingView>
+}
+```
 
 ## A Note to Future Developers
 
