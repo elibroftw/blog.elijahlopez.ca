@@ -255,7 +255,36 @@ for future projects. Any project that uses React Native becomes tech debt instan
 &lt;/li>
 &lt;/ol>
 &lt;p>I&amp;rsquo;m going to document all my issues and solution for them&lt;/p>
-&lt;h3 id="no-permission-handler-detected" >No Permission Handler Detected
+&lt;h3 id="how-to-request-and-check-for-permissions-in-react-native" >How to Request and Check for Permissions in react-native
+&lt;span>
+&lt;a href="#how-to-request-and-check-for-permissions-in-react-native">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>I&amp;rsquo;ll give a brief overview&lt;/p>
+&lt;ul>
+&lt;li>set iOS permissions in &lt;code>package.json&lt;/code>&lt;/li>
+&lt;li>Add permission to AndroidManifest.xml and Info.plist&lt;/li>
+&lt;li>on macOS, you need to run &lt;code>npx react-native setup-ios-permissions &amp;amp;&amp;amp; npx pod-install&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;p>Mobile code&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-js" data-lang="js">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">import&lt;/span> { PERMISSIONS, RESULTS, check, request } from &lt;span style="color:#ed9d13">&amp;#39;react-native-permissions&amp;#39;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">// check (PERM) // compare to RESULTS.DENIED
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">// request(PERM) // compare to logic
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">let&lt;/span> permission;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">if&lt;/span> (Platform.OS === &lt;span style="color:#ed9d13">&amp;#39;ios&amp;#39;&lt;/span>) permission = PERMISSIONS.IOS.LOCATION_WHEN_IN_USE;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">else&lt;/span> &lt;span style="color:#6ab825;font-weight:bold">if&lt;/span> (Platform.OS === &lt;span style="color:#ed9d13">&amp;#39;android&amp;#39;&lt;/span>) permission = PERMISSIONS.ANDROID.ACCESS_FINE_LOCATION;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">else&lt;/span> permission = &lt;span style="color:#6ab825;font-weight:bold">null&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">if&lt;/span> (permission !== &lt;span style="color:#6ab825;font-weight:bold">null&lt;/span>) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">let&lt;/span> locationPermResult = &lt;span style="color:#6ab825;font-weight:bold">await&lt;/span> check(permission);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">if&lt;/span> (locationPermResult === RESULTS.DENIED) locationPermResult = &lt;span style="color:#6ab825;font-weight:bold">await&lt;/span> request(permission);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">if&lt;/span> (locationPermResult === RESULTS.GRANTED || locationPermResult === RESULTS.LIMITED) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic">// can ignore the LIMITED portion if your application requires full permissions
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">&lt;/span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="no-permission-handler-detected" >No Permission Handler Detected
 &lt;span>
 &lt;a href="#no-permission-handler-detected">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
@@ -268,7 +297,7 @@ I bought a &amp;ldquo;gaming&amp;rdquo; laptop because at least this baby can te
 &lt;ul>
 &lt;li>&amp;ldquo;reactNativePermissionsIOS&amp;rdquo; in package.json&lt;/li>
 &lt;li>Edit &lt;code>Info.plist&lt;/code>&lt;/li>
-&lt;li>&lt;code>pod install&lt;/code> in the subfolder&lt;/li>
+&lt;li>&lt;code>npx react-native setup-ios-permissions &amp;amp;&amp;amp; npx pod-install&lt;/code>&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;li>If the above step did not work (always run in XCode, not VS Code), then run the following&lt;/li>
@@ -363,6 +392,13 @@ I bought a &amp;ldquo;gaming&amp;rdquo; laptop because at least this baby can te
 08-19 21:45:45.043 1900 1900 E AndroidRuntime: ... 29 more
 ```
 &lt;/details>
+&lt;h3 id="ios-keyboard-overlapping-text-field" >iOS Keyboard Overlapping Text Field
+&lt;span>
+&lt;a href="#ios-keyboard-overlapping-text-field">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Let me try to install this&lt;/p>
 &lt;h2 id="a-note-to-future-developers" >A Note to Future Developers
 &lt;span>
 &lt;a href="#a-note-to-future-developers">
