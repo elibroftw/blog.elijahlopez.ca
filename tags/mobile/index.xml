@@ -825,7 +825,7 @@ Cannot expand ZIP &amp;lsquo;C:\Users\maste\Documents\GitHub\SplitTheTank\node_m
 &lt;ul>
 &lt;li>Project with path &amp;lsquo;:react-native-worklets&amp;rsquo; could not be found in project &amp;lsquo;:react-native-vision-camera&amp;rsquo;&lt;/li>
 &lt;li>yarn add @shopify/react-native-skia@0.1.175&lt;/li>
-&lt;li>yarn add react-native-worklets@https://github.com/chrfalch/react-native-worklets#d62d76c&lt;/li>
+&lt;li>yarn add react-native-worklets@&lt;a href="https://github.com/chrfalch/react-native-worklets#d62d76c">https://github.com/chrfalch/react-native-worklets#d62d76c&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;li>Tesla has &lt;a href="https://github.com/teslamotors/react-native-camera-kit">react-native-camera-kit&lt;/a> which has QR Scanning out the box
@@ -979,8 +979,16 @@ I bought a &amp;ldquo;gaming&amp;rdquo; laptop because at least this baby can te
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
-&lt;/h3>&lt;p>Let me try to install this&lt;/p>
-&lt;h2 id="a-note-to-future-developers" >A Note to Future Developers
+&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-jsx" data-lang="jsx">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">import&lt;/span> { KeyboardAvoidingView } from &lt;span style="color:#ed9d13">&amp;#39;react-native&amp;#39;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">import&lt;/span> { useHeaderHeight} from &lt;span style="color:#ed9d13">&amp;#39;@react-navigation/elements&amp;#39;&lt;/span>; &lt;span style="color:#999;font-style:italic">// if you are using react-navigation
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">function&lt;/span> AScreen() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">const&lt;/span> headerHeight = useHeaderHeight();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#6ab825;font-weight:bold">KeyboardAvoidingView&lt;/span> &lt;span style="color:#bbb">behavior&lt;/span>=&lt;span style="color:#ed9d13">&amp;#39;padding&amp;#39;&lt;/span> &lt;span style="color:#bbb">keyboardVerticalOffset&lt;/span>={headerHeight + &lt;span style="color:#3677a9">20&lt;/span>}&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#6ab825;font-weight:bold">Searchbar&lt;/span> /&amp;gt; {&lt;span style="color:#999;font-style:italic">/* from react-native-paper */&lt;/span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#6ab825;font-weight:bold">KeyboardAvoidingView&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="a-note-to-future-developers" >A Note to Future Developers
 &lt;span>
 &lt;a href="#a-note-to-future-developers">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
