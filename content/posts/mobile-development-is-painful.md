@@ -188,6 +188,10 @@ end
 platform :ios, min_ios_version_supported
 ```
 
+INFO: The `min_ios_version_supported` comes from `node_modules/react-native/scripts/react_native_pods.rb`
+
+TODO: Pull the highest IPHONEOS_DEPLOYMENT_TARGET from your project.pbxproj instead of MIN_IOS_OVERRIDE
+
 ### react-native-vector-icons Icons are Missing
 
 - In XCode, delete (remove references) font folder with the react native vector icons
