@@ -285,7 +285,7 @@ This is the error I got.
 ```
 </details>
 
-### iOS Keyboard Overlapping Text Field
+### Keyboard Overlapping Text Field
 
 ```jsx
 import { KeyboardAvoidingView } from 'react-native';
@@ -298,6 +298,14 @@ function AScreen() {
     </KeyboardAvoidingView>
 }
 ```
+
+### Running App in the "Background"
+
+This tutorial isn't short so I've linked it [here](/posts/react-native-run-app-in-background/).
+
+Stack overflow users do not understand this question. What you are looking for is "Android: prevent app from pausing"
+
+You see, I had this problem with Flutter in 2020, but three years later and 50 google searches I found out that what I wanted is called "foreground service" which requires registering a foreground service (one max) and a persistent notification. If you want to do stuff in the "background" without showing a notification the first time, that's not exactly morally correct and you'll be having a very tough time implementing it.
 
 ## A Note to Future Developers
 
