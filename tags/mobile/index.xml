@@ -997,9 +997,9 @@ I bought a &amp;ldquo;gaming&amp;rdquo; laptop because at least this baby can te
 08-19 21:45:45.043 1900 1900 E AndroidRuntime: ... 29 more
 ```
 &lt;/details>
-&lt;h3 id="ios-keyboard-overlapping-text-field" >iOS Keyboard Overlapping Text Field
+&lt;h3 id="keyboard-overlapping-text-field" >Keyboard Overlapping Text Field
 &lt;span>
-&lt;a href="#ios-keyboard-overlapping-text-field">
+&lt;a href="#keyboard-overlapping-text-field">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
@@ -1012,7 +1012,16 @@ I bought a &amp;ldquo;gaming&amp;rdquo; laptop because at least this baby can te
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#6ab825;font-weight:bold">Searchbar&lt;/span> /&amp;gt; {&lt;span style="color:#999;font-style:italic">/* from react-native-paper */&lt;/span>}
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#6ab825;font-weight:bold">KeyboardAvoidingView&lt;/span>&amp;gt;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="a-note-to-future-developers" >A Note to Future Developers
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="running-app-in-the-background" >Running App in the &amp;ldquo;Background&amp;rdquo;
+&lt;span>
+&lt;a href="#running-app-in-the-background">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>This tutorial isn&amp;rsquo;t short so I&amp;rsquo;ve linked it &lt;a href="https://blog.elijahlopez.ca/posts/react-native-run-app-in-background.md">here&lt;/a>.&lt;/p>
+&lt;p>Stack overflow users do not understand this question. What you are looking for is &amp;ldquo;Android: prevent app from pausing&amp;rdquo;&lt;/p>
+&lt;p>You see, I had this problem with Flutter in 2020, but three years later and 50 google searches I found out that what I wanted is called &amp;ldquo;foreground service&amp;rdquo; which requires registering a foreground service (one max) and a persistent notification. If you want to do stuff in the &amp;ldquo;background&amp;rdquo; without showing a notification the first time, that&amp;rsquo;s not exactly morally correct and you&amp;rsquo;ll be having a very tough time implementing it.&lt;/p>
+&lt;h2 id="a-note-to-future-developers" >A Note to Future Developers
 &lt;span>
 &lt;a href="#a-note-to-future-developers">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
