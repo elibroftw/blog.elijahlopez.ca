@@ -18,6 +18,7 @@ This solution assumes you are using `react-i18next` because I want to instill pr
 Add the following in `AndroidManifest.xml` (child of <manifest> tag)
 
 ```xml
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
 ```
 
@@ -40,13 +41,13 @@ import { useTranslation } from 'react-i18next';
 import { Platform } from 'react-native';
 
 /**
- * A react[-native] hook for notifee which registers (Android 8+ or SDK 26+ rqeuired) notification channels in order to show notifications.
+ * A react[-native] hook for notifee which registers (Android 8+ or SDK 26+ required) notification channels in order to show notifications.
  * Channels are updated on user language change so that the app notification settings use the language they prefer (if your app supports it).
  * Relevant documentation: https://notifee.app/react-native/docs/android/channels.
  * How to use?
  * @createChannels: use `createChannel[Group]` to create and update channels or channel groups based on users language
  * @phaseOutChannels: use `deleteChannel[Group]` to delete phased out channels OR if you need to update a setting that is "cannot be overridden"
- *  never delete code from this function uneless you added a channel/group back (with the same setting values)
+ *  never delete code from this function unless you added a channel/group back (with the same setting values)
  *  https://notifee.app/react-native/reference/androidchannel
  */
 export function useNotifee({ createChannels, phaseOutChannels }) {
@@ -203,18 +204,7 @@ Add a small icon (transparent background) to your android project in react-nativ
 
 ## Permission Checking
 
-Do not let your users access to feature if they the notification request. You can check like so
-
-```js
-import notifee, { AuthorizationStatus } from '@notifee/react-native';
-
-// in your react component
-const [disable, setDisable] = useState(true);
-const notifSettings = await notifee.getNotificationSettings();
-if (notifSettings.authorizationStatus >= AuthorizationStatus.AUTHORIZED) {
-    setDisable(false);
-}
-```
+If users disable notifications, the foreground service will still work.
 
 ## Foreground Service
 
@@ -222,9 +212,10 @@ if (notifSettings.authorizationStatus >= AuthorizationStatus.AUTHORIZED) {
 
 ```js
 useEffect(() => {
-    notifee.registerForegroundService(() => {
+    notifee.registerForegroundService(_notification => {
             return new Promise(() => {
-                console.log('start foreground service');
+                // this code runs after we display the notification
+                console.log('foreground service');
                 // either do you loop task here...
             });
         });
@@ -261,8 +252,9 @@ useEffect(() => {
 }, []);
 ```
 
-If you want to add the notification only at the last minute, you can modify the following code
-to create a notification when the user goes home or enters another app and then delete the notification when the user returns to the app. I'm writing this article while in the process of finishing our MVP, so obviously I'm not going to do unnecessary work that may break the background functionality I have implemented already using the above method.
+If you want to add the notification only at the last minute, you can modify the following code to create the foreground service and the notification on background here; and to stop the service (notification does not need to be explicitly stopped) when the app comes into the foreground.
+
+I'll modify the code for you in the future since this is not MVP (minimum viable product) related functionality.
 
 ```js
 // or you could modify this code
@@ -280,8 +272,6 @@ useEffect(() => {
             console.log('AppState', appState.current);
         });
 
-        return () => {
-            subscription.remove();
-        };
+        return subscription.remove;
     }, []);
 ```
