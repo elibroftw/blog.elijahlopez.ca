@@ -2,14 +2,16 @@
 title: "Finance Knowledge Database"
 date: 2023-09-08T14:15:12-04:00
 draft: false
+tags: [
+    "finance",
+]
 ---
 
 For my last co-op, I got to intern at Fiera Capital on their Private Debt team which manages $5B+ of investors. Within the first week, there are a lot of terms related not just to lending but even M&A that I had trouble figuring out the meaning. I'm writing this article to make it easier to learn and understand finance.
 
 ### Revolver or Revolving (Loan, Debt, Credit)
 
-This means that there's a max limit on how much the borrower can borrow and it can be repaid to
-free up the amount available to borrow. A credit card is an example of this.
+This means that there's a max limit on how much the borrower can borrow and it can be repaid to free up the amount available to borrow. A credit card is an example of this.
 
 ### Accordion Loan
 
@@ -113,3 +115,7 @@ I believe this is when you agree to a purchase price of $500,000 and you only gi
 ### [T / S] DSCR - [Total / Senior] Debt Service Coverage Ratio
 
 Net Operating Income / Interest Expense
+
+### Interest Paid-in-kind (PIK)
+
+The interest is accrued rather than paid in cash in the period.
