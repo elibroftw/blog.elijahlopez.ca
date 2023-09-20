@@ -14,7 +14,27 @@ If you have guidelines for other frameworks, feel free to email me your code so 
 
 There's two ways to accomplish this. One is to use serve static files and the other is to only serve the static file (through embedded resource). I'll give instructions just in case.
 
+### Serving From Static Folder
+
+Create [ProjectName/wwwroot/css/SwaggerDark.json](https://github.com/elibroftw/SwaggerDark/blob/master/SwaggerDark.css) in your project. You need to create these folders if they do not exist. If you have guidelines for other frameworks, feel free to email me your code so I can add it to the [README.md](https://github.com/elibroftw/SwaggerDark/tree/master)
+
+In Program.cs:
+
+```cs
+app.UseStaticFiles();  // ADD THIS LINE
+if (app.Environment.IsDevelopment()) {
+            app.UseHttpLogging();
+            app.UseSwagger();
+            app.UseSwaggerUI(c => {
+                c.EnableTryItOutByDefault();
+                c.InjectStylesheet("/css/SwaggerDark.css");  // ADD THIS LINE
+            });
+        }
+```
+
 ### Serving From an Embedded Resource
+
+I don't really recommend this route anymore, as it adds complexity for serving static files.
 
 Create [ProjectName/Assets/SwaggerDark.json](https://github.com/elibroftw/SwaggerDark/blob/master/SwaggerDark.css) in your project. You need to create the asset folder if it does not exist.
 
@@ -50,24 +70,6 @@ In `ProjectName/ProjectName.csproj`:
     </ItemGroup>
     <!-- ... -->
 </Project>
-```
-
-### Serving From Static Folder
-
-Create [ProjectName/wwwroot/css/SwaggerDark.json](https://github.com/elibroftw/SwaggerDark/blob/master/SwaggerDark.css) in your project. You need to create these folders if they do not exist. If you have guidelines for other frameworks, feel free to email me your code so I can add it to the [README.md](https://github.com/elibroftw/SwaggerDark/tree/master)
-
-In Program.cs:
-
-```cs
-app.UseStaticFiles();  // ADD THIS LINE
-if (app.Environment.IsDevelopment()) {
-            app.UseHttpLogging();
-            app.UseSwagger();
-            app.UseSwaggerUI(c => {
-                c.EnableTryItOutByDefault();
-                c.InjectStylesheet("/css/SwaggerDark.css");  // ADD THIS LINE
-            });
-        }
 ```
 
 You may need to hard restart your app for the changes to take effect.
