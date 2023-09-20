@@ -1440,13 +1440,35 @@ and &lt;code>SttApi/Assets/getmakes.json&lt;/code> where SttApi is the project n
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>ASP.NET Core Swagger Dark Theme</title><link>https://blog.elijahlopez.ca/posts/aspnet-swagger-dark-theme/</link><pubDate>Fri, 02 Jun 2023 12:49:14 -0400</pubDate><guid>https://blog.elijahlopez.ca/posts/aspnet-swagger-dark-theme/</guid><description>&lt;p>&lt;em>For the SEO&lt;/em>: How to add dark theme to Swagger UI ASP.NET? Follow these instructions.&lt;/p>
 &lt;p>If you have guidelines for other frameworks, feel free to email me your code so I can add it to the &lt;a href="https://github.com/elibroftw/SwaggerDark/tree/master">README.md&lt;/a>&lt;/p>
 &lt;p>There&amp;rsquo;s two ways to accomplish this. One is to use serve static files and the other is to only serve the static file (through embedded resource). I&amp;rsquo;ll give instructions just in case.&lt;/p>
-&lt;h3 id="serving-from-an-embedded-resource" >Serving From an Embedded Resource
+&lt;h3 id="serving-from-static-folder" >Serving From Static Folder
+&lt;span>
+&lt;a href="#serving-from-static-folder">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Create &lt;a href="https://github.com/elibroftw/SwaggerDark/blob/master/SwaggerDark.css">ProjectName/wwwroot/css/SwaggerDark.json&lt;/a> in your project. You need to create these folders if they do not exist. If you have guidelines for other frameworks, feel free to email me your code so I can add it to the &lt;a href="https://github.com/elibroftw/SwaggerDark/tree/master">README.md&lt;/a>&lt;/p>
+&lt;p>In Program.cs:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-cs" data-lang="cs">&lt;span style="display:flex;">&lt;span>app.UseStaticFiles(); &lt;span style="color:#999;font-style:italic">// ADD THIS LINE&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">if&lt;/span> (app.Environment.IsDevelopment()) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> app.UseHttpLogging();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> app.UseSwagger();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> app.UseSwaggerUI(c =&amp;gt; {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> c.EnableTryItOutByDefault();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> c.InjectStylesheet(&lt;span style="color:#ed9d13">&amp;#34;/css/SwaggerDark.css&amp;#34;&lt;/span>); &lt;span style="color:#999;font-style:italic">// ADD THIS LINE&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> });
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>In your &lt;code>csproj&lt;/code>, add&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csproj" data-lang="csproj">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">&amp;lt;ItemGroup&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">&amp;lt;Content&lt;/span> &lt;span style="color:#bbb">Include=&lt;/span>&lt;span style="color:#ed9d13">&amp;#34;..\AppRunner\wwwroot\**&amp;#34;&lt;/span> &lt;span style="color:#bbb">Link=&lt;/span>&lt;span style="color:#ed9d13">&amp;#34;wwwroot\%(RecursiveDir)%(Filename)%(Extension)&amp;#34;&lt;/span> &lt;span style="color:#bbb">CopyToOutputDirectory=&lt;/span>&lt;span style="color:#ed9d13">&amp;#34;Always&amp;#34;&lt;/span> &lt;span style="color:#6ab825;font-weight:bold">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">&amp;lt;/ItemGroup&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="serving-from-an-embedded-resource" >Serving From an Embedded Resource
 &lt;span>
 &lt;a href="#serving-from-an-embedded-resource">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
-&lt;/h3>&lt;p>Create &lt;a href="https://github.com/elibroftw/SwaggerDark/blob/master/SwaggerDark.css">ProjectName/Assets/SwaggerDark.json&lt;/a> in your project. You need to create the asset folder if it does not exist.&lt;/p>
+&lt;/h3>&lt;p>I don&amp;rsquo;t really recommend this route anymore, as it adds complexity for serving static files.&lt;/p>
+&lt;p>Create &lt;a href="https://github.com/elibroftw/SwaggerDark/blob/master/SwaggerDark.css">ProjectName/Assets/SwaggerDark.json&lt;/a> in your project. You need to create the asset folder if it does not exist.&lt;/p>
 &lt;p>In Program.cs:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-cs" data-lang="cs">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">using&lt;/span> &lt;span style="color:#447fcf;text-decoration:underline">System.Reflection&lt;/span>;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
@@ -1473,23 +1495,6 @@ and &lt;code>SttApi/Assets/getmakes.json&lt;/code> where SttApi is the project n
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">&amp;lt;/ItemGroup&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic">&amp;lt;!-- ... --&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">&amp;lt;/Project&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="serving-from-static-folder" >Serving From Static Folder
-&lt;span>
-&lt;a href="#serving-from-static-folder">
-&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
-&lt;/a>
-&lt;/span>
-&lt;/h3>&lt;p>Create &lt;a href="https://github.com/elibroftw/SwaggerDark/blob/master/SwaggerDark.css">ProjectName/wwwroot/css/SwaggerDark.json&lt;/a> in your project. You need to create these folders if they do not exist. If you have guidelines for other frameworks, feel free to email me your code so I can add it to the &lt;a href="https://github.com/elibroftw/SwaggerDark/tree/master">README.md&lt;/a>&lt;/p>
-&lt;p>In Program.cs:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-cs" data-lang="cs">&lt;span style="display:flex;">&lt;span>app.UseStaticFiles(); &lt;span style="color:#999;font-style:italic">// ADD THIS LINE&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">if&lt;/span> (app.Environment.IsDevelopment()) {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> app.UseHttpLogging();
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> app.UseSwagger();
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> app.UseSwaggerUI(c =&amp;gt; {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> c.EnableTryItOutByDefault();
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> c.InjectStylesheet(&lt;span style="color:#ed9d13">&amp;#34;/css/SwaggerDark.css&amp;#34;&lt;/span>); &lt;span style="color:#999;font-style:italic">// ADD THIS LINE&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> });
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>You may need to hard restart your app for the changes to take effect.&lt;/p>
 &lt;p>&lt;img src="https://raw.githubusercontent.com/Amoenus/SwaggerDark/master/SwaggerDark.png" alt="Screenshot 1 of Swagger Dark Theme" title="Swagger Dark Theme Screenshot 1">&lt;/p>
 &lt;p>&lt;img src="https://raw.githubusercontent.com/elibroftw/SwaggerDark/master/SwaggerDark2.png" alt="Screenshot 2 of Swagger Dark Theme" title="Swagger Dark Theme Screenshot 2">&lt;/p></description></item><item><title>Mark Zuckerberg and the Metaverse Are Moral Failures</title><link>https://blog.elijahlopez.ca/posts/mark-zuckerburg-and-the-metaverse-are-moral-failures/</link><pubDate>Thu, 01 Jun 2023 20:43:19 -0400</pubDate><guid>https://blog.elijahlopez.ca/posts/mark-zuckerburg-and-the-metaverse-are-moral-failures/</guid><description>&lt;p>Imagine being the CEO of a corporation with billions of dollars of which you are also the majority shareholder. Not only do you control billions of dollars personally but you control a corporation with billions of dollars in cash in the bank.&lt;/p>
