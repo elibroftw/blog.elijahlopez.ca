@@ -884,14 +884,14 @@ Adapt the following for your own use. The Route decorator indicates that the rou
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">return&lt;/span> GenerateToken(&lt;span style="color:#ed9d13">&amp;#34;email&amp;#34;&lt;/span>);
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cd2828;font-weight:bold">#if DEBUG&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cd2828;font-weight:bold">#if&lt;/span> DEBUG
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> [HttpGet]&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> [Authorize(Roles = &amp;#34;User&amp;#34;)]&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">public&lt;/span> &lt;span style="color:#6ab825;font-weight:bold">string&lt;/span> TestAuthorization() {
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">var&lt;/span> email = User.FindFirstValue(ClaimTypes.Email);
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">return&lt;/span> &lt;span style="color:#ed9d13">$&amp;#34;Your email is {email}&amp;#34;&lt;/span>;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a61717;background-color:#e3d2d2">#&lt;/span>endif
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cd2828;font-weight:bold">#endif&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">private&lt;/span> &lt;span style="color:#6ab825;font-weight:bold">string&lt;/span> GenerateToken(&lt;span style="color:#6ab825;font-weight:bold">string&lt;/span> email) {
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">var&lt;/span> claims = &lt;span style="color:#6ab825;font-weight:bold">new&lt;/span>[] { &lt;span style="color:#6ab825;font-weight:bold">new&lt;/span> Claim(ClaimTypes.Email, email), &lt;span style="color:#6ab825;font-weight:bold">new&lt;/span> Claim(ClaimTypes.Role, &lt;span style="color:#ed9d13">&amp;#34;User&amp;#34;&lt;/span>) };
@@ -910,7 +910,7 @@ Adapt the following for your own use. The Route decorator indicates that the rou
 &lt;/span>
 &lt;/h2>&lt;p>I&amp;rsquo;m making this separate because it&amp;rsquo;s a common issue and the following way is the best way to get a claim. You can use &lt;code>[Authorize(Roles = &amp;quot;...&amp;quot;)]&lt;/code> in order to gate keep a single route or all routes of a controller (put the macro before the controller in the latter case).&lt;/p>
 &lt;p>This is a method I have in my auth controller for faster debugging since I&amp;rsquo;m doing backend and frontend for a new project.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-cs" data-lang="cs">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cd2828;font-weight:bold">#if DEBUG&lt;/span>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-cs" data-lang="cs">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cd2828;font-weight:bold">#if&lt;/span> DEBUG
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> [HttpGet]&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> [Authorize(Roles = &amp;#34;User&amp;#34;)]&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">public&lt;/span> &lt;span style="color:#6ab825;font-weight:bold">string&lt;/span> TestAuthorization() {
@@ -918,7 +918,7 @@ Adapt the following for your own use. The Route decorator indicates that the rou
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">var&lt;/span> email = User.FindFirstValue(ClaimTypes.Email);
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">return&lt;/span> &lt;span style="color:#ed9d13">$&amp;#34;Your email is {email}&amp;#34;&lt;/span>;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a61717;background-color:#e3d2d2">#&lt;/span>endif
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cd2828;font-weight:bold">#endif&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>How to Convert xlsx to csv With Python</title><link>https://blog.elijahlopez.ca/posts/python-xlsx-to-csv/</link><pubDate>Fri, 10 Feb 2023 18:34:17 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/python-xlsx-to-csv/</guid><description>&lt;p>Try using &lt;a href="https://github.com/dilshod/xlsx2csv">https://github.com/dilshod/xlsx2csv&lt;/a> first.&lt;/p>
 &lt;p>If you search this question online, you&amp;rsquo;ll get the slowest answer ever which is to use pandas or xlrd. But I will show you a method
 which works on Windows and only requires you have excel installed.&lt;/p>
@@ -2692,12 +2692,12 @@ server, like a remote node.&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>To ensure the RPC-wallet is running, you can add a &amp;ldquo;start if not already running&amp;rdquo; function to your backend. I&amp;rsquo;ll share the code I use myself in the future, but these are the arguments for running your RPC. For development, ask the user to enter the wallet password since that wallet would most likely be spendable.&lt;/p>
 &lt;p>Create a file &lt;code>configs/monero-rpc.common.conf&lt;/code> to contain the base configuaration of the RPC. Other parameters are based upon whether we are running the website in devevelopment or production.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-conf" data-lang="conf">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#40ffff">non-interactive&lt;/span>=&lt;span style="color:#40ffff">1&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#40ffff">log-file&lt;/span>=&lt;span style="color:#ed9d13">&amp;#34;monero-wallet-rpc.log&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#40ffff">max-log-file-size&lt;/span>=&lt;span style="color:#40ffff">5000000&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#40ffff">max-log-files&lt;/span>=&lt;span style="color:#40ffff">2&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#40ffff">log-level&lt;/span>=&lt;span style="color:#40ffff">0&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-py" data-lang="py">&lt;span style="display:flex;">&lt;span>monero_rpc_cmd = [&lt;span style="color:#24909d">str&lt;/span>(monero_rpc), &lt;span style="color:#ed9d13">&amp;#39;--config-file&amp;#39;&lt;/span>, &lt;span style="color:#ed9d13">&amp;#39;other_files/monero-rpc.common.conf&amp;#39;&lt;/span>,
+&lt;pre tabindex="0">&lt;code class="language-conf" data-lang="conf">non-interactive=1
+log-file=&amp;#34;monero-wallet-rpc.log&amp;#34;
+max-log-file-size=5000000
+max-log-files=2
+log-level=0
+&lt;/code>&lt;/pre>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-py" data-lang="py">&lt;span style="display:flex;">&lt;span>monero_rpc_cmd = [&lt;span style="color:#24909d">str&lt;/span>(monero_rpc), &lt;span style="color:#ed9d13">&amp;#39;--config-file&amp;#39;&lt;/span>, &lt;span style="color:#ed9d13">&amp;#39;other_files/monero-rpc.common.conf&amp;#39;&lt;/span>,
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#39;--rpc-login&amp;#39;&lt;/span>, &lt;span style="color:#ed9d13">&amp;#39;monero:&amp;#39;&lt;/span> + os.environ[&lt;span style="color:#ed9d13">&amp;#39;XMR_RPC_PW&amp;#39;&lt;/span>],
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#39;--trusted-daemon&amp;#39;&lt;/span> &lt;span style="color:#6ab825;font-weight:bold">if&lt;/span> TRUSTED_DAEMON &lt;span style="color:#6ab825;font-weight:bold">else&lt;/span> &lt;span style="color:#ed9d13">&amp;#39;--untrusted-daemon&amp;#39;&lt;/span>,
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ed9d13">&amp;#39;--rpc-bind-port&amp;#39;&lt;/span>, XMR_RPC_PORT, &lt;span style="color:#ed9d13">&amp;#39;--wallet-file&amp;#39;&lt;/span>, wallet_file, &lt;span style="color:#ed9d13">&amp;#39;--password&amp;#39;&lt;/span>]

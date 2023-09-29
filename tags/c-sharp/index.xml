@@ -245,14 +245,14 @@ Adapt the following for your own use. The Route decorator indicates that the rou
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">return&lt;/span> GenerateToken(&lt;span style="color:#ed9d13">&amp;#34;email&amp;#34;&lt;/span>);
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cd2828;font-weight:bold">#if DEBUG&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cd2828;font-weight:bold">#if&lt;/span> DEBUG
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> [HttpGet]&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> [Authorize(Roles = &amp;#34;User&amp;#34;)]&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">public&lt;/span> &lt;span style="color:#6ab825;font-weight:bold">string&lt;/span> TestAuthorization() {
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">var&lt;/span> email = User.FindFirstValue(ClaimTypes.Email);
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">return&lt;/span> &lt;span style="color:#ed9d13">$&amp;#34;Your email is {email}&amp;#34;&lt;/span>;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a61717;background-color:#e3d2d2">#&lt;/span>endif
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cd2828;font-weight:bold">#endif&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">private&lt;/span> &lt;span style="color:#6ab825;font-weight:bold">string&lt;/span> GenerateToken(&lt;span style="color:#6ab825;font-weight:bold">string&lt;/span> email) {
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">var&lt;/span> claims = &lt;span style="color:#6ab825;font-weight:bold">new&lt;/span>[] { &lt;span style="color:#6ab825;font-weight:bold">new&lt;/span> Claim(ClaimTypes.Email, email), &lt;span style="color:#6ab825;font-weight:bold">new&lt;/span> Claim(ClaimTypes.Role, &lt;span style="color:#ed9d13">&amp;#34;User&amp;#34;&lt;/span>) };
@@ -271,7 +271,7 @@ Adapt the following for your own use. The Route decorator indicates that the rou
 &lt;/span>
 &lt;/h2>&lt;p>I&amp;rsquo;m making this separate because it&amp;rsquo;s a common issue and the following way is the best way to get a claim. You can use &lt;code>[Authorize(Roles = &amp;quot;...&amp;quot;)]&lt;/code> in order to gate keep a single route or all routes of a controller (put the macro before the controller in the latter case).&lt;/p>
 &lt;p>This is a method I have in my auth controller for faster debugging since I&amp;rsquo;m doing backend and frontend for a new project.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-cs" data-lang="cs">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cd2828;font-weight:bold">#if DEBUG&lt;/span>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-cs" data-lang="cs">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cd2828;font-weight:bold">#if&lt;/span> DEBUG
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> [HttpGet]&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> [Authorize(Roles = &amp;#34;User&amp;#34;)]&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">public&lt;/span> &lt;span style="color:#6ab825;font-weight:bold">string&lt;/span> TestAuthorization() {
@@ -279,7 +279,7 @@ Adapt the following for your own use. The Route decorator indicates that the rou
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">var&lt;/span> email = User.FindFirstValue(ClaimTypes.Email);
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">return&lt;/span> &lt;span style="color:#ed9d13">$&amp;#34;Your email is {email}&amp;#34;&lt;/span>;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a61717;background-color:#e3d2d2">#&lt;/span>endif
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cd2828;font-weight:bold">#endif&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>ASP.NET Core Kebab Case Routes</title><link>https://blog.elijahlopez.ca/posts/aspnet-kebab-case-routes/</link><pubDate>Sun, 29 Jan 2023 14:37:16 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/aspnet-kebab-case-routes/</guid><description>&lt;p>See &lt;a href="https://learn.microsoft.com/en-us/aspnet/core/mvc/controllers/routing#use-a-parameter-transformer-to-customize-token-replacement">docs&lt;/a> for the latest way to do it. Here is how you would do it for ASP.NET Core 7.0:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-c#" data-lang="c#">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">// Program.cs&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">// EXISTING IMPORTS&lt;/span>
