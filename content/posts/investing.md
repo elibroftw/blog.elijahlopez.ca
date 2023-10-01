@@ -15,9 +15,9 @@ I'll start off with the tips and then go over what you need to know to follow th
 ## Tips
 
 1. You're either investing for the compound effect, in which case you need to invest often, or to live off the yield, in which case you can invest once and sell shares monthly for income
-2. If you want the benefits of compounding, invest on a weeky basis (pick a random day of th week to do it on)
-3. During bull markets, invest in $VOO; the Beta coefficient plays a huge role during the inevitable bear markets and you should try to avoid that
-4. Whenever the NASDAQ-100 is down -15% or more from its peak, invest in the $QQQ rather than the $VOO. The $QQQ will give a heuristically inflation adjusted CAGR of 10% (dividends excluded). The extra 2% is a big deal when we talk about decades. I'm actually not too sure about this recommendation, so stick to the $VOO for now.
+2. If you want the benefits of compounding, invest on a weekly basis (pick a random day of th week to do it on)
+3. During bull markets, invest in the cheapest S&P500 Index ETF ($FNILX or $VOO); the Beta coefficient plays a huge role during the inevitable bear markets and you should try to avoid that
+4. Whenever the NASDAQ-100 is down -15% or more from its peak, invest in the $QQQ rather than the $FNILX. The $QQQ will give a heuristically inflation adjusted CAGR of 10% (dividends excluded). The extra 2% is a big deal when we talk about decades. I'm actually not too sure about this recommendation, so stick to the $FNILX for now.
 5. Do not try to time the market. The weekly schedule solves the issues caused by impatience.
 6. Do not pick stocks unless you are less than 25 years old. When you are less than 25, you can afford to lose all of your money.
 
@@ -45,7 +45,7 @@ If you are in Canada and want to invest in American stocks (or vice versa), you 
 
 ### Exchange-Traded Funds (ETFs)
 
-There are many ETFs and they consist of a basket of securities. Financial securities are picked and maintained by the creator of the ETF. For example, the $VOO S&P 500 Index ETF is run by Vanguard. Each ETF usually has an expense ratio. That means you get charged for owning the ETF. I recommend $VOO instead of $SPY because the expense ratio for $VOO is  0.03% compared to $SPY's 0.09%.
+There are many ETFs and they consist of a basket of securities. Financial securities are picked and maintained by the creator of the ETF. For example, the $FNILX S&P 500 Index ETF is run by Vanguard. Each ETF usually has an expense ratio. That means you get charged for owning the ETF. I recommend $FNILX instead of $VOO or $SPY because the expense ratio for $FNILX is  0% compared to $SPY's 0.09% and $VOO's 0.03%.
 
 ### Orders
 

@@ -120,7 +120,7 @@ My thought process for this is simple. We need to calculate ideal income based o
 This ia big one, if not the biggest. Typically, we want $1M in cash by the time of retirement. Why? With $1M and 7% average annual S&P 500 return, we get $50,000-$70,000 per year if income tax is payable or not. I believe this is enough since we assume there is no mortgage and we aren't going on spending sprees. With disposable income of $4,000 / month which would be worth $2,000 minimum accounting for inflation, we're good.
 In total, household networth at retirement (age 55) should be $1.5M to $3M. In business classes, we'd do some math to calculate the money needed at retirement in order to die with X amount of money. However, since we are dealing with an ideal lifestyle, we want to be able to live off passive income and leave our children with something.
 
-We need to employ some financial equations now to account for real stock market growth of 8.66%.[^Moneychimp] To get this number, I used 35 years of data from Jan 1st 1986 to Dec 31 2021, adjust for inflation, add dividends, and subtract 0.03% because VOO is the cheapest S&P 500 exchange traded fund (ETF).
+We need to employ some financial equations now to account for real stock market growth of 8.66%.[^Moneychimp] To get this number, I used 35 years of data from Jan 1st 1986 to Dec 31 2021, adjust for inflation, add dividends, and subtract 0.03% because FNILX is the cheapest S&P 500 exchange traded fund (ETF).
 
 I don't have time to update my old investing article, but I summarized the basics [here](/posts/investing).
 
