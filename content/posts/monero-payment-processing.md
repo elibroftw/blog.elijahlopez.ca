@@ -7,6 +7,7 @@ tags: [
     "cryptocurrency",
     "programming",
     "tutorial",
+    "python",
 ]
 ---
 
