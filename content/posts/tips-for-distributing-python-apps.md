@@ -3,7 +3,7 @@ title: "Tips for Distributing Python Apps"
 date: 2023-07-22T01:00:56-04:00
 draft: false
 tags: [
-    'pyhon'
+    'python'
 ]
 ---
 

@@ -22,7 +22,7 @@ The project is called "SttApi" so replace that with your own project name.
 {
     ...
     "Jwt": {
-        "Key": "Generate 22-length secret using Python secrets or something",
+        "Key": "Generate a key using Python secrets.token_hex(64) or similar",
         "Issuer": "https://localhost:44355/",           // url of the project, am using development settings
         "Audience": "https://localhost:44355/"
     }

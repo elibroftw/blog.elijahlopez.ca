@@ -3,7 +3,7 @@ title: "How to Install and Root PixelExperience ROM for OnePlus 6T"
 date: 2023-04-15T22:49:46-04:00
 tags: [
     'mobile',
-    'android',
+    'android'
 ]
 ---
 
