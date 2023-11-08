@@ -119,3 +119,7 @@ Net Operating Income / Interest Expense
 ### Interest Paid-in-kind (PIK)
 
 The interest is accrued rather than paid in cash in the period.
+
+### Expression of Interest (EOI)
+
+Interest/appeal in making a deal was expressed
