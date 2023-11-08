@@ -27,3 +27,11 @@ Sincerely,
 Elijah Lopez
 
 Ex-JetBrains user.
+
+## JetBrains Bloatware Remnant
+
+In case people have doubts about how much bloat JetBrains' software has, here are some screenshots of folders I found of JetBrains' after uninstalling all of their software from my PC.
+
+![AppData/Roaming 628MB remnant](/images/jetbrains/appdata-roaming-remnant.png)
+
+![AppData/Local 1.60GB remnant](/images/jetbrains/appdata-local-remnant.png)
