@@ -7,7 +7,16 @@
 &lt;p>So goodbye JetBrains. Two years after creating an issue to make the &lt;a href="https://youtrack.jetbrains.com/issue/IDEA-285950/Add-option-to-pin-Python-Console-in-IntelliJ">Python Console persistent on IntelliJ&lt;/a>, the issue persists in IntelliJ but alas the author is no longer a user.&lt;/p>
 &lt;p>Sincerely,&lt;/p>
 &lt;p>Elijah Lopez&lt;/p>
-&lt;p>Ex-JetBrains user.&lt;/p></description></item><item><title>C# MongoDB Add Item to Dictionary</title><link>https://blog.elijahlopez.ca/posts/csharp-mongodb-add-item-to-dictionary/</link><pubDate>Sat, 12 Aug 2023 11:12:03 -0400</pubDate><guid>https://blog.elijahlopez.ca/posts/csharp-mongodb-add-item-to-dictionary/</guid><description>&lt;p>To add an item to a Dictionary field in a MongoDB collection - say &lt;code>JoinRequests&lt;/code> of the &lt;code>Ride&lt;/code> collection - treat the dictionary field an array and utilize the &lt;code>$push&lt;/code> operator. I do not like the k, v extra outlining, but this is the only way I found that works with dots in the key. If you find an atomic way that can treat the dictionary as a Document and
+&lt;p>Ex-JetBrains user.&lt;/p>
+&lt;h2 id="jetbrains-bloatware-remnant" >JetBrains Bloatware Remnant
+&lt;span>
+&lt;a href="#jetbrains-bloatware-remnant">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>In case people have doubts about how much bloat JetBrains&amp;rsquo; software has, here are some screenshots of folders I found of JetBrains&amp;rsquo; after uninstalling all of their software from my PC.&lt;/p>
+&lt;p>&lt;img src="https://blog.elijahlopez.ca/images/jetbrains/appdata-roaming-remnant.png" alt="AppData/Roaming 628MB remnant">&lt;/p>
+&lt;p>&lt;img src="https://blog.elijahlopez.ca/images/jetbrains/appdata-local-remnant.png" alt="AppData/Local 1.60GB remnant">&lt;/p></description></item><item><title>C# MongoDB Add Item to Dictionary</title><link>https://blog.elijahlopez.ca/posts/csharp-mongodb-add-item-to-dictionary/</link><pubDate>Sat, 12 Aug 2023 11:12:03 -0400</pubDate><guid>https://blog.elijahlopez.ca/posts/csharp-mongodb-add-item-to-dictionary/</guid><description>&lt;p>To add an item to a Dictionary field in a MongoDB collection - say &lt;code>JoinRequests&lt;/code> of the &lt;code>Ride&lt;/code> collection - treat the dictionary field an array and utilize the &lt;code>$push&lt;/code> operator. I do not like the k, v extra outlining, but this is the only way I found that works with dots in the key. If you find an atomic way that can treat the dictionary as a Document and
 not as an array of documents, please let me know.&lt;/p>
 &lt;p>Here is an example.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-cs" data-lang="cs">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">using&lt;/span> &lt;span style="color:#447fcf;text-decoration:underline">Microsoft.Extensions.Options&lt;/span>;
