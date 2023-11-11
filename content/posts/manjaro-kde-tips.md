@@ -207,3 +207,25 @@ sudo cp ~/Desktop/Game.desktop ~/.local/share/applications
 ```sh
 killall steam
 ```
+
+### version GLIBC_2.38 Not Found
+
+Man I tried to show my friend today how my Manjaro system was running and of course it breaks.
+
+Manjaro fucking sucks. Let's get that straight. I tried running a pacman command and it doesn't upgrade my system. I did something and everything broke.
+
+```sh
+pacman
+pacman: /usr/lib/libc.so.6: version `GLIBC_2.38' not found (required by pacman)
+pacman: /usr/lib/libc.so.6: version `GLIBC_2.38' not found (required by /usr/lib/libalpm.so.13)
+```
+
+To fix this issue,
+
+1. Download [pacman-static](https://pkgbuild.com/~morganamilo/pacman-static/x86_64/bin/)
+2. `cd ~/Downloads && chmod +x ./pacman-static``
+3. `sudo pacman -Syu glibc-locales --overwrite /usr/lib/locale/\*/\* --noconfirm` [reference](https://forum.manjaro.org/t/stable-update-2023-10-09-mesa-grub-glibc-thunderbird-kde-frameworks-renaming/149302/2)
+4. `sudo ./pacman-static -Syu --noconfirm`
+5. `sudo pacman-mirrors`
+
+Hey hey hey, we fixed it.
