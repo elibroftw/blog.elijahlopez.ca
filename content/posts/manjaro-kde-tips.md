@@ -7,6 +7,10 @@ tags: [
 ]
 ---
 
+### Webcam
+
+Install kamoso (with Add/Remove Software).
+
 ### How to Install yay
 
 Yet Another Yogurt (yay) helps you install packages from AUR using the command `yay -S` instead of entering in commands to clone and build the package.
