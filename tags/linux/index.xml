@@ -182,7 +182,25 @@ You can choose to delete the original shortcut afterwards.&lt;/p>
 &lt;/a>
 &lt;/span>
 &lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>killall steam
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Linux USB Formatting Issues</title><link>https://blog.elijahlopez.ca/posts/linux-usb-formatting-issues/</link><pubDate>Sun, 24 Jul 2022 21:03:20 -0400</pubDate><guid>https://blog.elijahlopez.ca/posts/linux-usb-formatting-issues/</guid><description>&lt;p>When trying to test out multiple Linux distros on multiple
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="version-glibc_238-not-found" >version GLIBC_2.38 Not Found
+&lt;span>
+&lt;a href="#version-glibc_238-not-found">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Man I tried to show my friend today how my Manjaro system was running and of course it breaks.&lt;/p>
+&lt;p>Manjaro fucking sucks. Let&amp;rsquo;s get that straight. I tried running a pacman command and it doesn&amp;rsquo;t upgrade my system. I did something and everything broke.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>pacman
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>pacman: /usr/lib/libc.so.6: version &lt;span style="color:#ed9d13">`&lt;/span>GLIBC_2.38&lt;span style="color:#ed9d13">&amp;#39; not found (required by pacman)
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ed9d13">pacman: /usr/lib/libc.so.6: version `GLIBC_2.38&amp;#39;&lt;/span> not found (required by /usr/lib/libalpm.so.13)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>To fix this issue,&lt;/p>
+&lt;ol>
+&lt;li>Download &lt;a href="https://pkgbuild.com/~morganamilo/pacman-static/x86_64/bin/">pacman-static&lt;/a>&lt;/li>
+&lt;li>`cd ~/Downloads &amp;amp;&amp;amp; chmod +x ./pacman-static``&lt;/li>
+&lt;li>&lt;code>sudo pacman -Syu glibc-locales --overwrite /usr/lib/locale/\*/\* --noconfirm&lt;/code> &lt;a href="https://forum.manjaro.org/t/stable-update-2023-10-09-mesa-grub-glibc-thunderbird-kde-frameworks-renaming/149302/2">reference&lt;/a>&lt;/li>
+&lt;li>&lt;code>sudo ./pacman-static -Syu --noconfirm&lt;/code>&lt;/li>
+&lt;/ol>
+&lt;p>Hey hey hey, we fixed it.&lt;/p></description></item><item><title>Linux USB Formatting Issues</title><link>https://blog.elijahlopez.ca/posts/linux-usb-formatting-issues/</link><pubDate>Sun, 24 Jul 2022 21:03:20 -0400</pubDate><guid>https://blog.elijahlopez.ca/posts/linux-usb-formatting-issues/</guid><description>&lt;p>When trying to test out multiple Linux distros on multiple
 USB sticks, I ran into this horrible error. The creators of Balena Etcher
 simply do not care about users who soft brick their USBs. Rufus and Balena
 developers simply say that their software cannot hard brick the USB,
