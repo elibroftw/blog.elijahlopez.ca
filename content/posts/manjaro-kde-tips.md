@@ -283,3 +283,27 @@ sudo systemctl start lightdm
 
 1. Ctrl + Alt + F2
 2. `nmtui`
+
+### How to Install Python 3.10 on Manjaro (or Arch)
+
+Try this first.
+
+```sh
+yay -S python310
+```
+
+It didn't work for me, so this is how I did it.
+
+```sh
+cd ~/Downloads
+git clone https://aur.archlinux.org/python310.git
+cd python310
+makepkg -si
+# the directory is 360 MB, so only if that's a lot for your system, remove it
+cd ..
+rm -rf python310
+```
+
+This will take a LONG time...but it works.
+
+Music Caster runs on Linux again!
