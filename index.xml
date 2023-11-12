@@ -1251,6 +1251,7 @@ Since this is an example, is it not for copy-pasting but rather to show you how 
 &lt;li>&lt;a href="#failed-to-start-light-display-manager-error">Failed to Start Light Display Manager Error&lt;/a>
 &lt;ul>
 &lt;li>&lt;a href="#how-to-enable-wi-fi-in-ttyttl">How to Enable Wi-Fi in TTY/TTL&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#how-to-install-python-310-on-manjaro-or-arch">How to Install Python 3.10 on Manjaro (or Arch)&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;/ul>
@@ -1518,7 +1519,25 @@ You can choose to delete the original shortcut afterwards.&lt;/p>
 &lt;/h3>&lt;ol>
 &lt;li>Ctrl + Alt + F2&lt;/li>
 &lt;li>&lt;code>nmtui&lt;/code>&lt;/li>
-&lt;/ol></description></item><item><title>Stop Paying for 1Password</title><link>https://blog.elijahlopez.ca/posts/stop-paying-for-1password/</link><pubDate>Sat, 10 Jun 2023 09:23:46 -0400</pubDate><guid>https://blog.elijahlopez.ca/posts/stop-paying-for-1password/</guid><description>&lt;p>So I applied for an internship position at 1Password which had Bonus points for&lt;/p>
+&lt;/ol>
+&lt;h3 id="how-to-install-python-310-on-manjaro-or-arch" >How to Install Python 3.10 on Manjaro (or Arch)
+&lt;span>
+&lt;a href="#how-to-install-python-310-on-manjaro-or-arch">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Try this first.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>yay -S python310
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>It didn&amp;rsquo;t work for me, so this is how I did it.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#24909d">cd&lt;/span> ~/Downloads
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>git clone https://aur.archlinux.org/python310.git
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#24909d">cd&lt;/span> python310
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>makepkg -si
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic"># the directory is 360 MB, so only if that&amp;#39;s a lot for your system, remove it&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#24909d">cd&lt;/span> ..
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>rm -rf python310
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>This will take a LONG time&amp;hellip;but it works.&lt;/p>
+&lt;p>Music Caster runs on Linux again!&lt;/p></description></item><item><title>Stop Paying for 1Password</title><link>https://blog.elijahlopez.ca/posts/stop-paying-for-1password/</link><pubDate>Sat, 10 Jun 2023 09:23:46 -0400</pubDate><guid>https://blog.elijahlopez.ca/posts/stop-paying-for-1password/</guid><description>&lt;p>So I applied for an internship position at 1Password which had Bonus points for&lt;/p>
 &lt;blockquote>
 &lt;p>Frontend web development experience with Javascript frameworks like React, Angular, or Vue.js
 Experience with TypeScript.
