@@ -7,11 +7,19 @@ tags: [
 ]
 ---
 
-### Webcam
+{{< toc >}}
+
+## Webcam Application
+
+### KDE
 
 Install kamoso (with Add/Remove Software).
 
-### How to Install yay
+### Gnome
+
+Cheese
+
+## How to Install yay
 
 Yet Another Yogurt (yay) helps you install packages from AUR using the command `yay -S` instead of entering in commands to clone and build the package.
 
@@ -24,7 +32,7 @@ cd ..
 rm yay -rf
 ```
 
-### How to Install Packages from AUR
+## How to Install Packages from AUR
 
 You can either do `pamac build $PKGNAME` or use `yay -s $PACKAGENAME` which requires installing yay as shown above.
 
@@ -36,11 +44,25 @@ The following is a one-liner way to install packages in yay to skip the prompts.
 echo y | LANG=C yay --noprovides --answerdiff None --answerclean None --mflags "--noconfirm" $PACKAGENAME
 ```
 
-### How to install Visual Studio Code in Manajaro
+### gpg: keyserver recevie failed: No route to host
+
+```sh
+gpg --server hkp://keys.gnupg.net --recv-key KEY_GOES_HERE
+```
+
+If the above fails with "gpg: keyserver receive failed: Server indicated a failure",
+
+Use `sudo nano /etc/resolv.conf` and add Cloudflare's DNS
+
+```conf
+nameserver 1.1.1.1  # Cloudflare
+```
+
+## How to install Visual Studio Code in Manjaro
 
 To install vscode, `yay -S visual-studio-code-bin`
 
-### VSCode Fix ZSH Font
+## VSCode Fix ZSH Font
 
 ```sh
 sudo pacman -Su ttf-meslo-nerd-font-powerlevel10k ttf-firacode-nerd --noconfirm
@@ -80,30 +102,30 @@ To use this font in Visual Studio Code, set the editor font family to `firaCode 
 
 Set the terminal font-family to `firaCode Nerd Font, monospace`
 
-### Setting Default Browser for Electron Apps
+## Setting Default Browser for Electron Apps
 
 ```sh
 xdg-mime default firefox.desktop x-scheme-handler/http
 xdg-mime default firefox.desktop x-scheme-handler/https
 ```
 
-### How to fix Sudo Password Not Accepted
+## How to fix Sudo Password Not Accepted
 
 ```zsh
 systemctl start systemd-homed
 pacman -S pambase --noconfirm   # optional
 ```
 
-### Virtual Terminal
+## Virtual Terminal
 
 - Ctrl + Alt + F4 to go to virtual terminal
 - Ctrl + Alt + F1 to go back to desktop
 
-### X-Server Restart
+## X-Server Restart
 
 Ctrl + Alt + Backspace (unconfirmed)
 
-### How to setup OneDrive on Linux
+## How to setup OneDrive on Linux
 
 - [jstaf/onedriver](https://github.com/jstaf/onedriver)
 - For Arch, use `sudo pamac build onedriver`
@@ -130,13 +152,13 @@ sudo systemctl start onedrive@$USER.service
 journalctl -u onedrive@$USER # scroll to bottom to check if syncing works
 ```
 
-### Linux How to Read a File in the Terminal
+## Linux How to Read a File in the Terminal
 
 - Use `less` to read line by line (arrow up and down keys)
 - Use `more` to read page by page (arrow up and down keys)
 - Use `cat` to output entire file (useful for piping `|` commands)
 
-### How to Install an AppImage on Manjaro
+## How to Install an AppImage on Manjaro
 
 First install `appimagelauncher`
 
@@ -146,11 +168,11 @@ sudo pacman -S appimagelauncher
 
 Next double click on the downloaded AppImage
 
-### Linux Append Line to System File
+## Linux Append Line to System File
 
 To append a line to a system file, do not use `>>`. Instead use `commandForOutputGoesHere | sudo tee -a /path/to/file`
 
-### Steam Scale UI on Linux or Manjaro
+## Steam Scale UI on Linux or Manjaro
 
 Before we get started, reminder to prefer using `Steam (Runtime)` instead of `Steam (Native)`
 
@@ -195,7 +217,7 @@ You will also have to add this argument to all game shortcuts.
 
 </details>
 
-### How to Pin or Favourite Games on Steam Linux
+## How to Pin or Favourite Games on Steam Linux
 
 Copy the desktop file to your local applications directory.
 This will let you pin / favourite the game to your start menu.
@@ -206,13 +228,13 @@ mkdir ~/.local/share/applications
 sudo cp ~/Desktop/Game.desktop ~/.local/share/applications
 ```
 
-### How to Force Close Apps on Linux
+## How to Force Close Apps on Linux
 
 ```sh
 killall steam
 ```
 
-### version GLIBC_2.38 Not Found
+## version GLIBC_2.38 Not Found
 
 Man I tried to show my friend today how my Manjaro system was running and of course it breaks.
 
@@ -230,6 +252,34 @@ To fix this issue,
 2. `cd ~/Downloads && chmod +x ./pacman-static``
 3. `sudo pacman -Syu glibc-locales --overwrite /usr/lib/locale/\*/\* --noconfirm` [reference](https://forum.manjaro.org/t/stable-update-2023-10-09-mesa-grub-glibc-thunderbird-kde-frameworks-renaming/149302/2)
 4. `sudo ./pacman-static -Syu --noconfirm`
-5. `sudo pacman-mirrors`
+5. `sudo pacman-mirrors -f5`
 
 Hey hey hey, we fixed it.
+
+My laptop's battery drained so when I started it up again I got the error in the following section.
+
+## Failed to Start Light Display Manager Error
+
+In the lightdm logs, you'll see the following.
+
+```sh
+failed to start seat: seat0
+```
+
+First step is to get terminal access
+
+1. Ctrl + Alt + F2
+2. Enter your username and then your password
+3. `sudo pacman -Syu --noconfirm`
+
+```sh
+nmtui    # connect to a wifi network if you are using wifi
+sudo pacman -S lightdm-gtk-greeter --noconfirm
+sudo pacman -Syu
+sudo systemctl start lightdm
+```
+
+### How to Enable Wi-Fi in TTY/TTL
+
+1. Ctrl + Alt + F2
+2. `nmtui`
