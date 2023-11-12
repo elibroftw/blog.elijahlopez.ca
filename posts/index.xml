@@ -1217,50 +1217,112 @@ Since this is an example, is it not for copy-pasting but rather to show you how 
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">if&lt;/span> &lt;span style="color:#6ab825;font-weight:bold">not&lt;/span> create_key:
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">with&lt;/span> suppress(&lt;span style="color:#bbb">FileNotFoundError&lt;/span>):
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> wr.DeleteValue(key, app_name)
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Manjaro KDE Tips</title><link>https://blog.elijahlopez.ca/posts/manjaro-kde-tips/</link><pubDate>Tue, 27 Jun 2023 10:56:19 -0400</pubDate><guid>https://blog.elijahlopez.ca/posts/manjaro-kde-tips/</guid><description>&lt;h3 id="webcam" >Webcam
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Manjaro KDE Tips</title><link>https://blog.elijahlopez.ca/posts/manjaro-kde-tips/</link><pubDate>Tue, 27 Jun 2023 10:56:19 -0400</pubDate><guid>https://blog.elijahlopez.ca/posts/manjaro-kde-tips/</guid><description>&lt;div>
+&lt;h2>Table of Contents&lt;/h2>
+&lt;nav id="TableOfContents">
+&lt;ul>
+&lt;li>&lt;a href="#webcam-application">Webcam Application&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#kde">KDE&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#gnome">Gnome&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="#how-to-install-yay">How to Install yay&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#how-to-install-packages-from-aur">How to Install Packages from AUR&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#gpg-keyserver-recevie-failed-no-route-to-host">gpg: keyserver recevie failed: No route to host&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="#how-to-install-visual-studio-code-in-manjaro">How to install Visual Studio Code in Manjaro&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#vscode-fix-zsh-font">VSCode Fix ZSH Font&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#how-to-install-fira-code-nerd-font-on-arch">How to Install Fira Code Nerd Font on Arch&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#setting-default-browser-for-electron-apps">Setting Default Browser for Electron Apps&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#how-to-fix-sudo-password-not-accepted">How to fix Sudo Password Not Accepted&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#virtual-terminal">Virtual Terminal&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#x-server-restart">X-Server Restart&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#how-to-setup-onedrive-on-linux">How to setup OneDrive on Linux&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#linux-how-to-read-a-file-in-the-terminal">Linux How to Read a File in the Terminal&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#how-to-install-an-appimage-on-manjaro">How to Install an AppImage on Manjaro&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#linux-append-line-to-system-file">Linux Append Line to System File&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#steam-scale-ui-on-linux-or-manjaro">Steam Scale UI on Linux or Manjaro&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#how-to-pin-or-favourite-games-on-steam-linux">How to Pin or Favourite Games on Steam Linux&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#how-to-force-close-apps-on-linux">How to Force Close Apps on Linux&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#version-glibc_238-not-found">version GLIBC_2.38 Not Found&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#failed-to-start-light-display-manager-error">Failed to Start Light Display Manager Error&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#how-to-enable-wi-fi-in-ttyttl">How to Enable Wi-Fi in TTY/TTL&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/nav>
+&lt;/div>
+&lt;h2 id="webcam-application" >Webcam Application
 &lt;span>
-&lt;a href="#webcam">
+&lt;a href="#webcam-application">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;h3 id="kde" >KDE
+&lt;span>
+&lt;a href="#kde">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
 &lt;/h3>&lt;p>Install kamoso (with Add/Remove Software).&lt;/p>
-&lt;h3 id="how-to-install-yay" >How to Install yay
+&lt;h3 id="gnome" >Gnome
+&lt;span>
+&lt;a href="#gnome">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Cheese&lt;/p>
+&lt;h2 id="how-to-install-yay" >How to Install yay
 &lt;span>
 &lt;a href="#how-to-install-yay">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
-&lt;/h3>&lt;p>Yet Another Yogurt (yay) helps you install packages from AUR using the command &lt;code>yay -S&lt;/code> instead of entering in commands to clone and build the package.&lt;/p>
+&lt;/h2>&lt;p>Yet Another Yogurt (yay) helps you install packages from AUR using the command &lt;code>yay -S&lt;/code> instead of entering in commands to clone and build the package.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-zsh" data-lang="zsh">&lt;span style="display:flex;">&lt;span>pacman -S --needed git base-devel --noconfirm
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>git clone https://aur.archlinux.org/yay.git
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#24909d">cd&lt;/span> yay
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>makepkg -si
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#24909d">cd&lt;/span> ..
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>rm yay -rf
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="how-to-install-packages-from-aur" >How to Install Packages from AUR
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="how-to-install-packages-from-aur" >How to Install Packages from AUR
 &lt;span>
 &lt;a href="#how-to-install-packages-from-aur">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
-&lt;/h3>&lt;p>You can either do &lt;code>pamac build $PKGNAME&lt;/code> or use &lt;code>yay -s $PACKAGENAME&lt;/code> which requires installing yay as shown above.&lt;/p>
+&lt;/h2>&lt;p>You can either do &lt;code>pamac build $PKGNAME&lt;/code> or use &lt;code>yay -s $PACKAGENAME&lt;/code> which requires installing yay as shown above.&lt;/p>
 &lt;p>In the next section is an example on how to install visual studio code.&lt;/p>
 &lt;p>The following is a one-liner way to install packages in yay to skip the prompts.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#24909d">echo&lt;/span> y | &lt;span style="color:#40ffff">LANG&lt;/span>=C yay --noprovides --answerdiff None --answerclean None --mflags &lt;span style="color:#ed9d13">&amp;#34;--noconfirm&amp;#34;&lt;/span> &lt;span style="color:#40ffff">$PACKAGENAME&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="how-to-install-visual-studio-code-in-manajaro" >How to install Visual Studio Code in Manajaro
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="gpg-keyserver-recevie-failed-no-route-to-host" >gpg: keyserver recevie failed: No route to host
 &lt;span>
-&lt;a href="#how-to-install-visual-studio-code-in-manajaro">
+&lt;a href="#gpg-keyserver-recevie-failed-no-route-to-host">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
-&lt;/h3>&lt;p>To install vscode, &lt;code>yay -S visual-studio-code-bin&lt;/code>&lt;/p>
-&lt;h3 id="vscode-fix-zsh-font" >VSCode Fix ZSH Font
+&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>gpg --server hkp://keys.gnupg.net --recv-key KEY_GOES_HERE
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>If the above fails with &amp;ldquo;gpg: keyserver receive failed: Server indicated a failure&amp;rdquo;,&lt;/p>
+&lt;p>Use &lt;code>sudo nano /etc/resolv.conf&lt;/code> and add Cloudflare&amp;rsquo;s DNS&lt;/p>
+&lt;pre tabindex="0">&lt;code class="language-conf" data-lang="conf">nameserver 1.1.1.1 # Cloudflare
+&lt;/code>&lt;/pre>&lt;h2 id="how-to-install-visual-studio-code-in-manjaro" >How to install Visual Studio Code in Manjaro
+&lt;span>
+&lt;a href="#how-to-install-visual-studio-code-in-manjaro">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>To install vscode, &lt;code>yay -S visual-studio-code-bin&lt;/code>&lt;/p>
+&lt;h2 id="vscode-fix-zsh-font" >VSCode Fix ZSH Font
 &lt;span>
 &lt;a href="#vscode-fix-zsh-font">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
-&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>sudo pacman -Su ttf-meslo-nerd-font-powerlevel10k ttf-firacode-nerd --noconfirm
+&lt;/h2>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>sudo pacman -Su ttf-meslo-nerd-font-powerlevel10k ttf-firacode-nerd --noconfirm
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Set Terminal › Integrated: Font Family to &lt;code>firaCode Nerd Font, monospace&lt;/code> or &lt;code>MesloLGS NF, monospace&lt;/code>&lt;/p>
 &lt;h2 id="how-to-install-fira-code-nerd-font-on-arch" >How to Install Fira Code Nerd Font on Arch
 &lt;span>
@@ -1287,46 +1349,46 @@ Since this is an example, is it not for copy-pasting but rather to show you how 
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>sudo pacman -S ttf-firacode-nerd --noconfirm
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>To use this font in Visual Studio Code, set the editor font family to &lt;code>firaCode Nerd Font, 'Cascadia Code', Consolas, 'Courier New', monospace&lt;/code>.&lt;/p>
 &lt;p>Set the terminal font-family to &lt;code>firaCode Nerd Font, monospace&lt;/code>&lt;/p>
-&lt;h3 id="setting-default-browser-for-electron-apps" >Setting Default Browser for Electron Apps
+&lt;h2 id="setting-default-browser-for-electron-apps" >Setting Default Browser for Electron Apps
 &lt;span>
 &lt;a href="#setting-default-browser-for-electron-apps">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
-&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>xdg-mime default firefox.desktop x-scheme-handler/http
+&lt;/h2>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>xdg-mime default firefox.desktop x-scheme-handler/http
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>xdg-mime default firefox.desktop x-scheme-handler/https
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="how-to-fix-sudo-password-not-accepted" >How to fix Sudo Password Not Accepted
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="how-to-fix-sudo-password-not-accepted" >How to fix Sudo Password Not Accepted
 &lt;span>
 &lt;a href="#how-to-fix-sudo-password-not-accepted">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
-&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-zsh" data-lang="zsh">&lt;span style="display:flex;">&lt;span>systemctl start systemd-homed
+&lt;/h2>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-zsh" data-lang="zsh">&lt;span style="display:flex;">&lt;span>systemctl start systemd-homed
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>pacman -S pambase --noconfirm &lt;span style="color:#999;font-style:italic"># optional&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="virtual-terminal" >Virtual Terminal
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="virtual-terminal" >Virtual Terminal
 &lt;span>
 &lt;a href="#virtual-terminal">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
-&lt;/h3>&lt;ul>
+&lt;/h2>&lt;ul>
 &lt;li>Ctrl + Alt + F4 to go to virtual terminal&lt;/li>
 &lt;li>Ctrl + Alt + F1 to go back to desktop&lt;/li>
 &lt;/ul>
-&lt;h3 id="x-server-restart" >X-Server Restart
+&lt;h2 id="x-server-restart" >X-Server Restart
 &lt;span>
 &lt;a href="#x-server-restart">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
-&lt;/h3>&lt;p>Ctrl + Alt + Backspace (unconfirmed)&lt;/p>
-&lt;h3 id="how-to-setup-onedrive-on-linux" >How to setup OneDrive on Linux
+&lt;/h2>&lt;p>Ctrl + Alt + Backspace (unconfirmed)&lt;/p>
+&lt;h2 id="how-to-setup-onedrive-on-linux" >How to setup OneDrive on Linux
 &lt;span>
 &lt;a href="#how-to-setup-onedrive-on-linux">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
-&lt;/h3>&lt;ul>
+&lt;/h2>&lt;ul>
 &lt;li>&lt;a href="https://github.com/jstaf/onedriver">jstaf/onedriver&lt;/a>&lt;/li>
 &lt;li>For Arch, use &lt;code>sudo pamac build onedriver&lt;/code>&lt;/li>
 &lt;/ul>
@@ -1339,40 +1401,40 @@ Since this is an example, is it not for copy-pasting but rather to show you how 
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>sudo systemctl &lt;span style="color:#24909d">enable&lt;/span> onedrive@&lt;span style="color:#40ffff">$USER&lt;/span>.service
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo systemctl start onedrive@&lt;span style="color:#40ffff">$USER&lt;/span>.service
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>journalctl -u onedrive@&lt;span style="color:#40ffff">$USER&lt;/span> &lt;span style="color:#999;font-style:italic"># scroll to bottom to check if syncing works&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="linux-how-to-read-a-file-in-the-terminal" >Linux How to Read a File in the Terminal
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="linux-how-to-read-a-file-in-the-terminal" >Linux How to Read a File in the Terminal
 &lt;span>
 &lt;a href="#linux-how-to-read-a-file-in-the-terminal">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
-&lt;/h3>&lt;ul>
+&lt;/h2>&lt;ul>
 &lt;li>Use &lt;code>less&lt;/code> to read line by line (arrow up and down keys)&lt;/li>
 &lt;li>Use &lt;code>more&lt;/code> to read page by page (arrow up and down keys)&lt;/li>
 &lt;li>Use &lt;code>cat&lt;/code> to output entire file (useful for piping &lt;code>|&lt;/code> commands)&lt;/li>
 &lt;/ul>
-&lt;h3 id="how-to-install-an-appimage-on-manjaro" >How to Install an AppImage on Manjaro
+&lt;h2 id="how-to-install-an-appimage-on-manjaro" >How to Install an AppImage on Manjaro
 &lt;span>
 &lt;a href="#how-to-install-an-appimage-on-manjaro">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
-&lt;/h3>&lt;p>First install &lt;code>appimagelauncher&lt;/code>&lt;/p>
+&lt;/h2>&lt;p>First install &lt;code>appimagelauncher&lt;/code>&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>sudo pacman -S appimagelauncher
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Next double click on the downloaded AppImage&lt;/p>
-&lt;h3 id="linux-append-line-to-system-file" >Linux Append Line to System File
+&lt;h2 id="linux-append-line-to-system-file" >Linux Append Line to System File
 &lt;span>
 &lt;a href="#linux-append-line-to-system-file">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
-&lt;/h3>&lt;p>To append a line to a system file, do not use &lt;code>&amp;gt;&amp;gt;&lt;/code>. Instead use &lt;code>commandForOutputGoesHere | sudo tee -a /path/to/file&lt;/code>&lt;/p>
-&lt;h3 id="steam-scale-ui-on-linux-or-manjaro" >Steam Scale UI on Linux or Manjaro
+&lt;/h2>&lt;p>To append a line to a system file, do not use &lt;code>&amp;gt;&amp;gt;&lt;/code>. Instead use &lt;code>commandForOutputGoesHere | sudo tee -a /path/to/file&lt;/code>&lt;/p>
+&lt;h2 id="steam-scale-ui-on-linux-or-manjaro" >Steam Scale UI on Linux or Manjaro
 &lt;span>
 &lt;a href="#steam-scale-ui-on-linux-or-manjaro">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
-&lt;/h3>&lt;p>Before we get started, reminder to prefer using &lt;code>Steam (Runtime)&lt;/code> instead of &lt;code>Steam (Native)&lt;/code>&lt;/p>
+&lt;/h2>&lt;p>Before we get started, reminder to prefer using &lt;code>Steam (Runtime)&lt;/code> instead of &lt;code>Steam (Native)&lt;/code>&lt;/p>
 &lt;p>If you have root access, run the following command so that steam will be properly scaled
 no matter how it is launched (steam desktop shortcut, terminal, game desktop shortcut).&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#24909d">echo&lt;/span> &lt;span style="color:#ed9d13">&amp;#34;STEAM_FORCE_DESKTOPUI_SCALING=&amp;#39;1.5&amp;#39;&amp;#34;&lt;/span> | sudo tee -a /etc/environment
@@ -1390,31 +1452,31 @@ no matter how it is launched (steam desktop shortcut, terminal, game desktop sho
 &lt;/code>&lt;/pre>&lt;p>Save the file and restart steam (the next section has a command for shutting down apps by program name).&lt;/p>
 &lt;p>You will also have to add this argument to all game shortcuts.&lt;/p>
 &lt;/details>
-&lt;h3 id="how-to-pin-or-favourite-games-on-steam-linux" >How to Pin or Favourite Games on Steam Linux
+&lt;h2 id="how-to-pin-or-favourite-games-on-steam-linux" >How to Pin or Favourite Games on Steam Linux
 &lt;span>
 &lt;a href="#how-to-pin-or-favourite-games-on-steam-linux">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
-&lt;/h3>&lt;p>Copy the desktop file to your local applications directory.
+&lt;/h2>&lt;p>Copy the desktop file to your local applications directory.
 This will let you pin / favourite the game to your start menu.
 You can choose to delete the original shortcut afterwards.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>mkdir ~/.local/share/applications
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo cp ~/Desktop/Game.desktop ~/.local/share/applications
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="how-to-force-close-apps-on-linux" >How to Force Close Apps on Linux
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="how-to-force-close-apps-on-linux" >How to Force Close Apps on Linux
 &lt;span>
 &lt;a href="#how-to-force-close-apps-on-linux">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
-&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>killall steam
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="version-glibc_238-not-found" >version GLIBC_2.38 Not Found
+&lt;/h2>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>killall steam
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="version-glibc_238-not-found" >version GLIBC_2.38 Not Found
 &lt;span>
 &lt;a href="#version-glibc_238-not-found">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
-&lt;/h3>&lt;p>Man I tried to show my friend today how my Manjaro system was running and of course it breaks.&lt;/p>
+&lt;/h2>&lt;p>Man I tried to show my friend today how my Manjaro system was running and of course it breaks.&lt;/p>
 &lt;p>Manjaro fucking sucks. Let&amp;rsquo;s get that straight. I tried running a pacman command and it doesn&amp;rsquo;t upgrade my system. I did something and everything broke.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>pacman
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>pacman: /usr/lib/libc.so.6: version &lt;span style="color:#ed9d13">`&lt;/span>GLIBC_2.38&lt;span style="color:#ed9d13">&amp;#39; not found (required by pacman)
@@ -1425,9 +1487,38 @@ You can choose to delete the original shortcut afterwards.&lt;/p>
 &lt;li>`cd ~/Downloads &amp;amp;&amp;amp; chmod +x ./pacman-static``&lt;/li>
 &lt;li>&lt;code>sudo pacman -Syu glibc-locales --overwrite /usr/lib/locale/\*/\* --noconfirm&lt;/code> &lt;a href="https://forum.manjaro.org/t/stable-update-2023-10-09-mesa-grub-glibc-thunderbird-kde-frameworks-renaming/149302/2">reference&lt;/a>&lt;/li>
 &lt;li>&lt;code>sudo ./pacman-static -Syu --noconfirm&lt;/code>&lt;/li>
-&lt;li>&lt;code>sudo pacman-mirrors&lt;/code>&lt;/li>
+&lt;li>&lt;code>sudo pacman-mirrors -f5&lt;/code>&lt;/li>
 &lt;/ol>
-&lt;p>Hey hey hey, we fixed it.&lt;/p></description></item><item><title>Stop Paying for 1Password</title><link>https://blog.elijahlopez.ca/posts/stop-paying-for-1password/</link><pubDate>Sat, 10 Jun 2023 09:23:46 -0400</pubDate><guid>https://blog.elijahlopez.ca/posts/stop-paying-for-1password/</guid><description>&lt;p>So I applied for an internship position at 1Password which had Bonus points for&lt;/p>
+&lt;p>Hey hey hey, we fixed it.&lt;/p>
+&lt;p>My laptop&amp;rsquo;s battery drained so when I started it up again I got the error in the following section.&lt;/p>
+&lt;h2 id="failed-to-start-light-display-manager-error" >Failed to Start Light Display Manager Error
+&lt;span>
+&lt;a href="#failed-to-start-light-display-manager-error">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>In the lightdm logs, you&amp;rsquo;ll see the following.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>failed to start seat: seat0
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>First step is to get terminal access&lt;/p>
+&lt;ol>
+&lt;li>Ctrl + Alt + F2&lt;/li>
+&lt;li>Enter your username and then your password&lt;/li>
+&lt;li>&lt;code>sudo pacman -Syu --noconfirm&lt;/code>&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>nmtui &lt;span style="color:#999;font-style:italic"># connect to a wifi network if you are using wifi&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo pacman -S lightdm-gtk-greeter --noconfirm
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo pacman -Syu
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo systemctl start lightdm
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="how-to-enable-wi-fi-in-ttyttl" >How to Enable Wi-Fi in TTY/TTL
+&lt;span>
+&lt;a href="#how-to-enable-wi-fi-in-ttyttl">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ol>
+&lt;li>Ctrl + Alt + F2&lt;/li>
+&lt;li>&lt;code>nmtui&lt;/code>&lt;/li>
+&lt;/ol></description></item><item><title>Stop Paying for 1Password</title><link>https://blog.elijahlopez.ca/posts/stop-paying-for-1password/</link><pubDate>Sat, 10 Jun 2023 09:23:46 -0400</pubDate><guid>https://blog.elijahlopez.ca/posts/stop-paying-for-1password/</guid><description>&lt;p>So I applied for an internship position at 1Password which had Bonus points for&lt;/p>
 &lt;blockquote>
 &lt;p>Frontend web development experience with Javascript frameworks like React, Angular, or Vue.js
 Experience with TypeScript.
