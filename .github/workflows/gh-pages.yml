@@ -1,14 +1,9 @@
 name: Push hugo build to gh-pages
 
-on:
-  push:
-    branches:
-      # if you're changing the branch from master, also change the `master` in `refs/heads/master` at the bottom
-      - master
-  pull_request:
+on: [push, pull_request]
 
 jobs:
-  deploy:
+  ci:
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -45,9 +40,8 @@ jobs:
         run: |
           hugo --minify
 
-      - name: Push public to gh-pages
-        # change this if your branch is not master
-        if: ${{ github.ref == 'refs/heads/master' }}
+      - name: Deploy public dir to gh-pages branch
+        if: github.event.push.ref == format('refs/heads/{0}', github.event.repository.default_branch)
         run: |
           cd public
           git config user.name '${{ github.actor }}'
