@@ -24,7 +24,7 @@ Cheese
 Yet Another Yogurt (yay) helps you install packages from AUR using the command `yay -S` instead of entering in commands to clone and build the package.
 
 ```zsh
-pacman -S --needed git base-devel --noconfirm
+pacman -S --needed --noconfirm git base-devel
 git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si
@@ -41,7 +41,7 @@ In the next section is an example on how to install visual studio code.
 The following is a one-liner way to install packages in yay to skip the prompts.
 
 ```sh
-echo y | LANG=C yay --noprovides --answerdiff None --answerclean None --mflags "--noconfirm" $PACKAGENAME
+echo y | LANG=C yay --provides=false --answerdiff=None --answerclean=None --mflags "--noconfirm" -S $list_of_packages
 ```
 
 ### gpg: keyserver recevie failed: No route to host
