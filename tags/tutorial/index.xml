@@ -973,13 +973,44 @@ Adapt the following for your own use. The Route decorator indicates that the rou
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }, &lt;span style="color:#3677a9">250&lt;/span>);
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>yt-dlp Audio Download Tutorial</title><link>https://blog.elijahlopez.ca/posts/yt-dlp-audio-download/</link><pubDate>Mon, 22 May 2023 20:33:19 -0400</pubDate><guid>https://blog.elijahlopez.ca/posts/yt-dlp-audio-download/</guid><description>&lt;p>Since my &lt;a href="https://www.youtube.com/watch?v=Tq9qpA2QOTI">yt-dlp propaganda on YouTube is getting many views&lt;/a>, I thought I&amp;rsquo;d create this article and a future video on how to use yt-dlp to download audio from websites, primarily YouTube.&lt;/p>
-&lt;h2 id="installing-yt-dlp" >Installing yt-dlp
-&lt;span>
-&lt;a href="#installing-yt-dlp">
-&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
-&lt;/a>
-&lt;/span>
-&lt;/h2>&lt;p>Following the &lt;a href="https://github.com/yt-dlp/yt-dlp/wiki/Installation">official instructions&lt;/a>&lt;/p>
+&lt;details>&lt;summary>Installing yt-dlp&lt;/summary>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;a href="https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp.exe">Windows download&lt;/a>&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>winget install yt-dlp&lt;/code>&lt;/li>
+&lt;li>&lt;code>choco install yt-dlp&lt;/code>&lt;/li>
+&lt;li>&lt;code>scoop install yt-dlp&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp_macos">macOS download&lt;/a>&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>brew install yt-dlp&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp">Linux download&lt;/a>&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;code>sudo pacman -Syu yt-dlp --noconfirm&lt;/code>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>sudo add-apt-repository ppa:tomtomtom/yt-dlp &lt;span style="color:#999;font-style:italic"># Add ppa repo to apt&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo apt update &lt;span style="color:#999;font-style:italic"># Update package list&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo apt install yt-dlp &lt;span style="color:#999;font-style:italic"># Install yt-dlp&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Via Python 3+&lt;/p>
+&lt;ul>
+&lt;li>Windows: &lt;code>python -m pip install -U yt-dlp&lt;/code>&lt;/li>
+&lt;li>Other: &lt;code>python3 -m pip install -U yt-dlp&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/details>
 &lt;h2 id="installing-ffmpeg" >Installing ffmpeg
 &lt;span>
 &lt;a href="#installing-ffmpeg">
