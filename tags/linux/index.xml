@@ -65,7 +65,7 @@
 &lt;/a>
 &lt;/span>
 &lt;/h2>&lt;p>Yet Another Yogurt (yay) helps you install packages from AUR using the command &lt;code>yay -S&lt;/code> instead of entering in commands to clone and build the package.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-zsh" data-lang="zsh">&lt;span style="display:flex;">&lt;span>pacman -S --needed git base-devel --noconfirm
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-zsh" data-lang="zsh">&lt;span style="display:flex;">&lt;span>pacman -S --needed --noconfirm git base-devel
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>git clone https://aur.archlinux.org/yay.git
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#24909d">cd&lt;/span> yay
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>makepkg -si
@@ -80,7 +80,7 @@
 &lt;/h2>&lt;p>You can either do &lt;code>pamac build $PKGNAME&lt;/code> or use &lt;code>yay -s $PACKAGENAME&lt;/code> which requires installing yay as shown above.&lt;/p>
 &lt;p>In the next section is an example on how to install visual studio code.&lt;/p>
 &lt;p>The following is a one-liner way to install packages in yay to skip the prompts.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#24909d">echo&lt;/span> y | &lt;span style="color:#40ffff">LANG&lt;/span>=C yay --noprovides --answerdiff None --answerclean None --mflags &lt;span style="color:#ed9d13">&amp;#34;--noconfirm&amp;#34;&lt;/span> &lt;span style="color:#40ffff">$PACKAGENAME&lt;/span>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#24909d">echo&lt;/span> y | &lt;span style="color:#40ffff">LANG&lt;/span>=C yay --provides=&lt;span style="color:#24909d">false&lt;/span> --answerdiff=None --answerclean=None --mflags &lt;span style="color:#ed9d13">&amp;#34;--noconfirm&amp;#34;&lt;/span> -S &lt;span style="color:#40ffff">$list_of_packages&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="gpg-keyserver-recevie-failed-no-route-to-host" >gpg: keyserver recevie failed: No route to host
 &lt;span>
 &lt;a href="#gpg-keyserver-recevie-failed-no-route-to-host">
