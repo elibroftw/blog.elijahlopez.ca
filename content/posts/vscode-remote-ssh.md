@@ -45,6 +45,7 @@ During the process of adding our keys, we'll have to enter our passwords.
 ```sh
 ssh-copy-id -i path/to/file/if/not/default USER@HOST
 # examples
+ssh-copy-id USER@HOST
 ssh-copy-id -i .ssh/id_ed25519.pub USER@HOST
 ssh-copy-id -i /mnt/c/Users/maste/.ssh/id_ed25519.pub USER@HOST
 ```
@@ -72,15 +73,15 @@ type path\to\id_algo.pub | ssh USER@HOST "cat >> .ssh/authorized_keys"
 3. Select the first path  (e.g. `C:\Users\maste\.ssh\config`)
 4. Enter the information for your remote server(s). Here is mine for reference. I had to comment out PreferredAuthentications.
 
-    ```sh
-    Host uWaterloo
-      User e5lopez
-      HostName linux.student.cs.uwaterloo.ca
-      IdentityFile "C:\Users\maste\.ssh\id_ed25519"
-      # Linux/MacOS: IdentityFile "/Users/USER/.ssh/id_ed25519"
-      # PreferredAuthentications publickey
-      # to set up a ProxyJump see next section
-    ```
+```sh
+Host uWaterloo
+    User e5lopez
+    HostName linux.student.cs.uwaterloo.ca
+    IdentityFile "C:\Users\maste\.ssh\id_ed25519"
+    # Linux/MacOS: IdentityFile "/Users/USER/.ssh/id_ed25519"
+    # PreferredAuthentications publickey
+    # to set up a ProxyJump see next section
+```
 
 5. From the command palette, use "Remote-SSH: Connect Current Window to Host..." and select the host you just added
 6. A window will show up asking you to choose the platform for the remote server so choose the **remote server's** platform (e.g. Linux)

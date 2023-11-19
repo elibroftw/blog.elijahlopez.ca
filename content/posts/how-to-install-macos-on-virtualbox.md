@@ -5,7 +5,8 @@ draft: false
 tags: [
     'windows',
     'tutorial',
-    'mobile'
+    'mobile',
+    'virtual-box'
 ]
 ---
 
