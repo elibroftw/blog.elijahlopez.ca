@@ -9,9 +9,28 @@ tags: [
 
 Since my [yt-dlp propaganda on YouTube is getting many views](https://www.youtube.com/watch?v=Tq9qpA2QOTI), I thought I'd create this article and a future video on how to use yt-dlp to download audio from websites, primarily YouTube.
 
-## Installing yt-dlp
+<details><summary>Installing yt-dlp</summary>
 
-Following the [official instructions](https://github.com/yt-dlp/yt-dlp/wiki/Installation)
+- [Windows download](https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp.exe)
+  - `winget install yt-dlp`
+  - `choco install yt-dlp`
+  - `scoop install yt-dlp`
+- [macOS download](https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp_macos)
+  - `brew install yt-dlp`
+- [Linux download](https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp)
+  - `sudo pacman -Syu yt-dlp --noconfirm`
+
+  - ```sh
+    sudo add-apt-repository ppa:tomtomtom/yt-dlp    # Add ppa repo to apt
+    sudo apt update                         # Update package list
+    sudo apt install -y yt-dlp              # Install yt-dlp
+    ```
+
+- Via Python 3+
+  - Windows: `python -m pip install -U yt-dlp`
+  - Other: `python3 -m pip install -U yt-dlp`
+
+</details>
 
 ## Installing ffmpeg
 
