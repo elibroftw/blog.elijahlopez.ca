@@ -34,7 +34,9 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> User elijah
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> HostName 127.0.0.1
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Port &lt;span style="color:#3677a9">3022&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> IdentityFile &lt;span style="color:#ed9d13">&amp;#34;C:\Users\maste\.ssh\id_ed25519&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> IdentityFile &lt;span style="color:#ed9d13">&amp;#34;C:\Users\maste\.ssh\id_rsa&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic"># ForwardX11 yes # show GUI on client (unverified)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> RemoteCommand &lt;span style="color:#24909d">export&lt;/span> &lt;span style="color:#40ffff">DISPLAY&lt;/span>=:0 &lt;span style="color:#999;font-style:italic"># show GUI on remote (unverified)&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>ASP.NET WEB API launch.json for Visual Studio Code</title><link>https://blog.elijahlopez.ca/posts/vscode-aspnet-rest-api-launch-configuration/</link><pubDate>Sun, 29 Jan 2023 13:03:33 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/vscode-aspnet-rest-api-launch-configuration/</guid><description>&lt;p>Suppose you want to be able to work on your ASP.NET application in Visual Studio as well as Visual Studio Code. Sure you can use the run feature of the Solution Explorer extension in Visual Studio Code, but that&amp;rsquo;s not a native feeling.&lt;/p>
 &lt;p>Create the following file:&lt;/p>
 &lt;details>&lt;summary>.vscode/launch.json&lt;/summary>

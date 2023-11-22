@@ -34,7 +34,9 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> User elijah
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> HostName 127.0.0.1
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Port &lt;span style="color:#3677a9">3022&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> IdentityFile &lt;span style="color:#ed9d13">&amp;#34;C:\Users\maste\.ssh\id_ed25519&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> IdentityFile &lt;span style="color:#ed9d13">&amp;#34;C:\Users\maste\.ssh\id_rsa&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic"># ForwardX11 yes # show GUI on client (unverified)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> RemoteCommand &lt;span style="color:#24909d">export&lt;/span> &lt;span style="color:#40ffff">DISPLAY&lt;/span>=:0 &lt;span style="color:#999;font-style:italic"># show GUI on remote (unverified)&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>How to Install macOS 12 Monterey on VirtualBox Windows 11</title><link>https://blog.elijahlopez.ca/posts/how-to-install-macos-on-virtualbox/</link><pubDate>Tue, 15 Aug 2023 21:15:51 -0400</pubDate><guid>https://blog.elijahlopez.ca/posts/how-to-install-macos-on-virtualbox/</guid><description>&lt;p>For reference: my laptop is the Razer Blade 14 2022 with &lt;a href="https://www.amd.com/en/product/11541">AMD Ryzen 9 6900HX&lt;/a>. It supports AMD-V.&lt;/p>
 &lt;p>Ventura (13) didn&amp;rsquo;t work for me, so I will try Monterey (12).&lt;/p>
 &lt;p>Disable &amp;ldquo;Memory integrity&amp;rdquo; under Core isolation in the Windows Security app. Restart computer. This will disable the Hyper-V hypervisor.
