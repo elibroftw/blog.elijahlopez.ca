@@ -2,12 +2,14 @@
 title: "Objective Morality (Work in Progress)"
 date: 2023-11-21T21:45:01-05:00
 draft: false
-hidden: true
+hidden: false
 tags: [
   "opinion",
   "morality"
 ]
 ---
+
+{{< toc >}}
 
 ## Preface
 
