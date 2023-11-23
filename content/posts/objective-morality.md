@@ -13,7 +13,9 @@ tags: [
 
 ## Preface
 
-For most of human (documented) history, humans have been practicing moral relativism. Even to this day, humans are practicing moral relativism. To me, morality is objective but almost all humans are practicing moral relativism and holding other humans accountable to a standard that is actually below moral objectivity. **No country practices moral objectivity.** Moral objectivity is the belief that morals aren't determined by the time period we live in and the thinking of the people who set those morals. A key example is slavery. Slavery is objectively immoral. Just because humans in the past had slaves and justified slaves, doesn't mean it was moral at the time, but rather that the humans at the time were not moral enough to see through their faulty thinking. Being brainwashed does not mean the actions are moral. Actions are immoral regardless of if the perpetrator is brainwashed or raised in a certain manner; They **may be innocent**, but their actions were immoral regardless. This is the basis of the insanity defense, but we can take it further to encapsulate people who were raised in very rough neighborhoods. Crime is associated with poverty...the solution isn't mass incarceration, it's to re-educate and give human beings enough resources so that they want to hold onto something rather than lose by way of crime. This won't solve all crime, but solving violent crime is a good start.
+I want to state that this isn't a "progressive" nor "conservative" guideline. It's a humanity moral guideline that points out that two extremist sides opposing each other does not make either side the moral authority on every topic!
+
+For most of human (documented) history, humans have been practicing moral relativism. Even to this day, humans are practicing moral relativism. To me, morality is objective but almost all humans are practicing moral relativism and holding other humans accountable to a standard that is actually below moral objectivity. **No country practices moral objectivity.** Moral objectivity is the belief that morals aren't determined by the time period we live in and the thinking of the people who set those morals. A key example is slavery. Slavery is objectively immoral. Just because humans in the past had slaves and justified slaves, doesn't mean it was moral at the time. What does it mean? Well just like today, it just means that humans at the time practiced moral relativism under the guise that they knew what objective morality is which based on the definition of morality I will soon state isn't true.
 
 ## Principality of Morality
 
@@ -25,11 +27,14 @@ The principality of morality is an optimization function that reduces harm witho
 - you like to be tied up
 - you like to piss
 - Kinks themselves not immoral but subjugating someone else to them without honest dialogues on top of consent is immoral
-  - What is a kink? It's moral actions that society normally does not partake in even behind closed doors. I won't define any kinks here.
+  - What is a kink? It's moral actions that society normally does not partake in even behind closed doors. I won't state any kinks here.
+  - Critical reasoning is very important to teach and spread otherwise we can justify anything in order to protect children or "in the interest of national security", including banning encryption, privacy, and free travel. A society is capable of differentiating what policies are moral or not if the voter base can do so themselves. How to teach critical thinking is no different from how to think objective morality, so this document serves that purpose well.
 
 </details>
 
 To be a follower of objective morality, you need to be able to dissect and distinguish very peculiar and nuanced topics that may be deemed immoral without rationale. A good rule of thumb is to be curious why some people around you deem an action to be bad; This is just a start. Hardly will you meet someone who has the capabilities of convincing you. A follower of objective morality questions whether they are on the path of objective morality. What sets two moral peers apart is the ability to debate oneself to changing a mind on all sorts of topics.
+
+It is important to distinguish between morality and personal belief. For example, it may be a personal belief to not prefer pre-marital sex, but if someone else does that (including your descendants), then your response becomes a question on morality not belief anymore. So when reading these topics, it's not about personal belief, which everyone has a right to, but whether that belief can stand at a systematic level.
 
 ### The First Test
 
@@ -60,7 +65,6 @@ The morality surrounding this is one that I've already stated. Is the mental ill
 Based on [Mental Health America's](https://screening.mhanational.org/content/condition-forever-will-i-always-feel-way/) "Some people fight a near constant battle with mental illness," my fear has indeed come true. It is very sad that some people are in a situation that treatment seems unlikely.
 
 ### Compelled Compassion
-
 
 ## Homosexuality
 
@@ -113,7 +117,7 @@ Again, control meaning that if being homosexual is determined at birth, then the
 
 ## Government and Democracy
 
-A democracy as a technical definition does not actually define what a democracy is to western countries. For example, the USA of today would not consider the USA of 1776 a democracy because the USA of the time enslaved Black Americans. You will find that a lot of people in the west will not acknowledge India or China as a democracy on the basis of muslim rights or "communism" even though there is nothing stopping someone from running in an election. Of course democracies are going to have restrictions on who can participate and how the electoral system works. The purpose of this paragraph is that a democracy does not guarantee morality and that dictatorships aren't immoral but rather carry greater risk of immorality. The phrase benevolent dictator exists because that's exactly what monarchies were and that's exactly what we see in open-source projects that succeed beyond a handful of people. Most corporations are managed by a CEO, a dictator. Although shareholders may "vote" a person in, a dictator is someone who has authority to make decisions for people in an organization without requiring the consent of other representatives. Are all corporations with CEOs immoral?  No, although some people will argue that all corporations that are not cooperatives or not-for-profit are immoral.
+A democracy as a technical definition does not actually define what a democracy is to western countries. For example, the USA of today would not consider the USA of 1776 a democracy because the USA of the time enslaved Black Americans. You will find that a lot of people in the west will not acknowledge India or China as a democracy on the basis of muslim rights or "communism" even though there is nothing stopping someone from running in an election. Of course democracies are going to have restrictions on who can participate and how the electoral system works. The purpose of this paragraph is that a democracy does not guarantee morality and that dictatorships aren't immoral but rather carry greater risk of immorality. The phrase benevolent dictator exists because that's exactly what monarchies were and that's exactly what we see in open-source projects that succeed beyond a handful of people. Most corporations are managed by a CEO, a dictator. Although shareholders may "vote" a person in, a dictator is someone who has authority to make decisions for people in an organization without requiring the consent of other representatives. Are all corporations with CEOs immoral? No, although some people will argue that all corporations that are not cooperatives or not-for-profit are immoral.
 
 ## Murder
 
@@ -129,3 +133,11 @@ I'm at my limit for being able to write fluently and structurally.
   - Just as we can't charge someone for murder who's unethical actions resulted in many people died, we shouldn't become blood hungry and gluttony on violence as we would be no better than the people who committed these murders. We can do better and we can show everyone that immoral people can be punished by way of isolation rather than by way of death. Isolated from impeding the liberty of innocent without impeding their basic human right to life.
 
 The biggest moral principle for being against the death penalty is that to do no harm to innocent we cannot assume that every person put on death row is 100% guilty. The justice system and judicial system is actually not that good and one of the only charities I think is beneficial is the Innocent's Project. Such a project should be funded via an investment yield to continue to defend and exonerate innocent people who were sentenced by 12 jurors.
+
+## Raising a Child
+
+Raising a child should always be about success in life, liberty, freedom, intelligence. When you are raising a child, refusing to take into consideration how things can affect the child's mental health in the future, or their intelligence when solving problems at school, or the potential harm your child may cause others (bullying), reflects badly on your morality as well.
+
+## Retaliation
+
+Retaliation does not solve or prevent further injustice. It is wrong to retaliate when the choice of prevention does in fact exist. Retaliating instead of preventing the situation from arising is how we get
