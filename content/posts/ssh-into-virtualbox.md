@@ -58,6 +58,4 @@ Host "VirtualBox Linux Mint"
     HostName 127.0.0.1
     Port 3022
     IdentityFile "C:\Users\maste\.ssh\id_rsa"
-    # ForwardX11 yes                                    # show GUI on client    (unverified)
-    RemoteCommand export DISPLAY=:0    # show GUI on remote (unverified)
 ```
