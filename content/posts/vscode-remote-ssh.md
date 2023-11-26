@@ -78,6 +78,9 @@ Host uWaterloo
     User e5lopez
     HostName linux.student.cs.uwaterloo.ca
     IdentityFile "C:\Users\maste\.ssh\id_ed25519"
+    ForwardAgent yes
+    AddKeysToAgent yes
+    ForwardX11 yes
     # Linux/MacOS: IdentityFile "/Users/USER/.ssh/id_ed25519"
     # PreferredAuthentications publickey
     # to set up a ProxyJump see next section
