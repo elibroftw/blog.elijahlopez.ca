@@ -123,3 +123,7 @@ The interest is accrued rather than paid in cash in the period.
 ### Expression of Interest (EOI)
 
 Interest/appeal in making a deal was expressed
+
+### Next Twelve Months (NTM)
+
+The value that is being looked at is based on 12 months of projected dataA
