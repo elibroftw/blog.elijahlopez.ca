@@ -73,18 +73,23 @@ type path\to\id_algo.pub | ssh USER@HOST "cat >> .ssh/authorized_keys"
 3. Select the first path  (e.g. `C:\Users\maste\.ssh\config`)
 4. Enter the information for your remote server(s). Here is mine for reference. I had to comment out PreferredAuthentications.
 
-```sh
-Host uWaterloo
-    User e5lopez
-    HostName linux.student.cs.uwaterloo.ca
-    IdentityFile "C:\Users\maste\.ssh\id_ed25519"
-    ForwardAgent yes
-    AddKeysToAgent yes
-    ForwardX11 yes
-    # Linux/MacOS: IdentityFile "/Users/USER/.ssh/id_ed25519"
-    # PreferredAuthentications publickey
-    # to set up a ProxyJump see next section
-```
+    ```sh
+    Host uWaterloo
+        User e5lopez
+        HostName linux.student.cs.uwaterloo.ca
+        IdentityFile "C:\Users\maste\.ssh\id_ed25519"
+        ForwardAgent yes
+        AddKeysToAgent yes
+        # ssh -X
+        ForwardX11 yes
+        ForwardX11Trusted yes
+        # Install https://sourceforge.net/projects/vcxsrv/  (XLaunch from Windows Search)
+        # Set USER ENVIRONMENT VARIABLE "DISPLAY" to "localhost:0"
+
+        # Linux/MacOS: IdentityFile "/Users/USER/.ssh/id_ed25519"
+        # PreferredAuthentications publickey
+        # to set up a ProxyJump see next section
+    ```
 
 5. From the command palette, use "Remote-SSH: Connect Current Window to Host..." and select the host you just added
 6. A window will show up asking you to choose the platform for the remote server so choose the **remote server's** platform (e.g. Linux)
