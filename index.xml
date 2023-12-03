@@ -23654,11 +23654,17 @@ if you aren&amp;rsquo;t doing anything abnormal on your computer.&lt;/p>
 &lt;/a>
 &lt;/span>
 &lt;/h2>&lt;ol>
-&lt;li>Install the &lt;a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh">Remote - SSH extension&lt;/a>&lt;/li>
-&lt;li>Use the Command Palette (Ctrl + Shift + P) and use the &amp;ldquo;Remote-SSH: Open SSH Configuration File&amp;hellip;&amp;rdquo; command&lt;/li>
-&lt;li>Select the first path (e.g. &lt;code>C:\Users\maste\.ssh\config&lt;/code>)&lt;/li>
-&lt;li>Enter the information for your remote server(s). Here is mine for reference. I had to comment out PreferredAuthentications.&lt;/li>
-&lt;/ol>
+&lt;li>
+&lt;p>Install the &lt;a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh">Remote - SSH extension&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Use the Command Palette (Ctrl + Shift + P) and use the &amp;ldquo;Remote-SSH: Open SSH Configuration File&amp;hellip;&amp;rdquo; command&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Select the first path (e.g. &lt;code>C:\Users\maste\.ssh\config&lt;/code>)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Enter the information for your remote server(s). Here is mine for reference. I had to comment out PreferredAuthentications.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>Host uWaterloo
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> User e5lopez
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> HostName linux.student.cs.uwaterloo.ca
@@ -23672,12 +23678,20 @@ if you aren&amp;rsquo;t doing anything abnormal on your computer.&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic"># Linux/MacOS: IdentityFile &amp;#34;/Users/USER/.ssh/id_ed25519&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic"># PreferredAuthentications publickey&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic"># to set up a ProxyJump see next section&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="5">
-&lt;li>From the command palette, use &amp;ldquo;Remote-SSH: Connect Current Window to Host&amp;hellip;&amp;rdquo; and select the host you just added&lt;/li>
-&lt;li>A window will show up asking you to choose the platform for the remote server so choose the &lt;strong>remote server&amp;rsquo;s&lt;/strong> platform (e.g. Linux)&lt;/li>
-&lt;li>If all goes well, you should be able to connect without having to enter a password
-&lt;img src="https://blog.elijahlopez.ca/images/vs-code/connected-example.png" alt="VS Code SSH">&lt;/li>
-&lt;li>Tip: add multiple folders in the remote server to a workspace&lt;/li>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>From the command palette, use &amp;ldquo;Remote-SSH: Connect Current Window to Host&amp;hellip;&amp;rdquo; and select the host you just added&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>A window will show up asking you to choose the platform for the remote server so choose the &lt;strong>remote server&amp;rsquo;s&lt;/strong> platform (e.g. Linux)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>If all goes well, you should be able to connect without having to enter a password
+&lt;img src="https://blog.elijahlopez.ca/images/vs-code/connected-example.png" alt="VS Code SSH">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Tip: add multiple folders in the remote server to a workspace&lt;/p>
+&lt;/li>
 &lt;/ol>
 &lt;h2 id="proxy-jump-setup" >Proxy Jump Setup
 &lt;span>
