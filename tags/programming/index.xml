@@ -3494,7 +3494,7 @@ I’ve known ThreadPools before as I worked with them in Java 6+ months ago, but
 There is also a &lt;code>ProcessPoolExecutor&lt;/code>, but I’d only suggest you use that for CPU-bound tasks.
 ThreadPoolExecutor is better since requests are network bound (and also because I encountered a jumbled error when I tried to use &lt;code>ProcessPoolExecutor&lt;/code>.
 Here is a quick proof of concept using &lt;code>ThreadPoolExecutor&lt;/code>.&lt;/p>
-&lt;script type="application/javascript" src="https://gist.github.com/elibroftw/fc61f40da65ad3178ea03c768c86a932.js">&lt;/script>
+&lt;script src="https://gist.github.com/elibroftw/fc61f40da65ad3178ea03c768c86a932.js">&lt;/script>
 &lt;p>I hope that the comments in the code above were enough but if not, please let me know.&lt;/p></description></item><item><title>Automate Firefox Addon Publishing</title><link>https://blog.elijahlopez.ca/posts/automate-firefox-addon-publishing/</link><pubDate>Thu, 08 Oct 2020 22:58:39 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/automate-firefox-addon-publishing/</guid><description>&lt;p>If you&amp;rsquo;re like me, you always want to speed up aspects of your life especially routine tasks. I&amp;rsquo;ll be doing this in Python but you can easily convert the code to a language of your choice.&lt;/p>
 &lt;h2 id="prerequisites" >Prerequisites
 &lt;span>
@@ -3521,7 +3521,7 @@ After installing these two modules, copy the snippet at the bottom of the articl
 &lt;/span>
 &lt;/h2>&lt;p>&lt;code>GUID&lt;/code>: include the &amp;lsquo;{&amp;rsquo; and &amp;lsquo;}&amp;rsquo; into the string if applicable
 &lt;code>addon_files&lt;/code>: a list of source files of the add-on (relative path&lt;/p>
-&lt;script type="application/javascript" src="https://gist.github.com/elibroftw/1a94149a2f6232d062b666c4ee9ea530.js">&lt;/script></description></item><item><title>VS Code Remote SSH Tutorial</title><link>https://blog.elijahlopez.ca/posts/vscode-remote-ssh/</link><pubDate>Fri, 11 Sep 2020 18:23:50 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/vscode-remote-ssh/</guid><description>&lt;p>In this tutorial we&amp;rsquo;ll integrate SSH into VS Code in a way that won&amp;rsquo;t require entering a password every time.&lt;/p>
+&lt;script src="https://gist.github.com/elibroftw/1a94149a2f6232d062b666c4ee9ea530.js">&lt;/script></description></item><item><title>VS Code Remote SSH Tutorial</title><link>https://blog.elijahlopez.ca/posts/vscode-remote-ssh/</link><pubDate>Fri, 11 Sep 2020 18:23:50 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/vscode-remote-ssh/</guid><description>&lt;p>In this tutorial we&amp;rsquo;ll integrate SSH into VS Code in a way that won&amp;rsquo;t require entering a password every time.&lt;/p>
 &lt;details>&lt;summary>Troubleshooting on Windows&lt;/summary>
 &lt;p>Visual Studio Code is incredibly wasteful on Windows. The developers have no respect for users'
 devices. If one of your devices can&amp;rsquo;t connect to the remote-ssh server two times in a row without any
@@ -3642,7 +3642,7 @@ if you aren&amp;rsquo;t doing anything abnormal on your computer.&lt;/p>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Convert Word Files to PDF With Python</title><link>https://blog.elijahlopez.ca/posts/convert-word-files-to-pdf/</link><pubDate>Wed, 02 Sep 2020 23:04:27 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/convert-word-files-to-pdf/</guid><description>&lt;p>NOTE: Windows tutorial.&lt;/p>
 &lt;p>Back when I first started University, I decided to type out all my math notes. Yes, you heard me right, I typed out my math notes (equation editor is very powerful) - or took screenshot snippets of the textbook PDF and pasted them into my notes.docx if I was lagging behind and too lazy to type it out later. I&amp;rsquo;m always about studying efficiently so whenever I needed to read my math notes, it was always annoying having to wait a couple seconds for Word to open up my notes so I decided to start exporting them to PDF but I didn&amp;rsquo;t want to do it manually every time for both all my course notes so I decided I would use Python to solve my problem. Here&amp;rsquo;s what I came up with after doing some research and debugging to optimize code execution.&lt;/p>
 &lt;p>A lot of the code is about leveraging the win32 API and I&amp;rsquo;d be lying if I knew what everything actually did, but rest assured I did have to figure out how to get it to work as you can see with the word = comments where I was figuring out how to do the conversion using threads. I&amp;rsquo;m sure you could even use multiprocessing here but that&amp;rsquo;s for another time since this code was made for only 4 files. You could also use a thread pool if it turns out you have more than 4 files but don&amp;rsquo;t want to rewrite the code to work with multiprocessing.&lt;/p>
-&lt;script type="application/javascript" src="https://gist.github.com/elibroftw/5d048a6fededb730e3f2e95793212046.js">&lt;/script></description></item><item><title>Automate Unity Building</title><link>https://blog.elijahlopez.ca/posts/automate-unity-building/</link><pubDate>Sun, 21 Jun 2020 11:11:24 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/automate-unity-building/</guid><description>&lt;p>It took me hours to figure out how to create a simple build script in Unity, even after watching videos, I was really confused.
+&lt;script src="https://gist.github.com/elibroftw/5d048a6fededb730e3f2e95793212046.js">&lt;/script></description></item><item><title>Automate Unity Building</title><link>https://blog.elijahlopez.ca/posts/automate-unity-building/</link><pubDate>Sun, 21 Jun 2020 11:11:24 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/automate-unity-building/</guid><description>&lt;p>It took me hours to figure out how to create a simple build script in Unity, even after watching videos, I was really confused.
 So why not write an article so that other developers won&amp;rsquo;t need to spend that much time themselves.&lt;/p>
 &lt;h2 id="getting-started" >Getting Started
 &lt;span>
@@ -4312,7 +4312,7 @@ Git is a versioning tool used so that mistakes don’t hurt you, and for letting
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
-&lt;/h2>&lt;script type="application/javascript" src="https://gist.github.com/elibroftw/bcbf2ee1c8662d8fb6f6116a3705d337.js">&lt;/script>
+&lt;/h2>&lt;script src="https://gist.github.com/elibroftw/bcbf2ee1c8662d8fb6f6116a3705d337.js">&lt;/script>
 &lt;h2 id="backstory" >Backstory
 &lt;span>
 &lt;a href="#backstory">
