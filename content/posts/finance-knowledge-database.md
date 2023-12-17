@@ -19,9 +19,25 @@ An agreement that the limit can be increased or that a term can be added.
 
 ### FCCR - Fixed-Charge Coverage Ratio
 
-FCCR = (EBIT + Fixed Charges Before Tax) /  (Fixed Charges Before Tax + Interest Expense)
+FCCR = (EBITDA minus taxes unfunded capex and distributions) / (Fixed Charges Before Tax including interest expense)
 
-### Leverage = Total Debet / EBITDA
+### Unfunded Capex
+
+Unfunded Capex = Net Debt Added - Capex
+
+From a lender's point of view, when assets are sold, the capex does not decrease, unlike a DCF model.
+
+### Distribution
+
+My broad definition is: Non operational cash outflow.
+
+Typically this is defined in the legal contract with a lot of leeway. For example, some distributions might be salary related, so it is hard to make a court believe that the covenant was a legitimate if it was preventing management from earning a living (as ridiculous as it sounds, according to my co-worker at FPD).
+
+### Leverage = Total Funded Debt / EBITDA
+
+### Funded Debt
+
+Funded debt refers to all types of **loans** provided by lenders. The reason "funded" is used, is because "debt" on its own implies all liabilities.
 
 ### EBITDA
 
@@ -126,4 +142,42 @@ Interest/appeal in making a deal was expressed
 
 ### Next Twelve Months (NTM)
 
-The value that is being looked at is based on 12 months of projected dataA
+The value that is being looked at is based on 12 months of projected data
+
+### Trailing Twelve Months (TTM)
+
+The value that is being looked at is based on 12 months of projected data
+
+### Last Twelve Months (LTM)
+
+Literally TTM. I hope that we get rid of this terminology as I'm not the only one who starts reading LTM as long-term before realizing the m stands for months. Please re-write your sentences such that TTM is use rather than LTM.
+
+### Canadian Private Debt Players
+
+- Fiera Private Debt (I worked here)
+- Centurian Asset Management
+- Roynat (Royal Bank + National Bank Collaboration)
+
+### Commit Facility
+
+Money goes after preconditions. Cancellation clause for between signing and disbursement.
+
+### Demand facility
+
+You can call back the loan without the lender in default. Typically a lower coupon because of this stipulation.
+
+### Mezzanine Debt
+
+Can convert the debt to equity interest.
+
+### Purchase Price Allocation (PPA)
+
+> Purchase price allocation is an application of goodwill accounting whereby one company, when purchasing a second company, allocates the purchase price into various assets and liabilities acquired from the transaction
+
+### SOFR
+
+Secured Overnight Financing Rate. BASED ON OBSERVED U.S. TREASURY MARKET TRANSACTIONS.
+
+### LIBOR
+
+London Interbank Offered Rate. This rate isn't used anymore due to the [2012 rate-rigging scandal](https://en.wikipedia.org/wiki/Libor_scandal). It was only an ESTIMATION.
