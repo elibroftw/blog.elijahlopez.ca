@@ -23,7 +23,7 @@ FCCR = (EBITDA minus taxes unfunded capex and distributions) / (Fixed Charges Be
 
 ### Unfunded Capex
 
-Unfunded Capex = Net Debt Added - Capex
+Unfunded CAPEX = Net CAPEX - increase in long-term debt
 
 From a lender's point of view, when assets are sold, the capex does not decrease, unlike a DCF model.
 
