@@ -336,6 +336,7 @@ ponds to&lt;/li>
 &lt;/li>
 &lt;/ul>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>git cat-file -t COMMIT
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>git cat-file -p COMMIT
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Can then find the blob we are looking for.&lt;/p>
 &lt;h3 id="git-hooks" >Git Hooks
 &lt;span>
@@ -345,7 +346,6 @@ ponds to&lt;/li>
 &lt;/span>
 &lt;/h3>&lt;ul>
 &lt;li>Script to run when particular events occur on client or server side&lt;/li>
-&lt;li>&lt;code>git config core.hookspath&lt;/code>&lt;/li>
 &lt;li>chmod u+x ./.git/hooks/commit-msg.sample&lt;/li>
 &lt;/ul>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#cd2828;font-weight:bold">#!/bin/sh
