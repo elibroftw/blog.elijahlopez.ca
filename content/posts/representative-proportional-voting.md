@@ -1,6 +1,10 @@
 ---
-title: "Representative Proportional Voting"
+title: "Fixed Seats Proportional Representation (FSP-R)"
 # date: 2021-11-19T11:58:17-04:00   # idea first conceptualized
+aliases: [
+    '/posts/fixed-seats-proportional-representation/',
+    '/posts/representative-proportional-voting/'
+]
 date: 2023-04-12T17:14:32-04:00
 tags: [
   'canada',
@@ -8,9 +12,9 @@ tags: [
 ]
 ---
 
-This article describes and demonstrates a novel solution for electoral reform called Representative Proportional Voting (RPV) - similar to the open-list proportional representation system used by Finland - that it is practical to implement. It is also more effective in holding elections where every vote contributes to the formation of a government body. Below is the overall results of the 2021 Canadian general election under the presently used [First Past the Post (FPTP)](https://www.elections.ca/content.aspx?section=res&dir=ces&document=part1&lang=e#p13) electoral system compared to Representative Proportional Voting (RPV).
+This article describes and demonstrates a novel solution for electoral reform called Fixed Seats Proportional Representation (FSP / FSP-R, previously called representative proportional voting) - similar to the open-list proportional representation system used by Finland - that it is practical to implement. It is also more effective in holding elections where every vote contributes to the formation of a government body. Below is the overall results of the 2021 Canadian general election under the presently used [First Past the Post (FPTP)](https://www.elections.ca/content.aspx?section=res&dir=ces&document=part1&lang=e#p13) electoral system compared to FSP.
 
-|Party|FPTP Seats|FPTP Seats %|RPV Seats|RPV Seats %|Vote %|
+|Party|FPTP Seats|FPTP Seats %|FSP Seats|FSP Seats %|Vote %|
 |:-|:-|:-|:-|:-|:-|
 |People's Party - PPC|0|0%|17 +|5.03%|4.94%|
 |Green Party|2|0.59%|8 +|2.37%|2.33%|
@@ -19,7 +23,7 @@ This article describes and demonstrates a novel solution for electoral reform ca
 |Conservative|119|35.21%|115 **-**|34.02%|33.74%|
 |Liberal|160|47.34%|111 -|32.84%|32.62%|
 
-I've included this table at the top to highlight how ineffective the current electoral system is at giving voters a voice. From a numerical point of view, by analyzing each district, FPTP resulted in **52.15% of all votes (8,883,902), NOT GOING TOWARDS AN ELECTED MP SITTING IN THE HOUSE OF COMMONS!**. In contrast, under RPV, 99% of votes went towards an elected candidate.
+I've included this table at the top to highlight how ineffective the current electoral system is at giving voters a voice. From a numerical point of view, by analyzing each district, FPTP resulted in **52.15% of all votes (8,883,902), NOT GOING TOWARDS AN ELECTED MP SITTING IN THE HOUSE OF COMMONS!**. In contrast, under FSP, 99% of votes went towards an elected candidate.
 
 {{< toc >}}
 
@@ -35,9 +39,9 @@ A lot of Canadians demand electoral reform without suggestions as to how, while 
 
 Ranked ballots work great when it's just for one localized governance, such as mayor or a university student association. If it were applied to federal elections we would still not have proportional representation. Rather, we would see an amalgamation of parties most closely aligned (vote A if not vote B). Ranked voting is strategic voting and minority voters would still be **unrepresented**.
 
-## RPV Overview
+## FSPR Overview
 
-Representative Proportional Voting (RPV) is similar to the open-list PR system used in Finland with two caveats being that independent candidates still have a chance and that the huntington-hill method is used to appropriate seats rather than the D'Hondt method. This new system is applicable to provincial/territorial & federal elections.
+FSPR is similar to the open-list PR system used in Finland with two caveats being that independent candidates still have a chance and that the huntington-hill method is used to appropriate seats rather than the D'Hondt method. This new system is applicable to provincial/territorial & federal elections.
 
 Voters will vote for their preferred candidate and if they prefer an independent candidate, they can further rank these independent candidates and rank a party-affiliated candidate last, A run-off is held for votes going towards independent candidates are collapsed until the last independent candidate remains. An independent candidates can be elected if they win the First Past the Post manner. Otherwise, they are eliminated and the rankings go to party-affiliated candidates that were ranked last. The votes going towards each of the remaining party candidates are considered as party votes and are pooled for the region. The remaining seats are distributed proportionally based on which districts had the highest percentage support for each party (note that highest percentage support does not necessarily mean the popular vote in that district).
 
@@ -45,15 +49,15 @@ An example to illustrate my point. Say that there is party A that would win the 
 
 In the case of a province or territory that only has one seat, a ranked ballot with runoff would suffice.
 
-~~One possible criticism is that there will be ridings where the candidate that is elected didn't get second or third either. This is a valid tradeoff since the current situation is that your vote would be meaningless if the representative of the other party got even one more vote than the party-affiliated representative you voted for. With my proposed RPV, all votes will matter even in hindsight. So the upsides are that: independent representatives are favoured, one of the running candidates will win the riding, every vote counts towards the governing body rather than only for a singular riding, and the democratically elected body is proportional to how voters voted.~~
+~~One possible criticism is that there will be ridings where the candidate that is elected didn't get second or third either. This is a valid tradeoff since the current situation is that your vote would be meaningless if the representative of the other party got even one more vote than the party-affiliated representative you voted for. With my proposed FSP, all votes will matter even in hindsight. So the upsides are that: independent representatives are favoured, one of the running candidates will win the riding, every vote counts towards the governing body rather than only for a singular riding, and the democratically elected body is proportional to how voters voted.~~
 
 To incentivize and protect independent candidates, we give independents priority when picking representatives for each riding. If they were to be included in the [Huntington-Hill](https://en.wikipedia.org/wiki/Huntington-Hill_method) method for proportional seat distribution, it would be possible for no seat to be allocated to them since party's would have a greater proportion of votes. This is why I kept the same voting procedures / logistics.
 
-~~I'll probably hear people complaining about a non-FPTP candidate winning. No candidate should be entitled to represent a riding without 50% of support and a ranked ballot is not guaranteed to reflect the federal wide policies voters want. Therefore, RPV is a valid Canadian-centred compromise. I will now dive into the technicalities as well as the practical results if RPV was the system used in the last election.~~
+~~I'll probably hear people complaining about a non-FPTP candidate winning. No candidate should be entitled to represent a riding without 50% of support and a ranked ballot is not guaranteed to reflect the federal wide policies voters want. Therefore, FSP is a valid Canadian-centred compromise. I will now dive into the technicalities as well as the practical results if FSP was the system used in the last election.~~
 
-## RPV Algorithm
+## FSP Algorithm
 
-It is simply amazing that computer science can even be applied to politics. I've outlined the algorithm for RPV below. Note that this version of the algorithm and the election results distribute seats on a federal level rather than on a region level. I will update the algorithm and results soon. It incorporates many concepts such as FPTP, Huntington-Hill (fun fact is that it is used for the electoral college points in the U.S.A.), Hare Quota, and even ranked ballots (for niche situations).
+It is simply amazing that computer science can even be applied to politics. I've outlined the algorithm for FSP below. Note that this version of the algorithm and the election results distribute seats on a federal level rather than on a region level. I will update the algorithm and results soon. It incorporates many concepts such as FPTP, Huntington-Hill (fun fact is that it is used for the electoral college points in the U.S.A.), Hare Quota, and even ranked ballots (for niche situations).
 
 1. Just like how it is presently, each person will vote for a candidate in their riding with some exception.
     - Voters voting for an independent candidate are allowed to rank their preferences for independent candidates with their final choice optionally being a party-affiliated candidate. This ensures that their vote won't be lost if no independent candidate won.
@@ -71,11 +75,11 @@ It is simply amazing that computer science can even be applied to politics. I've
         - For each party that has unassigned seats, assign a seat to an unelected riding with the highest percentage voting for that party.
 6. Use a list or graph of all ridings with their assigned representative to keep track of seat assignment / election results.
 
-## 44th 2021 General Elections FPTP Versus RPV
+## 44th 2021 General Elections FPTP Versus FSP
 
-I wrote the first draft of this article in Nov-2021, however I wanted to show how the 2021 election would be different if RPV was used rather than FPTP before I shared RPV to everyone.
+I wrote the first draft of this article in Nov-2021, however I wanted to show how the 2021 election would be different if FSP was used rather than FPTP before I shared FSP to everyone.
 
-Methodology: I wrote Python code that downloaded 2021 election polling data, transformed that data to be useful, implemented the RPV algorithm, supplied data to the algorithm, and lastly summarized the results for consumption.
+Methodology: I wrote Python code that downloaded 2021 election polling data, transformed that data to be useful, implemented the FSP algorithm, supplied data to the algorithm, and lastly summarized the results for consumption.
 
 ### Vote Distribution
 
@@ -131,7 +135,7 @@ Vote distribution for all parties (that got at least one vote) in the 2021 Canad
 
 My code also aggregated votes that were not cast to the winning candidate, I calculated that 8,883,902 votes or 52.15% of all votes  **DID NOT GO TOWARDS ELECTING A CANDIDATE!**. In other words those votes did not matter in hindsight on top of citizens not going to the polls.
 
-### RPV Results
+### FSP Results
 
 The Hare quota is 50,322. There were 87 seat changes from the FPTP results.
 
@@ -144,25 +148,25 @@ The Hare quota is 50,322. There were 87 seat changes from the FPTP results.
 | Liberal                                   | 111   | 32.84% |
 | Conservative                         | 115   | 34.02% |
 
-It's clear that under RPV, we can get a 99% representative government body where the 1% that went unrepresented voted for parties that got less than ~50,000 votes (Hare Quota).
+It's clear that under FSP, we can get a 99% representative government body where the 1% that went unrepresented voted for parties that got less than ~50,000 votes (Hare Quota).
 For the list of ridings that would have a different representative, you can download [a CSV of the compiled results](https://github.com/elibroftw/representative-proportional-voting/releases/download/2021/districts.csv).
 
 Some notable points are that all elected parties would have more seats than the proportional vote because 1% of votes went to very unpopular parties. The liberals lose 49 seats, NDP doubles their seat count, and the PPC ends up getting more than double the seats than what Green would get. This sort of system would force all parties to reach out to every voter even in districts that are considered wins.
 
-Since this is a post-election analysis, numbers for some parties will be under-represented even though they won more seats. For example, it is common for voters to vote Liberals just so that the Conservatives don't win and it's possible some people voted Conservative instead of PPC so that the Liberals don't win. Therefore, under RPV, we could reasonably expect bigger parties to lose even more seats to smaller parties. This logic does extend to parties on the same side of the spectrum such as the Green party. As seen in the CSV provided, we could see Green party getting seats that would have been NDP under FPTP.
+Since this is a post-election analysis, numbers for some parties will be under-represented even though they won more seats. For example, it is common for voters to vote Liberals just so that the Conservatives don't win and it's possible some people voted Conservative instead of PPC so that the Liberals don't win. Therefore, under FSP, we could reasonably expect bigger parties to lose even more seats to smaller parties. This logic does extend to parties on the same side of the spectrum such as the Green party. As seen in the CSV provided, we could see Green party getting seats that would have been NDP under FPTP.
 
-RPV would do away with strategic voting to the point where it would be ignorant to vote for a party other than the one you genuinely support. A greater proportional system
+FSP would do away with strategic voting to the point where it would be ignorant to vote for a party other than the one you genuinely support. A greater proportional system
 would also promote bootstrapping of parties as support only needs to be nation wide to win a seat rather than concentrated in one riding.
 
-Under the RPV system, 99% of voters ended up represented. The votes of the 1%, although divided, do matter in aggregate. For example, the Free Party had just under the threshold to get a seat. Every vote really does matter under RPV compared to FPTP, where voting might have seemed like a waste of time in hindsight. Only under an RPV system would I ever support a policy that forced citizens to check into a polling station to vote or explicitly abstain from voting. There would be almost no subjective reasons to avoid voting under RPV as it would be in direct opposition to your interests.
+Under the FSP system, 99% of voters ended up represented. The votes of the 1%, although divided, do matter in aggregate. For example, the Free Party had just under the threshold to get a seat. Every vote really does matter under FSP compared to FPTP, where voting might have seemed like a waste of time in hindsight. Only under an FSP system would I ever support a policy that forced citizens to check into a polling station to vote or explicitly abstain from voting. There would be almost no subjective reasons to avoid voting under FSP as it would be in direct opposition to your interests.
 
 ### Reproducing The Results
 
-Reproduction is very important. My Python code, the CSV file listing both FPTP and RPV results, and a JSON for further analysis can be found on [GitHub](https://github.com/elibroftw/representative-proportional-voting).
+Reproduction is very important. My Python code, the CSV file listing both FPTP and FSP results, and a JSON for further analysis can be found on [GitHub](https://github.com/elibroftw/representative-proportional-voting).
 
 ## Conclusion
 
-In conclusion, every voter's voice matters under RPV. If I was/am ever an MP or MPP, I would propose to use this method for all provincial/territorial and federal elections. I strongly believe that under RPV, Canada will be setting the standard for a democracy where each citizen's voice is valued due to aggregation rather than the current system where a vote only goes as far as the district.
+In conclusion, every voter's voice matters under FSP. If I was/am ever an MP or MPP, I would propose to use this method for all provincial/territorial and federal elections. I strongly believe that under FSP, Canada will be setting the standard for a democracy where each citizen's voice is valued due to aggregation rather than the current system where a vote only goes as far as the district.
 
 ## Extensions
 

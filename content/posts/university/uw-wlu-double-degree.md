@@ -26,9 +26,9 @@ If you are running AOSP 11+, like the Google Pixel 7, this is what you need to s
 - Phase 2 authentication: MSCHAPV2
 - CA certificate: trust on first use
 - Do not verify
-- Identify: lope3800@wlu.ca
-- Password: same as @mylaurier.ca password
-- Advanced > Privacy > Use device MAC :(
+- Identify: `lope3800@wlu.ca` or `e5lopez@uwaterloo.ca`
+- Password: same as @mylaurier.ca password or uwaterloo.ca password
+- If connection doesn't work try changing Advanced &rarr; Privacy &rarr; Use device MAC 😒
 
 ## Homeschool Differences
 

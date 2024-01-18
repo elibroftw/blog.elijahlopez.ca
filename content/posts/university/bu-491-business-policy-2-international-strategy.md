@@ -266,11 +266,12 @@ How to use these to our advantages?
 - Global
   - Global efficiency
 
-### Managing differences
+### Managing Differences
 
-- Adaption: customization increases market share
-- Aggregation: deliver economies of scale through regional or global operations
-- Arbitrage: exploitation of differences between national and regional markets
+- Triple A
+  - Adaption: adapting product for the target to increase market share
+  - Aggregation: deliver economies of scale through regional or global operations
+  - Arbitrage: exploitation of differences between national and regional markets
 
 - Competitive advantage: why globalize at all
 - Configuration: location of overseas operations
