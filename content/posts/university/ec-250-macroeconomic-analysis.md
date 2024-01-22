@@ -561,8 +561,6 @@ w = 0.60
   - Cyclical unemployment is the difference between the actual and natural unemployment rate (u vs u with overbar)
   - My guess is that Canada's natural rate of unemployment is between 5.5% - 5.6% because it was around this in 2019 and was below this during the inflation that occurred during 2022. When rates started going up, so did unemployment and now we are at 5.8% which I believe is still above natural unemployment due to the higher numbers of international students and the hours they can work.
 
-
-
 ### Lesson 2 Summary
 
 1. Explain how output is determined using the production function.

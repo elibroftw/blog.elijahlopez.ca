@@ -59,3 +59,5 @@ Host "VirtualBox Linux Mint"
     Port 3022
     IdentityFile "C:\Users\maste\.ssh\id_rsa"
 ```
+
+If you want to run a GUI on the VirtualBox, run `export DISPLAY=:0` first
