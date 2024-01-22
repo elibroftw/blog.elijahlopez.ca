@@ -560,8 +560,6 @@ w = 0.60
   - Natural rate of unemployment is the prevailing unemployment rate when output & employment is at full-employment levels
   - Cyclical unemployment is the difference between the actual and natural unemployment rate (u vs u with overbar)
 
-
-
 ### Lesson 2 Summary
 
 1. Explain how output is determined using the production function.
