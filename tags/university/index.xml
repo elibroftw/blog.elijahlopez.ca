@@ -396,6 +396,59 @@ ponds to&lt;/li>
 &lt;/h2>&lt;ul>
 &lt;li>Source code is an array of car parts and we want to deliver the final car&lt;/li>
 &lt;li>A build system assembles the parts into deliverables efficiently without needing to remember certain actions&lt;/li>
+&lt;/ul>
+&lt;h3 id="families-of-build-tools" >Families of Build Tools
+&lt;span>
+&lt;a href="#families-of-build-tools">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>&lt;a href="https://learn.uwaterloo.ca/d2l/le/content/1005130/viewContent/5356971/View">slides&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://is.gd/rzymTT">reading&lt;/a>&lt;/li>
+&lt;li>low-level tools: define deps and rules for each input and output file&lt;/li>
+&lt;li>abstraction-based tools: derive low-level build code from high-evel data. e.g., maps of sources files to executables&lt;/li>
+&lt;li>framework-driven tools: default behaviour is assumed unless explicitly overridden&lt;/li>
+&lt;li>organizationally-scaling tools: reuse the output of build command across machines to accelerate builds nad reduce (organizational-level) waste
+&lt;ul>
+&lt;li>how do we do this for rust?&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Dependency management tools&lt;/li>
+&lt;li>Testing frameworks (CS 447)&lt;/li>
+&lt;/ul>
+&lt;h3 id="low-level-build-systems" >Low-level Build Systems
+&lt;span>
+&lt;a href="#low-level-build-systems">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>make
+&lt;ul>
+&lt;li>&lt;a href="https://github.com/smcintosh/makeexample">Example Makefile&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/elibroftw/bootleg-settlers-of-katan/blob/master/Makefile">More complicated but succinct Makefile&lt;/a>&lt;/li>
+&lt;li>express dependencies with &lt;code>program: program2 program3&lt;/code>&lt;/li>
+&lt;li>requires tabs not spaces&lt;/li>
+&lt;li>write recipes&lt;/li>
+&lt;li>variables (lazy evaluation)
+&lt;ul>
+&lt;li>x = &amp;ldquo;a command&amp;rdquo;&lt;/li>
+&lt;li>$(x)&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>parallelization: make -j8&lt;/li>
+&lt;li>% wildcard is greedy (%.o -&amp;gt; foo.o.o)
+&lt;ul>
+&lt;li>the % must be equal on both sides of the rule&lt;/li>
+&lt;li>$&amp;lt;: expands to the first dependency&lt;/li>
+&lt;li>$^: expands to the entire list of dependencies&lt;/li>
+&lt;li>$@: expands to the name of the target&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>header files are dependents on .o files because .c files might not actually change&lt;/li>
+&lt;/ul>
+&lt;/li>
 &lt;/ul></description></item><item><title>BU 491 Business Policy 2 International Strategy</title><link>https://blog.elijahlopez.ca/posts/university/bu-491-business-policy-2-international-strategy/</link><pubDate>Tue, 09 May 2023 15:55:38 -0400</pubDate><guid>https://blog.elijahlopez.ca/posts/university/bu-491-business-policy-2-international-strategy/</guid><description>&lt;div>
 &lt;h2>Table of Contents&lt;/h2>
 &lt;nav id="TableOfContents">
