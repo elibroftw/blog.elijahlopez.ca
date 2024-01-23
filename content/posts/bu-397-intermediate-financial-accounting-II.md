@@ -191,7 +191,7 @@ Payroll tax expense     640
 ### Decommissioning and Restoration Obligations
 
 - Construction and operation of long-lived assets sometimes create obligations associated with the eventual retirement
-- Asset retirement obligation (ARO) or site restoration obligation
+- Asset retirement obligation (ARO) or site restoration obligation ; credit
 - Recognized in the period incurred
 - IFRS
   - constructive (like what is expected by the public) and legal
@@ -212,6 +212,9 @@ Payroll tax expense     640
     - for IFRS, we know the amount beforehand
     - for ASPE, depends on the incremental capitalized costs
   - Accrue the interest
+
+```accounting
+```
 
 ```accounting
 # Under IFRS
@@ -300,6 +303,8 @@ COGS      55,000
 
 - Question: when do loyalty points hurt the store?
 
+For expense method, the premiums expense is based off the difference. So (Price - Cost) multiplied by the number of units (redemption and then expected - redemption).
+
 ### Contingency
 
 - IFRS:
@@ -372,13 +377,17 @@ Revenue bonds
   - Company does not inform creditor
   - no derecognition
 
-
 ### Bonds Issued at Discount or Premium
 
+To calculate the market price or proceeds, we need to sum the present value of the face value as well as present value of the ordinary annuity. Use a present value factor where periods is the years times the number of payments per year and the rate is the effective interest rate divided by the number of payments per year.
+
 - IFRS: effective interest rate amortization
+  - periods = coupons per year \* maturity in years
+  - amt = coupon per period not per year
 - ASPE: effective interest rate amortization or straight line
 
 ```accounting
+# fair value transaction
 Cash $800,000 Dr.
   Bonds Payable $800,000 Cr.
 
@@ -392,7 +401,13 @@ Interest Expense $40,000 Dr.
 ```
 
 ```accounting
-Interest expense = beginning carrying amount * effective market yield
+# discounted bond of $100,000, 10%C, y=12%
+Cash                    $88,700
+  Bonds Payables      $88,700
+```
+
+```accounting
+# Interest expense = beginning carrying amount * effective market yield (divide by number of payments per year)
                                = 88,700 * 12% = $10,644
 
 Dr. Interest expense                               10,644
@@ -406,7 +421,7 @@ Dr. Interest expense                               10,644
 # in this example 10% coupon, semi-annually, 12% yield, $100,000 par value
 Dr. Cash                                                    96,750
        Cr. Bonds payable                                     95,083
-       Cr. Interest expense (or payable)             1,667     (= 5,000 x 2/6 )
+       Cr. Interest payable             1,667     (= 5,000 x 2/6 )
 ```
 
 ### Zero-interest Bearing Marketable Securities
@@ -553,3 +568,308 @@ Non-substantial,
 
 - Debt to Asset ratio = Total debt / Total assets
 - Times interest earned = Income before taxes nad interest expense / interest expense
+
+## Shareholders' Equity
+
+### Basic Forms
+
+- Proprietorship
+  - Single owner
+- Partnership
+  - Multipler owners
+- Corporation
+  - >= 1 owner
+  - Seperate legal entity
+  - Taxed seperately, and personal tax is at dividends
+  - Owners only risk investment
+
+### Corporate Classification
+
+- Public / Crown Corporation
+  - Government units - no shares
+  - Government Business Entreprises - issues shares (e.g. canada post)
+- Private Sector
+  - Not-for-profit
+    - no shares, since no distributions of profits
+  - for profit
+    - shares issued
+    - privately held
+    - publicly traded
+
+### Incorporation Process
+
+- Submit articles of incorporation
+  - Maximum shares
+  - Addresses
+  - Directors
+  - Share classes
+
+### Shares
+
+- Groups or classes
+- Each share is equal to another in the same class
+- If no restrictions, there are basic or inherent rights
+- CBCA also allows pre-emptive rights
+- Basic or Inherent Rights
+  - Share proportionally in profits and losses
+  - Management (vote for directors)
+  - Corporate assets upon liquidation
+- Pre-emptive rights
+  - allows shareholders to purchase new share issuances
+  - protects against involuntary dilution
+
+### Types of Shares
+
+- Common
+  - Ownership interest
+  - Right to elect board of directors
+  - Default share type
+- In-Substance Common Shares
+  - Similar to common shares BUT cannot be called common shares for account purposes
+- Preferred Shares
+  - Assurance of dividend before common shares
+  - Priority over all other types of shares over earnings and assets upon dissolution
+  - No voting rights
+  - No share in profit higher than stated rate
+  - Features at corporation's discretion:
+    - Cumulative in dividend arrears
+    - Convertible to common shares
+    - Callable/Redeemable at specified dates and prices
+    - Retractable - Can sell their shares back to company and mus tbe paid
+    - Participating - share in profit distribution
+  - CBCA does not allow shares issued with a par value
+  - Expressed as a percentage of issue price
+  - Shareholder investment cannot be withdrawn at shareholders' discretion unless all prior claims have been paid
+
+### Legality of Dividend Distribution
+
+1. No dividends unless teh corporate capital is kept intact
+    - Net assets should be sufficient for solvency purposes
+    - CBCA Corporate Solvency Tests
+      - After dividend, can the corporation pay its liabilities
+      - After dividend, is the realizable value of assets less than total liabilities plus legal capital
+        - Portion of company's equity protected by law
+2. Dividends must be formally approved by the board of directors
+3. Dividends must agree with stipulations in the contracts (debt)
+
+### Issuance of Shares
+
+- Initial Public Offering (IPO)
+- Seasoned share issuance
+
+```accounting
+# 500 shares at $10
+Cash                        $5,000 Dr.
+  Common shares       $5,000 Cr.
+# 100 preferred shares at $10 per share
+Cash                      $1,000 Dr.
+  Preferred Shares          $1,000 Cr.
+```
+
+### Shares Sold on a Subscription Basis
+
+- Partial payment
+- Share only issued until full price received
+- Cash already debited
+- 10 common shares, at $20, 50 people accept, 50% down, due in 6 months
+
+```accounting
+Share subscriptions receivable    $10,000
+  Common shares subscribed              $10,000
+# first instalment
+Cash                                              $5,000
+  Share subscriptions receivable          $5,000
+# final instalment
+Cash  $5,000
+  Share subscriptions receivable $5,000
+Common shares subscribed        $10,000
+  Common shares                               $10,000
+```
+
+In case of default, possible actions are:
+
+- refund paid amount
+
+```accounting
+Common shares subscribed $1,000
+    Share subscription $500
+    Accounts Payable $500
+```
+
+- treat paid amount as forfeited; transfer to contributed surplus
+- issue fewer shares
+
+### Shares issued with other securities
+
+- for lum-sum sales
+- relative fair value method
+  - estimate fair values of each class of securities, then proportionally allocates the lump-sum to each instrument
+- residual value method
+  - allocate lump-sum to instruments that are easier to measure, then allocate rest to the other instruments
+
+### Cost of Issuing Shares
+
+- Capital-related (deduct from proceeds)
+  - Unerwriting
+  - Accounting and legal fees
+  - Printing
+  - Taxes
+- Operation-related (expenses)
+  - management
+  - maintaining records
+
+### Reacquisition or Repurchases of Shares
+
+- increase ROE
+- provide shares for employee share compensation
+- business acquisitions or mergers
+- stop takeovers
+- demand to affect share price
+- leverage buy-out (LBO)
+- manage regulatory capital requirements
+- reacquired shares are either retired or held as treasury shares (inteded for re-issue)
+- CBCA required shares to be cancelled and restored status to authorized but unissued
+- treasury relatively uncommon in canada
+
+if reacquisition cost < average issuance price
+
+```accounting
+Dr. Share capital $1,000
+  Cr. Cash $800
+  Cr. Contributed Surplus $200
+```
+
+if > average issuance price
+
+```accounting
+Dr. Share capital          $1,000  (= $10 x 100)
+     Cr. Cash                                  $1,200 (= $12 x 100)
+
+Debit $200 to first contributed surplus and then to retained earnings
+```
+
+- Share account Book Value per share is the average issuing price
+
+### Dividends
+
+- Date of declaration (board passes resolution)
+- Date of record (eligibility of shareholders)
+  - business day before ex-dividend date
+- Date of payment
+
+- share of earnings
+- liquidating dividends (when operations are exhausted, think mining, oil & gas, resource extraction)
+
+### Cash Dividends
+
+Cash dividend of 50 cents a share on 1.8MM shares on July 16 to all shareholders of record on June 24.
+
+```accounting
+# after declaration
+Dividends Declared (- Equity) $900,000
+  Dividends Payable (+ Liability)       $900,000
+# nothing on entry date
+# payment date
+Dividends Payable           $900,000
+Cash                                            $900,000
+```
+
+### Property (in-kind) Dividends
+
+- Generally measured at fair value of assets given up
+- Non-reciprocal transfer of non-monetary assets between an entity and its owners
+- Merchandise, real estate, investments
+
+### Stock Dividends
+
+- 1,000 common shares
+- $50,000 retained earnings
+- $130 per share fair value
+- All shareholders received stock dividends
+
+```accounting
+# 1000 * 0.1 * 130 = $13,000
+# on declaration
+Retained earnings   Dr. 13,000
+  Stock Dividends Distributable   Cr. 13,000
+# on distribution
+Stock Dividends Distributable   Dr. 13,000
+  Common Shares Cr. 13,000
+```
+
+### Liquidating Dividends
+
+- paid out of contributed surplus
+- excess of accumulated income considered a return of shareholders' investment
+- Example 1.2M dividend with $900,000 considered a return of income
+
+```accounting
+Retained Earnings   900,000
+Contributed Surplus  300,000
+  Dividends Payable         1,200,000
+```
+
+### Non-cumulative and Non-participating preferred shares
+
+- Question: is it cheaper to issue bonds or preferred shares
+  - Probably bonds since the interest payments are guaranteed and fixed
+  - So why would you ever issue a preferred shares if it is more expensive? just because it can be stopped temporarily?
+- $50,000 to be distributed as cash dividends
+- $400,000 book value
+- 1,000 $6 preferred shares out standing with book value of $100,000
+
+```accounting
+# non-cumulative preferred shares and non-participating
+Total dividends declared $50,000
+Less Preferred shares paid first $6,000
+Balance available to common shareholders $44,000
+# cumulative and non-participating, last 2 years are also due
+total dividend declared $50,000
+Less: dividends in arrears $12,000
+Preferred shares current  $6,000
+To common shares:   $32,000
+# cumulative and participating
+# need to treat the preferred share dividend as if it is part of the proportion so that the proportion of dividends is fair for common
+Total dividends declared $50,000
+Less; preferred in arrears: 12,000
+-----------------------------
+Less: preferred 6% 6,000
+Less: common 6% 24,000
+To preferred (20% of 8,000):  1,600
+To common (80% of 8,00): 6,400
+```
+
+In case 1, the participation is capped
+
+### Stock Splits vs Stock Dividends
+
+- Lower stock market price = easier to acquire
+- If stock dividends are large enough, it's basically a stock split (SEC)
+- large stock dividend is more than 20% and is not mentioned about in ASPE and IFRS
+
+### Components of Shareholders' Equity
+
+1. Share capital (provided by shareholders)
+2. Contributed Surplus (provided by shareholders)
+3. Retained Earnings (earned)
+4. Accumulated OCI (earned)
+
+- IFRS: detailed changes in shareholders' equity
+- ASPE: only retained earnings, contributed capital in notes
+
+### Capital Disclosure
+
+- Amount of authorized, issued and fully paid shares
+- Rights, preferences, any restrictions
+- Reconciliation between opening and closing balances
+- Restrictions on shares
+- IFRS:
+- Objectives, policies, processes for managing capital
+- Summary quantitative date about what the company manages as capital, and any changes
+
+### Equity Financial Statement Analysis
+
+- ROE = (Net Income - Preferred dividends) / (average common common shareholders' equity)
+- Dividend payout (Cash dividends) / (net income - preferred dividends)
+- PE ratio = (market price per share) / (earnings per share)
+- Book value per share = Common shareholders' equity / number of common shares outstanding
