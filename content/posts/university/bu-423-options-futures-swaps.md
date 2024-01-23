@@ -358,3 +358,148 @@ Rates used in option pricing are usually expressed with continuous compounding
 ### Zero Rates
 
 - A zero rate (or spot rate), for maturity T is the rate of interest earned on an investment that provides a payoff only at time T
+
+Maturity (years) | Zero Rate with Continuous Compounding
+---------------------- | ------------------------------------------------------
+0.5 | 5.0
+1.0 | 5.8
+1.5 | 6.4
+2.0 | 6.8
+
+### Bond Pricing (Continuous)
+
+- theoretical price of a two-year bond providing a 6% coupon semi-annually is: `3e^(-0.05 * 0.5) + 3e^(-0.058*1)+ 3e^(-0.064*1.5) +103e^(-0.068*2.0)= 98.39`
+- yield when you replace all the different rates above with a single rate to make the PV equal the price
+
+### Par Yield
+
+- coupon rate that causes the bond price to equal its face value
+- similar to solving for bond yield, but set the price to the face value
+- c = (100 - 100d)m / A
+
+### Data to Determine Treasury Zero Curve
+
+- Bootstrap Method
+- `BOND_PRICE * e % (RATE * MATURITY_IN_YEARS) = FACE_VALUE`
+- For the coupon bonds, we can use the zero rates from before and just solve for the lump-sum rate R
+
+### Forward Rates
+
+- (R2T2 - R1T1) / (T2 - T1)
+- Approximately true when rates are not expressed with continuous compounding
+
+### Forward Rate Agreement (FRA)
+
+- OTC agreement that a certain LIBOR rate will apply to a certain principal during a certain future time period
+- Predetermined rate RK is exchanged for interest at the LIBOR rate
+- FRA can be valued by assuming the forward LIBOR interest rate RF is certain to be realized
+- Value = Present Value of the difference between teh interest that would be paid at interest RF and the interest paid at rate RK
+- `(RF - RK) * Price / (T2 - T1)` and then discount to 0 from T2
+- Use case: floating rate payment in the future but you want to make sure you are paying a fixed rate
+  - the receiver will want a premium for receiving
+
+A company has agreed that it will receive 4% on $100 million for 3 months starting in 3 years. The forward rate for the period between 3 and 3.25 years is 3%. The value of the contract to the company is +$250,000 discounted from time 3.25 years to time zero at the OIS rate.
+
+`(0.04 - 0.03) * 100_000_000 * 0.25 / (1.03^3.25) = 250_000 / (1.03 ^ 3.25)`
+
+Suppose rate proves to be 4.5% (with quarterly compounding). The payoff is –$125,000 at the 3.25 year point. Often the FRA is settled at time 3 years for the present value of the known cash flow at time 3.25 years.
+
+`-125_000 / (1 + (0.045 * 0.25)) = -123_609.39`
+
+- 3x6 FRA: starts in 3 months (90 days) and ends in 6 months (180 days)
+- 6x9 FRA: starts in 6 months (180 days) and ends in 9 months (270 days)
+- Question: rate of 3.10% for 6x9. 3% right now. What is the fixed rate in the agreement?
+  - `(1 + (0.031 * 0.75)) / (1 + 0.03 * 0.5) = (1 + R * 0.25)`
+  - RF = 3.251%
+- Question: 3 months have passed, and the rate has gone to 3.25% for 3 months and 3.3% for 6 months. what is the value of the FRA
+  - `(1 + (0.033 * 0.5)) / (1 + 0.0325 * 0.25) = (1 + R * 0.25)`
+  - RF = 3.323%
+  - FRA = (0.03251 - 0.03323) / 1.033^0.5
+  - FRA = -0.007084 of the loan amount
+
+## Determination of Forward and Futures Prices
+
+### Intro and Types of Contracts
+
+- Futures contract
+- Forward contract
+  - Even an airline ticket is a forward contract
+  - There should be a model/marketplace for this sort of thing for each airline and etc.
+- we have three times: 0, t, and T (maturity)
+
+Types
+
+- forward contracts on investment assets that provide no income
+  - discount bills, bonds, stocks without dividends
+- forward contracts on investment assets that provide a known dividend yield
+  - coupon bonds, indices, currency
+- forward contracts on investment assets that provide a known cash income
+  - coupon bonds, indices
+
+### Valuing Forward Contracts
+
+For all these equations, for the price at t, we can replace T with (T - t).
+
+When first negotiated, a forward contract is worth 0 because neither party is actually paying for the contract to exist.
+
+But later, when there is a contract with delivery price K and a contract with delivery price F0, we can show that the value of the contract is:
+
+Long forward contract
+
+<img class=equation src="https://latex.codecogs.com/svg.image?f=(F_0-K)e^{-rT}" alt="f=(F_0-K)e^{-rT}">
+
+Short forward contract
+
+<img class=equation src="https://latex.codecogs.com/svg.image?f=(K-F_0)e^{-rT}" alt="f=(K-F_0)e^{-rT}">
+
+### The Forward Price
+
+<img class=equation src="https://latex.codecogs.com/svg.image?F_0=S_0(1+r)^T" alt="F_0=S_0(1+r)^T">
+
+### Forward Price with Continuous Compounding
+
+<img class=equation src="https://latex.codecogs.com/svg.image?F_0=S_0e^{rT}" alt="F_0=S_0e^{rT}">
+
+Value:
+
+0 + 100e^(-5%)
+
+### Known Dollar Income
+
+<img class=equation src="https://latex.codecogs.com/svg.image?F_0=(S_0-I)e^{rt}" alt="F_0=(S_0-I)e^{rt}">
+
+Where I is the present value of the income during life of forward contract
+
+### Know Yield
+
+<img class=equation src="https://latex.codecogs.com/svg.image?F_0=S_0e^{(r-q)T}" alt="F_0=(S_0-I)e^{rt}">
+
+Where q is the average yield during the life of the contract (continuous compounding)
+
+### Forward Pricing Example 1
+
+- Stock without dividend
+- spot price = $40
+- risk free for 3 months is 5% per annum (5% / 4 = 1.25%)
+- Ft = 40(e ^ 0.0125) = $40.50
+- Suppose that F0 = $43
+- How to execute the overpriced arbitrage strategy?
+- Short the forward, borrow at risk-free (isn't this the margin rate) to buy the underlying
+- at T, deliver the underlying and close the short forward and pay off the loan
+
+### Futures Pricing
+
+<img class=equation src="https://latex.codecogs.com/svg.image?F_t=S_0e^{(r-q)T}" alt="F_t=(S_0-I)e^{rt}">
+
+Example
+
+- Spot: 400
+- yield of 3% p.a
+- rm = 8%
+
+### Index Arbitrage and Program Trading
+
+- simultaneous purchase/sale of at least 15 stocks with total value > $1MM
+- Black Monday: arbitrage opportunities
+
+### Expected Futures Pricing

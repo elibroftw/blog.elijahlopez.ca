@@ -648,3 +648,187 @@ FILLED RAS
   - Intuit violation of privacy
 - Back doors
   - Debugging left overs
+
+### Privilege Escalation
+
+- A legitimate part that runs with higher privieldge
+- Attacker wants to trick the system into running custom command
+- StrandHogg 2.0: Critical Android flow allows app hijacking, data theft
+
+### Rootkits
+
+- often used by script kiddies
+- Two main parts
+  - gaining unauthorized root / admin priviledges
+    - known exploit
+    - backdoor added
+  - hides existence
+    - clean up log messages created by exploit
+    - modify commands like ls and ps to not report files and processes by the rootkit
+
+Example: Sony XCP
+
+- Mark Russinovinch developed rootkit scanner for Windows
+- Sony audio CD player (XCP) "copy protection"
+- audio CD has an autorun.exe which auto executes and installs a rootkit
+- Sony released an uninstaller that left a back door
+- Hard to find and uninstall because files and processes started with $sys$ were hidden
+- It's basically HIV but for computers
+
+### Keystroke Logger
+
+- record of email / IM you send, all passwords you type
+- data can abe access locally or sent to a remote server
+- installed by malware
+- application specific
+- system specific
+- hardware keyboard logger
+
+### Interface Illusions
+
+What if dragging on that “scrollbar” really dragged a program (from a malicious website) into your “Startup” folder (in addition to scrolling the document)? This really happened
+
+- Conficker worm had "open folder and view files" under Install or run program.
+
+### Clickjacking
+
+- trick user into clicking something disguised as innocuous
+
+### Phishing
+
+- Example of interface illusion
+- Can make the website look like the real thing
+  - Everything except for the URL (but it's possible to have very hidden characters)
+
+### Man-in-The-Middle
+
+- man in the middle intercepts communication from user and sends it to the intended party
+- sees, records, and can capture passwords, and insert malicious commands
+
+### Nonmalicious flaws: Covert Channels
+
+- Attacker creates a capability to transfer sensitive Information through a channel that is not supposed to transmit information
+- What information can/cannot be transmitted through a channel may be determined by a policy/guidelines/physical limitation
+- An attacker sees that the victim, although not using internet, publishes a report summarizing public information
+- The attacker can hide the data in the report
+
+### Cache Timing side channels
+
+- Spectre and Meltdown attacks
+- Caches are shared: by timing cache access, a process can learn information about data used by another.
+- Speculative and out of order execution can be exploited
+
+### Other Potential Attack Vectors
+
+- Bandwidth consumption
+- Timing computations
+- Electromagnetic emission
+- Sound emissions
+- Power consumption
+- Differential power analysis
+- Differential fault analysis
+
+### Controls Against Security Flaws
+
+- Several stages in software life cycle
+- Design
+
+### Design - Modularity
+
+- each responsible for a single subtask
+- easier to check for flaws
+- low coupling
+
+### Design - Encapsulation
+
+- self-contained
+- reduce coupling
+- do not need to know implementation of other modules (use APIs)
+
+### Design - Information Hiding
+
+- Implementation and internal state should be hidden from developers of other module
+- Prevents reliance on behaviour not promised in the API
+- also hides malicious actions
+  - Samsung.pck
+
+### Design - Mutual Suspicion
+
+- Input validation / sanitation
+
+### Design - Confinement
+
+- Sandbox functionality of other modules that are required
+
+### Security Controls Implementation
+
+- don't use C
+- static code analysis
+  - software products that look for buffer overflows, TOCTTOU
+  - do not rely on them
+- hardware assistance
+  - ARM Pointer Authentication https://lwn.net/Articles/718888/
+  - Hardware-assisted shadow stack https://lwn.net/Articles/758245/
+  - Capabilities in hardware https://www.cl.cam.ac.uk/research/security/ctsrd/cheri/
+- formal methods
+  - try proving that the code is correct
+  - not really possible
+  - need markups or assertions
+- genetic diversity
+  - lots of machines run the same code, but if there was more different implementations, less common flaw
+  - same thing happens in agriculture
+
+### Security Controls - Code Reviews
+
+- LGTM!
+- Just get the code
+- Better: guided walk-through
+  - explain code to reviewers (comments suffice imo)
+  - good for changes to code
+- Easter egg code reviews are when no problems are assumed
+  - Therefore, author can intentionally insert flaws so reviewer reviews better
+
+### Security Controls - Testing
+
+- black-box
+- fuzz testing
+  - random data
+- white-box
+  - useful for regression testing
+  - suite of tests created
+
+### Security Controls - Docs
+
+- write down choices made and why they were made
+- if there is a question to do a secure thing, it should be done and ask if it should be removed rather than not enforced at all and left as a TODO
+
+### Standards, Processes, Audit
+
+- standards: what to use (design, testing, etc)
+- processes: how to implement standards
+- audits: verification that implementation was done correctly
+
+### Operating Systems
+
+- allows different entities to access different resources in a shared way
+  - files, memory, etc.
+  - (subjects vs. objects)
+
+### Separation in OS
+
+- Keep user's objects separate from other users
+- Physical
+- Temporal
+- Logical
+- Cryptographic
+
+### Access control lists (ACLs)
+
+- Each object has a list of subjects and their access rights
+- Determine set of allowed users per objects
+- Determine set of objects that a user can access
+- Revoke a user's access right to an object or all objects
+
+### ACLs and capabilities
+
+- UNIX each file has an ACL and the caller is given a list of capabilities as well

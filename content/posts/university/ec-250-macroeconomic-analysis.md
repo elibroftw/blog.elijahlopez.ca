@@ -571,3 +571,244 @@ w = 0.60
 7. Discuss the categories of employment.
 8. Calculate key labour force variables.
 9. Discuss the different types of unemployment.
+
+## Chapter 4 Consumption, Saving, and Investment
+
+- Goods market equilibrium is when desired savings = desired investment
+- Income (after-tax) = Saving + Consumption
+- Desired consumption  _C<sup>d</sup>_
+- Desired national saving, _S<sup>d</sup>_ occurs when _C<sup>d</sup>_ is met (in a closed economy)
+- _S<sup>d</sup>_ =  _Y_ - _C<sup>d</sup>_ - _G_
+
+### Individual Consumption Decisions
+
+- $20,000 income after taxes
+- Could spend all of it or save some of it
+- The future expectation may influence spending decisions today
+- Could borrow to spend more this year, but the cost is bourne in the future
+- Real interest rate _r_ affects the trade-off
+- Desire to have relatively even spending pattern over time is known as _consumption-smoothing motive_
+
+### Current Income and Consumption
+
+- Suppose $3,000 bonus after taxes
+- Marginal propensity to consume (MPC)
+  - Fraction of additional current income that would be consumed in the current period
+  - When income reduces, it gives the fraction of current income lost that is saved
+  - If MPC is 0.4, and income lowered bt $4,000, consumption would reduce by $1,600
+
+### Expected Future Income and Consumption
+
+- If income is expected to start coming in, consumption will be higher than if no employment opportunity was upcoming
+
+### Wealth and Consumption
+
+- Similar the current income expect that expenditures clearly come out of savings and not out of the additional current income
+- Because people own a part of their wealth in equities, the performance of the stock market ought to influence consumption spending
+- Another major form of wealth is housing
+  - Therefore, one could argue, inflation could be cooled by decimating the housing market. If people who bought houses for investments get wrecked, they will spend more and thus prices will cool
+  - "5.7 cents for every dollar increase in housing wealth, but not measurable for increases in stock market wealth" - Lise Pichette, “Are Wealth Effects Important for Canada?,” Bank of Canada Review, Spring 2004.
+  - one third of households own stocks, two thirds own a house
+  - stock prices are more volatile
+  - primary household capital gains tax exemption
+  - concerns of a housing bubble that may one day burst may impact the whole economy ($4,000 less spending per house)
+
+### Real Interest Rate and Consumption
+
+- higher interest rate is two pronged
+- one hand: take advantage of higher payoff
+  - substitution effect of the real interest rate on saving (save more and spend more in the future)
+- other hand: need smaller amounts to achieve target
+  - income effect of the real interest rate on saving
+- need to consider people are borrowers as well
+  - borrowers can consume less when they have to spend more on interest
+- the effect on real interest rates and national saving is not very strong
+
+<details><summary>Comments</summary>
+- cars don't last as long as houses and require financing (interests)
+- houses are 10x car prices and have amortization period of 20+ years so higher interest rates means paying more in interest + you need to pay maintenance
+- some people are
+- interest payments on student loans (not applicable anymore due to federal laws allowing tax deduction)
+- the situation where real interest rates rise seems like during periods of high inflation -> less inflation so maybe people had to reduce consumption and the temporary higher real interest rates just allows for returning to normal spending habits
+- when real interest rates rise, what are expectations for the stock market? If they are the same, then why would people save more? how many people are actually saving?
+- https://www.thestar.com/business/majority-of-canadians-now-have-more-debt-than-savings-statcan-says-here-s-why-the/article_40e0159e-b6fc-11ee-aaed-839d0983b705.html
+</details>
+
+### Taxes and Interest Rates
+
+if _i_ is the nominal interest rate and _t_ is the income tax rate,
+
+_(1 - i)t_ is the after-tax nominal rate
+
+Expected after-tax real interest rate
+
+<img class=equation src="https://latex.codecogs.com/svg.image?r_{a-t}=(1-t)i-\pi^e" alt="r_{a-t}=(1-t)i-\pi^e">
+
+pi ^ e is the expected inflation rate.
+
+Target overnight rate is the key indicator of monetary policy. The overnight rate itself is what chartered banks make on short-term loans to one another. Where is the repo market and who has access to it?
+
+- Reserve ratio:
+  - how much banks must keep as reserves which prevents the banks from loaning out
+  - the central bank pays interest on the reserves (interest on reserves) for banks to deposit into the central bank
+- Discount rate: how much it costs to loan money from the central bank
+- Open Market operations: central bank can purchase or sell government treasuries which is an opportunity cost for banks when they lend to each other
+  - This is basically subsidizing by the central bank
+
+### Fiscal Policy
+
+- The assumption is that fiscal policy does not affect aggregate supply of goods and services and that aggregate output Y is given
+  - This assumption is everything wrong with the economy. It's why we are where we are and not in the future already
+  - If governments derived policies that targeted aggregate supply of goods and services in a way that creates jobs and not in a way that competes with other businesses for the G&S it bid for, Canada would be more innovative. How is green technology going to give us all jobs?
+  - The textbook says this assumption is valid at full-employment (people who are chronically unemployed can be hired though) and that the policy won't significantly affect capital stock or labour supply
+- Affects _C<sup>d</sup>_ which is that $1 less in consuming is $1 more in national saving
+- Government spending can come from higher taxes which means less consuming
+- If governments have to borrow, that means taxpayers have to pay more taxes in the future...expected future incomes will fall, thus reduced consumption
+- Any temporary increase in government spending will reduce desired national saving because the new amount saved will always be less than the amount G spent
+- With tax cuts thrown in, "anything goes"
+  - Consumers are not going to be thinking about future tax increases, so either government spending goes down the same amount as tax cuts or desired consumer spending will increase and national saving will decrease. If government spending went down an equal amount, then there would be higher national saving because of course not all the income that was kept would be spent.
+  - Ricardian equivalence proposition: that tax cuts do not affect consumption
+
+### Investment
+
+- increase capacity to produce and earn profits in the future
+- fluctuates sharply over the business cycle and can account for half or more of declines
+  - goes down because of expected future profits / demand. Will government spending increase prices or actually lead to the intended chain effect of increased investment
+  - seems like during recessions, governments should be investing heavily to get better equity in startups/innovation rather than give grants
+- important in understanding long-run productive capacity
+
+Determinants of Desired National Saving
+
+An Increase in... | Desired National Savings... | Reason
+-------- | ----------------------------------- | ----------
+Current output | Rise | Part of the extra income is saved to provide for future consumption.
+Expected future income | Fall | Anticipation of future income raises current desired consumption, lowering current desired saving.
+Wealth | Fall | Some of the extra wealth is consumed, which reduces saving for given income.
+Expected real interest rate, r | Probably rise | An increased return makes saving more attractive, probably outweighing the fact that less must be saved to reach a specific savings target
+
+### Desired Capital Stock
+
+- Amount of capital that would allow the firm to earn the largest expected profit
+- MPK<sup>f</sup> is the expected future marginal product of capital which is the benefit from one unit of investment today
+- Example
+  - $1,000 oven per cubic metre
+  - no operational costs (solar-powered)
+  - 10% depreciation (10% less efficient every year)
+  - borrowing rate is 8%
+  - This is a cost because for every $ invested with borrowed funds or retained funds, it could've been earning the interest rate too!
+  - Therefore, the user cost is $180 per cubic metre per year it should equal MPK<sup>f</sup> for maximizing profits
+
+<img class=equation src="https://latex.codecogs.com/svg.image?uc=rp_K+dp_K=(r+d)p_K" alt="uc=rp_K+dp_K=(r+d)p_K">
+
+- profit maximization after considering taxes: (1 - t)MPK<sup>f</sup> = uc
+- divide both sides by 1- t to get the "tax-adjusted user cost of capital"
+- actual corporate taxes are on profit not revenues and investment is sometimes deductible
+  - depreciation allowances
+  - investment tax credit
+- therefore use effective tax rate: what tax rate (tau), on revenue has the same effect as the actual tax code
+
+q theory of investment
+
+- James Tobin, Yale
+- that stock prices influence capital investment
+- if Tobin's q > 1, profitable to acquire additional capital since value > cost
+- if Tobin's q < 1, not profitable
+- Tobin's q = V / p<sub>K</sub>K
+- V: stock market value of firm, p<sub>K</sub>K is the replacement cost of the firm's capital cost (Maintenance CAPEX?)
+- Higher MPK -> higher stock prices -> higher q
+- lower real interest rates -> shift from investing in bonds to stocks -> higher stock prices -> higher q
+- lower capital purchase price -> lower denominator and higher q
+
+Changes
+
+- decrease in expected real interest rate, increases desired capital stock
+  - higher capital stock means higher profits meaning higher stock prices as well
+- technological changes increase MPK<sup>f</sup>
+
+Taxes
+
+Effective tax rates on capital investment G7
+
+Country | 2005 | 2010 | 2015
+---------- | -------- | -------- | ---------
+Canada | 38.8% | 19.9% | 20.0%
+Germany | 33.8 | 24.3 | 23.8
+Italy | 32.5 | 27.2 | 8.3
+United States | 35.2 | 34.6 | 34.6
+United Kingdom | 29.7 | 28.7 | 22.9
+Japan | 45.8 | 45.8 | 42.1
+
+Is Japan high post flattening of GDP or was it always high?
+
+Two opposing forces: purchase or construction of new capital goods  (**gross investment**)increases capital stock but capital stock does depreciate and wear out which reduces the capital stock. I feel that with software, tech debt does not actually wear until it becomes unbearable and unproductive to use and/or update.
+The difference between gross investment and depreciation is **net investment**.
+
+net investment = gross investment - depreciation
+
+<img class=equation src="https://latex.codecogs.com/svg.image?K_{t+1}-K_t=I_t-dK_t" alt="K_{t+1}-K_t=I_t-dK_t">
+
+K t+t can be replaced with the desired capital (K*)
+
+Realistically, the investment cannot be made immediately and might take years as in the case of skyscrapers and nuclear power plants.
+
+### Determinants of Desired Investment
+
+An increase in... | Causes Desired Investment to | Reason
+---------------------- | ----------------------- |  ---------------
+Real interest rate, r | Fall | The user cost increases, which reduces desired capital stock.
+Effective tax rate | Fall | The tax-adjusted user cost increases, which reduces desired capital stock.
+Expected future MPK | Rise | The desired capital stock increases.
+
+### Investment in Inventories and Housing
+
+- Inventory investment = increase in inventory of unsold goods, unfinished goods, or raw materials
+  - the most volatile component of investment spending during business cycles
+- Residential investment: construction of housing, (SFH, condos, apartments)
+
+Why might inventory spending increase?
+
+- add more variety (e.g., for cars) for shoppers to select from to avoid waiting for delivery
+  - The expected commission (keeping the same sales force) from the increase dictates the spending inventory level
+  - Cost of holding more inventory (cars): depreciation, financing for the higher inventory
+
+Apartment investments:
+
+- marginal product is the real value of rents (that can be collected) minus taxes and operating costs.
+- the user costs = depreciation, wear and tear, and interest costs
+- construction incentive: future marginal product is at least as great as its user cost
+
+As for other types of capital, constructing an apartment building is profitable only if its expected future marginal product is at least as great as its user cost.
+
+### Goods Market Equilibrium
+
+- what economics forces at play?
+- real interest rate plays a big part
+- equilibrium is when aggregate quantity of goods supplied equals aggregate quantity of goods demanded
+- equilibrium is when Y = C<sup>d</sup> + I<sup>d</sup> + G
+- difference between income-expenditure identity is that there are two **desired** components, so actual output vs. desired may be different.
+- Desired savings = desired investment (graph with interest rates being the vertical axis)
+  - higher interest rates make investments more expensive as the competing rate of earning can be met in the bonds market or something
+  - There is some contradiction as now the text is claiming that higher real interest rates definitely increase national savings
+  - Apparently the real interest rate will be bid up. I guess because banks will have exhausted lending, so private credit lends at the equilibrium rate?
+  - The interest rate represents many rates so things get messy in real world
+
+![In an economy with no foreign trade, the goods market is in equilibrium when desired national saving equals desired investment. Equivalently, the goods market is in equilibrium when the aggregate quantity of goods supplied equals the aggregate quantity of goods demanded.](/images/university/ec-250/saving-investment-curves.png)
+
+### Shifts in the Savings Curve
+
+- a temporary increase in government spending can result in savings curve shifting left (lower desired national savings)
+- **crowding out** is when government spending (which uses more real resources) causes investment to decrease (higher rates for same investment)
+
+### Shifts in the Investment Curve
+
+- new invention that increases MPK
+- new economic reforms
+
+### Lesson 3 Summary
+
+1. Discuss the factors that underlie economy-wide demand for goods and services in a closed economy.
+2. Explain the determinants of household spending and saving.
+3. Explain the determinants of investment spending by firms.
+4. Describe how equilibrium is obtained in the goods market.
+5. Explain the role of the real interest rate in bringing goods market to equilibrium.
+6. Describe how equilibrium is obtained between saving and investment using the saving-investment diagram.

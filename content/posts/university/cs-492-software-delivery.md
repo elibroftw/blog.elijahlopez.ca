@@ -226,3 +226,104 @@ post-receive | Runs after update completion, can be used to broadcast or create 
 
 - Source code is an array of car parts and we want to deliver the final car
 - A build system assembles the parts into deliverables efficiently without needing to remember certain actions
+
+### Families of Build Tools
+
+- [slides](https://learn.uwaterloo.ca/d2l/le/content/1005130/viewContent/5356971/View)
+- [reading](https://is.gd/rzymTT)
+- low-level tools: define deps and rules for each input and output file
+- abstraction-based tools: derive low-level build code from high-evel data. e.g., maps of sources files to executables
+- framework-driven tools: default behaviour is assumed unless explicitly overridden
+- organizationally-scaling tools: reuse the output of build command across machines to accelerate builds nad reduce (organizational-level) waste
+  - how do we do this for rust?
+- Dependency management tools
+- Testing frameworks (CS 447)
+
+## Low-level Build Systems
+
+### Make
+
+- [Example Makefile](https://github.com/smcintosh/makeexample)
+- [More complicated but succinct Makefile](https://github.com/elibroftw/bootleg-settlers-of-katan/blob/master/Makefile)
+- express dependencies with `program: program2 program3`
+- requires tabs not spaces
+- write recipes
+- variables (lazy evaluation)
+  - x = "a command"
+  - $(x)
+- parallelization: make -j8
+- % wildcard is greedy (%.o -> foo.o.o)
+  - the % must be equal on both sides of the rule
+  - $<:  expands to the first dependency
+  - $^: expands to the entire list of dependencies
+  - $@: expands to the name of the target
+- header files are dependents on .o files because .c files might not actually change
+- Make has built-in rules for compiling c files and linking o files
+  - .o files: `$(CC) $(CPPFLAGS) $(CFLAGS) -c`
+  - linking automatically works for programs where a source code exists
+  - string manipulation: either use `${OBJS:.o=.d}` or `$(patsubt %.o,%.d,$(OBJS))`
+
+Shortcoming of Make
+
+- Shell scripts are not portable (cross platform)
+- Boilerplate expressions need to be repeated
+
+[Recursive Make Considered Harmful](https://aegis.sourceforge.net/auug97.pdf)
+
+- Every make only knows the dependencies of itself, not subdirectories it calls make on
+- People would order the recursions to build one project before another
+- Distrust in incremental build process
+
+Addressed
+
+- Apache Ant (low level). Uses Java for recipes
+- Scons and Raek use Python and Ruby as first-class languages to enable portable and extensible build code
+
+### Abstraction-based build
+
+"There is only one problem in software engineer problem that cannot be solved by adding a layer of abstraction: too many layers of abstraction"
+
+- GNU Autotools
+  - Generate Makefiles
+- CMake
+  - Generate Makefiles
+  - Only 3 lines
+  - Made by the Scientific community
+- Meson
+
+```cmake
+# Set the minimum version of CMake that will be supported by this build file
+cmake_minimum_required(VERSION 3.5)
+# Give the project a name
+project(CappedRandom)
+# Add an executable that is made up of the three C source files
+add_executable(main main.c input.c random.c)
+```
+
+### Maven - Framework Driven Build Tool
+
+- assumes a lifecycle
+- lifecycle: series of phases
+- phase: series of goals to build actions via plugins
+
+Lifecycles
+
+- default: produces project deliverables
+- clean: initial state
+- site: website/docs material
+
+Phase | Goal
+--------- | ------
+process-resources | resources:resources
+compile |  compiler:compile
+process-test-resources | resources:testResources
+test-compile |  compiler:testCompile
+test |  surefire:test
+package |  jar:jar | par:par | war:war
+install |  install:install
+deploy |  deploy:deploy
+**Clean**
+clean | clean:clean
+**Site** |
+site | site:site
+site-deploy | site:deploy
