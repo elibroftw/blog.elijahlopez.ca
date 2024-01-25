@@ -417,15 +417,19 @@ ponds to&lt;/li>
 &lt;li>Dependency management tools&lt;/li>
 &lt;li>Testing frameworks (CS 447)&lt;/li>
 &lt;/ul>
-&lt;h3 id="low-level-build-systems" >Low-level Build Systems
+&lt;h2 id="low-level-build-systems" >Low-level Build Systems
 &lt;span>
 &lt;a href="#low-level-build-systems">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
+&lt;/h2>&lt;h3 id="make" >Make
+&lt;span>
+&lt;a href="#make">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
 &lt;/h3>&lt;ul>
-&lt;li>make
-&lt;ul>
 &lt;li>&lt;a href="https://github.com/smcintosh/makeexample">Example Makefile&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://github.com/elibroftw/bootleg-settlers-of-katan/blob/master/Makefile">More complicated but succinct Makefile&lt;/a>&lt;/li>
 &lt;li>express dependencies with &lt;code>program: program2 program3&lt;/code>&lt;/li>
@@ -447,9 +451,137 @@ ponds to&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;li>header files are dependents on .o files because .c files might not actually change&lt;/li>
+&lt;li>Make has built-in rules for compiling c files and linking o files
+&lt;ul>
+&lt;li>.o files: &lt;code>$(CC) $(CPPFLAGS) $(CFLAGS) -c&lt;/code>&lt;/li>
+&lt;li>linking automatically works for programs where a source code exists&lt;/li>
+&lt;li>string manipulation: either use &lt;code>${OBJS:.o=.d}&lt;/code> or &lt;code>$(patsubt %.o,%.d,$(OBJS))&lt;/code>&lt;/li>
 &lt;/ul>
 &lt;/li>
-&lt;/ul></description></item><item><title>BU 491 Business Policy 2 International Strategy</title><link>https://blog.elijahlopez.ca/posts/university/bu-491-business-policy-2-international-strategy/</link><pubDate>Tue, 09 May 2023 15:55:38 -0400</pubDate><guid>https://blog.elijahlopez.ca/posts/university/bu-491-business-policy-2-international-strategy/</guid><description>&lt;div>
+&lt;/ul>
+&lt;p>Shortcoming of Make&lt;/p>
+&lt;ul>
+&lt;li>Shell scripts are not portable (cross platform)&lt;/li>
+&lt;li>Boilerplate expressions need to be repeated&lt;/li>
+&lt;/ul>
+&lt;p>&lt;a href="https://aegis.sourceforge.net/auug97.pdf">Recursive Make Considered Harmful&lt;/a>&lt;/p>
+&lt;ul>
+&lt;li>Every make only knows the dependencies of itself, not subdirectories it calls make on&lt;/li>
+&lt;li>People would order the recursions to build one project before another&lt;/li>
+&lt;li>Distrust in incremental build process&lt;/li>
+&lt;/ul>
+&lt;p>Addressed&lt;/p>
+&lt;ul>
+&lt;li>Apache Ant (low level). Uses Java for recipes&lt;/li>
+&lt;li>Scons and Raek use Python and Ruby as first-class languages to enable portable and extensible build code&lt;/li>
+&lt;/ul>
+&lt;h3 id="abstraction-based-build" >Abstraction-based build
+&lt;span>
+&lt;a href="#abstraction-based-build">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>&amp;ldquo;There is only one problem in software engineer problem that cannot be solved by adding a layer of abstraction: too many layers of abstraction&amp;rdquo;&lt;/p>
+&lt;ul>
+&lt;li>GNU Autotools
+&lt;ul>
+&lt;li>Generate Makefiles&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>CMake
+&lt;ul>
+&lt;li>Generate Makefiles&lt;/li>
+&lt;li>Only 3 lines&lt;/li>
+&lt;li>Made by the Scientific community&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Meson&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-cmake" data-lang="cmake">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic"># Set the minimum version of CMake that will be supported by this build file
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">&lt;/span>&lt;span style="color:#24909d">cmake_minimum_required&lt;/span>(&lt;span style="color:#ed9d13">VERSION&lt;/span> &lt;span style="color:#ed9d13">3.5&lt;/span>)&lt;span style="color:#a61717;background-color:#e3d2d2">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a61717;background-color:#e3d2d2">&lt;/span>&lt;span style="color:#999;font-style:italic"># Give the project a name
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">&lt;/span>&lt;span style="color:#24909d">project&lt;/span>(&lt;span style="color:#ed9d13">CappedRandom&lt;/span>)&lt;span style="color:#a61717;background-color:#e3d2d2">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a61717;background-color:#e3d2d2">&lt;/span>&lt;span style="color:#999;font-style:italic"># Add an executable that is made up of the three C source files
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">&lt;/span>&lt;span style="color:#24909d">add_executable&lt;/span>(&lt;span style="color:#ed9d13">main&lt;/span> &lt;span style="color:#ed9d13">main.c&lt;/span> &lt;span style="color:#ed9d13">input.c&lt;/span> &lt;span style="color:#ed9d13">random.c&lt;/span>)&lt;span style="color:#a61717;background-color:#e3d2d2">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="maven---framework-driven-build-tool" >Maven - Framework Driven Build Tool
+&lt;span>
+&lt;a href="#maven---framework-driven-build-tool">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>assumes a lifecycle&lt;/li>
+&lt;li>lifecycle: series of phases&lt;/li>
+&lt;li>phase: series of goals to build actions via plugins&lt;/li>
+&lt;/ul>
+&lt;p>Lifecycles&lt;/p>
+&lt;ul>
+&lt;li>default: produces project deliverables&lt;/li>
+&lt;li>clean: initial state&lt;/li>
+&lt;li>site: website/docs material&lt;/li>
+&lt;/ul>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Phase&lt;/th>
+&lt;th>Goal&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>process-resources&lt;/td>
+&lt;td>resources:resources&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>compile&lt;/td>
+&lt;td>compiler:compile&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>process-test-resources&lt;/td>
+&lt;td>resources:testResources&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>test-compile&lt;/td>
+&lt;td>compiler:testCompile&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>test&lt;/td>
+&lt;td>surefire:test&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>package&lt;/td>
+&lt;td>jar:jar&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>install&lt;/td>
+&lt;td>install:install&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>deploy&lt;/td>
+&lt;td>deploy:deploy&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;strong>Clean&lt;/strong>&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>clean&lt;/td>
+&lt;td>clean:clean&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;strong>Site&lt;/strong>&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>site&lt;/td>
+&lt;td>site:site&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>site-deploy&lt;/td>
+&lt;td>site:deploy&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table></description></item><item><title>BU 491 Business Policy 2 International Strategy</title><link>https://blog.elijahlopez.ca/posts/university/bu-491-business-policy-2-international-strategy/</link><pubDate>Tue, 09 May 2023 15:55:38 -0400</pubDate><guid>https://blog.elijahlopez.ca/posts/university/bu-491-business-policy-2-international-strategy/</guid><description>&lt;div>
 &lt;h2>Table of Contents&lt;/h2>
 &lt;nav id="TableOfContents">
 &lt;ul>
