@@ -1,7 +1,7 @@
 ---
 title: "EC 250 Macroeconomic Analysis"
 date: 2024-01-09T14:28:58-05:00
-draft: true
+draft: false
 tags: [
   'university'
 ]
@@ -589,6 +589,13 @@ w = 0.60
 - Real interest rate _r_ affects the trade-off
 - Desire to have relatively even spending pattern over time is known as _consumption-smoothing motive_
 
+```py
+def f(income_1=35_000, income_2=30_000, tuition=6150, i=0.05, wealth=0):
+  desired_consumption = (wealth * (i + 1) + income_1 * (i + 1) + income_2 - tuition) / (2+i)
+  print(f'desired consumption = {desired_consumption:.0f}, desired saving = {(income_1 - desired_consumption):.0f}')
+  return desired_consumption, income_1 - desired_consumption
+```
+
 ### Current Income and Consumption
 
 - Suppose $3,000 bonus after taxes
@@ -644,7 +651,7 @@ Expected after-tax real interest rate
 
 <img class=equation src="https://latex.codecogs.com/svg.image?r_{a-t}=(1-t)i-\pi^e" alt="r_{a-t}=(1-t)i-\pi^e">
 
-pi ^ e is the expected inflation rate.
+_pi<sup>e</sup>_ is the expected inflation rate.
 
 Target overnight rate is the key indicator of monetary policy. The overnight rate itself is what chartered banks make on short-term loans to one another. Where is the repo market and who has access to it?
 
@@ -667,7 +674,7 @@ Target overnight rate is the key indicator of monetary policy. The overnight rat
 - Any temporary increase in government spending will reduce desired national saving because the new amount saved will always be less than the amount G spent
 - With tax cuts thrown in, "anything goes"
   - Consumers are not going to be thinking about future tax increases, so either government spending goes down the same amount as tax cuts or desired consumer spending will increase and national saving will decrease. If government spending went down an equal amount, then there would be higher national saving because of course not all the income that was kept would be spent.
-  - Ricardian equivalence proposition: that tax cuts do not affect consumption
+  - Ricardian equivalence proposition: that tax cuts or increases do not affect consumption
 
 ### Investment
 
@@ -700,8 +707,8 @@ Expected real interest rate, r | Probably rise | An increased return makes savin
 
 <img class=equation src="https://latex.codecogs.com/svg.image?uc=rp_K+dp_K=(r+d)p_K" alt="uc=rp_K+dp_K=(r+d)p_K">
 
-- profit maximization after considering taxes: (1 - t)MPK<sup>f</sup> = uc
-- divide both sides by 1- t to get the "tax-adjusted user cost of capital"
+- profit maximization after considering taxes: _(1 - tau)MPK<sup>f</sup> = uc_
+- divide both sides by 1- tau to get the "tax-adjusted user cost of capital"
 - actual corporate taxes are on profit not revenues and investment is sometimes deductible
   - depreciation allowances
   - investment tax credit
@@ -747,7 +754,7 @@ net investment = gross investment - depreciation
 
 <img class=equation src="https://latex.codecogs.com/svg.image?K_{t+1}-K_t=I_t-dK_t" alt="K_{t+1}-K_t=I_t-dK_t">
 
-K t+t can be replaced with the desired capital (K*)
+_K<sub>t+t</sub>_ can be replaced with the desired capital (_K*_)
 
 Realistically, the investment cannot be made immediately and might take years as in the case of skyscrapers and nuclear power plants.
 
@@ -786,7 +793,7 @@ As for other types of capital, constructing an apartment building is profitable 
 - equilibrium is when aggregate quantity of goods supplied equals aggregate quantity of goods demanded
 - equilibrium is when Y = C<sup>d</sup> + I<sup>d</sup> + G
 - difference between income-expenditure identity is that there are two **desired** components, so actual output vs. desired may be different.
-- Desired savings = desired investment (graph with interest rates being the vertical axis)
+- Desired savings (S<sup>d</sup>) = desired investment I<sup>d</sup> ; graph with interest rates being the vertical axis
   - higher interest rates make investments more expensive as the competing rate of earning can be met in the bonds market or something
   - There is some contradiction as now the text is claiming that higher real interest rates definitely increase national savings
   - Apparently the real interest rate will be bid up. I guess because banks will have exhausted lending, so private credit lends at the equilibrium rate?
@@ -798,6 +805,7 @@ As for other types of capital, constructing an apartment building is profitable 
 
 - a temporary increase in government spending can result in savings curve shifting left (lower desired national savings)
 - **crowding out** is when government spending (which uses more real resources) causes investment to decrease (higher rates for same investment)
+- Apparently "expected increase in future income" does not shift the savings curve down
 
 ### Shifts in the Investment Curve
 
