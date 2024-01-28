@@ -1,9 +1,10 @@
 ---
 title: "CS 489 Security"
 date: 2024-01-09T11:33:24-05:00
-draft: true
+draft: false
 tags: [
-  'university'
+  'university',
+  'cybersecurity'
 ]
 ---
 
@@ -33,7 +34,7 @@ Assignment | Start Date | Due Date | Days Given | Grade Weight
 - [Computer Security and the Internet](https://link.springer.com/book/10.1007/978-3-030-83411-13th)
 - [Security in Computing 5th edition](https://eopcw.com/assets/stores/Computer%20Security/lecturenote_1704978481security-in-computing-5-e.pdf)
 
-### Goals
+### Goals (CIA)
 
 - Confidentiality: limiting access to authorized parties
 - Integrity: when you receive data, you get the "right" data
@@ -82,11 +83,11 @@ Assignment | Start Date | Due Date | Days Given | Grade Weight
 
 ### Methods of Defence
 
-- PRevent it
+- Prevent it
 - Deter it
 - Deflect it: make yourself less attractive to attacker (Xbox)
 - Detect it
-- Recover from ti
+- Recover from it
 - Defence in depth
 - Your car may get stolen
   - Park inside your garage
@@ -124,6 +125,24 @@ Assignment | Start Date | Due Date | Days Given | Grade Weight
   - VPN
 
 ## Program Security
+
+### Linux Security Basics
+
+What is the root user, and what is sudo, and how does it work?
+
+The root user, is the super-user with user ID 0 on a Linux system which implies they have full uncapped control over the entire system and are allowed to do anything they want.
+
+Therefore, certain programs restrict actions to the root user as they are basically saying "we are doing or want to access something critical, therefore the root user needs to run this program." This is there to protect the system from non-root users and programs.
+
+So to run programs that require the user to be root, either we log in as the root user and run every program by default with privilege or we use the `sudo` (superuser do) program to run other programs as the root user. The sudo program is a program with root access (well one specific one which is the ability to set a program's userID) that lets us run programs as any other user, however the default behaviour is to try running as the root user.
+
+Now how does sudo actually figure out if the non-root user can run programs as root? Security policy. It first checks if the command is allowed to be run by root by the user via the patterns in the `/etc/sudoers` file. This means that sudo will not ask for the password. Anyways, the sudo program will do all those pattern checks and then will try to see if you are part of the sudo group. The sudo group is a group that can use the sudo command arbitrarily.
+
+Want to know if you are part of the sudo group?
+
+```sh
+groups $USER | grep -q sudo && echo "you are sudo" ||  echo you are not sudo
+```
 
 ### Flaw, faults, and failures
 
@@ -214,7 +233,6 @@ strcpy(buffer, arv[1]);
 ```
 
 What happens when the buffer length < than the first argument?
-
 
 ```c
 int check_signature(char *str, int j) {
