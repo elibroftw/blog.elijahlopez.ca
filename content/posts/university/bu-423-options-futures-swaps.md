@@ -1,7 +1,7 @@
 ---
 title: "BU 423 Options, Futures & Swaps"
 date: 2024-01-09T14:26:54-05:00
-draft: true
+draft: false
 tags: [
   'university'
 ]
@@ -393,8 +393,8 @@ Maturity (years) | Zero Rate with Continuous Compounding
 - OTC agreement that a certain LIBOR rate will apply to a certain principal during a certain future time period
 - Predetermined rate RK is exchanged for interest at the LIBOR rate
 - FRA can be valued by assuming the forward LIBOR interest rate RF is certain to be realized
-- Value = Present Value of the difference between teh interest that would be paid at interest RF and the interest paid at rate RK
-- `(RF - RK) * Price / (T2 - T1)` and then discount to 0 from T2
+- Value = Present Value of the difference between the interest that would be paid at interest RF and the interest paid at rate RK
+- `(RF - RK) * Price * length of the contract / (T2 - T1)` and then discount to 0 from T2
 - Use case: floating rate payment in the future but you want to make sure you are paying a fixed rate
   - the receiver will want a premium for receiving
 
@@ -414,10 +414,19 @@ Suppose rate proves to be 4.5% (with quarterly compounding). The payoff is –$1
 - Question: 3 months have passed, and the rate has gone to 3.25% for 3 months and 3.3% for 6 months. what is the value of the FRA
   - `(1 + (0.033 * 0.5)) / (1 + 0.0325 * 0.25) = (1 + R * 0.25)`
   - RF = 3.323%
-  - FRA = (0.03251 - 0.03323) / 1.033^0.5
-  - FRA = -0.007084 of the loan amount
+  - `FRA = (0.03323 - 0.03251) * 0.25 / (1 + 0.033 * 0.5)`
+  - FRA = 0.00017710154273060686 of the loan amount
+
+### Theories of the Term Structure
+
+- Expectations theory: forward rates equal expected future zero rates
+- Market Segmentation: short, medium, and long rates determined independently of each other
+- Liquidity Preference Theory: forward rates higher than expected future zero rate
+  - To manage these preferences, banks offer different rates for depositors and borrowers depending on the maturity
 
 ## Determination of Forward and Futures Prices
+
+Unit: Domestic Currency / Foreign Currency
 
 ### Intro and Types of Contracts
 
@@ -474,7 +483,7 @@ Where I is the present value of the income during life of forward contract
 
 <img class=equation src="https://latex.codecogs.com/svg.image?F_0=S_0e^{(r-q)T}" alt="F_0=(S_0-I)e^{rt}">
 
-Where q is the average yield during the life of the contract (continuous compounding)
+Where q is the average yield during the life of the contract (continuous compounding), For storage costs, use(+u) instead of (-q). Use q = rf for currencies. For cost of carry, use c (storage cost plus interest cost) in place of r.
 
 ### Forward Pricing Example 1
 
@@ -502,4 +511,38 @@ Example
 - simultaneous purchase/sale of at least 15 stocks with total value > $1MM
 - Black Monday: arbitrage opportunities
 
-### Expected Futures Pricing
+### Interest Rate Futures
+
+- day count convention
+- unit of time for calculating accrued interest when instruments are traded
+- Treasury: Actual / Actual
+- Corporate Bonds: 30 / 360
+- Money Market Instruments (e.g, LIBOR) Actual / 360
+
+### Bond Prices Between Coupons
+
+- Cash Price = Quoted Price + Accrued Interest
+- quoted price is flat price
+- invoice or total price paid is called the dirty price or cash price
+- `Accrued Interest = Coupon * (days since last coupon / coupon period)`
+  - Actually count the days in the coupon period instead of dividing by two
+
+```example
+A semi-annual coupon bond with 8% coupon rate
+Days passed since last coupon payment is 30
+Accrued interest = $80/2  * (30/182.5) = 6.58
+coupon rate * par value * (days / 365)
+Invoice = 990 (quoted) + 6.58 = $996.58
+```
+
+### Treasury Bill Prices in the US
+
+P = 360/n (100 - Y)
+
+Quoted based on annualized discount. So if the quoted price is 8 for 3 month, then the cash price is 100 - (8/4) = 98.
+
+### Canadian Treasury Bills
+
+Quoted on yield. Actual/Actual
+
+365/n * (100 - Y) / Y

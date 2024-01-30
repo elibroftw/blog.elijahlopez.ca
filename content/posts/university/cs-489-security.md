@@ -850,3 +850,43 @@ What if dragging on that “scrollbar” really dragged a program (from a malici
 ### ACLs and capabilities
 
 - UNIX each file has an ACL and the caller is given a list of capabilities as well
+
+### Authentication Factors
+
+- Something the user knows
+  - Password, PIN
+- Something the user has
+  - Badge
+- Something the user is
+  - Biometrics
+- User Context
+  - Location, time, devices in proximity
+
+- There's also https://github.com/johwconst/keystrokeDynamics2FA
+
+### Passwords
+
+- 8 in length can be cracked easily
+- Probably want a password at least 10 in length
+  - Don't use acronyms, use full form
+- Password hygiene
+  - Use a password manager to create and store password
+  - Autofill option
+  - Problem?
+- NIST Advice for Develoeprs
+  - Allow copying
+  - Do not prompt password changes as it  leads to cycling
+
+### Cryptographic Tools
+
+- Hash: Fixed length deterministic output from a variable-length input value
+- Mac: one-way, computers a password fingerprint
+- Encryption: with a secret key you can recover data
+
+### Adobe Password Hacks
+
+- Each password has a hint (123456)
+
+### Server Authentication
+
+-
