@@ -1,7 +1,7 @@
 ---
 title: "BU 397 Intermediate Financial Accounting II"
 date: 2024-01-08T17:26:07-05:00
-draft: true
+draft: false
 tags: [
   'university'
 ]
@@ -873,3 +873,23 @@ In case 1, the participation is capped
 - Dividend payout (Cash dividends) / (net income - preferred dividends)
 - PE ratio = (market price per share) / (earnings per share)
 - Book value per share = Common shareholders' equity / number of common shares outstanding
+
+### Derivatives
+
+- effect of transferring the one or more financial risks inherent in the underlying primary instrument
+- PV of a forward contract is 0; so no initial investment
+- main purpose is for risk management or hedging. Other purposes is speculation and arbitraging.
+- Risks: market risk, credit risk (counterparty), and liqduity risk (companies paying off debt obligations)
+- Measure at FV-NI
+  - remeasure on SFP dates
+- Purchase commitments are not derivates unless
+  - ASPE: exchange traded futures
+
+A stock warrant gives the holder the right to purchase a company's stock at a specific price and at a specific date. A stock warrant is issued directly by the company concerned; when an investor exercises a stock warrant, the shares that fulfill the obligation are not received from another investor but directly from the company.
+
+Company A has 5,000 shares of Company B and bought 5,000 put options at $2/put option. Strike price is $100 per share (current value).
+
+- Purpose: Company B is willing to lose a maximum of $2 per share and wants to limit the downside to this amount
+- Investments (FV-NI). Declines would be posted to net income
+- No the accounting is no transparent, because the NI and OCI are different when underlying goes down
+G
