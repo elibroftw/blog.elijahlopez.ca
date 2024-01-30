@@ -1239,6 +1239,97 @@ test value first (for example 1), compiled the program, and then started gdb:&lt
 &lt;/span>
 &lt;/h3>&lt;ul>
 &lt;li>UNIX each file has an ACL and the caller is given a list of capabilities as well&lt;/li>
+&lt;/ul>
+&lt;h3 id="authentication-factors" >Authentication Factors
+&lt;span>
+&lt;a href="#authentication-factors">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>
+&lt;p>Something the user knows&lt;/p>
+&lt;ul>
+&lt;li>Password, PIN&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Something the user has&lt;/p>
+&lt;ul>
+&lt;li>Badge&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Something the user is&lt;/p>
+&lt;ul>
+&lt;li>Biometrics&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>User Context&lt;/p>
+&lt;ul>
+&lt;li>Location, time, devices in proximity&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>There&amp;rsquo;s also &lt;a href="https://github.com/johwconst/keystrokeDynamics2FA">https://github.com/johwconst/keystrokeDynamics2FA&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="passwords" >Passwords
+&lt;span>
+&lt;a href="#passwords">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>8 in length can be cracked easily&lt;/li>
+&lt;li>Probably want a password at least 10 in length
+&lt;ul>
+&lt;li>Don&amp;rsquo;t use acronyms, use full form&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Password hygiene
+&lt;ul>
+&lt;li>Use a password manager to create and store password&lt;/li>
+&lt;li>Autofill option&lt;/li>
+&lt;li>Problem?&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>NIST Advice for Develoeprs
+&lt;ul>
+&lt;li>Allow copying&lt;/li>
+&lt;li>Do not prompt password changes as it leads to cycling&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="cryptographic-tools" >Cryptographic Tools
+&lt;span>
+&lt;a href="#cryptographic-tools">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Hash: Fixed length deterministic output from a variable-length input value&lt;/li>
+&lt;li>Mac: one-way, computers a password fingerprint&lt;/li>
+&lt;li>Encryption: with a secret key you can recover data&lt;/li>
+&lt;/ul>
+&lt;h3 id="adobe-password-hacks" >Adobe Password Hacks
+&lt;span>
+&lt;a href="#adobe-password-hacks">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Each password has a hint (123456)&lt;/li>
+&lt;/ul>
+&lt;h3 id="server-authentication" >Server Authentication
+&lt;span>
+&lt;a href="#server-authentication">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>&lt;/li>
 &lt;/ul></description></item><item><title>SIM Swapping: Why SMS 2FA Is Unsecure</title><link>https://blog.elijahlopez.ca/posts/sim-swapping-why-sms-2fa-is-unsecure/</link><pubDate>Sun, 09 Jul 2023 19:38:38 -0400</pubDate><guid>https://blog.elijahlopez.ca/posts/sim-swapping-why-sms-2fa-is-unsecure/</guid><description>&lt;p>A lot of companies provide their users with SMS for 2FA in case their users reuse passwords across multiple services. However, users who are forced to use SMS 2FA or choose to use SMS 2FA can be left completely insecure, especially with financially related services which oddly use non-token based 2FA (many crypto exchanges).&lt;/p>
 &lt;p>If a criminal wants to steal your cryptocurrency, they are not going to abide by identity theft laws.&lt;/p>
 &lt;p>SIM swapping is when a malicious actor uses your government ID, such as a social security number (USA) or social insurance number (Canada) to pretend to have lost access to their phone, and subsequently call the telecommunication provider to essentially switch over service to their SIM from the old one. Once a valid service is secured, the malicious actor can simply use the password leaks they found and break into your account.&lt;/p>
