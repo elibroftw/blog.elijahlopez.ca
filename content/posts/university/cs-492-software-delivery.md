@@ -327,3 +327,22 @@ clean | clean:clean
 **Site** |
 site | site:site
 site-deploy | site:deploy
+
+## Organizational Scaling
+
+1. Build execution is computationally expensive
+    - In-memory dependecy graph requires plenty of high-speed RAM
+    - Processor-intensive operation: fast CPU
+    - Files need to be stat'd (modification time), read (source files) and written (intermediate and output files): large and fast disk I/O
+2. Constraints on parallelism
+3. Commands are repeated across machines
+
+### Google's Bazel
+
+- internal built tool is called blaze
+- Starlark: domain-specific build language inspired by Python
+- Load build files relevant to target of the execution
+- Analyze the inputs and dependencies and produces an action graph
+- Execute by traversing teh action graph until final build outputs are produced
+- Action graph is a directed graph of build artifacts
+  - Graph is queryable to better understand the build process
