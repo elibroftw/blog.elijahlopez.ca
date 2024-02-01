@@ -820,3 +820,68 @@ As for other types of capital, constructing an apartment building is profitable 
 4. Describe how equilibrium is obtained in the goods market.
 5. Explain the role of the real interest rate in bringing goods market to equilibrium.
 6. Describe how equilibrium is obtained between saving and investment using the saving-investment diagram.
+
+## Chapter 7 The Asset Market, Money, and Prices
+
+Buy and sell financial assets such as gold, houses, stocks, and bonds
+
+_Money_: assets that can be used to make payments, such as cash, and chequing accounts. Most prices are expressed in units of money.
+
+### What is Money?
+
+- assets that are widely used and accepted as payment
+- medium of exchange
+  - without money, bartering is done
+    - bartering flaw is that it is hard to find someone who has the item you have and is willing to trade it for what you have
+    - opportunity to specialize is greatly reduced
+- unit of account
+  - uniform way to measure value of everything (naturally flowing from previous statement)
+  - not always the same as medium of exchange for countries with high and erratic inflation. WANT: currency stability
+- store of value
+  - any asset could be a store of value
+  - money is held even with low return because it can be used as a medium of exchange
+
+### Measures of Money
+
+- M1 + Monetary Aggregate
+  - Narrowly defined money
+  - Currency and Balances held in chequing accounts
+  - All of its components are accepted and used for payments
+  - 37.6M population so $2396/person
+- M2
+  - M1+ plus somewhat less money-like comprise M2
+  - non-chequable deposits
+    - cheques cannot be written on these deposits
+    - Investment accounts
+- M3
+  - GIC accounts (fixed deposits)
+  - non-personal term deposits
+  - FX deposits of residents (because they can be easily converted to usable currency)
+
+### The Money Supply
+
+- amount of money in the economy
+- partly determined by the central bank
+- open-market operations
+  - open-market purchase: newly minted currency buys financial assets such as government bonds from the public
+  - open-market sale: sell government bonds to reduce money supply
+- can also purchase bonds directly from the government (printing money)
+  - developing countries with low tax base
+  - racked by war or natural disaster
+  - BoC is treated as a private entity (independent) which is why national savings still decreases with government deficits
+
+### Portfolio Allocation
+
+- which assets and how much of each asset to hold
+- Expected Return
+  - the higher an asset’s expected return (after subtracting taxes and fees such as brokers’ commissions), the more desirable the asset is and the more of it holders of wealth will want to own
+- Risk
+  - Uncertainty about the return an asset will earn
+  - Most people don't like risk
+- Liquidity
+  - A liquid asset can easily be disposed of if there is an emergency need for funds or if an unexpectedly good financial investment opportunity arises. Thus, everything else being equal, the more liquid an asset is, the more attractive it will be to holders of wealth.
+- Time to Maturity
+  - amount of time until a financial security matures
+  - prefer shorter over longer
+  - expectations theory means average of short terms = long
+  - reality: longer = higher returns due to term premium
