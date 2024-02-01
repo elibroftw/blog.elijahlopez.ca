@@ -546,3 +546,55 @@ Quoted based on annualized discount. So if the quoted price is 8 for 3 month, th
 Quoted on yield. Actual/Actual
 
 365/n * (100 - Y) / Y
+
+### Treasury Bond Futures
+
+For each $100 face value of bond,
+
+Cash Price received by short party = most recent settlement price \* conversion factor + accrued interest.
+
+- 10-year Treasury note futures contract quotes are to the nearest half of a thirty-second (0.5/32ths). 127-015 means 127 + 1.5/32 and 90-08 means 90 + 8/32.
+- 5-year and 2-year Treasury note contracts are quoted to nearest quarter of a thirty-second (0.25/32ths). 119-197 means 119 + 19.75 / 32
+
+Settlement is priced on a 6% bond and delivery can be any bond with a maturity of more than 15 years but less
+than 25 years. The conversion factor is unique to each bond.
+
+Example
+
+Each contract is delivery of $100,000 face value of bonds. Suppose recent settlement price is 90-00, there's a conversion factor of 1.3800, and the accrued interest is $3 per $100 face value.
+
+Therefore, (1.3800 × 90.00) + 3.00 = $127.20. Since $100,000 face value is delivered (x1000), the total cash received is $127,200.
+
+### Conversion Factors
+
+- Quoted price the bond would have on the first day of delivery month assuming interest rate is 6% with semi-annual compounding and the maturity is rounded down to a multiple of 3 months. If the maturity is no a multiple of 6 months, assume a coupon is paid in three months meaning that accrued interest of 3 months has to be subtracted.
+
+Example
+
+As a first example of these rules, consider a 10% coupon bond with 20 years and two months to maturity. For the purposes of calculating the conversion factor, the bond is assumed to have exactly 20 years to maturity. The first coupon payment is assumed to be made after six months. Coupon payments are then assumed to be made at six-month intervals until the end of the 20 years when the principal payment is made. Assume that the face value is $100. When the discount rate is 6% per annum with semiannual compounding (or 3% per six months), the value of the bond is
+
+- Sum from i=1 to i=40 { 5/1.03^i } + 100 / 1.03^40 = 146.23
+- Divided by the face value to get a conversion factor of 1.4623
+
+Consider an 8% coupon bond with 18 years and 4 months to maturity. For the purposes of calculating the conversion factor, the bond is assumed to have exactly 18 years and 3 months to maturity. Discounting all the payments back to a point in time three months from today at 6% per annum (compounded semiannually) gives a value of
+
+- 3 months from today, the value is 4 (for the last coupon?) + sum from i=1 to i=36 {4 / 1.03^i} + 100 / 1.03^36 = 125.83
+- Discounting to today is 125.83 / (1.03^0.5) = 123.99. Subtract the accrued interest of 2 (3/6 * 4) to get 121.99
+
+### Determining Treasury Futures Price
+
+- 115 quoted bond price, 12% coupon, conversion factor of 1.6, 60 days since last coupon payment, 122 till next coupon payment, 148 after that till contract Maturity
+- S0 is the CASH VALUE not the quoted value
+- S0 = 115 + (60/182) * 6 = 116.978
+- I = 6e^(-0.1 * (122/365)) = 5.803
+- F0 = (S0 - I)e^(rT)
+- F0 = (116.987 - 5.803)e^(0.1 * (270/360)) = 119.211
+- Quoted F0 = 119.711 - total accrued interest = 119.711 - 148/183 * 6 = 114.851
+- Now we need to divide by the conversion factor to get 71.79
+
+### Eurodollar
+
+- a eurodollar is a dollar deposited in a bank outside the USA
+- futures on 3-month LIBOR rate (eurodollar deposit rate)
+- rate earned on $1 million
+- a change in one basis point (0.01) in a eurodollar futures quotes corresponds to a contract price change of $25 (x2500)
