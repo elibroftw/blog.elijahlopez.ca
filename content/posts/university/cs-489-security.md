@@ -887,6 +887,8 @@ What if dragging on that “scrollbar” really dragged a program (from a malici
 
 - Each password has a hint (123456)
 
-### Server Authentication
+### Biometrics
 
--
+- physical characteristics
+- sufficiently close
+- observed fingerprint will never be identical to previously stored fingerprint of the same user
