@@ -893,3 +893,194 @@ Company A has 5,000 shares of Company B and bought 5,000 put options at $2/put o
 - Investments (FV-NI). Declines would be posted to net income
 - No the accounting is no transparent, because the NI and OCI are different when underlying goes down
 G
+
+### Futures
+
+- Exchange-traded
+- Standardized amounts and dates
+- Settled through clearing houses
+- Requires collateral (margin)
+- Settled daily
+- G/L Recognized against income
+
+Short $1,000 grain contract settling in 30 days. Initial $100 margin.
+
+```accounting
+Derivatives - Deposit   100
+  Cash                            100
+```
+
+The value of grain increases, so our position decreases (futures contract moved against the company).
+
+```accounting
+Gain or Loss                                                50
+  Derivatives - Financial Assets/Liabilities      50
+```
+
+Suppose there is a margin call for $50
+
+```accounting
+Derivatives - Deposit   50
+  Cash                            50
+```
+
+Settled on net basis
+
+```accounting
+Cash              100
+Derivatives      50                 (clearing house already settled this to the counterparty)
+  Derivatives - Deposit 150
+```
+
+### Derivatives Involving the Entity's Own Shares
+
+- IFRS: Fixed-for-fixed equity transaction (gross settlement)
+- ASPE: silent, general principles would say contra equity
+- When purchasing an options, debit the contributed surplus first
+
+```accounting
+Contributed surplus  200
+  Cash                              200
+```
+
+Company A agrees to purchase $50,000 US for $65,000 CAD in 30 days. There is a fair value of $500 on the issue date.
+On settlement the ratio is $1.25 CDN = $1 US (versus 1.3 agreement)
+
+```accounting
+Derivatives       500
+  Gain or Loss        500
+# gross basis settlement
+Cash                  62,500
+Gain or Loss        3,000
+  Cash                             65,000
+  Derivatives                         500
+# net basis settlement
+G/L             3,000
+  Cash                      2,500
+  Derivatives               500
+```
+
+### Hybrid/Compound Investments
+
+- preferred shares
+- convertible debt
+- redeemable shares
+- Debt classification requires meeting financial liabilities definition
+  - contractual obligation
+  - deliver cash or financial asset to another party
+  - potentially unfavourable exchange of financial assets
+- Equity:
+  - residual interest after deducting liabilities
+- Offsetting?
+  - Only if there is a legal right and intended to settle
+- Measurement
+  - Residual value approach (incremental). IFRS. Debt first.
+  - Relative fair value (proportional). Equity can be valued as zero or residual method. Easier first
+  - debt measured at Amortized cost
+
+### Convertible Debt
+
+- holder has option to exchange for common shares
+- raise capital without giving up ownership
+- lower interest rate, since investors can ride on share value increase
+- B corp. offers 3-year, 6% annual coupon, convertible bonds par = $1000. Convertible to 250 shares trading at $3/share. Similar straight line bonds carry an interest rate of 9%. 1,000 bonds are issued at par.
+
+```accounting
+FV = $1,000,000
+PV = 924,061 (straight bond)
+Value of option = 1,000,000 - 75,939
+
+Cash                    1,000,000
+  Bonds Payable              924,061
+  Conversion Rights           75,939
+
+# ASPE, not recommended but if equity was valued at $0
+Cash                  1,000,000
+Bonds Payable           1,000,000
+
+# conversion - assume unamortized is $14,058
+Bonds Payable          985,942
+Contributed Surplus     75,939
+  Common Shares             1,061,881
+
+# pay $15,000 to convert ASPE
+Bonds Payable             972,476 (given)
+Loss on redemption         8,968 ( subtract fair value of 981,462 from carry value)
+Contributed Surplus       75,939 (given)
+  Common Shares                           1,048,415
+  Cash                                                   15,000
+
+# pay $15,000  to convert IFRS
+bonds payable           972,476
+loss on redemption      15,000
+  Common Shares                 1,048,415
+  Cash                                        15,000
+
+# retirement with offer of 1,070,000
+Bonds Payable                 972,476
+Loss on Redemption             8,986 (difference between offer and book value of the bond)
+Contributed Surplus            75,939
+Retained Earnings               12,599 (need to book value of contribution as well)
+  Cash                                          1,070,000
+```
+
+### Share Based Compensation
+
+- direct awarks of stock
+- compensatory stock option plans (CSOP)
+  - grants, vesting
+  - paid for service, is an expense, operating transactions
+  - income statement
+  - not traded
+- employee stock option or purchase plans (ESOP)
+  - employee usually purchases the options
+  - charged to equity account
+  - capital transaction
+  - shareholders' equity
+  - not generally traded
+- share appreciation rights (SAR)
+- performance-type plans
+
+### employee stock option or purchase plans (ESOP)
+
+Employee purchases 6,000 $10 options with a premium of $1.
+
+```accounting
+# options bought
+Cash                        6,000
+  Contributed Surplus - Options       6,000
+# options exercises
+Cash                                            60,000
+Contributed Surplus - Options       6,000
+  Common Shares                                   66,000
+```
+
+### CSOP
+
+Options granted to 5 executives to  purchase 2,000 shares at a price of $60. Grant date is Jan 1, 2024. Vesting is Dec 31, 2025. Compensation expense is 220,000.
+
+```accounting
+# on end date of year
+Compensation Expense 110,000
+  Contributed Surplus         110,000
+# 20% exercised Jun 1, 2027
+Cash                            120,000
+  Contributed Surplus     44,000
+  Common Shares               164,000
+# 80% not exercised
+Contributed Surplus - stock options         176,000
+  Contributed Surplus - Expired Options           176,000
+# forfeiture. ASPE: estimate or expense as occur. IFRS must estimate.
+# if change in estimate:
+Contributed Surplus XXX
+  Compensation Expense XXX
+# direct stocks. Fair Value. For private companies, employees cannot realize the value.
+```
+
+Full Disclosure
+
+- accounting policy used
+- description of plans and modifications
+- issued, exercised, forefeited, expired
+- method of fair value
+- compensation should reflect in net income and contributed surplus
