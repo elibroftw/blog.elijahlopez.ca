@@ -884,4 +884,106 @@ _Money_: assets that can be used to make payments, such as cash, and chequing ac
   - amount of time until a financial security matures
   - prefer shorter over longer
   - expectations theory means average of short terms = long
-  - reality: longer = higher returns due to term premium
+  - reality: longer = higher returns due to **term premium**
+
+### Types of Assets
+
+- Bonds
+  - Fixed-income securities
+  - Canadian bonds have very low risk of default. High liqduidity
+  - Corporate bonds are higher risk and could be illiquid during troubling times
+-Stocks
+  - Corporate ownership
+  - Dividends
+  - Small businesses are owned by one or two people and its shares are not marketable
+    - Return is profits or selling the company
+- Houses
+  - Largest asset for most homeowners
+  - Benefit of shelter minus maintenance and property taxes
+  - Change in value of the land and the house
+    - Mistaken belief that there is no risk in holding wealth as housing. US Housing Crisis
+  - Very illiquid, could take months or years to sell BUT home equity line of credit (HELOC) is available
+  - Durable goods such as automobiles, furniture, and appliances
+
+- The demand for each asset is how much a holder of wealth allocated for it in their portfolio
+- US housing crisis: less regulation in the US led to 22% of all mortgages being sub-prime, combined with delayed interest rising resulted in delayed mass default (52% in Freddie Mac and Fannie Mae)
+- Mortgage Backed Securities containing these loans were sold to everyone even foreign investors meaning that that the collapse affected more than just the USA
+
+### Demand for Money
+
+- Liquid and low return
+- Factors:
+  - higher price level -> proportional demand for more money
+    - 70 years ago, price levels was 1/10th meaning nominally, you'd need 10 times less money.
+  - higher real income -> demand more money (real means implies more money)
+    - higher real income means more spending meaning more liquidity needed
+    - not proportional, as higher the income, more efficient investment (might require minimum balance)
+    - also lower the income, there might not just be as many attractive alternatives
+  - increase in interest rates on monetary assets compared to non-monetary assets -> demand more money
+    - returns on alternative assets can sway the demand for money
+- Other Factors
+  - Increase in Wealth, small increase in demand for money
+  - Higher risk in alternative assets increases demand for money. Money itself can be risky via erratic inflation.
+  - Liquidity in other assets will reduce demand for money
+    - Convertibility to cash (deregulation, competition, innovation in financial markets)
+  - Efficiency in payment tech will reduce demand for money
+    - Credit cards, ATMs, debit cards
+
+<img class=equation src="https://latex.codecogs.com/svg.image?M^d=P\times L(Y,i)" alt="M^d=P * L(Y,i)">
+
+- M<sup>d</sup> = aggregate demand for money, in nominal terms
+- P = the price level
+- Y = real income or output
+- i = the nominal interest rate earned by alternative, non-monetary assets (e.g. bonds)
+- L =a function relating money demand to real income and the nominal interest rate
+- the interest on monetary assets is less volatile than the interest on non-monetary assets and is thus not statistically included
+- Can also use r + pi^e to express in terms of real interest and expected inflation rate
+
+<img class=equation src="https://latex.codecogs.com/svg.image?M^d=P\times L(Y,r+\pi^e)" alt="M^d=P * L(Y,r+\pi^e)">
+
+Divide both sides by the price level to get the real demand for money. Also known as the **money demand function**
+
+<img class=equation-tall src="https://latex.codecogs.com/svg.image?\frac{M^d}{P} = (Y,r+\pi^e)" alt="\frac{M^d}{P}=(Y,r+\pi^e)">
+
+### Elasticities of Money Demand
+
+- income elasticity of money demand: increase in money demanded for 1% increase in real income. suggested to be 0.5
+- interest elasticity of money demand: increase in money demanded for 1% increase in interest rates on non-monetary assets (NOT PERCENTAGE POINTS. THINK 0.10 to 0.101). suggested to be -0.3
+
+### Velocity and Quantity Theory of Money
+
+- Turn over of the money stock
+- nominal GDP / nominal money stock
+- higher velocity means each dollar is being used in a greater dollar volume of transactions (assuming transaction volume is proportional to gdp)
+- quantity theory of money: real money demand is proportional to real income M<sup>d</sup> / P =kY where k is a constant
+- demand for M reduces velocity so innovations such as interest bearing chequing accounts can reduce the velocity
+- M1 velocity has been declining over time
+- M2 is long-term stable but not over short-term due to something like the stock market
+
+### Asset Market Equilibrium
+
+- each asset has a fixed-supply, so equilibrium is met when the quantity demanded for each asset equals the fixed supply
+- linked to the price level
+- Two groups: money (M = all assets that can be used for payments. assumed to pay i<sup>m</sup>). non-monetary (NM) assets pay (expected real interest rate + expected inflation rate)
+- Md (total money desired by everyone) + NMd (desired non-monetary assets) = aggregate nominal wealth (as in the sum of desired distribution of wealth = total aggregate wealth)
+- M + NM = aggregate nominal wealth (wealth = the two components that make it up)
+- Therefore, there is equilibrium when the quantity of money demanded equals the quantity of money supplied
+- The nominal money supply M is determined by the central bank through its open-market operations
+- any imbalance between desired national saving and desired national investment is bridged by foreign borrowing or foreign lending
+- Price factor is nominal money divided by the real demand for money
+
+### Money Growth and Inflation
+
+The growth in price levels (inflation) is closely linked to the growth in the nominal money supply.
+
+<img class=equation-tall src="https://latex.codecogs.com/svg.image?\frac{\Delta P}{P}=\frac{\Delta M}{M}-\frac{\Delta L(Y,r+pi^e)}{L(Y,r+pi^e)}" alt="\frac{\Delta P}{P}=\frac{\Delta M}{M}-\frac{\Delta L(Y,r+pi^e)}{L(Y,r+pi^e)}">
+
+- the rate of inflation equals the growth rate of the nominal money supply minus the growth rate of real money demand
+
+With η<sub>Y</sub> (\\eta\_Y) being the income elasticity of money demand, then in the long run where nominal interest rates are constant, inflation can be stated as:
+
+<img class=equation-tall src="https://latex.codecogs.com/svg.image?\pi = \frac{\Delta M}{M}-\eta\frac{\Delta Y}{Y}" alt="\pi = \frac{\Delta M}{M}-η \frac{\Delta Y}{Y}">
+
+Suppose that nominal money supply growth is 10% per year, real income is growing by 3% per year, and the income elasticity of money demand is 2/3. Then, Eq. (7.12) predicts that the inflation rate will be 10% − (2/3)(3%), or 8% per year.
+
+By subtracting the variable nominal yield on the real return bond from the fixed nominal yield on the conventional bond, the Bank can therefore obtain a measure of inflation expectations.
