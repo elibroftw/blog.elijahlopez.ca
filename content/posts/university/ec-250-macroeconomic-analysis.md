@@ -629,7 +629,7 @@ def f(income_1=35_000, income_2=30_000, tuition=6150, i=0.05, wealth=0):
   - income effect of the real interest rate on saving
 - need to consider people are borrowers as well
   - borrowers can consume less when they have to spend more on interest
-- the effect on real interest rates and national saving is not very strong
+- the effect on real interest rates and national saving is not very strong but a higher national savings is said to lower real interest rate
 
 <details><summary>Comments</summary>
 - cars don't last as long as houses and require financing (interests)
@@ -848,6 +848,7 @@ _Money_: assets that can be used to make payments, such as cash, and chequing ac
   - Currency and Balances held in chequing accounts
   - All of its components are accepted and used for payments
   - 37.6M population so $2396/person
+  - does not include savings accounts
 - M2
   - M1+ plus somewhat less money-like comprise M2
   - non-chequable deposits
@@ -921,6 +922,7 @@ _Money_: assets that can be used to make payments, such as cash, and chequing ac
     - also lower the income, there might not just be as many attractive alternatives
   - increase in interest rates on monetary assets compared to non-monetary assets -> demand more money
     - returns on alternative assets can sway the demand for money
+    - a decrease in interest rates for non-monetary assets increases demand for money
 - Other Factors
   - Increase in Wealth, small increase in demand for money
   - Higher risk in alternative assets increases demand for money. Money itself can be risky via erratic inflation.
@@ -949,16 +951,19 @@ Divide both sides by the price level to get the real demand for money. Also know
 
 - income elasticity of money demand: increase in money demanded for 1% increase in real income. suggested to be 0.5
 - interest elasticity of money demand: increase in money demanded for 1% increase in interest rates on non-monetary assets (NOT PERCENTAGE POINTS. THINK 0.10 to 0.101). suggested to be -0.3
+- inflation decreases as demand for money increases
 
 ### Velocity and Quantity Theory of Money
 
 - Turn over of the money stock
 - nominal GDP / nominal money stock
+  - real income / real money demand
 - higher velocity means each dollar is being used in a greater dollar volume of transactions (assuming transaction volume is proportional to gdp)
 - quantity theory of money: real money demand is proportional to real income M<sup>d</sup> / P =kY where k is a constant
 - demand for M reduces velocity so innovations such as interest bearing chequing accounts can reduce the velocity
 - M1 velocity has been declining over time
 - M2 is long-term stable but not over short-term due to something like the stock market
+- % Change in velocity = % Change in Real Income minus Inflation minus % Change in Money Supply
 
 ### Asset Market Equilibrium
 
@@ -971,6 +976,8 @@ Divide both sides by the price level to get the real demand for money. Also know
 - The nominal money supply M is determined by the central bank through its open-market operations
 - any imbalance between desired national saving and desired national investment is bridged by foreign borrowing or foreign lending
 - Price factor is nominal money divided by the real demand for money
+- Under classic model, government spending increases price levels which means that output does not increase
+- If the expected inflation rate decreases, there is lower demand for non-monetary assets (due to lower nominal rates) and thus a higher demand for money
 
 ### Money Growth and Inflation
 
