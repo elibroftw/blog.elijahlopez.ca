@@ -1,4 +1,37 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ELL Blog</title><link>https://blog.elijahlopez.ca/</link><description>ELL Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 09 Jan 2024 14:28:58 -0500</lastBuildDate><atom:link href="https://blog.elijahlopez.ca/index.xml" rel="self" type="application/rss+xml"/><item><title>EC 250 Macroeconomic Analysis</title><link>https://blog.elijahlopez.ca/posts/university/ec-250-macroeconomic-analysis/</link><pubDate>Tue, 09 Jan 2024 14:28:58 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/university/ec-250-macroeconomic-analysis/</guid><description>&lt;h2 id="outline" >Outline
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ELL Blog</title><link>https://blog.elijahlopez.ca/</link><description>ELL Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 02 Feb 2024 16:41:37 -0500</lastBuildDate><atom:link href="https://blog.elijahlopez.ca/index.xml" rel="self" type="application/rss+xml"/><item><title>Python Glob Multiple Filetypes</title><link>https://blog.elijahlopez.ca/posts/python-glob-multiple-filetypes/</link><pubDate>Fri, 02 Feb 2024 16:41:37 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/python-glob-multiple-filetypes/</guid><description>&lt;p>I&amp;rsquo;m writing this because I cannot believe how stupid developers on Stack Overflow are. There are two pages of answers to this question and none of them actually care about reusability, abstraction, and correctness.&lt;/p>
+&lt;p>The right way to do it is as follows.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-py" data-lang="py">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">import&lt;/span> &lt;span style="color:#447fcf;text-decoration:underline">glob&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>FILE_EXTS = {&lt;span style="color:#ed9d13">&amp;#39;.txt&amp;#39;&lt;/span>, &lt;span style="color:#ed9d13">&amp;#39;json&amp;#39;&lt;/span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">def&lt;/span> &lt;span style="color:#447fcf">find_files&lt;/span>(directory):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">for&lt;/span> file &lt;span style="color:#6ab825;font-weight:bold">in&lt;/span> glob.iglob(&lt;span style="color:#ed9d13">f&lt;/span>&lt;span style="color:#ed9d13">&amp;#39;&lt;/span>&lt;span style="color:#ed9d13">{&lt;/span>glob.escape(directory)&lt;span style="color:#ed9d13">}&lt;/span>&lt;span style="color:#ed9d13">/**/*.*&amp;#39;&lt;/span>, recursive=&lt;span style="color:#6ab825;font-weight:bold">True&lt;/span>):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">if&lt;/span> Path(uri).suffix.casefold() &lt;span style="color:#6ab825;font-weight:bold">in&lt;/span> FILE_EXTS:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">yield&lt;/span> uri
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Why is this the right way?&lt;/p>
+&lt;ol>
+&lt;li>Abstracted utility function&lt;/li>
+&lt;li>Works on any folder even folder paths with glob patterns in the file path due to the &lt;code>glob.escape&lt;/code> that we do&lt;/li>
+&lt;li>Recursively collects files&lt;/li>
+&lt;li>Folders are not searched more than once&lt;/li>
+&lt;li>Return type is a generator and not a list, so offers more flexibility for increased performance&lt;/li>
+&lt;li>I use this in my music player, and the glob.escape was introduced to fix a bug one of users encountered&lt;/li>
+&lt;/ol></description></item><item><title>Macroeconomics Asset Market Question (Chegg is Garbage Pt. 1)</title><link>https://blog.elijahlopez.ca/posts/chegg-is-garbage-part-1/</link><pubDate>Fri, 02 Feb 2024 16:20:08 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/chegg-is-garbage-part-1/</guid><description>&lt;p>Consider an economy with a constant growth rate of nominal money supply and a constant real interest rate r​ = 0.06. Which of the following statements about the inflation rate of the economy would be​ valid?&lt;/p>
+&lt;p>a. The​ long-term inflation rate would be equal to the money growth rate regardless of the output growth.&lt;/p>
+&lt;p>b. The ultimate determinant of the inflation rate is how people form their expectation of future inflation.&lt;/p>
+&lt;p>c. Without knowing the nominal interest​ rate, π ​+ 0.09​, one can not tell the real demand for money and hence the inflation rate.&lt;/p>
+&lt;p>d. The faster the​ economy&amp;rsquo;s real output​ grows, the lower the inflation rate.&lt;/p>
+&lt;p>The answer according to Google, Chegg, Homework.Study.com will give you the wrong answer. I ignored them because I trust myself more than even textbooks. I&amp;rsquo;ll break down the problem and give you the solution at the end if you still can&amp;rsquo;t figure it out.&lt;/p>
+&lt;hr>
+&lt;img class=equation-tall src="https://latex.codecogs.com/svg.image?\pi = \frac{\Delta P}{P} = \frac{\Delta M}{M}-\eta_Y\frac{\Delta Y}{Y}-\eta_i\frac{\Delta i}{i}" alt="The inflation rate = % change in money supply - income elasticity of money demand \* % change in real output - interest elasticity of money demand * % change in interest rates">
+&lt;p>The inflation rate = % change in money supply - income elasticity of money demand * % change in real output - interest elasticity of money demand * % change in interest rates.&lt;/p>
+&lt;p>We know from theory that when real income/output increases, the demand for money also increases. Therefore, the income elasticity of money demand is positive. We also know that when interest rates go up for non-monetary assets such as bonds, there is a lower demand for money, hence there is a negative interest elasticity of money demand.&lt;/p>
+&lt;p>In the question, we are told that the growth rate of the money supply is constant, and interest rates are constant. Therefore, only the change in real output can affect the inflation rate. You should be able to figure out the answer now.&lt;/p>
+&lt;details>&lt;summary>Answer&lt;/summary>
+&lt;p>The faster the​ economy&amp;rsquo;s real output​ grows, the less effect money supply growth has on the change in price levels; lower inflation rate.&lt;/p>
+&lt;p>Note that since the money supply is growing every year, the economy has to also grow every year to keep the inflation rate lower than without any output growth.&lt;/p>
+&lt;/details>
+&lt;p>Just goes to show you that sure you can Google a question, but if you are intelligent or have mastered a field, you should have the confidence to disregard information you read online even from &amp;ldquo;trusted authorities.&amp;rdquo; Obviously, this doesn&amp;rsquo;t mean you don&amp;rsquo;t bow down to the scientific method where empirical evidence is king.&lt;/p></description></item><item><title>EC 250 Macroeconomic Analysis</title><link>https://blog.elijahlopez.ca/posts/university/ec-250-macroeconomic-analysis/</link><pubDate>Tue, 09 Jan 2024 14:28:58 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/university/ec-250-macroeconomic-analysis/</guid><description>&lt;h2 id="outline" >Outline
 &lt;span>
 &lt;a href="#outline">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
@@ -1308,7 +1341,7 @@ the loss of income for one year isn&amp;rsquo;t convincing enough&lt;/li>
 &lt;li>borrowers can consume less when they have to spend more on interest&lt;/li>
 &lt;/ul>
 &lt;/li>
-&lt;li>the effect on real interest rates and national saving is not very strong&lt;/li>
+&lt;li>the effect on real interest rates and national saving is not very strong but a higher national savings is said to lower real interest rate&lt;/li>
 &lt;/ul>
 &lt;details>&lt;summary>Comments&lt;/summary>
 - cars don't last as long as houses and require financing (interests)
@@ -1699,6 +1732,7 @@ The difference between gross investment and depreciation is &lt;strong>net inves
 &lt;li>Currency and Balances held in chequing accounts&lt;/li>
 &lt;li>All of its components are accepted and used for payments&lt;/li>
 &lt;li>37.6M population so $2396/person&lt;/li>
+&lt;li>does not include savings accounts&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;li>M2
@@ -1848,6 +1882,7 @@ The difference between gross investment and depreciation is &lt;strong>net inves
 &lt;li>increase in interest rates on monetary assets compared to non-monetary assets -&amp;gt; demand more money
 &lt;ul>
 &lt;li>returns on alternative assets can sway the demand for money&lt;/li>
+&lt;li>a decrease in interest rates for non-monetary assets increases demand for money&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;/ul>
@@ -1891,6 +1926,7 @@ The difference between gross investment and depreciation is &lt;strong>net inves
 &lt;/h3>&lt;ul>
 &lt;li>income elasticity of money demand: increase in money demanded for 1% increase in real income. suggested to be 0.5&lt;/li>
 &lt;li>interest elasticity of money demand: increase in money demanded for 1% increase in interest rates on non-monetary assets (NOT PERCENTAGE POINTS. THINK 0.10 to 0.101). suggested to be -0.3&lt;/li>
+&lt;li>inflation decreases as demand for money increases&lt;/li>
 &lt;/ul>
 &lt;h3 id="velocity-and-quantity-theory-of-money" >Velocity and Quantity Theory of Money
 &lt;span>
@@ -1900,12 +1936,17 @@ The difference between gross investment and depreciation is &lt;strong>net inves
 &lt;/span>
 &lt;/h3>&lt;ul>
 &lt;li>Turn over of the money stock&lt;/li>
-&lt;li>nominal GDP / nominal money stock&lt;/li>
+&lt;li>nominal GDP / nominal money stock
+&lt;ul>
+&lt;li>real income / real money demand&lt;/li>
+&lt;/ul>
+&lt;/li>
 &lt;li>higher velocity means each dollar is being used in a greater dollar volume of transactions (assuming transaction volume is proportional to gdp)&lt;/li>
 &lt;li>quantity theory of money: real money demand is proportional to real income M&lt;sup>d&lt;/sup> / P =kY where k is a constant&lt;/li>
 &lt;li>demand for M reduces velocity so innovations such as interest bearing chequing accounts can reduce the velocity&lt;/li>
 &lt;li>M1 velocity has been declining over time&lt;/li>
 &lt;li>M2 is long-term stable but not over short-term due to something like the stock market&lt;/li>
+&lt;li>% Change in velocity = % Change in Real Income minus Inflation minus % Change in Money Supply&lt;/li>
 &lt;/ul>
 &lt;h3 id="asset-market-equilibrium" >Asset Market Equilibrium
 &lt;span>
@@ -1923,6 +1964,8 @@ The difference between gross investment and depreciation is &lt;strong>net inves
 &lt;li>The nominal money supply M is determined by the central bank through its open-market operations&lt;/li>
 &lt;li>any imbalance between desired national saving and desired national investment is bridged by foreign borrowing or foreign lending&lt;/li>
 &lt;li>Price factor is nominal money divided by the real demand for money&lt;/li>
+&lt;li>Under classic model, government spending increases price levels which means that output does not increase&lt;/li>
+&lt;li>If the expected inflation rate decreases, there is lower demand for non-monetary assets (due to lower nominal rates) and thus a higher demand for money&lt;/li>
 &lt;/ul>
 &lt;h3 id="money-growth-and-inflation" >Money Growth and Inflation
 &lt;span>
