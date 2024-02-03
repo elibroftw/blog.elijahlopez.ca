@@ -148,9 +148,11 @@ Holder has an obligation vs. option
   - What can be delivered
   - Where to deliver
   - When to deliver
+    - For many futures contracts, the delivery period is the whole month
 - Settled daily (mark to market)
 - Closing out futures is easy, it's just an opposite trade
 - Most contracts are closed out before maturity
+- When used for hedging, profits are not recorded for accounting purposes until the contract is closed (pg. 59). If not for hedging, then the books would note the gain/loss in the year end even if the contract will not be closed until the next year
 
 ### Convergence
 
@@ -211,6 +213,7 @@ As time goes on, the future's price converges to the spot price
 
 - Difference between spot and futures
 - Arises because uncertainty about basis when hedge is closed out
+- An improvement (increases) in the basis benefits the short position
 
 ### Long Hedge for Purchase of an Asset
 
@@ -249,7 +252,7 @@ Example 1
 - $5MM portfolio
 - 1.5 Beta
 - One contract is $250 times the index
-- `1.5 * 5,000,000 / 250,000 = 30
+- 1.5 * 5,000,000 / 250,000 = 30 contracts short
 
 Example 2
 
@@ -286,7 +289,7 @@ Example 2
 - Roll futures forward to hedge future exposures
 - Just before maturity, close them out and replace them with new contract reflect the new exposure
 
-### Liqduity Issues
+### Liquidity Issues
 
 - In any hedging situation there is a danger that losses will be realized on the hedge while the gains on the underlying exposure are unrealized
 - Example: Metallgesellschaft which sold long term fixed-price contracts on heating oil and gasoline and hedged using stack and roll
@@ -349,6 +352,15 @@ Example 2
 - Rc: m ln ( 1 + Rm / m)
 - Rm: m (e^(Rc / m) - 1)
 
+```py
+import math
+def convert_interest_rate(m_old, m_new, rate):
+  rc = math.log(1 + rate/m_old) * m_old
+  print(f'Continuous compounding rate: {rc * 100:.4f}')
+  rm = m_new * (math.e ** (rc / m_new) - 1)
+  print(f'New rate: {rm * 100:.4f}')
+```
+
 ```txt
 10% with semiannual compounding is equivalent to 2ln(1.05)=9.758% with continuous compounding
 8% with continuous compounding is equivalent to 4(e0.08/4 -1)=8.08% with quarterly compounding
@@ -365,6 +377,10 @@ Maturity (years) | Zero Rate with Continuous Compounding
 1.0 | 5.8
 1.5 | 6.4
 2.0 | 6.8
+
+Template
+
+COUPON_FOR_PERIOD e^(-HALF_YEAR_CTN_CMPDNG * 0.5) + 3e^(-r*1) = 97
 
 ### Bond Pricing (Continuous)
 
@@ -393,7 +409,7 @@ Maturity (years) | Zero Rate with Continuous Compounding
 - OTC agreement that a certain LIBOR rate will apply to a certain principal during a certain future time period
 - Predetermined rate RK is exchanged for interest at the LIBOR rate
 - FRA can be valued by assuming the forward LIBOR interest rate RF is certain to be realized
-- Value = Present Value of the difference between the interest that would be paid at interest RF and the interest paid at rate RK
+- Value = Present Value of the difference between the forward LIBOR interest rate (RF) and the interest paid at the FRA rate RK
 - `(RF - RK) * Price * length of the contract / (T2 - T1)` and then discount to 0 from T2
 - Use case: floating rate payment in the future but you want to make sure you are paying a fixed rate
   - the receiver will want a premium for receiving
@@ -416,6 +432,13 @@ Suppose rate proves to be 4.5% (with quarterly compounding). The payoff is –$1
   - RF = 3.323%
   - `FRA = (0.03323 - 0.03251) * 0.25 / (1 + 0.033 * 0.5)`
   - FRA = 0.00017710154273060686 of the loan amount
+
+A financial manager needs to hedge against a possible decrease in short-term interest rates. he decides to hedge his risk exposure by going short on a 3X6 FRA that expires in 90 days and is based on a 90-day LIBOR. The current LIBOR spot rates are observed: 30-day 5.83%, 90-day 6.00%, 180-day 6.14% and 360-day 6.51%. What is the rate the manager would receive on this FRA:
+
+- Interest paid on $1 for 180 days: 0.0614 * 0.5 = 0.0307
+- Interest paid on $1 for 90 days: 0.06 * 0.25 = 0.015
+- Expected interest paid on $1 from 3x6 (compounded from 90-day): (1.0307 / 1.015 - 1)
+- Expected interest rate for 3x6 (compounded from 90): (1.0307 / 1.015 - 1) / 0.25 + 1 = 6.19%
 
 ### Theories of the Term Structure
 
@@ -447,7 +470,7 @@ Types
 
 ### Valuing Forward Contracts
 
-For all these equations, for the price at t, we can replace T with (T - t).
+For all these equations, T is the time till maturity in years from the present. r is the continuous compounding rate for the period of time.
 
 When first negotiated, a forward contract is worth 0 because neither party is actually paying for the contract to exist.
 
@@ -460,6 +483,8 @@ Long forward contract
 Short forward contract
 
 <img class=equation src="https://latex.codecogs.com/svg.image?f=(K-F_0)e^{-rT}" alt="f=(K-F_0)e^{-rT}">
+
+So in this case, a rate of say 8% continuous compounding for 3 month period requires multiplying the rate by the months.
 
 ### The Forward Price
 
@@ -481,9 +506,9 @@ Where I is the present value of the income during life of forward contract
 
 ### Know Yield
 
-<img class=equation src="https://latex.codecogs.com/svg.image?F_0=S_0e^{(r-q)T}" alt="F_0=(S_0-I)e^{rt}">
+<img class=equation src="https://latex.codecogs.com/svg.image?F_0=S_0e^{(r-q)T}" alt="F_0=S_0e^{(r-q)T}">
 
-Where q is the average yield during the life of the contract (continuous compounding), For storage costs, use(+u) instead of (-q). Use q = rf for currencies. For cost of carry, use c (storage cost plus interest cost) in place of r.
+Where q is the average yield during the life of the contract (continuous compounding), For storage costs, use(+u) instead of (-q). Use q = rf (foreign) for currencies. For cost of carry, use c (storage cost plus interest cost) in place of r.
 
 ### Forward Pricing Example 1
 
