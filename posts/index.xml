@@ -2213,12 +2213,17 @@ In finance, there is no wealth generation, only wealth redistribution.&lt;/p>
 &lt;ul>
 &lt;li>What can be delivered&lt;/li>
 &lt;li>Where to deliver&lt;/li>
-&lt;li>When to deliver&lt;/li>
+&lt;li>When to deliver
+&lt;ul>
+&lt;li>For many futures contracts, the delivery period is the whole month&lt;/li>
+&lt;/ul>
+&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;li>Settled daily (mark to market)&lt;/li>
 &lt;li>Closing out futures is easy, it&amp;rsquo;s just an opposite trade&lt;/li>
 &lt;li>Most contracts are closed out before maturity&lt;/li>
+&lt;li>When used for hedging, profits are not recorded for accounting purposes until the contract is closed (pg. 59). If not for hedging, then the books would note the gain/loss in the year end even if the contract will not be closed until the next year&lt;/li>
 &lt;/ul>
 &lt;h3 id="convergence" >Convergence
 &lt;span>
@@ -2322,6 +2327,7 @@ In finance, there is no wealth generation, only wealth redistribution.&lt;/p>
 &lt;/h3>&lt;ul>
 &lt;li>Difference between spot and futures&lt;/li>
 &lt;li>Arises because uncertainty about basis when hedge is closed out&lt;/li>
+&lt;li>An improvement (increases) in the basis benefits the short position&lt;/li>
 &lt;/ul>
 &lt;h3 id="long-hedge-for-purchase-of-an-asset" >Long Hedge for Purchase of an Asset
 &lt;span>
@@ -2388,7 +2394,7 @@ In finance, there is no wealth generation, only wealth redistribution.&lt;/p>
 &lt;li>$5MM portfolio&lt;/li>
 &lt;li>1.5 Beta&lt;/li>
 &lt;li>One contract is $250 times the index&lt;/li>
-&lt;li>`1.5 * 5,000,000 / 250,000 = 30&lt;/li>
+&lt;li>1.5 * 5,000,000 / 250,000 = 30 contracts short&lt;/li>
 &lt;/ul>
 &lt;p>Example 2&lt;/p>
 &lt;ul>
@@ -2443,9 +2449,9 @@ In finance, there is no wealth generation, only wealth redistribution.&lt;/p>
 &lt;li>Roll futures forward to hedge future exposures&lt;/li>
 &lt;li>Just before maturity, close them out and replace them with new contract reflect the new exposure&lt;/li>
 &lt;/ul>
-&lt;h3 id="liqduity-issues" >Liqduity Issues
+&lt;h3 id="liquidity-issues" >Liquidity Issues
 &lt;span>
-&lt;a href="#liqduity-issues">
+&lt;a href="#liquidity-issues">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
@@ -2564,7 +2570,13 @@ In finance, there is no wealth generation, only wealth redistribution.&lt;/p>
 &lt;li>Rc: m ln ( 1 + Rm / m)&lt;/li>
 &lt;li>Rm: m (e^(Rc / m) - 1)&lt;/li>
 &lt;/ul>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-txt" data-lang="txt">&lt;span style="display:flex;">&lt;span>10% with semiannual compounding is equivalent to 2ln(1.05)=9.758% with continuous compounding
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-py" data-lang="py">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">import&lt;/span> &lt;span style="color:#447fcf;text-decoration:underline">math&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">def&lt;/span> &lt;span style="color:#447fcf">convert_interest_rate&lt;/span>(m_old, m_new, rate):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> rc = math.log(&lt;span style="color:#3677a9">1&lt;/span> + rate/m_old) * m_old
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#24909d">print&lt;/span>(&lt;span style="color:#ed9d13">f&lt;/span>&lt;span style="color:#ed9d13">&amp;#39;Continuous compounding rate: &lt;/span>&lt;span style="color:#ed9d13">{&lt;/span>rc * &lt;span style="color:#3677a9">100&lt;/span>&lt;span style="color:#ed9d13">:&lt;/span>&lt;span style="color:#ed9d13">.4f&lt;/span>&lt;span style="color:#ed9d13">}&lt;/span>&lt;span style="color:#ed9d13">&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> rm = m_new * (math.e ** (rc / m_new) - &lt;span style="color:#3677a9">1&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#24909d">print&lt;/span>(&lt;span style="color:#ed9d13">f&lt;/span>&lt;span style="color:#ed9d13">&amp;#39;New rate: &lt;/span>&lt;span style="color:#ed9d13">{&lt;/span>rm * &lt;span style="color:#3677a9">100&lt;/span>&lt;span style="color:#ed9d13">:&lt;/span>&lt;span style="color:#ed9d13">.4f&lt;/span>&lt;span style="color:#ed9d13">}&lt;/span>&lt;span style="color:#ed9d13">&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-txt" data-lang="txt">&lt;span style="display:flex;">&lt;span>10% with semiannual compounding is equivalent to 2ln(1.05)=9.758% with continuous compounding
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>8% with continuous compounding is equivalent to 4(e0.08/4 -1)=8.08% with quarterly compounding
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Rates used in option pricing are usually expressed with continuous compounding
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="zero-rates" >Zero Rates
@@ -2602,6 +2614,8 @@ In finance, there is no wealth generation, only wealth redistribution.&lt;/p>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
+&lt;p>Template&lt;/p>
+&lt;p>COUPON_FOR_PERIOD e^(-HALF_YEAR_CTN_CMPDNG * 0.5) + 3e^(-r*1) = 97&lt;/p>
 &lt;h3 id="bond-pricing-continuous" >Bond Pricing (Continuous)
 &lt;span>
 &lt;a href="#bond-pricing-continuous">
@@ -2654,7 +2668,7 @@ In finance, there is no wealth generation, only wealth redistribution.&lt;/p>
 &lt;li>OTC agreement that a certain LIBOR rate will apply to a certain principal during a certain future time period&lt;/li>
 &lt;li>Predetermined rate RK is exchanged for interest at the LIBOR rate&lt;/li>
 &lt;li>FRA can be valued by assuming the forward LIBOR interest rate RF is certain to be realized&lt;/li>
-&lt;li>Value = Present Value of the difference between the interest that would be paid at interest RF and the interest paid at rate RK&lt;/li>
+&lt;li>Value = Present Value of the difference between the forward LIBOR interest rate (RF) and the interest paid at the FRA rate RK&lt;/li>
 &lt;li>&lt;code>(RF - RK) * Price * length of the contract / (T2 - T1)&lt;/code> and then discount to 0 from T2&lt;/li>
 &lt;li>Use case: floating rate payment in the future but you want to make sure you are paying a fixed rate
 &lt;ul>
@@ -2683,6 +2697,13 @@ In finance, there is no wealth generation, only wealth redistribution.&lt;/p>
 &lt;li>FRA = 0.00017710154273060686 of the loan amount&lt;/li>
 &lt;/ul>
 &lt;/li>
+&lt;/ul>
+&lt;p>A financial manager needs to hedge against a possible decrease in short-term interest rates. he decides to hedge his risk exposure by going short on a 3X6 FRA that expires in 90 days and is based on a 90-day LIBOR. The current LIBOR spot rates are observed: 30-day 5.83%, 90-day 6.00%, 180-day 6.14% and 360-day 6.51%. What is the rate the manager would receive on this FRA:&lt;/p>
+&lt;ul>
+&lt;li>Interest paid on $1 for 180 days: 0.0614 * 0.5 = 0.0307&lt;/li>
+&lt;li>Interest paid on $1 for 90 days: 0.06 * 0.25 = 0.015&lt;/li>
+&lt;li>Expected interest paid on $1 from 3x6 (compounded from 90-day): (1.0307 / 1.015 - 1)&lt;/li>
+&lt;li>Expected interest rate for 3x6 (compounded from 90): (1.0307 / 1.015 - 1) / 0.25 + 1 = 6.19%&lt;/li>
 &lt;/ul>
 &lt;h3 id="theories-of-the-term-structure" >Theories of the Term Structure
 &lt;span>
@@ -2746,13 +2767,14 @@ In finance, there is no wealth generation, only wealth redistribution.&lt;/p>
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
-&lt;/h3>&lt;p>For all these equations, for the price at t, we can replace T with (T - t).&lt;/p>
+&lt;/h3>&lt;p>For all these equations, T is the time till maturity in years from the present. r is the continuous compounding rate for the period of time.&lt;/p>
 &lt;p>When first negotiated, a forward contract is worth 0 because neither party is actually paying for the contract to exist.&lt;/p>
 &lt;p>But later, when there is a contract with delivery price K and a contract with delivery price F0, we can show that the value of the contract is:&lt;/p>
 &lt;p>Long forward contract&lt;/p>
 &lt;img class=equation src="https://latex.codecogs.com/svg.image?f=(F_0-K)e^{-rT}" alt="f=(F_0-K)e^{-rT}">
 &lt;p>Short forward contract&lt;/p>
 &lt;img class=equation src="https://latex.codecogs.com/svg.image?f=(K-F_0)e^{-rT}" alt="f=(K-F_0)e^{-rT}">
+&lt;p>So in this case, a rate of say 8% continuous compounding for 3 month period requires multiplying the rate by the months.&lt;/p>
 &lt;h3 id="the-forward-price" >The Forward Price
 &lt;span>
 &lt;a href="#the-forward-price">
@@ -2783,8 +2805,8 @@ In finance, there is no wealth generation, only wealth redistribution.&lt;/p>
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
-&lt;/h3>&lt;img class=equation src="https://latex.codecogs.com/svg.image?F_0=S_0e^{(r-q)T}" alt="F_0=(S_0-I)e^{rt}">
-&lt;p>Where q is the average yield during the life of the contract (continuous compounding), For storage costs, use(+u) instead of (-q). Use q = rf for currencies. For cost of carry, use c (storage cost plus interest cost) in place of r.&lt;/p>
+&lt;/h3>&lt;img class=equation src="https://latex.codecogs.com/svg.image?F_0=S_0e^{(r-q)T}" alt="F_0=S_0e^{(r-q)T}">
+&lt;p>Where q is the average yield during the life of the contract (continuous compounding), For storage costs, use(+u) instead of (-q). Use q = rf (foreign) for currencies. For cost of carry, use c (storage cost plus interest cost) in place of r.&lt;/p>
 &lt;h3 id="forward-pricing-example-1" >Forward Pricing Example 1
 &lt;span>
 &lt;a href="#forward-pricing-example-1">
