@@ -1084,3 +1084,61 @@ Full Disclosure
 - issued, exercised, forefeited, expired
 - method of fair value
 - compensation should reflect in net income and contributed surplus
+
+<details><summary>Exercise P16.9</summary>
+
+$4MM 10-year 8% convertible bond for $4.6MM (premium) on September 30, 2023. Each $1000 is 80 common shares + 20 detachable warrants for exercise of $15. Warrants trade at $3 each. $4.2MM if pure debt. On March 23, 2026, half warrants were exercised. Common shares trading at $20. On September 30, 2028, bonds converted to shares.
+
+```accounting
+Since we know the PV of the pure debt is 4,200,000, the yield is 3.64% according to RATE(10 * 2, -4000000 * 0.08 / 2, 4200000, -4000000) in excel.
+
+September 30, 2023
+Cash 4,600,000
+  Bonds Payable                                                     4,200,000
+  Contributed Surplus - Warrants                               240,000
+  Contributed Surplus - Conversion Rights                160,000
+
+Amortization Schedule for the bond (reduce carrying value by the difference coupon payment and the interest expense from the semi-annual compounded yield) until September 30 2028.
+
+March 23, 2026
+Cash                                                600,000
+Contributed Surplus - Warrants     120,000
+  Common Shares                                 720,000
+
+Sep 30, 2028
+Bonds                                                          4,117,705
+Contributed Surplus - Conversion Rights       160,000
+  Common Shares                                                       4,277.705  (/ 4,000,000 / 1000 * 80  = $13.36782943/share)
+```
+
+</details>
+
+## Income Taxes
+
+- Some expenses are not tax deductible
+- financial reporting: receivable, tax purposes: when cash comes in
+- financial: percentage of completion, tax purposes: when contract is completed
+- financial: warranty liability expense, tax purposes: not a cash expense so don't recognize
+- financial: litigation liability, tax purposes: not a cash expense so don't recognize
+- financial: unearned revenue for cash, tax purposes: cash came in so recognize
+- financial: straight line depreciation, tax purposes: accelerated (CCA)
+- financial: fines and penalties, tax purposes: non-commercial expenses are not tax-deductible
+
+### Temporary Difference Approach - Deferred Tax Expenses
+
+- If settlement results in higher tax payable, deferred tax liability (increase taxes in the future)
+- if the other way, deferred tax asset (reduce taxes in the future)
+- tax base/basis of an asset
+  - deductible for tax purposes after carrying amount is recovered
+
+Example
+
+30% tax rate
+
+end of year | Carrying Value | Tax Base | Temporary Difference | Deffereed Tax Balance
+
+- carrying value 1000, 900, 800
+- tax base 1000, 700, 300
+- deducted: 0, 300, 400
+- difference 0, 200, 500
+- deferred: 0, 60, 90
