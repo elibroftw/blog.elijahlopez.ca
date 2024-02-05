@@ -345,4 +345,41 @@ site-deploy | site:deploy
 - Analyze the inputs and dependencies and produces an action graph
 - Execute by traversing teh action graph until final build outputs are produced
 - Action graph is a directed graph of build artifacts
-  - Graph is queryable to better understand the build process
+  - Graph is [queryable](https://docs.bazel.build/versions/0.29.1/query-how-to.html) to better understand the build process
+  - Lot of things are implicitly done
+  - `bazel query "deps(mavendeps)"`
+
+## CI and CD
+
+- Practitioners (Developers, QA, Release Engineers) <-> Build System <-> Development Tools
+  - Developers: execute local builds to sync changes and perform simple tests
+  - QA: automated tests into build system
+    - normal builds should provide quick feedback
+    - slower tests can be relegated to special build targets that are executed less often
+  - Releng: micro and macro
+    - micro-build: behaviour of a build system in a single execution
+    - macro-build: provisioning fleet of build resources
+- DevTools
+  - Static analysis: infer, coverity
+  - Problems like: buffer overflows, resource leaks, dead code, null pointer dereference & exceptions
+- Code review
+  - pre-merge review
+  - [QT Gerrit code review](https://codereview.qt-project.org/#/c/140545/)
+    - Qt Sanity Bot
+    - Qt CI Bot
+- Release automation
+  - Nightly builds
+    - When builds took hours, the build would run at night after the day's changes so that the QA can run tests in the morning
+    - Too infrequent
+    - Don't know what change broke the build
+    - What if you wrote the broken code the day before
+      - `git bisect` can split the history into two sets of commits
+  - Continuous builds
+
+### CI
+
+- Martin Fowler: Refactoring, Continuous Integration - verify automated build
+- Cycle: build -> git -> build -> test -> report
+- Tools:
+  - Install: Jenkins, CruiseControl, Buildbot
+  - Cloud: Travis CI, GitHub Actions, Circle Ci
