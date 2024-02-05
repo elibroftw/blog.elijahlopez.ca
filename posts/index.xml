@@ -5771,6 +5771,65 @@ Compensation Expense XXX
 &lt;li>issued, exercised, forefeited, expired&lt;/li>
 &lt;li>method of fair value&lt;/li>
 &lt;li>compensation should reflect in net income and contributed surplus&lt;/li>
+&lt;/ul>
+&lt;details>&lt;summary>Exercise P16.9&lt;/summary>
+&lt;p>$4MM 10-year 8% convertible bond for $4.6MM (premium) on September 30, 2023. Each $1000 is 80 common shares + 20 detachable warrants for exercise of $15. Warrants trade at $3 each. $4.2MM if pure debt. On March 23, 2026, half warrants were exercised. Common shares trading at $20. On September 30, 2028, bonds converted to shares.&lt;/p>
+&lt;pre tabindex="0">&lt;code class="language-accounting" data-lang="accounting">Since we know the PV of the pure debt is 4,200,000, the yield is 3.64% according to RATE(10 * 2, -4000000 * 0.08 / 2, 4200000, -4000000) in excel.
+September 30, 2023
+Cash 4,600,000
+Bonds Payable 4,200,000
+Contributed Surplus - Warrants 240,000
+Contributed Surplus - Conversion Rights 160,000
+Amortization Schedule for the bond (reduce carrying value by the difference coupon payment and the interest expense from the semi-annual compounded yield) until September 30 2028.
+March 23, 2026
+Cash 600,000
+Contributed Surplus - Warrants 120,000
+Common Shares 720,000
+Sep 30, 2028
+Bonds 4,117,705
+Contributed Surplus - Conversion Rights 160,000
+Common Shares 4,277.705 (/ 4,000,000 / 1000 * 80 = $13.36782943/share)
+&lt;/code>&lt;/pre>&lt;/details>
+&lt;h2 id="income-taxes" >Income Taxes
+&lt;span>
+&lt;a href="#income-taxes">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;ul>
+&lt;li>Some expenses are not tax deductible&lt;/li>
+&lt;li>financial reporting: receivable, tax purposes: when cash comes in&lt;/li>
+&lt;li>financial: percentage of completion, tax purposes: when contract is completed&lt;/li>
+&lt;li>financial: warranty liability expense, tax purposes: not a cash expense so don&amp;rsquo;t recognize&lt;/li>
+&lt;li>financial: litigation liability, tax purposes: not a cash expense so don&amp;rsquo;t recognize&lt;/li>
+&lt;li>financial: unearned revenue for cash, tax purposes: cash came in so recognize&lt;/li>
+&lt;li>financial: straight line depreciation, tax purposes: accelerated (CCA)&lt;/li>
+&lt;li>financial: fines and penalties, tax purposes: non-commercial expenses are not tax-deductible&lt;/li>
+&lt;/ul>
+&lt;h3 id="temporary-difference-approach---deferred-tax-expenses" >Temporary Difference Approach - Deferred Tax Expenses
+&lt;span>
+&lt;a href="#temporary-difference-approach---deferred-tax-expenses">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>If settlement results in higher tax payable, deferred tax liability (increase taxes in the future)&lt;/li>
+&lt;li>if the other way, deferred tax asset (reduce taxes in the future)&lt;/li>
+&lt;li>tax base/basis of an asset
+&lt;ul>
+&lt;li>deductible for tax purposes after carrying amount is recovered&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>Example&lt;/p>
+&lt;p>30% tax rate&lt;/p>
+&lt;p>end of year | Carrying Value | Tax Base | Temporary Difference | Deffereed Tax Balance&lt;/p>
+&lt;ul>
+&lt;li>carrying value 1000, 900, 800&lt;/li>
+&lt;li>tax base 1000, 700, 300&lt;/li>
+&lt;li>deducted: 0, 300, 400&lt;/li>
+&lt;li>difference 0, 200, 500&lt;/li>
+&lt;li>deferred: 0, 60, 90&lt;/li>
 &lt;/ul></description></item><item><title>CS 492 Software Delivery</title><link>https://blog.elijahlopez.ca/posts/university/cs-492-software-delivery/</link><pubDate>Mon, 08 Jan 2024 13:04:18 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/university/cs-492-software-delivery/</guid><description>&lt;h2 id="summary" >Summary
 &lt;span>
 &lt;a href="#summary">
@@ -6386,7 +6445,84 @@ ponds to&lt;/li>
 &lt;li>Execute by traversing teh action graph until final build outputs are produced&lt;/li>
 &lt;li>Action graph is a directed graph of build artifacts
 &lt;ul>
-&lt;li>Graph is queryable to better understand the build process&lt;/li>
+&lt;li>Graph is &lt;a href="https://docs.bazel.build/versions/0.29.1/query-how-to.html">queryable&lt;/a> to better understand the build process&lt;/li>
+&lt;li>Lot of things are implicitly done&lt;/li>
+&lt;li>&lt;code>bazel query &amp;quot;deps(mavendeps)&amp;quot;&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="ci-and-cd" >CI and CD
+&lt;span>
+&lt;a href="#ci-and-cd">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;ul>
+&lt;li>Practitioners (Developers, QA, Release Engineers) &amp;lt;-&amp;gt; Build System &amp;lt;-&amp;gt; Development Tools
+&lt;ul>
+&lt;li>Developers: execute local builds to sync changes and perform simple tests&lt;/li>
+&lt;li>QA: automated tests into build system
+&lt;ul>
+&lt;li>normal builds should provide quick feedback&lt;/li>
+&lt;li>slower tests can be relegated to special build targets that are executed less often&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Releng: micro and macro
+&lt;ul>
+&lt;li>micro-build: behaviour of a build system in a single execution&lt;/li>
+&lt;li>macro-build: provisioning fleet of build resources&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>DevTools
+&lt;ul>
+&lt;li>Static analysis: infer, coverity&lt;/li>
+&lt;li>Problems like: buffer overflows, resource leaks, dead code, null pointer dereference &amp;amp; exceptions&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Code review
+&lt;ul>
+&lt;li>pre-merge review&lt;/li>
+&lt;li>&lt;a href="https://codereview.qt-project.org/#/c/140545/">QT Gerrit code review&lt;/a>
+&lt;ul>
+&lt;li>Qt Sanity Bot&lt;/li>
+&lt;li>Qt CI Bot&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Release automation
+&lt;ul>
+&lt;li>Nightly builds
+&lt;ul>
+&lt;li>When builds took hours, the build would run at night after the day&amp;rsquo;s changes so that the QA can run tests in the morning&lt;/li>
+&lt;li>Too infrequent&lt;/li>
+&lt;li>Don&amp;rsquo;t know what change broke the build&lt;/li>
+&lt;li>What if you wrote the broken code the day before
+&lt;ul>
+&lt;li>&lt;code>git bisect&lt;/code> can split the history into two sets of commits&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Continuous builds&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="ci" >CI
+&lt;span>
+&lt;a href="#ci">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Martin Fowler: Refactoring, Continuous Integration - verify automated build&lt;/li>
+&lt;li>Cycle: build -&amp;gt; git -&amp;gt; build -&amp;gt; test -&amp;gt; report&lt;/li>
+&lt;li>Tools:
+&lt;ul>
+&lt;li>Install: Jenkins, CruiseControl, Buildbot&lt;/li>
+&lt;li>Cloud: Travis CI, GitHub Actions, Circle Ci&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;/ul></description></item><item><title>Best Cell Phone Carriers Canada</title><link>https://blog.elijahlopez.ca/posts/best-cell-phone-carriers-canada/</link><pubDate>Tue, 02 Jan 2024 18:14:11 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/best-cell-phone-carriers-canada/</guid><description>&lt;p>So I got a look at the boxing day deals and all the 4 carriers had $34 for 50GB of data per month. I thought I had a good deal at $39 for 25GB per month! I even fought on the phone with Koodo about it during the summer since they were offering 20GB for $39 at the time and I was paying $40 for 6GB. I had switched to Koodo from Fredumb Mobile either in 2022 or something.&lt;/p>
