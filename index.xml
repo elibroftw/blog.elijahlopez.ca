@@ -1,17 +1,28 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ELL Blog</title><link>https://blog.elijahlopez.ca/</link><description>ELL Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 05 Feb 2024 21:57:41 -0500</lastBuildDate><atom:link href="https://blog.elijahlopez.ca/index.xml" rel="self" type="application/rss+xml"/><item><title>Wait a Bit Before Upgrading Will Ya?</title><link>https://blog.elijahlopez.ca/posts/wait-a-bit-before-upgrading-will-ya/</link><pubDate>Mon, 05 Feb 2024 21:57:41 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/wait-a-bit-before-upgrading-will-ya/</guid><description>&lt;p>Do not update your software dependencies unless&lt;/p>
-&lt;p>a. the update has been out for 2 months which is enough time for new users to test it out as if they are the QA team
-- non-mature technology is always prone to bugs and if it is working for you now, let someone else run into and report issues with the next versions. Here are four examples over four years of this happening to me!
-- 2024: I thought upgrading to react-native to the latest was such a good idea&amp;hellip;after a couple days, I finally went to test iOS and the development build doesn&amp;rsquo;t even compile because the package manager (cocoapods) is broken. After the tedious fix, it compiled, but react-native itself doesn&amp;rsquo;t work. I wanted confirmation bias for this article and when I went to check npm, I noticed a new version was published an hour ago, and it was the fix for the problem too. So either live on the edge and become bitter like me or just update to (n - 1).
-- 2023: expo didn&amp;rsquo;t work so I never got to enjoy its easy-ness
-- 2022: React&amp;rsquo;s subdependency was broken when I installed react for the first time in 2 years and building for production was broken which I found out while I was recording a youtube video!
-- 2021: I thought upgrading to Python3.10 was a great idea, oh wait regression bug that required editing the source code to fix it
-- 2020: webpack was broken when I was working on my first React project. Good think vite has replaced webpack, because webpack was a good reason to stick to backend development and VanillaJS
-b. there is a security vulnerability
-- one thing that scares me is that if I die, will someone be able to takeover and maintain my own projects, such as Music Caster?
-c. the codebase has become technical debt with interest
-- every couple years, you should evaluate whether the code base is up to modern standards or using modern techniques. Obviously it might not use modern technology, but you need to decide whether the tech debt is one you pay interest on or one you can hold until it&amp;rsquo;s no longer your concern
-- An example of tech debt with no/low interest: reproducible builds. With Music Caster, the tech debt is sizable, but the interest is very low, and the one quirk is that you have to install one of the packages with the system interpreter and not with the venv interpreter.
-- An example of tech debt that you have to pay interest on: the codebase is in a language or use a specific framework that has fallen out of popularity so less people know it meaning either you have to pay developers more money or you have to accept lower productive developers. Sure, you could argue this applies to very new technology, but you are paying a premium to prevent the tech-debt.&lt;/p></description></item><item><title>How to Install Ruby on MacOS</title><link>https://blog.elijahlopez.ca/posts/how-to-install-ruby-on-macos/</link><pubDate>Mon, 05 Feb 2024 21:28:03 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/how-to-install-ruby-on-macos/</guid><description>&lt;p>This is how you install Ruby on MacOS and you don&amp;rsquo;t have to reopen the terminal.&lt;/p>
+&lt;ol>
+&lt;li>the update has been out for 2 months which is enough time for new users to test it out as if they are the QA team
+&lt;ul>
+&lt;li>non-mature technology is always prone to bugs and if it is working for you now, let someone else run into and report issues with the next versions. Here are four examples over four years of this happening to me!&lt;/li>
+&lt;li>2024: I thought upgrading to react-native to the latest was such a good idea&amp;hellip;after a couple days, I finally went to test iOS and the development build doesn&amp;rsquo;t even compile because the package manager (cocoapods) is broken. After the tedious fix, it compiled, but react-native itself doesn&amp;rsquo;t work. I wanted confirmation bias for this article and when I went to check npm, I noticed a new version was published an hour ago, and it was the fix for the problem too. So either live on the edge and become bitter like me or just update to (n - 1).&lt;/li>
+&lt;li>2023: expo didn&amp;rsquo;t work so I never got to enjoy its easy-ness&lt;/li>
+&lt;li>2022: React&amp;rsquo;s subdependency was broken when I installed react for the first time in 2 years and building for production was broken which I found out while I was recording a youtube video!&lt;/li>
+&lt;li>2021: I thought upgrading to Python3.10 was a great idea, oh wait regression bug that required editing the source code to fix it&lt;/li>
+&lt;li>2020: webpack was broken when I was working on my first React project. Good think vite has replaced webpack, because webpack was a good reason to stick to backend development and VanillaJS&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>there is a security vulnerability
+&lt;ul>
+&lt;li>one thing that scares me is that if I die, will someone be able to takeover and maintain my own projects, such as Music Caster?&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>the codebase has become technical debt with interest
+&lt;ul>
+&lt;li>every couple years, you should evaluate whether the code base is up to modern standards or using modern techniques. Obviously it might not use modern technology, but you need to decide whether the tech debt is one you pay interest on or one you can hold until it&amp;rsquo;s no longer your concern&lt;/li>
+&lt;li>An example of tech debt with no/low interest: reproducible builds. With Music Caster, the tech debt is sizable, but the interest is very low, and the one quirk is that you have to install one of the packages with the system interpreter and not with the venv interpreter.&lt;/li>
+&lt;li>An example of tech debt that you have to pay interest on: the codebase is in a language or use a specific framework that has fallen out of popularity so less people know it meaning either you have to pay developers more money or you have to accept lower productive developers. Sure, you could argue this applies to very new technology, but you are paying a premium to prevent the tech-debt.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ol></description></item><item><title>How to Install Ruby on MacOS</title><link>https://blog.elijahlopez.ca/posts/how-to-install-ruby-on-macos/</link><pubDate>Mon, 05 Feb 2024 21:28:03 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/how-to-install-ruby-on-macos/</guid><description>&lt;p>This is how you install Ruby on MacOS and you don&amp;rsquo;t have to reopen the terminal.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-zsh" data-lang="zsh">&lt;span style="display:flex;">&lt;span>brew install ruby-install chruby
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ruby-install -V
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#24909d">echo&lt;/span> &lt;span style="color:#ed9d13">&amp;#34;# enable chruby&amp;#34;&lt;/span> &amp;gt;&amp;gt; ~/.zshrc
