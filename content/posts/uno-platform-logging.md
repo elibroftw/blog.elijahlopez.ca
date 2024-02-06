@@ -6,6 +6,8 @@ tags: [
     'c#',
     'uno-platform',
     'mobile',
+    'programming',
+    'tutorial'
 ]
 ---
 
