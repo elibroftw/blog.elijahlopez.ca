@@ -623,3 +623,61 @@ Consider an 8% coupon bond with 18 years and 4 months to maturity. For the purpo
 - futures on 3-month LIBOR rate (eurodollar deposit rate)
 - rate earned on $1 million
 - a change in one basis point (0.01) in a eurodollar futures quotes corresponds to a contract price change of $25 (x2500)
+- final settlement price is 100 minus actual 3 month LIBOR rate
+- quoted on a value of 100
+- long position = receive a rate
+- for eurodollar futures lasting beyond two years, forward rates != future rates
+  - futures settled daily where forward is settled once
+  - futures settled at the beginning of three-months, FRA settled end of 3 month period
+
+## Swaps
+
+- OTC agreement to exchange cash flows in the future. Calculation usually involves the future value of an interest rate, an exchange rate, or another market variables
+- You agree to pay a fixed-rate and get paid back a floating rate (e.g. LIBOR or OIS)
+
+Suppose Apple has an obligation to pay LIBOR + 0.1%. If they purchase a SWAP with CitiBank, they pay CitiBank a fixed rate, say 3%, and receive LIBOR. Therefore, there's a fixed rate of 3.1%.
+
+Can also convert a fixed rate to a floating if they think interest rates will come down.
+
+What if we made swaps available for mortgage payers as well?
+
+### Swap Market
+
+- Maturity in years
+- Bid: how much you would get if you pay the floating
+- Ask: how much you would pay to get the floating
+
+### Confirmations
+
+- International Swaps and Derivatives has Master Agreements
+
+### Comparative Advantage Example
+
+- AAACorp wants to borrow floating (4% fixed, 6-month LIBOR - 0.1% Floating)
+  - Pays 120 less in fixed and 70 less in floating
+- BBBCorp wants to borrow fixed (5.2% fixed, 6-month LIBOR + 0.6%)
+  - Spread is 70 basis points in floating compared to 120 in basis
+- Swap designed:
+  - The benefit that needs to be split is: 120 - 70 = 50 basis points
+  - Think: one corporation has to pay floating to the other, so calculate the fixed rate paid to each other which is the fixed rate + half the benefit.
+  - BBBCorp borrows floating at +0.6% and pays fixed 4.35% and receives floating
+    - benefit = 5.2% - 4.95% = 25 basis points
+  - AAACorp borrows fixed at 4% and pays floating and receives 4.35%
+    - spread = -0.1% + 0.35% = 25 basis points
+  - With a financial institution, there is a cut that is taken. That cut is basically split in two.
+
+### Fixed-for-Fixed Currency Swap
+
+- Pay 3% on a US dollar principal of 15,000,000
+- Receive 4% on a pound sterling principal of 10,000,000
+
+Example
+
+- GE wants to borrow AUD
+  - Current rates are 5% for USD and 7.6% for AUD
+- Quantas wants to borrow USD
+  - Current rates are 7% for USD and 8% for AUD
+- Swap
+  - Benefit is (2 - 0.4)  = 160 basis points
+  - Therefore, GE borrows USD at 5%, pays 8% for AUD and gets 6.2% in USD
+  - Therefore, Quantas borrows AUD at 8%, pays 6.2% USD, and gets 8% AUD

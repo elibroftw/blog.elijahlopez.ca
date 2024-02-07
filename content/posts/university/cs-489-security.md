@@ -892,3 +892,55 @@ What if dragging on that “scrollbar” really dragged a program (from a malici
 - physical characteristics
 - sufficiently close
 - observed fingerprint will never be identical to previously stored fingerprint of the same user
+
+### Trusted System Design Elements
+
+- Security must be part of design early on
+  - Hard to retrofit security, see Windows 95/98
+- Android later added user switching and camera was not secure at the beginning
+- Least privilege
+  - In A1, pwgen has setuid0 when it only needs to write to the /etc/shadow file
+- Economy of mechanism
+- Open design
+  - Avoid security by obscurity
+- Complete mediation
+- Permission based / fail-safe defaults
+- Least common mechanism
+  - shared mechanism could be used as covert channel
+- Ease of use
+  - don't want protection mechanism to be difficult to use, nobody will use it or will use it incorrectly
+  - Android before: grant all permissions in the beginning
+  - Android now: grant permission one by one based on usage
+
+### Default Allow vs Default DEny
+
+- blacklist
+- whitelist
+
+### Access Control
+
+- Mandatory access control (MAC)
+  - central authority establishes who can access what
+  - good for military
+  - chineses wall, bell-la padula, biba
+- Discretionary access control (DAC)
+  - Owners can control
+  - Grant others access to your home directory
+
+### Object Protection
+
+- Hidden data
+  - Deleting a file will not physically erase file on disk
+  - Deleting text in MS word might not remove text from document
+  - Putting black box over text in PDF leaves text in PDF
+
+### Accountability and Audit
+
+- Granularity of event logging
+
+### Virtualization
+
+- Isolation
+- Virtual memory: page mapping
+- Virtual machines: virtualize I/O devices, file, printers
+- A sophisticated rootkit could run the OS in a virtual environment controlled by the rootkit and it would be undetectable
