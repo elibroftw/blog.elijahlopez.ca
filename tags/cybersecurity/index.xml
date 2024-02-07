@@ -1332,6 +1332,112 @@ test value first (for example 1), compiled the program, and then started gdb:&lt
 &lt;li>physical characteristics&lt;/li>
 &lt;li>sufficiently close&lt;/li>
 &lt;li>observed fingerprint will never be identical to previously stored fingerprint of the same user&lt;/li>
+&lt;/ul>
+&lt;h3 id="trusted-system-design-elements" >Trusted System Design Elements
+&lt;span>
+&lt;a href="#trusted-system-design-elements">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Security must be part of design early on
+&lt;ul>
+&lt;li>Hard to retrofit security, see Windows 95/98&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Android later added user switching and camera was not secure at the beginning&lt;/li>
+&lt;li>Least privilege
+&lt;ul>
+&lt;li>In A1, pwgen has setuid0 when it only needs to write to the /etc/shadow file&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Economy of mechanism&lt;/li>
+&lt;li>Open design
+&lt;ul>
+&lt;li>Avoid security by obscurity&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Complete mediation&lt;/li>
+&lt;li>Permission based / fail-safe defaults&lt;/li>
+&lt;li>Least common mechanism
+&lt;ul>
+&lt;li>shared mechanism could be used as covert channel&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Ease of use
+&lt;ul>
+&lt;li>don&amp;rsquo;t want protection mechanism to be difficult to use, nobody will use it or will use it incorrectly&lt;/li>
+&lt;li>Android before: grant all permissions in the beginning&lt;/li>
+&lt;li>Android now: grant permission one by one based on usage&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="default-allow-vs-default-deny" >Default Allow vs Default DEny
+&lt;span>
+&lt;a href="#default-allow-vs-default-deny">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>blacklist&lt;/li>
+&lt;li>whitelist&lt;/li>
+&lt;/ul>
+&lt;h3 id="access-control" >Access Control
+&lt;span>
+&lt;a href="#access-control">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Mandatory access control (MAC)
+&lt;ul>
+&lt;li>central authority establishes who can access what&lt;/li>
+&lt;li>good for military&lt;/li>
+&lt;li>chineses wall, bell-la padula, biba&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Discretionary access control (DAC)
+&lt;ul>
+&lt;li>Owners can control&lt;/li>
+&lt;li>Grant others access to your home directory&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="object-protection" >Object Protection
+&lt;span>
+&lt;a href="#object-protection">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Hidden data
+&lt;ul>
+&lt;li>Deleting a file will not physically erase file on disk&lt;/li>
+&lt;li>Deleting text in MS word might not remove text from document&lt;/li>
+&lt;li>Putting black box over text in PDF leaves text in PDF&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="accountability-and-audit" >Accountability and Audit
+&lt;span>
+&lt;a href="#accountability-and-audit">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Granularity of event logging&lt;/li>
+&lt;/ul>
+&lt;h3 id="virtualization" >Virtualization
+&lt;span>
+&lt;a href="#virtualization">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Isolation&lt;/li>
+&lt;li>Virtual memory: page mapping&lt;/li>
+&lt;li>Virtual machines: virtualize I/O devices, file, printers&lt;/li>
+&lt;li>A sophisticated rootkit could run the OS in a virtual environment controlled by the rootkit and it would be undetectable&lt;/li>
 &lt;/ul></description></item><item><title>SIM Swapping: Why SMS 2FA Is Unsecure</title><link>https://blog.elijahlopez.ca/posts/sim-swapping-why-sms-2fa-is-unsecure/</link><pubDate>Sun, 09 Jul 2023 19:38:38 -0400</pubDate><guid>https://blog.elijahlopez.ca/posts/sim-swapping-why-sms-2fa-is-unsecure/</guid><description>&lt;p>A lot of companies provide their users with SMS for 2FA in case their users reuse passwords across multiple services. However, users who are forced to use SMS 2FA or choose to use SMS 2FA can be left completely insecure, especially with financially related services which oddly use non-token based 2FA (many crypto exchanges).&lt;/p>
 &lt;p>If a criminal wants to steal your cryptocurrency, they are not going to abide by identity theft laws.&lt;/p>
 &lt;p>SIM swapping is when a malicious actor uses your government ID, such as a social security number (USA) or social insurance number (Canada) to pretend to have lost access to their phone, and subsequently call the telecommunication provider to essentially switch over service to their SIM from the old one. Once a valid service is secured, the malicious actor can simply use the password leaks they found and break into your account.&lt;/p>

@@ -2993,6 +2993,113 @@ than 25 years. The conversion factor is unique to each bond.&lt;/p>
 &lt;li>futures on 3-month LIBOR rate (eurodollar deposit rate)&lt;/li>
 &lt;li>rate earned on $1 million&lt;/li>
 &lt;li>a change in one basis point (0.01) in a eurodollar futures quotes corresponds to a contract price change of $25 (x2500)&lt;/li>
+&lt;li>final settlement price is 100 minus actual 3 month LIBOR rate&lt;/li>
+&lt;li>quoted on a value of 100&lt;/li>
+&lt;li>long position = receive a rate&lt;/li>
+&lt;li>for eurodollar futures lasting beyond two years, forward rates != future rates
+&lt;ul>
+&lt;li>futures settled daily where forward is settled once&lt;/li>
+&lt;li>futures settled at the beginning of three-months, FRA settled end of 3 month period&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="swaps" >Swaps
+&lt;span>
+&lt;a href="#swaps">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;ul>
+&lt;li>OTC agreement to exchange cash flows in the future. Calculation usually involves the future value of an interest rate, an exchange rate, or another market variables&lt;/li>
+&lt;li>You agree to pay a fixed-rate and get paid back a floating rate (e.g. LIBOR or OIS)&lt;/li>
+&lt;/ul>
+&lt;p>Suppose Apple has an obligation to pay LIBOR + 0.1%. If they purchase a SWAP with CitiBank, they pay CitiBank a fixed rate, say 3%, and receive LIBOR. Therefore, there&amp;rsquo;s a fixed rate of 3.1%.&lt;/p>
+&lt;p>Can also convert a fixed rate to a floating if they think interest rates will come down.&lt;/p>
+&lt;p>What if we made swaps available for mortgage payers as well?&lt;/p>
+&lt;h3 id="swap-market" >Swap Market
+&lt;span>
+&lt;a href="#swap-market">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Maturity in years&lt;/li>
+&lt;li>Bid: how much you would get if you pay the floating&lt;/li>
+&lt;li>Ask: how much you would pay to get the floating&lt;/li>
+&lt;/ul>
+&lt;h3 id="confirmations" >Confirmations
+&lt;span>
+&lt;a href="#confirmations">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>International Swaps and Derivatives has Master Agreements&lt;/li>
+&lt;/ul>
+&lt;h3 id="comparative-advantage-example" >Comparative Advantage Example
+&lt;span>
+&lt;a href="#comparative-advantage-example">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>AAACorp wants to borrow floating (4% fixed, 6-month LIBOR - 0.1% Floating)
+&lt;ul>
+&lt;li>Pays 120 less in fixed and 70 less in floating&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>BBBCorp wants to borrow fixed (5.2% fixed, 6-month LIBOR + 0.6%)
+&lt;ul>
+&lt;li>Spread is 70 basis points in floating compared to 120 in basis&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Swap designed:
+&lt;ul>
+&lt;li>The benefit that needs to be split is: 120 - 70 = 50 basis points&lt;/li>
+&lt;li>Think: one corporation has to pay floating to the other, so calculate the fixed rate paid to each other which is the fixed rate + half the benefit.&lt;/li>
+&lt;li>BBBCorp borrows floating at +0.6% and pays fixed 4.35% and receives floating
+&lt;ul>
+&lt;li>benefit = 5.2% - 4.95% = 25 basis points&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>AAACorp borrows fixed at 4% and pays floating and receives 4.35%
+&lt;ul>
+&lt;li>spread = -0.1% + 0.35% = 25 basis points&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>With a financial institution, there is a cut that is taken. That cut is basically split in two.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="fixed-for-fixed-currency-swap" >Fixed-for-Fixed Currency Swap
+&lt;span>
+&lt;a href="#fixed-for-fixed-currency-swap">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Pay 3% on a US dollar principal of 15,000,000&lt;/li>
+&lt;li>Receive 4% on a pound sterling principal of 10,000,000&lt;/li>
+&lt;/ul>
+&lt;p>Example&lt;/p>
+&lt;ul>
+&lt;li>GE wants to borrow AUD
+&lt;ul>
+&lt;li>Current rates are 5% for USD and 7.6% for AUD&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Quantas wants to borrow USD
+&lt;ul>
+&lt;li>Current rates are 7% for USD and 8% for AUD&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Swap
+&lt;ul>
+&lt;li>Benefit is (2 - 0.4) = 160 basis points&lt;/li>
+&lt;li>Therefore, GE borrows USD at 5%, pays 8% for AUD and gets 6.2% in USD&lt;/li>
+&lt;li>Therefore, Quantas borrows AUD at 8%, pays 6.2% USD, and gets 8% AUD&lt;/li>
+&lt;/ul>
+&lt;/li>
 &lt;/ul></description></item><item><title>CS 489 Security</title><link>https://blog.elijahlopez.ca/posts/university/cs-489-security/</link><pubDate>Tue, 09 Jan 2024 11:33:24 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/university/cs-489-security/</guid><description>&lt;!--
 [Learn uWaterloo](https://learn.uwaterloo.ca/d2l/le/content/1005130/Home)
 [Course Website](https://cs.uwaterloo.ca/~m285xu/courses/cs489-w24/)
@@ -4327,6 +4434,112 @@ test value first (for example 1), compiled the program, and then started gdb:&lt
 &lt;li>physical characteristics&lt;/li>
 &lt;li>sufficiently close&lt;/li>
 &lt;li>observed fingerprint will never be identical to previously stored fingerprint of the same user&lt;/li>
+&lt;/ul>
+&lt;h3 id="trusted-system-design-elements" >Trusted System Design Elements
+&lt;span>
+&lt;a href="#trusted-system-design-elements">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Security must be part of design early on
+&lt;ul>
+&lt;li>Hard to retrofit security, see Windows 95/98&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Android later added user switching and camera was not secure at the beginning&lt;/li>
+&lt;li>Least privilege
+&lt;ul>
+&lt;li>In A1, pwgen has setuid0 when it only needs to write to the /etc/shadow file&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Economy of mechanism&lt;/li>
+&lt;li>Open design
+&lt;ul>
+&lt;li>Avoid security by obscurity&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Complete mediation&lt;/li>
+&lt;li>Permission based / fail-safe defaults&lt;/li>
+&lt;li>Least common mechanism
+&lt;ul>
+&lt;li>shared mechanism could be used as covert channel&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Ease of use
+&lt;ul>
+&lt;li>don&amp;rsquo;t want protection mechanism to be difficult to use, nobody will use it or will use it incorrectly&lt;/li>
+&lt;li>Android before: grant all permissions in the beginning&lt;/li>
+&lt;li>Android now: grant permission one by one based on usage&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="default-allow-vs-default-deny" >Default Allow vs Default DEny
+&lt;span>
+&lt;a href="#default-allow-vs-default-deny">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>blacklist&lt;/li>
+&lt;li>whitelist&lt;/li>
+&lt;/ul>
+&lt;h3 id="access-control" >Access Control
+&lt;span>
+&lt;a href="#access-control">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Mandatory access control (MAC)
+&lt;ul>
+&lt;li>central authority establishes who can access what&lt;/li>
+&lt;li>good for military&lt;/li>
+&lt;li>chineses wall, bell-la padula, biba&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Discretionary access control (DAC)
+&lt;ul>
+&lt;li>Owners can control&lt;/li>
+&lt;li>Grant others access to your home directory&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="object-protection" >Object Protection
+&lt;span>
+&lt;a href="#object-protection">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Hidden data
+&lt;ul>
+&lt;li>Deleting a file will not physically erase file on disk&lt;/li>
+&lt;li>Deleting text in MS word might not remove text from document&lt;/li>
+&lt;li>Putting black box over text in PDF leaves text in PDF&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="accountability-and-audit" >Accountability and Audit
+&lt;span>
+&lt;a href="#accountability-and-audit">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Granularity of event logging&lt;/li>
+&lt;/ul>
+&lt;h3 id="virtualization" >Virtualization
+&lt;span>
+&lt;a href="#virtualization">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Isolation&lt;/li>
+&lt;li>Virtual memory: page mapping&lt;/li>
+&lt;li>Virtual machines: virtualize I/O devices, file, printers&lt;/li>
+&lt;li>A sophisticated rootkit could run the OS in a virtual environment controlled by the rootkit and it would be undetectable&lt;/li>
 &lt;/ul></description></item><item><title>BU 397 Intermediate Financial Accounting II</title><link>https://blog.elijahlopez.ca/posts/bu-397-intermediate-financial-accounting-ii/</link><pubDate>Mon, 08 Jan 2024 17:26:07 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/bu-397-intermediate-financial-accounting-ii/</guid><description>&lt;ul>
 &lt;li>Lots of content for this class.&lt;/li>
 &lt;li>Focus on IFRS which has been GAAP since 2011 for Canadian publicly traded companies&lt;/li>
