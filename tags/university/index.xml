@@ -5993,7 +5993,7 @@ Common Shares 4,277.705 (/ 4,000,000 / 1000 * 80 = $13.36782943/share)
 &lt;/a>
 &lt;/span>
 &lt;/h3>&lt;ul>
-&lt;li>If settlement results in higher tax payable, deferred tax liability (increase taxes in the future)&lt;/li>
+&lt;li>If settlement results in higher tax payable, it&amp;rsquo;s a deferred tax liability (increase taxes in the future)&lt;/li>
 &lt;li>if the other way, deferred tax asset (reduce taxes in the future)&lt;/li>
 &lt;li>tax base/basis of an asset
 &lt;ul>
@@ -6003,13 +6003,81 @@ Common Shares 4,277.705 (/ 4,000,000 / 1000 * 80 = $13.36782943/share)
 &lt;/ul>
 &lt;p>Example&lt;/p>
 &lt;p>30% tax rate&lt;/p>
-&lt;p>end of year | Carrying Value | Tax Base | Temporary Difference | Deffereed Tax Balance&lt;/p>
+&lt;p>end of year | Carrying Value | Tax Base | Temporary Difference | Deferred Tax Balance&lt;/p>
 &lt;ul>
 &lt;li>carrying value 1000, 900, 800&lt;/li>
-&lt;li>tax base 1000, 700, 300&lt;/li>
-&lt;li>deducted: 0, 300, 400&lt;/li>
-&lt;li>difference 0, 200, 500&lt;/li>
-&lt;li>deferred: 0, 60, 90&lt;/li>
+&lt;li>tax base 1000, 700, 500&lt;/li>
+&lt;li>deducted: 0, 200, 400&lt;/li>
+&lt;li>difference 0, 300, 500&lt;/li>
+&lt;li>deferred: 0, 200 * 30% = 60, 300 * 30% = 90&lt;/li>
+&lt;/ul>
+&lt;h3 id="tax-base--tax-basis-of-liability" >Tax Base / Tax Basis of Liability
+&lt;span>
+&lt;a href="#tax-base--tax-basis-of-liability">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>tax base = Carrying amount - future tax deductions&lt;/li>
+&lt;li>when liability can be settled for its carrying amount without any tax consequences, tax base = carrying amount&lt;/li>
+&lt;li>unearned revenue: settlement is via recognition so no tax effect&lt;/li>
+&lt;/ul>
+&lt;p>Example - Deferred Tax Liability&lt;/p>
+&lt;ul>
+&lt;li>Company A reported $130,000 revenue in 2023&lt;/li>
+&lt;li>$100,000 was taxable revenue in 2023 (collected)&lt;/li>
+&lt;li>20,000 will be collected in 2024, and 10,000 in 2025&lt;/li>
+&lt;li>25% tax rate&lt;/li>
+&lt;li>income tax payable is 10,000 in 2023, 11,000 in 2024&lt;/li>
+&lt;/ul>
+&lt;pre tabindex="0">&lt;code class="language-accounting" data-lang="accounting">2023
+Current Income Tax Expense 10,000
+Deferred Income Tax Expense 7,500
+Cash 10,000
+Deferred Tax Liability (30,000 * 25%) 7,500
+2024
+Deferred Income Tax Liability 5,000
+Deferred tax benefit 5,000
+# the point of deferred tax benefit is because it was already reduced retained earnings the year before
+Current income tax expense 11,000
+Income tax payable 11,000
+&lt;/code>&lt;/pre>&lt;p>Example - Deferred Tax Asset&lt;/p>
+&lt;ul>
+&lt;li>2 year assurance warranty expense&lt;/li>
+&lt;li>estimated 500,000 expense&lt;/li>
+&lt;li>actual costs were 300,000 in 2024, 200,000 in 2025&lt;/li>
+&lt;li>income tax payable: 600,000 in 2023, 440,000 in 2024&lt;/li>
+&lt;li>future tax rate is 25%&lt;/li>
+&lt;li>warranty liability
+&lt;ul>
+&lt;li>2023: 500,000 recognized vs. 0 actual -&amp;gt; 25% * 500,000 = 125,000 asset&lt;/li>
+&lt;li>2024: 200,000 recognized vs. 0 actual -&amp;gt; 25% * 200,000 = 50,000 asset remaining&lt;/li>
+&lt;li>2025: 0 recognized vs. 0 -&amp;gt; 0&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;pre tabindex="0">&lt;code class="language-accounting" data-lang="accounting">2023
+Current income tax expense 600,000
+Income tax payable 600,000
+Deferred income tax asset 125,000
+Deferred Income tax benefit 125,000
+2024
+Deferred Income tax expense 75,000
+Income tax asset 75,000
+Current income tax expense 440,000
+Income tax payable 440,000
+2025
+Deferred Income tax expense 50,000
+Income tax asset 50,000
+&lt;/code>&lt;/pre>&lt;h3 id="cca-recap" >CCA Recap
+&lt;span>
+&lt;a href="#cca-recap">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Accelerate Investment Incentive (1.5x) applies only to net additions&lt;/li>
+&lt;li>UCC&lt;sub>end&lt;/sub> = UCC&lt;sub>start&lt;/sub>- CCA RATE * (UCC_0 + NET ADDITIONS * 1.5 [only if net additions &amp;gt; 0])`&lt;/li>
 &lt;/ul></description></item><item><title>CS 492 Software Delivery</title><link>https://blog.elijahlopez.ca/posts/university/cs-492-software-delivery/</link><pubDate>Mon, 08 Jan 2024 13:04:18 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/university/cs-492-software-delivery/</guid><description>&lt;h2 id="summary" >Summary
 &lt;span>
 &lt;a href="#summary">
@@ -6705,6 +6773,94 @@ ponds to&lt;/li>
 &lt;li>Cloud: Travis CI, GitHub Actions, Circle Ci&lt;/li>
 &lt;/ul>
 &lt;/li>
+&lt;/ul>
+&lt;p>&lt;a href="https://rebels.cs.uwaterloo.ca/papers/tse2018_gallaba.pdf">An Empirical Study of Projects that (mis)use Travis CI&lt;/a>&lt;/p>
+&lt;ul>
+&lt;li>Build job processing service
+&lt;ul>
+&lt;li>apply changes to latest source code, run tests, possible distribute&lt;/li>
+&lt;li>configuration via language property, services, before_install, install&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>Robust Build System&lt;/p>
+&lt;ul>
+&lt;li>Invest time creating and maintaining&lt;/li>
+&lt;li>Issues: broken build or weird bugs&lt;/li>
+&lt;/ul>
+&lt;p>Flaky tests&lt;/p>
+&lt;ul>
+&lt;li>Result can fail even with the same input (non-deterministic behaviour)
+&lt;ul>
+&lt;li>False positive
+&lt;ul>
+&lt;li>Code might be fine and there is a loss in trust of the test&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>False negative
+&lt;ul>
+&lt;li>a test passes but it should&amp;rsquo;ve failed&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="how-to-read-a-paper" >How to Read a Paper
+&lt;span>
+&lt;a href="#how-to-read-a-paper">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>key contributions&lt;/li>
+&lt;li>limitations&lt;/li>
+&lt;li>replicate or extend&lt;/li>
+&lt;li>three-pass approach
+&lt;ol>
+&lt;li>Rough overview (10 minutes)
+&lt;ul>
+&lt;li>Title, Abstract, Introduction&lt;/li>
+&lt;li>Read section and subsection headings&lt;/li>
+&lt;li>Read conclusion&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>??? see slides&lt;/li>
+&lt;li>???&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;/ul>
+&lt;p>&lt;a href="https://rebels.cs.uwaterloo.ca/papers/ase2023_maipradit.pdf">An Empirical Study of the OpenStack Community&lt;/a>&lt;/p>
+&lt;ul>
+&lt;li>Q1: The recheck command is used to rebuild without updating code in the discussion thread&lt;/li>
+&lt;li>Q2 42% of rebuilds pass&lt;/li>
+&lt;li>Q3: Justifiable waste is one recheck (that changes the status). 24% rechecks were justifiable (16.78 years of computational time out of 187.4 years)&lt;/li>
+&lt;li>Q4: understanding how to reduce these wastes by better handling failed CI builds, further studies for better identification and awareness of such resource waste to developers, and tool support to reduce the waste produced by repeated rebuilds.&lt;/li>
+&lt;/ul>
+&lt;h3 id="ci-resources-are-a-shared-commodity" >CI Resources are a shared commodity
+&lt;span>
+&lt;a href="#ci-resources-are-a-shared-commodity">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>build minutes&lt;/li>
+&lt;li>user seats&lt;/li>
+&lt;li>tragedy of the commons
+&lt;ul>
+&lt;li>unfettered access to a resource&lt;/li>
+&lt;li>no formal rules to regulate access&lt;/li>
+&lt;li>accelerated depreciation of a resource deu to self-interest&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>Cost of rechecking&lt;/p>
+&lt;ul>
+&lt;li>OpenStack wasted: 187.4 build years
+&lt;ul>
+&lt;li>developer cost is 16.81 years waiting for re-checks&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>precisions and recall&lt;/li>
 &lt;/ul></description></item><item><title>BU 491 Business Policy 2 International Strategy</title><link>https://blog.elijahlopez.ca/posts/university/bu-491-business-policy-2-international-strategy/</link><pubDate>Tue, 09 May 2023 15:55:38 -0400</pubDate><guid>https://blog.elijahlopez.ca/posts/university/bu-491-business-policy-2-international-strategy/</guid><description>&lt;div>
 &lt;h2>Table of Contents&lt;/h2>
 &lt;nav id="TableOfContents">
