@@ -944,3 +944,26 @@ What if dragging on that “scrollbar” really dragged a program (from a malici
 - Virtual memory: page mapping
 - Virtual machines: virtualize I/O devices, file, printers
 - A sophisticated rootkit could run the OS in a virtual environment controlled by the rootkit and it would be undetectable
+
+## Mobile OS Security
+
+- Embedded
+- Sensors
+- Ubiquitous connectivity (4G / 5G, NFC)
+
+### Overview of Android OS
+
+### Mobile OS Security Mechanisms
+
+- Different communication channels (wifi, nfc, cellular, bluetooth)
+- Threats: what is stored on the mobile devices
+
+### Mobile App Security
+
+### Mobile OS Known Vulnerabilities and Flaws
+
+- WHo could introduce flaws?
+  - App developers, tools
+  - Distributors: googel play, sideloading, alternative markets
+  - Administrations configure the app
+  - Vendors of the AndroidOS who can modify the kernel

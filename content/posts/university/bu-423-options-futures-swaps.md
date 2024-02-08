@@ -646,6 +646,7 @@ What if we made swaps available for mortgage payers as well?
 - Maturity in years
 - Bid: how much you would get if you pay the floating
 - Ask: how much you would pay to get the floating
+- For floating rates, the rate at the beginning of the period determines the rate for the payment at the end of the period
 
 ### Confirmations
 
@@ -681,3 +682,32 @@ Example
   - Benefit is (2 - 0.4)  = 160 basis points
   - Therefore, GE borrows USD at 5%, pays 8% for AUD and gets 6.2% in USD
   - Therefore, Quantas borrows AUD at 8%, pays 6.2% USD, and gets 8% AUD
+
+Example 7.1
+
+- swap 3% per annum and receives LIBOR every six months on $100million
+- swap has 15 months remaining (3, 9, 15)
+- Rate applicable to exchange in 3 months is 2.9%
+- Forward LIBOR rates for 3-9 month period and 9-15 month periods are 3.429%, 3.734%
+- OIS zero rates are 2.8% for 3 months, 3.2% for 9 months, and 3.4% for 15 months
+
+Period | 3 months | 9 months | 15 months
+--------- | ------------- | ------------ | --------------
+LIBOR | 2.9%| ~3.429% | ~3.734%
+PAY | 1.5M | 1.5M | 1.5M
+RECEIVE | 1.45 |  1.745  | 1.867
+Calculation | 2.9%/2 \* 100 | 3.429%/2 \* 100 | 3.734%/2 \* 100
+
+Discount by the OIS Rate using the continuous compounding formula.
+
+Alternatively, value both cashflows as Bonds and value as the difference.
+
+Example 7.3 and 7.4
+
+- Japanese interest rates are 1.5% per annum (continuous)
+- USD interest rates are 2.5%
+- 3% yen, 4% dollars
+- Principals are $10M and 1,200M yen
+- Swap lasts more than 3 years
+- Exchange rate is 110 yen per dollar
+- Get the PV of hte cashflows for each currency and then convert one to the other
