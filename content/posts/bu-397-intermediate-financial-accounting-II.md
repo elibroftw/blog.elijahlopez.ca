@@ -1126,19 +1126,82 @@ Contributed Surplus - Conversion Rights       160,000
 
 ### Temporary Difference Approach - Deferred Tax Expenses
 
-- If settlement results in higher tax payable, deferred tax liability (increase taxes in the future)
+- If settlement results in higher tax payable, it's a deferred tax liability (increase taxes in the future)
 - if the other way, deferred tax asset (reduce taxes in the future)
 - tax base/basis of an asset
   - deductible for tax purposes after carrying amount is recovered
+
 
 Example
 
 30% tax rate
 
-end of year | Carrying Value | Tax Base | Temporary Difference | Deffereed Tax Balance
+end of year | Carrying Value | Tax Base | Temporary Difference | Deferred Tax Balance
 
 - carrying value 1000, 900, 800
-- tax base 1000, 700, 300
-- deducted: 0, 300, 400
-- difference 0, 200, 500
-- deferred: 0, 60, 90
+- tax base 1000, 700, 500
+- deducted: 0, 200, 400
+- difference 0, 300, 500
+- deferred: 0, 200 \* 30% = 60, 300 \* 30% = 90
+
+### Tax Base / Tax Basis of Liability
+
+- tax base = Carrying amount - future tax deductions
+- when liability can be settled for its carrying amount without any tax consequences, tax base = carrying amount
+- unearned revenue: settlement is via recognition so no tax effect
+
+Example - Deferred Tax Liability
+
+- Company A reported $130,000 revenue in 2023
+- $100,000 was taxable revenue in 2023 (collected)
+- 20,000 will be collected in 2024, and 10,000 in 2025
+- 25% tax rate
+- income tax payable is 10,000 in 2023, 11,000 in 2024
+
+```accounting
+2023
+Current Income Tax Expense                  10,000
+Deferred Income Tax Expense                   7,500
+  Cash                                                                  10,000
+  Deferred Tax Liability (30,000 * 25%)                 7,500
+
+2024
+Deferred Income Tax Liability       5,000
+  Deferred tax benefit                             5,000
+# the point of deferred tax benefit is because it was already reduced retained earnings the year before
+Current income tax expense        11,000
+  Income tax payable                             11,000
+```
+
+Example - Deferred Tax Asset
+
+- 2 year assurance warranty expense
+- estimated 500,000 expense
+- actual costs were 300,000 in 2024, 200,000 in 2025
+- income tax payable: 600,000 in 2023, 440,000 in 2024
+- future tax rate is 25%
+- warranty liability
+  - 2023: 500,000 recognized vs. 0 actual -> 25% * 500,000 = 125,000 asset
+  - 2024: 200,000 recognized vs. 0 actual -> 25% * 200,000 = 50,000 asset remaining
+  - 2025: 0 recognized vs. 0 -> 0
+
+```accounting
+2023
+Current income tax expense        600,000
+  Income tax payable                       600,000
+Deferred income tax asset         125,000
+  Deferred Income tax benefit              125,000
+2024
+Deferred Income tax expense       75,000
+  Income tax asset                                75,000
+Current income tax expense          440,000
+  Income tax payable                             440,000
+2025
+Deferred Income tax expense        50,000
+  Income tax asset                                     50,000
+```
+
+### CCA Recap
+
+- Accelerate Investment Incentive (1.5x) applies only to net additions
+- UCC<sub>end</sub> = UCC<sub>start</sub>- CCA RATE \* (UCC_0  + NET ADDITIONS \* 1.5 [only if net additions > 0])`

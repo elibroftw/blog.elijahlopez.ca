@@ -383,3 +383,57 @@ site-deploy | site:deploy
 - Tools:
   - Install: Jenkins, CruiseControl, Buildbot
   - Cloud: Travis CI, GitHub Actions, Circle Ci
+
+[An Empirical Study of Projects that (mis)use Travis CI](https://rebels.cs.uwaterloo.ca/papers/tse2018_gallaba.pdf)
+
+- Build job processing service
+  - apply changes to latest source code, run tests, possible distribute
+  - configuration via language property, services, before_install, install
+
+Robust Build System
+
+- Invest time creating and maintaining
+- Issues: broken build or weird bugs
+
+Flaky tests
+
+- Result can fail even with the same input (non-deterministic behaviour)
+  - False positive
+    - Code might be fine and there is a loss in trust of the test
+  - False negative
+    - a test passes but it should've failed
+
+### How to Read a Paper
+
+- key contributions
+- limitations
+- replicate or extend
+- three-pass approach
+  1. Rough overview (10 minutes)
+      - Title, Abstract, Introduction
+      - Read section and subsection headings
+      - Read conclusion
+  2. ??? see slides
+  3. ???
+
+[An Empirical Study of the OpenStack Community](https://rebels.cs.uwaterloo.ca/papers/ase2023_maipradit.pdf)
+
+- Q1: The recheck command is used to rebuild without updating code in the discussion thread
+- Q2 42% of rebuilds pass
+- Q3: Justifiable waste is one recheck (that changes the status). 24% rechecks were justifiable (16.78 years of computational time out of 187.4 years)
+- Q4: understanding how to reduce these wastes by better handling failed CI builds, further studies for better identification and awareness of such resource waste to developers, and tool support to reduce the waste produced by repeated rebuilds.
+
+### CI Resources are a shared commodity
+
+- build minutes
+- user seats
+- tragedy of the commons
+  - unfettered access to a resource
+  - no formal rules to regulate access
+  - accelerated depreciation of a resource deu to self-interest
+
+Cost of rechecking
+
+- OpenStack wasted: 187.4 build years
+  - developer cost is 16.81 years waiting for re-checks
+- precisions and recall
