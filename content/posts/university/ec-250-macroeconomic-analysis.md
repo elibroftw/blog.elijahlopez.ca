@@ -145,7 +145,7 @@ Comparative Static Experiments
     - proposition was that to handle the demand, more people would need to be hired and then multiplier effect does the rest
     - with what money?
 
-## Chapter 2 The Measurement and Structure of the Canadian Economy
+## Chapter 2 - The Measurement and Structure of the Canadian Economy
 
 - measurement is possible and is required for serious understanding
 
@@ -325,7 +325,7 @@ uses-of-saving identity. Private savings are used in three ways
 - Explain the difference between real and nominal interest rates.
 - Calculate the expected real rate of interest.
 
-## Chapter 3 Productivity, Output, and Employment
+## Chapter 3 - Productivity, Output, and Employment
 
 - Labour market
 - Goods and services market
@@ -572,7 +572,7 @@ w = 0.60
 8. Calculate key labour force variables.
 9. Discuss the different types of unemployment.
 
-## Chapter 4 Consumption, Saving, and Investment
+## Chapter 4 - Consumption, Saving, and Investment
 
 - Goods market equilibrium is when desired savings = desired investment
 - Income (after-tax) = Saving + Consumption
@@ -821,7 +821,7 @@ As for other types of capital, constructing an apartment building is profitable 
 5. Explain the role of the real interest rate in bringing goods market to equilibrium.
 6. Describe how equilibrium is obtained between saving and investment using the saving-investment diagram.
 
-## Chapter 7 The Asset Market, Money, and Prices
+## Chapter 7 - The Asset Market, Money, and Prices
 
 Buy and sell financial assets such as gold, houses, stocks, and bonds
 
@@ -994,3 +994,40 @@ With η<sub>Y</sub> (\\eta\_Y) being the income elasticity of money demand, then
 Suppose that nominal money supply growth is 10% per year, real income is growing by 3% per year, and the income elasticity of money demand is 2/3. Then, Eq. (7.12) predicts that the inflation rate will be 10% − (2/3)(3%), or 8% per year.
 
 By subtracting the variable nominal yield on the real return bond from the fixed nominal yield on the conventional bond, the Bank can therefore obtain a measure of inflation expectations.
+
+### Learning Outcomes
+
+1. List the functions of money.
+2. Discuss the different measures of the money and how they relate to the money supply.
+3. Explain the factors affecting how people allocate their wealth among various assets.
+4. Discuss the key macroeconomic variables that affect money demand.
+5. List the variables in the nominal money demand function and explain the effects of changes in each variable.
+6. Explain how changes in the real interest rate and expected inflation affect nominal money demand.
+7. Describe how the real money demand equation is obtained.
+8. Explain how other factors affect money demand.
+9. Define and calculate elasticities of money demand.
+10. Explain velocity.
+11. Discuss the quantity theory of money.
+12. Describe how equilibrium is obtained in the asset market.
+13. Discuss how the money supply is related to the rate of inflation.
+
+## Chapter 5 - Saving and Investment in the Open Economy
+
+- open economies mean countries can temporarily spend more than they produce (via imports)
+- desired investment does not have to equal desired saving when foreign sector is involved
+- When saving > investment, lend in international market (current account surplus). When saving < investment, international borrower (current account deficit)
+
+### Balance of Payments
+
+- Current account has three separate components
+  - net exports of goods and services
+    - merchandise trade balance = merchandise exports - merchandise imports
+      - gets more attention in press than warranted
+    - services include tourism
+      - foreign students in canada are an export of services
+  - investment income from assets abroad
+    - interest payments, dividends, royalties (credit)
+    - payment of investment income is a debit
+    - NFP include this plus the wages & salaries of Canadians working abroad but it's small enough to ignore...
+  - current transfers
+    - payments from one country to the other (e.g. foreign aid)
