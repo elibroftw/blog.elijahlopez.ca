@@ -3026,6 +3026,7 @@ than 25 years. The conversion factor is unique to each bond.&lt;/p>
 &lt;li>Maturity in years&lt;/li>
 &lt;li>Bid: how much you would get if you pay the floating&lt;/li>
 &lt;li>Ask: how much you would pay to get the floating&lt;/li>
+&lt;li>For floating rates, the rate at the beginning of the period determines the rate for the payment at the end of the period&lt;/li>
 &lt;/ul>
 &lt;h3 id="confirmations" >Confirmations
 &lt;span>
@@ -3100,6 +3101,62 @@ than 25 years. The conversion factor is unique to each bond.&lt;/p>
 &lt;li>Therefore, Quantas borrows AUD at 8%, pays 6.2% USD, and gets 8% AUD&lt;/li>
 &lt;/ul>
 &lt;/li>
+&lt;/ul>
+&lt;p>Example 7.1&lt;/p>
+&lt;ul>
+&lt;li>swap 3% per annum and receives LIBOR every six months on $100million&lt;/li>
+&lt;li>swap has 15 months remaining (3, 9, 15)&lt;/li>
+&lt;li>Rate applicable to exchange in 3 months is 2.9%&lt;/li>
+&lt;li>Forward LIBOR rates for 3-9 month period and 9-15 month periods are 3.429%, 3.734%&lt;/li>
+&lt;li>OIS zero rates are 2.8% for 3 months, 3.2% for 9 months, and 3.4% for 15 months&lt;/li>
+&lt;/ul>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Period&lt;/th>
+&lt;th>3 months&lt;/th>
+&lt;th>9 months&lt;/th>
+&lt;th>15 months&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>LIBOR&lt;/td>
+&lt;td>2.9%&lt;/td>
+&lt;td>~3.429%&lt;/td>
+&lt;td>~3.734%&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>PAY&lt;/td>
+&lt;td>1.5M&lt;/td>
+&lt;td>1.5M&lt;/td>
+&lt;td>1.5M&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>RECEIVE&lt;/td>
+&lt;td>1.45&lt;/td>
+&lt;td>1.745&lt;/td>
+&lt;td>1.867&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Calculation&lt;/td>
+&lt;td>2.9%/2 * 100&lt;/td>
+&lt;td>3.429%/2 * 100&lt;/td>
+&lt;td>3.734%/2 * 100&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>Discount by the OIS Rate using the continuous compounding formula.&lt;/p>
+&lt;p>Alternatively, value both cashflows as Bonds and value as the difference.&lt;/p>
+&lt;p>Example 7.3 and 7.4&lt;/p>
+&lt;ul>
+&lt;li>Japanese interest rates are 1.5% per annum (continuous)&lt;/li>
+&lt;li>USD interest rates are 2.5%&lt;/li>
+&lt;li>3% yen, 4% dollars&lt;/li>
+&lt;li>Principals are $10M and 1,200M yen&lt;/li>
+&lt;li>Swap lasts more than 3 years&lt;/li>
+&lt;li>Exchange rate is 110 yen per dollar&lt;/li>
+&lt;li>Get the PV of hte cashflows for each currency and then convert one to the other&lt;/li>
 &lt;/ul></description></item><item><title>CS 489 Security</title><link>https://blog.elijahlopez.ca/posts/university/cs-489-security/</link><pubDate>Tue, 09 Jan 2024 11:33:24 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/university/cs-489-security/</guid><description>&lt;!--
 [Learn uWaterloo](https://learn.uwaterloo.ca/d2l/le/content/1005130/Home)
 [Course Website](https://cs.uwaterloo.ca/~m285xu/courses/cs489-w24/)
@@ -4540,6 +4597,55 @@ test value first (for example 1), compiled the program, and then started gdb:&lt
 &lt;li>Virtual memory: page mapping&lt;/li>
 &lt;li>Virtual machines: virtualize I/O devices, file, printers&lt;/li>
 &lt;li>A sophisticated rootkit could run the OS in a virtual environment controlled by the rootkit and it would be undetectable&lt;/li>
+&lt;/ul>
+&lt;h2 id="mobile-os-security" >Mobile OS Security
+&lt;span>
+&lt;a href="#mobile-os-security">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;ul>
+&lt;li>Embedded&lt;/li>
+&lt;li>Sensors&lt;/li>
+&lt;li>Ubiquitous connectivity (4G / 5G, NFC)&lt;/li>
+&lt;/ul>
+&lt;h3 id="overview-of-android-os" >Overview of Android OS
+&lt;span>
+&lt;a href="#overview-of-android-os">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;h3 id="mobile-os-security-mechanisms" >Mobile OS Security Mechanisms
+&lt;span>
+&lt;a href="#mobile-os-security-mechanisms">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Different communication channels (wifi, nfc, cellular, bluetooth)&lt;/li>
+&lt;li>Threats: what is stored on the mobile devices&lt;/li>
+&lt;/ul>
+&lt;h3 id="mobile-app-security" >Mobile App Security
+&lt;span>
+&lt;a href="#mobile-app-security">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;h3 id="mobile-os-known-vulnerabilities-and-flaws" >Mobile OS Known Vulnerabilities and Flaws
+&lt;span>
+&lt;a href="#mobile-os-known-vulnerabilities-and-flaws">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>WHo could introduce flaws?
+&lt;ul>
+&lt;li>App developers, tools&lt;/li>
+&lt;li>Distributors: googel play, sideloading, alternative markets&lt;/li>
+&lt;li>Administrations configure the app&lt;/li>
+&lt;li>Vendors of the AndroidOS who can modify the kernel&lt;/li>
+&lt;/ul>
+&lt;/li>
 &lt;/ul></description></item><item><title>BU 397 Intermediate Financial Accounting II</title><link>https://blog.elijahlopez.ca/posts/bu-397-intermediate-financial-accounting-ii/</link><pubDate>Mon, 08 Jan 2024 17:26:07 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/bu-397-intermediate-financial-accounting-ii/</guid><description>&lt;ul>
 &lt;li>Lots of content for this class.&lt;/li>
 &lt;li>Focus on IFRS which has been GAAP since 2011 for Canadian publicly traded companies&lt;/li>
