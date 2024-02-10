@@ -1031,3 +1031,66 @@ By subtracting the variable nominal yield on the real return bond from the fixed
     - NFP include this plus the wages & salaries of Canadians working abroad but it's small enough to ignore...
   - current transfers
     - payments from one country to the other (e.g. foreign aid)
+  - current account balance
+    - add all credit items and subtract all debit items in the current account
+    - positive = current account surplus, negative = current account deficit
+
+Capital Account = inflows - outflows
+
+Transactions where the good being purchased was not currently produced won't be included in the current account. Trade of existing assets is recorded in the capital and financial account. When domestic assets are sold to foreigners, it's a financial inflow (credit) since funds are flowing into Canada.
+
+Official Settlements Balance
+
+- Official reserver assets (not domestic assets, foreign government securities, foreign bank deposits, IMF assets)
+- balance of payments or official settlements balance is the net increase in a countries net holdings of reserve assets. Surplus when holdings increase and deficit when holding reduce.
+
+Current Account Balance + Capital Account Balance = 0
+
+- Reasoning: international transactions are swap of goods, services, or assets
+  - Suppose Canadian imports  75 CAD worth of goods from British exporter
+  - The exporter then purchases 75 CAD worth of pound sterlings from the FX market
+    - The purchase of the 75 CAD counts as a capital inflow (example is the central bank reducing its reserve currency)
+      - Not sure if FX Market counts as a capital inflow
+  - Statistical discrepancy when difference is non-zero
+
+Net Foreign Assets and the Balance of Payments Accounts
+
+- REDEFN: net foreign assets: foreign stocks, bonds, and factories owned by domestic residents minus foreign liabilities (domestic assets owned by foreigners)
+- changes: value of existing foreign assets and liabilities. acquisition of new foreign assets or liabilities
+  - net amount of acquisition is the current account surplus
+  - a deficit means selling of assets or acquiring more debt (net foreign borrowing)
+
+If new capital bought with foreign debt is highly productive, the foreign debt would not be an economic burden.
+
+### Open Economy Goods Market Equilibrium
+
+<img class=equation src="https://latex.codecogs.com/svg.image?S^d = I^d + CA = I^d + (NX + NFP)" alt="S^d = I^d + CA = I^d + (NX + NFP)">
+
+- In a closed-economy, CA = 0
+- NFP determined by past investments so are not much affected by current macro-economic developments. Therefore, just look at net exports.
+- Total spending by domestic residents is called absorption
+
+### Saving and Investment in a Small Open Economy
+
+- a small economy cannot impact world real interest rate. Therefore the real interest rate can be fixed
+- a supply shock can cause savings to decrease and thus the current account surplus falls (if rates are low enough, then the current account deficit increases)
+- globalization
+- Globalization in Canada: direct investment (influence management) vs. portfolio investment
+
+### Saving and Investment in Large Open Economies
+
+- can affect real world interest rates
+- domestic economy and foreign economy (rest of the world)
+- the excess savings in the domestic market show up as the desired borrowing (foreign investment minus foreign saving) in the foreign economy
+- the world real interest rate will be such that desired international lending by one country equals desired international borrowing by the other country
+
+### Twin Deficits
+
+- large government budget deficits and large current account deficits
+- proposition: government deficit reduces desired national saving and thus reduces current account surplus (reduces capital outflows)
+- A deficit due to higher government spending does reduce desired savings and thus also reduces the current account balance
+- A deficit due to tax cuts (meaning no reduction in spending) will increase consumption if the Ricardian equivalence does not hold
+  - The one thing to note is that in the long run, tax cuts without a reduction in government spending might end up hurting the national wealth as the interest paid by the government won't be going to all Canadians
+- Would require an increase in private saving, a decline in investment to offset, or a rise in current account deficit
+  - A decline in investment is unlikely as the government is either demanding more domestic goods or demand is maintained
+    - 100% saving is not possible due to the Marginal propensity to consume (MPC) which is ???
