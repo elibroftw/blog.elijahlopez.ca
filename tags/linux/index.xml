@@ -334,11 +334,88 @@ which is a good thing but they provide 0 support in fixing the issue.&lt;/p>
 The &lt;a href="https://www.partitionwizard.com/free-partition-manager.html">MiniTool Parition Wizard&lt;/a> was very handy.
 Open this tool up, right click the USB or drive you want to fix, and click wipe drive and fill the drive with 0s.
 This should take 10 minutes.&lt;/p>
-&lt;p>Afterwards, you can either format the drive in Windows or run Balena Etcher to flash another ISO.&lt;/p></description></item><item><title>Linux Desktop Sucks!</title><link>https://blog.elijahlopez.ca/posts/linux-desktop-sucks/</link><pubDate>Sat, 26 Feb 2022 12:44:37 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/linux-desktop-sucks/</guid><description>&lt;p>First of all, I know a lot of Linux fans will get offended and resort to cheap shots and blame the user. If you are one of those people, you are not at all helpful.&lt;/p>
-&lt;p>I&amp;rsquo;ve used Raspian (~2014), Ubuntu GNOME (~2016), Manjaro KDE (2020 &amp;amp; 2022-2023), Fedora, Zorin (2021).&lt;/p>
-&lt;p>The next distro I will try is Linux Mint as it is supposed to be the most user friendly distro.&lt;/p>
-&lt;p>So what is a reason that Linux Desktop sucks? An issue/problem requiring a convoluted process to solve or is unsolvable; Also something so simple that shouldn&amp;rsquo;t have required me to use the terminal in order to unlock (fractional scaling should be allowed and not a tick box or a command).&lt;/p>
-&lt;h2 id="manjaro-kde-specific-issues" >Manjaro KDE Specific Issues
+&lt;p>Afterwards, you can either format the drive in Windows or run Balena Etcher to flash another ISO.&lt;/p></description></item><item><title>Linux Desktop Sucks!</title><link>https://blog.elijahlopez.ca/posts/linux-desktop-sucks/</link><pubDate>Sat, 26 Feb 2022 12:44:37 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/linux-desktop-sucks/</guid><description>&lt;div>
+&lt;h2>Table of Contents&lt;/h2>
+&lt;nav id="TableOfContents">
+&lt;ul>
+&lt;li>&lt;a href="#introduction">Introduction&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#linux-mint">Linux MInt&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#dual-boot-menu">Dual Boot Menu&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#dual-boot-time">Dual Boot Time&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#nvidia-driver-installation">NVIDIA Driver Installation&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#external-monitor-scale-cannot-be-different">External Monitor Scale Cannot be Different&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="#manjaro-kde-specific-issues">Manjaro KDE Specific Issues&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#black-screen-bug">Black Screen Bug&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#plugging-or-unplugging-power-puts-laptop-to-sleep">Plugging or Unplugging Power Puts Laptop to Sleep&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#inefficient-upgrading">Inefficient Upgrading&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#unintuitive-appearance-settings">Unintuitive Appearance Settings&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#webcam">Webcam&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="#other-issues">Other Issues&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#canonical-and-snap-sucks">Canonical and Snap Sucks&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#no-ctrl-for-tabbing">No Ctrl for Tabbing&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="#poor-cloud-storage-support">Poor Cloud Storage Support&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#poor-installation-tutorials">Poor Installation Tutorials&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#cant-shutdowneasily">Can&amp;rsquo;t Shutdown Easily&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#firefox-does-not-work-intuitively-gnome">Firefox Does Not Work Intuitively (GNOME)&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#no-default-shortcut-to-open-up-the-fileexplorer">No Default Shortcut to Open up the File Explorer&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#installing-custom-programs-is-aheadache">Installing Custom Programs is a HEADACHE&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#how-can-linux-distros-gainusers">How Can Linux Distros Gain Users?&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/nav>
+&lt;/div>
+&lt;h2 id="introduction" >Introduction
+&lt;span>
+&lt;a href="#introduction">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>I&amp;rsquo;ve used Raspian (~2014), Ubuntu GNOME (~2016), Manjaro KDE (2020 &amp;amp; 2022-2023), Fedora, Zorin (2021), and Mint (2024).&lt;/p>
+&lt;p>There&amp;rsquo;s a lot of UX issues with Linux and for some reasons the user base starts victim blaming instead of actually improving the experience. It&amp;rsquo;s very political regard and reminds me of this one person who genuinely believed that Libertarianism was about legalizing underage marriage.&lt;/p>
+&lt;p>The issues listed under each distro may actually extend to other distros as the desktop (e.g. KDE, or GNOME) or the Windowing System (Wayland) may be the same on different distros.&lt;/p>
+&lt;h2 id="linux-mint" >Linux MInt
+&lt;span>
+&lt;a href="#linux-mint">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>I installed Linux Mint alongside Windows 11 on my laptop for work purposes. Running Linux Mint in a Virtual Machine is slow, ugly, and not as convenient as I thought it was. Why dual boot? Well I need a lot of services: OneDrive, Mega, GitHub Desktop, and video games. I also want an experience where the issues are minor. I think Windows 11 downgraded a lot of components to be more like macOS and Linux which is why I will be making some videos on why Windows 11 sucks, but this article is about my Linux experience.&lt;/p>
+&lt;h3 id="dual-boot-menu" >Dual Boot Menu
+&lt;span>
+&lt;a href="#dual-boot-menu">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>First off, the default dual boot menu is ugly. GRUB is still not configured to scale on monitors that have a higher resolution than 1080p. I have been using 1440p laptop screens since 2017. That&amp;rsquo;s 7 years now. I&amp;rsquo;ll have to customize this, but it is an annoyance.&lt;/p>
+&lt;h3 id="dual-boot-time" >Dual Boot Time
+&lt;span>
+&lt;a href="#dual-boot-time">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>For some reason Linux and Windows have different ways of storing time and no one on the Linux side thought about changing the way time works if installed alongside Windows. I really don&amp;rsquo;t want to have to adjust my time settings every time I boot back into Windows. I&amp;rsquo;ll probably just not adjust the time on the Linux side and let it be.&lt;/p>
+&lt;h3 id="nvidia-driver-installation" >NVIDIA Driver Installation
+&lt;span>
+&lt;a href="#nvidia-driver-installation">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>When installing NVIDIA drivers for Linux Mint, we are told to enter a password for Secure Boot and that we would have to enter this after rebooting but a reboot does not actually make us enter the password&amp;hellip;unless we selected &amp;ldquo;Enroll MOK.&amp;rdquo; It would be helpful if the drivers app gave better instructions.&lt;/p>
+&lt;h3 id="external-monitor-scale-cannot-be-different" >External Monitor Scale Cannot be Different
+&lt;span>
+&lt;a href="#external-monitor-scale-cannot-be-different">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;h2 id="manjaro-kde-specific-issues" >Manjaro KDE Specific Issues
 &lt;span>
 &lt;a href="#manjaro-kde-specific-issues">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
