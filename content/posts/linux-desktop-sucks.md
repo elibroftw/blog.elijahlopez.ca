@@ -8,13 +8,33 @@ tags: [
 ]
 ---
 
-First of all, I know a lot of Linux fans will get offended and resort to cheap shots and blame the user. If you are one of those people, you are not at all helpful.
+{{< toc >}}
 
-I've used Raspian (~2014), Ubuntu GNOME (~2016), Manjaro KDE (2020 & 2022-2023), Fedora, Zorin (2021).
+## Introduction
 
-The next distro I will try is Linux Mint as it is supposed to be the most user friendly distro.
+I've used Raspian (~2014), Ubuntu GNOME (~2016), Manjaro KDE (2020 & 2022-2023), Fedora, Zorin (2021), and Mint (2024).
 
-So what is a reason that Linux Desktop sucks? An issue/problem requiring a convoluted process to solve or is unsolvable; Also something so simple that shouldn't have required me to use the terminal in order to unlock (fractional scaling should be allowed and not a tick box or a command).
+There's a lot of UX issues with Linux and for some reasons the user base starts victim blaming instead of actually improving the experience. It's very political regard and reminds me of this one person who genuinely believed that Libertarianism was about legalizing underage marriage.
+
+The issues listed under each distro may actually extend to other distros as the desktop (e.g. KDE, or GNOME) or the Windowing System (Wayland) may be the same on different distros.
+
+## Linux MInt
+
+I installed Linux Mint alongside Windows 11 on my laptop for work purposes. Running Linux Mint in a Virtual Machine is slow, ugly, and not as convenient as I thought it was. Why dual boot? Well I need a lot of services: OneDrive, Mega, GitHub Desktop, and video games. I also want an experience where the issues are minor. I think Windows 11 downgraded a lot of components to be more like macOS and Linux which is why I will be making some videos on why Windows 11 sucks, but this article is about my Linux experience.
+
+### Dual Boot Menu
+
+First off, the default dual boot menu is ugly. GRUB is still not configured to scale on monitors that have a higher resolution than 1080p. I have been using 1440p laptop screens since 2017. That's 7 years now. I'll have to customize this, but it is an annoyance.
+
+### Dual Boot Time
+
+For some reason Linux and Windows have different ways of storing time and no one on the Linux side thought about changing the way time works if installed alongside Windows. I really don't want to have to adjust my time settings every time I boot back into Windows. I'll probably just not adjust the time on the Linux side and let it be.
+
+### NVIDIA Driver Installation
+
+When installing NVIDIA drivers for Linux Mint, we are told to enter a password for Secure Boot and that we would have to enter this after rebooting but a reboot does not actually make us enter the password...unless we selected "Enroll MOK." It would be helpful if the drivers app gave better instructions.
+
+### External Monitor Scale Cannot be Different
 
 ## Manjaro KDE Specific Issues
 
