@@ -22,6 +22,14 @@ The issues listed under each distro may actually extend to other distros as the 
 
 I installed Linux Mint alongside Windows 11 on my laptop for work purposes. Running Linux Mint in a Virtual Machine is slow, ugly, and not as convenient as I thought it was. Why dual boot? Well I need a lot of services: OneDrive, Mega, GitHub Desktop, and video games. I also want an experience where the issues are minor. I think Windows 11 downgraded a lot of components to be more like macOS and Linux which is why I will be making some videos on why Windows 11 sucks, but this article is about my Linux experience.
 
+### Bluetooth (Headphones)
+
+There are three issues I have with bluetooth on Linux Mint.. The first time I connected my headphones to the laptop, it was pretty smooth. Now that I want to use connect my headphones to the laptop after having used them with my phone, the laptop is going "Connected" right after double tapping, and then it fails to connect resulting in a disconnect.
+
+1. It doesn't work. The error I after the UI has told me my headphones have connected is "Connection Failed: br-connection-unknown." I had to remove the device and add it again for my headphones to connect.
+2. One if the straight up lie that the laptop is connected to the headphones after a single double click. Stop telling the user that we have connected when we haven't!
+3. The bluetooth icon in the taskbar doesn't open a tray UI like Date, Battery, Music, WiFi icon. It's actually not part of the desktop, but as a user application. What??
+
 ### Dual Boot Menu
 
 First off, the default dual boot menu is ugly. GRUB is still not configured to scale on monitors that have a higher resolution than 1080p. I have been using 1440p laptop screens since 2017. That's 7 years now. I'll have to customize this, but it is an annoyance.
