@@ -7,6 +7,8 @@ tags: [
 ]
 ---
 
+{{< toc >}}
+
 - Lots of content for this class.
 - Focus on IFRS which has been GAAP since 2011 for Canadian publicly traded companies
 
@@ -569,7 +571,7 @@ Non-substantial,
 - Debt to Asset ratio = Total debt / Total assets
 - Times interest earned = Income before taxes nad interest expense / interest expense
 
-## Shareholders' Equity
+## Chapter 15 Shareholders' Equity
 
 ### Basic Forms
 
@@ -765,7 +767,8 @@ Debit $200 to first contributed surplus and then to retained earnings
 Cash dividend of 50 cents a share on 1.8MM shares on July 16 to all shareholders of record on June 24.
 
 ```accounting
-# after declaration
+# after declaration (note no retained earnings account)
+# JE not necessary for preferred share dividends since they are always payable for the year
 Dividends Declared (- Equity) $900,000
   Dividends Payable (+ Liability)       $900,000
 # nothing on entry date
@@ -817,6 +820,7 @@ Contributed Surplus  300,000
 - $50,000 to be distributed as cash dividends
 - $400,000 book value
 - 1,000 $6 preferred shares out standing with book value of $100,000
+  - preferred dividend is 6% of book value
 
 ```accounting
 # non-cumulative preferred shares and non-participating
@@ -836,7 +840,7 @@ Less; preferred in arrears: 12,000
 Less: preferred 6% 6,000
 Less: common 6% 24,000
 To preferred (20% of 8,000):  1,600
-To common (80% of 8,00): 6,400
+To common (80% of 8,000): 6,400
 ```
 
 In case 1, the participation is capped
@@ -874,7 +878,7 @@ In case 1, the participation is capped
 - PE ratio = (market price per share) / (earnings per share)
 - Book value per share = Common shareholders' equity / number of common shares outstanding
 
-### Derivatives
+## Chapter 16 Complex Financial Instruments
 
 - effect of transferring the one or more financial risks inherent in the underlying primary instrument
 - PV of a forward contract is 0; so no initial investment
@@ -984,6 +988,7 @@ G/L             3,000
 - raise capital without giving up ownership
 - lower interest rate, since investors can ride on share value increase
 - B corp. offers 3-year, 6% annual coupon, convertible bonds par = $1000. Convertible to 250 shares trading at $3/share. Similar straight line bonds carry an interest rate of 9%. 1,000 bonds are issued at par.
+  - To get the present value without derivative rights, use the same coupon, same market price but ???
 
 ```accounting
 FV = $1,000,000
@@ -1113,7 +1118,18 @@ Contributed Surplus - Conversion Rights       160,000
 
 </details>
 
-## Income Taxes
+## Chapter 18 Income Taxes
+
+- IFRS: Deferred vs. ASPE: Future
+- To calculate current taxes: add temporary and permanent differences back to accounting income and then multiply by the tax rate
+  - Permanent differences: an accounting deduction not recognized by CRA
+  - Temporary differences: accounting and tax recognition is different for certain assets and (liabilities)
+- To calculate Deferred/Future Tax Expense (Benefit) create a table (CB, TB, DIFF, TAX DIFF):
+  - Multiply each difference between the accounting book value and the tax base/value by the tax rate and sum the values to get the net deferred/future expense (benefit). Liabilities have negative book value for the purposes of this calculation.
+  - If the value is positive, we debit _D/F Tax Expense_ against _D/F Tax Liability_, and if it is negative then we credit _D/F Tax Benefit_ against _D/F Tax Asset_
+  - In the future, a the tax liability is reduced by crediting deferred tax benefit and a tax asset is reduced by debiting deferred tax expense
+
+<details><summary>Other</summary>
 
 - Some expenses are not tax deductible
 - financial reporting: receivable, tax purposes: when cash comes in
@@ -1124,13 +1140,15 @@ Contributed Surplus - Conversion Rights       160,000
 - financial: straight line depreciation, tax purposes: accelerated (CCA)
 - financial: fines and penalties, tax purposes: non-commercial expenses are not tax-deductible
 
-### Temporary Difference Approach - Deferred Tax Expenses
+</details>
 
+### Temporary Difference Approach - Deferred/Future Tax Expenses
+
+- In ASPE, use FUTURE, under IFRS use DEFERRED
 - If settlement results in higher tax payable, it's a deferred tax liability (increase taxes in the future)
 - if the other way, deferred tax asset (reduce taxes in the future)
 - tax base/basis of an asset
   - deductible for tax purposes after carrying amount is recovered
-
 
 Example
 
@@ -1139,9 +1157,9 @@ Example
 end of year | Carrying Value | Tax Base | Temporary Difference | Deferred Tax Balance
 
 - carrying value 1000, 900, 800
-- tax base 1000, 700, 500
 - deducted: 0, 200, 400
-- difference 0, 300, 500
+- tax base 1000, 700, 500
+- difference 0, 200, 300
 - deferred: 0, 200 \* 30% = 60, 300 \* 30% = 90
 
 ### Tax Base / Tax Basis of Liability
@@ -1193,15 +1211,60 @@ Deferred income tax asset         125,000
   Deferred Income tax benefit              125,000
 2024
 Deferred Income tax expense       75,000
-  Income tax asset                                75,000
+  Deferred Income tax asset                                75,000
 Current income tax expense          440,000
   Income tax payable                             440,000
 2025
 Deferred Income tax expense        50,000
-  Income tax asset                                     50,000
+  Deferred Income tax asset                                     50,000
 ```
 
 ### CCA Recap
 
 - Accelerate Investment Incentive (1.5x) applies only to net additions
 - UCC<sub>end</sub> = UCC<sub>start</sub>- CCA RATE \* (UCC_0  + NET ADDITIONS \* 1.5 [only if net additions > 0])`
+
+### Future Tax Rebates
+
+- use income tax rates that are expected to apply when the tax liabilities are settled or tax assets are realized
+- ASPE: tabled bills that the government can pass
+- IFRS: announcements are actual enactment
+- discounting deferred tax assets and liabilities is not permitted
+- the deferred tax liability is calculated using the future expected tax rates for each future taxable amount
+Example
+
+### Tax Loss Carry-forward or Carry-back
+
+- Can carry tax loss back up to 3 years
+- Can carry forward for 20 years ahead
+- Can be attractive merger candidates as income can be reduced
+- We carry back the **loss** and not the **loss \* tax rate**
+  - Suppose loss of 350,000 and that previous 3 years had total losses of 300,000
+  - therefore, the carry back is calculated on the previous tax rates but is limited to 50,000
+
+```accounting
+Income tax receivable 82,500     (+A)
+  Current tax benefit 82,500     (+SE)  Current benefit from loss carry-back
+```
+
+For a carry forward, suppose the tax loss that can be carried forward is 150,000 and the future rate is 20%.
+
+```accounting
+deferred tax asset        30,000
+  deferred tax benefit            30,000
+  # Deferred tax benefit from loss carry-forward
+```
+
+In a future year with taxable income, we use deferred tax expense
+
+```accounting
+taxable income = (200,000 - 150,000) = 50,000
+taxable = 10,000
+deferred = 30,000
+
+Current Tax Expense         10,000
+  Income Tax Payable                10,000
+
+Deferred Tax Expense        30,000
+  Deferred Tax Asset                30,000
+```
