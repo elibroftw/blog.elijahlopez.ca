@@ -2174,7 +2174,7 @@ The difference between gross investment and depreciation is &lt;strong>net inves
 &lt;li>&lt;a href="#choice-of-contract">Choice of Contract&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#optimal-hedge-ratio">Optimal Hedge Ratio&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#hedging-using-index-futures">Hedging Using Index Futures&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#hedging-to-non-zero-beta">Hedging to non-Zero beta&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#hedging-to-non-zero-beta">Hedging to Non-Zero beta&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#reasoning">Reasoning&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#stack-and-roll">Stack and Roll&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#liquidity-issues">Liquidity Issues&lt;/a>&lt;/li>
@@ -2673,15 +2673,16 @@ In finance, there is no wealth generation, only wealth redistribution.&lt;/p>
 &lt;/li>
 &lt;li>&lt;code>Vp = 5,050,000 (1 - 15.125%) + 810,000 = 5,096,187.50&lt;/code>&lt;/li>
 &lt;/ul>
-&lt;h3 id="hedging-to-non-zero-beta" >Hedging to non-Zero beta
+&lt;h3 id="hedging-to-non-zero-beta" >Hedging to Non-Zero beta
 &lt;span>
 &lt;a href="#hedging-to-non-zero-beta">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
 &lt;/h3>&lt;ul>
-&lt;li>If beta &amp;lt; 1, Number of contracts to sell = (Beta - Beta you want) Vp / Vi&lt;/li>
-&lt;li>If beta &amp;gt; 1, Number of contracts to buy = (Beta you want - Beta) Vp / Vi&lt;/li>
+&lt;li>Previous section, we got a beta of 0, what about non-zero?&lt;/li>
+&lt;li>If Beta &amp;gt; desired Beta, Number of contracts to sell = (Beta - desired Beta) Vp / Vi&lt;/li>
+&lt;li>If Beta &amp;lt; desired Beta, Number of contracts to buy = (Desired Beta - Beta) Vp / Vi&lt;/li>
 &lt;/ul>
 &lt;h3 id="reasoning" >Reasoning
 &lt;span>
