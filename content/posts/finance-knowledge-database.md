@@ -181,3 +181,14 @@ Secured Overnight Financing Rate. BASED ON OBSERVED U.S. TREASURY MARKET TRANSAC
 ### LIBOR
 
 London Interbank Offered Rate. This rate isn't used anymore due to the [2012 rate-rigging scandal](https://en.wikipedia.org/wiki/Libor_scandal). It was only an ESTIMATION.
+
+### 4Cs of Credit
+
+- capacity
+  - how much throughput for the payments
+- character
+  - trustworthiness, credit score, references, KYC
+- collateral
+  - what is being offered in case of a default
+- capital
+  - net worth
