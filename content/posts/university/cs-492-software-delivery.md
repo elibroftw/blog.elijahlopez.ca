@@ -45,6 +45,11 @@ What is (continuous) integration fundamentally.
 
 ### Design and Implementation of Release Pipelines
 
+1. Integrate
+2. Build
+3. Deploy
+4. Monitor
+
 What are patches?
 
 - Bug fixes
@@ -143,11 +148,11 @@ Maintenance
 ### VCS Brief
 
 - Enforce discipline
-- Archiving versions of source code
-- Maintaining historical information
-- Enable collaboration
-- Recovery
-- Conserve disk space since only one central point and VCS uses compression
+- **Archiving versions** of source code
+- Maintaining **historical information**
+- Enable **collaboration**
+- **Recovery**
+- **Conserve disk space** since only one central point and VCS uses compression
 - Git is a distributed version control system
 
 ### Git Operations
@@ -189,8 +194,8 @@ Maintenance
   - remotes
     - branches that are being tracked
   - tags
-    - what commit each tag corre
-    ponds to
+    - what commit each tag corresponds to
+    - tags are IMMUTABLE
 
 ```sh
 git cat-file -t COMMIT
@@ -234,7 +239,7 @@ post-receive | Runs after update completion, can be used to broadcast or create 
 - low-level tools: define deps and rules for each input and output file
 - abstraction-based tools: derive low-level build code from high-evel data. e.g., maps of sources files to executables
 - framework-driven tools: default behaviour is assumed unless explicitly overridden
-- organizationally-scaling tools: reuse the output of build command across machines to accelerate builds nad reduce (organizational-level) waste
+- organizationally-scaling tools: reuse the output of build command across machines to accelerate builds and reduce (organizational-level) waste
   - how do we do this for rust?
 - Dependency management tools
 - Testing frameworks (CS 447)
@@ -242,6 +247,30 @@ post-receive | Runs after update completion, can be used to broadcast or create 
 ## Low-level Build Systems
 
 ### Make
+
+<details><summary>Example File</summary>
+
+```make
+# o files are built automatically via `$(CC) $(CPPFLAGS) $(CFLAGS) -c`
+EXEC = main
+OBJS = random.o input.o main.o
+DEPS = ${OBJS:.o=.d}
+# DEPS = $(patsubt %.o,%.d,$(OBJS))
+# CC = gcc
+# preprocessor flags
+CPPFLAGS = -MMD
+# CFLAGS: compiler flags
+# since the target is the name of a direct object, the built-in rule applies
+$(EXEC): $(OBJS)
+
+-include $(DEPS)
+
+.PHONY: clean
+clean:
+	rm -f $(EXEC) $(OBJS) $(DEPS)
+```
+
+</details>
 
 - [Example Makefile](https://github.com/smcintosh/makeexample)
 - [More complicated but succinct Makefile](https://github.com/elibroftw/bootleg-settlers-of-katan/blob/master/Makefile)
@@ -302,6 +331,39 @@ add_executable(main main.c input.c random.c)
 
 ### Maven - Framework Driven Build Tool
 
+<details><summary>Example</summary>
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+  <groupId>ca.uwaterloo.cs446</groupId>
+  <artifactId>mavendeps</artifactId>
+  <version>2022</version>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+    <exec.mainClass>ca.uwaterloo.cs446.mavendeps.Main</exec.mainClass>
+  </properties>
+
+  <dependencies>
+    <!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core -->
+    <dependency>
+        <groupId>org.apache.logging.log4j</groupId>
+        <artifactId>log4j-core</artifactId>
+        <version>2.22.1</version>
+    </dependency>
+  </dependencies>
+</project>
+```
+
+</details>
+
+- convention over configuration
+- concepts: lifecycle, phases, goals, plugins
 - assumes a lifecycle
 - lifecycle: series of phases
 - phase: series of goals to build actions via plugins
@@ -312,26 +374,24 @@ Lifecycles
 - clean: initial state
 - site: website/docs material
 
-Phase | Goal
---------- | ------
-process-resources | resources:resources
-compile |  compiler:compile
-process-test-resources | resources:testResources
-test-compile |  compiler:testCompile
-test |  surefire:test
-package |  jar:jar | par:par | war:war
-install |  install:install
-deploy |  deploy:deploy
-**Clean**
-clean | clean:clean
-**Site** |
-site | site:site
-site-deploy | site:deploy
+Lifecycle | Phase | Goal
+----------- | --------- | ------
+**Default** | process-resources | resources:resources
+--- | compile |  compiler:compile
+--- | process-test-resources | resources:testResources
+--- | test-compile |  compiler:testCompile
+--- | test |  surefire:test
+--- | package |  jar:jar, par:par, war:war
+--- | install |  install:install
+--- | deploy |  deploy:deploy
+**Clean** | clean | clean:clean
+**Site** | site | site:site
+--- | site-deploy | site:deploy
 
 ## Organizational Scaling
 
 1. Build execution is computationally expensive
-    - In-memory dependecy graph requires plenty of high-speed RAM
+    - In-memory dependency graph requires plenty of high-speed RAM
     - Processor-intensive operation: fast CPU
     - Files need to be stat'd (modification time), read (source files) and written (intermediate and output files): large and fast disk I/O
 2. Constraints on parallelism
@@ -339,15 +399,19 @@ site-deploy | site:deploy
 
 ### Google's Bazel
 
-- internal built tool is called blaze
+- Internal built tool is called blaze
+- What's the point?
+  - Centralized caching to cut down repeated builds
+  - Cross language
+  - Language specific implicit rule (e.g. header files)
 - Starlark: domain-specific build language inspired by Python
 - Load build files relevant to target of the execution
 - Analyze the inputs and dependencies and produces an action graph
-- Execute by traversing teh action graph until final build outputs are produced
+- Execute by traversing the action graph until final build outputs are produced
 - Action graph is a directed graph of build artifacts
   - Graph is [queryable](https://docs.bazel.build/versions/0.29.1/query-how-to.html) to better understand the build process
   - Lot of things are implicitly done
-  - `bazel query "deps(mavendeps)"`
+  - `bazel query "deps(//:mavendeps)"`
 
 ## CI and CD
 
@@ -430,7 +494,7 @@ Flaky tests
 - tragedy of the commons
   - unfettered access to a resource
   - no formal rules to regulate access
-  - accelerated depreciation of a resource deu to self-interest
+  - accelerated depreciation of a resource due to self-interest
 
 Cost of rechecking
 
@@ -478,6 +542,7 @@ Cost of rechecking
 - Decision trees were used to produce classifiers. Why? Average AUC equal to 0.89
 - F1-score of 0.79 (AUC = 0.89), on average. This improvement equates to an average   improvement of 2.4X
 - cross-project classifier has as 1.5X over baseline
+  - baseline is the ratio of CI skip commits in the studied projects
 - within project means tested on ourselves (past to future) whereas cross-project means trained on one project and used on another
 
 [A cost-efficient approach to building in continuous integration](https://dl.acm.org/doi/pdf/10.1145/3377811.3380437)
@@ -487,3 +552,7 @@ Cost of rechecking
 - want to fail builds as early as possible
 - SmartBuildSkip: prediction
   - first failure means later builds are more likely to fail
+
+### Review Session
+
+-

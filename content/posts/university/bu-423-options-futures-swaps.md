@@ -7,6 +7,8 @@ tags: [
 ]
 ---
 
+{{< toc >}}
+
 Derivative: financial instruments that depend on an underlying asset. Everything in finance could be considered a derivative.
 In finance, there is no wealth generation, only wealth redistribution.
 
@@ -29,7 +31,7 @@ Building Blocks / Examples
 - Swaps
 - Options
 
-### Why are Derivates Used
+### Why are Derivatives Used
 
 - Hedging
 - Speculation
@@ -274,10 +276,15 @@ Example 2
   - Notice that we divided risk free rate to account for 3 month
 - `Vp = 5,050,000 (1 - 15.125%) + 810,000 = 5,096,187.50`
 
-### Hedging to non-Zero beta
+```p
+def portfolio_value()
+```
 
-- If beta < 1, Number of contracts to sell = (Beta - Beta you want) Vp / Vi
-- If beta > 1, Number of contracts to buy = (Beta you want - Beta) Vp / Vi
+### Hedging to Non-Zero beta
+
+- Previous section, we got a beta of 0, what about non-zero?
+- If Beta > desired Beta, Number of contracts to sell = (Beta - desired Beta) Vp / Vi
+- If Beta < desired Beta, Number of contracts to buy = (Desired Beta - Beta) Vp / Vi
 
 ### Reasoning
 
@@ -410,7 +417,7 @@ COUPON_FOR_PERIOD e^(-HALF_YEAR_CTN_CMPDNG * 0.5) + 3e^(-r*1) = 97
 - Predetermined rate RK is exchanged for interest at the LIBOR rate
 - FRA can be valued by assuming the forward LIBOR interest rate RF is certain to be realized
 - Value = Present Value of the difference between the forward LIBOR interest rate (RF) and the interest paid at the FRA rate RK
-- `(RF - RK) * Price * length of the contract / (T2 - T1)` and then discount to 0 from T2
+- `(RF - RK) * Price * length of the contract` and then discount to 0 from T2
 - Use case: floating rate payment in the future but you want to make sure you are paying a fixed rate
   - the receiver will want a premium for receiving
 
@@ -536,7 +543,7 @@ Example
 - simultaneous purchase/sale of at least 15 stocks with total value > $1MM
 - Black Monday: arbitrage opportunities
 
-### Interest Rate Futures
+## Interest Rate Futures
 
 - day count convention
 - unit of time for calculating accrued interest when instruments are traded

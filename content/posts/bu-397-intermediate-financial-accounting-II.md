@@ -988,7 +988,7 @@ G/L             3,000
 - raise capital without giving up ownership
 - lower interest rate, since investors can ride on share value increase
 - B corp. offers 3-year, 6% annual coupon, convertible bonds par = $1000. Convertible to 250 shares trading at $3/share. Similar straight line bonds carry an interest rate of 9%. 1,000 bonds are issued at par.
-  - To get the present value without derivative rights, use the same coupon, same market price but ???
+  - To get the present value without derivative rights, use the same coupon payment, but different discount rate
 
 ```accounting
 FV = $1,000,000
@@ -1125,7 +1125,7 @@ Contributed Surplus - Conversion Rights       160,000
   - Permanent differences: an accounting deduction not recognized by CRA
   - Temporary differences: accounting and tax recognition is different for certain assets and (liabilities)
 - To calculate Deferred/Future Tax Expense (Benefit) create a table (CB, TB, DIFF, TAX DIFF):
-  - Multiply each difference between the accounting book value and the tax base/value by the tax rate and sum the values to get the net deferred/future expense (benefit). Liabilities have negative book value for the purposes of this calculation.
+  - Multiply each difference between the accounting book value and the tax base/value by the tax rate (sum of tax applicable/deductible in the future if tax rates differ) and sum the values to get the net deferred/future expense (benefit). Liabilities have negative book value for the purposes of this calculation.
   - If the value is positive, we debit _D/F Tax Expense_ against _D/F Tax Liability_, and if it is negative then we credit _D/F Tax Benefit_ against _D/F Tax Asset_
   - In the future, a the tax liability is reduced by crediting deferred tax benefit and a tax asset is reduced by debiting deferred tax expense
 
@@ -1268,3 +1268,19 @@ Current Tax Expense         10,000
 Deferred Tax Expense        30,000
   Deferred Tax Asset                30,000
 ```
+
+### Separate Disclosure
+
+- IFRS requires it
+- ASPE: netted
+
+### Valuation Allowance
+
+- If unlikely to benefit from loss carryforward,
+- ASPE: future tax asset is recognized with an offsetting variance allowance (contra)
+- IFRS: not recognized at all
+
+## Midterm Tips
+
+- Apply knowledge to exercise questions
+  - Exercises in this document, the quizzes, the assignment, group project

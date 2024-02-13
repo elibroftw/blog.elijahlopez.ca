@@ -967,3 +967,20 @@ What if dragging on that “scrollbar” really dragged a program (from a malici
   - Distributors: googel play, sideloading, alternative markets
   - Administrations configure the app
   - Vendors of the AndroidOS who can modify the kernel
+
+### Android Permissions
+
+- Linux Kernel, Framework / SDK, Applications
+- Manifest file for permissions
+- Prompt user for granting app permissions
+- Runtime Permissions (aka Dangeorus Permissions)
+- Allow additional access to restricted data
+- Pemrission history
+- Special Permissions
+  - Allow access to senstive system resources like drawing over other apps
+- UID is always the same
+- Process ID is different on every run
+- Binder IPC (inter-process communication)
+  - APIs in remote service objects are called as if they are local
+- Intents
+  - Intents pass a messaging object from a callinga pp to another app
