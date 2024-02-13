@@ -4900,7 +4900,10 @@ test value first (for example 1), compiled the program, and then started gdb:&lt
 &lt;li>&lt;a href="#components-of-shareholders-equity">Components of Shareholders&amp;rsquo; Equity&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#capital-disclosure">Capital Disclosure&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#equity-financial-statement-analysis">Equity Financial Statement Analysis&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#derivatives">Derivatives&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="#chapter-16-complex-financial-instruments">Chapter 16 Complex Financial Instruments&lt;/a>
+&lt;ul>
 &lt;li>&lt;a href="#futures">Futures&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#derivatives-involving-the-entitys-own-shares">Derivatives Involving the Entity&amp;rsquo;s Own Shares&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#hybridcompound-investments">Hybrid/Compound Investments&lt;/a>&lt;/li>
@@ -6027,7 +6030,8 @@ Debit $200 to first contributed surplus and then to retained earnings
 &lt;/a>
 &lt;/span>
 &lt;/h3>&lt;p>Cash dividend of 50 cents a share on 1.8MM shares on July 16 to all shareholders of record on June 24.&lt;/p>
-&lt;pre tabindex="0">&lt;code class="language-accounting" data-lang="accounting"># after declaration
+&lt;pre tabindex="0">&lt;code class="language-accounting" data-lang="accounting"># after declaration (note no retained earnings account)
+# JE not necessary for preferred share dividends since they are always payable for the year
 Dividends Declared (- Equity) $900,000
 Dividends Payable (+ Liability) $900,000
 # nothing on entry date
@@ -6093,7 +6097,11 @@ Dividends Payable 1,200,000
 &lt;/li>
 &lt;li>$50,000 to be distributed as cash dividends&lt;/li>
 &lt;li>$400,000 book value&lt;/li>
-&lt;li>1,000 $6 preferred shares out standing with book value of $100,000&lt;/li>
+&lt;li>1,000 $6 preferred shares out standing with book value of $100,000
+&lt;ul>
+&lt;li>preferred dividend is 6% of book value&lt;/li>
+&lt;/ul>
+&lt;/li>
 &lt;/ul>
 &lt;pre tabindex="0">&lt;code class="language-accounting" data-lang="accounting"># non-cumulative preferred shares and non-participating
 Total dividends declared $50,000
@@ -6112,7 +6120,7 @@ Less; preferred in arrears: 12,000
 Less: preferred 6% 6,000
 Less: common 6% 24,000
 To preferred (20% of 8,000): 1,600
-To common (80% of 8,00): 6,400
+To common (80% of 8,000): 6,400
 &lt;/code>&lt;/pre>&lt;p>In case 1, the participation is capped&lt;/p>
 &lt;h3 id="stock-splits-vs-stock-dividends" >Stock Splits vs Stock Dividends
 &lt;span>
@@ -6168,13 +6176,13 @@ To common (80% of 8,00): 6,400
 &lt;li>PE ratio = (market price per share) / (earnings per share)&lt;/li>
 &lt;li>Book value per share = Common shareholders&amp;rsquo; equity / number of common shares outstanding&lt;/li>
 &lt;/ul>
-&lt;h3 id="derivatives" >Derivatives
+&lt;h2 id="chapter-16-complex-financial-instruments" >Chapter 16 Complex Financial Instruments
 &lt;span>
-&lt;a href="#derivatives">
+&lt;a href="#chapter-16-complex-financial-instruments">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
-&lt;/h3>&lt;ul>
+&lt;/h2>&lt;ul>
 &lt;li>effect of transferring the one or more financial risks inherent in the underlying primary instrument&lt;/li>
 &lt;li>PV of a forward contract is 0; so no initial investment&lt;/li>
 &lt;li>main purpose is for risk management or hedging. Other purposes is speculation and arbitraging.&lt;/li>
@@ -6296,7 +6304,11 @@ Derivatives 500
 &lt;li>holder has option to exchange for common shares&lt;/li>
 &lt;li>raise capital without giving up ownership&lt;/li>
 &lt;li>lower interest rate, since investors can ride on share value increase&lt;/li>
-&lt;li>B corp. offers 3-year, 6% annual coupon, convertible bonds par = $1000. Convertible to 250 shares trading at $3/share. Similar straight line bonds carry an interest rate of 9%. 1,000 bonds are issued at par.&lt;/li>
+&lt;li>B corp. offers 3-year, 6% annual coupon, convertible bonds par = $1000. Convertible to 250 shares trading at $3/share. Similar straight line bonds carry an interest rate of 9%. 1,000 bonds are issued at par.
+&lt;ul>
+&lt;li>To get the present value without derivative rights, use the same coupon, same market price but ???&lt;/li>
+&lt;/ul>
+&lt;/li>
 &lt;/ul>
 &lt;pre tabindex="0">&lt;code class="language-accounting" data-lang="accounting">FV = $1,000,000
 PV = 924,061 (straight bond)
@@ -6425,6 +6437,23 @@ Common Shares 4,277.705 (/ 4,000,000 / 1000 * 80 = $13.36782943/share)
 &lt;/a>
 &lt;/span>
 &lt;/h2>&lt;ul>
+&lt;li>IFRS: Deferred vs. ASPE: Future&lt;/li>
+&lt;li>To calculate current taxes: add temporary and permanent differences back to accounting income and then multiply by the tax rate
+&lt;ul>
+&lt;li>Permanent differences: an accounting deduction not recognized by CRA&lt;/li>
+&lt;li>Temporary differences: accounting and tax recognition is different for certain assets and (liabilities)&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>To calculate Deferred/Future Tax Expense (Benefit) create a table (CB, TB, DIFF, TAX DIFF):
+&lt;ul>
+&lt;li>Multiply each difference between the accounting book value and the tax base/value by the tax rate and sum the values to get the net deferred/future expense (benefit). Liabilities have negative book value for the purposes of this calculation.&lt;/li>
+&lt;li>If the value is positive, we debit &lt;em>D/F Tax Expense&lt;/em> against &lt;em>D/F Tax Liability&lt;/em>, and if it is negative then we credit &lt;em>D/F Tax Benefit&lt;/em> against &lt;em>D/F Tax Asset&lt;/em>&lt;/li>
+&lt;li>In the future, a the tax liability is reduced by crediting deferred tax benefit and a tax asset is reduced by debiting deferred tax expense&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;details>&lt;summary>Other&lt;/summary>
+&lt;ul>
 &lt;li>Some expenses are not tax deductible&lt;/li>
 &lt;li>financial reporting: receivable, tax purposes: when cash comes in&lt;/li>
 &lt;li>financial: percentage of completion, tax purposes: when contract is completed&lt;/li>
@@ -6434,6 +6463,7 @@ Common Shares 4,277.705 (/ 4,000,000 / 1000 * 80 = $13.36782943/share)
 &lt;li>financial: straight line depreciation, tax purposes: accelerated (CCA)&lt;/li>
 &lt;li>financial: fines and penalties, tax purposes: non-commercial expenses are not tax-deductible&lt;/li>
 &lt;/ul>
+&lt;/details>
 &lt;h3 id="temporary-difference-approach---deferredfuture-tax-expenses" >Temporary Difference Approach - Deferred/Future Tax Expenses
 &lt;span>
 &lt;a href="#temporary-difference-approach---deferredfuture-tax-expenses">
@@ -6455,9 +6485,9 @@ Common Shares 4,277.705 (/ 4,000,000 / 1000 * 80 = $13.36782943/share)
 &lt;p>end of year | Carrying Value | Tax Base | Temporary Difference | Deferred Tax Balance&lt;/p>
 &lt;ul>
 &lt;li>carrying value 1000, 900, 800&lt;/li>
-&lt;li>tax base 1000, 700, 500&lt;/li>
 &lt;li>deducted: 0, 200, 400&lt;/li>
-&lt;li>difference 0, 300, 500&lt;/li>
+&lt;li>tax base 1000, 700, 500&lt;/li>
+&lt;li>difference 0, 200, 300&lt;/li>
 &lt;li>deferred: 0, 200 * 30% = 60, 300 * 30% = 90&lt;/li>
 &lt;/ul>
 &lt;h3 id="tax-base--tax-basis-of-liability" >Tax Base / Tax Basis of Liability
@@ -6512,12 +6542,12 @@ Deferred income tax asset 125,000
 Deferred Income tax benefit 125,000
 2024
 Deferred Income tax expense 75,000
-Income tax asset 75,000
+Deferred Income tax asset 75,000
 Current income tax expense 440,000
 Income tax payable 440,000
 2025
 Deferred Income tax expense 50,000
-Income tax asset 50,000
+Deferred Income tax asset 50,000
 &lt;/code>&lt;/pre>&lt;h3 id="cca-recap" >CCA Recap
 &lt;span>
 &lt;a href="#cca-recap">
