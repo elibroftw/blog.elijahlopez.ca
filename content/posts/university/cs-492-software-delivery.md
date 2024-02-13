@@ -437,3 +437,53 @@ Cost of rechecking
 - OpenStack wasted: 187.4 build years
   - developer cost is 16.81 years waiting for re-checks
 - precisions and recall
+
+### CI Acceleration
+
+- mitigating the re-check riot problem
+- cloud-based CI solutions tacitly encourage wasteful behaviour
+  - `runs-on: ubuntu-latest` (starting with a fresh container, no reusability)
+    - a fresh copy is cloned (wasteful bandwith)
+- Does every change require a CI run?
+  - Updates to comments in the code
+  - Only updates the README.md
+  - Changes an area not tested by the CI test suite
+- Existing solutions
+  - CI skip
+  - Github allows devs to indicate change sets that do not require a build
+  - Magic phrase in the commit message [github: skipping workflow runs](https://docs.github.com/en/actions/managing-workflow-runs/skipping-workflow-runs)
+
+[Which Commits Can Be CI Skipped?](https://ieeexplore.ieee.org/abstract/document/8633335)
+
+- Our findings show that our rule-based technique can detect and label CI commits with an Areas Under the Curve between 0.56 and 0.98 (average of 0.73)
+- On average, 18.16% of commits are skipped
+- [CI-Skipper prototype](https://github.com/suhaibmujahid/ci-skipper)
+  - Feb 2017
+- TravisTorrent Dataset
+- Need to create rules to skip CI on commits
+- Security implications?
+
+- Q1. Rules derived based on commits that were explicitly skipped by real developers
+- Q2. 0.73 (false positives against false negatives)
+- Q3. impact of source code analysis on ci-skipper, build commits are predicted to be CI skip commits but they result in fail builds, machine learning techniques
+
+- Precision (noise in signal) = (true positive) / (true positive + false positive)
+- Recall (completeness / end goal) = (true positives) / (true positives + false negatives)
+- `f1 = 2 * (p * r) / (p + r)`
+  - tp vs fp (receiver operator characteristic curve)
+- an AUC sets a coin flip to 0.5, so we know that the classifier is better when it is greater than 0.5
+
+[A Machine Learning Approach to Improve the Detection of CI Skip Commits](https://ieeexplore.ieee.org/abstract/document/8961089)
+
+- Decision trees were used to produce classifiers. Why? Average AUC equal to 0.89
+- F1-score of 0.79 (AUC = 0.89), on average. This improvement equates to an average   improvement of 2.4X
+- cross-project classifier has as 1.5X over baseline
+- within project means tested on ourselves (past to future) whereas cross-project means trained on one project and used on another
+
+[A cost-efficient approach to building in continuous integration](https://dl.acm.org/doi/pdf/10.1145/3377811.3380437)
+
+- costs millions of dollars to Mozilla and Google
+- the value is letting developers find bugs early
+- want to fail builds as early as possible
+- SmartBuildSkip: prediction
+  - first failure means later builds are more likely to fail

@@ -1016,6 +1016,8 @@ By subtracting the variable nominal yield on the real return bond from the fixed
 - open economies mean countries can temporarily spend more than they produce (via imports)
 - desired investment does not have to equal desired saving when foreign sector is involved
 - When saving > investment, lend in international market (current account surplus). When saving < investment, international borrower (current account deficit)
+- The current account indicates how much is available for net foreign lending
+  - It is essentially the net payments/income transferred from and to
 
 ### Balance of Payments
 
@@ -1037,11 +1039,12 @@ By subtracting the variable nominal yield on the real return bond from the fixed
 
 Capital Account = inflows - outflows
 
-Transactions where the good being purchased was not currently produced won't be included in the current account. Trade of existing assets is recorded in the capital and financial account. When domestic assets are sold to foreigners, it's a financial inflow (credit) since funds are flowing into Canada.
+- When the capital account has a surplus, that means that the net foreign assets decrease because there was more inflows (purchases of domestic assets) than outflows (purchases of foreign assets)
+- Transactions where the good being purchased was not currently produced won't be included in the current account. Trade of existing assets is recorded in the capital and financial account. When domestic assets are sold to foreigners, it's a financial inflow (credit) since funds are flowing into Canada.
 
 Official Settlements Balance
 
-- Official reserver assets (not domestic assets, foreign government securities, foreign bank deposits, IMF assets)
+- Official reserve assets (not domestic assets, foreign government securities, foreign bank deposits, IMF assets)
 - balance of payments or official settlements balance is the net increase in a countries net holdings of reserve assets. Surplus when holdings increase and deficit when holding reduce.
 
 Current Account Balance + Capital Account Balance = 0
@@ -1069,6 +1072,7 @@ If new capital bought with foreign debt is highly productive, the foreign debt w
 - In a closed-economy, CA = 0
 - NFP determined by past investments so are not much affected by current macro-economic developments. Therefore, just look at net exports.
 - Total spending by domestic residents is called absorption
+  - Y - National Saving?
 
 ### Saving and Investment in a Small Open Economy
 
@@ -1083,12 +1087,14 @@ If new capital bought with foreign debt is highly productive, the foreign debt w
 - domestic economy and foreign economy (rest of the world)
 - the excess savings in the domestic market show up as the desired borrowing (foreign investment minus foreign saving) in the foreign economy
 - the world real interest rate will be such that desired international lending by one country equals desired international borrowing by the other country
+- The sum of current accounts of all countries equals 0 (therefore, equilibrium is one big a system of linear equations)
 
 ### Twin Deficits
 
 - large government budget deficits and large current account deficits
 - proposition: government deficit reduces desired national saving and thus reduces current account surplus (reduces capital outflows)
 - A deficit due to higher government spending does reduce desired savings and thus also reduces the current account balance
+  - public savings decreases, so unless consumption decreases, national savings goes down
 - A deficit due to tax cuts (meaning no reduction in spending) will increase consumption if the Ricardian equivalence does not hold
   - The one thing to note is that in the long run, tax cuts without a reduction in government spending might end up hurting the national wealth as the interest paid by the government won't be going to all Canadians
 - Would require an increase in private saving, a decline in investment to offset, or a rise in current account deficit
