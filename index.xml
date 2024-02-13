@@ -2204,7 +2204,101 @@ The difference between gross investment and depreciation is &lt;strong>net inves
 &lt;/li>
 &lt;/ul>
 &lt;/li>
-&lt;/ul></description></item><item><title>BU 423 Options, Futures &amp; Swaps</title><link>https://blog.elijahlopez.ca/posts/university/bu-423-options-futures-swaps/</link><pubDate>Tue, 09 Jan 2024 14:26:54 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/university/bu-423-options-futures-swaps/</guid><description>&lt;p>Derivative: financial instruments that depend on an underlying asset. Everything in finance could be considered a derivative.
+&lt;/ul></description></item><item><title>BU 423 Options, Futures &amp; Swaps</title><link>https://blog.elijahlopez.ca/posts/university/bu-423-options-futures-swaps/</link><pubDate>Tue, 09 Jan 2024 14:26:54 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/university/bu-423-options-futures-swaps/</guid><description>&lt;div>
+&lt;h2>Table of Contents&lt;/h2>
+&lt;nav id="TableOfContents">
+&lt;ul>
+&lt;li>&lt;a href="#naturel-of-derivatives">Naturel of Derivatives&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#why-are-derivates-used">Why are Derivates Used&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#futures-contracts-introduction">Futures Contracts Introduction&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#over-the-contract-markets">Over-the Contract markets&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#lehman-bankruptcy">Lehman Bankruptcy&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#new-regulations-for-otc">New Regulations for OTC&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#otc-systemic-risk">OTC Systemic Risk&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#forward-contracts-introduction">Forward Contracts Introduction&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#options">Options&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#hedge-funds">Hedge Funds&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#arbitrage-examples">Arbitrage Examples&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="#futures-contracts-chapter-2">Futures Contracts (Chapter 2)&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#convergence">Convergence&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#margin">Margin&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#otc-markets-bilateral-clearing">OTC Markets: Bilateral Clearing&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#terminology">Terminology&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#forward-contracts">Forward Contracts&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="#hedging-strategies">Hedging Strategies&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#arguments-for-hedging">Arguments For Hedging&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#arguments-against-hedging">Arguments Against Hedging&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#basis-risk">Basis Risk&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#long-hedge-for-purchase-of-an-asset">Long Hedge for Purchase of an Asset&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#choice-of-contract">Choice of Contract&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#optimal-hedge-ratio">Optimal Hedge Ratio&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#hedging-using-index-futures">Hedging Using Index Futures&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#hedging-to-non-zero-beta">Hedging to non-Zero beta&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#reasoning">Reasoning&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#stack-and-roll">Stack and Roll&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#liquidity-issues">Liquidity Issues&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="#interest-rates">Interest Rates&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#treasury-rates">Treasury Rates&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#libor">LIBOR&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#us-fed-funds-rate">U.S. Fed Funds Rate&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#repo-rates">Repo Rates&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#libor-swaps">LIBOR Swaps&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#ois-rate">OIS Rate&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#risk-free-rate">Risk-Free Rate&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#measuring-interest-rates">Measuring Interest Rates&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#conversion-formulas">Conversion Formulas&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#zero-rates">Zero Rates&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#bond-pricing-continuous">Bond Pricing (Continuous)&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#par-yield">Par Yield&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#data-to-determine-treasury-zero-curve">Data to Determine Treasury Zero Curve&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#forward-rates">Forward Rates&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#forward-rate-agreement-fra">Forward Rate Agreement (FRA)&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#theories-of-the-term-structure">Theories of the Term Structure&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="#determination-of-forward-and-futures-prices">Determination of Forward and Futures Prices&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#intro-and-types-of-contracts">Intro and Types of Contracts&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#valuing-forward-contracts">Valuing Forward Contracts&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#the-forward-price">The Forward Price&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#forward-price-with-continuous-compounding">Forward Price with Continuous Compounding&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#known-dollar-income">Known Dollar Income&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#know-yield">Know Yield&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#forward-pricing-example-1">Forward Pricing Example 1&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#futures-pricing">Futures Pricing&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#index-arbitrage-and-program-trading">Index Arbitrage and Program Trading&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#interest-rate-futures">Interest Rate Futures&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#bond-prices-between-coupons">Bond Prices Between Coupons&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#treasury-bill-prices-in-the-us">Treasury Bill Prices in the US&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#canadian-treasury-bills">Canadian Treasury Bills&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#treasury-bond-futures">Treasury Bond Futures&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#conversion-factors">Conversion Factors&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#determining-treasury-futures-price">Determining Treasury Futures Price&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#eurodollar">Eurodollar&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="#swaps">Swaps&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#swap-market">Swap Market&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#confirmations">Confirmations&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#comparative-advantage-example">Comparative Advantage Example&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#fixed-for-fixed-currency-swap">Fixed-for-Fixed Currency Swap&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/nav>
+&lt;/div>
+&lt;p>Derivative: financial instruments that depend on an underlying asset. Everything in finance could be considered a derivative.
 In finance, there is no wealth generation, only wealth redistribution.&lt;/p>
 &lt;ul>
 &lt;li>
@@ -4836,6 +4930,37 @@ test value first (for example 1), compiled the program, and then started gdb:&lt
 &lt;li>Vendors of the AndroidOS who can modify the kernel&lt;/li>
 &lt;/ul>
 &lt;/li>
+&lt;/ul>
+&lt;h3 id="android-permissions" >Android Permissions
+&lt;span>
+&lt;a href="#android-permissions">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Linux Kernel, Framework / SDK, Applications&lt;/li>
+&lt;li>Manifest file for permissions&lt;/li>
+&lt;li>Prompt user for granting app permissions&lt;/li>
+&lt;li>Runtime Permissions (aka Dangeorus Permissions)&lt;/li>
+&lt;li>Allow additional access to restricted data&lt;/li>
+&lt;li>Pemrission history&lt;/li>
+&lt;li>Special Permissions
+&lt;ul>
+&lt;li>Allow access to senstive system resources like drawing over other apps&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>UID is always the same&lt;/li>
+&lt;li>Process ID is different on every run&lt;/li>
+&lt;li>Binder IPC (inter-process communication)
+&lt;ul>
+&lt;li>APIs in remote service objects are called as if they are local&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Intents
+&lt;ul>
+&lt;li>Intents pass a messaging object from a callinga pp to another app&lt;/li>
+&lt;/ul>
+&lt;/li>
 &lt;/ul></description></item><item><title>BU 397 Intermediate Financial Accounting II</title><link>https://blog.elijahlopez.ca/posts/bu-397-intermediate-financial-accounting-ii/</link><pubDate>Mon, 08 Jan 2024 17:26:07 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/bu-397-intermediate-financial-accounting-ii/</guid><description>&lt;div>
 &lt;h2>Table of Contents&lt;/h2>
 &lt;nav id="TableOfContents">
@@ -6306,7 +6431,7 @@ Derivatives 500
 &lt;li>lower interest rate, since investors can ride on share value increase&lt;/li>
 &lt;li>B corp. offers 3-year, 6% annual coupon, convertible bonds par = $1000. Convertible to 250 shares trading at $3/share. Similar straight line bonds carry an interest rate of 9%. 1,000 bonds are issued at par.
 &lt;ul>
-&lt;li>To get the present value without derivative rights, use the same coupon, same market price but ???&lt;/li>
+&lt;li>To get the present value without derivative rights, use the same coupon payment, but different discount rate&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;/ul>
