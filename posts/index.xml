@@ -2739,7 +2739,8 @@ In finance, there is no wealth generation, only wealth redistribution.&lt;/p>
 &lt;/li>
 &lt;li>&lt;code>Vp = 5,050,000 (1 - 15.125%) + 810,000 = 5,096,187.50&lt;/code>&lt;/li>
 &lt;/ul>
-&lt;h3 id="hedging-to-non-zero-beta" >Hedging to Non-Zero beta
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-p" data-lang="p">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">def&lt;/span> &lt;span style="color:#40ffff">portfolio_value&lt;/span>()
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="hedging-to-non-zero-beta" >Hedging to Non-Zero beta
 &lt;span>
 &lt;a href="#hedging-to-non-zero-beta">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
@@ -2990,7 +2991,7 @@ In finance, there is no wealth generation, only wealth redistribution.&lt;/p>
 &lt;li>Predetermined rate RK is exchanged for interest at the LIBOR rate&lt;/li>
 &lt;li>FRA can be valued by assuming the forward LIBOR interest rate RF is certain to be realized&lt;/li>
 &lt;li>Value = Present Value of the difference between the forward LIBOR interest rate (RF) and the interest paid at the FRA rate RK&lt;/li>
-&lt;li>&lt;code>(RF - RK) * Price * length of the contract / (T2 - T1)&lt;/code> and then discount to 0 from T2&lt;/li>
+&lt;li>&lt;code>(RF - RK) * Price * length of the contract&lt;/code> and then discount to 0 from T2&lt;/li>
 &lt;li>Use case: floating rate payment in the future but you want to make sure you are paying a fixed rate
 &lt;ul>
 &lt;li>the receiver will want a premium for receiving&lt;/li>
