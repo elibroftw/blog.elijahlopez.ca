@@ -7140,7 +7140,26 @@ Deferred Tax Asset 30,000
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
-&lt;/h3>&lt;ul>
+&lt;/h3>&lt;details>&lt;summary>Example File&lt;/summary>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-make" data-lang="make">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic"># o files are built automatically via `$(CC) $(CPPFLAGS) $(CFLAGS) -c`
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">&lt;/span>&lt;span style="color:#40ffff">EXEC&lt;/span> = main
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#40ffff">OBJS&lt;/span> = random.o input.o main.o
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#40ffff">DEPS&lt;/span> = &lt;span style="color:#ed9d13">${&lt;/span>&lt;span style="color:#40ffff">OBJS&lt;/span>:.o=.d&lt;span style="color:#ed9d13">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic"># DEPS = $(patsubt %.o,%.d,$(OBJS))
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic"># CC = gcc
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic"># preprocessor flags
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">&lt;/span>&lt;span style="color:#40ffff">CPPFLAGS&lt;/span> = -MMD
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic"># CFLAGS: compiler flags
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic"># since the target is the name of a direct object, the built-in rule applies
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">&lt;/span>&lt;span style="color:#447fcf">$(EXEC)&lt;/span>: &lt;span style="color:#6ab825;font-weight:bold">$(&lt;/span>&lt;span style="color:#40ffff">OBJS&lt;/span>&lt;span style="color:#6ab825;font-weight:bold">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a61717;background-color:#e3d2d2">-include&lt;/span> &lt;span style="color:#6ab825;font-weight:bold">$(&lt;/span>&lt;span style="color:#40ffff">DEPS&lt;/span>&lt;span style="color:#6ab825;font-weight:bold">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#447fcf">.PHONY&lt;/span>: clean
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#447fcf">clean&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> rm -f &lt;span style="color:#6ab825;font-weight:bold">$(&lt;/span>EXEC&lt;span style="color:#6ab825;font-weight:bold">)&lt;/span> &lt;span style="color:#6ab825;font-weight:bold">$(&lt;/span>OBJS&lt;span style="color:#6ab825;font-weight:bold">)&lt;/span> &lt;span style="color:#6ab825;font-weight:bold">$(&lt;/span>DEPS&lt;span style="color:#6ab825;font-weight:bold">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/details>
+&lt;ul>
 &lt;li>&lt;a href="https://github.com/smcintosh/makeexample">Example Makefile&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://github.com/elibroftw/bootleg-settlers-of-katan/blob/master/Makefile">More complicated but succinct Makefile&lt;/a>&lt;/li>
 &lt;li>express dependencies with &lt;code>program: program2 program3&lt;/code>&lt;/li>
@@ -7236,6 +7255,7 @@ Deferred Tax Asset 30,000
 &lt;table>
 &lt;thead>
 &lt;tr>
+&lt;th>Lifecycle&lt;/th>
 &lt;th>Phase&lt;/th>
 &lt;th>Goal&lt;/th>
 &lt;/tr>
@@ -7243,57 +7263,56 @@ Deferred Tax Asset 30,000
 &lt;tbody>
 &lt;tr>
 &lt;td>&lt;strong>Default&lt;/strong>&lt;/td>
-&lt;td>&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&lt;/td>
-&lt;/tr>
-&lt;tr>
 &lt;td>process-resources&lt;/td>
 &lt;td>resources:resources&lt;/td>
 &lt;/tr>
 &lt;tr>
+&lt;td>&amp;mdash;&lt;/td>
 &lt;td>compile&lt;/td>
 &lt;td>compiler:compile&lt;/td>
 &lt;/tr>
 &lt;tr>
+&lt;td>&amp;mdash;&lt;/td>
 &lt;td>process-test-resources&lt;/td>
 &lt;td>resources:testResources&lt;/td>
 &lt;/tr>
 &lt;tr>
+&lt;td>&amp;mdash;&lt;/td>
 &lt;td>test-compile&lt;/td>
 &lt;td>compiler:testCompile&lt;/td>
 &lt;/tr>
 &lt;tr>
+&lt;td>&amp;mdash;&lt;/td>
 &lt;td>test&lt;/td>
 &lt;td>surefire:test&lt;/td>
 &lt;/tr>
 &lt;tr>
+&lt;td>&amp;mdash;&lt;/td>
 &lt;td>package&lt;/td>
 &lt;td>jar:jar&lt;/td>
 &lt;/tr>
 &lt;tr>
+&lt;td>&amp;mdash;&lt;/td>
 &lt;td>install&lt;/td>
 &lt;td>install:install&lt;/td>
 &lt;/tr>
 &lt;tr>
+&lt;td>&amp;mdash;&lt;/td>
 &lt;td>deploy&lt;/td>
 &lt;td>deploy:deploy&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>&lt;strong>Clean&lt;/strong>&lt;/td>
-&lt;td>&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;-&lt;/td>
-&lt;/tr>
-&lt;tr>
 &lt;td>clean&lt;/td>
 &lt;td>clean:clean&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>&lt;strong>Site&lt;/strong>&lt;/td>
-&lt;td>&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;-&lt;/td>
-&lt;/tr>
-&lt;tr>
 &lt;td>site&lt;/td>
 &lt;td>site:site&lt;/td>
 &lt;/tr>
 &lt;tr>
+&lt;td>&amp;mdash;&lt;/td>
 &lt;td>site-deploy&lt;/td>
 &lt;td>site:deploy&lt;/td>
 &lt;/tr>
