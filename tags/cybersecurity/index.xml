@@ -411,7 +411,7 @@
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">&lt;/span>j
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;amp;str FP + &lt;span style="color:#3677a9">8&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Return &lt;span style="color:#447fcf">Address&lt;/span> (RA)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Old Frame &lt;span style="color:#447fcf">Pointer&lt;/span> (FP) &amp;lt;----- FRAME POINTER HERE
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Old Frame &lt;span style="color:#447fcf">Pointer&lt;/span> (FP) &amp;amp;larr;--- FRAME POINTER HERE
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>............
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Padding
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>............
@@ -737,7 +737,7 @@ test value first (for example 1), compiled the program, and then started gdb:&lt
 &lt;li>provide input:&lt;code>%d...%s&lt;/code>&lt;/li>
 &lt;li>Suppose we want to read a variable &lt;code>pin&lt;/code> and the address through debugging is said to be &lt;code>0x0804fa88&lt;/code>&lt;/li>
 &lt;li>Provide input &lt;code>0x0804fa888%d...%s&lt;/code>&lt;/li>
-&lt;li>Provide input &lt;code>0x0804fa888%d...%n&lt;/code> &amp;lt;- %n can change the value&lt;/li>
+&lt;li>Provide input &lt;code>0x0804fa888%d...%n&lt;/code> ← %n can change the value&lt;/li>
 &lt;/ul>
 &lt;h3 id="tocttou" >TOCTTOU
 &lt;span>
