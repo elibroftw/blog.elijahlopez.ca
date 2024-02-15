@@ -718,3 +718,71 @@ Example 7.3 and 7.4
 - Swap lasts more than 3 years
 - Exchange rate is 110 yen per dollar
 - Get the PV of hte cashflows for each currency and then convert one to the other
+
+## Mechanics of Options Markets
+
+- Call = option to buy at strike price by a certain date
+- Put = option to sell at strike price by a certain date
+- American style = exercised any time during its life
+- European style = exercised only at maturity
+
+### Payoffs
+
+- Long Call: max loss is the premium, max win is unlimited
+- Short Call: max loss is unlimited, max win is the premium
+- Long Put: max loss is the premium, max win is the share price - premium
+- Short Put: max loss is the drop is share price + premium, max win is the premium
+
+### Intrinsic Value
+
+- Max{ Strike minus Stock Price, 0 }
+
+### CBOE and OTC
+
+- Flex options
+- Binary options
+- Credit event binary options
+- Doom options
+
+### Dividends & Stock Splits
+
+- stripe price K to buy/sell N shares
+- n-for-m stock plsit
+- Strike price is mK/n
+- no shares is increase to nN/m
+- stock dividends is similar manner
+
+<details><summary>Example</summary>
+
+- call option to buy 100 shares for $20 per share
+- 2-for-1 stock split
+  - strike price of $10 to purchase 200 shares
+- 5% stock dividend
+  - Equivalent to a 1.05-for-1 stock split
+  - Strike price is 20/1.05 to purchase 105 shares
+
+</details>
+
+### Market Makers
+
+### Options Margin
+
+- naked option
+
+### Warrants
+
+- right to purchase new shares issued to the right holder
+
+### Convertible
+
+- the straight bond cannot be higher than the treasury bond but will approach it as the firm's value rises
+- MAX(Value of the bond, value of the shares you could get) + conversion premium
+
+### Swaptions
+
+## Midterm Questions
+
+- FRA 5% LIBOR and receive 7%, semi-annual compounded
+- forward rate is 5%
+- 5.1% semi-annual
+- `1000 * (0.07 - 0.051) / 2 * e^(-0.05(3.5)) = 7.88%`

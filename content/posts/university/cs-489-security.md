@@ -984,3 +984,44 @@ What if dragging on that “scrollbar” really dragged a program (from a malici
   - APIs in remote service objects are called as if they are local
 - Intents
   - Intents pass a messaging object from a callinga pp to another app
+
+### Mobile Framework Security
+
+- Creating a Permission Map through Dynamic Analysis
+- Motivation
+  - Lack of understanding Android Access Control
+  - Incomplete / Missing security docs and specs
+  - Highly customized ecosystem
+  - Access control anomolies
+  - Potential vulnerabilities
+- Solution
+  - API to Permission Maps
+- Dynamic Analysis uses techniques
+  - Virtual environment or actual device
+  - Want to look for specific behaviours characterizing a vulnerability or a property
+- Static Analysis
+- Invoke all APis from unpriviledged apps and detect the checks that protect them
+- Apps do not need permission to dsiable its own component
+- To disable another users' app component, need permission to do that
+  - Permission map
+    - Need interact accross users for different user id or change related setting for different app
+- Static Analysis
+  - Identify entry points defined in the framework
+  - Build control flow grpah of each API
+  - Perform a reachability analysis on the cfg
+  - Identify access control enforcement methods
+    - Path insentitive: union of all identified permissions
+    - Path sensitive:
+      - Extracting path conditions from entry
+      - First-order logic formula by disjunction of path conditions
+
+### App Privacy
+
+- Information Leakage
+- IMEI, GPS coordinates, SMS messages, banking information
+
+### Mobile App Security
+
+### Mobile User Authentication
+
+### Convert Channels
