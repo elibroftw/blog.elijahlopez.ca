@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>linux on ELL Blog</title><link>https://blog.elijahlopez.ca/tags/linux/</link><description>ELL Blog (linux)</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 27 Jun 2023 10:56:19 -0400</lastBuildDate><atom:link href="https://blog.elijahlopez.ca/tags/linux/index.xml" rel="self" type="application/rss+xml"/><item><title>Manjaro KDE Tips</title><link>https://blog.elijahlopez.ca/posts/manjaro-kde-tips/</link><pubDate>Tue, 27 Jun 2023 10:56:19 -0400</pubDate><guid>https://blog.elijahlopez.ca/posts/manjaro-kde-tips/</guid><description>&lt;div>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>linux on ELL Blog</title><link>https://blog.elijahlopez.ca/tags/linux/</link><description>ELL Blog (linux)</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 27 Jun 2023 10:56:19 -0400</lastBuildDate><atom:link href="https://blog.elijahlopez.ca/tags/linux/index.xml" rel="self" type="application/rss+xml"/><item><title>Linux [Desktop] Tips</title><link>https://blog.elijahlopez.ca/posts/linux-tips/</link><pubDate>Tue, 27 Jun 2023 10:56:19 -0400</pubDate><guid>https://blog.elijahlopez.ca/posts/linux-tips/</guid><description>&lt;div>
 &lt;h2>Table of Contents&lt;/h2>
 &lt;nav id="TableOfContents">
 &lt;ul>
@@ -35,6 +35,7 @@
 &lt;li>&lt;a href="#how-to-install-python-310-on-manjaro-or-arch">How to Install Python 3.10 on Manjaro (or Arch)&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;/li>
+&lt;li>&lt;a href="#how-to-reduce-firefox-scroll-speed-or-sensitivity">How to Reduce Firefox Scroll Speed or Sensitivity&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;/nav>
 &lt;/div>
@@ -318,7 +319,20 @@ You can choose to delete the original shortcut afterwards.&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#24909d">cd&lt;/span> ..
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>rm -rf python310
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>This will take a LONG time&amp;hellip;but it works.&lt;/p>
-&lt;p>Music Caster runs on Linux again!&lt;/p></description></item><item><title>Linux USB Formatting Issues</title><link>https://blog.elijahlopez.ca/posts/linux-usb-formatting-issues/</link><pubDate>Sun, 24 Jul 2022 21:03:20 -0400</pubDate><guid>https://blog.elijahlopez.ca/posts/linux-usb-formatting-issues/</guid><description>&lt;p>When trying to test out multiple Linux distros on multiple
+&lt;p>Music Caster runs on Linux again!&lt;/p>
+&lt;h2 id="how-to-reduce-firefox-scroll-speed-or-sensitivity" >How to Reduce Firefox Scroll Speed or Sensitivity
+&lt;span>
+&lt;a href="#how-to-reduce-firefox-scroll-speed-or-sensitivity">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>The scroll speed on Firefox is too sensitive. To reduce it,&lt;/p>
+&lt;ol>
+&lt;li>Go to about:config&lt;/li>
+&lt;li>Search for &lt;code>mousewheel.default.delta_multiplier_y&lt;/code>&lt;/li>
+&lt;li>Set to 75 or change until satisfactory&lt;/li>
+&lt;li>You can test the scroll speed on this post itself&lt;/li>
+&lt;/ol></description></item><item><title>Linux USB Formatting Issues</title><link>https://blog.elijahlopez.ca/posts/linux-usb-formatting-issues/</link><pubDate>Sun, 24 Jul 2022 21:03:20 -0400</pubDate><guid>https://blog.elijahlopez.ca/posts/linux-usb-formatting-issues/</guid><description>&lt;p>When trying to test out multiple Linux distros on multiple
 USB sticks, I ran into this horrible error. The creators of Balena Etcher
 simply do not care about users who soft brick their USBs. Rufus and Balena
 developers simply say that their software cannot hard brick the USB,

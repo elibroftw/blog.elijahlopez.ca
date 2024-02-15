@@ -4966,7 +4966,95 @@ test value first (for example 1), compiled the program, and then started gdb:&lt
 &lt;li>Intents pass a messaging object from a callinga pp to another app&lt;/li>
 &lt;/ul>
 &lt;/li>
-&lt;/ul></description></item><item><title>BU 397 Intermediate Financial Accounting II</title><link>https://blog.elijahlopez.ca/posts/bu-397-intermediate-financial-accounting-ii/</link><pubDate>Mon, 08 Jan 2024 17:26:07 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/bu-397-intermediate-financial-accounting-ii/</guid><description>&lt;div>
+&lt;/ul>
+&lt;h3 id="mobile-framework-security" >Mobile Framework Security
+&lt;span>
+&lt;a href="#mobile-framework-security">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Creating a Permission Map through Dynamic Analysis&lt;/li>
+&lt;li>Motivation
+&lt;ul>
+&lt;li>Lack of understanding Android Access Control&lt;/li>
+&lt;li>Incomplete / Missing security docs and specs&lt;/li>
+&lt;li>Highly customized ecosystem&lt;/li>
+&lt;li>Access control anomolies&lt;/li>
+&lt;li>Potential vulnerabilities&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Solution
+&lt;ul>
+&lt;li>API to Permission Maps&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Dynamic Analysis uses techniques
+&lt;ul>
+&lt;li>Virtual environment or actual device&lt;/li>
+&lt;li>Want to look for specific behaviours characterizing a vulnerability or a property&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Static Analysis&lt;/li>
+&lt;li>Invoke all APis from unpriviledged apps and detect the checks that protect them&lt;/li>
+&lt;li>Apps do not need permission to dsiable its own component&lt;/li>
+&lt;li>To disable another users&amp;rsquo; app component, need permission to do that
+&lt;ul>
+&lt;li>Permission map
+&lt;ul>
+&lt;li>Need interact accross users for different user id or change related setting for different app&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Static Analysis
+&lt;ul>
+&lt;li>Identify entry points defined in the framework&lt;/li>
+&lt;li>Build control flow grpah of each API&lt;/li>
+&lt;li>Perform a reachability analysis on the cfg&lt;/li>
+&lt;li>Identify access control enforcement methods
+&lt;ul>
+&lt;li>Path insentitive: union of all identified permissions&lt;/li>
+&lt;li>Path sensitive:
+&lt;ul>
+&lt;li>Extracting path conditions from entry&lt;/li>
+&lt;li>First-order logic formula by disjunction of path conditions&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="app-privacy" >App Privacy
+&lt;span>
+&lt;a href="#app-privacy">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Information Leakage&lt;/li>
+&lt;li>IMEI, GPS coordinates, SMS messages, banking information&lt;/li>
+&lt;/ul>
+&lt;h3 id="mobile-app-security-1" >Mobile App Security
+&lt;span>
+&lt;a href="#mobile-app-security-1">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;h3 id="mobile-user-authentication" >Mobile User Authentication
+&lt;span>
+&lt;a href="#mobile-user-authentication">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;h3 id="convert-channels" >Convert Channels
+&lt;span>
+&lt;a href="#convert-channels">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3></description></item><item><title>BU 397 Intermediate Financial Accounting II</title><link>https://blog.elijahlopez.ca/posts/bu-397-intermediate-financial-accounting-ii/</link><pubDate>Mon, 08 Jan 2024 17:26:07 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/bu-397-intermediate-financial-accounting-ii/</guid><description>&lt;div>
 &lt;h2>Table of Contents&lt;/h2>
 &lt;nav id="TableOfContents">
 &lt;ul>
@@ -9324,7 +9412,7 @@ Since this is an example, is it not for copy-pasting but rather to show you how 
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">if&lt;/span> &lt;span style="color:#6ab825;font-weight:bold">not&lt;/span> create_key:
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">with&lt;/span> suppress(&lt;span style="color:#bbb">FileNotFoundError&lt;/span>):
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> wr.DeleteValue(key, app_name)
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Manjaro KDE Tips</title><link>https://blog.elijahlopez.ca/posts/manjaro-kde-tips/</link><pubDate>Tue, 27 Jun 2023 10:56:19 -0400</pubDate><guid>https://blog.elijahlopez.ca/posts/manjaro-kde-tips/</guid><description>&lt;div>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Linux [Desktop] Tips</title><link>https://blog.elijahlopez.ca/posts/linux-tips/</link><pubDate>Tue, 27 Jun 2023 10:56:19 -0400</pubDate><guid>https://blog.elijahlopez.ca/posts/linux-tips/</guid><description>&lt;div>
 &lt;h2>Table of Contents&lt;/h2>
 &lt;nav id="TableOfContents">
 &lt;ul>
@@ -9361,6 +9449,7 @@ Since this is an example, is it not for copy-pasting but rather to show you how 
 &lt;li>&lt;a href="#how-to-install-python-310-on-manjaro-or-arch">How to Install Python 3.10 on Manjaro (or Arch)&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;/li>
+&lt;li>&lt;a href="#how-to-reduce-firefox-scroll-speed-or-sensitivity">How to Reduce Firefox Scroll Speed or Sensitivity&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;/nav>
 &lt;/div>
@@ -9644,7 +9733,20 @@ You can choose to delete the original shortcut afterwards.&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#24909d">cd&lt;/span> ..
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>rm -rf python310
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>This will take a LONG time&amp;hellip;but it works.&lt;/p>
-&lt;p>Music Caster runs on Linux again!&lt;/p></description></item><item><title>Stop Paying for 1Password</title><link>https://blog.elijahlopez.ca/posts/stop-paying-for-1password/</link><pubDate>Sat, 10 Jun 2023 09:23:46 -0400</pubDate><guid>https://blog.elijahlopez.ca/posts/stop-paying-for-1password/</guid><description>&lt;p>So I applied for an internship position at 1Password which had Bonus points for&lt;/p>
+&lt;p>Music Caster runs on Linux again!&lt;/p>
+&lt;h2 id="how-to-reduce-firefox-scroll-speed-or-sensitivity" >How to Reduce Firefox Scroll Speed or Sensitivity
+&lt;span>
+&lt;a href="#how-to-reduce-firefox-scroll-speed-or-sensitivity">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>The scroll speed on Firefox is too sensitive. To reduce it,&lt;/p>
+&lt;ol>
+&lt;li>Go to about:config&lt;/li>
+&lt;li>Search for &lt;code>mousewheel.default.delta_multiplier_y&lt;/code>&lt;/li>
+&lt;li>Set to 75 or change until satisfactory&lt;/li>
+&lt;li>You can test the scroll speed on this post itself&lt;/li>
+&lt;/ol></description></item><item><title>Stop Paying for 1Password</title><link>https://blog.elijahlopez.ca/posts/stop-paying-for-1password/</link><pubDate>Sat, 10 Jun 2023 09:23:46 -0400</pubDate><guid>https://blog.elijahlopez.ca/posts/stop-paying-for-1password/</guid><description>&lt;p>So I applied for an internship position at 1Password which had Bonus points for&lt;/p>
 &lt;blockquote>
 &lt;p>Frontend web development experience with Javascript frameworks like React, Angular, or Vue.js
 Experience with TypeScript.
@@ -31089,6 +31191,7 @@ I&amp;rsquo;ll start with the tips so that this post is useful for everyone.&lt;
 &lt;li>Password: same as @mylaurier.ca password&lt;/li>
 &lt;li>Advanced &amp;gt; Privacy &amp;gt; Use device MAC :(&lt;/li>
 &lt;/ul>
+&lt;p>On Linux devices, disable the certificate password and only supply the username and password given here.&lt;/p>
 &lt;h2 id="homeschool-differences" >Homeschool Differences
 &lt;span>
 &lt;a href="#homeschool-differences">
