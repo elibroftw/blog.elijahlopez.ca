@@ -252,7 +252,7 @@ int check_signature(char *str, int j) {
 j
 &str                                                          FP + 8
 Return Address (RA)
-Old Frame Pointer (FP)                           <----- FRAME POINTER HERE
+Old Frame Pointer (FP)                           &larr;--- FRAME POINTER HERE
 ............
 Padding
 ............
@@ -590,7 +590,7 @@ FILLED RAS
 - provide input:`%d...%s`
 - Suppose we want to read a variable `pin` and the address through debugging is said to be `0x0804fa88`
 - Provide input `0x0804fa888%d...%s`
-- Provide input `0x0804fa888%d...%n` <- %n can change the value
+- Provide input `0x0804fa888%d...%n` &larr; %n can change the value
 
 ### TOCTTOU
 

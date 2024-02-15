@@ -376,7 +376,7 @@ from functools import wrapsdef memo(func):  # remove print statements in a pract
     return _helper
 
 
-@memo  # square = memo(square) <-- what it means
+@memo  # square = memo(square) &larr; what it means
 def square(x):
     return x * x
 

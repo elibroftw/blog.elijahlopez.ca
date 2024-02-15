@@ -373,8 +373,8 @@ Rate of return = 22.13 / 20.83 - 1 = 6.24%
 
 4. Loaded-up fund has an expense ratio of 1.75%. Economy Fund has a front-end load of 2% but an expense ratio of 0.25%. Assume rate of return is 6% before any fees.
 
-- LU = 1000 \* 1.06 \* (1 - 0.0175) = 1041.45 -> 4.1%
-- EF = 1000 \* (1 - 0.98) \* 1.06 \* (1 - 0.0025) = 1036.20 -> 3.62%
+- LU = 1000 \* 1.06 \* (1 - 0.0175) = 1041.45 &rarr; 4.1%
+- EF = 1000 \* (1 - 0.98) \* 1.06 \* (1 - 0.0025) = 1036.20 &rarr; 3.62%
 
 ## Risk & Return
 
@@ -394,7 +394,7 @@ Rate of return = 22.13 / 20.83 - 1 = 6.24%
       - 12 \* (1.0458 ^ (1/12) - 1)  = 4.4867%
     - Continuous compounding
       - FV = euler's constant ^ (rt)
-      - For a EAR of 4.58%, ln (1 + 4.58%) = r -> r = 4.475%
+      - For a EAR of 4.58%, ln (1 + 4.58%) = r &rarr; r = 4.475%
 
 <img class=equation-tall src="https://latex.codecogs.com/svg.image?EAR=(1+\frac{APR}{n})^n">
 
@@ -1210,9 +1210,9 @@ Long-term (30y)
 
 If you require a return and the intrinsic value you calculate equal the market value, buy it because it does give you the required return.
 
-- IV > MV -> Buy
-- IV < MV -> Sell
-- IV = MV -> Buy
+- IV > MV &rarr; Buy
+- IV < MV &rarr; Sell
+- IV = MV &rarr; Buy
 
 ### Dividend Growth Model
 

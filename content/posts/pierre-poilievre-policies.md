@@ -48,5 +48,5 @@ Bill C-395 was sponsored by Poilievre  in 2018 as a private member's bill. The g
 
 ## Every Dollar Spent Should be Accompanied with a Dollar Received
 
-The idea is that politicans need to be forced to keep the budget balanced in order to reduce debt and prevent excess aggregate demand (-> inflation).
+The idea is that politicians need to be forced to keep the budget balanced in order to reduce debt and prevent excess aggregate demand (&rarr; inflation).
 Poilievre used the bill under Clinton as an example.

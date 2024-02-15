@@ -85,16 +85,16 @@ This is very useful if you ever need to check the type of a variable. I found it
 export function trueTypeOf(obj) {
     return Object.prototype.toString.call(obj).slice(8, -1).toLowerCase()
     /*
-        []              -> array
-        {}              -> object
-        ''              -> string
-        new Date()      -> date
-        1               -> number
-        function () {}  -> function
-        /test/i         -> regexp
-        true            -> boolean
-        null            -> null
-        trueTypeOf()    -> undefined
+        []              &rarr; array
+        {}              &rarr; object
+        ''              &rarr; string
+        new Date()      &rarr; date
+        1               &rarr; number
+        function () {}  &rarr; function
+        /test/i         &rarr; regexp
+        true            &rarr; boolean
+        null            &rarr; null
+        trueTypeOf()    &rarr; undefined
     */
 }
 ```

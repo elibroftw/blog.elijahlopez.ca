@@ -56,7 +56,7 @@ Thanks ChatGPT:
 - smartphones will become obsolete and replaced by wearable devices, such as smart glasses or watches. Additionally, it predicts that voice assistants will become more prevalent and advanced
 - AI and ML will become more pervasive
   - AI being integrated into various aspects of our lives such as healthcare, education, and transportation
-  - 5G adoption -> autonomous vehicles and augmented reality experiences.
+  - 5G adoption &rarr; autonomous vehicles and augmented reality experiences.
   - biotechnology, including gene editing and personalized medicine.
 
 [Unintended consequences](https://dl.acm.org/doi/10.1145/3184402)

@@ -684,7 +684,7 @@ When to use
   - Gathering
   - Analysis
   - Specification (documenting)
-  - Evaluation (validation) -> re-evaluate (analysis)
+  - Evaluation (validation) &rarr; re-evaluate (analysis)
 
 A requirement is a simple statement of what the system must do or what characteristics does it have. Requirements will describe
 
