@@ -1199,9 +1199,9 @@ Example - Deferred Tax Asset
 - income tax payable: 600,000 in 2023, 440,000 in 2024
 - future tax rate is 25%
 - warranty liability
-  - 2023: 500,000 recognized vs. 0 actual -> 25% * 500,000 = 125,000 asset
-  - 2024: 200,000 recognized vs. 0 actual -> 25% * 200,000 = 50,000 asset remaining
-  - 2025: 0 recognized vs. 0 -> 0
+  - 2023: 500,000 recognized vs. 0 actual &rarr; 25% * 500,000 = 125,000 asset
+  - 2024: 200,000 recognized vs. 0 actual &rarr; 25% * 200,000 = 50,000 asset remaining
+  - 2025: 0 recognized vs. 0 &rarr; 0
 
 ```accounting
 2023
