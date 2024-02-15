@@ -1,9 +1,12 @@
 ---
-title: "Manjaro KDE Tips"
+title: "Linux [Desktop] Tips"
 date: 2023-06-27T10:56:19-04:00
 draft: false
 tags: [
     "linux",
+]
+alias: [
+    '/posts/manjaro-kde-tips/'
 ]
 ---
 
@@ -307,3 +310,12 @@ rm -rf python310
 This will take a LONG time...but it works.
 
 Music Caster runs on Linux again!
+
+## How to Reduce Firefox Scroll Speed or Sensitivity
+
+The scroll speed on Firefox is too sensitive. To reduce it,
+
+1. Go to about:config
+2. Search for `mousewheel.default.delta_multiplier_y`
+3. Set to 75 or change until satisfactory
+4. You can test the scroll speed on this post itself
