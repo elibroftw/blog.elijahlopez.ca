@@ -2232,6 +2232,20 @@ The difference between gross investment and depreciation is &lt;strong>net inves
 &lt;li>&lt;a href="#fixed-for-fixed-currency-swap">Fixed-for-Fixed Currency Swap&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;/li>
+&lt;li>&lt;a href="#mechanics-of-options-markets">Mechanics of Options Markets&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#payoffs">Payoffs&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#intrinsic-value">Intrinsic Value&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#cboe-and-otc">CBOE and OTC&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#dividends--stock-splits">Dividends &amp;amp; Stock Splits&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#market-makers">Market Makers&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#options-margin">Options Margin&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#warrants">Warrants&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#convertible">Convertible&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#swaptions">Swaptions&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="#midterm-questions">Midterm Questions&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;/nav>
 &lt;/div>
@@ -3380,6 +3394,132 @@ than 25 years. The conversion factor is unique to each bond.&lt;/p>
 &lt;li>Swap lasts more than 3 years&lt;/li>
 &lt;li>Exchange rate is 110 yen per dollar&lt;/li>
 &lt;li>Get the PV of hte cashflows for each currency and then convert one to the other&lt;/li>
+&lt;/ul>
+&lt;h2 id="mechanics-of-options-markets" >Mechanics of Options Markets
+&lt;span>
+&lt;a href="#mechanics-of-options-markets">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;ul>
+&lt;li>Call = option to buy at strike price by a certain date&lt;/li>
+&lt;li>Put = option to sell at strike price by a certain date&lt;/li>
+&lt;li>American style = exercised any time during its life&lt;/li>
+&lt;li>European style = exercised only at maturity&lt;/li>
+&lt;/ul>
+&lt;h3 id="payoffs" >Payoffs
+&lt;span>
+&lt;a href="#payoffs">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Long Call: max loss is the premium, max win is unlimited&lt;/li>
+&lt;li>Short Call: max loss is unlimited, max win is the premium&lt;/li>
+&lt;li>Long Put: max loss is the premium, max win is the share price - premium&lt;/li>
+&lt;li>Short Put: max loss is the drop is share price + premium, max win is the premium&lt;/li>
+&lt;/ul>
+&lt;h3 id="intrinsic-value" >Intrinsic Value
+&lt;span>
+&lt;a href="#intrinsic-value">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Max{ Strike minus Stock Price, 0 }&lt;/li>
+&lt;/ul>
+&lt;h3 id="cboe-and-otc" >CBOE and OTC
+&lt;span>
+&lt;a href="#cboe-and-otc">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Flex options&lt;/li>
+&lt;li>Binary options&lt;/li>
+&lt;li>Credit event binary options&lt;/li>
+&lt;li>Doom options&lt;/li>
+&lt;/ul>
+&lt;h3 id="dividends--stock-splits" >Dividends &amp;amp; Stock Splits
+&lt;span>
+&lt;a href="#dividends--stock-splits">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>stripe price K to buy/sell N shares&lt;/li>
+&lt;li>n-for-m stock plsit&lt;/li>
+&lt;li>Strike price is mK/n&lt;/li>
+&lt;li>no shares is increase to nN/m&lt;/li>
+&lt;li>stock dividends is similar manner&lt;/li>
+&lt;/ul>
+&lt;details>&lt;summary>Example&lt;/summary>
+&lt;ul>
+&lt;li>call option to buy 100 shares for $20 per share&lt;/li>
+&lt;li>2-for-1 stock split
+&lt;ul>
+&lt;li>strike price of $10 to purchase 200 shares&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>5% stock dividend
+&lt;ul>
+&lt;li>Equivalent to a 1.05-for-1 stock split&lt;/li>
+&lt;li>Strike price is 20/1.05 to purchase 105 shares&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/details>
+&lt;h3 id="market-makers" >Market Makers
+&lt;span>
+&lt;a href="#market-makers">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;h3 id="options-margin" >Options Margin
+&lt;span>
+&lt;a href="#options-margin">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>naked option&lt;/li>
+&lt;/ul>
+&lt;h3 id="warrants" >Warrants
+&lt;span>
+&lt;a href="#warrants">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>right to purchase new shares issued to the right holder&lt;/li>
+&lt;/ul>
+&lt;h3 id="convertible" >Convertible
+&lt;span>
+&lt;a href="#convertible">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>the straight bond cannot be higher than the treasury bond but will approach it as the firm&amp;rsquo;s value rises&lt;/li>
+&lt;li>MAX(Value of the bond, value of the shares you could get) + conversion premium&lt;/li>
+&lt;/ul>
+&lt;h3 id="swaptions" >Swaptions
+&lt;span>
+&lt;a href="#swaptions">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;h2 id="midterm-questions" >Midterm Questions
+&lt;span>
+&lt;a href="#midterm-questions">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;ul>
+&lt;li>FRA 5% LIBOR and receive 7%, semi-annual compounded&lt;/li>
+&lt;li>forward rate is 5%&lt;/li>
+&lt;li>5.1% semi-annual&lt;/li>
+&lt;li>&lt;code>1000 * (0.07 - 0.051) / 2 * e^(-0.05(3.5)) = 7.88%&lt;/code>&lt;/li>
 &lt;/ul></description></item><item><title>CS 489 Security</title><link>https://blog.elijahlopez.ca/posts/university/cs-489-security/</link><pubDate>Tue, 09 Jan 2024 11:33:24 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/university/cs-489-security/</guid><description>&lt;!--
 [Learn uWaterloo](https://learn.uwaterloo.ca/d2l/le/content/1005130/Home)
 [Course Website](https://cs.uwaterloo.ca/~m285xu/courses/cs489-w24/)
