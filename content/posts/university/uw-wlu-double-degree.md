@@ -30,6 +30,8 @@ If you are running AOSP 11+, like the Google Pixel 7, this is what you need to s
 - Password: same as @mylaurier.ca password
 - Advanced > Privacy > Use device MAC :(
 
+On Linux devices, disable the certificate password and only supply the username and password given here.
+
 ## Homeschool Differences
 
 ### Scholarships
