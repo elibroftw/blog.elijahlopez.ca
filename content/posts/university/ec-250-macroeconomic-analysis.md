@@ -637,7 +637,7 @@ def f(income_1=35_000, income_2=30_000, tuition=6150, i=0.05, wealth=0):
 - houses are 10x car prices and have amortization period of 20+ years so higher interest rates means paying more in interest + you need to pay maintenance
 - some people are
 - interest payments on student loans (not applicable anymore due to federal laws allowing tax deduction)
-- the situation where real interest rates rise seems like during periods of high inflation -> less inflation so maybe people had to reduce consumption and the temporary higher real interest rates just allows for returning to normal spending habits
+- the situation where real interest rates rise seems like during periods of high inflation &rarr; less inflation so maybe people had to reduce consumption and the temporary higher real interest rates just allows for returning to normal spending habits
 - when real interest rates rise, what are expectations for the stock market? If they are the same, then why would people save more? how many people are actually saving?
 - https://www.thestar.com/business/majority-of-canadians-now-have-more-debt-than-savings-statcan-says-here-s-why-the/article_40e0159e-b6fc-11ee-aaed-839d0983b705.html
 </details>
@@ -723,9 +723,9 @@ q theory of investment
 - if Tobin's q < 1, not profitable
 - Tobin's q = V / p<sub>K</sub>K
 - V: stock market value of firm, p<sub>K</sub>K is the replacement cost of the firm's capital cost (Maintenance CAPEX?)
-- Higher MPK -> higher stock prices -> higher q
-- lower real interest rates -> shift from investing in bonds to stocks -> higher stock prices -> higher q
-- lower capital purchase price -> lower denominator and higher q
+- Higher MPK &rarr; higher stock prices &rarr; higher q
+- lower real interest rates &rarr; shift from investing in bonds to stocks &rarr; higher stock prices &rarr; higher q
+- lower capital purchase price &rarr; lower denominator and higher q
 
 Changes
 
@@ -915,13 +915,13 @@ _Money_: assets that can be used to make payments, such as cash, and chequing ac
 
 - Liquid and low return
 - Factors:
-  - higher price level -> proportional demand for more money
+  - higher price level &rarr; proportional demand for more money
     - 70 years ago, price levels was 1/10th meaning nominally, you'd need 10 times less money.
-  - higher real income -> demand more money (real means implies more money)
+  - higher real income &rarr; demand more money (real means implies more money)
     - higher real income means more spending meaning more liquidity needed
     - not proportional, as higher the income, more efficient investment (might require minimum balance)
     - also lower the income, there might not just be as many attractive alternatives
-  - increase in interest rates on monetary assets compared to non-monetary assets -> demand more money
+  - increase in interest rates on monetary assets compared to non-monetary assets &rarr; demand more money
     - returns on alternative assets can sway the demand for money
     - a decrease in interest rates for non-monetary assets increases demand for money
 - Other Factors

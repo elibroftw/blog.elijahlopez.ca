@@ -72,7 +72,7 @@ Ultimately, users are responsible for siding with an argument, the platform is j
 - An argument has rebutals for the arguments next popular and next least popular argument's points.
 - <details><summary>Rebutal considerations</summary>
     Replies are to be made to at least 1 rebutal within 2 weeks or the point/rebuttal will be marked as "failed to defend point/rebuttal".
-    Hence, points/rebuttals can be shown to the user sorted by point/rebutall defended -> ongoing -> failed to defend.
+    Hence, points/rebuttals can be shown to the user sorted by point/rebutall defended &rarr; ongoing &rarr; failed to defend.
 
     This time window feature is very important in order to force discourse. It's very easy to make 1 rebutal and never respond again. Every response to a rebutal must address the rebutal fully. Not addressing a rebutal fully makes the rebutal valid. In that way, points and rebutals can follow a thread type of structure to allow multiple replies and rebutals per point rather than batching all rebutals for a point into one. For less popular arguments, operators are allowed to be leniant about the forced rebutal rule. I'd say if there are more than 5 argument, the bottom 50% won't need to comply with the forced discussion. This is because it's more likely these projects are arguing with bad faith characters and so the operator can use their own prioritization method for rule violation reports.
     </details>

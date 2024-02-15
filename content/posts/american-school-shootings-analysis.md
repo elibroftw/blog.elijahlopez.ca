@@ -26,7 +26,7 @@ So what can we learn?
 
 1. Students shouldn't be allowed to buy guns at all. You should not be allowed to sell a gun to a person who has not even graduated high school yet. If going to school is mandatory, then there should be a system to check the education status of a person. If no status shows up, assume no diploma. Unless the country of birth was outside of America, in which case it is quite reasonable to assume that the 21+ (see below) person has a diploma.
 2. The government of the USA is not poor. It is the most funded, and thus the country should be able to buy guns people want to sell. And it should be straight forward. Gun sellers should be able to bring a gun, and ask for the price they purchased the gun at and the government can also offer its own valuation.
-3. Gun shows need to ensure everyone in the show is 21+ or have no age restriction at all (-> no selling in the gun show)
+3. Gun shows need to ensure everyone in the show is 21+ or have no age restriction at all (&rarr; no selling in the gun show)
 4. Guns should only be sold to those who are 21+, same as alcohol. If a person aged 18 isn't capable of [consuming alcohol rationally](#alcoholism), then neither can they handle _their own_ gun.
 5. Guns should only be gifted to 18-20 year olds if the person gifting is a parent.
 6. Guns cannot be gifted to people under 18 year olds (by [birth year](#birth-year)). It should be the parents responsibility to keep the gun safe, so even though a parent can practically buy a gun for their child, they are the official owners and are thus responsible for the gun and their child.

@@ -1214,7 +1214,7 @@ income taxes deducted: (55,000) (to find payable amount after credits)
   - Deductible against taxable capital gains
   - carried back 3 years, forward indefinitely
   - on death deductible against any income
-  - conversion of rates over the year (3/4 -> 2/3 -> 1/2)
+  - conversion of rates over the year (3/4 &rarr; 2/3 &rarr; 1/2)
   - 2/3 from 1988 to 1989, 3/4 from 1990 to 1999, 2/3 in 2000, 1/2 since 2001
   - [inclusion rates](https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/about-your-tax-return/tax-return/completing-a-tax-return/personal-income/line-12700-capital-gains/you-calculate-your-capital-gain-loss/inclusion-rates-previous-years.html)
   - to convert, divide by numerator and then multiply by the denominator and then multiply by recent rate
@@ -1342,7 +1342,7 @@ Div. B income
 - Mrs. Plant: $60,000 (58,000 in employment income)
 - Amanda: 7,000
 - Joan:
-  - Home <-> university $150
+  - Home &harr; university $150
   - 4,200 - 150 = 4,050
 - Courtney 2,800
 - Mr. Plant 5,000 + 100 (don't include 4,000 in dividends since it was first generation)

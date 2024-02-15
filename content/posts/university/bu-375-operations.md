@@ -57,8 +57,8 @@ x<sup>2</sup> p -->
 
 ### Transformation Process
 
-- General idea: inputs -> transformation process -> output
-- Feedback between inputs <-> process <-> output
+- General idea: inputs &rarr; transformation process &rarr; output
+- Feedback between inputs &harr; process &harr; output
 - Value is created
 - Physical, locational, exchange, physiological, psychological, informational
 - Value = Price consumers are willing to pay - Cost to produce
@@ -759,7 +759,7 @@ R = demand rate \* lead time + Safety Stock
 
 <img class=equation src="https://latex.codecogs.com/svg.image?z\sigma_d\sqrt{L}">
 
-Use table for z depending on % service level. e.g. 95% -> z = 1.65. Service level is the probability that demand won't be greater than quantity of goods in stock.
+Use table for z depending on % service level. e.g. 95% &rarr; z = 1.65. Service level is the probability that demand won't be greater than quantity of goods in stock.
 
 ### Periodic Order Quantities (Variable Demand)
 

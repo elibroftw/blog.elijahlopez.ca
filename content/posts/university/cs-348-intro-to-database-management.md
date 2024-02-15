@@ -152,7 +152,7 @@ subset of tuples of a relation and thus schema is the same
 ### Natural Join
 
 If both relations have the same attribute, then the join will only filter out
-tuples that don't have those attributes matching. During the first cross product, duplicate attributes are renamed (e.g. ID, ID -> ID, ID_1) but at the end the duplicated attributes are thrown out.
+tuples that don't have those attributes matching. During the first cross product, duplicate attributes are renamed (e.g. ID, ID &rarr; ID, ID_1) but at the end the duplicated attributes are thrown out.
 
 ### Set-Based Relational Operators
 
@@ -451,7 +451,7 @@ Assert inner query is non-empty (not exists) where inner query does a search bas
 
 Find all students who have taken all courses offered in the Biology department.
 
-return student if for all biology courses available student has taken that course. -> return students where the following relation is empty (all bio courses except the ones the student has taken)
+return student if for all biology courses available student has taken that course. &rarr; return students where the following relation is empty (all bio courses except the ones the student has taken)
 
 #### Unique
 
@@ -834,25 +834,25 @@ Two ways, first is armstrong's axioms
 
 #### Reflexivity
 
-SIN, EName -> EName
+SIN, EName &rarr; EName
 
 #### Augmentation
 
-If X is a subset of Y, then X -> Y.
+If X is a subset of Y, then X &rarr; Y.
 
-SIN, Z -> EName, Z
+SIN, Z &rarr; EName, Z
 
 #### Transitivity
 
-X -> Y, Y -> Z => X -> Z
+X &rarr; Y, Y &rarr; Z => X &rarr; Z
 
 #### Union Rule
 
-X -> Y, X -> Z => X => YZ
+X &rarr; Y, X &rarr; Z => X => YZ
 
 #### Decomposition
 
-X -> YZ => X -> Y, X -> Z
+X &rarr; YZ => X &rarr; Y, X &rarr; Z
 
 ### Function Dependencies: Attribute Closure
 
@@ -886,7 +886,7 @@ Algorithm:
 Minimal cover:
 
 1. Every RHS of a dependency in F is a single attribute
-2. There does not exist an FD X -> A in F such that the set F - {X -> A} = F. (no redundant FD)
+2. There does not exist an FD X &rarr; A in F such that the set F - {X &rarr; A} = F. (no redundant FD)
 3. There are no redundant attributes in the LHS set of a FD in F
 
 ## Transactions

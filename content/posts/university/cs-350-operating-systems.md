@@ -1162,9 +1162,9 @@ Process uses more memory than system has
 
 Transition States
 
-- new -- admit --> ready -- scheduler dispatch --> running -- exit -- I/O or event wait --> waiting
-- running -- exit --> Terminated
-- waiting -- I/O or event completion --> ready
+- new -- admit &rarr; ready -- scheduler dispatch &rarr; running -- exit -- I/O or event wait &rarr; waiting
+- running -- exit &rarr; Terminated
+- waiting -- I/O or event completion &rarr; ready
 
 #### Scheduling Decisions
 
@@ -1703,9 +1703,9 @@ List the three largest sources of improved OS performance when using a slab allo
 
 [ffs.pdf](https://rcs.uwaterloo.ca/~ali/readings/ffs.pdf)
 
-512 bytes -> 1024 resulted in 2x performance
+512 bytes &rarr; 1024 resulted in 2x performance
 - each disk transfer accessed twice the amount of data
-- direct blocks contained twice as much data -> most files don’t need indirect blocks
+- direct blocks contained twice as much data &rarr; most files don’t need indirect blocks
 Randomization of data blocks causes deteriorated performance due to seeking before access
 Super-block is at the start of each partition and contains critical data and is replicated. 
 

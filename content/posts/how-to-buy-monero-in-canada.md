@@ -24,7 +24,7 @@ to create a better crypto:crypto exchange (all currency pairs).
 
 ## Kraken
 
-### CAD -> USD -> XMR
+### CAD &rarr; USD &rarr; XMR
 
 A deposit fee of 0.1% for etransfer (3k limit), a USD conversion fee of 0.2%, and a 0.16% post limit order fee to buy XMR, and a flat network fee to withdraw.
 In total, that's 0.46% as a maker and a 0.56% fee as a taker. You can use Etana to forgo the deposit fee, but I'm unsure if Etana has its
@@ -41,11 +41,11 @@ Make sure to set the limit order one cent less than market with **post** selecte
 
 The etransfer deposit fee took the largest chunk! I'll have to test the other methods to compare.
 
-### TODO: USDT -> XMR
+### TODO: USDT &rarr; XMR
 
 Next time I buy Monero, I'll try this method.
 
-### XLM -> USD -> XMR
+### XLM &rarr; USD &rarr; XMR
 
 Bought for C$0.119274 (1% margin), sold for US$0.089 (lucky), monero for $137.95.
 
@@ -54,7 +54,7 @@ Buying XLM on Newton costed me a margin of 1%. I'm thoroughly disappointed with 
 Transferring XLM to Kraken was free. Selling to USD has a 0.16% fee for a post limit order, and a post limit order on XMR is another 0.16%.
 So this method would result in fees of 1.32% for makers to 2.03% for takers.
 
-### USD -> XMR
+### USD &rarr; XMR
 
 You'll need a USD bank account for this and you'll need Etana which is another KYC hurdle. Theoretically this method results in
 a 0.16% fee as a maker and a 0.26% fee as a taker. I say theoretically though since I don't know if there's any fee from Etana's side and

@@ -121,7 +121,7 @@ Maintenance
 - Catch: generating updates from all **supported** previous releases to the latest.
   - For every platform (Windows, Linux distros, macOS), every locale, every installer from LATEST-1, LATEST-2, LATEST-3. Not just for firefox
 - Updates are snippets (XML) that point to the partial/complete .mar (Mozilla Archive) file
-- Minor updates: Updating 3.6.\* to the latest 3.6.\*, beta -> latest beta, nightly -> latest nightly
+- Minor updates: Updating 3.6.\* to the latest 3.6.\*, beta &rarr; latest beta, nightly &rarr; latest nightly
 - Major updates: advertisement of new features
 - Complete vs partial updates. Partial is the binary diff between the old release complete .mar file and the latest release complete .mar file.
 - These differences were shown to be very common across the platforms, so caching/hashing was used.
@@ -158,7 +158,7 @@ Maintenance
 ### Git Operations
 
 - `git clone`
-  - Online repo -> Local repo
+  - Online repo &rarr; Local repo
 - Local
   - `git log`
   - `git branch`
@@ -281,7 +281,7 @@ clean:
   - x = "a command"
   - $(x)
 - parallelization: make -j8
-- % wildcard is greedy (%.o -> foo.o.o)
+- % wildcard is greedy (%.o &rarr; foo.o.o)
   - the % must be equal on both sides of the rule
   - $<:  expands to the first dependency
   - $^: expands to the entire list of dependencies
@@ -415,7 +415,7 @@ Lifecycle | Phase | Goal
 
 ## CI and CD
 
-- Practitioners (Developers, QA, Release Engineers) <-> Build System <-> Development Tools
+- Practitioners (Developers, QA, Release Engineers) &harr; Build System &harr; Development Tools
   - Developers: execute local builds to sync changes and perform simple tests
   - QA: automated tests into build system
     - normal builds should provide quick feedback
@@ -443,7 +443,7 @@ Lifecycle | Phase | Goal
 ### CI
 
 - Martin Fowler: Refactoring, Continuous Integration - verify automated build
-- Cycle: build -> git -> build -> test -> report
+- Cycle: build &rarr; git &rarr; build &rarr; test &rarr; report
 - Tools:
   - Install: Jenkins, CruiseControl, Buildbot
   - Cloud: Travis CI, GitHub Actions, Circle Ci

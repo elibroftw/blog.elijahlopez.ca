@@ -28,7 +28,7 @@ use reqwest;
 use reqwest::Client;
 
 // when making requests, try to use an existing client instead of creating a client or using the get method
-async fn make_request(client: &Client) -> Result<Value, reqwest::Error> {
+async fn make_request(client: &Client) &rarr; Result<Value, reqwest::Error> {
     let url = "https://api.sampleapis.com/coffee/hot";
     let response = client.get(url).send().await?;
     let hot_coffees = response.json::<Value>().await;
@@ -63,15 +63,15 @@ use reqwest;
 use reqwest::Client;
 
 #[get("/")]
-async fn index(client: &State<Client>) -> Result<Value, NotFound<String>> {
+async fn index(client: &State<Client>) &rarr; Result<Value, NotFound<String>> {
     let url = "https://api.sampleapis.com/coffee/hot";
     let response = client.get(url).send().await.map_err(|e| Status::NotFound(e.to_string()))?;
     response.json::<Value>().await.map_err(|e| Status::NotFound(e.to_string()))
-    // `result.map_err` is for E -> F whereas `result.or_else` can turn an error into an ok
+    // `result.map_err` is for E &rarr; F whereas `result.or_else` can turn an error into an ok
 }
 
 #[launch]
-fn rocket() -> _ {
+fn rocket() &rarr; _ {
     let client = reqwest::Client::builder().user_agent("reqwest").build().unwrap();
     rocket::build()
         .manage(client)

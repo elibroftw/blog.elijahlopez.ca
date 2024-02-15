@@ -30,7 +30,7 @@ serde = { version = "1.0", features = ["derive"] }
 use rocket::serde::json::{json, Value, Json};
 
 #[get("/")]
-fn index() -> Option<Value> {
+fn index() &rarr; Option<Value> {
     // Returns JSON if json manipulation succeeds, else 404
 
     // Assume that this response is from an API request
@@ -56,7 +56,7 @@ fn index() -> Option<Value> {
 }
 
 #[launch]
-fn rocket() -> _ {
+fn rocket() &rarr; _ {
     rocket::build()
         .mount("/", routes![index])
 }
@@ -86,7 +86,7 @@ struct Name<'r> {
 struct Names<'r>(Vec<Name<'r>>);
 
 #[get("/get-api")]
-async fn new_index(client: &State<Client>) -> Result<Json<Names<'_>>, NotFound<String>> {
+async fn new_index(client: &State<Client>) &rarr; Result<Json<Names<'_>>, NotFound<String>> {
     // make a request
     let response = client.get("url that returns a list of names").send().await.map_err(|e| NotFound(e.to_string()))?;
     let mut names = response.json::<Names<'_>>().await.map_err(|e| NotFound(e.to_string()))?;
@@ -100,7 +100,7 @@ async fn new_index(client: &State<Client>) -> Result<Json<Names<'_>>, NotFound<S
 }
 
 #[post("/post-api", data = "<names>")]
-fn post_index(mut names: Json<Names<'_>>) -> Json<Names<'_>> {
+fn post_index(mut names: Json<Names<'_>>) &rarr; Json<Names<'_>> {
     names.0.0.push(
         Name {
             first: "Rachel".into(),
@@ -111,7 +111,7 @@ fn post_index(mut names: Json<Names<'_>>) -> Json<Names<'_>> {
 }
 
 #[launch]
-fn rocket() -> _ {
+fn rocket() &rarr; _ {
     rocket::build()
         .mount("/", routes![new_index, post_index])
 }

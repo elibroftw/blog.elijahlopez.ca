@@ -17,7 +17,7 @@ languages promote 32-BIT over 64-BIT, but that's why I'm here.
 ## Agenda
 
 Last year I read Rust by example and it was not helpful at all at quantifying what you really need to know.
-My expectations is that a novice -> beginner means that you are capable of producing a rust **project** not file that someone else can compile.
+My expectations is that a novice &rarr; beginner means that you are capable of producing a rust **project** not file that someone else can compile.
 Let's skip over how to create single file projects in Rust. That's easy, just create a `sample.rs` file and use Code Runner in VS Code or `rustc sample.rs`.
 This is good for someone who is printing hello world into the console but it is a horrible way to go about things.
 

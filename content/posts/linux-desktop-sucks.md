@@ -121,7 +121,7 @@ I'm speaking from the point of a practical user who also programs. I love keyboa
 
 ## Can't Shutdown Easily
 
-A great and Windows comparable Linux distro should require minimal changes and should have a tips section. For example it's faster to shutdown using "Alt + F2 -> poweroff" than it is to use your mouse or searching (not in the menu) for shutdown, clicking enter, pressing the right key, and pressing enter. Why is the default click cancel instead of Shut down? On Windows it's just Alt + F4 on the desktop and an Enter.
+A great and Windows comparable Linux distro should require minimal changes and should have a tips section. For example it's faster to shutdown using "Alt + F2 &rarr; poweroff" than it is to use your mouse or searching (not in the menu) for shutdown, clicking enter, pressing the right key, and pressing enter. Why is the default click cancel instead of Shut down? On Windows it's just Alt + F4 on the desktop and an Enter.
 
 ## Firefox Does Not Work Intuitively (GNOME)
 
