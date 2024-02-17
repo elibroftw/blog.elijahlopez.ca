@@ -5158,8 +5158,8 @@ test value first (for example 1), compiled the program, and then started gdb:&lt
 &lt;li>&lt;a href="#defeasance">Defeasance&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#bonds-issued-at-discount-or-premium">Bonds Issued at Discount or Premium&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#bonds-issued-between-interest-dates">Bonds Issued Between Interest Dates&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#zero-interest-bearing-marketable-securities">Zero-interest Bearing Marketable Securities&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#non-marketable-instruments-with-noon-market-rates">Non-Marketable Instruments with noon-market rates&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#zero-coupon-marketable-securities">Zero-Coupon Marketable Securities&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#non-marketable-instruments-with-non-market-rates">Non-Marketable Instruments with non-market rates&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#notes-issued-for-non-cash-proceeds-property-goods-or-services">Notes Issued for non-cash proceeds (Property, Goods, or Services)&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#fair-value-option">Fair Value Option&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#extinguishment-of-debt">Extinguishment of Debt&lt;/a>&lt;/li>
@@ -5466,7 +5466,7 @@ CPP contributions payable 500
 EI premiums payable 100
 Union dues payable 50
 Employee income tax deductions payable 1,500
-Cash 3, 850
+Cash 850
 &lt;/code>&lt;/pre>&lt;pre tabindex="0">&lt;code class="language-accounting" data-lang="accounting"># employer required
 Payroll tax expense 640
 CPP contributions payable 500
@@ -5539,7 +5539,7 @@ EI premiums payable 140
 &lt;/ul>
 &lt;/li>
 &lt;/ul>
-&lt;pre tabindex="0">&lt;code class="language-accounting" data-lang="accounting">&lt;/code>&lt;/pre>&lt;pre tabindex="0">&lt;code class="language-accounting" data-lang="accounting"># Under IFRS
+&lt;pre tabindex="0">&lt;code class="language-accounting" data-lang="accounting"># Under IFRS
 Interest expense 26,134
 ARO 26,134
 # Under ASPE
@@ -5554,7 +5554,7 @@ Drilling Platform 88,203
 ARO 88,203
 &lt;/code>&lt;/pre>&lt;p>Under IFRS COGS increases whereas under ASPE Depreciation expense will increase subsequent years.&lt;/p>
 &lt;p>Suppose upon dismantling, there is a higher cash payment that the ARO.&lt;/p>
-&lt;pre tabindex="0">&lt;code class="language-accounting" data-lang="accounting">across 600,000
+&lt;pre tabindex="0">&lt;code class="language-accounting" data-lang="accounting">ARO 600,000
 Loss on Settlement of ARO 10,000
 Cash 610,000
 &lt;/code>&lt;/pre>&lt;h3 id="production-guarantees" >Production Guarantees
@@ -5611,7 +5611,7 @@ Warranty expense 20,000
 &lt;p>Purchase are partially loyalty points which is unearned revenue for IFRS 15, optional under ASPE&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>$100,000 products purchased, 10,000 points earned, 45% gross profit, 9,500 points to be redeemed&lt;/p>
+&lt;p>$100,000 products purchased, 10,000 points earned, 45% gross profit, 9,500 points estimated to be redeemed&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>One point worth $1 distributed for every $10&lt;/p>
@@ -5620,7 +5620,7 @@ Warranty expense 20,000
 &lt;p>Loyalty Points Unearned Revenue = $9,500&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>Proportion of goods/services = $100,000 * (100,000 + $9,500) = $91,324&lt;/p>
+&lt;p>Proportion of goods/services = $100,000 * (100,000 / (100,000 + 9,500)) = $91,324&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>Proportion of loyaty points = 100,000 - 91,324 = 8,676&lt;/p>
@@ -5816,9 +5816,9 @@ Cr. Bonds payable 644
 Dr. Cash 96,750
 Cr. Bonds payable 95,083
 Cr. Interest payable 1,667 (= 5,000 x 2/6 )
-&lt;/code>&lt;/pre>&lt;h3 id="zero-interest-bearing-marketable-securities" >Zero-interest Bearing Marketable Securities
+&lt;/code>&lt;/pre>&lt;h3 id="zero-coupon-marketable-securities" >Zero-Coupon Marketable Securities
 &lt;span>
-&lt;a href="#zero-interest-bearing-marketable-securities">
+&lt;a href="#zero-coupon-marketable-securities">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
@@ -5827,9 +5827,9 @@ Cr. Interest payable 1,667 (= 5,000 x 2/6 )
 &lt;li>Company issued a bond with face value of 10,000 but the cash proceeds was 7,721.80.&lt;/li>
 &lt;/ul>
 &lt;img class=equation-tall src="https://latex.codecogs.com/svg.image?7721.80=\frac{10,000}{(1+r)^3}" alt="7721.80 = 10,000 / (1 + r)^3">
-&lt;h3 id="non-marketable-instruments-with-noon-market-rates" >Non-Marketable Instruments with noon-market rates
+&lt;h3 id="non-marketable-instruments-with-non-market-rates" >Non-Marketable Instruments with non-market rates
 &lt;span>
-&lt;a href="#non-marketable-instruments-with-noon-market-rates">
+&lt;a href="#non-marketable-instruments-with-non-market-rates">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
@@ -5863,7 +5863,7 @@ Buildings 37,908
 &lt;/h3>&lt;ul>
 &lt;li>Every period update to fair value&lt;/li>
 &lt;li>IFRS: fair value only if it results in more relevant information&lt;/li>
-&lt;li>Put unrealized gains in OCI which wil be wiped when debt is paid off
+&lt;li>Put unrealized gains in OCI which will be wiped when debt is paid off
 &lt;ul>
 &lt;li>Example: Higher credit risk means that the market value of debt is lower (higher return = higher risk)&lt;/li>
 &lt;/ul>
@@ -5924,16 +5924,16 @@ Buildings 37,908
 &lt;/ol>
 &lt;p>A building with fair value of $16MM is transferred to settle a $20MM loan.&lt;/p>
 &lt;pre tabindex="0">&lt;code class="language-accounting" data-lang="accounting"># Creditor
-Buildings $16M Dr.
-Loss on loan $4M Dr.
-Notes receivable $20M Cr.
+Buildings 16M
+Loss on loan 4M
+Notes receivable 20M
 &lt;/code>&lt;/pre>&lt;p>The building had a book value of $21M&lt;/p>
 &lt;pre tabindex="0">&lt;code class="language-accounting" data-lang="accounting"># Debtor
-Building Depreciation $5 Dr.
-Notes Payable $20M Dr.
-Loss on Building transfer $5M Dr.
-Buildings $26M Cr.
-Gain on Debt Restructuring $4M Cr.
+Building Depreciation 5M
+Notes Payable 20M
+Loss on Building transfer 5M
+Buildings 26M
+Gain on Debt Restructuring 4M
 &lt;/code>&lt;/pre>&lt;p>Share transfer&lt;/p>
 &lt;p>320,000 shares worth $16M is transferred. Creditor is treating it as FV-NI.&lt;/p>
 &lt;pre tabindex="0">&lt;code class="language-accounting" data-lang="accounting"># Creditor
@@ -6155,7 +6155,7 @@ Gain on Debt Restructuring $4M Cr.
 &lt;/a>
 &lt;/span>
 &lt;/h3>&lt;ol>
-&lt;li>No dividends unless teh corporate capital is kept intact
+&lt;li>No dividends unless the corporate capital is kept intact
 &lt;ul>
 &lt;li>Net assets should be sufficient for solvency purposes&lt;/li>
 &lt;li>CBCA Corporate Solvency Tests
@@ -6209,6 +6209,7 @@ Share subscriptions receivable $5,000
 # final instalment
 Cash $5,000
 Share subscriptions receivable $5,000
+# settlement
 Common shares subscribed $10,000
 Common shares $10,000
 &lt;/code>&lt;/pre>&lt;p>In case of default, possible actions are:&lt;/p>
@@ -6250,7 +6251,7 @@ Accounts Payable $500
 &lt;/h3>&lt;ul>
 &lt;li>Capital-related (deduct from proceeds)
 &lt;ul>
-&lt;li>Unerwriting&lt;/li>
+&lt;li>Underwriting&lt;/li>
 &lt;li>Accounting and legal fees&lt;/li>
 &lt;li>Printing&lt;/li>
 &lt;li>Taxes&lt;/li>
@@ -6288,7 +6289,7 @@ Cr. Contributed Surplus $200
 &lt;/code>&lt;/pre>&lt;p>if &amp;gt; average issuance price&lt;/p>
 &lt;pre tabindex="0">&lt;code class="language-accounting" data-lang="accounting">Dr. Share capital $1,000 (= $10 x 100)
 Cr. Cash $1,200 (= $12 x 100)
-Debit $200 to first contributed surplus and then to retained earnings
+Debit $200 to contributed surplus and then to retained earnings
 &lt;/code>&lt;/pre>&lt;ul>
 &lt;li>Share account Book Value per share is the average issuing price&lt;/li>
 &lt;/ul>
@@ -6487,7 +6488,7 @@ To common (80% of 8,000): 6,400
 &lt;li>remeasure on SFP dates&lt;/li>
 &lt;/ul>
 &lt;/li>
-&lt;li>Purchase commitments are not derivates unless
+&lt;li>Purchase commitments are not derivatives unless
 &lt;ul>
 &lt;li>ASPE: exchange traded futures&lt;/li>
 &lt;/ul>
@@ -6525,8 +6526,9 @@ Derivatives - Financial Assets/Liabilities 50
 &lt;pre tabindex="0">&lt;code class="language-accounting" data-lang="accounting">Derivatives - Deposit 50
 Cash 50
 &lt;/code>&lt;/pre>&lt;p>Settled on net basis&lt;/p>
-&lt;pre tabindex="0">&lt;code class="language-accounting" data-lang="accounting">Cash 100
-Derivatives 50 (clearing house already settled this to the counterparty)
+&lt;pre tabindex="0">&lt;code class="language-accounting" data-lang="accounting"># clearing house already settled this to the counterparty
+Cash 100
+Derivatives 50
 Derivatives - Deposit 150
 &lt;/code>&lt;/pre>&lt;h3 id="derivatives-involving-the-entitys-own-shares" >Derivatives Involving the Entity&amp;rsquo;s Own Shares
 &lt;span>
@@ -6703,7 +6705,7 @@ Compensation Expense XXX
 &lt;ul>
 &lt;li>accounting policy used&lt;/li>
 &lt;li>description of plans and modifications&lt;/li>
-&lt;li>issued, exercised, forefeited, expired&lt;/li>
+&lt;li>issued, exercised, forfeited, expired&lt;/li>
 &lt;li>method of fair value&lt;/li>
 &lt;li>compensation should reflect in net income and contributed surplus&lt;/li>
 &lt;/ul>
@@ -6812,7 +6814,7 @@ Deferred Tax Liability (30,000 * 25%) 7,500
 2024
 Deferred Income Tax Liability 5,000
 Deferred tax benefit 5,000
-# the point of deferred tax benefit is because it was already reduced retained earnings the year before
+# deferred tax benefit is because the expense already reduced retained earnings the year before and so an accounting benefit is being used here
 Current income tax expense 11,000
 Income tax payable 11,000
 &lt;/code>&lt;/pre>&lt;p>Example - Deferred Tax Asset&lt;/p>
