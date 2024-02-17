@@ -102,8 +102,8 @@ Examples | Accounts payable, Notes payable, Current portion of long-term debt, D
 Value-added Tax Example
 
 ```txt
-Accounts receivables 3,390
-  Sales revenue                     3,000
+Accounts receivables          3,390
+  Sales revenue                      3,000
   HST payable                          390
 ```
 
@@ -165,19 +165,19 @@ If tax instalment payments are made every 3 months, we need a year end adjusting
 
 ```accounting
 # employee deduction
-Salaries and wages expense                              6,000
-  CPP contributions payable                                   500
-  EI premiums payable                                            100
-  Union dues payable                                                50
+Salaries and wages expense                6,000
+  CPP contributions payable                       500
+  EI premiums payable                             100
+  Union dues payable                               50
   Employee income tax deductions payable        1,500
-  Cash 3,                                                                 850
+  Cash                                            850
 ```
 
 ```accounting
 # employer required
-Payroll tax expense     640
-  CPP contributions payable         500
-  EI premiums payable         140
+Payroll tax expense               640
+  CPP contributions payable             500
+  EI premiums payable                   140
 ```
 
 ### Short-Term Compensated Absences
@@ -216,9 +216,6 @@ Payroll tax expense     640
   - Accrue the interest
 
 ```accounting
-```
-
-```accounting
 # Under IFRS
 Interest expense 26,134
   ARO                         26,134
@@ -243,9 +240,9 @@ Under IFRS COGS increases whereas under ASPE Depreciation expense will increase 
 Suppose upon dismantling, there is a higher cash payment that the ARO.
 
 ```accounting
-across                                      600,000
-Loss on Settlement of ARO        10,000
-    Cash                                                         610,000
+ARO                           600,000
+Loss on Settlement of ARO             10,000
+    Cash                             610,000
 ```
 
 ### Production Guarantees
@@ -285,11 +282,11 @@ Warranty liability 20,000
 ### Loyalty Programs
 
 - Purchase are partially loyalty points which  is unearned revenue for IFRS 15, optional under ASPE
-- $100,000 products purchased, 10,000 points earned, 45% gross profit, 9,500 points to be redeemed
+- $100,000 products purchased, 10,000 points earned, 45% gross profit, 9,500 points estimated to be redeemed
 - One point worth $1 distributed for every $10
 
 - Loyalty Points Unearned Revenue = $9,500
-- Proportion of goods/services =  $100,000  \* (100,000 + $9,500) = $91,324
+- Proportion of goods/services =  $100,000  \* (100,000 / (100,000 + 9,500)) = $91,324
 - Proportion of loyaty points = 100,000 - 91,324 = 8,676
 
 ```accounting
@@ -299,8 +296,8 @@ Unearned revenue        8,676
 ```
 
 ```accounting
-COGS      55,000
-  Inventory         55,000
+COGS                 55,000
+  Inventory                  55,000
 ```
 
 - Question: when do loyalty points hurt the store?
@@ -426,21 +423,21 @@ Dr. Cash                                                    96,750
        Cr. Interest payable             1,667     (= 5,000 x 2/6 )
 ```
 
-### Zero-interest Bearing Marketable Securities
+### Zero-Coupon Marketable Securities
 
 - marketable meaning money that is given in the future is sold at the present value
 - Company issued a bond with face value of 10,000 but the cash proceeds was 7,721.80.
 
 <img class=equation-tall src="https://latex.codecogs.com/svg.image?7721.80=\frac{10,000}{(1+r)^3}" alt="7721.80 = 10,000 / (1 + r)^3">
 
-### Non-Marketable Instruments with noon-market rates
+### Non-Marketable Instruments with non-market rates
 
 - Government grant of 100,000 with 10% discount rate?
 
 ```accounting
-Cash        100,000
-  Notes payable   62,092
-  Buildings            37,908
+Cash                    100,000
+  Notes payable                 62,092
+  Buildings                     37,908
 ```
 
 ### Notes Issued for non-cash proceeds (Property, Goods, or Services)
@@ -454,7 +451,7 @@ Cash        100,000
 
 - Every period update to fair value
 - IFRS: fair value only if it results in more relevant information
-- Put unrealized gains in OCI which wil be wiped when debt is paid off
+- Put unrealized gains in OCI which will be wiped when debt is paid off
   - Example: Higher credit risk means that the market value of debt is lower (higher return = higher risk)
 - ASPE: allows fair value option and no OCI so recognize in net income
 
@@ -494,20 +491,20 @@ A building with fair value of $16MM is transferred to settle a $20MM loan.
 
 ```accounting
 # Creditor
-Buildings $16M Dr.
-Loss on loan $4M Dr.
-  Notes receivable $20M Cr.
+Buildings               16M
+Loss on loan             4M
+  Notes receivable            20M
 ```
 
 The building had a book value of $21M
 
 ```accounting
 # Debtor
-Building Depreciation             $5 Dr.
-Notes Payable                     $20M Dr.
-Loss on Building transfer       $5M Dr.
-Buildings                                   $26M Cr.
-Gain on Debt Restructuring      $4M Cr.
+Building Depreciation              5M
+Notes Payable                     20M
+Loss on Building transfer          5M
+Buildings                                26M
+Gain on Debt Restructuring                4M
 ```
 
 Share transfer
@@ -645,7 +642,7 @@ Non-substantial,
 
 ### Legality of Dividend Distribution
 
-1. No dividends unless teh corporate capital is kept intact
+1. No dividends unless the corporate capital is kept intact
     - Net assets should be sufficient for solvency purposes
     - CBCA Corporate Solvency Tests
       - After dividend, can the corporation pay its liabilities
@@ -677,15 +674,16 @@ Cash                      $1,000 Dr.
 
 ```accounting
 Share subscriptions receivable    $10,000
-  Common shares subscribed              $10,000
+  Common shares subscribed                $10,000
 # first instalment
-Cash                                              $5,000
+Cash                              $5,000
   Share subscriptions receivable          $5,000
 # final instalment
-Cash  $5,000
-  Share subscriptions receivable $5,000
-Common shares subscribed        $10,000
-  Common shares                               $10,000
+Cash                              $5,000
+  Share subscriptions receivable          $5,000
+# settlement
+Common shares subscribed          $10,000
+  Common shares                          $10,000
 ```
 
 In case of default, possible actions are:
@@ -712,7 +710,7 @@ Common shares subscribed $1,000
 ### Cost of Issuing Shares
 
 - Capital-related (deduct from proceeds)
-  - Unerwriting
+  - Underwriting
   - Accounting and legal fees
   - Printing
   - Taxes
@@ -747,7 +745,7 @@ if > average issuance price
 Dr. Share capital          $1,000  (= $10 x 100)
      Cr. Cash                                  $1,200 (= $12 x 100)
 
-Debit $200 to first contributed surplus and then to retained earnings
+Debit $200 to contributed surplus and then to retained earnings
 ```
 
 - Share account Book Value per share is the average issuing price
@@ -774,7 +772,7 @@ Dividends Declared (- Equity) $900,000
 # nothing on entry date
 # payment date
 Dividends Payable           $900,000
-Cash                                            $900,000
+  Cash                                  $900,000
 ```
 
 ### Property (in-kind) Dividends
@@ -793,11 +791,11 @@ Cash                                            $900,000
 ```accounting
 # 1000 * 0.1 * 130 = $13,000
 # on declaration
-Retained earnings   Dr. 13,000
-  Stock Dividends Distributable   Cr. 13,000
+Retained earnings               Dr. 13,000
+  Stock Dividends Distributable             Cr. 13,000
 # on distribution
 Stock Dividends Distributable   Dr. 13,000
-  Common Shares Cr. 13,000
+  Common Shares                             Cr. 13,000
 ```
 
 ### Liquidating Dividends
@@ -886,7 +884,7 @@ In case 1, the participation is capped
 - Risks: market risk, credit risk (counterparty), and liqduity risk (companies paying off debt obligations)
 - Measure at FV-NI
   - remeasure on SFP dates
-- Purchase commitments are not derivates unless
+- Purchase commitments are not derivatives unless
   - ASPE: exchange traded futures
 
 A stock warrant gives the holder the right to purchase a company's stock at a specific price and at a specific date. A stock warrant is issued directly by the company concerned; when an investor exercises a stock warrant, the shares that fulfill the obligation are not received from another investor but directly from the company.
@@ -917,23 +915,24 @@ Derivatives - Deposit   100
 The value of grain increases, so our position decreases (futures contract moved against the company).
 
 ```accounting
-Gain or Loss                                                50
+Gain or Loss                                  50
   Derivatives - Financial Assets/Liabilities      50
 ```
 
 Suppose there is a margin call for $50
 
 ```accounting
-Derivatives - Deposit   50
+Derivatives - Deposit         50
   Cash                            50
 ```
 
 Settled on net basis
 
 ```accounting
-Cash              100
-Derivatives      50                 (clearing house already settled this to the counterparty)
-  Derivatives - Deposit 150
+# clearing house already settled this to the counterparty
+Cash                      100
+Derivatives                50
+  Derivatives - Deposit        150
 ```
 
 ### Derivatives Involving the Entity's Own Shares
@@ -943,7 +942,7 @@ Derivatives      50                 (clearing house already settled this to the 
 - When purchasing an options, debit the contributed surplus first
 
 ```accounting
-Contributed surplus  200
+Contributed surplus           200
   Cash                              200
 ```
 
@@ -954,7 +953,7 @@ On settlement the ratio is $1.25 CDN = $1 US (versus 1.3 agreement)
 Derivatives       500
   Gain or Loss        500
 # gross basis settlement
-Cash                  62,500
+Cash               62,500
 Gain or Loss        3,000
   Cash                             65,000
   Derivatives                         500
@@ -1066,12 +1065,12 @@ Options granted to 5 executives to  purchase 2,000 shares at a price of $60. Gra
 
 ```accounting
 # on end date of year
-Compensation Expense 110,000
-  Contributed Surplus         110,000
+Compensation Expense    110,000
+  Contributed Surplus           110,000
 # 20% exercised Jun 1, 2027
-Cash                            120,000
+Cash                     120,000
   Contributed Surplus     44,000
-  Common Shares               164,000
+  Common Shares                     164,000
 # 80% not exercised
 Contributed Surplus - stock options         176,000
   Contributed Surplus - Expired Options           176,000
@@ -1086,7 +1085,7 @@ Full Disclosure
 
 - accounting policy used
 - description of plans and modifications
-- issued, exercised, forefeited, expired
+- issued, exercised, forfeited, expired
 - method of fair value
 - compensation should reflect in net income and contributed surplus
 
@@ -1186,7 +1185,7 @@ Deferred Income Tax Expense                   7,500
 2024
 Deferred Income Tax Liability       5,000
   Deferred tax benefit                             5,000
-# the point of deferred tax benefit is because it was already reduced retained earnings the year before
+# deferred tax benefit is because the expense already reduced retained earnings the year before and so an accounting benefit is being used here
 Current income tax expense        11,000
   Income tax payable                             11,000
 ```
@@ -1211,12 +1210,12 @@ Deferred income tax asset         125,000
   Deferred Income tax benefit              125,000
 2024
 Deferred Income tax expense       75,000
-  Deferred Income tax asset                                75,000
-Current income tax expense          440,000
-  Income tax payable                             440,000
+  Deferred Income tax asset                 75,000
+Current income tax expense       440,000
+  Income tax payable                       440,000
 2025
 Deferred Income tax expense        50,000
-  Deferred Income tax asset                                     50,000
+  Deferred Income tax asset                 50,000
 ```
 
 ### CCA Recap
