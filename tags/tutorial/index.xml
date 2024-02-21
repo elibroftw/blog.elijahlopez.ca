@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>tutorial on ELL Blog</title><link>https://blog.elijahlopez.ca/tags/tutorial/</link><description>ELL Blog (tutorial)</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 05 Feb 2024 21:28:03 -0500</lastBuildDate><atom:link href="https://blog.elijahlopez.ca/tags/tutorial/index.xml" rel="self" type="application/rss+xml"/><item><title>How to Install Ruby on MacOS</title><link>https://blog.elijahlopez.ca/posts/how-to-install-ruby-on-macos/</link><pubDate>Mon, 05 Feb 2024 21:28:03 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/how-to-install-ruby-on-macos/</guid><description>&lt;p>This is how you install Ruby on MacOS and you don&amp;rsquo;t have to reopen the terminal.&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tutorial on ELL Blog</title><link>https://blog.elijahlopez.ca/tags/tutorial/</link><description>ELL Blog (Tutorial)</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 05 Feb 2024 21:28:03 -0500</lastBuildDate><atom:link href="https://blog.elijahlopez.ca/tags/tutorial/index.xml" rel="self" type="application/rss+xml"/><item><title>How to Install Ruby on MacOS</title><link>https://blog.elijahlopez.ca/posts/how-to-install-ruby-on-macos/</link><pubDate>Mon, 05 Feb 2024 21:28:03 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/how-to-install-ruby-on-macos/</guid><description>&lt;p>This is how you install Ruby on MacOS and you don&amp;rsquo;t have to reopen the terminal.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-zsh" data-lang="zsh">&lt;span style="display:flex;">&lt;span>brew install ruby-install chruby
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ruby-install -V
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#24909d">echo&lt;/span> &lt;span style="color:#ed9d13">&amp;#34;# enable chruby&amp;#34;&lt;/span> &amp;gt;&amp;gt; ~/.zshrc
@@ -3576,7 +3576,92 @@ any non-scripting language like C/C++ or Python.&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#24909d">echo&lt;/span> &lt;span style="color:#ed9d13">&amp;#34;greater than 5&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">fi&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">done&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Installing Libraries for C++ with Vcpkg and CMake</title><link>https://blog.elijahlopez.ca/posts/vcpkg-cmake-tutorial/</link><pubDate>Sun, 19 Dec 2021 19:51:55 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/vcpkg-cmake-tutorial/</guid><description>&lt;h2 id="trouble-shooting" >Trouble Shooting
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>How to Generate a CSR Using openssl</title><link>https://blog.elijahlopez.ca/posts/how-to-generate-csr/</link><pubDate>Tue, 25 Jan 2022 13:14:03 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/how-to-generate-csr/</guid><description>&lt;p>&lt;a href="https://www.ssldragon.com/blog/how-to-install-an-ssl-certificate-on-heroku/">https://www.ssldragon.com/blog/how-to-install-an-ssl-certificate-on-heroku/&lt;/a>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>openssl req -newkey rsa:4096 -keyout elijahlopez.ca.key -out elijahlopez.ca.csr -config .&lt;span style="color:#ed9d13">\e&lt;/span>lijahlopez.ca.csr.conf
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-powershell" data-lang="powershell">&lt;span style="display:flex;">&lt;span>&amp;amp; &lt;span style="color:#ed9d13">&amp;#39;C:\Program Files\Git\usr\bin\openssl.exe&amp;#39;&lt;/span> req -newkey rsa&lt;span style="color:#a61717;background-color:#e3d2d2">:&lt;/span>&lt;span style="color:#3677a9">4096&lt;/span> -keyout elijahlopez.ca.key -out elijahlopez.ca.csr -config .\elijahlopez.ca.csr.conf
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Here is a pretty and succinct guide on creating a Certificate Signing Request (CSR).&lt;/p>
+&lt;p>For the tutorial, replace all &lt;code>{ Sample value }&lt;/code> with your values.&lt;/p>
+&lt;h2 id="instructions" >Instructions
+&lt;span>
+&lt;a href="#instructions">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;h3 id="generating-a-key" >Generating a Key
+&lt;span>
+&lt;a href="#generating-a-key">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>This avoids entering passphrases when generating the CSR.&lt;/p>
+&lt;p>&lt;code>openssl genpkey -algorithm ed25519 &amp;gt; { lenerva.com }.key&lt;/code>&lt;/p>
+&lt;p>The filename for me is &lt;em>&lt;code>lenerva.com&lt;/code>&lt;/em>&lt;code>.key&lt;/code>.&lt;/p>
+&lt;h3 id="create-a-csr-config-file" >Create a CSR Config File
+&lt;span>
+&lt;a href="#create-a-csr-config-file">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Filename: &lt;code>{ lenerva.com }.csr.cnf&lt;/code>&lt;/p>
+&lt;pre tabindex="0">&lt;code class="language-conf" data-lang="conf">[ req ]
+prompt = no
+distinguished_name = req_distinguised_name
+[ req_distinguised_name ]
+countryName = { CA }
+stateOrProvinceName = { Ontario }
+localityName = { Toronto }
+organizationName = { LeNerva Inc. }
+commonName = { lenerva.com }
+emailAddress = { security@lenerva.com }
+subjectAltName = @alt_names
+[alt_names]
+DNS.1 = { lenerva.com }
+DNS.2 = { www.lenerva.com }
+&lt;/code>&lt;/pre>&lt;h3 id="generating-the-csr" >Generating the CSR
+&lt;span>
+&lt;a href="#generating-the-csr">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>&lt;code>openssl req -new -out { lenerva.com }.csr -key { lenerva.com }.key -config { lenerva.com }.csr.cnf&lt;/code>&lt;/p>
+&lt;h3 id="read-csr-as-a-human" >Read CSR as a Human
+&lt;span>
+&lt;a href="#read-csr-as-a-human">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>&lt;code>openssl req -in { lenerva.com }.csr -text -nout&lt;/code>&lt;/p>
+&lt;h2 id="jargon" >Jargon
+&lt;span>
+&lt;a href="#jargon">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align:left">Name&lt;/th>
+&lt;th style="text-align:right">Summary&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align:left">CSR&lt;/td>
+&lt;td style="text-align:right">Certificate Signing Request&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">SAN&lt;/td>
+&lt;td style="text-align:right">Subject Alternative Name&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="resources" >Resources
+&lt;span>
+&lt;a href="#resources">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>Pinter, Jannis. &lt;a href="https://blog.pinterjann.is/ed25519-certificates.html">Create ED25519 certificates for TLS with OpenSSL&lt;/a>&lt;/p></description></item><item><title>Installing Libraries for C++ with Vcpkg and CMake</title><link>https://blog.elijahlopez.ca/posts/vcpkg-cmake-tutorial/</link><pubDate>Sun, 19 Dec 2021 19:51:55 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/vcpkg-cmake-tutorial/</guid><description>&lt;h2 id="trouble-shooting" >Trouble Shooting
 &lt;span>
 &lt;a href="#trouble-shooting">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
