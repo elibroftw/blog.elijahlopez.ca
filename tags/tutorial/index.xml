@@ -3576,8 +3576,7 @@ any non-scripting language like C/C++ or Python.&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#24909d">echo&lt;/span> &lt;span style="color:#ed9d13">&amp;#34;greater than 5&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">fi&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">done&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>How to Generate a CSR Using openssl</title><link>https://blog.elijahlopez.ca/posts/how-to-generate-csr/</link><pubDate>Tue, 25 Jan 2022 13:14:03 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/how-to-generate-csr/</guid><description>&lt;p>&lt;a href="https://www.ssldragon.com/blog/how-to-install-an-ssl-certificate-on-heroku/">https://www.ssldragon.com/blog/how-to-install-an-ssl-certificate-on-heroku/&lt;/a>&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>openssl req -newkey rsa:4096 -keyout elijahlopez.ca.key -out elijahlopez.ca.csr -config .&lt;span style="color:#ed9d13">\e&lt;/span>lijahlopez.ca.csr.conf
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>How to Generate a CSR Using openssl</title><link>https://blog.elijahlopez.ca/posts/how-to-generate-csr/</link><pubDate>Tue, 25 Jan 2022 13:14:03 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/how-to-generate-csr/</guid><description>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>openssl req -newkey rsa:4096 -keyout elijahlopez.ca.key -out elijahlopez.ca.csr -config .&lt;span style="color:#ed9d13">\e&lt;/span>lijahlopez.ca.csr.conf
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-powershell" data-lang="powershell">&lt;span style="display:flex;">&lt;span>&amp;amp; &lt;span style="color:#ed9d13">&amp;#39;C:\Program Files\Git\usr\bin\openssl.exe&amp;#39;&lt;/span> req -newkey rsa&lt;span style="color:#a61717;background-color:#e3d2d2">:&lt;/span>&lt;span style="color:#3677a9">4096&lt;/span> -keyout elijahlopez.ca.key -out elijahlopez.ca.csr -config .\elijahlopez.ca.csr.conf
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Here is a pretty and succinct guide on creating a Certificate Signing Request (CSR).&lt;/p>
 &lt;p>For the tutorial, replace all &lt;code>{ Sample value }&lt;/code> with your values.&lt;/p>
@@ -3602,7 +3601,8 @@ any non-scripting language like C/C++ or Python.&lt;/p>
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
-&lt;/h3>&lt;p>Filename: &lt;code>{ lenerva.com }.csr.cnf&lt;/code>&lt;/p>
+&lt;/h3>&lt;p>Do this once and reuse forever.&lt;/p>
+&lt;p>Filename: &lt;code>{ lenerva.com }.csr.cnf&lt;/code>&lt;/p>
 &lt;pre tabindex="0">&lt;code class="language-conf" data-lang="conf">[ req ]
 prompt = no
 distinguished_name = req_distinguised_name
@@ -3661,7 +3661,35 @@ DNS.2 = { www.lenerva.com }
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
-&lt;/h2>&lt;p>Pinter, Jannis. &lt;a href="https://blog.pinterjann.is/ed25519-certificates.html">Create ED25519 certificates for TLS with OpenSSL&lt;/a>&lt;/p></description></item><item><title>Installing Libraries for C++ with Vcpkg and CMake</title><link>https://blog.elijahlopez.ca/posts/vcpkg-cmake-tutorial/</link><pubDate>Sun, 19 Dec 2021 19:51:55 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/vcpkg-cmake-tutorial/</guid><description>&lt;h2 id="trouble-shooting" >Trouble Shooting
+&lt;/h2>&lt;ul>
+&lt;li>Pinter, Jannis. &lt;a href="https://blog.pinterjann.is/ed25519-certificates.html">Create ED25519 certificates for TLS with OpenSSL&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.ssldragon.com/blog/how-to-install-an-ssl-certificate-on-heroku/">SSL Dragon: How to Install an SSL Certificate on Heroku/&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="how-to-use-certificates-from-the-certificate-authority" >How to use Certificates from the Certificate Authority
+&lt;span>
+&lt;a href="#how-to-use-certificates-from-the-certificate-authority">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;h3 id="combining-the-certificate" >Combining the Certificate
+&lt;span>
+&lt;a href="#combining-the-certificate">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Sentigo sends us a zip file with the domain certificate and the authority certificate &amp;ldquo;bundle&amp;rdquo; as well. We however, want our servers to the send the full certificate chain, otherwise network requests from non-browsers will fail to verify the SSL (speaking from experience using the requests module on my website). Note that a browser will not report any errors as they are &amp;ldquo;smart&amp;rdquo; enough to fill in the gaps as a lone certificate can be implied to be signed by a certificate authority. Don&amp;rsquo;t ask me how it really works as I am speaking from a memory of me reading the rationale two or three years ago.&lt;/p>
+&lt;p>&lt;code>cat domain.crt domain.ca-bundle &amp;gt; domain.chain.crt&lt;/code>&lt;/p>
+&lt;p>To manually do this: Create a new file chain.crt which is nothing but the contents of the domain.crt file followed by the contents of the ca-bundle file. If you are confused, you can look at my website&amp;rsquo;s github where I have all &lt;a href="https://github.com/elibroftw/website/tree/master/ssl">three files located&lt;/a>.&lt;/p>
+&lt;h3 id="unencrypted-private-key" >Unencrypted Private Key
+&lt;span>
+&lt;a href="#unencrypted-private-key">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Finally, you can print out the private key like so&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>openssl rsa -in domain.key
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-powershell" data-lang="powershell">&lt;span style="display:flex;">&lt;span>&amp;amp; &lt;span style="color:#ed9d13">&amp;#39;C:\Program Files\Git\usr\bin\openssl.exe&amp;#39;&lt;/span> rsa -in domain.key
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Installing Libraries for C++ with Vcpkg and CMake</title><link>https://blog.elijahlopez.ca/posts/vcpkg-cmake-tutorial/</link><pubDate>Sun, 19 Dec 2021 19:51:55 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/vcpkg-cmake-tutorial/</guid><description>&lt;h2 id="trouble-shooting" >Trouble Shooting
 &lt;span>
 &lt;a href="#trouble-shooting">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
