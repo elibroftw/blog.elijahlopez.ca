@@ -1,4 +1,44 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ELL Blog</title><link>https://blog.elijahlopez.ca/</link><description>ELL Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 23 Feb 2024 21:59:01 -0500</lastBuildDate><atom:link href="https://blog.elijahlopez.ca/index.xml" rel="self" type="application/rss+xml"/><item><title>Canada is Worse because of Justin Trudeau</title><link>https://blog.elijahlopez.ca/posts/canada-is-worse-becuase-of-justin-trudeau/</link><pubDate>Fri, 23 Feb 2024 21:59:01 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/canada-is-worse-becuase-of-justin-trudeau/</guid><description>&lt;p>These days, chronically online Canadians are absolutely wild. They complain about bills that they didn&amp;rsquo;t even read.&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ELL Blog</title><link>https://blog.elijahlopez.ca/</link><description>ELL Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 24 Feb 2024 15:23:23 -0500</lastBuildDate><atom:link href="https://blog.elijahlopez.ca/index.xml" rel="self" type="application/rss+xml"/><item><title>Linux Desktop Detach Process From Terminal</title><link>https://blog.elijahlopez.ca/posts/linux-desktop-detach-process-from-terminal/</link><pubDate>Sat, 24 Feb 2024 15:23:23 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/linux-desktop-detach-process-from-terminal/</guid><description>&lt;h3 id="parentheses" >Parentheses
+&lt;span>
+&lt;a href="#parentheses">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>(firefox &amp;amp;)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="using-disown" >Using disown
+&lt;span>
+&lt;a href="#using-disown">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>So let&amp;rsquo;s start a job in the shell.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>firefox &amp;amp;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>This will start the job in the background of the shell, but it will still be a child of the terminal. We can confirm by running &lt;code>jobs&lt;/code>.
+If we want to keep the application running after we close or disconnect from the shell, then we need to use &lt;code>disown&lt;/code>. If we have multiple jobs, then we can also use &lt;code>%n&lt;/code>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>firefox &amp;amp;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#24909d">disown&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>firefox &amp;amp;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>code &amp;amp;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#24909d">disown&lt;/span> %1
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>firefox &amp;amp; &lt;span style="color:#24909d">disown&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="nohup" >nohup
+&lt;span>
+&lt;a href="#nohup">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>&lt;code>nohup&lt;/code>, is an application that executes another application such that it won&amp;rsquo;t receive a &lt;code>SIGHUP&lt;/code> when the shell receives the hang up signal. Typically, we also need to redirect &lt;code>stdout&lt;/code> and &lt;code>stderr&lt;/code> if we don&amp;rsquo;t want the creation of a &lt;code>nohup.out&lt;/code> file which is the default behaviour.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>nohup firefox &amp;gt;/dev/null 2&amp;gt;&amp;amp;&lt;span style="color:#3677a9">1&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>In this command, we are informing the shell, to redirect output to &lt;code>/dev/null&lt;/code> (a place that discards everything that is written to it, and returns an End of File - EOF if read from). We also inform the shell to redirect the stderr (2) to wherever the stdout (1) is directed (&amp;amp;) to.&lt;/p>
+&lt;h3 id="using-dex-for-desktop-entries" >Using &lt;code>dex&lt;/code> for Desktop Entries
+&lt;span>
+&lt;a href="#using-dex-for-desktop-entries">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Another way is to use &lt;code>dex&lt;/code> to run the &amp;ldquo;Exec&amp;rdquo; value of a &lt;code>.desktop&lt;/code> file if the entry type is &lt;code>Application&lt;/code>.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>dex /usr/share/applications/firefox.desktop
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;a href="https://wiki.archlinux.org/title/Desktop_entries#Usage">Desktop entries - ArchWiki&lt;/a>&lt;/p></description></item><item><title>Canada is Worse because of Justin Trudeau</title><link>https://blog.elijahlopez.ca/posts/canada-is-worse-becuase-of-justin-trudeau/</link><pubDate>Fri, 23 Feb 2024 21:59:01 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/canada-is-worse-becuase-of-justin-trudeau/</guid><description>&lt;p>These days, chronically online Canadians are absolutely wild. They complain about bills that they didn&amp;rsquo;t even read.&lt;/p>
 &lt;h3 id="why-trudeau-was-elected" >Why Trudeau was Elected
 &lt;span>
 &lt;a href="#why-trudeau-was-elected">
