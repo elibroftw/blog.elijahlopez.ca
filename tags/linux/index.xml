@@ -1,10 +1,13 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Linux on ELL Blog</title><link>https://blog.elijahlopez.ca/tags/linux/</link><description>ELL Blog (Linux)</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 24 Feb 2024 15:23:23 -0500</lastBuildDate><atom:link href="https://blog.elijahlopez.ca/tags/linux/index.xml" rel="self" type="application/rss+xml"/><item><title>Linux Desktop Detach Process From Terminal</title><link>https://blog.elijahlopez.ca/posts/linux-desktop-detach-process-from-terminal/</link><pubDate>Sat, 24 Feb 2024 15:23:23 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/linux-desktop-detach-process-from-terminal/</guid><description>&lt;h3 id="parentheses" >Parentheses
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Linux on ELL Blog</title><link>https://blog.elijahlopez.ca/tags/linux/</link><description>ELL Blog (Linux)</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 24 Feb 2024 15:23:23 -0500</lastBuildDate><atom:link href="https://blog.elijahlopez.ca/tags/linux/index.xml" rel="self" type="application/rss+xml"/><item><title>Linux Desktop Detach Process From Terminal</title><link>https://blog.elijahlopez.ca/posts/linux-desktop-detach-process-from-terminal/</link><pubDate>Sat, 24 Feb 2024 15:23:23 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/linux-desktop-detach-process-from-terminal/</guid><description>&lt;h3 id="subshell" >Subshell
 &lt;span>
-&lt;a href="#parentheses">
+&lt;a href="#subshell">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
-&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>(firefox &amp;amp;)
+&lt;/h3>&lt;p>Run the command (with bg) in a sub-shell like so&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>(firefox &amp;amp;)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>To ignore output,&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>(firefox &amp;gt;/dev/null 2&amp;gt;&amp;amp;&lt;span style="color:#3677a9">1&lt;/span> &amp;amp;)
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="using-disown" >Using disown
 &lt;span>
 &lt;a href="#using-disown">
