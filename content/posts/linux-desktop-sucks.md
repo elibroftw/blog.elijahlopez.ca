@@ -34,6 +34,14 @@ There are three issues I have with bluetooth on Linux Mint.. The first time I co
 
 First off, the default dual boot menu is ugly. GRUB is still not configured to scale on monitors that have a higher resolution than 1080p. I have been using 1440p laptop screens since 2017. That's 7 years now. I'll have to customize this, but it is an annoyance.
 
+Refind was recommended to install but guess what, I got a scary red error: "Secure Boot violation. Invalid signature". Searching for help yields a single reddit comment replying to post on r/linux4**NOOBS**
+
+> You need to create a local signing key, register it using the MOK utility, then sign the rEFInd binary using that signing key. You can access the full manual at http://www.rodsbooks.com/refind/secureboot.html
+
+How is this noob-friendly advice?
+
+I uninstalled refind and yet I got the same error. Good thing I took a Timeshift yesterday which also backed up the boot drive. Good thing I don't use this stupid distro as a daily driver where it can mess with my cloud files.
+
 ### Dual Boot Time
 
 For some reason Linux and Windows have different ways of storing time and no one on the Linux side thought about changing the way time works if installed alongside Windows. I really don't want to have to adjust my time settings every time I boot back into Windows. I'll probably just not adjust the time on the Linux side and let it be.
@@ -98,6 +106,16 @@ So I click appearance from the settings app and there is no option to change the
 
 The webcam does not work. Glitches with green.
 
+## Nautilis Sucks
+
+I can't create new files in the directory through a right click menu. I can't access the right click menu if I'm using list mode and the folder is full of files. On Windows, a right click is applied on the folder if the file is not selected, but on Nautilis, too bad so sad, did you mean to right click a file? It's not a big deal since the right click menu in Nautlis is only useful for accessing properties since its other features can be done using keyboard shortcuts (Ctrl +C, Ctrl + V, Ctrl +Shift+N).
+
+## Zorin OS
+
+### Firefox Home Page Overwritten on Every Login
+
+On Zorin OS, the home page is overwritten on every log in to <https://start.zorin.com/> which uses Google primarily. Are they even paid by Google to do that?
+
 ## Other Issues
 
 ### Canonical and Snap Sucks
@@ -108,49 +126,32 @@ The mentality that we need to live a worse life just because we get a free exper
 
 ### No Ctrl for Tabbing
 
-If linux is all about customization, why is it so damn difficult to replace Alt with Ctrl? Windows predates Linux, so this Alt + # shortcut should
-not be forced upon users.
+If Linux desktop is all about customization, why is it so damn difficult to replace Alt with Ctrl? Windows predates Linux, so this Alt + # shortcut should
+not be forced upon users. At least on Firefox there's an extension to give us the behaviour that Chrome supports.
 
-## Poor Cloud Storage Support
+### Poor Cloud Storage Support
 
 Coming from Windows, I use OneDrive and MEGA. I do care about OneDrive since
 it has my personal files that I need backed up to the cloud. Where is the OneDrive support without using rsync which
-doesn't work half the time?
+doesn't work half the time? Also, for information, Mega and OneDrive work on macOS. Sure you can argue it's up to the app developers, but there's so many distros and packaging is a pain in the ass as a developer myself. I had to resort to distributing Python scripts because it was so annoying to distribute apps without requiring system permissions to install.
 
-## Poor Installation Tutorials
+### Poor Installation Tutorials
 
-Just look at any tutorial for flashing an ISO. Generic tutorials tell you to use Rufus, an ugly and non-intuitive UI. Fedora has their own flash tool which looks nice but does not work on other distros (I broke two of my USB's).
+Just look at any tutorial for flashing an ISO. Generic tutorials tell you to use Rufus, an ugly and non-intuitive UI. Fedora has their own flash tool which looks nice but does not work on other distros.
 
-I only found about balenaEtcher, the most intuitive ISO flash tool by pure luck when searching for something not about flashing ISOs.
+I only found out about balenaEtcher, the most intuitive ISO flash tool by pure luck when searching for something other than flashing ISOs.
 
 With Debian, the tutorials tell you to use free-[software] ISO and make it too complicated just to download the non-free-[software] ISO. Then there is the language used to describe ISO's. CD: an ISO that lets you install Debian and requires internet. DVD: live distro no requiring an internet connection. I'll get some guy in the comments nitpicking my interpretation but the Debian explanation is not succinct at all.
 
-I'm speaking from the point of a practical user who also programs. I love keyboard shortcuts, automation, and aesthetic design. I current dual boot Zorin OS and Windows on my laptop. I found that Zorin OS looked the nicest but I also realized that the only reason I was able to install it was luck. I flashed the Zorin OS 15 ISO in 2020 and only had motivation to dual boot in 2021 when Zorin OS 16 was out. When I tried to install Zorin OS 15, I ran into an issue so instead of giving up I could just try installing 16 as the problem may have been patched.
+I'm speaking from the point of a practical user who also programs. I love keyboard shortcuts, automation, and aesthetic design. I used to dual boot Zorin OS and Windows on my laptop. I found that Zorin OS looked the nicest (at the time) but I also realized that the only reason I was able to install it was luck. I flashed the Zorin OS 15 ISO in 2020 and only had motivation to dual boot in 2021 when Zorin OS 16 was out. When I tried to install Zorin OS 15, I ran into an issue so instead of giving up I could just try installing 16 as the problem may have been patched.
 
-## Can't Shutdown Easily
+### Can't Shutdown Easily
 
 A great and Windows comparable Linux distro should require minimal changes and should have a tips section. For example it's faster to shutdown using "Alt + F2 &rarr; poweroff" than it is to use your mouse or searching (not in the menu) for shutdown, clicking enter, pressing the right key, and pressing enter. Why is the default click cancel instead of Shut down? On Windows it's just Alt + F4 on the desktop and an Enter.
 
-## Firefox Does Not Work Intuitively (GNOME)
-
-- On Windows, to modify a tab, simply use Ctrl + # to go to a specific tab
-- On GNOME, the tradition is to use Alt + #instead of Ctrl + # to switch tabs but Chrome allows Ctrl unlike Firefox..
-- The solution is to use a 3rd party extension that "is not actively monitored for security by Mozilla."
-- And on my favourite distro, Zorin OS, the home page is overwritten on every log in to <https://start.zorin.com/> which uses Google primarily. Are they even paid by Google to do that?
-
-## No Default Shortcut to Open up the File Explorer
-
-Yes the technical term on Linux is "nautilus" but I am a very practical person, and File Explorer is the most concise manner to communicate an application that explores files.
-
-On Windows, it's simply Super+e . Most Linux distros? You have to know and create a keyboard shortcut in settings for the command nautilis --browser -w . This issue is not present on Zorin OS, but it was on Manjaro, and probably Fedora.
-
-To fix this in KDE, simply go to Settings → Configure Shortcuts....
-
-Let's criticize the file explorer even more. I can't create new files in the directory through a right click menu. I can't access the right click menu if I'm using list mode and the folder is full of files. On Windows, a right click is applied on the folder if the file is not selected, but on Nautilis, too bad so sad, did you mean to right click a file? It's not a big deal since the right click menu in Nautlis is only useful for accessing properties since its other features can be done using keyboard shortcuts (Ctrl +C, Ctrl + V, Ctrl +Shift+N).
-
 One last head ache is the inability to launch commands from the address bar… I want the best of GUI and command line, not just a GUI and not just a terminal.
 
-## Installing Custom Programs is a HEADACHE
+### Installing Custom Programs is a HEADACHE
 
 Applies to: Fedora
 
