@@ -44,6 +44,14 @@ When installing NVIDIA drivers for Linux Mint, we are told to enter a password f
 
 ### External Monitor Scale Cannot be Different
 
+I have my laptop connected to two external monitors. The scale on all three displays has to be the same for the UI to fit 100%. On Windows I can set the scale to different values for each monitor without any problem. On Linux Mint, fractional scaling is still experimental.
+
+### Wake From Sleep shows Clipped Login UI
+
+![ALT: all of my three displays are black but my left monitor shows the clipped UI](/images/linux/linux-mint-clipped-login-ui.jpg)
+
+I can still login by simply typing my password and pressing enter but this is such a subpar experience. Windows 11 has its issues but it is never a simple issue. The worst Windows 11 does is run the anti-virus on a folder I did not exempt.
+
 ## Manjaro KDE Specific Issues
 
 I had to daily drive Manjaro KDE for 3 weeks on my Razer Blade Stealth, and over that time I encountered a plethora of issues and I've documented [some solutions](/posts/manjaro-kde-tips).
