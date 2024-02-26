@@ -553,6 +553,43 @@ Cost of rechecking
 - SmartBuildSkip: prediction
   - first failure means later builds are more likely to fail
 
-### Review Session
+## Virtualization
 
--
+- Virtual Machines emulate a computer system and provide a computer system within another computer system
+- Needed for sharing infrastructure users to give the impression that each user has their own machine
+- Shippable environment: makes an entire stack shippable with the operating system (e.g. GitHub)
+- System virtualization: "full"; hosts an entire operating system
+- Process virtualization: isolate software to run on the underlying problem
+
+## History of Virtualization
+
+- 1960s
+  - Goal: need to run legacy software on newer hardware
+  - Result: CP-67 mainframe system that supported virtualization
+  - Pros: Isolation; one user crashing wouldn't effect another
+- 1980s
+  - Goal: treat a directory as another root directory
+  - Results: `chroot`
+  - Pro: Share of system and kernel level features
+  - Java
+    - Goal: compile-once-run-anywhere
+    - JVM: abstracts hardware details
+- 1990s
+  - VMWare
+  - Hypervisor types
+    - Bare metal, where the hypervisor is running on hardware
+    - Hosted: a host OS is running on the hardware which runs the hypervisor
+  - ESX Server: run VMs without a host OS
+  - GSX SErver: run VMs on Windows
+  - Workstations: Run VMs on Unix
+
+### How to chroot jail
+
+1. SSH into the instance
+2. Create a dir called jail
+3. `cp /bin/bash jail/bin`
+4. `ldd`: list shared libs needed for bash
+5. create lib and lib64 in jail dir and copy libs over
+6. run chroot to change root into jail. Repeat process to add ls and vim to jail
+
+Super painful.
