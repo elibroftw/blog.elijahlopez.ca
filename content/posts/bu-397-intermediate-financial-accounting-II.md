@@ -848,6 +848,7 @@ In case 1, the participation is capped
 - Lower stock market price = easier to acquire
 - If stock dividends are large enough, it's basically a stock split (SEC)
 - large stock dividend is more than 20% and is not mentioned about in ASPE and IFRS
+- 2 for 1 stock split: 2 shares for every 1 currently issued
 
 ### Components of Shareholders' Equity
 
@@ -1283,3 +1284,75 @@ Deferred Tax Expense        30,000
 
 - Apply knowledge to exercise questions
   - Exercises in this document, the quizzes, the assignment, group project
+
+## Chapter 17 Earnings Per Share
+
+- The main goal of financial accounting is decision-usefulness
+- Perspective of common shareholder
+
+Does EPS communicate maintainence capex? Yes, through depreciation expense. Does EPS communicate growth in CAPEX that was useless? Yes, through lower revenues and higher depreciation.
+
+- Paper: current expected credit loss model amplifies stock market reactions to earnings surprises (actual EPS over consensus EPS by sell-side analysts). Amplification = over-reaction.
+- Bank are motivated to beat or meet EP targets by under-provisioning:
+  - Over-provision (over-expense) when economy is already bad (taking a big bath)
+  - Under provision next year (to appear good out there)
+
+If companies are motivated to meet or beat EPS via manipulation, EPS loses relevance and contradicts the accounting framework. Need to update standards or enforce (provincial in Canada, SEC in USA).
+
+### Basic EPS
+
+Actual earnings over the weighted average number of common shares outstanding
+
+### Diluted EPS
+
+Considering dilutions due to complex financial instruments at play.
+
+### EPS IFRS vs ASPE
+
+- ASPE does not need to report EPS calculations or disclosure
+- Three lines for EPS from: continuing operations, discontinued operations, net income
+- Need to show basic and diluted for both types
+
+### Price Earnings Ratio
+
+- Useful information by relating earnings to the price the shares are trading at
+- Allows "easy comparison" with other companies
+- Multiplier of per share market value
+- If Among similar companies one has a higher P/E, it may be overpriced
+
+### Simple vs Complex Capital Structure
+
+- For simple ones without convertibles, just basic EPS
+- For complex capital structures, securities that will potentially dilute the EPS, need to be included in the diluted EPS
+
+### Income Available to Common Shareholders
+
+- Deduct obligations to non-common shareholders such as current preferred dividends. Do not include arrears as they were included already
+
+### Weighted Average Common Shares Example
+
+Start of year: 200,000. July 1st: 225,000. Net income: 315,000.
+
+`Basic EPS = 315000 / (200000 * 0.5 + 425000 * 0.5) = 1.008 = 1.01`
+
+Restatement of average number of shares is required before a stock dividend or split event (so past results can be normalized).
+
+### In-Class EPS Exercse
+
+```accounting
+Shares outstanding Jan 1: 150,000
+2-for-1 stock split, Apr 1:     150,000
+Shares issued, Jul 1:   20,000
+Shares repurchased, Oct 1: -50,000
+Shares issued:, Dec 31: 10,000
+Ending Balance:           280,000
+Net Income: 476,000
+
+3,000 $2 cumulative shares were issued for $300,000. no "dividends" were declared during 2023.
+
+Weighted Average Number of Shares = 300,000 * 0.5 + 320,000 * 3/12 + 270000 * 91/92 + 280000 * 1/365 = 297,500. Ignore last issued since that's not even a single day.
+
+Income to common shareholders: 470,000
+
+Basic EPS = $1.58
+```
