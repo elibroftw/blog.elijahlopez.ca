@@ -1,5 +1,5 @@
 ---
-title: "CS 492 Software Delivery"
+title: "CS 489 Software Delivery"
 date: 2024-01-08T13:04:18-05:00
 draft: false
 tags: [
