@@ -850,6 +850,7 @@ What if dragging on that “scrollbar” really dragged a program (from a malici
 ### ACLs and capabilities
 
 - UNIX each file has an ACL and the caller is given a list of capabilities as well
+- [UNIX Permissions](https://mason.gmu.edu/~montecin/UNIXpermiss.htm)
 
 ### Authentication Factors
 
@@ -875,7 +876,7 @@ What if dragging on that “scrollbar” really dragged a program (from a malici
   - Problem?
 - NIST Advice for Develoeprs
   - Allow copying
-  - Do not prompt password changes as it  leads to cycling
+  - Do not prompt password changes as it leads to cycling
 
 ### Cryptographic Tools
 
@@ -912,6 +913,10 @@ What if dragging on that “scrollbar” really dragged a program (from a malici
   - Android before: grant all permissions in the beginning
   - Android now: grant permission one by one based on usage
 
+### Complete Mediation
+
+Complete mediation means that every access to every object should be authorized.
+
 ### Default Allow vs Default DEny
 
 - blacklist
@@ -922,10 +927,32 @@ What if dragging on that “scrollbar” really dragged a program (from a malici
 - Mandatory access control (MAC)
   - central authority establishes who can access what
   - good for military
-  - chineses wall, bell-la padula, biba
+  - chineses wall,  Bell-LaPadula, biba
 - Discretionary access control (DAC)
   - Owners can control
   - Grant others access to your home directory
+
+### Bell-LaPadula
+
+Can't write down and can't read up. Can't read when not part of the same groups as the access required. Can write to more groups, but not less.
+
+Example
+
+- sales.txt: Secret and for groups Accounting and Sales
+  - Person with Top Secret and Accounting cannot read the file
+  - Person with Unclassified and Accounting can write the file permissions
+  - Person with Top Secret cannot write the file
+  - Person with Accounting and Marketing cannot read nor write the file
+
+## Biba Model
+
+- Prevent inappropriate modification of data
+- Subjects and objects are ordered by an integrity classification scheme, I(s) and I(o)
+- Write access: I(s) ≥<sub>dom</sub> I(o)
+- Read access I(o) ≥<sub>dom</sub> I(s)
+- Subject Low watermark: if subject s reads object o, then I(s) = glb(I(s), I(o)), where glb() = greatest lower bound
+- Object Low Watermark Property: if subject s modifies object o, then I(o) = glb(I(s), I(o))
+- Integrity of subject/object can only go down, information flows down
 
 ### Object Protection
 

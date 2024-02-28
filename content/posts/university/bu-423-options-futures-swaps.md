@@ -786,3 +786,58 @@ Example 7.3 and 7.4
 - forward rate is 5%
 - 5.1% semi-annual
 - `1000 * (0.07 - 0.051) / 2 * e^(-0.05(3.5)) = 7.88%`
+
+## Properties of Stock Options
+
+### Effect of Variables on Option Pricing
+
+Variable | c | p | C | P
+----------- | --- | -- | -- | ---
+S<sub>0</sub> | + | - | + | -
+K | - | + | - | +
+T | ? | ? | + | +
+σ | + | + | + | +
+r | + | - | + | -
+D | - | + | - | +
+
+### Lower Bound for European Call Option Prices; No Dividends
+
+<img class=equation src="https://latex.codecogs.com/svg.image?c>=max{S_0-Ke^{-rT}, 0}" alt="c>=max{S_0-Ke^{-rT}, 0}">
+
+Is there an arbitrage opportunity if  c = 3, T = 1, K = 18, S<sub>0</sub> = 20, r = 10%, D = 0?
+
+3 >= 3.71
+
+Strategy: Short stock to get $20. Buy call for $3. Invest $17 at the risk free rate.
+
+`17^(e(-0.10)(1)) = 18.79`
+
+Is there an arbitrage when the put premium is $1, T = 0.5, S = 37, r = 5%, K = 40, D = 0?
+
+<img class=equation src="https://latex.codecogs.com/svg.image?p>=max(Ke^{-rT}-S_0,0)" alt="p>=max(Ke^{-rT}-S_0,0)">
+
+p = 1 >= 2.01
+
+Borrow 38 to purchase put and stock.
+
+Is there an arbitrage when the call premium is 3, put premium is 1 or 2.25, T = 0.25, S = 31, r = 10%, K = 30, D = 0?
+
+```math
+C + ke^{-rT} = p + S<sub>0</sub>
+3 + 30e^{-0.1(0.25)} != 2.25 + 31
+32.26 < 33.25
+Strategy
+Short stock @31
+sell put 2.25
+            +33.25
+Buy call    -3
+Buy Bond    32.2
+Left with: .99
+```
+
+### American Put Exercised Early
+
+S = 60, T = 0.25, r = 10%, K = 100, D = 0. What if K = 50?
+
+- Advantages? Risk-free rate on the current payout
+- Disadvantages?
