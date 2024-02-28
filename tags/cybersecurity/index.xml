@@ -1239,6 +1239,7 @@ test value first (for example 1), compiled the program, and then started gdb:&lt
 &lt;/span>
 &lt;/h3>&lt;ul>
 &lt;li>UNIX each file has an ACL and the caller is given a list of capabilities as well&lt;/li>
+&lt;li>&lt;a href="https://mason.gmu.edu/~montecin/UNIXpermiss.htm">UNIX Permissions&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;h3 id="authentication-factors" >Authentication Factors
 &lt;span>
@@ -1372,6 +1373,13 @@ test value first (for example 1), compiled the program, and then started gdb:&lt
 &lt;/ul>
 &lt;/li>
 &lt;/ul>
+&lt;h3 id="complete-mediation" >Complete Mediation
+&lt;span>
+&lt;a href="#complete-mediation">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Complete mediation means that every access to every object should be authorized.&lt;/p>
 &lt;h3 id="default-allow-vs-default-deny" >Default Allow vs Default DEny
 &lt;span>
 &lt;a href="#default-allow-vs-default-deny">
@@ -1393,7 +1401,7 @@ test value first (for example 1), compiled the program, and then started gdb:&lt
 &lt;ul>
 &lt;li>central authority establishes who can access what&lt;/li>
 &lt;li>good for military&lt;/li>
-&lt;li>chineses wall, bell-la padula, biba&lt;/li>
+&lt;li>chineses wall, Bell-LaPadula, biba&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;li>Discretionary access control (DAC)
@@ -1402,6 +1410,39 @@ test value first (for example 1), compiled the program, and then started gdb:&lt
 &lt;li>Grant others access to your home directory&lt;/li>
 &lt;/ul>
 &lt;/li>
+&lt;/ul>
+&lt;h3 id="bell-lapadula" >Bell-LaPadula
+&lt;span>
+&lt;a href="#bell-lapadula">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Can&amp;rsquo;t write down and can&amp;rsquo;t read up. Can&amp;rsquo;t read when not part of the same groups as the access required. Can write to more groups, but not less.&lt;/p>
+&lt;p>Example&lt;/p>
+&lt;ul>
+&lt;li>sales.txt: Secret and for groups Accounting and Sales
+&lt;ul>
+&lt;li>Person with Top Secret and Accounting cannot read the file&lt;/li>
+&lt;li>Person with Unclassified and Accounting can write the file permissions&lt;/li>
+&lt;li>Person with Top Secret cannot write the file&lt;/li>
+&lt;li>Person with Accounting and Marketing cannot read nor write the file&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="biba-model" >Biba Model
+&lt;span>
+&lt;a href="#biba-model">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;ul>
+&lt;li>Prevent inappropriate modification of data&lt;/li>
+&lt;li>Subjects and objects are ordered by an integrity classification scheme, I(s) and I(o)&lt;/li>
+&lt;li>Write access: I(s) ≥&lt;sub>dom&lt;/sub> I(o)&lt;/li>
+&lt;li>Read access I(o) ≥&lt;sub>dom&lt;/sub> I(s)&lt;/li>
+&lt;li>Subject Low watermark: if subject s reads object o, then I(s) = glb(I(s), I(o)), where glb() = greatest lower bound&lt;/li>
+&lt;li>Object Low Watermark Property: if subject s modifies object o, then I(o) = glb(I(s), I(o))&lt;/li>
+&lt;li>Integrity of subject/object can only go down, information flows down&lt;/li>
 &lt;/ul>
 &lt;h3 id="object-protection" >Object Protection
 &lt;span>

@@ -2486,6 +2486,13 @@ The difference between gross investment and depreciation is &lt;strong>net inves
 &lt;/ul>
 &lt;/li>
 &lt;li>&lt;a href="#midterm-questions">Midterm Questions&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#properties-of-stock-options">Properties of Stock Options&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#effect-of-variables-on-option-pricing">Effect of Variables on Option Pricing&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#lower-bound-for-european-call-option-prices-no-dividends">Lower Bound for European Call Option Prices; No Dividends&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#american-put-exercised-early">American Put Exercised Early&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
 &lt;/ul>
 &lt;/nav>
 &lt;/div>
@@ -3760,6 +3767,110 @@ than 25 years. The conversion factor is unique to each bond.&lt;/p>
 &lt;li>forward rate is 5%&lt;/li>
 &lt;li>5.1% semi-annual&lt;/li>
 &lt;li>&lt;code>1000 * (0.07 - 0.051) / 2 * e^(-0.05(3.5)) = 7.88%&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;h2 id="properties-of-stock-options" >Properties of Stock Options
+&lt;span>
+&lt;a href="#properties-of-stock-options">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;h3 id="effect-of-variables-on-option-pricing" >Effect of Variables on Option Pricing
+&lt;span>
+&lt;a href="#effect-of-variables-on-option-pricing">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Variable&lt;/th>
+&lt;th>c&lt;/th>
+&lt;th>p&lt;/th>
+&lt;th>C&lt;/th>
+&lt;th>P&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>S&lt;sub>0&lt;/sub>&lt;/td>
+&lt;td>+&lt;/td>
+&lt;td>-&lt;/td>
+&lt;td>+&lt;/td>
+&lt;td>-&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>K&lt;/td>
+&lt;td>-&lt;/td>
+&lt;td>+&lt;/td>
+&lt;td>-&lt;/td>
+&lt;td>+&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>T&lt;/td>
+&lt;td>?&lt;/td>
+&lt;td>?&lt;/td>
+&lt;td>+&lt;/td>
+&lt;td>+&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>σ&lt;/td>
+&lt;td>+&lt;/td>
+&lt;td>+&lt;/td>
+&lt;td>+&lt;/td>
+&lt;td>+&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>r&lt;/td>
+&lt;td>+&lt;/td>
+&lt;td>-&lt;/td>
+&lt;td>+&lt;/td>
+&lt;td>-&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>D&lt;/td>
+&lt;td>-&lt;/td>
+&lt;td>+&lt;/td>
+&lt;td>-&lt;/td>
+&lt;td>+&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="lower-bound-for-european-call-option-prices-no-dividends" >Lower Bound for European Call Option Prices; No Dividends
+&lt;span>
+&lt;a href="#lower-bound-for-european-call-option-prices-no-dividends">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;img class=equation src="https://latex.codecogs.com/svg.image?c>=max{S_0-Ke^{-rT}, 0}" alt="c>=max{S_0-Ke^{-rT}, 0}">
+&lt;p>Is there an arbitrage opportunity if c = 3, T = 1, K = 18, S&lt;sub>0&lt;/sub> = 20, r = 10%, D = 0?&lt;/p>
+&lt;p>3 &amp;gt;= 3.71&lt;/p>
+&lt;p>Strategy: Short stock to get $20. Buy call for $3. Invest $17 at the risk free rate.&lt;/p>
+&lt;p>&lt;code>17^(e(-0.10)(1)) = 18.79&lt;/code>&lt;/p>
+&lt;p>Is there an arbitrage when the put premium is $1, T = 0.5, S = 37, r = 5%, K = 40, D = 0?&lt;/p>
+&lt;img class=equation src="https://latex.codecogs.com/svg.image?p>=max(Ke^{-rT}-S_0,0)" alt="p>=max(Ke^{-rT}-S_0,0)">
+&lt;p>p = 1 &amp;gt;= 2.01&lt;/p>
+&lt;p>Borrow 38 to purchase put and stock.&lt;/p>
+&lt;p>Is there an arbitrage when the call premium is 3, put premium is 1 or 2.25, T = 0.25, S = 31, r = 10%, K = 30, D = 0?&lt;/p>
+&lt;pre tabindex="0">&lt;code class="language-math" data-lang="math">C + ke^{-rT} = p + S&amp;lt;sub&amp;gt;0&amp;lt;/sub&amp;gt;
+3 + 30e^{-0.1(0.25)} != 2.25 + 31
+32.26 &amp;lt; 33.25
+Strategy
+Short stock @31
+sell put 2.25
++33.25
+Buy call -3
+Buy Bond 32.2
+Left with: .99
+&lt;/code>&lt;/pre>&lt;h3 id="american-put-exercised-early" >American Put Exercised Early
+&lt;span>
+&lt;a href="#american-put-exercised-early">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>S = 60, T = 0.25, r = 10%, K = 100, D = 0. What if K = 50?&lt;/p>
+&lt;ul>
+&lt;li>Advantages? Risk-free rate on the current payout&lt;/li>
+&lt;li>Disadvantages?&lt;/li>
 &lt;/ul></description></item><item><title>CS 489 Security</title><link>https://blog.elijahlopez.ca/posts/university/cs-489-security/</link><pubDate>Tue, 09 Jan 2024 11:33:24 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/university/cs-489-security/</guid><description>&lt;!--
 [Learn uWaterloo](https://learn.uwaterloo.ca/d2l/le/content/1005130/Home)
 [Course Website](https://cs.uwaterloo.ca/~m285xu/courses/cs489-w24/)
@@ -5001,6 +5112,7 @@ test value first (for example 1), compiled the program, and then started gdb:&lt
 &lt;/span>
 &lt;/h3>&lt;ul>
 &lt;li>UNIX each file has an ACL and the caller is given a list of capabilities as well&lt;/li>
+&lt;li>&lt;a href="https://mason.gmu.edu/~montecin/UNIXpermiss.htm">UNIX Permissions&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;h3 id="authentication-factors" >Authentication Factors
 &lt;span>
@@ -5134,6 +5246,13 @@ test value first (for example 1), compiled the program, and then started gdb:&lt
 &lt;/ul>
 &lt;/li>
 &lt;/ul>
+&lt;h3 id="complete-mediation" >Complete Mediation
+&lt;span>
+&lt;a href="#complete-mediation">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Complete mediation means that every access to every object should be authorized.&lt;/p>
 &lt;h3 id="default-allow-vs-default-deny" >Default Allow vs Default DEny
 &lt;span>
 &lt;a href="#default-allow-vs-default-deny">
@@ -5155,7 +5274,7 @@ test value first (for example 1), compiled the program, and then started gdb:&lt
 &lt;ul>
 &lt;li>central authority establishes who can access what&lt;/li>
 &lt;li>good for military&lt;/li>
-&lt;li>chineses wall, bell-la padula, biba&lt;/li>
+&lt;li>chineses wall, Bell-LaPadula, biba&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;li>Discretionary access control (DAC)
@@ -5164,6 +5283,39 @@ test value first (for example 1), compiled the program, and then started gdb:&lt
 &lt;li>Grant others access to your home directory&lt;/li>
 &lt;/ul>
 &lt;/li>
+&lt;/ul>
+&lt;h3 id="bell-lapadula" >Bell-LaPadula
+&lt;span>
+&lt;a href="#bell-lapadula">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Can&amp;rsquo;t write down and can&amp;rsquo;t read up. Can&amp;rsquo;t read when not part of the same groups as the access required. Can write to more groups, but not less.&lt;/p>
+&lt;p>Example&lt;/p>
+&lt;ul>
+&lt;li>sales.txt: Secret and for groups Accounting and Sales
+&lt;ul>
+&lt;li>Person with Top Secret and Accounting cannot read the file&lt;/li>
+&lt;li>Person with Unclassified and Accounting can write the file permissions&lt;/li>
+&lt;li>Person with Top Secret cannot write the file&lt;/li>
+&lt;li>Person with Accounting and Marketing cannot read nor write the file&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="biba-model" >Biba Model
+&lt;span>
+&lt;a href="#biba-model">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;ul>
+&lt;li>Prevent inappropriate modification of data&lt;/li>
+&lt;li>Subjects and objects are ordered by an integrity classification scheme, I(s) and I(o)&lt;/li>
+&lt;li>Write access: I(s) ≥&lt;sub>dom&lt;/sub> I(o)&lt;/li>
+&lt;li>Read access I(o) ≥&lt;sub>dom&lt;/sub> I(s)&lt;/li>
+&lt;li>Subject Low watermark: if subject s reads object o, then I(s) = glb(I(s), I(o)), where glb() = greatest lower bound&lt;/li>
+&lt;li>Object Low Watermark Property: if subject s modifies object o, then I(o) = glb(I(s), I(o))&lt;/li>
+&lt;li>Integrity of subject/object can only go down, information flows down&lt;/li>
 &lt;/ul>
 &lt;h3 id="object-protection" >Object Protection
 &lt;span>
@@ -31812,9 +31964,9 @@ I&amp;rsquo;ll start with the tips so that this post is useful for everyone.&lt;
 &lt;li>Phase 2 authentication: MSCHAPV2&lt;/li>
 &lt;li>CA certificate: trust on first use&lt;/li>
 &lt;li>Do not verify&lt;/li>
-&lt;li>Identify: &lt;a href="mailto:lope3800@wlu.ca">lope3800@wlu.ca&lt;/a>&lt;/li>
-&lt;li>Password: same as @mylaurier.ca password&lt;/li>
-&lt;li>Advanced &amp;gt; Privacy &amp;gt; Use device MAC :(&lt;/li>
+&lt;li>Identify: &lt;code>lope3800@wlu.ca&lt;/code> or &lt;code>e5lopez@uwaterloo.ca&lt;/code>&lt;/li>
+&lt;li>Password: same as @mylaurier.ca password or uwaterloo.ca password&lt;/li>
+&lt;li>If connection doesn&amp;rsquo;t work try changing Advanced → Privacy → Use device MAC 😒&lt;/li>
 &lt;/ul>
 &lt;p>On Linux devices, disable the certificate password and only supply the username and password given here.&lt;/p>
 &lt;h2 id="homeschool-differences" >Homeschool Differences
