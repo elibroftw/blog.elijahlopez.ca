@@ -841,3 +841,105 @@ S = 60, T = 0.25, r = 10%, K = 100, D = 0. What if K = 50?
 
 - Advantages? Risk-free rate on the current payout
 - Disadvantages?
+
+### American Put Options (No Dividends)
+
+<img class=equation src="https://latex.codecogs.com/svg.image?p>=max{K-S_0,0}" alt="p>=max(K-S_0,0)">
+
+### Impact of Dividends on the Lower Bounds to Option Prices
+
+<img class=equation src="https://latex.codecogs.com/svg.image?c>=max(S_0-D-Ke^{-rT})" alt="c>=max(S_0-D-Ke^{-rT})">
+
+<img class=equation src="https://latex.codecogs.com/svg.image?p>=max(S_0-D-Ke^{-rT})" alt="p>=max(S_0-D-Ke^{-rT})">
+
+Need to read Chapter 10 again.
+
+## Chapter 11 - Trading Strategies Involving Options
+
+1. Bond plus option to create principal protected note
+2. Stock plus option
+3. options of the same type (spread)
+4. Different types (combination)
+
+### Principal Protected Note
+
+- $1000 instrument consisting of
+  - 3-year zero-coupon bond with principal of $1000
+  - 3-year at-the-money call option on a stock portfolio currently worth $1000
+  - Play: sell portfolio, buy ATM call, buy bond
+
+### Bull Spread Using Calls
+
+- Buy ITM call
+- Sell OTM call
+
+### Bull Spread Using Puts
+
+- Buy OTM put
+- Sel ITM put
+
+### Bear Spread Using Calls
+
+- Buy OTM call
+- Sell ITM call
+
+### Bear Spread Using Puts
+
+- Buy ITM put
+- Sell OTM put
+
+### Box Spread
+
+- combination of a bull call spread and a bear put spread
+- if european, use present value of strike prices difference
+- not necessarily so for american
+
+<details><summary>Box Spread Example</summary>
+
+```txt
+Long C1       ST <= 40        40<ST<60      ST>60
+Short P1            0                   St-40           ST-40
+Short C2      -(40-ST)                 0                   0
+Long P2           60-ST             60-ST              0
+
+                        20                       20               20
+
+Therefore Cost = 20e^(-0.05)(0.5)
+```
+
+</details>
+
+Two options, call and a put, with same underlying asset, strike. maturity.
+
+At what strike price would they have the same value?
+
+Answer: graphically or using put-call parity
+
+### Put-Call Parity
+
+- Put-call parity theorem is an equation representing the proper relation between put and call prices
+- violation implies arbitrage opportunities
+- sell high side, buy low side
+- invest cash from sell
+
+<img class=equation-tall src="https://latex.codecogs.com/svg.image?C+\frac{X}{(1+r_f)^t}=S_0+P" alt="C+\frac{X}{(1+r_f)^t}=S_0+P">
+
+### Butterfly Spread Using Calls
+
+- Long call ITM
+- Long call OTM
+- Short 2 calls ATM
+
+### Calendar Spread Using Calls
+
+- Short on shorter-dated call
+- Long on longer-dated call
+
+### Strangle Combination
+
+- Make money when volatility is higher
+
+### Strip & Strap
+
+- Strip: Long call and Two long puts
+- Strap: Two long calls and one long put
