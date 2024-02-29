@@ -1323,7 +1323,7 @@ Considering dilutions due to complex financial instruments at play.
 ### Simple vs Complex Capital Structure
 
 - For simple ones without convertibles, just basic EPS
-- For complex capital structures, securities that will potentially dilute the EPS, need to be included in the diluted EPS
+- For complex capital structures, securities that will potentially dilute the EPS, need to be included in the diluted EPS. Do not include anti-dilutive securities.
 
 ### Income Available to Common Shareholders
 
@@ -1356,3 +1356,50 @@ Income to common shareholders: 470,000
 
 Basic EPS = $1.58
 ```
+
+### Diluted EPS: If-Converted Convertible Bonds Method
+
+- assume conversion occurs later of the beginning of the year and the issue date
+- need to add back the interest net of taxes (1 - T)
+- 410,000 net income, 100,000 WACS, 30% tax
+- 1 convertible to 20,000 common shares at 6% of 1,000,000
+- 1 convertible to 32,000 common shares at 10% of 500,000 on April 1
+- Basic EPS: $4.10
+- Diluted Earnings:
+  - `410000 + 0.06 * 1000000 * 0.7 + 0.1 * 500000 * 9 / 12 * 0.7` = 478,250
+- Diluted WACS: `100000 + 20000 + 32000 * 9/12` = 144,000
+- Diluted EPS: $3.32
+
+### Diluted EPS: Options and Warrants
+
+- Assume options are exercised the later of: the beginning of the year and the issue date
+- In the money options: intrinsic value (market and strike price delta is positive for the option)
+  - Call: Market Price - Strike Price > 0
+  - Put: Strike Price - Market Price > 0
+- When the company writes the option,
+  - Call: just need to issue shares
+  - Put: need to purchase shares
+
+### Treasury Stock Method
+
+Impact of written call options on EPS numbers
+
+1. Options are exercised at the beginning of the year
+2. Money is used to buy back shares at the treasury at teh average market price during the year
+
+Treasury shares are a contra equity account which means that the shares were not cancelled.
+
+Suppose the market price is $28 and the strike price is $20 and 5000 call options sold.
+
+Shares to be issued = (5000 - 5000 * 20 / 28) = 1429
+
+### Reverse Treasury Stock Method
+
+Impact of written put options on EPS numbers.
+
+1. Options are exercised at beginning of the year
+2. Shares are issued in the market to obtain funds to buy shares for the put option
+
+Suppose 1,500 put options with a strike price of $30 were exercised when the market price was $20.
+
+Shares issued: (1,500 * 30 / 20 - 1500) = 750
