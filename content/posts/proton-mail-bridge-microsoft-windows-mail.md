@@ -1,15 +1,13 @@
 ---
 title: "Proton Mail Bridge Microsoft Windows Mail"
 date: 2023-07-25T13:59:08-04:00
-draft: false
+draft: true
 tags: [
     "windows",
 ]
 ---
 
-I got my Windows 11 laptop back and was able to add my Proton Mail account to the default Mail app that comes preinstalled on Windows.
-I'm not sure if this will work on Windows 10, but I will test that out on Thursday.
-I hope these instructions are clear enough for everyone else since Proton Mail does not have any articles and did not want to give paying customers (me) any support on how to do this.
+This is my effort in getting ProtonMail to work with Windows 11.
 
 1. Install [Proton Mail Bridge](https://proton.me/mail/bridge)
 2. Log into Proton Mail Bridge
@@ -26,8 +24,10 @@ I hope these instructions are clear enough for everyone else since Proton Mail d
 13. Copy the IMAP port in the bridge app
 14. Enter 127.0.0.1:IMAPPORT for incoming email server (e.g. 127.0.0.1:1143)
 15. Set account type to IMAP4 (or whichever IMAP is latest on your screen)
-16. Copy SMTP port in bridge app
-17. Enter 127.0.0.1:SMTPPORT for outgoing email server (e.g. 127.0.0.1:1027)
-18. If you need to add other accounts, add accounts to mail but with a different email address and user name
+16. ENSURE SURE THAT SECURE CONNECTION TYPE IS NONE
+17. Copy SMTP port in bridge app
+18. Enter 127.0.0.1:SMTPPORT for outgoing email server (e.g. 127.0.0.1:1027)
+19. ENSURE SURE THAT SECURE CONNECTION TYPE IS NONE
+20. If you need to add other accounts, add accounts to mail but with a different email address and user name
 
 If you need pictures, please comment and I will update the article to include pictures.
