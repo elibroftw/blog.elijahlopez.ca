@@ -2432,6 +2432,23 @@ Identify alternative policy approaches to dealing with business cycles.&lt;/p>
 &lt;li>&lt;a href="#effect-of-variables-on-option-pricing">Effect of Variables on Option Pricing&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#lower-bound-for-european-call-option-prices-no-dividends">Lower Bound for European Call Option Prices; No Dividends&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#american-put-exercised-early">American Put Exercised Early&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#american-put-options-no-dividends">American Put Options (No Dividends)&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#impact-of-dividends-on-the-lower-bounds-to-option-prices">Impact of Dividends on the Lower Bounds to Option Prices&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="#chapter-11---trading-strategies-involving-options">Chapter 11 - Trading Strategies Involving Options&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#principal-protected-note">Principal Protected Note&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#bull-spread-using-calls">Bull Spread Using Calls&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#bull-spread-using-puts">Bull Spread Using Puts&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#bear-spread-using-calls">Bear Spread Using Calls&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#bear-spread-using-puts">Bear Spread Using Puts&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#box-spread">Box Spread&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#put-call-parity">Put-Call Parity&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#butterfly-spread-using-calls">Butterfly Spread Using Calls&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#calendar-spread-using-calls">Calendar Spread Using Calls&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#strangle-combination">Strangle Combination&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#strip--strap">Strip &amp;amp; Strap&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;/ul>
@@ -3812,6 +3829,166 @@ Left with: .99
 &lt;ul>
 &lt;li>Advantages? Risk-free rate on the current payout&lt;/li>
 &lt;li>Disadvantages?&lt;/li>
+&lt;/ul>
+&lt;h3 id="american-put-options-no-dividends" >American Put Options (No Dividends)
+&lt;span>
+&lt;a href="#american-put-options-no-dividends">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;img class=equation src="https://latex.codecogs.com/svg.image?p>=max{K-S_0,0}" alt="p>=max(K-S_0,0)">
+&lt;h3 id="impact-of-dividends-on-the-lower-bounds-to-option-prices" >Impact of Dividends on the Lower Bounds to Option Prices
+&lt;span>
+&lt;a href="#impact-of-dividends-on-the-lower-bounds-to-option-prices">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;img class=equation src="https://latex.codecogs.com/svg.image?c>=max(S_0-D-Ke^{-rT})" alt="c>=max(S_0-D-Ke^{-rT})">
+&lt;img class=equation src="https://latex.codecogs.com/svg.image?p>=max(S_0-D-Ke^{-rT})" alt="p>=max(S_0-D-Ke^{-rT})">
+&lt;p>Need to read Chapter 10 again.&lt;/p>
+&lt;h2 id="chapter-11---trading-strategies-involving-options" >Chapter 11 - Trading Strategies Involving Options
+&lt;span>
+&lt;a href="#chapter-11---trading-strategies-involving-options">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;ol>
+&lt;li>Bond plus option to create principal protected note&lt;/li>
+&lt;li>Stock plus option&lt;/li>
+&lt;li>options of the same type (spread)&lt;/li>
+&lt;li>Different types (combination)&lt;/li>
+&lt;/ol>
+&lt;h3 id="principal-protected-note" >Principal Protected Note
+&lt;span>
+&lt;a href="#principal-protected-note">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>$1000 instrument consisting of
+&lt;ul>
+&lt;li>3-year zero-coupon bond with principal of $1000&lt;/li>
+&lt;li>3-year at-the-money call option on a stock portfolio currently worth $1000&lt;/li>
+&lt;li>Play: sell portfolio, buy ATM call, buy bond&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="bull-spread-using-calls" >Bull Spread Using Calls
+&lt;span>
+&lt;a href="#bull-spread-using-calls">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Buy ITM call&lt;/li>
+&lt;li>Sell OTM call&lt;/li>
+&lt;/ul>
+&lt;h3 id="bull-spread-using-puts" >Bull Spread Using Puts
+&lt;span>
+&lt;a href="#bull-spread-using-puts">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Buy OTM put&lt;/li>
+&lt;li>Sel ITM put&lt;/li>
+&lt;/ul>
+&lt;h3 id="bear-spread-using-calls" >Bear Spread Using Calls
+&lt;span>
+&lt;a href="#bear-spread-using-calls">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Buy OTM call&lt;/li>
+&lt;li>Sell ITM call&lt;/li>
+&lt;/ul>
+&lt;h3 id="bear-spread-using-puts" >Bear Spread Using Puts
+&lt;span>
+&lt;a href="#bear-spread-using-puts">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Buy ITM put&lt;/li>
+&lt;li>Sell OTM put&lt;/li>
+&lt;/ul>
+&lt;h3 id="box-spread" >Box Spread
+&lt;span>
+&lt;a href="#box-spread">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>combination of a bull call spread and a bear put spread&lt;/li>
+&lt;li>if european, use present value of strike prices difference&lt;/li>
+&lt;li>not necessarily so for american&lt;/li>
+&lt;/ul>
+&lt;details>&lt;summary>Box Spread Example&lt;/summary>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-txt" data-lang="txt">&lt;span style="display:flex;">&lt;span>Long C1 ST &amp;lt;= 40 40&amp;lt;ST&amp;lt;60 ST&amp;gt;60
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Short P1 0 St-40 ST-40
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Short C2 -(40-ST) 0 0
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Long P2 60-ST 60-ST 0
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 20 20 20
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Therefore Cost = 20e^(-0.05)(0.5)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/details>
+&lt;p>Two options, call and a put, with same underlying asset, strike. maturity.&lt;/p>
+&lt;p>At what strike price would they have the same value?&lt;/p>
+&lt;p>Answer: graphically or using put-call parity&lt;/p>
+&lt;h3 id="put-call-parity" >Put-Call Parity
+&lt;span>
+&lt;a href="#put-call-parity">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Put-call parity theorem is an equation representing the proper relation between put and call prices&lt;/li>
+&lt;li>violation implies arbitrage opportunities&lt;/li>
+&lt;li>sell high side, buy low side&lt;/li>
+&lt;li>invest cash from sell&lt;/li>
+&lt;/ul>
+&lt;img class=equation-tall src="https://latex.codecogs.com/svg.image?C+\frac{X}{(1+r_f)^t}=S_0+P" alt="C+\frac{X}{(1+r_f)^t}=S_0+P">
+&lt;h3 id="butterfly-spread-using-calls" >Butterfly Spread Using Calls
+&lt;span>
+&lt;a href="#butterfly-spread-using-calls">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Long call ITM&lt;/li>
+&lt;li>Long call OTM&lt;/li>
+&lt;li>Short 2 calls ATM&lt;/li>
+&lt;/ul>
+&lt;h3 id="calendar-spread-using-calls" >Calendar Spread Using Calls
+&lt;span>
+&lt;a href="#calendar-spread-using-calls">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Short on shorter-dated call&lt;/li>
+&lt;li>Long on longer-dated call&lt;/li>
+&lt;/ul>
+&lt;h3 id="strangle-combination" >Strangle Combination
+&lt;span>
+&lt;a href="#strangle-combination">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Make money when volatility is higher&lt;/li>
+&lt;/ul>
+&lt;h3 id="strip--strap" >Strip &amp;amp; Strap
+&lt;span>
+&lt;a href="#strip--strap">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Strip: Long call and Two long puts&lt;/li>
+&lt;li>Strap: Two long calls and one long put&lt;/li>
 &lt;/ul></description></item><item><title>CS 489 Security</title><link>https://blog.elijahlopez.ca/posts/university/cs-489-security/</link><pubDate>Tue, 09 Jan 2024 11:33:24 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/university/cs-489-security/</guid><description>&lt;!--
 [Learn uWaterloo](https://learn.uwaterloo.ca/d2l/le/content/1005130/Home)
 [Course Website](https://cs.uwaterloo.ca/~m285xu/courses/cs489-w24/)
