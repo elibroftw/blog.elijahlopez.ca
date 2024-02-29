@@ -97,30 +97,7 @@ You can do this anytime before starting the virtual machine. This was the roadbl
 &lt;/h3>&lt;p>A critical error has occurred while running the virtual machine&lt;/p>
 &lt;ul>
 &lt;li>&lt;a href="https://forums.virtualbox.org/viewtopic.php?f=1&amp;amp;t=62339">I have a 64bit host, but can&amp;rsquo;t install 64bit guests&lt;/a>&lt;/li>
-&lt;/ul></description></item><item><title>Proton Mail Bridge Microsoft Windows Mail</title><link>https://blog.elijahlopez.ca/posts/proton-mail-bridge-microsoft-windows-mail/</link><pubDate>Tue, 25 Jul 2023 13:59:08 -0400</pubDate><guid>https://blog.elijahlopez.ca/posts/proton-mail-bridge-microsoft-windows-mail/</guid><description>&lt;p>I got my Windows 11 laptop back and was able to add my Proton Mail account to the default Mail app that comes preinstalled on Windows.
-I&amp;rsquo;m not sure if this will work on Windows 10, but I will test that out on Thursday.
-I hope these instructions are clear enough for everyone else since Proton Mail does not have any articles and did not want to give paying customers (me) any support on how to do this.&lt;/p>
-&lt;ol>
-&lt;li>Install &lt;a href="https://proton.me/mail/bridge">Proton Mail Bridge&lt;/a>&lt;/li>
-&lt;li>Log into Proton Mail Bridge&lt;/li>
-&lt;li>If you have more than one Proton Mail address, toggle split addresses&lt;/li>
-&lt;li>Open Mail app&lt;/li>
-&lt;li>Click Settings (cog) and then management accounts&lt;/li>
-&lt;li>Click Add account&lt;/li>
-&lt;li>Click advanced setup&lt;/li>
-&lt;li>Click Internet email&lt;/li>
-&lt;li>Use the user name in the bridge app for the email address and user name.&lt;/li>
-&lt;li>For password, use the password found in the bridge app for IMAP&lt;/li>
-&lt;li>Set account name to &amp;ldquo;Proton Mail&amp;rdquo;&lt;/li>
-&lt;li>Enter your name in the next field or whatever you want to be called&lt;/li>
-&lt;li>Copy the IMAP port in the bridge app&lt;/li>
-&lt;li>Enter 127.0.0.1:IMAPPORT for incoming email server (e.g. 127.0.0.1:1143)&lt;/li>
-&lt;li>Set account type to IMAP4 (or whichever IMAP is latest on your screen)&lt;/li>
-&lt;li>Copy SMTP port in bridge app&lt;/li>
-&lt;li>Enter 127.0.0.1:SMTPPORT for outgoing email server (e.g. 127.0.0.1:1027)&lt;/li>
-&lt;li>If you need to add other accounts, add accounts to mail but with a different email address and user name&lt;/li>
-&lt;/ol>
-&lt;p>If you need pictures, please comment and I will update the article to include pictures.&lt;/p></description></item><item><title>Windows Programming: Start App on Login</title><link>https://blog.elijahlopez.ca/posts/windows-programming-start-app-on-login/</link><pubDate>Thu, 29 Jun 2023 20:22:04 -0400</pubDate><guid>https://blog.elijahlopez.ca/posts/windows-programming-start-app-on-login/</guid><description>&lt;p>To start an app on login on Windows, you must add a REG_SZ value to the registry key &lt;code>HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Run&lt;/code>.&lt;/p>
+&lt;/ul></description></item><item><title>Windows Programming: Start App on Login</title><link>https://blog.elijahlopez.ca/posts/windows-programming-start-app-on-login/</link><pubDate>Thu, 29 Jun 2023 20:22:04 -0400</pubDate><guid>https://blog.elijahlopez.ca/posts/windows-programming-start-app-on-login/</guid><description>&lt;p>To start an app on login on Windows, you must add a REG_SZ value to the registry key &lt;code>HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Run&lt;/code>.&lt;/p>
 &lt;p>The value&amp;rsquo;s name can be arbitrary, but not empty, and it&amp;rsquo;s data should be of the format &lt;code>path\to\executable optional args&lt;/code>. Personally, I add double quotes to the path, however apps like docker desktop do not even though the path has spaces.&lt;/p>
 &lt;h3 id="python-start-app-on-login" >Python Start App on Login
 &lt;span>
