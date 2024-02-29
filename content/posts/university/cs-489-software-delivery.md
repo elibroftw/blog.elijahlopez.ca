@@ -576,12 +576,17 @@ Cost of rechecking
     - JVM: abstracts hardware details
 - 1990s
   - VMWare
-  - Hypervisor types
+  - Hypervisor (virtual machine monitors) types
     - Bare metal, where the hypervisor is running on hardware
     - Hosted: a host OS is running on the hardware which runs the hypervisor
   - ESX Server: run VMs without a host OS
   - GSX SErver: run VMs on Windows
   - Workstations: Run VMs on Unix
+- 00s and 10s
+  - Containers
+    - First appeared in Solaris 10 (2005), followed by Linux in 2008
+    - Zones allow lightweight isolation with shared core of OS, system and apps
+    - Containers popularized by Docker (2013), which automates deployment
 
 ### How to chroot jail
 
@@ -593,3 +598,51 @@ Cost of rechecking
 6. run chroot to change root into jail. Repeat process to add ls and vim to jail
 
 Super painful.
+
+### Linux Support for Containers (LXC)
+
+- Set of processes running on top of a common kernel
+- Isolated from rest and cannot impact each other or the host
+- cgroups
+  - Control Groups
+  - Allow system to control access to system resource (meter, limit, restrict)
+
+### Docker
+
+- [Overview](https://docs.docker.com/get-started/overview/)
+  - Client, Daemon, and Registry
+- Orchestration tool for containers with several features
+  - Portability
+  - App-centric
+  - Builds from "source"
+  - Versioning
+  - Component reuse
+  - Public registry
+  - Tool ecosystem
+
+<details><summary>Jekyll Dockerfile</summary>
+
+```Dockerfile
+FROM jekyll/jekyll:3.8.6
+# the base image sets the working directory to /srv/jekyll
+# the base image already uses EXPOSE 4000
+COPY . .
+RUN bundle install
+CMD bundle exec jekyll serve
+```
+
+</details>
+
+- `docker run --rm -p 4000:4000 tagOrId`
+- use '--rm'  to remove container after it has stopped
+- use `-d` for daemon command
+- `p` is for opening the localhost container port
+- Use `docker tag source copy` to clone the image (to prep for new push)
+- Use `docker push tag` to push to a registry
+  - Tags are usually "x/y:z" for registries
+- Use --volume src:dest to copy a directory on the host machine to a directory on the container. This way we can persist data without deleting the volume
+
+### Traditional Development
+
+- Python runtime on the development machine
+- Choice of Python runtime on development machine imposes constraints on the runtime that can be used in production

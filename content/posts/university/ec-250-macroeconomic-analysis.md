@@ -799,7 +799,7 @@ As for other types of capital, constructing an apartment building is profitable 
   - Apparently the real interest rate will be bid up. I guess because banks will have exhausted lending, so private credit lends at the equilibrium rate?
   - The interest rate represents many rates so things get messy in real world
 
-![In an economy with no foreign trade, the goods market is in equilibrium when desired national saving equals desired investment. Equivalently, the goods market is in equilibrium when the aggregate quantity of goods supplied equals the aggregate quantity of goods demanded.](/images/university/ec-250/saving-investment-curves.png)
+![In an economy with no foreign trade, the goods market is in equilibrium when desired national saving equals desired investment. Equivalently, the goods market is in equilibrium when the aggregate quantity of goods supplied equals the aggregate quantity of goods demanded.](/images/ec-250/saving-investment-curves.png)
 
 ### Shifts in the Savings Curve
 
@@ -1100,3 +1100,93 @@ If new capital bought with foreign debt is highly productive, the foreign debt w
 - Would require an increase in private saving, a decline in investment to offset, or a rise in current account deficit
   - A decline in investment is unlikely as the government is either demanding more domestic goods or demand is maintained
     - 100% saving is not possible due to the Marginal propensity to consume (MPC) which is ???
+
+## Chapter 8 - Business Cycles
+
+### What is a Business Cycle
+
+![aggregate economic activity peaks before start of a contraction/recession, trough before start of a expansion](/images/ec-250/business-cycle.png)
+
+A severe recession is called a depression. Sequence from one peak to the next is called the business cycle. Properties include:
+
+1. Fluctuations of aggregate economic activity
+2. Feature expansions and contractions
+3. Persistent
+
+History shows that business cycles have become less severe, attributed somewhat to better monetary policies, but it could simply be better measurements, more job variability, or a lot of things. There's no proof that all these factors will always be there, especially when some countries are not appealing to live in (e.g. UK).
+
+### Economic Variables and the Business Cycle
+
+economic variables can be:
+
+1. procyclical: moves with the business cycle
+2. countercyclical: moves against the business cycle
+3. acyclical: does not depend on business cycle
+
+timing:
+
+1. **leading**: occurs ahead of of aggregate economic activity
+2. coincident: occurs at the same time
+3. lagging: occurs behind economic activity
+
+Key variables
+
+1. production (procyclical and coincident)
+2. expenditure (procyclical and coincident)
+3. labour market variables (employment is procyclical and coincident; opposite for unemployment)
+4. money growth (procyclical and **leads** the  business cycle)
+    - meaning: high money growth comes before business cycle expansion and lower money growth comes before contraction. Could also be counter-cyclical since Bank of Canada is trying to influence the economy
+    - CPI inflation is procyclical but lags
+5. financial variables (e.g. stock prices are procyclical and lead the business cycle)
+    - lead is like 1 month, so losses in stock market are followed by contractions?
+
+- Durables vs. nondurables
+  - can put off purchases of durable goods when times are tough
+- Output is more volatile than total hours
+
+Define a business cycle.
+Discuss the causes of business cycles.
+Briefly describe the history of business cycles in Canada.
+Describe how key economic variables are affected by the business cycle.
+Identify alternative policy approaches to dealing with business cycles.
+
+### Explanation of Fluctuation
+
+- economic shocks and models related to it
+- classical or keynesian approach via AD-AS framework
+
+## Chapter 9 - IS-LM-FE Model
+
+### Full Equilibrium
+
+- for the classical theory, full equilibrium (FE) condition which relaxes the Keynesian assumption of fixed wages in the labour market
+
+![FE Line is vertical at Y line](/images/ec-250/fe-line.png)
+
+The full-employment line shifts right/left because of:
+
+All Else Equal, An | Shifts the FE line | Reason
+------------------------ | ---------------------- | -----------
+Beneficial supply shock | Right | 1.More output can be produced for the same amount of capital and labour. 2. If the MPN rises, labour demand increases and raises employment. Full-employment output increases for both reasons.
+Increase in labour supply | Right | Equilibrium employment rises, raising full-employment output.
+Increase in the capital stock | Right | More output can be produced with the same amount of labour. In addition, increased capital may increase the MPN, which increases labour demand and equilibrium employment.
+
+### Investment-Saving Curve
+
+- Investment-Saving
+- Savings and Investment equilibrium = goods market equilibrium
+
+![investment-savings vs output](/images/ec-250/is-curve.png)
+
+Factors That Shift the IS Curve
+
+All Else Equal, an Increase in | Shifts the IS Curve | Reason
+--------------------------------------- | --------------------------- | ----------------------
+Expected future output | Up and to the right | Desired consumption rises, raising the real interest rate that clears the goods market.
+Wealth | Up and to the right | Desired saving falls (desired consumption rises), raising the real interest rate that clears the goods market.
+Government purchases, G | Up and to the right | Desired saving falls (demand for goods rises), raising the real interest rate that clears the goods market.
+Taxes, T |No change or down and to the left | No change, if consumers take into account an offsetting future tax cut and do not change consumption (Ricardian equivalence); down, if consumers do not take into account a future tax cut and reduce desired consumption, increasing desired national saving and lowering the real interest rate that clears the goods market.
+Expected future marginal product of capital, MPK<sup>_f_</sup> | Up and to the right | Desired investment increases, raising the real interest rate that clears the goods market.
+Effective tax rate on capital | Down and to the left | Desired investment falls, lowering the real interest rate that clears the goods market.
+
+### Labour-Money Curve
