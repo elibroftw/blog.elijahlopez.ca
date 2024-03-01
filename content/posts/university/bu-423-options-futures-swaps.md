@@ -938,6 +938,7 @@ Answer: graphically or using put-call parity
 ### Strangle Combination
 
 - Make money when volatility is higher
+- OTM Put and OTM Call
 
 ### Strip & Strap
 
