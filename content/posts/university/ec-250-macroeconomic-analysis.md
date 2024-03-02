@@ -1189,4 +1189,61 @@ Taxes, T |No change or down and to the left | No change, if consumers take into 
 Expected future marginal product of capital, MPK<sup>_f_</sup> | Up and to the right | Desired investment increases, raising the real interest rate that clears the goods market.
 Effective tax rate on capital | Down and to the left | Desired investment falls, lowering the real interest rate that clears the goods market.
 
-### Labour-Money Curve
+### Liquidity-Money Curve
+
+1. Price of non-monetary assets is inversely related to its nominal interest rate or yield
+2. For a given rate of inflation, the price of a non-monetary asset and its real interest rate are also inversely related
+
+Basically, higher the price, lower the real interest rate. There is a different MD curve for each output Y.
+
+![liquidity-money vs. interest real interest rate](/images/ec-250/lm-curve.png)
+
+All Else Equal, an Increase in | Shifts the IS Curve | Reason
+--------------------------------------- | --------------------------- | ----------------------
+Nominal money supply, <i>M</i> | Down-right | Real money supply increases, lowering the real interest rate
+Price level, <i>P</i> | Up-left | Real money supply falls, raising real interest rate that clears the asset market
+Expected inflation, pi<sup>e</sup> | Down-right | Demand for money falls, lowering the real interest rate that clears the asset market
+Nominal interest rate on money, i<sup>m</sup> | Up-left | Demand for money increases, raising the real interest rate that clears the asset market
+
+### Temporary Adverse Supply Shock
+
+- Productivity falls temporarily,
+
+1. FE shifts left
+2. Price level adjust since IS and LS have a gap
+3. Real wage, employment, and output decline; real interest rate and price level at higher equilibrium point
+4. temporary inflation (higher price level)
+5. consumption and investment are lower
+
+What is not consistent is that the real interest rate might not increase due to mismatched expectations; apparently if the shock is expected to be permanent, rates would not rise; the lesson says the shock was temporary, but historic oil prices shows that the oil prices stayed steady after 1974 till the next shock, whereas oil prices decreased after 1980. Real interest rates only rise if the expectation is that it is temporary.
+
+1973-1974 Oil shock: USA gave $2.2B to Israel and OAPEC (OPEC Arab countries) decided to have an oil embargo on the USA. It is pretty clear that people would think this shock would be permanent. It's not really clear why oil prices remained high even after the embargo ended in 1974. Prices most likely remained the same due to the devaluation of the USD by that time.
+
+### Monetary Expansion
+
+![effects of monetary expansion](/images/ec-250/monetary-expansion.png)
+
+- short-term: lower interest rates and higher demand for output
+- long-term: prices get higher but no net difference
+
+### Fiscal Expansion
+
+![effects of fiscal expansion](/images/ec-250/fiscal-expansion.png)
+
+- government increases spending
+- short-term: higher IS curve so higher interest rates
+- long-term: prices and interest rates are higher
+
+### IS-LM-FE Classical vs Keynesian
+
+1. how rapidly is general equilibrium reached (could be 3 years in reality)
+2. what does monetary policy do?
+    - classical believes monetary neutrality exists in short-run whereas Keynesian only believes in long-run.
+
+### Aggregate Demand Curve
+
+The relationship between price levels and output
+
+![aggregate demand curve](/images/ec-250/aggregate-demand-curve.png)
+
+Factors that shift the curve is when the IS or LM shift while keeping the price level constant.
