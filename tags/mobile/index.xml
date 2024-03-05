@@ -1021,6 +1021,15 @@ I bought a &amp;ldquo;gaming&amp;rdquo; laptop because at least this baby can te
 &lt;/h3>&lt;p>This tutorial isn&amp;rsquo;t short so I&amp;rsquo;ve linked it &lt;a href="https://blog.elijahlopez.ca/posts/react-native-run-app-in-background/">here&lt;/a>.&lt;/p>
 &lt;p>Stack overflow users do not understand this question. What you are looking for is &amp;ldquo;Android: prevent app from pausing&amp;rdquo;&lt;/p>
 &lt;p>You see, I had this problem with Flutter in 2020, but three years later and 50 google searches I found out that what I wanted is called &amp;ldquo;foreground service&amp;rdquo; which requires registering a foreground service (one max) and a persistent notification. If you want to do stuff in the &amp;ldquo;background&amp;rdquo; without showing a notification the first time, that&amp;rsquo;s not exactly morally correct and you&amp;rsquo;ll be having a very tough time implementing it.&lt;/p>
+&lt;h3 id="command-phasescriptexecution-failed-with-a-nonzero-exit-code-node-not-found-or-does-not-exist" >Command PhaseScriptExecution failed with a nonzero exit code. node not found or does not exist
+&lt;span>
+&lt;a href="#command-phasescriptexecution-failed-with-a-nonzero-exit-code-node-not-found-or-does-not-exist">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Solution:&lt;/p>
+&lt;p>open &lt;code>ios/.xcode.env.local&lt;/code> and delete the line starting with &lt;code>export NODE_BINARY&lt;/code>.&lt;/p>
+&lt;p>It seems that XCode and by way a human being decided it was a good idea to hardcode a path to a node binary that doesn&amp;rsquo;t exist and overrides whatever the developer is using.&lt;/p>
 &lt;h2 id="a-note-to-future-developers" >A Note to Future Developers
 &lt;span>
 &lt;a href="#a-note-to-future-developers">
