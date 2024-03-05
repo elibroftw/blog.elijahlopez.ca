@@ -2115,6 +2115,209 @@ reasoning process based on each individualâ€™s values, principles, and purpose â
 &lt;/ul>
 &lt;/li>
 &lt;li>Casper (ethereum) depends on trusted nodes to broadcast the correct block hash&lt;/li>
+&lt;/ul>
+&lt;h2 id="common-bugs-and-vulnerabilities" >Common Bugs and Vulnerabilities
+&lt;span>
+&lt;a href="#common-bugs-and-vulnerabilities">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;h3 id="memory-errors" >Memory Errors
+&lt;span>
+&lt;a href="#memory-errors">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>a bug where memory not intended to be read or modified is read or modified&lt;/li>
+&lt;li>Heartbleed Vulnerability
+&lt;ul>
+&lt;li>Tell server more length than actually supplied&lt;/li>
+&lt;li>Server ended up returning more than required string&lt;/li>
+&lt;li>Affected 70%&lt;/li>
+&lt;li>CRA was affected and 900 taxpayers&amp;rsquo; identities were stolen&lt;/li>
+&lt;li>RCMP charged computer science student (unauthroized use of computer and mischeif)&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-c" data-lang="c">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">char&lt;/span> buff[&lt;span style="color:#3677a9">8&lt;/span>];
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">int&lt;/span> correct = &lt;span style="color:#3677a9">0&lt;/span>; &lt;span style="color:#999;font-style:italic">// in GCC convention, this variable will appear before the buff buff[0],...,buff[7],correct
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="von-neumann-architecture" >Von Neumann Architecture
+&lt;span>
+&lt;a href="#von-neumann-architecture">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>CPU does not care about semantics&lt;/li>
+&lt;/ul>
+&lt;h3 id="what-is-memory" >What is Memory
+&lt;span>
+&lt;a href="#what-is-memory">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Text (program code), Stack, Heap, Global (static)&lt;/li>
+&lt;li>Linux x86-64 convetion
+&lt;ul>
+&lt;li>Environment&lt;/li>
+&lt;li>Stack (grows to lower addresses)&lt;/li>
+&lt;li>Heap&lt;/li>
+&lt;li>BSS&lt;/li>
+&lt;li>Data (read from program binary as well - GLOBAL/STATIC)&lt;/li>
+&lt;li>Text (lower address)&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="heap-vs-stack" >Heap vs. Stack
+&lt;span>
+&lt;a href="#heap-vs-stack">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Must be manually managed&lt;/li>
+&lt;li>Any program can apparently use just the stack&lt;/li>
+&lt;/ul>
+&lt;h3 id="what-does-malloc-do" >what does malloc() do?
+&lt;span>
+&lt;a href="#what-does-malloc-do">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>malloc is provided by the clib (e.g. glibc)&lt;/li>
+&lt;li>in low level sense, the program has to check for the next available free memory spot&lt;/li>
+&lt;li>first request big chunk of memory from the OS&lt;/li>
+&lt;li>then the glibc will chunk the 4MB for the program to handle the smaller malloc&amp;rsquo;s&lt;/li>
+&lt;/ul>
+&lt;h3 id="what-does-free-do" >What does free do?
+&lt;span>
+&lt;a href="#what-does-free-do">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>&lt;a href="https://github.com/shellphish/how2heap">How2Heap&lt;/a>&lt;/p>
+&lt;h3 id="what-is-safe-in-memory-safety" >What is safe in memory safety?
+&lt;span>
+&lt;a href="#what-is-safe-in-memory-safety">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Observation 1: At runtime, memory is a pool of objects&lt;/li>
+&lt;li>Observation 2: Each objet has known andlimited &lt;strong>size&lt;/strong> and &lt;strong>lifetime&lt;/strong>&lt;/li>
+&lt;li>Observation 3: Once allocated, the size of an object never changes&lt;/li>
+&lt;li>Observation 4: Memory access is always object-oriented
+&lt;ul>
+&lt;li>Memory read: (object_id, offset, length)&lt;/li>
+&lt;li>Memory write: (object_id, offset, length, value)&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>The following code is illegal, since the address is not up to the program but the OS/compiler.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-c" data-lang="c">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">int&lt;/span> *p = &lt;span style="color:#3677a9">0xdeadbeef&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">int&lt;/span> v = *p;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Spatial safety violations&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-c" data-lang="c">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">int&lt;/span> &lt;span style="color:#447fcf">foo&lt;/span>(&lt;span style="color:#6ab825;font-weight:bold">int&lt;/span> x) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">int&lt;/span> arr[&lt;span style="color:#3677a9">16&lt;/span>] = {&lt;span style="color:#3677a9">0&lt;/span>};
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">return&lt;/span> arr[x]; &lt;span style="color:#999;font-style:italic">// array was not initialized fully
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">&lt;/span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">long&lt;/span> &lt;span style="color:#447fcf">foo&lt;/span>() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">int&lt;/span> a = &lt;span style="color:#3677a9">0&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">return&lt;/span> *(&lt;span style="color:#6ab825;font-weight:bold">long&lt;/span> *)(&amp;amp;a); &lt;span style="color:#999;font-style:italic">// reading 8 bytes from a 4 byte valuefg
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">&lt;/span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-c" data-lang="c">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">int&lt;/span> &lt;span style="color:#447fcf">foo&lt;/span>(&lt;span style="color:#6ab825;font-weight:bold">int&lt;/span> *p) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic">// what if p == NULL
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">&lt;/span> &lt;span style="color:#6ab825;font-weight:bold">return&lt;/span> *p + &lt;span style="color:#3677a9">42&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="what-is-temporal-safety" >What is temporal safety?
+&lt;span>
+&lt;a href="#what-is-temporal-safety">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>For any object during a program execution, we know its (object_id, size [int], alive [bool]).&lt;/li>
+&lt;li>For each memory access, we know.
+&lt;ul>
+&lt;li>memory read: (object_id, offset [int], length [int])&lt;/li>
+&lt;li>memory write: (object_id, offset [int], length [int])&lt;/li>
+&lt;li>memory free: (object_id)&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>violations:
+&lt;ul>
+&lt;li>read: status != init&lt;/li>
+&lt;li>write: status == dead&lt;/li>
+&lt;li>free: status == dead&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-c" data-lang="c">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">int&lt;/span> &lt;span style="color:#447fcf">foo&lt;/span>() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">int&lt;/span> *p = &lt;span style="color:#447fcf">malloc&lt;/span>(&lt;span style="color:#6ab825;font-weight:bold">sizeof&lt;/span>(&lt;span style="color:#6ab825;font-weight:bold">int&lt;/span>))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> *p = &lt;span style="color:#3677a9">42&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#447fcf">free&lt;/span>(p);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">return&lt;/span> *p;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-c" data-lang="c">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">int&lt;/span> *ptr
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">void&lt;/span> &lt;span style="color:#447fcf">foo&lt;/span>() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">int&lt;/span> p = &lt;span style="color:#3677a9">100&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ptr = &amp;amp;p;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">int&lt;/span> &lt;span style="color:#447fcf">bar&lt;/span>() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">return&lt;/span> *ptr; &lt;span style="color:#999;font-style:italic">// invalid since address is invalid
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">&lt;/span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-c" data-lang="c">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">int&lt;/span> &lt;span style="color:#447fcf">foo&lt;/span>() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">int&lt;/span> *p = &lt;span style="color:#447fcf">malloc&lt;/span>(&lt;span style="color:#6ab825;font-weight:bold">sizeof&lt;/span>(&lt;span style="color:#6ab825;font-weight:bold">int&lt;/span>))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> *p = &lt;span style="color:#3677a9">42&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#447fcf">free&lt;/span>(p);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#447fcf">free&lt;/span>(p); &lt;span style="color:#999;font-style:italic">// double free&amp;#39;s are undefined behaviour
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">&lt;/span> &lt;span style="color:#6ab825;font-weight:bold">return&lt;/span> *p;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="memory-leak" >Memory Leak
+&lt;span>
+&lt;a href="#memory-leak">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-c" data-lang="c">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">int&lt;/span> &lt;span style="color:#447fcf">foo&lt;/span>() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">int&lt;/span> *p = &lt;span style="color:#447fcf">malloc&lt;/span>(&lt;span style="color:#6ab825;font-weight:bold">sizeof&lt;/span>(&lt;span style="color:#6ab825;font-weight:bold">int&lt;/span>))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">int&lt;/span> *q = &lt;span style="color:#447fcf">malloc&lt;/span>(&lt;span style="color:#6ab825;font-weight:bold">sizeof&lt;/span>(&lt;span style="color:#6ab825;font-weight:bold">int&lt;/span>))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> *p = &lt;span style="color:#3677a9">42&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#447fcf">free&lt;/span>(q);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">return&lt;/span> *p;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="heartbleed-vulnerability-i" >Heartbleed Vulnerability I
+&lt;span>
+&lt;a href="#heartbleed-vulnerability-i">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;h3 id="heartbleed-vulnerability-ii" >Heartbleed Vulnerability II
+&lt;span>
+&lt;a href="#heartbleed-vulnerability-ii">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;h3 id="memory-errors-are-prevalent" >Memory Errors are Prevalent
+&lt;span>
+&lt;a href="#memory-errors-are-prevalent">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>disproportionately high number of memory errors among all security vulnerabiities is that we know memory errors the best&lt;/li>
+&lt;li>memory errors have unniversally accepted definitions (e.g. Stack Overflow website)
+&lt;ul>
+&lt;li>do not need to argue that this is a bug and not a feature&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>gradual adoption of memory-safe languages&lt;/li>
 &lt;/ul></description></item><item><title>SIM Swapping: Why SMS 2FA Is Unsecure</title><link>https://blog.elijahlopez.ca/posts/sim-swapping-why-sms-2fa-is-unsecure/</link><pubDate>Sun, 09 Jul 2023 19:38:38 -0400</pubDate><guid>https://blog.elijahlopez.ca/posts/sim-swapping-why-sms-2fa-is-unsecure/</guid><description>&lt;p>A lot of companies provide their users with SMS for 2FA in case their users reuse passwords across multiple services. However, users who are forced to use SMS 2FA or choose to use SMS 2FA can be left completely insecure, especially with financially related services which oddly use non-token based 2FA (many crypto exchanges).&lt;/p>
 &lt;p>If a criminal wants to steal your cryptocurrency, they are not going to abide by identity theft laws.&lt;/p>
 &lt;p>SIM swapping is when a malicious actor uses your government ID, such as a social security number (USA) or social insurance number (Canada) to pretend to have lost access to their phone, and subsequently call the telecommunication provider to essentially switch over service to their SIM from the old one. Once a valid service is secured, the malicious actor can simply use the password leaks they found and break into your account.&lt;/p>

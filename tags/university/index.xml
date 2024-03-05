@@ -2568,6 +2568,16 @@ Identify alternative policy approaches to dealing with business cycles.&lt;/p>
 &lt;li>&lt;a href="#strip--strap">Strip &amp;amp; Strap&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;/li>
+&lt;li>&lt;a href="#chapter-12---binomial-trees">Chapter 12 - Binomial Trees&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#risk-neutral-valuation">Risk-Neutral Valuation&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#two-step-examples">Two-Step Examples&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#choosing-u-and-d">Choosing u and d&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#options-on-stock-indices-currencies-futures">Options on Stock Indices, Currencies, Futures&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#time-steps">Time Steps&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#black-scholes-merton-model">Black-Scholes-Merton Model&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
 &lt;/ul>
 &lt;/nav>
 &lt;/div>
@@ -4107,6 +4117,115 @@ Left with: .99
 &lt;/h3>&lt;ul>
 &lt;li>Strip: Long call and Two long puts&lt;/li>
 &lt;li>Strap: Two long calls and one long put&lt;/li>
+&lt;/ul>
+&lt;h2 id="chapter-12---binomial-trees" >Chapter 12 - Binomial Trees
+&lt;span>
+&lt;a href="#chapter-12---binomial-trees">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>Series of events where there are two possible outcomes.&lt;/p>
+&lt;p>Stock price is currently $20. In three months it will either be $22 or $18. Suppose call option has strike price 1.&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Delta: Shares for every options shorted&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Value of the portfolio when short a call:&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>20 * delta - f&lt;/code> where f is the value of the option&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>At 22, &lt;code>22 * delta - 1&lt;/code>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>At 18, &lt;code>18 * delta&lt;/code>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>22*delta - 1 = 18 * delta&lt;/code> → &lt;code>delta = 0.25&lt;/code>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>The value in 3 months is 4.5&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Today, &lt;code>4.5 * e^-( -0.12*0.25) = 4.367&lt;/code> where risk-free rate is 12%&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Therefore, 20(0.25) - f = 4.367 → f = 0.633&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Risk less when &lt;code>Delta = (fu - fd) / (S0u - S0d)&lt;/code>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>f = (pfu + (1 - p)fd)e^(-rT)
+-p = (e^(rt) - d) / (u - d)&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="risk-neutral-valuation" >Risk-Neutral Valuation
+&lt;span>
+&lt;a href="#risk-neutral-valuation">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>In a risk-neutral world, stock at time T is worth S&lt;sub>0&lt;/sub>e&lt;sup>rT&lt;/sup>. In original example, p = 0.6523 and option value is e&lt;sup>-0.12*0.25&lt;/sup>(0.6523 * 1 + 0.3477 * 0) = 0.633&lt;/p>
+&lt;h3 id="two-step-examples" >Two-Step Examples
+&lt;span>
+&lt;a href="#two-step-examples">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Valuing a European Call Option&lt;/p>
+&lt;p>&lt;img src="https://blog.elijahlopez.ca/images/bu-423/binomial-tree-two-step-call-option.png" alt="Valuing a Call Option Figure 12.4, page 275">&lt;/p>
+&lt;p>Valuing a European Put Option&lt;/p>
+&lt;p>&lt;img src="https://blog.elijahlopez.ca/images/bu-423/binomial-tree-two-step-put-option.png" alt="Valuing a Put Option Figure 12.7, page 278">&lt;/p>
+&lt;p>Valuing an American Put Option&lt;/p>
+&lt;p>&lt;img src="https://blog.elijahlopez.ca/images/bu-423/binomial-tree-two-step-american-put-option.png" alt="Valuing an American Put Option Figure 12.8, page 279 ">&lt;/p>
+&lt;h3 id="choosing-u-and-d" >Choosing u and d
+&lt;span>
+&lt;a href="#choosing-u-and-d">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>&lt;code>u = e^(sigma sqrt(delta t))&lt;/code>&lt;/li>
+&lt;li>&lt;code>d = 1/u = e^-(sigma sqrt(delta t))&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;h3 id="options-on-stock-indices-currencies-futures" >Options on Stock Indices, Currencies, Futures
+&lt;span>
+&lt;a href="#options-on-stock-indices-currencies-futures">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Same process except p is different&lt;/li>
+&lt;li>Probability of an up move&lt;/li>
+&lt;/ul>
+&lt;p>p = (a - d) / (u - d)&lt;/p>
+&lt;ul>
+&lt;li>Non-Dividend: a = e^(r * delta t)&lt;/li>
+&lt;li>Index with yield q: a = e^((r-q) * delta t)&lt;/li>
+&lt;li>Currency with foreign risk-free rate rf: e^((r-rf) * delta t)&lt;/li>
+&lt;li>Futures: a = 1&lt;/li>
+&lt;/ul>
+&lt;h3 id="time-steps" >Time Steps
+&lt;span>
+&lt;a href="#time-steps">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>At least 30 time steps are required for good option values&lt;/li>
+&lt;li>&lt;a href="https://www-2.rotman.utoronto.ca/~hull/software/index.html">DerivaGem&lt;/a> allows up to 500 time steps&lt;/li>
+&lt;/ul>
+&lt;h3 id="black-scholes-merton-model" >Black-Scholes-Merton Model
+&lt;span>
+&lt;a href="#black-scholes-merton-model">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>price of a European call option as the time step tends to Zero&lt;/li>
 &lt;/ul></description></item><item><title>CS 489 Security</title><link>https://blog.elijahlopez.ca/posts/university/cs-489-security/</link><pubDate>Tue, 09 Jan 2024 11:33:24 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/university/cs-489-security/</guid><description>&lt;!--
 [Learn uWaterloo](https://learn.uwaterloo.ca/d2l/le/content/1005130/Home)
 [Course Website](https://cs.uwaterloo.ca/~m285xu/courses/cs489-w24/)
@@ -6224,6 +6343,209 @@ reasoning process based on each individual’s values, principles, and purpose �
 &lt;/ul>
 &lt;/li>
 &lt;li>Casper (ethereum) depends on trusted nodes to broadcast the correct block hash&lt;/li>
+&lt;/ul>
+&lt;h2 id="common-bugs-and-vulnerabilities" >Common Bugs and Vulnerabilities
+&lt;span>
+&lt;a href="#common-bugs-and-vulnerabilities">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;h3 id="memory-errors" >Memory Errors
+&lt;span>
+&lt;a href="#memory-errors">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>a bug where memory not intended to be read or modified is read or modified&lt;/li>
+&lt;li>Heartbleed Vulnerability
+&lt;ul>
+&lt;li>Tell server more length than actually supplied&lt;/li>
+&lt;li>Server ended up returning more than required string&lt;/li>
+&lt;li>Affected 70%&lt;/li>
+&lt;li>CRA was affected and 900 taxpayers&amp;rsquo; identities were stolen&lt;/li>
+&lt;li>RCMP charged computer science student (unauthroized use of computer and mischeif)&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-c" data-lang="c">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">char&lt;/span> buff[&lt;span style="color:#3677a9">8&lt;/span>];
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">int&lt;/span> correct = &lt;span style="color:#3677a9">0&lt;/span>; &lt;span style="color:#999;font-style:italic">// in GCC convention, this variable will appear before the buff buff[0],...,buff[7],correct
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="von-neumann-architecture" >Von Neumann Architecture
+&lt;span>
+&lt;a href="#von-neumann-architecture">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>CPU does not care about semantics&lt;/li>
+&lt;/ul>
+&lt;h3 id="what-is-memory" >What is Memory
+&lt;span>
+&lt;a href="#what-is-memory">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Text (program code), Stack, Heap, Global (static)&lt;/li>
+&lt;li>Linux x86-64 convetion
+&lt;ul>
+&lt;li>Environment&lt;/li>
+&lt;li>Stack (grows to lower addresses)&lt;/li>
+&lt;li>Heap&lt;/li>
+&lt;li>BSS&lt;/li>
+&lt;li>Data (read from program binary as well - GLOBAL/STATIC)&lt;/li>
+&lt;li>Text (lower address)&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="heap-vs-stack" >Heap vs. Stack
+&lt;span>
+&lt;a href="#heap-vs-stack">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Must be manually managed&lt;/li>
+&lt;li>Any program can apparently use just the stack&lt;/li>
+&lt;/ul>
+&lt;h3 id="what-does-malloc-do" >what does malloc() do?
+&lt;span>
+&lt;a href="#what-does-malloc-do">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>malloc is provided by the clib (e.g. glibc)&lt;/li>
+&lt;li>in low level sense, the program has to check for the next available free memory spot&lt;/li>
+&lt;li>first request big chunk of memory from the OS&lt;/li>
+&lt;li>then the glibc will chunk the 4MB for the program to handle the smaller malloc&amp;rsquo;s&lt;/li>
+&lt;/ul>
+&lt;h3 id="what-does-free-do" >What does free do?
+&lt;span>
+&lt;a href="#what-does-free-do">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>&lt;a href="https://github.com/shellphish/how2heap">How2Heap&lt;/a>&lt;/p>
+&lt;h3 id="what-is-safe-in-memory-safety" >What is safe in memory safety?
+&lt;span>
+&lt;a href="#what-is-safe-in-memory-safety">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Observation 1: At runtime, memory is a pool of objects&lt;/li>
+&lt;li>Observation 2: Each objet has known andlimited &lt;strong>size&lt;/strong> and &lt;strong>lifetime&lt;/strong>&lt;/li>
+&lt;li>Observation 3: Once allocated, the size of an object never changes&lt;/li>
+&lt;li>Observation 4: Memory access is always object-oriented
+&lt;ul>
+&lt;li>Memory read: (object_id, offset, length)&lt;/li>
+&lt;li>Memory write: (object_id, offset, length, value)&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>The following code is illegal, since the address is not up to the program but the OS/compiler.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-c" data-lang="c">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">int&lt;/span> *p = &lt;span style="color:#3677a9">0xdeadbeef&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">int&lt;/span> v = *p;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Spatial safety violations&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-c" data-lang="c">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">int&lt;/span> &lt;span style="color:#447fcf">foo&lt;/span>(&lt;span style="color:#6ab825;font-weight:bold">int&lt;/span> x) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">int&lt;/span> arr[&lt;span style="color:#3677a9">16&lt;/span>] = {&lt;span style="color:#3677a9">0&lt;/span>};
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">return&lt;/span> arr[x]; &lt;span style="color:#999;font-style:italic">// array was not initialized fully
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">&lt;/span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">long&lt;/span> &lt;span style="color:#447fcf">foo&lt;/span>() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">int&lt;/span> a = &lt;span style="color:#3677a9">0&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">return&lt;/span> *(&lt;span style="color:#6ab825;font-weight:bold">long&lt;/span> *)(&amp;amp;a); &lt;span style="color:#999;font-style:italic">// reading 8 bytes from a 4 byte valuefg
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">&lt;/span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-c" data-lang="c">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">int&lt;/span> &lt;span style="color:#447fcf">foo&lt;/span>(&lt;span style="color:#6ab825;font-weight:bold">int&lt;/span> *p) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#999;font-style:italic">// what if p == NULL
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">&lt;/span> &lt;span style="color:#6ab825;font-weight:bold">return&lt;/span> *p + &lt;span style="color:#3677a9">42&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="what-is-temporal-safety" >What is temporal safety?
+&lt;span>
+&lt;a href="#what-is-temporal-safety">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>For any object during a program execution, we know its (object_id, size [int], alive [bool]).&lt;/li>
+&lt;li>For each memory access, we know.
+&lt;ul>
+&lt;li>memory read: (object_id, offset [int], length [int])&lt;/li>
+&lt;li>memory write: (object_id, offset [int], length [int])&lt;/li>
+&lt;li>memory free: (object_id)&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>violations:
+&lt;ul>
+&lt;li>read: status != init&lt;/li>
+&lt;li>write: status == dead&lt;/li>
+&lt;li>free: status == dead&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-c" data-lang="c">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">int&lt;/span> &lt;span style="color:#447fcf">foo&lt;/span>() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">int&lt;/span> *p = &lt;span style="color:#447fcf">malloc&lt;/span>(&lt;span style="color:#6ab825;font-weight:bold">sizeof&lt;/span>(&lt;span style="color:#6ab825;font-weight:bold">int&lt;/span>))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> *p = &lt;span style="color:#3677a9">42&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#447fcf">free&lt;/span>(p);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">return&lt;/span> *p;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-c" data-lang="c">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">int&lt;/span> *ptr
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">void&lt;/span> &lt;span style="color:#447fcf">foo&lt;/span>() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">int&lt;/span> p = &lt;span style="color:#3677a9">100&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ptr = &amp;amp;p;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">int&lt;/span> &lt;span style="color:#447fcf">bar&lt;/span>() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">return&lt;/span> *ptr; &lt;span style="color:#999;font-style:italic">// invalid since address is invalid
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">&lt;/span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-c" data-lang="c">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">int&lt;/span> &lt;span style="color:#447fcf">foo&lt;/span>() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">int&lt;/span> *p = &lt;span style="color:#447fcf">malloc&lt;/span>(&lt;span style="color:#6ab825;font-weight:bold">sizeof&lt;/span>(&lt;span style="color:#6ab825;font-weight:bold">int&lt;/span>))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> *p = &lt;span style="color:#3677a9">42&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#447fcf">free&lt;/span>(p);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#447fcf">free&lt;/span>(p); &lt;span style="color:#999;font-style:italic">// double free&amp;#39;s are undefined behaviour
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">&lt;/span> &lt;span style="color:#6ab825;font-weight:bold">return&lt;/span> *p;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="memory-leak" >Memory Leak
+&lt;span>
+&lt;a href="#memory-leak">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-c" data-lang="c">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">int&lt;/span> &lt;span style="color:#447fcf">foo&lt;/span>() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">int&lt;/span> *p = &lt;span style="color:#447fcf">malloc&lt;/span>(&lt;span style="color:#6ab825;font-weight:bold">sizeof&lt;/span>(&lt;span style="color:#6ab825;font-weight:bold">int&lt;/span>))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">int&lt;/span> *q = &lt;span style="color:#447fcf">malloc&lt;/span>(&lt;span style="color:#6ab825;font-weight:bold">sizeof&lt;/span>(&lt;span style="color:#6ab825;font-weight:bold">int&lt;/span>))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> *p = &lt;span style="color:#3677a9">42&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#447fcf">free&lt;/span>(q);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#6ab825;font-weight:bold">return&lt;/span> *p;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="heartbleed-vulnerability-i" >Heartbleed Vulnerability I
+&lt;span>
+&lt;a href="#heartbleed-vulnerability-i">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;h3 id="heartbleed-vulnerability-ii" >Heartbleed Vulnerability II
+&lt;span>
+&lt;a href="#heartbleed-vulnerability-ii">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;h3 id="memory-errors-are-prevalent" >Memory Errors are Prevalent
+&lt;span>
+&lt;a href="#memory-errors-are-prevalent">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>disproportionately high number of memory errors among all security vulnerabiities is that we know memory errors the best&lt;/li>
+&lt;li>memory errors have unniversally accepted definitions (e.g. Stack Overflow website)
+&lt;ul>
+&lt;li>do not need to argue that this is a bug and not a feature&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>gradual adoption of memory-safe languages&lt;/li>
 &lt;/ul></description></item><item><title>BU 397 Intermediate Financial Accounting II</title><link>https://blog.elijahlopez.ca/posts/bu-397-intermediate-financial-accounting-ii/</link><pubDate>Mon, 08 Jan 2024 17:26:07 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/bu-397-intermediate-financial-accounting-ii/</guid><description>&lt;div>
 &lt;h2>Table of Contents&lt;/h2>
 &lt;nav id="TableOfContents">
