@@ -1047,8 +1047,286 @@ Example
 - Information Leakage
 - IMEI, GPS coordinates, SMS messages, banking information
 
-### Mobile App Security
+## Ethics and Laws
 
-### Mobile User Authentication
+Laws, morality, and theifs are all beliefs, claims, rules, and norms about how we should live and behave
 
-### Convert Channels
+### Cambridge Analytica
+
+- Facebook launched open graph in 2010
+  - External developers can request access to their data and their friends' data
+- In 2013, an app “thisisyourdigitallife” approached to almost
+300,000 users and paid them to take a psychological test.
+- In 2014, Facebook adapted its rules to limit a developer’s access to user data, especially the friends’ data
+- In 2015, The Guardian reported that Cambridge Analytica was
+helping Ted Cruz’s presidential campaign. FB acknowledged the data leak and argued that they have legally pressured Cambridge Analytica to remove all of the data they had improperly acquired
+- In 2016, Cambridge Analytica was responsible for the “Defeat
+Crooked Hilary” video campaign on FB (assisting Trump’s team).
+- Exposed in 2018 by The Guardian because of whistle blower Christopher Wylie. 50 million to 87 million users estimated  to been impacted.
+- Slew of fines. UK UCO 2018: 500,000 pounds, FTC 2019: $5B, SEC 2019: $100M
+
+### Linux Kernel University of Minnesota
+
+- Intentionally adding buggy code and not informing the reviewer beforehand
+
+### What is Law
+
+- Formal rules governing society
+- "Basic" and objectively enforceable
+- Species with great detail what must be done and what not to do
+- Upheld and applied by state-backed justice system
+- Not enough:
+  - lengthy legislative process does not keep up with technology
+  - very narrow focus
+
+![Legislative prccess in Canada](/images/cs-489-security/canada-legislative-process.png)
+
+### Non-Violations of Law
+
+- mood manipulation study by Facebook in 2012
+  - news feed was scweed by facebook scientists
+  - some people were shown content with more positive words
+  - others were shown content sadder than average
+  - Finding 1: more negative &rarr; negative status messages
+  - Finding 2: neutral content &rarr; reduction in words produced by person
+- Facebook had this in its terms and services
+
+### What is Morality
+
+- informal framework of values, principles, beliefs, customs, ways of living
+- social pressure
+- an individual strongly bounded to a moral system may consider questioning the moral system as wrong
+- unconscious formation: family, community, culture
+- habit without explicit thinking and reasoning process
+- rarely a moral authority agreed by every individual
+
+### Ethics
+
+- Branch of philosphy that answers **what should I do?** out of all possibilities
+- ethical decision is a conscious
+reasoning process based on each individual’s values, principles, and purpose — do something that is good, right, and meaningful
+- ethics is the framework to reason about issues that the laws cannot or do not address
+- Ethics is the framework to examine a moral system to see whether the principles and rules there make sense
+- ethical reflections shape laws and moral systems a society will develop
+
+### Responsible DIsclosure
+
+Suppose a vulnerability is found, what should you do?
+
+- coordinated vulnerability disclosure
+  - private full disclosure to all responsible parties (e.g., software vendors for most software bugs)
+- wait for patch (90 to 120 days)
+- public partial disclosure to pressure responsible parties
+- public full disclosure in the interests of pontential victims
+
+### Building Ethically
+
+- Get as many **dissenting** voices as possible
+- Explain how something works, what can go wrong, how can bad actors take advantage of non-experts
+- privacy and data protection norms vary accross regions
+- consult other experts
+
+### Non-Experts
+
+- does it work as intended?
+- who does this effect?
+- does data need to be collected?
+- tool not working?
+- failure modes? abuses?
+- who is effected?
+
+### Independent Experts
+
+Insitutional review boards (IRB), independent ethics committee (iEC), ethical review boards (ERB), research ethics board (REB).
+
+### Professional Codes
+
+- Association for Computing Machinery (ACM)
+- Institute of Electrical and Electronics Engineers (IEEE)
+- Canadian Information Processing Society (CIPS)
+  - Protect Public Interest and Maintain Integrity
+  - Demonstrate Competence and Quality of Service
+  - Maintain Confidential Information and Privacy
+  - Avoid Conflicts of Interest
+  - Uphold Responsibility to the IT Professi
+
+### Legal Protections
+
+In contrast to real property, so-called “intellectual property” (IP) differs in important ways:
+
+- It is non-depletable
+- It is replicable
+- It has minimal marginal cost
+
+Four kinds
+
+- Trade secrets
+- Trademarks
+- Patents
+- Copyright
+
+What?
+
+- differnet intangible
+- different rights
+- different durations
+- different registration process
+
+### Trade Secrets
+
+- people you have to tell are not able to pass it on
+
+Reverse engineering
+
+- figuring out how something works or taking it apart to figure out how it works
+- trade secret protection is lost
+- Kerckhoffs’s principal: do not depend on secrecy for cryptographic security. RC4 was reverse engineered in 1994
+
+### Trademarks
+
+- names, brands, logos, domain names
+- make a legal filing showing that you are using the name in commerce
+- have to be renewed
+
+### Patents
+
+- inventions including algorithms
+  - Novel
+  - Useful
+  - Non-obvious
+- many cryptographic patents
+
+### Copyright
+
+- Protects expressions of ideas but not the ideas themselves
+- Life + 50 in Canada, Life + 70 in USA
+
+### Cyber Crime
+
+- Bizarre rulings:
+  - value of stolen data was the value of the paper it was printed on
+  - value of stolen manual was equivalent to equipment it was for
+- Computer forensics (admissibility)
+- Cybercrime treaty
+  - computer crime is often international
+  - The Council of Europe cybercrime treaty
+    - "making it easier for law enforcement to access telecommunications traffic (including voice, data, and Internet)"
+
+## Non-technical Aspects of Security
+
+### Security Plan
+
+- what security goals
+- how are they met?
+- how they will stay met
+
+Seven parts
+
+- Policy: high-level goals and priorities
+- Current state: risk analysis, anticipation of new situations
+- Requirements: what are the security and privacy needs
+- Recommended controls: how to provide those needs
+- Accountability: who is responsible for what
+- Timetable: when the elements of the plan will be performed
+- Continuing attention: how often the plan should be updated
+
+### Developing the Security Plan
+
+Input from several constituencies
+
+- Upper management / CTO / CIO (setting policy)
+- IT (hardware group, sysadmins)
+- Systems and application programmers, DB admins
+- Data entry personnel
+- Physical security personnel
+- Representative users
+- External consulting / advisory board
+
+### Business Continuity Plan
+
+A way out of availability situations,
+
+- Catastrophic: a large part (or all) of a computing capability is suddenly unavailable
+- Long duration: the outage is expected to last for so long that business would suffer if left unattended
+
+Need redundancy and arrange backups and training employees. What about live testing?
+
+### Risk Analysis
+
+- Identify assets
+  - Hardware
+  - Software
+  - Data
+  - Documentation
+  - Procedures
+  - Reputation
+- Determine vulnerabilities
+  - Threat modeling
+  - Think like an attacker and be very creative, even outlandish
+- Estimate likelihood of exploitation
+  - acturial science
+  - what is the chance of a buffer overflow bug with arbitrary code execution? With stack canaries? with ASLR?
+- Compute risk exposure
+  - legal obligations
+  - penalities
+  - harm
+  - value of keeping it away from competitors
+  - cost of delaying or out sourcing data processing when systems down
+- Survey applicable controls
+  - different ways to control vulnerabilities
+- Project savings due to control
+  - savings = risk exposure - cost of control - new risk exposure
+  - when savings >= 0, apply control (risk averse); insurance.
+
+### Physical Security
+
+- attacker steals laptop off of desk
+
+## Blockchain
+
+- each block contains a hash of the previous block
+- header: hash of previous block and hash of current block's payload
+  - this is better because ensures authencity of the payload
+- payload: app specific info
+- Making it harder to revert transactions:
+  - Ensure that the first k bits of the header hash starts with 0. Expect 2<sup>k</sup> hash operations to find a valid N such that header is `HN...R`
+- N is nonce. Need to find a nonce such that the header hash remains unchanged
+- Deterrent: longer chains are preferred over shorter chains
+  - Need hash power equal to blocks between chain head and the crucial block times 2<sup>k</sup>
+  - would need to mine slower than the rest of the participants
+
+### Confrmation Level
+
+- Why do we need extra blocks when there is no 51% power?
+- Pre-mining of a block which is revealed after transaction is sent
+- Send two transactions in a short window to trigger a fork
+- Send two transactions to seperate haves of the network
+- Drawbacks:
+  - slow confirmation (10 minutes to confirm on bitcoin, with waiting for 6)
+  - vulnerable to 51%
+  - energy consumption since hashing doesn't do anything else
+    - running a payment system is important though
+
+### Proof of Stake
+
+- Chance of node being elected to propose a new block is proportional to its staked value
+- collisions not allowed, only leader creates a block
+- If more than 50% of staked resources are controled, then attacker can prove fraudulent transactions
+  - Attacker loses the weapon to future attacks, and is not easily recoverable
+  - Solution is to hard fork to invalidate fradulent transactions added by attacker
+  - social coordination is required
+
+### Chain Validation (Nothing at Stake)
+
+- Attacker double spends (1% stake)
+- Next block proposer has no incentive to select which chain to converge on and has no idea which chain survives in the future, so mines both
+- When it's alice's turn again, she chooses the favouralbe block
+- Ethereum Slash protocol
+  - Penalize those who "equivocated" (voted on two different versions)
+  - Penalize those who voted on the wrong block regardless of if they double-voted
+
+### Long Range Attacks (Bootstrapping)
+
+- Bob first joins the network, which chain to accept?
+  - Not expensive at all to create a counterfeit chain
+- Casper (ethereum) depends on trusted nodes to broadcast the correct block hash

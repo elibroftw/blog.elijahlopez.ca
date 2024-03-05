@@ -646,3 +646,21 @@ CMD bundle exec jekyll serve
 
 - Python runtime on the development machine
 - Choice of Python runtime on development machine imposes constraints on the runtime that can be used in production
+
+## Infrastructure as Code
+
+- What is configuration?
+  - Networking
+  - Kernel features
+- Application and Middleware
+  - Spring Boot
+    - bean configuration
+    - Component settings
+- httpd:
+  - plugins
+  - documentroot
+  - SSL
+
+Writing configuration as code. Can be stored in a VCS. Manage and provision machines using code-like syntax rather tha interactive configuration tools. Automatically executed to perform tasks.
+
+Technologies: puppet, chef, terraform, ansible, SaltStack

@@ -1160,6 +1160,7 @@ Identify alternative policy approaches to dealing with business cycles.
 ### Full Equilibrium
 
 - for the classical theory, full equilibrium (FE) condition which relaxes the Keynesian assumption of fixed wages in the labour market
+- A situation in which all markets in an economy are simultaneously in equilibrium is called a **general equilibrium**
 
 ![FE Line is vertical at Y line](/images/ec-250/fe-line.png)
 
@@ -1198,7 +1199,7 @@ Basically, higher the price, lower the real interest rate. There is a different 
 
 ![liquidity-money vs. interest real interest rate](/images/ec-250/lm-curve.png)
 
-All Else Equal, an Increase in | Shifts the IS Curve | Reason
+All Else Equal, an Increase in | Shifts the LM Curve | Reason
 --------------------------------------- | --------------------------- | ----------------------
 Nominal money supply, <i>M</i> | Down-right | Real money supply increases, lowering the real interest rate
 Price level, <i>P</i> | Up-left | Real money supply falls, raising real interest rate that clears the asset market
@@ -1206,6 +1207,8 @@ Expected inflation, pi<sup>e</sup> | Down-right | Demand for money falls, loweri
 Nominal interest rate on money, i<sup>m</sup> | Up-left | Demand for money increases, raising the real interest rate that clears the asset market
 
 ### Temporary Adverse Supply Shock
+
+![Effects of a Temporary Adverse Supply Shock](/images/ec-250/temporary-adverse-supply-shock.webp)
 
 - Productivity falls temporarily,
 
@@ -1218,6 +1221,8 @@ Nominal interest rate on money, i<sup>m</sup> | Up-left | Demand for money incre
 What is not consistent is that the real interest rate might not increase due to mismatched expectations; apparently if the shock is expected to be permanent, rates would not rise; the lesson says the shock was temporary, but historic oil prices shows that the oil prices stayed steady after 1974 till the next shock, whereas oil prices decreased after 1980. Real interest rates only rise if the expectation is that it is temporary.
 
 1973-1974 Oil shock: USA gave $2.2B to Israel and OAPEC (OPEC Arab countries) decided to have an oil embargo on the USA. It is pretty clear that people would think this shock would be permanent. It's not really clear why oil prices remained high even after the embargo ended in 1974. Prices most likely remained the same due to the devaluation of the USD by that time.
+
+Constant: Government spending and nominal money supply
 
 ### Monetary Expansion
 
@@ -1247,3 +1252,21 @@ The relationship between price levels and output
 ![aggregate demand curve](/images/ec-250/aggregate-demand-curve.png)
 
 Factors that shift the curve is when the IS or LM shift while keeping the price level constant.
+
+### Chapter 9 Quiz Questions
+
+Suppose the aggregate demand curve is given by the​ equation: `Y =540 +30M/P`.
+
+The​ full-employment level of output is 1,500 and the current nominal money supply is 15. If the economy is in​ full-employment equilibrium, calculate the current price level.
+
+P = enter your response here
+
+With the price level fixed at 0.469​, suppose the nominal money supply changes by 3 and is now 18.
+
+Now find the​ short-run equilibrium level of output.
+
+Y = enter your response here
+
+To return to​ long-run equilibrium, the price level must​ adjust, shifting the​ short-run aggregate supply curve. The​ long-run equilibrium price level​ is:
+
+P = enter your response here

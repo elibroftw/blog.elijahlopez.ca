@@ -307,6 +307,14 @@ Stack overflow users do not understand this question. What you are looking for i
 
 You see, I had this problem with Flutter in 2020, but three years later and 50 google searches I found out that what I wanted is called "foreground service" which requires registering a foreground service (one max) and a persistent notification. If you want to do stuff in the "background" without showing a notification the first time, that's not exactly morally correct and you'll be having a very tough time implementing it.
 
+### Command PhaseScriptExecution failed with a nonzero exit code. node not found or does not exist
+
+Solution:
+
+open `ios/.xcode.env.local` and delete the line starting with `export NODE_BINARY`.
+
+It seems that XCode and by way a human being decided it was a good idea to hardcode a path to a node binary that doesn't exist and overrides whatever the developer is using.
+
 ## A Note to Future Developers
 
 Make two apps. It's much better. Learn both Swift and Kotlin. Write feature in Kotlin, write feature again in Swift. Less time wasted due to these react-native specific conflicts.

@@ -1403,3 +1403,164 @@ Impact of written put options on EPS numbers.
 Suppose 1,500 put options with a strike price of $30 were exercised when the market price was $20.
 
 Shares issued: (1,500 * 30 / 20 - 1500) = 750
+
+## Chapter 20 - Leases
+
+### What is a Lease?
+
+- contractual agreement between _lessor_ and a _lessee_
+  - lessee has a right to use property owned by the lessor
+- provisions
+  - lease term or duration
+  - lease payments (sales, interest rate, price index)
+  - taxes, insurance, maintenance on lessee or lessor or shared
+  - early termination or non-cancellable
+  - default: lessee pays balance or lessor sells asset to third party and recoup shortfall from teh lesee
+  - end: return to lease (_simple termination_), or renewal, or purchase at nominal price, or _bargaining purchase option_ (lessee benefits)
+
+### Advantages
+
+- 100% financing at fixed rates with no money down and fixed payments
+- no obsolescent risk
+
+### Conceptual Nature of Leases
+
+Does it go on the balance sheet?
+
+1. Executory: both parties need to perform; no capitalization
+2. Classification approach: economic substance; instalment purchases are capitalized so lease with similar characteristics should be
+3. Contract-based approach: asset is not a physical property but a right-to-use; liability is to make lease payments (rental payment minus expenses paid by lessor)
+
+ASPE allows many operating leases but IFRS has limits.
+
+### GAAP  Lease Treatments
+
+- ASPE: classification approach
+  - Similar to instalment purchases
+  - All benefits and risks is transferred
+  - Other leases should be reported as expense and not on balance sheet
+  - 3 tests, short-circuit pass
+  - transfer of ownership: is there assurance that the lesse will take ownership at the end of term
+  - economic life tests: leasing for 75% of the asset's economic life
+  - recovery of investment by lessor: present value of the  lease is 90% of more of the asset's market price
+- IFRS: contract-based approach
+  - identified asset for a period of time
+  - service component excluded from lease accounting
+
+Example: Is it a lease for IFRS?
+
+Airport operator, use of space for three years. The supplier has the right to change the location at any time. Minimal cost to customer who owns the kiosk used to sell the goods. Many areas would fit the need.
+
+Since the space can change, it cannot be identified and so there is no lease.
+
+### Low-Value Leases and Lease Portfolios (IFRS)
+
+- not real estate
+- not manufacturing equipment
+- cars for sales and management become a portfolio but are not low value
+- IT equipment are low-value
+- Servers with many individual modules are large values
+- Office equipment and furniture are low value
+
+### Dealing with On Balance Sheet Lease
+
+### Dealing with Off Balance Sheet Lease
+
+### Lease Payment Required for a Rate of Return
+
+- Variables
+  - Lessee's credit standing
+  - Length of the lease
+  - Status of residual value (guaranteed or unguaranteed)
+  - Income tax effects
+- Initial costs added to investment ot be recovered (similar to initial capex in a DCF)
+- Deduct: PV of the purchase option and PV of the residual value
+
+Example
+
+We want a 10% return on $100,000 investment in an asset that is to be lease for 5 years. Annual rent is due in advance each year (annuity due). No purchase option, bargain purchase option, or residual value.
+
+```accounting
+PV = 100,000 = x+ x/(1+0.1) + x/(1+0.1)^2
+100000 = x(1 + 1/...) = (1 + (1 - (1 + r)^-(n - 1)/r))
+100000 = x * 4.1699
+x = $23,982
+```
+
+### PV of Lease Payments Calculation
+
+- Minimum rental payments
+- Amounts guaranteed: maximum amount required by lessor to pay at the end of the lease
+- Bargain purchase option (BPO): pay significant lower amount at the end of lease
+- Need to subtract executory costs by the lessor
+
+1. Implicit rate: PV minimum lease payments plus un-guaranteed residual value = FV of underlying
+2. Lessee's incremental borrowing rate (equivalent funds were borrowed for a similar term and similar security)
+
+ASPE: lower of the two rates used to ensure that the lessee does not get a lower PV.
+
+### Right-of-use assets under IFRS
+
+```accounting
+1-Sep | contract initiated with first payment
+Right-of-use Asset      23,769
+  Lease Liability                18,769
+  Cash                                5,000
+
+31-Dec  | 4 months depreciation
+Depreciation Expense 1,320
+  Accumulated-Dep ROU Asset 1,320
+
+31-Dec | 4 months interest
+Interest Expense  1667
+  Interest Payable      1667
+```
+
+### Capital Leases Under ASPE
+
+### Lease Liability ASPE vs. IFRS
+
+- IFRS
+  - Lease liability (PV)
+  - Right-of-use-asset (lease liability plus payments already made)
+- ASPE
+  - Obligation under lease: under lease minus lease payments already made
+  - Asset under lease = lower of: PV of minimum lease payments and fair value at lease's inception
+
+Example
+
+It's January 1st, rental payments of 25,981.62, no options at the end of the term, fair value of $100,000 and lasts for 5 years without residual value. Straight-line depreciation methods. Lessee pays executory costs except for $2,000 baked into the payment. Borrow rate is 11% however Lessor uses 10% which is known to Lessee.
+
+- Discount rate: for IFRS it is 10%, under ASPE it is MIN(10%, 11%)
+- Guaranteed amount is 0
+- Lease payment is 25,981.62 - 2,000 = 23,981.62
+
+PV works out to 100,000 using a financial calculator or the annuity due table.
+
+Therefore, amount to be capitalized is $100,000 and initial liability is 100,000 - 23,981.62 = 76,018.
+
+```accounting
+# Jan 1 2023 IFRS
+Right-of-Use Asset    100,000
+  Lease Liability             76,018
+  Cash                        23,982
+# Jan 1 2023 ASPE
+Equipment under lease 100,000
+  Obligations under lease    76,018
+  Cash                                23,982
+
+Maintenance Expense      DR 2,000
+  Cash                                CR 2,000
+
+# lease payment
+Maintenance Expense DR 2,000
+Lease Liability or Obligations under lease  DR 23,982
+  Cash                  CR 25,982
+# returned to lessor
+Acc. Dep 100,000
+  Right of use Asset or Equipment under lease     100,000
+# purchase ownership
+Right of use Asset or Equipment under lease     DR 105,000
+  Acc. Dep CR 100,000
+  Cash CR 5,000
+```
