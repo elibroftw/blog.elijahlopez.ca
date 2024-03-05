@@ -1330,3 +1330,155 @@ Need redundancy and arrange backups and training employees. What about live test
 - Bob first joins the network, which chain to accept?
   - Not expensive at all to create a counterfeit chain
 - Casper (ethereum) depends on trusted nodes to broadcast the correct block hash
+
+## Common Bugs and Vulnerabilities
+
+### Memory Errors
+
+- a bug where memory not intended to be read or modified is read or modified
+- Heartbleed Vulnerability
+  - Tell server more length than actually supplied
+  - Server ended up returning more than required string
+  - Affected 70%
+  - CRA was affected and 900 taxpayers' identities were stolen
+  - RCMP charged computer science student (unauthroized use of computer and mischeif)
+
+```c
+char buff[8];
+int correct = 0; // in GCC convention, this variable will appear before the buff buff[0],...,buff[7],correct
+```
+
+### Von Neumann Architecture
+
+- CPU does not care about semantics
+
+### What is Memory
+
+- Text (program code), Stack, Heap, Global (static)
+- Linux x86-64 convetion
+  - Environment
+  - Stack (grows to lower addresses)
+  - Heap
+  - BSS
+  - Data (read from program binary as well - GLOBAL/STATIC)
+  - Text (lower address)
+
+### Heap vs. Stack
+
+- Must be manually managed
+- Any program can apparently use just the stack
+
+### what does malloc() do?
+
+- malloc is provided by the clib (e.g. glibc)
+- in low level sense, the program has to check for the next available free memory spot
+- first request big chunk of memory from the OS
+- then the glibc will chunk the 4MB for the program to handle the smaller malloc's
+
+### What does free do?
+
+[How2Heap](https://github.com/shellphish/how2heap)
+
+### What is safe in memory safety?
+
+- Observation 1: At runtime, memory is a pool of objects
+- Observation 2: Each objet has known andlimited **size** and **lifetime**
+- Observation 3: Once allocated, the size of an object never changes
+- Observation 4: Memory access is always object-oriented
+  - Memory read: (object_id, offset, length)
+  - Memory write: (object_id, offset, length, value)
+
+The following code is illegal, since the address is not up to the program but the OS/compiler.
+
+  ```c
+  int *p = 0xdeadbeef;
+  int v = *p;
+  ```
+
+Spatial safety violations
+
+```c
+int foo(int x) {
+  int arr[16] = {0};
+  return arr[x]; // array was not initialized fully
+}
+
+long foo() {
+  int a = 0;
+  return *(long *)(&a); // reading 8 bytes from a 4 byte valuefg
+}
+```
+
+```c
+int foo(int *p) {
+  // what if p == NULL
+  return *p + 42;
+}
+```
+
+### What is temporal safety?
+
+- For any object during a program execution, we know its (object_id, size [int], alive [bool]).
+- For each memory access, we know.
+  - memory read: (object_id, offset [int], length [int])
+  - memory write: (object_id, offset [int], length [int])
+  - memory free: (object_id)
+- violations:
+  - read: status != init
+  - write: status == dead
+  - free: status == dead
+
+```c
+int foo() {
+  int *p = malloc(sizeof(int))
+  *p = 42;
+  free(p);
+  return *p;
+}
+```
+
+```c
+int *ptr
+
+void foo() {
+  int p = 100;
+  ptr = &p;
+}
+
+int bar() {
+  return *ptr; // invalid since address is invalid
+}
+```
+
+```c
+int foo() {
+  int *p = malloc(sizeof(int))
+  *p = 42;
+  free(p);
+  free(p); // double free's are undefined behaviour
+  return *p;
+}
+```
+
+### Memory Leak
+
+```c
+int foo() {
+  int *p = malloc(sizeof(int))
+  int *q = malloc(sizeof(int))
+  *p = 42;
+  free(q);
+  return *p;
+}
+```
+
+### Heartbleed Vulnerability I
+
+### Heartbleed Vulnerability II
+
+### Memory Errors are Prevalent
+
+- disproportionately high number of memory errors among all security vulnerabiities is that we know memory errors the best
+- memory errors have unniversally accepted definitions (e.g. Stack Overflow website)
+  - do not need to argue that this is a bug and not a feature
+- gradual adoption of memory-safe languages

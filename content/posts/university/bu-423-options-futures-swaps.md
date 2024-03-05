@@ -944,3 +944,67 @@ Answer: graphically or using put-call parity
 
 - Strip: Long call and Two long puts
 - Strap: Two long calls and one long put
+
+## Chapter 12 - Binomial Trees
+
+Series of events where there are two possible outcomes.
+
+Stock price is currently $20. In three months it will either be $22 or $18. Suppose call option has strike price 1.
+
+- Delta: Shares for every options shorted
+- Value of the portfolio when short a call:
+- `20 * delta - f` where f is the value of the option
+- At 22, `22 * delta - 1`
+- At 18, `18 * delta`
+- `22*delta - 1 = 18 * delta` &rarr; `delta = 0.25`
+- The value in 3 months is 4.5
+- Today, `4.5 * e^-( -0.12*0.25) = 4.367` where risk-free rate is 12%
+- Therefore, 20(0.25) - f = 4.367 &rarr; f = 0.633
+
+- Risk less when `Delta = (fu - fd) / (S0u - S0d)`
+- f = (pfu + (1 - p)fd)e^(-rT)
+-p = (e^(rt) - d) / (u - d)
+
+### Risk-Neutral Valuation
+
+In a risk-neutral world, stock at time T is worth S<sub>0</sub>e<sup>rT</sup>. In original example, p = 0.6523 and option value is e<sup>-0.12\*0.25</sup>(0.6523 \* 1 + 0.3477 \* 0) = 0.633
+
+### Two-Step Examples
+
+Valuing a European Call Option
+
+![Valuing a Call Option Figure 12.4, page 275](/images/bu-423/binomial-tree-two-step-call-option.png)
+
+Valuing a European Put Option
+
+![Valuing a Put Option Figure 12.7, page 278](/images/bu-423/binomial-tree-two-step-put-option.png)
+
+Valuing an American Put Option
+
+![Valuing an American Put Option Figure 12.8, page 279 ](/images/bu-423/binomial-tree-two-step-american-put-option.png)
+
+### Choosing u and d
+
+- `u = e^(sigma sqrt(delta t))`
+- `d = 1/u = e^-(sigma sqrt(delta t))`
+
+### Options on Stock Indices, Currencies, Futures
+
+- Same process except p is different
+- Probability of an up move
+
+p = (a - d) / (u - d)
+
+- Non-Dividend: a = e^(r * delta t)
+- Index with yield q: a = e^((r-q) * delta t)
+- Currency with foreign risk-free rate rf: e^((r-rf) * delta t)
+- Futures: a = 1
+
+### Time Steps
+
+- At least 30 time steps are required for good option values
+- [DerivaGem](https://www-2.rotman.utoronto.ca/~hull/software/index.html) allows up to 500 time steps
+
+### Black-Scholes-Merton Model
+
+- price of a European call option as the time step tends to Zero
