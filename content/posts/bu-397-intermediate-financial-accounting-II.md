@@ -1497,7 +1497,8 @@ x = $23,982
 1. Implicit rate: PV minimum lease payments plus un-guaranteed residual value = FV of underlying
 2. Lessee's incremental borrowing rate (equivalent funds were borrowed for a similar term and similar security)
 
-ASPE: lower of the two rates used to ensure that the lessee does not get a lower PV.
+- ASPE: lower of the two rates used to ensure that the lessee does not get a lower PV.
+- IFRS: use Lessor's implicit rate
 
 ### Right-of-use assets under IFRS
 
@@ -1564,3 +1565,31 @@ Right of use Asset or Equipment under lease     DR 105,000
   Acc. Dep CR 100,000
   Cash CR 5,000
 ```
+
+For the interest expense adjustment entry, don't credit payable but rather the obligations or the liability.
+
+<details><summary>In-class Practice (Shrek and Fiona)</summary>
+
+```accounting
+9yr useful life
+7 year term
+4,300,000
+8% incremental borrowing rate vs. 6% implicit
+100,000 end payment
+
+Annuity due
+The lease payment is PMT(6%, 9, 4300000 - 100000/1.06^7, 0, 1) = -$715,441
+The PV of the lease payments is 4,240,810 and PV of the lease is 4,300,000
+This is a right-of-use lease that should be capitalized since it is not short-term or low-value. There is an identifiable asset.
+
+Right-of-use Asset Dr. 4,300,000
+  Lease liability         Cr. 3,584,559.36
+  Cash                      Cr. 715,441
+
+Interest expense 215,074 (6% of lease liability)
+  Lease liability 215,074
+Depreciation expense              Dr. 477778
+  Accumulated depreciation          Cr. 477778
+```
+
+</details>
