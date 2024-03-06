@@ -411,6 +411,14 @@ COUPON_FOR_PERIOD e^(-HALF_YEAR_CTN_CMPDNG * 0.5) + 3e^(-r*1) = 97
 - (R2T2 - R1T1) / (T2 - T1)
 - Approximately true when rates are not expressed with continuous compounding
 
+### Interest Rate Swap
+
+- One person pays a fixed rate and the other pays a floating rate
+- For the person paying a fixed rate (and receiving a floating rate) the credit risk is
+  - The floating rate is expected to decrease based on the term structure (upward sloping)
+  - Interest rates decline unexpectedly
+- credit risk is greater when term structure slopes downward (market expects interest rates to decrease in the long term) and the risk exposure increases when interest rates decline
+
 ### Forward Rate Agreement (FRA)
 
 - OTC agreement that a certain LIBOR rate will apply to a certain principal during a certain future time period
@@ -705,7 +713,7 @@ PAY | 1.5M | 1.5M | 1.5M
 RECEIVE | 1.45 |  1.745  | 1.867
 Calculation | 2.9%/2 \* 100 | 3.429%/2 \* 100 | 3.734%/2 \* 100
 
-Discount by the OIS Rate using the continuous compounding formula.
+Discount by the OIS Rate using the continuous compounding formula (Pe^(-rT)).
 
 Alternatively, value both cashflows as Bonds and value as the difference.
 
@@ -800,9 +808,11 @@ T | ? | ? | + | +
 r | + | - | + | -
 D | - | + | - | +
 
+Essentially, the european options differ in one way which is that the longer the time to expiration does not guarantee a higher price.
+
 ### Lower Bound for European Call Option Prices; No Dividends
 
-<img class=equation src="https://latex.codecogs.com/svg.image?c>=max{S_0-Ke^{-rT}, 0}" alt="c>=max{S_0-Ke^{-rT}, 0}">
+<img class=equation src="https://latex.codecogs.com/svg.image?c>=\max(S_0-Ke^{-rT}, 0)" alt="c>=max{S_0-Ke^{-rT}, 0}">
 
 Is there an arbitrage opportunity if  c = 3, T = 1, K = 18, S<sub>0</sub> = 20, r = 10%, D = 0?
 
@@ -814,7 +824,7 @@ Strategy: Short stock to get $20. Buy call for $3. Invest $17 at the risk free r
 
 Is there an arbitrage when the put premium is $1, T = 0.5, S = 37, r = 5%, K = 40, D = 0?
 
-<img class=equation src="https://latex.codecogs.com/svg.image?p>=max(Ke^{-rT}-S_0,0)" alt="p>=max(Ke^{-rT}-S_0,0)">
+<img class=equation src="https://latex.codecogs.com/svg.image?p>=\max(Ke^{-rT}-S_0,0)" alt="p>=max(Ke^{-rT}-S_0,0)">
 
 p = 1 >= 2.01
 
@@ -872,6 +882,7 @@ Need to read Chapter 10 again.
 
 - Buy ITM call
 - Sell OTM call
+- Maximum loss is the net premium paid
 
 ### Bull Spread Using Puts
 
@@ -882,6 +893,7 @@ Need to read Chapter 10 again.
 
 - Buy OTM call
 - Sell ITM call
+- Net Premium received is the maximum gain
 
 ### Bear Spread Using Puts
 
@@ -929,6 +941,8 @@ Answer: graphically or using put-call parity
 - Long call ITM
 - Long call OTM
 - Short 2 calls ATM
+- Benefit from flat stock
+- [Butterfly using Puts](https://www.fidelity.com/learning-center/investment-products/options/options-strategy-guide/long-butterfly-spread-puts)
 
 ### Calendar Spread Using Calls
 
@@ -938,7 +952,8 @@ Answer: graphically or using put-call parity
 ### Strangle Combination
 
 - Make money when volatility is higher
-- OTM Put and OTM Call
+- Purchase OTM Put and OTM Call
+- Breakeven stock price is the strike price(s) +- net premiums paid (+ for call and - for put)
 
 ### Strip & Strap
 
