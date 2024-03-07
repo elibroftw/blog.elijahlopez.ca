@@ -2318,6 +2318,124 @@ reasoning process based on each individual’s values, principles, and purpose �
 &lt;/ul>
 &lt;/li>
 &lt;li>gradual adoption of memory-safe languages&lt;/li>
+&lt;/ul>
+&lt;h2 id="common-bugs" >Common Bugs
+&lt;span>
+&lt;a href="#common-bugs">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;h3 id="unsafe-integer-operations" >Unsafe integer operations
+&lt;span>
+&lt;a href="#unsafe-integer-operations">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Mathemetical integers are unbounded&lt;/li>
+&lt;li>Machine integers are bounded by a fixed number of bits&lt;/li>
+&lt;/ul>
+&lt;p>Best way to bounds check is to check if the old balance is subtractable and that the value is less than or equal to than the max that can be added (MAX - old balance).&lt;/p>
+&lt;h3 id="common-integer-overflow-and-underflow-cases" >Common Integer Overflow and Underflow Cases
+&lt;span>
+&lt;a href="#common-integer-overflow-and-underflow-cases">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>signed ⇆ unsigned&lt;/li>
+&lt;li>size-decreasing cast (truncate)&lt;/li>
+&lt;li>see slides for more&lt;/li>
+&lt;/ul>
+&lt;h3 id="unsafe-floating-point-operations" >Unsafe Floating-point operations
+&lt;span>
+&lt;a href="#unsafe-floating-point-operations">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>floating-point number are bounded by a limited precision&lt;/li>
+&lt;li>The Perils of Floating Point&lt;/li>
+&lt;/ul>
+&lt;h3 id="pointer-relational-comparison" >Pointer Relational Comparison
+&lt;span>
+&lt;a href="#pointer-relational-comparison">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>in memory, for the same struc, the properties do appear in memory order&lt;/li>
+&lt;li>therefore, &amp;amp;structInstance.one &amp;amp;structInstance.two&lt;/li>
+&lt;li>however stack variables are not guarnateed to be in a certain order&lt;/li>
+&lt;/ul>
+&lt;h3 id="insufficient-sanitization-on-untrusted-input" >Insufficient Sanitization on Untrusted Input
+&lt;span>
+&lt;a href="#insufficient-sanitization-on-untrusted-input">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>SQL unescaped input&lt;/li>
+&lt;/ul>
+&lt;h3 id="format-strings" >Format Strings
+&lt;span>
+&lt;a href="#format-strings">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>printf is very powerful&lt;/li>
+&lt;li>&lt;code>%7$11x&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;h3 id="same-origin-policy" >Same-origin policy
+&lt;span>
+&lt;a href="#same-origin-policy">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>two urls sharing same uri schem (ftp, http, https)&lt;/li>
+&lt;li>untrusted input shown to another user can trigger a cross-site scripting attack since the user input was not sanitized&lt;/li>
+&lt;/ul>
+&lt;h3 id="untrusted-logic" >Untrusted Logic
+&lt;span>
+&lt;a href="#untrusted-logic">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>In 2016, an attacker exploited a vulnerability in Ethereum&amp;rsquo;s DAO smart contract. The attacker drained more than $3.6M.&lt;/li>
+&lt;li>&lt;code>msg.sender.call.value(_weiToWithdraw())&lt;/code>&lt;/li>
+&lt;li>Reentrancy attack
+&lt;ul>
+&lt;li>before the checks are finished, call withdraw again which will pass all checks since the timestamp was not updated yet&lt;/li>
+&lt;li>that means that the function is recursively called until the contract&amp;rsquo;s internal store of the balance is exhausted&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>fix:
+&lt;ul>
+&lt;li>first do the book keeping then call the function&lt;/li>
+&lt;li>wrap function with mutex variables&lt;/li>
+&lt;li>require the mutex to be false at the beginning of the function call&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>Solidiity callback function: runs when money is sent to the contract or is interacted with&lt;/p>
+&lt;h3 id="data-race" >Data Race
+&lt;span>
+&lt;a href="#data-race">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>to avoid data races, need a way to synchronize between threads or clients
+&lt;ul>
+&lt;li>for threads, use mutexes and acqurie before change&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>for databases, use transactions&lt;/li>
+&lt;li>memory errors: double free, double allocate (dangling)&lt;/li>
+&lt;li>heisenburg and non-deterministic behaviour&lt;/li>
 &lt;/ul></description></item><item><title>SIM Swapping: Why SMS 2FA Is Unsecure</title><link>https://blog.elijahlopez.ca/posts/sim-swapping-why-sms-2fa-is-unsecure/</link><pubDate>Sun, 09 Jul 2023 19:38:38 -0400</pubDate><guid>https://blog.elijahlopez.ca/posts/sim-swapping-why-sms-2fa-is-unsecure/</guid><description>&lt;p>A lot of companies provide their users with SMS for 2FA in case their users reuse passwords across multiple services. However, users who are forced to use SMS 2FA or choose to use SMS 2FA can be left completely insecure, especially with financially related services which oddly use non-token based 2FA (many crypto exchanges).&lt;/p>
 &lt;p>If a criminal wants to steal your cryptocurrency, they are not going to abide by identity theft laws.&lt;/p>
 &lt;p>SIM swapping is when a malicious actor uses your government ID, such as a social security number (USA) or social insurance number (Canada) to pretend to have lost access to their phone, and subsequently call the telecommunication provider to essentially switch over service to their SIM from the old one. Once a valid service is secured, the malicious actor can simply use the password leaks they found and break into your account.&lt;/p>

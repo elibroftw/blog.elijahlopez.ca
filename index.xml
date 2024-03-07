@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ELL Blog</title><link>https://blog.elijahlopez.ca/</link><description>ELL Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 06 Mar 2024 22:25:52 -0500</lastBuildDate><atom:link href="https://blog.elijahlopez.ca/index.xml" rel="self" type="application/rss+xml"/><item><title>Retail Investors Are Stupid</title><link>https://blog.elijahlopez.ca/posts/retail-investors-are-stupid/</link><pubDate>Wed, 06 Mar 2024 22:25:52 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/retail-investors-are-stupid/</guid><description>&lt;p>Please repeat after me. Efficient Market Hypothesis does not mean stocks are valued fairly. It just means that stock prices reflect the latest news that is parsable by algorithms or is being parsed by many, and I mean many, decision making humans. So a news piece that is very obscure, like a journalist on Twitter is not going to have an impact on the markets unless it goes &lt;a href="https://www.fiercepharma.com/marketing/eli-lilly-hit-new-twitter-blue-fake-account-forced-apologize-over-free-insulin-tweet">viral (fake news example)&lt;/a>.&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ELL Blog</title><link>https://blog.elijahlopez.ca/</link><description>ELL Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 07 Mar 2024 02:05:53 -0500</lastBuildDate><atom:link href="https://blog.elijahlopez.ca/index.xml" rel="self" type="application/rss+xml"/><item><title>Retail Investors Are Stupid</title><link>https://blog.elijahlopez.ca/posts/retail-investors-are-stupid/</link><pubDate>Wed, 06 Mar 2024 22:25:52 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/retail-investors-are-stupid/</guid><description>&lt;p>Please repeat after me. Efficient Market Hypothesis does not mean stocks are valued fairly. It just means that stock prices reflect the latest news that is parsable by algorithms or is being parsed by many, and I mean many, decision making humans. So a news piece that is very obscure, like a journalist on Twitter is not going to have an impact on the markets unless it goes &lt;a href="https://www.fiercepharma.com/marketing/eli-lilly-hit-new-twitter-blue-fake-account-forced-apologize-over-free-insulin-tweet">viral (fake news example)&lt;/a>.&lt;/p>
 &lt;p>So what have we learned? That the market is a monolith where stock prices reflect the majority shared opine. So if most people are stupid and believe everything they read on the internet or buy stocks based on the same feelings (e.g. I shop at Costco, Costco is always packed, Costco stock will always go up). Obviously, with Costco, it&amp;rsquo;s a 300B+ company that isn&amp;rsquo;t correcting anytime soon. Let&amp;rsquo;s take an example of &amp;ldquo;the future.&amp;rdquo;&lt;/p>
 &lt;h2 id="the-future-is-y-not" >The Future is Y. NOT
 &lt;span>
@@ -3297,6 +3297,12 @@ Identify alternative policy approaches to dealing with business cycles.&lt;/p>
 &lt;li>&lt;a href="#black-scholes-merton-model">Black-Scholes-Merton Model&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;/li>
+&lt;li>&lt;a href="#chapter-18---binomial-trees-in-practice-derivagem">Chapter 18 - Binomial Trees in Practice (DerivaGem)&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#custom-derivative-payoff-example">Custom Derivative Payoff Example&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#put-example-delta-shares-short">Put Example Delta Shares Short&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
 &lt;/ul>
 &lt;/nav>
 &lt;/div>
@@ -4869,7 +4875,7 @@ Left with: .99
 &lt;p>Stock price is currently $20. In three months it will either be $22 or $18. Suppose call option has strike price 1.&lt;/p>
 &lt;ul>
 &lt;li>
-&lt;p>Delta: Shares for every options shorted&lt;/p>
+&lt;p>Delta: shares long for every options shorted&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>Value of the portfolio when short a call:&lt;/p>
@@ -4899,8 +4905,10 @@ Left with: .99
 &lt;p>Risk less when &lt;code>Delta = (fu - fd) / (S0u - S0d)&lt;/code>&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>f = (pfu + (1 - p)fd)e^(-rT)
--p = (e^(rt) - d) / (u - d)&lt;/p>
+&lt;p>f = (pfu + (1 - p)fd)e^(-rT)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>p = (e^(rt) - d) / (u - d)&lt;/p>
 &lt;/li>
 &lt;/ul>
 &lt;h3 id="risk-neutral-valuation" >Risk-Neutral Valuation
@@ -4929,6 +4937,7 @@ Left with: .99
 &lt;/a>
 &lt;/span>
 &lt;/h3>&lt;ul>
+&lt;li>Sigma is the annualized volatility&lt;/li>
 &lt;li>&lt;code>u = e^(sigma sqrt(delta t))&lt;/code>&lt;/li>
 &lt;li>&lt;code>d = 1/u = e^-(sigma sqrt(delta t))&lt;/code>&lt;/li>
 &lt;/ul>
@@ -4967,6 +4976,42 @@ Left with: .99
 &lt;/span>
 &lt;/h3>&lt;ul>
 &lt;li>price of a European call option as the time step tends to Zero&lt;/li>
+&lt;/ul>
+&lt;h2 id="chapter-18---binomial-trees-in-practice-derivagem" >Chapter 18 - Binomial Trees in Practice (DerivaGem)
+&lt;span>
+&lt;a href="#chapter-18---binomial-trees-in-practice-derivagem">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;ul>
+&lt;li>approximate movements in the price of a stock or other asset&lt;/li>
+&lt;li>for each small interval of time (delta t), stock moves up &lt;em>u&lt;/em> or down &lt;em>d&lt;/em>&lt;/li>
+&lt;li>tree parameters for a non-dividend paying stock: volatility, risk-free rate, stock price&lt;/li>
+&lt;/ul>
+&lt;h3 id="custom-derivative-payoff-example" >Custom Derivative Payoff Example
+&lt;span>
+&lt;a href="#custom-derivative-payoff-example">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>S0 = 20&lt;/li>
+&lt;li>Sigma = 25%&lt;/li>
+&lt;li>r = 5%&lt;/li>
+&lt;li>T =6mo&lt;/li>
+&lt;li>Time step = 3 mo&lt;/li>
+&lt;li>Payoff = MAX(S^2 - 400, 50)&lt;/li>
+&lt;li>Using the two-step example, we get a price of $103&lt;/li>
+&lt;/ul>
+&lt;h3 id="put-example-delta-shares-short" >Put Example Delta Shares Short
+&lt;span>
+&lt;a href="#put-example-delta-shares-short">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Delta = (2.16 - 6.96) / (56.12 - 44.55) = -0.41 (the payoff from the next step)&lt;/li>
+&lt;li>As time passes, delta will change (delta hedging)&lt;/li>
 &lt;/ul></description></item><item><title>CS 489 Security</title><link>https://blog.elijahlopez.ca/posts/university/cs-489-security/</link><pubDate>Tue, 09 Jan 2024 11:33:24 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/university/cs-489-security/</guid><description>&lt;!--
 [Learn uWaterloo](https://learn.uwaterloo.ca/d2l/le/content/1005130/Home)
 [Course Website](https://cs.uwaterloo.ca/~m285xu/courses/cs489-w24/)
@@ -7287,6 +7332,124 @@ reasoning process based on each individual’s values, principles, and purpose �
 &lt;/ul>
 &lt;/li>
 &lt;li>gradual adoption of memory-safe languages&lt;/li>
+&lt;/ul>
+&lt;h2 id="common-bugs" >Common Bugs
+&lt;span>
+&lt;a href="#common-bugs">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;h3 id="unsafe-integer-operations" >Unsafe integer operations
+&lt;span>
+&lt;a href="#unsafe-integer-operations">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Mathemetical integers are unbounded&lt;/li>
+&lt;li>Machine integers are bounded by a fixed number of bits&lt;/li>
+&lt;/ul>
+&lt;p>Best way to bounds check is to check if the old balance is subtractable and that the value is less than or equal to than the max that can be added (MAX - old balance).&lt;/p>
+&lt;h3 id="common-integer-overflow-and-underflow-cases" >Common Integer Overflow and Underflow Cases
+&lt;span>
+&lt;a href="#common-integer-overflow-and-underflow-cases">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>signed ⇆ unsigned&lt;/li>
+&lt;li>size-decreasing cast (truncate)&lt;/li>
+&lt;li>see slides for more&lt;/li>
+&lt;/ul>
+&lt;h3 id="unsafe-floating-point-operations" >Unsafe Floating-point operations
+&lt;span>
+&lt;a href="#unsafe-floating-point-operations">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>floating-point number are bounded by a limited precision&lt;/li>
+&lt;li>The Perils of Floating Point&lt;/li>
+&lt;/ul>
+&lt;h3 id="pointer-relational-comparison" >Pointer Relational Comparison
+&lt;span>
+&lt;a href="#pointer-relational-comparison">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>in memory, for the same struc, the properties do appear in memory order&lt;/li>
+&lt;li>therefore, &amp;amp;structInstance.one &amp;amp;structInstance.two&lt;/li>
+&lt;li>however stack variables are not guarnateed to be in a certain order&lt;/li>
+&lt;/ul>
+&lt;h3 id="insufficient-sanitization-on-untrusted-input" >Insufficient Sanitization on Untrusted Input
+&lt;span>
+&lt;a href="#insufficient-sanitization-on-untrusted-input">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>SQL unescaped input&lt;/li>
+&lt;/ul>
+&lt;h3 id="format-strings" >Format Strings
+&lt;span>
+&lt;a href="#format-strings">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>printf is very powerful&lt;/li>
+&lt;li>&lt;code>%7$11x&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;h3 id="same-origin-policy" >Same-origin policy
+&lt;span>
+&lt;a href="#same-origin-policy">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>two urls sharing same uri schem (ftp, http, https)&lt;/li>
+&lt;li>untrusted input shown to another user can trigger a cross-site scripting attack since the user input was not sanitized&lt;/li>
+&lt;/ul>
+&lt;h3 id="untrusted-logic" >Untrusted Logic
+&lt;span>
+&lt;a href="#untrusted-logic">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>In 2016, an attacker exploited a vulnerability in Ethereum&amp;rsquo;s DAO smart contract. The attacker drained more than $3.6M.&lt;/li>
+&lt;li>&lt;code>msg.sender.call.value(_weiToWithdraw())&lt;/code>&lt;/li>
+&lt;li>Reentrancy attack
+&lt;ul>
+&lt;li>before the checks are finished, call withdraw again which will pass all checks since the timestamp was not updated yet&lt;/li>
+&lt;li>that means that the function is recursively called until the contract&amp;rsquo;s internal store of the balance is exhausted&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>fix:
+&lt;ul>
+&lt;li>first do the book keeping then call the function&lt;/li>
+&lt;li>wrap function with mutex variables&lt;/li>
+&lt;li>require the mutex to be false at the beginning of the function call&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>Solidiity callback function: runs when money is sent to the contract or is interacted with&lt;/p>
+&lt;h3 id="data-race" >Data Race
+&lt;span>
+&lt;a href="#data-race">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>to avoid data races, need a way to synchronize between threads or clients
+&lt;ul>
+&lt;li>for threads, use mutexes and acqurie before change&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>for databases, use transactions&lt;/li>
+&lt;li>memory errors: double free, double allocate (dangling)&lt;/li>
+&lt;li>heisenburg and non-deterministic behaviour&lt;/li>
 &lt;/ul></description></item><item><title>BU 397 Intermediate Financial Accounting II</title><link>https://blog.elijahlopez.ca/posts/bu-397-intermediate-financial-accounting-ii/</link><pubDate>Mon, 08 Jan 2024 17:26:07 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/bu-397-intermediate-financial-accounting-ii/</guid><description>&lt;div>
 &lt;h2>Table of Contents&lt;/h2>
 &lt;nav id="TableOfContents">
