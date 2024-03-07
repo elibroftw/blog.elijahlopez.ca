@@ -966,7 +966,7 @@ Series of events where there are two possible outcomes.
 
 Stock price is currently $20. In three months it will either be $22 or $18. Suppose call option has strike price 1.
 
-- Delta: Shares for every options shorted
+- Delta: shares long for every options shorted
 - Value of the portfolio when short a call:
 - `20 * delta - f` where f is the value of the option
 - At 22, `22 * delta - 1`
@@ -978,7 +978,7 @@ Stock price is currently $20. In three months it will either be $22 or $18. Supp
 
 - Risk less when `Delta = (fu - fd) / (S0u - S0d)`
 - f = (pfu + (1 - p)fd)e^(-rT)
--p = (e^(rt) - d) / (u - d)
+- p = (e^(rt) - d) / (u - d)
 
 ### Risk-Neutral Valuation
 
@@ -1000,6 +1000,7 @@ Valuing an American Put Option
 
 ### Choosing u and d
 
+- Sigma is the annualized volatility
 - `u = e^(sigma sqrt(delta t))`
 - `d = 1/u = e^-(sigma sqrt(delta t))`
 
@@ -1023,3 +1024,24 @@ p = (a - d) / (u - d)
 ### Black-Scholes-Merton Model
 
 - price of a European call option as the time step tends to Zero
+
+## Chapter 18 - Binomial Trees in Practice (DerivaGem)
+
+- approximate movements in the price of a stock or other asset
+- for each small interval of time (delta t), stock moves up _u_ or down _d_
+- tree parameters for a non-dividend paying stock: volatility, risk-free rate, stock price
+
+### Custom Derivative Payoff Example
+
+- S0 = 20
+- Sigma = 25%
+- r = 5%
+- T =6mo
+- Time step = 3 mo
+- Payoff = MAX(S^2 - 400, 50)
+- Using the two-step example, we get a price of $103
+
+### Put Example Delta Shares Short
+
+- Delta = (2.16 - 6.96) / (56.12 - 44.55) = -0.41 (the payoff from the next step)
+- As time passes, delta will change (delta hedging)

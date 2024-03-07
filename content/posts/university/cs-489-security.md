@@ -1482,3 +1482,65 @@ int foo() {
 - memory errors have unniversally accepted definitions (e.g. Stack Overflow website)
   - do not need to argue that this is a bug and not a feature
 - gradual adoption of memory-safe languages
+
+## Common Bugs
+
+### Unsafe integer operations
+
+- Mathemetical integers are unbounded
+- Machine integers are bounded by a fixed number of bits
+
+Best way to bounds check is to check if the old balance is subtractable and that the value is less than or equal to than the max that can be added (MAX - old balance).
+
+### Common Integer Overflow and Underflow Cases
+
+- signed &lrarr; unsigned
+- size-decreasing cast (truncate)
+- see slides for more
+
+### Unsafe Floating-point operations
+
+- floating-point number are bounded by a limited precision
+- The Perils of Floating Point
+
+### Pointer Relational Comparison
+
+- in memory, for the same struc, the properties do appear in memory order
+- therefore, &structInstance.one &structInstance.two
+- however stack variables are not guarnateed to be in a certain order
+
+### Insufficient Sanitization on Untrusted Input
+
+- SQL unescaped input
+
+### Format Strings
+
+- printf is very powerful
+- `%7$11x`
+
+### Same-origin policy
+
+- two urls sharing same uri schem (ftp, http, https)
+- untrusted input shown to another user can trigger a cross-site scripting attack since the user input was not sanitized
+
+### Untrusted Logic
+
+- In 2016, an attacker exploited a vulnerability in Ethereum's DAO smart contract. The attacker drained more than $3.6M.
+- `msg.sender.call.value(_weiToWithdraw())`
+- Reentrancy attack
+  - before the checks are finished, call withdraw again which will pass all checks since the timestamp was not updated yet
+  - that means that the function is recursively called until the contract's internal store of the balance is exhausted
+- fix:
+  - first do the book keeping then call the function
+  - wrap function with mutex variables
+  - require the mutex to be false at the beginning of the function call
+
+Solidiity callback function: runs when money is sent to the contract or is interacted with
+
+### Data Race
+
+- to avoid data races, need a way to synchronize between threads or clients
+  - for threads, use mutexes and acqurie before change
+- for databases, use transactions
+- memory errors: double free, double allocate (dangling)
+- heisenburg and non-deterministic behaviour
