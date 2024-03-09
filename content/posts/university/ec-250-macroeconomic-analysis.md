@@ -1270,3 +1270,166 @@ Y = enter your response here
 To return to​ long-run equilibrium, the price level must​ adjust, shifting the​ short-run aggregate supply curve. The​ long-run equilibrium price level​ is:
 
 P = enter your response here
+
+## Chapter 10: Exchange Rates, Business Cycles, and Macroeconomic Policy in the Open Economy
+
+Nation economies are interdependent in two main ways meaning policies of one country can affect the other
+
+1. International trade in goods and service
+2. Worldwide integration of financial markets
+
+### Nominal Exchange Rates
+
+- Units of foreign currency that can be purchased with one unit of domestic currency.
+- for most major currencies, _e<sub>nom</sub>_ is floating
+- Canadian Effective Exchange Rate index (CEER) of 17 largest trading partners but moves in tandem with CA-US exchange rate
+
+### Real Exchange Rates
+
+- price of domestic goods relative to foreign goods such that
+
+<img class=equation-tall src="https://latex.codecogs.com/svg.image?e=\frac{e_nomP}{P_For}" alt="e=\frac{e_nomP}{P_For}">
+
+- if one hamburger in Japan costs 312 yen and one hamburger in Canada costs 3 dollars then the real exchange rate is 78 yen per Canadian dollar
+
+### Appreciation and Depreciation
+
+- domestic currency nominal depreciation: nominal exchange rate falls
+- domestic currency appreciation: nominal exchange rate rises
+- fixed: weakening of the currency is called a devaluation while a strengthening is called a revaluation
+
+### Purchasing Power Parity
+
+<img class=equation-tall src="https://latex.codecogs.com/svg.image?P=\frac{P_For}{e_nom}" alt="P=\frac{P_For}{e_nom}">
+
+- holds in long run but not in the short run:
+  1. countries produce different goods
+  2. some goods aren't traded
+  3. transportation costs and legal barriers to trade
+
+<img class=equation-tall src="https://latex.codecogs.com/svg.image?\frac{\Delta e}{e}=\frac{\Delta e_nom}{e_nom}+\frac{\Delta P}{P}-\frac{\Delta P_For}{P_For}" alt="\frac{\Delta e}{e}=\frac{\Delta e_nom}{e_nom}+\frac{\Delta P}{P}-\frac{\Delta P_For}{P_For}">
+
+First factor is the appreciation and the last two factors are the inflation rates
+
+Therefore, a nominal appreciation is either due to a real appreciation or a lower domestic inflation rate
+
+### Real Exchange Rate and Net Exports
+
+This implies that the higher the real exchange rate, the lower a country’s net exports will be.
+
+### Demand for Currency
+
+1. able to buy goods from countries using said currency
+2. able to purchase real and financial assets denominated in said currency
+
+## Supply for Currency
+
+1. buy foreign goods
+2. buy foreign real and financial assets
+
+### Currency and Changes in Output (Income)
+
+Rise in domestic output also meaning higher imports and lower net exports. Exchange rate decreases because they need to purchase foreign currency,
+
+### Effects of Change in Real Interest Rates
+
+A rise in domestic interest rates makes foreigners want to buy domestic assets and strengthens the exchange rate
+
+### Returns on Domestic and Foreign Assets
+
+Nominal rate of return on a foreign bond:
+
+<img class=equation-tall src="https://latex.codecogs.com/svg.image?1+i_For-\frac{\Delta e_nom}{e_nom}" alt="1+i_For-\frac{\Delta e_nom}{e_nom}">
+
+### Interest Rate Parity
+
+Suggests that there is an indifference between domestic and foreign assets of comparable risk and liquidity;
+
+<img class=equation-tall src="https://latex.codecogs.com/svg.image?(1+i_For)\frac{e_nom}{e^f_nom}=(1+i)" alt="(1+i_For)\frac{e_nom}{e^f_nom}=(1+i)">
+
+### IS-LM-FE and Net Exports
+
+1. factors that increase net exports shift the IS curve up
+2. factors that decrease net exports shift the IS curve down
+
+Factors that shift
+
+1. an increase in foreign output, which increases foreigners’ demand for domestic exports;
+2. an increase in the foreign real interest rate, which makes people want to buy foreign assets, causing the exchange rate to depreciate, which in turn causes net exports to rise;
+3. a shift in worldwide demand toward the domestic country’s goods, such as an increase in the relative quality of the domestic good
+
+### International Transmission of Business Cycles
+
+- US output decline reduces demand for Canadian exports, shifting Canadian IS curve down
+  - therefore recession in Canada in a Keynesian model but in classical there is not affect
+
+### Mundell-Fleming Model
+
+- small open economy IS-LM model which assumes that the exchange rate is not expected to change
+- policies won't affect foreign interest rates
+
+### Fiscal Expansion and Interest Rates
+
+A rise in government purchases shifts the IS curve up and the domestic interest rate temporarily rises which induces capital inflows, appreciating the domestic currency, and thus making expert more expensive, such that IS curve shifts left until the domestic interest rate equals the foreign rate.
+
+### Monetary Expansion and Interest Rates
+
+An increase in domestic money supply shifts the LM down, causing the domestic interest rate to fall below the foreign rate. Arbitrage opportunities induce capital flow into foreign from domestic, depreciating the domestic currency. A depreciated currency makes net exports cheaper, shifting the IS curve to teh right. The end result, assuming a fixed price-level, is an equal interest rate, depreciated currency, and higher net exports.
+
+In the long-run, keynesian model shows monetary neutrality which occurs immediately for the Classic model; real exchange rate unaffected but nominal exchange rate is affected.
+
+<img class=equation-tall src="https://latex.codecogs.com/svg.image?e_nom=\frac{eP_For}{P}" alt="e_nom=\frac{eP_For}{P}">
+
+### Fixed Exchange Rates
+
+The nominal exchange rate is official set by the government, possibly in agreement with other countries. If the fundamental rate, determined by free market participants is less than the official rate, then the currency is overvalued. Responses include:
+
+1. The country can devalue the currency (by reducing the exchange rate) but if it did this a lot, it might as well employ a flexible-rate system.
+2. The country could also restrict international transactions to reduce the supply of its currency to the foreign exchange market, thus raising the fundamental value; even though this is suppression.
+3. Country could purchase its own currency via the central banks official reserve assets (gold, foreign bank deposits, and special assets created by agencies like the IMF). Reserve assets = balance of payments deficit. This method has its limits since some countries ran out of gold and thus a currency devaluation was inevitable.
+
+- Similarly, an undervalued currency can't be maintained for long by foreign central banks
+- An undervalued currency can also be responded to by increasing the money supply
+
+### Monetary Policy and Fixed Exchange Rate
+
+Countries have to co-operate with their monetary policies in order to avoid depreciating their currencies to another. If one country increases their money supply, the currency depreciates.
+
+### Fiscal Policy and Fixed Exchange Rate
+
+- fiscal expansion results in undervalued exchange rate so the real exchange rate increases in lock step even though output is not impacted
+
+### Choosing an Exchange System
+
+1. a fixed exchange rate to promote trade,
+2. free international movements of capital, and
+3. autonomy over domestic monetary policy.
+
+Currency Unions: Common currency shared by a group of countries (e.g. EU). Reduces cost of trading and prevents speculation attacks. Monetary policies cannot be independent.
+
+### Advanced Models of Open Economy
+
+1. the FE line to respond to unexpected events such as changes in world energy prices,
+2. expectations of exchange rate changes, and
+3. partial price level adjustment in the short run.
+
+### Quiz Question
+
+1. Why don't PPP hold for Big Macs across the world?
+    **- a. not exact productA**
+    - b. sold by different franchises
+    - c. patent
+2. Nominal exchange rates of different trading partners is called?
+    - **effective exchange rate**
+3. If the dollar/Swiss frac exchange rate falls, then?
+    - **dollar more valuable**?
+    - swiss imports more from Canada into Switzlerand
+    - canadian firms export more to switzerland
+    - swiss franc more valuable relative to the dollar
+4. 2002-2008 canadian dollar against US dollar appreciated due to net exports increasing
+5. If foreign interest rates decrease, then exchange rates rise and net exports decrease
+6. If Canada's real interest rate rises relative to British real interest, we expect net exports to decrease but exchange rates to rise
+7. Increase is domestic income decreases net exports, increase in foreign income increases net exports. An increase in the domestic real interest rate results in a higher real exchange rate and a net exports decline
+8. In the short run in the Keynesian model for a small open economy with flexible exchange​ rates, an increase in the domestic money supply would cause domestic output to​ rise and the domestic real interest rate to​ fall
+9. for an undervalued currency in a fixed exchange rate, the country can increase money supply; if money supply is increased too much it may make the currency over-valued
+10. european union agreeing to use the euro is called a currency union. all countries in the currency union must share a common monetary policy.

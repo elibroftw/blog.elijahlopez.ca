@@ -1,5 +1,5 @@
 ---
-title: "Linux Desktop Detach Process From Terminal"
+title: "Linux: Run Process in the Background and Detach"
 date: 2024-02-24T15:23:23-05:00
 draft: false
 tags: [
