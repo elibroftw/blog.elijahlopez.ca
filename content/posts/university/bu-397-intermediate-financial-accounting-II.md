@@ -5,6 +5,9 @@ draft: false
 tags: [
   'university'
 ]
+aliases: [
+  '/posts/bu-397-intermediate-financial-accounting-II.md'
+]
 ---
 
 {{< toc >}}
@@ -74,7 +77,7 @@ Examples | Accounts payable, Notes payable, Current portion of long-term debt, D
   - Could be interest-bearing or non-interest bearing (in which case, we borrow at the present value of the note)
   - $100,000 four-month, 12% note on March 1st. Statements made on June and December.
     - on June 30th, credit interest expense amount to interest payable
-  - non-interest bearing $100,000 four-month, 12% discount rate, present value of $96,154, on March 1st.
+  - non-interest bearing $100,000 four-month, 12% discount rate, present value (PV) of $96,154, on March 1st.
   - 96,154 = (100,000 / (1 + 12% * 4 / 12))
   - On March 1st, borrow the present value
   - On June 30th, credit interest expense amount to **notes payable**
@@ -541,7 +544,7 @@ On December 31, 2023, Manitoba National Bank enters into a debt restructuring ag
 2. Extend maturity date from Dec 31, 2023 to Dec 31, 2027.
 3. Reduce interest rate (annual payment) from 12% to 8% (The current market rate is 9%).
 
-Old terms have a PV of 10,500,000 (because already at maturity).
+Old terms have a Present Value (PV) of 10,500,000 (because already at maturity).
 Use original effective interest to calculate PV of new terms which is 7,906,572.
 The difference is ~ 33% so treat it as a settlement.
 
@@ -1593,3 +1596,79 @@ Depreciation expense              Dr. 477778
 ```
 
 </details>
+
+### Lease Inducements
+
+If there is no lease inducements ($100 paid every Jan 1)
+
+```accounting
+# Jan 1st
+Dr. Prepaid rent   $100
+  Cr. Cash                      $100
+# Dec 31
+Dr. Low-value lease expense (IFRS) or rent expense (ASPE) $100
+  Cr. Prepaid rent                                $100
+```
+
+With inducement (last 2 months free), figure out total rent ($300 * 22 = 6,600). Monthly rent expense = 6600/24 = 275.
+
+```accounting
+# at every monthly payment date
+Dr. Prepaid rent expense $25
+Dr. Low-value lease expense (IFRS) or rent expense (ASPE) $275
+  Cr. Cash                                                                                   $300
+# last two months
+Dr. Low-value lease expense (IFRS) or rent expense (ASPE) $275
+  Cr. Prepaid rent expense $275
+```
+
+### Lessor Accounting
+
+```accounting
+# start of lease / first payment
+Dr. lease receivable (gross investment = total non-discounted rental receivables less executory costs)
+  Cr. {Asset Name} acquired for lease
+  Cr. Unearned interest income
+# year-end interest accrual
+Dr. Unearned interest income (* implicit rate)
+  Cr. Interest come
+# lease payment received
+Dr. Cash
+  Cr. Lease Receivable (payment - executory)
+  Cr. Maintenance and Repairs Expense (executory)
+```
+
+How to solve problems
+
+- Use Annuity due table to get the PV of the monthly payments received.
+  - This will be the asset acquired for the lease
+- The initial unearned interest is the difference between total cash receivable and the present value
+- The present value net of the first payment is what the accrual interest applies
+- Cash payment go towards lease receivable and executory costs
+- For residual values, increase the lease receivable and include it when calculating the PV
+
+```accounting
+# sign contract
+Dr. Lease receivable 119,908
+  Cr. Equipment Acquired for Lesee     100,000
+  Cr. Unearned Interest Income            19,908
+# first payment
+Cash 25,982
+  Lease Receivable      23,982
+  Maintenance and Repairs Expense   2,000
+# interest accrual at year end
+Unearned interest income Dr. 7,602 ((100,000 - 23981.62) * 10%)
+  Interest Income                 Cr. 7,602
+# second payment
+Cash 25,982
+  Lease Receivable 23,982
+  Maintenance and Repairs Expense 2,000
+# end of year 2
+Unearned Interest Income Dr. 5,964
+  Interest Income Cr. 5,964
+```
+
+## Pensions
+
+- post-employment benefits (IFRS)
+- Employee Future Benefits (ASPE)

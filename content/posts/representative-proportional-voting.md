@@ -1,7 +1,7 @@
 ---
 title: "Fixed Seats Proportional Representation (FSP-R)"
 # date: 2021-11-19T11:58:17-04:00   # idea first conceptualized
-alias: [
+aliases: [
     '/posts/fixed-seats-proportional-representation/',
     '/posts/representative-proportional-voting/'
 ]

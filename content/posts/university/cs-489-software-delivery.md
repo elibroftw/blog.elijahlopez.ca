@@ -664,3 +664,43 @@ CMD bundle exec jekyll serve
 Writing configuration as code. Can be stored in a VCS. Manage and provision machines using code-like syntax rather tha interactive configuration tools. Automatically executed to perform tasks.
 
 Technologies: puppet, chef, terraform, ansible, SaltStack
+
+### Puppet Notes
+
+- Quest exercises were done
+
+```puppet
+class pasture {
+
+  $port                = '80'
+  $default_character   = 'sheep'
+  $default_message     = ''
+  $pasture_config_file = '/etc/pasture_config.yaml'
+
+  package { 'pasture':
+    ensure   => present,
+    provider => 'gem',
+    before   => File[$pasture_config_file],  # pasture resource comes before this file
+  }
+  $pasture_config_hash = {
+    'port'              => $port,
+    'default_character' => $default_character,
+    'default_message'   => $default_message,
+  }
+  file { $pasture_config_file:
+    # source  => 'puppet:///modules/pasture/pasture_config.yaml',  # hard coded
+    content => epp('pasture/pasture_config.yaml.epp', $pasture_config_hash),  # template
+    notify  => Service['pasture'],  # when this config resource is updated, restart the pasture service
+  }
+
+  file { '/etc/systemd/system/pasture.service':
+    # source  => 'puppet:///modules/pasture/pasture.service',  # hard coded
+    content => epp('pasture/pasture.service.epp', $pasture_service_hash), # template
+    notify  => Service['pasture'],
+  }
+
+  service { 'pasture':
+    ensure => running,
+  }
+}
+```

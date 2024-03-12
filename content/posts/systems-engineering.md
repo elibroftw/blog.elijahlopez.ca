@@ -115,13 +115,23 @@ Hardware (CPU, memory, disks, screens)
 
 System calls are made by first putting args in registers, issuing trap instructions to switch from user mode to kernel mode. Trap instructions are assembly code with one procedure per system call. These procedures are callable in C and putts args in the right place before executing trap instruction.
 
-#### GUIs on Linux
+#### GUIs on linux
 
 - GNOME (GNU Network Object Model Environment), KDE (K Desktop Environment)
 - Built on top of xlib which interacts with the X Windowing System or X11 server which controls the devices and is responsible for redirecting input
 - There is also a display manager which is responsible for displaying the graphical login screen
 
-#### Shell / Command Line Intrerface
+### Memory Management
+
+### Permission Bits
+
+`chmod` changes the permissions of files. The mode is 3 number (0-7) that corresponds to a binary number representing whether read, write, execute is allowed for each group. The first number is the for the owner, the second number is for the group, and the third number is for others. For quick reference, use 666 for read and write and use 777 to execute as well.
+
+`ls -la` can be can be used to list all files with their metadata
+
+### Sockets
+
+For networking purposes pioneered by BSD.
 
 ## Precision Time Protocol (PTP)
 
