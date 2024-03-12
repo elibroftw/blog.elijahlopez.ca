@@ -1,7 +1,7 @@
 ---
 title: "Systems Engineering"
 date: 2024-03-05T17:15:02-05:00
-draft: true
+draft: false
 ---
 
 ## Goals
@@ -22,6 +22,29 @@ Source: [Modern Operating System by Andrew Tanenbaum Chapter 10](https://csc-knu
 - a popular variant of UNIX
 - Android is based on Linux
 - most variants of UNIX have the same common set of system calls and the strategies/algorithms for the implementation is similar with differences
+
+### Kernel and User Mode
+
+### Trouble Shooting
+
+#### Memory Trouble Shooting
+
+- vmstat:
+  - https://www.redhat.com/sysadmin/linux-commands-vmstat
+- `free -th`
+- `top`
+  - use `Shift + F`, `s`, `q` to sort my memory or cpu
+- `ps aux | grep process-name`
+
+#### I/O Trouble Shooting
+
+- iostat -x -c -d -t 1 900 > /tmp/iostat.txt
+- lscpu and read threads per core
+
+#### Program Debugging
+
+- strace COMMAND
+  - or use `-p PID` to attach to a process
 
 ### History of Linux
 
@@ -132,6 +155,12 @@ System calls are made by first putting args in registers, issuing trap instructi
 ### Sockets
 
 For networking purposes pioneered by BSD.
+
+1. Reliable connection-oriented byte stream - pipe equivalent (Transmission Control Protocol TCP)
+2. Reliable connection-oriented packet stream (User Datagram Protocol UDP)
+3. Unreliable packet transmission
+
+Protocols including Internet Protocol originated from US Dept. of Defense's ARPANET
 
 ## Precision Time Protocol (PTP)
 
