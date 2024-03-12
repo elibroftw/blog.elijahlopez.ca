@@ -2843,13 +2843,20 @@ Identify alternative policy approaches to dealing with business cycles.&lt;/p>
 &lt;li>&lt;a href="#choosing-u-and-d">Choosing u and d&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#options-on-stock-indices-currencies-futures">Options on Stock Indices, Currencies, Futures&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#time-steps">Time Steps&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#black-scholes-merton-model">Black-Scholes-Merton Model&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;li>&lt;a href="#chapter-18---binomial-trees-in-practice-derivagem">Chapter 18 - Binomial Trees in Practice (DerivaGem)&lt;/a>
 &lt;ul>
 &lt;li>&lt;a href="#custom-derivative-payoff-example">Custom Derivative Payoff Example&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#put-example-delta-shares-short">Put Example Delta Shares Short&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="#chapter-13---black-scholes-merton-model">Chapter 13 - Black-Scholes-Merton Model&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#lognormal-property">Lognormal Property&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#estimating-volatility-from-historical-data">Estimating Volatility from Historical Data&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#black-scholes-formulas">Black-Scholes Formulas&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#implied-volatility">Implied Volatility&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;/ul>
@@ -4517,15 +4524,6 @@ Left with: .99
 &lt;li>At least 30 time steps are required for good option values&lt;/li>
 &lt;li>&lt;a href="https://www-2.rotman.utoronto.ca/~hull/software/index.html">DerivaGem&lt;/a> allows up to 500 time steps&lt;/li>
 &lt;/ul>
-&lt;h3 id="black-scholes-merton-model" >Black-Scholes-Merton Model
-&lt;span>
-&lt;a href="#black-scholes-merton-model">
-&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
-&lt;/a>
-&lt;/span>
-&lt;/h3>&lt;ul>
-&lt;li>price of a European call option as the time step tends to Zero&lt;/li>
-&lt;/ul>
 &lt;h2 id="chapter-18---binomial-trees-in-practice-derivagem" >Chapter 18 - Binomial Trees in Practice (DerivaGem)
 &lt;span>
 &lt;a href="#chapter-18---binomial-trees-in-practice-derivagem">
@@ -4561,6 +4559,85 @@ Left with: .99
 &lt;/h3>&lt;ul>
 &lt;li>Delta = (2.16 - 6.96) / (56.12 - 44.55) = -0.41 (the payoff from the next step)&lt;/li>
 &lt;li>As time passes, delta will change (delta hedging)&lt;/li>
+&lt;/ul>
+&lt;h2 id="chapter-13---black-scholes-merton-model" >Chapter 13 - Black-Scholes-Merton Model
+&lt;span>
+&lt;a href="#chapter-13---black-scholes-merton-model">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;ul>
+&lt;li>price of a European call option as the time step tends to Zero&lt;/li>
+&lt;li>mean \mu is the expected return and \sigma is volatility&lt;/li>
+&lt;li>Delta S / S is the stock return which is normal distributed&lt;/li>
+&lt;/ul>
+&lt;h3 id="lognormal-property" >Lognormal Property
+&lt;span>
+&lt;a href="#lognormal-property">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;img class=equation src="https://latex.codecogs.com/svg.image?\ln S_0+(\mu - \sigma^2 / 2)T" alt="">
+&lt;p>Standard deviation:&lt;/p>
+&lt;img class=equation src="https://latex.codecogs.com/svg.image?\sigma \sqrt T" alt="">
+&lt;p>Therefore the normal distribution, \phi [mean, variance], Is&lt;/p>
+&lt;img class=equation src="https://latex.codecogs.com/svg.image?\ln S_T \approx \phi [\ln S_0+(\mu - \sigma^2 / 2)T, \sigma^2T]" alt="">
+&lt;p>or&lt;/p>
+&lt;img class=equation-tall src="https://latex.codecogs.com/svg.image?\ln \frac{S_T}{S_0} \approx \phi [(\mu - \sigma^2 / 2)T, \sigma^2T]" alt="">
+&lt;p>Example&lt;/p>
+&lt;ul>
+&lt;li>N = 16%, std = 35%, S0 = $38&lt;/li>
+&lt;li>Calculate probailiy that a european call option with k = %40 and maturity 6 months out will be exercised&lt;/li>
+&lt;li>P(S_T &amp;gt; 40)&lt;/li>
+&lt;li>Use online distribution calculator to figure it out&lt;/li>
+&lt;/ul>
+&lt;h3 id="estimating-volatility-from-historical-data" >Estimating Volatility from Historical Data
+&lt;span>
+&lt;a href="#estimating-volatility-from-historical-data">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ol>
+&lt;li>Take observation S_0, S_1, S_n at intervals of Tau years (for weekly data, Tau = 1/52)&lt;/li>
+&lt;li>Calculate the continuously compounded return in each interval as: &lt;code>mu_i = ln (S_1 / S_{i - 1})&lt;/code>&lt;/li>
+&lt;li>Calculate the standard deviation, s, of the mu_i&amp;rsquo;s&lt;/li>
+&lt;li>Historical volatility estimate is: \sigma \hat = s / (sqrt ( Tau))&lt;/li>
+&lt;/ol>
+&lt;ul>
+&lt;li>Tau decision: need as many observations as possible&lt;/li>
+&lt;li>With daily, lots of noise&lt;/li>
+&lt;li>Period has to be big enough period for validity&lt;/li>
+&lt;li>Need more than 30 observations&lt;/li>
+&lt;/ul>
+&lt;h3 id="black-scholes-formulas" >Black-Scholes Formulas
+&lt;span>
+&lt;a href="#black-scholes-formulas">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>European Call&lt;/p>
+&lt;img class=equation src="https://latex.codecogs.com/svg.image?c=S_0N(d_1)-Ke^{irT}N(d_2)" alt="">
+&lt;p>European Put&lt;/p>
+&lt;img class=equation src="https://latex.codecogs.com/svg.image?p=Ke^{-rT}N(-d_2)-S_0N(-d_1)" alt="">
+&lt;p>d1 variable&lt;/p>
+&lt;img class=equation-tall src="https://latex.codecogs.com/svg.image?d_1=\frac{\ln(S_0/K)+(r+\sigma^2/2)T}{\sigma \sqrt T}" alt="">
+&lt;p>d2 variable&lt;/p>
+&lt;img class=equation-tall src="https://latex.codecogs.com/svg.image?d_2=\frac{\ln(S_0/K)+(r-\sigma^2/2)T}{\sigma \sqrt T}=d_1-\sigma \sqrt T" alt="">
+&lt;p>The variable mu does not appear in the black-scholes equation. It is independent of all variables affected by risk preference. Consistent with risk-neutral valuation principle.&lt;/p>
+&lt;img class=equation src="https://latex.codecogs.com/svg.image?e^{-rT}N(d_2)(S_0e^{rT}N(d_1)/N(d_2)-K)" alt="">
+&lt;ul>
+&lt;li>N(d2) is the probability of exercising&lt;/li>
+&lt;/ul>
+&lt;p>With dividends, need to substitute the stock price with the stock price minus the dividends paid through the maturity&lt;/p>
+&lt;h3 id="implied-volatility" >Implied Volatility
+&lt;span>
+&lt;a href="#implied-volatility">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>The volatility that makes the model price the derivative the same as the market price.&lt;/li>
+&lt;li>If two options with the same underlying have different implied volatilizes, something might be overpriced/underpriced&lt;/li>
 &lt;/ul></description></item><item><title>CS 489 Security</title><link>https://blog.elijahlopez.ca/posts/university/cs-489-security/</link><pubDate>Tue, 09 Jan 2024 11:33:24 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/university/cs-489-security/</guid><description>&lt;!--
 [Learn uWaterloo](https://learn.uwaterloo.ca/d2l/le/content/1005130/Home)
 [Course Website](https://cs.uwaterloo.ca/~m285xu/courses/cs489-w24/)
@@ -6999,6 +7076,45 @@ reasoning process based on each individualâ€™s values, principles, and purpose â
 &lt;li>for databases, use transactions&lt;/li>
 &lt;li>memory errors: double free, double allocate (dangling)&lt;/li>
 &lt;li>heisenburg and non-deterministic behaviour&lt;/li>
+&lt;/ul>
+&lt;h2 id="fuzz-testing" >Fuzz Testing
+&lt;span>
+&lt;a href="#fuzz-testing">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;ul>
+&lt;li>To drive the execution of a system into desired state&lt;/li>
+&lt;li>system: source code, input format&lt;/li>
+&lt;li>state: output or current state&lt;/li>
+&lt;/ul>
+&lt;h3 id="genetic-algorithm" >Genetic Algorithm
+&lt;span>
+&lt;a href="#genetic-algorithm">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Feedback and Selection fo most successful&lt;/li>
+&lt;/ul>
+&lt;h3 id="path-coverage" >Path Coverage
+&lt;span>
+&lt;a href="#path-coverage">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>AFL: American Fuzzy Lop&lt;/li>
+&lt;/ul>
+&lt;h3 id="narrow-range-constriants" >Narrow-range Constriants
+&lt;span>
+&lt;a href="#narrow-range-constriants">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>SMT Solvers&lt;/li>
+&lt;li>&lt;a href="https://fuzzing-survey.org/">Fuzzers&lt;/a>&lt;/li>
 &lt;/ul></description></item><item><title>BU 397 Intermediate Financial Accounting II</title><link>https://blog.elijahlopez.ca/posts/university/bu-397-intermediate-financial-accounting-ii/</link><pubDate>Mon, 08 Jan 2024 17:26:07 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/university/bu-397-intermediate-financial-accounting-ii/</guid><description>&lt;div>
 &lt;h2>Table of Contents&lt;/h2>
 &lt;nav id="TableOfContents">
