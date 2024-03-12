@@ -87,7 +87,285 @@
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
 &lt;/a>
 &lt;/span>
-&lt;/h3>&lt;p>The worst part of the pandemic was the cheap equity capital that got taken advantage by corporations abusing securities rules and going public through reverse mergers in order to skirt off regulations. Investors get completely misled, and projections went down the toilet for sure. I&amp;rsquo;ll be writing a more concrete article about why SPACs should be banned in the future.&lt;/p></description></item><item><title>Canada Parliamentary Reform</title><link>https://blog.elijahlopez.ca/posts/canada-parliamentary-reform/</link><pubDate>Mon, 04 Mar 2024 22:07:35 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/canada-parliamentary-reform/</guid><description>&lt;p>In 1927, the Supreme Court of Canada ruled, unanimously, in the Persons Case that women were not eligible to be senators. Since this was during the time that Canada was still under British rule, an appeal was allowed and the Judicial Committee of the Privy Council allowed women to become senators.&lt;/p>
+&lt;/h3>&lt;p>The worst part of the pandemic was the cheap equity capital that got taken advantage by corporations abusing securities rules and going public through reverse mergers in order to skirt off regulations. Investors get completely misled, and projections went down the toilet for sure. I&amp;rsquo;ll be writing a more concrete article about why SPACs should be banned in the future.&lt;/p></description></item><item><title>Systems Engineering</title><link>https://blog.elijahlopez.ca/posts/systems-engineering/</link><pubDate>Tue, 05 Mar 2024 17:15:02 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/systems-engineering/</guid><description>&lt;h2 id="goals" >Goals
+&lt;span>
+&lt;a href="#goals">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>Writing this as I study for my interview with &lt;span class="inline-spoiler">TBA?&lt;/span>
+.&lt;/p>
+&lt;ol>
+&lt;li>We need to be able to troubleshoot a system using different Linux commands such as ping / ps aux | vmstat&lt;/li>
+&lt;li>We need to know how Linux works; what types of memory there are, how processes work, relationship between the kernel and user applications, etc.&lt;/li>
+&lt;li>Does the candidate understand the relationship between the kernel and the user applications?&lt;/li>
+&lt;li>Does the candidate understand on which resource something will get bottlenecked and how to determine that?&lt;/li>
+&lt;li>Does the candidate understand some of the common tools on a typical Linux system?&lt;/li>
+&lt;li>Does the candidate understand some common patterns to solve systems problems?&lt;/li>
+&lt;/ol>
+&lt;h2 id="linux" >Linux
+&lt;span>
+&lt;a href="#linux">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>Source: &lt;a href="https://csc-knu.github.io/sys-prog/books/Andrew%20S.%20Tanenbaum%20-%20Modern%20Operating%20Systems.pdf">Modern Operating System by Andrew Tanenbaum Chapter 10&lt;/a>&lt;/p>
+&lt;ul>
+&lt;li>a popular variant of UNIX&lt;/li>
+&lt;li>Android is based on Linux&lt;/li>
+&lt;li>most variants of UNIX have the same common set of system calls and the strategies/algorithms for the implementation is similar with differences&lt;/li>
+&lt;/ul>
+&lt;h3 id="kernel-and-user-mode" >Kernel and User Mode
+&lt;span>
+&lt;a href="#kernel-and-user-mode">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;h3 id="trouble-shooting" >Trouble Shooting
+&lt;span>
+&lt;a href="#trouble-shooting">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;h4 id="memory-trouble-shooting" >Memory Trouble Shooting
+&lt;span>
+&lt;a href="#memory-trouble-shooting">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;ul>
+&lt;li>vmstat:
+&lt;ul>
+&lt;li>&lt;a href="https://www.redhat.com/sysadmin/linux-commands-vmstat">https://www.redhat.com/sysadmin/linux-commands-vmstat&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;code>free -th&lt;/code>&lt;/li>
+&lt;li>&lt;code>top&lt;/code>
+&lt;ul>
+&lt;li>use &lt;code>Shift + F&lt;/code>, &lt;code>s&lt;/code>, &lt;code>q&lt;/code> to sort my memory or cpu&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;code>ps aux | grep process-name&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;h4 id="io-trouble-shooting" >I/O Trouble Shooting
+&lt;span>
+&lt;a href="#io-trouble-shooting">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;ul>
+&lt;li>iostat -x -c -d -t 1 900 &amp;gt; /tmp/iostat.txt&lt;/li>
+&lt;li>lscpu and read threads per core&lt;/li>
+&lt;/ul>
+&lt;h4 id="program-debugging" >Program Debugging
+&lt;span>
+&lt;a href="#program-debugging">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;ul>
+&lt;li>strace COMMAND
+&lt;ul>
+&lt;li>or use &lt;code>-p PID&lt;/code> to attach to a process&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="history-of-linux" >History of Linux
+&lt;span>
+&lt;a href="#history-of-linux">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>(1940s-1950s) system with one programmer at a time → (1960s) system with puncard programs batched together with time-consuming debugging/output process →&lt;/li>
+&lt;li>Timesharing invented aat Dartmouth College which ran BASIC&lt;/li>
+&lt;li>Timesharing by MIT, CTSS was successful and a collaboration began between MIT, Bell Labs, General Electric (MULTICS MULTiplexed Information and Computing Service)&lt;/li>
+&lt;li>Ken Thompson wrote a stripped version of MULTICS in assembly on a PDP-7 minicomputer to support Thompon&amp;rsquo;s development effort&lt;/li>
+&lt;li>Brain Kernighan called it UNICS (UnNiplexed Information and Computing Service); UNIX is just a short-form&lt;/li>
+&lt;li>Colleagues joined in and ported it (requires rewriting for each system) to many different minicomputers&lt;/li>
+&lt;li>Memory protection resulted in multiple users&lt;/li>
+&lt;li>Thomson designed and created a high-level language B (simplified BCPL which was simplified CPL which never worked and neither did PL/I) to rewrite UNIX&lt;/li>
+&lt;li>B lacked structures, so Dennis Ritchie (a colleague) designed C and wrote a compiler&lt;/li>
+&lt;li>(1974) Ritche and Thompas published UNIX paper&lt;/li>
+&lt;li>AT&amp;amp;T owned Bell Labs and was a regulated monopoly with no permission to be in computer business; UNIX licensed for a fee to universities&lt;/li>
+&lt;li>Coincidence being that PDP-11 which the Bell Labs team ported UNIX to, was being used at these universities&lt;/li>
+&lt;li>Version 7 was portable&lt;/li>
+&lt;/ul>
+&lt;h4 id="how-to-port-unix-to-another-system" >How to Port UNIX to Another System
+&lt;span>
+&lt;a href="#how-to-port-unix-to-another-system">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;ol>
+&lt;li>Write C compiler for new machine
+&lt;ul>
+&lt;li>Steve Johnson rewrote the portable C compiler&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Write device drivers for new machine&amp;rsquo;s I/O (monitors, printers, disks)
+&lt;ul>
+&lt;li>no two disks worked the same way so can&amp;rsquo;t just copy code to that machine and compile it!&lt;/li>
+&lt;li>instead of carrying physical tape for months, someone decided to use cables since they were a phone company after all
+&lt;ul>
+&lt;li>UNIX networking&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Small amount of machine-dependent code, usually in assembly for interrupts and memory-management had to be rewritten&lt;/li>
+&lt;/ol>
+&lt;p>The first port was to the Interdata 8/32 minicomputer which exposed a large number of assumptions UNIX had made from being on the PDP-11&lt;/p>
+&lt;ul>
+&lt;li>16bit integers, max program size of 64 KB, 3 registers for variables&lt;/li>
+&lt;/ul>
+&lt;h4 id="mass-commercialization" >Mass Commercialization
+&lt;span>
+&lt;a href="#mass-commercialization">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;p>After AT&amp;amp;T was broken up, it started producing Systems, with System V being so complicated. UNIX was still worked on but never widely circulated. AT&amp;amp;T sold UNIX business unit to Novell in 1993 which sold it to Santa Cruz Operation in 1995. All major companies already had licenses by then.&lt;/p>
+&lt;h4 id="berkely-unix" >Berkely UNIX
+&lt;span>
+&lt;a href="#berkely-unix">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;ul>
+&lt;li>Version 6&lt;/li>
+&lt;li>U.S. Dep. of Defense&amp;rsquo;s Advanced Research Projects Agency (ARPA) grants&lt;/li>
+&lt;li>Released 1BSD (berkeley software distribution) and 2BSD for PDP-11&lt;/li>
+&lt;li>4BSD
+&lt;ul>
+&lt;li>had improvements like virtual memory and paging (allows programs to be larger than physical memory by paging parts into disk and swapping them out)&lt;/li>
+&lt;li>faster file system&lt;/li>
+&lt;li>networking introduced (TCP/IP)&lt;/li>
+&lt;li>new editor (vi)&lt;/li>
+&lt;li>new shell (csh)&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Became well established and vendors started basing on BSD&lt;/li>
+&lt;/ul>
+&lt;h4 id="fragmentation-of-unix" >Fragmentation of UNIX
+&lt;span>
+&lt;a href="#fragmentation-of-unix">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;ul>
+&lt;li>Unlike MS-DOS where software would always run on MS-DOS, UNIX programs might not work with other UNIX systems due to a lack of standardization&lt;/li>
+&lt;li>standardizations failed because of misaligned interests&lt;/li>
+&lt;li>POSIX (Portable Operating System): IEEE standards board stepped in and produced 10003.1 which is a set of system procedures every UNIX conformant system must supply
+&lt;ul>
+&lt;li>The intersection of both major systems was used instead of the intersection&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>C standardized by ANSI and ISO&lt;/li>
+&lt;li>MINX was created which was UNIX-like and for educational purposes and was microkernel design
+&lt;ul>
+&lt;li>file system and memory manager ran as two separate user processes&lt;/li>
+&lt;li>microkernel has the advantage of being easier to understand and maintain&lt;/li>
+&lt;li>user-process crash does less damage than a kernel&lt;/li>
+&lt;li>disadvantage is extra switching between kernel and user mode but this is okay because X Windows is user mode in contrast to even the GUI being kernel on WIndows&lt;/li>
+&lt;li>MINX 3 (2004) took all this a step further with self-healing and even separated out device drivers as user processes with more programs ported from UNIX to MINIX 3.0&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h4 id="introduction-of-linux" >Introduction of Linux
+&lt;span>
+&lt;a href="#introduction-of-linux">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;ul>
+&lt;li>MINIX was educational so many feature requests rejectetd&lt;/li>
+&lt;li>Finnish student Linus Torvalds created a full-blown UNIX clone with all features that were initially missing (Linux 0.0.1 1991)&lt;/li>
+&lt;li>monolithic, although borrowed ideas from MINIX&lt;/li>
+&lt;li>virtual memory added&lt;/li>
+&lt;li>used many features of gcc compiler and so was not ANSI standard C; other compilers like LLVM from University of Illinois exist which do not support nonstandard gcc extensions and so kernel would have to be patched to replace the non-ANSI code&lt;/li>
+&lt;li>Linux 1.0 in 1994; large UNIX compatibility for many programs to be ported over; 2.0 in 1996&lt;/li>
+&lt;li>Linux C lines of code ballooned from 10,000 to 165,000 to 470,000 to 16MM in 2013&lt;/li>
+&lt;li>Lawsuit against BSD (4.4) resulted in a delay of FreeBSD which would&amp;rsquo;ve increased competition&lt;/li>
+&lt;/ul>
+&lt;h3 id="overview-of-linux" >Overview of Linux
+&lt;span>
+&lt;a href="#overview-of-linux">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>for programmers by programmers&lt;/li>
+&lt;li>simple (no classes of files for different access as mainframes did)&lt;/li>
+&lt;li>principle of least surprise (ls A* and rm A* should list and remove all files beginning with A)&lt;/li>
+&lt;li>apps should do one thing and one hing well&lt;/li>
+&lt;li>apps should not waste time or require extra typing (cp instead of copy, command line args instead of one by one form-line inputs)&lt;/li>
+&lt;/ul>
+&lt;pre tabindex="0">&lt;code class="language-hierarchy" data-lang="hierarchy"> Users | runs programs
+---- USER MODE ---
+Standard Utility Programs | calls library
+Standard Library (POSIX) | calls system interfaces
+---- KERNEL MODE ---
+Linux OS (manages processes, memory, file system, I/O) | Supremely commands
+Hardware (CPU, memory, disks, screens)
+&lt;/code>&lt;/pre>&lt;p>System calls are made by first putting args in registers, issuing trap instructions to switch from user mode to kernel mode. Trap instructions are assembly code with one procedure per system call. These procedures are callable in C and putts args in the right place before executing trap instruction.&lt;/p>
+&lt;h4 id="guis-on-linux" >GUIs on linux
+&lt;span>
+&lt;a href="#guis-on-linux">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h4>&lt;ul>
+&lt;li>GNOME (GNU Network Object Model Environment), KDE (K Desktop Environment)&lt;/li>
+&lt;li>Built on top of xlib which interacts with the X Windowing System or X11 server which controls the devices and is responsible for redirecting input&lt;/li>
+&lt;li>There is also a display manager which is responsible for displaying the graphical login screen&lt;/li>
+&lt;/ul>
+&lt;h3 id="memory-management" >Memory Management
+&lt;span>
+&lt;a href="#memory-management">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;h3 id="permission-bits" >Permission Bits
+&lt;span>
+&lt;a href="#permission-bits">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>&lt;code>chmod&lt;/code> changes the permissions of files. The mode is 3 number (0-7) that corresponds to a binary number representing whether read, write, execute is allowed for each group. The first number is the for the owner, the second number is for the group, and the third number is for others. For quick reference, use 666 for read and write and use 777 to execute as well.&lt;/p>
+&lt;p>&lt;code>ls -la&lt;/code> can be can be used to list all files with their metadata&lt;/p>
+&lt;h3 id="sockets" >Sockets
+&lt;span>
+&lt;a href="#sockets">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>For networking purposes pioneered by BSD.&lt;/p>
+&lt;ol>
+&lt;li>Reliable connection-oriented byte stream - pipe equivalent (Transmission Control Protocol TCP)&lt;/li>
+&lt;li>Reliable connection-oriented packet stream (User Datagram Protocol UDP)&lt;/li>
+&lt;li>Unreliable packet transmission&lt;/li>
+&lt;/ol>
+&lt;p>Protocols including Internet Protocol originated from US Dept. of Defense&amp;rsquo;s ARPANET&lt;/p>
+&lt;h2 id="precision-time-protocol-ptp" >Precision Time Protocol (PTP)
+&lt;span>
+&lt;a href="#precision-time-protocol-ptp">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;ul>
+&lt;li>The outcome of using PTP is synchronization (time) of multiple systems that are interconnected down to &lt;strong>nanosecond precision&lt;/strong>.&lt;/li>
+&lt;li>The case for PTP is that when there are multiple systems responding to multiple clients, a write request and a read request can land on different nodes; often times databases have replicas so a read might hit one of the replicas that hasn&amp;rsquo;t registered the write (violation of &lt;strong>linearizability&lt;/strong>).
+&lt;ul>
+&lt;li>Solution: we want timestamps on the backend and database replicas so that the replica blocks the read until it&amp;rsquo;s own updated timestamp is equal or greater to the read request. The alternative would be to mash queries to the replica until most replicas are in consensus.&lt;/li>
+&lt;li>Implementation: To have precise timestamps for systems where changes can happen in the milliseconds, a time synchronization protocol is needed for nanosecond precision&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>&lt;a href="https://standards.ieee.org/ieee/1588/6825/">IEEE 1588-2019&lt;/a>&lt;/p>
+&lt;blockquote>
+&lt;p>provides precise synchronization of clocks in packet-based networked systems&lt;/p>
+&lt;/blockquote></description></item><item><title>Canada Parliamentary Reform</title><link>https://blog.elijahlopez.ca/posts/canada-parliamentary-reform/</link><pubDate>Mon, 04 Mar 2024 22:07:35 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/canada-parliamentary-reform/</guid><description>&lt;p>In 1927, the Supreme Court of Canada ruled, unanimously, in the Persons Case that women were not eligible to be senators. Since this was during the time that Canada was still under British rule, an appeal was allowed and the Judicial Committee of the Privy Council allowed women to become senators.&lt;/p>
 &lt;p>What does that mean? That means that courts are not likely to be filled with unbiased individuals. If all the justices can deem women ineligible to be a senator, then our laws will always be begrudged to the societal views held by judges in the past.&lt;/p>
 &lt;p>I propose two things. Supreme court rulings should always be able to be appealed resulting in a group of people from the age of 16 to the age of 70 deciding the final verdict. The group of people would have to be 10, with half guaranteed to be under half the age of life expectancy. The life expectancy will be a hard coded age in the constitution meaning that every time the age is too low, everyone in Canada has to agree that the age is too low.&lt;/p>
 &lt;p>The second thing is that we need to do away with the senate. It&amp;rsquo;s a waste of time and only exists because of a broken electoral system. Voters did not vote for senators and there&amp;rsquo;s too many of them to hold a single one accountable. If the PM gets to pick the supreme court, why do they get to pick the senators as well?!&lt;/p></description></item><item><title>There Is No Labour Shortage in Canada</title><link>https://blog.elijahlopez.ca/posts/there-is-no-labour-shortage-in-canada/</link><pubDate>Thu, 29 Feb 2024 21:14:08 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/there-is-no-labour-shortage-in-canada/</guid><description>&lt;p>There is no labour shortage for unskilled labour in Canada. To determine whether there&amp;rsquo;s a labour shortage objectively speaking, we need to figure out how many months of unemployment is desirable.&lt;/p>
