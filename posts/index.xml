@@ -7717,7 +7717,7 @@ reasoning process based on each individualâ€™s values, principles, and purpose â
 &lt;li>for databases, use transactions&lt;/li>
 &lt;li>memory errors: double free, double allocate (dangling)&lt;/li>
 &lt;li>heisenburg and non-deterministic behaviour&lt;/li>
-&lt;/ul></description></item><item><title>BU 397 Intermediate Financial Accounting II</title><link>https://blog.elijahlopez.ca/posts/bu-397-intermediate-financial-accounting-ii/</link><pubDate>Mon, 08 Jan 2024 17:26:07 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/bu-397-intermediate-financial-accounting-ii/</guid><description>&lt;div>
+&lt;/ul></description></item><item><title>BU 397 Intermediate Financial Accounting II</title><link>https://blog.elijahlopez.ca/posts/university/bu-397-intermediate-financial-accounting-ii/</link><pubDate>Mon, 08 Jan 2024 17:26:07 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/university/bu-397-intermediate-financial-accounting-ii/</guid><description>&lt;div>
 &lt;h2>Table of Contents&lt;/h2>
 &lt;nav id="TableOfContents">
 &lt;ul>
@@ -7836,8 +7836,11 @@ reasoning process based on each individualâ€™s values, principles, and purpose â
 &lt;li>&lt;a href="#right-of-use-assets-under-ifrs">Right-of-use assets under IFRS&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#capital-leases-under-aspe">Capital Leases Under ASPE&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#lease-liability-aspe-vs-ifrs">Lease Liability ASPE vs. IFRS&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#lease-inducements">Lease Inducements&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#lessor-accounting">Lessor Accounting&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;/li>
+&lt;li>&lt;a href="#pensions">Pensions&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;/nav>
 &lt;/div>
@@ -7963,7 +7966,7 @@ reasoning process based on each individualâ€™s values, principles, and purpose â
 &lt;li>on June 30th, credit interest expense amount to interest payable&lt;/li>
 &lt;/ul>
 &lt;/li>
-&lt;li>non-interest bearing $100,000 four-month, 12% discount rate, present value of $96,154, on March 1st.&lt;/li>
+&lt;li>non-interest bearing $100,000 four-month, 12% discount rate, present value (PV) of $96,154, on March 1st.&lt;/li>
 &lt;li>96,154 = (100,000 / (1 + 12% * 4 / 12))&lt;/li>
 &lt;li>On March 1st, borrow the present value&lt;/li>
 &lt;li>On June 30th, credit interest expense amount to &lt;strong>notes payable&lt;/strong>&lt;/li>
@@ -8584,7 +8587,7 @@ Gain on Debt Restructuring $4M Cr.
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>2. Extend maturity date from Dec 31, 2023 to Dec 31, 2027.
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>3. Reduce interest rate (annual payment) from 12% to 8% (The current market rate is 9%).
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Old terms have a PV of 10,500,000 (because already at maturity).
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Old terms have a Present Value (PV) of 10,500,000 (because already at maturity).
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Use original effective interest to calculate PV of new terms which is 7,906,572.
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>The difference is ~ 33% so treat it as a settlement.
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
@@ -9968,7 +9971,85 @@ Interest expense 215,074 (6% of lease liability)
 Lease liability 215,074
 Depreciation expense Dr. 477778
 Accumulated depreciation Cr. 477778
-&lt;/code>&lt;/pre>&lt;/details></description></item><item><title>CS 489 Software Delivery</title><link>https://blog.elijahlopez.ca/posts/university/cs-489-software-delivery/</link><pubDate>Mon, 08 Jan 2024 13:04:18 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/university/cs-489-software-delivery/</guid><description>&lt;h2 id="summary" >Summary
+&lt;/code>&lt;/pre>&lt;/details>
+&lt;h3 id="lease-inducements" >Lease Inducements
+&lt;span>
+&lt;a href="#lease-inducements">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>If there is no lease inducements ($100 paid every Jan 1)&lt;/p>
+&lt;pre tabindex="0">&lt;code class="language-accounting" data-lang="accounting"># Jan 1st
+Dr. Prepaid rent $100
+Cr. Cash $100
+# Dec 31
+Dr. Low-value lease expense (IFRS) or rent expense (ASPE) $100
+Cr. Prepaid rent $100
+&lt;/code>&lt;/pre>&lt;p>With inducement (last 2 months free), figure out total rent ($300 * 22 = 6,600). Monthly rent expense = 6600/24 = 275.&lt;/p>
+&lt;pre tabindex="0">&lt;code class="language-accounting" data-lang="accounting"># at every monthly payment date
+Dr. Prepaid rent expense $25
+Dr. Low-value lease expense (IFRS) or rent expense (ASPE) $275
+Cr. Cash $300
+# last two months
+Dr. Low-value lease expense (IFRS) or rent expense (ASPE) $275
+Cr. Prepaid rent expense $275
+&lt;/code>&lt;/pre>&lt;h3 id="lessor-accounting" >Lessor Accounting
+&lt;span>
+&lt;a href="#lessor-accounting">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;pre tabindex="0">&lt;code class="language-accounting" data-lang="accounting"># start of lease / first payment
+Dr. lease receivable (gross investment = total non-discounted rental receivables less executory costs)
+Cr. {Asset Name} acquired for lease
+Cr. Unearned interest income
+# year-end interest accrual
+Dr. Unearned interest income (* implicit rate)
+Cr. Interest come
+# lease payment received
+Dr. Cash
+Cr. Lease Receivable (payment - executory)
+Cr. Maintenance and Repairs Expense (executory)
+&lt;/code>&lt;/pre>&lt;p>How to solve problems&lt;/p>
+&lt;ul>
+&lt;li>Use Annuity due table to get the PV of the monthly payments received.
+&lt;ul>
+&lt;li>This will be the asset acquired for the lease&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>The initial unearned interest is the difference between total cash receivable and the present value&lt;/li>
+&lt;li>The present value net of the first payment is what the accrual interest applies&lt;/li>
+&lt;li>Cash payment go towards lease receivable and executory costs&lt;/li>
+&lt;li>For residual values, increase the lease receivable and include it when calculating the PV&lt;/li>
+&lt;/ul>
+&lt;pre tabindex="0">&lt;code class="language-accounting" data-lang="accounting"># sign contract
+Dr. Lease receivable 119,908
+Cr. Equipment Acquired for Lesee 100,000
+Cr. Unearned Interest Income 19,908
+# first payment
+Cash 25,982
+Lease Receivable 23,982
+Maintenance and Repairs Expense 2,000
+# interest accrual at year end
+Unearned interest income Dr. 7,602 ((100,000 - 23981.62) * 10%)
+Interest Income Cr. 7,602
+# second payment
+Cash 25,982
+Lease Receivable 23,982
+Maintenance and Repairs Expense 2,000
+# end of year 2
+Unearned Interest Income Dr. 5,964
+Interest Income Cr. 5,964
+&lt;/code>&lt;/pre>&lt;h2 id="pensions" >Pensions
+&lt;span>
+&lt;a href="#pensions">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;ul>
+&lt;li>post-employment benefits (IFRS)&lt;/li>
+&lt;li>Employee Future Benefits (ASPE)&lt;/li>
+&lt;/ul></description></item><item><title>CS 489 Software Delivery</title><link>https://blog.elijahlopez.ca/posts/university/cs-489-software-delivery/</link><pubDate>Mon, 08 Jan 2024 13:04:18 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/university/cs-489-software-delivery/</guid><description>&lt;h2 id="summary" >Summary
 &lt;span>
 &lt;a href="#summary">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
@@ -11102,7 +11183,50 @@ Accumulated depreciation Cr. 477778
 &lt;/li>
 &lt;/ul>
 &lt;p>Writing configuration as code. Can be stored in a VCS. Manage and provision machines using code-like syntax rather tha interactive configuration tools. Automatically executed to perform tasks.&lt;/p>
-&lt;p>Technologies: puppet, chef, terraform, ansible, SaltStack&lt;/p></description></item><item><title>Best Cell Phone Carriers Canada</title><link>https://blog.elijahlopez.ca/posts/best-cell-phone-carriers-canada/</link><pubDate>Tue, 02 Jan 2024 18:14:11 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/best-cell-phone-carriers-canada/</guid><description>&lt;p>So I got a look at the boxing day deals and all the 4 carriers had $34 for 50GB of data per month. I thought I had a good deal at $39 for 25GB per month! I even fought on the phone with Koodo about it during the summer since they were offering 20GB for $39 at the time and I was paying $40 for 6GB. I had switched to Koodo from Fredumb Mobile either in 2022 or something.&lt;/p>
+&lt;p>Technologies: puppet, chef, terraform, ansible, SaltStack&lt;/p>
+&lt;h3 id="puppet-notes" >Puppet Notes
+&lt;span>
+&lt;a href="#puppet-notes">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Quest exercises were done&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-puppet" data-lang="puppet">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">class&lt;/span> &lt;span style="color:#bbb">pasture&lt;/span> {&lt;span style="color:#a61717;background-color:#e3d2d2">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a61717;background-color:#e3d2d2">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a61717;background-color:#e3d2d2">&lt;/span> &lt;span style="color:#40ffff">$port&lt;/span> = &lt;span style="color:#ed9d13">&amp;#39;80&amp;#39;&lt;/span>&lt;span style="color:#a61717;background-color:#e3d2d2">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a61717;background-color:#e3d2d2">&lt;/span> &lt;span style="color:#40ffff">$default_character&lt;/span> = &lt;span style="color:#ed9d13">&amp;#39;sheep&amp;#39;&lt;/span>&lt;span style="color:#a61717;background-color:#e3d2d2">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a61717;background-color:#e3d2d2">&lt;/span> &lt;span style="color:#40ffff">$default_message&lt;/span> = &lt;span style="color:#ed9d13">&amp;#39;&amp;#39;&lt;/span>&lt;span style="color:#a61717;background-color:#e3d2d2">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a61717;background-color:#e3d2d2">&lt;/span> &lt;span style="color:#40ffff">$pasture_config_file&lt;/span> = &lt;span style="color:#ed9d13">&amp;#39;/etc/pasture_config.yaml&amp;#39;&lt;/span>&lt;span style="color:#a61717;background-color:#e3d2d2">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a61717;background-color:#e3d2d2">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a61717;background-color:#e3d2d2">&lt;/span> &lt;span style="color:#6ab825;font-weight:bold">package&lt;/span> { &lt;span style="color:#ed9d13">&amp;#39;pasture&amp;#39;&lt;/span>:&lt;span style="color:#a61717;background-color:#e3d2d2">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a61717;background-color:#e3d2d2">&lt;/span> &lt;span style="color:#bbb">ensure&lt;/span> =&amp;gt; &lt;span style="color:#6ab825;font-weight:bold">present&lt;/span>,&lt;span style="color:#a61717;background-color:#e3d2d2">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a61717;background-color:#e3d2d2">&lt;/span> &lt;span style="color:#bbb">provider&lt;/span> =&amp;gt; &lt;span style="color:#ed9d13">&amp;#39;gem&amp;#39;&lt;/span>,&lt;span style="color:#a61717;background-color:#e3d2d2">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a61717;background-color:#e3d2d2">&lt;/span> &lt;span style="color:#6ab825;font-weight:bold">before&lt;/span> =&amp;gt; &lt;span style="color:#6ab825;font-weight:bold">File&lt;/span>[&lt;span style="color:#40ffff">$pasture_config_file],&lt;/span>&lt;span style="color:#999;font-style:italic"> # pasture resource comes before this file&lt;/span>&lt;span style="color:#a61717;background-color:#e3d2d2">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a61717;background-color:#e3d2d2">&lt;/span> }&lt;span style="color:#a61717;background-color:#e3d2d2">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a61717;background-color:#e3d2d2">&lt;/span> &lt;span style="color:#40ffff">$pasture_config_hash&lt;/span> = {&lt;span style="color:#a61717;background-color:#e3d2d2">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a61717;background-color:#e3d2d2">&lt;/span> &lt;span style="color:#ed9d13">&amp;#39;port&amp;#39;&lt;/span> =&amp;gt; &lt;span style="color:#40ffff">$port,&lt;/span>&lt;span style="color:#a61717;background-color:#e3d2d2">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a61717;background-color:#e3d2d2">&lt;/span> &lt;span style="color:#ed9d13">&amp;#39;default_character&amp;#39;&lt;/span> =&amp;gt; &lt;span style="color:#40ffff">$default_character,&lt;/span>&lt;span style="color:#a61717;background-color:#e3d2d2">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a61717;background-color:#e3d2d2">&lt;/span> &lt;span style="color:#ed9d13">&amp;#39;default_message&amp;#39;&lt;/span> =&amp;gt; &lt;span style="color:#40ffff">$default_message,&lt;/span>&lt;span style="color:#a61717;background-color:#e3d2d2">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a61717;background-color:#e3d2d2">&lt;/span> }&lt;span style="color:#a61717;background-color:#e3d2d2">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a61717;background-color:#e3d2d2">&lt;/span> &lt;span style="color:#6ab825;font-weight:bold">file&lt;/span> { &lt;span style="color:#40ffff">$pasture_config_file:&lt;/span>&lt;span style="color:#999;font-style:italic">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic"> # source =&amp;gt; &amp;#39;puppet:///modules/pasture/pasture_config.yaml&amp;#39;, # hard coded&lt;/span>&lt;span style="color:#a61717;background-color:#e3d2d2">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a61717;background-color:#e3d2d2">&lt;/span> &lt;span style="color:#bbb">content&lt;/span> =&amp;gt; &lt;span style="color:#bbb">epp&lt;/span>(&lt;span style="color:#ed9d13">&amp;#39;pasture/pasture_config.yaml.epp&amp;#39;&lt;/span>, &lt;span style="color:#40ffff">$pasture_config_hash),&lt;/span>&lt;span style="color:#999;font-style:italic"> # template&lt;/span>&lt;span style="color:#a61717;background-color:#e3d2d2">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a61717;background-color:#e3d2d2">&lt;/span> &lt;span style="color:#6ab825;font-weight:bold">notify&lt;/span> =&amp;gt; &lt;span style="color:#6ab825;font-weight:bold">Service&lt;/span>[&lt;span style="color:#ed9d13">&amp;#39;pasture&amp;#39;&lt;/span>],&lt;span style="color:#999;font-style:italic"> # when this config resource is updated, restart the pasture service&lt;/span>&lt;span style="color:#a61717;background-color:#e3d2d2">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a61717;background-color:#e3d2d2">&lt;/span> }&lt;span style="color:#a61717;background-color:#e3d2d2">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a61717;background-color:#e3d2d2">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a61717;background-color:#e3d2d2">&lt;/span> &lt;span style="color:#6ab825;font-weight:bold">file&lt;/span> { &lt;span style="color:#ed9d13">&amp;#39;/etc/systemd/system/pasture.service&amp;#39;&lt;/span>:&lt;span style="color:#999;font-style:italic">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic"> # source =&amp;gt; &amp;#39;puppet:///modules/pasture/pasture.service&amp;#39;, # hard coded&lt;/span>&lt;span style="color:#a61717;background-color:#e3d2d2">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a61717;background-color:#e3d2d2">&lt;/span> &lt;span style="color:#bbb">content&lt;/span> =&amp;gt; &lt;span style="color:#bbb">epp&lt;/span>(&lt;span style="color:#ed9d13">&amp;#39;pasture/pasture.service.epp&amp;#39;&lt;/span>, &lt;span style="color:#40ffff">$pasture_service_hash),&lt;/span>&lt;span style="color:#999;font-style:italic"> # template&lt;/span>&lt;span style="color:#a61717;background-color:#e3d2d2">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a61717;background-color:#e3d2d2">&lt;/span> &lt;span style="color:#6ab825;font-weight:bold">notify&lt;/span> =&amp;gt; &lt;span style="color:#6ab825;font-weight:bold">Service&lt;/span>[&lt;span style="color:#ed9d13">&amp;#39;pasture&amp;#39;&lt;/span>],&lt;span style="color:#a61717;background-color:#e3d2d2">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a61717;background-color:#e3d2d2">&lt;/span> }&lt;span style="color:#a61717;background-color:#e3d2d2">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a61717;background-color:#e3d2d2">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a61717;background-color:#e3d2d2">&lt;/span> &lt;span style="color:#6ab825;font-weight:bold">service&lt;/span> { &lt;span style="color:#ed9d13">&amp;#39;pasture&amp;#39;&lt;/span>:&lt;span style="color:#a61717;background-color:#e3d2d2">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a61717;background-color:#e3d2d2">&lt;/span> &lt;span style="color:#bbb">ensure&lt;/span> =&amp;gt; &lt;span style="color:#6ab825;font-weight:bold">running&lt;/span>,&lt;span style="color:#a61717;background-color:#e3d2d2">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a61717;background-color:#e3d2d2">&lt;/span> }&lt;span style="color:#a61717;background-color:#e3d2d2">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a61717;background-color:#e3d2d2">&lt;/span>}&lt;span style="color:#a61717;background-color:#e3d2d2">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Best Cell Phone Carriers Canada</title><link>https://blog.elijahlopez.ca/posts/best-cell-phone-carriers-canada/</link><pubDate>Tue, 02 Jan 2024 18:14:11 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/best-cell-phone-carriers-canada/</guid><description>&lt;p>So I got a look at the boxing day deals and all the 4 carriers had $34 for 50GB of data per month. I thought I had a good deal at $39 for 25GB per month! I even fought on the phone with Koodo about it during the summer since they were offering 20GB for $39 at the time and I was paying $40 for 6GB. I had switched to Koodo from Fredumb Mobile either in 2022 or something.&lt;/p>
 &lt;p>So here is my list of the best cell phone carriers.&lt;/p>
 &lt;h2 id="for-individuals" >For Individuals
 &lt;span>
@@ -12680,6 +12804,7 @@ Since this is an example, is it not for copy-pasting but rather to show you how 
 &lt;h2>Table of Contents&lt;/h2>
 &lt;nav id="TableOfContents">
 &lt;ul>
+&lt;li>&lt;a href="#which-distro-should-i-use">Which Distro Should I Use?&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#webcam-application">Webcam Application&lt;/a>
 &lt;ul>
 &lt;li>&lt;a href="#kde">KDE&lt;/a>&lt;/li>
@@ -12717,6 +12842,28 @@ Since this is an example, is it not for copy-pasting but rather to show you how 
 &lt;/ul>
 &lt;/nav>
 &lt;/div>
+&lt;h2 id="which-distro-should-i-use" >Which Distro Should I Use?
+&lt;span>
+&lt;a href="#which-distro-should-i-use">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;ul>
+&lt;li>&lt;a href="https://nobaraproject.org/download-nobara/">Nobara KDE&lt;/a>: General purpose (replacement for Windows)
+&lt;ul>
+&lt;li>Note that secure boot needs to be disabled&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="https://fedoraproject.org/spins/kde/">Fedora KDE&lt;/a>: Alternative - especially for dual-booting for developing/workstation AND you don&amp;rsquo;t have an NVIDIA graphics card&lt;/li>
+&lt;/ul>
+&lt;p>The best distro is functionally the best, stable (for general and niches like gaming and content creation), and has better performance than the alternatives.&lt;/p>
+&lt;ul>
+&lt;li>For functionality, KDE is the best; fractional scaling.&lt;/li>
+&lt;li>For stability, we choose anything but Arch. A perfect example is this comment explaining that when things break, he doesn&amp;rsquo;t consider it broken &lt;a href="https://www.reddit.com/r/archlinux/comments/11t3wc1/comment/jchsx4e">if he has to use the internet (arch wiki) to fix the problem&lt;/a>. My definition of broken is that the issue cannot be fixed by restarting your computer.&lt;/li>
+&lt;li>For performance, we want to avoid Ubuntu-based distros that use snaps&lt;/li>
+&lt;li>We are left with distros that support KDE out of the box: Namely, Debian based (excluding Ubuntu) and Fedora based.&lt;/li>
+&lt;/ul>
+&lt;p>So why Fedora instead of Debian? Well because it&amp;rsquo;s more up to date and it&amp;rsquo;s also not confusing to download unlike Debian. Why Nobara instead of Fedora KDE? Well because Nobara is trying to be like Windows in the sense that it works for everyone.&lt;/p>
 &lt;h2 id="webcam-application" >Webcam Application
 &lt;span>
 &lt;a href="#webcam-application">
