@@ -1544,3 +1544,22 @@ Solidiity callback function: runs when money is sent to the contract or is inter
 - for databases, use transactions
 - memory errors: double free, double allocate (dangling)
 - heisenburg and non-deterministic behaviour
+
+## Fuzz Testing
+
+- To drive the execution of a system into desired state
+- system: source code, input format
+- state: output or current state
+
+### Genetic Algorithm
+
+- Feedback and Selection fo most successful
+
+### Path Coverage
+
+- AFL: American Fuzzy Lop
+
+### Narrow-range Constriants
+
+- SMT Solvers
+- [Fuzzers](https://fuzzing-survey.org/)

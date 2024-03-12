@@ -1021,10 +1021,6 @@ p = (a - d) / (u - d)
 - At least 30 time steps are required for good option values
 - [DerivaGem](https://www-2.rotman.utoronto.ca/~hull/software/index.html) allows up to 500 time steps
 
-### Black-Scholes-Merton Model
-
-- price of a European call option as the time step tends to Zero
-
 ## Chapter 18 - Binomial Trees in Practice (DerivaGem)
 
 - approximate movements in the price of a stock or other asset
@@ -1045,3 +1041,75 @@ p = (a - d) / (u - d)
 
 - Delta = (2.16 - 6.96) / (56.12 - 44.55) = -0.41 (the payoff from the next step)
 - As time passes, delta will change (delta hedging)
+
+## Chapter 13 - Black-Scholes-Merton Model
+
+- price of a European call option as the time step tends to Zero
+- mean \mu is the expected return and \sigma is volatility
+- Delta S / S is the stock return which is normal distributed
+
+### Lognormal Property
+
+<img class=equation src="https://latex.codecogs.com/svg.image?\ln S_0+(\mu - \sigma^2 / 2)T" alt="">
+
+Standard deviation:
+
+<img class=equation src="https://latex.codecogs.com/svg.image?\sigma \sqrt T" alt="">
+
+Therefore the normal distribution, \phi [mean, variance], Is
+
+<img class=equation src="https://latex.codecogs.com/svg.image?\ln S_T \approx \phi [\ln S_0+(\mu - \sigma^2 / 2)T, \sigma^2T]" alt="">
+
+or
+
+<img class=equation-tall src="https://latex.codecogs.com/svg.image?\ln \frac{S_T}{S_0} \approx \phi [(\mu - \sigma^2 / 2)T, \sigma^2T]" alt="">
+
+Example
+
+- N = 16%, std = 35%, S0 = $38
+- Calculate probailiy that a european call option with k = %40 and maturity 6 months out will be exercised
+- P(S_T > 40)
+- Use online distribution calculator to figure it out
+
+### Estimating Volatility from Historical Data
+
+1. Take observation S_0, S_1, S_n at intervals of Tau years (for weekly data, Tau = 1/52)
+2. Calculate the continuously compounded return in each interval as: `mu_i = ln (S_1 / S_{i - 1})`
+3. Calculate the standard deviation, s, of the mu_i's
+4. Historical volatility estimate is: \sigma \hat = s / (sqrt ( Tau))
+
+- Tau decision: need as many observations as possible
+- With daily, lots of noise
+- Period has to be big enough period for validity
+- Need more than 30 observations
+
+### Black-Scholes Formulas
+
+European Call
+
+<img class=equation src="https://latex.codecogs.com/svg.image?c=S_0N(d_1)-Ke^{irT}N(d_2)" alt="">
+
+European Put
+
+<img class=equation src="https://latex.codecogs.com/svg.image?p=Ke^{-rT}N(-d_2)-S_0N(-d_1)" alt="">
+
+d1 variable
+
+<img class=equation-tall src="https://latex.codecogs.com/svg.image?d_1=\frac{\ln(S_0/K)+(r+\sigma^2/2)T}{\sigma \sqrt T}" alt="">
+
+d2 variable
+
+<img class=equation-tall src="https://latex.codecogs.com/svg.image?d_2=\frac{\ln(S_0/K)+(r-\sigma^2/2)T}{\sigma \sqrt T}=d_1-\sigma \sqrt T" alt="">
+
+The variable mu does not appear in the black-scholes equation. It is independent of all variables affected by risk preference. Consistent with risk-neutral valuation principle.
+
+<img class=equation src="https://latex.codecogs.com/svg.image?e^{-rT}N(d_2)(S_0e^{rT}N(d_1)/N(d_2)-K)" alt="">
+
+- N(d2) is the probability of exercising
+
+With dividends, need to substitute the stock price with the stock price minus the dividends paid through the maturity
+
+### Implied Volatility
+
+- The volatility that makes the model price the derivative the same as the market price.
+- If two options with the same underlying have different implied volatilizes, something might be overpriced/underpriced
