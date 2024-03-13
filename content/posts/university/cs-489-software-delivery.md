@@ -668,6 +668,9 @@ Technologies: puppet, chef, terraform, ansible, SaltStack
 ### Puppet Notes
 
 - Quest exercises were done
+- To use a module for a node, you need to include it or instantiate the class inside `site.pp`
+  - `/etc/puppetlabs/code/environments/production/manifests/site.pp`
+- Example module init file
 
 ```puppet
 class pasture {
@@ -688,14 +691,14 @@ class pasture {
     'default_message'   => $default_message,
   }
   file { $pasture_config_file:
-    # source  => 'puppet:///modules/pasture/pasture_config.yaml',  # hard coded
-    content => epp('pasture/pasture_config.yaml.epp', $pasture_config_hash),  # template
+    # source  => 'puppet:///modules/pasture/pasture_config.yaml',  # hard coded in files/pasture_config.yaml
+    content => epp('pasture/pasture_config.yaml.epp', $pasture_config_hash),  # templates/pasture_config.yaml.epp
     notify  => Service['pasture'],  # when this config resource is updated, restart the pasture service
   }
 
   file { '/etc/systemd/system/pasture.service':
     # source  => 'puppet:///modules/pasture/pasture.service',  # hard coded
-    content => epp('pasture/pasture.service.epp', $pasture_service_hash), # template
+    content => epp('pasture/pasture.service.epp', $pasture_service_hash), # templates/pasture.service.epp
     notify  => Service['pasture'],
   }
 

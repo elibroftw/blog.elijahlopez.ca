@@ -1362,11 +1362,13 @@ Basic EPS = $1.58
 
 ### Diluted EPS: If-Converted Convertible Bonds Method
 
+Summary: Calculate situational net income by adding back the interest paid for the duration of the bond net of taxes. Calculate the diluted WACS by adding the weighted shares possibly added. So if the bond was issued during the year instead of before the 2nd day of the year, you want to pro-rate the interest expense as well as the shares diluted.
+
 - assume conversion occurs later of the beginning of the year and the issue date
 - need to add back the interest net of taxes (1 - T)
-- 410,000 net income, 100,000 WACS, 30% tax
-- 1 convertible to 20,000 common shares at 6% of 1,000,000
-- 1 convertible to 32,000 common shares at 10% of 500,000 on April 1
+- 410,000 net income, 100,000 Weighted Average Common Shares (WACS), 30% tax
+- 1 bond convertible 20,000 common shares at 6% of $1,000,000
+- 1 bond convertible to 32,000 common shares at 10% of $500,000 on April 1
 - Basic EPS: $4.10
 - Diluted Earnings:
   - `410000 + 0.06 * 1000000 * 0.7 + 0.1 * 500000 * 9 / 12 * 0.7` = 478,250
@@ -1500,10 +1502,12 @@ x = $23,982
 1. Implicit rate: PV minimum lease payments plus un-guaranteed residual value = FV of underlying
 2. Lessee's incremental borrowing rate (equivalent funds were borrowed for a similar term and similar security)
 
-- ASPE: lower of the two rates used to ensure that the lessee does not get a lower PV.
+- ASPE: lessor of the two rates used to ensure that the lessee does not get a lower PV
 - IFRS: use Lessor's implicit rate
 
 ### Right-of-use assets under IFRS
+
+The initial value of the right-of-use asset is the PV of the payments plus the PV of the residual value or purchase option discounted at the lessor/implicit rate
 
 ```accounting
 1-Sep | contract initiated with first payment
@@ -1672,3 +1676,22 @@ Unearned Interest Income Dr. 5,964
 
 - post-employment benefits (IFRS)
 - Employee Future Benefits (ASPE)
+
+## Chapter 19 - Pensions and Post Employment Benefits
+
+### Changes in Defined Benefit Obligation
+
+- Current services cost
+  - DBO increases due to employee working more and earning additional benefits
+- Past service costs
+  - Plan gets amended (e.g. vesting period decreases or a reduction in benefits)
+- Interest cost
+  - Increase the DBO for the interest cost of the DBO and the past service amendments active during the year
+- Benefits paid to retirees
+  - Subtract the DBO
+- Actuarial gains and losses
+  - assumptions that have changed. In IFRS, recognize in OCI
+
+### Plan Assetsx`
+
+The assets can change in value. When the DBO > Plan Assets, that a net defined benefit liability (underfunded) and when the DBO < Plan asset, the plan is overfunded.
