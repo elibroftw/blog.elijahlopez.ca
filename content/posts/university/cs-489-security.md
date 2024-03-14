@@ -1563,3 +1563,22 @@ Solidiity callback function: runs when money is sent to the contract or is inter
 
 - SMT Solvers
 - [Fuzzers](https://fuzzing-survey.org/)
+
+## Finding Bugs
+
+- Program analysis
+- derive properties which hold for program P (inteference)
+- prove that a property holds for program P (verification)
+- given a program P, generate a program P' which is
+  - equivalent to P in most ways
+  - behaves better than P with respect to some criteria
+
+### Concrete Semantics
+
+- all possible executions under all possible inputs
+- could be close to infinite which is impractical to enumerate
+- safety properties: no possible execution should reach these erroneous states
+- testing: consdering a subset of the possible executions
+- bounded model checking
+- abstract interpretation: if the abstract semantics cover all possible cases -> so does the concrete semantics
+  - false alarms: widening of the model during execution

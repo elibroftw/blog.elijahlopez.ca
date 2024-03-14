@@ -1322,7 +1322,7 @@ This implies that the higher the real exchange rate, the lower a country’s net
 1. able to buy goods from countries using said currency
 2. able to purchase real and financial assets denominated in said currency
 
-## Supply for Currency
+### Supply for Currency
 
 1. buy foreign goods
 2. buy foreign real and financial assets
@@ -1433,3 +1433,12 @@ Currency Unions: Common currency shared by a group of countries (e.g. EU). Reduc
 8. In the short run in the Keynesian model for a small open economy with flexible exchange​ rates, an increase in the domestic money supply would cause domestic output to​ rise and the domestic real interest rate to​ fall
 9. for an undervalued currency in a fixed exchange rate, the country can increase money supply; if money supply is increased too much it may make the currency over-valued
 10. european union agreeing to use the euro is called a currency union. all countries in the currency union must share a common monetary policy.
+
+## Chapter 11: Classical Business Cycle Analysis: Market-Clearing Macroeconomics
+
+business cycle theories have two components:
+
+1. Description of the types of shocks believed to affect the economy the most
+2. a model that describes how key macroeconomic variables respond to economic shocks
+
+### Real Business Cycle Theory

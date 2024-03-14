@@ -1113,3 +1113,90 @@ With dividends, need to substitute the stock price with the stock price minus th
 
 - The volatility that makes the model price the derivative the same as the market price.
 - If two options with the same underlying have different implied volatilizes, something might be overpriced/underpriced
+
+## Chapter 15: Options on Stock Indices and Currencies
+
+- Most popular in the U.S.A are S&P 100 (OEX, XEO),  S&P 500 (SPX), DOW times 0.01 (DJX), NADAQ 100 (NDX)
+- Contracts are settled on 100 times the index in cash OEX is American whereas the others are European
+
+### Example 15.1
+
+- Portfolio Beta of 1.0
+- Value is $500,000
+- Index at 1,000
+- What trade is necessary to provide insurance to prevent value from falling below $450,000
+
+### Example 15.2
+
+- Portfolio has Beta of 2.0
+- Value is $500,000
+- Index at 1,000
+- rf = 12% per annum
+- dividend yield on both is 4%
+- How many put options to purchase on the index at the strike?
+
+How to solve?
+
+1. Find relationship of portfolio to index.
+    - The portfolio return is the value that fell plus the pro-rated dividends that was received
+    - Then use this return to calculate the situational return on the index and subtract the dividend yield
+    - This nominal value on the index is the strike price we want to purchase of the put
+2. Find number of puts to purchase
+    - puts to purchase to cover initial portfolio: Beta \* Vp / (Vidx * 100) wher Vp and Vidx are current values
+
+### Currency Options
+
+- NASDAQ OMX
+- Used for buying insurance when exposed to FX
+
+### Range Forward
+
+## Futures options and Black's Model
+
+- American and expires a few days before the earliest delivery
+- When a call futures option is exercises
+  - The Holder acquires
+    1. A long position in the futures
+    2. A cash amount equal to excess of the futures price at the most recent settlement over the strike price
+
+### Example 16.1
+
+- July call option on gold futures with a strike of $12000 per ounce. Exercised when futures price is 1,240 and recent settlement of 1,238. One contract is 100 ounces
+- Trader receives: one long July contract on gold and (1238 - 1200) * 100 = 3800.
+
+### Example 16.2
+
+- September put option on corn 300 cents per bushel
+- exercised when futures is 280 cents per bushel with recent settlement of 279 cents per bushel
+- Trader received: long short futures on the corn contract and 21 cents per bushel in cash
+
+### Immediately Selling the Future Payoff
+
+- Payoff from call = F - K
+- Payoff from put = K - F
+
+### Advantages of Future Options over Spot Options
+
+- futures may be easier to trade
+- no delivery
+- futures and options trade on the same exchange
+- futures options may entail lower transaction costs
+
+### European Futures Options
+
+- the futures option and spot options are equal at maturity
+- spot options are regarded as futures options when valued over the counter
+
+### Put-Call Parity for European Futures Options
+
+<img class=equation-tall src="https://latex.codecogs.com/svg.image?c+Ke^{-rt}=p+F_0 e^{-rt}" alt="c+Ke^{-rt}=p+F_0 e^{-rt}">
+
+### Riskless Futures Option Portfolio
+
+- 3Delta - 4 = 2 Delta &rarr; Long Delta futures of 0.8
+- With a risk-free rate of 6%, the value of the portfolio is -1.6e^{-0.06/12} = -1.592
+- Value of the options must be 1.592 since the value of the futures is 0
+
+The portfolio is risk-less when
+
+<img class=equation-tall src="https://latex.codecogs.com/svg.image?\Delta = \frac{f_u-f_d}{F_0u-F_0d}" alt="">
