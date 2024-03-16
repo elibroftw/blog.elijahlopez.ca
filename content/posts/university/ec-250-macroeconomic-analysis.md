@@ -1442,3 +1442,122 @@ business cycle theories have two components:
 2. a model that describes how key macroeconomic variables respond to economic shocks
 
 ### Real Business Cycle Theory
+
+Suggests that real shocks to the economy are the primary cause of business cycles; Real shocks affect the IS curve or the FE line while nominal shocks are shocks to money supply or demand which affect the LM curve. Examples of shocks:
+
+- the production function,
+- the size of the labour force,
+- the real quantity of government purchases, and
+- the spending and saving decisions of consumers.
+
+The important shock is supply/productivity shocks.
+
+Most economic booms result from beneficial productivity shocks; while most recessions are caused by adverse productivity shocks.
+
+### Critiques of RBC Theory
+
+- cumulative effects
+- other shocks such as war and military buildup
+
+### Solow Residual
+
+The proportion of growth not attributed to labour and capital
+
+<img class=equation-tall src="https://latex.codecogs.com/svg.image?A=\frac{Y}{(K^aN{1-a})}" alt="A=\frac{Y}{(K^aN{1-a})}">
+
+If there is a difference in intensity of inputs, productivity can change without technology changing. If uk is capital utilization, un is labour utilization, and A is tech,
+
+<img class=equation src="https://latex.codecogs.com/svg.image?Au_{K^a}u_{N^{1-a}}" alt="">
+
+### Fiscal Policy Shocks in the Classical Model
+
+increase/decrease in government spending has a wealth effect that results in an increase/decrease in labour supplied shifting the FE line to the right/left resulting in an increase/decrease in the full employment level of output. Classic economists are against dampening the business cycle through fiscal policies.
+
+### Unemployment in Classical Models
+
+In the classical model unemployment is just mismatched workers and jobs. With shocks, there is an increase in the matching problem. IMF reported great deal of churning of jobs but it doesn't explain all unemployment (e.g. temporary layoffs; timing). You'd think more help would be needed during recessions but they fall. Government can reduce regulations on business or reduce minimum wage instead of fiscal policy that does not improve the matching problem (I mean the government can always expand government jobs).
+
+### Money in the Classical Model
+
+procyclical is explained by "reverse causation"; the change in money growth precedes changes in output does not mean that the money growth caused the output changes. Storm windows don't cause winter to come, the winter coming causes storm windows to be put up.
+
+Bank of Canada wants to increase the demand for money by reducing the interest rate which requires a higher money supply so that businesses can get money they want easily and handle future sales. For example, just before christmas the money supply increases (gift-buying).
+
+### Misperception Theory; Non-Neutrality of Money
+
+A producer's wage is equal to the price of the good being produced. Price and output is related (higher the price more goods are produced and vice versa). The producer has to use previous expectations of the current price level to estimate the actual price level. So if there is an expectation of 5% inflation and price of break increases by 5%, then baker retains output since the real wage has not changed. Therefore, the change in output can simply be due to the difference between the general and expected price levels.
+
+<img class=equation src="https://latex.codecogs.com/svg.image?Y=Y\bar+b(P-P^e)" alt="Y=Y\bar+b(P-P^e)">
+
+So although Long-Run Aggregate Supply is vertical, Short Run Aggregate Supply is a curve swinging upwards intersecting when P = Pe. Anticipated monetary policy has no effects.
+
+### Rational Price Expectations Theory
+
+If expectations are correct, the expected price will equal the actual price. The central bank has to surprise people to affect output but it's clear that the central bank would want to increase money supply during recessions and decrease it during booms and so only a random policy would have effects.
+
+## Chapter 12: Keynesian Business Cycle Analysis
+
+- Non-Market-Clearing Macroeconomics
+- Wages and prices are sticky and won't easily go down
+- Economy can be in disequilibrium for long period of time
+- Recession is not an optimal response to an aggregate demand shock; rather it is disequilibrium in which high unemployment reflects excess supply of labour
+- Stabilization policy can and should be used by the government to reduce economic fluctuations
+
+### Nominal Wage Rigidity
+
+Nominal wages are set by contracts for an extended period of time and thus there are expectations of the future economy. Same equation as before. here is a different SRAS for every expected price.
+
+### Monetary and Fiscal Policies in the Keynesian Model
+
+The IS-LM model is output versus interest rates whereas the AD-AS model is the Price level versus the output.
+
+![monetary expansion](/images/ec-250/is-lm-ad-as-monetary-policy.png)
+
+![monetary expansion](/images/ec-250/is-lm-ad-as-fiscal-policy.png)
+
+There are two price level adjustments since one is the before labour contracts are renegotiated
+
+Fiscal and monetary policies are both referred to as aggregate demand policies because both policies affect the position of the aggregate demand curve. Only unanticipated fiscal policies have a long-term affect.
+
+### Criticisms of the Nominal Wage Rigidity Assumption
+
+- less than one-third of the Canadian labour force is unionized and covered by long-term wage contracts
+- some labour contracts are indexed to inflation, so the real wage is fixed, not the nominal wage
+- real wages are procyclical no counter-cyclical
+
+### Price Stickiness
+
+Empirical evidence on price stickiness is not conclusive; sticky in response to monetary policy shocks and flexible in response to shocks. Exchange rate pass-throughs are slow or incomplete.
+
+- Monopolistic Competition
+  - Prices are set in nominal terms and maintain those prices for some period
+  - Output adjusted to meet demand at the nominal price
+  - Prices adjusted from due to significant changes in costs or demand
+- Menu Costs
+  - Changing the price means printing new menus which costs money
+
+For firms that have some monopoly power,
+
+Price = (1 + Markup) * Marginal Cost
+
+### Macroeconomic Stabilization
+
+Recessions are undesirable because the unemployed are hurt. Government policies can quickly restore to general equilibrium but would increase price level in the long-run tha if no action was taken. In my opinion, there shouldn't be a need to fear people being unemployed if people could get a reduction in their tax bills equal to their estimated savings. Someone with $0 in savings should not have to pay as much in taxes nor should they get less in EI than someone who has $100,000 in savings. The latter can still maintain their assets so if anything EI should be as normalized as possible across the board. Secondly, there should not be a labour surplus during non-booming times. The government can also fund education during times of recessions so that people out of job can still get educated for skilled jobs that have labour shortages (grants given for specific programs).
+
+### Fiscal Policy Multiplier
+
+- increase in gdp / increase in spending
+- for the US economy the multiplier is sometimes zero during periods of full employment to 1.5 in periods of recession
+- therefore, maybe best to run surpluses with full employment and deficits during recessions to avoid the price increase
+
+### Real Wage Rigidity and Efficiency Wage Model
+
+- workers who feel well treated will work harder and more efficiently
+- effort vs real wage is an S curve. There is a sweet spot just before effort flattens off (tangent to line from origin)
+- therefore market-clearing wage > efficiency wage determines unemployment. Labour supply - Labour demand = unemployment and unemployment does not reduce real wages\*
+
+
+### Demand Shocks
+
+- more dispensable income (that is spent more than saved?) from a government tax cut or increase in money supply
+- expected results -> higher output and prices immediately and then a return to full employment at a higher price level (SRAS curve moves)
