@@ -1582,3 +1582,80 @@ Solidiity callback function: runs when money is sent to the contract or is inter
 - bounded model checking
 - abstract interpretation: if the abstract semantics cover all possible cases -> so does the concrete semantics
   - false alarms: widening of the model during execution
+
+## Defenses against Common Vulnerabilities
+
+- Runtime sanity checking
+- Defensive programming; anticipate what might go wrong in software
+  - Normal paradigm: expect others to follow the rules
+  - Defensive paradigm: expect others to ignore / by-pass the rules
+
+### Paranoia
+
+- NULL-check for every pointer access even when its an internal function called by a public function that does the check
+- Undefined behavior sanitizer (UBSan)
+  - stateless sanity checks
+  - `-fsanitize=bool`
+    - loading of a bool value which is neither true nor false
+  - `-fsanitize=bounds`
+    - statically known checking
+  - `-fsanitize=function`
+    - wrong type of pointer when calling
+  - `-fsanitize=null`
+  - `-fsanitize=integer-divide-by-zero`
+  - `-fsanitize=integer-overflow`
+
+### Dynamic Checking
+
+- Fat pointer
+
+### AddressSanitizer (ASan)
+
+- Overhead of ASan is 70% on average
+- Shadow memory
+- Fast shadow translation
+- Memory available gets mapped to shadow
+- Shadow gets mapped to inaccessible
+- Compact representation (7 bytes of membery into 1 byte of shadow memory)
+
+```c
+// before:
+*addr = ...; or ... = *addr;
+// after:
+if (*MemToShadow(address) != 0) {
+  ReportError(address, ...);
+}
+*address = ...; // or: ... = *address;
+```
+
+- limitations:
+  - continuous overrun detection only
+  - limited protection on use-after-free
+  - incompataible with other security scheme (e.g. UBSan)
+  - not suitable for library developers
+    - not possible to use an application that is not using ASan with a library compiled with ASan
+
+### Why is Java Efficient?
+
+- no 70% overhead but you still get an array index out of bounds exception
+- Java Virutal Machine means the JVM can store extra metadata like length without depending on OS memeory implementation
+- Java does not allow **arbitrary casting**
+  - Only upward cast and sometimes downward cast. No re-interpret cast so length is always there. New object needs to be created for "re-interpreting"
+
+### Reference Monitor
+
+### Runtime Verification (RV)
+
+- Validation: are we building the right product?
+- Verification: are we building the product right?
+- linear temporal logic (LTL): primitive properties, propositional connectives, temporal connectives
+
+### Control-Flow Integrity (CFI)
+
+- Shadow Stack: return address protection  inside Intel
+
+### Aspect Oriented Programming
+
+- separation of cross-cutting concerns
+- logging
+- obscures control flow

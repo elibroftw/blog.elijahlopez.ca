@@ -1114,7 +1114,7 @@ With dividends, need to substitute the stock price with the stock price minus th
 - The volatility that makes the model price the derivative the same as the market price.
 - If two options with the same underlying have different implied volatilizes, something might be overpriced/underpriced
 
-## Chapter 15: Options on Stock Indices and Currencies
+## Chapter 15 - Options on Stock Indices and Currencies
 
 - Most popular in the U.S.A are S&P 100 (OEX, XEO),  S&P 500 (SPX), DOW times 0.01 (DJX), NADAQ 100 (NDX)
 - Contracts are settled on 100 times the index in cash OEX is American whereas the others are European
@@ -1151,7 +1151,7 @@ How to solve?
 
 ### Range Forward
 
-## Futures options and Black's Model
+## Chapter 16 - Futures options and Black's Model
 
 - American and expires a few days before the earliest delivery
 - When a call futures option is exercises
@@ -1200,3 +1200,41 @@ How to solve?
 The portfolio is risk-less when
 
 <img class=equation-tall src="https://latex.codecogs.com/svg.image?\Delta = \frac{f_u-f_d}{F_0u-F_0d}" alt="">
+
+## Chapter 17 - The Greek Letters
+
+- Delta = change in option price with relation to underlying
+- Vega or Lambda: change in option price with relation to underlying volatility
+- Theta: change in option price with relation to time
+- Rho: change in option price with relation to interest rate
+- Gamma: Change in option's **delta** in relation to stock price change (2nd derivative)
+
+### Stop-Loss Strategy
+
+- assuming a naked call position
+- buying 100,000 shares as soon as price reaches $50
+- selling 100,000 shares as soon as price falls below $50
+- if the stock keeps around the strike price of 50, then the person can lose money
+
+### How Delta-Hedging Works
+
+If we hold a short call position and hold delta shares, why are we doing so? When the underlying's value goes up, we lose delta in the short call options, but we also gain on the underlying shares.
+
+- delta on a european non-dividend call is N(d1)
+  - european non-dividend put: N(d1) - 1
+- As time to maturity decreases, delta of out the money calls increases, and in the money calls decreases
+- Buy high sell low
+
+### Example 17.1
+
+- A bank has sold for $300,000 a European call option on 100,000 shares of a non-dividend- paying stock
+- S0  = 49,  K  = 50,  r  = 5%,  s = 20%,
+- T = 20 weeks, m = 13%
+- The Black-Scholes-Merton value of the option is $240,000
+- How does the bank hedge its risk to lock in a $60,000 profit?
+
+### Gamma Addresses Delta Hedging Errors Caused by Curvature
+
+- greatest for options at the money
+- Tau = portfolio value
+- change in gamma = Theta times change in time +0.5 Tau change in share price squared

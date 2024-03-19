@@ -172,3 +172,15 @@ Protocols including Internet Protocol originated from US Dept. of Defense's ARPA
 [IEEE 1588-2019](https://standards.ieee.org/ieee/1588/6825/)
 
 > provides precise synchronization of clocks in packet-based networked systems
+
+## System Resources
+
+### Containers are More than Isolation
+
+Containers aren't just for isolating applications and ensuring "it will run everywhere." Containers can also be used to make it easier to allocate a system's resources.
+
+Suppose we want to limit how much memory an application uses. We want to containerize the application using something like docker and limit the memory using `docker run --memory=1g`
+
+### Mitigating Memory Usage
+
+Suppose an application's memory usage keeps increasing as it runs. What could be the cause of the problem? What happens to the other applications if the system's memory usage is at 99%-100%? What can we do to ensure the application will keep running (e.g. systemd service Restart=always)? What can we do to prolong/delay the issue and doesn't hinder performance (i.e. increasing swap space has noticeable effects but speaking practically what can you do if you in the perspective of being the head of infrastructure)?
