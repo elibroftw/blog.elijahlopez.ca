@@ -128,6 +128,7 @@ The difference between the courses is that Macro Economics 1 is abstracted where
   - Fiscal Policies
     - Government
     - Taxes
+  - Inflation and Unemployment
   - Economic Growth
     - Purpose
     - Factors

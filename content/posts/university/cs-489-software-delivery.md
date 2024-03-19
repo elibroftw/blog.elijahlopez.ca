@@ -707,3 +707,32 @@ class pasture {
   }
 }
 ```
+
+## Deployment and Mitigating Failures
+
+- Integrate (push patches to git server) &rarr; Build (from source code) &rarr; **Deploy (new) &rarr; Monitor (new ideas for patches)**
+- Deployment is a systematic process for making official version of software available
+- Release pipelines require experts; DevOps / Release engineers / operators
+- Release engineers increase the market potential of software organizations
+  - "Investment in release engineering has enabled Mozilla to compete with software giants like Microsoft, Google, and Apple"
+- Release strategy
+  - Send compiled software to production team for etching on to shipment media
+  - Upload tarball to location on web
+  - Push changes into package repository like Maven Centra or NPM
+  - Upload new release to an app store like Google Play or Apple Store
+
+### Blue-Green Deployment
+
+[Blue-Green Deployment by Martin Fowler](https://martinfowler.com/bliki/BlueGreenDeployment.html)
+
+1. Blue-green deployment tackles the challenge of minimizing downtime when automating deployment
+2. The challenge is addressed by ensuring there are two as-identical production environments and the latest version is deployed to the idle environment for testing before switching the router to target the blue environment
+3. Roll-over/backs can be done by first running the application in read-only mode for some time before running it in read-write mode.
+4. Speaking on disaster-readiness, since one environment is running a previous version or the staging version, this approach is equivalent to what would be needed in case of a disaster.
+5. Trickiest tier from (web, app, database services) to maintain in blue-green architecture is the database service since there can be two different schemas for the database. To integrate it, the first scheme modification has to support both versions, and only when the old version is deprecated, should the schema support for it should be removed
+
+### A/B Testing
+
+### Canary Releases
+
+### Chaos Engineering

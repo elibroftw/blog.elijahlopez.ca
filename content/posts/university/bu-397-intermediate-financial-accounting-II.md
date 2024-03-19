@@ -1692,6 +1692,38 @@ Unearned Interest Income Dr. 5,964
 - Actuarial gains and losses
   - assumptions that have changed. In IFRS, recognize in OCI
 
-### Plan Assetsx`
+### Plan Assets
 
-The assets can change in value. When the DBO > Plan Assets, that a net defined benefit liability (underfunded) and when the DBO < Plan asset, the plan is overfunded.
+- The assets can change in value. When the DBO > Plan Assets, that a net defined benefit liability (underfunded) and when the DBO < Plan asset, the plan is over-funded.
+
+### Other Defined Benefit Plans that Vest or Accumulate
+
+- health care, life insurance, long-term disability, dental and eye care, legal and tax services, tuition assistance, free or subsidized travel
+
+### Other Defined Benefit Plans that do not Accumulate
+
+- no attempt to accrue the benefit, costs, or liabilities
+- recognize as event occurs
+
+### Presentation of Benefits
+
+- SFP
+  - If there is one or more defined benefit plans, show separately
+  - can only be combined if all result in defined benefit liability or defined benefit asset
+  - no guidance
+- Income Statement
+  - No guidance
+  - a) Report as separate components
+  - b) part of similar expenses
+  - c) total as a single benefit cost (most companies do this)
+
+## Changing the Accounting Policy
+
+- Accounting policy: Switching from FIFO to weighted average
+  - specific principles, practices, and application
+  - change is required by a primary source of GAAP
+  - voluntary change that results in a more reliable presentation
+- Accounting estimate: Depreciation estimate change
+  - adjustment to the carrying value due to change in assumption
+- Correction of a prior period error(s)
+  - Omissions or misstatements

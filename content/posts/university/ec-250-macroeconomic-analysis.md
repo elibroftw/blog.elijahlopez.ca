@@ -559,6 +559,7 @@ w = 0.60
     - reallocation of labour from shrinking to growing industries
   - Natural rate of unemployment is the prevailing unemployment rate when output & employment is at full-employment levels
   - Cyclical unemployment is the difference between the actual and natural unemployment rate (u vs u with overbar)
+  - My guess is that Canada's natural rate of unemployment is between 5.5% - 5.6% because it was around this in 2019 and was below this during the inflation that occurred during 2022. When rates started going up, so did unemployment and now we are at 5.8% which I believe is still above natural unemployment due to the higher numbers of international students and the hours they can work.
 
 ### Lesson 2 Summary
 
@@ -1423,7 +1424,7 @@ Currency Unions: Common currency shared by a group of countries (e.g. EU). Reduc
     - **effective exchange rate**
 3. If the dollar/Swiss frac exchange rate falls, then?
     - **dollar more valuable**?
-    - swiss imports more from Canada into Switzlerand
+    - swiss imports more from Canada into Switzerland
     - canadian firms export more to switzerland
     - swiss franc more valuable relative to the dollar
 4. 2002-2008 canadian dollar against US dollar appreciated due to net exports increasing
@@ -1485,7 +1486,7 @@ Bank of Canada wants to increase the demand for money by reducing the interest r
 
 ### Misperception Theory; Non-Neutrality of Money
 
-A producer's wage is equal to the price of the good being produced. Price and output is related (higher the price more goods are produced and vice versa). The producer has to use previous expectations of the current price level to estimate the actual price level. So if there is an expectation of 5% inflation and price of break increases by 5%, then baker retains output since the real wage has not changed. Therefore, the change in output can simply be due to the difference between the general and expected price levels.
+A producer's wage is equal to the price of the good being produced. Price and output is related (higher the price more goods are produced and vice versa). The producer has to use previous expectations of the current price level to estimate the actual price level. So if there is an expectation of 5% inflation and price of bread increases by 5%, then baker retains output since the real wage has not changed. Therefore, the change in output can simply be due to the difference between the general and expected price levels.
 
 <img class=equation src="https://latex.codecogs.com/svg.image?Y=Y\bar+b(P-P^e)" alt="Y=Y\bar+b(P-P^e)">
 
@@ -1505,7 +1506,7 @@ If expectations are correct, the expected price will equal the actual price. The
 
 ### Nominal Wage Rigidity
 
-Nominal wages are set by contracts for an extended period of time and thus there are expectations of the future economy. Same equation as before. here is a different SRAS for every expected price.
+Nominal wages are set by contracts for an extended period of time and thus there are expectations of the future economy. Same equation as before. here is a different Short-run Aggregate Supply (SRAS) for every expected price.
 
 ### Monetary and Fiscal Policies in the Keynesian Model
 
@@ -1556,8 +1557,147 @@ Recessions are undesirable because the unemployed are hurt. Government policies 
 - effort vs real wage is an S curve. There is a sweet spot just before effort flattens off (tangent to line from origin)
 - therefore market-clearing wage > efficiency wage determines unemployment. Labour supply - Labour demand = unemployment and unemployment does not reduce real wages\*
 
-
 ### Demand Shocks
 
 - more dispensable income (that is spent more than saved?) from a government tax cut or increase in money supply
 - expected results -> higher output and prices immediately and then a return to full employment at a higher price level (SRAS curve moves)
+
+## Chapter 13 - Unemployment And Inflation
+
+- Twin evils
+- Phillips curve: an empirical relationship between inflation and unemployment
+  - inflation tends to be low when unemployment is high and high when unemployment is low
+  - only held till the 1960s as the relationship failed to hold in the decades that followed
+    - analysis to disprove the curve was also done during this time
+  - stagflation: where inflation and unemployment is high
+- Expectations-Augmented Phillips Curve
+  - Friedman–Phelps theory
+  - Unanticipated inflation vs. cyclical unemployment
+    - In classical, Misperception theory is used.
+  - When Aggregate Demand increases unexpectedly, cyclical unemployment will be negative because more employment than natural is required
+  - Example: think money supply is expected to increase by 10% (output remains equal), but increased by 15%. Price level increases less than 15% because output is increased as there is a belief that relative prices of goods are higher when they are not
+  - If unemployment rate is higher than natural, that implies that actual inflation is higher than expected inflation
+  - Strength of the relationship is related to the slope of the SRAS curve
+
+### Expectations-Augmented Phillips Curve
+
+- When the expected inflation increases, the curve shifts to the right (higher unemployment rate for the same inflation rate)
+- When the natural rate of unemployment changes, the curve shifts to the right
+- For adverse supply shocks, classical blames the increase in natural unemployment to higher levels of mismatch between workers and jobs whereas keynesian blames it on higher than ideal real wage.
+  - classical: high energy costs transfers jobs from the energy users to energy providers (makes sense)
+  - Phillips curve moves up and to the right
+
+### Policies and the Phillips Curve
+
+- Classical: stabilization policies are futile because of quick self-correction
+- Keynesian: possible for unemployment rate to deviate from natural rate for an extended period of time
+  - Thus when AD falls and unemployment increases, government can use AD to increase inflation again
+- **The Lucas Critique**
+  - new policies change the economic rules, and so no one can safely assume historical relationships will continue to hold
+  - applies to phillips curve when policy makers thought they could increase inflation to reduce unemployment
+
+### Long-Run Phillips Curve
+
+- vertical line
+- expected inflation = actual inflation
+- actual unemployment = natural unemployment
+
+### Costs of Unemployment
+
+- loss of output because fewer people are employed
+- borne on the unemployed (loss of income) and society (unemployment insurance received instead of income taxes paid)
+- **Okun's law**: 1 percentage point increase in cyclical unemployment reduces real output by 2 percentage points.
+  - considered too high because it reflects more issues than just a change in cyclical unemployment
+- offsetting factors:
+  - searching for the perfect match may lead to future productivity and output growth
+  - leisure time (diminishing utility)
+
+### Long-Term Behaviour of the Unemployment Rate
+
+- natural unemployment rate corresponds to full-employment output
+- unsure when we are at full-employment output
+- hard to figure out what the natural rate is so not a good idea to pursue policies in pursuit of this number
+- changes:
+  - Demographic
+    - women have equal or lower unemployment rate nowadays
+    - younger workers have higher unemployment rate
+  - Technological changes
+    - Higher skill requirement which reduces employment opportunities for low-skilled or poorly educated workers
+    - (see the Application “Technological Change and Wage Inequality” in Chapter 3, p. 74).
+  - Hysteresis
+    - the tendency of the natural rate of unemployment to change in response to the actual unemployment rate, rising if the actual unemployment rate is above the natural rate and falling if the actual unemployment rate is below the natural rate.
+    - downturns in economies with high levels of worker regulation tends to persist more due to firms not hiring workers that will never need to be fired (pessimist hiring versus optimistic)
+  - Employment Insurance
+    - replacement ratio: benefit relative to lost wages
+    - benefit duration: amount of time an unemployed worker receives benefits for
+    - eligibility requirements: what does the worker need to do to collect benefits
+    - disincentive index: disincentive to search for jobs and accept job offers
+
+### Policies to Reduce the Natural Rate of Unemployment
+
+- no surefire method for reducing the natural rate exists
+- make it easier for workers who have been made unemployed by a shrinking industry to retrain and find re-employment in expanding industries
+  - a case can be made for such policy measures as tax credits, subsidies for training, and relocating unemployed workers
+  - goal: eliminate mismatch between workers and jobs
+  - recent modifications of EI emphasizes retraining and encouraging workers to move to where new jobs are created
+- minimizing size of payroll taxes firms pay when employing workers. Cost to employ includes contributions to EI, Worker's Compensation, Federal and Provincial (Quebec) Pension Plans
+- hysteresis proponents: aggressive monetary and fiscal policies (high pressure)
+  - not a good idea as it is high risk for a loosely validated problem of skill deterioration
+
+There are definitely more policies that could be applied and more discussion should be applied in this area. For example, the textbook does not discuss information gaps between government organizations and individual workers, unemployed, and future workers. If innovation drivers economic growth, then shouldn't worker's be made aware of programs that they can contribute to. Or how to incentivize workers to become forefront of innovation (e.g. university grants in sectors that aren't saturated).
+
+### Costs of Inflation
+
+- Anticipated inflation:
+  - prices of goods and services would increase 4% every year, but so would nominal wages. No purchasing power harm
+  - nominal interest rates would adjust to offset drop in purchasing power; money saved would earn the real interest rate regardless of the rate of the anticipated inflation rate
+  - **Shoe leather costs**
+    - Costs incurred to reduce holding the cash whose value erodes due to inflation
+    - Estimated to be 0.3% of GDP for 10% perfectly anticipated inflation
+  - Menu costs
+    - cost of changing nominal prices; lowered by technological progress
+- Unanticipated Inflation
+  - Interest earned in savings account is a less than expected in a real sense which is a gain for the Bank paying the interest
+  - lenders and savers get hurt, fixed rate borrowers or people with fixed payments benefit
+- Hyperinflation
+  - extremely high for sustained period of time
+  - workers paid more often
+  - higher shoe leather costs
+  - the real value of taxes collected by the government falls sharply during hyperinflations
+  - when prices aren't reliable indicators of supply and demand, then markets cannot allocate resource efficiently
+
+### Fighting Inflation
+
+- sustained monetary growth in industrialized countries is usually due to not tightening monetary policies during times of over full-employment output but using expansionary policies during recessions
+- disinflation by ways of slowing reducing the money growth may lead to a serious recession
+- if policies succeed in reducing inflation below expected rate, unemployment will rise above the natural rate until inflation expectations lower
+
+#### Rapid vs. Gradual Disinflation
+
+Classical's **cold turkey**
+
+- rapid disinflation / reduction in money supply growth. Since it's dramatic, public ought to reduce expectations
+- Keynesian disagree because of an adjustment period which brings in delays and that people might expect the government to abandon the policy
+
+Keynesian **gradualism**: reduce rate of money growth and inflation gradually over the years; effective due to being politically sustainable
+
+The **sacrifice ratio**
+
+- amount of output lost when the inflation rate is reduced by 1 percent
+- Take the total output loss as a % of one year's GDP, and divide it by the reduction in inflation
+- different in every country, sometimes less than 1 and sometimes up to 3
+- flexibility of the labour market. The higher the flexibility, the lower the sacrifice. The higher the regulation, the higher the sacrifice
+- rapid disinflation tended to have lower sacrifice ratios
+- Hard to determine if Laurence Ball's estimate on the loss of output is accurate (e.g. supply shocks, estimating output without disinflation)
+
+Credibility and Reputation
+
+Saying is one thing and the electability of policymakers can get in the way of keeping promises. Central banks are usually independent.
+
+#### Wage and Price Controls
+
+- impose price and wages limits to break expectations
+- price controls likely to cause shortages since in a free market, relative prices will change due to supply and demand
+- shortages due to excess demand cause disruptions
+- the disruptions imply that the controls are temporary and public will expect greater inflation in the future
+- when combined with tightening, expectations of lower inflation post-lifting are more plausible
