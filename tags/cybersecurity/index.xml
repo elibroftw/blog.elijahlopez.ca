@@ -2510,6 +2510,149 @@ reasoning process based on each individualâ€™s values, principles, and purpose â
 &lt;li>false alarms: widening of the model during execution&lt;/li>
 &lt;/ul>
 &lt;/li>
+&lt;/ul>
+&lt;h2 id="defenses-against-common-vulnerabilities" >Defenses against Common Vulnerabilities
+&lt;span>
+&lt;a href="#defenses-against-common-vulnerabilities">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;ul>
+&lt;li>Runtime sanity checking&lt;/li>
+&lt;li>Defensive programming; anticipate what might go wrong in software
+&lt;ul>
+&lt;li>Normal paradigm: expect others to follow the rules&lt;/li>
+&lt;li>Defensive paradigm: expect others to ignore / by-pass the rules&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="paranoia" >Paranoia
+&lt;span>
+&lt;a href="#paranoia">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>NULL-check for every pointer access even when its an internal function called by a public function that does the check&lt;/li>
+&lt;li>Undefined behavior sanitizer (UBSan)
+&lt;ul>
+&lt;li>stateless sanity checks&lt;/li>
+&lt;li>&lt;code>-fsanitize=bool&lt;/code>
+&lt;ul>
+&lt;li>loading of a bool value which is neither true nor false&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;code>-fsanitize=bounds&lt;/code>
+&lt;ul>
+&lt;li>statically known checking&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;code>-fsanitize=function&lt;/code>
+&lt;ul>
+&lt;li>wrong type of pointer when calling&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;code>-fsanitize=null&lt;/code>&lt;/li>
+&lt;li>&lt;code>-fsanitize=integer-divide-by-zero&lt;/code>&lt;/li>
+&lt;li>&lt;code>-fsanitize=integer-overflow&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="dynamic-checking" >Dynamic Checking
+&lt;span>
+&lt;a href="#dynamic-checking">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Fat pointer&lt;/li>
+&lt;/ul>
+&lt;h3 id="addresssanitizer-asan" >AddressSanitizer (ASan)
+&lt;span>
+&lt;a href="#addresssanitizer-asan">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Overhead of ASan is 70% on average&lt;/li>
+&lt;li>Shadow memory&lt;/li>
+&lt;li>Fast shadow translation&lt;/li>
+&lt;li>Memory available gets mapped to shadow&lt;/li>
+&lt;li>Shadow gets mapped to inaccessible&lt;/li>
+&lt;li>Compact representation (7 bytes of membery into 1 byte of shadow memory)&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-c" data-lang="c">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">// before:
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">&lt;/span>*addr = ...; or ... = *addr;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">// after:
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#999;font-style:italic">&lt;/span>&lt;span style="color:#6ab825;font-weight:bold">if&lt;/span> (*&lt;span style="color:#447fcf">MemToShadow&lt;/span>(address) != &lt;span style="color:#3677a9">0&lt;/span>) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#447fcf">ReportError&lt;/span>(address, ...);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>*address = ...; &lt;span style="color:#999;font-style:italic">// or: ... = *address;
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>limitations:
+&lt;ul>
+&lt;li>continuous overrun detection only&lt;/li>
+&lt;li>limited protection on use-after-free&lt;/li>
+&lt;li>incompataible with other security scheme (e.g. UBSan)&lt;/li>
+&lt;li>not suitable for library developers
+&lt;ul>
+&lt;li>not possible to use an application that is not using ASan with a library compiled with ASan&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="why-is-java-efficient" >Why is Java Efficient?
+&lt;span>
+&lt;a href="#why-is-java-efficient">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>no 70% overhead but you still get an array index out of bounds exception&lt;/li>
+&lt;li>Java Virutal Machine means the JVM can store extra metadata like length without depending on OS memeory implementation&lt;/li>
+&lt;li>Java does not allow &lt;strong>arbitrary casting&lt;/strong>
+&lt;ul>
+&lt;li>Only upward cast and sometimes downward cast. No re-interpret cast so length is always there. New object needs to be created for &amp;ldquo;re-interpreting&amp;rdquo;&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="reference-monitor" >Reference Monitor
+&lt;span>
+&lt;a href="#reference-monitor">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;h3 id="runtime-verification-rv" >Runtime Verification (RV)
+&lt;span>
+&lt;a href="#runtime-verification-rv">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Validation: are we building the right product?&lt;/li>
+&lt;li>Verification: are we building the product right?&lt;/li>
+&lt;li>linear temporal logic (LTL): primitive properties, propositional connectives, temporal connectives&lt;/li>
+&lt;/ul>
+&lt;h3 id="control-flow-integrity-cfi" >Control-Flow Integrity (CFI)
+&lt;span>
+&lt;a href="#control-flow-integrity-cfi">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Shadow Stack: return address protection inside Intel&lt;/li>
+&lt;/ul>
+&lt;h3 id="aspect-oriented-programming" >Aspect Oriented Programming
+&lt;span>
+&lt;a href="#aspect-oriented-programming">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>separation of cross-cutting concerns&lt;/li>
+&lt;li>logging&lt;/li>
+&lt;li>obscures control flow&lt;/li>
 &lt;/ul></description></item><item><title>SIM Swapping: Why SMS 2FA Is Unsecure</title><link>https://blog.elijahlopez.ca/posts/sim-swapping-why-sms-2fa-is-unsecure/</link><pubDate>Sun, 09 Jul 2023 19:38:38 -0400</pubDate><guid>https://blog.elijahlopez.ca/posts/sim-swapping-why-sms-2fa-is-unsecure/</guid><description>&lt;p>A lot of companies provide their users with SMS for 2FA in case their users reuse passwords across multiple services. However, users who are forced to use SMS 2FA or choose to use SMS 2FA can be left completely insecure, especially with financially related services which oddly use non-token based 2FA (many crypto exchanges).&lt;/p>
 &lt;p>If a criminal wants to steal your cryptocurrency, they are not going to abide by identity theft laws.&lt;/p>
 &lt;p>SIM swapping is when a malicious actor uses your government ID, such as a social security number (USA) or social insurance number (Canada) to pretend to have lost access to their phone, and subsequently call the telecommunication provider to essentially switch over service to their SIM from the old one. Once a valid service is secured, the malicious actor can simply use the password leaks they found and break into your account.&lt;/p>
