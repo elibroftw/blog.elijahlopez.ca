@@ -300,8 +300,8 @@ no matter how it is launched (steam desktop shortcut, terminal, game desktop sho
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>sudo nano /usr/share/applications/steam.desktop
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>If you have &lt;code>gedit&lt;/code>, you can use that instead.&lt;/p>
 &lt;p>Next scroll to the &lt;strong>first&lt;/strong> Exec for the desktop entry, and add &lt;code>-forcedesktopscaling=1.5&lt;/code> like below&lt;/p>
-&lt;pre tabindex="0">&lt;code class="language-desktop" data-lang="desktop">Exec=/usr/bin/steam-runtime -forcedesktopscaling=1.5 %U
-&lt;/code>&lt;/pre>&lt;p>Save the file and restart steam (the next section has a command for shutting down apps by program name).&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-desktop" data-lang="desktop">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">Exec&lt;/span>=&lt;span style="color:#ed9d13">/usr/bin/steam-runtime -forcedesktopscaling=1.5 %U&lt;/span>&lt;span style="color:#666">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Save the file and restart steam (the next section has a command for shutting down apps by program name).&lt;/p>
 &lt;p>You will also have to add this argument to all game shortcuts.&lt;/p>
 &lt;/details>
 &lt;h2 id="how-to-pin-or-favourite-games-on-steam-linux" >How to Pin or Favourite Games on Steam Linux
