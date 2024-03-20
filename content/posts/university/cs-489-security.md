@@ -1659,3 +1659,35 @@ if (*MemToShadow(address) != 0) {
 - separation of cross-cutting concerns
 - logging
 - obscures control flow
+
+## Entropy
+
+### program analysis
+
+```c
+- scanf("%s", buf);
++ scanf("%15s", buf);
+```
+
+### Exploit mitigation
+
+Add canary
+
+### Randomizing Memory Addresses
+
+- ASLR — Address Space Layout Randomization
+  - a system-level protection that randomly arranges the address space positions of key data areas of a process, including the base of the executable and the positions of the stack, heap and libraries.
+- PIE — Position Independent Executable
+  - a body of machine code that executes properly regardless of its absolute address. This is also known as position-independent code (PIC)
+
+### Entropies in Heap Allocators
+
+Allocate in random placements with canry boundaries
+
+### Software Diversity
+
+- different compilers
+- different languages
+- different sanitization techniques
+- different application (nginx vs apache)
+- different libc implementation

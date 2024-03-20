@@ -294,8 +294,8 @@ Warranty liability 20,000
 
 ```accounting
 Cash                100,000
-Sales revenue               91,324
-Unearned revenue        8,676
+  Sales revenue               91,324
+  Unearned revenue               8,676
 ```
 
 ```accounting
@@ -1073,7 +1073,7 @@ Compensation Expense    110,000
   Contributed Surplus           110,000
 # 20% exercised Jun 1, 2027
 Cash                     120,000
-  Contributed Surplus     44,000
+Contributed Surplus       44,000
   Common Shares                     164,000
 # 80% not exercised
 Contributed Surplus - stock options         176,000
@@ -1679,6 +1679,16 @@ Unearned Interest Income Dr. 5,964
 
 ## Chapter 19 - Pensions and Post Employment Benefits
 
+- Notes:
+  - Past Service Costs
+    - Interest applies on the days it's been an item (i.e. year end date minus amendment date, usually 1 years worth of interest)
+  - Contributions:
+    - Increases the plan assets
+    - If made during the year, lowers the net interest by the pro-rated amount (July 1st, means half the interest gained)
+  - Actual Return on Plans Over Projected
+    - ASPE: this difference will impact the Defined Benefit Expense
+    - IFRS: this difference will only impact OCI and will not lower/increase the defined benefit expense
+
 ### Changes in Defined Benefit Obligation
 
 - Current services cost
@@ -1727,3 +1737,28 @@ Unearned Interest Income Dr. 5,964
   - adjustment to the carrying value due to change in assumption
 - Correction of a prior period error(s)
   - Omissions or misstatements
+
+### Retrospective Restatement
+
+ASPE allows only full restatement whereas IFRS allows partial restatement
+
+1. Figure out the years affected and which balances need to be adjusted.
+    - 2021 &rarr; restate ending balances. Provide net income statement impact.
+    - 2022 &rarr; restate ending balances. Provide net income statement impact.
+    - 203 (open) &rarr; restate beginning balances and continue accounting to close the books
+2. Accounts
+
+### Retrospective Restatement Example 1
+
+20,000 depreciation not recorded for the previous (2022) year where books have been closed. Assume unadjusted earnings was 350,000.
+
+- 2022 ending balance / 2023 beginning balance needs to be adjusted
+- accounts affects: accumulated depreciation - building via depreciation expense, retained earnings, future/deferred taxes
+  - since the carrying value of the building is restated to be lower, the future deferred taxes has to be reduced as well due to a lower temporary difference
+  - concept: if income before taxes is lower, then so is the deferred tax expense and thus the future tax liability is also lower (debit)
+
+```accounting
+Dr. Future Tax Liability 6,000
+Dr. Retained Earnings 14,000
+  Cr. Accumulated Depreciation 20,000
+```

@@ -733,6 +733,10 @@ class pasture {
 
 ### A/B Testing
 
+An experimental design has subjects in a control group which does not receive treatment and are a baseline behaviour and a treatment group which receive a single change and a hypothesis was made. Subjects are randomly assigned to a control group or a treatment group.
+
+Hypothesis formulation is to improve a bottom line measurement such as the click through rate. Two versions of the application are deployed and tested against.
+
 ### Canary Releases
 
 ### Chaos Engineering

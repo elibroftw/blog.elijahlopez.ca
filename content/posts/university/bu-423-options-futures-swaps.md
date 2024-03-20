@@ -979,6 +979,8 @@ Stock price is currently $20. In three months it will either be $22 or $18. Supp
 - Risk less when `Delta = (fu - fd) / (S0u - S0d)`
 - f = (pfu + (1 - p)fd)e^(-rT)
 - p = (e^(rt) - d) / (u - d)
+- u = the multiplicative factor for an up movement
+- d = the multiplicative factor for a down movement
 
 ### Risk-Neutral Valuation
 
@@ -1204,7 +1206,7 @@ The portfolio is risk-less when
 ## Chapter 17 - The Greek Letters
 
 - Delta = change in option price with relation to underlying
-- Vega or Lambda: change in option price with relation to underlying volatility
+- Vega or Lambda: change in option price with relation to underlying implied volatility
 - Theta: change in option price with relation to time
 - Rho: change in option price with relation to interest rate
 - Gamma: Change in option's **delta** in relation to stock price change (2nd derivative)
@@ -1214,7 +1216,7 @@ The portfolio is risk-less when
 - assuming a naked call position
 - buying 100,000 shares as soon as price reaches $50
 - selling 100,000 shares as soon as price falls below $50
-- if the stock keeps around the strike price of 50, then the person can lose money
+- if the stock fluctuates around the strike price of 50, then this strategy loses lots of money due to buying high and selling low
 
 ### How Delta-Hedging Works
 
@@ -1237,4 +1239,59 @@ If we hold a short call position and hold delta shares, why are we doing so? Whe
 
 - greatest for options at the money
 - Tau = portfolio value
-- change in gamma = Theta times change in time +0.5 Tau change in share price squared
+- change in gamma = Theta times change in time + 0.5 Tau change in share price squared
+
+### Managing Delta, Gamma, and Vega
+
+Gamma and Vega require taking a position in the options themselves.
+
+-- | Delta | Gamma | Vega
+-- | ------- | --------- | --------
+Portfolio | 0 | -5000 | -8000
+Option 1 | 0.6 | 0.5 | 2.09T11
+Option 2 | 0.5 | 0.8 | 1.2
+
+What position in option 1 and the underlying asset will make the portfolio delta and gamma neutral?  Answer: Long 10,000 options, short  6000 of the asset
+
+What position in option 1 and the underlying asset will make the portfolio delta and vega neutral? Answer: Long 4000 options, short 2400 of the asset
+
+What position in option 1, option 2, and the asset will make the portfolio  delta, gamma, and vega neutral?
+We solve
+
+```txt
+  −5000+0.5w1 +0.8w2 =0
+  −8000+2.0w1 +1.2w2 =0
+to get w1 = 400 and w2 = 6000. We require long positions of 400 and 6000 in option 1 and option 2. A short position of 3240 in the asset is then required to make the portfolio delta neutral
+```
+
+### Rho
+
+Rho is the rate of change of the value of a derivative with respect to the interest rate
+
+### Hedging in practice
+
+- become delta-neutral at least once a day
+- whenever opportunities arise, improve gamma and vega
+- hedging becomes less expensive as a portfolio gets larger
+
+### Greek Letters When Underlying has a Yield
+
+See slide 32 of slide deck 17 (or see page 381)
+
+### Futures for Delta Hedging
+
+futures is e^{-(r-q)T} times the position required in the spot contract
+
+### Synthetic Option
+
+- take positions that match the greeks of the option
+
+### Portfolio Insurance
+
+- Sell enough of the portfolio or index futures to match the delta of the put option (e.g. October 1987)
+- As portfolio value increases, delta goes down and so original portfolio is repurchased to some extent
+- As portfolio value decreases, more of portfolio is sold
+
+## Chapter 19 - Volatility Smiles
+
+For options with some maturities, the implied volatility versus the strike price makes a smile.
