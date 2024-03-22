@@ -4343,8 +4343,16 @@ Identify alternative policy approaches to dealing with business cycles.&lt;/p>
 &lt;li>&lt;a href="#how-delta-hedging-works">How Delta-Hedging Works&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#example-171">Example 17.1&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#gamma-addresses-delta-hedging-errors-caused-by-curvature">Gamma Addresses Delta Hedging Errors Caused by Curvature&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#managing-delta-gamma-and-vega">Managing Delta, Gamma, and Vega&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#rho">Rho&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#hedging-in-practice">Hedging in practice&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#greek-letters-when-underlying-has-a-yield">Greek Letters When Underlying has a Yield&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#futures-for-delta-hedging">Futures for Delta Hedging&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#synthetic-option">Synthetic Option&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#portfolio-insurance">Portfolio Insurance&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;/li>
+&lt;li>&lt;a href="#chapter-19---volatility-smiles">Chapter 19 - Volatility Smiles&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;/nav>
 &lt;/div>
@@ -6298,7 +6306,7 @@ Left with: .99
 &lt;/span>
 &lt;/h2>&lt;ul>
 &lt;li>Delta = change in option price with relation to underlying&lt;/li>
-&lt;li>Vega or Lambda: change in option price with relation to underlying volatility&lt;/li>
+&lt;li>Vega or Lambda: change in option price with relation to underlying implied volatility&lt;/li>
 &lt;li>Theta: change in option price with relation to time&lt;/li>
 &lt;li>Rho: change in option price with relation to interest rate&lt;/li>
 &lt;li>Gamma: Change in option&amp;rsquo;s &lt;strong>delta&lt;/strong> in relation to stock price change (2nd derivative)&lt;/li>
@@ -6353,8 +6361,111 @@ Left with: .99
 &lt;/h3>&lt;ul>
 &lt;li>greatest for options at the money&lt;/li>
 &lt;li>Tau = portfolio value&lt;/li>
-&lt;li>change in gamma = Theta times change in time +0.5 Tau change in share price squared&lt;/li>
-&lt;/ul></description></item><item><title>CS 489 Security</title><link>https://blog.elijahlopez.ca/posts/university/cs-489-security/</link><pubDate>Tue, 09 Jan 2024 11:33:24 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/university/cs-489-security/</guid><description>&lt;!--
+&lt;li>change in gamma = Theta times change in time + 0.5 Tau change in share price squared&lt;/li>
+&lt;/ul>
+&lt;h3 id="managing-delta-gamma-and-vega" >Managing Delta, Gamma, and Vega
+&lt;span>
+&lt;a href="#managing-delta-gamma-and-vega">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Gamma and Vega require taking a position in the options themselves.&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&amp;ndash;&lt;/th>
+&lt;th>Delta&lt;/th>
+&lt;th>Gamma&lt;/th>
+&lt;th>Vega&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Portfolio&lt;/td>
+&lt;td>0&lt;/td>
+&lt;td>-5000&lt;/td>
+&lt;td>-8000&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Option 1&lt;/td>
+&lt;td>0.6&lt;/td>
+&lt;td>0.5&lt;/td>
+&lt;td>2.09T11&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Option 2&lt;/td>
+&lt;td>0.5&lt;/td>
+&lt;td>0.8&lt;/td>
+&lt;td>1.2&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>What position in option 1 and the underlying asset will make the portfolio delta and gamma neutral? Answer: Long 10,000 options, short 6000 of the asset&lt;/p>
+&lt;p>What position in option 1 and the underlying asset will make the portfolio delta and vega neutral? Answer: Long 4000 options, short 2400 of the asset&lt;/p>
+&lt;p>What position in option 1, option 2, and the asset will make the portfolio delta, gamma, and vega neutral?
+We solve&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-txt" data-lang="txt">&lt;span style="display:flex;">&lt;span> −5000+0.5w1 +0.8w2 =0
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> −8000+2.0w1 +1.2w2 =0
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>to get w1 = 400 and w2 = 6000. We require long positions of 400 and 6000 in option 1 and option 2. A short position of 3240 in the asset is then required to make the portfolio delta neutral
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="rho" >Rho
+&lt;span>
+&lt;a href="#rho">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Rho is the rate of change of the value of a derivative with respect to the interest rate&lt;/p>
+&lt;h3 id="hedging-in-practice" >Hedging in practice
+&lt;span>
+&lt;a href="#hedging-in-practice">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>become delta-neutral at least once a day&lt;/li>
+&lt;li>whenever opportunities arise, improve gamma and vega&lt;/li>
+&lt;li>hedging becomes less expensive as a portfolio gets larger&lt;/li>
+&lt;/ul>
+&lt;h3 id="greek-letters-when-underlying-has-a-yield" >Greek Letters When Underlying has a Yield
+&lt;span>
+&lt;a href="#greek-letters-when-underlying-has-a-yield">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>See slide 32 of slide deck 17 (or see page 381)&lt;/p>
+&lt;h3 id="futures-for-delta-hedging" >Futures for Delta Hedging
+&lt;span>
+&lt;a href="#futures-for-delta-hedging">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>futures is e^{-(r-q)T} times the position required in the spot contract&lt;/p>
+&lt;h3 id="synthetic-option" >Synthetic Option
+&lt;span>
+&lt;a href="#synthetic-option">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>take positions that match the greeks of the option&lt;/li>
+&lt;/ul>
+&lt;h3 id="portfolio-insurance" >Portfolio Insurance
+&lt;span>
+&lt;a href="#portfolio-insurance">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Sell enough of the portfolio or index futures to match the delta of the put option (e.g. October 1987)&lt;/li>
+&lt;li>As portfolio value increases, delta goes down and so original portfolio is repurchased to some extent&lt;/li>
+&lt;li>As portfolio value decreases, more of portfolio is sold&lt;/li>
+&lt;/ul>
+&lt;h2 id="chapter-19---volatility-smiles" >Chapter 19 - Volatility Smiles
+&lt;span>
+&lt;a href="#chapter-19---volatility-smiles">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>For options with some maturities, the implied volatility versus the strike price makes a smile.&lt;/p></description></item><item><title>CS 489 Security</title><link>https://blog.elijahlopez.ca/posts/university/cs-489-security/</link><pubDate>Tue, 09 Jan 2024 11:33:24 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/university/cs-489-security/</guid><description>&lt;!--
 [Learn uWaterloo](https://learn.uwaterloo.ca/d2l/le/content/1005130/Home)
 [Course Website](https://cs.uwaterloo.ca/~m285xu/courses/cs489-w24/)
 -->
@@ -9009,6 +9120,65 @@ reasoning process based on each individual’s values, principles, and purpose �
 &lt;li>separation of cross-cutting concerns&lt;/li>
 &lt;li>logging&lt;/li>
 &lt;li>obscures control flow&lt;/li>
+&lt;/ul>
+&lt;h2 id="entropy" >Entropy
+&lt;span>
+&lt;a href="#entropy">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;h3 id="program-analysis" >program analysis
+&lt;span>
+&lt;a href="#program-analysis">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-c" data-lang="c">&lt;span style="display:flex;">&lt;span>- &lt;span style="color:#447fcf">scanf&lt;/span>(&lt;span style="color:#ed9d13">&amp;#34;%s&amp;#34;&lt;/span>, buf);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>+ &lt;span style="color:#447fcf">scanf&lt;/span>(&lt;span style="color:#ed9d13">&amp;#34;%15s&amp;#34;&lt;/span>, buf);
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="exploit-mitigation" >Exploit mitigation
+&lt;span>
+&lt;a href="#exploit-mitigation">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Add canary&lt;/p>
+&lt;h3 id="randomizing-memory-addresses" >Randomizing Memory Addresses
+&lt;span>
+&lt;a href="#randomizing-memory-addresses">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>ASLR — Address Space Layout Randomization
+&lt;ul>
+&lt;li>a system-level protection that randomly arranges the address space positions of key data areas of a process, including the base of the executable and the positions of the stack, heap and libraries.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>PIE — Position Independent Executable
+&lt;ul>
+&lt;li>a body of machine code that executes properly regardless of its absolute address. This is also known as position-independent code (PIC)&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="entropies-in-heap-allocators" >Entropies in Heap Allocators
+&lt;span>
+&lt;a href="#entropies-in-heap-allocators">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Allocate in random placements with canry boundaries&lt;/p>
+&lt;h3 id="software-diversity" >Software Diversity
+&lt;span>
+&lt;a href="#software-diversity">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>different compilers&lt;/li>
+&lt;li>different languages&lt;/li>
+&lt;li>different sanitization techniques&lt;/li>
+&lt;li>different application (nginx vs apache)&lt;/li>
+&lt;li>different libc implementation&lt;/li>
 &lt;/ul></description></item><item><title>BU 397 Intermediate Financial Accounting II</title><link>https://blog.elijahlopez.ca/posts/university/bu-397-intermediate-financial-accounting-ii/</link><pubDate>Mon, 08 Jan 2024 17:26:07 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/university/bu-397-intermediate-financial-accounting-ii/</guid><description>&lt;div>
 &lt;h2>Table of Contents&lt;/h2>
 &lt;nav id="TableOfContents">

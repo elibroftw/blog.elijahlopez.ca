@@ -2653,6 +2653,65 @@ reasoning process based on each individual’s values, principles, and purpose �
 &lt;li>separation of cross-cutting concerns&lt;/li>
 &lt;li>logging&lt;/li>
 &lt;li>obscures control flow&lt;/li>
+&lt;/ul>
+&lt;h2 id="entropy" >Entropy
+&lt;span>
+&lt;a href="#entropy">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;h3 id="program-analysis" >program analysis
+&lt;span>
+&lt;a href="#program-analysis">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-c" data-lang="c">&lt;span style="display:flex;">&lt;span>- &lt;span style="color:#447fcf">scanf&lt;/span>(&lt;span style="color:#ed9d13">&amp;#34;%s&amp;#34;&lt;/span>, buf);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>+ &lt;span style="color:#447fcf">scanf&lt;/span>(&lt;span style="color:#ed9d13">&amp;#34;%15s&amp;#34;&lt;/span>, buf);
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="exploit-mitigation" >Exploit mitigation
+&lt;span>
+&lt;a href="#exploit-mitigation">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Add canary&lt;/p>
+&lt;h3 id="randomizing-memory-addresses" >Randomizing Memory Addresses
+&lt;span>
+&lt;a href="#randomizing-memory-addresses">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>ASLR — Address Space Layout Randomization
+&lt;ul>
+&lt;li>a system-level protection that randomly arranges the address space positions of key data areas of a process, including the base of the executable and the positions of the stack, heap and libraries.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>PIE — Position Independent Executable
+&lt;ul>
+&lt;li>a body of machine code that executes properly regardless of its absolute address. This is also known as position-independent code (PIC)&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="entropies-in-heap-allocators" >Entropies in Heap Allocators
+&lt;span>
+&lt;a href="#entropies-in-heap-allocators">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Allocate in random placements with canry boundaries&lt;/p>
+&lt;h3 id="software-diversity" >Software Diversity
+&lt;span>
+&lt;a href="#software-diversity">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>different compilers&lt;/li>
+&lt;li>different languages&lt;/li>
+&lt;li>different sanitization techniques&lt;/li>
+&lt;li>different application (nginx vs apache)&lt;/li>
+&lt;li>different libc implementation&lt;/li>
 &lt;/ul></description></item><item><title>SIM Swapping: Why SMS 2FA Is Unsecure</title><link>https://blog.elijahlopez.ca/posts/sim-swapping-why-sms-2fa-is-unsecure/</link><pubDate>Sun, 09 Jul 2023 19:38:38 -0400</pubDate><guid>https://blog.elijahlopez.ca/posts/sim-swapping-why-sms-2fa-is-unsecure/</guid><description>&lt;p>A lot of companies provide their users with SMS for 2FA in case their users reuse passwords across multiple services. However, users who are forced to use SMS 2FA or choose to use SMS 2FA can be left completely insecure, especially with financially related services which oddly use non-token based 2FA (many crypto exchanges).&lt;/p>
 &lt;p>If a criminal wants to steal your cryptocurrency, they are not going to abide by identity theft laws.&lt;/p>
 &lt;p>SIM swapping is when a malicious actor uses your government ID, such as a social security number (USA) or social insurance number (Canada) to pretend to have lost access to their phone, and subsequently call the telecommunication provider to essentially switch over service to their SIM from the old one. Once a valid service is secured, the malicious actor can simply use the password leaks they found and break into your account.&lt;/p>
