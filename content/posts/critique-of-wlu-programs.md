@@ -13,6 +13,12 @@ tags: [
 
 I'm a 5th (yes 5th) year student at Wilfrid Laurier University (B. Business Administration) and University of Waterloo (B. Computer Science) and I've been through some rough times and some good times. My worst term was 2B but 5A is in second place and actually prompted (EC 250 ONLINE) me write this post.
 
+## WileyPlus and Timed Textbooks or Access Codes for Marks is Unethical
+
+- This school is filled with unethical practices that the school claims is unethical
+- If ethics matters at all, the last thing to do is to turn around and subject students to similar unethical practices
+- if unethical practices don't matter when students are on the receiving end, why would students care if a minority is on the receiving end?
+
 ## Micro-Economics 1 Should be Combined with Micro-Economics 2
 
 When I took Microeconomics 2 over the summer of 2020, my notes were condenses to 76 lines. This was after I started writing my notes in Word files and before I started writing my notes on my [blog](/tags/university). My micro-economic notes were a continuation of my notes from high school which was a word document for each chapter. Clearly, with notes like mine, micro-economics 2 should just be a chapter in microeconomics 1. On top of this, the only reason we had to take micro-economics 2 or macro-economics 2 was that you had to take one to graduate plus they are pre-requisites to 4th year finance courses that can be overridden by an academic advisor. Additionally, micro-economics 1 is similar to managerial accounting. So if anything, micro-economics 1 should be combined with managerial accounting 1.
