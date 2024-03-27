@@ -1,9 +1,8 @@
 ---
 title: "American School Shootings Analysis"
 date: 2022-08-23T14:22:33-04:00
-tags: [
-    "politics",
-]
+tags:
+  - politics
 hidden: true
 ---
 

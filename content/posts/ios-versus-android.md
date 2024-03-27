@@ -2,6 +2,7 @@
 title: "iOS Versus Android"
 date: 2023-04-18T16:55:02-04:00
 draft: false
+tags:
 ---
 
 There's only a couple reasons to get an iPhone.

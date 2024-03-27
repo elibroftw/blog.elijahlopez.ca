@@ -2,12 +2,11 @@
 title: "ASP.NET Core Optional Json Fields"
 date: 2023-01-29T14:03:20-05:00
 draft: false
-tags: [
-    "programming",
-    "tutorial",
-    "c-sharp",
-    "asp.net",
-]
+tags:
+  - programming
+  - tutorial
+  - c-sharp
+  - asp.net
 ---
 
 Also featured in this article is enum to string converter.

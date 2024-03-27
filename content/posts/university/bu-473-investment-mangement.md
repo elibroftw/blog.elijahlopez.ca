@@ -2,10 +2,9 @@
 title: "BU 473 Investment Management"
 date: 2023-05-09T15:25:11-04:00
 draft: false
-tags: [
-    "university",
-    "finance",
-]
+tags:
+  - university
+  - finance
 ---
 
 Bruce Everitt

@@ -1,11 +1,10 @@
 ---
-title: "Cigarettes Should be Banned"
+title: "Should Cigarettes be Banned?"
 date: 2023-04-19T22:48:57-04:00
 draft: true
-tags: [
-  'canada',
-  'politics'
-]
+tags:
+  - canada
+  - politics
 ---
 
 If the goal of the government is to protect its citizens, it should be taking a more harder stance against products and services that serve a substitutable purpose. Cigarettes are proof that there is a big conspiracy going on that the government bows down to companies that are raking billions of dollars. We know cigarettes cause cancer. We also know psychedelics do not cause cancer. However, the cancer causing product is legally taxed, and psychedelics are available in the grey (BC) or black market.

@@ -1,9 +1,8 @@
 ---
 title: "MacOS Sucks"
 date: 2022-05-12T17:21:36-04:00
-tags: [
-    "opinion",
-]
+tags:
+  - opinion
 ---
 
 Here are some reasons MacOS sucks. Of course, Linux and Windows suck too. The order for desktop OS's

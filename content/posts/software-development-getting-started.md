@@ -2,13 +2,12 @@
 title: "How to Start Developing Software (Programming)"
 date: 2022-12-12T22:43:39-05:00
 draft: true
-tags: [
-    "programming",
-    "guide",
-    "rust",
-    "c++",
-    "python"
-]
+tags:
+  - programming
+  - guide
+  - rust
+  - c++
+  - python
 ---
 
 TODO

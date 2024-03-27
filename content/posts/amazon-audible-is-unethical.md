@@ -2,9 +2,9 @@
 title: "Amazon Audible Is Unethical"
 date: 2023-07-25T22:54:36-04:00
 draft: false
-tags: [
-    'opinion'
-]
+tags:
+  - opinion
+  - ethics
 ---
 
 Today I realized I was being charged US$15/month for a whole year by Amazon Audible. The reason? A free trial cancellation that did not go through fully.

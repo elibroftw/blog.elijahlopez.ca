@@ -2,9 +2,8 @@
 title: "BU 375 Operations"
 date: 2022-06-04T10:23:48-04:00
 draft: false
-tags: [
-    "university",
-]
+tags:
+  - university
 ---
 
 <!-- markdownlint-disable MD033 -->

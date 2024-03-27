@@ -2,11 +2,10 @@
 title: "Pierre Poilievre Policies"
 date: 2022-09-22T17:39:09-04:00
 hidden: true
-tags: [
-    "canada",
-    "opinion",
-    "politics",
-]
+tags:
+  - canada
+  - opinion
+  - politics
 ---
 
 I'm making this blog post and video to document (practical?) policies that I've heard/read Pierre Poilievre express.

@@ -2,9 +2,8 @@
 title: "Principles of Software Engineering"
 date: 2022-04-03T20:39:50-04:00
 draft: true
-tags: [
-    "programming",
-]
+tags:
+  - programming
 ---
 
 Disclaimer: This is a work in progress.

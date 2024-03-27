@@ -1,12 +1,11 @@
 ---
 title: "VS Code Remote SSH Tutorial"
 date: 2020-09-11T18:23:50-05:00
-tags: [
-    "programming",
-    "tutorial",
-    "ssh",
-    "vscode",
-]
+tags:
+  - programming
+  - tutorial
+  - ssh
+  - vscode
 aliases: ['/posts/vs-code-remote-ssh/']
 ---
 

@@ -2,11 +2,10 @@
 title: "Automate Firefox Addon Publishing"
 date: 2020-10-08T22:58:39-05:00
 draft: false
-tags: [
-    "tutorial",
-    "programming",
-    "python",
-]
+tags:
+  - tutorial
+  - programming
+  - python
 ---
 
 If you're like me, you always want to speed up aspects of your life especially routine tasks. I'll be doing this in Python but you can easily convert the code to a language of your choice.
@@ -28,6 +27,6 @@ After installing these two modules, copy the snippet at the bottom of the articl
 ## Modifying the Script
 
 `GUID`: include the '{' and '}' into the string if applicable
-`addon_files`: a list of source files of the add-on (relative path
+`addon_files`: a list of source files of the add-on (relative path)
 
 {{< gist elibroftw 1a94149a2f6232d062b666c4ee9ea530 >}}

@@ -2,12 +2,10 @@
 title: "Linux [Desktop] Tips"
 date: 2023-06-27T10:56:19-04:00
 draft: false
-tags: [
-    "linux",
-]
-aliases: [
-    '/posts/manjaro-kde-tips/'
-]
+tags:
+  - linux
+aliases:
+  - /posts/manjaro-kde-tips/
 ---
 
 {{< toc >}}

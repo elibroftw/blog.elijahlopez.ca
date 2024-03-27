@@ -2,10 +2,10 @@
 title: "CS 489 Security"
 date: 2024-01-09T11:33:24-05:00
 draft: false
-tags: [
-  'university',
-  'cybersecurity'
-]
+tags:
+  - university
+  - cybersecurity
+  - computer-science
 ---
 
 <!--

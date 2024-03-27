@@ -2,11 +2,10 @@
 title: "How to Create a Monero Stagenet Wallet"
 date: 2022-02-21T17:04:11-05:00
 draft: false
-tags: [
-    "tutorial",
-    "monero",
-    "cryptocurrency",
-]
+tags:
+  - tutorial
+  - monero
+  - cryptocurrency
 ---
 
 {{< youtube MlYorZQTmV4 >}}

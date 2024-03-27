@@ -2,9 +2,9 @@
 title: "CS 489 Software Delivery"
 date: 2024-01-08T13:04:18-05:00
 draft: false
-tags: [
-  'university'
-]
+tags:
+  - university
+  - computer-science
 ---
 
 ## Summary

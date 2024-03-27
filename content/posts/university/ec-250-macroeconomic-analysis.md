@@ -2,9 +2,9 @@
 title: "EC 250 Macroeconomic Analysis"
 date: 2024-01-09T14:28:58-05:00
 draft: false
-tags: [
-  'university'
-]
+tags:
+  - university
+  - economics
 ---
 
 ## Outline

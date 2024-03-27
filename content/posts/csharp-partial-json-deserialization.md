@@ -2,11 +2,10 @@
 title: "C# Partial Json Deserialization"
 date: 2024-03-24T13:57:58-04:00
 draft: true
-tags: [
-    "programming",
-    "tutorial",
-    "c-sharp",
-]
+tags:
+  - programming
+  - tutorial
+  - c-sharp
 ---
 
 <!-- { {< youtube TODO >} } -->

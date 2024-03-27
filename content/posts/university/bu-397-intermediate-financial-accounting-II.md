@@ -2,12 +2,11 @@
 title: "BU 397 Intermediate Financial Accounting II"
 date: 2024-01-08T17:26:07-05:00
 draft: false
-tags: [
-  'university'
-]
-aliases: [
-  '/posts/bu-397-intermediate-financial-accounting-II.md'
-]
+tags:
+  - university
+  - accounting
+aliases:
+  - /posts/bu-397-intermediate-financial-accounting-II
 ---
 
 {{< toc >}}

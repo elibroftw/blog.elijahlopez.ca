@@ -1,12 +1,11 @@
 ---
 title: "JavaScript Snippets"
 date: 2022-08-29T14:21:28-04:00
-tags: [
-    "tutorial",
-    "programming",
-    "javascript",
-    "webdev",
-]
+tags:
+  - tutorial
+  - programming
+  - javascript
+  - webdev
 ---
 
 Here are some snippets that would've saved me many minutes of my time.

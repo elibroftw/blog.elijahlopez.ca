@@ -2,10 +2,9 @@
 title: "Canada is Worse because of Justin Trudeau"
 date: 2024-02-23T21:59:01-05:00
 draft: false
-tags: [
-  'canada',
-  'opinion'
-]
+tags:
+  - canada
+  - opinion
 ---
 
 These days, chronically online Canadians are absolutely wild. They complain about bills that they didn't even read.

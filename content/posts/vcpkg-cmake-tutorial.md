@@ -2,14 +2,13 @@
 title: "Installing Libraries for C++ with Vcpkg and CMake"
 date: 2021-12-19T19:51:55-05:00
 draft: false
-tags: [
-    "tutorial",
-    "programming",
-    "c++",
-    "vcpkg",
-    "cmake",
-    "vscode",
-]
+tags:
+  - tutorial
+  - programming
+  - c++
+  - vcpkg
+  - cmake
+  - vscode
 ---
 
 ## Trouble Shooting

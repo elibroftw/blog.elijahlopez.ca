@@ -2,9 +2,8 @@
 title: "Stop Using Discord for Support Forums"
 date: 2023-12-31T14:20:47-05:00
 draft: false
-tags: [
-  'opinion'
-]
+tags:
+  - opinion
 ---
 
 As I sit here to type, I'm in 11 different Discord developer library servers. In each of these servers are non Search Engine Indexable support threads. Meaning that I as a developer, when I encounter a problem or a bug or need to do something, I get 0 results on Google and have to join a Discord server, waste my time agreeing to the rules I didn't read, and then try searching for a the problem, but since Discord's search is not even close to a search engine like Google, it is slow and I end up having to start a new thread. Then of course, each discord community has locking features. So instead of keeping discussions on the same thread, I have to start a new one and reference the old one. Thanks Stripe.

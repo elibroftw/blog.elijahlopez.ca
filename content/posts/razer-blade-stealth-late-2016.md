@@ -2,9 +2,8 @@
 title: "Razer Blade Stealth Late 2016, 5 Years Later"
 date: 2022-07-19T12:34:25-04:00
 draft: false
-tags: [
-  "review"
-]
+tags:
+  - review
 ---
 
 {{< toc >}}

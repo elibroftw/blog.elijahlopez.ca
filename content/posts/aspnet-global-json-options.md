@@ -2,12 +2,11 @@
 title: "ASP.NET Core Global Json Options"
 date: 2023-07-23T15:48:46-04:00
 draft: true
-tags: [
-    "tutorial",
-    "programming",
-    "c-sharp",
-    "asp.net",
-]
+tags:
+  - tutorial
+  - programming
+  - c-sharp
+  - asp.net
 ---
 
 When adding JSON options to an ASP.NET controller, these options do not apply to manual uses of the json serializer.

@@ -2,9 +2,9 @@
 title: "CS 350 Operating Systems"
 date: 2023-01-10T14:56:10-05:00
 draft: false
-tags: [
-    "university",
-]
+tags:
+  - university
+  - computer-science
 ---
 
 <!-- <img class=equation-tall src="https://latex.codecogs.com/svg.image?QI="> -->

@@ -2,9 +2,8 @@
 title: "yt-dlp Audio Download Tutorial"
 date: 2023-05-22T20:33:19-04:00
 draft: false
-tags: [
-    'tutorial'
-]
+tags:
+  - tutorial
 ---
 
 Since my [yt-dlp propaganda on YouTube is getting many views](https://www.youtube.com/watch?v=Tq9qpA2QOTI), I thought I'd create this article and a future video on how to use yt-dlp to download audio from websites, primarily YouTube.

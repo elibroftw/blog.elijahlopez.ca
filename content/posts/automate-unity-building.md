@@ -2,12 +2,11 @@
 title: "Automate Unity Building"
 date: 2020-06-21T11:11:24-05:00
 draft: false
-tags: [
-    "tutorial",
-    "programming",
-    "python",
-    "c-sharp",
-]
+tags:
+  - tutorial
+  - programming
+  - python
+  - c-sharp
 ---
 
 It took me hours to figure out how to create a simple build script in Unity, even after watching videos, I was really confused.

@@ -2,14 +2,13 @@
 title: "ASP.NET Core Add HTML to Web Api"
 date: 2023-07-15T12:45:48-04:00
 draft: false
-tags: [
-    "programming",
-    "tutorial",
-    "c-sharp",
-    "asp.net",
-    "html",
-    "webdev",
-]
+tags:
+  - programming
+  - tutorial
+  - c-sharp
+  - asp.net
+  - html
+  - webdev
 ---
 
 Suppose you wanted to add html to your asp.net web api project, how would you go about it?

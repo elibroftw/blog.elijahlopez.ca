@@ -2,12 +2,11 @@
 title: "Windows Programming: Start App on Login"
 date: 2023-06-29T20:22:04-04:00
 draft: false
-tags: [
-    'tutorial',
-    'programming',
-    'python',
-    'windows'
-]
+tags:
+  - tutorial
+  - programming
+  - python
+  - windows'
 ---
 
 To start an app on login on Windows, you must add a REG_SZ value to the registry key `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Run`.

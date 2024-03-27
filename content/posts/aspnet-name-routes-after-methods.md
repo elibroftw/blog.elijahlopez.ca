@@ -2,12 +2,11 @@
 title: "ASP.NET Core Name Routes After Methods"
 date: 2023-05-28T18:10:09-04:00
 draft: false
-tags: [
-    "programming",
-    "tutorial",
-    "c-sharp",
-    "asp.net",
-]
+tags:
+  - programming
+  - tutorial
+  - c-sharp
+  - asp.net
 ---
 
 Suppose you want to avoid using decorators for every public method you write and you just want the route to following the same convention as your methods in your controller.

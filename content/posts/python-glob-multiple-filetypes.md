@@ -2,11 +2,10 @@
 title: "Python Glob Multiple Filetypes"
 date: 2024-02-02T16:41:37-05:00
 draft: false
-tags: [
-    'tutorial',
-    'programming',
-    'python',
-]
+tags:
+  - tutorial
+  - programming
+  - python
 ---
 
 I'm writing this because I cannot believe how stupid developers on Stack Overflow are. There are two pages of answers to this question and none of them actually care about reusability, abstraction, and correctness.

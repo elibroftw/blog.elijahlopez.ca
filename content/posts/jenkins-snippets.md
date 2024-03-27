@@ -1,13 +1,12 @@
 ---
 title: "Jenkins Snippets"
 date: 2022-02-07T11:08:15-05:00
-tags: [
-    "tutorial",
-    "programming",
-    "jenkins",
-    "groovy",
-    "devops",
-]
+tags:
+  - tutorial
+  - programming
+  - jenkins
+  - groovy
+  - devops
 ---
 
 ## Ignorable Preface

@@ -1,12 +1,11 @@
 ---
 title: "JavaScript ES6 Imports Explained"
 date: 2022-03-31T09:27:06-04:00
-tags: [
-    "tutorial",
-    "programming",
-    "javascript",
-    "webdev",
-]
+tags:
+  - tutorial
+  - programming
+  - javascript
+  - webdev
 ---
 
 If you work extensively with NodeJS, you probably already know of `require('express');`

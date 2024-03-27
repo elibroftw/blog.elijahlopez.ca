@@ -1,11 +1,10 @@
 ---
 title: "How to Buy Monero in Canada"
 date: 2022-02-25T22:56:02-05:00
-tags: [
-    "monero",
-    "cryptocurrency",
-    "canada",
-]
+tags:
+  - monero
+  - cryptocurrency
+  - canada
 ---
 
 I'll be testing all of these methods except LocalMonero since the actual fee there is at least 20% as of 2022/4/21.

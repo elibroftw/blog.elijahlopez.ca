@@ -2,9 +2,9 @@
 title: "There Is No Labour Shortage in Canada"
 date: 2024-02-29T21:14:08-05:00
 draft: false
-tags: [
-  'canada'
-]
+tags:
+  - canada
+  - opinion
 ---
 
 There is no labour shortage for unskilled labour in Canada. To determine whether there's a labour shortage objectively speaking, we need to figure out how many months of unemployment is desirable.

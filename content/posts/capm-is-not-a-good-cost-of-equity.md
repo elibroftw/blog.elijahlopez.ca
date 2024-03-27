@@ -2,9 +2,9 @@
 title: "CAPM is not a Good Cost of Equity [DCF, WACC]"
 date: 2024-02-16T00:59:06-05:00
 draft: false
-tags: [
-  'finance'
-]
+tags:
+  - finance
+  - opinion
 ---
 
 ### CAPM Assumptions are Not True

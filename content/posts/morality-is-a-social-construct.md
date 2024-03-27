@@ -2,9 +2,8 @@
 title: "Morality is a Social Construct"
 date: 2024-01-02T21:12:17-05:00
 draft: true
-tags: [
-  'opinion'
-]
+tags:
+  - opinion
 ---
 
 I'm currently watching a video called [How recruiters in India use false promises to lure students to Canada - The Fifth Estate](https://youtu.be/dNrXA5m7ROM?si=XbkX2g41OjPPCrmq)

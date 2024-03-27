@@ -2,10 +2,9 @@
 title: "Monero vs \"Privacy Coins\""
 date: 2022-02-26T12:48:07-05:00
 draft: false
-tags: [
-  "monero",
-  "cryptocurrency",
-]
+tags:
+  - monero
+  - cryptocurrency
 ---
 
 {{< toc >}}

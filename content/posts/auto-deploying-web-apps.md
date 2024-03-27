@@ -2,11 +2,10 @@
 title: "Auto-Deploying Web Apps"
 date: 2022-05-19T11:57:19-04:00
 draft: true
-tags: [
-    "tutorial",
-    "programming",
-    "git",
-]
+tags:
+  - tutorial
+  - programming
+  - git
 ---
 
 The pre-requisite for this tutorial is having 2FA for anything relevant to deployment. E.g. DigitalOcean, email service, github, MongoDB, etc. This will considerably lower the chance for a vulnerability to be caused by you and will isolate it toward a) host provider (MITM attack through sneaking host certificates) and b) source code hosted servers. If you can't trust your source code host, then use the same host your web app server. If you can't trust your host provider, then run your own servers. I'm pretty sure that if cloud services purposely abused their physical access, you could sue them. The monero wallet on the LeNerva website server is view only, so I don't have to worry about theft.

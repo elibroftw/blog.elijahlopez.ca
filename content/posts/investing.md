@@ -1,10 +1,10 @@
 ---
 title: "Investing (Equities)"
 date: 2022-05-20T01:18:18-04:00
-tags: [
-    "canada",
-    "finance",
-]
+tags:
+  - canada
+  - finance
+hidden: true
 ---
 
 My updated investing article. I wrote this with an emphasis on safety rather than making money.
@@ -36,12 +36,12 @@ If you are in America, pick [Robinhood](https://robinhood.com/). I don't recomme
 - TFSA: Tax Free Savings Account. Maximize this before your RRSP
 - (R)RSP: Registered Retirement Savings Plan (good for 30+ year olds)
 - RESP: Registered Education Savings Plan (CAD only, so invest wisely!)
-- Cash: Use this after maxxing your registered accounts. Tax implications exist when you make capital gains, so avoid selling unless you know what you are doing
+- Cash: Use this after maxing your registered accounts. Tax implications exist when you make capital gains, so avoid selling unless you know what you are doing
 - Margin: do not use this account. It's best to not open one since using the Margin is tempting if you learn more than the basics.
 
 ### Norbert's Gambit
 
-If you are in Canada and want to invest in American stocks (or vice versa), you need to learn Norbert's Gambit to avoid the percentage foreign exchange fees. This is incredbly simple for RBC. Buy DLR and short DLR.U. RBC will take care of the settling automatically so you don't have to spend more time or money unlike Questrade and Wealthsimple. Questrade and Wealthsimple's experience and FX fees is *bakwas* (outrageous). A new broker needs to be started in Canada or someone new needs to lead RBC Direct Investing. Hopefully it'll be me one day, but I have things to do too.
+If you are in Canada and want to invest in American stocks (or vice versa), you need to learn Norbert's Gambit to avoid the percentage foreign exchange fees. This is incredibly simple for RBC. Buy DLR and short DLR.U. RBC will take care of the settling automatically so you don't have to spend more time or money unlike Questrade and Wealthsimple. Questrade and Wealthsimple's experience and FX fees is *bakwas* (outrageous). A new broker needs to be started in Canada or someone new needs to lead RBC Direct Investing. Hopefully it'll be me one day, but I have things to do too.
 
 ### Exchange-Traded Funds (ETFs)
 

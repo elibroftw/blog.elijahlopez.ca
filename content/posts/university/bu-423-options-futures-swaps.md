@@ -2,9 +2,9 @@
 title: "BU 423 Options, Futures & Swaps"
 date: 2024-01-09T14:26:54-05:00
 draft: false
-tags: [
-  'university'
-]
+tags:
+  - university
+  - finance
 ---
 
 {{< toc >}}

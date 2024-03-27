@@ -2,11 +2,10 @@
 title: "How to Convert xlsx to csv With Python"
 date: 2023-02-10T18:34:17-05:00
 draft: false
-tags: [
-    "tutorial",
-    "programming",
-    "python",
-]
+tags:
+  - tutorial
+  - programming
+  - python
 ---
 
 Try using https://github.com/dilshod/xlsx2csv first.

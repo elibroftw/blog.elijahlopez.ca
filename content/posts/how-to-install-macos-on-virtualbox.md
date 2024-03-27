@@ -2,12 +2,11 @@
 title: "How to Install macOS 12 Monterey on VirtualBox Windows 11"
 date: 2023-08-15T21:15:51-04:00
 draft: false
-tags: [
-    'windows',
-    'tutorial',
-    'mobile',
-    'virtual-box'
-]
+tags:
+  - windows
+  - tutorial
+  - mobile
+  - virtual-box
 ---
 
 For reference: my laptop is the Razer Blade 14 2022 with [AMD Ryzen 9 6900HX](https://www.amd.com/en/product/11541). It supports AMD-V.

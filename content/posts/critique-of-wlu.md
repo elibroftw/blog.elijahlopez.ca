@@ -1,25 +1,47 @@
 ---
-title: "Critique of the Laurier Academic Programs and More"
+title: "Critique of Wilfrid Laurier University"
 date: 2024-03-15T20:16:01-04:00
-draft: true
-tags: [
-  'opinion'
-]
+draft: false
+tags:
+  - opinion
+  - university
 ---
-
-{{< toc >}}
 
 ## Introduction
 
 I'm a 5th (yes 5th) year student at Wilfrid Laurier University (B. Business Administration) and University of Waterloo (B. Computer Science) and I've been through some rough times and some good times. My worst term was 2B but 5A is in second place and actually prompted (EC 250 ONLINE) me write this post.
 
-## WileyPlus and Timed Textbooks or Access Codes for Marks is Unethical
+I'm going to divide my thoughts based on main sections.
 
-- This school is filled with unethical practices that the school claims is unethical
+This is always a work in progress so comment below with anything I should add.
+
+{{< toc >}}
+
+## Housing
+
+One of the biggest issues I have with this university is how there is a housing shortage and this school decides to not take responsibility of the housing of students and instead leave it up to the private industry where what ends up happening is that in the buildings right behind campus, there are non-students living under rent-control with neighbors being students paying $300+ more per month.
+
+The second thing I hate about the school is that it doesn't advocate for student's quality of life. We have a double road going through campus.
+
+## Culture
+
+I simply cannot claim to be proud to be a golden hawk. I feel like after second-year, I didn't care too much about parties anyways. I ended up solving my mental health issues and would rather hang out with friends I can count on. After I solved my mental health issues, I realized culture is about a mindset, and whatever mindset I have is not valued here at Laurier.
+
+## Miscellaneous
+
+### OneCard Credits and Food Court
+
+Screw this monetary system. Thank fully I'm almost done using the money on Subway bowls.
+
+## Academics
+
+### WileyPlus and Timed Textbooks or Access Codes for Marks is Unethical
+
+<!-- - This school is filled with unethical practices simultaneously as the school claims to be a leader in ethics -->
 - If ethics matters at all, the last thing to do is to turn around and subject students to similar unethical practices
 - if unethical practices don't matter when students are on the receiving end, why would students care if a minority is on the receiving end?
 
-## Micro-Economics 1 Should be Combined with Micro-Economics 2
+### Micro-Economics 1 Should be Combined with Micro-Economics 2
 
 When I took Microeconomics 2 over the summer of 2020, my notes were condenses to 76 lines. This was after I started writing my notes in Word files and before I started writing my notes on my [blog](/tags/university). My micro-economic notes were a continuation of my notes from high school which was a word document for each chapter. Clearly, with notes like mine, micro-economics 2 should just be a chapter in microeconomics 1. On top of this, the only reason we had to take micro-economics 2 or macro-economics 2 was that you had to take one to graduate plus they are pre-requisites to 4th year finance courses that can be overridden by an academic advisor. Additionally, micro-economics 1 is similar to managerial accounting. So if anything, micro-economics 1 should be combined with managerial accounting 1.
 
@@ -106,7 +128,7 @@ std_dev = sqrt(variance)
 
 </details>
 
-## Macro-Economics 2 is Crammed
+### EC 250 -  Macro-Economics 2 is Crammed
 
 I'm in 5A and I'm taking EC-250 because it's a pre-requisite to fixed income but I'm also interested in macro-economics. This is one of the few times where I have felt constant pressure and burnout throughout the term. Maybe only 2 weeks of breathing room and this course was responsible for the stress. The expectation was to read an entire chapter, sometimes two, then do homework, and then do a quiz. When things got tough, I just resorted to reading the instructors "summaries" which were also filled with word vomit. My notes are most definitely filled with word vomits. Somewhere along the line, conceptual teaching was thrown out in favour of memorization. I suggest Macro-Economics 1 and 2 be taught in first year where the load is balanced between the two.
 
@@ -139,17 +161,17 @@ The difference between the courses is that Macro Economics 1 is abstracted where
     - Purpose
     - Factors
 
-## BU 111 - Introduction to Business Organization
+### BU 111 - Introduction to Business Organization
 
 BU 111 is super generalized and should not cover time value of money. Time Value is an important concept that belongs in finance 1 where students should be taught how to start creating Excel templates that can be used for Finance 2, Investment Management, and Futures, Swap, & Options.
 
 I'll have to revisit my notes to improve this critique.
 
-## BU 121
+### BU 121
 
 Don't have much criticisms of BU 121 as it is more of a practical application of BU 111 and should focus on either extending or applying said courses.
 
-## Organizational Behaviour 1 (BU 288)
+### BU 288 - Organizational Behaviour 1
 
 These courses are very subpar. First, I vaguely remember the content but remember the professors well since they had personalities. The first course mentions Dunning Kruger even thought the "effect" is [autocorrelation](https://economicsfromthetopdown.com/2022/04/08/the-dunning-kruger-effect-is-autocorrelation/#fn1) (i.e. the effect isn't psychological but statistical and "tells us nothing about the people it supposedly measures").
 
@@ -162,7 +184,7 @@ The course is a bunch of theories that the take away is to manage people based o
 - Negotiation: **needs improvement**
 - Ethics: **needs more**
 
-## Organizational Behaviour 2 (BU 398)
+### BU 398 - Organizational Behaviour 2
 
 This course focused on the behaviour of the organization itself. It's definitely an information overload.
 
@@ -178,11 +200,11 @@ This course focused on the behaviour of the organization itself. It's definitely
 
 The only good thing about the second course is that it was in person and people actually showed up to class.
 
-## BU 362 - Building and Managing Products, Services and Brands
+### BU 362 - Building and Managing Products, Services and Brands
 
 This was a case based course which was okay and got reworked anyways so I won't talk about it. Basically a way for laurier to get more money from us and make us pay $100+ for the articles.
 
-## BU 375 - Operations Management
+### BU 375 - Operations Management
 
 Useful course since it's an intro to project management. Pairs well with Waterloo's Algorithms which goes over a graph algorithm. Two assignments that were a burden. For the second assignment, I even created a python program to draw the graphs for me using networkx and matplotlib.
 
@@ -191,7 +213,7 @@ Useful course since it's an intro to project management. Pairs well with Waterlo
 My group members recommended the company to innovate in creating digital humans that have the same genetic reactions as actual humans to be used in clinical trials.
 Make with this what you will but in my opinion, a BBA holder is not a good consultant if the average person can't even critically think of a good solution. I think the BBA program needs to seriously promote intra-organizational case solutions more.
 
-## BU 481 - Strategic Management (Policy 1)
+### BU 481 - Strategic Management (Policy 1)
 
 Disgusting course. Never focused on failures, only successes. Talks about strategies from OB 2. Had to read cases every week. Content was very boring.
 
@@ -202,7 +224,7 @@ Disgusting course. Never focused on failures, only successes. Talks about strate
 - Leader analysis: refuses to acknowledge that leaders are picked by luck not merit and can fool shareholders like with Jack Welch
 - Frameworks
 
-## BU 489 - International Strategy (Policy 2)
+### BU 489 - International Strategy (Policy 2)
 
 What this course should focus and teach: when to expand outside of a country, when to start outside the country, how to create a strategy to expand outside of a country, how to maintain and/or manage an organization with a presence in more than one location, when does an organization transcend it's nationality (Transnational), and when should organizations exit a market?
 

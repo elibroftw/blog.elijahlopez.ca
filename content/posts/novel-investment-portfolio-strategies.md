@@ -2,9 +2,8 @@
 title: "New Investment Portfolio Strategies"
 date: 2024-02-29T14:36:16-05:00
 draft: false
-tags: [
-  'finance'
-]
+tags:
+  - finance
 ---
 
 When people talk about portfolio weighting, there's usually only three that people are taught: market capitalization, price, equal.

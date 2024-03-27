@@ -1,12 +1,12 @@
 ---
-title: "Rust Json Manipulation"
+title: "Rust JSON Manipulation"
 date: 2022-12-06T17:23:13-05:00
 draft: false
-tags: [
-    "programming",
-    "tutorial",
-    "rust",
-]
+tags:
+  - programming
+  - tutorial
+  - rust
+  - rocket.rs
 ---
 
 We'll be doing this in the context of `rocket`.

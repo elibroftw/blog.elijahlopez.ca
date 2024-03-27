@@ -2,14 +2,14 @@
 title: "React Native Geocoder With OSM & Nominatim"
 date: 2023-05-28T13:48:47-04:00
 draft: false
-tags: [
-    "tutorial",
-    "programming",
-    "javascript",
-    "webdev",
-    "mobile",
-    "reactjs",
-]
+hidden: true
+tags:
+  - tutorial
+  - programming
+  - javascript
+  - webdev
+  - mobile
+  - react-native
 ---
 
 I needed to add geocoding to a React Native app I am working on. I could've gone with Google Maps API or Mapbox, however Google Maps charges for search after a certain number of requests and Mapbox failed. Then I found out that OpenStreetMaps (OSM) and Nominatim have a big dataset and it's results were pretty good.

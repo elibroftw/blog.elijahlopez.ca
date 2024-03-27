@@ -2,10 +2,9 @@
 title: "Top VS Code Extensions"
 date: 2022-10-24T21:28:18-04:00
 draft: false
-tags: [
-  "vscode",
-  "programming",
-]
+tags:
+  - vscode
+  - programming
 ---
 
 For this article, I'm going to skip over default language packs since they are a goto install.

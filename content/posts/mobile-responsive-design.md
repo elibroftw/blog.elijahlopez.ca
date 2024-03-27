@@ -1,12 +1,11 @@
 ---
 title: "HTML and CSS - Mobile Responsive Design"
 date: 2022-02-24T00:40:12-05:00
-tags: [
-    "tutorial",
-    "programming",
-    "webdev",
-    "mobile"
-]
+tags:
+  - tutorial
+  - programming
+  - webdev
+  - mobile
 ---
 
 Tutorials nowadays just regurgitate the wrong information! Here's the right way to do mobile responsive design. The key is to use

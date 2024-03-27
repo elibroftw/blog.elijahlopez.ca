@@ -1,13 +1,12 @@
 ---
 title: "ReactJS Tips"
 date: 2022-09-23T19:57:18-04:00
-tags: [
-    "tutorial",
-    "programming",
-    "javascript",
-    "webdev",
-    "reactjs",
-]
+tags:
+  - tutorial
+  - programming
+  - javascript
+  - webdev
+  - reactjs
 ---
 
 I'm only in the mood for writing down my thoughts, so I apologize for the upcoming messiness.
