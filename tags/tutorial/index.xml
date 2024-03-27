@@ -1,4 +1,39 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tutorial on ELL Blog</title><link>https://blog.elijahlopez.ca/tags/tutorial/</link><description>ELL Blog (Tutorial)</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 24 Feb 2024 15:23:23 -0500</lastBuildDate><atom:link href="https://blog.elijahlopez.ca/tags/tutorial/index.xml" rel="self" type="application/rss+xml"/><item><title>Linux: Run Process in the Background and Detach</title><link>https://blog.elijahlopez.ca/posts/linux-background-process/</link><pubDate>Sat, 24 Feb 2024 15:23:23 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/linux-background-process/</guid><description>&lt;h3 id="using-disown" >Using disown
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tutorial on ELL Blog</title><link>https://blog.elijahlopez.ca/tags/tutorial/</link><description>ELL Blog (Tutorial)</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 27 Mar 2024 10:35:26 -0400</lastBuildDate><atom:link href="https://blog.elijahlopez.ca/tags/tutorial/index.xml" rel="self" type="application/rss+xml"/><item><title>REST APIs: Do Not Return 404 When A Resource is Null</title><link>https://blog.elijahlopez.ca/posts/rest-apis-do-not-return-404/</link><pubDate>Wed, 27 Mar 2024 10:35:26 -0400</pubDate><guid>https://blog.elijahlopez.ca/posts/rest-apis-do-not-return-404/</guid><description>&lt;p>Last year when I was implementing a get-status endpoint, I searched online whether I should return a 404 or null when the user has no active status. The reasons provided were not convincing but while debugging an error in my application recently (unrelated), even though I had logs set to error-only, that 404 error would still be seen! So here are the reasons why a REST API should return 204 (no content) or an empty/null response when there is no content.&lt;/p>
+&lt;h2 id="reasons" >Reasons
+&lt;span>
+&lt;a href="#reasons">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;h3 id="reason-1---polluting-the-error-log" >Reason 1 - Polluting the Error Log
+&lt;span>
+&lt;a href="#reason-1---polluting-the-error-log">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>The 404 error pollutes the error log from real errors and makes it hard to differentiate between the authentic errors and the intentional 404s.&lt;/p>
+&lt;h3 id="reason-2---unnecessary-client-side-error-handling-complications" >Reason 2 - Unnecessary Client-Side Error Handling Complications
+&lt;span>
+&lt;a href="#reason-2---unnecessary-client-side-error-handling-complications">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>There is added complexity in the client or consumer of the rest API. Instead of logging all errors the client has to make an exception for the 404 and what if there&amp;rsquo;s a typo in the future? The error won&amp;rsquo;t be caught then since it would be returning an authentic 404.&lt;/p>
+&lt;h3 id="reason-3---no-content-204-is-a-better-alternative" >Reason 3 - No Content 204 is a Better Alternative
+&lt;span>
+&lt;a href="#reason-3---no-content-204-is-a-better-alternative">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>One of the reasons I used 404 was because it made more sense from a language perspective of hey that resource doesn&amp;rsquo;t exist! But this way of thing needs to be reframed. I know the endpoint exists, so the client is simply asking if there is anything to &lt;strong>report&lt;/strong>.&lt;/p>
+&lt;p>A 204 is successful and and doesn&amp;rsquo;t require an error message. The client can easily handle this status code without needing to change or make an exception to how they handle network errors.&lt;/p>
+&lt;h2 id="what-is-the-alternative" >What is the Alternative?
+&lt;span>
+&lt;a href="#what-is-the-alternative">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>Return a 204 status code is the alternative and works well when the mindset of thinking of the REST actions themselves as being the resources the client wants to interact with rather than the backend action being only a facilitator to a resource stored in the database.&lt;/p></description></item><item><title>Linux: Run Process in the Background and Detach</title><link>https://blog.elijahlopez.ca/posts/linux-background-process/</link><pubDate>Sat, 24 Feb 2024 15:23:23 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/linux-background-process/</guid><description>&lt;h3 id="using-disown" >Using disown
 &lt;span>
 &lt;a href="#using-disown">
 &lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
