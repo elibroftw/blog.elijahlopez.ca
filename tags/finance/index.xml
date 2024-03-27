@@ -197,7 +197,2310 @@
 &lt;/blockquote>
 &lt;p>Intelligence and finance should go hand in hand but we find that it is the complete opposite when it comes to the stock market. We need to realize that an IQ of 100 is really really dumb. Why do I say that? Because I go to university and I see the kinds of people here, and I see the kinds of people in Computer Science itself. I recently passed a tutorial where the average was 50% and I got a 92% after a 5% late penalty (due to submitting incorrectly). If the average IQ is 124 in CS and the average mark for a CS test is 50%, it&amp;rsquo;s almost as if an average IQ of 124 is just the bare minimum.&lt;/p>
 &lt;p>So then the average IQ of an investor is also 100. Not to mention IQ has nothing to do with returns. IQ just means capability. You still need to apply IQ to gain an advantage. Research takes time and IQ reduces the time it takes to make decisions. Anyways thanks for attending my ramble of the day. Wasted hours on this, but mostly because my midterm went well.&lt;/p>
-&lt;p>&lt;a href="https://www.usfunds.com/resource/how-losing-an-eye-helped-charlie-munger-see-success/">How Losing an Eye Helped Charlie Munger See Success&lt;/a>&lt;/p></description></item><item><title>Finance Knowledge Database</title><link>https://blog.elijahlopez.ca/posts/finance-knowledge-database/</link><pubDate>Fri, 08 Sep 2023 14:15:12 -0400</pubDate><guid>https://blog.elijahlopez.ca/posts/finance-knowledge-database/</guid><description>&lt;p>For my last co-op, I got to intern at Fiera Capital on their Private Debt team which manages $5B+ of investors. Within the first week, there are a lot of terms related not just to lending but even M&amp;amp;A that I had trouble figuring out the meaning. I&amp;rsquo;m writing this article to make it easier to learn and understand finance.&lt;/p>
+&lt;p>&lt;a href="https://www.usfunds.com/resource/how-losing-an-eye-helped-charlie-munger-see-success/">How Losing an Eye Helped Charlie Munger See Success&lt;/a>&lt;/p></description></item><item><title>BU 423 Options, Futures &amp; Swaps</title><link>https://blog.elijahlopez.ca/posts/university/bu-423-options-futures-swaps/</link><pubDate>Tue, 09 Jan 2024 14:26:54 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/university/bu-423-options-futures-swaps/</guid><description>&lt;div>
+&lt;h2>Table of Contents&lt;/h2>
+&lt;nav id="TableOfContents">
+&lt;ul>
+&lt;li>&lt;a href="#naturel-of-derivatives">Naturel of Derivatives&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#why-are-derivatives-used">Why are Derivatives Used&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#futures-contracts-introduction">Futures Contracts Introduction&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#over-the-contract-markets">Over-the Contract markets&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#lehman-bankruptcy">Lehman Bankruptcy&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#new-regulations-for-otc">New Regulations for OTC&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#otc-systemic-risk">OTC Systemic Risk&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#forward-contracts-introduction">Forward Contracts Introduction&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#options">Options&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#hedge-funds">Hedge Funds&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#arbitrage-examples">Arbitrage Examples&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="#futures-contracts-chapter-2">Futures Contracts (Chapter 2)&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#convergence">Convergence&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#margin">Margin&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#otc-markets-bilateral-clearing">OTC Markets: Bilateral Clearing&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#terminology">Terminology&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#forward-contracts">Forward Contracts&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="#hedging-strategies">Hedging Strategies&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#arguments-for-hedging">Arguments For Hedging&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#arguments-against-hedging">Arguments Against Hedging&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#basis-risk">Basis Risk&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#long-hedge-for-purchase-of-an-asset">Long Hedge for Purchase of an Asset&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#choice-of-contract">Choice of Contract&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#optimal-hedge-ratio">Optimal Hedge Ratio&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#hedging-using-index-futures">Hedging Using Index Futures&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#hedging-to-non-zero-beta">Hedging to Non-Zero beta&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#reasoning">Reasoning&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#stack-and-roll">Stack and Roll&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#liquidity-issues">Liquidity Issues&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="#interest-rates">Interest Rates&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#treasury-rates">Treasury Rates&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#libor">LIBOR&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#us-fed-funds-rate">U.S. Fed Funds Rate&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#repo-rates">Repo Rates&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#libor-swaps">LIBOR Swaps&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#ois-rate">OIS Rate&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#risk-free-rate">Risk-Free Rate&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#measuring-interest-rates">Measuring Interest Rates&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#conversion-formulas">Conversion Formulas&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#zero-rates">Zero Rates&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#bond-pricing-continuous">Bond Pricing (Continuous)&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#par-yield">Par Yield&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#data-to-determine-treasury-zero-curve">Data to Determine Treasury Zero Curve&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#forward-rates">Forward Rates&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#interest-rate-swap">Interest Rate Swap&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#forward-rate-agreement-fra">Forward Rate Agreement (FRA)&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#theories-of-the-term-structure">Theories of the Term Structure&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="#determination-of-forward-and-futures-prices">Determination of Forward and Futures Prices&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#intro-and-types-of-contracts">Intro and Types of Contracts&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#valuing-forward-contracts">Valuing Forward Contracts&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#the-forward-price">The Forward Price&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#forward-price-with-continuous-compounding">Forward Price with Continuous Compounding&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#known-dollar-income">Known Dollar Income&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#know-yield">Know Yield&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#forward-pricing-example-1">Forward Pricing Example 1&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#futures-pricing">Futures Pricing&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#index-arbitrage-and-program-trading">Index Arbitrage and Program Trading&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="#interest-rate-futures">Interest Rate Futures&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#bond-prices-between-coupons">Bond Prices Between Coupons&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#treasury-bill-prices-in-the-us">Treasury Bill Prices in the US&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#canadian-treasury-bills">Canadian Treasury Bills&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#treasury-bond-futures">Treasury Bond Futures&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#conversion-factors">Conversion Factors&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#determining-treasury-futures-price">Determining Treasury Futures Price&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#eurodollar">Eurodollar&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="#swaps">Swaps&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#swap-market">Swap Market&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#confirmations">Confirmations&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#comparative-advantage-example">Comparative Advantage Example&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#fixed-for-fixed-currency-swap">Fixed-for-Fixed Currency Swap&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="#mechanics-of-options-markets">Mechanics of Options Markets&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#payoffs">Payoffs&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#intrinsic-value">Intrinsic Value&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#cboe-and-otc">CBOE and OTC&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#dividends--stock-splits">Dividends &amp;amp; Stock Splits&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#market-makers">Market Makers&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#options-margin">Options Margin&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#warrants">Warrants&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#convertible">Convertible&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#swaptions">Swaptions&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="#midterm-questions">Midterm Questions&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#properties-of-stock-options">Properties of Stock Options&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#effect-of-variables-on-option-pricing">Effect of Variables on Option Pricing&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#lower-bound-for-european-call-option-prices-no-dividends">Lower Bound for European Call Option Prices; No Dividends&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#american-put-exercised-early">American Put Exercised Early&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#american-put-options-no-dividends">American Put Options (No Dividends)&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#impact-of-dividends-on-the-lower-bounds-to-option-prices">Impact of Dividends on the Lower Bounds to Option Prices&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="#chapter-11---trading-strategies-involving-options">Chapter 11 - Trading Strategies Involving Options&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#principal-protected-note">Principal Protected Note&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#bull-spread-using-calls">Bull Spread Using Calls&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#bull-spread-using-puts">Bull Spread Using Puts&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#bear-spread-using-calls">Bear Spread Using Calls&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#bear-spread-using-puts">Bear Spread Using Puts&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#box-spread">Box Spread&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#put-call-parity">Put-Call Parity&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#butterfly-spread-using-calls">Butterfly Spread Using Calls&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#calendar-spread-using-calls">Calendar Spread Using Calls&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#strangle-combination">Strangle Combination&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#strip--strap">Strip &amp;amp; Strap&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="#chapter-12---binomial-trees">Chapter 12 - Binomial Trees&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#risk-neutral-valuation">Risk-Neutral Valuation&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#two-step-examples">Two-Step Examples&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#choosing-u-and-d">Choosing u and d&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#options-on-stock-indices-currencies-futures">Options on Stock Indices, Currencies, Futures&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#time-steps">Time Steps&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="#chapter-18---binomial-trees-in-practice-derivagem">Chapter 18 - Binomial Trees in Practice (DerivaGem)&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#custom-derivative-payoff-example">Custom Derivative Payoff Example&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#put-example-delta-shares-short">Put Example Delta Shares Short&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="#chapter-13---black-scholes-merton-model">Chapter 13 - Black-Scholes-Merton Model&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#lognormal-property">Lognormal Property&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#estimating-volatility-from-historical-data">Estimating Volatility from Historical Data&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#black-scholes-formulas">Black-Scholes Formulas&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#implied-volatility">Implied Volatility&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="#chapter-15---options-on-stock-indices-and-currencies">Chapter 15 - Options on Stock Indices and Currencies&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#example-151">Example 15.1&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#example-152">Example 15.2&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#currency-options">Currency Options&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#range-forward">Range Forward&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="#chapter-16---futures-options-and-blacks-model">Chapter 16 - Futures options and Black&amp;rsquo;s Model&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#example-161">Example 16.1&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#example-162">Example 16.2&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#immediately-selling-the-future-payoff">Immediately Selling the Future Payoff&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#advantages-of-future-options-over-spot-options">Advantages of Future Options over Spot Options&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#european-futures-options">European Futures Options&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#put-call-parity-for-european-futures-options">Put-Call Parity for European Futures Options&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#riskless-futures-option-portfolio">Riskless Futures Option Portfolio&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="#chapter-17---the-greek-letters">Chapter 17 - The Greek Letters&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#stop-loss-strategy">Stop-Loss Strategy&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#how-delta-hedging-works">How Delta-Hedging Works&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#example-171">Example 17.1&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#gamma-addresses-delta-hedging-errors-caused-by-curvature">Gamma Addresses Delta Hedging Errors Caused by Curvature&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#managing-delta-gamma-and-vega">Managing Delta, Gamma, and Vega&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#rho">Rho&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#hedging-in-practice">Hedging in practice&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#greek-letters-when-underlying-has-a-yield">Greek Letters When Underlying has a Yield&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#futures-for-delta-hedging">Futures for Delta Hedging&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#synthetic-option">Synthetic Option&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#portfolio-insurance">Portfolio Insurance&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="#chapter-19---volatility-smiles">Chapter 19 - Volatility Smiles&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/nav>
+&lt;/div>
+&lt;p>Derivative: financial instruments that depend on an underlying asset. Everything in finance could be considered a derivative.
+In finance, there is no wealth generation, only wealth redistribution.&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;a href="https://rotman.utoronto.ca/~hull">Lecture slides&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Textbook: &lt;a href="http://libgen.li/index.php?req=Fundamentals+of+Futures+and+Options&amp;amp;columns%5B%5D=t&amp;amp;columns%5B%5D=a&amp;amp;columns%5B%5D=s&amp;amp;columns%5B%5D=y&amp;amp;columns%5B%5D=p&amp;amp;columns%5B%5D=i&amp;amp;objects%5B%5D=f&amp;amp;objects%5B%5D=e&amp;amp;objects%5B%5D=s&amp;amp;objects%5B%5D=a&amp;amp;objects%5B%5D=p&amp;amp;objects%5B%5D=w&amp;amp;topics%5B%5D=l&amp;amp;topics%5B%5D=c&amp;amp;topics%5B%5D=f&amp;amp;topics%5B%5D=a&amp;amp;topics%5B%5D=m&amp;amp;topics%5B%5D=r&amp;amp;topics%5B%5D=s&amp;amp;res=25&amp;amp;filesuns=all&amp;amp;curtab=f&amp;amp;order=year&amp;amp;ordermode=desc">Fundamentals of Futures and Options 9th edition by John C. Hull&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Four Quizzes 40%&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Midterm Exam 25%&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Final Exam 35%&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="naturel-of-derivatives" >Naturel of Derivatives
+&lt;span>
+&lt;a href="#naturel-of-derivatives">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;ul>
+&lt;li>Return = Risk Free + Risk Premium&lt;/li>
+&lt;li>Risk can be transferred for a price. One sufficient manner is through the use of derivatives&lt;/li>
+&lt;/ul>
+&lt;p>Building Blocks / Examples&lt;/p>
+&lt;ul>
+&lt;li>Futures Contracts&lt;/li>
+&lt;li>Forward Contracts&lt;/li>
+&lt;li>Swaps&lt;/li>
+&lt;li>Options&lt;/li>
+&lt;/ul>
+&lt;h3 id="why-are-derivatives-used" >Why are Derivatives Used
+&lt;span>
+&lt;a href="#why-are-derivatives-used">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Hedging&lt;/li>
+&lt;li>Speculation&lt;/li>
+&lt;li>Locking in arbitrage&lt;/li>
+&lt;li>Changing nature of a liability
+&lt;ul>
+&lt;li>Fixed rate loan and you want to change that into a variable one&lt;/li>
+&lt;li>You can either pay back the loan and take a variable rate (transaction costs)&lt;/li>
+&lt;li>Or you can use a derivate&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Change the nature of an investment without incurring the costs of selling one portfolio and buying another
+&lt;ul>
+&lt;li>Something about using a forwards contract&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="futures-contracts-introduction" >Futures Contracts Introduction
+&lt;span>
+&lt;a href="#futures-contracts-introduction">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>F = S (1 + r) ^ T&lt;/p>
+&lt;ul>
+&lt;li>Agreement to buy or sell underlying asset at some point in the future for a certain price&lt;/li>
+&lt;li>Spot contract is buying or selling immediately&lt;/li>
+&lt;li>An example. Spot price of $100, risk-free of 5%, Expected price in a year is $110. F0 is 105 if there is no risk?&lt;/li>
+&lt;li>Selling = short position. Buying = long position&lt;/li>
+&lt;li>Exchanges Trading Futures
+&lt;ul>
+&lt;li>CME Group&lt;/li>
+&lt;li>Intercontinental Exchange&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="over-the-contract-markets" >Over-the Contract markets
+&lt;span>
+&lt;a href="#over-the-contract-markets">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>More important alternative than exchanges because anything goes&lt;/li>
+&lt;li>In the exchange-traded market, there are standardized contracts&lt;/li>
+&lt;/ul>
+&lt;h3 id="lehman-bankruptcy" >Lehman Bankruptcy
+&lt;span>
+&lt;a href="#lehman-bankruptcy">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Active participant in OTC derivative market&lt;/li>
+&lt;li>Took high risk and couldn&amp;rsquo;t roll into short-term funding&lt;/li>
+&lt;li>Sold protection for debt instruments for mortgage backed securities
+&lt;ul>
+&lt;li>Sold Credit Default Swaps which is a protection instrument for mortgage backed securities&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Long Term Capital (hedge fund). Proprietary trading models, promising investors 20%+ but as it got larger it was harder to attain the returns
+&lt;ul>
+&lt;li>Then they levered their fund&lt;/li>
+&lt;li>Systematic Risk&lt;/li>
+&lt;li>Placed bet on USSR and USA interest model
+&lt;ul>
+&lt;li>When USSR collapsed, they went bankrupt&lt;/li>
+&lt;li>&lt;a href="https://www.investopedia.com/terms/l/longtermcapital.asp">1998 Russian financial crisis&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="new-regulations-for-otc" >New Regulations for OTC
+&lt;span>
+&lt;a href="#new-regulations-for-otc">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Standard OTC products must be traded on swap execution facilities&lt;/li>
+&lt;li>Central clearing party must be used&lt;/li>
+&lt;li>Trades must be reported to a central registry&lt;/li>
+&lt;/ul>
+&lt;h3 id="otc-systemic-risk" >OTC Systemic Risk
+&lt;span>
+&lt;a href="#otc-systemic-risk">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Default by one large financial institution can lead to losses in other financial institution&lt;/li>
+&lt;/ul>
+&lt;h3 id="forward-contracts-introduction" >Forward Contracts Introduction
+&lt;span>
+&lt;a href="#forward-contracts-introduction">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Trade in OTC market&lt;/li>
+&lt;li>Popular on currencies and interest rates&lt;/li>
+&lt;li>Forward Price = delivery price if negotiated today&lt;/li>
+&lt;/ul>
+&lt;h3 id="options" >Options
+&lt;span>
+&lt;a href="#options">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Call = option to buy at strike price by a certain date&lt;/li>
+&lt;li>Put = option to sell at strike price by a certain date&lt;/li>
+&lt;li>American style = exercised any time during its life&lt;/li>
+&lt;li>European style = exercised only at maturity&lt;/li>
+&lt;/ul>
+&lt;p>Profit = (Stock Price - Strike Price - Purchase Price)&lt;/p>
+&lt;p>Examples:&lt;/p>
+&lt;ul>
+&lt;li>100 put options short
+&lt;ul>
+&lt;li>Losses limited to strike price + price paid for the option&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>100 call options long at strike price of $550 for $29 per option
+&lt;ul>
+&lt;li>Profit increases as stock price increases&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>Options vs. Futures/Forwards&lt;/p>
+&lt;p>Holder has an obligation vs. option&lt;/p>
+&lt;h3 id="hedge-funds" >Hedge Funds
+&lt;span>
+&lt;a href="#hedge-funds">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Not same regulations as mutual funds&lt;/li>
+&lt;li>Mutual funds
+&lt;ul>
+&lt;li>Disclose investment policies&lt;/li>
+&lt;li>Redeemable at any time&lt;/li>
+&lt;li>Limited use of leverage&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Hedge fund fee: 2 plus 20%&lt;/li>
+&lt;/ul>
+&lt;h3 id="arbitrage-examples" >Arbitrage Examples
+&lt;span>
+&lt;a href="#arbitrage-examples">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>stock price is quoted in 100 pounds in London and $152 in New York&lt;/li>
+&lt;li>exchange rate is 1.55 for pounds to USD&lt;/li>
+&lt;li>therefore, short the stock in london, buy in new york&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;ul>
+&lt;li>risk-free rate is 5%&lt;/li>
+&lt;li>spot price of gold is US$100 per ounce&lt;/li>
+&lt;li>1-year futures is 105&lt;/li>
+&lt;li>expected spot price in 1 year is $110 (does not matter)&lt;/li>
+&lt;li>F = S (1 + r) ^ T&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;ul>
+&lt;li>spot price of oil s US$40&lt;/li>
+&lt;li>1-year futures price of oil is US$35 (or $50)&lt;/li>
+&lt;li>risk-free is 2% per annum&lt;/li>
+&lt;li>storage cost is 1% per annum&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="futures-contracts-chapter-2" >Futures Contracts (Chapter 2)
+&lt;span>
+&lt;a href="#futures-contracts-chapter-2">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;ul>
+&lt;li>Formula = F = S (1 + r) ^ T&lt;/li>
+&lt;li>Exchange traded&lt;/li>
+&lt;li>Wide range of underlyings&lt;/li>
+&lt;li>Specs need to be defined
+&lt;ul>
+&lt;li>What can be delivered&lt;/li>
+&lt;li>Where to deliver&lt;/li>
+&lt;li>When to deliver
+&lt;ul>
+&lt;li>For many futures contracts, the delivery period is the whole month&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Settled daily (mark to market)&lt;/li>
+&lt;li>Closing out futures is easy, it&amp;rsquo;s just an opposite trade&lt;/li>
+&lt;li>Most contracts are closed out before maturity&lt;/li>
+&lt;li>When used for hedging, profits are not recorded for accounting purposes until the contract is closed (pg. 59). If not for hedging, then the books would note the gain/loss in the year end even if the contract will not be closed until the next year&lt;/li>
+&lt;/ul>
+&lt;h3 id="convergence" >Convergence
+&lt;span>
+&lt;a href="#convergence">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>As time goes on, the future&amp;rsquo;s price converges to the spot price&lt;/p>
+&lt;h3 id="margin" >Margin
+&lt;span>
+&lt;a href="#margin">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Margin is cash or marketable securities deposited by an investor with his or her broker&lt;/li>
+&lt;li>The balance in the margin account is adjusted to reflect daily settlement&lt;/li>
+&lt;li>Margin minimizes the possibility of a loss through a default on a contract&lt;/li>
+&lt;li>Retail traders provide &lt;strong>initial margin&lt;/strong> and, when the balance in the margin account falls below a &lt;strong>maintenance margin level&lt;/strong>, they must provide variation margin bringing balance back up to initial margin level.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;ul>
+&lt;li>Short futures contract&lt;/li>
+&lt;li>Want to sell the asset later before maturity&lt;/li>
+&lt;li>Revenue = Spot Price + Price at T = 0 MINUS Price at T = 1&lt;/li>
+&lt;li>Example sold asset at spot price of 110 + shorted future at price of 105 - bought back future at price of 112 = 103&lt;/li>
+&lt;/ul>
+&lt;h3 id="otc-markets-bilateral-clearing" >OTC Markets: Bilateral Clearing
+&lt;span>
+&lt;a href="#otc-markets-bilateral-clearing">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Transaction between two parties typically governed by ISDA Master Agreement&lt;/li>
+&lt;li>Credit Support Annex (CSA) defines the collateral that has to be posted&lt;/li>
+&lt;li>After Financial Crisis of 2007-2007, centralized counterparties (CPP) have to be used to avoid financial institutions from chain reacting defaults&lt;/li>
+&lt;li>Companies can clear its transaction through a member&lt;/li>
+&lt;/ul>
+&lt;h3 id="terminology" >Terminology
+&lt;span>
+&lt;a href="#terminology">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>open interest: outstanding contracts&lt;/li>
+&lt;li>settlement price: price before final bell&lt;/li>
+&lt;li>volume of trading: number of trades for a day&lt;/li>
+&lt;/ul>
+&lt;h3 id="forward-contracts" >Forward Contracts
+&lt;span>
+&lt;a href="#forward-contracts">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Private contract between 2 parties&lt;/li>
+&lt;li>Non-standard contract&lt;/li>
+&lt;li>Usually 1 specified delivery date (futures are a range)&lt;/li>
+&lt;li>Settled at end of contract&lt;/li>
+&lt;li>Delivery usually occurs&lt;/li>
+&lt;li>Some credit risk (risk of counterparty default)&lt;/li>
+&lt;/ul>
+&lt;h2 id="hedging-strategies" >Hedging Strategies
+&lt;span>
+&lt;a href="#hedging-strategies">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;ul>
+&lt;li>Long hedge is when you know you will lock in the price for an asset you know you will buy in the future&lt;/li>
+&lt;li>Short hedge is when you know you will sell an asset in the future and want to lock in the price&lt;/li>
+&lt;/ul>
+&lt;h3 id="arguments-for-hedging" >Arguments For Hedging
+&lt;span>
+&lt;a href="#arguments-for-hedging">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Take steps to minimize risks arising from interest rates, exchange rates, and other market variables&lt;/li>
+&lt;/ul>
+&lt;h3 id="arguments-against-hedging" >Arguments Against Hedging
+&lt;span>
+&lt;a href="#arguments-against-hedging">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Shareholders can make their own hedging decisions&lt;/li>
+&lt;li>May increase risk if competitors do not hedge&lt;/li>
+&lt;li>Loss on hedge but gain in the underlying is hard to explain&lt;/li>
+&lt;/ul>
+&lt;h3 id="basis-risk" >Basis Risk
+&lt;span>
+&lt;a href="#basis-risk">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Difference between spot and futures&lt;/li>
+&lt;li>Arises because uncertainty about basis when hedge is closed out&lt;/li>
+&lt;li>An improvement (increases) in the basis benefits the short position&lt;/li>
+&lt;/ul>
+&lt;h3 id="long-hedge-for-purchase-of-an-asset" >Long Hedge for Purchase of an Asset
+&lt;span>
+&lt;a href="#long-hedge-for-purchase-of-an-asset">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>F1: Futures price at time hedge is set up&lt;/li>
+&lt;li>F2: Futures price at time asset is purchased&lt;/li>
+&lt;li>S2: Asset price at time of purchase (Cost)&lt;/li>
+&lt;li>b2: Basis at time of purchase&lt;/li>
+&lt;li>Net Amount paid =S2 - (F2 - F1) = F1 + b2&lt;/li>
+&lt;li>Net Amount received = S2 + (F1 - F2) = F1 + b2&lt;/li>
+&lt;/ul>
+&lt;h3 id="choice-of-contract" >Choice of Contract
+&lt;span>
+&lt;a href="#choice-of-contract">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Choose delivery month as close to life of the hedge&lt;/li>
+&lt;li>When there is no futures contract on the asset being hedged, choose teh most highly correlated with the asset price. 2 basis components&lt;/li>
+&lt;/ul>
+&lt;h3 id="optimal-hedge-ratio" >Optimal Hedge Ratio
+&lt;span>
+&lt;a href="#optimal-hedge-ratio">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;img class=equation-tall src="https://latex.codecogs.com/svg.image?h^*=p\frac{\sigma_S}{\sigma_F}">
+&lt;ul>
+&lt;li>
+&lt;p>change in standard deviation of change in spot price&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>change in standard deviation of the future price&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>price coefficient between two assets&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Airline will purchase 2 million gallons of jet fuel in one month and hedges using heating oil futures&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>From historical data&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>h^* = 0.928 * 0.0263 / 0.0313 = 0.78&lt;/code>&lt;/li>
+&lt;li>Therefore optimal number of contracts is 0.78 times 2,000,000 / 42,000 [units per contract] = 37&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="hedging-using-index-futures" >Hedging Using Index Futures
+&lt;span>
+&lt;a href="#hedging-using-index-futures">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Beta times value of the portfolio divided by value of one index futures contract.&lt;/p>
+&lt;p>Example 1&lt;/p>
+&lt;ul>
+&lt;li>1,000 S&amp;amp;P futures price&lt;/li>
+&lt;li>$5MM portfolio&lt;/li>
+&lt;li>1.5 Beta&lt;/li>
+&lt;li>One contract is $250 times the index&lt;/li>
+&lt;li>1.5 * 5,000,000 / 250,000 = 30 contracts short&lt;/li>
+&lt;/ul>
+&lt;p>Example 2&lt;/p>
+&lt;ul>
+&lt;li>Index level of 1,000. Future price of 1,010, 250x per contract&lt;/li>
+&lt;li>Portfolio value of $5,050,000&lt;/li>
+&lt;li>risk-free = 4%&lt;/li>
+&lt;li>Dividend = 1% per year&lt;/li>
+&lt;li>Beta = 1.5&lt;/li>
+&lt;li>3 month horizon&lt;/li>
+&lt;li>Future exit in 4 months&lt;/li>
+&lt;li>&lt;code>1.5 \* (5,050,000 / (250 * 1,010)) = 30 contracts&lt;/code>&lt;/li>
+&lt;li>in 3 months, index is at 900 and the future is at 902&lt;/li>
+&lt;li>What&amp;rsquo;s the net value?&lt;/li>
+&lt;li>R = (P1 - P0 + D) / P0 = (P1 - P0) / P0 + D / P0&lt;/li>
+&lt;li>R = Rf + Beta (Rm - Rf)&lt;/li>
+&lt;li>Gain from short position = &lt;code>(1010 - 902) * 30 * 250= 810,000&lt;/code>&lt;/li>
+&lt;li>&lt;code>Loss from index = (900 - 1000 + 1% * 1000 / 12 * 4) / 1000 = -97.5 / 1000 = -9.75%&lt;/code>&lt;/li>
+&lt;li>&lt;code>Rp = 4% / 4+ 1.5 (-0.0975 - 0.04 / 4) = -15.125%&lt;/code>
+&lt;ul>
+&lt;li>Notice that we divided risk free rate to account for 3 month&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;code>Vp = 5,050,000 (1 - 15.125%) + 810,000 = 5,096,187.50&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-p" data-lang="p">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">def&lt;/span> &lt;span style="color:#40ffff">portfolio_value&lt;/span>()
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="hedging-to-non-zero-beta" >Hedging to Non-Zero beta
+&lt;span>
+&lt;a href="#hedging-to-non-zero-beta">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Previous section, we got a beta of 0, what about non-zero?&lt;/li>
+&lt;li>If Beta &amp;gt; desired Beta, Number of contracts to sell = (Beta - desired Beta) Vp / Vi&lt;/li>
+&lt;li>If Beta &amp;lt; desired Beta, Number of contracts to buy = (Desired Beta - Beta) Vp / Vi&lt;/li>
+&lt;/ul>
+&lt;h3 id="reasoning" >Reasoning
+&lt;span>
+&lt;a href="#reasoning">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>You think your stocks will outperform the market&lt;/li>
+&lt;li>Hedging ensure the return you earn is the risk-free rate plus the excess over the market (or minus the underperformance over the market)&lt;/li>
+&lt;/ul>
+&lt;h3 id="stack-and-roll" >Stack and Roll
+&lt;span>
+&lt;a href="#stack-and-roll">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Roll futures forward to hedge future exposures&lt;/li>
+&lt;li>Just before maturity, close them out and replace them with new contract reflect the new exposure&lt;/li>
+&lt;/ul>
+&lt;h3 id="liquidity-issues" >Liquidity Issues
+&lt;span>
+&lt;a href="#liquidity-issues">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>In any hedging situation there is a danger that losses will be realized on the hedge while the gains on the underlying exposure are unrealized&lt;/li>
+&lt;li>Example: Metallgesellschaft which sold long term fixed-price contracts on heating oil and gasoline and hedged using stack and roll&lt;/li>
+&lt;/ul>
+&lt;h2 id="interest-rates" >Interest Rates
+&lt;span>
+&lt;a href="#interest-rates">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;h3 id="treasury-rates" >Treasury Rates
+&lt;span>
+&lt;a href="#treasury-rates">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Instruments issued by government in its own currency&lt;/li>
+&lt;/ul>
+&lt;h3 id="libor" >LIBOR
+&lt;span>
+&lt;a href="#libor">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>London Interbank Offered Rate&lt;/li>
+&lt;li>Based on submissions by banks&lt;/li>
+&lt;li>Why would banks collude for this?&lt;/li>
+&lt;/ul>
+&lt;h3 id="us-fed-funds-rate" >U.S. Fed Funds Rate
+&lt;span>
+&lt;a href="#us-fed-funds-rate">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Unsecured interbank overnight rate of interest&lt;/li>
+&lt;li>Allows banks to adjust the cash (i.e., reserves) on deposit with the Federal Reserve at the end of each day&lt;/li>
+&lt;li>= average rate on brokered transactions&lt;/li>
+&lt;li>central bank can intervene&lt;/li>
+&lt;/ul>
+&lt;h3 id="repo-rates" >Repo Rates
+&lt;span>
+&lt;a href="#repo-rates">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Financial institution agreeing to purchase back &lt;strong>securities&lt;/strong> it sold now for a higher price&lt;/li>
+&lt;li>It&amp;rsquo;s a loan?&lt;/li>
+&lt;li>The rate of interest is calculated between X and Y&lt;/li>
+&lt;/ul>
+&lt;h3 id="libor-swaps" >LIBOR Swaps
+&lt;span>
+&lt;a href="#libor-swaps">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>LIBOR is exchanged for a fixed rate&lt;/li>
+&lt;li>3 month LIBOR swap is same risk as continually refreshed 3 month AA-rated banks&lt;/li>
+&lt;/ul>
+&lt;h3 id="ois-rate" >OIS Rate
+&lt;span>
+&lt;a href="#ois-rate">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Overnight Indexed Swap&lt;/li>
+&lt;li>Fixed rate for a period is exchanged for the geometric average of overnight rates&lt;/li>
+&lt;li>Single exchange for up to one year maturity&lt;/li>
+&lt;li>Periodic exchange for over one year, e.g. quarterly&lt;/li>
+&lt;li>OIS rate is a continually refresh overnight rate&lt;/li>
+&lt;/ul>
+&lt;h3 id="risk-free-rate" >Risk-Free Rate
+&lt;span>
+&lt;a href="#risk-free-rate">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Treasury rate is artificially low because Banks do not keep capital for Treasury instruments&lt;/li>
+&lt;li>Treasury instruments have favourable tax treatements&lt;/li>
+&lt;li>OIS rates is a proxy for the risk-free rates&lt;/li>
+&lt;/ul>
+&lt;blockquote>
+&lt;p>For example, suppose that in a U.S. three-month OIS the notional principal is $100 million and the fixed rate (i.e., the OIS rate) is 3% per annum. If the geometric average of overnight effective federal funds rates during the three months proves to be 2.8% per annum, the fixed rate payer has to pay 0.25 × (0.030 − 0.028) × $100,000,000 or $50,000 to the floating rate payer. (This calculation does not take account of the impact of day count conventions.)&lt;/p>
+&lt;/blockquote>
+&lt;h3 id="measuring-interest-rates" >Measuring Interest Rates
+&lt;span>
+&lt;a href="#measuring-interest-rates">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Principal e^(RT)
+&lt;ul>
+&lt;li>R = continuously compounded rate for time T&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="conversion-formulas" >Conversion Formulas
+&lt;span>
+&lt;a href="#conversion-formulas">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Rc : continuously compounded rate&lt;/li>
+&lt;li>Rm: same rate with compounding m times per year&lt;/li>
+&lt;li>Rc: m ln ( 1 + Rm / m)&lt;/li>
+&lt;li>Rm: m (e^(Rc / m) - 1)&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-py" data-lang="py">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">import&lt;/span> &lt;span style="color:#447fcf;text-decoration:underline">math&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#6ab825;font-weight:bold">def&lt;/span> &lt;span style="color:#447fcf">convert_interest_rate&lt;/span>(m_old, m_new, rate):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> rc = math.log(&lt;span style="color:#3677a9">1&lt;/span> + rate/m_old) * m_old
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#24909d">print&lt;/span>(&lt;span style="color:#ed9d13">f&lt;/span>&lt;span style="color:#ed9d13">&amp;#39;Continuous compounding rate: &lt;/span>&lt;span style="color:#ed9d13">{&lt;/span>rc * &lt;span style="color:#3677a9">100&lt;/span>&lt;span style="color:#ed9d13">:&lt;/span>&lt;span style="color:#ed9d13">.4f&lt;/span>&lt;span style="color:#ed9d13">}&lt;/span>&lt;span style="color:#ed9d13">&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> rm = m_new * (math.e ** (rc / m_new) - &lt;span style="color:#3677a9">1&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#24909d">print&lt;/span>(&lt;span style="color:#ed9d13">f&lt;/span>&lt;span style="color:#ed9d13">&amp;#39;New rate: &lt;/span>&lt;span style="color:#ed9d13">{&lt;/span>rm * &lt;span style="color:#3677a9">100&lt;/span>&lt;span style="color:#ed9d13">:&lt;/span>&lt;span style="color:#ed9d13">.4f&lt;/span>&lt;span style="color:#ed9d13">}&lt;/span>&lt;span style="color:#ed9d13">&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-txt" data-lang="txt">&lt;span style="display:flex;">&lt;span>10% with semiannual compounding is equivalent to 2ln(1.05)=9.758% with continuous compounding
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>8% with continuous compounding is equivalent to 4(e0.08/4 -1)=8.08% with quarterly compounding
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Rates used in option pricing are usually expressed with continuous compounding
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="zero-rates" >Zero Rates
+&lt;span>
+&lt;a href="#zero-rates">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>A zero rate (or spot rate), for maturity T is the rate of interest earned on an investment that provides a payoff only at time T&lt;/li>
+&lt;/ul>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Maturity (years)&lt;/th>
+&lt;th>Zero Rate with Continuous Compounding&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>0.5&lt;/td>
+&lt;td>5.0&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>1.0&lt;/td>
+&lt;td>5.8&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>1.5&lt;/td>
+&lt;td>6.4&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>2.0&lt;/td>
+&lt;td>6.8&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>Template&lt;/p>
+&lt;p>COUPON_FOR_PERIOD e^(-HALF_YEAR_CTN_CMPDNG * 0.5) + 3e^(-r*1) = 97&lt;/p>
+&lt;h3 id="bond-pricing-continuous" >Bond Pricing (Continuous)
+&lt;span>
+&lt;a href="#bond-pricing-continuous">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>theoretical price of a two-year bond providing a 6% coupon semi-annually is: &lt;code>3e^(-0.05 * 0.5) + 3e^(-0.058*1)+ 3e^(-0.064*1.5) +103e^(-0.068*2.0)= 98.39&lt;/code>&lt;/li>
+&lt;li>yield when you replace all the different rates above with a single rate to make the PV equal the price&lt;/li>
+&lt;/ul>
+&lt;h3 id="par-yield" >Par Yield
+&lt;span>
+&lt;a href="#par-yield">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>coupon rate that causes the bond price to equal its face value&lt;/li>
+&lt;li>similar to solving for bond yield, but set the price to the face value&lt;/li>
+&lt;li>c = (100 - 100d)m / A&lt;/li>
+&lt;/ul>
+&lt;h3 id="data-to-determine-treasury-zero-curve" >Data to Determine Treasury Zero Curve
+&lt;span>
+&lt;a href="#data-to-determine-treasury-zero-curve">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Bootstrap Method&lt;/li>
+&lt;li>&lt;code>BOND_PRICE * e % (RATE * MATURITY_IN_YEARS) = FACE_VALUE&lt;/code>&lt;/li>
+&lt;li>For the coupon bonds, we can use the zero rates from before and just solve for the lump-sum rate R&lt;/li>
+&lt;/ul>
+&lt;h3 id="forward-rates" >Forward Rates
+&lt;span>
+&lt;a href="#forward-rates">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>(R2T2 - R1T1) / (T2 - T1)&lt;/li>
+&lt;li>Approximately true when rates are not expressed with continuous compounding&lt;/li>
+&lt;/ul>
+&lt;h3 id="interest-rate-swap" >Interest Rate Swap
+&lt;span>
+&lt;a href="#interest-rate-swap">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>One person pays a fixed rate and the other pays a floating rate&lt;/li>
+&lt;li>For the person paying a fixed rate (and receiving a floating rate) the credit risk is
+&lt;ul>
+&lt;li>The floating rate is expected to decrease based on the term structure (upward sloping)&lt;/li>
+&lt;li>Interest rates decline unexpectedly&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>credit risk is greater when term structure slopes downward (market expects interest rates to decrease in the long term) and the risk exposure increases when interest rates decline&lt;/li>
+&lt;/ul>
+&lt;h3 id="forward-rate-agreement-fra" >Forward Rate Agreement (FRA)
+&lt;span>
+&lt;a href="#forward-rate-agreement-fra">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>OTC agreement that a certain LIBOR rate will apply to a certain principal during a certain future time period&lt;/li>
+&lt;li>Predetermined rate RK is exchanged for interest at the LIBOR rate&lt;/li>
+&lt;li>FRA can be valued by assuming the forward LIBOR interest rate RF is certain to be realized&lt;/li>
+&lt;li>Value = Present Value of the difference between the forward LIBOR interest rate (RF) and the interest paid at the FRA rate RK&lt;/li>
+&lt;li>&lt;code>(RF - RK) * Price * length of the contract&lt;/code> and then discount to 0 from T2&lt;/li>
+&lt;li>Use case: floating rate payment in the future but you want to make sure you are paying a fixed rate
+&lt;ul>
+&lt;li>the receiver will want a premium for receiving&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>A company has agreed that it will receive 4% on $100 million for 3 months starting in 3 years. The forward rate for the period between 3 and 3.25 years is 3%. The value of the contract to the company is +$250,000 discounted from time 3.25 years to time zero at the OIS rate.&lt;/p>
+&lt;p>&lt;code>(0.04 - 0.03) * 100_000_000 * 0.25 / (1.03^3.25) = 250_000 / (1.03 ^ 3.25)&lt;/code>&lt;/p>
+&lt;p>Suppose rate proves to be 4.5% (with quarterly compounding). The payoff is –$125,000 at the 3.25 year point. Often the FRA is settled at time 3 years for the present value of the known cash flow at time 3.25 years.&lt;/p>
+&lt;p>&lt;code>-125_000 / (1 + (0.045 * 0.25)) = -123_609.39&lt;/code>&lt;/p>
+&lt;ul>
+&lt;li>3x6 FRA: starts in 3 months (90 days) and ends in 6 months (180 days)&lt;/li>
+&lt;li>6x9 FRA: starts in 6 months (180 days) and ends in 9 months (270 days)&lt;/li>
+&lt;li>Question: rate of 3.10% for 6x9. 3% right now. What is the fixed rate in the agreement?
+&lt;ul>
+&lt;li>&lt;code>(1 + (0.031 * 0.75)) / (1 + 0.03 * 0.5) = (1 + R * 0.25)&lt;/code>&lt;/li>
+&lt;li>RF = 3.251%&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Question: 3 months have passed, and the rate has gone to 3.25% for 3 months and 3.3% for 6 months. what is the value of the FRA
+&lt;ul>
+&lt;li>&lt;code>(1 + (0.033 * 0.5)) / (1 + 0.0325 * 0.25) = (1 + R * 0.25)&lt;/code>&lt;/li>
+&lt;li>RF = 3.323%&lt;/li>
+&lt;li>&lt;code>FRA = (0.03323 - 0.03251) * 0.25 / (1 + 0.033 * 0.5)&lt;/code>&lt;/li>
+&lt;li>FRA = 0.00017710154273060686 of the loan amount&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>A financial manager needs to hedge against a possible decrease in short-term interest rates. he decides to hedge his risk exposure by going short on a 3X6 FRA that expires in 90 days and is based on a 90-day LIBOR. The current LIBOR spot rates are observed: 30-day 5.83%, 90-day 6.00%, 180-day 6.14% and 360-day 6.51%. What is the rate the manager would receive on this FRA:&lt;/p>
+&lt;ul>
+&lt;li>Interest paid on $1 for 180 days: 0.0614 * 0.5 = 0.0307&lt;/li>
+&lt;li>Interest paid on $1 for 90 days: 0.06 * 0.25 = 0.015&lt;/li>
+&lt;li>Expected interest paid on $1 from 3x6 (compounded from 90-day): (1.0307 / 1.015 - 1)&lt;/li>
+&lt;li>Expected interest rate for 3x6 (compounded from 90): (1.0307 / 1.015 - 1) / 0.25 + 1 = 6.19%&lt;/li>
+&lt;/ul>
+&lt;h3 id="theories-of-the-term-structure" >Theories of the Term Structure
+&lt;span>
+&lt;a href="#theories-of-the-term-structure">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Expectations theory: forward rates equal expected future zero rates&lt;/li>
+&lt;li>Market Segmentation: short, medium, and long rates determined independently of each other&lt;/li>
+&lt;li>Liquidity Preference Theory: forward rates higher than expected future zero rate
+&lt;ul>
+&lt;li>To manage these preferences, banks offer different rates for depositors and borrowers depending on the maturity&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="determination-of-forward-and-futures-prices" >Determination of Forward and Futures Prices
+&lt;span>
+&lt;a href="#determination-of-forward-and-futures-prices">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>Unit: Domestic Currency / Foreign Currency&lt;/p>
+&lt;h3 id="intro-and-types-of-contracts" >Intro and Types of Contracts
+&lt;span>
+&lt;a href="#intro-and-types-of-contracts">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Futures contract&lt;/li>
+&lt;li>Forward contract
+&lt;ul>
+&lt;li>Even an airline ticket is a forward contract&lt;/li>
+&lt;li>There should be a model/marketplace for this sort of thing for each airline and etc.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>we have three times: 0, t, and T (maturity)&lt;/li>
+&lt;/ul>
+&lt;p>Types&lt;/p>
+&lt;ul>
+&lt;li>forward contracts on investment assets that provide no income
+&lt;ul>
+&lt;li>discount bills, bonds, stocks without dividends&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>forward contracts on investment assets that provide a known dividend yield
+&lt;ul>
+&lt;li>coupon bonds, indices, currency&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>forward contracts on investment assets that provide a known cash income
+&lt;ul>
+&lt;li>coupon bonds, indices&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="valuing-forward-contracts" >Valuing Forward Contracts
+&lt;span>
+&lt;a href="#valuing-forward-contracts">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>For all these equations, T is the time till maturity in years from the present. r is the continuous compounding rate for the period of time.&lt;/p>
+&lt;p>When first negotiated, a forward contract is worth 0 because neither party is actually paying for the contract to exist.&lt;/p>
+&lt;p>But later, when there is a contract with delivery price K and a contract with delivery price F0, we can show that the value of the contract is:&lt;/p>
+&lt;p>Long forward contract&lt;/p>
+&lt;img class=equation src="https://latex.codecogs.com/svg.image?f=(F_0-K)e^{-rT}" alt="f=(F_0-K)e^{-rT}">
+&lt;p>Short forward contract&lt;/p>
+&lt;img class=equation src="https://latex.codecogs.com/svg.image?f=(K-F_0)e^{-rT}" alt="f=(K-F_0)e^{-rT}">
+&lt;p>So in this case, a rate of say 8% continuous compounding for 3 month period requires multiplying the rate by the months.&lt;/p>
+&lt;h3 id="the-forward-price" >The Forward Price
+&lt;span>
+&lt;a href="#the-forward-price">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;img class=equation src="https://latex.codecogs.com/svg.image?F_0=S_0(1+r)^T" alt="F_0=S_0(1+r)^T">
+&lt;h3 id="forward-price-with-continuous-compounding" >Forward Price with Continuous Compounding
+&lt;span>
+&lt;a href="#forward-price-with-continuous-compounding">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;img class=equation src="https://latex.codecogs.com/svg.image?F_0=S_0e^{rT}" alt="F_0=S_0e^{rT}">
+&lt;p>Value:&lt;/p>
+&lt;p>0 + 100e^(-5%)&lt;/p>
+&lt;h3 id="known-dollar-income" >Known Dollar Income
+&lt;span>
+&lt;a href="#known-dollar-income">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;img class=equation src="https://latex.codecogs.com/svg.image?F_0=(S_0-I)e^{rt}" alt="F_0=(S_0-I)e^{rt}">
+&lt;p>Where I is the present value of the income during life of forward contract&lt;/p>
+&lt;h3 id="know-yield" >Know Yield
+&lt;span>
+&lt;a href="#know-yield">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;img class=equation src="https://latex.codecogs.com/svg.image?F_0=S_0e^{(r-q)T}" alt="F_0=S_0e^{(r-q)T}">
+&lt;p>Where q is the average yield during the life of the contract (continuous compounding), For storage costs, use(+u) instead of (-q). Use q = rf (foreign) for currencies. For cost of carry, use c (storage cost plus interest cost) in place of r.&lt;/p>
+&lt;h3 id="forward-pricing-example-1" >Forward Pricing Example 1
+&lt;span>
+&lt;a href="#forward-pricing-example-1">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Stock without dividend&lt;/li>
+&lt;li>spot price = $40&lt;/li>
+&lt;li>risk free for 3 months is 5% per annum (5% / 4 = 1.25%)&lt;/li>
+&lt;li>Ft = 40(e ^ 0.0125) = $40.50&lt;/li>
+&lt;li>Suppose that F0 = $43&lt;/li>
+&lt;li>How to execute the overpriced arbitrage strategy?&lt;/li>
+&lt;li>Short the forward, borrow at risk-free (isn&amp;rsquo;t this the margin rate) to buy the underlying&lt;/li>
+&lt;li>at T, deliver the underlying and close the short forward and pay off the loan&lt;/li>
+&lt;/ul>
+&lt;h3 id="futures-pricing" >Futures Pricing
+&lt;span>
+&lt;a href="#futures-pricing">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;img class=equation src="https://latex.codecogs.com/svg.image?F_t=S_0e^{(r-q)T}" alt="F_t=(S_0-I)e^{rt}">
+&lt;p>Example&lt;/p>
+&lt;ul>
+&lt;li>Spot: 400&lt;/li>
+&lt;li>yield of 3% p.a&lt;/li>
+&lt;li>rm = 8%&lt;/li>
+&lt;/ul>
+&lt;h3 id="index-arbitrage-and-program-trading" >Index Arbitrage and Program Trading
+&lt;span>
+&lt;a href="#index-arbitrage-and-program-trading">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>simultaneous purchase/sale of at least 15 stocks with total value &amp;gt; $1MM&lt;/li>
+&lt;li>Black Monday: arbitrage opportunities&lt;/li>
+&lt;/ul>
+&lt;h2 id="interest-rate-futures" >Interest Rate Futures
+&lt;span>
+&lt;a href="#interest-rate-futures">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;ul>
+&lt;li>day count convention&lt;/li>
+&lt;li>unit of time for calculating accrued interest when instruments are traded&lt;/li>
+&lt;li>Treasury: Actual / Actual&lt;/li>
+&lt;li>Corporate Bonds: 30 / 360&lt;/li>
+&lt;li>Money Market Instruments (e.g, LIBOR) Actual / 360&lt;/li>
+&lt;/ul>
+&lt;h3 id="bond-prices-between-coupons" >Bond Prices Between Coupons
+&lt;span>
+&lt;a href="#bond-prices-between-coupons">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Cash Price = Quoted Price + Accrued Interest&lt;/li>
+&lt;li>quoted price is flat price&lt;/li>
+&lt;li>invoice or total price paid is called the dirty price or cash price&lt;/li>
+&lt;li>&lt;code>Accrued Interest = Coupon * (days since last coupon / coupon period)&lt;/code>
+&lt;ul>
+&lt;li>Actually count the days in the coupon period instead of dividing by two&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;pre tabindex="0">&lt;code class="language-example" data-lang="example">A semi-annual coupon bond with 8% coupon rate
+Days passed since last coupon payment is 30
+Accrued interest = $80/2 * (30/182.5) = 6.58
+coupon rate * par value * (days / 365)
+Invoice = 990 (quoted) + 6.58 = $996.58
+&lt;/code>&lt;/pre>&lt;h3 id="treasury-bill-prices-in-the-us" >Treasury Bill Prices in the US
+&lt;span>
+&lt;a href="#treasury-bill-prices-in-the-us">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>P = 360/n (100 - Y)&lt;/p>
+&lt;p>Quoted based on annualized discount. So if the quoted price is 8 for 3 month, then the cash price is 100 - (8/4) = 98.&lt;/p>
+&lt;h3 id="canadian-treasury-bills" >Canadian Treasury Bills
+&lt;span>
+&lt;a href="#canadian-treasury-bills">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Quoted on yield. Actual/Actual&lt;/p>
+&lt;p>365/n * (100 - Y) / Y&lt;/p>
+&lt;h3 id="treasury-bond-futures" >Treasury Bond Futures
+&lt;span>
+&lt;a href="#treasury-bond-futures">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>For each $100 face value of bond,&lt;/p>
+&lt;p>Cash Price received by short party = most recent settlement price * conversion factor + accrued interest.&lt;/p>
+&lt;ul>
+&lt;li>10-year Treasury note futures contract quotes are to the nearest half of a thirty-second (0.5/32ths). 127-015 means 127 + 1.5/32 and 90-08 means 90 + 8/32.&lt;/li>
+&lt;li>5-year and 2-year Treasury note contracts are quoted to nearest quarter of a thirty-second (0.25/32ths). 119-197 means 119 + 19.75 / 32&lt;/li>
+&lt;/ul>
+&lt;p>Settlement is priced on a 6% bond and delivery can be any bond with a maturity of more than 15 years but less
+than 25 years. The conversion factor is unique to each bond.&lt;/p>
+&lt;p>Example&lt;/p>
+&lt;p>Each contract is delivery of $100,000 face value of bonds. Suppose recent settlement price is 90-00, there&amp;rsquo;s a conversion factor of 1.3800, and the accrued interest is $3 per $100 face value.&lt;/p>
+&lt;p>Therefore, (1.3800 × 90.00) + 3.00 = $127.20. Since $100,000 face value is delivered (x1000), the total cash received is $127,200.&lt;/p>
+&lt;h3 id="conversion-factors" >Conversion Factors
+&lt;span>
+&lt;a href="#conversion-factors">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Quoted price the bond would have on the first day of delivery month assuming interest rate is 6% with semi-annual compounding and the maturity is rounded down to a multiple of 3 months. If the maturity is no a multiple of 6 months, assume a coupon is paid in three months meaning that accrued interest of 3 months has to be subtracted.&lt;/li>
+&lt;/ul>
+&lt;p>Example&lt;/p>
+&lt;p>As a first example of these rules, consider a 10% coupon bond with 20 years and two months to maturity. For the purposes of calculating the conversion factor, the bond is assumed to have exactly 20 years to maturity. The first coupon payment is assumed to be made after six months. Coupon payments are then assumed to be made at six-month intervals until the end of the 20 years when the principal payment is made. Assume that the face value is $100. When the discount rate is 6% per annum with semiannual compounding (or 3% per six months), the value of the bond is&lt;/p>
+&lt;ul>
+&lt;li>Sum from i=1 to i=40 { 5/1.03^i } + 100 / 1.03^40 = 146.23&lt;/li>
+&lt;li>Divided by the face value to get a conversion factor of 1.4623&lt;/li>
+&lt;/ul>
+&lt;p>Consider an 8% coupon bond with 18 years and 4 months to maturity. For the purposes of calculating the conversion factor, the bond is assumed to have exactly 18 years and 3 months to maturity. Discounting all the payments back to a point in time three months from today at 6% per annum (compounded semiannually) gives a value of&lt;/p>
+&lt;ul>
+&lt;li>3 months from today, the value is 4 (for the last coupon?) + sum from i=1 to i=36 {4 / 1.03^i} + 100 / 1.03^36 = 125.83&lt;/li>
+&lt;li>Discounting to today is 125.83 / (1.03^0.5) = 123.99. Subtract the accrued interest of 2 (3/6 * 4) to get 121.99&lt;/li>
+&lt;/ul>
+&lt;h3 id="determining-treasury-futures-price" >Determining Treasury Futures Price
+&lt;span>
+&lt;a href="#determining-treasury-futures-price">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>115 quoted bond price, 12% coupon, conversion factor of 1.6, 60 days since last coupon payment, 122 till next coupon payment, 148 after that till contract Maturity&lt;/li>
+&lt;li>S0 is the CASH VALUE not the quoted value&lt;/li>
+&lt;li>S0 = 115 + (60/182) * 6 = 116.978&lt;/li>
+&lt;li>I = 6e^(-0.1 * (122/365)) = 5.803&lt;/li>
+&lt;li>F0 = (S0 - I)e^(rT)&lt;/li>
+&lt;li>F0 = (116.987 - 5.803)e^(0.1 * (270/360)) = 119.211&lt;/li>
+&lt;li>Quoted F0 = 119.711 - total accrued interest = 119.711 - 148/183 * 6 = 114.851&lt;/li>
+&lt;li>Now we need to divide by the conversion factor to get 71.79&lt;/li>
+&lt;/ul>
+&lt;h3 id="eurodollar" >Eurodollar
+&lt;span>
+&lt;a href="#eurodollar">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>a eurodollar is a dollar deposited in a bank outside the USA&lt;/li>
+&lt;li>futures on 3-month LIBOR rate (eurodollar deposit rate)&lt;/li>
+&lt;li>rate earned on $1 million&lt;/li>
+&lt;li>a change in one basis point (0.01) in a eurodollar futures quotes corresponds to a contract price change of $25 (x2500)&lt;/li>
+&lt;li>final settlement price is 100 minus actual 3 month LIBOR rate&lt;/li>
+&lt;li>quoted on a value of 100&lt;/li>
+&lt;li>long position = receive a rate&lt;/li>
+&lt;li>for eurodollar futures lasting beyond two years, forward rates != future rates
+&lt;ul>
+&lt;li>futures settled daily where forward is settled once&lt;/li>
+&lt;li>futures settled at the beginning of three-months, FRA settled end of 3 month period&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="swaps" >Swaps
+&lt;span>
+&lt;a href="#swaps">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;ul>
+&lt;li>OTC agreement to exchange cash flows in the future. Calculation usually involves the future value of an interest rate, an exchange rate, or another market variables&lt;/li>
+&lt;li>You agree to pay a fixed-rate and get paid back a floating rate (e.g. LIBOR or OIS)&lt;/li>
+&lt;/ul>
+&lt;p>Suppose Apple has an obligation to pay LIBOR + 0.1%. If they purchase a SWAP with CitiBank, they pay CitiBank a fixed rate, say 3%, and receive LIBOR. Therefore, there&amp;rsquo;s a fixed rate of 3.1%.&lt;/p>
+&lt;p>Can also convert a fixed rate to a floating if they think interest rates will come down.&lt;/p>
+&lt;p>What if we made swaps available for mortgage payers as well?&lt;/p>
+&lt;h3 id="swap-market" >Swap Market
+&lt;span>
+&lt;a href="#swap-market">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Maturity in years&lt;/li>
+&lt;li>Bid: how much you would get if you pay the floating&lt;/li>
+&lt;li>Ask: how much you would pay to get the floating&lt;/li>
+&lt;li>For floating rates, the rate at the beginning of the period determines the rate for the payment at the end of the period&lt;/li>
+&lt;/ul>
+&lt;h3 id="confirmations" >Confirmations
+&lt;span>
+&lt;a href="#confirmations">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>International Swaps and Derivatives has Master Agreements&lt;/li>
+&lt;/ul>
+&lt;h3 id="comparative-advantage-example" >Comparative Advantage Example
+&lt;span>
+&lt;a href="#comparative-advantage-example">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>AAACorp wants to borrow floating (4% fixed, 6-month LIBOR - 0.1% Floating)
+&lt;ul>
+&lt;li>Pays 120 less in fixed and 70 less in floating&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>BBBCorp wants to borrow fixed (5.2% fixed, 6-month LIBOR + 0.6%)
+&lt;ul>
+&lt;li>Spread is 70 basis points in floating compared to 120 in basis&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Swap designed:
+&lt;ul>
+&lt;li>The benefit that needs to be split is: 120 - 70 = 50 basis points&lt;/li>
+&lt;li>Think: one corporation has to pay floating to the other, so calculate the fixed rate paid to each other which is the fixed rate + half the benefit.&lt;/li>
+&lt;li>BBBCorp borrows floating at +0.6% and pays fixed 4.35% and receives floating
+&lt;ul>
+&lt;li>benefit = 5.2% - 4.95% = 25 basis points&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>AAACorp borrows fixed at 4% and pays floating and receives 4.35%
+&lt;ul>
+&lt;li>spread = -0.1% + 0.35% = 25 basis points&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>With a financial institution, there is a cut that is taken. That cut is basically split in two.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="fixed-for-fixed-currency-swap" >Fixed-for-Fixed Currency Swap
+&lt;span>
+&lt;a href="#fixed-for-fixed-currency-swap">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Pay 3% on a US dollar principal of 15,000,000&lt;/li>
+&lt;li>Receive 4% on a pound sterling principal of 10,000,000&lt;/li>
+&lt;/ul>
+&lt;p>Example&lt;/p>
+&lt;ul>
+&lt;li>GE wants to borrow AUD
+&lt;ul>
+&lt;li>Current rates are 5% for USD and 7.6% for AUD&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Quantas wants to borrow USD
+&lt;ul>
+&lt;li>Current rates are 7% for USD and 8% for AUD&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Swap
+&lt;ul>
+&lt;li>Benefit is (2 - 0.4) = 160 basis points&lt;/li>
+&lt;li>Therefore, GE borrows USD at 5%, pays 8% for AUD and gets 6.2% in USD&lt;/li>
+&lt;li>Therefore, Quantas borrows AUD at 8%, pays 6.2% USD, and gets 8% AUD&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>Example 7.1&lt;/p>
+&lt;ul>
+&lt;li>swap 3% per annum and receives LIBOR every six months on $100million&lt;/li>
+&lt;li>swap has 15 months remaining (3, 9, 15)&lt;/li>
+&lt;li>Rate applicable to exchange in 3 months is 2.9%&lt;/li>
+&lt;li>Forward LIBOR rates for 3-9 month period and 9-15 month periods are 3.429%, 3.734%&lt;/li>
+&lt;li>OIS zero rates are 2.8% for 3 months, 3.2% for 9 months, and 3.4% for 15 months&lt;/li>
+&lt;/ul>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Period&lt;/th>
+&lt;th>3 months&lt;/th>
+&lt;th>9 months&lt;/th>
+&lt;th>15 months&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>LIBOR&lt;/td>
+&lt;td>2.9%&lt;/td>
+&lt;td>~3.429%&lt;/td>
+&lt;td>~3.734%&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>PAY&lt;/td>
+&lt;td>1.5M&lt;/td>
+&lt;td>1.5M&lt;/td>
+&lt;td>1.5M&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>RECEIVE&lt;/td>
+&lt;td>1.45&lt;/td>
+&lt;td>1.745&lt;/td>
+&lt;td>1.867&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Calculation&lt;/td>
+&lt;td>2.9%/2 * 100&lt;/td>
+&lt;td>3.429%/2 * 100&lt;/td>
+&lt;td>3.734%/2 * 100&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>Discount by the OIS Rate using the continuous compounding formula (Pe^(-rT)).&lt;/p>
+&lt;p>Alternatively, value both cashflows as Bonds and value as the difference.&lt;/p>
+&lt;p>Example 7.3 and 7.4&lt;/p>
+&lt;ul>
+&lt;li>Japanese interest rates are 1.5% per annum (continuous)&lt;/li>
+&lt;li>USD interest rates are 2.5%&lt;/li>
+&lt;li>3% yen, 4% dollars&lt;/li>
+&lt;li>Principals are $10M and 1,200M yen&lt;/li>
+&lt;li>Swap lasts more than 3 years&lt;/li>
+&lt;li>Exchange rate is 110 yen per dollar&lt;/li>
+&lt;li>Get the PV of hte cashflows for each currency and then convert one to the other&lt;/li>
+&lt;/ul>
+&lt;h2 id="mechanics-of-options-markets" >Mechanics of Options Markets
+&lt;span>
+&lt;a href="#mechanics-of-options-markets">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;ul>
+&lt;li>Call = option to buy at strike price by a certain date&lt;/li>
+&lt;li>Put = option to sell at strike price by a certain date&lt;/li>
+&lt;li>American style = exercised any time during its life&lt;/li>
+&lt;li>European style = exercised only at maturity&lt;/li>
+&lt;/ul>
+&lt;h3 id="payoffs" >Payoffs
+&lt;span>
+&lt;a href="#payoffs">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Long Call: max loss is the premium, max win is unlimited&lt;/li>
+&lt;li>Short Call: max loss is unlimited, max win is the premium&lt;/li>
+&lt;li>Long Put: max loss is the premium, max win is the share price - premium&lt;/li>
+&lt;li>Short Put: max loss is the drop is share price + premium, max win is the premium&lt;/li>
+&lt;/ul>
+&lt;h3 id="intrinsic-value" >Intrinsic Value
+&lt;span>
+&lt;a href="#intrinsic-value">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Max{ Strike minus Stock Price, 0 }&lt;/li>
+&lt;/ul>
+&lt;h3 id="cboe-and-otc" >CBOE and OTC
+&lt;span>
+&lt;a href="#cboe-and-otc">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Flex options&lt;/li>
+&lt;li>Binary options&lt;/li>
+&lt;li>Credit event binary options&lt;/li>
+&lt;li>Doom options&lt;/li>
+&lt;/ul>
+&lt;h3 id="dividends--stock-splits" >Dividends &amp;amp; Stock Splits
+&lt;span>
+&lt;a href="#dividends--stock-splits">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>stripe price K to buy/sell N shares&lt;/li>
+&lt;li>n-for-m stock plsit&lt;/li>
+&lt;li>Strike price is mK/n&lt;/li>
+&lt;li>no shares is increase to nN/m&lt;/li>
+&lt;li>stock dividends is similar manner&lt;/li>
+&lt;/ul>
+&lt;details>&lt;summary>Example&lt;/summary>
+&lt;ul>
+&lt;li>call option to buy 100 shares for $20 per share&lt;/li>
+&lt;li>2-for-1 stock split
+&lt;ul>
+&lt;li>strike price of $10 to purchase 200 shares&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>5% stock dividend
+&lt;ul>
+&lt;li>Equivalent to a 1.05-for-1 stock split&lt;/li>
+&lt;li>Strike price is 20/1.05 to purchase 105 shares&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/details>
+&lt;h3 id="market-makers" >Market Makers
+&lt;span>
+&lt;a href="#market-makers">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;h3 id="options-margin" >Options Margin
+&lt;span>
+&lt;a href="#options-margin">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>naked option&lt;/li>
+&lt;/ul>
+&lt;h3 id="warrants" >Warrants
+&lt;span>
+&lt;a href="#warrants">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>right to purchase new shares issued to the right holder&lt;/li>
+&lt;/ul>
+&lt;h3 id="convertible" >Convertible
+&lt;span>
+&lt;a href="#convertible">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>the straight bond cannot be higher than the treasury bond but will approach it as the firm&amp;rsquo;s value rises&lt;/li>
+&lt;li>MAX(Value of the bond, value of the shares you could get) + conversion premium&lt;/li>
+&lt;/ul>
+&lt;h3 id="swaptions" >Swaptions
+&lt;span>
+&lt;a href="#swaptions">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;h2 id="midterm-questions" >Midterm Questions
+&lt;span>
+&lt;a href="#midterm-questions">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;ul>
+&lt;li>FRA 5% LIBOR and receive 7%, semi-annual compounded&lt;/li>
+&lt;li>forward rate is 5%&lt;/li>
+&lt;li>5.1% semi-annual&lt;/li>
+&lt;li>&lt;code>1000 * (0.07 - 0.051) / 2 * e^(-0.05(3.5)) = 7.88%&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;h2 id="properties-of-stock-options" >Properties of Stock Options
+&lt;span>
+&lt;a href="#properties-of-stock-options">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;h3 id="effect-of-variables-on-option-pricing" >Effect of Variables on Option Pricing
+&lt;span>
+&lt;a href="#effect-of-variables-on-option-pricing">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Variable&lt;/th>
+&lt;th>c&lt;/th>
+&lt;th>p&lt;/th>
+&lt;th>C&lt;/th>
+&lt;th>P&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>S&lt;sub>0&lt;/sub>&lt;/td>
+&lt;td>+&lt;/td>
+&lt;td>-&lt;/td>
+&lt;td>+&lt;/td>
+&lt;td>-&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>K&lt;/td>
+&lt;td>-&lt;/td>
+&lt;td>+&lt;/td>
+&lt;td>-&lt;/td>
+&lt;td>+&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>T&lt;/td>
+&lt;td>?&lt;/td>
+&lt;td>?&lt;/td>
+&lt;td>+&lt;/td>
+&lt;td>+&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>σ&lt;/td>
+&lt;td>+&lt;/td>
+&lt;td>+&lt;/td>
+&lt;td>+&lt;/td>
+&lt;td>+&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>r&lt;/td>
+&lt;td>+&lt;/td>
+&lt;td>-&lt;/td>
+&lt;td>+&lt;/td>
+&lt;td>-&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>D&lt;/td>
+&lt;td>-&lt;/td>
+&lt;td>+&lt;/td>
+&lt;td>-&lt;/td>
+&lt;td>+&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>Essentially, the european options differ in one way which is that the longer the time to expiration does not guarantee a higher price.&lt;/p>
+&lt;h3 id="lower-bound-for-european-call-option-prices-no-dividends" >Lower Bound for European Call Option Prices; No Dividends
+&lt;span>
+&lt;a href="#lower-bound-for-european-call-option-prices-no-dividends">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;img class=equation src="https://latex.codecogs.com/svg.image?c>=\max(S_0-Ke^{-rT}, 0)" alt="c>=max{S_0-Ke^{-rT}, 0}">
+&lt;p>Is there an arbitrage opportunity if c = 3, T = 1, K = 18, S&lt;sub>0&lt;/sub> = 20, r = 10%, D = 0?&lt;/p>
+&lt;p>3 &amp;gt;= 3.71&lt;/p>
+&lt;p>Strategy: Short stock to get $20. Buy call for $3. Invest $17 at the risk free rate.&lt;/p>
+&lt;p>&lt;code>17^(e(-0.10)(1)) = 18.79&lt;/code>&lt;/p>
+&lt;p>Is there an arbitrage when the put premium is $1, T = 0.5, S = 37, r = 5%, K = 40, D = 0?&lt;/p>
+&lt;img class=equation src="https://latex.codecogs.com/svg.image?p>=\max(Ke^{-rT}-S_0,0)" alt="p>=max(Ke^{-rT}-S_0,0)">
+&lt;p>p = 1 &amp;gt;= 2.01&lt;/p>
+&lt;p>Borrow 38 to purchase put and stock.&lt;/p>
+&lt;p>Is there an arbitrage when the call premium is 3, put premium is 1 or 2.25, T = 0.25, S = 31, r = 10%, K = 30, D = 0?&lt;/p>
+&lt;pre tabindex="0">&lt;code class="language-math" data-lang="math">C + ke^{-rT} = p + S&amp;lt;sub&amp;gt;0&amp;lt;/sub&amp;gt;
+3 + 30e^{-0.1(0.25)} != 2.25 + 31
+32.26 &amp;lt; 33.25
+Strategy
+Short stock @31
+sell put 2.25
++33.25
+Buy call -3
+Buy Bond 32.2
+Left with: .99
+&lt;/code>&lt;/pre>&lt;h3 id="american-put-exercised-early" >American Put Exercised Early
+&lt;span>
+&lt;a href="#american-put-exercised-early">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>S = 60, T = 0.25, r = 10%, K = 100, D = 0. What if K = 50?&lt;/p>
+&lt;ul>
+&lt;li>Advantages? Risk-free rate on the current payout&lt;/li>
+&lt;li>Disadvantages?&lt;/li>
+&lt;/ul>
+&lt;h3 id="american-put-options-no-dividends" >American Put Options (No Dividends)
+&lt;span>
+&lt;a href="#american-put-options-no-dividends">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;img class=equation src="https://latex.codecogs.com/svg.image?p>=max{K-S_0,0}" alt="p>=max(K-S_0,0)">
+&lt;h3 id="impact-of-dividends-on-the-lower-bounds-to-option-prices" >Impact of Dividends on the Lower Bounds to Option Prices
+&lt;span>
+&lt;a href="#impact-of-dividends-on-the-lower-bounds-to-option-prices">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;img class=equation src="https://latex.codecogs.com/svg.image?c>=max(S_0-D-Ke^{-rT})" alt="c>=max(S_0-D-Ke^{-rT})">
+&lt;img class=equation src="https://latex.codecogs.com/svg.image?p>=max(S_0-D-Ke^{-rT})" alt="p>=max(S_0-D-Ke^{-rT})">
+&lt;p>Need to read Chapter 10 again.&lt;/p>
+&lt;h2 id="chapter-11---trading-strategies-involving-options" >Chapter 11 - Trading Strategies Involving Options
+&lt;span>
+&lt;a href="#chapter-11---trading-strategies-involving-options">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;ol>
+&lt;li>Bond plus option to create principal protected note&lt;/li>
+&lt;li>Stock plus option&lt;/li>
+&lt;li>options of the same type (spread)&lt;/li>
+&lt;li>Different types (combination)&lt;/li>
+&lt;/ol>
+&lt;h3 id="principal-protected-note" >Principal Protected Note
+&lt;span>
+&lt;a href="#principal-protected-note">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>$1000 instrument consisting of
+&lt;ul>
+&lt;li>3-year zero-coupon bond with principal of $1000&lt;/li>
+&lt;li>3-year at-the-money call option on a stock portfolio currently worth $1000&lt;/li>
+&lt;li>Play: sell portfolio, buy ATM call, buy bond&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="bull-spread-using-calls" >Bull Spread Using Calls
+&lt;span>
+&lt;a href="#bull-spread-using-calls">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Buy ITM call&lt;/li>
+&lt;li>Sell OTM call&lt;/li>
+&lt;li>Maximum loss is the net premium paid&lt;/li>
+&lt;/ul>
+&lt;h3 id="bull-spread-using-puts" >Bull Spread Using Puts
+&lt;span>
+&lt;a href="#bull-spread-using-puts">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Buy OTM put&lt;/li>
+&lt;li>Sel ITM put&lt;/li>
+&lt;/ul>
+&lt;h3 id="bear-spread-using-calls" >Bear Spread Using Calls
+&lt;span>
+&lt;a href="#bear-spread-using-calls">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Buy OTM call&lt;/li>
+&lt;li>Sell ITM call&lt;/li>
+&lt;li>Net Premium received is the maximum gain&lt;/li>
+&lt;/ul>
+&lt;h3 id="bear-spread-using-puts" >Bear Spread Using Puts
+&lt;span>
+&lt;a href="#bear-spread-using-puts">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Buy ITM put&lt;/li>
+&lt;li>Sell OTM put&lt;/li>
+&lt;/ul>
+&lt;h3 id="box-spread" >Box Spread
+&lt;span>
+&lt;a href="#box-spread">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>combination of a bull call spread and a bear put spread&lt;/li>
+&lt;li>if european, use present value of strike prices difference&lt;/li>
+&lt;li>not necessarily so for american&lt;/li>
+&lt;/ul>
+&lt;details>&lt;summary>Box Spread Example&lt;/summary>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-txt" data-lang="txt">&lt;span style="display:flex;">&lt;span>Long C1 ST &amp;lt;= 40 40&amp;lt;ST&amp;lt;60 ST&amp;gt;60
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Short P1 0 St-40 ST-40
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Short C2 -(40-ST) 0 0
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Long P2 60-ST 60-ST 0
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 20 20 20
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Therefore Cost = 20e^(-0.05)(0.5)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/details>
+&lt;p>Two options, call and a put, with same underlying asset, strike. maturity.&lt;/p>
+&lt;p>At what strike price would they have the same value?&lt;/p>
+&lt;p>Answer: graphically or using put-call parity&lt;/p>
+&lt;h3 id="put-call-parity" >Put-Call Parity
+&lt;span>
+&lt;a href="#put-call-parity">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Put-call parity theorem is an equation representing the proper relation between put and call prices&lt;/li>
+&lt;li>violation implies arbitrage opportunities&lt;/li>
+&lt;li>sell high side, buy low side&lt;/li>
+&lt;li>invest cash from sell&lt;/li>
+&lt;/ul>
+&lt;img class=equation-tall src="https://latex.codecogs.com/svg.image?C+\frac{X}{(1+r_f)^t}=S_0+P" alt="C+\frac{X}{(1+r_f)^t}=S_0+P">
+&lt;h3 id="butterfly-spread-using-calls" >Butterfly Spread Using Calls
+&lt;span>
+&lt;a href="#butterfly-spread-using-calls">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Long call ITM&lt;/li>
+&lt;li>Long call OTM&lt;/li>
+&lt;li>Short 2 calls ATM&lt;/li>
+&lt;li>Benefit from flat stock&lt;/li>
+&lt;li>&lt;a href="https://www.fidelity.com/learning-center/investment-products/options/options-strategy-guide/long-butterfly-spread-puts">Butterfly using Puts&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="calendar-spread-using-calls" >Calendar Spread Using Calls
+&lt;span>
+&lt;a href="#calendar-spread-using-calls">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Short on shorter-dated call&lt;/li>
+&lt;li>Long on longer-dated call&lt;/li>
+&lt;/ul>
+&lt;h3 id="strangle-combination" >Strangle Combination
+&lt;span>
+&lt;a href="#strangle-combination">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Make money when volatility is higher&lt;/li>
+&lt;li>Purchase OTM Put and OTM Call&lt;/li>
+&lt;li>Breakeven stock price is the strike price(s) +- net premiums paid (+ for call and - for put)&lt;/li>
+&lt;/ul>
+&lt;h3 id="strip--strap" >Strip &amp;amp; Strap
+&lt;span>
+&lt;a href="#strip--strap">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Strip: Long call and Two long puts&lt;/li>
+&lt;li>Strap: Two long calls and one long put&lt;/li>
+&lt;/ul>
+&lt;h2 id="chapter-12---binomial-trees" >Chapter 12 - Binomial Trees
+&lt;span>
+&lt;a href="#chapter-12---binomial-trees">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>Series of events where there are two possible outcomes.&lt;/p>
+&lt;p>Stock price is currently $20. In three months it will either be $22 or $18. Suppose call option has strike price 1.&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Delta: shares long for every options shorted&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Value of the portfolio when short a call:&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>20 * delta - f&lt;/code> where f is the value of the option&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>At 22, &lt;code>22 * delta - 1&lt;/code>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>At 18, &lt;code>18 * delta&lt;/code>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>22*delta - 1 = 18 * delta&lt;/code> → &lt;code>delta = 0.25&lt;/code>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>The value in 3 months is 4.5&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Today, &lt;code>4.5 * e^-( -0.12*0.25) = 4.367&lt;/code> where risk-free rate is 12%&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Therefore, 20(0.25) - f = 4.367 → f = 0.633&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Risk less when &lt;code>Delta = (fu - fd) / (S0u - S0d)&lt;/code>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>f = (pfu + (1 - p)fd)e^(-rT)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>p = (e^(rt) - d) / (u - d)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>u = the multiplicative factor for an up movement&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>d = the multiplicative factor for a down movement&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="risk-neutral-valuation" >Risk-Neutral Valuation
+&lt;span>
+&lt;a href="#risk-neutral-valuation">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>In a risk-neutral world, stock at time T is worth S&lt;sub>0&lt;/sub>e&lt;sup>rT&lt;/sup>. In original example, p = 0.6523 and option value is e&lt;sup>-0.12*0.25&lt;/sup>(0.6523 * 1 + 0.3477 * 0) = 0.633&lt;/p>
+&lt;h3 id="two-step-examples" >Two-Step Examples
+&lt;span>
+&lt;a href="#two-step-examples">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Valuing a European Call Option&lt;/p>
+&lt;p>&lt;img src="https://blog.elijahlopez.ca/images/bu-423/binomial-tree-two-step-call-option.png" alt="Valuing a Call Option Figure 12.4, page 275">&lt;/p>
+&lt;p>Valuing a European Put Option&lt;/p>
+&lt;p>&lt;img src="https://blog.elijahlopez.ca/images/bu-423/binomial-tree-two-step-put-option.png" alt="Valuing a Put Option Figure 12.7, page 278">&lt;/p>
+&lt;p>Valuing an American Put Option&lt;/p>
+&lt;p>&lt;img src="https://blog.elijahlopez.ca/images/bu-423/binomial-tree-two-step-american-put-option.png" alt="Valuing an American Put Option Figure 12.8, page 279 ">&lt;/p>
+&lt;h3 id="choosing-u-and-d" >Choosing u and d
+&lt;span>
+&lt;a href="#choosing-u-and-d">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Sigma is the annualized volatility&lt;/li>
+&lt;li>&lt;code>u = e^(sigma sqrt(delta t))&lt;/code>&lt;/li>
+&lt;li>&lt;code>d = 1/u = e^-(sigma sqrt(delta t))&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;h3 id="options-on-stock-indices-currencies-futures" >Options on Stock Indices, Currencies, Futures
+&lt;span>
+&lt;a href="#options-on-stock-indices-currencies-futures">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Same process except p is different&lt;/li>
+&lt;li>Probability of an up move&lt;/li>
+&lt;/ul>
+&lt;p>p = (a - d) / (u - d)&lt;/p>
+&lt;ul>
+&lt;li>Non-Dividend: a = e^(r * delta t)&lt;/li>
+&lt;li>Index with yield q: a = e^((r-q) * delta t)&lt;/li>
+&lt;li>Currency with foreign risk-free rate rf: e^((r-rf) * delta t)&lt;/li>
+&lt;li>Futures: a = 1&lt;/li>
+&lt;/ul>
+&lt;h3 id="time-steps" >Time Steps
+&lt;span>
+&lt;a href="#time-steps">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>At least 30 time steps are required for good option values&lt;/li>
+&lt;li>&lt;a href="https://www-2.rotman.utoronto.ca/~hull/software/index.html">DerivaGem&lt;/a> allows up to 500 time steps&lt;/li>
+&lt;/ul>
+&lt;h2 id="chapter-18---binomial-trees-in-practice-derivagem" >Chapter 18 - Binomial Trees in Practice (DerivaGem)
+&lt;span>
+&lt;a href="#chapter-18---binomial-trees-in-practice-derivagem">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;ul>
+&lt;li>approximate movements in the price of a stock or other asset&lt;/li>
+&lt;li>for each small interval of time (delta t), stock moves up &lt;em>u&lt;/em> or down &lt;em>d&lt;/em>&lt;/li>
+&lt;li>tree parameters for a non-dividend paying stock: volatility, risk-free rate, stock price&lt;/li>
+&lt;/ul>
+&lt;h3 id="custom-derivative-payoff-example" >Custom Derivative Payoff Example
+&lt;span>
+&lt;a href="#custom-derivative-payoff-example">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>S0 = 20&lt;/li>
+&lt;li>Sigma = 25%&lt;/li>
+&lt;li>r = 5%&lt;/li>
+&lt;li>T =6mo&lt;/li>
+&lt;li>Time step = 3 mo&lt;/li>
+&lt;li>Payoff = MAX(S^2 - 400, 50)&lt;/li>
+&lt;li>Using the two-step example, we get a price of $103&lt;/li>
+&lt;/ul>
+&lt;h3 id="put-example-delta-shares-short" >Put Example Delta Shares Short
+&lt;span>
+&lt;a href="#put-example-delta-shares-short">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Delta = (2.16 - 6.96) / (56.12 - 44.55) = -0.41 (the payoff from the next step)&lt;/li>
+&lt;li>As time passes, delta will change (delta hedging)&lt;/li>
+&lt;/ul>
+&lt;h2 id="chapter-13---black-scholes-merton-model" >Chapter 13 - Black-Scholes-Merton Model
+&lt;span>
+&lt;a href="#chapter-13---black-scholes-merton-model">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;ul>
+&lt;li>price of a European call option as the time step tends to Zero&lt;/li>
+&lt;li>mean \mu is the expected return and \sigma is volatility&lt;/li>
+&lt;li>Delta S / S is the stock return which is normal distributed&lt;/li>
+&lt;/ul>
+&lt;h3 id="lognormal-property" >Lognormal Property
+&lt;span>
+&lt;a href="#lognormal-property">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;img class=equation src="https://latex.codecogs.com/svg.image?\ln S_0+(\mu - \sigma^2 / 2)T" alt="">
+&lt;p>Standard deviation:&lt;/p>
+&lt;img class=equation src="https://latex.codecogs.com/svg.image?\sigma \sqrt T" alt="">
+&lt;p>Therefore the normal distribution, \phi [mean, variance], Is&lt;/p>
+&lt;img class=equation src="https://latex.codecogs.com/svg.image?\ln S_T \approx \phi [\ln S_0+(\mu - \sigma^2 / 2)T, \sigma^2T]" alt="">
+&lt;p>or&lt;/p>
+&lt;img class=equation-tall src="https://latex.codecogs.com/svg.image?\ln \frac{S_T}{S_0} \approx \phi [(\mu - \sigma^2 / 2)T, \sigma^2T]" alt="">
+&lt;p>Example&lt;/p>
+&lt;ul>
+&lt;li>N = 16%, std = 35%, S0 = $38&lt;/li>
+&lt;li>Calculate probailiy that a european call option with k = %40 and maturity 6 months out will be exercised&lt;/li>
+&lt;li>P(S_T &amp;gt; 40)&lt;/li>
+&lt;li>Use online distribution calculator to figure it out&lt;/li>
+&lt;/ul>
+&lt;h3 id="estimating-volatility-from-historical-data" >Estimating Volatility from Historical Data
+&lt;span>
+&lt;a href="#estimating-volatility-from-historical-data">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ol>
+&lt;li>Take observation S_0, S_1, S_n at intervals of Tau years (for weekly data, Tau = 1/52)&lt;/li>
+&lt;li>Calculate the continuously compounded return in each interval as: &lt;code>mu_i = ln (S_1 / S_{i - 1})&lt;/code>&lt;/li>
+&lt;li>Calculate the standard deviation, s, of the mu_i&amp;rsquo;s&lt;/li>
+&lt;li>Historical volatility estimate is: \sigma \hat = s / (sqrt ( Tau))&lt;/li>
+&lt;/ol>
+&lt;ul>
+&lt;li>Tau decision: need as many observations as possible&lt;/li>
+&lt;li>With daily, lots of noise&lt;/li>
+&lt;li>Period has to be big enough period for validity&lt;/li>
+&lt;li>Need more than 30 observations&lt;/li>
+&lt;/ul>
+&lt;h3 id="black-scholes-formulas" >Black-Scholes Formulas
+&lt;span>
+&lt;a href="#black-scholes-formulas">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>European Call&lt;/p>
+&lt;img class=equation src="https://latex.codecogs.com/svg.image?c=S_0N(d_1)-Ke^{irT}N(d_2)" alt="">
+&lt;p>European Put&lt;/p>
+&lt;img class=equation src="https://latex.codecogs.com/svg.image?p=Ke^{-rT}N(-d_2)-S_0N(-d_1)" alt="">
+&lt;p>d1 variable&lt;/p>
+&lt;img class=equation-tall src="https://latex.codecogs.com/svg.image?d_1=\frac{\ln(S_0/K)+(r+\sigma^2/2)T}{\sigma \sqrt T}" alt="">
+&lt;p>d2 variable&lt;/p>
+&lt;img class=equation-tall src="https://latex.codecogs.com/svg.image?d_2=\frac{\ln(S_0/K)+(r-\sigma^2/2)T}{\sigma \sqrt T}=d_1-\sigma \sqrt T" alt="">
+&lt;p>The variable mu does not appear in the black-scholes equation. It is independent of all variables affected by risk preference. Consistent with risk-neutral valuation principle.&lt;/p>
+&lt;img class=equation src="https://latex.codecogs.com/svg.image?e^{-rT}N(d_2)(S_0e^{rT}N(d_1)/N(d_2)-K)" alt="">
+&lt;ul>
+&lt;li>N(d2) is the probability of exercising&lt;/li>
+&lt;/ul>
+&lt;p>With dividends, need to substitute the stock price with the stock price minus the dividends paid through the maturity&lt;/p>
+&lt;h3 id="implied-volatility" >Implied Volatility
+&lt;span>
+&lt;a href="#implied-volatility">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>The volatility that makes the model price the derivative the same as the market price.&lt;/li>
+&lt;li>If two options with the same underlying have different implied volatilizes, something might be overpriced/underpriced&lt;/li>
+&lt;/ul>
+&lt;h2 id="chapter-15---options-on-stock-indices-and-currencies" >Chapter 15 - Options on Stock Indices and Currencies
+&lt;span>
+&lt;a href="#chapter-15---options-on-stock-indices-and-currencies">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;ul>
+&lt;li>Most popular in the U.S.A are S&amp;amp;P 100 (OEX, XEO), S&amp;amp;P 500 (SPX), DOW times 0.01 (DJX), NADAQ 100 (NDX)&lt;/li>
+&lt;li>Contracts are settled on 100 times the index in cash OEX is American whereas the others are European&lt;/li>
+&lt;/ul>
+&lt;h3 id="example-151" >Example 15.1
+&lt;span>
+&lt;a href="#example-151">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Portfolio Beta of 1.0&lt;/li>
+&lt;li>Value is $500,000&lt;/li>
+&lt;li>Index at 1,000&lt;/li>
+&lt;li>What trade is necessary to provide insurance to prevent value from falling below $450,000&lt;/li>
+&lt;/ul>
+&lt;h3 id="example-152" >Example 15.2
+&lt;span>
+&lt;a href="#example-152">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Portfolio has Beta of 2.0&lt;/li>
+&lt;li>Value is $500,000&lt;/li>
+&lt;li>Index at 1,000&lt;/li>
+&lt;li>rf = 12% per annum&lt;/li>
+&lt;li>dividend yield on both is 4%&lt;/li>
+&lt;li>How many put options to purchase on the index at the strike?&lt;/li>
+&lt;/ul>
+&lt;p>How to solve?&lt;/p>
+&lt;ol>
+&lt;li>Find relationship of portfolio to index.
+&lt;ul>
+&lt;li>The portfolio return is the value that fell plus the pro-rated dividends that was received&lt;/li>
+&lt;li>Then use this return to calculate the situational return on the index and subtract the dividend yield&lt;/li>
+&lt;li>This nominal value on the index is the strike price we want to purchase of the put&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Find number of puts to purchase
+&lt;ul>
+&lt;li>puts to purchase to cover initial portfolio: Beta * Vp / (Vidx * 100) wher Vp and Vidx are current values&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ol>
+&lt;h3 id="currency-options" >Currency Options
+&lt;span>
+&lt;a href="#currency-options">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>NASDAQ OMX&lt;/li>
+&lt;li>Used for buying insurance when exposed to FX&lt;/li>
+&lt;/ul>
+&lt;h3 id="range-forward" >Range Forward
+&lt;span>
+&lt;a href="#range-forward">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;h2 id="chapter-16---futures-options-and-blacks-model" >Chapter 16 - Futures options and Black&amp;rsquo;s Model
+&lt;span>
+&lt;a href="#chapter-16---futures-options-and-blacks-model">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;ul>
+&lt;li>American and expires a few days before the earliest delivery&lt;/li>
+&lt;li>When a call futures option is exercises
+&lt;ul>
+&lt;li>The Holder acquires
+&lt;ol>
+&lt;li>A long position in the futures&lt;/li>
+&lt;li>A cash amount equal to excess of the futures price at the most recent settlement over the strike price&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="example-161" >Example 16.1
+&lt;span>
+&lt;a href="#example-161">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>July call option on gold futures with a strike of $12000 per ounce. Exercised when futures price is 1,240 and recent settlement of 1,238. One contract is 100 ounces&lt;/li>
+&lt;li>Trader receives: one long July contract on gold and (1238 - 1200) * 100 = 3800.&lt;/li>
+&lt;/ul>
+&lt;h3 id="example-162" >Example 16.2
+&lt;span>
+&lt;a href="#example-162">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>September put option on corn 300 cents per bushel&lt;/li>
+&lt;li>exercised when futures is 280 cents per bushel with recent settlement of 279 cents per bushel&lt;/li>
+&lt;li>Trader received: long short futures on the corn contract and 21 cents per bushel in cash&lt;/li>
+&lt;/ul>
+&lt;h3 id="immediately-selling-the-future-payoff" >Immediately Selling the Future Payoff
+&lt;span>
+&lt;a href="#immediately-selling-the-future-payoff">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Payoff from call = F - K&lt;/li>
+&lt;li>Payoff from put = K - F&lt;/li>
+&lt;/ul>
+&lt;h3 id="advantages-of-future-options-over-spot-options" >Advantages of Future Options over Spot Options
+&lt;span>
+&lt;a href="#advantages-of-future-options-over-spot-options">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>futures may be easier to trade&lt;/li>
+&lt;li>no delivery&lt;/li>
+&lt;li>futures and options trade on the same exchange&lt;/li>
+&lt;li>futures options may entail lower transaction costs&lt;/li>
+&lt;/ul>
+&lt;h3 id="european-futures-options" >European Futures Options
+&lt;span>
+&lt;a href="#european-futures-options">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>the futures option and spot options are equal at maturity&lt;/li>
+&lt;li>spot options are regarded as futures options when valued over the counter&lt;/li>
+&lt;/ul>
+&lt;h3 id="put-call-parity-for-european-futures-options" >Put-Call Parity for European Futures Options
+&lt;span>
+&lt;a href="#put-call-parity-for-european-futures-options">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;img class=equation-tall src="https://latex.codecogs.com/svg.image?c+Ke^{-rt}=p+F_0 e^{-rt}" alt="c+Ke^{-rt}=p+F_0 e^{-rt}">
+&lt;h3 id="riskless-futures-option-portfolio" >Riskless Futures Option Portfolio
+&lt;span>
+&lt;a href="#riskless-futures-option-portfolio">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>3Delta - 4 = 2 Delta → Long Delta futures of 0.8&lt;/li>
+&lt;li>With a risk-free rate of 6%, the value of the portfolio is -1.6e^{-0.06/12} = -1.592&lt;/li>
+&lt;li>Value of the options must be 1.592 since the value of the futures is 0&lt;/li>
+&lt;/ul>
+&lt;p>The portfolio is risk-less when&lt;/p>
+&lt;img class=equation-tall src="https://latex.codecogs.com/svg.image?\Delta = \frac{f_u-f_d}{F_0u-F_0d}" alt="">
+&lt;h2 id="chapter-17---the-greek-letters" >Chapter 17 - The Greek Letters
+&lt;span>
+&lt;a href="#chapter-17---the-greek-letters">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;ul>
+&lt;li>Delta = change in option price with relation to underlying&lt;/li>
+&lt;li>Vega or Lambda: change in option price with relation to underlying implied volatility&lt;/li>
+&lt;li>Theta: change in option price with relation to time&lt;/li>
+&lt;li>Rho: change in option price with relation to interest rate&lt;/li>
+&lt;li>Gamma: Change in option&amp;rsquo;s &lt;strong>delta&lt;/strong> in relation to stock price change (2nd derivative)&lt;/li>
+&lt;/ul>
+&lt;h3 id="stop-loss-strategy" >Stop-Loss Strategy
+&lt;span>
+&lt;a href="#stop-loss-strategy">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>assuming a naked call position&lt;/li>
+&lt;li>buying 100,000 shares as soon as price reaches $50&lt;/li>
+&lt;li>selling 100,000 shares as soon as price falls below $50&lt;/li>
+&lt;li>if the stock fluctuates around the strike price of 50, then this strategy loses lots of money due to buying high and selling low&lt;/li>
+&lt;/ul>
+&lt;h3 id="how-delta-hedging-works" >How Delta-Hedging Works
+&lt;span>
+&lt;a href="#how-delta-hedging-works">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>If we hold a short call position and hold delta shares, why are we doing so? When the underlying&amp;rsquo;s value goes up, we lose delta in the short call options, but we also gain on the underlying shares.&lt;/p>
+&lt;ul>
+&lt;li>delta on a european non-dividend call is N(d1)
+&lt;ul>
+&lt;li>european non-dividend put: N(d1) - 1&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>As time to maturity decreases, delta of out the money calls increases, and in the money calls decreases&lt;/li>
+&lt;li>Buy high sell low&lt;/li>
+&lt;/ul>
+&lt;h3 id="example-171" >Example 17.1
+&lt;span>
+&lt;a href="#example-171">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>A bank has sold for $300,000 a European call option on 100,000 shares of a non-dividend- paying stock&lt;/li>
+&lt;li>S0 = 49, K = 50, r = 5%, s = 20%,&lt;/li>
+&lt;li>T = 20 weeks, m = 13%&lt;/li>
+&lt;li>The Black-Scholes-Merton value of the option is $240,000&lt;/li>
+&lt;li>How does the bank hedge its risk to lock in a $60,000 profit?&lt;/li>
+&lt;/ul>
+&lt;h3 id="gamma-addresses-delta-hedging-errors-caused-by-curvature" >Gamma Addresses Delta Hedging Errors Caused by Curvature
+&lt;span>
+&lt;a href="#gamma-addresses-delta-hedging-errors-caused-by-curvature">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>greatest for options at the money&lt;/li>
+&lt;li>Tau = portfolio value&lt;/li>
+&lt;li>change in gamma = Theta times change in time + 0.5 Tau change in share price squared&lt;/li>
+&lt;/ul>
+&lt;h3 id="managing-delta-gamma-and-vega" >Managing Delta, Gamma, and Vega
+&lt;span>
+&lt;a href="#managing-delta-gamma-and-vega">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Gamma and Vega require taking a position in the options themselves.&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&amp;ndash;&lt;/th>
+&lt;th>Delta&lt;/th>
+&lt;th>Gamma&lt;/th>
+&lt;th>Vega&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Portfolio&lt;/td>
+&lt;td>0&lt;/td>
+&lt;td>-5000&lt;/td>
+&lt;td>-8000&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Option 1&lt;/td>
+&lt;td>0.6&lt;/td>
+&lt;td>0.5&lt;/td>
+&lt;td>2.09T11&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Option 2&lt;/td>
+&lt;td>0.5&lt;/td>
+&lt;td>0.8&lt;/td>
+&lt;td>1.2&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>What position in option 1 and the underlying asset will make the portfolio delta and gamma neutral? Answer: Long 10,000 options, short 6000 of the asset&lt;/p>
+&lt;p>What position in option 1 and the underlying asset will make the portfolio delta and vega neutral? Answer: Long 4000 options, short 2400 of the asset&lt;/p>
+&lt;p>What position in option 1, option 2, and the asset will make the portfolio delta, gamma, and vega neutral?
+We solve&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-txt" data-lang="txt">&lt;span style="display:flex;">&lt;span> −5000+0.5w1 +0.8w2 =0
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> −8000+2.0w1 +1.2w2 =0
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>to get w1 = 400 and w2 = 6000. We require long positions of 400 and 6000 in option 1 and option 2. A short position of 3240 in the asset is then required to make the portfolio delta neutral
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="rho" >Rho
+&lt;span>
+&lt;a href="#rho">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>Rho is the rate of change of the value of a derivative with respect to the interest rate&lt;/p>
+&lt;h3 id="hedging-in-practice" >Hedging in practice
+&lt;span>
+&lt;a href="#hedging-in-practice">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>become delta-neutral at least once a day&lt;/li>
+&lt;li>whenever opportunities arise, improve gamma and vega&lt;/li>
+&lt;li>hedging becomes less expensive as a portfolio gets larger&lt;/li>
+&lt;/ul>
+&lt;h3 id="greek-letters-when-underlying-has-a-yield" >Greek Letters When Underlying has a Yield
+&lt;span>
+&lt;a href="#greek-letters-when-underlying-has-a-yield">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>See slide 32 of slide deck 17 (or see page 381)&lt;/p>
+&lt;h3 id="futures-for-delta-hedging" >Futures for Delta Hedging
+&lt;span>
+&lt;a href="#futures-for-delta-hedging">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;p>futures is e^{-(r-q)T} times the position required in the spot contract&lt;/p>
+&lt;h3 id="synthetic-option" >Synthetic Option
+&lt;span>
+&lt;a href="#synthetic-option">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>take positions that match the greeks of the option&lt;/li>
+&lt;/ul>
+&lt;h3 id="portfolio-insurance" >Portfolio Insurance
+&lt;span>
+&lt;a href="#portfolio-insurance">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h3>&lt;ul>
+&lt;li>Sell enough of the portfolio or index futures to match the delta of the put option (e.g. October 1987)&lt;/li>
+&lt;li>As portfolio value increases, delta goes down and so original portfolio is repurchased to some extent&lt;/li>
+&lt;li>As portfolio value decreases, more of portfolio is sold&lt;/li>
+&lt;/ul>
+&lt;h2 id="chapter-19---volatility-smiles" >Chapter 19 - Volatility Smiles
+&lt;span>
+&lt;a href="#chapter-19---volatility-smiles">
+&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
+&lt;/a>
+&lt;/span>
+&lt;/h2>&lt;p>For options with some maturities, the implied volatility versus the strike price makes a smile.&lt;/p></description></item><item><title>Finance Knowledge Database</title><link>https://blog.elijahlopez.ca/posts/finance-knowledge-database/</link><pubDate>Fri, 08 Sep 2023 14:15:12 -0400</pubDate><guid>https://blog.elijahlopez.ca/posts/finance-knowledge-database/</guid><description>&lt;p>For my last co-op, I got to intern at Fiera Capital on their Private Debt team which manages $5B+ of investors. Within the first week, there are a lot of terms related not just to lending but even M&amp;amp;A that I had trouble figuring out the meaning. I&amp;rsquo;m writing this article to make it easier to learn and understand finance.&lt;/p>
 &lt;h3 id="revolver-or-revolving-loan-debt-credit" >Revolver or Revolving (Loan, Debt, Credit)
 &lt;span>
 &lt;a href="#revolver-or-revolving-loan-debt-credit">
@@ -3320,114 +5623,4 @@ Final stock price must depart from X by this cost for the straddle to provide a 
 &lt;p>Some people, WSJ included, like to point out that the bank failed because of diversity initiatives. This is very disingenuous.
 First of all, management is 100% white in terms of race and not a single woman on management is in a position that is not stereotypically dominated by men. Second of all, diversity has nothing to do with intelligence! Diversity doesn&amp;rsquo;t reduce critical thinking (unless it is done wrong) and it doesn&amp;rsquo;t improve critical thinking unless cultural differences or differing experiences are taken advantage of. The only way diversity could have caused this bank failure is if there was a culture that promoted minimizing shareholder valuation.&lt;/p>
 &lt;p>This whole situation is like that movie Margin Call, except the person working in risk is non-existent (Chief of Risk was vacant for 8 months while interest rates were being raised). Clearly, the people to blame for SVB&amp;rsquo;s collapse is management and then the board, although can the board really be blamed when it is management that was supposed to manage the company properly?&lt;/p>
-&lt;/details></description></item><item><title>Investing (Equities)</title><link>https://blog.elijahlopez.ca/posts/investing/</link><pubDate>Fri, 20 May 2022 01:18:18 -0400</pubDate><guid>https://blog.elijahlopez.ca/posts/investing/</guid><description>&lt;p>My updated investing article. I wrote this with an emphasis on safety rather than making money.
-I&amp;rsquo;ll start off with the tips and then go over what you need to know to follow these tips/rules.&lt;/p>
-&lt;div>
-&lt;h2>Table of Contents&lt;/h2>
-&lt;nav id="TableOfContents">
-&lt;ul>
-&lt;li>&lt;a href="#tips">Tips&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#getting-started">Getting Started&lt;/a>
-&lt;ul>
-&lt;li>&lt;a href="#broker">Broker&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#accounts">Accounts&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#norberts-gambit">Norbert&amp;rsquo;s Gambit&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#exchange-traded-funds-etfs">Exchange-Traded Funds (ETFs)&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#orders">Orders&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#placing-orders-guideline">Placing Orders Guideline&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#options-and-futures">Options and Futures&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>&lt;a href="#crypto-currency">Crypto-Currency&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;/nav>
-&lt;/div>
-&lt;h2 id="tips" >Tips
-&lt;span>
-&lt;a href="#tips">
-&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
-&lt;/a>
-&lt;/span>
-&lt;/h2>&lt;ol>
-&lt;li>You&amp;rsquo;re either investing for the compound effect, in which case you need to invest often, or to live off the yield, in which case you can invest once and sell shares monthly for income&lt;/li>
-&lt;li>If you want the benefits of compounding, invest on a weekly basis (pick a random day of th week to do it on)&lt;/li>
-&lt;li>During bull markets, invest in the cheapest S&amp;amp;P500 Index ETF ($FNILX or $VOO); the Beta coefficient plays a huge role during the inevitable bear markets and you should try to avoid that&lt;/li>
-&lt;li>Whenever the NASDAQ-100 is down -15% or more from its peak, invest in the $QQQ rather than the $FNILX. The $QQQ will give a heuristically inflation adjusted CAGR of 10% (dividends excluded). The extra 2% is a big deal when we talk about decades. I&amp;rsquo;m actually not too sure about this recommendation, so stick to the $FNILX for now.&lt;/li>
-&lt;li>Do not try to time the market. The weekly schedule solves the issues caused by impatience.&lt;/li>
-&lt;li>Do not pick stocks unless you are less than 25 years old. When you are less than 25, you can afford to lose all of your money.&lt;/li>
-&lt;/ol>
-&lt;h2 id="getting-started" >Getting Started
-&lt;span>
-&lt;a href="#getting-started">
-&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
-&lt;/a>
-&lt;/span>
-&lt;/h2>&lt;p>About what I said earlier 😅. I&amp;rsquo;m simply not in the mood to improve on my first investing article I created in 2020.
-I can tell you what to learn though.&lt;/p>
-&lt;h3 id="broker" >Broker
-&lt;span>
-&lt;a href="#broker">
-&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
-&lt;/a>
-&lt;/span>
-&lt;/h3>&lt;p>You need a broker. If you are in Canada and are planning on investing weekly, go with RBC Direct Investing.
-If you are in America, pick &lt;a href="https://robinhood.com/">Robinhood&lt;/a>. I don&amp;rsquo;t recommend Questrade or Wealthsimple because the experience for investing in US stocks is abysmal and I&amp;rsquo;d rather pay $10 to avoid waiting in a customer support chat and to avoid Wealthsimple&amp;rsquo;s FX fee.&lt;/p>
-&lt;h3 id="accounts" >Accounts
-&lt;span>
-&lt;a href="#accounts">
-&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
-&lt;/a>
-&lt;/span>
-&lt;/h3>&lt;ul>
-&lt;li>TFSA: Tax Free Savings Account. Maximize this before your RRSP&lt;/li>
-&lt;li>(R)RSP: Registered Retirement Savings Plan (good for 30+ year olds)&lt;/li>
-&lt;li>RESP: Registered Education Savings Plan (CAD only, so invest wisely!)&lt;/li>
-&lt;li>Cash: Use this after maxxing your registered accounts. Tax implications exist when you make capital gains, so avoid selling unless you know what you are doing&lt;/li>
-&lt;li>Margin: do not use this account. It&amp;rsquo;s best to not open one since using the Margin is tempting if you learn more than the basics.&lt;/li>
-&lt;/ul>
-&lt;h3 id="norberts-gambit" >Norbert&amp;rsquo;s Gambit
-&lt;span>
-&lt;a href="#norberts-gambit">
-&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
-&lt;/a>
-&lt;/span>
-&lt;/h3>&lt;p>If you are in Canada and want to invest in American stocks (or vice versa), you need to learn Norbert&amp;rsquo;s Gambit to avoid the percentage foreign exchange fees. This is incredbly simple for RBC. Buy DLR and short DLR.U. RBC will take care of the settling automatically so you don&amp;rsquo;t have to spend more time or money unlike Questrade and Wealthsimple. Questrade and Wealthsimple&amp;rsquo;s experience and FX fees is &lt;em>bakwas&lt;/em> (outrageous). A new broker needs to be started in Canada or someone new needs to lead RBC Direct Investing. Hopefully it&amp;rsquo;ll be me one day, but I have things to do too.&lt;/p>
-&lt;h3 id="exchange-traded-funds-etfs" >Exchange-Traded Funds (ETFs)
-&lt;span>
-&lt;a href="#exchange-traded-funds-etfs">
-&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
-&lt;/a>
-&lt;/span>
-&lt;/h3>&lt;p>There are many ETFs and they consist of a basket of securities. Financial securities are picked and maintained by the creator of the ETF. For example, the $FNILX S&amp;amp;P 500 Index ETF is run by Vanguard. Each ETF usually has an expense ratio. That means you get charged for owning the ETF. I recommend $FNILX instead of $VOO or $SPY because the expense ratio for $FNILX is 0% compared to $SPY&amp;rsquo;s 0.09% and $VOO&amp;rsquo;s 0.03%.&lt;/p>
-&lt;h3 id="orders" >Orders
-&lt;span>
-&lt;a href="#orders">
-&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
-&lt;/a>
-&lt;/span>
-&lt;/h3>&lt;ul>
-&lt;li>Limit order: a bid to buy a stock at a max price OR an ask to sell your stock at min price&lt;/li>
-&lt;li>Market order: buying whatever the sellers are offering and vice versa. Use with discretion and its more useful for tickers with high volume&lt;/li>
-&lt;/ul>
-&lt;h3 id="placing-orders-guideline" >Placing Orders Guideline
-&lt;span>
-&lt;a href="#placing-orders-guideline">
-&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
-&lt;/a>
-&lt;/span>
-&lt;/h3>&lt;p>To buy a stock, place a buy limit order below market price and if it isn&amp;rsquo;t filled by 3:30 PM EST, keep increasing the bid to the asking price.&lt;/p>
-&lt;p>To sell a stock, place a sell limit order above market price and if it isn&amp;rsquo;t filed by 3:30 PM EST, keep lowering the ask to the bid price.&lt;/p>
-&lt;h3 id="options-and-futures" >Options and Futures
-&lt;span>
-&lt;a href="#options-and-futures">
-&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
-&lt;/a>
-&lt;/span>
-&lt;/h3>&lt;p>Unless you are less than 25 years old or a gambler, do not even bother with options or futures. It&amp;rsquo;s best to stay away. This is for people who can afford to lose money or know what they are doing (i.e. you work in Securities, Equities, Options).&lt;/p>
-&lt;h2 id="crypto-currency" >Crypto-Currency
-&lt;span>
-&lt;a href="#crypto-currency">
-&lt;svg viewBox="0 0 28 23" height="100%" width="19" xmlns="http://www.w3.org/2000/svg">&lt;path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>&lt;/svg>
-&lt;/a>
-&lt;/span>
-&lt;/h2>&lt;p>Sike! There&amp;rsquo;s no such thing as &amp;ldquo;investing&amp;rdquo; in crypto-currency. You are either gambling or want to be a part of the P2P cash adoption.&lt;/p></description></item></channel></rss>
+&lt;/details></description></item></channel></rss>

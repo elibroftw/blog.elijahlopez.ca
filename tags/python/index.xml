@@ -16,46 +16,6 @@
 &lt;li>Folders are not searched more than once&lt;/li>
 &lt;li>Return type is a generator and not a list, so offers more flexibility for increased performance&lt;/li>
 &lt;li>I use this in my music player, and the glob.escape was introduced to fix a bug one of users encountered&lt;/li>
-&lt;/ol></description></item><item><title>Tips for Distributing Python Apps</title><link>https://blog.elijahlopez.ca/posts/tips-for-distributing-python-apps/</link><pubDate>Sat, 22 Jul 2023 01:00:56 -0400</pubDate><guid>https://blog.elijahlopez.ca/posts/tips-for-distributing-python-apps/</guid><description>&lt;p>Here are some pillars for making Python app distribution better for end users. I was not able to follow some of these pillars when I distributed Music Caster, so I wrote them down for other methods I&amp;rsquo;d try if I were to go about doing it again.&lt;/p>
-&lt;ol>
-&lt;li>
-&lt;p>Python apps should be able to be installed without requiring administrative privileges.&lt;/p>
-&lt;ul>
-&lt;li>pip&lt;/li>
-&lt;li>git + script&lt;/li>
-&lt;li>Inno/NSIS/Wix&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>
-&lt;p>Distribute python code as opposed to compiled code&lt;/p>
-&lt;ul>
-&lt;li>obfuscate if you want to&lt;/li>
-&lt;li>install dependencies on user side or bundle in zip file&lt;/li>
-&lt;li>instruct user to install Python 3.X&lt;/li>
-&lt;li>create virtualenv on setup&lt;/li>
-&lt;li>TODO: look into &lt;a href="https://docs.pipenv.org/">pipenv&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>
-&lt;p>Create start menu shortcuts for platforms&lt;/p>
-&lt;ul>
-&lt;li>Linux: &lt;code>~/.local/share/applications/my_app.desktop&lt;/code>&lt;/li>
-&lt;li>Windows: &lt;code>%appdata%\Microsoft\Windows\Start Menu\Programs&lt;/code>&lt;/li>
-&lt;li>MacOSX: ???&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>
-&lt;p>Install to a common programs folder&lt;/p>
-&lt;ul>
-&lt;li>Linux: &lt;code>~/.local/bin&lt;/code>&lt;/li>
-&lt;li>Windows: &lt;code>%localappdata%\Programs&lt;/code>&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>
-&lt;p>Allow users to manually update by default and allow auto updating&lt;/p>
-&lt;p>When using a git based approach, git fetch to check for updates, and git reset to the latest v* tag when updating. Try not to update to latest commit since a commit does not imply code change or testing.&lt;/p>
-&lt;p>When using executables, use a server link or github API request combined with digital signed checksum (Tauri does this).&lt;/p>
-&lt;/li>
 &lt;/ol></description></item><item><title>Windows Programming: Start App on Login</title><link>https://blog.elijahlopez.ca/posts/windows-programming-start-app-on-login/</link><pubDate>Thu, 29 Jun 2023 20:22:04 -0400</pubDate><guid>https://blog.elijahlopez.ca/posts/windows-programming-start-app-on-login/</guid><description>&lt;p>To start an app on login on Windows, you must add a REG_SZ value to the registry key &lt;code>HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Run&lt;/code>.&lt;/p>
 &lt;p>The value&amp;rsquo;s name can be arbitrary, but not empty, and it&amp;rsquo;s data should be of the format &lt;code>path\to\executable optional args&lt;/code>. Personally, I add double quotes to the path, however apps like docker desktop do not even though the path has spaces.&lt;/p>
 &lt;h3 id="python-start-app-on-login" >Python Start App on Login
@@ -541,7 +501,7 @@ After installing these two modules, copy the snippet at the bottom of the articl
 &lt;/a>
 &lt;/span>
 &lt;/h2>&lt;p>&lt;code>GUID&lt;/code>: include the &amp;lsquo;{&amp;rsquo; and &amp;lsquo;}&amp;rsquo; into the string if applicable
-&lt;code>addon_files&lt;/code>: a list of source files of the add-on (relative path&lt;/p>
+&lt;code>addon_files&lt;/code>: a list of source files of the add-on (relative path)&lt;/p>
 &lt;script src="https://gist.github.com/elibroftw/1a94149a2f6232d062b666c4ee9ea530.js">&lt;/script></description></item><item><title>Convert Word Files to PDF With Python</title><link>https://blog.elijahlopez.ca/posts/convert-word-files-to-pdf/</link><pubDate>Wed, 02 Sep 2020 23:04:27 -0500</pubDate><guid>https://blog.elijahlopez.ca/posts/convert-word-files-to-pdf/</guid><description>&lt;p>NOTE: Windows tutorial.&lt;/p>
 &lt;p>Back when I first started University, I decided to type out all my math notes. Yes, you heard me right, I typed out my math notes (equation editor is very powerful) - or took screenshot snippets of the textbook PDF and pasted them into my notes.docx if I was lagging behind and too lazy to type it out later. I&amp;rsquo;m always about studying efficiently so whenever I needed to read my math notes, it was always annoying having to wait a couple seconds for Word to open up my notes so I decided to start exporting them to PDF but I didn&amp;rsquo;t want to do it manually every time for both all my course notes so I decided I would use Python to solve my problem. Here&amp;rsquo;s what I came up with after doing some research and debugging to optimize code execution.&lt;/p>
 &lt;p>A lot of the code is about leveraging the win32 API and I&amp;rsquo;d be lying if I knew what everything actually did, but rest assured I did have to figure out how to get it to work as you can see with the word = comments where I was figuring out how to do the conversion using threads. I&amp;rsquo;m sure you could even use multiprocessing here but that&amp;rsquo;s for another time since this code was made for only 4 files. You could also use a thread pool if it turns out you have more than 4 files but don&amp;rsquo;t want to rewrite the code to work with multiprocessing.&lt;/p>
