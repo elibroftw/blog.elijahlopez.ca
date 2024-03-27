@@ -3,7 +3,7 @@ title: "Uno Platform Logging"
 date: 2023-02-17T21:59:46-05:00
 draft: false
 tags: [
-    'c#',
+    'c-sharp',
     'uno-platform',
     'mobile',
     'programming',
