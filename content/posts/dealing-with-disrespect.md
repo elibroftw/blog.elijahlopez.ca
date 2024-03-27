@@ -1,7 +1,7 @@
 ---
 title: "Dealing With Disrespect"
 date: 2022-11-19T22:21:06-05:00
-draft: false
+draft: true
 hidden: true
 aliases: ['/posts/handling-disrespect/']
 ---

@@ -2,13 +2,12 @@
 title: "ASP.NET WEB API launch.json for Visual Studio Code"
 date: 2023-01-29T13:03:33-05:00
 draft: false
-tags: [
-    "programming",
-    "tutorial",
-    "c-sharp",
-    "asp.net",
-    "vscode",
-]
+tags:
+  - programming
+  - tutorial
+  - c-sharp
+  - asp.net
+  - vscode
 ---
 
 Suppose you want to be able to work on your ASP.NET application in Visual Studio as well as Visual Studio Code. Sure you can use the run feature of the Solution Explorer extension in Visual Studio Code, but that's not a native feeling.

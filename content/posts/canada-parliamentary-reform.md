@@ -2,10 +2,9 @@
 title: "Canada Parliamentary Reform"
 date: 2024-03-04T22:07:35-05:00
 draft: false
-tags: [
-  'canada',
-  'opinion'
-]
+tags:
+  - canada
+  - opinion
 ---
 
 In 1927, the Supreme Court of Canada ruled, unanimously, in the Persons Case that women were not eligible to be senators. Since this was during the time that Canada was still under British rule, an appeal was allowed and the Judicial Committee of the Privy Council allowed women to become senators.

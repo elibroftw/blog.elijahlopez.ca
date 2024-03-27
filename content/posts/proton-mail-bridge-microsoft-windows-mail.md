@@ -2,9 +2,8 @@
 title: "Proton Mail Bridge Microsoft Windows Mail"
 date: 2023-07-25T13:59:08-04:00
 draft: true
-tags: [
-    "windows",
-]
+tags:
+  - windows
 ---
 
 This is my effort in getting ProtonMail to work with Windows 11.

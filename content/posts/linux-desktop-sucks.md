@@ -2,10 +2,9 @@
 title: "Linux Desktop Sucks!"
 date: 2022-02-26T12:44:37-05:00
 draft: false
-tags: [
-    'linux',
-    'opinion'
-]
+tags:
+  - linux
+  - opinion
 ---
 
 {{< toc >}}

@@ -1,12 +1,12 @@
 ---
-title: "REST APIs: Do Not Return 404 When A Resource is Null"
+title: "A REST API Should Not Return 404 When A Resource is Null"
 date: 2024-03-27T10:35:26-04:00
 draft: false
-tags: [
-    "programming",
-    "tutorial",
-    "backend",
-]
+tags:
+  - programming
+  - tutorial
+  - backend
+  - opinion
 ---
 
 

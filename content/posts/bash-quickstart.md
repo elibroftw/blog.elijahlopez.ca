@@ -2,12 +2,11 @@
 title: "Bash Quickstart"
 date: 2022-01-26T12:38:14-05:00
 draft: false
-tags: [
-    "tutorial",
-    "programming",
-    "devops",
-    "bash",
-]
+tags:
+  - tutorial
+  - programming
+  - devops
+  - bash
 ---
 
 ## Strings

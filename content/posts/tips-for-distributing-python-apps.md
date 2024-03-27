@@ -2,9 +2,9 @@
 title: "Tips for Distributing Python Apps"
 date: 2023-07-22T01:00:56-04:00
 draft: false
-tags: [
-    'python'
-]
+hidden: true
+tags:
+  - python
 ---
 
 Here are some pillars for making Python app distribution better for end users. I was not able to follow some of these pillars when I distributed Music Caster, so I wrote them down for other methods I'd try if I were to go about doing it again.

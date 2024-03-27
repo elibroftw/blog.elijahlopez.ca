@@ -2,10 +2,11 @@
 title: "ASP.NET Core Swagger Dark Theme"
 date: 2023-06-02T12:49:14-04:00
 draft: false
-tags: [
-    "tutorial",
-    "asp.net",
-]
+tags:
+  - programming
+  - tutorial
+  - c-sharp
+  - asp.net
 ---
 
 _For the SEO_: How to add dark theme to Swagger UI ASP.NET? Follow these instructions.

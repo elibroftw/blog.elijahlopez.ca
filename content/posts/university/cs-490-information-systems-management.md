@@ -2,9 +2,9 @@
 title: "CS 490 Information Systems Management"
 date: 2023-05-09T13:02:11-04:00
 draft: false
-tags: [
-    "university",
-]
+tags:
+  - university
+  - computer-science
 ---
 
 {{< toc >}}

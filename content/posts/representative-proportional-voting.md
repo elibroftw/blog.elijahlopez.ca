@@ -1,15 +1,13 @@
 ---
 title: "Fixed Seats Proportional Representation (FSP-R)"
+aliases:
+  - /posts/fixed-seats-proportional-representation/
+  - /posts/representative-proportional-voting/
 # date: 2021-11-19T11:58:17-04:00   # idea first conceptualized
-aliases: [
-    '/posts/fixed-seats-proportional-representation/',
-    '/posts/representative-proportional-voting/'
-]
 date: 2023-04-12T17:14:32-04:00
-tags: [
-  'canada',
-  'politics'
-]
+tags:
+  - canada
+  - politics
 ---
 
 This article describes and demonstrates a novel solution for electoral reform called Fixed Seats Proportional Representation (FSP / FSP-R, previously called representative proportional voting) - similar to the open-list proportional representation system used by Finland - that it is practical to implement. It is also more effective in holding elections where every vote contributes to the formation of a government body. Below is the overall results of the 2021 Canadian general election under the presently used [First Past the Post (FPTP)](https://www.elections.ca/content.aspx?section=res&dir=ces&document=part1&lang=e#p13) electoral system compared to FSP.

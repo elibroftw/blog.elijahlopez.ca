@@ -2,9 +2,10 @@
 title: "Best Cell Phone Carriers Canada"
 date: 2024-01-02T18:14:11-05:00
 draft: false
-tags: [
-  'canada'
-]
+tags:
+  - canada
+  - tech
+  - opinion
 ---
 
 So I got a look at the boxing day deals and all the 4 carriers had $34 for 50GB of data per month. I thought I had a good deal at $39 for 25GB per month! I even fought on the phone with Koodo about it during the summer since they were offering 20GB for $39 at the time and I was paying $40 for 6GB. I had switched to Koodo from Fredumb Mobile either in 2022 or something.

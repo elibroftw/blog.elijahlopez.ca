@@ -2,11 +2,10 @@
 title: "SIM Swapping: Why SMS 2FA Is Unsecure"
 date: 2023-07-09T19:38:38-04:00
 draft: false
-tags: [
-    'cryptocurrency',
-    'cybersecurity',
-    'opinion'
-]
+tags:
+  - cryptocurrency
+  - cybersecurity
+  - opinion
 ---
 
 A lot of companies provide their users with SMS for 2FA in case their users reuse passwords across multiple services. However, users who are forced to use SMS 2FA or choose to use SMS 2FA can be left completely insecure, especially with financially related services which oddly use non-token based 2FA (many crypto exchanges).

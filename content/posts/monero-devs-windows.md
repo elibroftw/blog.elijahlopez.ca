@@ -2,14 +2,13 @@
 title: "Monero Onboarding for Windows Developers"
 date: 2022-12-03T12:58:50-05:00
 draft: false
-tags: [
-    "monero",
-    "cryptocurrency",
-    "programming",
-    "tutorial",
-    "vscode",
-    "c++",
-]
+tags:
+  - monero
+  - cryptocurrency
+  - programming
+  - tutorial
+  - vscode
+  - c++
 aliases: ['/posts/monero-dev-windows/']
 ---
 

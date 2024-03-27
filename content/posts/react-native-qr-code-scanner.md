@@ -2,12 +2,11 @@
 title: "React Native QR Code Scanner (2023)"
 date: 2023-08-05T11:13:28-04:00
 draft: false
-tags: [
-    "tutorial",
-    "programming",
-    "react-native",
-    "mobile"
-]
+tags:
+  - tutorial
+  - programming
+  - react-native
+  - mobile
 ---
 
 Shout out to Tesla motors. Although a recruiter that works there rejected me with the wrong name, they made a react native package that is simple to use.

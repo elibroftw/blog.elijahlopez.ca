@@ -1,9 +1,8 @@
 ---
 title: "Sum of Geometric Sequences"
 date: 2021-12-18T23:28:15-05:00
-tags: [
-    "math",
-]
+tags:
+  - math
 ---
 
 Here are two useful formulas that are presented in a pretty way.

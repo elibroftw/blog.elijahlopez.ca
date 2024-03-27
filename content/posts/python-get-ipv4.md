@@ -2,11 +2,10 @@
 title: "Python Get LAN IPv4 Address"
 date: 2023-02-04T01:30:27-05:00
 draft: false
-tags: [
-    "tutorial",
-    "programming",
-    "python",
-]
+tags:
+  - tutorial
+  - programming
+  - python
 ---
 
 The Windows version returns the LAN IPv4 address, even if connected to a VPN.

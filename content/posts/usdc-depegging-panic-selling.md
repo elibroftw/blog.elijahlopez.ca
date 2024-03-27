@@ -2,10 +2,9 @@
 title: "USDC De-pegging is/was Panic Selling"
 date: 2023-03-15T23:26:23-04:00
 draft: false
-tags: [
-    "opinion",
-    "finance"
-]
+tags:
+  - opinion
+  - finance
 ---
 
 On Friday night, [USDC](https://www.circle.com/en/usdc), a virtual currency that is supposed to be stabilized at a 1:1 ratio with the USD lost its peg due to a combination of two news events. Circle, the company that issues USDC and allows redemption of it for USD stated that it had 3.3B (8.175% of 40B) of its cash & cash equivalents in [Silicon Valley Bank (SVB)](https://en.wikipedia.org/wiki/Silicon_Valley_Bank), the bank that collapsed last week. The second event was [Coinbase](https://twitter.com/coinbase/status/1634399032767307776) freezing redemptions with plans to recommence Monday.

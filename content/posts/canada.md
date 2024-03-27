@@ -1,12 +1,11 @@
 ---
 title: "My Thoughts on Canada"
 date: 2022-05-21T01:18:18-04:00
-tags: [
-    "canada",
-    "finance",
-    "opinion",
-    "politics",
-]
+tags:
+  - canada
+  - finance
+  - opinion
+  - politics
 hidden: true
 ---
 

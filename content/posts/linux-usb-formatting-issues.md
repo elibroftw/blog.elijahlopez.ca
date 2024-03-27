@@ -2,10 +2,9 @@
 title: "Linux USB Formatting Issues"
 date: 2022-07-24T21:03:20-04:00
 draft: false
-tags: [
-    "linux",
-    "windows"
-]
+tags:
+  - linux
+  - windows
 ---
 
 When trying to test out multiple Linux distros on multiple

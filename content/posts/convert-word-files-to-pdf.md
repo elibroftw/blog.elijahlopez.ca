@@ -2,11 +2,10 @@
 title: "Convert Word Files to PDF With Python"
 date: 2020-09-02T23:04:27-05:00
 draft: false
-tags: [
-    "tutorial",
-    "programming",
-    "python",
-]
+tags:
+  - tutorial
+  - programming
+  - python
 ---
 
 NOTE: Windows tutorial.

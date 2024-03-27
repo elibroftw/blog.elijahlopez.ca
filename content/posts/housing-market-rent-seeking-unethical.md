@@ -2,11 +2,10 @@
 title: "Housing Market Rent-Seeking is Unethical"
 date: 2022-11-21T16:36:44-05:00
 draft: false
-tags: [
-    "canada",
-    "politics",
-    "opinion",
-]
+tags:
+  - canada
+  - politics
+  - opinion
 hidden: true
 ---
 

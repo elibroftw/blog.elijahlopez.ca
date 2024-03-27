@@ -2,10 +2,9 @@
 title: "Abortion Simplified"
 date: 2022-06-25T18:04:08-04:00
 hidden: true
-tags: [
-  "opinion",
-  "morality"
-]
+tags:
+  - opinion
+  - morality
 ---
 
 After thinking about abortion for a good couple hours, I was finally able to form an almost perfect opinion.

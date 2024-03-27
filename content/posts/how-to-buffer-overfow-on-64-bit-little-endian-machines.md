@@ -1,5 +1,5 @@
 ---
-title: "How to Buffer Overfow on 64-Bit Little Endian Machines"
+title: "How to Buffer Overflow on 64-Bit Little Endian Machines"
 date: 2024-02-06T12:18:51-05:00
 draft: true
 ---

@@ -1,11 +1,10 @@
 ---
 title: "Oneplus 6T Review"
 date: 2022-07-28T20:15:28-04:00
-tags: [
-  'review',
-  'mobile',
-  'android',
-]
+tags:
+  - review
+  - mobile
+  - android
 ---
 
 I submitted this review to OnePlus for a chance to review their Oneplus 10T.

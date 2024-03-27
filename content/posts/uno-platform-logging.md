@@ -2,13 +2,12 @@
 title: "Uno Platform Logging"
 date: 2023-02-17T21:59:46-05:00
 draft: false
-tags: [
-    'c-sharp',
-    'uno-platform',
-    'mobile',
-    'programming',
-    'tutorial'
-]
+tags:
+  - c-sharp
+  - uno-platform
+  - mobile
+  - programming
+  - tutorial
 ---
 
 Note that you will need to run with debugging (F5) for some logging and breakpoints/tracepoints to work.

@@ -2,10 +2,9 @@
 title: "How to Install Ruby on MacOS"
 date: 2024-02-05T21:28:03-05:00
 draft: false
-tags: [
-  'macos',
-  'tutorial'
-]
+tags:
+  - macos
+  - tutorial
 ---
 
 This is how you install Ruby on MacOS and you don't have to reopen the terminal.

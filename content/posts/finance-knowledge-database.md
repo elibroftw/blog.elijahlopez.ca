@@ -2,9 +2,8 @@
 title: "Finance Knowledge Database"
 date: 2023-09-08T14:15:12-04:00
 draft: false
-tags: [
-    "finance",
-]
+tags:
+  - finance
 ---
 
 For my last co-op, I got to intern at Fiera Capital on their Private Debt team which manages $5B+ of investors. Within the first week, there are a lot of terms related not just to lending but even M&A that I had trouble figuring out the meaning. I'm writing this article to make it easier to learn and understand finance.

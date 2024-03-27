@@ -1,7 +1,10 @@
 ---
 title: "Windows Notebooks vs. MacBooks"
 date: 2024-03-27T14:06:32-04:00
-draft: true
+draft: false
+tags:
+  - opinion
+  - tech
 ---
 
 So let's be clear. Until the snapdragon x elite CPU laptops have dropped, there are only a few reasons to purchase a Windows laptop over a MacBook. I won't deny the performance benefits of the M series chips, but I will dispute the battery life as it is only a couple hours better than a gaming laptop when faced with the same workload.

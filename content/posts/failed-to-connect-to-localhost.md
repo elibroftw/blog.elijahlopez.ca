@@ -2,10 +2,9 @@
 title: "Fixing Failed to Connect to localhost/127.0.0.1"
 date: 2023-02-19T15:48:20-05:00
 draft: true
-tags: [
-    'mobile',
-    'android',
-]
+tags:
+  - mobile
+  - android
 ---
 
 I wanted to consume a localhost API I had running on localhost/127.0.0.1:7065. So to fix this issue, instead

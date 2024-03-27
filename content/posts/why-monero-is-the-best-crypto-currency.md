@@ -2,10 +2,9 @@
 title: "Why Monero Is the Best Crypto-Currency"
 date: 2021-10-24T11:37:57-05:00
 draft: false
-tags: [
-  "monero",
-  "cryptocurrency",
-]
+tags:
+  - monero
+  - cryptocurrency
 ---
 
 ![Header Image](/images/crypto/monero-pros.bmp)

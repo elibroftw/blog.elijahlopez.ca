@@ -2,12 +2,11 @@
 title: "ASP.NET Core JWT Authorization"
 date: 2023-05-03T13:14:55-04:00
 draft: false
-tags: [
-    "programming",
-    "tutorial",
-    "c-sharp",
-    "asp.net",
-]
+tags:
+  - programming
+  - tutorial
+  - c-sharp
+  - asp.net
 ---
 
 Don't feel like explaining my code, so just copy and modify it for yourself as I can assure you it's one of the cleanest you can find.

@@ -2,13 +2,12 @@
 title: "Bash & Linux Helpers"
 date: 2022-02-14T14:06:30-05:00
 draft: false
-tags: [
-    "tutorial",
-    "programming",
-    "devops",
-    "bash",
-    "linux",
-]
+tags:
+  - tutorial
+  - programming
+  - devops
+  - bash
+  - linux
 ---
 
 It seems that many article tutorials on `bash` are ugly, are suboptimal, and are no straight forward.

@@ -2,9 +2,8 @@
 title: "UW WLU Double Degree"
 date: 2021-12-17T21:36:13-05:00
 draft: false
-tags: [
-    "university",
-]
+tags:
+  - university
 ---
 I started my double degree BCS and BBA journey in Fall 2019.
 Here are some things you should know about the program plus the University environment.
@@ -86,7 +85,7 @@ I will share some advice.
 
 ### Moving to Campus
 
-- If WLU based, you'll first be at Lazaridus Hall.
+- If WLU based, you'll first need to visit Lazaridus Hall
   - Pick up residence keys/pass
   - Pick up orientation kit
   - If you took a picture of yourself for the Onecard, pick that up here too
@@ -102,3 +101,7 @@ I will share some advice.
   - Getting a 100% in high school math is just the prerequisite
 
 Two of my friends from high school that were in CS enrolled in both advanced math classes with one even signing up for the advanced CS class. Then, once they found it really tough (~2nd week), they switched to normal stream and had to catch up with me 😂.
+
+### University of Waterloo's Campus is Better
+
+It took me a couple years to realize, but the University of Waterloo campus is better. The Laurier campus seems to have cliques, but the Waterloo campus is bigger and the student areas are always filled with lots of random people you can easily socialize with. On the Laurier campus, it always feels lonely and you can't do anything about it but on the Waterloo side, it's most definitely a choice.

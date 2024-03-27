@@ -2,13 +2,12 @@
 title: "How to Create a Monero Payment Processor"
 date: 2022-06-10T20:13:16-04:00
 draft: false
-tags: [
-    "monero",
-    "cryptocurrency",
-    "programming",
-    "tutorial",
-    "python",
-]
+tags:
+  - monero
+  - cryptocurrency
+  - programming
+  - tutorial
+  - python
 ---
 
 ## Preface

@@ -2,12 +2,11 @@
 title: "ASP.NET Core Kebab Case Routes"
 date: 2023-01-29T14:37:16-05:00
 draft: false
-tags: [
-    "programming",
-    "tutorial",
-    "c-sharp",
-    "asp.net",
-]
+tags:
+  - programming
+  - tutorial
+  - c-sharp
+  - asp.net
 aliases: ["/posts/aspnet-kebab-case"]
 ---
 

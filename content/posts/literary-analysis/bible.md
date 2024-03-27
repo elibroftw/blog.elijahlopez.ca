@@ -2,9 +2,8 @@
 title: "Analysis of the New Testament (For Now)"
 date: 2023-12-24T16:56:12-04:00
 draft: false
-tags: [
-  'literary-analysis'
-]
+tags:
+  - literary-analysis
 ---
 
 ## Preface

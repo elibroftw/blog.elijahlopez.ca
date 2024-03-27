@@ -2,9 +2,8 @@
 title: "CS 348 Intro to Database Management"
 date: 2023-01-10T16:02:06-05:00
 draft: false
-tags: [
-    "university",
-]
+tags:
+  - university
 ---
 
 {{< toc >}}

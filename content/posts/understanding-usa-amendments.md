@@ -3,12 +3,11 @@ title: "Understanding the USA Amendments"
 date: 2022-07-04T11:15:56-04:00
 draft: true
 hidden: true
-tags: [
-    "opinion",
-    "politics",
-    "usa",
-    "canada"
-]
+tags:
+  - opinion
+  - politics
+  - usa
+  - canada
 ---
 
 The language used in the Bill of Rights of the USA is 200+ years old. It is not clear that everyone in the present day would

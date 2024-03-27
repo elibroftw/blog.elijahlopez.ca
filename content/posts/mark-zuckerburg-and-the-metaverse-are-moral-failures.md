@@ -1,10 +1,9 @@
 ---
 title: "Mark Zuckerberg and the Metaverse Are Moral Failures"
 date: 2023-06-01T20:43:19-04:00
-tags: [
-  "opinion",
-  "morality"
-]
+tags:
+  - opinion
+  - morality
 ---
 
 Imagine being the CEO of a corporation with billions of dollars of which you are also the majority shareholder. Not only do you control billions of dollars personally but you control a corporation with billions of dollars in cash in the bank.

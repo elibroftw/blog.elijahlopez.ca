@@ -1,14 +1,13 @@
 ---
 title: "Tauri Custom Titlebar (React)"
 date: 2022-12-24T10:45:01-05:00
-tags: [
-    "tutorial",
-    "programming",
-    "javascript",
-    "webdev",
-    "reactjs",
-    "tauri",
-]
+tags:
+  - tutorial
+  - programming
+  - javascript
+  - webdev
+  - reactjs
+  - tauri
 ---
 
 This tutorial is based on Part 12 of my Tauri & ReactJS series.

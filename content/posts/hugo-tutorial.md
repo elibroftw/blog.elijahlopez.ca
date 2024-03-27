@@ -1,13 +1,12 @@
 ---
 title: "Creating a Blog With GitHub Pages and Hugo"
 date: 2021-12-17T22:18:47-05:00
-tags: [
-    "tutorial",
-    "programming",
-    "hugo",
-    "markdown",
-    "git",
-]
+tags:
+  - tutorial
+  - programming
+  - hugo
+  - markdown
+  - git
 ---
 
 I created this blog using Hugo and host it on GitHub Pages. In this tutorial, I'll teach you to do the same.

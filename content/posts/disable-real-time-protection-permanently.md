@@ -2,9 +2,8 @@
 title: "How to Disable Real Time Protection Permanently"
 date: 2023-02-22T23:58:11-05:00
 draft: false
-tags: [
-    'windows'
-]
+tags:
+  - windows
 ---
 
 As a developer who dabbles with web development, Real-Time protection ramps up CPU usage unnecessarily.

@@ -2,6 +2,11 @@
 title: "ASP.NET Core Add Versioning"
 date: 2024-03-07T02:05:53-05:00
 draft: true
+tags:
+  - programming
+  - tutorial
+  - c-sharp
+  - asp.net
 ---
 
 ### Introduction

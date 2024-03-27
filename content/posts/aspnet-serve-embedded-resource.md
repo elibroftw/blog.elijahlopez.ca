@@ -1,12 +1,11 @@
 ---
 title: "ASP.NET Core Serve Embedded Resource"
 date: 2023-06-02T14:09:28-04:00
-tags: [
-    "programming",
-    "tutorial",
-    "c-sharp",
-    "asp.net",
-]
+tags:
+  - programming
+  - tutorial
+  - c-sharp
+  - asp.net
 ---
 
 You really shouldn't be serving static files from the server but rather a reverse proxy like NGINX or something like an S3 bucket. However, what if you are just doing some debugging? In that case, here are three examples of reading an embedded resource in different contexts.

@@ -1,11 +1,10 @@
 ---
 title: "How to fix Unable to Get Local Issuer Certificate"
 date: 2022-11-13T13:11:52-05:00
-tags: [
-  "tutorial",
-  "python",
-  "devops",
-]
+tags:
+  - tutorial
+  - python
+  - devops
 ---
 
 So you were trying to use `requests` or `httpx` to access a website, in my case my own, and you got an SSL verify error:

@@ -1,10 +1,9 @@
 ---
 title: "Google Maps Search and Get Coordinates"
 date: 2023-10-02T18:10:33-04:00
-draft: false
-tags: [
-    'tutorial'
-]
+draft: true
+tags:
+  - tutorial
 ---
 
 When reading the documentation for Google Maps Places autocomplete, under "optimizations", Google recommends using their geocode service instead of [Text Search](https://developers.google.com/maps/documentation/places/web-service/search-text) if you want to get the coordinates of the place.

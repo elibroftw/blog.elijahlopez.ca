@@ -2,13 +2,12 @@
 title: "How to SSH Into VirtualBox"
 date: 2023-11-19T14:22:42-05:00
 draft: false
-tags: [
-    'programming',
-    'tutorial',
-    'ssh',
-    'vscode',
-    'virtual-box'
-]
+tags:
+  - programming
+  - tutorial
+  - ssh
+  - vscode
+  - virtual-box
 ---
 
 For the Oracle VirtualBox VM, click the virtualbox network settings and add a new port forwarding rule under advanced settings and add a rule for SSH with the TCP protocol, 3022 Host port, and 22 guest port.

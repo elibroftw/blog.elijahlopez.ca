@@ -2,10 +2,9 @@
 title: "Macroeconomics Asset Market Question (Chegg is Garbage Pt. 1)"
 date: 2024-02-02T16:20:08-05:00
 draft: false
-tags: [
-  'economics',
-  'opinion'
-]
+tags:
+  - economics
+  - opinion
 ---
 
 Consider an economy with a constant growth rate of nominal money supply and a constant real interest rate r​ = 0.06. Which of the following statements about the inflation rate of the economy would be​ valid?

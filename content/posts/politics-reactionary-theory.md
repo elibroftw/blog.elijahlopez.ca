@@ -2,9 +2,8 @@
 title: "Politics Reactionary Theory"
 date: 2022-12-15T17:36:04-05:00
 draft: true
-tags: [
-    'politics'
-]
+tags:
+  - politics
 ---
 
 This is a theory about Reactionary politics by me. Reactionary is something that is already known, however it is often painted as solely being conservative, right wing, and completely ignores the silent majority, the people who either don't vote or have centrist positions. These people simply don't vote because they don't see people in politics that reflect their ideals and since the people don't exist, it often seems like people are binary in their political view. The truth is that there are many people who hold centrist views and views are usually bundled based on common interests and backgrounds.

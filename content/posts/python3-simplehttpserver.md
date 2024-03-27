@@ -2,11 +2,10 @@
 title: "Python3 Simplehttpserver"
 date: 2019-07-10T22:38:39-05:00
 draft: false
-tags: [
-    "tutorial",
-    "programming",
-    "python",
-]
+tags:
+  - tutorial
+  - programming
+  - python
 ---
 
 ## Code

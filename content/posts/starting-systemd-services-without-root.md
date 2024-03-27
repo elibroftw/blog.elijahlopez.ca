@@ -1,10 +1,9 @@
 ---
 title: "Starting Systemd Services Without Root"
 date: 2023-01-21T14:49:20-05:00
-tags: [
-    "devops",
-    "tutorial"
-]
+tags:
+  - devops
+  - tutorial
 aliases: ["/posts/starting-systemctl-services-without-root"]
 ---
 
