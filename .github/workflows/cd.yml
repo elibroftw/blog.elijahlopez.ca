@@ -12,32 +12,33 @@ jobs:
     permissions:
       contents: write
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@main
         with:
           submodules: true # Fetch Hugo themes (true OR recursive)
           fetch-depth: 0 # Fetch all history for .GitInfo and .Lastmod
 
-      - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v2
-        with:
-          hugo-version: 'latest'
-          extended: true
+      - name: Install Hugo
+        run: sudo apt -y install hugo
 
       - name: Setup output
         id: vars
         run: |
           rm -rf public
-          echo "commit_msg=$(git log -1 --pretty=%B)" >> $GITHUB_OUTPUT
+
+          echo 'commit_msg<<EOF' >> $GITHUB_OUTPUT
+          echo "$(git log -1 --pretty=%B)" >> $GITHUB_OUTPUT
+          echo 'EOF' >> $GITHUB_OUTPUT
+
           git worktree add public gh-pages
 
-      - uses: actions/cache@v3
+      - uses: actions/cache@main
         with:
           path: /tmp/hugo_cache
           key: ${{ runner.os }}-hugomod-${{ hashFiles('**/go.sum') }}
           restore-keys: |
             ${{ runner.os }}-hugomod-
 
-      - name: Build
+      - name: Build Hugo
         # git worktree <path> <branch> sets <path> as root for <branch>
         run: |
           hugo --minify
@@ -50,6 +51,6 @@ jobs:
           git config user.email '${{ github.actor }}@users.noreply.github.com'
           if [ "`git status -s`" ]; then
             git add --all
-            git commit -am "deployed: ${{ steps.vars.outputs.commit_msg }}"
+            git commit --amend -m "deployed: ${{ steps.vars.outputs.commit_msg }}"
           fi
-          git push --all
+          git push --force
