@@ -1272,7 +1272,7 @@ To return to​ long-run equilibrium, the price level must​ adjust, shifting t
 
 P = enter your response here
 
-## Chapter 10: Exchange Rates, Business Cycles, and Macroeconomic Policy in the Open Economy
+## Chapter 10 - Exchange Rates, Business Cycles, and Macroeconomic Policy in the Open Economy
 
 Nation economies are interdependent in two main ways meaning policies of one country can affect the other
 
@@ -1435,7 +1435,7 @@ Currency Unions: Common currency shared by a group of countries (e.g. EU). Reduc
 9. for an undervalued currency in a fixed exchange rate, the country can increase money supply; if money supply is increased too much it may make the currency over-valued
 10. european union agreeing to use the euro is called a currency union. all countries in the currency union must share a common monetary policy.
 
-## Chapter 11: Classical Business Cycle Analysis: Market-Clearing Macroeconomics
+## Chapter 11 - Classical Business Cycle Analysis: Market-Clearing Macroeconomics
 
 business cycle theories have two components:
 
@@ -1496,7 +1496,7 @@ So although Long-Run Aggregate Supply is vertical, Short Run Aggregate Supply is
 
 If expectations are correct, the expected price will equal the actual price. The central bank has to surprise people to affect output but it's clear that the central bank would want to increase money supply during recessions and decrease it during booms and so only a random policy would have effects.
 
-## Chapter 12: Keynesian Business Cycle Analysis
+## Chapter 12 - Keynesian Business Cycle Analysis
 
 - Non-Market-Clearing Macroeconomics
 - Wages and prices are sticky and won't easily go down
@@ -1822,28 +1822,323 @@ Money supply is also affected by the banking system’s behaviour and the public
 
 ### Monetarist
 
-Left off here
+- Dominant figure: Milton Friedman
+
+> Proposition 1. Monetary policy has powerful short-run effects on the real economy. In the longer run, however, changes in the money supply have their primary effect on the price level
+
+---
+> Proposition 2. Despite the powerful short-run effect of money on the economy, there is little scope for using monetary policy actively to try to smooth business cycles.
+
+- time needed to gather and process information (information lag) to determine state of economy
+- uncertainty to the magnitude of the effect of a change in interest rates and money supply
+- maybe a year to take effect
+- bank of canada estimates 12-18 months to influence inflation rate
+- might be possible for wages to adjust quick enough that the monetary supply causes prices to rise
+
+---
+
+> Proposition 3. Even if there is some scope for using monetary policy to smooth business cycles, the central bank cannot be relied on to do so effectively.
+
+- distrust of central bank comes from historic examples
+- 1929-1933: Federal Reserve System was unable or unwilling to stop the money supply from falling by one-third due to bank runs
+
+---
+
+> Proposition 4. The central bank should choose a specific monetary aggregate (such as M1 or M2) and commit itself to making that aggregate grow at a fixed percentage rate, year in and year out.
+
+- central bank has considerable influence over the rate of money growth so it can be held accountable for deviation
+- steady money growth would lead to smaller cyclical fluctuations than "countercyclical" monetary policies used historically
+- ultimately, the growth rate of the monetary aggregate selected would be consistent with an inflation rate near zero
+- some are open to suspending rules during a depression
+
+### Central Bank Credibility
+
+Monetarism relies on the assumption that the government and the central bank are incompetent and can't intervene effectively. The argument against rules is that the central bank has done better post world war II; in other words, monetary policy is getting better. However, the rules argument is not just about incompetence but also about credibility.
+
+- Suppose the central bank says they will maintain a stable money supply. If there is no credibility, firms can increase prices because they know the central bank will increase money supply. If there is credibility, firms will realize prices would come down anyways.
+
+To increase credibility, the central bank has to be willing to let the economy go into a recession if firms doubt the central bank and try messing with short-term output.
+
+Ironclad rules create risks when prevent corrective actions from taking place during unexpected crisis' (e.g. depression).
+
+### John Taylor's Rule and Inflation Targeting
+
+nominal overnight interest rate = inflation + 0.02 + 0.5 * percent deviation from full-employment output + 0.5 (inflation - 0.02)
+
+where inflation is the trailing twelve months and 0.02 is the target for inflation
+
+Described actual behaviour of U.S. Federal Reserve quite accurately. Meant as a guideline. A number of countries have adopted inflation targeting since the 90s. An advantage is that it's simple to understand so households can make decisions. A major disadvantage is that inflation responds to policy with a long lag so the bank has to act 12-18 months early.
+
+### Price-Level Targeting
+
+Bank of Canada is exploring targeting price level because it provides certainty about long-term purchasing power of money. With inflation targeting being a band of 1-3% per year, investors have to plan for cumulative inflation of 28% to 109% in 25 years. With price-level targeting, the price level fo 164.06 is certain, but the central bank must allow inflation to be variable. If year one has 1% inflation, under inflation targeting, only 2% needs to be hit in the next. Under price-level targeting, a price level of 104.04 is sought and an inflation rate of 3% is tolerable.
+
+Price level targeting allows greater flexibility. If interest rates are raised to cool housing and inflation falls, there is still commitment that the long-term price-level will remain.
+
+The decision to use Price-Level targeting all comes down to the public's ability to plan and look ahead.
+
+### Other Ways to Boost Central Bank Credibility
+
+- Tough Central Banker: someone who strongly dislikes inflation
+- Incentives: losing job if targets are not met
+- Independence: evidence supports that independent central banks are more credible (with relation to annual inflation rate)
 
 ## Chapter 15 - Government Spending and Its Financing
 
-### Automatic Stabalizers
+### Government Sectors
 
+The total government sector is composed of:
+
+- federal
+- provincial
+- territorial
+- local/municipal
+  - School boards
+- Canada and Quebec Pension Plans
+
+### Government Expenditures
+
+Total government expenditure is 40% of GDP! (yikes).
+
+1. Purchases: spending for goods and services (schools, defences, infrastructure maintenance, public servants)
+2. Transfers: payments to individuals without a good/service in return (Old Age Security, Civil pensions, foreign aid, EI, social assistance)
+3. Interest Payments: paid to holders of government bonds
+
+Below is a table of government expenditures for countries with allegedly similar living standards.
+
+Country | 1987 | 2000 | 2019
+--- | --- | --- | ---
+France | 51.9 | 51.6 | 54.4
+Finland | 48.5 | 48.4 | 51.6
+Italy | 50.8 | 45.8 | 50.0
+Sweden | 62.3 | 55.1 | 49.6
+Norway | 50.5 | 42.3 | 48.3
+Germany | 45.8 | 45.1 | 44.2
+Iceland | 37.4 | 41.9 | 43.0
+Netherlands | 58.4 | 44.1 | 41.8
+United Kingdom | 43.6 | 39.1 | 41.0
+Canada | 46.1 | 40.5 | 40.9
+Average OECD | 40.4 | 38.4 | 40.2
+New Zealand | 53.6 | 38.1 | 38.3
+United States | 37.0 | 33.4 | 38.1
+Japan | 31.5 | 38.5 | 38.2
+South Korea | 17.7 | 22.4 | 36.6
+Australia | 38.9 | 33.9 | 35.0
+Ireland | 52.0 | 31.2 | 24.8
+
+Revenue comes from direct and indirect taxes.
+
+Revenue comes from direct (imposed on taxpayer such as personal income taxes, property taxes, and payroll taxes such as EI and CPP/QPP) and indirect taxes (25%) where the burden imposed on an entity is passed to another entity (e.g. sales tax, GST, HST).
+
+Budget break down:
+
+1. Good and Services: 1/4 of federal spending and 3/4 for other levels
+2. Transfer Payments: Greater proportion in federal than lower tiers
+3. Interest Payments: more important in federal but proportion wise lower-tier pay more
+
+Reminder that surplus = Tax Revenue (T) minus Government purchases (G) minus Transfers (TR) minus interest payments (INT)
+
+The **primary budget surplus** excludes interest payments. The importance of this concept is to answer the question on if the government can afford its current programs.
+
+### Automatic Stabilizers
+
+- GDP rises: taxes rise and spending falls without legislation
+  - Employment Insurance
+  - Income tax system
 - Higher government spending and deficits during recessions and lower spending during expansions and lower deficits
+- _full-employment surplus or deficit_ (or structural surplus/deficit): government budget balance if economy was at full-employment
+
+### Government Capital Formation
+
+- how does the government spend its resources
+- current items (police officers) versus capital items (mass transit systems)
+- a current deficit does not include capital spending but does include upkeep (fight against depreciation)
+- net lending = T - (G + TR + INT - dK + I) = saving + dK - I
+- net lending is usually higher then depreciation so net lending is less than saving
+- surplus that is based on current spending is higher than one that includes investment spending
+
+### Incentives and Taxes
+
+- If average taxes go up but marginal stays the same, labour goes up
+- if marginal goes up and average stays the same, less labour is supplied
+- Therefore, to keep people working, need to increase the lowest marginal rates?
+- **Distortions**: tax-induced deviations from the efficient free market outcomes
+- Distortions occur because of why people are motivated to work
+  - It seems that at the end of the day increasing taxes for average people does more harm
+- As income rises in Canada, benefits fall. The additional dollar may also result in losing the benefit
+  - High marginal tax rates and low average tax rates discourages labour supply and leads to **poverty trap**
+  - Disposable income does not increase as fast as earned income
+
+Why is it hard to eliminate the poverty trap?
+
+1. It means it costs money to subsidize low-income workers when they enter the labour force.
+2. Coordination from the federal and provincial governments as one is responsible for refundable income tax credits and the other administers social assistance
+    - My solution: federal government should not be directly transferring to individuals but only to provinces. The existence of a transfer to individuals by both the provincial government and a federal government indicates redundant wealth transfers that can be delegated to the provincial government as the federal government's duties are about laws, national defence, and economic guidance
+
+**tax rate smoothing**: maintaining stable tax rates to minimize distortions
+
+Arthur Laffer curve: government revenue is 0 at both 0% and 100% tax rates. At a certain point, an increase in the tax rate causes a decrease in the tax base.
+
+In 2013, a study found that 5 of 10 province corporation tax rates were higher than optimal collection (Saskatchewan, New Brunswick, Nova Scotia, Newfoundland and Labrador, and PEI).
 
 ### Deficits and Debt
 
-- change in debt-gdp ratio: deficit ratio divided by the GDP
+- debt: total value of government bonds outstanding since bonds are used to finance debt
+  - net of debt owed to government via financial assets
+- debt-GDP ratio: debt outstanding over GDP
+- the budget deficit equals the change in the nominal value of the government bonds outstanding
+- change in debt-gdp ratio:
+  - = (G + TR - T) / Y (budget deficit ratio) + (interest rate - growth rate) * (previous debt-GDP ratio)
+  - = deficit ratio divided by the GDP
 - If GDP increase by 2%, then do deficit ratio / (GPD * (1 + 2%))
 
-### Seigniorage
+---
 
-The revenue governments make because there is a difference in the cost to produce and the value of the money it is creating
+- there is a view that the billions in debt will need to be paid by children and grand children via taxes so government borrowing robs the future
+  - caveat: bonds are owned by Citizens therefore future payers of debt are already the ones being the recipients of the interest and principal\
+  - issue 1: higher tax rates and current budget deficits will lead to a distortion
+  - issue 2: most people hold no or little bonds but will be the ones paying higher taxes to pay debt than receiving interest. may have fewer public services
+    - bond holders are richer on average
+  - issue 3: government deficits reduce national saving and thus economy accumulates less domestic capital and foreign assets; lower standard of living for future generations. David Johnson of WLU concluded that debt accumulation from 1975 - 1996 resulted in lower incomes of 3-10%. Cos of $57 to $189B
+
+[is the debt war over?](https://www.mcgill.ca/economics/files/economics/introductory_essay.pdf)
 
 ### Departures from Ricardian Equivalence
 
+Assumption is that the same people paying taxes today will be responsible for paying back the debt that the government accumulated during their life. The argument that the equivalence would hold is that the current generation would save out of the goodness of their hearts to help the next generation BUT it will still appear unfair either in the sense that the next generation earns less and pays more in taxes and thus is looked down upon by the current generation as being too stupid to earn more.
+
 Reasons it may fail:
 
-1. borrowing constraints
-2. shortsightedness
-3. failure to leave bequests, and
-4. non-lump-sum taxes
+1. borrowing constraints: many people would consume more if lenders existed
+2. shortsightedness: people don't get that they will pay for the government's debt
+3. failure to leave bequests: no inheritance because they believe children will be richer
+4. non-lump-sum taxes: level and timing of tax cuts have effect on the economy
+
+### Deficit and Inflation
+
+- deficit causes higher AD, higher price levels, and lower desired national saving (IS upward)
+- can lead to ongoing increases in money supply
+  - central bank funds the government's borrowing instead of taxes or public borrowing
+  - seigniorage: the revenue governments raise from printing money (only for governments with the right to issue money)
+  - finance department or treasury authorizes borrowing &rarr; new bonds are issued &rarr; central bank is asked to purchase &rarr; new currency issued (monetary base increases)
+
+> Heavy reliance on seignorage usually occurs in war-torn or developing countries, in which military or social conditions dictate levels of government spending well above what the country can raise in taxes or borrow from the public
+
+What happened during 2020 in Canada though? Hmmm.
+
+## Chapter 6 - Long-Run Economic Growth
+
+- small differences in growth rates lead to large differences in the average person's income
+- since 1973, industrialized countries experienced a sustained slowdown; significant slowdown of productivity growth
+  - argument one: no slowdown bu measurement error (failing to measure improved quality of capital inputs - like computers)
+    - my take: probably this since desktops came in 1970s and they only got cheaper and better over time. It's easy to fail to adjust the value of today's computers and electronics to as high as they used to be. Especially as price data is lost and competition is rife. Old technology was measured so high but it's output would be worth $0 today
+  - argument two: large increase in oil prices since the timing and universal effect is there but productivity did not surge back up after oil prices came down
+    - this did reduce productivity, obviously but by the time prices went up, computers started taking over
+
+> No one understands completely why economies grow, and no one has a magic formula for inducing rapid growth. Indeed, if such a formula existed, there would be no poor countries
+
+### Sources of Economic Growth
+
+- elasticity of output with respect to capital (alphaK)
+- elasticity of output with respect to labour (alphaN)
+- growth accounting equation:
+
+growth rate of output = growth rate of productivity + alphaK \* growth rate of capital + alphaN \* growth rate of labour
+
+- Measure of growth need to be adjusted for skilled
+- Using historical data, alphaK = 0.3, alphaN = 0.7
+- East asian miracle: growth attributed to capital and labour growth rather than productivity growth
+  - higher labour participation
+  - higher national saving
+- due to diminishing returns, productivity is key for sustained growth
+
+### Neoclassical Growth Model
+
+- 1950s Solow–Swan model
+- Nt: number of workers available in year t (growth = n)
+- Kt: capital stock in year t
+- Consumption\_t = Output\_t - Gross Investment\_t
+- yt = Yt / Nt = output per worker
+- ct = Ct / Nt = consumption per worker
+- kt = Kt / Nt = capital stock per worker (capital-labour ratio)
+
+Production: Y = At * F(Kt, Nt); yt = At f(kt)
+
+---
+
+- Steady states: long-run
+  - output per worker, consumption per worker, and capital stock per worker are constant (everything grows at rate n)
+  - It = (n + depreciation)Kt
+  - Ct = Yt - (n + d)Kt
+  - c = Af(k) - (n +d)k
+  - Golden Rule capital-labour ratio: KG required to Maximize consumption per worker
+  - essentially, for higher capital-labour ratios, increases in the ratio lead to less consumption due to maintaining the high ratio
+- Reaching the steady state
+  - Saving t = s (constant) Yt
+  - sYt = (n + d)Kt \[steady]
+    - this constraint fixes the capital-labour ratio unless there is a change in population growth, saving rate, or productivity
+  - sAf(k) = (n + d)k \[steady]
+  - usually below the golden rule steady state
+
+### Long-Run Living Standards
+
+- living standards: output, consumption, and capital per worker
+- higher saving rate: higher long-run output due to larger capital sock ( sAf(k) curve shifts up)
+- increase in population growth rate: causes long-run output to fall since more output is used to equip workers with capital rather than for consumption; (n+d)k curve shifts up
+- increase in productivity: increases output, incomes, saving, capital stock; y = Af(k) curve shifts up
+
+### Endogenous Growth Theory
+
+- neoclassical growth model assumes, rather than explains, the behaviour of the crucial determinant of the long-run growth rate of output per capita.
+- human capital: invest in people and thus productivity increases and if physical capital and human capital are correlated, then marginal productivity of capital does not need to diminish
+- R&D generates technical know-how which is productive and offsets capital productivity declining
+
+### Environment and Economic Growth
+
+- U shaped
+- China example of air quality declining and now improving
+
+### Long-Run Growth Policies
+
+- affecting the savings rate
+  - if there is no discrimination against individuals spending or saving, savings rate freely chosen should be optimal in balancing short-term pain for long-term gain
+  - Canadians save too little and policy should raise saving rate
+  - if real interest rate affects saving, hen a tax change that increased the real return would work
+  - taxing consumption and not income; too small of a response
+  - require people to save (e.g. CPP)
+  - government saving, but can deficit spending on infrastructure work?
+- democracy
+  - relative to dictatorships: less wars, better relations, pro-investment
+  - economic growth?
+    - India (democracy) vs. China (one-party)
+    - Jenny A. Minier: used control groups and compared countries that transitioned from/to democracy
+- affecting productivity rates
+  - quality of nation's infrastructure and productivity
+    - highways, bridges, utilities, dams, airports
+    - has to complement activities of the private sector
+      - e.g. lowering transportation costs
+    - public–private partnerships
+  - human capial and productivity
+    - education, worker training/relocation, health
+    - Specific programs should be examined carefully to see whether benefits exceed costs
+    - **entrepreneurial skill**: building successful new business or new products tto market
+      - remove unnecessary barriers to entrepreneurial activity (excessive red tape)
+  - research and development
+    - research councils
+    - scientific and technical progress, even commercially oriented
+    - government does 25% of R&D spending which has fallen since 1963 (worst in G7)
+    - government should fund more masters, phds, and research rather than rely on tax credits
+  - industrial policy
+    - influence countries pattern of industrial development through taxes, subsidies, or regulation
+    - promote high-tech industries
+    - borrowing constrains: startups can' financing projects
+    - spillovers: one company bears cost of the breakthrough while others do the cheaper improvements
+      - subsidy or patents
+    - dangerous since not easy to pick the winning tech and could support political supporters not economic promise
+  - market policy
+    - extent of intervention in the markets
+    - spectrum between communism and capitalism
+    - possibility of monopolies and oligopolies to emerge
+    - unattractive: medical care
+  - social insurance
+    - well-designed social net is important for redistributing economic gains and when there is a fallback, greater risk can be taken to strive for growth

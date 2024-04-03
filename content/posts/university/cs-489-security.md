@@ -8,12 +8,6 @@ tags:
   - computer-science
 ---
 
-<!--
-[Learn uWaterloo](https://learn.uwaterloo.ca/d2l/le/content/1005130/Home)
-
-[Course Website](https://cs.uwaterloo.ca/~m285xu/courses/cs489-w24/)
- -->
-
 ## Introduction
 
 ### Assignments

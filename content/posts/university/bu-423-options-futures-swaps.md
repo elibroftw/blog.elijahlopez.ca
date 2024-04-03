@@ -425,7 +425,7 @@ COUPON_FOR_PERIOD e^(-HALF_YEAR_CTN_CMPDNG * 0.5) + 3e^(-r*1) = 97
 - Predetermined rate RK is exchanged for interest at the LIBOR rate
 - FRA can be valued by assuming the forward LIBOR interest rate RF is certain to be realized
 - Value = Present Value of the difference between the forward LIBOR interest rate (RF) and the interest paid at the FRA rate RK
-- `(RF - RK) * Price * length of the contract` and then discount to 0 from T2
+- `(RF - RK) * Principal * length of the contract` and then discount to 0 from T2 at the risk free rate?
 - Use case: floating rate payment in the future but you want to make sure you are paying a fixed rate
   - the receiver will want a premium for receiving
 
@@ -453,7 +453,7 @@ A financial manager needs to hedge against a possible decrease in short-term int
 - Interest paid on $1 for 180 days: 0.0614 * 0.5 = 0.0307
 - Interest paid on $1 for 90 days: 0.06 * 0.25 = 0.015
 - Expected interest paid on $1 from 3x6 (compounded from 90-day): (1.0307 / 1.015 - 1)
-- Expected interest rate for 3x6 (compounded from 90): (1.0307 / 1.015 - 1) / 0.25 + 1 = 6.19%
+- Expected interest rate for 3x6 (compounded from 90): (1.0307 / 1.015 - 1) / 0.25 = 6.19%
 
 ### Theories of the Term Structure
 
@@ -519,7 +519,7 @@ Value:
 
 Where I is the present value of the income during life of forward contract
 
-### Know Yield
+### Known Yield
 
 <img class=equation src="https://latex.codecogs.com/svg.image?F_0=S_0e^{(r-q)T}" alt="F_0=S_0e^{(r-q)T}">
 
@@ -1142,6 +1142,7 @@ How to solve?
 1. Find relationship of portfolio to index.
     - The portfolio return is the value that fell plus the pro-rated dividends that was received
     - Then use this return to calculate the situational return on the index and subtract the dividend yield
+      - Do do this use CAPM formula
     - This nominal value on the index is the strike price we want to purchase of the put
 2. Find number of puts to purchase
     - puts to purchase to cover initial portfolio: Beta \* Vp / (Vidx * 100) wher Vp and Vidx are current values
@@ -1150,6 +1151,11 @@ How to solve?
 
 - NASDAQ OMX
 - Used for buying insurance when exposed to FX
+- Lower bound is equivalent to european options with dividends
+
+<img class=equation src="https://latex.codecogs.com/svg.image?c>=max(S_0e^{-r_fT}-Ke^{-rT}, 0)" alt="c>=max(S_0e^{-r_fT}-Ke^{-rT}, 0)">
+
+<img class=equation src="https://latex.codecogs.com/svg.image?p>=max(Ke^{-rT}-S_0e^{-r_fT}, 0)" alt="p>=max(Ke^{-rT}-S_0e^{-r_fT}, 0)">
 
 ### Range Forward
 
@@ -1188,15 +1194,18 @@ How to solve?
 
 - the futures option and spot options are equal at maturity
 - spot options are regarded as futures options when valued over the counter
+- when futures prices decrease with maturity, American call futures are worth less than the corresponding American call on the underlying asset
+- American futures options are never equal to European futures options unless it's the last day of exercising
 
 ### Put-Call Parity for European Futures Options
 
 <img class=equation-tall src="https://latex.codecogs.com/svg.image?c+Ke^{-rt}=p+F_0 e^{-rt}" alt="c+Ke^{-rt}=p+F_0 e^{-rt}">
 
-### Riskless Futures Option Portfolio
+### Binomial Riskless Futures Option Pricing
 
+- 1 month out
 - 3Delta - 4 = 2 Delta &rarr; Long Delta futures of 0.8
-- With a risk-free rate of 6%, the value of the portfolio is -1.6e^{-0.06/12} = -1.592
+- With a risk-free rate of 6%, the value of the portfolio is (2 * 0.8)e^{-0.06/12} = -1.592
 - Value of the options must be 1.592 since the value of the futures is 0
 
 The portfolio is risk-less when
@@ -1207,9 +1216,12 @@ The portfolio is risk-less when
 
 - Delta = change in option price with relation to underlying
 - Vega or Lambda: change in option price with relation to underlying implied volatility
+  - if volatility goes up and price of underlying stays the same, both the put and call options go up in price
 - Theta: change in option price with relation to time
+  - If gamma and delta are 0, then the portfolio is risk-neutral and should be appreciating at the risk-free rate
 - Rho: change in option price with relation to interest rate
 - Gamma: Change in option's **delta** in relation to stock price change (2nd derivative)
+  - Positive for long puts and calls since if price goes up, delta will go up for call obviously, but also up for put since less short is needed in underlying
 
 ### Stop-Loss Strategy
 
@@ -1292,6 +1304,249 @@ futures is e^{-(r-q)T} times the position required in the spot contract
 - As portfolio value increases, delta goes down and so original portfolio is repurchased to some extent
 - As portfolio value decreases, more of portfolio is sold
 
+## Chapter 22 - Exotic Options
+
+- Packages
+- Nonstandard American options
+- Gap options
+- Forward start options
+- Cliquet options
+- Compound options
+- Chooser options
+- Barrier options
+- Binary options
+- Lookback options
+- Shout options
+- Asian options
+- Options to exchange one asset for another
+- Options involving several assets
+
+### Packages
+
+- Portfolios of standard options
+- Examples from Chapter 11: bull spreads, bear spreads, straddles, etc
+- Example from Chapter 15: Range forward contracts
+- Packages are often structured to have zero cost
+
+### Nonstandard American options
+
+- Bermudan: exercisable on specific dates
+- initial lock out period
+- strike price changes over life
+
+### Gap Options
+
+- Call option pays (ST - K1) when (S > K2)
+- Put option pays (K1 - ST) when (S < K2)
+- Valuation formula found in Chapter 22
+
+### Forward Start Options
+
+- Option starts at a future time T
+- Often structured so that strike price equals asset price at time T
+- Planning to give employees at-the-money options in each future year can be regarded as a series of forward start options
+
+### Cliquet Option
+
+- rules determine how the strike price is determined
+- for example, 20 at-the-money three-month options (total life of five years)
+- When one option expires, a similar one comes into existence
+
+### Compound Options
+
+- An option on an option
+- Call on call
+- Put on call
+- Call on put
+- Put on put
+- Very sensitive
+
+### Chooser Options
+
+- start at 0, mature at T2
+- at T1, buyer can choose whether the option is a put or a call
+- this is a package
+- p = c + e^{-r(T2-T1)}K - S1 e^{-q(T2-T1)}
+- At T1, c + e^{-q(T2-T1)} max(0, Ke^{-(r-q)(T2-T1)} - S)
+- call maturing at T1 plus put maturity at T1
+
+### Barrier Options
+
+- in: option comes into existence only if asset price hits barrier before option maturity
+- out: option are knocked out if asset price hits barrier before option maturity
+- up: asset price hits barrier from below
+- down: asset price hits barrier from above
+- eight possible combinations (put or call)
+- parity
+  - c = cui + cuo
+  - c = cdi + cdo
+  - p = pui + puo
+  - p = pdi + pdo
+
+### Binary Options
+
+- Cash-or-nothing: pays Q if S > K at time T. Value = e^{-rT}QN(d2)
+- Asset-or-nothing: pays S if S > K at time T, or nothing. Value = S0e^{-qT}N(d1)
+
+### Lookback Options
+
+- Floating call: Pays ST – Smin at time T
+  - Allows buyer to buy stock at lowest observed price in some interval of time
+- Floating put: pays Smax - ST at time T
+  - Allows buyer to sell stock at highest observed price in some interval of time
+- Fixed call: pays maximum observed asset price minus strike price
+- Fixed put: pays strike price minus minimum observed asset price
+
+### Shout Options
+
+- Able to lock in a price once during the life
+- Usually pays like a call or a put but also the intrinsic value at the shout time
+
+### Asian Options
+
+- Payoff related to average stock price
+- average price
+
+### Options to Exchange
+
+- One asset for another
+- Payoff is price difference between the assets
+
+### Basket Options
+
+- option on the value of a portfolio
+
+### Mortgage-Backed Securities
+
+- Pass-Through
+- Collateralized Mortgage Obligation (CMO)
+- Interest Only (IO)
+- Principal Only (PO)
+
+### Variations of Interest Rate Swaps
+
+- different principles
+- different payment frequencies
+- floating for floating or fixed for fixed
+
+### Compounding Swaps
+
+- Business Snapshot 22.2
+- Interest is compounded instead of paid
+
+### Complex Swaps
+
+- LIBOR-in-arrears swaps
+- CMS and CMT swaps
+- Differential swaps
+
+### Equity Swaps
+
+- Business Snapshot 22.3
+- Total return on equity index is exchanged for a fixed or floating return
+
+### Embedded Swaps
+
+- Accrual swaps
+- Cancelable swaps
+- Cancelable compounding swaps
+
+### Other Swaps
+
+- Indexed principal swap
+- Commodity swap
+- Volatility swap
+- Bizarre deals: P&G 5/30 swap
+- P&G receiving 5.3% interest on $200M for 5 years semi-annually
+- P&G would pay back the 30-day commercial paper rate minus 75 basis points plus spread
+- spread = max (0, 98.5 * (5 year commercial constant maturity rate) / (5.78%) - 5 year treasury price) / 100
+
+### Chapter 8 - Secularization
+
+- traditionally loans are funded via deposits
+- loans can increase much faster than deposits
+- Assets are combined and sold in tranches
+  - Senior Tranche 80% (ABSs)  - AAA
+  - Mezzanine Tranche (15%) - BBB - ABS CDO Created
+    - Senior Tranche (65%) - AAA (does not convey actual risk)
+    - Mezzanine Tranche (25%) - BBB
+    - Equity Tranche (10%)
+  - Equity Tranche - Not Rated
+  - Bankruptcies wipe out from equity first
+- Asset cash flows go first to senior, then mezzanine, then equity
+
+### What Led to the Financial Crisis
+
+- Starting in 2000, mortgage originators relaxed lending standards and created large subprime first mortgages
+- demand for real estate and prices rose
+- 100% mortgage
+- ARMs
+- teaser rates
+- no income, no job, no assets (NINJAs), ARMs, teaser rates, liar loans, **non-recourse borrowing** (repossession)
+
+### What was not accounted for
+
+- Default correlation increase in stressed market conditions
+- Recovery rates are less in stressed market conditions
+- Tranche with a certain rating cannot be equated with a bond with the same rating
+  - BBB tranches used to create ABS CDOs were 1% wide nad had all or nothing distributions
+  - not the same as the loss distribution for a BBB bond
+
+### Regulatory Arbitrage
+
+- capital required to keep for the tranches was less than the mortgages themselves
+- mortgage originators: only cared about originating mortgages that can be securitized
+- Valuers: under pressure to provide high valuations to keep business
+- traders: focused on year-end bonus and not long term
+
+### Aftermath of Financial Crisis
+
+- Banks required to hold more equity capital with the definition of equity capital being tightened
+- Banks required to satisfy liquidity ratios
+- CCPs and SEFs for OTC derivatives
+- Bonuses limited in Europe
+- Bonuses spread over several years
+- Proprietary trading restricted
+
+## Chapter 25 - Derivative Mishaps
+
+### Losses by Non-Financial Corporations
+
+- Allied Lyons ($150M)
+- Gibsons Greeting ($20M)
+- Hammersmith and Fulham ($600M)
+- Metallgesellschaft ($1.8B)
+  - Promised client long term supply of oil at certain prices
+  - Sold hedge at the bottom and then the hedge was useless
+- Orange County ($1.6B)
+  - Robert L. Citron was making excess returns
+  - Reverse repos
+  - Borrowed money in short-term and invested in short-term markets
+  - Took new assets and put them up as collateral to buy in long-term securities
+- Procter and Gamble ($90M)
+- Shell ($1B)
+- Sumitomo ($2B)
+  - Trader at Sumitomo was trying to recoup losses through copper
+
+### Losses by Financial Institutions
+
+- Allied Irish Banks ($700M)
+- Amaranth ($6B)
+- Barings ($1B)
+- Enron's counterparties (billions)
+- Kidder Peabody ($350M)
+- LTCM ($4B)
+  - high leverage
+  - exposure to 1997 Asian financial crisis and 1998 russian financial crisis
+- Midland Bank ($500M)
+- Societe Generale ($7B)
+- Subprime morgages (tens of billions)
+- UBS ($2.3B)
+
 ## Chapter 19 - Volatility Smiles
 
 For options with some maturities, the implied volatility versus the strike price makes a smile.
+
+## Final Exam
+
+- 25 Multiple Choice

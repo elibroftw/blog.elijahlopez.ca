@@ -1303,11 +1303,16 @@ If companies are motivated to meet or beat EPS via manipulation, EPS loses relev
 
 ### Basic EPS
 
-Actual earnings over the weighted average number of common shares outstanding
+Income available to common shareholders (remove preferred dividends) over the weighted average number of common shares outstanding
+
+- apply stock splits retroactively when calculating weighted average
 
 ### Diluted EPS
 
-Considering dilutions due to complex financial instruments at play.
+- Considering dilutions due to complex financial instruments at play.
+- Add dilutive securities one at a time based on most dilutive to least dilutive (order matters)
+- Do not include securities that increase the EPS
+  - If options dilute EPS but then convertible bond increases EPS, include only the options dilution
 
 ### EPS IFRS vs ASPE
 
@@ -1384,7 +1389,7 @@ Summary: Calculate situational net income by adding back the interest paid for t
   - Call: just need to issue shares
   - Put: need to purchase shares
 
-### Treasury Stock Method
+### Written Call Options - Treasury Stock Method
 
 Impact of written call options on EPS numbers
 
@@ -1397,7 +1402,7 @@ Suppose the market price is $28 and the strike price is $20 and 5000 call option
 
 Shares to be issued = (5000 - 5000 * 20 / 28) = 1429
 
-### Reverse Treasury Stock Method
+### Written Put Options - Reverse Treasury Stock Method
 
 Impact of written put options on EPS numbers.
 
@@ -1407,6 +1412,28 @@ Impact of written put options on EPS numbers.
 Suppose 1,500 put options with a strike price of $30 were exercised when the market price was $20.
 
 Shares issued: (1,500 * 30 / 20 - 1500) = 750
+
+### Diluted EPS - Comprehensive Example
+
+- net income of $5MM year ended June 30, 2023
+- 500,000 common shares outstanding
+- average market price of $50
+- tax rate of 25%
+- written call options to buy 100,000 common shares at $45/share
+- 100,000 preferred shares convertible to 150,000 common shares with $10 per share dividends
+- 4% convertible bond face value of $30MM issued on par, $1000 convertible to 25 common shares
+
+<details><summary>Solution</summary>
+
+- Net Income Available to Common Shareholders = $5MM - 100000 \* 10 = $4MM
+- Basic EPS = $4MM / 500,000 = $8
+- With written options: 100,000 - 4,500,000 / 50 = 10,000 diluted shares
+- With convertible preferred shares: $5MM / 650,000 = 7.69
+- With convertible bond: ($4MM + (30MM \* 0.04) \* (1 - 0.25)) / (500,000 + 30_000_000/1000 \* 25) = $3.92
+- Order: Options, Convertible Bond, Convertible Preferred Shares
+- Conclusion: Convertible preferred shares not included at the end since it did not dilute EPS further
+
+</details>
 
 ## Chapter 20 - Leases
 
@@ -1472,10 +1499,12 @@ Since the space can change, it cannot be identified and so there is no lease.
 
 ### Lease Payment Required for a Rate of Return
 
+The fair value of an asset is the present value. We need to determine the annuity payment such that the factor times the payment equals the fair value minus any present value of the term-end option payment.
+
 - Variables
   - Lessee's credit standing
   - Length of the lease
-  - Status of residual value (guaranteed or unguaranteed)
+  - Status of residual value (guaranteed or non-guaranteed)
   - Income tax effects
 - Initial costs added to investment ot be recovered (similar to initial capex in a DCF)
 - Deduct: PV of the purchase option and PV of the residual value
@@ -1671,12 +1700,23 @@ Unearned Interest Income Dr. 5,964
   Interest Income Cr. 5,964
 ```
 
-## Pensions
+### Lease Comprehensive Example
+
+Two years, end of year payments. $13,000 option to purchase at end of term. Fair value of $135,000. Residual value of $13,000. Lessee pays $5,000 per year in insurance costs. 10% rate of return by the lessor.
+
+- Lease payment = (135,000 - 13,000 / 1.1^2) / (Annuity \[Due] Factor) = 71595
+- Lease receivable: the fair value plus the residual value
+- Lessor:
+  - Need to expense executory costs
+  - Interest income is the interest on the net investment
+  - Unearned interest income once lease has been initiated
+- Right-of-use asset
+  - PV of the lease payment plus PV of the exercise price = 135,000
+
+## Chapter 19 - Pensions and Post Employment Benefits
 
 - post-employment benefits (IFRS)
 - Employee Future Benefits (ASPE)
-
-## Chapter 19 - Pensions and Post Employment Benefits
 
 - Notes:
   - Past Service Costs

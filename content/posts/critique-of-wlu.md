@@ -130,6 +130,10 @@ std_dev = sqrt(variance)
 
 ### EC 250 -  Macro-Economics 2 is Crammed
 
+> First, defraying the costs that low-income workers face when entering the labour force costs money.
+
+This is headache of a sentence straight from the textbook. So much redundancy and it's so hard to parse. What does it mean? It means it costs money to subsidize low-income workers when they enter the labour force.
+
 I'm in 5A and I'm taking EC-250 because it's a pre-requisite to fixed income but I'm also interested in macro-economics. This is one of the few times where I have felt constant pressure and burnout throughout the term. Maybe only 2 weeks of breathing room and this course was responsible for the stress. The expectation was to read an entire chapter, sometimes two, then do homework, and then do a quiz. When things got tough, I just resorted to reading the instructors "summaries" which were also filled with word vomit. My notes are most definitely filled with word vomits. Somewhere along the line, conceptual teaching was thrown out in favour of memorization. I suggest Macro-Economics 1 and 2 be taught in first year where the load is balanced between the two.
 
 The difference between the courses is that Macro Economics 1 is abstracted whereas Macro Economics 2 answers where the abstractions come from which is just as important and more enlightening. Generally speaking, macro-economics 1 and 2 should cover the following:
