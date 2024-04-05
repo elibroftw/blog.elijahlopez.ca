@@ -43,6 +43,14 @@ jobs:
         run: |
           hugo --minify
 
+      - name: Add CNAME
+        run: |
+            if [ ! -f public/CNAME ]; then
+              # install yq
+              sudo wget https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 -O /usr/bin/yq && sudo chmod +x /usr/bin/yq
+              yq '.baseUrl' config.yaml | cut -c 9- | sed 's/\/$//' > public/CNAME
+            fi
+
       - name: Deploy public dir to gh-pages branch
         if: github.ref_name == github.event.repository.default_branch
         run: |
