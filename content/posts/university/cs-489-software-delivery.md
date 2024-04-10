@@ -235,7 +235,6 @@ post-receive | Runs after update completion, can be used to broadcast or create 
 ### Families of Build Tools
 
 - [slides](https://learn.uwaterloo.ca/d2l/le/content/1005130/viewContent/5356971/View)
-- [reading](https://is.gd/rzymTT)
 - low-level tools: define deps and rules for each input and output file
 - abstraction-based tools: derive low-level build code from high-evel data. e.g., maps of sources files to executables
 - framework-driven tools: default behaviour is assumed unless explicitly overridden
@@ -243,6 +242,10 @@ post-receive | Runs after update completion, can be used to broadcast or create 
   - how do we do this for rust?
 - Dependency management tools
 - Testing frameworks (CS 447)
+
+[A Large-Scale Empirical Study of the Relationship between Build Technology and Build Maintenance](https://is.gd/rzymTT)
+
+> modern, framework-driven build technologies need to be maintained more often and these build changes are more tightly coupled with the source code than low-level or abstraction-based ones. However, build technology migrations tend to coincide with a shift of build maintenance work to a build-focused team, deferring the cost of build maintenance to them.
 
 ## Low-level Build Systems
 
@@ -737,6 +740,103 @@ An experimental design has subjects in a control group which does not receive tr
 
 Hypothesis formulation is to improve a bottom line measurement such as the click through rate. Two versions of the application are deployed and tested against.
 
+Statistical hypothesis testing:
+
+- want to disprove something not accept something (null hypotheses)
+  - in software: click through rates on ads, performance (memory, CPU, I/O, network)
+- used to check if two samples are derived from the same distribution
+- statistical test is a _p-value_
+- compare p-value to alpha (threshold) value
+- if the p-value is less than alpha, the null hypothesis should be rejected
+  - Fisher's test: null hypothesis is that the lady cannot detect milk-first
+  - Hypergeometric distribution: determine what what probability of high success is like (e.g. meeting something that would otherwise be 5%)
+  - Software: click-through rate in A and B are drawn from the same population
+
+Contingency table:
+
+| | Session w/ clicks | Sessions w/o clicks | Row total
+Control (A) | a | b | a + b
+Treatment (B) | c | d | c + d
+column total | a + c | b + d | a + b + c + d
+
+`p = (a + b Choose a) * (c + d Choose c) / (N choose a + c)`
+
 ### Canary Releases
 
+partial, time-limited deployment of a change in a service, followed by evaluation of the safety. Production may then be rolled forward, backward, or alert someone
+
+- coal mines often contain noxious gases
+- early warning system: bring caged canary (bird) and the bird would die
+- software releases introduces some risk and we want to minimize impact of deploying to a global userbase
+- solution: distribute on a _canary_ channel and if it _dies_, make sure not to roll it out further
+
+decision-making
+
+- how to deploy partial service changes
+- what safety metrics to collect
+- how to compare metrics
+- what is a _dead canary_
+
+[Canary Analysis Service](https://is.gd/8xeKzf)
+
+- Canary Analysis Service by Google that analyzes key metrics
+- Modifying versus Analyzing production
+- conducts an A/B test of "is the canary meaningfully worse"
+- default tooling integration and zero configuration option
+  - concessions in analysis quality
+  - no canary setup: rollout tool exposes canary to subset of population and remainder is the control and then asks CAS for the result
+- Remote Procedure Calls are used (RPCs)
+- API spec is that GetResult starts the analysis and blocks until complete. Since result for the same id is the same, the function is idempotent and so additional calls don't trigger anything but return the same result
+- Returns PASS/FAILL
+- check: combination of canary and control time series that can eb turned into PASS/FAILL
+  - crash rate, RPC error ratio, dataset size
+- each evaluation request has multiple trials so there are a collection of checks. all checks must PASS
+- configuration: what is the check called, how to get the time series for said check, how to turn a time series into a verdict, additional metadata
+  - Monarch is the source of monitoring data
+  - Abstract query turns into specialized query for particular population
+  - Common queries provided
+- Coordinator
+  - Transactionally takes ownership of an evaluations
+    - if failed, the RPC is re-routed to the canonical coordinator
+  - Processes evaluations in memory
+  - Has a queue of RPCs that are awaiting the evaluation
+  - Updates the database after finishing
+  - Model component: predicted behaviours so predicted failure is not on the canary
+  - Checkpoints are made in case coordinator dies
+  - Autoconfiguration
+
 ### Chaos Engineering
+
+- hard to predict production conditions
+- rare environments lead to catastrophic failures
+- improper fallback settings when service is down
+- retry storms (improperly tuned timeouts)
+- downstream dependency failure
+  - leftpad incident
+  - event-stream bitcoin mining exploit
+- cascading failures
+- What to do?
+  - sensitivity to change
+  - mimic chaos of real world deployment environment
+  - introduce experiment of: server crashes, hard disk failures, cleaning staff knocks network cable out of server
+  - compare to steady state version
+
+[Chaos Engineering](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=7436642)
+
+- Chaos monkey: randomly terminate cloud nodes. Simulate potential outages during work hours
+- Chaos Kong: can fail an entire region of EC2 instances on AWS. Runs monthly.
+- Failure Injection Testing (internal service failures)
+- Premise one: collection of services are viewed as a single system
+- Premise two: inject real-world inputs to better understand the system
+- Netflix:
+  - stream starts per second
+    - varies during the day but there is intuition whether it is within the standard range of variation
+  - new account signups per second
+- happy path: inputs that do not error out
+  - not good because it does not account for real possibility of unlikable inputs
+- failures of traditional testing:
+  - overloaded server &rarr; queue becomes longer and response slows down, and higher memory usage
+  - clients make requests to a cache that has cached a transient error
+  - integration testing required for the complex interactions
+    - sometimes only possible in production
+- netflix runs chaos experiments continuously
