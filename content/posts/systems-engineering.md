@@ -175,7 +175,12 @@ Protocols including Internet Protocol originated from US Dept. of Defense's ARPA
 
 ## System Resources
 
-### Containers are More than Isolation
+### Containers
+
+- Docker
+  - Isolate the process
+- Control Groups (cgroups)
+  - Allow the system to control access to system resource (meter, limit, restrict)
 
 Containers aren't just for isolating applications and ensuring "it will run everywhere." Containers can also be used to make it easier to allocate a system's resources.
 
