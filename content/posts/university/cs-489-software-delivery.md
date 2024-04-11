@@ -9,39 +9,10 @@ tags:
 
 ## Summary
 
-- Want to deliver software faster with less big changes
-- Continuous Integration: Find issues in patches continuously (after commits), to reduce the costs due to the developer's memory fading (context switching)
-
-## Logistics & Introductions
-
-[Slides](https://learn.uwaterloo.ca/d2l/le/content/1005130/viewContent/5333551/View)
-
-- Slides include: calendly link, piazza
-
-### Grade Breakdown
-
-- In lab tasks (12%) in MC 3003: Jan 17th, Jan 31st, Feb 28th, Mar 13th
-- Project (28%) with 5 students
-  - Report on existing github project's pipeline, limitations, and improvements (5%)
-  - Improvement and reports 15%
-  - Final presentation
-- Midterm (20%)
-  - Can bring one filled 8.5" x 11 paper sheets double sided
-- Final Exam (40%)
-  - Can bring two filled 8.5" x 11 paper sheets double sided
-
-Due dates: February 16th, March 22nd, 3rd
-
-What the fuck is Google's bazel.
-
-### Course Introductions
-
-- [Course outline](https://cs.uwaterloo.ca/~s4mcinto/courses/CS489/1241/)
-- [Poll](https://is.gd/vp1t2J)
-
 In the past, software delivery used to be walled. Each team would be just hand off their work output to the next team and not care about the end product.
 
-What is (continuous) integration fundamentally.
+- Want to deliver software faster with less big changes
+- Continuous Integration: Find issues in patches continuously (after commits), to reduce the costs due to the developer's memory fading (context switching)
 
 ### Design and Implementation of Release Pipelines
 
@@ -588,7 +559,7 @@ Midterm Cutoff
     - Bare metal, where the hypervisor is running on hardware
     - Hosted: a host OS is running on the hardware which runs the hypervisor
   - ESX Server: run VMs without a host OS
-  - GSX SErver: run VMs on Windows
+  - GSX Server: run VMs on Windows
   - Workstations: Run VMs on Unix
 - 00s and 10s
   - Containers
@@ -641,6 +612,7 @@ CMD bundle exec jekyll serve
 
 </details>
 
+- `docker build .`
 - `docker run --rm -p 4000:4000 tagOrId`
 - use '--rm'  to remove container after it has stopped
 - use `-d` for daemon command
@@ -677,6 +649,7 @@ Technologies: puppet, chef, terraform, ansible, SaltStack
 
 - Quest exercises were done
   - ssh password for nodes is puppet
+- Use `sudo puppet resource` to check a resource such as `package httpd` or `file /tmp/test`
 - To use a module for a node, you need to include it or instantiate the class inside `site.pp`
   - `/etc/puppetlabs/code/environments/production/manifests/site.pp`
 - Validation: `puppet parser validate pasture/manifests/init.pp`
@@ -686,7 +659,6 @@ Technologies: puppet, chef, terraform, ansible, SaltStack
 
 ```puppet
 # /etc/puppetlabs/code/environments/production/manifests/site.pp
-# /etc/puppetlabs/code/environments/production/modules/pasture/manifests/init.pp
 node 'pasture.puppet.vm' {
   class { 'pasture':
     default_character => 'bunny',
@@ -783,7 +755,7 @@ Templates
 - A profile is a class that declares one or more related component modules and sets their parameters as needed. The set of profiles on a system defines and configures the technology stack it needs to fulfill its business role.
   - The purpose of profiles is to avoid duplicating parameters when including a class for various nodes
 - A role is a class that combines one or more profiles to define the desired state for a whole system. A role should correspond to the business purpose of a server
-- Hiera: built-in data lookup. Use the `loopup(..)` and define variables in `data/common`, `data/domain` and `data/nodes`
+- Hiera: built-in data lookup. Use the `lookup(..)` and define variables in `data/common`, `data/domain` and `data/nodes`
 - control repository: for setting up puppet from a git repo
   - `puppet code deploy production --wait`
 - Puppetfile: manages external dependencies `mod "puppetlabs/postgresql", '5.12.1'`. Requires a tool to get the entire tree
@@ -831,7 +803,8 @@ Statistical hypothesis testing:
 
 Contingency table:
 
-| | Session w/ clicks | Sessions w/o clicks | Row total
+|  | Session w/ clicks | Sessions w/o clicks | Row total
+--- | ---------------------- | --------------------------- | -------------
 Control (A) | a | b | a + b
 Treatment (B) | c | d | c + d
 column total | a + c | b + d | a + b + c + d

@@ -1,5 +1,5 @@
 ---
-title: "A Scathing Review of CS 489 Software and Systems Security (University of Waterloo)"
+title: "Review of CS 489 Software and Systems Security (University of Waterloo)"
 date: 2024-04-03T14:49:36-04:00
 draft: false
 tags:
@@ -12,12 +12,13 @@ I took CS 489/698 Software and Systems Security this past Winter term (2024) and
 
 ## Assignment Criticism
 
-In the first assignment, there's a buffer overflow but we were only taught how to do it on a 32-bit system where the vulnerability was in the main method versus the assignment where the vulnerability is in another function and on 64-bit program. Not to mention, that they don't mention during class anything about the gcc options-fstack-protector and -fno-stack-protector and how it's the fault of certain (idk which ones) linux distros [see here](https://stackoverflow.com/a/10713028/7732434).
+In the first assignment, there's a buffer overflow but we were only taught how to do it on a 32-bit system where the vulnerability was in the main method versus the assignment where the vulnerability is in another function and on 64-bit program. ~~Not to mention, that they don't mention during class anything about the gcc options-fstack-protector and -fno-stack-protector and how it's the fault of certain (idk which ones) linux distros [see here](https://stackoverflow.com/a/10713028/7732434).~~
 
 In the second assignment, the assignment tried to be situational, but in my opinion, it would be much more effective if instead of having a bunch of classes on the content, the class itself was situational and we were put in groups to simulate how things go wrong. This would've been much more effective, similar to scenes in Mr. Robot where we see social and technical vulnerabilities being exploited. It would be nice to see an actual device exploited by a USB and/or disc in class rather than just be told that this is an existing potential weakness to be exploited.
 
 In the third assignment, we had to learn about the various fuzzers. The biggest problems with this assignment is that it takes hours to setup the environment (100GB), and we aren't given docs on the various fuzzers. We have to create code with bugs that won't be detected by the fuzzers. The biggest problem is that for one of the fuzzers, it would work locally but not on their test servers which would report character comparisons as a crash...
-In the fourth assignment, we are given seccom-bpf sandboxes and are told to make a program that can read and print out a specific file's contents. There's 4 of them, and the first one is easy once you understand you need to simply use system calls that aren't being filtered. At the second sandbox though, no clue what the strategy is. In class we are only taught that these sandboxes exist, and the piazza post states to use seccom-tools. Yeah, I have quizzes and other projects to do, I don't think spending hours just to maintain a high mark in the course is a good enough motivation to sink hours. It's not satisfying and it's a deterioration of my mental health which in my humble opinion should be prioritized over school most of the time.
+In the fourth assignment, we are given seccom-bpf sandboxes and are told to make a program that can read and print out a specific file's contents. The only issues was I had no idea that open corresponded to the open_at system call, otherwise I could've done 3/4ths of the assignment.
+In class we are only taught that these sandboxes exist, and the piazza post states to use `seccom-tools`. Yeah, I have quizzes and other projects to do, I don't think spending hours just to maintain a high mark in the course is a good enough motivation to sink hours. It's not satisfying and it's a deterioration of my mental health which in my humble opinion should be prioritized over school most of the time.
 
 ## Content Criticism
 
