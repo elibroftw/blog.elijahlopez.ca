@@ -556,6 +556,11 @@ Cost of rechecking
 - SmartBuildSkip: prediction
   - first failure means later builds are more likely to fail
 
+---
+Midterm Cutoff
+
+---
+
 ## Virtualization
 
 - Virtual Machines emulate a computer system and provide a computer system within another computer system
@@ -671,17 +676,37 @@ Technologies: puppet, chef, terraform, ansible, SaltStack
 ### Puppet Notes
 
 - Quest exercises were done
+  - ssh password for nodes is puppet
 - To use a module for a node, you need to include it or instantiate the class inside `site.pp`
   - `/etc/puppetlabs/code/environments/production/manifests/site.pp`
+- Validation: `puppet parser validate pasture/manifests/init.pp`
+- The puppet server also has a admin portal
+  - Role-based access control system (RBAC)
 - Example module init file
 
 ```puppet
-class pasture {
+# /etc/puppetlabs/code/environments/production/manifests/site.pp
+# /etc/puppetlabs/code/environments/production/modules/pasture/manifests/init.pp
+node 'pasture.puppet.vm' {
+  class { 'pasture':
+    default_character => 'bunny',
+  }
+}
+```
 
-  $port                = '80'
-  $default_character   = 'sheep'
-  $default_message     = ''
-  $pasture_config_file = '/etc/pasture_config.yaml'
+- explanations
+  - notify service: want to restart a service when a resource changes
+
+```puppet
+# /etc/puppetlabs/code/environments/production/modules/pasture/manifests/init.pp
+# parametrize
+class pasture (
+  $port                = '80',
+  $default_character   = 'sheep',
+  $default_message     = '',
+  $pasture_config_file = '/etc/pasture_config.yaml',
+  $sinatra_server      = 'webrick',
+){
 
   package { 'pasture':
     ensure   => present,
@@ -692,6 +717,7 @@ class pasture {
     'port'              => $port,
     'default_character' => $default_character,
     'default_message'   => $default_message,
+    'sinatra_server'    => $sinatra_server,
   }
   file { $pasture_config_file:
     # source  => 'puppet:///modules/pasture/pasture_config.yaml',  # hard coded in files/pasture_config.yaml
@@ -708,8 +734,59 @@ class pasture {
   service { 'pasture':
     ensure => running,
   }
+  # unless statement is also supported
+  if ($sinatra_server == 'thin') or ($sinatra_server == 'mongrel')  {
+    package { $sinatra_server:
+      provider => 'gem',
+      notify   => Service['pasture'],
+    }
+  }
 }
 ```
+
+Templates
+
+- variables defined at the top (provided via a hash on the pp side)
+- usage of variables using `<%= $VAR%>`
+
+```epp
+<%- | $port,
+      $default_character,
+      $default_message,
+      $sinatra_server,
+| -%>
+# This file is managed by Puppet. Please do not make manual changes.
+---
+:default_character: <%= $default_character %>
+:default_message:   <%= $default_message %>
+:sinatra_settings:
+  :port: <%= $port %>
+  :server: <%= $sinatra_server %>
+```
+
+- `facter`
+  - get facts about a system when requesting a catalog
+  - `-p`: include custom facts
+  - `facter -p os.family`: drill down
+  - manifests can access facts using `$facts['fact_name']`
+- `puppet job`
+  - trigger puppet across multiple nodes remotely without needing to ssh manually
+  - need to be logged in `puppet access login --lifetime 1d` (use RBAC to create users)
+  - `puppet job run --nodes pasture-dev.puppet.vm,pasture-prod.puppet.vm`
+- [sudo] journalctl -u pasture -e
+  - view logs for specific service unit `-u`
+  - the `-e` jumps to the end of the file
+  - to read a file starting from the bottom use `less +G file.log`
+- The Forge
+  - community maintained modules
+  - `puppet module install puppetlabs-postgresql` installs the module `postgresql` to the modules directory
+- A profile is a class that declares one or more related component modules and sets their parameters as needed. The set of profiles on a system defines and configures the technology stack it needs to fulfill its business role.
+  - The purpose of profiles is to avoid duplicating parameters when including a class for various nodes
+- A role is a class that combines one or more profiles to define the desired state for a whole system. A role should correspond to the business purpose of a server
+- Hiera: built-in data lookup. Use the `loopup(..)` and define variables in `data/common`, `data/domain` and `data/nodes`
+- control repository: for setting up puppet from a git repo
+  - `puppet code deploy production --wait`
+- Puppetfile: manages external dependencies `mod "puppetlabs/postgresql", '5.12.1'`. Requires a tool to get the entire tree
 
 ## Deployment and Mitigating Failures
 
