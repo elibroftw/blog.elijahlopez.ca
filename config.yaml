@@ -45,9 +45,9 @@ params:
     - css/inline-spoiler.scss
   # customJS:
   #   - js/copy-button.js
-  dateFormat: "2006-Jan-02"
+  dateFormat: "January 2, 2006"
   paginationSinglePost: true
-  style: dark-without-switcher
+  style: dark
   readMore: false
   disableSummary: true
   # utteranc.es support
@@ -55,6 +55,12 @@ params:
   utterancesTheme: "github-dark" # optional
   utterancesIssue: "" # optional
   utterancesLabel: "" # optional
+  # giscus support
+  # GiscusRepo: "elibroftw/blog.elijahlopez.ca"  # mandatory
+  # GiscusRepoId: "438500230" # mandatory
+  # GiscusCategory: "General" # mandatory
+  # GiscusCategoryId: "9f0abe34da433c9b6db74bffa2466494a717b579a96b30a5d252e5090baea7be" # mandatory
+  # GiscusLazyLoad: false # optional
   # webmentions:
   #   url: https://elibroftw.github.io/
   #   login: hugo-theme-anubis
@@ -85,3 +91,7 @@ markup:
   goldmark:
     renderer:
       unsafe: true # enable raw HTML in Markdown
+minify:
+  tdewolff:
+    html:
+      keepWhitespace: false
