@@ -7,7 +7,7 @@ self.addEventListener('install', event => {
       '/',
       {{- range $.Site.RegularPages }}
       '{{ .Permalink }}',
-      {{- end }}
+  {{- end }}
     ]);
   }));
 });
@@ -23,8 +23,15 @@ self.addEventListener('activate', event => {
 });
 
 async function cacheFirstWithRefresh(request) {
-  console.log(request);
-  // TODO: https://latex.codecogs.com/ should be cache-first
+  var hostname = (new URL(request.url)).hostname;
+
+  if (hostname == 'latex.codecogs.com') {
+    const responseFromCache = await caches.match(request);
+    if (responseFromCache) {
+      return responseFromCache;
+    }
+  }
+
   const fetchResponsePromise = fetch(request).then(async (networkResponse) => {
     if (networkResponse.ok) {
       const cache = await caches.open(cacheName);
