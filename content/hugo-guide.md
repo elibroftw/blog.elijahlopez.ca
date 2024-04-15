@@ -24,11 +24,14 @@ In case you want to blog on a new device, here are the commands to set yourself 
 ```bash
 # replace USERNAME/blog with your username and blog repo name
 git clone --recurse-submodules -j8 https://github.com/USERNAME/blog.git
+git config --global submodule.recurse true
 # choose cloned directory
 cd blog
 ```
 
 ## Creating Content (e.g. a Post)
+
+Before writing, make sure you are modifying the latest version of the blog. Use `git pull --rebase`. The first reason to do so, is if we are working on multiple devices, we do not want to run into some sort of merge conflict when we want to push our updates. The second reason is because the auto-deploy script can also commit updates to the theme, so we want to ensure that we aren't going to mess the remote state up.
 
 1. In a terminal working in your repo directory, use the command `hugo new posts/POST.md`
     - "POST" name is arbitrary
@@ -49,6 +52,10 @@ cd blog
     git submodule update --remote --merge
     hugo -d docs
     ```
+
+## Including a Table of Contents
+
+To include a Table of Contents, use `{{</* toc */>}}` (custom shortcode)
 
 ## Images
 
@@ -112,6 +119,8 @@ We just need the video id.
 {{< youtube rtSR9ySQ5h4 >}}
 
 ### Gfycat
+
+2023: Wow this service got shut down. Skip this section.
 
 This one is a custom shortcode, but we just need the id of the gfycat link.
 

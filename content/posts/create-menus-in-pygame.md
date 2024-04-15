@@ -109,7 +109,9 @@ It's just a question of placement (modifying button_rects) since I have taught y
 
 Check out my game [Jungle Climb](https://github.com/elibroftw/jungle-climb) if you want to see how all the helper functions are put together.
 
-{{< gfycat arcticbigheartedaddax >}}
+There used to be a GIF of the menu, but of course gfycat shutdown.
+
+<!-- {{< gfycat arcticbigheartedaddax >}} -->
 
 ## Possible Improvements
 

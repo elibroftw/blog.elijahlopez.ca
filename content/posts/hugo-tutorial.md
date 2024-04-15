@@ -31,6 +31,7 @@ If you are like me, you can follow the tutorial that [forks my site](#forking-my
 6. Add a custom domain if you want later since it takes 5+ minutes
 7. Edit the About section in https://github.com/USERNAME/blog/ and change the website to `https://USERNAME.github.io` or a domain
 8. Clone your repo using `git clone --recurse-submodules -j8 https://github.com/USERNAME/blog.git` or GitHub desktop
+    - also set `git config --global submodule.recurse true`
 9. Delete `content/posts` and `static/images`
     - Add your own `favicon.ico` to `static/images`
 10. Edit `config.yaml` and replace my information with yours
