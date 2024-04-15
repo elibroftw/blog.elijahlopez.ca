@@ -15,7 +15,12 @@ jobs:
       - uses: actions/checkout@main
         with:
           submodules: true # Fetch Hugo themes (true OR recursive)
-          fetch-depth: 0 # Fetch all history for .GitInfo and .Lastmod
+          fetch-depth: 0      # Fetch all history for .GitInfo and .Lastmod
+
+      - name: Config git
+        run: |
+          git config user.name '${{ github.actor }}'
+          git config user.email '${{ github.actor }}@users.noreply.github.com'
 
       - name: Install Hugo
         run: sudo apt -y install hugo
@@ -28,7 +33,7 @@ jobs:
           echo 'commit_msg<<EOF' >> $GITHUB_OUTPUT
           echo "$(git log -1 --pretty=%B)" >> $GITHUB_OUTPUT
           echo 'EOF' >> $GITHUB_OUTPUT
-
+          # git worktree <path> <branch> sets <path> as root for <branch>
           git worktree add public gh-pages
 
       - uses: actions/cache@main
@@ -38,10 +43,18 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-hugomod-
 
-      - name: Build Hugo
-        # git worktree <path> <branch> sets <path> as root for <branch>
+      # assume all submodules have alreayd been initiated in actions/checkout
+      - name: Update submodules
         run: |
-          hugo --minify
+          git submodule update --recursive --remote
+          output=$(git status --porcelain)
+          if [ -n "$output" ]; then
+            git add .
+            git commit -m "Update submodules"
+          fi
+
+      - name: Build Hugo
+        run: hugo --minify
 
       - name: Add CNAME
         run: |
@@ -51,12 +64,14 @@ jobs:
               yq '.baseUrl' config.yaml | cut -c 9- | sed 's/\/$//' > public/CNAME
             fi
 
+      - name: Push submodules update
+        run: |
+          git push
+
       - name: Deploy public dir to gh-pages branch
         if: github.ref_name == github.event.repository.default_branch
         run: |
           cd public
-          git config user.name '${{ github.actor }}'
-          git config user.email '${{ github.actor }}@users.noreply.github.com'
           if [ "`git status -s`" ]; then
             git add --all
             git commit --amend -m "deployed: ${{ steps.vars.outputs.commit_msg }}"
