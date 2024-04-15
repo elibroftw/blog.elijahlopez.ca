@@ -46,7 +46,7 @@ jobs:
       # assume all submodules have alreayd been initiated in actions/checkout
       - name: Update submodules
         run: |
-          git submodule update --recursive --remote
+          git submodule update --recursive --remote --force 
           output=$(git status --porcelain)
           if [ -n "$output" ]; then
             git add .
