@@ -23,7 +23,7 @@ jobs:
           git config user.email '${{ github.actor }}@users.noreply.github.com'
 
       - name: Install Hugo
-        run: sudo apt -y install hugo
+        run: sudo snap install hugo
 
       - name: Setup output
         id: vars
