@@ -830,17 +830,17 @@ _Money_: assets that can be used to make payments, such as cash, and chequing ac
 
 ### What is Money?
 
-- assets that are widely used and accepted as payment
-- medium of exchange
-  - without money, bartering is done
-    - bartering flaw is that it is hard to find someone who has the item you have and is willing to trade it for what you have
-    - opportunity to specialize is greatly reduced
-- unit of account
-  - uniform way to measure value of everything (naturally flowing from previous statement)
-  - not always the same as medium of exchange for countries with high and erratic inflation. WANT: currency stability
-- store of value
-  - any asset could be a store of value
-  - money is held even with low return because it can be used as a medium of exchange
+1. assets that are widely used and accepted as payment
+2. medium of exchange
+    - without money, bartering is done
+      - bartering flaw is that it is hard to find someone who has the item you have and is willing to trade it for what you have
+      - opportunity to specialize is greatly reduced
+3. unit of account
+    - uniform way to measure value of everything (naturally flowing from previous statement)
+    - not always the same as medium of exchange for countries with high and erratic inflation. WANT: currency stability
+4. store of value
+    - any asset could be a store of value
+    - money is held even with low return because it can be used as a medium of exchange
 
 ### Measures of Money
 
