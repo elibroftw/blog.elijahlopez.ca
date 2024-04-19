@@ -1437,6 +1437,21 @@ Shares issued: (1,500 * 30 / 20 - 1500) = 750
 
 ## Chapter 20 - Leases
 
+A lease should be included on the balance sheet to recognize future lease payment **obligations**
+
+- Is it a lease?
+  - IFRS - Contractual: identifiable asset, long-term, not a individual low-value asset
+  - ASPE - Classification: meets one of [three tests](#gaap-lease-treatments)
+- The lease liability
+  - IFRS - Lease liability; present value using implicit rate or lessor
+  - ASPE - Obligation under lease; asset under lease minus initial payments
+- The lease asset
+  - IFRS - Right-of-use asset; lease liability plus initial payments
+  - ASPE - Asset under lease;  Min { PV of minimum lease payments, fair value at lease's inception }
+    - Explanation: the asset value should never be higher than the value at inception
+
+[Examples](#lease-liability-example)
+
 ### What is a Lease?
 
 - contractual agreement between _lessor_ and a _lessee_
@@ -1446,7 +1461,7 @@ Shares issued: (1,500 * 30 / 20 - 1500) = 750
   - lease payments (sales, interest rate, price index)
   - taxes, insurance, maintenance on lessee or lessor or shared
   - early termination or non-cancellable
-  - default: lessee pays balance or lessor sells asset to third party and recoup shortfall from teh lesee
+  - default: lessee pays balance or lessor sells asset to third party and recoup shortfall from teh lessee
   - end: return to lease (_simple termination_), or renewal, or purchase at nominal price, or _bargaining purchase option_ (lessee benefits)
 
 ### Advantages
@@ -1456,27 +1471,31 @@ Shares issued: (1,500 * 30 / 20 - 1500) = 750
 
 ### Conceptual Nature of Leases
 
-Does it go on the balance sheet?
+Perspectives:
 
 1. Executory: both parties need to perform; no capitalization
-2. Classification approach: economic substance; instalment purchases are capitalized so lease with similar characteristics should be
-3. Contract-based approach: asset is not a physical property but a right-to-use; liability is to make lease payments (rental payment minus expenses paid by lessor)
+2. \[ASPE] Classification approach: economic substance; instalment purchases are capitalized so lease with similar characteristics should be
+    - capitalize leases similar to otherwise instalment purchases
+    - substantially all benefits and risks are transferred to the lessee?
+3. \[IFRS] Contract-based approach: asset is not a physical property but a right-to-use; liability is to make lease payments (rental payment minus expenses paid by lessor)
+    - capitalize all leases except for short-term and low-value leases
 
 ASPE allows many operating leases but IFRS has limits.
 
-### GAAP  Lease Treatments
+### GAAP Lease Treatments
 
 - ASPE: classification approach
   - Similar to instalment purchases
   - All benefits and risks is transferred
   - Other leases should be reported as expense and not on balance sheet
-  - 3 tests, short-circuit pass
-  - transfer of ownership: is there assurance that the lesse will take ownership at the end of term
-  - economic life tests: leasing for 75% of the asset's economic life
-  - recovery of investment by lessor: present value of the  lease is 90% of more of the asset's market price
+  - Meets one of three tests:
+    1. transfer of ownership; is there assurance that the lessee will take ownership at the end of term
+    2. economic life tests; leasing for 75% of the asset's economic life
+    3. recovery of investment by lessor; present value of the  lease is 90% or more of the asset's market price
 - IFRS: contract-based approach
   - identified asset for a period of time
   - service component excluded from lease accounting
+  - not short-term nor low-value (allow portfolio of **similar** low-value assets)
 
 Example: Is it a lease for IFRS?
 
@@ -1492,10 +1511,6 @@ Since the space can change, it cannot be identified and so there is no lease.
 - IT equipment are low-value
 - Servers with many individual modules are large values
 - Office equipment and furniture are low value
-
-### Dealing with On Balance Sheet Lease
-
-### Dealing with Off Balance Sheet Lease
 
 ### Lease Payment Required for a Rate of Return
 
@@ -1513,8 +1528,15 @@ Example
 
 We want a 10% return on $100,000 investment in an asset that is to be lease for 5 years. Annual rent is due in advance each year (annuity due). No purchase option, bargain purchase option, or residual value.
 
+Option one (Exam)
+
+Look up the factor in the **annuity due** table for a rate of 10% with a maturity of 5 years.
+Divide the present value by this factor to get the annual payment.
+
+Option Two (In-practice)
+
 ```accounting
-PV = 100,000 = x+ x/(1+0.1) + x/(1+0.1)^2
+PV = 100,000 = x + x/(1+0.1) + x/(1+0.1)^2
 100000 = x(1 + 1/...) = (1 + (1 - (1 + r)^-(n - 1)/r))
 100000 = x * 4.1699
 x = $23,982
@@ -1527,41 +1549,32 @@ x = $23,982
 - Bargain purchase option (BPO): pay significant lower amount at the end of lease
 - Need to subtract executory costs by the lessor
 
-1. Implicit rate: PV minimum lease payments plus un-guaranteed residual value = FV of underlying
+1. Implicit rate: PV of minimum lease payments plus un-guaranteed residual value = Fair value of underlying
 2. Lessee's incremental borrowing rate (equivalent funds were borrowed for a similar term and similar security)
 
-- ASPE: lessor of the two rates used to ensure that the lessee does not get a lower PV
-- IFRS: use Lessor's implicit rate
+- ASPE: minimum of the two rates (ensure that the lessee does not get a lower PV)
+- IFRS: use implicit rate of lessor
 
 ### Right-of-use assets under IFRS
 
-The initial value of the right-of-use asset is the PV of the payments plus the PV of the residual value or purchase option discounted at the lessor/implicit rate
+The initial value of the right-of-use asset is the PV of the payments plus the PV of the residual value or purchase option discounted at the lessor-implicit rate
 
 ```accounting
 1-Sep | contract initiated with first payment
-Right-of-use Asset      23,769
+Right-of-use Asset        23,769
   Lease Liability                18,769
-  Cash                                5,000
+  Cash                           5,000
 
 31-Dec  | 4 months depreciation
-Depreciation Expense 1,320
-  Accumulated-Dep ROU Asset 1,320
+Depreciation Expense       1,320
+  Accumulated-Dep ROU Asset      1,320
 
 31-Dec | 4 months interest
-Interest Expense  1667
-  Interest Payable      1667
+Interest Expense    1,667
+  Interest Payable        1,667
 ```
 
-### Capital Leases Under ASPE
-
-### Lease Liability ASPE vs. IFRS
-
-- IFRS
-  - Lease liability (PV)
-  - Right-of-use-asset (lease liability plus payments already made)
-- ASPE
-  - Obligation under lease: under lease minus lease payments already made
-  - Asset under lease = lower of: PV of minimum lease payments and fair value at lease's inception
+### Lease Liability Example
 
 Example
 
