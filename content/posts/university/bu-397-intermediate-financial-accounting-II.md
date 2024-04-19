@@ -1718,32 +1718,71 @@ Two years, end of year payments. $13,000 option to purchase at end of term. Fair
 - post-employment benefits (IFRS)
 - Employee Future Benefits (ASPE)
 
-- Notes:
-  - Past Service Costs
-    - Interest applies on the days it's been an item (i.e. year end date minus amendment date, usually 1 years worth of interest)
-  - Contributions:
-    - Increases the plan assets
-    - If made during the year, lowers the net interest by the pro-rated amount (July 1st, means half the interest gained)
-  - Actual Return on Plans Over Projected
-    - ASPE: this difference will impact the Defined Benefit Expense
-    - IFRS: this difference will only impact OCI and will not lower/increase the defined benefit expense
+Quick Guide
+
+- Past Service Costs
+  - Interest applies on the days it has been an item (the current year end date minus any amendment date; usually 1 years worth of interest)
+- Contributions
+  - Increases the plan's assets
+  - If made during the year, lowers the net interest expense by the pro-rated amount (July 1st = half the interest gained)
+- Remeasurement Losses/Gains and Actuarial Losses/Gains
+  - ASPE: this difference will impact the Defined Benefit Expense
+  - IFRS: this difference will only impact OCI and not Defined Benefit Expense
+
+### Defined Benefit Plan
+
+- fixed payout regardless of plan's performance
+- therefore, employer assumes risk of the plan's shortfall
 
 ### Changes in Defined Benefit Obligation
 
 - Current services cost
-  - DBO increases due to employee working more and earning additional benefits
+  - DBO increases
+  - Present value of future contributions required due to employee's services in the current period
 - Past service costs
-  - Plan gets amended (e.g. vesting period decreases or a reduction in benefits)
+  - DBO addition or reduction based on info (amendments)
 - Interest cost
-  - Increase the DBO for the interest cost of the DBO and the past service amendments active during the year
-- Benefits paid to retirees
+  - Increase the DBO for the interest cost of the beginning DBO balance and the past service amendments active during the year (pro-rated)
+- Payments to retirees
   - Subtract the DBO
+- Remeasurement gains and losses
+  - Return on plan's assets differs from projected return
+  - IFRS: OCI
 - Actuarial gains and losses
-  - assumptions that have changed. In IFRS, recognize in OCI
+  - assumptions that have changed
+  - IFRS: OCI assumption
 
 ### Plan Assets
 
-- The assets can change in value. When the DBO > Plan Assets, that a net defined benefit liability (underfunded) and when the DBO < Plan asset, the plan is over-funded.
+- Increase the plan assets
+  - Contributions from employer
+    - contributory: employee contributions reduce defined benefit expense
+  - Actual earnings on assets
+- Decrease
+  - Payments to retirees
+
+### DBO Versus Plan Assets
+
+- Measured at the date of the annual financial statements
+- DBO > Plan Asset: Net Defined Benefit Liability (underfunded plan)
+- DBO < Plan Assets: Net Defined Benefit Asset (overfunded plan)
+
+### Pension Accounting Worksheet (Template)
+
+Item | \[IFRS] Remeasurement Loss | DB Expense | Cash | Net DB A/L | DB Obligation | Plan Asset
+--- | --- | --- | --- | --- | --- | ---
+Balance | | | | | |
+Past service cost/benefit | | + | | | - |
+Current service cost | | + | | | - |
+Net interest cost | | +/- | | | - | +
+Remeasurement loss on plan assets | | | | | | -
+Employer contributions | | | | | |
+Benefits paid | N/A | N/A | N/A | N/A | + | -
+Actuarial loss/gain | | | | | |
+| | | | | |
+Expense journal entires | | | N/A | LEFT SUM | |
+Contribution journal entries | N/A | N/A |  | LEFT SUM | |
+Balance | | | | SUM | SUM | SUM
 
 ### Other Defined Benefit Plans that Vest or Accumulate
 
@@ -1760,11 +1799,17 @@ Two years, end of year payments. $13,000 option to purchase at end of term. Fair
   - If there is one or more defined benefit plans, show separately
   - can only be combined if all result in defined benefit liability or defined benefit asset
   - no guidance
-- Income Statement
-  - No guidance
-  - a) Report as separate components
-  - b) part of similar expenses
-  - c) total as a single benefit cost (most companies do this)
+- Income Statement (no guidance)
+  - 1) total as a single benefit cost (most companies do this)
+  - 2) Report as separate components
+  - 3) part of similar expenses
+
+### Pension Disclosures
+
+- ASPE
+  - dates of actuarial valuations, difference between surpluses/deficits of balance sheet and plan, fair values, Description, major changes,
+- IFRS
+  - In addition to ASPE, characteristics and risks, details on amount included in net income, plan's effect on future cash flow,
 
 ## Changing the Accounting Policy
 
