@@ -4,7 +4,7 @@ description: "Just a subpage of about"
 date: "2019-02-28"
 author: "Hugo Authors"
 slug: /about/subpage
-menu:
+menus:
   about:
     identifier: about
     name: About
@@ -21,4 +21,4 @@ menu:
 hidden: true
 ---
 
-Just a subpage of About.
+This page exists just to showcase how sub-menus work. I'm glad it existed otherwise I wouldn't have found the bug and subsequently fixed it in my version of the Anubis theme fork.

@@ -2,10 +2,10 @@
 
 A site I'll be writing new posts on, since Medium is centralized, slow, and doesn't allow you to export/download posts.
 
-This blog uses the [Anubis Theme](https://github.com/Mitrichius/hugo-theme-anubis).
+This blog uses my fork of the [Anubis Theme](https://github.com/elibroftw/hugo-theme-anubis).
 
-Read `content/hugo-guide.md` ([Online](https://blog.elijahlopez.ca/hugo-guide#new-machine-setup)) on how to
-create posts, custom pages, using images, and embedding rich content (e.g. tweets, youtube, gfycat, github gist).
+If you want to start your blog, read `content/hugo-guide.md` ([Online](https://blog.elijahlopez.ca/hugo-guide#new-machine-setup)) on how to
+create posts, custom pages, using images, and embedding rich content (e.g. tweets, youtube, gfycat, github gist). I haven't updated in a while, so fair warning is given.
 
 ## Tips
 
