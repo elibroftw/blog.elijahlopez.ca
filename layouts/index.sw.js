@@ -1,3 +1,4 @@
+// sw = service worker
 var cacheName = 'v1';
 
 self.addEventListener('install', event => {
@@ -5,6 +6,7 @@ self.addEventListener('install', event => {
   event.waitUntil(caches.open(cacheName).then(cache => {
     return cache.addAll([
       '/',
+      '/posts/',
       {{- range $.Site.RegularPages }}
       '{{ .Permalink }}',
   {{- end }}
