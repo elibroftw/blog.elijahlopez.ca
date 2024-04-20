@@ -148,7 +148,7 @@ If tax instalment payments are made every 3 months, we need a year end adjusting
 
 - Cash dividend payable
   - Corporation declared a dividend
-  - Stock/shre dividends are not a liability
+  - Stock/share dividends are not a liability
 - Rents and Royalties payable
   - from contractual agreement
 - Customer advance and deposits
@@ -289,7 +289,7 @@ Warranty liability 20,000
 
 - Loyalty Points Unearned Revenue = $9,500
 - Proportion of goods/services =  $100,000  \* (100,000 / (100,000 + 9,500)) = $91,324
-- Proportion of loyaty points = 100,000 - 91,324 = 8,676
+- Proportion of loyalty points = 100,000 - 91,324 = 8,676
 
 ```accounting
 Cash                100,000
@@ -577,11 +577,11 @@ Non-substantial,
 - Proprietorship
   - Single owner
 - Partnership
-  - Multipler owners
+  - Multiple owners
 - Corporation
   - >= 1 owner
-  - Seperate legal entity
-  - Taxed seperately, and personal tax is at dividends
+  - Separate legal entity
+  - Taxed separately, and personal tax is at dividends
   - Owners only risk investment
 
 ### Corporate Classification
@@ -729,7 +729,7 @@ Common shares subscribed $1,000
 - demand to affect share price
 - leverage buy-out (LBO)
 - manage regulatory capital requirements
-- reacquired shares are either retired or held as treasury shares (inteded for re-issue)
+- reacquired shares are either retired or held as treasury shares (intended for re-issue)
 - CBCA required shares to be cancelled and restored status to authorized but unissued
 - treasury relatively uncommon in canada
 
@@ -884,7 +884,7 @@ In case 1, the participation is capped
 - effect of transferring the one or more financial risks inherent in the underlying primary instrument
 - PV of a forward contract is 0; so no initial investment
 - main purpose is for risk management or hedging. Other purposes is speculation and arbitraging.
-- Risks: market risk, credit risk (counterparty), and liqduity risk (companies paying off debt obligations)
+- Risks: market risk, credit risk (counterparty), and liquidity risk (companies paying off debt obligations)
 - Measure at FV-NI
   - remeasure on SFP dates
 - Purchase commitments are not derivatives unless
@@ -1033,7 +1033,7 @@ Retained Earnings               12,599 (need to book value of contribution as we
 
 ### Share Based Compensation
 
-- direct awarks of stock
+- direct awards of stock
 - compensatory stock option plans (CSOP)
   - grants, vesting
   - paid for service, is an expense, operating transactions
@@ -1292,7 +1292,7 @@ Deferred Tax Expense        30,000
 - The main goal of financial accounting is decision-usefulness
 - Perspective of common shareholder
 
-Does EPS communicate maintainence capex? Yes, through depreciation expense. Does EPS communicate growth in CAPEX that was useless? Yes, through lower revenues and higher depreciation.
+Does EPS communicate maintenance capex? Yes, through depreciation expense. Does EPS communicate growth in CAPEX that was useless? Yes, through lower revenues and higher depreciation.
 
 - Paper: current expected credit loss model amplifies stock market reactions to earnings surprises (actual EPS over consensus EPS by sell-side analysts). Amplification = over-reaction.
 - Bank are motivated to beat or meet EP targets by under-provisioning:
@@ -1344,7 +1344,7 @@ Start of year: 200,000. July 1st: 225,000. Net income: 315,000.
 
 Restatement of average number of shares is required before a stock dividend or split event (so past results can be normalized).
 
-### In-Class EPS Exercse
+### In-Class EPS Exercise
 
 ```accounting
 Shares outstanding Jan 1: 150,000
@@ -1709,7 +1709,7 @@ How to solve problems
 ```accounting
 # sign contract
 Dr. Lease receivable 119,908
-  Cr. Equipment Acquired for Lesee     100,000
+  Cr. Equipment Acquired for Lessee     100,000
   Cr. Unearned Interest Income            19,908
 # first payment
 Cash 25,982
@@ -1882,7 +1882,7 @@ Dr. Retained Earnings 14,000
 - Selective disclosure
 - Untimely disclosure
 - Insider trading
-- Ontario Securities Commission: www.sedarplus.ca
+- [SEDAR+](www.sedarplus.ca): disclosures for Canadian capital markets
 
 ### Full Disclosure Principle
 
@@ -1899,7 +1899,7 @@ Dr. Retained Earnings 14,000
 - Operating segment
   - must meet:
     - engages in business activities which it earns revenues and incurs expenses
-    - its results are regularly reviewed by the company's chief operating decision-market
+    - its results are regularly reviewed by the company's chief operating decision-maker
     - discrete financial information available on it
   - reportable (at least one of these tests):
     - revenue is 10% or more of the combined revenue
