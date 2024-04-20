@@ -1144,6 +1144,11 @@ Contributed Surplus - Conversion Rights       160,000
 
 </details>
 
+### Capital Cost of Allowance Recap
+
+- Accelerate Investment Incentive (1.5x) applies only to net additions
+- UCC<sub>end</sub> = UCC<sub>start</sub>- CCA RATE \* (UCC_0  + NET ADDITIONS \* 1.5 [only if net additions > 0])`
+
 ### Temporary Difference Approach - Deferred/Future Tax Expenses
 
 - In ASPE, use FUTURE, under IFRS use DEFERRED
@@ -1220,11 +1225,6 @@ Current income tax expense       440,000
 Deferred Income tax expense        50,000
   Deferred Income tax asset                 50,000
 ```
-
-### CCA Recap
-
-- Accelerate Investment Incentive (1.5x) applies only to net additions
-- UCC<sub>end</sub> = UCC<sub>start</sub>- CCA RATE \* (UCC_0  + NET ADDITIONS \* 1.5 [only if net additions > 0])`
 
 ### Future Tax Rebates
 
