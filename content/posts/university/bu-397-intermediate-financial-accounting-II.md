@@ -1802,14 +1802,14 @@ Balance | | | | | |
 Past service cost/benefit | | + | | | - |
 Current service cost | | + | | | - |
 Net interest cost | | +/- | | | - | +
-Remeasurement loss on plan assets | | | | | | -
-Employer contributions | | | | | |
+Remeasurement loss on plan assets | +/- | | | | | +/-
+Employer contributions | | | | | | +
 Benefits paid | N/A | N/A | N/A | N/A | + | -
-Actuarial loss/gain | | | | | |
+Actuarial loss/gain | +/- | | | | |
 | | | | | |
 Expense journal entires | | | N/A | LEFT SUM | |
 Contribution journal entries | N/A | N/A |  | LEFT SUM | |
-Balance | | | | SUM | SUM | SUM
+Balance | | | | SUM | SUM | SUM (given)
 
 ### Other Defined Benefit Plans that Vest or Accumulate
 
