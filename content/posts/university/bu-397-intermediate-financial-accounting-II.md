@@ -1379,6 +1379,10 @@ Summary: Calculate situational net income by adding back the interest paid for t
 - Diluted WACS: `100000 + 20000 + 32000 * 9/12` = 144,000
 - Diluted EPS: $3.32
 
+### Diluted EPS: If-Converted Preferred Shares
+
+Similar to convertible bonds, add back the preferred dividend to earnings for common shareholders. Dividends paid to preferred share holders are net of taxes. Therefore, there is no tax to account for.
+
 ### Diluted EPS: Options and Warrants
 
 - Assume options are exercised the later of: the beginning of the year and the issue date
@@ -1446,8 +1450,8 @@ A lease should be included on the balance sheet to recognize future lease paymen
   - IFRS - Lease liability; present value using implicit rate or lessor
   - ASPE - Obligation under lease; asset under lease minus initial payments
 - The lease asset
-  - IFRS - Right-of-use asset; lease liability plus initial payments
-  - ASPE - Asset under lease;  Min { PV of minimum lease payments, fair value at lease's inception }
+  - IFRS - Right-of-use Asset; lease liability plus initial payments
+  - ASPE - _Asset_ under lease;  Min { PV of minimum lease payments, fair value at lease's inception }
     - Explanation: the asset value should never be higher than the value at inception
 
 [Examples](#lease-liability-example)
@@ -1659,9 +1663,10 @@ With inducement (last 2 months free), figure out total rent ($300 * 22 = 6,600).
 
 ```accounting
 # at every monthly payment date
-Dr. Prepaid rent expense $25
-Dr. Low-value lease expense (IFRS) or rent expense (ASPE) $275
-  Cr. Cash                                                                                   $300
+Dr. Prepaid rent expense     $25
+Dr. Low-value lease expense (IFRS) or rent expense (ASPE) \
+                             $275
+  Cr. Cash                            $300
 # last two months
 Dr. Low-value lease expense (IFRS) or rent expense (ASPE) $275
   Cr. Prepaid rent expense $275
@@ -1669,14 +1674,23 @@ Dr. Low-value lease expense (IFRS) or rent expense (ASPE) $275
 
 ### Lessor Accounting
 
+Three types of companies: manufacturer (e.g. automobile), independent finance (e.g. private debt), traditional financial institutions (banks)
+
+Type | ASPE | IFRS
+--- | --- | ---
+Operating | Operating lease | Operating lease
+Finance (Capital) Lease | |
+Sales-type: arranged with company that has the asset | Sales-type lease | Manufacturer / dealer lease
+Financing-type: leases arranged with a finance company | Direct financing lease | finance lease
+
 ```accounting
 # start of lease / first payment
 Dr. lease receivable (gross investment = total non-discounted rental receivables less executory costs)
   Cr. {Asset Name} acquired for lease
-  Cr. Unearned interest income
+  Cr. Unearned interest income (total interest on the asset)
 # year-end interest accrual
-Dr. Unearned interest income (* implicit rate)
-  Cr. Interest come
+Dr. Unearned interest income (net investment * implicit rate)
+  Cr. Interest income
 # lease payment received
 Dr. Cash
   Cr. Lease Receivable (payment - executory)
