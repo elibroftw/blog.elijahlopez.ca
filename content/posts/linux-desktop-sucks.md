@@ -11,7 +11,7 @@ tags:
 
 ## Introduction
 
-I've used Raspian (~2014), Ubuntu GNOME (~2016), Manjaro KDE (2020 & 2022-2023), Fedora, Zorin (2021), and Mint (2024).
+I've used Raspian (~2014), Ubuntu GNOME (~2016), Manjaro KDE (2020 & 2022-2023), Fedora, Zorin (2021), Mint (2024), and Nobara (2024).
 
 There's a lot of UX issues with Linux and for some reasons the user base starts victim blaming instead of actually improving the experience. It's very political regard and reminds me of this one person who genuinely believed that Libertarianism was about legalizing underage marriage.
 
@@ -114,6 +114,10 @@ I can't create new files in the directory through a right click menu. I can't ac
 ### Firefox Home Page Overwritten on Every Login
 
 On Zorin OS, the home page is overwritten on every log in to <https://start.zorin.com/> which uses Google primarily. Are they even paid by Google to do that?
+
+## Nobara KDE
+
+When the laptop wakes from sleep, the cursor cannot be moved by the trackpad anymore. Online search yielded to disable "suspend" or "modern standby" but I couldn't find those settings in the BIOS menu of a 2016 laptop (razer blade stealth).
 
 ## Other Issues
 

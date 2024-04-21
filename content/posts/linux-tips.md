@@ -12,9 +12,7 @@ aliases:
 
 ## Which Distro Should I Use?
 
-- [Nobara KDE](https://nobaraproject.org/download-nobara/): General purpose (replacement for Windows)
-  - Note that secure boot needs to be disabled
-- [Fedora KDE](https://fedoraproject.org/spins/kde/): Alternative - especially for dual-booting for developing/workstation AND you don't have an NVIDIA graphics card
+[Fedora KDE](https://fedoraproject.org/spins/kde/)
 
 The best distro is functionally the best, stable (for general and niches like gaming and content creation), and has better performance than the alternatives.
 
@@ -23,7 +21,7 @@ The best distro is functionally the best, stable (for general and niches like ga
 - For performance, we want to avoid Ubuntu-based distros that use snaps
 - We are left with distros that support KDE out of the box: Namely, Debian based (excluding Ubuntu) and Fedora based.
 
-So why Fedora instead of Debian? Well because it's more up to date and it's also not confusing to download unlike Debian. Why Nobara instead of Fedora KDE? Well because Nobara is trying to be like Windows in the sense that it works for everyone.
+So why Fedora instead of Debian? Well because it's more up to date and it's also not confusing to download unlike Debian.
 
 ## Webcam Application
 
