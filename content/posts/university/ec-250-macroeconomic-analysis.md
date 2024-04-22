@@ -117,9 +117,9 @@ Comparative Static Experiments
 - A single independent variable is changed
 - Events can be shocks (weather that affects wheat yields, discovery of new oil)
 
-### Disagreeing Macroeconomists Intr
+### Disagreeing Macroeconomists
 
-- always can find someone who disagrees with the status qup
+- always can find someone who disagrees with the status quo
 - can even disagree with themselves
 - **positive analysis**: economic consequences without desirability analysis
   - what would happen if income tax increased by 5%
@@ -200,7 +200,7 @@ The measurement of production, income, expenditure.
 - I = investment (25%)
   - new capital capitals: _fixed capital investment_
   - inventory investment
-  - government does make investments so that would go heref
+  - government does make investments so that would go here
 - G = government purchase of goods and services (20%)
   - interest payments are not considered (good)
   - is spending fueled by increase in debt counted? yes
@@ -892,7 +892,7 @@ _Money_: assets that can be used to make payments, such as cash, and chequing ac
 
 - Bonds
   - Fixed-income securities
-  - Canadian bonds have very low risk of default. High liqduidity
+  - Canadian bonds have very low risk of default. High liquidity
   - Corporate bonds are higher risk and could be illiquid during troubling times
 -Stocks
   - Corporate ownership
@@ -1059,7 +1059,7 @@ Current Account Balance + Capital Account Balance = 0
 
 Net Foreign Assets and the Balance of Payments Accounts
 
-- REDEFN: net foreign assets: foreign stocks, bonds, and factories owned by domestic residents minus foreign liabilities (domestic assets owned by foreigners)
+- re-definition: net foreign assets: foreign stocks, bonds, and factories owned by domestic residents minus foreign liabilities (domestic assets owned by foreigners)
 - changes: value of existing foreign assets and liabilities. acquisition of new foreign assets or liabilities
   - net amount of acquisition is the current account surplus
   - a deficit means selling of assets or acquiring more debt (net foreign borrowing)
@@ -1506,7 +1506,7 @@ If expectations are correct, the expected price will equal the actual price. The
 
 ### Nominal Wage Rigidity
 
-Nominal wages are set by contracts for an extended period of time and thus there are expectations of the future economy. Same equation as before. here is a different Short-run Aggregate Supply (SRAS) for every expected price.
+Nominal wages are set by contracts for an extended period of time and thus there are expectations of the future economy. Same equation as before. here is a different Short-Run Aggregate Supply (SRAS) for every expected price.
 
 ### Monetary and Fiscal Policies in the Keynesian Model
 
@@ -1528,7 +1528,7 @@ Fiscal and monetary policies are both referred to as aggregate demand policies b
 
 ### Price Stickiness
 
-Empirical evidence on price stickiness is not conclusive; sticky in response to monetary policy shocks and flexible in response to shocks. Exchange rate pass-throughs are slow or incomplete.
+Empirical evidence on price stickiness is not conclusive; sticky in response to monetary policy shocks and flexible in response to shocks. Exchange rate pass-through is slow or incomplete.
 
 - Monopolistic Competition
   - Prices are set in nominal terms and maintain those prices for some period
@@ -1663,7 +1663,7 @@ There are definitely more policies that could be applied and more discussion sho
   - extremely high for sustained period of time
   - workers paid more often
   - higher shoe leather costs
-  - the real value of taxes collected by the government falls sharply during hyperinflations
+  - the real value of taxes collected by the government falls sharply during hyperinflation
   - when prices aren't reliable indicators of supply and demand, then markets cannot allocate resource efficiently
 
 ### Fighting Inflation
@@ -1706,7 +1706,7 @@ Saying is one thing and the electability of policymakers can get in the way of k
 
 Money supply is also affected by the banking system’s behaviour and the public’s decisions, not just the central bank.
 
-- depository institutions: privately owned banks, trust companies, credit unions, and caisses populaires that accept deposits from and make loans directly to the public.
+- depository institutions: privately owned banks, trust companies, credit unions, and _caisses populaires_ (Quebec) that accept deposits from and make loans directly to the public.
 - First supply of money is deployed in exchange of real assets
 - The belief that money has value becomes self-justifying: If most people believe that money has value, then it has value.
   - if everyone believes money has no value then no one would accept it
@@ -1769,7 +1769,7 @@ Money supply is also affected by the banking system’s behaviour and the public
 
 - Banks only make net transfers to each other (e.g. National Bank $100 cheque from RBC + RBC $80 cheque from National Bank = $20 to NB)
 - **Clearing/Settlement balances** are held at the Bank of Canada
-- Reserves are not requried to be held at the Bank of Canada, but 13 large banks and credit unions (direct clearers) do so.
+- Reserves are not required to be held at the Bank of Canada, but 13 large banks and credit unions (direct clearers) do so.
 - Large Value Transfer System (LVTS)
   - Financial Institutions that can clear cheques but don't partake in LVTS have accounts with the larger banks
 - Banks with larger balances than needed can lend to another bank charging an **overnight rate**
@@ -2118,7 +2118,7 @@ Production: Y = At * F(Kt, Nt); yt = At f(kt)
     - has to complement activities of the private sector
       - e.g. lowering transportation costs
     - public–private partnerships
-  - human capial and productivity
+  - human capital and productivity
     - education, worker training/relocation, health
     - Specific programs should be examined carefully to see whether benefits exceed costs
     - **entrepreneurial skill**: building successful new business or new products tto market
@@ -2127,7 +2127,7 @@ Production: Y = At * F(Kt, Nt); yt = At f(kt)
     - research councils
     - scientific and technical progress, even commercially oriented
     - government does 25% of R&D spending which has fallen since 1963 (worst in G7)
-    - government should fund more masters, phds, and research rather than rely on tax credits
+    - government should fund more masters, PhD's, and research rather than rely on tax credits
   - industrial policy
     - influence countries pattern of industrial development through taxes, subsidies, or regulation
     - promote high-tech industries
