@@ -145,7 +145,7 @@ Holder has an obligation vs. option
 
 - Formula =  F = S (1 + r) ^ T
 - Exchange traded
-- Wide range of underlyings
+- Applicable to a wide variety of underlying assets
 - Specs need to be defined
   - What can be delivered
   - Where to deliver
@@ -289,7 +289,7 @@ def portfolio_value()
 ### Reasoning
 
 - You think your stocks will outperform the market
-- Hedging ensure the return you earn is the risk-free rate plus the excess over the market (or minus the underperformance over the market)
+- Hedging ensure the return you earn is the risk-free rate plus the excess over the market (or minus the under-performance over the market)
 
 ### Stack and Roll
 
@@ -307,7 +307,7 @@ def portfolio_value()
 
 - Instruments issued by government in its own currency
 
-### LIBOR
+### London Interbank Offered Rate (LIBOR)
 
 - London Interbank Offered Rate
 - Based on submissions by banks
@@ -342,7 +342,7 @@ def portfolio_value()
 ### Risk-Free Rate
 
 - Treasury rate is artificially low because Banks do not keep capital for Treasury instruments
-- Treasury instruments have favourable tax treatements
+- Treasury instruments have favourable tax treatments
 - OIS rates is a proxy for the risk-free rates
 
 > For example, suppose that in a U.S. three-month OIS the notional principal is $100 million and the fixed rate (i.e., the OIS rate) is 3% per annum. If the geometric average of overnight effective federal funds rates during the three months proves to be 2.8% per annum, the fixed rate payer has to pay 0.25 × (0.030 − 0.028) × $100,000,000 or $50,000 to the floating rate payer. (This calculation does not take account of the impact of day count conventions.)
@@ -387,7 +387,7 @@ Maturity (years) | Zero Rate with Continuous Compounding
 
 Template
 
-COUPON_FOR_PERIOD e^(-HALF_YEAR_CTN_CMPDNG * 0.5) + 3e^(-r*1) = 97
+`COUPON_FOR_PERIOD * e^(-HALF_YEAR_CTN_COMPOUNDING * 0.5) + 3e^(-r*1) = 97`
 
 ### Bond Pricing (Continuous)
 
@@ -755,7 +755,7 @@ Example 7.3 and 7.4
 ### Dividends & Stock Splits
 
 - stripe price K to buy/sell N shares
-- n-for-m stock plsit
+- n-for-m stock split
 - Strike price is mK/n
 - no shares is increase to nN/m
 - stock dividends is similar manner
@@ -1069,7 +1069,7 @@ or
 Example
 
 - N = 16%, std = 35%, S0 = $38
-- Calculate probailiy that a european call option with k = %40 and maturity 6 months out will be exercised
+- Calculate probability that a european call option with k = %40 and maturity 6 months out will be exercised
 - P(S_T > 40)
 - Use online distribution calculator to figure it out
 
@@ -1118,7 +1118,7 @@ With dividends, need to substitute the stock price with the stock price minus th
 
 ## Chapter 15 - Options on Stock Indices and Currencies
 
-- Most popular in the U.S.A are S&P 100 (OEX, XEO),  S&P 500 (SPX), DOW times 0.01 (DJX), NADAQ 100 (NDX)
+- Most popular in the U.S.A are S&P 100 (OEX, XEO),  S&P 500 (SPX), DOW times 0.01 (DJX), NASDAQ 100 (NDX)
 - Contracts are settled on 100 times the index in cash OEX is American whereas the others are European
 
 ### Example 15.1
@@ -1145,7 +1145,7 @@ How to solve?
       - Do do this use CAPM formula
     - This nominal value on the index is the strike price we want to purchase of the put
 2. Find number of puts to purchase
-    - puts to purchase to cover initial portfolio: Beta \* Vp / (Vidx * 100) wher Vp and Vidx are current values
+    - Put options to purchase to cover the initial portfolio: `Beta \* ValueOfPortfolio / (ValueOfIndex * 100)` where values are the initial values
 
 ### Currency Options
 
@@ -1390,9 +1390,9 @@ futures is e^{-(r-q)T} times the position required in the spot contract
 
 ### Lookback Options
 
-- Floating call: Pays ST – Smin at time T
+- Floating call: Pays `Stock at time T – Stock minimum` at time T
   - Allows buyer to buy stock at lowest observed price in some interval of time
-- Floating put: pays Smax - ST at time T
+- Floating put: pays `Stock max - Stock at time T` at time T
   - Allows buyer to sell stock at highest observed price in some interval of time
 - Fixed call: pays maximum observed asset price minus strike price
 - Fixed put: pays strike price minus minimum observed asset price
@@ -1540,7 +1540,7 @@ futures is e^{-(r-q)T} times the position required in the spot contract
   - exposure to 1997 Asian financial crisis and 1998 russian financial crisis
 - Midland Bank ($500M)
 - Societe Generale ($7B)
-- Subprime morgages (tens of billions)
+- Subprime mortgages (tens of billions)
 - UBS ($2.3B)
 
 ## Chapter 19 - Volatility Smiles
