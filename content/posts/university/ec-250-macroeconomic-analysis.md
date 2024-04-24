@@ -435,6 +435,8 @@ Year | Real GDP Y (Billions of 2012 dollars)  | Capital, K (Billions of 2012 dol
   - Generally, an increase in capital stock also increases MPN
 - Aggregate Labour Demand
   - demand for labour of all firms in the economy
+- Labour hoarding
+  - During a recession, hiring and firing costs are too much to otherwise layoff
 
 ### Supply of Labour
 
@@ -805,7 +807,7 @@ As for other types of capital, constructing an apartment building is profitable 
 ### Shifts in the Savings Curve
 
 - a temporary increase in government spending can result in savings curve shifting left (lower desired national savings)
-- **crowding out** is when government spending (which uses more real resources) causes investment to decrease (higher rates for same investment)
+- **crowding out** is when government spending (excess demand for resources) causes investment to decrease (due to the higher market-clearing interest rates)
 - Apparently "expected increase in future income" does not shift the savings curve down
 
 ### Shifts in the Investment Curve
@@ -1459,12 +1461,13 @@ Most economic booms result from beneficial productivity shocks; while most reces
 
 - cumulative effects
 - other shocks such as war and military buildup
+- counterargument: accumulation of smaller productivity shocks
 
 ### Solow Residual
 
 The proportion of growth not attributed to labour and capital
 
-<img class=equation-tall src="https://latex.codecogs.com/svg.image?A=\frac{Y}{(K^aN{1-a})}" alt="A=\frac{Y}{(K^aN{1-a})}">
+<img class=equation-tall src="https://latex.codecogs.com/svg.image?A=\frac{Y}{(K^aN^{1-a})}" alt="A=\frac{Y}{(K^aN^{1-a})}">
 
 If there is a difference in intensity of inputs, productivity can change without technology changing. If uk is capital utilization, un is labour utilization, and A is tech,
 
@@ -1472,7 +1475,7 @@ If there is a difference in intensity of inputs, productivity can change without
 
 ### Fiscal Policy Shocks in the Classical Model
 
-increase/decrease in government spending has a wealth effect that results in an increase/decrease in labour supplied shifting the FE line to the right/left resulting in an increase/decrease in the full employment level of output. Classic economists are against dampening the business cycle through fiscal policies.
+An increase/decrease in government spending **has a wealth effect** (higher future taxes means poorer and income effects leads to more labour supply) that results in an increase/decrease in labour supplied shifting the FE line to the right/left resulting in an increase/decrease in the full employment level of output. Classic economists are against dampening the business cycle through fiscal policies.
 
 ### Unemployment in Classical Models
 
@@ -1489,6 +1492,8 @@ Bank of Canada wants to increase the demand for money by reducing the interest r
 A producer's wage is equal to the price of the good being produced. Price and output is related (higher the price more goods are produced and vice versa). The producer has to use previous expectations of the current price level to estimate the actual price level. So if there is an expectation of 5% inflation and price of bread increases by 5%, then baker retains output since the real wage has not changed. Therefore, the change in output can simply be due to the difference between the general and expected price levels.
 
 <img class=equation src="https://latex.codecogs.com/svg.image?Y=Y\bar+b(P-P^e)" alt="Y=Y\bar+b(P-P^e)">
+
+We see here that supply can be higher if the actual price level is higher than the expected price level. This is because suppliers will think the a portion of the actual prices is real and will increase output to capture the difference.
 
 So although Long-Run Aggregate Supply is vertical, Short Run Aggregate Supply is a curve swinging upwards intersecting when P = Pe. Anticipated monetary policy has no effects.
 
@@ -1508,15 +1513,19 @@ If expectations are correct, the expected price will equal the actual price. The
 
 Nominal wages are set by contracts for an extended period of time and thus there are expectations of the future economy. Same equation as before. here is a different Short-Run Aggregate Supply (SRAS) for every expected price.
 
-### Monetary and Fiscal Policies in the Keynesian Model
+### Monetary in the Keynesian Model
 
 The IS-LM model is output versus interest rates whereas the AD-AS model is the Price level versus the output.
 
 ![monetary expansion](/images/ec-250/is-lm-ad-as-monetary-policy.png)
 
+### Fiscal Policies in the Keynesian Model
+
 ![monetary expansion](/images/ec-250/is-lm-ad-as-fiscal-policy.png)
 
-There are two price level adjustments since one is the before labour contracts are renegotiated
+For an increase in money supply, there are two price level adjustments since one occurs before labour contracts are renegotiated
+
+In the Classical model in the previous chapter, anticipated or unanticipated government spending influences wealth and the full employment output, whereas in the Keynesian model, participants anticipate the effects of the fiscal policy and negotiate a wage that would maintain the real wage (no change in wealth). With an unanticipated fiscal policy,
 
 Fiscal and monetary policies are both referred to as aggregate demand policies because both policies affect the position of the aggregate demand curve. Only unanticipated fiscal policies have a long-term affect.
 
@@ -1573,7 +1582,7 @@ Recessions are undesirable because the unemployed are hurt. Government policies 
 - Expectations-Augmented Phillips Curve
   - Friedman–Phelps theory
   - Unanticipated inflation vs. cyclical unemployment
-    - In classical, Misperception theory is used.
+    - In classical, Misperception theory is used
   - When Aggregate Demand increases unexpectedly, cyclical unemployment will be negative because more employment than natural is required
   - Example: think money supply is expected to increase by 10% (output remains equal), but increased by 15%. Price level increases less than 15% because output is increased as there is a belief that relative prices of goods are higher when they are not
   - If unemployment rate is higher than natural, that implies that actual inflation is higher than expected inflation
@@ -1582,10 +1591,11 @@ Recessions are undesirable because the unemployed are hurt. Government policies 
 ### Expectations-Augmented Phillips Curve
 
 - When the expected inflation increases, the curve shifts to the right (higher unemployment rate for the same inflation rate)
-- When the natural rate of unemployment changes, the curve shifts to the right
+- When the natural rate of unemployment increases, the curve shifts to the right
 - For adverse supply shocks, classical blames the increase in natural unemployment to higher levels of mismatch between workers and jobs whereas keynesian blames it on higher than ideal real wage.
   - classical: high energy costs transfers jobs from the energy users to energy providers (makes sense)
   - Phillips curve moves up and to the right
+- Beneficial supply shock leads to the curve moving down and left
 
 ### Policies and the Phillips Curve
 
@@ -1739,7 +1749,7 @@ Money supply is also affected by the banking system’s behaviour and the public
 - cu = Currency Deposit ratio (CU / DEP)
 - res = RES / DEP
 - M =((cu + 1) / (cu + res)) BASE
-  - The factor to the BASE is called the money multiplier
+  - The money supply equals the base times the money multiplier factor
 
 ### Open Market Operations
 
@@ -1752,7 +1762,7 @@ Money supply is also affected by the banking system’s behaviour and the public
 
 - Created in 1934, crown corporation since 1938
 - While the government may issue a directive to the Bank, it has not done so since the act was amended in 1967 to allow this
-- Board: 12 part-time directors, governor (appointed for 7 years renewable), senior deputy governor, deputy minister of finance
+- Board: 12 part-time directors, governor (appointed for 7 years renewable by the governor), senior deputy governor, deputy minister of finance
   - directors are not experts on monetary policy and cannot be bankers nor economists'
 - Essentially, although the government has the power to influence the bank, it can't influence in the short-term
 - Balance sheet
@@ -1987,10 +1997,11 @@ In 2013, a study found that 5 of 10 province corporation tax rates were higher t
   - net of debt owed to government via financial assets
 - debt-GDP ratio: debt outstanding over GDP
 - the budget deficit equals the change in the nominal value of the government bonds outstanding
+- Change in Debt-GDP ratio = Deficit:GDP + (Interest:GDP - GDP Growth) * Previous Debt:GDP
 - change in debt-gdp ratio:
   - = (G + TR - T) / Y (budget deficit ratio) + (interest rate - growth rate) * (previous debt-GDP ratio)
   - = deficit ratio divided by the GDP
-- If GDP increase by 2%, then do deficit ratio / (GPD * (1 + 2%))
+- If GDP increase by 2%, then do deficit ratio / (GDP * (1 + 2%))
 
 ---
 
@@ -2043,7 +2054,7 @@ What happened during 2020 in Canada though? Hmmm.
 - elasticity of output with respect to labour (alphaN)
 - growth accounting equation:
 
-growth rate of output = growth rate of productivity + alphaK \* growth rate of capital + alphaN \* growth rate of labour
+_growth rate of output = growth rate of productivity + alphaK \* growth rate of capital + alphaN \* growth rate of labour_
 
 - Measure of growth need to be adjusted for skilled
 - Using historical data, alphaK = 0.3, alphaN = 0.7
@@ -2077,20 +2088,22 @@ Production: Y = At * F(Kt, Nt); yt = At f(kt)
   - Saving t = s (constant) Yt
   - sYt = (n + d)Kt \[steady]
     - this constraint fixes the capital-labour ratio unless there is a change in population growth, saving rate, or productivity
+    - since population growth cannot keep increasing, in the long-run only productivity growth increases per-capita growth
   - sAf(k) = (n + d)k \[steady]
   - usually below the golden rule steady state
 
 ### Long-Run Living Standards
 
+- An increase in productivity: increases output, incomes, saving, capital stock; y = Af(k) curve **shifts up**
 - living standards: output, consumption, and capital per worker
 - higher saving rate: higher long-run output due to larger capital sock ( sAf(k) curve shifts up)
 - increase in population growth rate: causes long-run output to fall since more output is used to equip workers with capital rather than for consumption; (n+d)k curve shifts up
-- increase in productivity: increases output, incomes, saving, capital stock; y = Af(k) curve shifts up
 
 ### Endogenous Growth Theory
 
+- AK model
 - neoclassical growth model assumes, rather than explains, the behaviour of the crucial determinant of the long-run growth rate of output per capita.
-- human capital: invest in people and thus productivity increases and if physical capital and human capital are correlated, then marginal productivity of capital does not need to diminish
+- human capital: invest in people and thus productivity increases and if **physical capital and human capital are correlated**, then marginal productivity of capital does not need to diminish
 - R&D generates technical know-how which is productive and offsets capital productivity declining
 
 ### Environment and Economic Growth
