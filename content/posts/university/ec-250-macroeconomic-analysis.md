@@ -830,6 +830,7 @@ As for other types of capital, constructing an apartment building is profitable 
 - a temporary increase in government spending can result in savings curve shifting left (lower desired national savings)
 - **crowding out** is when government spending (excess demand for resources) causes investment to decrease (due to the higher market-clearing interest rates)
 - Apparently "expected increase in future income" does not shift the savings curve down
+- **net export crowding**: if a fiscal expansion causes the local currency to appreciate, reducing the net exports.
 
 ### Shifts in the Investment Curve
 
@@ -1091,6 +1092,8 @@ If new capital bought with foreign debt is highly productive, the foreign debt w
 
 ### Open Economy Goods Market Equilibrium
 
+How to calculate savings: Investment plus current account (NX + NFP); CA = GDP - Investment - Consumption - Government
+
 <img class=equation src="https://latex.codecogs.com/svg.image?S^d = I^d + CA = I^d + (NX + NFP)" alt="S^d = I^d + CA = I^d + (NX + NFP)">
 
 - In a closed-economy, CA = 0
@@ -1133,6 +1136,8 @@ If new capital bought with foreign debt is highly productive, the foreign debt w
 
 ![aggregate economic activity peaks before start of a contraction/recession, trough before start of a expansion](/images/ec-250/business-cycle.webp)
 
+A _trough_ is the low point in a business cycle and a _peak_ is the high point.
+
 A severe recession is called a depression. Sequence from one peak to the next is called the business cycle. Properties include:
 
 1. Fluctuations of aggregate economic activity
@@ -1141,6 +1146,8 @@ A severe recession is called a depression. Sequence from one peak to the next is
 
 History shows that business cycles have become less severe, attributed somewhat to better monetary policies, but it could simply be better measurements, more job variability, or a lot of things. There's no proof that all these factors will always be there, especially when some countries are not appealing to live in (e.g. UK).
 
+Business cycles are periodic (bound to happen) but not known when to happen or the interval for it (not recurrent)
+
 ### Economic Variables and the Business Cycle
 
 economic variables can be:
@@ -1148,6 +1155,8 @@ economic variables can be:
 1. procyclical: moves with the business cycle
 2. countercyclical: moves against the business cycle
 3. acyclical: does not depend on business cycle
+
+comovement: many economic variables having regular and predictable patterns over the business cycle
 
 timing:
 
@@ -1169,12 +1178,6 @@ Key variables
 - Durables vs. nondurables
   - can put off purchases of durable goods when times are tough
 - Output is more volatile than total hours
-
-Define a business cycle.
-Discuss the causes of business cycles.
-Briefly describe the history of business cycles in Canada.
-Describe how key economic variables are affected by the business cycle.
-Identify alternative policy approaches to dealing with business cycles.
 
 ### Explanation of Fluctuation
 
@@ -1309,6 +1312,7 @@ Nation economies are interdependent in two main ways meaning policies of one cou
 - Units of foreign currency that can be purchased with one unit of domestic currency.
 - for most major currencies, _e<sub>nom</sub>_ is floating
 - Canadian Effective Exchange Rate index (CEER) of 17 largest trading partners but moves in tandem with CA-US exchange rate
+- Relative purchasing power parity: nominal rates change with inflation
 
 ### Real Exchange Rates
 
@@ -1320,8 +1324,8 @@ Nation economies are interdependent in two main ways meaning policies of one cou
 
 ### Appreciation and Depreciation
 
-- domestic currency nominal depreciation: nominal exchange rate falls
-- domestic currency appreciation: nominal exchange rate rises
+- When the domestic currency appreciation: nominal exchange rate rises (buy more foreign currency)
+- When the domestic currency nominal depreciation: nominal exchange rate falls (buy less foreign currency)
 - fixed: weakening of the currency is called a devaluation while a strengthening is called a revaluation
 
 ### Purchasing Power Parity
@@ -2190,7 +2194,7 @@ According to the misperceptions theory, short-lived shocks may have long-term ef
 
 When is SRAS > LRAS (Misperceptions)
 
-Answer: when actual price level exceeds expected price level
+Answer: when actual price level is higher than the expected price level
 
 The reason for different effects of an anticipated fiscal policy on the full-employment output in the Keynesian and Classical models is
 
@@ -2209,28 +2213,27 @@ change in debt-gdp ratio:
 
 ```txt
 = (G + TR - T) / Y (budget deficit ratio) + (interest rate - growth rate) * (previous debt-GDP ratio)
-= deficit + (interest - growth) * previous debt-GDP-ratio
+= deficit ratio + (interest:gdp - growth) * previous debt-GDP-ratio
 = deficit ratio divided by the GDP
 ```
 
-If GDP increase by 2%, then do deficit ratio / (GPD * (1 + 2%))
+If GDP increase by 2%, then do deficit ratio / (GDP * (1 + 2%))
 
 The per-worker production function in the Solow model assumes `______`
 
 - A) increasing returns to scale and diminishing marginal productivity of capital.
 - B) constant returns to scale and increasing marginal productivity of capital.
-- C) constant returns to scale and diminishing marginal productivity of capital.
+- C) constant returns to scale and diminishing marginal productivity of capital. <----
 - D) decreasing returns to scale and diminishing marginal productivity of capital.
+
+`s * f(k) = (n + k) k`
 
 Friedman-Phelps
 
 unanticpated inflation vs. unemployment at a natural rate of unemployment
 requires expected inflation and natural rate are equal
 
-`s * f(k) = (n + k) k`
-
-You just read that forecasters predict Canada will run a current account deficit in 2004. From this you
-would infer that Canada will also `_______`
+You just read that forecasters predict Canada will run a current account deficit in 2004. From this you would infer that Canada will also `_______`
 
 - A) decrease its holding of net foreign assets.
 - B) run a capital account deficit in 2004.
@@ -2258,7 +2261,7 @@ current account to `________` and saving to `________`.
 - C) rise; rise
 - D) rise; remain unchanged
 
-If future marginal product of capital increases, then current investments increase, which can borrow locally or at the world rate. The higher rates entices saving.
+If future marginal product of capital increases, then current investments increase, which can borrow locally or at the world rate (current account falls). The higher rates entices saving.
 
 Absorption: amount consumed by domestic residents
 
@@ -2270,4 +2273,4 @@ When a temporary adverse supply shock hits a small open economy, it causes the c
 - C) rise; remain unchanged
 - D) rise; fall
 
-Remember that a decrease in savings corresponds to a decrease in current account and that rates won't change.
+Remember that a decrease in savings corresponds to a decrease in current account and that in a **small** open economy, rates are unaffected change.
