@@ -45,7 +45,7 @@ Building Blocks / Examples
 
 ### Futures Contracts Introduction
 
-F = S (1 + r) ^ T
+<img class=equation src="https://latex.codecogs.com/svg.image?F=S(1+r)^T" alt="F = S(1 + r)^T">
 
 - Agreement to buy or sell underlying asset at some point in the future for a certain price
 - Spot contract is buying or selling immediately
@@ -143,7 +143,6 @@ Holder has an obligation vs. option
 
 ## Futures Contracts (Chapter 2)
 
-- Formula =  F = S (1 + r) ^ T
 - Exchange traded
 - Applicable to a wide variety of underlying assets
 - Specs need to be defined
@@ -275,10 +274,6 @@ Example 2
 - `Rp = 4% / 4+ 1.5 (-0.0975 - 0.04 / 4) = -15.125%`
   - Notice that we divided risk free rate to account for 3 month
 - `Vp = 5,050,000 (1 - 15.125%) + 810,000 = 5,096,187.50`
-
-```p
-def portfolio_value()
-```
 
 ### Hedging to Non-Zero beta
 
@@ -448,7 +443,7 @@ Suppose rate proves to be 4.5% (with quarterly compounding). The payoff is –$1
   - `FRA = (0.03323 - 0.03251) * 0.25 / (1 + 0.033 * 0.5)`
   - FRA = 0.00017710154273060686 of the loan amount
 
-A financial manager needs to hedge against a possible decrease in short-term interest rates. he decides to hedge his risk exposure by going short on a 3X6 FRA that expires in 90 days and is based on a 90-day LIBOR. The current LIBOR spot rates are observed: 30-day 5.83%, 90-day 6.00%, 180-day 6.14% and 360-day 6.51%. What is the rate the manager would receive on this FRA:
+A financial manager needs to hedge against a possible decrease in short-term interest rates. He decides to hedge his risk exposure by going short on a 3X6 FRA that expires in 90 days and is based on a 90-day LIBOR. The current LIBOR spot rates are observed: 30-day 5.83%, 90-day 6.00%, 180-day 6.14% and 360-day 6.51%. What is the rate the manager would receive on this FRA:
 
 - Interest paid on $1 for 180 days: 0.0614 * 0.5 = 0.0307
 - Interest paid on $1 for 90 days: 0.06 * 0.25 = 0.015
@@ -607,7 +602,7 @@ Therefore, (1.3800 × 90.00) + 3.00 = $127.20. Since $100,000 face value is deli
 
 ### Conversion Factors
 
-- Quoted price the bond would have on the first day of delivery month assuming interest rate is 6% with semi-annual compounding and the maturity is rounded down to a multiple of 3 months. If the maturity is no a multiple of 6 months, assume a coupon is paid in three months meaning that accrued interest of 3 months has to be subtracted.
+- Quoted price the bond would have on the first day of delivery month assuming interest rate is 6% with semi-annual compounding and the maturity is rounded down to a multiple of 3 months. If the maturity is not a multiple of 6 months, assume a coupon is paid in three months meaning that accrued interest of 3 months has to be subtracted.
 
 Example
 
@@ -760,7 +755,7 @@ Example 7.3 and 7.4
 - no shares is increase to nN/m
 - stock dividends is similar manner
 
-<details><summary>Example</summary>
+Example
 
 - call option to buy 100 shares for $20 per share
 - 2-for-1 stock split
@@ -768,8 +763,6 @@ Example 7.3 and 7.4
 - 5% stock dividend
   - Equivalent to a 1.05-for-1 stock split
   - Strike price is 20/1.05 to purchase 105 shares
-
-</details>
 
 ### Market Makers
 
