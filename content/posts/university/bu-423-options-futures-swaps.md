@@ -710,7 +710,9 @@ Calculation | 2.9%/2 \* 100 | 3.429%/2 \* 100 | 3.734%/2 \* 100
 
 Discount by the OIS Rate using the continuous compounding formula (Pe^(-rT)).
 
-Alternatively, value both cashflows as Bonds and value as the difference.
+Alternatively, value both cashflows as Bonds.
+
+The value of a swap, is the difference between what you receive and what you pay.
 
 Example 7.3 and 7.4
 
@@ -875,6 +877,7 @@ Need to read Chapter 10 again.
 
 - Buy ITM call
 - Sell OTM call
+- Maximum gain is the higher strike minus the ITM lower strike minus net premium paid
 - Maximum loss is the net premium paid
 
 ### Bull Spread Using Puts
@@ -936,6 +939,7 @@ Answer: graphically or using put-call parity
 - Short 2 calls ATM
 - Benefit from flat stock
 - [Butterfly using Puts](https://www.fidelity.com/learning-center/investment-products/options/options-strategy-guide/long-butterfly-spread-puts)
+- Max revenue = Difference between centre and lowest price
 
 ### Calendar Spread Using Calls
 
@@ -1039,9 +1043,12 @@ p = (a - d) / (u - d)
 
 ## Chapter 13 - Black-Scholes-Merton Model
 
-- price of a European call option as the time step tends to Zero
-- mean \mu is the expected return and \sigma is volatility
-- Delta S / S is the stock return which is normal distributed
+- Assumptions
+  - The assumption in equation (13.1) implies that the stock price at any future time has a lognormal distribution.
+  - Volatility on the underlying is known and constant
+  - price of a European call option as the time step tends to Zero
+  - mean \mu is the expected return and \sigma is volatility
+  - Delta S / S is the stock return which is normal distributed
 
 ### Lognormal Property
 
@@ -1539,7 +1546,3 @@ futures is e^{-(r-q)T} times the position required in the spot contract
 ## Chapter 19 - Volatility Smiles
 
 For options with some maturities, the implied volatility versus the strike price makes a smile.
-
-## Final Exam
-
-- 25 Multiple Choice
