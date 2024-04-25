@@ -7,25 +7,46 @@ tags:
   - economics
 ---
 
-## Outline
+## Course Takeaways
 
-1. apply economic models to represent the relationships between macroeconomic
-variables such as output and prices;
-2. employ graphical analysis to explain various aspects of macroeconomic theory learned in
-the course;
-3. calculate measures of the value of economic activity such as the gross domestic product
-and the consumer price index using macroeconomic data;
-4. explain the behavior of the economy in the long-run using classical theory about
-aggregate output, income, and expenditure; money and inflation; the open economy;
-and unemployment;
-5. explain the behavior of the economy in the very long-run using growth theory to explore
-the impacts of capital accumulation, population growth, and technological progress;
-6. explain the behavior of the economy in the short-run using business cycle theory to
-explore models of aggregate demand; how a small, open economy operates in the short
-run; and the impacts of monetary and fiscal policies and inflation; and
-7. apply principles learned in this course to discuss major macroeconomic problems and
-policy issues faced by Canada such as how monetary and fiscal policy can be used to help
-Canada deal with situations that arise in the global economy
+- what is the economy (i.e. output production. aka GDP)?
+  - goods and services created that can we can place monetary value on
+    - some activities may not be included like people staying at home instead of paying for daycare
+  - output is made up by capital stock, labour and a productivity factor, which doesn't have numerical breakdown
+  - there are many ways to measure GDP
+- without impacting consumption, only productivity determines long-run economic growth
+  - there are a variety of ways to improve productivity, read the section on policies [long-run-growth policies](#long-run-growth-policies)
+- Capital
+  - Capital are assets that people use to generate output
+  - Investments are made to maintain and grow capital
+- Labour
+  - People choose to make trade-offs between leisure and money
+  - People want to fund their leisure time so work money for that purpose
+  - Obviously and unfortunately, there are situations where the person is living to work versus working to live
+- the economy can either be booming in a bust or operating at "full employment"
+  - "full employment" is where unemployment rate equals natural unemployment, something hard to measure and can change
+  - natural unemployment can exist due to matching issues (oil & gas jobs went to renewable sector) and due to changing jobs (hunting for a job after being laid off)
+  - shocks are what change the state of the economy drastically
+    - technology shocks (transistor, internet), productivity shocks (COVID-19), supply shocks (higher oil prices because of OPEC)
+- Money
+  - exists for the sole purpose of making commerce efficient
+  - money can be interpreted as liquid assets meeting "what can be used to buy goods right now"
+  - money supply is influenced by the central bank and is made large because of fractional reserve lending
+    - for each dollar deposited at an institution, if the bank knows it only requires 20% to meet demand, it can lend until 80% has been fully lended (divide by 0.81)
+- Inflation: increase in the price of goods and services
+  - can be deliberately induced by the central bank
+    - central bank policies have a lagging effect so money supply can grow in the past year and its effects may take another year
+    - goal of money supply growth is to reduce interest rates to spur investments
+    - money supply has no effects on full-employment in the long-term, short-term is up for debate since it does cause inflation
+    - if the money supply grows, market participants end up realizing their dollars are worth less in a real sense and will increase prices
+  - inducement by federal
+    - crowding out: interest rates go up (lower private investments) because federal government spending too much
+  - costs of inflation
+    - cost of updating price labels:  _shoe leather costs_
+    - unanticipated inflation hurts savers and rewards banks and lenders
+    - hyperinflation: money loses meaning
+  - unexpected inflation and unemployment are related
+    - almost impossible to keep inflation unexpected
 
 ## Chapter 1 Introduction
 
@@ -1079,8 +1100,9 @@ If new capital bought with foreign debt is highly productive, the foreign debt w
 
 ### Saving and Investment in a Small Open Economy
 
-- a small economy cannot impact world real interest rate. Therefore the real interest rate can be fixed
+- a small economy cannot impact world real interest rate. Therefore the real interest rate is fixed
 - a supply shock can cause savings to decrease and thus the current account surplus falls (if rates are low enough, then the current account deficit increases)
+- a supply shock won't impact investment since interest rates did not increase
 - globalization
 - Globalization in Canada: direct investment (influence management) vs. portfolio investment
 
@@ -1090,6 +1112,7 @@ If new capital bought with foreign debt is highly productive, the foreign debt w
 - domestic economy and foreign economy (rest of the world)
 - the excess savings in the domestic market show up as the desired borrowing (foreign investment minus foreign saving) in the foreign economy
 - the world real interest rate will be such that desired international lending by one country equals desired international borrowing by the other country
+- The current account of the lender country rises (income receives from abroad)
 - The sum of current accounts of all countries equals 0 (therefore, equilibrium is one big a system of linear equations)
 
 ### Twin Deficits
@@ -2155,3 +2178,96 @@ Production: Y = At * F(Kt, Nt); yt = At f(kt)
     - unattractive: medical care
   - social insurance
     - well-designed social net is important for redistributing economic gains and when there is a fallback, greater risk can be taken to strive for growth
+
+## Knowledge Check
+
+According to the misperceptions theory, short-lived shocks may have long-term effects on the economy because of `______`
+
+- A) accelerator effects.
+- B) automatic stabilizers.
+- C) multiplier effects.
+- D) propagation mechanisms. <---------
+
+When is SRAS > LRAS (Misperceptions)
+
+Answer: when actual price level exceeds expected price level
+
+The reason for different effects of an anticipated fiscal policy on the full-employment output in the Keynesian and Classical models is
+
+- A) the Keynesian model assumes rational expectations, but the Classical model assumes perfect insight.
+- B) the Keynesian model assumes perfect insight, but the Classical model assumes rational
+- C) contrary to the Classical model, the Keynesian model assumes that policy has no wealth effect.  <-----------
+- D) the Keynesian model assumes perfect insight, but the Classical model assumes rational expectations.
+
+For Keynesian, there is no wealth effect due to price level adjusting in case of MS policies and expectations theory in case of
+
+Sacrifice Ratio: output lost for each 1% reduction in inflation
+
+Hystersis: natural rate of unemployment changes in response to the actual unemployment rate (rises if actual unemployment rate is below natural)
+
+change in debt-gdp ratio:
+
+```txt
+= (G + TR - T) / Y (budget deficit ratio) + (interest rate - growth rate) * (previous debt-GDP ratio)
+= deficit + (interest - growth) * previous debt-GDP-ratio
+= deficit ratio divided by the GDP
+```
+
+If GDP increase by 2%, then do deficit ratio / (GPD * (1 + 2%))
+
+The per-worker production function in the Solow model assumes `______`
+
+- A) increasing returns to scale and diminishing marginal productivity of capital.
+- B) constant returns to scale and increasing marginal productivity of capital.
+- C) constant returns to scale and diminishing marginal productivity of capital.
+- D) decreasing returns to scale and diminishing marginal productivity of capital.
+
+Friedman-Phelps
+
+unanticpated inflation vs. unemployment at a natural rate of unemployment
+requires expected inflation and natural rate are equal
+
+`s * f(k) = (n + k) k`
+
+You just read that forecasters predict Canada will run a current account deficit in 2004. From this you
+would infer that Canada will also `_______`
+
+- A) decrease its holding of net foreign assets.
+- B) run a capital account deficit in 2004.
+- C) run a balance of payments surplus.
+- D) decrease its official reserve assets.
+
+Capital account surplus = decrease in net foreign assets
+
+Which of the following statements is true?
+
+- A) The world as a whole has a current account deficit.
+- B) The world as a whole has a balance of payment surplus.
+- C) The world as a whole has a current account balance.
+- D) The world as a whole has a current account surplus.
+
+The world has a current account deficit
+
+This is because a current account deficit equals capital account surplus. Therefore, it follows that there is a higher deficit due to this mechanism rather than the offsetting current account surpluses in other countries.
+
+If there is an increase in the future marginal product of capital in a large open economy, it causes the
+current account to `________` and saving to `________`.
+
+- A) fall; remain unchanged
+- B) fall; rise
+- C) rise; rise
+- D) rise; remain unchanged
+
+If future marginal product of capital increases, then current investments increase, which can borrow locally or at the world rate. The higher rates entices saving.
+
+Absorption: amount consumed by domestic residents
+
+When a temporary adverse supply shock hits a small open economy, it causes the current account to
+`________` and investment to `________`.
+
+- A) fall; remain unchanged
+- B) fall; fall
+- C) rise; remain unchanged
+- D) rise; fall
+
+Remember that a decrease in savings corresponds to a decrease in current account and that rates won't change.
