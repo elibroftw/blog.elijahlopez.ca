@@ -82,8 +82,8 @@ Deleting original file Sewerslvt - all the joy In life was gone once you left.we
 
 ## Metadata Editing
 
-![Downloaded File Metadata in Music Caster](/images/yt-dlp/music-caster-metadata-before-edit.png)
+![Downloaded File Metadata in Music Caster](/images/yt-dlp/music-caster-metadata-before-edit.webp)
 
 yt-dlp is not smart enough to add all metadata nor the correct album cover, so if you are on Windows, you can use [Music Caster](https://github.com/elibroftw/music-caster/#readme) to further edit the metadata and add the correct cover art.
 
-![Metadata Edited in Music Caster](/images/yt-dlp/music-caster-metadata-edited.png)
+![Metadata Edited in Music Caster](/images/yt-dlp/music-caster-metadata-edited.webp)

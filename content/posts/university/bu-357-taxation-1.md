@@ -517,7 +517,7 @@ $6063
 
 <details><summary>Chapter 4, Problem 8</summary>
 
-![Problem 8](/images/bu-357/problem-8.png)
+![Problem 8](/images/bu-357/problem-8.webp)
 
 - Start at net income: 13,000
 - Add back any capital expenditures: 3,200 + 1,200

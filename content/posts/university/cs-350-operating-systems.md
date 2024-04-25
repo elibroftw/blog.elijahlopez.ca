@@ -1009,7 +1009,7 @@ Space inside a segment that was allocated for the stack; internal waste.
   - Least significant 12 bits are the offset when page size is 4KB
 - Each process has a page table that maps Virtual Page Numbers to Physical Page Numbers
 
-![pages table](/images/cs-350/pages.png)
+![pages table](/images/cs-350/pages.webp)
 
 ### MMUs
 
@@ -1265,7 +1265,7 @@ If H waits on a lock held by M, then the priotity of M and L both go up, whereas
 
 BVT example
 
-![BVT example](/images/cs-350/bvt-example.png)
+![BVT example](/images/cs-350/bvt-example.webp)
 
 ### Sleep / Wakeup
 
@@ -1285,11 +1285,11 @@ BVT example
 
 Realistic PC Architecture
 
-![realistic older PC architecture](/images/cs-350/pc-architecture.png)
+![realistic older PC architecture](/images/cs-350/pc-architecture.webp)
 
 I/O Bus PCI Example. Peripheral Component Interconnect Express (PCIe).
 
-![PCI I/O bus example](/images/cs-350/pci-io-bus.png)
+![PCI I/O bus example](/images/cs-350/pci-io-bus.webp)
 
 ### Memory and I/O buses
 
@@ -1376,7 +1376,7 @@ void sendbyte(uint8_t byte) {
   - Heads read and write data to platters
   - One head active at a time
 
-![disk anatomy](/images/cs-350/disk-anatomy.png)
+![disk anatomy](/images/cs-350/disk-anatomy.webp)
 
 ### Disk Positioning System
 

@@ -77,17 +77,17 @@ that there is a 10% dev tax on the total ZCash supply. This is no different than
 
 From the picture below, how would the user know if they are sending from a shielded address? They don't know! This hurts the privayc of ZEC users. It hinders privacy without even improving UX.
 
-![ZCash Wallet 1](/images/crypto/zcash-wallet-1.png)
+![ZCash Wallet 1](/images/crypto/zcash-wallet-1.webp)
 
 Each address is it's own account, and so no sub-addresses are possible.
 
-![ZCash Wallet 2](/images/crypto/zcash-wallet-2.png)
+![ZCash Wallet 2](/images/crypto/zcash-wallet-2.webp)
 
 Compare this to Monero. Each account has infinitely generated subaddresses and the balance is shown on an account basis.
 
-![Monero Wallet 1](/images/crypto/monero-wallet-1.png)
+![Monero Wallet 1](/images/crypto/monero-wallet-1.webp)
 
-![Monero Wallet 1](/images/crypto/monero-wallet-2.png)
+![Monero Wallet 1](/images/crypto/monero-wallet-2.webp)
 
 The Zecwallet Lite also does not store the wallet encrypted.
 I was never asked to create a pass code to decrypt the wallet so anyone who uses ZCash on a computer can have their ZCash stolen if their laptop/computer/storage is accessed by a third party.
@@ -305,4 +305,4 @@ It's sad enough that people think the upgrades to Monero are not needed.
 Feel free to donate some Monero.
 [84PR6SkYd5zaFLKDjAFrQfbaAg2c7SV3q3XDZ15QCpEZUggrN4YzY7n8m9XC3deXjo41yWHTm1LrsUpPTYGnRQbD9Cwp8En](monero:84PR6SkYd5zaFLKDjAFrQfbaAg2c7SV3q3XDZ15QCpEZUggrN4YzY7n8m9XC3deXjo41yWHTm1LrsUpPTYGnRQbD9Cwp8En)
 
-![monero:84PR6SkYd5zaFLKDjAFrQfbaAg2c7SV3q3XDZ15QCpEZUggrN4YzY7n8m9XC3deXjo41yWHTm1LrsUpPTYGnRQbD9Cwp8En](https://elijahlopez.ca/static/images/monero.png)
+![monero:84PR6SkYd5zaFLKDjAFrQfbaAg2c7SV3q3XDZ15QCpEZUggrN4YzY7n8m9XC3deXjo41yWHTm1LrsUpPTYGnRQbD9Cwp8En](https://elijahlopez.ca/static/images/monero.webp)

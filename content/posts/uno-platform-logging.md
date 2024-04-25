@@ -19,7 +19,7 @@ If you want to log regardless of debugging, then using the info function may wor
 First, if you simply need to debug something, try using
 [Visual Studio Tracepoints](https://learn.microsoft.com/en-us/visualstudio/debugger/using-tracepoints?view=vs-2022) which is nothing but a breakpoint as shown below (use curly braces to print variables). Click the the light grey part on the extreme left, add an action, and voila.
 
-![breakpoint screenshot](/images/c-sharp/visual-studio-breakpoint.png)
+![breakpoint screenshot](/images/c-sharp/visual-studio-breakpoint.webp)
 
 ## Logging
 

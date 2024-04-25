@@ -55,7 +55,7 @@ I have my laptop connected to two external monitors. The scale on all three disp
 
 ### Wake From Sleep shows Clipped Login UI
 
-![ALT: all of my three displays are black but my left monitor shows the clipped UI](/images/linux/linux-mint-clipped-login-ui.jpg)
+![ALT: all of my three displays are black but my left monitor shows the clipped UI](/images/linux/linux-mint-clipped-login-ui.webp)
 
 I can still login by simply typing my password and pressing enter but this is such a subpar experience. Windows 11 has its issues but it is never a simple issue. The worst Windows 11 does is run the anti-virus on a folder I did not exempt.
 

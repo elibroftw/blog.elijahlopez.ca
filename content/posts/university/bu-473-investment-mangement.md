@@ -1356,7 +1356,7 @@ Dividing a company's earnings before interest and taxes (EBIT) by its interest e
 
 TODO: use latex
 
-![ROE Breakdown](/images/bu-473/roe-breakdown.png)
+![ROE Breakdown](/images/bu-473/roe-breakdown.webp)
 
 ![Dupont Ratio](https://media.wallstreetprep.com/uploads/2021/11/04025747/DuPont-Analysis-Formula-ROE-Ratios.jpg)
 
@@ -1524,7 +1524,7 @@ When dividends do not exist, spot–futures parity states that the equilibrium f
 
 <img class=equation src="https://latex.codecogs.com/svg.image?F_0=P_0(1+r_f)^T">
 
-![Future Spreads](/images/bu-473/future-spreads.png)
+![Future Spreads](/images/bu-473/future-spreads.webp)
 
 ### Futures Prices vs. Expected Spot Price
 

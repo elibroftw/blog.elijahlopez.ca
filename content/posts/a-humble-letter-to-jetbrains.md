@@ -11,7 +11,7 @@ Dear JetBrains,
 
 I got home today and turned on my PC. I start up a twitch stream on Firefox and open up the task manager to check if I'm going to encounter any issues as I had the other day. What I notice is 47% of my memory is being used. That's 14.9GB. I sort apps by memory and what do I find?
 
-![Task Manager showing JetBrains Toolbox using 400MB of memory](/images/jetbrains/toolbox_mem_usage.png)
+![Task Manager showing JetBrains Toolbox using 400MB of memory](/images/jetbrains/toolbox_mem_usage.webp)
 
 So Toolbox is clearly disrespecting my PC, so of course I quit the app and disable the startup. I notice that my Music Player (Music Caster) only uses 100MB of memory, and that's a Python app. I wonder how much space the JetBrains Toolbox app takes up.
 
@@ -31,6 +31,6 @@ Ex-JetBrains user.
 
 In case people have doubts about how much bloat JetBrains' software has, here are some screenshots of folders I found of JetBrains' after uninstalling all of their software from my PC.
 
-![AppData/Roaming 628MB remnant](/images/jetbrains/appdata-roaming-remnant.png)
+![AppData/Roaming 628MB remnant](/images/jetbrains/appdata-roaming-remnant.webp)
 
-![AppData/Local 1.60GB remnant](/images/jetbrains/appdata-local-remnant.png)
+![AppData/Local 1.60GB remnant](/images/jetbrains/appdata-local-remnant.webp)

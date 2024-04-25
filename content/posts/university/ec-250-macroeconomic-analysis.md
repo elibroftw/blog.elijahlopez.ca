@@ -802,7 +802,7 @@ As for other types of capital, constructing an apartment building is profitable 
   - Apparently the real interest rate will be bid up. I guess because banks will have exhausted lending, so private credit lends at the equilibrium rate?
   - The interest rate represents many rates so things get messy in real world
 
-![In an economy with no foreign trade, the goods market is in equilibrium when desired national saving equals desired investment. Equivalently, the goods market is in equilibrium when the aggregate quantity of goods supplied equals the aggregate quantity of goods demanded.](/images/ec-250/saving-investment-curves.png)
+![In an economy with no foreign trade, the goods market is in equilibrium when desired national saving equals desired investment. Equivalently, the goods market is in equilibrium when the aggregate quantity of goods supplied equals the aggregate quantity of goods demanded.](/images/ec-250/saving-investment-curves.webp)
 
 ### Shifts in the Savings Curve
 
@@ -1108,7 +1108,7 @@ If new capital bought with foreign debt is highly productive, the foreign debt w
 
 ### What is a Business Cycle
 
-![aggregate economic activity peaks before start of a contraction/recession, trough before start of a expansion](/images/ec-250/business-cycle.png)
+![aggregate economic activity peaks before start of a contraction/recession, trough before start of a expansion](/images/ec-250/business-cycle.webp)
 
 A severe recession is called a depression. Sequence from one peak to the next is called the business cycle. Properties include:
 
@@ -1165,7 +1165,7 @@ Identify alternative policy approaches to dealing with business cycles.
 - for the classical theory, full equilibrium (FE) condition which relaxes the Keynesian assumption of fixed wages in the labour market
 - A situation in which all markets in an economy are simultaneously in equilibrium is called a **general equilibrium**
 
-![FE Line is vertical at Y line](/images/ec-250/fe-line.png)
+![FE Line is vertical at Y line](/images/ec-250/fe-line.webp)
 
 The full-employment line shifts right/left because of:
 
@@ -1180,7 +1180,7 @@ Increase in the capital stock | Right | More output can be produced with the sam
 - Investment-Saving
 - Savings and Investment equilibrium = goods market equilibrium
 
-![investment-savings vs output](/images/ec-250/is-curve.png)
+![investment-savings vs output](/images/ec-250/is-curve.webp)
 
 Factors That Shift the IS Curve
 
@@ -1200,7 +1200,7 @@ Effective tax rate on capital | Down and to the left | Desired investment falls,
 
 Basically, higher the price, lower the real interest rate. There is a different MD curve for each output Y.
 
-![liquidity-money vs. interest real interest rate](/images/ec-250/lm-curve.png)
+![liquidity-money vs. interest real interest rate](/images/ec-250/lm-curve.webp)
 
 All Else Equal, an Increase in | Shifts the LM Curve | Reason
 --------------------------------------- | --------------------------- | ----------------------
@@ -1229,14 +1229,14 @@ Constant: Government spending and nominal money supply
 
 ### Monetary Expansion
 
-![effects of monetary expansion](/images/ec-250/monetary-expansion.png)
+![effects of monetary expansion](/images/ec-250/monetary-expansion.webp)
 
 - short-term: lower interest rates and higher demand for output
 - long-term: prices get higher but no net difference
 
 ### Fiscal Expansion
 
-![effects of fiscal expansion](/images/ec-250/fiscal-expansion.png)
+![effects of fiscal expansion](/images/ec-250/fiscal-expansion.webp)
 
 - government increases spending
 - short-term: higher IS curve so higher interest rates
@@ -1252,7 +1252,7 @@ Constant: Government spending and nominal money supply
 
 The relationship between price levels and output
 
-![aggregate demand curve](/images/ec-250/aggregate-demand-curve.png)
+![aggregate demand curve](/images/ec-250/aggregate-demand-curve.webp)
 
 Factors that shift the curve is when the IS or LM shift while keeping the price level constant.
 
@@ -1517,11 +1517,11 @@ Nominal wages are set by contracts for an extended period of time and thus there
 
 The IS-LM model is output versus interest rates whereas the AD-AS model is the Price level versus the output.
 
-![monetary expansion](/images/ec-250/is-lm-ad-as-monetary-policy.png)
+![monetary expansion](/images/ec-250/is-lm-ad-as-monetary-policy.webp)
 
 ### Fiscal Policies in the Keynesian Model
 
-![monetary expansion](/images/ec-250/is-lm-ad-as-fiscal-policy.png)
+![monetary expansion](/images/ec-250/is-lm-ad-as-fiscal-policy.webp)
 
 For an increase in money supply, there are two price level adjustments since one occurs before labour contracts are renegotiated
 

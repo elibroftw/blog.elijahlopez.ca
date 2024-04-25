@@ -1073,7 +1073,7 @@ Crooked Hilary” video campaign on FB (assisting Trump’s team).
   - lengthy legislative process does not keep up with technology
   - very narrow focus
 
-![Legislative prccess in Canada](/images/cs-489-security/canada-legislative-process.png)
+![Legislative prccess in Canada](/images/cs-489-security/canada-legislative-proces.webp)
 
 ### Non-Violations of Law
 

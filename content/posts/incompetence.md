@@ -57,9 +57,9 @@ support personnel.
 
 I have the bank UI zoomed in and noticed blurryness. Look at how fake these guys are.
 
-![Blurry Navigation Bar](/images/incompetence/bmo1.jpg)
+![Blurry Navigation Bar](/images/incompetence/bmo1.webp)
 
-![Actual Navigation Bar](/images/incompetence/bmo2.png)
+![Actual Navigation Bar](/images/incompetence/bmo2.webp)
 
 ### CIBC
 

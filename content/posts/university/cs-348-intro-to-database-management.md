@@ -162,7 +162,7 @@ tuples that don't have those attributes matching. During the first cross product
 
 ### Summary of Relational Operators
 
-![summary of relational operators](/images/cs-348/relation-operators.png)
+![summary of relational operators](/images/cs-348/relation-operators.webp)
 
 ### Finding the maximums of a relation
 
@@ -192,7 +192,7 @@ KEYWORD (statements is implied)
 
 Schema used for Examples
 
-![database schema](/images/cs-348/database-examples-schema.png)
+![database schema](/images/cs-348/database-examples-schema.webp)
 
 [SQL interpreter](https://www.db-book.com/university-lab-dir/sqljs.html)
 

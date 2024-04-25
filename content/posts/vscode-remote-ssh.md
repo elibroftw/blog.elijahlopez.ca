@@ -93,7 +93,7 @@ type path\to\id_algo.pub | ssh USER@HOST "cat >> .ssh/authorized_keys"
 5. From the command palette, use "Remote-SSH: Connect Current Window to Host..." and select the host you just added
 6. A window will show up asking you to choose the platform for the remote server so choose the **remote server's** platform (e.g. Linux)
 7. If all goes well, you should be able to connect without having to enter a password
-![VS Code SSH](/images/vs-code/connected-example.png)
+![VS Code SSH](/images/vs-code/connected-example.webp)
 8. Tip: add multiple folders in the remote server to a workspace
 
 ## Proxy Jump Setup

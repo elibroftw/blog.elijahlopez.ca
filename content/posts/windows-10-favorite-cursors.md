@@ -16,7 +16,7 @@ Below are the cursor packs I have installed from best to worst since I loathe th
 
 ## 1. Breeze Hacked
 
-![Breeze Hacked](/images/windows-10-favorite-cursors/breeze-hacked.png)
+![Breeze Hacked](/images/windows-10-favorite-cursors/breeze-hacked.webp)
 
 [Download from deviantart](https://www.deviantart.com/en-ryuu/art/Breeze-Hacked-Cursor-For-Windows-752551821)
 
@@ -25,7 +25,7 @@ In this case it's "hackish," that needs to be fulfilled. It does remind me of th
 
 ## 2. Evolution OS
 
-![Evolution OS](/images/windows-10-favorite-cursors/evolution-os.jpeg)
+![Evolution OS](/images/windows-10-favorite-cursors/evolution-os.webp)
 
 [Download from deviantart](https://www.deviantart.com/sk-studios-design/art/EvolutionOS-Custom-Cursors-for-Windows-648438877)
 
@@ -33,7 +33,7 @@ This is a Mac OS inspired theme. It is an immediate improvement over the Windows
 
 ## 3. Window Better Black
 
-![Window Better Black](/images/windows-10-favorite-cursors/windows-better-black.png)
+![Window Better Black](/images/windows-10-favorite-cursors/windows-better-black.webp)
 
 [Download from deviantart](https://www.deviantart.com/twipeep/art/Windows-10-cursor-black-version-572437583)
 

@@ -44,7 +44,7 @@ Know both the program specific ones (browser, explorer, IDE of choice, etc.) and
 Instead of doing a calculation by hand or opening an IDE to create and run a script, you can actually execute Python code from the command line.
 Aside from the common batch functions (e.g. ls, cd), knowing how to use Python from the command line will save you a lot of time.
 
-![Python in the Terminal](/images/intermediate-python/python-in-terminal.png)
+![Python in the Terminal](/images/intermediate-python/python-in-terminal.webp)
 
 ### How to Search Engine
 

@@ -84,7 +84,7 @@ The exceptions being: Python, Windows C++ development, .NET development, Java.
 
 6. Set MSYS2 as the default terminal profile for Windows in the VSCode `workspace` settings
 
-    ![Setting default terminal profile](/images/vs-code/setting-default-profile.jpg)
+    ![Setting default terminal profile](/images/vs-code/setting-default-profile.webp)
 
 6. Open an MSYS2 Terminal in VS Code
 

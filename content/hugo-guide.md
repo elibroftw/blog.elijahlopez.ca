@@ -62,16 +62,16 @@ To include a Table of Contents, use `{{</* toc */>}}` (custom shortcode)
 To embed an image in markdown use.
 
 ```md
-![Unity installation screenshot](/images/automate-unity-building/unity-hub.png)
+![Unity installation screenshot](/images/automate-unity-building/unity-hub.webp)
 ```
 
  make sure the image is under the `static/images` directory. I organize images based on the post or tag they
-are related to, so I suggest putting the image in `static/images/crypto/monero.png` or `static/images/about/headshot.png`.
+are related to, so I suggest putting the image in `static/images/crypto/monero.webp` or `static/images/about/headshot.webp`. I suggest using webp over png as webp provides better compression.
 
 To embed this image, add something like the below.
 
 ```md
-![Unity installation screenshot](/images/automate-unity-building/unity-hub.png)
+![Unity installation screenshot](/images/automate-unity-building/unity-hub.webp)
 ```
 
 For aligning images, you can check out https://davidwells.io/snippets/how-to-align-images-in-markdown and https://stackoverflow.com/questions/255170/markdown-and-image-alignment.

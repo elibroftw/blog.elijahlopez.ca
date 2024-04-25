@@ -983,15 +983,15 @@ In a risk-neutral world, stock at time T is worth S<sub>0</sub>e<sup>rT</sup>. I
 
 Valuing a European Call Option
 
-![Valuing a Call Option Figure 12.4, page 275](/images/bu-423/binomial-tree-two-step-call-option.png)
+![Valuing a Call Option Figure 12.4, page 275](/images/bu-423/binomial-tree-two-step-call-option.webp)
 
 Valuing a European Put Option
 
-![Valuing a Put Option Figure 12.7, page 278](/images/bu-423/binomial-tree-two-step-put-option.png)
+![Valuing a Put Option Figure 12.7, page 278](/images/bu-423/binomial-tree-two-step-put-option.webp)
 
 Valuing an American Put Option
 
-![Valuing an American Put Option Figure 12.8, page 279 ](/images/bu-423/binomial-tree-two-step-american-put-option.png)
+![Valuing an American Put Option Figure 12.8, page 279 ](/images/bu-423/binomial-tree-two-step-american-put-option.webp)
 
 ### Choosing u and d
 

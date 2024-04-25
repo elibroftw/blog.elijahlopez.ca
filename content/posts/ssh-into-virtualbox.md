@@ -12,7 +12,7 @@ tags:
 
 For the Oracle VirtualBox VM, click the virtualbox network settings and add a new port forwarding rule under advanced settings and add a rule for SSH with the TCP protocol, 3022 Host port, and 22 guest port.
 
-![port forwarding UI in VirtualBox](/images/virtual-box/port-forwarding-ssh.png)
+![port forwarding UI in VirtualBox](/images/virtual-box/port-forwarding-ssh.webp)
 
 On the Virtual Machine, install openssh-server. This is how you would do it on Debian-based systems. I'm using Linux mint.
 
