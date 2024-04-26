@@ -1064,10 +1064,15 @@ Contributed Surplus - Options       6,000
 
 ### CSOP
 
+According to IFRS2:10-13A, CSOP recognized at fair value (usually using black-scholes-merton model)
+
+- Although unvested options dilute earnings, the compensation expense is allocated during vesting period, not grant.
+- After vesting, as long as the option has not expired, it is dilutive
+
 Options granted to 5 executives to  purchase 2,000 shares at a price of $60. Grant date is Jan 1, 2024. Vesting is Dec 31, 2025. Compensation expense is 220,000.
 
 ```accounting
-# on end date of year
+Dec 31, 2025 - Vested of options
 Compensation Expense    110,000
   Contributed Surplus           110,000
 # 20% exercised Jun 1, 2027
