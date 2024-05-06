@@ -1,5 +1,5 @@
 ---
-title: "BU 357 Taxation 1"
+title: "BU 357 Taxation I"
 date: 2023-05-09T15:01:54-04:00
 draft: false
 tags:
