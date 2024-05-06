@@ -96,3 +96,30 @@ Of course, no society (as to my knowledge) has such a tax scheme, so the moral t
     - Estimated inheritance fee is $2MM as the shares are publicly traded and a market value exists unlike only an estimated intrinsic value as was the case with shares of private companies.
 
 </details>
+
+### Government's Law
+
+1 Peter 2:13
+
+> Submit yourselves for the Lord's sake to every human authority: whether to the emperor, as the supreme authority, or to governors, who are sent by him to punish those who do wrong and to commend those who do right.
+
+This passage strongly implies that government institutions are permitted and that in those cases, it is the rule of the land. Although the other bible version say "evildoers," there is a big difference betweens someone violently harming someone, and someone who commits crimes due to poverty.
+
+### When to Defy The Law
+
+Matthew 22:17-22
+
+> Tell us then, what is your opinion? Is it right to pay the imperial tax to Caesar or not?”
+> But Jesus, knowing their evil intent, said, “You hypocrites, why are you trying to trap me? 19 Show me the coin used for paying the tax.” They brought him a denarius, 20 and he asked them, “Whose image is this? And whose inscription?”
+> “Caesar’s,” they replied.
+> Then he said to them, “So give back to Caesar what is Caesar’s, and to God what is God’s.”
+
+Matthew 5:19
+
+> Therefore anyone who sets aside one of the least of these commands and teaches others accordingly will be called least in the kingdom of heaven, but whoever practices and teaches these commands will be called great in the kingdom of heaven.
+
+Luke 9:5
+
+> If people do not welcome you, leave their town and shake the dust off your feet as a testimony against them.”
+
+Leave the land if free to move. This is the case for many Americans, but not people outside of America.
