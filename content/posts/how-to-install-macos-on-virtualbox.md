@@ -4,10 +4,13 @@ date: 2023-08-15T21:15:51-04:00
 draft: false
 tags:
   - windows
+  - macos
   - tutorial
   - mobile
   - virtual-box
 ---
+
+Update: I ended up purchasing a macbook air :(
 
 For reference: my laptop is the Razer Blade 14 2022 with [AMD Ryzen 9 6900HX](https://www.amd.com/en/product/11541). It supports AMD-V.
 
