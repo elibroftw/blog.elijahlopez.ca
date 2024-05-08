@@ -162,3 +162,7 @@ This party is Arab-secular
 In conclusion every party in Israel (90%+ of seats) is pro-settlements or non-secular except for the Hadash-Ta'al coalition and possibly the Israeli Labor Party. Since 106/120 members of the Knessat are pro-settlements/racist/victim-blaming, most Israelis are not pro-peace and are probably biased regarding the discussion on Palestine. 106/120 is a large percentage for a country that has a high proportional electoral system. There cannot be peace in Palestine till Israelis realize they are voting for their own self-interests over the lives of humans on the other side of the war.
 
 Countries around the world should sanction Israel since unlike Russia, Israel's population is also pro-settlement and land theft. The refusal of the US to sanction Israel says a lot about moral grandstanding in the 21st century.
+
+## Other Information
+
+A lot of people claim Hamas is immoral, but they are literally a military without having a country. How can we expect people without sovereignty to act morally when Americans who already had sovereignty committed the [My Lai massacre](https://en.wikipedia.org/wiki/My_Lai_massacre) on the other side of the fucking planet. These are people who had the freedom to consciously decide to protest the constitute and go to jail instead . A lot of Americans like to bring up sexual violence used by Hamas but are they going to blame the entire US Army for this massacre as well?

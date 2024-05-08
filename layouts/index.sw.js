@@ -29,9 +29,7 @@ async function cacheFirstWithRefresh(request) {
 
   if (hostname == 'latex.codecogs.com') {
     const responseFromCache = await caches.match(request);
-    if (responseFromCache) {
-      return responseFromCache;
-    }
+    if (responseFromCache) return responseFromCache;
   }
 
   const fetchResponsePromise = fetch(request).then(async (networkResponse) => {

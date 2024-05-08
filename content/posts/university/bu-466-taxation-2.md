@@ -42,12 +42,16 @@ Corporation
 - Loss carryovers (Sec. 111)
   - Non-Capital loss (back 3 years, forward 20 years)
     - total losses including division C (applies to anything)
-  - Business Investment Losses (BIL) - disposition of shares and debts of a Small Business Corporation
+  - Allowable Business Investment Losses (ABIL) - disposition of shares and debts of a Small Business Corporation
+    - Similar to allowable capital loss except it can be claimed against anythin
+    - the Allowable indicates a 50% inclusion of the losses
     - 50% of losses can be claimed against anything
     - carry back 3 years, carry forward 10 and then reclassified as net-capital loss
+    - Reduces Division B income
   - Net capital loss (back 3, forward indefinitely)
     - Restricted to taxable capital gains
     - The inclusion rate has already been applied to this
+    - Inclusion has already been done if accounts are Taxable Capital Gains and Allowable Capital Losses
   - Restricted farm losses
   - Farm losses
 
@@ -98,7 +102,9 @@ Federal Abatement: A way to "make way" for the provincial taxes. Applies only on
 
 For every province that has a permanent establishment, income is allocated as so:
 
-(gross revenue in province / total gross revenue) + (wages in province / total wages)
+((gross revenue in province / total gross revenue) + (wages in province / total wages)) / 2
+
+<img class=equation-tall src="https://latex.codecogs.com/svg.image?\dfrac{ \frac{GrossRevenueInProvince}{TotalGrossRevenue} + \frac{WagesInProvince}{TotalWages} }{2}">
 
 <details><summary>Example</summary>
 
@@ -106,7 +112,7 @@ ABC Inc. operates in Ontario and has a permanent establishment in the US. It ear
 
 Line | Ontario | US | Total
 --- | --- | --- | ---
-200,000 | 50,000 | 250,000
+Revenues | 200,000 | 50,000 | 250,000
 Salaries | 47,500 | 2,500 | 50,000
 Federal Abatement | 87.5% | 13.5% | 70,000
 
@@ -137,5 +143,72 @@ Provincial | 12% | 70,000 | 8,400
 Total Current Taxes | | | 21,400
 
 </details>
+
+<details><summary>Chapter 11 Problem 6</summary>
+
+```txt
+Business income for Division B: 263,000
+Canadian investment royalty income: 11,000
+UK Dividends: 20,000
+Taxable Canadian Dividends 5,000
+Taxable Capital Gains   7,000
+Charitable Donations      100,000
+Net Capital Loss from 2017  8,000
+AB and BC provincial tax rates: 10%
+Division B Income: 263,000 + 11,000 + 20,000 + 7,000 = 306,000
+Division C deductions = 306,000 - 5,000 (cdn dividends) - 100,000 (donations) - 7,000 (CL) = 194,000
+```
+
+Region | BC | AB | US | Total
+--- | --- | --- | --- | ---
+Revenues | 3M | 3M | 4M | 10M
+Wages | 500k | 300k | 200k | 1M
+Allocation | 40% | 30% | 30% | 100%
+Income | 77,600 | 58,200 | 58,200 | 194,000
+
+Type | Rate | Income Applicable | Impact on Current Taxes
+--- | --- | --- | ---
+Basic | 38% | 194,000 | 73,720
+GRR | (13%) | 194,000 | (25,220)
+Abatement | (10%) | 135,800 | (13,580)
+Fed Tax | X | X | X
+BC Tax | 10% | 77,600  | 7,760
+Alberta Tax | 10% |  58,200 | 5,820
+Effective | ? | N/R | 48,500
+
+</details>
+
+
+<details><summary>Chapter 11 Problem 1</summary>
+
+Year | 2020 | 2021 | 2022 | 2023
+--- | --- | --- | --- | ---
+Business Income | 54,000 | 32,000 | (75,000) | 62,500
+Cdn Div. | 42,500 | 22,500 | 18,000 | 10,500
+Taxable Capital Gains | 11,000 | 2,500 | 5,000 | 9,000
+Allowable Capital Losses | 2,000 | 4,500 | 3,500 | 0
+_Net Taxable Capital Gain_ | 9,000 | 0 | 1,500 | 9,000
+_ABILs_ | (3,750) | 0 | 0 | 0
+_Division B_ | 101,750 | 54,500 | 0 | 82,000
+_Division C_ | - | - | - | -
+Cdn Div. | (42,500) | (22,500) | (18,000) | (10,500)
+_Max Charitable Donations_ | 76,312.50 | 24,000 | 0 | 46,875
+_Charitable Donations Deductions_ | (23,000) | (9,000) | 0 | (16,000)
+_Charitable Balance_ | 0 | 0 | 3,000 | 0
+_Net Capital Loss Claim_ | (9,000) | 0 | (1,500) | (500)
+_Net Capital Loss Balance_ | 0 | 2,000 | 500 | 0
+_Income Before Capital Loss_ | 27,250 | 23,000 | 0 | 55,000
+_Non capital loss Balance_ | 0 | 0 | 24,750 | 0
+_Non capital loss Claim_ | (27,250) | (23,000) | 0 | (24,750)
+Taxable Income | 0 | 0 | 0 | 30,250
+
+Net capital loss balance of 9,000 starting in 2017
+
+- Net capital loss 2024: 0
+- Charitable Donations Carry forward 2024: 0
+- Non-capital loss 2024: 0
+
+</details>
+
 
 ## Chapter 12
