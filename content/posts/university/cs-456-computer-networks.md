@@ -100,6 +100,62 @@ What is the internet and what is a protocol?
   - 4G, 5G
   - cellular network operator
 
+### Institutional Networks
+
+As mentioned before, in an institutional network, we have lots of access points in each building, and they all connect to switches which connect to distribution routers (routers in buildings) which connect to core routers which connect to edge routers which connect to at least one ISP.
+
+- [UWaterloo Core Network Statistics](https://ns-info.uwaterloo.ca/netstats/core.php)
+- [UWaterloo Building Network Statistics](https://ns-info.uwaterloo.ca/netstats/building.php)
+
+### Router Versus Switches
+
+If two networks use different technologies, we need to use routers, which is a switch with more capabilities.
+
+### Access Networks: Data Center Networks
+
+- high-bandwidth links (10s to 100s Gbps)
+- connect hundreds to thousands of servers together, and to internet
+
+### Hosts Send Packets of Data
+
+- packet-switching: application messages is broken into smaller chunks (packets) of length _L_ bits
+- transmits packet into access network at transmission rate _R_
+- Link transmission rate is the capacity (link bandwidth)
+- packet transmission delay = time needed to transmit L-bit packet into link = L (bits) / R (bits per second)
+
+### Physical Media Links
+
+- coaxial cable
+  - two concentric copper conductors
+  - broadbands (100's Mbps per channel, multiple frequency channels)
+- fiber optic cable
+  - glass fiber carrying light pulses, each pulse is a bit
+  - high-speed operation: high-speed point-to-point (10s-100s Gbps)
+  - low error rate: repeaters spaced far part, immune to electromagnetic noise
+- wireless radio
+  - bands
+  -
+- radio link types
+  - Wireless LAN (WiFi)
+  - Bluetooth: cable replacement
+  - terrestrial microwave
+  - satellite
+
+### The Network Core
+
+- network forwards packets from one router to the next, across links on path from source to destination
+- forwarding (switching)
+  - move arriving packet from input link to appropriate output link (each router has many output ports). [Example](https://www.cisco.com/c/en/us/products/collateral/switches/catalyst-2960-x-series-switches/datasheet_c78-728232.html)
+- Run a routing algorithm/protocol on the routers
+  - It will end up deciding what the best output port is for linking
+  - creates the forwarding table
+    - packet header has an address
+    - forwarding table has a mapping of header value to output link
+
+### Packet switching Store and forward
+
+- entire packet must arrive at router before it can be transmitted on next link
+
 ## Chapter 2 Application Layer Protocols
 
 World Wide Web (HTTP), File Transfer (FTP), Electronic Mail (SMTP), Domain Name System (DNS), Socket Programming.
