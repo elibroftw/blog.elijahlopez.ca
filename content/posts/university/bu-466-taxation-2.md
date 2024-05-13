@@ -42,7 +42,7 @@ Corporation
 - Loss carryovers (Sec. 111)
   - Non-Capital loss (back 3 years, forward 20 years)
     - total losses including division C (applies to anything)
-  - Allowable Business Investment Losses (ABIL) - disposition of shares and debts of a Small Business Corporation
+  - Allowable Business Investment Losses (ABIL) - disposition of shares and debts of a Small Business Corporation (CCPC)
     - Similar to allowable capital loss except it can be claimed against anythin
     - the Allowable indicates a 50% inclusion of the losses
     - 50% of losses can be claimed against anything
@@ -104,7 +104,7 @@ For every province that has a permanent establishment, income is allocated as so
 
 ((gross revenue in province / total gross revenue) + (wages in province / total wages)) / 2
 
-<img class=equation-tall src="https://latex.codecogs.com/svg.image?\dfrac{ \frac{GrossRevenueInProvince}{TotalGrossRevenue} + \frac{WagesInProvince}{TotalWages} }{2}">
+<img class=equation-tall src="https://latex.codecogs.com/svg.image?\dfrac{ \frac{GrossRevenueInProvince}{TotalGrossRevenue} + \frac{WagesInProvince}{TotalWages} }{2}" label="\dfrac{ \frac{GrossRevenueInProvince}{TotalGrossRevenue} + \frac{WagesInProvince}{TotalWages} }{2}">
 
 <details><summary>Example</summary>
 
@@ -178,7 +178,6 @@ Effective | ? | N/R | 48,500
 
 </details>
 
-
 <details><summary>Chapter 11 Problem 1</summary>
 
 Year | 2020 | 2021 | 2022 | 2023
@@ -210,5 +209,141 @@ Net capital loss balance of 9,000 starting in 2017
 
 </details>
 
-
 ## Chapter 12
+
+Integration for Business and INvestment Income of the Private Corporation
+
+- CCPC overview and small business deduction
+- Associated Corporaitons
+- Investment income in a CCPC
+- Refundable taxes
+- Comprehensive problem
+
+### CCPC
+
+- shares non-publicly listed
+- not controlled (< 50%) by a public corporation
+- not controlled (< 50%) by a non-resident
+
+What are CCPC doing that public corporations not doing?
+
+Hiring Canadians
+
+### Dividends
+
+For the course, we will assume that the provincial dividend tax credit is perfect:
+
+- 5/11 for eligible dividends
+- 4/13 for non-eligible dividends
+
+In reality, a province's dividend tax credit may not be integrated.
+
+Individuals will prefer eligible dividends as they are subject to a lower rate of tax.
+
+### Terminology
+
+- Dividend: actual amount paid
+- Taxable Dividend: grossed up based on classification of the dividends
+
+### Non-Eligible Dividends
+
+- After-tax profits accumulated in LRIP balance
+- Based on income earned that was subject to a low rate of tax
+  - Active business income &rarr; SBD
+  - Investment income &rarr; All
+
+### Eligible Dividends
+
+- General Rate Income Pool (GRIP): high rate of tax (eligible dividend)
+  - Higher gross-up
+- Low Rate Income Pool (LRIP): low rate of tax (non-eligible dividend)
+  - Lower gross-up
+- After-tax profits accumulated in GRIP balance
+- Based on income earned that was not subject to a low rate of tax
+  - Public corporations, non-CCPC subject to full rate
+  - CCPCs not subject to a low rate of tax
+
+### General Rate Income Pool (GRIP)
+
+- Eligible dividends
+
+### Low Rate Income Pool (LRIP)
+
+- Non-eligible dividends
+  - Public corporations must pay out non-eligible dividends first
+    - Otherwise CRA charges excess eligible dividend penalty
+- Investment Income
+
+### Advantages and Disadvantages of Incorporation
+
+- Related income splitting potential (advantage)
+  - Family members are shareholders and so would get dividends
+  - Paying reasonable salaries
+- Tax cost if the combined corporate tax rate is over 13% for income eligible for SBD and 27.5% for other business income (disadvantage)
+- Separation of business and personal activities (advantage)
+- Limited liability (advantage)
+- Administrative costs (Disadvantage)
+- Additional legal and accounting costs (disadvantage)
+- Continuity of the separate legal entity (Advantage)
+
+### Small Business Deduction (SBD)
+
+- Instead of the general rate reduction, there is a small business deduction (19%)
+- Usually lower provincial tax
+- Limit is up to $500,000
+- Limit is reduced for Large CCPCs or CCPCs with significant passive investment income
+- Limit is shared with associated corporations
+
+Active Business Income
+
+- businesses other than investment business and personal services business
+- Specified Investment Business
+  - Property income unless corporation employs > five full-time employees
+- Personal Services Business (PSB)
+  - Individual performs services as if they were an employee of client
+  - Owns 10%+ of the corporation
+  - Unless: corporation employs > five full-time employees throughout the year, or services were provided to an associated corporation
+  - Not eligible for SBD or GRR; additional 5% levied on income
+  - Limitations on allowable deductions
+
+Calculation
+
+- Net Canadian active business income
+  - Want to benefit Canadians doing business in Canada
+- Taxable income fully taxed in Canada &rarr; calculated as total taxable income less foreign-source income estimated as the sum of
+  - Foreign-source investment income, estimates as 100/28 times the foreign tax credit on foreign non-business income
+  - foreign-source business income, 4x foreign business income
+- Business limit less any portion allocated to associated corporations
+
+Clawback of SBD
+
+SBD limit is reduced by the greater of
+
+- taxable capital reduction
+  - 500,000 limit reduced by $1 for every $80 of taxable capital greater than $10M of the preceding tax year employed of all associated corporations in Canada
+  - Fully clawed back when taxable capital reaches $50M
+  - Long-term debt counts
+- Adjusted Aggregate Investment Income (AAII)
+  - Reduced by $5 for every $1 in AAII earned by all associated corporations > $50,000
+    - Fully clawed back when investment income reaches $150,000
+      - **This should be lowered to $60,000**
+    - AAII = Aggregate Investment Income
+      - excludes; net taxable capital gains from dispositions of active assets and net capital loss carryovers
+      - includes: dividends from non-connected corporations and taxable amount of a life insurance policy
+      - We'll calculate this later on
+
+<details><summary>SBD Clawback Example</summary>
+
+ABC Inc. is a CCPC that has a December 31 year-end.
+
+- $350,00 earned in net active business income in Canada
+- $100,000 in interest income
+- Taxable Income of $450,000
+- Taxable capital employed of $40M
+- Business limit
+  - Clawback based on taxable capital reduction: (40M - 10M) / (50M - 10M) * 500k = $375,000
+    - Alternatively (40M - 10M) / 80
+  - Clawback base on AAII: (100,000 - 50,000) * 5 = $250,000
+    - Alternatively use the fully clawed back amount
+
+</details>
