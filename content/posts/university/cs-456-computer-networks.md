@@ -79,7 +79,7 @@ What is the internet and what is a protocol?
   - splitter to split the channels into TV and cable modem
   - channels for video, data (downstream and upstream), and control
   - Physics!
-- Hybrid fiber coax (HDC)
+- Hybrid fiber coax (HFC)
   - asymmetric: up to 40Mbps - 1.2Gbps downstream, 30-100 Mbps upstream
 - data is with packets with a source and a destination (ip addresses)
 
@@ -152,9 +152,36 @@ If two networks use different technologies, we need to use routers, which is a s
     - packet header has an address
     - forwarding table has a mapping of header value to output link
 
-### Packet switching Store and forward
+### Packet Switching store-and-forward
 
+- takes L/R seconds to transmit L-bit packet into link at R bits per second
 - entire packet must arrive at router before it can be transmitted on next link
+- When R2 > R1, the router receives bits at a faster rate than it can handle
+  - 3rd packet: `t = 3L/R1 + L/R2`
+- When R1 > R2,
+  - 3rd packet: `t = L/R1 + 3L/R2`
+
+### Packet Switching queuing
+
+- When R2 > R1, the queue fills because work arrives faster than it can service (transmission rate)
+- packets are dropped if buffer is full (congestion)
+
+### Circuit Switching
+
+- end-to-end resources allocated to, researched for "call" between source and destination
+- traditional telephone networks
+- no sharing
+- each link is split into sub-channels that can be used for circuits
+
+### Time Division Multiplexing
+
+Alternatively to FDM where each call is allocated its own band, we can divide time into slots and each call is allocated a periodic slots that can transmit at the wide frequency band and so would get a higher rate
+
+### Network of Networks
+
+Impossible O(N^2) to connect all ISPs to all other ISPs so there are global ISPs that connect to each other global ISPs via an Internet Exchange Point and peering links. Regional ISPs will connect access nets to ISPs. Content provider networks (Google, Microsoft, Netflix) may connect directly to an IXP or beside a global ISP to be close to end users.
+
+[TORIX](https://www.torix.ca/who-we-are/): Toronto Internet Exchange Point
 
 ## Chapter 2 Application Layer Protocols
 
