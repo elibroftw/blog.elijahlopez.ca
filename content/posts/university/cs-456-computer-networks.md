@@ -183,6 +183,52 @@ Impossible O(N^2) to connect all ISPs to all other ISPs so there are global ISPs
 
 [TORIX](https://www.torix.ca/who-we-are/): Toronto Internet Exchange Point
 
+### Packet Delays and Loss
+
+Four Sources
+
+- Nodal processing
+  - Checking bit errors, determining output link (< microsecond)
+- Queueing Delay
+  - Waiting at output link
+  - Congestion
+- Transmission Delay
+  - Time for packet until transmission
+
+Packets have time-to-live which is a uint defining the max hops. If a router encounters a packet with a TTL of 1, it drops the packet and typically returns an error to the sender. Otherwise it propagates a packet with the TTL minus 1.
+
+Transmission Rate = Packet Length * Average Packet Arrival Rate / Link Bandwidth
+
+- Transmission Rate ~= 0: small delay
+- Transmission Rate close to 1 but not large: large delay
+- Transmission Rate > 1: infinite delay due to more work than servicing
+
+### Real Internet Delays
+
+`traceroute` program
+
+`traceroute` will send sets (probe) of 3 packets with for all i = 1, to a TTL of 64 until the destination is reached. For each i, the packets are dropped by a router at the index i. The router at index i is not necessarily going to be the same for each packet. This program therefore allows inspecting/probing the network path.
+
+Reasons for different paths: routing table changes, load balancing
+
+### Throughput
+
+- bits/time unit
+  - instantaneous: any point in a timeslot (what you would show in a software that downloads stuff for the user)
+  - average: rate over longer period of time (useful for performance)
+- Bottleneck Link
+  - Which link is constraining the throughputs
+
+### Network Security
+
+- internet was designed for trusted groups in mind, so designers are catching up
+- all layers need to be protected
+- packet sniffing
+  - using wireshark, someone can inspect packets that are broadcasted by making their network card promiscuous (accept all packets instead of the default behaviour dropping ones that were not meant for the device). Especially harmful for unencrypted traffic
+  - IP spoofing: false source address can trick server into sending too much information to the real device
+  - Denial of Service
+    - Overwhelm server with bogus traffic
+
 ## Chapter 2 Application Layer Protocols
 
 World Wide Web (HTTP), File Transfer (FTP), Electronic Mail (SMTP), Domain Name System (DNS), Socket Programming.
