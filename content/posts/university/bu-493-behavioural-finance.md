@@ -33,6 +33,10 @@ Need discipline when picking people (from fast and slow)
 
 Testable cases: Enronn (2), seagram, risk profiling, Shattered Sears
 
+Marshmallow study: children taking one marshmallow now or waiting five minutes to get two. Study flawed because it only focused on stanford kids (affluence) and wasn't transferable when looking at kids who are less affluent. Ability to postpone gratification at an early age led to more successful life.
+
+James Flynn effect: IQ scores been rising without known effect.
+
 ## Chapter 1 Expected Utility Theory
 
 We seek to maximize our consumption utility. Imperfect measurements. Tradeoff is cost ($ and time). Rational. Self-aware.
@@ -131,12 +135,59 @@ Behavioural finance
 - proposed utility function &rarr; people want highest utility
 - bias towards value
 
+### About Biases
+
+- Most systematic errors are from biases
+- Emotional and cognitive biases
+
+### System 1
+
+- automatic
+- skillful system 1 through training, experience, and tacit knowledge
+- thinking takes a lot of effort, our brains conserve energy by relying on short cuts such as heuristics - can lead to biases (e.g. confirmation bias, anchoring, halo effect, priming, availability, sunk cost fallacy, loss aversion)
+
+### System 2
+
+- contemplative decision making
+- more holistic, somewhat self-aware
+- new, unfamiliar, complicated
+- can still be influenced by biases; e.g. bounded rationality pushing us to seek shortcuts
+
+### Certainty over Uncertainty
+
+- inconsistent risk taking choices
+- nature of uncertainty and situation can change risk seeking or averse behaviour
+
 ### Prospect Theory
 
+- Different way to look at utility
+- Loss aversion (gain and loss not the same)
+- Framing of risks has an impact
 - miscalculation of risk to reward due to the framework used
 - framing
 - manipulation of people
 - common outcomes (bias)
-- good loss aversion question: lose 100% change to lose $750 or 75% chance to lose $1000 and 25% change to lose nothing.
+- Allais paradox
+  - good loss aversion question: lose 100% change to lose $750 or 75% chance to lose $1000 and 25% change to lose nothing.
+- reference (expectations) changes behaviour
+- _hedonic editing_: framing losses and gains as differently
+
+### Ridging Finance Scandal
+
+- Limited partnership
+- Couple that worked for ridging finance
+- Create their own private lending firm
+- Securitized or funded the loan and sold it to Bay St.
+
+### Morbidity vs Mortality
+
+Higher probability to be financially hurt from being disabled than family is from death. Therefore, probably best to purchase disability insurance instead of life insurance.
+
+### Endowment Effect
+
+- owning something gives it more value than not owning it
+- somewhat like sunk-cost fallacy
+- house money effect: putting away initial capital and gambling with the "wins"
+- mental accounting / portfolio layering
 
 ## Chapter 2 Asset Pricing, Market Efficiency, Agency and Relationships

@@ -347,3 +347,101 @@ ABC Inc. is a CCPC that has a December 31 year-end.
     - Alternatively use the fully clawed back amount
 
 </details>
+
+### Corporation Association and Impacts
+
+- CCPC operation earns active income in Canada.
+- Conceptually, someone would want to apply the SBD for multiple corporations
+- If two corporations are deemed to be associated, they have to share the small business limit, as well as the calculation of said business limit
+
+- Key consideration (subsection 256(1))
+- Related persons under section 251
+- **Persons are individuals, corporations, and trusts**
+- Ownership
+  - Actual/legal ownership
+  - Deemed ownership [256(1.2), (1.3)]
+    - Multiplicative for indirect ownership
+- Controlled = controlled, directly, or indirectly
+  - Legal control &rarr; >50% of voting shares
+  - De facto control \[256(5.1)] &rarr; control via direct or indirect influence
+  - Deemed control \[256(1.2)]
+    - Look-through rule (aka not multiplicative for indirect control)
+
+Related persons includes relationships between
+
+Individuals
+
+- Blood relations, marriage/common-law, or adoption
+- Does not include aunts, uncles, or cousins
+
+Individuals and Corporations
+
+- Based on _de jure_ (legal) control
+- Direct or indirect control
+
+An individual is associated with a corporation where:
+
+1. Indirectly controls corp (>50% voting)
+2. Indirectly and non-arm length controls the corporation
+3. You are related to someone who controls the corporation
+
+Two corporations are related where
+
+1. both corporations are controlled by the same person
+2. One corporation is controlled by one person, who is related to a person/group that controls the other corporation
+3. One corporation is controlled by one person/related group, is related to each member of a group which controls the other corporation
+4. Two corporations are controlled by unrelated groups and at least one member of one of the groups is related to **each member** of the other group
+
+Five ways to associate corporations ITA 256(1)
+
+- a) One corporation controls another corporation
+  - A legally (> 50% ownership) controls B which legally controls C
+  - Since A indirectly controls C, therefore A controls C
+- b) Both corporations are controlled by the same person/group of persons
+  - group: if shareholders are voting together
+- c) one-to-one: one corporation is controlled by the one person; the person si related to the person who controls the other corporation; and either person owns 25% in the other corporation (excluding specified classes)
+- d)  one-to-many: one corporation is controlled by the one person. That person is related to each member of the group that controls the other corporation. That person owns 25%+ in the other corporation (excluding specified classes)
+- e) many-to-many: each corporation is controlled by a related group. each person from one group is related to each member of the other group. One or more people owns 25%+ (excluding specified classes) of the other corporation.
+
+256(2)
+
+If two corporations are associated to another corporation, then they are defacto associated.
+
+Control test- controlled by:
+
+Another corporation
+Same person or group of persons
+A related group
+
+Related test:
+to person member of group who controlled other corporation
+
+Cross-ownership test*
+
+<details><summary>Chapter 12 Problem 10</summary>
+
+Are these corporations associated?
+
+```txt
+(A) Leah Ltd. 55% -> Eliane Ltd. [256(1)(a)]
+
+(B) Miriam 51% Abigail Ltd. and 60% Ethan Ltd. [256(1)(b)]
+
+(C) Irene owns 50% Clare, 50% Philip. Mordechai owns 50% of each. Unrelated people. Associated by controlling group [256(1)(b)]
+
+(D) Lyn and Sarah are unrelated. Lyn owns 60% of Jay Ltd. Sarah owns 40% of Jay Ltd. Lynn owns 50% of Alex ltd. Sarah owns 50% of Alex Ltd. Associated by controlling group [256(1)(b)]
+
+(E) Janna Ltd. owns 50% of Jonathan Ltd. Rayna Ltd. owns 50% of Jonathan Ltd. Janna Ltd. owns 33% of Stan Ltd, Rayna Ltd. owns 33%, Adam Ltd. owns 33%. Still [256(1)(b)] because the group Janna Ltd. and Rayna Ltd. control both.
+
+(F) Ruth owns 1005 of Rick Ltd, 25% of Daniel Ltd.. Daughter owns 75% of Daniel Ltd. [256(1)(c)]
+
+(G) Dahlia's Brother in law owns 100% of Gord Ltd, 30% of Rebecca Ltd. Dahlia owns 3100% of Rosalyn Ltd and 30% of Rebcca Ltd. Eden, unrelated, owns 40% of Rebecca Ltd. [256(1)(d)] associates Rosalyn Ltd and Rebecca Ltd., Gord Ltd. and Revecca Ltd due to (Joshua + Dahlia) being a related group. Gord Ltd and Rosalyn Ltd, are associated due to transitivity. [256(2)]
+
+(H) Yael owns 60% of Benjamin Ltd and 30% of Livi Ltd. Benjamin own 25% of Livi Ltd. Joy owns 45% of Livi Ltd. [256(1)(d)] due to Yael being related to Benjamin Ltd.
+
+(I) Daniella owns 60% of Elizabeth Ltd and 25% of Ava Ltd. Samara owns 75% of Ava Ltd. Daniella holds an option to buy 75% of Ava Ltd. at any time in the next 10 year. Yes due to a special rule that assumes any option for ownerships has been executed. [256(1)(a)]
+
+(J) Mr. J owns 50% of Isabelle Ltd. Mrs. J owns 50%. Mr. J' siblings own 75% of Rebecca Ltd. [256(1)(e)]
+```
+
+</details>

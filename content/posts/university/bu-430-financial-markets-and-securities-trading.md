@@ -10,6 +10,16 @@ Point based system. Participation based, quizzes, group.
 
 True price of the stock is the mid-point of hte bid-ask. Market price is the price on the order last executed.
 
+## Flash Boys Notes
+
+### Flash Boys Chapter 1
+
+- Dave Spivey
+- Milliseconds matters (millions of dollars)
+- Connecting Chicago options exchange to NASDAQ exchange
+- Went through mountain which was difficult
+- Telecommunication companies had no idea the power they had
+
 ## First Week
 
 ["These Teenagers Know More About Investing Than You Do"](https://on.wsj.com/44kCymS)
@@ -22,9 +32,9 @@ The Introduction to "Flash Boys" by M. Lewis.
 
 ["Do You Get the Best Prices Trading Stocks? The SEC is facing off against Citadel Securities and other firms over who gets to execute - and profit from - individuals’ trades"](https://on.wsj.com/3WoJFsE)
 
-"Pricing of Stock Trades Varies Widely Among Popular Brokers, Study Finds" - https://on.wsj.com/3UhfXTG
+["Pricing of Stock Trades Varies Widely Among Popular Brokers, Study Finds"](https://on.wsj.com/3UhfXTG)
 
-"Will Auctions Help Investors Get Better Prices? Traders Are Skeptical" - https://on.wsj.com/3wkR6qc
+["Will Auctions Help Investors Get Better Prices? Traders Are Skeptical"](https://on.wsj.com/3wkR6qc)
 
 What happens when a retail investor creates an order? It goes to the retail brokerage, and then gets sold to a wholesaler (marketmaker).
 
@@ -130,7 +140,50 @@ When a hedge fund buys a stock, the price goes up, the liquidity is eaten up. Su
   - 20% of all volume is diverted away from exchanges, so the exchanges lose out
   - People who put limit orders into exchange are providing liquidity also lose out since they don't get it
   - Institutional investors are pissed because the market markers have costs to set the spread so that the costs are covered plus profit.
+- Retail brokerages will send all flow, not just a subsect of the flow
+- So something like Citadel has to accept flow from GME
+- PFOF is 1% of spread whereas price improvement is 27%
 
 ### Institutional Investors
 
 - Argue that without PFOF, there is lower liquidity costs for everyone since market maker costs are lower
+
+### Brokerages
+
+- Most brokers only have a channel to a wholesaler
+- At the end of the day, the broker evaluates (price improvement) the wholesaler to continue sending the flow
+- Incentive to go with the highest PFOF payer
+- Higher the PFOF, the worse the price improvement
+- There's a rule that all wholesalers that a brokerage is dealing with, are charged the same amount which eliminates the conflict of interest
+- Brokerages like Fidelity and Vanguard don't accept PFOF but still send it to wholesalers because there's price improvement for clients
+- Why doesn't brokerages like TD Ameritrade and Charles Schwab do their own wholesaling?
+- They realized they don't have the expertise as Virtu and Citadel do (no proprietary tech)
+- 0 commission
+  - No PFOF, no 0 commissions
+  - RobinHood and few other startup brokerages lowered commissions until it got to $0
+  - RobinHood finances $0 commissions via PFOF
+  - Brokerages can finance it through other business divisions and margin interest
+
+### Wholesaler
+
+- They don't have to run the flow against their balance, they can forward it to the exchange
+- Very high fixed costs, so Citadel and Virtu have the lowest per order cost
+- There's a transfer of the savings of the economies of scale to retailers due to brokerages evaluating the performance of each wholesaler
+- Brokerages are very big players (TD Ameritrade is the biggest)
+- Citadel is vertically integrated and technologically advanced with billions invested to be the highest efficiency, and it has diversification
+- Proponents of PFOF: 27-28% price improvement over the spread
+- People against PFOF: Benchmark of using the spread is flawed in the first place
+  - Exchanges are deprived of ability to interact with retail flow
+  - Therefore, the spread is a flawed benchmark
+  - Argument is wrong because there are other market participants that can place bids and ask to narrow the spread
+  - If the market orders went directly to the exchange, the spread would narrow but not as much because there is flow from both institutions and retailers
+
+### Auctions
+
+Instead of removing PFOF, want to increase the competition of wholesalers. SEC wants to run auctions for each retail order so that all institutions will bring all buys and sells to the mid-quote.
+
+Caveats:
+
+Micro-Caps will fail at auctions because its retail flow and wholesalers if they still exist, will not want to deal with micro-caps either
+
+Retail flow is balance and so everyone gets their flow done. Institutions will only trade when the stock is trading in their interests, so it's always only one side that gets properly dealt with.
