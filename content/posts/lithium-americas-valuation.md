@@ -1,5 +1,5 @@
 ---
-title: "Lithium Americas Valuation"
+title: "Lithium Americas Valuation (LAC)"
 date: 2024-04-20T21:39:42-04:00
 draft: false
 tags:
@@ -10,9 +10,11 @@ tags:
 
 Lithium Americas is a mining corporation focused on extracting sedimentary lithium from [Thacker Pass](https://lithiumamericas.com/thacker-pass/overview/default.aspx), "The largest known **Measured** and Indicated Resource in North America."
 
-- [website](https://lithiumamericas.com/investor/overview/default.aspx)
-- TSX:LAC
-- NYSE:LAC
+- [Website](https://lithiumamericas.com/investor/overview/default.aspx)
+- [TSX:LAC](https://money.tmx.com/en/quote/LAC)
+- [NYSE:LAC](https://www.nyse.com/quote/LAC)
+
+NOTE: $ is in the USD denomination
 
 Recently, Lithium Americas announced a share issuance of 55,000,000 shares for a total of 250,000,000 ($5/share). The first part values the company using efficient market hypothesis. The second part is a quasi-dividend discount model.
 
@@ -30,7 +32,7 @@ Price Ceteris Paribus = $4.97
 Upside 0.37 cents per share or 8% based on recent after close pricing.
 ```
 
-Commentary: This is more of a question on whether the market will figure out that LAC is trading at a discount. I remember when PBR dropped 11%+ and now it's only down 1% for me.
+Commentary: This is more of a question on whether the market will figure out that LAC is trading at a discount. I remember when PBR dropped 11%+ and it came back up for the dividend. I sold it before the CEO was replaced.
 
 ## Valuing Based on Future Dividend Distributions
 
