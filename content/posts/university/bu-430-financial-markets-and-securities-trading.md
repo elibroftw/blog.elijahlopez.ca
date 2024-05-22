@@ -16,9 +16,17 @@ True price of the stock is the mid-point of hte bid-ask. Market price is the pri
 
 - Dave Spivey
 - Milliseconds matters (millions of dollars)
-- Connecting Chicago options exchange to NASDAQ exchange
+- Connecting Chicago futures exchange (CME in Aurora) to NASDAQ exchange
+  - E-Mini Futures: smaller than the future price meant for anybody
+  - SP500 E-Mini futures is one of the most frequently traded asset and definitely the most traded futures contract
+  - Arbitrage: shorting futures contract not required
+  - we buy the SPY ETF, but now what?
+  - **Latency arbitrage**: buying the ETF very quickly when the futures contract moves, and sell when the ETF moves
+  - Futures contract lead the market and are traded with leverage
+  - This arbitrage hurts market makers (adverse selection), therefore, market makers also want to get on the most optimal fiber optic cable
+  - market maker has always made money
 - Went through mountain which was difficult
-- Telecommunication companies had no idea the power they had
+- Telecommunication companies (Verizon) had no idea the power they had
 
 ## First Week
 
