@@ -181,7 +181,7 @@ Dealers (syndicate)
 - hedging inventory positions
 - distributing securities to ultimate investors
 
-## Trustee
+### Trustee
 
 - ensures legal requirements are met
 - monitors the issuing firm's performance
@@ -202,3 +202,67 @@ Dealers (syndicate)
 - credit sights covenant review
 
 ### Corporate Debt Primary Debt
+
+Secondary Corporate Bond Market
+
+- Trading of corporate bonds
+- 99% goes through Dealer Markets
+  - Reuters
+  - Bloomberg
+  - ICAP (ECN)
+
+### Regulation History
+
+- 80s
+  - LBO defaults
+- Fixed Income Pricing System introduced introduced in 1994
+- 2003
+  - TRACE system introduced. Trade Reporting and Compliance Engine
+- 144A Issue does not have to register
+  - Promote foreign/emerging market companies to come to the US
+  - Go to dealers who sell only to Qualified Institutional Buyers (QIBs)
+  - Speed of issuance
+  - Private lenders tend to have significant advantages over public lenders in handling credit risk and information asymmetry (Lender specialization)
+  - Favourable for higher yields (B rating) issuances
+  - International corporations favour 144A way more than US companies although it is going up slowly with the business cycle
+- Private debt is issued significantly more than public debt
+  - Most of it is through bank loans
+
+Canada
+
+- IIROC working with CSA to enhance transparency
+- Before November 2015, debt market was opaque
+
+### Optimal Debt Issue
+
+- debt or equity
+- market timing
+- debt composition
+- maturity structure
+- issuance markets?
+- currency composition
+
+### Primary Dealers
+
+Federal Reserve Bank of New York...
+
+Cantor Fitzgerald & Co.: iconic / ubiquitous company
+
+### Why do Foreign Countries own US Treasuries
+
+When countries export to US, they get USD currency. To get pay workers, these corporations need to acquire RMB, so they increase the currency exchange rate, which would make exports less attractive. Therefore, the foreign central banks want to facilitate the exchange rate themselves. With all the extra USD, they want to earn a rate of return. So therefore, they invest in the safest security; treasuries.
+
+Why are they abandoning treasuries?
+
+When US overnight lending rates go higher, the bond prices go down too. QE: federal reserve buys the bonds. Foreign demand (China and Japan) has been lower coincidentally further once rates started going up. Japanese and Chinese cost to buy debt has gone up due to a higher currency exchange rate. US domestic buyers (mutual funds, households, pension funds, insurance companies) are filling in the gap.
+
+### Uniform Price Dutch auction
+
+1. Treasury announces $16B 2 year note
+2. Demand schedule for quantity and yields
+3. Coupon set to 1/8th rounded down from highest aggregate demand yield that satisfies the tender
+4. Stop-out yield: all yields lower than the stop-out yield are met
+
+### Bid Cover Ratio
+
+Higher the bid-cover ratio, higher the interest.

@@ -73,7 +73,7 @@ What is the internet and what is a protocol?
   - then there's a router that connects outside the network
   - wired, wireless communication links
 
-### Access Networks: TV Cable--based Access
+### Access Networks: TV Cable-based Access
 
 - frequency division multiplexing (FDM): different channels transmitted in different frequency bands
   - splitter to split the channels into TV and cable modem
@@ -134,7 +134,6 @@ If two networks use different technologies, we need to use routers, which is a s
   - low error rate: repeaters spaced far part, immune to electromagnetic noise
 - wireless radio
   - bands
-  -
 - radio link types
   - Wireless LAN (WiFi)
   - Bluetooth: cable replacement
@@ -161,7 +160,7 @@ If two networks use different technologies, we need to use routers, which is a s
 - When R1 > R2,
   - 3rd packet: `t = L/R1 + 3L/R2`
 
-### Packet Switching queuing
+### Packet Switching Queuing
 
 - When R2 > R1, the queue fills because work arrives faster than it can service (transmission rate)
 - packets are dropped if buffer is full (congestion)
@@ -173,7 +172,7 @@ If two networks use different technologies, we need to use routers, which is a s
 - no sharing
 - each link is split into sub-channels that can be used for circuits
 
-### Time Division Multiplexing
+### Time Division Multiplexing (TDM)
 
 Alternatively to FDM where each call is allocated its own band, we can divide time into slots and each call is allocated a periodic slots that can transmit at the wide frequency band and so would get a higher rate
 
@@ -185,19 +184,20 @@ Impossible O(N^2) to connect all ISPs to all other ISPs so there are global ISPs
 
 ### Packet Delays and Loss
 
-Four Sources
+Packet delay is the sum of four sources
 
-- Nodal processing
-  - Checking bit errors, determining output link (< microsecond)
-- Queueing Delay
-  - Waiting at output link
-  - Congestion
-- Transmission Delay
-  - Time for packet until transmission
+1. Nodal processing
+    - Checking bit errors, determining output link (< microsecond)
+2. Queueing Delay
+    - Waiting at output link
+    - Congestion
+3. Transmission Delay
+    - Time for packet until transmission
+4. Propagation
 
 Packets have time-to-live which is a uint defining the max hops. If a router encounters a packet with a TTL of 1, it drops the packet and typically returns an error to the sender. Otherwise it propagates a packet with the TTL minus 1.
 
-Transmission Rate = Packet Length * Average Packet Arrival Rate / Link Bandwidth
+Traffic intensity = Transmission Rate = Packet Length * Average Packet Arrival Rate / Link Bandwidth
 
 - Transmission Rate ~= 0: small delay
 - Transmission Rate close to 1 but not large: large delay
@@ -229,9 +229,108 @@ Reasons for different paths: routing table changes, load balancing
   - Denial of Service
     - Overwhelm server with bogus traffic
 
+### Layers Framework
+
+Why layers?
+
+- explicit structure allows identification, relationship of
+system’s pieces
+- modularization eases maintenance, updating of system
+
+### Protocol layers and reference models
+
+- hosts
+- routers
+- links of various media
+- applications
+- protocols
+- hardware, software
+
+Example of layers is air travel
+
+- ticket (purchase) &rarr; ticketing service &rarr; ticket (complain)
+- baggage (check) &rarr; baggage service &rarr; baggage (claim)
+- gates (load) &rarr; gate service &rarr; gate (unload)
+- runway takeoff &rarr; runway service &rarr; runway landing
+- airplane routing &rarr; routing service &rarr; airplane routing
+
+### Layered Internet Protocol Stack
+
+- application (supporting network applications)
+  - HTTP, IMAP, SMTP, DNS
+- transport (process-process data transfer)
+  - TCP, UDP
+- network (routing of packets from source to dest)
+  - IP, routing protocols
+- link (data transfer between adjacent network elements)
+  - Ethernet, 802.11 (WIFI), PPP?
+- physical (bits on the wire)
+
 ## Chapter 2 Application Layer Protocols
 
 World Wide Web (HTTP), File Transfer (FTP), Electronic Mail (SMTP), Domain Name System (DNS), Socket Programming.
+
+### Client-server Paradigm
+
+- Server
+  - always-on host
+  - permanent IP address
+  - often in data centers, for scaling
+- client
+  - contact, communicate with server
+  - may be intermittently connected
+  - may have dynamic IP Addresses
+  - do not communicate directly with each other
+
+### Peer-peer Architecture
+
+- no always-on server
+- arbitrary end systems directly communicate
+- peers request service from other peers, provide service in return to other peers
+- self scalability - new peers bring new service capacity as well as new service demands
+- peers are intermittently connected and change IP addresses
+
+### Sockets
+
+Sockets are like doors on each of the processes that can send and receive messages relying on the transport infrastructure to deliver messages to socket on receiving process. Sockets can be UDP or TCP and can communicate within the same machine.
+
+### Addressing Processes
+
+- Each host device has unique 32-bit Internet Protocol address
+- Since many processes can run on the same host, a host is also used
+- 2^16 - 1 port numbers
+
+### Application Layer Protocol
+
+- types of messages (request, response)
+- message syntax (fields to delineate)
+- message semantics (meaning of field values)
+- rules (when and how to do something)
+- open protocols (RFCs)
+  - Interoperability
+  - HTTP, SMTP
+- Proprietary protocols
+  - Skype, Zoom
+
+### Transport Service Requirements
+
+- data integrity
+- throughput
+- timing
+- security
+
+### TCP vs UDP
+
+- TCP
+  - reliable transport between sending and receiving process
+  - flow control: sender won't overwhelm receiver
+  - congestion control: throttle sender when network overloaded
+  - connection-oriented: setup required between client and server processes
+  - does not provide: timing, minimum throughput guarantee, security
+- UDP
+  - unreliable data transfer between sending and receiving process
+  - does not provide: reliability, flow control, congestion control, timing, throughput, guarantee, security, or connection setup
+  - why does UDP exist?
 
 ## Chapter 3 Transport Layer Protocols
 

@@ -445,3 +445,117 @@ Are these corporations associated?
 ```
 
 </details>
+
+### Why is Association Important
+
+1. SBD limit is shared
+2. Immediate expensing limit is shared
+3. May not be SIB or PSB depending on relationship with associated corporations
+4. SR&ED credits for CCPCs phased out based on all associated corporation's taxable capital
+
+### Integration of Investment Income of a CCPC
+
+- Prevent indefinite deferral of tax if initial corporate tax rate is low
+- Additional refundable tax (ART) of 10 2/3 % levied to create high initial rate of corporate tax to prevent deferral
+- Provincial governments usually subject investment income to higher rate than active business income
+
+### Special Refundable Taxes
+
+- ART
+- Part IV Tax
+- Refundable Dividend Tax on Hand
+
+### Additional Refundable Tax (ART)
+
+Multiply 10.67...% on the lessor of: Aggregate investment income (AII), and (All = net taxable capital gains - net capital losses under Div C + income from property - dividends deducted under Div C - losses from Canadian and Foreign property) and Taxable income less income claimed using SBD
+
+Amount added to non-eligible RDTOH for Part I is least of:
+
+1. 30 2/3% \* Aii
+2. 30 2/3% * (TI - SBD) * (Part 1 Tax)
+3. Part 1 Tax (29,269)
+
+### Part IV Tax on Dividends
+
+- Avoid deferral of portfolio dividend income
+- 38 1/3% \* "portfolio dividends" received (not connected)
+- Two corporations are connected where corporation controlled by the other corporation or shares held by another corporation represent more than 10% of voting shares and 10% of fair market value of all issued shares
+
+### Refundable Dividend Tax on Hand
+
+- Accumulate all prepaid refundable taxes
+  - Refundable on Part I tax
+  - Refundable on Part IV tax paid
+- To receive a refund, must payout dividends
+  - 38.33 refund for every $100 of taxable dividends paid
+- Track two RDTOH accounts
+  - Part IV taxes paid on eligible dividends received non-connected corporations
+  - Part IV taxes paid on non-eligible dividends
+  - ...
+
+### Dividend Refund
+
+Sum of
+
+1. Lessor of 38 1/3% \* all eligible dividends and eligible RDTOH balance at the end of the year
+2. Lessor of 38 1/3% \* all non-eligible paid in year and NERDTOH balance
+3. The excess of the 38 1/3% dividends over the balance for the ERDTOH only (can never use the NERDTOH remaining balance)
+
+### Special Taxes Example
+
+<details><summary>Example - ART</summary>
+
+ABC Inc. is a CCPC. It solely earned investment income as follows:
+
+- interest income: 50,000
+- capital gain: 10,000
+- dividends: 25,000 from portfolio, 10,000 from connected corporations
+- Proportionate dividend refund for the connected corporation fo $3,000
+- Assume no RDTOH balance
+
+What is the Part I federal taxes payable and how much is refundable? What is the Part IV tax?
+
+- Dividend B Income: 50,000 + 0.5 * 10,000 + 25,000 + 10,000 = 90,000
+- Division C deduction: 35,000
+- Taxable: 55,000
+- Taxes:
+
+Type | Rate | Income Applicable | Impact on Current Taxes
+--- | --- | --- | ---
+Basic | 38% | 55,000 | 20,900
+Abatement | (10%) | 55,000 | (5,500)
+ART | 10 2/3% | 55,000 | 5,867
+Fed Tax | X | X | 21,267
+
+Refundable:
+
+1. 30 2/3% \* Aii  = 16,869
+2. 30 2/3% \* (TI - SBD) \* (Part 1 Tax) = 16,869
+3. Part 1 Tax (29,269)
+
+Part IV tax:
+
+- Eligible portoflio dividends = 25,000 \* 38.33% = 9,583
+- Connected corp dividends = 3,000
+
+RDTOH:
+
+- ERDTOH = 9,583
+- NERDTOH = 16,869 + 3,000 = 19,869
+
+If there is a GRIP balance of $100,000 from previous years, what dividend needs to be paid out to maximize the dividend refund?
+
+- NE dividend: 19,869 / .3833 = 51,837
+- E dividend: 9,583 / .3833 = 25,000 (not a coincidence)
+
+Suppose a 100,000 non-eligible dividend was declared,
+
+1. Lessor of 38.33% * Eligible dividend and ERDTOH = 0
+2. Lessor of 38.33% Non-eligible dividend and NERDTOH = MIN(38,333, 19,869) = 19,869
+3. If 2a (38,333) > 2b (19,869), then take lessor of excess and ERDTOH = MIN(18,464, 9,583) = 9,583
+
+Refund = 29,452
+
+This amount reduces the taxes payable and allows for a refunds
+
+</details>

@@ -109,14 +109,14 @@ Behavioural finance
 
 ### Attitude Towards Risk
 
-- Traditional: risk averse and curve is upward sloping and diminisihing
-- Behavioueal: risk evaluation is reference dependent. Risk seeking for some level of wealth (e.g. lottery)
+- Traditional: risk averse and curve is upward sloping and diminishing
+- Behavioural: risk evaluation is reference dependent. Risk seeking for some level of wealth (e.g. lottery)
 - double inflection: utility function
 - move from risk averse to risk seeking at different income levels
 
 ### Neuroeconomics
 
-- reuroscience and brain imagery
+- neuroscience and brain imagery
 - psychology
 - economics
 - _Emotiv_ company
@@ -130,7 +130,7 @@ Behavioural finance
 
 ### Bernoulli
 
-- father of deceision making
+- father of decision making
 - contradiction of systemic bias and expected value notion in 1738
 - proposed utility function &rarr; people want highest utility
 - bias towards value
@@ -190,4 +190,59 @@ Higher probability to be financially hurt from being disabled than family is fro
 - house money effect: putting away initial capital and gambling with the "wins"
 - mental accounting / portfolio layering
 
-## Chapter 2 Asset Pricing, Market Efficiency, Agency and Relationships
+## Week 3
+
+### Cognitive Error
+
+- Stat, info processing or memory errors
+- Faulty reasoning
+- Can be corrected through education
+- Dissonance - ignore new info
+- Conservatism - prior view
+- Confirmation Bias - info confirms beliefs
+- Representativeness - classify new info based on past
+- Illusion of control
+  - belief that they are in control
+  - gambling mentality - overtrading
+  - risk seeking
+- Hindsight - past events predictable
+  - selective perception and retention
+  - "could have"
+- Anchoring & adjustment - heuristics
+  - Initial Cost
+- Mental accounting - buckets
+- Framing - depends on presentation (questions)
+- Availability - heuristic, answer related to familiarity
+
+### Emotional Biases
+
+- Feeling or emotive
+- Spontaneous
+- Less easy to correct
+- "Blind spots" of mind
+- Regret aversion
+- status quo
+- endowment
+- self-control
+  - weighing benefits
+  - delay of gratification
+
+### Representativeness Bias
+
+## IPS and Asset Allocation
+
+Investment policy statement: what do you want from the fund and what are the restrictions
+
+1. Types of biases demonstrated
+2. Biases that dominate (C or E)
+3. Impact on asset allocation
+4. What adjustments should be made
+
+### Standard of Living Risk
+
+- Moderate or adapt based on wealth
+
+### BBK Model
+
+- classification models
+- confident, impetuous, careful, anxious
