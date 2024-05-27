@@ -14,7 +14,7 @@ True price of the stock is the mid-point of hte bid-ask. Market price is the pri
 
 ### Flash Boys Chapter 1
 
-- Dave Spivey
+- Dave Spivey - Spread networks
 - Milliseconds matters (millions of dollars)
 - Connecting Chicago futures exchange (CME in Aurora) to NASDAQ exchange
   - E-Mini Futures: smaller than the future price meant for anybody
@@ -22,11 +22,50 @@ True price of the stock is the mid-point of hte bid-ask. Market price is the pri
   - Arbitrage: shorting futures contract not required
   - we buy the SPY ETF, but now what?
   - **Latency arbitrage**: buying the ETF very quickly when the futures contract moves, and sell when the ETF moves
+    - Buy at a price between the bid-ask spread, ideally the mid-point
+    - Sell at a price between the mid-point and the ask
+    - You don't just have to be first to buy, but also be first in the limit sell queue to begin with at every possible price level
+      - Lots of risks: adverse selection, high capital requirements
+      - "picking up pennies in front of a steamroller"?
+    - When risk is too high, market makers will happily move the spreads
   - Futures contract lead the market and are traded with leverage
   - This arbitrage hurts market makers (adverse selection), therefore, market makers also want to get on the most optimal fiber optic cable
   - market maker has always made money
-- Went through mountain which was difficult
+- Fiber optic cable went through mountain which was difficult
+- A year later, microwave network was implemented which was faster (30% faster than spread networks), but not available for all 200 firms
+  - Government approved spectrum/frequency. Only 15 firms could use this.
+  - Not many bandwidth in a microwave
+  - Microwave links connect all exchanges nearby (Toronto to CME, European markets)
+  - Microwaves slow down when there is rain. You can collect data from weather stations and see the difference in market quality when there is rain and without
 - Telecommunication companies (Verizon) had no idea the power they had
+
+### Flash Boys Chapter 2
+
+- Brad Katsuyama, RBC employee
+  - Got sent to Wall Street, NYC at 24 in 2002
+  - Middleman between investors to trade large quantities (millions) of shares
+- RBC, ninth biggest bank in the world at the time, but no name on Wall Street
+  - did not make bad subprime loans to Americans
+  - nor did it peddle subprime mortgage securities to ignorant investors
+  - People in Canada always say US people are paid too much
+  - But that was because RBC is just an afterthought, a nobody
+- RBC acquired Carlin for $100M due to being late to changes in the market
+  - Carlin’s CEO Jeremy Frommer was swinging a baseball bat
+  - “They were like, ‘Yeah, I cover [hedge fund giant John] Paulson and we’re tight.’ And you’d call Paulson up and they’d barely heard of the guy.”
+- One day, an investors wanted to sell 5 million shares after a company had a buy offer for a bit less than $4 a share. The bid and ask quantities were at 1 million. He ended up losing money by selling less than 3.70 as if someone was reading his mind
+  - Whenever he would enter an order, the liquidity would vanish and he'd have to buy at higher prices or sell at lower prices (e.g. 100,000 shares of AMD)
+- When Brad first started trading, humans would be processing the orders, but now it was run using a matching engine
+- You could trade the same stock on: BATS, Direct Edge, Nasdaq, Nasdaq BX, and etc.
+- Maker-taker model. Crossing the spread classified the person as a taker who was charged fees and the maker would get paid fees. On BATS (Weehawken, New Jersey), it was reversed
+- What the hell is Getco (10% of US market at the time)
+- Rob Park: combined Brad's trading ideas into an algorithm that would buy at a trigger (offer greater than historical average of the amount offered. i.e. a thick market)
+- Golden Geese programmers were working on dark pool
+- HFT would pay to be in the dark pool
+- Flash orders: exchange would flash orders to the HFTs before the order hits the books
+- former Deutsche Bank software programmer named Billy Zhao, a former manager in Bank of America’s electronic trading division named John Schwall, and a twenty-two-year-old recent Stanford computer science graduate named Dan Aisen.
+- Golden Geese: Chinese programmer named Allen Zhang
+
+### Flash Boys Chapter 3
 
 ## First Week
 
@@ -195,3 +234,26 @@ Caveats:
 Micro-Caps will fail at auctions because its retail flow and wholesalers if they still exist, will not want to deal with micro-caps either
 
 Retail flow is balance and so everyone gets their flow done. Institutions will only trade when the stock is trading in their interests, so it's always only one side that gets properly dealt with.
+
+## How Markets are Connected
+
+### Flakiness / JIttery
+
+The state of technology where sometimes the person is first or not first due to some random thing (flaky)
+
+Related to physical world (sun ray, electromagnetic waves)
+
+### How to speed up Fiber Optic for Trading?
+
+Make the fiber hollow instead of with glass.
+
+Why are Satellites used for electronic trading?
+
+- Singapore market, and we are in Chicago, and the cable is in Seattle
+- Medium is faster, but distance is longer
+- Sometimes, when the satellites are in the right position, it is faster than cable
+  - To get to the Seattle cable, microwaves are used
+
+### What are Shortwaves
+
+- low bandwidth, faster speeds
