@@ -196,10 +196,10 @@ Bid-Ask Spread
   - Berkshire Hathaway notorious for not splitting
   - retail investors: "idiocratic volatility"
   - commitment with retail brokerage to share cashflow of the share
-- Two big costs
-  - Adverse Selection
+- Two big costs (applicable to wholesalers as well)
+  - Adverse Selection costs:
     - A phenomena/cost when taking the other side of the trade with an informed entity at a large scale (institutional investor, hedge fund, insider trader)
-  - Inventory cost: movement against you
+  - Inventory costs: movement against you
 - Costs are high for institutional and low for retail
 - When there is mixed flow, the exchange costs are lower
 - When there is only institutional flow, there is only high costs
@@ -264,11 +264,11 @@ When a hedge fund buys a stock, the price goes up, the liquidity is eaten up. Su
 
 ### Auctions
 
-Instead of removing PFOF, want to increase the competition of wholesalers. SEC wants to run auctions for each retail order so that all institutions will bring all buys and sells to the mid-quote.
+Instead of removing PFOF, want to increase the competition of wholesalers. SEC wants to run auctions for each retail order so that all institutions will bring all buys and sells to the mid-quote (SEC Order Competition Rule).
 
 Caveats:
 
-Micro-Caps will fail at auctions because its retail flow and wholesalers if they still exist, will not want to deal with micro-caps either
+Small caps and micro-caps will fail at auctions because its all retail flow. If did not exist, they would not want to deal with micro-caps either, leading to higher costs for retail. Institutions will not be able to fill that gap. It undermines US OBS act of 2012
 
 Retail flow is balance and so everyone gets their flow done. Institutions will only trade when the stock is trading in their interests, so it's always only one side that gets properly dealt with.
 

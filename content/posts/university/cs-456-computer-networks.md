@@ -217,7 +217,7 @@ Reasons for different paths: routing table changes, load balancing
   - instantaneous: any point in a timeslot (what you would show in a software that downloads stuff for the user)
   - average: rate over longer period of time (useful for performance)
 - Bottleneck Link
-  - Which link is constraining the throughputs
+  - Which link is constraining the throughput
 
 ### Network Security
 
@@ -331,6 +331,135 @@ Sockets are like doors on each of the processes that can send and receive messag
   - unreliable data transfer between sending and receiving process
   - does not provide: reliability, flow control, congestion control, timing, throughput, guarantee, security, or connection setup
   - why does UDP exist?
+  - to establish low-latency and loss-tolerating connections between applications on the internet
+
+### TCP Security
+
+- Transport Layer Security (TLS)
+  - Encrypted connections
+  - data integrity
+  - end-point authentication
+  - Application layer
+
+### Web and HTTP
+
+- web page consists of objects
+- objects: HTML file, JPEG image, Java applet, audio file
+- web page contains base HTML-file which includes several
+referenced objects, each addressable by a URL
+
+### Hypertext Transfer Protocol (HTTP)
+
+- client: browser that requests, receives, displays
+- server:  Web server sends objects in response to requests
+- stateless
+- RTT (definition): time for a small packet to travel from client to  server and back
+
+Non-Persistent
+
+1. TCP connection opened
+2. at most one object sent
+over TCP connection
+3. TCP connection closed
+
+- downloading multiple objects required multiple connections
+- Per object: One RTT for TCP initiation, one RTT for request and return, object/file transmission time
+- browsers open parallel TCP connections to fetch objects
+
+Persistent (HTTP 1.1)
+
+1. TCP connection opened to a server
+2. multiple objects can be sent over single TCP connection between client, and that server
+3. TCP connection closed
+
+- send messages over initial connection
+- as little as one RTT, which cuts response time in half
+
+### HTTP Request Message
+
+- ASCII (human-readable format)
+- Request line (GET, POST, HEAD commands)
+- Fun fact, all ASCII text transmitted must use CR LF for EOL
+- CR: carriage return
+- LF: line feed
+
+### HTTP Response Message
+
+- Status line (protocol, status code, status phrase)
+- header
+- data
+- 301 Moved Permanently
+- 505 HTTP Version Not Supported
+
+### Manual HTTP Request
+
+1. Netcat
+
+```sh
+nc -Cv gaia.cs.umass.edu 80
+```
+
+2. HTTP GET Request
+
+```sh
+GET /kurose_ross/interactive/index.php HTTP/1.1
+Host: gaia.cs.umass.edu
+# Hit x2 CR
+```
+
+### HTTP/2
+
+- Key goal: decreased delay in multi-object HTTP requests
+- HTTP 1.1 introduced first-come-first-served which can block small objects behind large objects
+- HTTP 2 introduces transmission priority
+- divide objects into frames, schedule frames to mitigate head-of-
+line blocking
+
+### HTTP/3
+
+- HTTP/2
+  - recovery from packet loss still stalls all object transmissions
+  - browsers have incentive to open multiple parallel TCP connections to reduce stalling
+- HTTP/3
+  - adds security, per object error and congestion-control over UDP
+
+### Maintaining State With Cookies
+
+1. Cookie header line of HTTP response message
+2. Cookie header line of HTTP request message
+3. Cookie file kept on users' host managed by browser
+4. backend database at website
+
+Can be as simple as backend creating a unique ID in a database and giving a cookie to the user so that it can identify the user in subsequent requests.
+
+What cookies can be used for :
+
+- authorization
+- shopping carts
+- recommendations
+- user session state (Web e-mail)
+
+Keeping state:
+
+- maintain state at
+sender/receiver over multiple
+transactions
+
+### Web Caches (Proxy Server)
+
+- server tells cache about object’s allowable caching in response header
+  - `Cache-Control: max-age=<seconds>`
+- reduces response time for client
+- reduce traffic on an institution's access link
+- internet dense with caches to enable poor content providers to more effectively deliver content
+
+### Conditional GET
+
+- don’t send object if cache has up-to-date cached version
+- specify date of cached copy in HTTP request
+  - `If-modified-since: <date>`
+- Server
+  - `HTTP/1.0 304 Not Modified`
 
 ## Chapter 3 Transport Layer Protocols
 
