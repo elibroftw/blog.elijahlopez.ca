@@ -64,8 +64,45 @@ True price of the stock is the mid-point of hte bid-ask. Market price is the pri
 - Flash orders: exchange would flash orders to the HFTs before the order hits the books
 - former Deutsche Bank software programmer named Billy Zhao, a former manager in Bank of America’s electronic trading division named John Schwall, and a twenty-two-year-old recent Stanford computer science graduate named Dan Aisen.
 - Golden Geese: Chinese programmer named Allen Zhang
+- When orders went to exchanges one at a time, the market would exist, but when the orders went to all exchange, the orders would disappear
+- 100% of BATS. Why? Rob's theory was that time/distance delay was involved. Because BATS was the closest to the office. When they built time delays into the program the orders would reach all exchanges at the same time and be cleared. Someone else was using the differences in time to take front-run.
+- Misaligned incentives: brokerages paid to send orders to some exchanges and billed for other
+- Mike Gitlin- managed T. Rowe Price
+  - Using _Thor_, RBCs time delay program, saved $29,000, a tenth of a percent which would be $160M+ daily on the total US stock market volume
 
 ### Flash Boys Chapter 3
+
+- Ronan Ryan, Wall Street trader born in Dublin
+  - Greenwich, Connecticut
+    - Very privileged
+    - Kids would have their own cars at sixteen and complain about taking the bus
+  - First job at MCI Communications due to hiring manager being Irish
+  - Deliver pagers to a big Wall Street firm
+  - Poached by Qwest Communications after becoming a salesperson
+  - Poached then by another telecom carrier, Level 3
+  - Knew where to run fiber cables through and where to place the machines
+  - In 2005, BT Radianz called
+    - offered colation services in Nutley, New Jersey
+    - Bountiful Trust had set up shop in Kansas City was that its founders believed that it no longer mattered where they were physically located
+      - 43 milliseconds to 3.8 milliseconds
+  - Exchanges soon caught on but Ronan was the expert
+  - Switching time went from 150 _microseconds_ to 1.2 microseconds per trade
+  - HFT firms did not want anyone knowing how much they made nor what they were really up to
+- HFT Firms: Hudson River Trading, Eagle Seven, Simplex Investments, Evolution Financial Technologies, Cooperfund, DRW
+- Propreitary trading firms: 4 russians, 1 Chinese
+- Took big pay cut (125,000 from 425,000) to work for RBC as head of HFT strategies under Brad
+- Thor was inconsistent due to taking different paths to arrive at the exchanges
+- HFT speed to beat: 465 microseconds!
+- HFT traders posted buy and sell orders of 100-shares on every stock on BATS not because they wanted to buy or sell them, but because they wanted to gain insight into what investors wanted to buy or sell. BATS was created by HFTs, hence the incentive to send orders to BATS
+- Latency tables: time to travel from each brokerage to each exchange
+  - Enables HFT to discern the broker of the trade, and thus whether the shares are part of a much larger order
+- How the Digital Broker works
+  - Algorithm: how to divide up the quantity and when to send the orders
+  - Router: where to send the order
+  - Customers pay commissions to get routed through dark pool, then exchanges that pay the broker, then the other exchanges (cost effective route)
+- CBSX exchange in Chicago suburbs inverted pricing structure to charge makers and pay takers which was coincident with Spread Networks opening recently
+- Ronan was involved with Spread Networks
+- Huge percentage of trades sent to dark pool get executed
 
 ## First Week
 
