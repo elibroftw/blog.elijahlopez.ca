@@ -1,5 +1,5 @@
 ---
-title: "Bu 449 Fixed Income Analysis"
+title: "BU 449 Fixed Income Analysis"
 date: 2024-05-09T15:59:30-04:00
 draft: false
 tags:
@@ -9,7 +9,7 @@ tags:
 
 {{< toc >}}
 
-### Introduction to the Fixed Income Environment
+## Introduction to the Fixed Income Environment
 
 - US: bloomberg real yield
 - CA: BNN bloomberg
@@ -55,6 +55,11 @@ Money Markets: short-term borrowing using commercial paper...
 
 [Fixed Income Outstanding](https://www.sifma.org/resources/research/fixed-income-chart/)
 
+- Treasury: 22.5
+- Treasury + Federal Agency: ~24T
+- Municipalties: $4T
+- Corporate Bonds: $10T
+
 ### Trifecta Framework
 
 - analytics
@@ -63,15 +68,15 @@ Money Markets: short-term borrowing using commercial paper...
 
 ## Chapter 1
 
-### Markey Players
+### Market Players
 
 - Issuers
-- Intermediairies
+- Intermediaries
   - Investment banks
   - Commercial banks
   - Dealers
   - Primary Dealers
-  - Interdealer brokers
+  - Inter-dealer brokers
   - Credit rating agencies
 - Investors
 
@@ -114,7 +119,8 @@ Structured instruments
 ### Prices
 
 - Full price
-  - Dirty Price / invoice price
+  - Dirty Price
+  - Invoice price = quoted Price plus the interest accrued since the last coupon payment
 - Actual price
   - Clean price
   - Quoted price (US bond prices quoted on a Bloomberg Terminal)
@@ -124,7 +130,7 @@ To calculate returns, make sure to consistently use the same price. Don't mix up
 
 ### Call Protection Period
 
-- callability is the ability for the issuer to call the bond back
+- Callability is the ability for the issuer to call the bond back
   - usually when interest rates drop, or the firms rating improves
 - although the callability itself leads to a premium, call protections is typical for the first half of the bond's life which reduces the flexibility of the firm
 
@@ -142,23 +148,24 @@ To calculate returns, make sure to consistently use the same price. Don't mix up
   - capital injection
   - call option more costly to bond-holders than refundable option
 
-### Make Whole Callable
+### Callable Make Whole Provision
 
-Special callable bond because it can be exercised at any time, call price is based on the treasury yield at the time the call occurs, the make whole price can go above par value unlike callable which has a ceiling. The make whole provision means that
+Special callable bond because it can be exercised at any time, call price is based on the treasury yield at the time the call occurs. The make whole price can go above par value unlike callable which has a ceiling.
 
 ### Make-whole versus Fixed Call
 
-### Embeded Bond Options
+### Embedded Bond Options
 
 - Favourable to issuers
   - accelerated sinking fund provision:
-    - sets a reserve aside to start retiring the debt (further than callable)
+    - sets a reserve aside to retire parts of the debt (further than callable)
   - cap on a floater: max amount of variable rate to pay
   - callable option
+    - the entire bond is called back, not just a part of it
   - prepayment option
   - **higher yields and lower prices**
 - Favourable to investors
-  - puttable option: investor can force the issuer to make the investor whole
+  - put-table option: investor can force the issuer to make the investor whole
   - extendible option: maturity date can be extended
   - conversion option: converted to equity
   - floor on a floater: variable rate but with a guaranteed yield
@@ -172,7 +179,9 @@ Issuance vs trading
 
 underwriter has firm commitment
 
-corporate -> prospectus -> dealer (underwriter) -> investors -> buy side (pension funds, insurance companies, mutual funds, trusts)
+### Process of Issuing Corporate Debt
+
+corporate &rarr; prospectus &rarr; dealer (underwriter) &rarr; investors &rarr; buy side (pension funds, insurance companies, mutual funds, trusts)
 
 Dealers (syndicate)
 
@@ -200,12 +209,18 @@ Dealers (syndicate)
 - shareholders restrict managers
 - bond holders restrict shareholders and managers
 - credit sights covenant review
+- violation of covenant can lead to penalties and trustee control
+
+### Medium Term Note
+
+Five to ten year maturity
 
 ### Corporate Debt Primary Debt
 
 Secondary Corporate Bond Market
 
 - Trading of corporate bonds
+- Over $10T in bonds
 - 99% goes through Dealer Markets
   - Reuters
   - Bloomberg
@@ -218,7 +233,7 @@ Secondary Corporate Bond Market
 - Fixed Income Pricing System introduced introduced in 1994
 - 2003
   - TRACE system introduced. Trade Reporting and Compliance Engine
-- 144A Issue does not have to register
+- 144A Issue does not have to register with SEC
   - Promote foreign/emerging market companies to come to the US
   - Go to dealers who sell only to Qualified Institutional Buyers (QIBs)
   - Speed of issuance
