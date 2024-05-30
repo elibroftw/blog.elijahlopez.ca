@@ -39,10 +39,12 @@ The notes are not organized at the moment, but you should be able to go through 
   - Microwave links connect all exchanges nearby (Toronto to CME, European markets)
   - Microwaves slow down when there is rain. You can collect data from weather stations and see the difference in market quality when there is rain and without
 - Telecommunication companies (Verizon) had no idea the power they had
+- The old fiber optics from Chicago to New Jersey which weren't straight themselves were innovations since they improved from copper wires
 
-### Flash Boys Chapter 2
+### Chapter 2 - Brad's Problem
 
-- Brad Katsuyama, RBC employee
+- Brad Katsuyama, RBC employee, WLU grad
+  - RBC engaged in agency trading, which means executing trades on behalf of clients
   - Got sent to Wall Street, NYC at 24 in 2002
   - Middleman between investors to trade large quantities (millions) of shares
 - RBC, ninth biggest bank in the world at the time, but no name on Wall Street
@@ -57,7 +59,7 @@ The notes are not organized at the moment, but you should be able to go through 
   - Whenever he would enter an order, the liquidity would vanish and he'd have to buy at higher prices or sell at lower prices (e.g. 100,000 shares of AMD)
 - When Brad first started trading, humans would be processing the orders, but now it was run using a matching engine
 - You could trade the same stock on: BATS, Direct Edge, Nasdaq, Nasdaq BX, and etc.
-- Maker-taker model. Crossing the spread classified the person as a taker who was charged fees and the maker would get paid fees. On BATS (Weehawken, New Jersey), it was reversed
+- Maker-taker model. Crossing the spread classified the person as a taker who was charged fees and the maker would get paid fees. On BATS (Weehawken, New Jersey) / Secaucus, it was reversed
 - What the hell is Getco (10% of US market at the time)
 - Rob Park: combined Brad's trading ideas into an algorithm that would buy at a trigger (offer greater than historical average of the amount offered. i.e. a thick market)
 - Golden Geese programmers were working on dark pool
@@ -66,12 +68,24 @@ The notes are not organized at the moment, but you should be able to go through 
 - former Deutsche Bank software programmer named Billy Zhao, a former manager in Bank of America’s electronic trading division named John Schwall, and a twenty-two-year-old recent Stanford computer science graduate named Dan Aisen.
 - Golden Geese: Chinese programmer named Allen Zhang
 - When orders went to exchanges one at a time, the market would exist, but when the orders went to all exchange, the orders would disappear
-- 100% of BATS. Why? Rob's theory was that time/distance delay was involved. Because BATS was the closest to the office. When they built time delays into the program the orders would reach all exchanges at the same time and be cleared. Someone else was using the differences in time to take front-run.
+- 100% of BATS. Why? Rob's theory was that time/distance delay was involved. Because BATS was the closest to the office. When they built time delays into the program the orders would reach all exchanges at the same time and be cleared. Someone else was using the differences in time to take front-run. When the HFT firms found that the order filled the entire quote, they basically can connect the dots that someone will be buying from other exchanges as well at that quote. Therefore, front-run the buyer and the buyer experiences slippage.
+  - How do the HFT orders come first before the RBC order?
+    - The HFTs have shorter fiber optic cables compared to RBC, where the cable lines go around manhattan before they go directly to new jersey.
+    - HFTs also had laser links and superior technology
 - Misaligned incentives: brokerages paid to send orders to some exchanges and billed for other
 - Mike Gitlin- managed T. Rowe Price
   - Using _Thor_, RBCs time delay program, saved $29,000, a tenth of a percent which would be $160M+ daily on the total US stock market volume
+- Is it bad or good?
+  - Front-running itself is illegal and is not what's happening here (back-running)
+  - Pension funds could also be the clients
+  - Front-running: when the brokerage sees an order from a client and buys it and sells it at a higher price. Fiduciary.
+  - The right word is called **back-running**
+  - Why is a good thing
+    - offers more liquidity to the market
+    - incentivize market makers to lower spreads because the HFTs are taking lowering the adverse selection costs and risks from the market maker because the HFTs are market makers who can immediately acquire the inventory and get rid of it. If the market maker sees someone who is making an informed decision, then they wil want to pre-acquire the inventory and reduce their inventory costs. Therefore, the bid-ask spread will be lower than otherwise.
+- According to my course, this story is partially true
 
-### Flash Boys Chapter 3
+### Chapter 3 - Ronan's Platform
 
 - Ronan Ryan, Wall Street trader born in Dublin
   - Greenwich, Connecticut
@@ -82,8 +96,9 @@ The notes are not organized at the moment, but you should be able to go through 
   - Poached by Qwest Communications after becoming a salesperson
   - Poached then by another telecom carrier, Level 3
   - Knew where to run fiber cables through and where to place the machines
+  - NYSE located located in Mahwah, New York
   - In 2005, BT Radianz called
-    - offered colation services in Nutley, New Jersey
+    - offered co-location services in Nutley, New Jersey
     - Bountiful Trust had set up shop in Kansas City was that its founders believed that it no longer mattered where they were physically located
       - 43 milliseconds to 3.8 milliseconds
   - Exchanges soon caught on but Ronan was the expert
@@ -104,3 +119,4 @@ The notes are not organized at the moment, but you should be able to go through 
 - CBSX exchange in Chicago suburbs inverted pricing structure to charge makers and pay takers which was coincident with Spread Networks opening recently
 - Ronan was involved with Spread Networks
 - Huge percentage of trades sent to dark pool get executed
+- How does co-location matter?

@@ -207,3 +207,27 @@ Why are Satellites used for electronic trading?
 ### What are Shortwaves
 
 - low bandwidth, faster speeds
+
+## FLV Case
+
+## NYSE vs NASDAQ Case
+
+- Discuss
+  - NYSE specialist: central human market maker made obsolete due to electronic trading but they have been replaced by something else today
+  - NASDAQ introduction? because it was too monopolistic. NYSE had one specialist per basket of stocks.
+    - Competition, but it turned out to be worse
+    - Why do NASDAQ market marker avoid Odd-Eighth Quotes and why did they stop avoiding?
+  - SOES bandits
+  - Continuous vs. batch markets
+    - Pros and cons
+    - For background, read the intro to "On the effects of continuous trading" (2024)
+    - Continuous because of real time electronic trading
+- Outside sources
+  - Compare the competitive landscape from 2000 to the present
+  - Exchanges as publicly traded companies. "Who Benefits from Securities Exchange Innovation" (2024)
+  - NYSE Autoquote (2003) and NYSE Hybrid (2006)
+    - Does Algorithmic Trading improve liqduidity (2011)
+  - Endogenous Liquidity Providers versus Deisgnated Market Makers
+    - pros and cons
+    - for background, read Intro to Brogaard, 2018 "High frequency trading and extreme price movements"
+    - New settlement rules (t+1) and initiatives (blockchain)

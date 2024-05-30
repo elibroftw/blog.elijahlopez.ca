@@ -246,3 +246,30 @@ Investment policy statement: what do you want from the fund and what are the res
 
 - classification models
 - confident, impetuous, careful, anxious
+
+## Week 4
+
+### Rolling a Dice
+
+If you get money of the face number you roll of the dice, and you need to pay $3.25, would you do it? If you can re-roll, when do you?
+
+### Mood and Risk Attitude
+
+- studies suggest happier people more optimistic and higher probabilities to positive events
+
+### Disposition Effect
+
+Tendency to hold losers and sell winners.
+
+### Prior Gains and Losses, and RIsk Aversion
+
+- If we don't crystalize a loss, we aren't a loser
+- losing a movie ticket vs the money to buy the movie ticket
+
+### House Money Effect
+
+- Successful investment
+- Bad investments can caus distress
+- If you win at Blackjack and are up $200, do you play more or less aggressively
+
+### Conflicting Effects
