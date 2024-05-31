@@ -273,11 +273,49 @@ When US overnight lending rates go higher, the bond prices go down too. QE: fede
 
 ### Uniform Price Dutch auction
 
+$20B where 16B is competitive tender and 4B is non-competitive tender.
+
 1. Treasury announces $16B 2 year note
 2. Demand schedule for quantity and yields
-3. Coupon set to 1/8th rounded down from highest aggregate demand yield that satisfies the tender
+3. Coupon rate set to 1/8th rounded down from highest aggregate demand yield that satisfies the tender. Therefore, the price is usually at a discount.
 4. Stop-out yield: all yields lower than the stop-out yield are met
 
 ### Bid Cover Ratio
 
-Higher the bid-cover ratio, higher the interest.
+Higher the bid-cover ratio, higher the interest in the issue. Measures the excess demand.
+
+Sum the $ demanded (competitive + non-competitive) at the stop-out yield and divide by the total $ issued.
+
+The BoC only has 2 people working at running these auctions since most of the process has been automated.
+
+### Secondary Market for Treasury Debt
+
+- trading amongst dealers (90%)
+- 10% external sources
+- IDB: interdealer broker
+  - 6 of them
+  - anonymous trading
+
+### Algorithmic Trading: GovPX
+
+- Improves public's access to US Treasury prices by disseminating all trades, best bids, offers in the market
+- consolidates data from 5-6 brokers
+
+### Federal Fund Market
+
+- Member banks borrow and lend within each other
+- Surplus bank lends to deficit bank
+- In the US, banks borrow to keep reserve requirements
+- In Canada, deficit banks borrow to maintain their internal Basel III requirements
+- The central bank can keep selling treasuries to remove liquidity
+- The central bank can also keep buying treasuries to provide liquidity
+- during great financial recession, banks were unwilling to lend to each other so there were spikes in the effective rate
+
+### Federal Funds Rate and Monetary Policy
+
+Decrease in overnight lending rate &rarr; dollar goes down, interest rate goes down &rarr; increase in demand &rarr; higher costs/prices &rarr; higher rate of inflation
+
+Increase in overnight lending rate &rarr; dollar goes up, interest rate goes up &rarr; decrease in demand &rarr; lower costs/prices &rarr; lower rate of inflation
+
+- dollar changes due to foreign investment
+- demand: **household, corporate**, government, and **exports**
