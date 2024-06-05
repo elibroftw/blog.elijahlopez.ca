@@ -210,6 +210,21 @@ Why are Satellites used for electronic trading?
 
 ## FLV Case
 
+Paper profit realization probability? Very unlikely.
+
+Why is the knowledge that someone holds shares in a company a downside? They don't need to disclose it until 5% of a company is owned. In Canada the threshold should be higher due to the difference in company sizes and yes it is 10%. Disclosure has downside because then everyone else will want to take advantage of the company if they are asking for counter party offers.
+
+If Kevin starts trading too aggressively through marketable limit orders (a limit order that can immediately be executed against the order book) people will figure out the signal. What are Kevin's choices? Best choice is to go slow and through dark markets. Dark only applied to pre trade transparency. Once trade has occured by law, it has to be reported to the public record of transactions. Dark pools used to be millisecond delays but that's been considerably reduced too.
+
+One thing that dark pool does for you. The problem with "lit" exchanges is that everything is shown: the order book. As soon as you make a trade the market knows where the price is going.
+What are these crossing networks? How to sell using cross networks (Jessica at Deutsche Bank) without market falling. Jessica said she had a client who was willing to buy 100k. The transaction hit the tape. What happens next? Ticked up by two cents 19.02-19.03. The market inferred there was either someone wants to buy more to sell more than 100,000 shares. If the buyer crosses the spread then that's the signal that the buyer is potentially more informed than the seller. Therefore an intelligent seller can get together a bunch of buyers and sell to each of them in a way where they have to cross the spread.
+
+Now he wants to sell 250,000 at 19.02 which would signal to market that the seller wants to sell more. If Jessica cared about the buyer she would not want the price to move up. The solution would probably be to sell at the mid-quote.
+
+It's not possible to post quotes that could have been fulfilled (lock or cross). When is this a problem? When two exchanges have different best offers. It's not supposed to happen but exchanges work hard to reconcile that by routing market orders to each other? The exchange that is offending would slide down the offers.
+
+Growing fragmentation tries to say that the same order could get different deals but there's arbitraging as well as a regulation: exchanges are mandated to route orders to the exchange with the best deal. Trade through rule. If the exchange knows that there is a better quote somewhere, then the trader has to get the best possible price.
+
 ## NYSE vs NASDAQ Case
 
 - Discuss

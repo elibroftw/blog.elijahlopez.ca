@@ -353,7 +353,7 @@ referenced objects, each addressable by a URL
 - client: browser that requests, receives, displays
 - server:  Web server sends objects in response to requests
 - stateless
-- RTT (definition): time for a small packet to travel from client to  server and back
+- RTT (definition): time for a small packet to travel from client to server and back
 
 Non-Persistent
 
@@ -444,22 +444,79 @@ Keeping state:
 - maintain state at
 sender/receiver over multiple
 transactions
+- could be just for a session
 
 ### Web Caches (Proxy Server)
 
+- why don't we keep the query result somewhere closer to us to reuse
 - server tells cache about object’s allowable caching in response header
   - `Cache-Control: max-age=<seconds>`
+  - `Cache-Control: no-cache`
 - reduces response time for client
 - reduce traffic on an institution's access link
 - internet dense with caches to enable poor content providers to more effectively deliver content
+- First configure your machine and browser configured with a proxy server
+
+<details><summary>Caching example</summary>
+
+- access link rate: 1.54Mbps
+- RTT from institutional router to server: 2 seconds
+- web object size: 100K bits
+- Average request rate: 15/sec
+  - Average data rate to browsers: 1.50Mbps
+
+Performance
+
+- access link utilization = 0.97 (1.50 / 1.54)
+- LAN utilization = 0.0015
+- End-end delay = Internet delay + access link delay + LAN delay = 2 sec + mins + usecs
+
+Options to improve
+
+1. Buy faster access link &rarr; faster access link rate &rarr; lower access link utilization
+2. Install a web cache to handle redundant requests
+    - Assume a hit rate of 0.4 &rarr; 0.6 \* 1.5 = 0.9 Mbps rate to browsers
+    - Access rate utilization = 0.9 / 1.54 = 0.58
+    - Average end-end- delay = 0.6 \* (delay from origin) + 0.4 \* (delay when satisfied at cache)
+    - LAN utilization &rarr;
+
+</details>
 
 ### Conditional GET
 
 - don’t send object if cache has up-to-date cached version
 - specify date of cached copy in HTTP request
-  - `If-modified-since: <date>`
+  - Header: `If-modified-since: <date>`
 - Server
   - `HTTP/1.0 304 Not Modified`
+- Implementation notes
+  - If the backend is being updated, set default date of the database schema to the day after the feature was rolled out (in debugging, test both future date and older date). When a client requests a route/object (with authorization), if the if-modified-since: date is definite
+  - frontend: simply keep track in persistent storage (local storage, IndexDB, preferred, shared preferences, DataStore)
+
+### E-mail
+
+- user agents
+- mail servers
+- simple mail transfer protocol: SMTP
+
+User Agent
+
+SMTP RFC (5321)
+
+TCP three phases:
+
+- handshaking
+- transfer of messages
+- closure
+
+SMTP Origin
+
+- Check sender
+- Check recipient
+- Send DATA ending with "." on a line by itself
+- Message added to queue
+- After sending all the mail, send QUIT to close TCP connection
+- The RTT is for each of these stages, but since the connection is persistent, we don't expense double the RTT
 
 ## Chapter 3 Transport Layer Protocols
 

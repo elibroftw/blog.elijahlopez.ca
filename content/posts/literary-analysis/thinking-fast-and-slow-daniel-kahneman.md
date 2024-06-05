@@ -16,6 +16,8 @@ denigrate: unfair critique. Sam denigrated the homeless when he said they deserv
 
 bias: systemic error
 
+precocious: a child having developed abilities at an earlier age than usual
+
 ## Introduction to Thinking, Fast and Slow
 
 A book about biases of intuition and how to create diagnoses and labels just like doctors have/do for illnesses.
@@ -409,7 +411,7 @@ Group estimates work best when each person makes an estimate individually and is
 
 Application to corporate executives: when having meetings discussing an issue, each person should be write a summary of their position which results in valuing the groups diverse knowledge rather than dealing with differences in how loud and often people talk.
 
-To combat jumping to conclusions (What you see is all there is), we may need to work backwards. So when asking if X is Y based on Z, we start by defining what it means to be Y and then assess if Z addresses all of what it means to be Y. Questions like is Mark an ethical person.
+To combat jumping to conclusions (What you see is all there is or WYSIATI), we may need to work backwards. So when asking if X is Y based on Z, we start by defining what it means to be Y and then assess if Z addresses all of what it means to be Y. Questions like is Mark an ethical person.
 
 People who hear one side of the story will almost always have higher convictions of their judgement that those who hear both sides to a story / legal case.
 
@@ -421,7 +423,70 @@ Biases
 
 ## Chapter 8 - How Judgments Happen
 
+System 1 continuously monitors the situation and gives basic assessments, which can form intuitive judgement. Substitutions of judgement is allowed. Translating values across dimensions (how tall would Sam be if they were as tall as their intelligence).
+
+Any intension of system 2 to answer a question triggers system 1 again. Situations are constantly evaluated as good or bad, requiring escape or permitting approach. We have the ability to judge people as safe or dangerous off a single glance. It influences how people vote. Ratings of competence rather than likability are the predictors of voting choices, albeit it can only explain 70% of results. Competence is a combination of strength and trustworthiness. Strong chin, slight confident smile,
+
+When people were asked how much they would contribute to help out birds that would otherwise drown, the number of birds to help didn't matter because the groups still averaged the same amount of money. "The almost complete neglect of quantity in such emotional contexts has been confirmed many times." Is it the neglect of emotional contexts, or does emotional contexts translate to a price for people and people would still answer with the max amount of money?
+
+The mental shotgun is the inability of system 2 to direct system 1 to one train of thoughts. System 1 will always do more than just what is required of it. An example is asking someone who hates big tech if the companies in big tech are financially well off. Or better yet, asking someone who likes a product if the company is doing well (when the company is not in fact doing well such as Pelaton).
+
 ## Chapter 9 - Answering an Easier Question
+
+>The target question is the assessment you intend to produce.
+>
+> The heuristic question is the simpler question that you answer instead.
+
+The target question is the assessment you intend to produce. The heuristic question is the simpler question that you answer instead.
+
+Substitution and heuristics in this sense stems from the mental shotgun.
+
+<details><summary>What is the meaning of happiness?</summary>
+
+The equivalent heuristic is "what makes me happy right now"
+
+The meaning of happiness is two-parts. The first part is of positive events and milestones. The second part is the minimization of being harmed, whether that be emotionally, physically, or even physiologically (e.g. shelter, food, people).
+
+</details>
+
+For "How" types of questions, intensity matching is the process of converting the answer of a heuristic into an answer for the original question. If both things have a scale, then we can easily translate in our heads using System 1.
+
+![Three men in a corridor](/images/thinking-fast-and-slow/three-men.png)
+
+<details><summary>Is the figure on the right larger than the figure on the left?</summary>
+
+This is a powerful illusion. There is no larger man. The 3D interpretation screws with our heads. We are tricked because we are thinking about the actual size of the people and not of the drawing. The bias is very deep, although the figure on the right is drawn in a peculiar manner.
+
+</details>
+
+Going back to the happiness question when asked about happiness and more, the order matters. If a question that could be a heuristic for happiness is asked first, it severely influences the happiness question. The example is asking about dating life and then happiness.
+
+<details><summary>Characteristic of System 1</summary>
+
+- generates impressions, feelings, and inclinations; when endorsed by System 2 these become beliefs, attitudes, and intentions
+- operates automatically and quickly, with little or no effort, and no sense of voluntary control
+- can be programmed by System 2 to mobilize attention when a particular pattern is detected (search)
+- executes skilled responses and generates skilled intuitions, after adequate training
+- creates a coherent pattern of activated ideas in associative memory
+- links a sense of cognitive ease to illusions of truth, pleasant feelings, and reduced vigilance
+- distinguishes the surprising from the normal
+- infers and invents causes and intentions
+- neglects ambiguity and suppresses doubt
+- is biased to believe and confirm
+- exaggerates emotional consistency (halo effect)
+- focuses on existing evidence and ignores absent evidence (WYSIATI)
+- generates a limited set of basic assessments
+- represents sets by norms and prototypes, does not integrate
+- matches intensities across scales (e.g., size to loudness)
+- computes more than intended (mental shotgun)
+- sometimes substitutes an easier question for a difficult one (heuristics)
+- is more sensitive to changes than to states (prospect theory)*
+- overweights low probabilities*
+- shows diminishing sensitivity to quantity (psychophysics)*
+- responds more strongly to losses than to gains (loss aversion)*
+- frames decision problems narrowly, in isolation from one another*
+
+</details>
 
 ## Chapter 10 - The Law of Small Numbers
 
@@ -471,3 +536,9 @@ Takeaways of the chapter
 - when drawing conclusions of good, we should also look at the conclusion of bad. To do good is also to avoid doing bad. (I added this)
 
 ## Chapter 11 - Anchor
+
+## Chapter 12 - The Science of Availability
+
+## Chapter 13 - Availability, Emotion, and Risk
+
+## Chapter 14 - Tom W's Specialty
