@@ -112,6 +112,7 @@ Bid-Ask Spread
 - Two big costs (applicable to wholesalers as well)
   - Adverse Selection costs:
     - A phenomena/cost when taking the other side of the trade with an informed entity at a large scale (institutional investor, hedge fund, insider trader)
+    - It can just be pressure on price even in the short-term
   - Inventory costs: movement against you
 - Costs are high for institutional and low for retail
 - When there is mixed flow, the exchange costs are lower
@@ -224,6 +225,22 @@ Now he wants to sell 250,000 at 19.02 which would signal to market that the sell
 It's not possible to post quotes that could have been fulfilled (lock or cross). When is this a problem? When two exchanges have different best offers. It's not supposed to happen but exchanges work hard to reconcile that by routing market orders to each other? The exchange that is offending would slide down the offers.
 
 Growing fragmentation tries to say that the same order could get different deals but there's arbitraging as well as a regulation: exchanges are mandated to route orders to the exchange with the best deal. Trade through rule. If the exchange knows that there is a better quote somewhere, then the trader has to get the best possible price.
+
+_electronic front running_: back-running
+
+_slow-market arbitrage_: latency arbitrage
+
+Investors Exchange (IEX) Exchange. It was founded in 2013 as a dark pool, and turned into an exchange in 2016. IEX has 38 miles of coiled fiber optic cable between its matching engine and servers used by HFTs giving IEX a 0.35 millisecond head start versus HFTs. This gives HFTs a disadvantage at re-pricing their quotes. How does it actually solve the problem? Is it because the quotes are delayed? Limit orders will be re-priced by the exchange before the orders that are in the coil get to the exchange. IEX is pegged to the other exchanges' quotes.
+
+Liquidity begets liquidity. IEX trying to do the HFTs / market makers job by doing it for them. The problem is that HFTs are just better at it. So HFTs end up staying away from it.
+
+What is spoiling the market? Brad kept calling people (shopping around) to see if anyone wants it but since he calls the wrong people, it tips people off. Broker connects two parties, a dealer could also hold inventory themselves? If the dealer does not tolerate inventory risk, they can impatiently trade out of large positions.
+
+For his last 3,000,000 million shares, the offer was 19.10. Since the initial share price was 19.04, 19.10 is much better than the initial price at the decision price.
+
+Implementation shortfall: realized profit vs paper profit when decision was made.
+
+Bryan Weller, does algorithmic trading reduce information acquisition? Markets are complicated. Without funds like FLV, price discovery wouldn't occur since they do fundamental research. As they do their job, they are also adversely selecting market makers who are providing liquidity. Modern market is bad at price discovery since hedge funds choose not to do research into everything anymore, since they know its harder to act on the research do to the sensitivity of the market.
 
 ## NYSE vs NASDAQ Case
 

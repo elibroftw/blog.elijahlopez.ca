@@ -79,7 +79,7 @@ The notes are not organized at the moment, but you should be able to go through 
   - Front-running itself is illegal and is not what's happening here (back-running)
   - Pension funds could also be the clients
   - Front-running: when the brokerage sees an order from a client and buys it and sells it at a higher price. Fiduciary.
-  - The right word is called **back-running**
+  - The right word is called **back-running** or **scalping** but it could just be quote **re-pricing**
   - Why is a good thing
     - offers more liquidity to the market
     - incentivize market makers to lower spreads because the HFTs are taking lowering the adverse selection costs and risks from the market maker because the HFTs are market makers who can immediately acquire the inventory and get rid of it. If the market maker sees someone who is making an informed decision, then they wil want to pre-acquire the inventory and reduce their inventory costs. Therefore, the bid-ask spread will be lower than otherwise.
