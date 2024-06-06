@@ -319,3 +319,99 @@ Increase in overnight lending rate &rarr; dollar goes up, interest rate goes up 
 
 - dollar changes due to foreign investment
 - demand: **household, corporate**, government, and **exports**
+
+## Bond Buyback at Deutsche Bank
+
+- February 2016
+- Falling stock price and CoCo bond price
+  - CoCo's pay higher interest than traditional bonds
+- Under-performing euro stock index
+- Decision is whether to buy back $5.5B CoCo bonds
+- Deutsche Bank: financial services
+  - investment banking (majority)
+  - commercial banking
+  - asset management
+- Global bank headquartered in Frankfurt, Germany
+- 31.1B EUR market cap
+- SWOT
+  - Strategy 2020
+  - Established Brand
+- When the dividend was suspended, the price declined
+- Higher Credit Default Swap spread
+- Maturity Transformation
+  - Difference between short term rates and long-term rates matters to banks
+  - Banks borrow at short-term rates and lend at long-term rates
+
+### Contingent Convertible Bonds
+
+Compared to a convertible, the contingent holder has no say and the bond can convert when share price decreases.
+
+Core Equity Tier 1 (CET1)
+
+- Common Shares
+- Retained Earnings
+
+Additional Tier 1 (AT1)
+
+- preferred shares
+- high-trigger CoCos
+  - low triggers means lower loss absorbing capacity
+  - usually not AT1
+  - Boost T2 capital in cost-efficient manner
+  - Regulators and markets pressured banks to boost T1 capital
+  - CoCos with higher triggers are more expensive
+  - Basel III and Dodd-Frank regulations
+
+Tier 2 (T2)
+
+- non-coco subordinated debt
+- low-trigger cocos
+
+### Structure of CoCos
+
+- Triggers
+  - Mechnical (book value or market value)
+  - Discretionary
+- Loss absorption mechanism
+  - Conversion to equity
+  - Principal write down (cash for forgoing the principal)
+- Capital Requirements
+  - Buffer against a shock
+  - 4.5% for T1
+  - Add-on by adding T2
+  - Tier 1 vs Tier 2
+    - Tier 1 is equity
+    - Tier 2 is subordinated debt that could be kept as debt forever*
+
+### Hedge Fund Strategies
+
+- Bearish on the Firm
+  - Short stock, buy CDS
+  - Solvency perception goes down as stock goes down
+  - Short unsecured bons + long CDS
+  - Short CoCo bonds + long CDS
+  - Combination of above
+- Bullish
+  - Long stock + short CDS
+  - Long unsecured bonds + short CDS
+  - Long CoCo bonds + short CDS
+  - Combination of above
+
+### LIBOR-Scandal and SOFR
+
+- london interbank offer rate
+- rate banks charge each other in London
+- want a low LIBOR rate not a high rate
+- banks even in USA use LIBOR as a going rate for risk free
+- Lower than it should've been to avoid regulation
+- Cannot trust self-regulation
+
+Fed Funds Rate is AAA whereas LIBOR is AA.
+
+ICE took control of LIBOR.
+
+LIBOR-ICE turned to Overnight interest swaps
+
+### Interest Rate Swap
+
+One side pays fixed rate, the other pays LIBOR on the principal, therefore there is a net cash flow.
