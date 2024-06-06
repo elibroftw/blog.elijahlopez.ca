@@ -273,3 +273,46 @@ Tendency to hold losers and sell winners.
 - If you win at Blackjack and are up $200, do you play more or less aggressively
 
 ### Conflicting Effects
+
+## Week 5
+
+### Regulatory Bodies
+
+10 Provinces, 3 Territories. 13 Securities Bodies with their own laws. They form the national IIROC. Investment Industry Regulatory Body. IIROC creates bylaws where membership is voluntary but mandatory for investment advisors. Canadian Securities Administrators: powerless country club and spokesperson for what the regulators have said.
+
+Regulators simply do not want to see a risk profiler because they don't audit and comment on it.
+
+### RIsk Taking
+
+Ability to take Risk versus WIllingness to take risk.
+
+### Investment Policy Statement
+
+1. Liquidity
+2. Time horizon
+3. Tax
+4. Legal/regulatory
+5. Unique circumstances
+
+An organization like the Ontario pension plan chooses the asset mix by voting on it. Either by voting directly, or through a board.
+
+### Strategic Asset Allocation
+
+### Richard Thaler
+
+- Auto-enroll people into pensions
+- Make it super easy to opt-out, the more sticky auto-enrollment is
+- Choice architecture: choosing things
+
+### Self-Control
+
+- People can opt out
+- People's best interests are on short-term needs
+- This can lead to making mistakes since it requires more self-control
+- A policy like sterilization for money might be wrong because poor people cannot properly think about the situation properly even if the policy was not directed at poor people but for anyone
+- Therefore, maybe have a policy of sterilization if the person already has no more than one child or they are 30 years old already
+
+### We need to do more
+
+- default saving rate of 3% is too low
+- automatic escalation
