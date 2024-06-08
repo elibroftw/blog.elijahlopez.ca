@@ -518,6 +518,141 @@ SMTP Origin
 - After sending all the mail, send QUIT to close TCP connection
 - The RTT is for each of these stages, but since the connection is persistent, we don't expense double the RTT
 
+IMAP (Internet Mail Access Protocol)
+
+- Internet Mail Access Protocol [RFC 3501]: messages stored on server
+- IMAP provides retrieval, deletion, folders of stored messages on server
+- HTTP: web-based interfaces on top of SMTP and IMAP (or POP)
+
+### Domain Name System
+
+- distributed database implemented in hierarchy of many name servers
+- application-layer protocol: hosts, DNS servers communicate to resolve names
+- services
+  - hostname to IP address translation
+  - host aliasing
+    - canonical, alias names
+  - mail server aliasing
+  - load distribution
+- don't want to centralize
+  - single point of failure
+  - traffic volume (Billions to Trillions a day)
+- more reads than writes
+- performance matters
+- physically decentralized
+- root DNS servers (13 logical servers, ICANN)
+  - .com DNS servers
+    - individual website.com DNS servers (e.g. \www.amazon.com)
+
+### Top Level Domain
+
+- responsible for .com, .org, .net, .edu, .aero, .jobs, .museums, and all top-level country domains, e.g.: .cn, .uk, .fr, .ca, .jp
+- Network Solutions: authoritative registry for .com, .net TLD
+- Educause: .edu TLD
+
+### Authoritative DNS Servers
+
+- organization’s own DNS server provided by self or service provider
+
+### Local DNS Server
+
+- return from cache which could be out of date
+- Use a TTL to expire cache entires
+  - If the hostname IP changes, need all TTLs to expire
+
+### DNS Records
+
+- type=A
+  - name is hostname, value is IP address
+- type=CNAME
+  - name is alias for the canonical name
+  - value is the canonical name
+  - `www.ibm.com` &rarr; `severeast.backup2.ibm.com`
+- type=NS
+  - name is domain, value is hostname of the authoritative name server for the domain
+- type=MX
+  - value is the name of the SMTP name server associated with the name
+
+### DNS Protocol Messages
+
+- Identification
+  - 16 bit number for query and in reply
+- Flags
+  - query or reply
+  - recursion desired?
+  - recursion available?
+  - reply is authoritative
+
+### DNS Registar
+
+- register domain with DNS registrar (Network Solutions for .com)
+  - provide names, IP addresses of authoritative name server (primary, and secondary)
+  - registar inserts NS, A RRs into the .com TLD server
+
+### DNS Security
+
+- DDOS
+  - root servers can handle it
+  - more dangerous for TLD servers
+- Spoofing attacks
+  - intercept DNS queries, return bogus reply
+  - RFC 4033 (authentication services)
+
+### Peer-to-peer (P2P) architecture
+
+- self scalability
+- no always-on server
+- complex management
+- time to distribute in server to many clients is the max of either the server upload divided by the number of downloads or the download speeds of the clients
+- With P2P, the server uploads at least one, but takes advantage of each client's upload speed
+  - D >= max{ F/us, F/dmin, NF/(us+ sum u)}
+  - server one upload, slowest client download, all clients helping server with uploading
+
+### BitTorrent
+
+- 256Kb chunks
+- _tracker_: tracks peers participating in swarm
+- _swarm_: group of peers exchanging chunks of a file
+- _churn_: peers may come and go
+- periodically need to ask each peer for list of chunks that they have
+- request missing chunks from peers, rarest first!
+- send chunks to top 4 who have sending her chunks at highest rate
+- re-evaluate top 4 every 10 seconds
+- every 30 seconds, randomly select another peer to send chunks to (unchoke)
+
+### Streaming Video (DASH)
+
+- Dynamic, Adaptive Streaming over HTTP
+- manifest file: provides URLs for different chunks
+- divide video into multiple chunks
+- each chunk encoded at multiple different rates
+- different rate encodings stored in different files
+- files replicated in various CDN nodes
+
+The client needs to
+
+- periodically estimate server-to-client bandwidth
+- consulting manifest, requests one chunk at a time
+- chooses maximum coding rate sustainable given current bandwidth
+- can choose different coding rates at different points in time
+- when to request chunk (avoid buffer overflow), what encoding rate, where to request chunk (which server to request from)
+- streaming video = encoding + DASH + playout buffer
+
+### Content Distribution Network (CDNs)
+
+- challenge: streaming content to hundreds of simultaneous users
+- option 1: mega server
+  - single point of failure
+  - possible network congestion
+- option 2: store copies at multiple geographically distributed sites (CDN)
+  - enter deep: push CDN servers into many access networks close to users (Akamai has 240,000 servers deployed in > 120 countries in 2015)
+  - bring home: larger clusters near access nets
+
+### Socket Programming
+
+- UDP: no connection nor handshake (may be lost or received out-of-order)
+- TCP: server must be running first
+
 ## Chapter 3 Transport Layer Protocols
 
 Design Issues, Connectionless UDP, Principles of Reliable Data Transfer, Connection-oriented Transport TCP, Flow Control, Congestion Control
