@@ -3,7 +3,7 @@ title: "JetBrains Sucks"
 date: 2023-11-07T21:11:40-05:00
 draft: false
 tags:
-  - opinion]
+  - opinion
   - programming
 ---
 
