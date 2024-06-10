@@ -263,3 +263,58 @@ Bryan Weller, does algorithmic trading reduce information acquisition? Markets a
     - pros and cons
     - for background, read Intro to Brogaard, 2018 "High frequency trading and extreme price movements"
     - New settlement rules (t+1) and initiatives (blockchain)
+
+NYSE started in 1792, physically trading. Buttonwood tree. System of human specialists, which are central market markers to make the market for a basket of stocks. The worry is a being ripped off (overcharging for liquidity) by the market maker.
+
+In the 1970s the NASDAQ was created due to specialist over-charing concern as well as fragmentation. Needed an exchange to list faster (tech), where companies that are innovating and couldn't qualify for the NYSE. NASDAQ chose to have multiple dealers providing liquidity on NASDAQ or so the argument goes. Then NASDAQ asked companies to move to them. Back then, there was n cross trading. What were the actual results? NASDAQ has more expensive liquidity which normally wouldn't make sense due to micro-economic theory. Explanation: dealers were colluding to overcharge. This hold true even after accounting for different stocks trading. When the same stock would move from NASDAQ to NYSE, its liquidity would improve.
+
+### LU-LD System
+
+- halts trading of stock that went up or down too much (per stock basis) to let traders calm down and think about it
+
+## Week 6?
+
+- GME electric boogaloo 2
+  - Roaring Kitty (Keith Gill) bought calls before he tweeted
+
+### Pre-Market and Post-Market Equity Trading
+
+- where and how?
+- brokerages &rarr; BlueOcean (ATS: alternative trading system, matching engine/platform)
+  - Thin market
+  - No price improvement
+- 4am - 8pm is when institutions start trading
+- Retail investors in the USA can trade 24/5 (Saturdays and Sunday morning not included)
+
+### New Texas Stock Exchange
+
+- Previously tried
+  - MEMX (members exchange)
+- MyX Pearl, Long-term stock exchange
+- Liquidity begets liquidity
+- Why?
+  - Circumvention of NASDAQ diversity explanation
+- Chicago to Texas is 3.5hrs
+  - Expensive network
+- NYSE
+  - Prestige and requirements compliance
+- After COVID state of NJ needed sources of revenue
+  - Transaction tax
+  - Every time you sell something you pay a tax, buyers don't
+  - Exchanges threatened to move to leave NJ and move to Chicago
+  - Exchanges have backup engines in other states to ensure that if something goes wrong there is a alternative system available
+  - Liquidity shrinks due to higher inventory costs
+
+## ITG Case
+
+- All institutional
+- POSIT dark pool
+  - Doesn't show anything
+  - Size discovery facility; trades large transactions
+  - Average is 300 on other dark pools versus POSIT 50,000
+- What is brokerages and bundling?
+  - Bundling of brokerage services such as access to affiliated Investment Banks IPOs, capital, and analyst forecasts affiliated
+- Why did SEC stop crusade against dark pools?
+- What does dark pool do to dark pools?
+- How bad was Project Omega?
+- ITG reputation went down after SEC and got acquired by Virtu after settling
