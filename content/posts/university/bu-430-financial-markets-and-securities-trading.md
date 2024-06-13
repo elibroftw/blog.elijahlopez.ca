@@ -268,6 +268,15 @@ NYSE started in 1792, physically trading. Buttonwood tree. System of human speci
 
 In the 1970s the NASDAQ was created due to specialist over-charing concern as well as fragmentation. Needed an exchange to list faster (tech), where companies that are innovating and couldn't qualify for the NYSE. NASDAQ chose to have multiple dealers providing liquidity on NASDAQ or so the argument goes. Then NASDAQ asked companies to move to them. Back then, there was n cross trading. What were the actual results? NASDAQ has more expensive liquidity which normally wouldn't make sense due to micro-economic theory. Explanation: dealers were colluding to overcharge. This hold true even after accounting for different stocks trading. When the same stock would move from NASDAQ to NYSE, its liquidity would improve.
 
+The dealers were caught because they stopped as soon as the first article went out and because people noticed, there was a big investigation.
+
+Two major changes to the markets in the late 1990s:
+
+1. Increase competition from other markets (stocks trade on all exchanges)
+2. At most 1 cent
+
+Specialists had to go because it was hard to go from 12 cents to 1 cent. 7-10 years without dealers and specialists market making.
+
 ### LU-LD System
 
 - halts trading of stock that went up or down too much (per stock basis) to let traders calm down and think about it
@@ -318,3 +327,24 @@ In the 1970s the NASDAQ was created due to specialist over-charing concern as we
 - What does dark pool do to dark pools?
 - How bad was Project Omega?
 - ITG reputation went down after SEC and got acquired by Virtu after settling
+
+## Quiz 2
+
+You are an algorithm responsible for Virtu’s activity in SPY on BATS and BATS Y, two sister exchanges. Your task is to make money by market making and/or sniping stale quotes. You observe that the price of the e-mini S&P 500 futures has ticked down, indicating that SPY price is also about to tick down, by 2 cents.
+
+SPY is currently quoted at 100.00 on the bid and 100.02 on the ask. The two-cent spread in SPY is typical, and you expect it to persist. There are:
+
+    100,000 shares at the bid and 100,000 shares at the ask on BATS and
+    100,000 shares at the bid and 100,000 shares at the ask on BATS Y.
+
+BATS charges 0.0030 cents/share to liquidity takers and rebates 0.0028 cents/share to liquidity makers.
+
+BATS Y is an inverted market; it charges 0.0010 cents/share to liquidity makers and rebates 0.0008 cents/share to liquidity takers.
+
+Your technology is good, but Citadel’s is slightly better. Because of this, while Citadel’s first order will be faster than yours, its second order will be slower than your first.
+
+In no more than 5 sentences, please explain what yours and Citadel’s next steps should be and why.
+
+Answer:
+
+The next spread is 9.98 - 10.00. Citadel will go to BATS Y and make money from the liquidity taking fees (short at 10.00, buy back at 10.00). Virtu will have to go do nothing because they would've had to short at 10.00 and buy back at 10.00 on BATS which would be super expensive.

@@ -198,9 +198,12 @@ Higher probability to be financially hurt from being disabled than family is fro
 - Faulty reasoning
 - Can be corrected through education
 - Dissonance - ignore new info
-- Conservatism - prior view
+- Conservatism
+  - prior view
+  - want to stick with what is known and not deal with the unknown
 - Confirmation Bias - info confirms beliefs
-- Representativeness - classify new info based on past
+- Representativeness
+  - confidence that the results from a sample can be used to represent the entire population (for example, does a single quarter of loss mean that the company won't be profitable in the future earnings?)
 - Illusion of control
   - belief that they are in control
   - gambling mentality - overtrading
@@ -221,6 +224,8 @@ Higher probability to be financially hurt from being disabled than family is fro
 - Less easy to correct
 - "Blind spots" of mind
 - Regret aversion
+  - The most powerful and common emotional bias
+  - Make the wrong decision to avoid regretting missing out; FOMO?
 - status quo
 - endowment
 - self-control
@@ -240,12 +245,30 @@ Investment policy statement: what do you want from the fund and what are the res
 
 ### Standard of Living Risk
 
-- Moderate or adapt based on wealth
+- Pompian and Longo
+- high wealth (low SLR): Adapt to the client's behavioural biases
+- low wealth (high SLR): Moderate the client's behavioural biases
 
 ### BBK Model
 
 - classification models
 - confident, impetuous, careful, anxious
+
+The Adventurer: Investors who are confident as well as make impulsive decisions have been classified as the adventurer in the BBK model. These are the kinds of investors who will make very risky investments. They are often seen investing in the futures and options space with high amounts of leverage. Often, they put all of their money on one single bet based on the level of confidence they might have on that bet.
+
+From the advisor’s point of view, such investors can be difficult to give advice to. This is because they have their own ideas about investing and are not afraid to test them in the marketplace.
+
+The Celebrities: These investors are also known for making impulsive decisions. However, instead of being confident, they are known for being anxious. This is the worst combination of traits amongst the four quadrants! The celebrities are not confident. Hence, they do not have their own investment theories. This means that they are gullible and are often taken advantage of by middlemen who want them to trade excessively so that they can earn commissions in the process. As an ethical advisor, one may have to make emotional appeals to this type of investor since they often do not respond to rationality.
+
+The Individualists: This category of investors is both confident as well as methodical. These types of investors have their own investment philosophy. They tend to know something about the market or at least make an attempt to learn before they invest their hard-earned money. Also, since they are very rational and analytical, they tend to come to the right conclusion. This is the best combination of traits in the four quadrants. Such investors are closest to the textbook rational investors. However, it needs to be noted that very few investors actually fall in this category. These are the best possible clients for an investment advisor since it is possible to make rational arguments and convince these investors. If it makes sense, then convincing these investors will be easy. If they are made aware of their behavioral biases, they are most likely to correct their course.
+
+The Guardian: The guardians are anxious as well as careful at the same time. This category of investors generally comprises of old people who are nearing retirement. These people tend to be quite methodical when it comes to decision making. However, they are also quite anxious about the safety of the money that they invest.
+
+Guardians are generally people who have a limited earning capability. Hence, they are more likely to preserve the assets that they have instead of taking risks. Guardians are generally not interested in volatile investments.
+
+As an investment advisor, they can be difficult to advise since they are also partly driven by the emotion of fear. If these clients get a feeling that the advisor is overbearing, they are most likely to change the advisors as well.
+
+The Straight Arrow: The four main quadrants are already described above. However, the BBK model has been extended to include a fifth category. This category is represented in the center, i.e., the interaction of the two axes. They are called the straight arrows. This is where a lot of investors tend to fall. These investors are known to have a composite of all the four traits and hence are known to be fairly balanced. Oftentimes, they are called the average investor since most investors a person comes across are likely to fall in this category.
 
 ## Week 4
 
@@ -306,8 +329,8 @@ An organization like the Ontario pension plan chooses the asset mix by voting on
 
 ### Self-Control
 
+- People's best interests are on **short-term needs**
 - People can opt out
-- People's best interests are on short-term needs
 - This can lead to making mistakes since it requires more self-control
 - A policy like sterilization for money might be wrong because poor people cannot properly think about the situation properly even if the policy was not directed at poor people but for anyone
 - Therefore, maybe have a policy of sterilization if the person already has no more than one child or they are 30 years old already
@@ -316,3 +339,28 @@ An organization like the Ontario pension plan chooses the asset mix by voting on
 
 - default saving rate of 3% is too low
 - automatic escalation
+
+## Corporate Governance
+
+- Institutional shareholders own over 50% of voting shares of US companies. In Canada it's less than 40%
+- CEO is board chair in 60% of US companies compared to less than 35% of Canadian companies
+- 26% of Canadian companies are controlled by a single shareholder or group who exercise and influence the control of the company
+- Only 12% of Fortune 500 companies have a shareholder \[group] with voting control
+
+### Committees
+
+- Mandated committee: audit
+- Compensation committee
+- Selection committee
+
+### Seagram
+
+- selling alcohol during prohibition
+- kept a lot of alcohol to sell at higher prices once legalized?
+- took 25% stake in Dupont
+- lost billions trying to make movies
+
+### Two Important Lessons
+
+- Are extreme valuations warranted by a new economy?
+- Loyalty can be misplaced in an organization and people are cautioned to keep a separate identity

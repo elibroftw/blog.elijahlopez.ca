@@ -96,6 +96,8 @@ Let's dismantle some arguments that think network effect + layer n solutions > l
 - Does not protect balances and thus would require managing at least two addresses just to reach the basic level of Monero's privacy. UX is much simpler and thus better for Monero. Monero has its own UX faults, but they are all UI and not technical. UI can always be improved at no cost to the user.
 - Requires user knowledge
 
+News from 2024 is that Samurai and Wasabi both disabled their custom "privacy"
+
 ### BTC & Lightning
 
 - Inbound liquidity. You need 5 BTC to receive ≤ 5 BTC. This is a rich get the richer scheme, and it's not mentioned often enough.
@@ -136,6 +138,10 @@ Instead of using a basic BCH wallet, you now have to use CashFusion's network. T
 Bitcoin Cash users have the right mindset; privacy is a human right.
 They like the idea of privacy but have this loyalty towards BCH similar to smokers opting for cigarettes over ecigs.
 One is objectively better than the other. Crypto is still in its infancy, so it'll take 10 years for people to stop acting like hard drug users who should be using psychedelics instead.
+
+### ETH + Railgun
+
+So Railgun is something I heard recently (2024)
 
 ### ETH + Aztec Protocol
 

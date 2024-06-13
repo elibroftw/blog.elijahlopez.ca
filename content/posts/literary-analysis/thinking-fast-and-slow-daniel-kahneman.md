@@ -537,8 +537,88 @@ Takeaways of the chapter
 
 ## Chapter 11 - Anchor
 
+_anchoring effect_: consider a particular value for an unknown quantity before estimating that quantity
+
+If you consider how much you should pay for a house, you will be influenced by the asking price.
+
+### Anchoring as adjustment
+
+- Start at anchor and move away from it until no longer certain
+- Therefore, we stopped too soon
+- Insufficient adjustment
+
+### Anchoring as primer
+
+When the anchor is absurd, we still are primed by it to think of  items with similar characteristics.
+
+### Anchoring Index
+
+The anchoring index is simply the ratio of the two differences (562/1,020) expressed as a percentage: 55%.
+
+Real Estate agents will deny that the asking price influenced their decision of what the lowest price they would accept would be.
+
+When asking for donations from people sensitive to the cause, even an extravagant number ($400) can lead to higher average donations ($143) compared to the average of $64 without an anchor, and an average of $20 with a low anchor ($5)
+
+### Example of Anchoring
+
+Judges asked to roll a dice of 3 or 9 and then sentence the person; anchoring effect of 50% (5 or 8 months)
+
+Rationing of campbell soup led to more soup purchased
+
+Advice when encountering a ridiculous offer is to make a sene and leave rather than make an equally ridiculous offer which will hinder further negotiations.
+
+To improve negotiations, think about lowest price that the opponent would accept as well as what the cost of losing out is.
+
+Maybe due to anchoring effect, penalties should be capped based on the defendant's cash position? e.g. (10% of Retained Earnings, 10% of net tangible value).
+
 ## Chapter 12 - The Science of Availability
+
+_availability heuristic_: substitute one question for another when wanting to estimate the size of a set by using the ease at which instances of the set come to mind
+
+awareness of your own biases can contribute to peace in marriages, and probably in other joint projects.
+
+When asked to rate assertiveness after listing six versus twelve examples, assertiveness rating is lower with more examples listed. This applies to lack of assertiveness (the more examples of lack of assertiveness asked, the more assertive the person rated themselves). The effect is not present if the participants are told beforehand that there is a reason for the diminished recalling.
 
 ## Chapter 13 - Availability, Emotion, and Risk
 
+> Victims and near victims are very concerned after a disaster. After each significant earthquake, Californians are for a while diligent in purchasing insurance and adopting measures of protection and mitigation...However, the memories of the disaster dim over time, and so do worry and diligence.
+
+Protective actions as done by individuals and governments are designed by tracking only the worst disaster experienced, assuming that future disasters could be no worse. It is hard to think that way though. This is a very good takeaway. We need to reassess some of our protective actions, especially for climate change, based on what could go wrong, not based on what has gone wrong.
+
+- Strokes cause almost twice as many deaths as all accidents combined, but 80% of respondents judged accidental death to be more likely.
+- Tornadoes were seen as more frequent killers than asthma, although the latter cause 20 times more deaths.
+- Death by lightning was judged less likely than death from botulism even though it is 52 times more frequent.
+- Death by disease is 18 times as likely as accidental death, but the two were judged about equally likely.
+- Death by accidents was judged to be more than 300 times more likely than death by diabetes, but the true ratio is 1:4.
+
+> estimates of causes of death are warped by media coverage
+
+_affect heuristic_: using how do I feel about it to answer what to think about it.
+
+This heuristic makes the world seem more ordered than it is in reality. When people hear about benefits, they automatically think there is less risk (vice versa as well). In the real world, trade-offs do exist.
+
+According to Paul Slovic, evaluation of risk depends on the measure itself (death per million, death per millions of dollars of product produced). “defining risk is thus an exercise in power.”
+
+Cass Sunstein takes another stance which is that the existing USA regulations are about public perception and not rationality. He argues that we should focus on saving life-years, not even just life. By looking at life-years, we would focus on younger people more. Insert: this was a very important distinction, as I viewed adults and children as equal life before I read this. I still dislike when media, including government statements always include that women are affected even when men are affected more (e.g. homelessness in Canada).
+
+_availability cascade_: biases flow into policy
+
+> On some occasions, a media story about a risk catches the attention of a segment of the public, which becomes aroused and worried. This emotional reaction becomes a story in itself, prompting additional coverage in the media, which in turn produces greater concern and involvement. The cycle is sometimes sped along deliberately by “availability entrepreneurs,” individuals or organizations who work to ensure a continuous flow of worrying news....anyone who claims that the danger is overstated is suspected of association with a “heinous cover-up.”
+
+- Indigenous mass graves
+- COVID-19 Lock downs and flight restrictions
+- Monkey-pox?
+- Book examples: Love Canal affair and the so-called Alar scare
+  - Love Canal, buried toxic waste was exposed during a rainy season in 1979, causing contamination of the water well beyond standard limits, as well as a foul smell.
+    - The legislation that mandated the cleanup of toxic sites, called CERCLA, established a Superfund and is considered a significant achievement of environmental legislation.
+  - Alar is a chemical that was sprayed on apples to regulate their growth and improve their appearance. 1989
+    - "when consumed in gigantic doses, caused cancerous tumors in rats and mice"
+    - The manufacturer withdrew the product and the FDA banned it.
+    - subsequent research deemed very small risk of a carcinogen
+    - fewer good apples were consumed
+
+It's possible for the Canadian Cabinet to have non-MP members, and apparently even the majority, although its very unusual for the non MPs to not seek and win election.
+
 ## Chapter 14 - Tom W's Specialty
+
+Using the base rate is obvious when no other information is provided.

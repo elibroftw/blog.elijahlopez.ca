@@ -603,6 +603,7 @@ IMAP (Internet Mail Access Protocol)
 - self scalability
 - no always-on server
 - complex management
+  - not attractive to develop, but would want to pay for it to be developed
 - time to distribute in server to many clients is the max of either the server upload divided by the number of downloads or the download speeds of the clients
 - With P2P, the server uploads at least one, but takes advantage of each client's upload speed
   - D >= max{ F/us, F/dmin, NF/(us+ sum u)}
