@@ -160,6 +160,12 @@ If two networks use different technologies, we need to use routers, which is a s
 - When R1 > R2,
   - 3rd packet: `t = L/R1 + 3L/R2`
 
+Finding out probability of users transmitting (binomial distributions):
+
+(users choose n) \* p^n * p^(1 - n)
+
+For "at least 2" you can do 1 - P(n=1) - P(n = 0).
+
 ### Packet Switching Queuing
 
 - When R2 > R1, the queue fills because work arrives faster than it can service (transmission rate)
@@ -167,6 +173,7 @@ If two networks use different technologies, we need to use routers, which is a s
 
 ### Circuit Switching
 
+- max users = link speed / required bandwidth
 - end-to-end resources allocated to, researched for "call" between source and destination
 - traditional telephone networks
 - no sharing
@@ -178,7 +185,7 @@ Alternatively to FDM where each call is allocated its own band, we can divide ti
 
 ### Network of Networks
 
-Impossible O(N^2) to connect all ISPs to all other ISPs so there are global ISPs that connect to each other global ISPs via an Internet Exchange Point and peering links. Regional ISPs will connect access nets to ISPs. Content provider networks (Google, Microsoft, Netflix) may connect directly to an IXP or beside a global ISP to be close to end users.
+Impossible O(N^2) to connect all ISPs to all other ISPs so there are global ISPs that connect to each other global ISPs via an Internet Exchange Point and peering links. Regional ISPs will connect access nets to ISPs. Content provider networks (Google, Microsoft, Netflix) may connect directly to an IXP or beside a global ISP to be close to end users. Data centers, bypassing higher tier ISPs, more control over user experience, less money for sending traffic into provider networks, avoiding network discrimination.
 
 [TORIX](https://www.torix.ca/who-we-are/): Toronto Internet Exchange Point
 
@@ -186,21 +193,24 @@ Impossible O(N^2) to connect all ISPs to all other ISPs so there are global ISPs
 
 Packet delay is the sum of four sources
 
-1. Nodal processing
+1. Processing
     - Checking bit errors, determining output link (< microsecond)
-2. Queueing Delay
+2. Queueing
     - Waiting at output link
     - Congestion
-3. Transmission Delay
-    - Time for packet until transmission
+3. Transmission
+    - Time for packet until it is sent off (transmitted)
 4. Propagation
+    - Traveling to the next link takes time
 
 Packets have time-to-live which is a uint defining the max hops. If a router encounters a packet with a TTL of 1, it drops the packet and typically returns an error to the sender. Otherwise it propagates a packet with the TTL minus 1.
 
-Traffic intensity = Transmission Rate = Packet Length * Average Packet Arrival Rate / Link Bandwidth
+Traffic intensity (I) = Transmission Rate = Packet Length * Average Packet Arrival Rate / Link Bandwidth = `La/R` where L is packet length and R is transmission speed.
+
+Queueing Delay = I \* L / R(1 - I)
 
 - Transmission Rate ~= 0: small delay
-- Transmission Rate close to 1 but not large: large delay
+- Transmission Rate close to 1 but not larger: large delay
 - Transmission Rate > 1: infinite delay due to more work than servicing
 
 ### Real Internet Delays
@@ -256,15 +266,17 @@ Example of layers is air travel
 
 ### Layered Internet Protocol Stack
 
-- application (supporting network applications)
-  - HTTP, IMAP, SMTP, DNS
-- transport (process-process data transfer)
-  - TCP, UDP
-- network (routing of packets from source to dest)
-  - IP, routing protocols
-- link (data transfer between adjacent network elements)
-  - Ethernet, 802.11 (WIFI), PPP?
-- physical (bits on the wire)
+Top to bottom view:
+
+1. **application** (supporting network applications)
+    - HTTP, IMAP, SMTP, DNS
+2. **transport** (process-process data transfer)
+    - TCP, UDP
+3. **network** (routing of packets from source to dest)
+    - IP, routing protocols
+4. **link** (data transfer between adjacent network elements)
+   - Ethernet, 802.11 (WIFI), PPP?
+5. **physical** (bits on the wire)
 
 ## Chapter 2 Application Layer Protocols
 
@@ -297,7 +309,7 @@ Sockets are like doors on each of the processes that can send and receive messag
 ### Addressing Processes
 
 - Each host device has unique 32-bit Internet Protocol address
-- Since many processes can run on the same host, a host is also used
+- Ports are used to differentiate **processes** running on the same host
 - 2^16 - 1 port numbers
 
 ### Application Layer Protocol
@@ -321,6 +333,8 @@ Sockets are like doors on each of the processes that can send and receive messag
 
 ### TCP vs UDP
 
+Classes of services: reliability (TCP), throughput (not guaranteed), delivery time (not guaranteed), and confidentiality via encryption (not guaranteed).
+
 - TCP
   - reliable transport between sending and receiving process
   - flow control: sender won't overwhelm receiver
@@ -330,8 +344,9 @@ Sockets are like doors on each of the processes that can send and receive messag
 - UDP
   - unreliable data transfer between sending and receiving process
   - does not provide: reliability, flow control, congestion control, timing, throughput, guarantee, security, or connection setup
-  - why does UDP exist?
+- Why does UDP exist?
   - to establish low-latency and loss-tolerating connections between applications on the internet
+  - there is no read (acknowledgement) receipt and no need for a TCP connection setup
 
 ### TCP Security
 
@@ -353,7 +368,7 @@ referenced objects, each addressable by a URL
 - client: browser that requests, receives, displays
 - server:  Web server sends objects in response to requests
 - stateless
-- RTT (definition): time for a small packet to travel from client to server and back
+- RTT: _Round Trip Time_: time for a small packet to travel from client to server and back
 
 Non-Persistent
 
@@ -373,7 +388,8 @@ Persistent (HTTP 1.1)
 3. TCP connection closed
 
 - send messages over initial connection
-- as little as one RTT, which cuts response time in half
+- as little as one RTT to request all the referenced objects, which cuts response time in half
+- requires the content length header so that the client can segregate all the incoming data into their respective responses. For example, if the server is sending 3 responses, the client will use the content length to know when the second, third, and fourth responses start
 
 ### HTTP Request Message
 
@@ -470,6 +486,7 @@ Performance
 - access link utilization = 0.97 (1.50 / 1.54)
 - LAN utilization = 0.0015
 - End-end delay = Internet delay + access link delay + LAN delay = 2 sec + mins + usecs
+- Another way to think about end-end delay: time to gather bits for a packet, time to transmit the packet, and time to propagate the packet, plus the time to process and queue
 
 Options to improve
 
@@ -505,7 +522,7 @@ SMTP RFC (5321)
 
 TCP three phases:
 
-- handshaking
+- handshaking (3 RTTs)
 - transfer of messages
 - closure
 
@@ -516,7 +533,7 @@ SMTP Origin
 - Send DATA ending with "." on a line by itself
 - Message added to queue
 - After sending all the mail, send QUIT to close TCP connection
-- The RTT is for each of these stages, but since the connection is persistent, we don't expense double the RTT
+- One RTT for each of these stages, but since the connection is persistent, we don't expense double the RTT
 
 IMAP (Internet Mail Access Protocol)
 
@@ -556,22 +573,27 @@ IMAP (Internet Mail Access Protocol)
 
 ### Local DNS Server
 
+- local name servers
 - return from cache which could be out of date
 - Use a TTL to expire cache entires
   - If the hostname IP changes, need all TTLs to expire
 
 ### DNS Records
 
-- type=A
-  - name is hostname, value is IP address
 - type=CNAME
+  - name to name
   - name is alias for the canonical name
   - value is the canonical name
   - `www.ibm.com` &rarr; `severeast.backup2.ibm.com`
+  - similar to symbolic links and shortcuts
+- type=A
+  - name to IP
+  - name is hostname, value is IP address
 - type=NS
-  - name is domain, value is hostname of the authoritative name server for the domain
+  - name to authoritative name server which indicates the other DNS records
+  - name is the domain, value is hostname of the authoritative name server for the domain
 - type=MX
-  - value is the name of the SMTP name server associated with the name
+  - value is the hostname of the SMTP name server associated with the current domain NAME
 
 ### DNS Protocol Messages
 
@@ -587,7 +609,7 @@ IMAP (Internet Mail Access Protocol)
 
 - register domain with DNS registrar (Network Solutions for .com)
   - provide names, IP addresses of authoritative name server (primary, and secondary)
-  - registar inserts NS, A RRs into the .com TLD server
+  - registar inserts NS, A, resource records (RR) into the .com TLD server
 
 ### DNS Security
 

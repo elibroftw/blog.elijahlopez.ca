@@ -415,3 +415,79 @@ LIBOR-ICE turned to Overnight interest swaps
 ### Interest Rate Swap
 
 One side pays fixed rate, the other pays LIBOR on the principal, therefore there is a net cash flow.
+
+## Teva Pharmaceuticals
+
+Pricing the 2016 bond offering.
+
+- Cross border acquisition
+- Israeli pharmaceutical company founded in 1901
+- Merged with Orphahell in 1982 to become Teva
+- Allergan acquisition, a division of ($40B from cash, shares and $19.5B bond financing)
+- Copaxone patent expiring: 20% revenue, 50% profits
+- Generic medicine is 54% of revenue
+  - Cost savings, no clinical trials, lower prices
+  - Largest producer in the US?
+  - 5 big producers (Teva - Israel, Novantis - Belgium, Sun Pharma - India, Mylan - Switzerland, Allergan - Ireland)
+- Consolidation?
+  - Probably just economies of scale
+  - Less patents coming out
+- Regulations
+  - US Hatch Waxman ACt
+    - No need for repetitive preclinical and clinical trials for generic drugs, only need prove equivalency
+  - Europe
+    - Centralized procedure
+    - Applications submitted to a group of countries, only one member evaluation needed
+- Macro-economic conditions
+  - China, Japan, Breixt
+- Bond yields
+  - Decreasing yields
+- Allergen: botox
+- M&A Synergies
+  - Newer markets
+  - Cost synergies: stream
+  - Offsetting Copaxone patent expiration
+- Bond Plan
+  - USD (six tranches, multiple maturities), EUR (three tranches), CHF
+  - Exchange rate frozen to July 16, 2016
+  - Looked at competitors' coupon rates to benchmark scenario analysis
+
+### Momentum and Contrarian
+
+- Momentum would be applicable only to an industry
+
+### Bloomberg
+
+- Bloomberg originally located in Israel
+- Operations research company
+  - Optimization
+
+### Z-Spread
+
+- Stick entire yield curve
+
+### Eurobond
+
+- GE Euro issue (GBP)
+- Teva did some Euro issue in dollars
+
+### Global Bond
+
+- IBM global issue: luxembourg
+
+### Eurobond Market
+
+- collared bond (cap and a floor)
+  - cap: a cap on the floating coupon being paid
+  - floor: a floor on the floating coupon being paid
+- drop-lock: change floating into fixed once a trigger occurs
+- perpetual/undated floating issue
+- dual currency issues (pay coupon in one currency and principal in another)
+- option currency bonds: investor or issuer chooses the currency
+
+### Brady Bonds
+
+- Emerging market debt blowing up
+- Non-performing loans to emerging market governments that were restructured into marketable securities
+- Interest rate bonds: interest due on the loans
+- Principal bonds: principal amount owed on the bank loans
