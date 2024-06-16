@@ -621,4 +621,44 @@ It's possible for the Canadian Cabinet to have non-MP members, and apparently ev
 
 ## Chapter 14 - Tom W's Specialty
 
-Using the base rate is obvious when no other information is provided.
+This chapter is about how dubious information still spoils rational thinking and that the imperfect choices made are due to System 2 laziness and not ignorance, meaning that if we keep System 2 engaged or ignore dubious information, we can think straight. The problem I have is that most of the time, the information isn't dubious but rather arbitrary and the conclusions others have made due to quick thinking. How can we invoke other people to re-evaluate?
+
+- Using the base rate is obvious when no other information is provided.
+  - When a personality is given even when it should not be trusted, people will forego the base rates and rank the field of study according to stereotypes
+- Stereotypes - judging via representativeness - can sometimes be true but also false
+- Excessive willingness to predict low base-rate events
+  - People with PhDs are more likely to subscribe to The New York Times than people with only a high school diploma
+  - If someone is reading The New York Times, what is a better bet? That they have a PhD or that they do not have a college degree? The  latter of course, since implications do not imply the vice versa
+
+> instructing people to “think like a statistician” enhanced the use of base-rate information, while the instruction to “think like a clinician” had the opposite effect.
+
+- A method of improving predictive accuracy is to engage System 2 (e.g. via frowning)
+  - Therefore, System 2 was failing due to lazyness and not due to ignorance!
+  - Individuals need to invest special effort to properly conduct analysis, it makes sense why comment sections are often filled with spam and ignorance
+
+> There is one thing you can do when you have doubts about the quality of the evidence: let your judgments of probability stay close to the base rate.
+
+### Constraining Yourself to the Logic of Probability
+
+When you believe in an event, you need to confirm that the resulting logical probabilities (i.e. Bayesian statistics) are also what you believe
+
+> if you believe that there is a 30% chance that candidate X will be elected president, and an 80% chance that he will be reelected if he wins the first time, then you must believe that the chances that he will be elected twice in a row are 24%
+
+1. Give high credence to the plausible base rate even with provided evidence
+2. Question how applicable the evidence is (assurance)
+
+### Taking Advantage of Representativeness
+
+The book mentions how to watch out for representativeness, but I re-arrange some examples for the beneficiary of the underdog.
+
+- Even if a company/individual has a highly core competency, you need to present yourself well: well-trimmed lawn, competent looking receptionist, etc.
+- Rare event predictions due to weak evidence, but what is weak evidence?
+- A damning report, but how sure that the evidence is solid (e.g. Bear reports on certain stocks)
+
+## Chapter 15 - Linda Less Is More
+
+## Chapter 16 - Causes Trump Statistics
+
+## Chapter 17 - Regression to the Mean
+
+## Chapter 18 - Taming Intuitive Predictions

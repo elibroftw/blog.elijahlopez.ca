@@ -1,10 +1,13 @@
 ---
-title: "This World Is a Joke"
+title: "RANT: This World Is a Joke"
 date: 2024-05-28T20:13:57-04:00
 draft: false
 tags:
   - opinion
+  - rant
 ---
+
+Warning: This is a first draft and has not gone through a full copy-editing which I usually do for very important articles, which this is obviously not.
 
 It is without a doubt that human beings en-masse aren't actually capable of critical thinking. There are many cultures in the world, and many countries with differing levels of economic power, and standards of living. There are countries that have been a democracy [^1] longer than others.
 
