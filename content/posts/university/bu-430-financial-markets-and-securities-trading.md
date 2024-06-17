@@ -268,14 +268,85 @@ NYSE started in 1792, physically trading. Buttonwood tree. System of human speci
 
 In the 1970s the NASDAQ was created due to specialist over-charing concern as well as fragmentation. Needed an exchange to list faster (tech), where companies that are innovating and couldn't qualify for the NYSE. NASDAQ chose to have multiple dealers providing liquidity on NASDAQ or so the argument goes. Then NASDAQ asked companies to move to them. Back then, there was n cross trading. What were the actual results? NASDAQ has more expensive liquidity which normally wouldn't make sense due to micro-economic theory. Explanation: dealers were colluding to overcharge. This hold true even after accounting for different stocks trading. When the same stock would move from NASDAQ to NYSE, its liquidity would improve.
 
-The dealers were caught because they stopped as soon as the first article went out and because people noticed, there was a big investigation.
+The dealers were caught because they stopped as soon as the first article went out and because people noticed, there was a big investigation. Billion dollar settlement.
 
 Two major changes to the markets in the late 1990s:
 
 1. Increase competition from other markets (stocks trade on all exchanges)
-2. At most 1 cent
+2. Everyone can submit limit orders to the book
+3. At least 1 cent per quotes
 
-Specialists had to go because it was hard to go from 12 cents to 1 cent. 7-10 years without dealers and specialists market making.
+Specialists had to go because it was hard to go from 12.5 cents 6.25 cents to 1 cent. 7-10 years without dealers and specialists market making. Early 2000s had only voluntary (endogenous) liquidity.
+
+### SOES Bandits
+
+- [Investopedia](https://www.investopedia.com/terms/s/soesbandits.asp)
+- Small order Execution System
+  - Prioritize small orders less than 1000
+- Bandits started taking advantage and split order quantities and force market makers to buy high and sell low
+- Wait for dealers to be busy and then snipe stale quotes
+
+### Batch Markets
+
+- When technology allowed for it, trading started happening continuously
+- Older was waiting
+- Batching  is better because continuous trading increased latency arbitrage and adverse selection and the benefits are cancelled out by the cons
+  - In batched, all orders came, intermediate them, and then execute them
+  - Continuous would happen too quick
+  - Adverse selection is higher in continuous because there are more signals, more price fluctuations
+  - Batch is better because less limit order signals
+    - There is less opportunity for arbitrage
+    - In a batch market, market makers are given time to adjust their stale quotes
+  - With continuous, you have to be fastest to reprice your quotes
+    - Only one market maker can be the fastest, since that is how physics and the engine works (engine does not wait, it immediately executes orders)
+    - Other market makers have to compensate by increasing the spreads
+      - But then the fastest market maker also widens their spread
+    - Taker traders pay the cost
+  - **Therefore continuous markets might be costing society more than comfortable batch markets, where executions occur within a second**
+    - Quotes are accumulated by all the fastest market makers, not just the fastest one
+      - Which means the spread can lower
+
+Citadel came out with their own analysis that says continuous trading is better. But their analysis is flawed due to using market volatility as the spread and then they conveniently skipped that there are quotes beyond the best bid and offers (deeper in the book).
+
+Citadel makes money as a fast market maker and HFT so they do not want to have to adapt to new changes.
+
+Another study from Sweden has data on what Citadel does and they found that Citadel makes money sniping other people's stale quotes than it loses on its own quotes being sniped.
+
+Taiwan was batched in 2020 and then moved to continuous trading and the execution costs were measured (5% increase).
+
+Moving to batched markets not happening anytime soon. Industry lobby is too big and SEC/government is way too busy in adding their own regulation.
+
+What's stopping IEX? They would lose volume due to market participants boycotting.
+People who pay for this new system would be people who don't benefit from the status quo.
+
+Brokerages cannot send orders to an arbitrary exchange, but rather send orders best on best quotes. Exchanges are not allowed to own brokerages.
+
+### Current Market
+
+NYSE (blue-chip) and NASDAQ (tech) don't really dominate, since they are 24% combined market share (modern trading landscape pie graph).
+
+Downside to multiple exchanges: With multiple exchanges, there's also greater adverse selection across exchanges, which can push spreads wider (arbitraging). Redundant capital investments but consensus is that multiple markets is better. Hurts institutional investors who have to split orders to the liquidity on all exchanges.
+
+### Publicly Traded
+
+- Prioritization of shareholders not just market makers and regulators
+- Shareholders want profit, so now exchanges have to make the most money
+- Exchange makes most money from trading fees, data, and listing fees (IPOs).
+  - Data revenue going to be fixed, listings are cyclical, but trading is also cyclical, but forever
+    - Trading volumes matters the most, so how to make traders trade more
+    - Exchanges care about market makers the most
+    - Citadel: 20% of NYSE volume, Virtu is another 20%
+
+### NYSE AutoQuote and NYSE Hybrid
+
+- AutoQuote in 2003: better liquidity
+- Hybrid in 2006: hurt liquidity
+  - Sped up access to market by liquidity takers
+
+### Jane Street Proprietary Trading Firm
+
+- Highly vertically integrated
+- In everything: ETFs, futures, options, stocks, international markets
 
 ### LU-LD System
 
@@ -328,7 +399,7 @@ Specialists had to go because it was hard to go from 12 cents to 1 cent. 7-10 ye
 - How bad was Project Omega?
 - ITG reputation went down after SEC and got acquired by Virtu after settling
 
-## Quiz 2
+## Quiz 2H
 
 You are an algorithm responsible for Virtu’s activity in SPY on BATS and BATS Y, two sister exchanges. Your task is to make money by market making and/or sniping stale quotes. You observe that the price of the e-mini S&P 500 futures has ticked down, indicating that SPY price is also about to tick down, by 2 cents.
 
@@ -348,3 +419,19 @@ In no more than 5 sentences, please explain what yours and Citadel’s next step
 Answer:
 
 The next spread is 9.98 - 10.00. Citadel will go to BATS Y and make money from the liquidity taking fees (short at 10.00, buy back at 10.00). Virtu will have to go do nothing because they would've had to short at 10.00 and buy back at 10.00 on BATS which would be super expensive.
+
+## Quiz 2J
+
+We have 200,000 shares at the ask (100.01, buy at 100.00) in the front of the queue followed by 10,000 shares. The e-mini S&P500 futures went up indicating that SPY will tick up by 2 cents.
+
+Try to buy the entire ask of 210,000. Fees are 0.003 CENTS / share to takers and rebates are 0.0028 CENTS / share to makers.
+
+10,000 (0.01 - 0.00003 - 0.00003) - 200,000 (0.00003 - 0.000028) = $99 assuming that you only reprice the 200,000 shares that were acquired instead of divesting them.
+
+Clarifications: buying and selling to yourself is legal, but _churning_, buying to yourself for the purposes of increasing volume and creating hype is illegal to the regulatory body.
+
+## Short Report 2 Answer
+
+A lot of Robin Hood investors were trading on margin and many of them used previous purchases of GameStop as collateral. Billions of dollars was potentially in-loans. DTCC was worried about volatility of GameStop and if it comes down, the margin loans might default, which might bankrupt RobinHood, which means that DTCC would be on the hook for the trades as it is expecting RobinHood to front the cash for the shares.
+
+## Peter Hayes Institutional Trading
