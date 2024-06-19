@@ -680,6 +680,81 @@ The client needs to
 
 Design Issues, Connectionless UDP, Principles of Reliable Data Transfer, Connection-oriented Transport TCP, Flow Control, Congestion Control
 
+### Transport Services and Protocols
+
+- provide logical communication between application processes running on different hosts
+- sender breaks application messages into segments passed to network layer
+- receiver reassembles segments into messages, passes to application layer
+
+> 12 kids in Ann's house sending letter to 12 kids in Bill's house, hosts = houses, processes = kids, app messages = letters in envelopes
+
+The network layer connects hosts, the transport layer connects processes
+
+### Principal Internet Transport Protocols
+
+- TCP: Transmission Control Protocol
+  - reliable, congestion control, flow control, connection setup
+- UDP: User Datagram Protocol
+  - unreliable, unordered delivery, no-frills extension of "best-effort" IP
+- Datagram: alternative name for packet (packet term should not be used in the first place)
+
+### Multiplexing/demultiplexing
+
+- Connectionless
+  - Single direction transfers
+  - Each datagram has an IP, and the transport-layer segment it carries contains the source and destination port number
+    - Implication 1: System API for sockets requires a local port number
+    - Implication 2: System API for sending datagrams must have both destination IP and port #
+    - Same destination and port # corresponds to same socket at the receiver host
+- Connection-oriented demultiplexing
+  - TCP socket has a 4-tuple: (source IP, source port, dest IP, dest port)
+  - demux: receiver uses all four values to direct segment to appropriate socket (even with the same port, the segment can be directed to a different socket)
+  - Each socket can be associated with different connecting client
+
+### Connectionless Transport
+
+- UDP no handshaking; RFC 768
+- UDP each segment is handled independently
+- No connection establishment (less delays)
+  - SImple: no connection state at sender, receiver
+  - Small header size
+  - No congestion control (as fast as desired and works in congestion)
+    - sender not throttled
+- Use cases
+  - Streaming/Multi-media (loss tolerant, rate sensitive)
+  - DNS, SNMP, HTTP/3
+- Checksum
+  - Detect errors in transmitted segment
+  - Sender treats UDP as 16-bit integer
+  - Checksum: summation
+  - Receiver: compute checksum
+  - Even if cheksum is 100%, it is still possible for a coincidental checksum bit error
+  - The checksum can remain the same even if a bit is changed in two different integers
+
+### Reliable Data Transfer
+
+- Let us invent the Reliable Data Transfer protocol (rdt)
+- Unidirectional data flow: finite state machines to specify sender, receiver
+- Handling errors
+  - Wait for receiver to send the ACK before sending another packet
+  - Add acknowledgements: (ACKs) which explicitly tells sender that packet received is OK
+  - Add negative acknowledgements (NAKs) which explicitly tells sender that packet received had errors
+  - Sender can retransmit on receiving a NAK
+  - To deal with corrupted acknowledgements, sender will use sequence numbers to the packet so that the receiver can discard duplicates
+- To eliminate NAK, receiver sends ACK for last pkt received OK (including sequence number), so if there is a duplicate ACK, retransmit current pkt
+- To deal with packet loss (data or ACKs), we need a reasonable time for the ACK
+  - Retransmit if ACK not received within a countdown, duplicate packets are handled appropriately anyways
+- Performance
+  - t =  RTT + L / R (transmission)
+  - utilization of sender busy sending = (L / R) / (RTT + L / R)
+
+### Go-Back-N Sender
+
+Pipelining: send multiple, "in-flight", yet-to-be acknowledged packets which increases utilization by 3x
+
+Sender sends a window up to N, cumulative ACKs: send ackks of all packets inclusive up to N, move window forward to begin at n+1. Use a timeout(n) to retransmit packet n and higher in the window
+
+
 ## Chapter 4 & 5 Network Layer
 
 Routing approaches, routing in the Internet, Internet Protocol, IPv6, tunnelling, router design, control/data plane, SDN.
@@ -687,3 +762,8 @@ Routing approaches, routing in the Internet, Internet Protocol, IPv6, tunnelling
 ## Chapter 6 Data Link Layer
 
 Multiple access protocols and LAN's, address resolution protocol, Ethernet.
+
+## Questions
+
+- What is QoS
+- QUIC benefits
