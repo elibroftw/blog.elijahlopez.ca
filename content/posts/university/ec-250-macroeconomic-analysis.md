@@ -9,12 +9,12 @@ tags:
 
 ## Course Takeaways
 
-- what is the economy (i.e. output production. aka GDP)?
+- What is the economy (i.e. output production. aka GDP)?
   - goods and services created that can we can place monetary value on
     - some activities may not be included like people staying at home instead of paying for daycare
   - output is made up by capital stock, labour and a productivity factor, which doesn't have numerical breakdown
   - there are many ways to measure GDP
-- without impacting consumption, only productivity determines long-run economic growth
+- Without impacting consumption, only productivity determines long-run economic growth
   - there are a variety of ways to improve productivity, read the section on policies [long-run-growth policies](#long-run-growth-policies)
 - Capital
   - Capital are assets that people use to generate output
@@ -23,9 +23,10 @@ tags:
   - People choose to make trade-offs between leisure and money
   - People want to fund their leisure time so work money for that purpose
   - Obviously and unfortunately, there are situations where the person is living to work versus working to live
-- the economy can either be booming in a bust or operating at "full employment"
+- Economic Cycle of busts and booms ("full employment")
   - "full employment" is where unemployment rate equals natural unemployment, something hard to measure and can change
-  - natural unemployment can exist due to matching issues (oil & gas jobs went to renewable sector) and due to changing jobs (hunting for a job after being laid off)
+  - natural unemployment can exist due to matching issues (e.g. oil & gas jobs went to renewable sector) and due to the _friction_ of changing jobs (hunting for a job after being laid off)
+    - Policies can be created to reduce matching issues and Employment Insurance can affect the friction (noticeable between provinces).
   - shocks are what change the state of the economy drastically
     - technology shocks (transistor, internet), productivity shocks (COVID-19), supply shocks (higher oil prices because of OPEC)
 - Money
@@ -39,6 +40,7 @@ tags:
     - goal of money supply growth is to reduce interest rates to spur investments
     - money supply has no effects on full-employment in the long-term, short-term is up for debate since it does cause inflation
     - if the money supply grows, market participants end up realizing their dollars are worth less in a real sense and will increase prices
+    - currently most central banks focus on annual inflation, but if they focused on stable price levels, then it would make it easier to properly invest today's money. Inflation targeting results in $1 being equal to a range of values in 20 years rather than a single value, which would be the case if price level targeting was used instead.
   - inducement by federal
     - crowding out: interest rates go up (lower private investments) because federal government spending too much
   - costs of inflation

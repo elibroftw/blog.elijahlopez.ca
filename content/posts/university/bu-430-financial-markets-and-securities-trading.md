@@ -352,6 +352,30 @@ Downside to multiple exchanges: With multiple exchanges, there's also greater ad
 
 - halts trading of stock that went up or down too much (per stock basis) to let traders calm down and think about it
 
+### Flash Crash May 6 2010
+
+In 15 minutes, 1T loss.
+
+Started on E-Mini SP500 futures. 1,000 contracts by Warlon Reed. When it tanked, the ETFs tanked and followed, and then the underlying stocks also tanked. Some stocks fell and others were halted.
+
+Regulators didn't really get it. They said the market is supported by endogenous providers, like HFTs, and they didn't do their jobs. They said more regulations needed to come. Market-wide circuit breakers were added rather than exchange.
+
+### Designated Market Makers
+
+When individual stocks tank, Citadel supports the price (buys more than they usually would buy). Not because it wanted to, but because it knows that prices would rebound. When multiple stocks tank, endogenous participants can't support the markets. That's why designated market makers were brought back which are the same marker makers but with obligations.
+
+Pareto allocation; Citadel may turn on a participation flag in its algorithm which lets the TSX engine that Citadel wants 40% of every trade that comes to the TSX, until the flag is turned off.
+
+TSX brought in Secondary Market Makers since they had signed perpetual contracts with the DMMs.
+
+### Settlement Rules
+
+US recently moved to t + 1. Why not blockchain with instantaneous settlement.
+
+- Market maker inventory costs would increase because more capital is tied up during the day instead of just the net capital every day
+- Instead of being able to reconcile every day, every transaction has to be valid
+- All cash transactions would have to be backed by cash at every transaction rather than daily
+
 ## Week 6?
 
 - GME electric boogaloo 2
@@ -385,7 +409,40 @@ Downside to multiple exchanges: With multiple exchanges, there's also greater ad
   - Exchanges have backup engines in other states to ensure that if something goes wrong there is a alternative system available
   - Liquidity shrinks due to higher inventory costs
 
+Pro-Texas Exchange article
+
+- Kurt Dew, part-timer lecturer at Northeastern University
+- "Big exchanges failed to meet SEC goal of providing markets useful for investors"
+  - Retail orders go to wholesalers and dark pools instead of the exchanges
+  - Counter-point: misinformed and that exchanges are regulated bodies
+- "stock markets are in shambles"
+  - No they aren't, US markets have the most liquid, most traded, and the cheapest to trade
+
+### European Markets
+
+- Older continent
+- Archaic?
+- Many multiple exchanges
+- No consolidation, prices are not always the best
+  - USA: Nation Best Bid and Offer from all exchanges
+- Latency issues
+- Financial scale: european companies financed by debt not equity
+  - Higher change of default
+
+### Dark pools
+
+1. Sub-penny price improvements
+2. Some level of privacy, volume not shown until actually traded, compared to order-book exchanges which is regulated
+
 ## ITG Case
+
+Hybrid traditional broker and technology firm. Value and execution service.
+
+Agency only brokerage: don't do trading of their own, only a middle-man
+
+The problem: during the previous year (2008), there was an influx of volume, but when volume fell cracks started to show.
+
+Super dark pool.
 
 - All institutional
 - POSIT dark pool
@@ -435,3 +492,11 @@ Clarifications: buying and selling to yourself is legal, but _churning_, buying 
 A lot of Robin Hood investors were trading on margin and many of them used previous purchases of GameStop as collateral. Billions of dollars was potentially in-loans. DTCC was worried about volatility of GameStop and if it comes down, the margin loans might default, which might bankrupt RobinHood, which means that DTCC would be on the hook for the trades as it is expecting RobinHood to front the cash for the shares.
 
 ## Peter Hayes Institutional Trading
+
+Wednesday, July 3rd
+
+## Deutche Borse and London Stock Exchange
+
+Hedge funds do not want DB to acquire LSE but rather take debt for a dividend roll-up, and then they campaign other shareholders to pay the dividend roll-up.
+
+The synergy would have been economies of scale. Mergers not good for everybody. In this case,

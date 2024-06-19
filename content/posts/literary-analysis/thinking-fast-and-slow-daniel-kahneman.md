@@ -3,8 +3,9 @@ title: "Thinking Fast and Slow by Daniel Kahneman"
 date: 2024-05-28T16:04:28-04:00
 draft: false
 tags:
-  - literary-analysis
   - finance
+  - university
+  - literary-analysis
 author: Daniel Kahneman
 ---
 

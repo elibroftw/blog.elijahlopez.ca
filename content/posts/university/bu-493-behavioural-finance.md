@@ -11,27 +11,11 @@ tags:
 
 Textbook #1: Behavioural Finance, Psychology, Decision-Making, and Markets, Ackert & Deaves, South-Western Cengage Learning 2018 (available through the library’s DTA program)
 
-Textbook #2: Thinking Fast and Slow, Daniel Kahneman, Random House, 2013
+[Thinking Fast and Slow by Daniel Kahneman (2013)](/posts/literary-analysis/thinking-fast-and-slow-daniel-kahneman)
 
 Suggested additional reading: The Psychology of Money, Morgan Housel
 
-Prospect theory: system I (unconscious, impulsive) vs system II
-
-E.g. driving = System I
-
-Thinking about things is system II
-
-Risk Profiler
-
-are the questions valid or not?
-
-Seagram story
-
-one of the offsprings ran it into the ground
-
-Need discipline when picking people (from fast and slow)
-
-Testable cases: Enronn (2), seagram, risk profiling, Shattered Sears
+Testable cases: Enronn (2), Seagram, Risk Profiling, Shattered Sears
 
 Marshmallow study: children taking one marshmallow now or waiting five minutes to get two. Study flawed because it only focused on stanford kids (affluence) and wasn't transferable when looking at kids who are less affluent. Ability to postpone gratification at an early age led to more successful life.
 
