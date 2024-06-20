@@ -348,3 +348,45 @@ An organization like the Ontario pension plan chooses the asset mix by voting on
 
 - Are extreme valuations warranted by a new economy?
 - Loyalty can be misplaced in an organization and people are cautioned to keep a separate identity
+
+## Mind Over Money - Jessica Biasin
+
+What is anti-social? Don't listen or aligned with norms of society. Deviants?
+
+### Psychology and Sociology
+
+Psychology; mind and behaviour, used for treating dysfunction.
+
+Sociology: origin, development, organization ,and functioning of society. Analysis of various relationships.
+
+### Antisocial Traits
+
+- Impulsivity
+- Deceitfulness
+- Recklessness
+- Sensation-seeking
+
+Affects .6% and 3.6% of adults, three times more common in men than women. Unsure what the same size for the self-reported study is.
+
+### Causes of Antisocial Behaviour
+
+- family history
+- childhood conduct disorder
+- low serotonin levels
+  - contributes to level of happiness
+- low arousal levels???
+- low anxiety levels
+- moral development deficits
+- and more
+
+### Interventions
+
+1. Talk Therapy
+2. individual cognitive behavioural therapy
+3. group based CBT
+4. Contingency Management
+5. Multi-Agency Care
+
+### Trends in Antisocial Behaviour
+
+### Q&A
