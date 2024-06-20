@@ -5,6 +5,8 @@ draft: false
 # Use aliases if unlisted posts were ever shared with people
 # Make sure /unlisted/first.* does not exist, since existence has priority over aliases
 aliases: ["/unlisted/first/"]
+tags:
+  - first
 ---
 
 This post tests if Hugo with the anubis theme works.
