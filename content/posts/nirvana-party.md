@@ -2,6 +2,10 @@
 title: "Nirvana Party"
 date: 2022-12-15T17:43:05-05:00
 draft: true
+tags:
+  - canada
+  - politics
+  - economics
 ---
 
 ## Principles

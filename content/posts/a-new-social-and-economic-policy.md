@@ -2,6 +2,8 @@
 title: "Introducing The Social Safety Trampoline"
 date: 2022-09-28T01:07:41-04:00
 draft: true
+tags:
+  - economics
 ---
 
 I often here about profit and wage complainers. People who think companies are not entitled to any increase in profits and that workers are entitled to wage increases due to a non-casual productivity increase; By this I mean that productivity has outpaced real wages not because the workers got more skillful, but because workers required less skills and abilities due to an efficiency in the technology used by workers.
@@ -21,4 +23,4 @@ Okay, as I was writing about innovation, I decided why not. To get innovation, w
 
 In terms of price gouging of innovation, we really need to decide if society needs to innovate further, with relation to drugs. I believe that most drugs being developed and sold at high prices affects those with serious diseases they were probably born with and are extremely rare. Since the number of beneficiatories are low, the company has to price accordingly. If a drug costed $50m to make and there are only 400 people that need it, yeah $125,000/person on only the R&D cost and not continued operations. Governments really need to decide who's health to prioritize, and since governements are a democracy, there will always be someone left out. Considering that companies still pursue the development of these drugs without government subsidies is crazy.
 
-If the goal of the government is to maximize the lives of its own residents, then the budget for these rare scenarios will have to small enough that the main point of the tax benefits the most tax payers. People don't pay taxes to benefit people, they pay it as a collective so that everyone benefits collectively as some things are much easier to acquire in bulk or as a collective than individually; fire departments, insurance, police, roads. 
+If the goal of the government is to maximize the lives of its own residents, then the budget for these rare scenarios will have to small enough that the main point of the tax benefits the most tax payers. People don't pay taxes to benefit people, they pay it as a collective so that everyone benefits collectively as some things are much easier to acquire in bulk or as a collective than individually; fire departments, insurance, police, roads.

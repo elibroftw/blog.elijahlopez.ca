@@ -1,7 +1,7 @@
 ---
 title: "ASP.NET Core Global Json Options"
 date: 2023-07-23T15:48:46-04:00
-draft: true
+draft: false
 tags:
   - tutorial
   - programming
@@ -24,3 +24,5 @@ public Constructor(IOptions<JsonOptions> jsonOptions) {
 ```
 
 If you don't know how to set default Json serializer options for the controller, read [ASP.NET Core Optional Json Fields](/posts/aspnet-optional-json-fields).
+
+I'm not sure why this was a draft, but I made it public again.
