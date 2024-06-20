@@ -462,9 +462,19 @@ Pricing the 2016 bond offering.
 - Operations research company
   - Optimization
 
-### Z-Spread
+### Nominal Spread
 
-- Stick entire yield curve
+Nominal spread is the difference in YTMs between spot curve and yield on a non-treasury bond for a given maturity
+
+### Zero Volatility Spread
+
+Zero-volatility (ZV) spreads are the (parallel) spread added to Treasury spot-rate curve, such that the PV of bond = market price
+
+When the curve is flat, z-spread and nominal spread are equal.
+
+When the spot curve is upward (downward) sloping, z-spread is greater (smaller) compared to the nominal spread
+
+### OAS
 
 ### Eurobond
 
@@ -491,3 +501,91 @@ Pricing the 2016 bond offering.
 - Non-performing loans to emerging market governments that were restructured into marketable securities
 - Interest rate bonds: interest due on the loans
 - Principal bonds: principal amount owed on the bank loans
+
+## Repo market
+
+### Introduction to Repo Market
+
+Repurchase Agreements. Bank A has cash, Bank B has treasuries. A Repo means that Bank B will repurchase from Bank A at a higher price at a later date. The difference between the prices is an implied paid interest also known as the repo rate. The difference between the collateral value and the cash received is called the haircut.
+
+Borrowers are usually: hedge funds, investment banks, etc.
+
+- If nobody wants to lend to you in a repo market, you basically collapse.
+- Takeaway is to always have a backup plan in case the rumours come.
+- Repo: borrowing dollars against a collateral
+  - Bullish: want to buy low and sell high
+- Reverse-repo: lending dollars against a collateral
+  - Bearish: want to sell high buy low
+
+Backed by primary dealers and
+
+### Repo Blowup of 2019
+
+- Sep 16, 2019
+- Usually means market participants don't want to lend
+- In this case, liquidity was low while securities were high
+- Corporate Tax Payments drain liquidity
+- JPM, BOA, CITI, Wells Fargo
+- Repo markets depending more on big 4
+- These four were blamed for the liquidity, but they cannot be relied upon like the central bank can
+- Jamie Dimon shifted the blame and said it was due to liquidity coverage rate
+(LCR)
+- Before, Federal reserves provided liquidity due to great recession
+- Federal funds rate is the interbank overnight lending rate
+- Government Collateral Repo Rate is different
+  - Published by the US Federal Reserve
+  - During a crisis, government collateral takes precedence
+- Usually the two rates are overlapping, but sometimes they depart the repo rate falls
+- Repo rate is below the federal funds rate because there is collateral
+
+### Bear Sterns
+
+- rumour that it held toxic assets
+- when it was being margin called, it had to sell these assets at a discount
+- it was in a liquidity crunch and no one wanted to lend the money
+
+### Troubled Asset Relief Program (TARP)
+
+- After initial shocks were delivered,
+- $780-800B injection to recapitalize the banks
+- Prevention of all banks collapsing when they had to sell assets at discounts to deleverage
+
+### Three Types of Repos
+
+To sell a security, need to borrow the security first.
+
+- Bi-party
+- Tri-party
+- Government
+
+### Haircuts
+
+- Sell price minus repo financing cost minus haircut funding cost
+- Original collateral might be $X, but only got less than that
+
+### Trip-Party Repo Market
+
+- US Treasuries
+- Less liquid securities: corporate
+- Agency Debentures
+
+Funders, Broker-Dealer, Customers
+
+### Repo Collateral
+
+- 10y treasury bond, bellweather bond
+
+### ARRC
+
+- alternative reference interest rate
+- transaction based
+- secured overnight finance rate (SOF)
+  - Average repo rate
+    - Biparty, triparty, government collateral
+  - NY federal reserve
+    - Rank highest volume to lowest volume of then remove 25% of the lowest volume
+    - Remove _Trading special_
+    - transaction weighted median rate posted every business day at 8am
+    - On average, daily SOFR is more volatile than EFFR and is 3.9 basis points lower
+    - Even more volatile on quarter end dates
+- Transaction activity

@@ -748,12 +748,101 @@ The network layer connects hosts, the transport layer connects processes
   - t =  RTT + L / R (transmission)
   - utilization of sender busy sending = (L / R) / (RTT + L / R)
 
-### Go-Back-N Sender
+### Go-Back-N
+
+Sender:
 
 Pipelining: send multiple, "in-flight", yet-to-be acknowledged packets which increases utilization by 3x
 
 Sender sends a window up to N, cumulative ACKs: send ackks of all packets inclusive up to N, move window forward to begin at n+1. Use a timeout(n) to retransmit packet n and higher in the window
 
+Receiver:
+
+Send ACK of highest in-order received sequence #. Remember only rcv_base. When receiving out-of-order packet, can either discard of buffer (implementation decision). Re-ack the packet with highest sequence number.
+
+### Selective Repeat
+
+Another pipelining protocol. Receiver individually acknowledges all correctly packets. Sender maintains timer for each unACKed packet. Sender window, N consecutive sequence #s.
+
+Want to avoid resending packets that were sent properly.
+
+Problem: if the ACK is not received of the first packet, then the sender will retransmit packet0, but the receiver is expecting the next packet0 not the previous packet0.
+
+Solution:
+
+- Window size >= max sequence number / 2.
+- Sequence numbers need to cover at least two window sizes.
+
+### TCP
+
+- reliable and in-order byte stream
+- full duplex data
+  - bi-directional on same connection
+  - maximum segment size
+- Uses go-back-N (cumulative ACKs) protocol with pipelining
+- full duplex data, connection-oriented
+  - handshaking
+
+### TCP Segment Structure
+
+- Other than source port and destination port,
+- sequence number
+- acknowledgement number
+  - the next sequence number to expect (this is an ACK?)
+- flow control (receive window, number of bytes receiver willing to accept)
+- congestion notification (C, E)
+
+### TCP Sequence Numbers
+
+Q: How receiver handles out-of- order segments?
+
+A: TCP spec doesn’t say; up to implementor
+
+TCP timeout needs to be longer than the RTT, but RTT varies. You can estimate RTT by using a SampleRTT (ignore retransmissions). Average several recent measurements.
+
+Exponential weighted moving average, with alpha = 0.125.
+
+(1 - a) EstimatedRTT + a(SampleRTT)
+
+Timeout interval = Estimated RTT + 4 * DevRTT
+
+DevRTT: EWMA of SampleRTT deviation from EstimatedRTT
+
+DevRTT = (1 - Beta) *\ DevRTT + Beta \*  | Sample RTT - EstimatedRTT |
+
+### TCP ACK Generation
+
+- First segment will not be ACKed until 500ms for next segment
+- If a second segment is sent, ACK is sent immediately, to avoid overhead
+- If there's a timeout, the sender resends the first packet, but the receiver sends the ACK of the highest one
+
+### TCP Fast Retransmit
+
+- Instead of waiting for timer to waittout, a triple duplicate ACK will trigger retransmission
+
+### TCP Flow Control
+
+- delivery is faster than the application layer reads from the socket buffer
+- In the TCP packet sent back to the sender, add flow control to the header of the TCP segment
+- `rwnd` field. RcvBuffer size set via socket options (default is 4096)
+- sneder limits amount of unACKed data to receive `rwnd`
+
+### TCP 3-way handshake
+
+- before exchanging data
+- need to agree on a connection parameters (starting sequence numbers)
+
+1. Client listens on socket, chooses init sequence number x, send `SYN` message
+2. Server chooses init sequence number y, `SYNACK`
+3. Client sends an ACK for the SYNACK(x) which indicated that the server is alive
+
+Closing the connection
+
+1. Client sends FINbit=1, seq = x
+2. Server sends ack
+3. Server sends FINbit
+4. Client sends ACK
+5. Client waits for 2 * max segment lifetime before closing the socket
 
 ## Chapter 4 & 5 Network Layer
 
