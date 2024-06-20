@@ -3,6 +3,9 @@ title: "Improving Safety and Efficiency of Payment System using AI and Quantum C
 date: 2024-05-27T16:03:52-04:00
 draft: false
 author: Ajit Desai
+tags:
+  - talks
+  - finance
 ---
 
 ## Papers
