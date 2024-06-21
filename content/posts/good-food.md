@@ -1,6 +1,9 @@
 ---
 title: "Good Food"
 date: 2022-08-23T21:36:50-04:00
+tags:
+  - opinion
+  - review
 ---
 
 This is a list of good food I would not mind eating again.
@@ -41,10 +44,8 @@ and doesn't feel oily like burgers and other fries do.
 
 ### Wendy's
 
-I don't like the fries at Wendy's however their bacon deluxe burger is the perfect burger.
-So I recommend the bacon deluxe, bring your own drink, and if you are a big man, get the son
-of a baconator or a jr. bacon cheeseburger. I'm going to get the breakfast baconator tomorrow to see
-if its a good eat-out breakfast.
+1. The Honey BBQ chicken tenders combo with the frosty swapped for the drink is the perfect meal. C$12.39 plus tax; $14 in Ontario.
+2. Bacon deluxe burger is the perfect burger
 
 ### Pita Halal
 

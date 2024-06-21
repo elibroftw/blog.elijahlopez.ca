@@ -7,6 +7,7 @@ tags:
   - opinion
   - cybersecurity
   - computer-science
+  - review
 ---
 
 I took CS 489/698 Software and Systems Security this past Winter term (2024) and I have to say, it's in the top 5 courses that have been a waste of time, money, and stress. I do not recommend it. 3/4 Assignments are related to the content but they expect you to learn from google and LLMs to figure out how to solve them, even though the starting directives are not enough.
