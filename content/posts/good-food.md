@@ -13,8 +13,8 @@ when it comes to food.
 
 ## Cooking
 
-My breakfast on days I feel like cooking is two scrambled eggs, two hashbrowns, and bacon bits.
-I find bacon bits easier to enjoy since the egg, hashbrowns, and bacon are in equal proportions
+My breakfast on days I feel like cooking is two scrambled eggs, two hash browns, and bacon bits.
+I find bacon bits easier to enjoy since the egg, hash browns, and bacon are in equal proportions
 for every bite you take. I consider this breakfast *heavy* meaning that I don't have to eat lunch.
 
 ## Fast Food
@@ -24,6 +24,27 @@ for every bite you take. I consider this breakfast *heavy* meaning that I don't 
 For now I really liked the Shawarma Specialty Pizza.
 
 The wings also provide good value but I found the sauces lacking.
+
+### Wendy's
+
+1. The Honey BBQ chicken tenders combo with the frosty swapped for the drink is the perfect meal. C$12.39 plus tax; $14 in Ontario.
+2. Bacon deluxe burger is the perfect burger
+
+### Pita Halal
+
+I recommend both the beef and chicken shawarma poutine. I recommend dining in because otherwise the fries get soggy. Also they provide these fancy ceramic bowls to eat the poutine in. I don't like their wraps much.
+
+### Osmow's
+
+Recently stepped up their game when it comes to chicken shawarma wraps (C$10.95). I find that the chicken quality depends on the location.
+
+## Burger King
+
+1. Chicken Jr
+2. Whopper Jr
+3. Whopper
+
+Fries are okay sometimes.
 
 ### Costco
 
@@ -42,28 +63,11 @@ drink, you can reduce your expense.
 An underrated franchise. The 4pc chicken strip basket (comes with fries and as side sauce) is pretty good
 and doesn't feel oily like burgers and other fries do.
 
-### Wendy's
-
-1. The Honey BBQ chicken tenders combo with the frosty swapped for the drink is the perfect meal. C$12.39 plus tax; $14 in Ontario.
-2. Bacon deluxe burger is the perfect burger
-
-### Pita Halal
-
-The quality has diminished, however their beef/chicken shawrma poutine used to be good. I recommend eating there instead of takeout
-as the food taste & quality varies strongly with time. Fries can get soggy extremely quickly. I don't like their wraps that much.
-
 ### Zesty Pita
 
 I was craving beef on rice instead of fries and this place delivered. I feel that rice may be healthier than fries
 so will try eating these mixes with a rice base instead of a fries base. The food here was more expensive than Pita Halal
 but I liked it either way. The beef tasted slightly like mutton.
-
-## Burger King
-
-Before, I used to always get their features like the roadhouse king or the bacon king. I was naive
-in thinking more is better, as the whopper is definitely the best thing they have to offer. Their chicken sandwich comes
-in second, although some places put less mayo than others. Therefore, I recommend the whopper, but if they ever put less mayo in it,
-I think you should tell them to put more mayo next time you're there. This is a problem with Mcdoanlds as well.
 
 ## Dine-in or Take Out Restaurants
 
