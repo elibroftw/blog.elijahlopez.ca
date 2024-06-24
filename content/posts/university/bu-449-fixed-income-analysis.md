@@ -263,6 +263,12 @@ Federal Reserve Bank of New York...
 
 Cantor Fitzgerald & Co.: iconic / ubiquitous company
 
+Must take part in all the auctions.
+
+Discretionary is more expensive than dutch auction.
+
+Trade using overnight borrowing for (repo) markets
+
 ### Why do Foreign Countries own US Treasuries
 
 When countries export to US, they get USD currency. To get pay workers, these corporations need to acquire RMB, so they increase the currency exchange rate, which would make exports less attractive. Therefore, the foreign central banks want to facilitate the exchange rate themselves. With all the extra USD, they want to earn a rate of return. So therefore, they invest in the safest security; treasuries.
@@ -589,3 +595,111 @@ Funders, Broker-Dealer, Customers
     - On average, daily SOFR is more volatile than EFFR and is 3.9 basis points lower
     - Even more volatile on quarter end dates
 - Transaction activity
+
+## SVB Case
+
+March 24, 2015, Greg Becker testified to U.S. Senate Committee on Banking, Housing and Urban Affairs.
+
+> Becker’s goal was to provide evidence in support of raising the threshold of US$50 billion in assets for the enforcement of enhanced prudential standards on SVB Financial under the Dodd-Frank Act
+
+those standard had become become effective as of June 1, 2014
+
+"many banks complained that these regulations imposed onerous costs on the"
+
+> SVB Financial had reported total assets of $39.3 billion in its 10-K filing for the end of fiscal year 2014, and average total assets of $33.0 billion for fiscal year 2014.5 These figures placed SVB above the threshold of $10 billion for some enhanced prudential standards, and close to the $50 billion cut-off for the full array of enhanced prudential standards [additional capital and risk management requirements]
+
+DF: company-level stress tests and mandatory risk committees
+
+Becker testimony (starting quote):
+
+> SVB, like our mid-sized bank peers, does not present systemic risks. ... Dodd-Frank Act requirements that were designed for the largest bank holding companies
+
+The question to answer is if traditional banking - taking deposits and lending to growing companies that drive job creation and investors in those companies, has systemic risk. Was Dodd-Frank Act really designed for the biggest banks (BHC)
+
+> The thresholds for enforcement were materially increased several years later, partially due to Becker’s testimony
+
+For fiscal year 2021, the parent company reported $211.5 billion in period-end total assets and $166.0 billion in average assets for the fiscal year - 438 per cent growth in total assets - yet it was below the asset threshold for strict scrutiny. Based on Exhibit 5, the balance sheet blew up in 2020 and then again in 2021. From $70B at the end of 2019 to 208 at the start of 2022. Let's create loan-asset ratios, and deposit loan ratios. Compare to a Canadian bank to get a picture of the size of SVB before and after its balance sheet expansion.
+
+Does anyone care to guess what factor the threshold increase by? The threshold had become $250B.
+
+Should becker continue to invest in fixed income securities with the rapid growth of deposits? At the end of 2021, treasury bond rates were 0.39 per cent for one-year, 1.26 per cent for five-year, and 1.52 per cent for 10-year bonds. Should SVB chase higher yields provided by longer-term bonds and accept higher interest rate risk? What risk management practices should SVB follow? Deposit base is largely uninsured, what is the risk exposure?
+
+### Background
+
+Founded in 1983, SVB specialized in serving the tech industry. The business model is very simple. Provide loans to companies on the condition that the VC money of these startups is parked at their bank. The businesses were high growth, high risk with high adaptability.
+
+When did it go public?
+
+Should we mention dot com?
+
+Under TARP, SVB received $235M for series B preferred stock. In 2009, SVB issued a $300M equity offering to redeem the preferred shares. In 2015, it stated that it server 65% of US startups. Syndicated loans (explain this) and foreign currency management.
+
+_SVB was the only US financial institution working with virtual currency start-ups"_
+
+Balance sheet: $66 billion in loans, $125 billion in securities, and $13 billion in cash as of the end of 2021. $175B in deposits with 97% being over the $250,000 Federal Deposit Insurance Corporation threshold. Tolerance of idiosyncrasy is why it was favoured among startups.
+
+Sample loan agreement with a client (turn into bullet points)
+
+> Maintain all of its and all of its Subsidiaries’ operating accounts, depository accounts, and excess cash with Bank and Bank’s Affiliates; provided, however, Foreign Subsidiaries of Borrower may maintain accounts outside of the United States with financial institutions other than Bank and Bank’s Affiliates. In addition to the foregoing, Borrower, any Subsidiary of Borrower, and any Guarantor shall obtain any business credit card exclusively from Bank
+
+The bank receiving short-term deposits and extending longer-term. Mortgages could have up to 30-year terms but commercial and industrial loans were typically offered with five-year term. _maturity transformation_ (read definition in notes before). Bank profits: difference in spread of interest paid on deposits and interest earned from borrowers.
+
+Net Interest Margin = Interest Revenue-Interest Expenses / Average Earning Assets
+
+Risks: maturity transformation, credit risk, and bank run risk. 2008 washington mutual failed due to mortgage defaults. Deteriorating housing market.
+
+A charge-off is writing off a loan as a loss and recoveries is what was gained on debt that was delinquent.
+
+Funds that can be withdrawn on demand are _runnable_. If the clients lose faith in the solvency of their bank, they will rush to withdraw funds, similar to the Great Depression of 1929, after which the Banking Act of 1933 established the FDIC.
+
+By 2021, **unlike** many other banks, SVB invested significant amount in held-to-maturity securities. $98.2B on the balance sheet, compared to $65.9B in loans. On the April 22, 2021 earnings call, CFO Daniel J. Beck responded to questions about the HTM portfolio:
+
+> We've seen just incredible liquidity growth continuing. Comfortable holding 3-5 year range maturities. Available for sale category is 2-year duration.
+
+The thought process was that stability of liquidity will persist. Agency securities, Agency mortgage Backs, agency CMOs in 3-5 year range. Compared to 2015, the bank is doing more than just deposits and loans.
+
+Accounts standards deem that HTM will be shown at the amortized cost, rather than fair value whereas available for sale securities will be recorded at fair value. The classification is based on the buyer's intent. Securities should not be classified as HTM if a change in interest rates and liquidity needs would prompt a sale. Sales only allowed when debt issuer creditworthiness changes, regulatory changes, or major changes.
+
+Dodd-Frank Act required board to to have a risk committee including an expert in "identifying, assessing, and managing risk exposure of large, complex financial  firms"
+
+Roger Dunbar was chair since 2012, director since 2004, and was the chair of the risk-committee from the inception and still serving at the end of 2021. The board met seven times in 2021.
+
+SVB also had a chief risk officer Laura Izurieta since 2016 with an extensive career at Capital One, Freddie Mac, and Bank of America
+
+SVB had lobbied hard for Economic Growth, Regulatory Relief, and Consumer Protection Act of 2018. Regulation YY increased company-run stress tests from $10B to $250B and risk committees from $10B to $50B.
+
+In January 2019,  US Federal Reserve issued a Matters Requiring Attention regarding the risk management practices (reference 67)
+
+Interest Rate Risk
+
+Although treasuries are safe from the perspective that its backed by the US government.
+
+Modified Duration: percentage decline in fixed income security's value for one percentage point increase in the discount rate. % change in price = -MD \* delta y. reference 72. The durations are given. Maybe use inflation data or money supply data?
+
+If B(y) is the price of the bond, then B(y +- delta y) is the bond price at a higher/lower discount rate.
+
+MD = - (B(y + delta y) - B(y - delta y)) / 2 dela y * 1/B(y)
+
+Portfolio modified durations are the weighted average of each individual security.s
+
+Duration of uninsured deposits is 0.
+
+`Dollar Value of 01`: dollar change of assets for a change in 1 basis point in discount rate.
+
+`DV01 = -MD * 0.0001 * original value`
+
+After calculating DV01, FOMC (Federal Open  Market Commitee) generally increased federal funds rate in increments of 25 bps
+
+SVB was aware of the risks as seen in their 2021 10K
+
+> To manage interest rate risk on the AFS portfolio, they have interest rate swap contracts to hedge against changes in the fair value of the securities. hedge accounting (see Intermediate Accounting II).
+
+An interest rate swap is a derivative where two parties agree to exchange payments for a set amount of time. In this case, at the end of the year for multiple years. One party, SVB in this case makes a fixed payment and the counterparty will pay  based on the future interest rate ofo SOFR (secured overnight financing rate).
+
+No information was provided regarding the maturities of these swap contracts, although the maturities are for two-year, five-year, 10-year, and 30-year.
+
+Was risk management using swaps appropriately? Increase or decrease the use of swaps?
+
+Currently using $10.7B in notional interest rate swaps. Do some stress tests basically.
+
+Try to reuse the interest rate swap from the case when explaining the concept on the slide deck.

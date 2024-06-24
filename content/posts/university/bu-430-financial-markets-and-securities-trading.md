@@ -448,13 +448,72 @@ Super dark pool.
 - POSIT dark pool
   - Doesn't show anything
   - Size discovery facility; trades large transactions
-  - Average is 300 on other dark pools versus POSIT 50,000
-- What is brokerages and bundling?
-  - Bundling of brokerage services such as access to affiliated Investment Banks IPOs, capital, and analyst forecasts affiliated
+  - Average is 300 on other dark pools versus POSIT 50,000 shares (you don't know it will be like that, 40% chance)
+    - Most are mid-quote dark pools
+    - Large institutions can trade their larger positions
+    - **Pinging**: HFTs (anyone with the technology that wants to know) might be pinging dark pools to check for liquidity with small orders (1 share to buy and to sell)
+      - The ping weighs down the average trading size
+      - Usually one side active; no market makers because there's no spread to make money off of; the market maker would have an information advantage that they could use to manipulate the real markets
+      - ITG dark pool may be dismissing any pings
+      - Take the reset of the information to the market to back-run the orders
+      - 20% of trading volume and no order books
+    - More participants maybe because of less leakage?
+      - Less leakage since each trade takes time to execute, whereby other dark pools are so low quantity signalling that someone is playing in that dark pool
+    - Ample liquidity, does it take part in the trade itself?
+  - Allocated Cost Efficiency: larger blocs, less trades
+- ITG Revenue
+  - What is brokerages and bundling?
+    - Bundling of brokerage services such as access to affiliated Investment Banks IPOs, capital, and analyst forecasts affiliated
+  - Struggling: compared to 2008 and earlier, in 2009 the market crashed and the trading volume swelled up which means commission revenues are down
+  - discretionary volume: dark pool revenue is down, providing for IPOs
+    - Customers only sends what they can and that has gone down due to other commitments
+    - client wants: equity research / recommendations, capital, IPO access, execution management (ITG does only this)
+      - Need to be affiliated to an underwriter to access IPOs
+      - IPOs are lucrative because they tend to be underpriced; the price will pop; average 10% return
+      - client views ITG as a way to preserve alpha, and other competitors as alpha generators
+    - Investment Banks provide all of this
+      - Also expects a certain requirement of volume for this access
+      - IPO Primary market
+        - Investment Bank sells IPOs to their clients
+      - Secondary market
+    - Brokerage bundling pros and cons
+      - Cons
+        - You aren't guaranteed the best for each of the categories
+        - you have to weigh the tradeoffs based on the total cost
+        - no comparative advantages
+        - European commission undid the bundle of analyst recommendation from other stuff
+          - The worry was downsizing or less analysis on smaller companies
+          - What happened was that the quality of analysis increased (prediction of upcoming announcements)
+            - Worse performers were dropped
+      - Pros
+    - Equity research
+      - Possible that the equity research is more lenient on the company due to the conflict of interest
 - Why did SEC stop crusade against dark pools?
 - What does dark pool do to dark pools?
-- How bad was Project Omega?
 - ITG reputation went down after SEC and got acquired by Virtu after settling
+  - Trident a big part of the infrastructure at Virtu
+- What is ITG to do?
+  - Focus on higher volume clients
+  - Pulled out of overseas markets
+  - DId not take up proprietary trading on their own account due to erosion of trust
+  - Some clients wanted ITG to sell the insights, but ITG said no
+- Project Omega
+  - Seven months
+  - It didn't look good to SEC. Settlement
+    - Alleged that ITG would make the spread by trading
+    - Alleged that ITG would encourage institutions to cross the spread so that ITG would get the full spread
+  - ITG says it was for good
+  - ITG would copy the trade of the dark pool on the exchange, and facilitate the sell in their own dark pool
+    - ITG would try to bring liquidity from other exchanges to the dark pool market
+    - It would place a buy limit order, and if it was executed, it would sell on POSIT
+  - It's bad because
+    - Information leakage
+    - Making money off of the back-running
+  - Argument for
+    - The expert says it's not leaking because it's a partial limit order
+      - If there are many limit orders, ITG's limit orders will blend in and no tipped off
+      - ITG was doing it very carefully and even shut down the project
+    - Price prediction based on the aggressor
 
 ## Quiz 2H
 
