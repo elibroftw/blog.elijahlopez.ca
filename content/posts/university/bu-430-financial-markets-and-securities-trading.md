@@ -556,6 +556,210 @@ Wednesday, July 3rd
 
 ## Deutche Borse and London Stock Exchange
 
-Hedge funds do not want DB to acquire LSE but rather take debt for a dividend roll-up, and then they campaign other shareholders to pay the dividend roll-up.
+Deutsche Börse: pronounced as doiche borsa
+
+Hedge funds do not want Deutsche Börse to acquire LSE but rather take debt for a dividend roll-up, and then they campaign other shareholders to pay the dividend roll-up.
 
 The synergy would have been economies of scale. Mergers not good for everybody. In this case,
+
+December 12 2004.
+
+- Chris Gibson-Smith, Chairman of the London Stock Exchange (LSE)
+- Werner Seifert, Chief Executive of the Deutsche Börse (owns Frankfurt stock exchange) submitted third bid to acquire LSE for 1.35 billion euros ($2.6B)
+- Clara Furse, new cheif executive, rejected it (undervalued)
+- Although board still in agreement, hedge funds caught wind of acquisition talks and acquired from below 5% to well over 30% and taken lead in opposing the bid, demanding a dividend rollup instead
+- Euronext (Paris exchange) also waiting to make a bid on the LSE
+
+### History of Deutsche Börse
+
+January 1993, holding company to amalgamate Frankfurt's exchange and securities depository (a securities depository is a book keeper of the shares without needing to physically transfer shares).
+
+Founding CEO Ruddier Von Rosen brought together all eight regional exchanges (Deutsche TerminBörse (DTB), Germany’s futures and options market, the country’s clearing organization and a data processing company).
+
+The exchange "run more like an electrical utility than a financial outfit." In 1993, Frankfurt had tiny market capitalization of its listings (as a percentage of GDP).
+
+In 1993, the three biggest exchanges (Berlin, Hamburg, Hanover and Stuttgart) were still quoting their own prices instead of moving from trading on the floor to computers as desired by the three biggest banks (which owned 30% of Borse). The differences in prices put off international investors and they turned to London's SEAQ International, which offers big blocks of German company shares.
+
+> Foreigners complained that listing procedures were clumsy and expensive, and that the big banks (which in effect ran the Börse) favoured cash markets over derivatives
+
+Cash market: investors receive shares immediately in exchange for cash. Basically the stock exchange.
+
+> Seifert wanted to develop computerised share trading system to cut costs and concentrate dealing in German equities currently spread over eight different exchanges. His aim to make trading in Deutschmark securities quicker and cheaper was nowhere easier to achieve than in Germany
+
+Needed to compete and beat London at this, especially the block trading. American Electronic Trading Systems and NASDAQ were trying to break into European markets. Trade Point, for British equities, was about to open in London.
+
+After selling properties and cutting loss-making activities to finance (DM150 million or $76.7M euros?) the new trading system, Xetra (Zeetra) was launched in 1997.
+
+Pan-European stock exchange alliances were preferred to mergers, but Seifert felt that mergers would be the best way to cut costs. In 1998, Frankfurt and Swiss counterpart (SBF?) merged to form Eurex, which poached the majority share of business in German government bonds (Bund) from London's Lifffe derivatives exchange.
+
+Eurex was a joint venture to create electronic trading and clearing platform for options, futures, and other derivatives contracts. They believed that exporting the tech to make it the world standard was essential, so they sold it to Hong Kong's stock exchange, and in-sources the operations of Vienna, Dublin, Helsinki, and Chicago. Other customers: Chicago Mercantile Exchange, the São
+Paulo Stock Exchange, Bovespa, and the Toronto Stock Exchange.
+
+Clearstream International, a specialist in clearing, settlement and custody of securities across borders, was created in 1999 as a merger between Deutsche Börse and Cedel (cross-border securities depo located in Luxembourg). Siefert acquired it for $1.4B in 2002.
+
+### LSE Merger Talks
+
+1995 Seifert hired McKinsey, which he used to work for nine years. First wanted to create a European index with LSE, but failed because each had ties to their own competing indexes.
+
+In 2000, Deutsche Börse wanted to rename itself as Euroboard and go public. Paris could not join in but French, Dutch, Belgian, Lisbon stock exchanges announced merging into Euronext.
+
+Gavin Casey of LSE approached Deutsche Börse offering full merger. Eruronext proposed 50/50 merger, but LSE wanted Frankfurt.
+
+> Blue chip stocks would be traded in London subject to London regulations, while the high-growth market would be in Frankfurt under German rules
+
+Deutsche Börse had the approval, LSE did not. OMX, Stockholm Stock Exchange, started hostile takeover.
+
+### Deutsche Börse IPO
+
+- February 2001
+- 23 times oversubscribed
+- self listed
+- compressing domestic stock and futures exchanges (and their respective clear houses) into a single company
+- combining cash and derivatives with indexes and clearing?
+- 2001: Eurex helped attatin 21% of the total trading volume of the European stock exchanges (highest trading volume of any international derivatives exchange)
+
+> Chicago Board of Trade and the Irish Stock Exchange. Clearstream, which operated clearing and settlement as well as custody services for equities and international bonds, served 94 countries and processed around 500,000 transactions per day.
+
+Hailed as main provider of trading solutions for financial markets. Set up internet-based trading networks to strike back at upstarts such as Nasdaq Europe. In June 2001, started trading 200 US blue chip stocks.
+
+Had to shut down Neuer Markt, which was a small companies exchange (junior) to response to Nasdaq.
+
+> after several of the companies collapsed in bankruptcy or financial scandal
+
+> In many politicians’ eyes, exchanges, like airlines, were symbols of national or even regional pride
+
+Seifert favoured Euro-SEC but securities regulation and supervision was chaotic, and harmonization of rules made negotiations complicated.
+
+In October 2001, Euronext bought Liffe and joined Euroclear.
+
+### Final LS Bid
+
+All cash bid, 23% above Friday closing price on LSE on 6 December 2004 (1.35 billion euros or $2.6B all cash no debt financing). Clara Furse's rejection came within hours. Borse made more than 2x the profit as LSE. Worry of Frankfurt was low volume of equity trading, due to small quoted Germany companies and weak IPO market.
+
+LSE was leading in low costs, and SEAQ avoided stamp duties on share deals (tax on share transfers). Market makers can quote two-way prices (bid-ask spread) for business in larger amount, so big blocks of stocks can be fed only when a counterpart exists. In 2004, LSE had 293 IPOs, or 80% of Western Europe. Mostly cash market, but derivatives is where the volume growth and higher revenues would come from.
+
+Synergy of the merger. Frank Hartmann:
+
+> Deutsche Börse could bolster efficiency and reduce fees for customers, which have become a bone of contention in Britain.”
+
+[Exchange in London Rejects Bid](https://www.nytimes.com/2004/12/14/business/worldbusiness/exchange-in-london-rejects-bid.html?searchResultPosition=1)
+
+> The question of costs is particularly sensitive for British investors who have been pressing the London exchange to lower its transaction fees. "When you are looking at infrastructures coming together, it's not just a question of price," said Ms. Knight at the Association of Private Client Investment Managers and Stockbrokers in London. "We are going to be looking at the cost benefits and how it's going to develop strategically
+
+### Hedge Funds and Deutsche Börse
+
+In the first half of 2004, Deutsche Börse shares underperformed the DAX index, and hedge funds like: Children's Investment Fund (TCI) in London, Atticus Capital in New York, and RIT Partners (Lord Rothschild) began buying in late autumn. RIT Partners sent Lord Rothschild to oppose the LSE bid and his son was part of Atticus.
+
+TCI managing partner Christopher Hohn warned against the bid as the bid was for 25 times earnings whereas Deutsche Börse was trading at 9. Board supervisory chairman Rolph Breuer was also head of Deutsche Bank's supervisory board which owned 6.8% of LSE..
+
+After the deal was proposed, TCI and Atticus bought heavily to own 12% of the company. "Stock was undervalued, poor corporate governance." Ironic since Deutsche Börse was ranked second among all DAX on the 2005 survey of governance practices.
+
+TCI wanted a shareholder vote, but Seufert insisted that German corporate law did not dictate that the takeovers needed a shareholder meeting. Only a change in corporation’s articles of association would require a shareholder meeting, or vastly different business acquisition. Also the maximum price would have to be shared. The fund wanted Deutsche Börse to buyback shares and return money to shareholders. Deutsche Börse was the only AA- company in Germany even after the share buy-back was announced.
+
+By February 2005, Deutsche Börse price went up by 27% and executives were hoping the hedge funds would have sold but TCI began garnering support from Fidelity (10%) and Merrill Lynch (3-4%) and increased their own stake to 7.9%.
+
+In Germany, a minority shareholder needs to hold a required 5% of shares for only three months to demand a shareholders' meeting.
+
+Instead of losing in the meeting, Seifert announced a dividend and buy-back programme by the end of 2007 and withdrew the offer on March 6th 2005. Debt-equity ratio went down from 12 to 9% in 2004.
+
+- [2005 balance sheet](https://www.deutsche-boerse.com/resource/blob/308024/9d1b5172aebccb5cb4360b8296074c00/data/konzernbilanz-2005_en.pdf)
+- [2006 balance sheet](https://www.deutsche-boerse.com/resource/blob/36788/5472fa8ae5d6aeabe0e04d858564f452/data/gb-gdb-2007_en.pdf)
+
+Hedge funds tried to remove supervisor board, and although the discharge vote had a 68% approval rating, TCI had dropped the proposal two days before AGM. Three board members resigned, including Breuer and Seifert who left the company immediately. Reto Francioni became the new CEO?
+
+> On 9 August 2005 the Börse’s shares went up 2.79% to €73.72, an increase of 22% since the ousting of Seifert in May, with investors welcoming signs of a more streamlined strategy underpinned by a share buy-back
+
+BaFin, Germany's financial sector supervisory board, had affirmed that certain shareholders acted in concert. The board did not properly represent the overseas shareholders. 21 board members, a third were employee representatives, and the reset were owned by Germany's largest financial institutions; Deutsche Bank, DZ Bank, HVB and Dresdner Bank. Such characteristic ties were not uncommon in German boardrooms.
+
+If a pan-European merger took place, which regulator would supervise the combined exchange (Euronext, The Swedish OM Group, the Australian bank Macquarie, and even the Nasdaq were rumoured to be interested)
+
+Britain’s Financial Services Authority would not easily give up oversight.
+
+### Deutsche Börse, Euronext, NYSE Mergers
+
+[TCI demands vote on Börse](https://www.fnlondon.com/articles/tci-demands-vote-on-borse-euronext-merger-20060830)
+
+> It is the second time Hohn has been linked with such a vote. In May, a company associated with TCI called for a vote on the principal of a European merger, which failed in favour of a "merger of equals" agreement with the NYSE.
+
+Hohn wanted to merge with Deutsche Börse instead, probably because he owned both companies and the amalgamation would be a quasi-monopoly with higher derivatives trading profits.
+
+> The largest Euronext shareholder is hedge fund The Children's Investment Fund Management, with 8.5%, according to shareholder register Citywatch
+
+[Banks lift Euronext stakes ahead of Deutsche Börse vote](https://www.fnlondon.com/articles/banks-lift-euronext-stakes-ahead-of-deutsche-borse-vote-20060420)
+
+[TCI cuts Deutsche Börse stake as hedge funds exit](https://www.reuters.com/article/deutscheboerse-funds-idUSL296195720090402/)
+
+April 2009.
+
+> The hedge funds were warned then to "respect management's responsibility to determine and implement the strategy of the company" or risk having their voting rights revoked, two people familiar with the matter said.
+> ... to consider a breakup or merger, including a deal last year with the NYSE that never came to pass
+
+NYSE Group offered 8 billion euros to acquire EuroNext due to NASDAQ trying to acquire LSE which outbid the rival offer from Deutsche Börse.
+
+[NYSE and Euronext 'set to merge](http://news.bbc.co.uk/2/hi/business/5002438.stm)
+
+Then Deutsche Börse raised bid to 8.6 billion euros but NYSE Group and Euronext penned the merger agreement regardless.
+
+Deutsche Börse still tried to merge in 2008 and 2009 with NYSE Euronext to create the largest exchange in history but was blocked by European Commission on the grounds that the resulting company would have a quasi-monopoly (90% volume) in the European financial derivatives traded globally. Appeal was unsuccessful (2011). [source](https://ec.europa.eu/commission/presscorner/detail/en/IP_12_94)
+
+[Deutsche Börse, NYSE Talks End, No ‘Conclusion’](https://www.bloomberg.com/news/articles/2008-12-07/deutsche-boerse-nyse-talks-end-no-conclusion)
+
+[DEALTALK-Deutsche Börse reignites exchange merger talks](https://www.reuters.com/article/markets/stocks/dealtalk-deutsche-boerse-reignites-exchange-merger-talks-idUSLNE4B800Y/)
+
+[NYSE Euronext-Deutsche Börse Merger: Let the Dance Go On](https://www.intereconomics.eu/contents/year/2011/number/4/article/nyse-euronext-deutsche-boerse-merger-let-the-dance-go-on.html)
+
+On 20 December 2012, the boards of directors of both Intercontinental Exchange (ICE) and the NYSE Euronext approved an $8 billion acquisition of NYSE Euronext
+
+### Hindsight Review
+
+[Hedge Funds Not Playing NYSE?](https://www.institutionalinvestor.com/article/2btfmn06fxlva08cl52bk/innovation/hedge-funds-not-playing-nyse)
+
+Apparently Seifer's plan would have made him look like a genius due to creating a successful and powerful exchange business in the world.
+
+[Hedge Funds Draw Critics in Europe's Market Wars May 2006](https://www.nytimes.com/2006/05/25/business/worldbusiness/25hedge.html)
+
+> The London Stock Exchange is now worth about twice Deutsche Börse's offer last year, at £2.57 billion ($4.81 billion), and Nasdaq has purchased enough of a stake in the London market to make it tough for anyone else to take it over
+
+Regulators threatened to revoke the rights of the activist investors. The cash distributions reduced Deutsche Börse's ability to bid for Euronext.
+
+In hindsight, the London Stock Exchange Group is worth 51.4B pounds or 60.86B euros  and Deutsche Börse is worth 36.83B euros. The merger would've been very successful given the power of hindsight. Even with a yield of 2%, that's an additional 14.72B or 51.55B euros. LSEG used to be smaller, but now is bigger or basically equal. By withdrawing the bid offer, Nasdaq was able to take a bigger stake and the stock price decimated the offer of the previous year.
+
+### Hedge Fund Activism, Corporate Governance, and Firm Performance
+
+August 2008; Authors: Alon Brava, Wei Jiang, Frank Partnoy, and Randall Thomas
+
+In two-thirds of cases, activist hedge funds propositions regarding strategy, operations, and financial are partially or fully successful. Hedge funds are non-confrontational and the return on activism announcements is approximately 7% in a year without reversals. Target firms experience increases in payout, operating performance, and higher CEO turnover after activism (+10%) and lower CEO pay (~$1M).
+
+Unlike mutual funds and pensions, Hedge Fund activism coems with influence over the corporate board and management. This is because of HF managers have less regulation over capital and high incentives which also means high concentration in a smaller basket of companies. Hedge funds target value firms with low market value relative to book value, and are profitable with sound operating cash flows and return on assets. Target companies have lower payouts.
+
+Hostile takeovers (hostility includes a threatened or actual proxy contest, takeover, lawsuit, or public campaign that is openly confrontational) is less than 30% of cases. They are not short-term holders and they do not seek control. Average 9.1% and up to 31.5% stake. Reliance on management cooperation or shareholder cooperation, which is why high institutional holding and analyst coverage stocks are targets. Hedge funds often coordinate (22% of cases, by filing Schedule 13Ds) or act in tandem.
+
+Returns depends on the actual activism not just stock picking.
+
+### The Real Effects of Hedge Fund Activism: Productivity, Asset Allocation, and Industry Concentration
+
+May 2013; Authors: Alon Brava, Wei Jiang, and Hyunseob Kim
+
+- low concentration manufacturing
+  - more competitive industries
+- increase in production efficiency within three years
+- efficient capital redeployment
+  - plants that were sold had lower productivity but experience greater improvement in the hands of the new owner and its best if the hedge fund is invovled
+  - more competition indicates better matching chances
+- Workers do not benefit
+  - reduction in wage hours stagnation in wages, although labour productivity goes up
+  - increase in labor productivity is only significant in highly unionized industries
+- return on assets performance measurement from 2,000 activism events (1994 to 2007)
+  - ROA versus control group in the same three-digit SIC industry and year adjusted for firm size and age
+  - Clear V-shape correlating with year of targeting
+  - Three years after intervension, the firm is outperfoming its previous pre-activism levels
+- Opponents think that hedge funds are short-term focused or only do financial engineering and deny real term value creation
+  - such as extracting payouts to shareholders through leverage (lol)
+  - hedge funds have a two year holding period
+- Within two years of activist intervension, close to 26% are delisted or acquired which is twice the normal attrition rate of Compustat. Previous research was not able to account for this potential surviorship bias whereas this research looks at the performance of plants which still exist regardless of if the company was acquired or delisted.
+- To dismiss claims that hedge funds were just scoping out companies on the right path already, focus was on confrontational activism
+- To refute stock picking, performance of plants that belong to target firms’ non-primary business segments were examined
+  - stock picking would only look at company's that are about to perform well due to their primary business not their non-primary business
+  - also looked at firms that switched from filing 13G (passive) to 13D (activist stance) which means that there should've been no additional performance
+
+> Additional tests refute alternative explanations that attribute the improvement to management’s voluntary reform, industry consolidation shocks, and hedge funds’ stock picking. The overall evidence is consistent with a real long-term effect of hedge fund intervention on target firms’ fundamentals.
