@@ -181,3 +181,9 @@ There is also a system countries like Norway use, however the main point is to m
 ## Electoral Misconduct
 
 Like with every law and system, there will be people trying to bend it. One such situation I could forsee far into the future are candidates running as an independents but supported by a party through advertisements/funding. Elections Canada would be tasked at ensuring such ~~_faltugiri_~~ horsing around would  be met with major fines.
+
+## Other Notes
+
+There was a good argument on whether or not proportional voting or democracy is even a good idea if the possibility of extreme actions can affect the majority of people. A good example that was brought up is that public transit doesn't run on Sabbath, but the minister of transportation is driven around in a car just fine.
+
+To be honest, it was a good question and it made me think of at what point should a minority opinion be given credence. I use Firefox and I would like to switch to using Fedora KDE in the future. Therefore, minority opinions, are important and I think 1% of the population should be a threshold, not the 1 seat threshold I have used. The election results would still be the same as what I have provided, however it would ensure that people can't just take unpopular issues and be represented so easily. There's a big difference between the PPC leader being the MP for his riding and a fringe party being the MP of a riding where they only have the support of 1.5% constituents (1% average nation wide). So of course, 1% of the nation should also involve having 10% in any riding.
