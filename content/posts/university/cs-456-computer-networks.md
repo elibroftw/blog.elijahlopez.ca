@@ -844,9 +844,98 @@ Closing the connection
 4. Client sends ACK
 5. Client waits for 2 * max segment lifetime before closing the socket
 
+### Congestion Control
+
+- high delay (queueing delays)
+- packet loss (buffer overflow)
+
+Causes
+
+- premature timeout &rarr; retransmission
+- multi-hop paths, some routers get more traffic through them
+
+Costs
+
+- additional work
+- lower maximum throughput
+
+Control
+
+- Routers provide direct feedback when flow passes through congest router
+- TCP ECN, ATM, DECbit protocols
+
+### AIMD
+
+- Additive Increase
+  - increase snding rate by 1 maximum segment size every RTT until loss detected
+- Multiplicative Decrease
+  - cut sending rate in half at each loss event
+  - sawtooth behaviour probing for bandwidth
+  - cut in half on loss detected by triple duplicate ACK
+  - Cut to 1 MSS when loss detected by timeout
+
+### Network-Assisted
+
+- Two bits in the TCP header indicating congestion (set by network operator at 80-85%)
+
+### Net Neutrality
+
+- multimedia apps often do not use TCP
+- there is no internet police policing use of congestion control
+- web browsers and 9 existing connections
+  - we want R / 2 instead of R / 10
+
+### TCP CUBIC
+
+- Better way to probe than AIMD for usable bandwidth?
+- K: point in time when TCP window size will reach W max
+- K itself is tuneable
+- Increase W (sending rate) as a function of the cube of the distance between current time and K
+- Default in Linux
+
+### QUIC: QUick UDP Internet Connections
+
+- Application-layer protocol on top of UDP
+- Deployed on many google servers and apps
+- Increase performance of HTTP
+- Combine TCP and TLS functionality into QUIC and combine with HTTP/2 slim to create HTTP 3
+
+### QUIC Specs
+
+- error and congestion control
+- streams parallel, no HOL (head-of-line) blocking
+
 ## Chapter 4 & 5 Network Layer
 
 Routing approaches, routing in the Internet, Internet Protocol, IPv6, tunnelling, router design, control/data plane, SDN.
+
+### Network-layer Services
+
+- transport from sender to receiver
+- sender
+  - datagrams passed to link layer
+- receiver
+  - segments to transport layer protocol
+- network layer implemented in every internet device
+
+### Data Plane
+
+### Control Plane
+
+- per-router control plane: ???
+- Software-defined networking: remote controller
+  - Every router connected to remote controller server which will instlal forwarding tables in routers
+
+### Network Service Model
+
+### Router Architecture
+
+- input ports
+- output ports
+- high-speed switching fabric
+- processor
+  - need to route in milliseconds
+  - forwards data plane (nanosecond frame)
 
 ## Chapter 6 Data Link Layer
 
