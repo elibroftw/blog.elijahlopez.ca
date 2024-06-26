@@ -1,12 +1,14 @@
 ---
 title: "What Is Greed?"
 date: 2022-12-15T17:35:13-05:00
-draft: true
+draft: false
+tags:
+  - wisdom
 ---
 
 Greed is wanting so much that fulfilling your want would actually take away from someone else and thus have a negative impact on other people.
 
-Greed to attain as much money (profit)  as possible so instead of cutting useless jobs, pay the useful jobs as low of a wage as possible.
+Greed to attain as much money (profit) as possible so instead of cutting useless jobs, pay the useful jobs as low of a wage as possible.
 
 Greed to acquire the most land in order to make more money leasing it, or acquiring as many properties as possible in order to make more money from renting it in addition to paying for the property's equity.
 
@@ -25,4 +27,4 @@ Greed for stimulation and a dopamine release so you end up losing self-control a
 Greed for a better life; Combined with an ethical standard, rather than enslave and treat humans poorly, innovation/productivity/efficiency can be attained. Without a moral or ethical standard, time saved might not be a
 good enough incentive.
 
-Time should be the ultimate incentive. If it saves time, it is worth pursuing. Patents are only useful when the goods & services cannot be provided by the people who require the product and does not need to be regulated to the specific details; pharma drugs.
+Time should be the ultimate incentive. If it saves time, it is worth pursuing. Patents are only useful when the goods & services cannot be provided by the people who require the product and does not need to be regulated to the specific details; pharmaceutical drugs.
