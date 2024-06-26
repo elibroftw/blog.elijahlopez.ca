@@ -1,10 +1,24 @@
 ---
 title: "Zero Sugar Carbonated Drink Reviews"
 date: 2023-11-11T17:50:33-05:00
-draft: true
+draft: false
+tags:
+  - review
 ---
 
-### Pepsi Zero Sugar (Zero Sugar)
+### Diet Pepsi
+
+Probably the best
+
+### Coke Zero
+
+Not as good as diet pepsi, but still good
+
+### Diet Coke
+
+Pretty good. Sometimes better than coke zero.
+
+### Pepsi Zero Sugar
 
 Do not buy, makes your stomach bloated and kind of sick to be honest
 
