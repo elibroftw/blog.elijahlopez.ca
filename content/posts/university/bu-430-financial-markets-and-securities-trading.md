@@ -7,7 +7,7 @@ tags:
   - university
 ---
 
-Point based system. Participation based, quizzes, group.
+{{< toc >}}
 
 ### Assumption
 
@@ -515,6 +515,38 @@ Super dark pool.
       - ITG was doing it very carefully and even shut down the project
     - Price prediction based on the aggressor
 
+### SEC Dark Pool Worry
+
+- believe informed investors activity on dark pools hurt activity
+- back in 2007-2008, chief economist for NASDAQ, Frank Hathaway, was testifying before congress; "if dark trading goes over 20% of all volume, hte markets will collapse." It's 40% of all volume and markets are fine
+  - Rationale: they all believed price discovery was lost in dark pools
+  - Then congress got worried about it and then told SEC to worry about it
+  - Dark pools would've (not implemented) been added to National Best Bid Offer under $200k
+- All dark pool restrictions got cancelled once academic research came out (as a draft) and then years later in a journal
+- Zhu H 2014. Do dark pools harm price discovery
+  - theory model
+  - logic: informed traders are aggressive (short information), uninformed would not risk moving the price and be matched in dark pools
+  - not going to get informed traders to go to dark pools since they do not care about the spread
+  - only uninformed traders would go to dark pool (buy and sell)
+    - institutions that would want to reshuffle their fund (index funds, mutual funds)
+  - informed participants would all be on one side of the dark pool
+  - back then, 4% chance of trading through dark pool
+- Research: theory, empirical, experiments
+  - theory: multi-story math equations
+- Comerton-Ford, Putinins 2015; Dark Trading and price discovery
+  - Empirical research backing up the previous theory
+  - Concentration of uninformed traders meaning that noise removed and the informed traders remain on the exchanges
+- Liquidity is harmed by dark pool
+  - Less uninformed traders on exchanges means Informed traders are adversely selecting the market, meaning that market makers would increase spreads to compensate
+  - Therefore retail price improvement gets harmed as well
+- European regulator implemented MiFID II
+  - Restricted dark pool trading (volume capped)
+  - More dark pools opened up
+- Dark pool trading adn information acquisition (Johnathon Brogaard and Pan 2022)
+  - Dark pools do price discovery because of long-lived information
+  - Other articles are about short-lived information
+  - Since dark pool execution is slow, long-lived information (impression), that the price will increase over months, then dark pool trading might be beneficial since weeks to wait is okay. This might harm price discovery since the price is not impacted by long-lived information.
+
 ## Quiz 2H
 
 You are an algorithm responsible for Virtu’s activity in SPY on BATS and BATS Y, two sister exchanges. Your task is to make money by market making and/or sniping stale quotes. You observe that the price of the e-mini S&P 500 futures has ticked down, indicating that SPY price is also about to tick down, by 2 cents.
@@ -565,8 +597,8 @@ The synergy would have been economies of scale. Mergers not good for everybody. 
 December 12 2004.
 
 - Chris Gibson-Smith, Chairman of the London Stock Exchange (LSE)
-- Werner Seifert, Chief Executive of the Deutsche Börse (owns Frankfurt stock exchange) submitted third bid to acquire LSE for 1.35 billion euros ($2.6B)
-- Clara Furse, new cheif executive, rejected it (undervalued)
+- Seifert Werner, Chief Executive of the Deutsche Börse (owns Frankfurt stock exchange) submitted third bid to acquire LSE for 1.35 billion euros ($2.6B)
+- Clara Furse, new chief executive, rejected it (undervalued)
 - Although board still in agreement, hedge funds caught wind of acquisition talks and acquired from below 5% to well over 30% and taken lead in opposing the bid, demanding a dividend rollup instead
 - Euronext (Paris exchange) also waiting to make a bid on the LSE
 
@@ -592,8 +624,7 @@ After selling properties and cutting loss-making activities to finance (DM150 mi
 
 Pan-European stock exchange alliances were preferred to mergers, but Seifert felt that mergers would be the best way to cut costs. In 1998, Frankfurt and Swiss counterpart (SBF?) merged to form Eurex, which poached the majority share of business in German government bonds (Bund) from London's Lifffe derivatives exchange.
 
-Eurex was a joint venture to create electronic trading and clearing platform for options, futures, and other derivatives contracts. They believed that exporting the tech to make it the world standard was essential, so they sold it to Hong Kong's stock exchange, and in-sources the operations of Vienna, Dublin, Helsinki, and Chicago. Other customers: Chicago Mercantile Exchange, the São
-Paulo Stock Exchange, Bovespa, and the Toronto Stock Exchange.
+Eurex was a joint venture to create electronic trading and clearing platform for options, futures, and other derivatives contracts. They believed that exporting the tech to make it the world standard was essential, so they sold it to Hong Kong's stock exchange, and in-sources the operations of Vienna, Dublin, Helsinki, and Chicago. Other customers: Chicago Mercantile Exchange, the São Paulo Stock Exchange, Bovespa, and the Toronto Stock Exchange.
 
 Clearstream International, a specialist in clearing, settlement and custody of securities across borders, was created in 1999 as a merger between Deutsche Börse and Cedel (cross-border securities depo located in Luxembourg). Siefert acquired it for $1.4B in 2002.
 
@@ -608,6 +639,8 @@ Gavin Casey of LSE approached Deutsche Börse offering full merger. Eruronext pr
 > Blue chip stocks would be traded in London subject to London regulations, while the high-growth market would be in Frankfurt under German rules
 
 Deutsche Börse had the approval, LSE did not. OMX, Stockholm Stock Exchange, started hostile takeover.
+
+Synergies: Tech transfer, diversification coverage, cost savings; Two main synergies: cost savings and revenue synergies.
 
 ### Deutsche Börse IPO
 
@@ -650,7 +683,7 @@ Synergy of the merger. Frank Hartmann:
 
 In the first half of 2004, Deutsche Börse shares underperformed the DAX index, and hedge funds like: Children's Investment Fund (TCI) in London, Atticus Capital in New York, and RIT Partners (Lord Rothschild) began buying in late autumn. RIT Partners sent Lord Rothschild to oppose the LSE bid and his son was part of Atticus.
 
-TCI managing partner Christopher Hohn warned against the bid as the bid was for 25 times earnings whereas Deutsche Börse was trading at 9. Board supervisory chairman Rolph Breuer was also head of Deutsche Bank's supervisory board which owned 6.8% of LSE..
+TCI managing partner Christopher Hohn warned against the bid as the bid was for 25 times earnings whereas Deutsche Börse was trading at 9. Board supervisory chairman Rolph Breuer was also head of Deutsche Bank's supervisory board which owned 6.8% of LSE.
 
 After the deal was proposed, TCI and Atticus bought heavily to own 12% of the company. "Stock was undervalued, poor corporate governance." Ironic since Deutsche Börse was ranked second among all DAX on the 2005 survey of governance practices.
 
@@ -763,3 +796,7 @@ May 2013; Authors: Alon Brava, Wei Jiang, and Hyunseob Kim
   - also looked at firms that switched from filing 13G (passive) to 13D (activist stance) which means that there should've been no additional performance
 
 > Additional tests refute alternative explanations that attribute the improvement to management’s voluntary reform, industry consolidation shocks, and hedge funds’ stock picking. The overall evidence is consistent with a real long-term effect of hedge fund intervention on target firms’ fundamentals.
+
+## Quiz 3H
+
+In a recent article, Kurt Dew states that legacy markets like the NYSE and Nasdaq have failed institutional investors. He cites the proliferation of dark pools as evidence of this failure. In no more than five sentences, please provide two arguments, one consistent with this view and one contrary to it. Support your arguments with evidence where possible.

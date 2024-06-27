@@ -291,7 +291,7 @@ Regulators simply do not want to see a risk profiler because they don't audit an
 
 ### RIsk Taking
 
-Ability to take Risk versus WIllingness to take risk.
+Risk tolerance takes into account the **Ability** to take Risk versus **WIllingness** to take risk.
 
 ### Investment Policy Statement
 
@@ -387,6 +387,30 @@ Affects .6% and 3.6% of adults, three times more common in men than women. Unsur
 4. Contingency Management
 5. Multi-Agency Care
 
-### Trends in Antisocial Behaviour
+## Institutional Behavioural Flaws
 
-### Q&A
+### Spillover Effects of Management Overconfidence
+
+> First, overconfident CEOs who overestimate future firm performance are more likely to provide positive information to analysts, thus increasing the likelihood of analysts issuing optimistic earnings forecasts for firms with over- confident CEOs. Second, overconfident CEOs may overestimate the precision of their information and disclose more precise information, which in turn may result in less dispersed analyst forecasts. Finally, managers who exhibit over- confidence show an increased willingness to voluntarily disclose information through management earnings guidance, which may lead to smaller forecast errors relative to managers who are less willing to disclose.
+
+Holding onto options that are in the money is considered over-confidence.
+
+- 25% more optimistic analyst forecasts
+- 2.4% to 4.3% smaller forecast errors
+- 3% to 3.8% smaller forecast deviations
+
+### The Dynamics of Overconfidence: Evidence from Stock Market Forecasters
+
+- experts can be quite overconfident
+- market forecasters are egregiously overconfident
+- success, measured by correct prediction leads to increased overconfidence
+- market experience, which is symptomatic of past success, is associated with higher levels of overconfidence
+- market learns to be overconfident through past collective success
+
+### Catering Motive
+
+- Makes perception of value is real
+- M&A
+- Changing the business name
+- Changing business structure
+- Changing accounting policies
