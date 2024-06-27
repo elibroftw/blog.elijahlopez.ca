@@ -1,8 +1,7 @@
 ---
 title: "Understanding the USA Amendments"
 date: 2022-07-04T11:15:56-04:00
-draft: true
-hidden: true
+draft: false
 tags:
   - opinion
   - politics
@@ -13,7 +12,7 @@ tags:
 The language used in the Bill of Rights of the USA is 200+ years old. It is not clear that everyone in the present day would
 understand what some of the terms even means, and then we need to understand the background and the context as well.
 
-This is my attempt at doing just that.
+This is my attempt at doing just that. I stopped caring after Amendment XVI.
 
 ## Amendment I
 
