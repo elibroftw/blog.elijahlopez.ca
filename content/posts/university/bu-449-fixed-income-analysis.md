@@ -596,6 +596,131 @@ Funders, Broker-Dealer, Customers
     - Even more volatile on quarter end dates
 - Transaction activity
 
+## Massachusetts Bay Transportation Authority Sustainability Bonds
+
+- nuances of sustainability bonds compared to green bonds and traditional bonds
+- $535M bond issues, $382M sustainability bonds, and $133M municipal tax-exempt bonds
+- CitiBank underwriting the bond
+  - success reselling bonds
+- bid uncertainty
+
+### Munis
+
+- Federal, States, Munis ($3.8T)
+- Infrastructure
+- Federally tax-exempt status
+- tax-exempt income (lower yield)
+  - two different yield curves
+- alternative minimum tax
+- liquidity risk, similar to corporate bonds
+- tax benefits
+- Q: is this also applicable to Canada
+
+Types
+
+- General Obligation Bond
+  - backed by tax revenue collected by the government
+- Revenue Bonds
+  - tolls from toll roads, airports, etc.
+
+### Green Bonds
+
+- 2007: First climate awareness bond
+- 2008: world bank
+- 2013: private sector started
+- Investment Banks came together to form green bond principles
+- US: Agency's are issuing the most
+  - Larger budgets and ability to issue more
+- EU: Financial Institutions
+  - Securitized?
+- Greenium
+  - Cost/Yield will be lower
+  - Look at similar bonds for what the greenium spread is
+
+### International Capital Markets ASsociation
+
+- Sets standards, advocacy
+
+### Green Bond Principles
+
+- use of proceeds
+  - clearly defined and quantifiable
+  - most for water-pollution from municipal market
+- project evaluation & selection for use of proceeds
+  - is nuclear considered part of green bonds?
+- management of proceeds
+- reporting
+  - the higher the size, the higher the quality of reporting
+  - frequency is annually
+
+Q: if we were to compare a green bond and a traditional bond from the same company, what might the differences be in terms of yield?
+
+### Green Bond Types
+
+- standard
+  - finance green project and secured by issuer
+- green revenue
+  - secured by pledged cash flows from related or unrelated projects
+- green project
+  - secured by cash flows and assets ot the projects
+  - for example large wind farms
+- green securitized
+  - secured by pool of assets
+
+Q: what are the risks associated with these types of bonds
+
+### Sustainability Bonds
+
+- Social Bond Principles (SBP)
+  - Positive social outcomes
+  - Basic infra, access to services, **affordable housing**, employment
+- Sometimes, bonds are SBP and GBP so they called them sustainability bonds
+- Briti companies
+
+### MTBA Auction
+
+- Dutch auction, submitted at the yield
+  - highest yield at which the entire issue can be sold
+- how to optimally determine the maturity of each of the bonds? Why not just put all bonds at the highest maturity?
+- case study: 2027 (10 year)
+
+## Durations
+
+### Duration Mismatch of FIs
+
+- Depository institutions fund long-term assets
+- As a result, their liabilities are more frequently funded compared to their assets
+
+### NCNB
+
+- Bought long-maturity bonds by speculating on interest rate cuts
+- When interest rates rose, NCNB got wiped out
+
+### Saving and Loan Crisis
+
+- short maturity deposits, long-term investments
+- yield curve inverted and S&L took significant losses
+
+### Spread Trades
+
+- The trader is expecting the yield curve to get steeper
+- Fed is trying to lower short-term borrowing cost
+- Economy looking up
+- `PVBP = n_2yr * PVBP_2yr + n_10yr * PVBP_10yr = 0`
+
+### Price Value of a Basis Point
+
+- Tangent equal to change in price over change in yield
+- average of PV minus + PV plus
+
+### Duration
+
+TODO
+
+### Convexity
+
+TODO
+
 ## SVB Case
 
 March 24, 2015, Greg Becker testified to U.S. Senate Committee on Banking, Housing and Urban Affairs.
@@ -703,3 +828,7 @@ Was risk management using swaps appropriately? Increase or decrease the use of s
 Currently using $10.7B in notional interest rate swaps. Do some stress tests basically.
 
 Try to reuse the interest rate swap from the case when explaining the concept on the slide deck.
+
+## Ratings
+
+Explain?

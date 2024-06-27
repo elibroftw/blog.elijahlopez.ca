@@ -937,6 +937,87 @@ Routing approaches, routing in the Internet, Internet Protocol, IPv6, tunnelling
   - need to route in milliseconds
   - forwards data plane (nanosecond frame)
 
+### Input Port Functions
+
+### Longest Prefix Matching
+
+- when looking at the forwarding table given a destination address, use longest address prefix that matches destination address
+- 1M routing table in Ternary Content Addressable Memories (TCAM)
+
+### Output Port Queuing
+
+- switch fabric
+- how much buffering?
+  - tail drop: drop arriving packets
+  - priority: drop/remove on priority basis
+
+### Packet Scheduling
+
+- first come, first served
+- priority
+- round robin
+- weighted fair queueing
+  - each class has a weight and each cycle is divided by the weights
+  - weight x is 2, y is 1, and z is 1 then two packets from x, one form y, and one form z
+  - minimum bandwidth guarantee (per-traffic-class)
+
+### How IP Datagram Works
+
+- Version (v4, v6)
+- Head Length
+- Type of Service
+- Length
+- 16-bit identifier
+- flags
+- fragment offset
+- time to live
+- upper layer
+- header checksum
+- source IP
+- dest IP
+- options
+- payload data
+
+Networks links have MTU (max transfer size), so the datagram is fragmented and put back together.
+
+A datagram with 4000 bytes with an MTU of 1500 bytes. ID of all three fragmented datagram will be the same, and the fragment flag will be set for all but the last one. The offset field exists since there are headers of each of the smaller datagrams. 1480 bytes in data field. Therefore, offset = 1480/8.
+
+### Subnets
+
+- set of interfaces that can physically reach each other without passing through an intervening router
+- IP addresses have structure
+  - subnet part
+  - host part
+- detach each interface from its host or router, creating islands of isolated networks
+- each isolated network is called a subnet
+  - subnet mask: /24 (high-order 24 bits: subnet part of the IP address)
+  - even links connecting two routers is a subnet
+  - one way is to hide the routers and see the link groups
+  - another way is to take the unique 24-bit high-order IP addresses
+
+#### Classless InterDomain Routing
+
+- Cider / CIDR
+- Can get something like 200.23.16.0/23
+- System admin sets IP addresses of each host
+- DHCP: Dynamic Host Configuration Protocol
+  - plug-and-play to set IP addresses
+  - can renew addresses
+
+### DHCP
+
+- host broadcasts DHCP discover msg (optional)
+- DHCP server responds with DHCP offer msg (optional)
+- host requests IP address: DHCP request msg
+  - broadcast IP
+  - everyone in the network receives the message, but only server is configured to respond to the message
+- DHCP server sends address: DHCP ack msg
+  - broadcast IP
+  - DHCP server offers an IP address
+  - Client tells DHCP server that it wants to use that IP address
+  - DHCP acknowledges
+  - IP has lifetime
+
 ## Chapter 6 Data Link Layer
 
 Multiple access protocols and LAN's, address resolution protocol, Ethernet.
