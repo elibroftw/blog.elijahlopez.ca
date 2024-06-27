@@ -1,13 +1,11 @@
 ---
 title: "Pierre Poilievre Policies"
 date: 2022-09-22T17:39:09-04:00
-hidden: true
 tags:
   - canada
   - opinion
   - politics
 ---
-
 I'm making this blog post and video to document (practical?) policies that I've heard/read Pierre Poilievre express.
 For each policy, I will include the excerpt as well as my analysis of it to connect the dots between stated policy and desired / expected results. This is evident in the first policy that incentivized me to create this blog post.
 
@@ -25,15 +23,13 @@ In conclusion, I myself had not thought of this policy and it's great Poilievre 
 
 ## Repealing Bill C-69
 
-The Impact Assessment ACt (IAA) stipulates that an impact assessment is necessary when a [designated project](https://laws.justice.gc.ca/eng/acts/I-2.75/page-1.html#1160090) (a physical activity on Canadian land and has been disignated by the Minister of Environment. Where that list of regulations made for physical activites is? No idea).
+[Constitutional challenge successful](https://calgaryherald.com/opinion/columnists/varcoe-stay-in-your-lane-after-victory-against-bill-c-69-alberta-emboldened-in-feud-with-feds)
 
-There isn't much information on this topic, but from https://atbcapitalmarkets.com/insights/the-bill-c-69-aftermath, it seems Bill-69 could potentially
-create infinite delays; incorporate 'traditional Indigenous knowledge' and 'the intersection of sex and gender with other identity factors' which is ridiciulous if the topic at hand is natural gas, oil sands, or like the following example, a Uranium mine; THE MINISTER OF THE ENVIRONMENT HAS VETO POWER WITH
-EVERY PROPOSAL!!!!
+The Impact Assessment ACt (IAA) stipulates that an impact assessment is necessary when a [designated project](https://laws.justice.gc.ca/eng/acts/I-2.75/page-1.html#1160090) (a physical activity on Canadian land and has been designated by the Minister of Environment. Where that list of regulations made for physical activities is? No idea).
 
-Even without any funding by corporations, being against this bill has merit. Poilevre is arguing from a point of improving energy independence, however I feel that the benefits are much more broader and not just restricted to energy. The bill supposedly impeding pipelines does have some merit as presently any pipeline proposal could be declined simply because the Minister of Environment doesn't want it approved or stalled by the Governor in Council.
+There isn't much information on this topic, but from https://atbcapitalmarkets.com/insights/the-bill-c-69-aftermath, it seems Bill-69 could potentially create infinite delays; incorporate 'traditional Indigenous knowledge' and 'the intersection of sex and gender with other identity factors' which is ridiculous if the topic at hand is natural gas, oil sands, or a Uranium mine; THE MINISTER OF THE ENVIRONMENT HAS VETO POWER WITH EVERY PROPOSAL!!!!
 
-Now for something interesting I found. It seems that even before the LPC, an assessment for an impact assessment was required. This [Uranium Millennium Mine Project](https://iaac-aeic.gc.ca/050/evaluations/proj/49928) has been under assessment since 2013. Apparently the proposal was started in 2009, and the last change was made in 2019. This is outrageous for both CPC and LPC if a Uranium mining project has been stalled for this long. Cameco, a Canadian company, has been losing revenue year over year!
+Even without any funding by corporations, being against this bill has merit. Poilievre is arguing from a point of improving energy independence, however I feel that the benefits are much more broader and not just restricted to energy. The bill supposedly impeding pipelines does have some merit as presently any pipeline proposal could be declined simply because the Minister of Environment doesn't want it approved or stalled by the Governor in Council.
 
 ## Disability Benefits Will Continue With Employment
 
