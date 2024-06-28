@@ -658,6 +658,79 @@ The book mentions how to watch out for representativeness, but I re-arrange some
 
 ## Chapter 15 - Linda Less Is More
 
+Fictitious person.
+
+> Linda is thirty-one years old, single, outspoken, and very bright. She majored in philosophy. As a student, she was deeply concerned with issues of discrimination and social justice, and also participated in antinuclear demonstrations.
+
+- Linda is a teacher in elementary school.
+- Linda works in a bookstore and takes yoga classes.
+- Linda is active in the feminist movement.
+- Linda is a psychiatric social worker.
+- Linda is a member of the League of Women Voters.
+- Linda is a bank teller.
+- Linda is an insurance salesperson.
+- Linda is a bank teller and is active in the feminist movement
+
+Sets up a contradiction to the intuition that Linda is part of the feminist and a bank teller compared to just being a bank teller. “feminist bank teller” ranked higher than “bank teller” in both. Representativeness wins against logic even when asking Statistics doctoral students.
+
+Problem was shortened to just "bank teller" versus "bank teller and active in the feminist movement" and people still answered with the second choice.
+
+> ‘but she can’t just be a bank teller; read the description.’
+
+### When Detail Disrupts Perception
+
+Adding detail to scenarios makes them more persuasive, but less likely to come true
+
+To appreciate the role of plausibility, consider the following questions: Which alternative is more probable?
+
+1. Mark has hair.
+2. Mark has blond hair.
+
+Which alternative is more probable?
+
+1. Jane is a teacher.
+2. Jane is a teacher and walks to work.
+
+### Less is More
+
+John List economist experimented with baseball cards. When auctioning sets of ten high-value cards, versus sets where three modest cards were added, the larger set is valued less in _single evaluation_: where the group is shown only one of the sets than in _joint valuation_: where the observers can see both sets and then place a value.
+
+### WImbledon Survey
+
+Rank from most to least probable:
+
+1. Borg will win the match.
+2. Borg will lose the first set.
+3. Borg will lose the first set but win the match.
+4. Borg will win the first set but lose the match.
+
+72% ranked #2 lower than #3.
+
+### Multi-Faced Die
+
+Regular six-sided die with four green faces and two red faces, which would be rolled 20 times. $25 if their sequence comes up.
+
+1. RGRRR
+2. GRGRRR
+3. GRRRRR
+
+Due to representiveness, we will gravitate to #2 even though it is simply just #1 but prefixed with G. It is actually less probable than #1.
+
+### Narrowing Down the Problem
+
+Asking about hard numbers rather than percentages, reduces the error seen (65% to 25%). This is usually due to "frequency representation" which appreciates that one group is wholly included in the other. **Forcing people think of individuals improves rationality**
+
+<details><summary>Health Survey Problem</summary>
+
+A health survey was conducted in a sample of adult males in British Columbia, of all ages and occupations. Please give your best estimate of the following values: What percentage of the men surveyed have had one or more heart attacks?
+What percentage of the men surveyed are both over 55 years old and have had one or more heart attacks? (65% fail)
+
+A health survey was conducted in a sample of 100 adult males in BC, of all ages and occupations. Please give your best estimate of the following values: How many of the 100 participants have had one or more heart attacks? How many of the 100 participants both are over 55 years old and have had one or more heart attacks? (25% fail)
+
+</details>
+
+At the end of the day, try not to communicate in a way where probability is taken as plausibility.
+
 ## Chapter 16 - Causes Trump Statistics
 
 ## Chapter 17 - Regression to the Mean
