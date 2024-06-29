@@ -1,5 +1,5 @@
 ---
-title: "ASP.NET Core Kebab Case Routes"
+title: "ASP.NET Core Hyphen Separated (Kebab) Routes"
 date: 2023-01-29T14:37:16-05:00
 draft: false
 tags:
@@ -7,7 +7,11 @@ tags:
   - tutorial
   - c-sharp
   - asp.net
-aliases: ["/posts/aspnet-kebab-case"]
+aliases:
+    - /posts/aspnet-kebab-case/
+    - /posts/aspnet-kebab-case-routes/
+    - /posts/aspnet-hyphen-separated-case/
+    - /posts/aspnet-dash-case/
 ---
 
 See [docs](https://learn.microsoft.com/en-us/aspnet/core/mvc/controllers/routing#use-a-parameter-transformer-to-customize-token-replacement) for the latest way to do it. Here is how you would do it for ASP.NET Core 7.0:
