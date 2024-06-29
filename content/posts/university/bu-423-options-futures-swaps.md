@@ -5,6 +5,7 @@ draft: false
 tags:
   - university
   - finance
+  - investing
 ---
 
 {{< toc >}}
