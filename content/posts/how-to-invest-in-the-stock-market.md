@@ -23,7 +23,7 @@ To start investing, you will need to open an account it through a platform calle
 
 ### Where to Open an Account (CA)
 
-I recommend opening up a National Bank account or an InteractiveBrokers (IBKR) account. I recommend National Bank because there is no commissions and no annual fees (U30, > C$20,000 in account value). I recommend IBKR, as they offer very fair commissions and very affordable and quick currency exchange compared to all other platforms that require employing a different technique to reduce the FX fee.
+I recommend opening up a National Bank account or an InteractiveBrokers (IBKR) account. I recommend National Bank because there is no commissions and no annual fees (U30, > C$20,000 in account value). I recommend IBKR, as they offer very fair commissions and very affordable and quick currency exchange compared to all other platforms that require employing a different technique to reduce the FX fee. The other benefit of IBKR, is that you can invest easily in international markets. For example, you can own the real BMW not the American Depository Receipts BMW.
 
 When you open an account, you will be asked what type of account(s) you wish to open/apply for.
 
