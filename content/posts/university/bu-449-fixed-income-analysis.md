@@ -749,7 +749,7 @@ Does anyone care to guess what factor the threshold increase by? The threshold h
 
 Should becker continue to invest in fixed income securities with the rapid growth of deposits? At the end of 2021, treasury bond rates were 0.39 per cent for one-year, 1.26 per cent for five-year, and 1.52 per cent for 10-year bonds. Should SVB chase higher yields provided by longer-term bonds and accept higher interest rate risk? What risk management practices should SVB follow? Deposit base is largely uninsured, what is the risk exposure?
 
-### Background
+### SVB Background
 
 Founded in 1983, SVB specialized in serving the tech industry. The business model is very simple. Provide loans to companies on the condition that the VC money of these startups is parked at their bank. The businesses were high growth, high risk with high adaptability.
 
@@ -771,7 +771,7 @@ The bank receiving short-term deposits and extending longer-term. Mortgages coul
 
 Net Interest Margin = Interest Revenue-Interest Expenses / Average Earning Assets
 
-Risks: maturity transformation, credit risk, and bank run risk. 2008 washington mutual failed due to mortgage defaults. Deteriorating housing market.
+Risks: maturity transformation, credit risk, interest rate risk, and bank run risk. 2008 washington mutual failed due to mortgage defaults. Deteriorating housing market.
 
 A charge-off is writing off a loan as a loss and recoveries is what was gained on debt that was delinquent.
 
@@ -819,7 +819,7 @@ SVB was aware of the risks as seen in their 2021 10K
 
 > To manage interest rate risk on the AFS portfolio, they have interest rate swap contracts to hedge against changes in the fair value of the securities. hedge accounting (see Intermediate Accounting II).
 
-An interest rate swap is a derivative where two parties agree to exchange payments for a set amount of time. In this case, at the end of the year for multiple years. One party, SVB in this case makes a fixed payment and the counterparty will pay  based on the future interest rate ofo SOFR (secured overnight financing rate).
+An interest rate swap is a derivative where two parties agree to exchange payments for a set amount of time. In this case, at the end of the year for multiple years. One party, SVB in this case makes a fixed payment and the counterparty will pay  based on the future interest rate of SOFR (secured overnight financing rate).
 
 No information was provided regarding the maturities of these swap contracts, although the maturities are for two-year, five-year, 10-year, and 30-year.
 
@@ -828,6 +828,109 @@ Was risk management using swaps appropriately? Increase or decrease the use of s
 Currently using $10.7B in notional interest rate swaps. Do some stress tests basically.
 
 Try to reuse the interest rate swap from the case when explaining the concept on the slide deck.
+
+### SVB Failure
+
+On Thursday March 9th, 2023, depositors withdrew almost 25% of deposits. On March 10, it was presumed that everything would be withdrawn. Regulators were forced to close the bank in the middle of the day. The second-biggest failure in nominal terms in US history, second to Washington Mutual Bank. Silicon Valley Bank was highly unusual in that about 94 percent of its deposits are large enough to be uninsured.
+
+FDIC limit of $250,000 per account.
+
+FDA changed in 2019 which relaxed rules for banks like SVB.
+
+SVB had systemtic risk. Panic of 2023: Signature Bank became third largest failure on Sunday March 12th.
+
+> The “systemic-risk exception” included in a 1991 law allows the FDIC to act immediately without taking time to seek out a least-cost method of resolving a bank failure: in this case, the FDIC announced that even uninsured depositors would be fully covered at both Silicon Valley Bank and Signature
+
+Additionally the Federal Reserve stepped in
+
+> In turn, the Federal Reserve invoked its power to take action during “unusual and exigent circumstances” that was included in a 1935 revision of the Federal Reserve Act and created a novel emergency-lending program with generous terms
+
+Makes sense since one of the problems during the great depression was the lack of a central bank and thus the money supply
+ dropped tremendously.
+
+First Republic Bank failed in May, which became at the new second-largest bank failure.
+
+Lastly, the panic spread to Europe and Credit Suisse, which in April 2023 became the single largest bank failure in the world, ever.
+
+significant “unrealized” losses on assets
+
+net interest margin: difference between interest earned and paid for via its assets and liabilities. Assets pay interest, and liabilities incur interest.
+
+2019: $70 billion of assets ($33B loans - credit lines to SVB customers rather than project loans or residential/commercial mortgages, $28B securities - exclusively government or agency-backed bonds) and $63B deposits. The securities holding of 40% was above national average of 25%, but not an outlier. Reasoning to hold loans: higher yield to store funds that will be lent out. 2. source of liquidity. Cash was $6B
+
+FDIC: most accounts covered, and only 42% of total deposits are over this limit. The specific choice of $250,000 as the legal threshold is an attempt to balance the benefits (financial stability) and costs (excess risk-taking by banks) of insurance.
+
+FDIC Insurance backed by standing fund financed by insurance premiums charged to banks, with a credit line from the US Treasury and the full faith and credit of the United States standing as additional lines of defense. Although uninsured deposits don't have explicit protection, in most bank failures FDIC has transferred the deposit base to another bank which allows the depositors to be made whole. The total losses in the last 30 years has been less than $300M. Implicit safety. Concentration in the largest banks. Out of bank with more than $50B in assets, SVB stood out for having the highest percentage of uninsured deposits.
+
+- Since customer deposits can be withdrawn on demand, they have a maturity of zero, whereas the assets need to earn their net interest margin and thus have higher maturities.
+- The difference between the Assets and Liabilities is considered Equities, but from a bank's perspective, this is Cushion Capital which is used to protect depositors and debtholders from variations int eh value of the assets. It was a mere $5B in 2019. This cushion is how bank checks and deposits have a no-questions-asked property.
+
+A depositor is not going to do a deep analysis on whether their bank is safe given a multi-component deposits. It's easier to withdraw their deposits.
+
+SVB was $3B already insolvent (negative $3B in equity) by December 2022 when assets were marked to market.
+
+SVB relied on stickiness to hedge interest-rate risk. stickiness allowed the dotted line to be so low.
+
+According to Dreschler, Savov, and Schnabl (2021), deposit spread is a remarkable hedge against interest-rate risk. From a valuation perspective, the net present value of the deposit spread can be called the "franchise value of deposits" which isn't included in the balance sheets. This value in theory goes up when interest rates rise. Therefore, although from a balance sheet perspective, many banks were close to insolvency, the stickiness of deposits makes banks. Therefore lack of stickiness results in insolvency.
+
+Fear of Collapse Begets Collapse.
+
+From public filings, everyone could tell with some math that the bank was insolvent.
+
+> The crucial shock arrived on March 8, 2023 \[10-K] report, when Silicon Valley Bank announced that it had sold $24 billion of book value securities earlier that day for a loss of $1.8 billion, along with a plan to raise $2.25 billion of new equity.
+
+[March 8th 2023 8K notable event](https://d18rn0p25nwr6d.cloudfront.net/CIK-0000719739/eede72d3-1cc6-45ee-89cf-3dc4f59469ad.pdf)
+
+[February 24th 2023 10K annual](https://d18rn0p25nwr6d.cloudfront.net/CIK-0000719739/f36fc4d7-9459-41d7-9e3d-2c468971b386.pdf)
+
+> On February 27, 2023, Becker sold 12,451 shares of company stock, worth a total of $3.6 million.
+
+So in, 12 days they sold their entire AFS portfolio meaning that management were only thinking of the decision after February 24th. Therefore, deposit withdrawals must've been occurring within days of the 10K being filed.
+
+All it takes to lose the no-questions-asked property is the salience of questions of why the bank had to sell assets for a loss. The next day, many depositors withdrew because
+to depositors its cheaper to transfer to another bank than to transfer after the bank has already collapsed even if their funds are implicitly secured. Depositors don't read 8Ks, they just see big loss and withdraw.
+
+> While we will realize a one-time, post-tax earnings loss of approximately $1.8 billion in connection with the sale, we expect the reinvestment of the proceeds to be immediately accretive to net interest income (NII) and net interest margin (NIM), resulting in a short payback period of approximately three years. As a result of these actions, we expect an approximately $450 million post-tax improvement in annualized NII.
+
+...
+
+> Even before today, we had ample liquidity and flexibility to manage our liquidity position, with one of the lowest loan-to-deposit ratios of any bank of our size, income from progressive securities paydowns, levers to manage our off-balance sheet client funds, and substantial borrowing capacity. The improved cash liquidity, profitability and financial flexibility resulting from the actions we announced today will bolster our financial position and our ability to support clients through sustained market pressures
+
+- NII: net interest income (magnitude)
+- NIM: net income margin (spread)
+
+> The Federal Deposit Insurance Corporation took the bank into receivership in the morning—the first intraday receivership in its history
+
+Violation of no-questions-asked property at many other banks with a high percentage of uninsured deposits combined with significant unrealized losses on their assets.
+
+Banks hit on Friday, March 10: Signature Bank ($110 billion in asset, $10B outflows), First Republic Bank, with ($213 billion, $25B outflows).
+
+Signature Bank had no pre-positioned collateral at the Federal Reserve.
+
+FDIC has a least cost duty unless they invoke systemic risk exception enacted in 1991. Positive vote from the boards of both the FDIC and Federal Reserve.
+SVB was not marked as systemic previously. No losses will be borne by the taxpayer.
+
+- idiosyncratic: having strange or unusual habits, ways of behaving, or features
+
+Bank Term Funding Program introduced: instead of borrowing market value minus small cushion, allows borrowing up to par value.
+
+Capital Regulations:
+
+> At 7 percent, the ratio at Silicon Valley Bank at the end of 2019 was below the 9.66 percent average for insured banks in the United States, but still above the acceptable minimum of 4 percent
+
+Liquidity Regulations:
+
+> reserve requirements; minimum cash-to-deposits ratio; can't survive full run.
+
+Federal Reserve Conclusion
+
+> “we need to evaluate how we supervise and regulate a bank’s management of interest rate risk. While interest rate risk is a core risk of banking that is not new to banks or supervisors, SVB did not appropriately manage its interest rate risk, and supervisors did not force the bank to fix these issues quickly enough”
+
+The US doesn't have rules to do mark-to-market interest rate stress tests, but the EU does, but the lower interest-rate risk there is shifted to credit-risk due to issuance of higher variable interest rate loans.
+
+> An information event that calls into question a bank’s solvency can quickly become self-reinforcing
+
+Explanation of deposit outflows:
 
 ## Ratings
 
