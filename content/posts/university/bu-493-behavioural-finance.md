@@ -414,3 +414,17 @@ Holding onto options that are in the money is considered over-confidence.
 - Changing the business name
 - Changing business structure
 - Changing accounting policies
+
+## Week 10
+
+### Pre-Frontal Cortex
+
+- Focus area
+
+### Dictator Game
+
+- Mover's decision can be rejected
+
+### Asch's Lines
+
+When surrounded by people who are saying the wrong answer, people ended up conforming to the majority.

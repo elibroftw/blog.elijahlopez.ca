@@ -1018,6 +1018,30 @@ A datagram with 4000 bytes with an MTU of 1500 bytes. ID of all three fragmented
   - DHCP acknowledges
   - IP has lifetime
 
+## IPv6 Datagram
+
+TODO
+
+### Generalized Forwarding
+
+- subheader matching,
+- action: forwarding/drop/modify
+- flow table abstraction
+  - priority
+  - counters
+
+### OpenFlow
+
+- Many header field to match
+- VLAN: Virtual LAN
+
+### Link-State Routing Protocol
+
+- Dijkstra's algorithm
+- Bellman-Ford
+- Distance vector
+  - wait, recompute, notify
+
 ## Chapter 6 Data Link Layer
 
 Multiple access protocols and LAN's, address resolution protocol, Ethernet.

@@ -3,6 +3,7 @@ title: "Rent Control Reduces New Housing Builds"
 date: 2024-07-03T14:32:11-04:00
 tags:
   - opinion
+  - economics
   - canada
 ---
 

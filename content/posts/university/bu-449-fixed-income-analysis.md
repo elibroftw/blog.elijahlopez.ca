@@ -932,6 +932,63 @@ The US doesn't have rules to do mark-to-market interest rate stress tests, but t
 
 Explanation of deposit outflows:
 
+## Bank Crises
+
+### RIsk Capital
+
+- Drops in value
+- Value at risk requirement
+
+### Risk Capital Spiral
+
+- loan and asset values dorp
+- collateral value drops
+- equity capital drops
+- risk aversion rises
+- assets need to be sold to recapitalized and deleverage
+- liquidity drop & volatility goes up
+- repeat
+
+### Margin Haircut Spiral
+
+- Haircuts go up
+- Borrowing goes down
+- Counterparty risk: AGI default can screw up CDS spreads
+
+### Shadow Banks
+
+- short-term liabilities, short-term borrowing, longer-term assets like MBS as collateral
+- fire-sales recapitalize
+
+### Dealer Repo Activity
+
+- Fell in October 2008
+
+### Credit Liquidity Spread
+
+- Liquidity risk different from credit risk
+  - TED spread
+- Credit risk is the Baa spread (difference between Moody's Baa and 10 year rate)
+
+### Flight to Liquidity
+
+- Long to short term end
+- 3-month OIS dropped
+
+### Commercial Paper
+
+- short-term funding
+
+### Swap Spread
+
+- difference between 10 year swap rate and 10 year Treasury rate
+- default proxy for financial sector
+- turned negative
+
+### GNMA MBS
+
+- yield spread went up reflecting higher risk
+
 ## Ratings
 
 Explain?
