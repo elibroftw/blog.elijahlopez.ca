@@ -4,6 +4,7 @@ date: 2024-02-29T14:36:16-05:00
 draft: false
 tags:
   - finance
+  - investing
 ---
 
 When people talk about portfolio weighting, there's usually only three that people are taught: market capitalization, price, equal.
@@ -34,7 +35,7 @@ Another way to maximize returns is to focus on Mature-Growth and Value stocks an
 
 - Weights are (1 - market-cap weight)
 - Strategy: smaller **mid-cap** stocks have more growth potential (and thus higher returns when in a basket) than larger companies
-- Do not rebalance until new stocks are added, and even then rebalance from largest-cap and overweight to the new stock. Never profit take since the strategy relies on betting on the small ones which will keep winning until they are big enough to take profit
+- Do not re-balance until new stocks are added, and even then re-balance from largest-cap and overweight to the new stock. Never profit take since the strategy relies on betting on the small ones which will keep winning until they are big enough to take profit
 
 ### Beta Cherry Picking
 
