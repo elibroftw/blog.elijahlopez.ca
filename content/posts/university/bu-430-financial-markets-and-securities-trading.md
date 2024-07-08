@@ -182,7 +182,7 @@ Instead of removing PFOF, want to increase the competition of wholesalers. SEC w
 
 Caveats:
 
-Small caps and micro-caps will fail at auctions because its all retail flow. If did not exist, they would not want to deal with micro-caps either, leading to higher costs for retail. Institutions will not be able to fill that gap. It undermines US OBS act of 2012
+Small caps and micro-caps will fail at auctions because its all retail flow. If did not exist, they would not want to deal with micro-caps either, leading to higher costs for retail. Institutions will not be able to fill that gap. It undermines US JOBS act of 2012 passed by congress. From Congress's and economic perspective, it's fair for large stocks to subsidize small stocks. Congress represents people, so it represents the people's will as well.
 
 Retail flow is balance and so everyone gets their flow done. Institutions will only trade when the stock is trading in their interests, so it's always only one side that gets properly dealt with.
 
@@ -224,7 +224,11 @@ Now he wants to sell 250,000 at 19.02 which would signal to market that the sell
 
 It's not possible to post quotes that could have been fulfilled (lock or cross). When is this a problem? When two exchanges have different best offers. It's not supposed to happen but exchanges work hard to reconcile that by routing market orders to each other? The exchange that is offending would slide down the offers.
 
-Growing fragmentation tries to say that the same order could get different deals but there's arbitraging as well as a regulation: exchanges are mandated to route orders to the exchange with the best deal. Trade through rule. If the exchange knows that there is a better quote somewhere, then the trader has to get the best possible price.
+Growing fragmentation tries to say that the same order could get different deals but there's arbitraging as well as a regulation: exchanges are mandated to route orders to the exchange with the best deal. **Trade through rule**. If the exchange knows that there is a better quote somewhere, then the trader has to get the best possible price.
+
+Suppose there's a NASDAQ quote with 100 shares at 10.00, NYSE with 10,000 shares at 10.01, and a BATS quote with 100,000 shares at 10.02. If a firm wants the BATS quantity, they just buy from NASDAQ and then go directly to BATS.
+
+ISO orders: dear BATS, do not re-route order to the best quote since the order sender guarantees its been taken. In Canada, the ISO order informs the exchange that all the best quotes on other exchanges have been taken.
 
 _electronic front running_: back-running
 
@@ -397,7 +401,9 @@ US recently moved to t + 1. Why not blockchain with instantaneous settlement.
 - MyX Pearl, Long-term stock exchange
 - Liquidity begets liquidity
 - Why?
-  - Circumvention of NASDAQ diversity explanation
+  - Circumvention of NASDAQ diversity explanation (EDI/DEI)
+  - NASDAQ lost hundreds of southern (banks) listings to NYSE
+    - Lack of minorities in those areas too
 - Chicago to Texas is 3.5hrs
   - Expensive network
 - NYSE
@@ -576,7 +582,7 @@ Try to buy the entire ask of 210,000. Fees are 0.003 CENTS / share to takers and
 
 10,000 (0.01 - 0.00003 - 0.00003) - 200,000 (0.00003 - 0.000028) = $99 assuming that you only reprice the 200,000 shares that were acquired instead of divesting them.
 
-Clarifications: buying and selling to yourself is legal, but _churning_, buying to yourself for the purposes of increasing volume and creating hype is illegal to the regulatory body.
+Clarifications: buying and selling to yourself is legal, but _churning_, buying to yourself for the purposes of increasing volume and creating hype is illegal to the regulatory body. It's legal and 3% of the data shows self-trading.
 
 ## Short Report 2 Answer
 
@@ -584,7 +590,111 @@ A lot of Robin Hood investors were trading on margin and many of them used previ
 
 ## Peter Hayes Institutional Trading
 
-Wednesday, July 3rd
+1995 tsx
+Index products group
+
+Index used to manage the index themselves before 1998.
+
+Credit Leone's
+
+Pq 1995 referendum.
+
+1999 TD
+
+New crest acquisition. Most of his co-workers got fired.
+
+Index and portfolio trading. Seagram vivendi merger.
+
+2023: equity #1 in Canada. New issues. Focused on Canada-ontario. 3% of global vs us 63%.
+
+By 2023 pension funds were underweight on Canadian equities.
+
+RBC and
+
+Merger with Callen. Revenue synergy not talent acquisition like before. No overlaping this time .
+
+Reverse takeover both times.
+
+Jennie Aldegereis - us
+
+Jame Boch - London
+
+Other people just care about feds and interest rate.
+
+Equity people always have a story in the terminal.
+
+1980 event:  bree-ex
+Tse 300:
+
+Gold company called bre-ex which claimed it had a massive gold find in the Philippines. Analysts were rejecting billions of dollars of revenue.
+
+Bree-ex went from 10cents to 10th spot. When a certain size and length, auto benchmark inclusion just when scrutiny was rising. Decision was made by the index committee to bring the stock in.
+
+Next day bre-x was halted. Rumour: not going in. Tsx will not be added to the index. Tsx president read the headline and called ahead that the stock isn't going in.
+
+Index committee hold emergency meeting with president. Rolland says it's a fraud and not going in the index. Index committee still put the stock in the index. 2 weeks later stock is added in the index, index funds have added, company imploded. Tsx bought in. Issuer and broker conflict of interest. Therefore s&p was brought in to manage the index.
+
+Chief geologist fell out of helicopter.
+
+Samples were being salted with gold. Based on sample the vein might be bigger.
+Their analyst just went over the vein instead of going on the ground.
+
+S&p did not like how tsx did it. S&p had public rules but the decisions are privately made.
+
+Many analysts were putting buys and then telling clients it's a piece of shit.
+
+Bloomberg terminal pre-release. Automatic class action lawsuit. Company failed to report in a timely manner.
+
+AML: 29 years and everyone was sad after hearing that. Accused of not having sufficient AML practices. TD was allowing mexican drug money through the US. There were people on the inside who were arrested for allowing the funds to come in.
+
+Started market structure podcast called _Bidout_. Had the professor as a guest speaker. Weather patterns impacting market making activities. 63 episodes.
+
+Dark pools. Early 2000. Reg anx. Forced market places to be linked. In the us you always get best price. National best bid and offer. Nyse and Nasdaq lost monopoly.
+
+Tsx lost its monopoly on 2007. Pure trading. Order protection rule in Canada is stronger because all best bids and offers must be satisfied whereas in the us only the top best before trading another market at another price.
+
+Various broker dealers launched dark pools. Consortium pools launched. In Canada only one launched known as matched now.
+
+Difference in Canada is that material price improvement against the bid or ask must occur in a Dark pool. Order exposure for retail. Launch now is owned by CBOE and was posit. Used for mid point trading. Fair access rule.
+
+US dark rule: no price improvement needed.
+
+Broker sponsored dark pools. In the early 2010s, almost every one suffered regulatory fine for not informing clients enough. Either trading prop. In us discrimination is allowed for trading preferences. Credit Suisse cross finder dark pool fined the most.
+
+If a company just put their order on the exchange theres so much leakage that the spread moves. Best way to minimize that leakage is to hide it in dark pool. Need to spread on all avenues. Min quantity on all orders prevents against pinging. Conditional is that I'll accept this order if everything else is not filled. Buy side evolution against back running. HFTs are smartest people in the room who use all the rules to get the biggest benefit. The rules can be bent to hft benefits which is annoying and has happened on exchanges.
+
+Rules in canada: proprietary cannot trade against orders with less than 5000 shares. Firms like TD made routing protocols to ensure retail got best execution. The routing would know where the other orders are going. This would avoid the ATS.
+
+Flash boys shined a light on the plumbing and gets annoyed at people having errors in the book.
+
+Firms were using the tape compared to the feed from the exchange. The hero was Brad and Ronin. Typical Michael Lewis 60mins. First chapter was leaked.
+
+Everyone who read that book didn't know it was happening. Everyone then wanted to understand market structure. Needed someone in Canada. Got to meet head traders of other firms. TD plays a big part in that book. TD Ameritrade. Sold to Schwab and td owns 10% of Schwab. Chris Snaggy made arrangements with wholesalers for the order flow.
+
+Brokers receive lots of market orders. Limit orders rest on an exchange. Market orders go to a wholesaler who price improves on the best bid or offer. Very small price improvement. Hard to back up the fact that the price improvement is significant. Ameritrade advertising is percent orders that get price improved. Broker gets that rebate check which is a payment for order flow. In any other industry it would be called a kick back. Uninformed retail means that both sides get action. Institutions segmented out. Non centralized trading which helps with price discovery and capital formation. Instead he thinks best execution should be to always search for the best price rather than routing to wholesaler. Each order should receive best execution and people took responsibility to do that. Retail missed dark pool orders. If RobinHood got cut out by wholesalers they'd be screwed.
+
+Retail is having it too good. They don't have to pay the infrastructure to interact. 16 exchanges and 40 seek pools is stupid. Should just be one. Too much redundancy. Regulations don't want NASDAQ collusion from happening again.
+
+Nyse market glitch.
+
+Chevron ruling. Handcuffs agencies from creating rules that aren't codified in Congress. Chevron says  agency is the expert when the law isn't clear on the issue.
+
+Asian market structure. Overnight trading happens in south Korea. 22% of leverage ETFs is in Korea.
+Us ATS: BlueOcean ats. 8am-4pm. 24 hour trading is so bad but it's coming from crypto trading and everything. TD Ameritrade started this on 24 symbols as an ad in SuperBowl. In 2023, RobinHood and IBKR decided to allow all symbols. For these 24 symbols, there's a popping futures market. Therefore, the price inference was good enough for price discovery rather than the other symbols which would be the price discovery during the overnight hours. Transactions that occur from 8pm - 11:59pm aren't recorded.
+
+Retail order. Parent and child order until GameStop, roaring kitty, and Reddit. If so many people bought GameStop the wholesaler got rolled.
+
+Nvidia contributed to 15% of world returns.
+
+End of day auction mmmost liquid.
+
+$100B+ IPO has not happened in tsx since before 2023. They go to usa because it's the holy grail.
+
+Biggest joke was ARM listing as ADR and not in the UK.
+
+Constellation executive sold before capital gains tax hike.
+
+Against zero commission trading because retail just trades without spending some time thinking about of a cost-benefit. Gamestop results in destabilization, short-sellers, and results in losses.
 
 ## Deutche Borse and London Stock Exchange
 
@@ -800,3 +910,20 @@ May 2013; Authors: Alon Brava, Wei Jiang, and Hyunseob Kim
 ## Quiz 3H
 
 In a recent article, Kurt Dew states that legacy markets like the NYSE and Nasdaq have failed institutional investors. He cites the proliferation of dark pools as evidence of this failure. In no more than five sentences, please provide two arguments, one consistent with this view and one contrary to it. Support your arguments with evidence where possible.
+
+## Citron and RobinHood
+
+## Insider Trading Cases
+
+### Texas Gulf Sulfur
+
+- Looking into rules of insider trading
+
+### Rajat Gupta
+
+- Tipping
+
+### Martha Stewart
+
+- Acting on a tip on a broker
+- Charged for perjury
