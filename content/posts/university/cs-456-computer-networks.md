@@ -1041,6 +1041,34 @@ TODO
 - Bellman-Ford
 - Distance vector
   - wait, recompute, notify
+    - convergence: two furthest nodes (t = largest number of hops)
+    - Link cost changes
+      - recalculate local DV, notify neighbours
+      - bad news travels slow
+      - if there is an update that makes a link really bad, the nodes will keep relaying information to another updating by 1 each time till it's done
+      - to avoid this, we can use "poisoned reverse" and "split horizon"
+      - _poisoned reverse_: accept higher value (error message)
+      - _split horizon_: if the predecessor sends an update, don't send back an update. Let timeout expiry fix the cost
+
+### Routing Scaling
+
+- administration autonomous system routing
+- inter-AS routing
+- RIP: Routing INformation Protocol (RFC 1723)
+  - Classic DV
+- EIGRP: Enhanced Interior Gateway Routing Protocol
+  - Cisco-proprietary for decades (2013 open, RFC 7868)
+- OSPF: Open Shortest Path First (RFC 2328)
+
+### eBGP, iBGP
+
+- External Border Gateway Protocol
+- Internal Border Gateway Protocol
+- BGP session
+  - semi-permanent TCP connection
+- prefix: destination being advertised
+- AS-PATH: list of ASes prefix has passed
+- NEXT-HOP: internal-AS router to next-hop AS
 
 ## Chapter 6 Data Link Layer
 
