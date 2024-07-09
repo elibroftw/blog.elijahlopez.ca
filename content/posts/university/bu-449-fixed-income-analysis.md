@@ -290,7 +290,7 @@ $20B where 16B is competitive tender and 4B is non-competitive tender.
 
 Higher the bid-cover ratio, higher the interest in the issue. Measures the excess demand.
 
-Sum the $ demanded (competitive + non-competitive) at the stop-out yield and divide by the total $ issued.
+Sum the $ demanded (competitive + non-competitive) at any yield and divide by the total $ issued.
 
 The BoC only has 2 people working at running these auctions since most of the process has been automated.
 
