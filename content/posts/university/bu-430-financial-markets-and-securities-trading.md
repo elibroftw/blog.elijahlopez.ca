@@ -744,7 +744,7 @@ Clearstream International, a specialist in clearing, settlement and custody of s
 
 In 2000, Deutsche Börse wanted to rename itself as Euroboard and go public. Paris could not join in but French, Dutch, Belgian, Lisbon stock exchanges announced merging into Euronext.
 
-Gavin Casey of LSE approached Deutsche Börse offering full merger. Eruronext proposed 50/50 merger, but LSE wanted Frankfurt.
+Gavin Casey of LSE approached Deutsche Börse offering full merger. Euronext proposed 50/50 merger, but LSE wanted Frankfurt.
 
 > Blue chip stocks would be traded in London subject to London regulations, while the high-growth market would be in Frankfurt under German rules
 
@@ -789,6 +789,39 @@ Synergy of the merger. Frank Hartmann:
 
 > The question of costs is particularly sensitive for British investors who have been pressing the London exchange to lower its transaction fees. "When you are looking at infrastructures coming together, it's not just a question of price," said Ms. Knight at the Association of Private Client Investment Managers and Stockbrokers in London. "We are going to be looking at the cost benefits and how it's going to develop strategically
 
+### Merger Announcement Return
+
+- target company being acquired goes up
+  - usually enough interest and bargaining power
+- acquirer loses value, about 3% on average
+  - acquirer tends to overpay
+  - winner's curse: when the price is not set, easy to overpay
+
+- New academic study to understand the long term affects of mergers.
+- Market doesn't fully price the long-term effects
+- Until 2006
+- The problem with measuring over 3 years, is the other strategies of the business, which might not be merger related
+- The longer you wait, the fuzzier the causation effects
+- 3 years is long, so hard to believe it's about the merger effect
+  - When you just look at mergers, companies that merged lost value over the next three years
+  - When looking at failed mergers (regulatory, exogenous): companies that want to buy but don't succeed. Those companies ended up performing even worse
+  - Therefore, mergers likely to create value (slows down loss of value)
+    - Also tells us companies that are looking to merge are already on the decline
+
+### Long-term Stock Exchange
+
+Caters to long-term investors, not taken off.
+
+### Firm Leverage
+
+- typical firm in North America are underlevered
+  - In Europe, mostly debt backed
+  - Study done to increase debt by 3.5%
+- this is due to volatile future cash flows
+- higher debt, means higher interest, which could hurt if there is a decline in revenue
+
+Large cash balance, tends to be misused. If firms have large cash balances, it's not because of great projects to invest in, but rather the firm has nothing to invest in and is value destructive. Firms with large cash balances are un-liked.
+
 ### Hedge Funds and Deutsche Börse
 
 In the first half of 2004, Deutsche Börse shares underperformed the DAX index, and hedge funds like: Children's Investment Fund (TCI) in London, Atticus Capital in New York, and RIT Partners (Lord Rothschild) began buying in late autumn. RIT Partners sent Lord Rothschild to oppose the LSE bid and his son was part of Atticus.
@@ -797,7 +830,7 @@ TCI managing partner Christopher Hohn warned against the bid as the bid was for 
 
 After the deal was proposed, TCI and Atticus bought heavily to own 12% of the company. "Stock was undervalued, poor corporate governance." Ironic since Deutsche Börse was ranked second among all DAX on the 2005 survey of governance practices.
 
-TCI wanted a shareholder vote, but Seufert insisted that German corporate law did not dictate that the takeovers needed a shareholder meeting. Only a change in corporation’s articles of association would require a shareholder meeting, or vastly different business acquisition. Also the maximum price would have to be shared. The fund wanted Deutsche Börse to buyback shares and return money to shareholders. Deutsche Börse was the only AA- company in Germany even after the share buy-back was announced.
+TCI wanted a shareholder vote, but Seifert insisted that German corporate law did not dictate that the takeovers needed a shareholder meeting. Only a change in corporation’s articles of association would require a shareholder meeting, or vastly different business acquisition. Also the maximum price would have to be shared. The fund wanted Deutsche Börse to buyback shares and return money to shareholders. Deutsche Börse was the only AA- company in Germany even after the share buy-back was announced.
 
 By February 2005, Deutsche Börse price went up by 27% and executives were hoping the hedge funds would have sold but TCI began garnering support from Fidelity (10%) and Merrill Lynch (3-4%) and increased their own stake to 7.9%.
 
@@ -865,7 +898,7 @@ Apparently Seifer's plan would have made him look like a genius due to creating 
 
 Regulators threatened to revoke the rights of the activist investors. The cash distributions reduced Deutsche Börse's ability to bid for Euronext.
 
-In hindsight, the London Stock Exchange Group is worth 51.4B pounds or 60.86B euros  and Deutsche Börse is worth 36.83B euros. The merger would've been very successful given the power of hindsight. Even with a yield of 2%, that's an additional 14.72B or 51.55B euros. LSEG used to be smaller, but now is bigger or basically equal. By withdrawing the bid offer, Nasdaq was able to take a bigger stake and the stock price decimated the offer of the previous year.
+In hindsight, the London Stock Exchange Group is worth 51.4B pounds or 60.86B euros and Deutsche Börse is worth 36.83B euros. The merger would've been very successful given the power of hindsight. Even with a yield of 2%, that's an additional 14.72B or 51.55B euros. LSEG used to be smaller, but now is bigger or basically equal. By withdrawing the bid offer, Nasdaq was able to take a bigger stake and the stock price decimated the offer of the previous year.
 
 ### Hedge Fund Activism, Corporate Governance, and Firm Performance
 
@@ -873,7 +906,7 @@ August 2008; Authors: Alon Brava, Wei Jiang, Frank Partnoy, and Randall Thomas
 
 In two-thirds of cases, activist hedge funds propositions regarding strategy, operations, and financial are partially or fully successful. Hedge funds are non-confrontational and the return on activism announcements is approximately 7% in a year without reversals. Target firms experience increases in payout, operating performance, and higher CEO turnover after activism (+10%) and lower CEO pay (~$1M).
 
-Unlike mutual funds and pensions, Hedge Fund activism coems with influence over the corporate board and management. This is because of HF managers have less regulation over capital and high incentives which also means high concentration in a smaller basket of companies. Hedge funds target value firms with low market value relative to book value, and are profitable with sound operating cash flows and return on assets. Target companies have lower payouts.
+Unlike mutual funds and pensions, Hedge Fund activism comes with influence over the corporate board and management. This is because of HF managers have less regulation over capital and high incentives which also means high concentration in a smaller basket of companies. Hedge funds target value firms with low market value relative to book value, and are profitable with sound operating cash flows and return on assets. Target companies have lower payouts.
 
 Hostile takeovers (hostility includes a threatened or actual proxy contest, takeover, lawsuit, or public campaign that is openly confrontational) is less than 30% of cases. They are not short-term holders and they do not seek control. Average 9.1% and up to 31.5% stake. Reliance on management cooperation or shareholder cooperation, which is why high institutional holding and analyst coverage stocks are targets. Hedge funds often coordinate (22% of cases, by filing Schedule 13Ds) or act in tandem.
 
@@ -890,7 +923,7 @@ May 2013; Authors: Alon Brava, Wei Jiang, and Hyunseob Kim
   - plants that were sold had lower productivity but experience greater improvement in the hands of the new owner and its best if the hedge fund is invovled
   - more competition indicates better matching chances
 - Workers do not benefit
-  - reduction in wage hours stagnation in wages, although labour productivity goes up
+  - reduction in wage hours, stagnation in wages, although labour productivity goes up
   - increase in labor productivity is only significant in highly unionized industries
 - return on assets performance measurement from 2,000 activism events (1994 to 2007)
   - ROA versus control group in the same three-digit SIC industry and year adjusted for firm size and age
@@ -910,6 +943,20 @@ May 2013; Authors: Alon Brava, Wei Jiang, and Hyunseob Kim
 ## Quiz 3H
 
 In a recent article, Kurt Dew states that legacy markets like the NYSE and Nasdaq have failed institutional investors. He cites the proliferation of dark pools as evidence of this failure. In no more than five sentences, please provide two arguments, one consistent with this view and one contrary to it. Support your arguments with evidence where possible.
+
+## Maker Taker Fees
+
+- why do makers get paid and takers pay?
+- Before, both makers and takers pay a fee
+  - Now, only takers pay a fee, makers are
+  - 9 miili fee (one-thousandth of a percent)
+- no good reason
+  - reason is because someone at some point introduced them and everyone started doing it
+  - difficult to go back
+- After 2000s, the government wanted new markets
+  - Instanet popped up (ECM)
+  - No one was coming, so a rebate was provided on top of the spread and the fees were coming from taker fees
+- Government put a cap on rebates at 30 mill
 
 ## Citron and RobinHood
 

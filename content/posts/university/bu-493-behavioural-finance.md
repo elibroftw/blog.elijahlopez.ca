@@ -428,3 +428,23 @@ Holding onto options that are in the money is considered over-confidence.
 ### Asch's Lines
 
 When surrounded by people who are saying the wrong answer, people ended up conforming to the majority.
+
+## Habits
+
+### Aging Presentation
+
+- Casino at Niagara Falls
+- people aged 60s-70s
+- under known probabilities, older adults and younger adults behave similarly
+- under unknown probabilities (ambiguity), older adults are willing to take more risk
+
+Explanation
+
+- Positivity Effect
+  - what has happened, not what's going to happen
+- less effort to process ambiguous decisions
+- experience
+
+### Habit Loop
+
+- Cue, Craving, Action, Reward
