@@ -224,7 +224,7 @@ Reasons for different paths: routing table changes, load balancing
 ### Throughput
 
 - bits/time unit
-  - instantaneous: any point in a timeslot (what you would show in a software that downloads stuff for the user)
+  - instantaneous: any point in a time slot (what you would show in a software that downloads stuff for the user)
   - average: rate over longer period of time (useful for performance)
 - Bottleneck Link
   - Which link is constraining the throughput
@@ -1069,6 +1069,23 @@ TODO
 - prefix: destination being advertised
 - AS-PATH: list of ASes prefix has passed
 - NEXT-HOP: internal-AS router to next-hop AS
+
+### Software Defined Networking
+
+- Why a logically centralized control plane?
+- table-forwarding to routers
+- OpenFlow: table-based switch control
+- SDN Controller: state management, communications
+- _packet-in_: transfer packet to controller
+- _flow-removed_: flow table entry deleted at switch
+- _port status_: inform controller of a change on a port
+
+### ICMP: Internet Control Message Protocol
+
+- network level information
+- hosts and routers
+- unreachable host, network, port, protocol
+- echo request/reply (ping)
 
 ## Chapter 6 Data Link Layer
 

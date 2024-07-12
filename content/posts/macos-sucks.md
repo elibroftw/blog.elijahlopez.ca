@@ -34,4 +34,4 @@ https://apple.stackexchange.com/questions/254380/why-am-i-getting-an-invalid-act
 The error is "invalid developer path."
 
 Every time you update, you have to agree to Apple's XCodes terms of service in order to use git, which isn't made by Apple but simply
-preinstalled by them. Don't want to instsall XCode? Too bad, the Command line tools themselves is 130MB.
+preinstalled by them. Don't want to install XCode? Too bad, the Command line tools themselves is 130MB.
