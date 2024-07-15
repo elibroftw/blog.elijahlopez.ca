@@ -29,3 +29,11 @@ When the company reinvest earnings into capital expenditure, in my opinion, the 
 Until this is codified, I suggest bookkeeping Retained Earnings into two subgroups, _Operational Earnings_, and _Liquid Investment_
 
 The other thing is that when thinking about the balance sheet, we realize that it can't be used to value the firm, because it does not account for the present value of its future cash flows!
+
+### Other Techniques to Explore
+
+- Fair value
+- Present value of cashflows
+- Market values
+
+Good examples: pure play profit (REITs). Pure play holding company (SCM, banks?), mixed use (BRK)
