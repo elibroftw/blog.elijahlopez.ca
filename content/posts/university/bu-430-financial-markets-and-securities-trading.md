@@ -584,10 +584,6 @@ Try to buy the entire ask of 210,000. Fees are 0.003 CENTS / share to takers and
 
 Clarifications: buying and selling to yourself is legal, but _churning_, buying to yourself for the purposes of increasing volume and creating hype is illegal to the regulatory body. It's legal and 3% of the data shows self-trading.
 
-## Short Report 2 Answer
-
-A lot of Robin Hood investors were trading on margin and many of them used previous purchases of GameStop as collateral. Billions of dollars was potentially in-loans. DTCC was worried about volatility of GameStop and if it comes down, the margin loans might default, which might bankrupt RobinHood, which means that DTCC would be on the hook for the trades as it is expecting RobinHood to front the cash for the shares.
-
 ## Peter Hayes Institutional Trading
 
 1995 tsx
@@ -653,7 +649,7 @@ Dark pools. Early 2000. Reg anx. Forced market places to be linked. In the us yo
 
 Tsx lost its monopoly on 2007. Pure trading. Order protection rule in Canada is stronger because all best bids and offers must be satisfied whereas in the us only the top best before trading another market at another price.
 
-Various broker dealers launched dark pools. Consortium pools launched. In Canada only one launched known as matched now.
+Various broker dealers launched dark pools. Consortium pools launched. In Canada only one launched known as Matched Now.
 
 Difference in Canada is that material price improvement against the bid or ask must occur in a Dark pool. Order exposure for retail. Launch now is owned by CBOE and was posit. Used for mid point trading. Fair access rule.
 
@@ -960,6 +956,43 @@ In a recent article, Kurt Dew states that legacy markets like the NYSE and Nasda
 
 ## Citron and RobinHood
 
+- In early 2021 DTCC, a clear housing, called RobinHood to increase collatoral ($3.5B)
+  - RobinHood couldn't find the money, so had to halt purchases
+  - Retailers think its a conspiracy
+  - DTCC asked collatoral because a lot of traders were trading on margin, which means that the Broker should be backing the purchase, not the trader who could go bankrupt if the stock goes down. DTCC doesn't want RobinHood to go bankrupt to relieve itself of the share obligation. With t + 2 settlement, 10% collatoral, however with voltailte stocks, the voltaility was increased to 100%
+  - DTCC is liable if RobinHood goes bankrupt
+  - A lot of Robin Hood investors were trading on margin and many of them used previous purchases of GameStop as collateral. Billions of dollars was potentially in-loans. DTCC was worried about volatility of GameStop and if it comes down, the margin loans might default, which might bankrupt RobinHood, which means that DTCC would be on the hook for the trades as it is expecting RobinHood to front the cash for the shares.
+- shorts are good for the market, however it was found that short sellers ride the bubble before shorting the stock
+
+### Commonwealth of Massachusetts  Sues RobinHood
+
+- Gamyfying the investment process
+  - Prized stock when they open an account
+  - Confetti when they buy or sell the stock
+  - Increased trading volume
+  - Users with lower financial literacy preferred these brokers
+  - Suboptimal buy/sell decisions
+- For not options were unprofitable
+- commonwealth of massachusetts lost the lawsuit
+  - Court dismissed the petittion because the way the app is oraganized is freedom of speech
+
+### SEC and RobinHood
+
+- failure to disclose PFOF (2020)
+
+### FINRA and RobinHood
+
+### Retail Investors Trading and Securities Brokerages INdustry
+
+- Returns of the stocks are not good over the time horizon retailers trade them
+- Herd menality trading
+  - RobinHood encourages herding by showing the most traded stocks
+- Retailer investors in aggregate perform the same as the market
+
+### Wallstreetbets
+
+- before GME, wallstreetbets would have somewhat good due diligence reports, but after GME, the speculative behaviour increased
+
 ## Insider Trading Cases
 
 ### Texas Gulf Sulfur
@@ -974,3 +1007,7 @@ In a recent article, Kurt Dew states that legacy markets like the NYSE and Nasda
 
 - Acting on a tip on a broker
 - Charged for perjury
+
+## How do Canadian Brokerages Make Money?
+
+- Routing retail flow to certain exchanges

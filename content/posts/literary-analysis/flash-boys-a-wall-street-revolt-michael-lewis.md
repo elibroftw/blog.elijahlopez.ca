@@ -65,8 +65,15 @@ The notes are not organized at the moment, but you should be able to go through 
 - Golden Geese programmers were working on dark pool
 - HFT would pay to be in the dark pool
 - Flash orders: exchange would flash orders to the HFTs before the order hits the books
+  - New York senator Charles Schumer sent a letter to the SEC about this
+  - HFTs know that informed traders would never show that information, so of course those traders are uninformed
+  - This was self-selection, the exchange doesn't do it for you
+  - Why would anyone do this? You would flash a marketable order that you think would be serviced by the market providers
 - former Deutsche Bank software programmer named Billy Zhao, a former manager in Bank of America’s electronic trading division named John Schwall, and a twenty-two-year-old recent Stanford computer science graduate named Dan Aisen.
 - Golden Geese: Chinese programmer named Allen Zhang
+- RBC wanted its own dark pool,
+  - RBC is too small
+  - cost ($4M) too much to operate the dark pool
 - When orders went to exchanges one at a time, the market would exist, but when the orders went to all exchange, the orders would disappear
 - 100% of BATS. Why? Rob's theory was that time/distance delay was involved. Because BATS was the closest to the office. When they built time delays into the program the orders would reach all exchanges at the same time and be cleared. Someone else was using the differences in time to take front-run. When the HFT firms found that the order filled the entire quote, they basically can connect the dots that someone will be buying from other exchanges as well at that quote. Therefore, front-run the buyer and the buyer experiences slippage.
   - How do the HFT orders come first before the RBC order?
