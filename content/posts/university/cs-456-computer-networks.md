@@ -924,7 +924,7 @@ Routing approaches, routing in the Internet, Internet Protocol, IPv6, tunnelling
 
 - per-router control plane: ???
 - Software-defined networking: remote controller
-  - Every router connected to remote controller server which will instlal forwarding tables in routers
+  - Every router connected to remote controller server which will install forwarding tables in routers
 
 ### Network Service Model
 
@@ -1090,6 +1090,126 @@ TODO
 ## Chapter 6 Data Link Layer
 
 Multiple access protocols and LAN's, address resolution protocol, Ethernet.
+
+### Where is it Implemented
+
+- on every host
+- inside network interface cards (NICs) or a chip, attached to systems buses
+
+### Multiple Access Protocols
+
+- point-to-point
+- broadcast
+  - shared wire or medium
+  - ethernet or wifi, 4G/5G
+  - collision if node receives two or more signals at the same time
+- more info
+  - distributed algorithm
+  - channel sharing info is shared on the channel itself
+
+### MAC Protocols
+
+- each frame has a unique MAC (Multiple Access Channel) address for source
+- MAC needed to get an assigned IP address
+- classes
+  - channel partitioning
+  - random access (allow and recover from collisions)
+  - taking turns
+    - nodes with more to send take longer turns
+  - TDMA: time division multiple access
+    - rounds, fixed length slot per station in each round
+    - unused slots are idle
+  - FDMA: frequency division multiple access
+    - frequency bands
+- 48-bit MAC address (hardware or random software)
+- local unique 32-bit IP address
+- administered and allocated by IEEE
+- manufacturers purchase MAC address space
+
+### Random Access Protocols
+
+- Slotted ALOHA
+  - fixed size frames
+  - divide time into fixed slots (1 slot is time to transmit 1 frame)
+  - when colliding, retransmit with probability p until success
+    - p: if there is no probability, then collisions will keep happening, need one to not transmit
+  - need clock sync
+  - idle slots
+  - max efficiency of 1/e = .37
+- Pure ALOHA
+  - no sync
+  - transmit frames immediately
+  - 18% efficiency (higher collision probability)
+- CSMA (Carrier Sense Multiple Access)
+  - binary (exponential) backoff on aborts
+  - simple: listen first, don't interrupt
+    - idle: transmit entire frame
+    - busy: defer
+    - collision occurs due to propagation delay
+      - on collision, entire packet transmission time wasted
+      - p = function of distance + propagation delay
+  - with collision detection
+    - detect fast and abort transmissions to reduce channel wastage
+    - easy for wired, hard for wireless
+
+### Taking Turns
+
+- polling
+  - master node required, which is a single point of failure
+- token passing
+  - control token passed from one node to the other
+  - single point of failure
+
+### Error Detection
+
+- parity checking
+- single bit parity
+  - detect single bit errors
+  - ensure that the number of 1s is even
+- two-dimensional bit parity
+  - detect and correct single bit errors on the row and column
+  - if a bit is flipped, both the row and column parities will report an error, in a coordinate form
+
+Checksum
+
+### Cyclic Redundancy Check (CRC)
+
+- XOR operation
+- R = remainder (D2^r / G)
+
+### ARP Protocol in Action
+
+- Address resolution protocol
+- determining MAC address from IP address
+- Use if a node doesn't have MAC address in ARP table
+- MAC address is needed as per ethernet protocol, because otherwise the switches will send those packets to all devices
+
+### Ethernet
+
+- dominant LAN tech
+- single chip
+- bus: all nodes in same collision domain (interconnected cord)
+- switched: active link-layer 2 switch in center
+- frame
+  - preamble, destination addr, source addr, type, data/payload, CRC
+  - preamble is used to sync receiver and sender clock rates
+  - ethernet type: higher layer protocol (e.g. IP, but could be others)
+- relies on higher layers to figure out reliability
+- no connection
+- MAC protocol: unslotted CSMA/CD with binary backoff
+- Many standards, different physical layer media (fiber, cable), speeds, but common MAC protocol and frame format
+
+### Ethernet Switch
+
+- store, forward Ethernet frames
+- examine incoming frame's MAC address, selectively forward frame
+- hosts are unaware of switches
+- no collisions, full duplex, each link is a collision domain
+  - cannot send multiple to one without collisions
+- Uses switch table to not require configuration (self-learning)
+  - When a frame is received, switch learns of the MAC and location of the sender
+  - If the destination MAC address is in the table (indexed), send only to it
+  - Otherwise, flood all interfaces except for arriving interface
 
 ## Questions
 

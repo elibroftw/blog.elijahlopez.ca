@@ -992,3 +992,56 @@ Explanation of deposit outflows:
 ## Ratings
 
 Explain?
+
+## Mortgage and Asset Backed Markets
+
+### Overview of Structured Financial Products
+
+- Asset backed
+  - Backed by a pool of loans and receivables
+- Mortgage backed
+  - Backed by a pool of mortgage loans
+  - Commercial
+    - In trouble because vacancy from work from home
+  - Residential
+    - Agency MBS
+      - Federally Related Institutions
+        - Tennessee Valley Authority
+      - Government sponsored Enterprises (OSEs)
+    - Non-agency MBS
+    - CMOs
+    - Stripped MBS
+
+### Agency Debt
+
+- Assets
+  - Agency loans
+  - Confirming pools
+    - ?
+  - CLO tranches
+    - ?
+  - Synthetic CDO tranches
+    - ?
+- Liabilities
+
+### Amortization Table Improvements
+
+- Passthrough rate
+- Prepayment rate risk
+- See amortization table file for the extra columns
+- My thoughts: just add a penalty in the contract
+
+## Course Feedback
+
+This course needs to be restructured so that it goes through the perspectives of each of the participants in the fixed income world. That would be
+
+- Central bank (both BOC and US Federal Reserve)
+- US Treasury (which is like the BoC with regard to issuing bonds)
+- Investment bankers
+- Dealers
+- Traders
+- Underwriters
+- Private debt
+- Banks
+- Public companies
+- Private companies

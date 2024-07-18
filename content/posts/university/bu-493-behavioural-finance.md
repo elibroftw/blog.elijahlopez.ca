@@ -448,3 +448,14 @@ Explanation
 ### Habit Loop
 
 - Cue, Craving, Action, Reward
+
+## Presentations
+
+### Overconfidence in Finance
+
+- too certain of self ability or probability of success
+- valuation of stock, results in misvaluation
+  - revenue syngergy's
+  - bubbles
+- Bill Ackman
+  - activist hedge fund investor
