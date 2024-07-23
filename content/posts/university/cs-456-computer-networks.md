@@ -1211,6 +1211,38 @@ Checksum
   - If the destination MAC address is in the table (indexed), send only to it
   - Otherwise, flood all interfaces except for arriving interface
 
+### Interconnecting Switches
+
+- still self learning
+
+### Datacenter Networks
+
+- top of rack (TOR) switch
+- 20-40 server blades
+
+Facebook F16:
+
+- spine switch
+- fabric switch
+- TOR switch
+
+Multipath with redundancy
+
+### Datacenter Protocol Innovations
+
+- RoCE: remote DMA (RDMA) over Converged Etherenet
+  - Don't know what this is
+- ECN: explicit congestion notification used in transport-layer congestion control (DCTCP, DCQCN)
+- experimentation with hop-by-hop (backpressure) congestion control
+- SDN used within
+
+## Nym Mixnet Sphinx
+
+Abdullahd and Hossein project
+
+- [Nym GitHub](https://github.com/nymtech)
+- [Sphinx Rust implementation](https://github.com/nymtech/sphinx)
+
 ## Questions
 
 - What is QoS
