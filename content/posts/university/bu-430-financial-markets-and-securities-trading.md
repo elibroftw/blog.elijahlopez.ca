@@ -997,7 +997,29 @@ In a recent article, Kurt Dew states that legacy markets like the NYSE and Nasda
 
 ### Texas Gulf Sulfur
 
+- Copper mine in Timmins, ON
+  - Usually keep the announcement hush-hush and buy land at low prices
+- 1964, announce access
 - Looking into rules of insider trading
+- Geologist Darke: tells friends to buy TGS, didn't buy himself
+  - Tipping
+- non-public information: not widely disseminated to the public
+  - _public dissemination_: dependent on information technology
+    - For example, having to wait for the next day's newspaper
+    - Nowadays, it can be in a mere number of seconds
+  - _Material_: Significant information that changes fundamentals
+  - _Misappropriated_: duty to the company to not disseminate the information
+- TGS PR manager, Crawford tried to time purchase after announcement, however announcement was delayed
+
+### Insider Trading Exampels
+
+In insider traders, people who aren't part of the company but are providing services, they are called temporary insiders.
+
+If you overhear something and you don't know the person, then you can trade on it.
+
+In some professions, there is no fiduciary duty.
+
+If there is a opaque/long chain of tipping, it's not insider trading because it's no really possible to tell if the information is from legal or illegall sources.
 
 ### Rajat Gupta
 
@@ -1011,3 +1033,9 @@ In a recent article, Kurt Dew states that legacy markets like the NYSE and Nasda
 ## How do Canadian Brokerages Make Money?
 
 - Routing retail flow to certain exchanges
+
+## Congressioanl ETF
+
+- Issue: 45 day delay
+- Issue: these trades are mostly from blinded trusts, which defeats the entire purpose of the ETF
+  - Yes the disclosures of blind trust exist
