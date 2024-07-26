@@ -1031,6 +1031,18 @@ Explain?
 - See amortization table file for the extra columns
 - My thoughts: just add a penalty in the contract
 
+### Prepayment Risk Hedge Funds
+
+- CMOS
+- CLOS
+  - Syndicated Loan Market
+- CDOs
+
+### Stripped MBS
+
+- Principal only tranche
+- Interest only tranche
+
 ## Course Feedback
 
 This course needs to be restructured so that it goes through the perspectives of each of the participants in the fixed income world. That would be
