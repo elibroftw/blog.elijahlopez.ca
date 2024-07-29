@@ -1028,7 +1028,24 @@ If there is a opaque/long chain of tipping, it's not insider trading because it'
 ### Martha Stewart
 
 - Acting on a tip on a broker
-- Charged for perjury
+- Convicted for perjury
+- Worked as a broker before she got popular
+- iClone
+- FDA rejecting iClone, broker found out and sold beforehand
+- Mikanavich and Thaniel
+- Thaniel calls Martha Stewart
+- Cooperated with SEC to avoid charges
+  - They were tipping
+  - They defrauded their client
+    - Duty of privacy and fidiuciary duty since Sam Waxel would end up selling at lower prices due to liquidity from another client
+- Public was outraged because of ??
+
+### Unfairness over Price Discovery
+
+- Famous theory model that says if insiders trade freely, market makers are adversely selected and widen the spreads
+- Some market participants will not trade as much
+- Based on previous data, before insider trading laws, the insider trading was so small, that it didn't lead to anything toxic, but then again spreads were already wider
+- Ethics argument:
 
 ## How do Canadian Brokerages Make Money?
 
