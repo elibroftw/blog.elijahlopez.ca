@@ -1152,6 +1152,8 @@ Multiple access protocols and LAN's, address resolution protocol, Ethernet.
     - detect fast and abort transmissions to reduce channel wastage
     - easy for wired, hard for wireless
 
+TODO: sample questions related to microseconds to wait
+
 ### Taking Turns
 
 - polling

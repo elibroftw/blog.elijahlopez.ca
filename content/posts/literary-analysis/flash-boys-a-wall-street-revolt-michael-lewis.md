@@ -127,3 +127,9 @@ The notes are not organized at the moment, but you should be able to go through 
 - Ronan was involved with Spread Networks
 - Huge percentage of trades sent to dark pool get executed
 - How does co-location matter?
+
+### Final Chapter
+
+Microwave towers were erected. According to [themistrading.com](https://blog.themistrading.com/2014/04/1215095-the-flash-boys-mystery-solved/), who owns it?
+
+> Tradeworx does. Manoh Narang does. The creator and SEC-entrenched high speed data seller does.
