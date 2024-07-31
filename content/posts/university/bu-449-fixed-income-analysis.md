@@ -1038,6 +1038,15 @@ Explain?
   - Syndicated Loan Market
 - CDOs
 
+Public Securities Association (PSA) prepayment benchmark.
+
+- If t<30, then CPR=PSA \* 6% \* t/30
+- If t≥30, then CPR=PSA * 6%
+
+SMM: Single monthly mortality rate
+
+1 - (1 - CPR)^(1/12)
+
 ### Stripped MBS
 
 - Principal only tranche
