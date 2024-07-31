@@ -32,7 +32,7 @@ THLLY / HO.PA | Thales S.A. | I | 4.65%
 VRNS | Varonis Systems | I | 4.65%
 RDWR | Radware | I | 4.65%
 QLYS | Qualys, Inc. | I | 4.65%
-4704.TYO | Trend Micro | I | 4.65%
+TMICY / 4704.TYO | Trend Micro | I | 4.65%
 SCWX | SecureWorks | I | 4.65%
 TENB | Tenable Holdings, Inc. | I | 4.65%
 AVGO | Broadcom | II | 2.33%
