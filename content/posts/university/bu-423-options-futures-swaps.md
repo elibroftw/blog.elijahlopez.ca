@@ -947,11 +947,13 @@ Answer: graphically or using put-call parity
 - Short on shorter-dated call
 - Long on longer-dated call
 
-### Strangle Combination
+### Strangle or Straddle Combination
 
 - Make money when volatility is higher
 - Purchase OTM Put and OTM Call
 - Breakeven stock price is the strike price(s) +- net premiums paid (+ for call and - for put)
+- long straddle: buying a call and put at the same strike price
+  - short straddle: writing the call and put at the same strike price
 
 ### Strip & Strap
 
@@ -1008,6 +1010,8 @@ Valuing an American Put Option
 
 - Same process except p is different
 - Probability of an up move
+- Cash settlement one day later
+- S&P 100 and AMEX Major Market Index  are examples of a broad indices
 
 p = (a - d) / (u - d)
 
