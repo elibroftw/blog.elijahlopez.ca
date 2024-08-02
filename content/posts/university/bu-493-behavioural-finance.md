@@ -15,7 +15,7 @@ Textbook #1: Behavioural Finance, Psychology, Decision-Making, and Markets, Acke
 
 Suggested additional reading: The Psychology of Money, Morgan Housel
 
-Testable cases: Enronn (2), Seagram, Risk Profiling, Shattered Sears
+Testable cases: Enron (2), Seagram, Risk Profiling, Shattered Sears
 
 Marshmallow study: children taking one marshmallow now or waiting five minutes to get two. Study flawed because it only focused on stanford kids (affluence) and wasn't transferable when looking at kids who are less affluent. Ability to postpone gratification at an early age led to more successful life.
 
@@ -66,30 +66,29 @@ Decision Making Process
 
 Traditional finance
 
-- rational assumption: people still not doing things good for themselves
-- efficient at obtaining the right information: is the information really readily accessible and do they know it's relevant
-- unbiased
-- Requires discreteness, indifference curves, transitivity
-  - indifference curve optimally is the biggest slope tangent to the curve
-- Bayes Theorem
-  - `P(expected given I)  =P(E) * P(I given E) / P(I)`
-    - bayes updates probability given new information
-- Rational Economic Man
-  - Challenges: humans affected by many emotions
+1. Rational assumption: people still not doing things good for themselves
+2. Efficient at obtaining the right information: is the information really readily accessible and do they know it's relevant
+3. Unbiased
+4. Requires discreteness, indifference curves, transitivity
+    - indifference curve optimally is the biggest slope tangent to the curve
+5. Bayes Theorem
+    - `P(expected given I)  = P(E) * P(I given E) / P(I)`
+      - bayes updates probability given new information
+6. Rational Economic Man
+    - Challenges: humans affected by many emotions
 
 Behavioural finance
 
-- people are normal (may exhibit flaws)
-- people relying on others
-  - tulips crisis
-  - genetic mutations that were rare
+1. People are normal (may exhibit flaws)
+2. People relying on others
+    - tulips crisis
+    - genetic mutations that were rare
+3. Based on observed investor and market behaviour
+
 - challenges efficient market hypothesis
-- based on observed investor and market behaviour
 - macro (herd, society, bubble)
   - functional of policy, incentives (e.g. Soviet Union using tonnage of the shipped for compensation instead of quality)
-  - worst examples used
 - micro
-
 
 ### Attitude Towards Risk
 
@@ -130,6 +129,15 @@ Behavioural finance
 - skillful system 1 through training, experience, and tacit knowledge
 - thinking takes a lot of effort, our brains conserve energy by relying on short cuts such as heuristics - can lead to biases (e.g. confirmation bias, anchoring, halo effect, priming, availability, sunk cost fallacy, loss aversion)
 
+### Anchoring Effect
+
+Relying too heavily on first piece of information
+
+### Availability Bias
+
+- Probability influence by availability of situation in memory
+  - What is seen may not be exactly what happens around us
+
 ### System 2
 
 - contemplative decision making
@@ -152,7 +160,7 @@ Behavioural finance
 - manipulation of people
 - common outcomes (bias)
 - Allais paradox
-  - good loss aversion question: lose 100% change to lose $750 or 75% chance to lose $1000 and 25% change to lose nothing.
+  - good loss aversion question: 100% chance to lose $750 or 75% chance to lose $1000 and 25% chance to lose nothing.
 - reference (expectations) changes behaviour
 - _hedonic editing_: framing losses and gains as differently
 
@@ -198,6 +206,7 @@ Higher probability to be financially hurt from being disabled than family is fro
 - Anchoring & adjustment - heuristics
   - Initial Cost
 - Mental accounting - buckets
+  - Source and intended use of money results in different treatments
 - Framing - depends on presentation (questions)
 - Availability - heuristic, answer related to familiarity
 
@@ -212,11 +221,10 @@ Higher probability to be financially hurt from being disabled than family is fro
   - Make the wrong decision to avoid regretting missing out; FOMO?
 - status quo
 - endowment
+  - valuing something when it is owned but not when they don't
 - self-control
   - weighing benefits
   - delay of gratification
-
-### Representativeness Bias
 
 ## IPS and Asset Allocation
 
@@ -236,7 +244,7 @@ Investment policy statement: what do you want from the fund and what are the res
 ### BBK Model
 
 - classification models
-- confident, impetuous, careful, anxious
+- confident, impetuous, careful, anxious, methodical
 
 The Adventurer: Investors who are confident as well as make impulsive decisions have been classified as the adventurer in the BBK model. These are the kinds of investors who will make very risky investments. They are often seen investing in the futures and options space with high amounts of leverage. Often, they put all of their money on one single bet based on the level of confidence they might have on that bet.
 
@@ -267,6 +275,8 @@ If you get money of the face number you roll of the dice, and you need to pay $3
 ### Disposition Effect
 
 Tendency to hold losers and sell winners.
+
+[Are Investors Reluctant to Realize Their Losses? TERRANCE ODEAN](https://faculty.haas.berkeley.edu/odean/papers%20current%20versions/areinvestorsreluctant.pdf)
 
 ### Prior Gains and Losses, and RIsk Aversion
 
@@ -421,9 +431,22 @@ Holding onto options that are in the money is considered over-confidence.
 
 - Focus area
 
+### Ultimatum Game
+
+- Two players: proposer and responder
+- Proposer offers split of money, responder accepts or rejects
+- If rejected, both get nothing
+
 ### Dictator Game
 
-- Mover's decision can be rejected
+- Similar to Ultimatum, but responder must accept any offer
+- Tests pure altruism without strategic considerations
+
+### Trust Game
+
+- Player 1 gives money to Player 2, amount is multiplied
+- Player 2 decides how much to return to Player 1
+- Measures trust and trustworthiness
 
 ### Asch's Lines
 
@@ -433,6 +456,7 @@ When surrounded by people who are saying the wrong answer, people ended up confo
 
 ### Aging Presentation
 
+- older people are less ambiguity averse but indifferent when it comes to risky decisions
 - Casino at Niagara Falls
 - people aged 60s-70s
 - under known probabilities, older adults and younger adults behave similarly
