@@ -73,7 +73,7 @@ woman decides it was unwanted just like a heckler at a comedy show. Consent, pri
 would be detained and if that resulted in their death because they are sensitive to any touch, that would be on them and not the police officers that
 removed them. This world would simply not function if the people in it were incapable of handling any obstacles. Likewise in the case of abortion,
 abortion is not the act of killing a fetus, but it is the act of moving them outside of property. It is that move that results in the death of the fetus,
-but the rights of the property (body) simply triump the rights of anything declaring that space to be theirs. The womb is a woman's property and is inside of the
+but the rights of the property (body) simply triumph the rights of anything declaring that space to be theirs. The womb is a woman's property and is inside of the
 woman itself. If abortion is illegal, the removal of a womb containing the fetus would be a loophole.
 
 ## Classical Liberal
@@ -85,7 +85,7 @@ Say you invited a person to your home and now you want them to leave. They refus
 no one, not you, not another human, nor the government, can forcibly remove the person.
 Do you accept the government's ruling or do you bring out the handgun your government has also banned in the country?
 Suppose you are a law abiding citizen and don't have a gun.
-Do you try to forcibly remove the trespassor which might result in your death or do you wait out 9 months?
+Do you try to forcibly remove the trespasser which might result in your death or do you wait out 9 months?
 
 Wouldn't it be much better if you could just call someone to do it for you without the fear of legislative punishment?
 
@@ -99,7 +99,7 @@ Wouldn't it be much better if you could just call someone to do it for you witho
   - Root reasoning is that sex based abortions could cause an imbalance of sex ratios in a country, which would have drastic effects on the lives of both sexes (e.g. India)
   - This bias issue should be dealt with in the education system as well as in immigration
   - Abortion itself should never be banned, however sex reveals should be banned only if abortions due to sex reveal starts affecting the sex ratio in the country
-  - If the sex-ratio is not changing much, the slight discirmination wouldn't be having severe consequences (e.g. race preferences in dating does not motivate people to behave differently, or it at least isn't a moral/legal issue)
+  - If the sex-ratio is not changing much, the slight discrimination wouldn't be having severe consequences (e.g. race preferences in dating does not motivate people to behave differently, or it at least isn't a moral/legal issue)
 - Child support should not be mandatory. There is no reason to force another person to financially support their sexual partner because the child is biologically theirs
   - One of the reasons of abortions is financial, so there shouldn't be a financial incentive to carry the fetus to term. It weakly implies abortion is wrong when 99.999% of abortions are not immoral
   - The child support incentive might exist to combat declining birth rates in Canada, but there are many reasons Canadians aren't having kids to replace themselves

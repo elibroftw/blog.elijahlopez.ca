@@ -754,7 +754,7 @@ Sender:
 
 Pipelining: send multiple, "in-flight", yet-to-be acknowledged packets which increases utilization by 3x
 
-Sender sends a window up to N, cumulative ACKs: send ackks of all packets inclusive up to N, move window forward to begin at n+1. Use a timeout(n) to retransmit packet n and higher in the window
+Sender sends a window up to N, cumulative ACKs: send ACKs of all packets inclusive up to N, move window forward to begin at n+1. Use a timeout(n) to retransmit packet n and higher in the window
 
 Receiver:
 
@@ -1240,7 +1240,7 @@ Multipath with redundancy
 
 ## Nym Mixnet Sphinx
 
-Abdullahd and Hossein project
+Abdullah and Hossein project
 
 - [Nym GitHub](https://github.com/nymtech)
 - [Sphinx Rust implementation](https://github.com/nymtech/sphinx)

@@ -430,7 +430,7 @@ Any intension of system 2 to answer a question triggers system 1 again. Situatio
 
 When people were asked how much they would contribute to help out birds that would otherwise drown, the number of birds to help didn't matter because the groups still averaged the same amount of money. "The almost complete neglect of quantity in such emotional contexts has been confirmed many times." Is it the neglect of emotional contexts, or does emotional contexts translate to a price for people and people would still answer with the max amount of money?
 
-The mental shotgun is the inability of system 2 to direct system 1 to one train of thoughts. System 1 will always do more than just what is required of it. An example is asking someone who hates big tech if the companies in big tech are financially well off. Or better yet, asking someone who likes a product if the company is doing well (when the company is not in fact doing well such as Pelaton).
+The mental shotgun is the inability of system 2 to direct system 1 to one train of thoughts. System 1 will always do more than just what is required of it. An example is asking someone who hates big tech if the companies in big tech are financially well off. Or better yet, asking someone who likes a product if the company is doing well (when the company is not in fact doing well such as Peloton).
 
 ## Chapter 9 - Answering an Easier Question
 
@@ -634,7 +634,7 @@ This chapter is about how dubious information still spoils rational thinking and
 > instructing people to “think like a statistician” enhanced the use of base-rate information, while the instruction to “think like a clinician” had the opposite effect.
 
 - A method of improving predictive accuracy is to engage System 2 (e.g. via frowning)
-  - Therefore, System 2 was failing due to lazyness and not due to ignorance!
+  - Therefore, System 2 was failing due to laziness and not due to ignorance!
   - Individuals need to invest special effort to properly conduct analysis, it makes sense why comment sections are often filled with spam and ignorance
 
 > There is one thing you can do when you have doubts about the quality of the evidence: let your judgments of probability stay close to the base rate.
@@ -714,7 +714,7 @@ Regular six-sided die with four green faces and two red faces, which would be ro
 2. GRGRRR
 3. GRRRRR
 
-Due to representiveness, we will gravitate to #2 even though it is simply just #1 but prefixed with G. It is actually less probable than #1.
+Due to representativeness, we will gravitate to #2 even though it is simply just #1 but prefixed with G. It is actually less probable than #1.
 
 ### Narrowing Down the Problem
 
