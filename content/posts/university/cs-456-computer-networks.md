@@ -896,12 +896,9 @@ Control
 ### QUIC: QUick UDP Internet Connections
 
 - Application-layer protocol on top of UDP
-- Deployed on many google servers and apps
+- Deployed on many Google servers and apps
 - Increase performance of HTTP
 - Combine TCP and TLS functionality into QUIC and combine with HTTP/2 slim to create HTTP 3
-
-### QUIC Specs
-
 - error and congestion control
 - streams parallel, no HOL (head-of-line) blocking
 
@@ -1248,4 +1245,3 @@ Abdullah and Hossein project
 ## Questions
 
 - What is QoS
-- QUIC benefits
