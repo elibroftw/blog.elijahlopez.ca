@@ -74,6 +74,8 @@ jobs:
           cd public
           if [ "`git status -s`" ]; then
             git add --all
-            git commit --amend -m "deployed: ${{ steps.vars.outputs.commit_msg }}"
+            commit_msg="${{ steps.vars.outputs.commit_msg }}"
+            commit_msg="${commit_msg//\"/\\\"}"
+            git commit --amend -m "deployed: $commit_msg"
           fi
           git push --force
