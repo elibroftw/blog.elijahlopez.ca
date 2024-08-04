@@ -733,6 +733,37 @@ At the end of the day, try not to communicate in a way where probability is take
 
 ## Chapter 16 - Causes Trump Statistics
 
+Statistical base rates are underweighted, but if you apply causality to them, it can be easily combined with the information in an individual case.
+
+> A cab was involved in a hit-and-run accident at night.
+> Two cab companies, the Green and the Blue, operate in the city.
+> You are given the following data:
+
+- 85% of the cabs in the city are Green and 15% are Blue.
+  - Implication: **85% of accidents involve green cabs** (causal)
+- A witness identified the cab as Blue. The court tested the reliability of the witness under the circumstances that existed on the night of the accident and concluded that the witness correctly identified each one of the two colors 80% of the time and failed 20% of the time.
+
+What is the probability that the cab involved in the accident was Blue rather than Green?
+
+Although our brain is tempted to write off the initial statistic, we need to apply _Bayesian inference_ which results in a Bayesian estimate of 41%.
+
+Solve for: Probability Blue given witness testimony
+
+```math
+- P(B) = 0.15 (prior probability of the cab being Blue)
+- P(G) = 0.85 (prior probability of the cab being Green)
+- P(W|B) = 0.80 (probability of the witness identifying the cab as Blue if it was Blue)
+- P(W|G) = 0.20 (probability of the witness identifying the cab as Blue if it was Green)
+P(B|W) = [P(W|B) * P(B)] / [P(W|B) * P(B) + P(W|G) * P(G)]
+P(B|W) = (0.80 * 0.15) / [(0.80 * 0.15) + (0.20 * 0.85)]
+= 0.12 / (0.12 + 0.17)
+= 0.12 / 0.29
+≈ 0.4138
+≈ 41.38%
+```
+
 ## Chapter 17 - Regression to the Mean
+
+Useful information for betting, especially on golf. If someone does exceptionally well, is it skill or luck? If its skill, then they shouldn't regress to the mean and do poorly the next round.
 
 ## Chapter 18 - Taming Intuitive Predictions
