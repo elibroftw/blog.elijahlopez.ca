@@ -1092,6 +1092,7 @@ For the transition, tunneling (protocol 41, RFC 4213) is used (IPv6 datagram ins
 ### Routing Algorithms
 
 - Link-State Routing Protocol
+  - global knowledge about the network
   - Dijkstra's algorithm
   - Least-cost path from one node to all other nodes
   - For k iterations, there are k nodes with known least-cost paths
