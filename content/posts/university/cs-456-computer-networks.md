@@ -1212,7 +1212,7 @@ The datagram is a person in a transportation vehicle (e.g. train), and the links
 
 ### Multiple Access Protocols
 
-There are point-to-point links (single sender, single receiver) and broadcast links (multiple sending and receiving nodes all connected to a single shared broadcast channel implying that every node gets every broadcast). WIth broadcast links
+There are point-to-point links (single sender, single receiver) and broadcast links (multiple sending and receiving nodes all connected to a single shared broadcast channel implying that every node gets every broadcast).
 
 - point-to-point links
   - point-to-point protocol (PPP)
@@ -1324,7 +1324,7 @@ Probability = 1 / 2^4 = 1/32. Delay = 4 \* (512 / 10_000_000 (M = 1e6) \* 1_000_
 
 - aka: link-layer address; LAN address; physical address
 - each frame has a unique MAC (Multiple Access Channel) address for source
-- MAC needed to get assigned an IP address by the router
+- MAC needed to get assigned an IP address by the DHCP server (probably bundled with the router in home networks)
 - 48-bit MAC address (hardware or random software)
 - local unique 32-bit IP address
 - IEEE manages the MAC address space so that manufacturers do not conflict
