@@ -7,7 +7,28 @@ tags:
   - computer-science
 ---
 
-Make sure to do review question at the end of every chapter.
+## Overview of the Internet
+
+### Open Systems Interconnection
+
+1. [Physical](#physical-media-links)
+    - fiber, cable, radio mediums that carry individual bits (smallest unit of data, 1 or 0)
+2. [Data Link](#chapter-6-data-link-layer)
+    - organizes all the data being transmitted into datagrams (the network-layer packet is referred to as a datagram) and frames and enables node &lrarr; node communication
+    - handles error detection and correction
+    - Ethernet, 802.11 (WIFI), point-to-point protocol (PPP)?
+3. [Network](#chapter-4--5-network-layer)
+    - the Internet Protocol (v4 and v6), and routing protocols for transferring packets to hosts
+4. [Transport](#chapter-3-transport-layer-protocols)
+    - TCP, UDP
+5. [Session](#tcp-3-way-handshake)
+    - Manages connections between applications
+6. [Presentation](#tcp-security)
+    - Formats and encrypts data for the application layer
+7. [Application](#chapter-2-application-layer-protocols)
+    - Network services
+    - HTTP, IMAP, SMTP, DNS
+    - Firewalls
 
 ## Chapter 1 Overall Picture of Computer Networking
 
@@ -263,20 +284,6 @@ Example of layers is air travel
 - gates (load) &rarr; gate service &rarr; gate (unload)
 - runway takeoff &rarr; runway service &rarr; runway landing
 - airplane routing &rarr; routing service &rarr; airplane routing
-
-### Layered Internet Protocol Stack
-
-Top to bottom view:
-
-1. **application** (supporting network applications)
-    - HTTP, IMAP, SMTP, DNS
-2. **transport** (process-process data transfer)
-    - TCP, UDP
-3. **network** (routing of packets from source to dest)
-    - IP, routing protocols
-4. **link** (data transfer between adjacent network elements)
-   - Ethernet, 802.11 (WIFI), PPP?
-5. **physical** (bits on the wire)
 
 ## Chapter 2 Application Layer Protocols
 
@@ -758,11 +765,11 @@ Sender sends a window up to N, cumulative ACKs: send ACKs of all packets inclusi
 
 Receiver:
 
-Send ACK of highest in-order received sequence #. Remember only rcv_base. When receiving out-of-order packet, can either discard of buffer (implementation decision). Re-ack the packet with highest sequence number.
+Send ACK of **highest in-order** received sequence #. Remember only rcv_base. When receiving out-of-order packet, can either discard of buffer (implementation decision). re-ACK the packet with highest sequence number.
 
 ### Selective Repeat
 
-Another pipelining protocol. Receiver individually acknowledges all correctly packets. Sender maintains timer for each unACKed packet. Sender window, N consecutive sequence #s.
+Another pipelining protocol. Receiver individually acknowledges all correctly packets (regardless of order). Sender maintains timer for each unACKed packet. Sender window, N consecutive sequence #s.
 
 Want to avoid resending packets that were sent properly.
 
@@ -782,6 +789,8 @@ Solution:
 - Uses go-back-N (cumulative ACKs) protocol with pipelining
 - full duplex data, connection-oriented
   - handshaking
+- Usually with 500ms ACK delay for the first segment
+- ACK is for the next expected packet number
 
 ### TCP Segment Structure
 
@@ -814,37 +823,38 @@ DevRTT = (1 - Beta) *\ DevRTT + Beta \*  | Sample RTT - EstimatedRTT |
 
 - First segment will not be ACKed until 500ms for next segment
 - If a second segment is sent, ACK is sent immediately, to avoid overhead
-- If there's a timeout, the sender resends the first packet, but the receiver sends the ACK of the highest one
+- If there's a timeout, the sender resends the first packet, but the receiver sends the **ACK of the highest one**
+  - Implication: sender does not retransmit for "lost" ACKs
 
 ### TCP Fast Retransmit
 
-- Instead of waiting for timer to waittout, a triple duplicate ACK will trigger retransmission
-
-### TCP Flow Control
-
-- delivery is faster than the application layer reads from the socket buffer
-- In the TCP packet sent back to the sender, add flow control to the header of the TCP segment
-- `rwnd` field. RcvBuffer size set via socket options (default is 4096)
-- sneder limits amount of unACKed data to receive `rwnd`
+Instead of waiting for the timer to wait-out, a three duplicate ACKs for an earlier segment will trigger retransmission
 
 ### TCP 3-way handshake
 
 - before exchanging data
 - need to agree on a connection parameters (starting sequence numbers)
 
-1. Client listens on socket, chooses init sequence number x, send `SYN` message
+1. Client listens on socket, chooses init sequence number x, send `SYN` message (synchronize the initial sequence number)
 2. Server chooses init sequence number y, `SYNACK`
 3. Client sends an ACK for the SYNACK(x) which indicated that the server is alive
 
 Closing the connection
 
-1. Client sends FINbit=1, seq = x
-2. Server sends ack
-3. Server sends FINbit
+1. Client sends `FIN` bit=1, seq = x
+2. Server sends `FINACK`
+3. Server sends `FIN` bit
 4. Client sends ACK
 5. Client waits for 2 * max segment lifetime before closing the socket
 
-### Congestion Control
+### TCP Flow Control
+
+- Delivery is faster than the application layer reads from the socket buffer
+- In the TCP packet sent back to the sender, add flow control to the header of the TCP segment
+- `rwnd` field. RcvBuffer size set via socket options (default is 4096)
+- sender limits amount of unACKed data to `rwnd`
+
+### TCP Congestion Control
 
 - high delay (queueing delays)
 - packet loss (buffer overflow)
@@ -864,19 +874,19 @@ Control
 - Routers provide direct feedback when flow passes through congest router
 - TCP ECN, ATM, DECbit protocols
 
-### AIMD
+### Congestion Control via AIMD
 
-- Additive Increase
-  - increase snding rate by 1 maximum segment size every RTT until loss detected
-- Multiplicative Decrease
-  - cut sending rate in half at each loss event
+- AI/MD
+- _Additive Increase_
+  - increase `cwnd` (congestion window) by 1 packet (increase data sent by the maximum segment size) on every RTT until loss is detected
+- _Multiplicative Decrease_
+  - cut sending rate in half at each loss event (e.g. triple duplicate ACK)
   - sawtooth behaviour probing for bandwidth
-  - cut in half on loss detected by triple duplicate ACK
-  - Cut to 1 MSS when loss detected by timeout
+  - cut to 1 MSS (maximum segment size) when loss detected by timeout
 
-### Network-Assisted
+### Congestion Information via Network-Assisted
 
-- Two bits in the TCP header indicating congestion (set by network operator at 80-85%)
+Two bits in the TCP header indicating congestion (set by network operator at 80-85%)
 
 ### Net Neutrality
 
@@ -893,7 +903,7 @@ Control
 - Increase W (sending rate) as a function of the cube of the distance between current time and K
 - Default in Linux
 
-### QUIC: QUick UDP Internet Connections
+### QUIC: Quick UDP Internet Connections
 
 - Application-layer protocol on top of UDP
 - Deployed on many Google servers and apps
@@ -901,6 +911,12 @@ Control
 - Combine TCP and TLS functionality into QUIC and combine with HTTP/2 slim to create HTTP 3
 - error and congestion control
 - streams parallel, no HOL (head-of-line) blocking
+
+> The most important difference in QUIC compared to HTTP/2 is that it's UDP-based, with built-in encryption, and more performant. The aim of the protocol is to thwart TCP's head-of-line blocking and higher latency. QUIC also allows multiplexing several application streams via a single connection.
+
+### Head-of-line Blocking
+
+If the head packet is lost, then all subsequent packets are blocked until the first packet in the sequence has been received. This is applicable to TCP and HTTP/2 (i.e. the streams). The subsequent packets are blocked because TCP ensures **in-order** delivery via sequence numbers and acknowledgements.
 
 ## Chapter 4 & 5 Network Layer
 
@@ -917,8 +933,76 @@ Routing approaches, routing in the Internet, Internet Protocol, IPv6, tunnelling
 
 ### Data Plane
 
+### IPv4 Datagram
+
+- Version (4-bits, v4 or v6), Header length, Type of service (e.g. FTP), datagram length
+- 16-bit ID, Flags, 13-bit Fragmentation offset
+  - Networks links have MTU (max transfer size), so a large IP datagram is fragmented and put back together.
+- TTL, Upper-layer protocol, header checksum
+- 32-bit source
+- 32-bit destination
+- options
+- data
+
+IPv4 is 32-bit so its address space was quickly used up.
+
+A datagram with 4000 bytes with an MTU of 1500 bytes. ID of all three fragmented datagram will be the same, and the fragment flag will be set for all but the last one. The offset field exists since there are headers of each of the smaller datagrams. 1480 bytes in data field. Therefore, offset = 1480/8. Offset is based on 8 bytes and is interpreted as how many bytes were sent in the other datagram. If datagrams are received out of order, can easily figure out what was missing.
+
+- datagram #1: offset = 0, fragmentation flag
+- datagram #2: offset = 1480/8, fragmentation flag
+- datagram #3: offset = 2960/8, no fragmentation flag
+
+### IP Addresses
+
+- 192.168.2.0/24
+- Each decimal number separated by decimal corresponds to 8 bits
+- Therefore, the slash-24 corresponds to the rightmost 24 bits, or the rightmost 3 decimal numbers
+
+
+
+### NAT
+
+- Network Address Translation
+- Addresses IP address allocation (pun!)
+- Many home networks with same address space (say 10.0.0.0/24) for private network usage
+- A NAT-enabled router has a single IP address which appears as a device to the outside world
+- The router gets its IP address from the ISP's DHCP server!
+- The router takes any connection which uses a device's random port and assigns it a 16-bit port that the router finds in its NAT table of size 60,000
+- Port-forwarding takes care of home servers
+- P2P can leverage NAT traversal for when all nodes are NAT enabled (NAT = hard to accept incoming connections)
+- IPv6 does not need NAT as there are enough unique addresses for all devices
+
+### IPv6 Datagram
+
+- addressing expanded to 128-bits (every grain of sand on the planet) from 32-bits
+- before unicast and multicast addresses.
+- Now: anycast address, which is one from a group of hosts
+- 40-byte header
+- TOS swapped out for traffic class
+- Flow label: request special handling of certain types of datagrams (e.g. audio or video)
+- Next header: replaces protocol field (TCP or UDP)
+- Hop limit: same functionality as the TTL in IPv4
+- No fragmentation/reassembly by intermediate routers. Source and Receivers are responsible. Routers will return "Packet Too Big" instead.
+- No header checksum,
+- No options (use next header instead)
+
+For the transition, tunneling (protocol 41, RFC 4213) is used (IPv6 datagram inside IPv4 data field).
+
+### OpenFlow Match and Action
+
+- Match
+  - Physical (Ingress port)
+  - Link (MAC, Ethernet, Virtual LAN)
+  - Network (IPs, TOS, Protocol)
+  - Transport (TCP/UDP ports)
+- Action
+  - forward to physical port or broadcast
+  - drop
+  - modify-field (packet header fields except IP Protocol field)
+
 ### Control Plane
 
+- whatever is configuring the router is in the control plane
 - per-router control plane: ???
 - Software-defined networking: remote controller
   - Every router connected to remote controller server which will install forwarding tables in routers
@@ -958,29 +1042,9 @@ Routing approaches, routing in the Internet, Internet Protocol, IPv6, tunnelling
   - weight x is 2, y is 1, and z is 1 then two packets from x, one form y, and one form z
   - minimum bandwidth guarantee (per-traffic-class)
 
-### How IP Datagram Works
-
-- Version (v4, v6)
-- Head Length
-- Type of Service
-- Length
-- 16-bit identifier
-- flags
-- fragment offset
-- time to live
-- upper layer
-- header checksum
-- source IP
-- dest IP
-- options
-- payload data
-
-Networks links have MTU (max transfer size), so the datagram is fragmented and put back together.
-
-A datagram with 4000 bytes with an MTU of 1500 bytes. ID of all three fragmented datagram will be the same, and the fragment flag will be set for all but the last one. The offset field exists since there are headers of each of the smaller datagrams. 1480 bytes in data field. Therefore, offset = 1480/8.
-
 ### Subnets
 
+- "Network mask"
 - set of interfaces that can physically reach each other without passing through an intervening router
 - IP addresses have structure
   - subnet part
@@ -992,7 +1056,7 @@ A datagram with 4000 bytes with an MTU of 1500 bytes. ID of all three fragmented
   - one way is to hide the routers and see the link groups
   - another way is to take the unique 24-bit high-order IP addresses
 
-#### Classless InterDomain Routing
+#### Classless Interdomain Routing
 
 - Cider / CIDR
 - Can get something like 200.23.16.0/23
@@ -1009,15 +1073,13 @@ A datagram with 4000 bytes with an MTU of 1500 bytes. ID of all three fragmented
   - broadcast IP
   - everyone in the network receives the message, but only server is configured to respond to the message
 - DHCP server sends address: DHCP ack msg
+  - Contains IP, subnet mask, DNS server IP, default gateway
+- Steps
   - broadcast IP
   - DHCP server offers an IP address
   - Client tells DHCP server that it wants to use that IP address
   - DHCP acknowledges
   - IP has lifetime
-
-## IPv6 Datagram
-
-TODO
 
 ### Generalized Forwarding
 
@@ -1027,18 +1089,17 @@ TODO
   - priority
   - counters
 
-### OpenFlow
+### Routing Algorithms
 
-- Many header field to match
-- VLAN: Virtual LAN
-
-### Link-State Routing Protocol
-
-- Dijkstra's algorithm
+- Link-State Routing Protocol
+  - Dijkstra's algorithm
+  - Least-cost path from one node to all other nodes
+  - For k iterations, there are k nodes with known least-cost paths
+  - O(n^2) runtime complexity
 - Bellman-Ford
-- Distance vector
-  - wait, recompute, notify
-    - convergence: two furthest nodes (t = largest number of hops)
+- Distance-vector
+  - wait, recompute (start at 1 for adjacent nodes), notify (current internal mapping)
+    - Convergence: two furthest nodes (t = largest number of hops)
     - Link cost changes
       - recalculate local DV, notify neighbours
       - bad news travels slow
@@ -1047,10 +1108,14 @@ TODO
       - _poisoned reverse_: accept higher value (error message)
       - _split horizon_: if the predecessor sends an update, don't send back an update. Let timeout expiry fix the cost
 
+Example of DV.  C - A  - B. In first iteration, we figure out the distance and we notify. C and B update their mappings, so notify a second time, and be done.
+
 ### Routing Scaling
 
-- administration autonomous system routing
-- inter-AS routing
+- administration Autonomous System routing
+- Tier-1 ISPs either have one or multiple
+- AS numbers assigned by ICANN
+- intra-AS routing
 - RIP: Routing INformation Protocol (RFC 1723)
   - Classic DV
 - EIGRP: Enhanced Interior Gateway Routing Protocol
@@ -1059,11 +1124,14 @@ TODO
 
 ### eBGP, iBGP
 
-- External Border Gateway Protocol
-- Internal Border Gateway Protocol
+- Route between AS (inter-AS routing protocol)
+- Advertise that a subnet exist to all routers
+- Determine best route to a _prefix_ (e.g. 138.16.68/22)
+- All ASs run BGP for inter-AS routing
+- External Border Gateway Protocol (two ASs)
+- Internal Border Gateway Protocol (one AS)
 - BGP session
   - semi-permanent TCP connection
-- prefix: destination being advertised
 - AS-PATH: list of ASes prefix has passed
 - NEXT-HOP: internal-AS router to next-hop AS
 
@@ -1072,6 +1140,8 @@ TODO
 - Why a logically centralized control plane?
 - table-forwarding to routers
 - OpenFlow: table-based switch control
+  - Many header field to match
+  - VLAN: Virtual LAN
 - SDN Controller: state management, communications
 - _packet-in_: transfer packet to controller
 - _flow-removed_: flow table entry deleted at switch
@@ -1079,10 +1149,12 @@ TODO
 
 ### ICMP: Internet Control Message Protocol
 
+- RFC 792
 - network level information
 - hosts and routers
 - unreachable host, network, port, protocol
 - echo request/reply (ping)
+- typically used for errors
 
 ## Chapter 6 Data Link Layer
 
@@ -1093,95 +1165,179 @@ Multiple access protocols and LAN's, address resolution protocol, Ethernet.
 - on every host
 - inside network interface cards (NICs) or a chip, attached to systems buses
 
+### Link-Layer Protocol
+
+- Layer 2
+- A node is a device running such protocols
+- Examples of nodes: hosts, routers, switches, and WiFi access points
+
+### What is a Link?
+
+The communication channels that connect adjacent nodes along the communication path
+
+### Link Layer Frame
+
+Transmitting nodes encapsulate datagrams in a _link-layer frame_. These frames are transmitted into links.
+The datagram is a person in a transportation vehicle (e.g. train), and the links are the rails.
+
+### Error Detection via Parity Checks
+
+- Single bit parity: even number of 1s
+  - Fails to catch even number of bit errors
+- Two-dimensional bit parity
+  - Divide total bits in data into i rows and j columns
+  - Parity bit on the row and column
+  - Detect and correct single bit errors on the row and column
+  - if a bit is flipped, both the row and column parities will report an error, in a coordinate form
+
+### Error Detection via Checksum
+
+- total bits are a sequence of k-bit integers
+- sum the integers for the error-detection bits
+- internet checksum: 16-bit integers
+- check: take 1s complement of the sum of data including checksum and expect 0
+- TCP & UDP: one checksum for entire packet
+- IP: checksum for header
+- Transport layer is software based so we want it to be quick
+
+### Cyclic Redundancy Check (CRC)
+
+- Sender and receiver agree on r + 1 bit pattern (generator) that should be able to divide the data bits plus r additional bits (binary division)
+- bit pattern: DR (d + r bits)
+- R = remainder (D \* 2^r / G)
+- Error detection guaranteed for fewer than r + 1 bit errors
+- link-layer
+- dedicated hardware
+- CRC codes or polynomial codes
+
 ### Multiple Access Protocols
 
-- point-to-point
-- broadcast
-  - shared wire or medium
-  - ethernet or wifi, 4G/5G
-  - collision if node receives two or more signals at the same time
+There are point-to-point links (single sender, single receiver) and broadcast links (multiple sending and receiving nodes all connected to a single shared broadcast channel implying that every node gets every broadcast). WIth broadcast links
+
+- point-to-point links
+  - point-to-point protocol (PPP)
+  - high-level data link control (HDLC)
+- broadcast links
+  - when any one node transmits a frame, the channel broadcasts the frame and each of the other nodes receives a copy
+  - Ethernet or WiFi (wireless LAN), 4G/5G
+  - **multiple access problem**
+  - collision: a node can't make the two or more tangled frames it received due to two or more nodes transmitting simultaneously
+    - data loss, wasted broadcast bandwidth
+  - four decades of academic research on multiple access protocols have been done
 - more info
   - distributed algorithm
   - channel sharing info is shared on the channel itself
 
-### MAC Protocols
+Three Categories of multiple access protocols
 
-- each frame has a unique MAC (Multiple Access Channel) address for source
-- MAC needed to get an assigned IP address
-- classes
-  - channel partitioning
-  - random access (allow and recover from collisions)
-  - taking turns
-    - nodes with more to send take longer turns
-  - TDMA: time division multiple access
-    - rounds, fixed length slot per station in each round
-    - unused slots are idle
-  - FDMA: frequency division multiple access
-    - frequency bands
-- 48-bit MAC address (hardware or random software)
-- local unique 32-bit IP address
-- administered and allocated by IEEE
-- manufacturers purchase MAC address space
+- channel partitioning protocols
+- random access protocols
+- taking-turns protocols
+
+### Multiple Access Protocol Desirable Characteristics
+
+For a broadcast channel of rate R bits per second,
+
+1. When only one node has data to send, that node has a throughput of R bps.
+2. When M nodes have data to send, each of these nodes has a throughput of R/M
+bps. This need not necessarily imply that each of the M nodes always has an
+instantaneous rate of R/M, but rather that each node should have an average
+transmission rate of R/M over some suitably defined interval of time.
+3. The protocol is decentralized; that is, there is no master node that represents a
+single point of failure for the network.
+4. The protocol is simple, so that it is inexpensive to implement.
+
+### Channel Partitioning Protocols Protocols
+
+- TDMA: Time Division Multiple Access
+  - divides time into time frames and further divides each time frame into N time slots
+  - slot sizes are chosen to fit a single packet
+  - rounds, fixed length slot per station in each round
+  - unused slots are idle
+  - drawback 1: node is limited to R/N even if only broadcaster
+  - drawback 2: node has to wait for its turn again even if only broadcaster
+- FDMA: Frequency Division Multiple Access
+  - Frequency bands instead of time slots
+  - Same drawback of limited speed
+- CDMA: Code Division Multiple Access
+  - Encode data bits based on unique code for each node which allows receivers to work with collisions
+  - Anti-jamming
 
 ### Random Access Protocols
 
+- Allows for full rate of transmission when node's are given access
+- Retransmit on collision with independently chosen random delay
+
 - Slotted ALOHA
-  - fixed size frames
-  - divide time into fixed slots (1 slot is time to transmit 1 frame)
+  - fixed size (L bits) frames
+  - divide time into fixed slots of size L/R seconds (enough time to transmit one frame)
+  - clocks synced across nodes
+  - transmit only at start of slots
+  - since transmission speed is the same, all nodes would detect the collision
   - when colliding, retransmit with probability p until success
-    - p: if there is no probability, then collisions will keep happening, need one to not transmit
-  - need clock sync
-  - idle slots
+    - if there was no probability, then collisions would persist
   - max efficiency of 1/e = .37
-- Pure ALOHA
-  - no sync
-  - transmit frames immediately
-  - 18% efficiency (higher collision probability)
+- Pure ALOHA (original from Abramson 1970)
+  - no time slots, no clock sync, fully decentralized
+  - if collision: retransmit with probability p or wait for frame time
+  - else: wait for frame transmission time before transmitting again
+  - max efficiency of 1/2e = 18% efficiency (higher collision probability)
 - CSMA (Carrier Sense Multiple Access)
-  - binary (exponential) backoff on aborts
-  - simple: listen first, don't interrupt
+  - Listen first, don't interrupt
     - idle: transmit entire frame
     - busy: defer
-    - collision occurs due to propagation delay
-      - on collision, entire packet transmission time wasted
+    - **collision occurs due to propagation delay** (time for datagram to travel the link)
+      - on collision, entire packet **transmission** time wasted
       - p = function of distance + propagation delay
-  - with collision detection
-    - detect fast and abort transmissions to reduce channel wastage
-    - easy for wired, hard for wireless
+- CSMA/CD: with collision detection
+  - listen while transmitting, abort on detection
+  - we want an interval that is short when the number of colliding nodes is small, and long when the number of colliding nodes is large.
+  - binary (exponential) backoff on aborts
+    - wait `K \* time to transmit 512 bits`, where K is chosen from 0 to 2^n -1 where n is the number of collisions
+  - detect fast and abort transmissions to reduce channel wastage
+  - easy for ethernet, hard for wireless
 
-TODO: sample questions related to microseconds to wait
+Questions
 
-### Taking Turns
+In CSMA/CD, after the fifth collision of the same frame, what is the probability that a node chooses K = 4? The result K = 4 corresponds to a backoff delay of how many seconds on a 10 Mbps Ethernet?
 
-- polling
+Probability = 1 / 2^4 = 1/32. Delay = 4 \* (512 / 10_000_000 (M = 1e6) \* 1_000_000) microseconds (1e6)
+
+### Taking-Turns Protocols
+
+- polling protocol
   - master node required, which is a single point of failure
-- token passing
+  - master node polls each of the nodes in round-robin
+  - master node can tell if node is done by detecting the lack of a "signal" on the channel
+- token-passing protocol
   - control token passed from one node to the other
-  - single point of failure
+  - decentralized, but still has a single point of failure
 
-### Error Detection
+### Switched Local Networks
 
-- parity checking
-- single bit parity
-  - detect single bit errors
-  - ensure that the number of 1s is even
-- two-dimensional bit parity
-  - detect and correct single bit errors on the row and column
-  - if a bit is flipped, both the row and column parities will report an error, in a coordinate form
+- ethernet protocol
+- switches don't know shit about the network layer
+- switches use the receiver MAC address in the packet header to figure out where to send the frame, otherwise all nodes get it
+- if a node wants to broadcast, it will send to MAC address FF-FF-FF-FF-FF-FF (48 1s)
 
-Checksum
+### MAC Addresses
 
-### Cyclic Redundancy Check (CRC)
+- aka: link-layer address; LAN address; physical address
+- each frame has a unique MAC (Multiple Access Channel) address for source
+- MAC needed to get assigned an IP address by the router
+- 48-bit MAC address (hardware or random software)
+- local unique 32-bit IP address
+- IEEE manages the MAC address space so that manufacturers do not conflict
+- manufacturers purchase MAC address space
 
-- XOR operation
-- R = remainder (D2^r / G)
+### ARP in Action
 
-### ARP Protocol in Action
-
-- Address resolution protocol
-- determining MAC address from IP address
-- Use if a node doesn't have MAC address in ARP table
-- MAC address is needed as per ethernet protocol, because otherwise the switches will send those packets to all devices
+- Address Resolution Protocol
+- Determining corresponding MAC address of an IP address
+- Use if a node doesn't have a MAC address in its _ARP table_
+- Off the subnet:
+  - Need to send the frame to the router first via MAC address (datagram still destined to receiver's IP address)
+  - The router will take care of modifying the MAC destination header via its routing table
 
 ### Ethernet
 
@@ -1200,23 +1356,42 @@ Checksum
 
 ### Ethernet Switch
 
-- store, forward Ethernet frames
+- link-layer switch
+- improvement over hubs (which is how ethernet collisions could occur before)
+- no collisions, full duplex, limits collision domains to each link
+  - cannot send multiple to one without collisions
+- store-and-forward Ethernet frames
 - examine incoming frame's MAC address, selectively forward frame
 - hosts are unaware of switches
-- no collisions, full duplex, each link is a collision domain
-  - cannot send multiple to one without collisions
 - Uses switch table to not require configuration (self-learning)
-  - When a frame is received, switch learns of the MAC and location of the sender
-  - If the destination MAC address is in the table (indexed), send only to it
-  - Otherwise, flood all interfaces except for arriving interface
+
+### Switches vs Routers
+
+Routers are layer-3 packet switches meaning they route using IP addressees, not MAC address. Routers need to be setup, whereas switches are plug-n-play. Switches are susceptible to broadcast storms or large ARP tables. Routers do not have a spanning tree restriction (switches only have one path, whereas routers enable multiple paths for example North America and Europe).
+
+### Self Learning Switches
+
+- When a frame is received, the switch learns of the MAC and location of the sender
+- If the destination MAC address is in the table (indexed), send frame only to that node
+- Otherwise, flood all interfaces except for arriving interface
 
 ### Interconnecting Switches
 
 - still self learning
 
-### Datacenter Networks
+### Virtual LANs
 
-- top of rack (TOR) switch
+- Map group of port numbers to a VLAN and avoid cross-contamination
+- To get from one VLAN to another use the router that is attached to the device with the switch
+- Desires
+  - Traffic isolation
+  - Inefficient uses of switch: suppose 10 groups, either need 10 switches or one switch with 96 ports and lack of traffic isolation
+  - Managing users: want to allow users to move to another group without having to modify cables
+- VLAN trunking: special port on all switches to intersect all VLANs (Ethernet frame 802.1Q to cross the VLAN trunk with VLAN ID tag)
+
+### Data Center Networks
+
+- top of rack (TOR) switch is layer-4 because it also makes decision based on the destination port-numbers
 - 20-40 server blades
 
 Facebook F16:
@@ -1244,4 +1419,10 @@ Abdullah and Hossein project
 
 ## Questions
 
-- What is QoS
+- What is QoS (quality of service)
+
+### Other
+
+[RC 1918](https://tools.ietf.org/html/rfc1918)
+
+- Private network addresses: 10/8, 172.16/12, and 192.168/16.
