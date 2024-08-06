@@ -933,6 +933,8 @@ Routing approaches, routing in the Internet, Internet Protocol, IPv6, tunnelling
 
 ### Data Plane
 
+Packet forwarding
+
 ### IPv4 Datagram
 
 - Version (4-bits, v4 or v6), Header length, Type of service (e.g. FTP), datagram length
@@ -1020,6 +1022,10 @@ For the transition, tunneling (protocol 41, RFC 4213) is used (IPv6 datagram ins
 
 ### Input Port Functions
 
+1. Consult lookup table
+2. Queue if switch fabric too slow
+3. Head-of-the-line blocking can occur if switch fabric is busy with the port another input packet wants to go to (the packet afterwards wants to go to a currently free port)
+
 ### Longest Prefix Matching
 
 - when looking at the forwarding table given a destination address, use longest address prefix that matches destination address
@@ -1037,7 +1043,7 @@ For the transition, tunneling (protocol 41, RFC 4213) is used (IPv6 datagram ins
 - first come, first served
 - priority
 - round robin
-- weighted fair queueing
+- weighted fair queueing (WFQ)
   - each class has a weight and each cycle is divided by the weights
   - weight x is 2, y is 1, and z is 1 then two packets from x, one form y, and one form z
   - minimum bandwidth guarantee (per-traffic-class)
@@ -1055,6 +1061,17 @@ For the transition, tunneling (protocol 41, RFC 4213) is used (IPv6 datagram ins
   - even links connecting two routers is a subnet
   - one way is to hide the routers and see the link groups
   - another way is to take the unique 24-bit high-order IP addresses
+
+Consider a router that interconnects three subnets: Subnet 1, Subnet 2, and
+Subnet 3. Suppose all of the interfaces in each of these three subnets are
+required to have the prefix 223.1.17.0/24. Also suppose that Subnet 1 is
+required to support at least 60 interfaces, Subnet 2 is to support at least 90
+interfaces, and Subnet 3 is to support at least 12 interfaces. Which three
+network addresses (of the form a.b.c.d/x) satisfy these constraints?
+
+- Subnet1: 223.1.17.0/26,
+- Subnet2: 223.1.17.128/25,
+- Subnet3: 223.1.17.64/28
 
 #### Classless Interdomain Routing
 
@@ -1145,17 +1162,26 @@ Example of DV.  C - A  - B. In first iteration, we figure out the distance and w
   - VLAN: Virtual LAN
 - SDN Controller: state management, communications
 - _packet-in_: transfer packet to controller
-- _flow-removed_: flow table entry deleted at switch
-- _port status_: inform controller of a change on a port
+- _flow-removed_: flow table entry deleted at Switch
+- _port-status_: inform controller of a change on a port
+- _modify-state_: modify entries in switch flow table
+- _read-state_: stats
 
 ### ICMP: Internet Control Message Protocol
 
 - RFC 792
 - network level information
 - hosts and routers
-- unreachable host, network, port, protocol
+- unreachable (1) host, (2) network, (3) port, (4) protocol
 - echo request/reply (ping)
 - typically used for errors
+
+```icmp
+Echo reply (to ping), type 0, code 0
+Destination network unreachable, type 3 code 0
+Destination host unreachable, type 3, code 1.
+Source quench (congestion control), type 4 code 0.
+```
 
 ## Chapter 6 Data Link Layer
 
