@@ -1003,7 +1003,7 @@ For the transition, tunneling (protocol 41, RFC 4213) is used (IPv6 datagram ins
 ### Control Plane
 
 - whatever is configuring the router is in the control plane
-- per-router control plane: ???
+- per-router control plane: routing algorithm runs in each router
 - Software-defined networking: remote controller
   - Every router connected to remote controller server which will install forwarding tables in routers
 

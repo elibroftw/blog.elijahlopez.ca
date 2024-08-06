@@ -583,7 +583,7 @@ You need to covariance or the correlation to find the standard deviation.
   - Expected return is then 13.39%
   - Standard deviation (square root of portfolio variance) is then 13.92% (the formula uses covariance)
 - c. what are the weights, expected return, and standard deviation of the optimal risky portfolio?
-  - **wB = (Excess return of the bond \* rE^2 - Excess return of equity \* Cov(rE, rB)) / ( excess return of rB \* rE^2 + excess return of equity \* rB^2 - \[excess return of B + excess return of E]Cov(rB, rE))** TODO
+  - **wB = (Excess return of the bond \* rE^2 - Excess return of equity \* Cov(rE, rB)) / ( excess return of rB \* rE^2 + excess return of equity \* rB^2 - \[excess return of B + excess return of E]Cov(rB, rE))** (TODO: turn into latex equation)
   - wB = 54.8%, wE = 45.2%
   - expected rp = 15.61%
   - STD(rp) = 16.54%
@@ -755,8 +755,6 @@ True picture of what occurred. Ethical standard.
   - The M2 value is the risk-adjusted return minus the index return
 - Information Ratio
   - alpha / (non-systematic risk)
-
-TODO: read slides
 
 ## Efficient Markets
 

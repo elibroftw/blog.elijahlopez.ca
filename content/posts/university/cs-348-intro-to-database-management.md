@@ -118,8 +118,6 @@ Database-level
 
 Consists of a set of operators
 
-<!-- TODO -->
-
 ### Operators
 
 - one or two relations as inputs
@@ -655,8 +653,6 @@ drop index ins_name_index
 Typically the index already exists on primary key and unique constraints.
 
 ### SQL Relational Division
-
-TODO: double check if this is correct.
 
 Assumes `model` is distinct (primary key). If model was not distinct, you would have to add the distinct keyword in the subquery as well
 as the ending count.

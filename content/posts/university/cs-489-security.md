@@ -812,7 +812,7 @@ What if dragging on that “scrollbar” really dragged a program (from a malici
 ### Security Controls - Docs
 
 - write down choices made and why they were made
-- if there is a question to do a secure thing, it should be done and ask if it should be removed rather than not enforced at all and left as a TODO
+- if there is a question to do a secure thing, it should be done and ask if it should be removed rather than not enforced at all or earmarked for later
 
 ### Standards, Processes, Audit
 
