@@ -9,13 +9,15 @@ tags:
 
 {{< toc >}}
 
-### Assumption
+## Preface
+
+### Assumptions
 
 True price of the stock is the mid-point of hte bid-ask. Market price is the price on the order last executed.
 
-## Flash Boys Notes
+### Flash Boys Notes
 
-[Combined Book Notes](/posts/literary-analysis/flash-boys-a-wall-street-revolt-michael-lewis)
+[My condense book notes](/posts/literary-analysis/flash-boys-a-wall-street-revolt-michael-lewis)
 
 ## First Week
 
