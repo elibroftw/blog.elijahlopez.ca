@@ -939,7 +939,7 @@ Packet forwarding
 
 - Version (4-bits, v4 or v6), Header length, Type of service (e.g. FTP), datagram length
 - 16-bit ID, Flags, 13-bit Fragmentation offset
-  - Networks links have MTU (max transfer size), so a large IP datagram is fragmented and put back together.
+  - Networks links have MTU (maximum transmission unit), so a large IP datagram is fragmented and put back together.
 - TTL, Upper-layer protocol, header checksum
 - 32-bit source
 - 32-bit destination
