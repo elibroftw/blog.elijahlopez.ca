@@ -7,7 +7,15 @@ tags:
   - macos
 ---
 
-Here is the following code if you need to get your app's logs as well as system logs through Applications code.
+Here is the following code if you need to get your app's logs as well as system logs through Applications code. The docs will tell you that the `.system` scope requires administration, but the reality is that by using the `local` log store, you can still get the system logs. [OSLogStore on Monterey by Michael Tsai](https://mjtsai.com/blog/2021/12/10/oslogstore-on-monterey/).
+
+> Quinn “The Eskimo!” @ Developer Technical Support @ Apple
+
+[OSLogStore.local()](https://developer.apple.com/documentation/oslog/oslogstore/local())
+
+> Gaining access to the local unified logging system requires permission from the system. The caller must be run by an admin account and have the com.apple.logging.local-store entitlement.
+
+The docs here are actually outdated since you do not need that entitlement. Note that using the `.system` scope won't work with sandboxed apps.
 
 ```swift
 import AppKit
@@ -57,3 +65,11 @@ for entry in logEntries {
 }
 try file.close()
 ```
+
+## References
+
+[Peter Steinberger; Logging in Swift; August 27, 2021](https://steipete.com/posts/logging-in-swift/)
+
+[Apple Developer; OSLogStore.local() Description](https://developer.apple.com/documentation/oslog/oslogstore/local())
+
+[Michael Tsai; OSLogStore on Monterey; December 10, 2021](https://mjtsai.com/blog/2021/12/10/oslogstore-on-monterey/)
