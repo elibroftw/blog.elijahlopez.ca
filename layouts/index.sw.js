@@ -5,6 +5,9 @@ var isOnline = true;
 
 window.addEventListener('online', () => { isOnline = true });
 window.addEventListener('offline', () => { isOnline = false });
+navigator.connection.onchange = e => {
+  isOnline = navigator.onLine;
+};
 
 self.addEventListener('install', event => {
   self.skipWaiting();
@@ -74,7 +77,9 @@ async function cacheFirstWithRefresh(request) {
 }
 
 self.addEventListener('fetch', function (event) {
-  if (isOnline) {
+  const requestUrl = new URL(event.request.url);
+  const isLocal = requestUrl.host == 'localhost:1313'
+  if (isOnline || isLocal || requestUrl.pathname == '/') {
     event.respondWith(networkFirst(event.request));
   } else {
     event.respondWith(cacheFirstWithRefresh(event.request));
