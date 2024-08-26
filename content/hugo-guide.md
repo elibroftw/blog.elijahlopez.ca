@@ -137,3 +137,18 @@ This one is a custom shortcode, but we just need the id of the gfycat link.
 ```
 
 {{< gist elibroftw 1a94149a2f6232d062b666c4ee9ea530 >}}
+
+### How to Write Footnotes
+
+Footnotes appear in numeric order and are linked via the same _tag_ used for the footnote. So you could use letters for a tag, but the render will still show numbers for the footnote. This is useful because you can write the footnote in markdown at the end of a paragraph rather than at the bottom of the article, so instead of scrolling to remember what the number is, you can put a unique tag, and the markdown render will show that markdown footnote at the bottom of the document with the proper numbering.
+
+```markdown
+This is how you write footnotes in Markdown/hugo[^1]
+
+[^1]: [text](https://name.tld)
+```
+
+This blog is a git repo on GitHub[^1]. This blog is a git repo on GitHub[^github]
+
+[^1]: [elibroftw/blog.elijahlopez.ca](https://github.com/elibroftw/blog.elijahlopez.ca)
+[^github]: [elibroftw/blog.elijahlopez.ca](https://github.com/elibroftw/blog.elijahlopez.ca)
