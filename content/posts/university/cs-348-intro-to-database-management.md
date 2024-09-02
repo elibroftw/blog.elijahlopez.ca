@@ -4,6 +4,7 @@ date: 2023-01-10T16:02:06-05:00
 draft: false
 tags:
   - university
+  - computer-science
 ---
 
 {{< toc >}}
@@ -188,7 +189,7 @@ KEYWORD (statements is implied)
 - SQL Data Control Language (DCL)
   - GRANT, REVOKE enforce the security model
 
-Schema used for Examples
+### Schema Used for Examples
 
 ![database schema](/images/cs-348/database-examples-schema.webp)
 
@@ -739,6 +740,8 @@ with recursive rec_prereq(course_id, prereq_id) as (select course_id, prereq_id 
 ## Entity-Relationship Model
 
 ### Database Design
+
+- Use draw.io
 
 #### Understand the real-world domain being modeled
 
