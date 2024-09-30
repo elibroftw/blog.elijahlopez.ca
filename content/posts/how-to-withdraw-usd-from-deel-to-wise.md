@@ -1,5 +1,5 @@
 ---
-title: "How to Withdraw USD From Deel to Wise Without a USD Account Details"
+title: "How to Withdraw USD From Deel to Wise Without USD Account Details"
 date: 2024-08-16T13:48:55-04:00
 draft: false
 tags:
