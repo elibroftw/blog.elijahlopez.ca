@@ -7,7 +7,7 @@ tags:
   - opinion
 ---
 
-Every time you start working on a project, ou should update your dependencies (weekly).
+Every time you start working on a project, you should update your dependencies (weekly).
 
 ### Iterative Dependency Approach
 
