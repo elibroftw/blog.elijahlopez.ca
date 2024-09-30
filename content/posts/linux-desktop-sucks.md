@@ -117,7 +117,9 @@ On Zorin OS, the home page is overwritten on every log in to <https://start.zori
 
 ## Nobara KDE
 
-When the laptop wakes from sleep, the cursor cannot be moved by the trackpad anymore. Online search yielded to disable "suspend" or "modern standby" but I couldn't find those settings in the BIOS menu of a 2016 laptop (razer blade stealth).
+When the laptop wakes from sleep, the cursor cannot be moved by the touchpad anymore. Online search yielded to disable "suspend" or "modern standby" but I couldn't find those settings in the BIOS menu of a 2016 laptop (razer blade stealth).
+
+Had to disable secure boot so I see a tpm error on every boot and need to press enter.
 
 ## Other Issues
 

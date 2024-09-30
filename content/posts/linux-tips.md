@@ -330,3 +330,7 @@ The scroll speed on Firefox is too sensitive. To reduce it,
 2. Search for `mousewheel.default.delta_multiplier_y`
 3. Set to 75 or change until satisfactory
 4. You can test the scroll speed on this post itself
+
+## Fix Touchpad after Waking From Sleep
+
+[See my other post](/posts/linux-touchpad-not-working/)

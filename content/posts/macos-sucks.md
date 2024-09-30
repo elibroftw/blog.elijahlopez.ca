@@ -54,7 +54,7 @@ Forget Linux distros. On Windows, status icons by default don't pollute the menu
 
 One of the issues with macOS is that it assumes its users will never need to use different instances of the same app for different tasks. There's an incorrect assumption that if I three windows of one app open, that all three are related to the same task. When I want to switch from the browser to one of these windows, I can't just use Command Tab, I also have to then use Command tilde and cycle through another window I don't need to use. It's also difficult to know how many windows I have of the same app! For this, you need to swipe up with three fingers. On Windows, the equivalent is Windows Tab. Option tab does nothing on macOS. Even then, the windows are scattered all over the place, so you need to take your time to count.
 
-Oh and if you minimize one window of an app, this Option trick doesn't even work! The window cannot be restored without using your trackpad, you just end up on the window that has not been minimized! Who came up with this garbage system? Even if there's another keyboard shortcut for that, that's another keyboard shortcut that didn't need to exist. Command tilde should've worked.
+Oh and if you minimize one window of an app, this Option trick doesn't even work! The window cannot be restored without using your touchpad, you just end up on the window that has not been minimized! Who came up with this garbage system? Even if there's another keyboard shortcut for that, that's another keyboard shortcut that didn't need to exist. Command tilde should've worked.
 
 ### Restoring a Window is a Pain
 

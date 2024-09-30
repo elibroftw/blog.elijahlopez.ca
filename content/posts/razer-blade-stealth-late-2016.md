@@ -41,11 +41,7 @@ The specs is predominantly why this laptop is not suited for productivity and ma
 
 ## Good Things
 
-Although you might LOL after reading the first four specs, mind you this was
-my **first** notebook that wasn't intel pentium, and I didn't have the financial
-freedom I have currently. My previous two laptops were a Windows XP
-laptop that had been in the family for over a decade, followed by a bukly Asus laptop
-with intel pentium.
+Although you might LOL after reading the first four specs, mind you this was my **first** notebook that wasn't intel pentium, and I didn't have the financial freedom I have currently. My previous two laptops were a Windows XP laptop that had been in the family for over a decade, followed by a bulky Asus laptop with intel pentium.
 
 ### Testament of Time
 
@@ -53,7 +49,7 @@ It's lasted 5 years even with low storage and required only $100 for a battery r
 to stressing the laptop for hours per day without a CPU limit. Currently, I have the CPU
 limited to 90% to prevent high temperatures. The CPU itself is not a pentium so that's another
 plus, although it is a mobile i5. Build quality is amazing. The laptop has no plastic and
-the trackpad is not trash. The only nicks present are on the sharp
+the touchpad is not trash. The only nicks present are on the sharp
 edges of the laptop lid, most likely due to letting other people touch or move your laptop.
 Pro-tip: never let anyone touch your laptop. You'd think moving a laptop would be done
 carefully by everyone, but no.
@@ -108,7 +104,7 @@ moderate Youtube playback, Microsoft word, some 30 minutes of idling. No program
 I want performance portability without a severe hit in battery life. If I was programming religiously on this laptop while playing YouTube
 and listening to music with microsoft word open, the laptop would surely last less.
 
-In 2020, I was overusing the laptop and the fans were spinning constaly every day. The battery ending up becoming bloated
+In 2020, I was overusing the laptop and the fans were spinning constantly every day. The battery ending up becoming bloated
 and I had to replace it. I was able to replace it myself, however the 3 hours and 50 minutes is using this new battery.
 
 The cord that is connected to the adaptor has the outside worn out. Not sure if the wires are exposed, but
@@ -125,11 +121,10 @@ with the cable plugged in. I have to charge while the laptop is awake and then s
 
 ### Mobile CPU
 
-- slow at opening apps even though "i5"
-- mobile CPU at the time meant dual core, but worse than the dekstop i3 lol.
-- I limited CPU speed to 90% to avoid loud fans and to avoid future battery bloating incidents
-- Over the last 5-6 years, I needed to install (electron-based) software like GitHub Desktop and VSCode which is less efficient
-- I cannot watch twitch at all, which is a 1 year old habit of mine
+- Slow at opening apps even though "i5"
+- Mobile CPU at the time meant dual core, but worse than the desktop i3 (LOL)
+- I limited CPU speed to 90% on WIndows to avoid loud fans and to avoid future battery bloating incidents
+- ~~I cannot watch twitch~~ I can confirm Twitch is watchable in 2024 on Fedora KDE.
 
 Geekbench 5 results are 500 for single core and 590 for multi core.
 
@@ -137,10 +132,7 @@ Geekbench 5 results are 500 for single core and 590 for multi core.
 
 Without perfect lighting, you will not look the same as you do in person. If I want
 a laptop to last until 2032, it will need to have a 1080p webcam. This is not compromisable
-which is why I chose the Razer Blade 14 instead of its Asus equivalanet. Your loss Asus.
-It's 2022. Gaming laptops are at the level of Macbook Pro's, and that means although Intel
-succeeded at improving performance significantly, their 13th gen chips should focus entirely
-on power efficiency.
+which is why I chose the Razer Blade 14 instead of its Asus equivalent in 2022. In 2024 and probably beyond, my recommendation is the Asus Zephyrus G14.
 
 ### Storage
 
@@ -150,7 +142,7 @@ eaten and requires cleaning up the computer every 2 months or so; If I didn't
 have to do this, I wouldn't have found out that VSCode does not clean up after
 itself and creates many folders that aren't required for it to function.
 The storage is almost full and this slows down the nvme SSD considerably.
-Comapred to Dave 2D's review, the SSD performance today is at best half.
+Compared to Dave 2D's review, the SSD performance today is at best half. Then again, 128GB is not enough in 2024, so if this laptop gets used more, I will upgrade the storage to 1TB.
 
 ### Minor Faults
 
@@ -159,10 +151,4 @@ Comapred to Dave 2D's review, the SSD performance today is at best half.
 
 ## Plans
 
-The laptop still works, so what is my plan? Well earlier this year, I was dual booting
-ZorinOS and Windows even with the storage constraint. However, I had many issues with Linux;
-Snap and flatpak take up so much storage, poor OneDrive integration. Therefore,
-my plan is to install Manjaro + KDE, improve the keyboard shortcuts, and if I don't like it, I
-will install the CuteFish desktop environment. Linux is the future, but I want to make that
-future 10 years, and not never. The best way for Linux to succeed, is to make transitioning from
-Windows as seamless as possible, and that means I will need to create a OneDrive client in 2023 or 2024.
+Experimenting on this laptop so that I can make the best Linux desktop tutorial mankind has seen.
