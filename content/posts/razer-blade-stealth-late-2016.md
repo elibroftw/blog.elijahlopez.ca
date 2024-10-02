@@ -142,7 +142,17 @@ eaten and requires cleaning up the computer every 2 months or so; If I didn't
 have to do this, I wouldn't have found out that VSCode does not clean up after
 itself and creates many folders that aren't required for it to function.
 The storage is almost full and this slows down the nvme SSD considerably.
-Compared to Dave 2D's review, the SSD performance today is at best half. Then again, 128GB is not enough in 2024, so if this laptop gets used more, I will upgrade the storage to 1TB.
+
+Compared to Dave 2D's review at launch, the SSD performance today is at best half for reading and worse than a fifth when it comes to write performance. In 2024, not only is the storage not enough, this performance degradation reminds me of how slow my first PC was when I was using an HDD instead of an SSD. The write speed is one third of what an HDD would provide meaning that I'll be buying a new SSD when Black Friday comes around.
+
+CrystalDiskMark Results (MB/s, R = Read, W = Write)
+
+Device | My Blade Stealth | At Launch (Dave 2D) | w/ new SSD | Razer Blade 14 (2022)
+-- | -- | -- | -- | --
+SEQ1M - Q8T1 | 440.62R 42.58W | 1043R 159.7W | N/A | 6529.36R 2653.02W
+SEQ1M - Q1T1 | 367.82R 28.52W | 520.9R 160.1W | N/A | 4142.25R 2169.57W
+RND4k - Q32T1| 237.36R 20.05W | 941R 160.6W| N/A | 469.99R 287.14W
+RND4k - Q1T1| 19.83R 20.45W | 43.38R 146.7W | N/A | 67.82R 149.92W
 
 ### Minor Faults
 
