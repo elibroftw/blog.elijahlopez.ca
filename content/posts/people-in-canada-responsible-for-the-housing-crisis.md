@@ -21,7 +21,7 @@ This person is straight up an idiot. The city simply negotiates with the builder
 
 ## u/Dr_Colossus
 
-This dumbass redditor opposed a railway line from Edmonton to Calgary because "you already need a car in both cities." First of all, no you don't. Second of all, a rail line makes housing around each station more attractive. Third of all, Red Deer is right there in the middle of the two cities. People like this should just not contribute to the discussion because it wastes everyone time to tell them how wrong they are. Saying cars are enough is like saying I'd rather drive to Toronto from Burlington than take the GO train. Once a train connecting Edmonton to Calgary exists, it will reduce traffic between the two cities because why bother driving so long? The only reason to drive is when the destination isn't exactly near the station.
+This dumbass redditor opposed a railway line from Edmonton to Calgary because "you already need a car in both cities." First of all, no you don't. Second of all, a rail line makes housing around each station more attractive. Third of all, Red Deer is right there in the middle of the two cities. People like this should just not contribute to the discussion because it wastes everyone time to tell them how wrong they are. Saying cars are enough is like saying I'd rather drive to Toronto from Oakville than take the GO train. Once a train connecting Edmonton to Calgary exists, it will reduce traffic between the two cities because why bother driving so long? The only reason to drive is when the destination isn't exactly near the station.
 
 ## Doug Ford
 

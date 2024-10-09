@@ -109,7 +109,7 @@ that could've just been pure coincidence.
 For dinner, my first time there, I got the half rack of ribs and half pound of wings. It came with fries too. This
 dinner was delicious, I was surprised I was able to finish most of it. I think it was only two wings and some
 fries that I could'nt finish which is understandable since I wasn't hungry when I went there. I got the Caesar garlic
-parmesean for the wings seasoning/sauce which is rare in the market (only Sultan's in Burlington offered something like that).
+parmesean for the wings seasoning/sauce which is rare.
 
 ### Famoso Neapolitan Pizzeria
 
