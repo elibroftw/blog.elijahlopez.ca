@@ -68,8 +68,6 @@ If you are like me, you can follow the tutorial that [forks my site](#forking-my
 12. Commit and push to origin (GitHub)
 13. To update your themes, use `git submodule update --remote --merge`
 
-Look into [Utterances](https://github.com/apps/utterances) for comment section.
-
 ## Other Resources
 
 - https://gohugo.io/getting-started/quick-start/
