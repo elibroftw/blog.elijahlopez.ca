@@ -34,10 +34,14 @@ If you are like me, you can follow the tutorial that [forks my site](#forking-my
     - also set `git config --global submodule.recurse true`
 9. Delete `content/posts` and `static/images`
     - Add your own `favicon.ico` to `static/images`
-10. Edit `config.yaml` and replace my information with yours
+10. Edit `hugo.yaml` and replace my information with yours
     - set `baseUrl` to the one shown by GitHub
-    - change the `author`, `email`, `utterancesRepo`, and `social`
-    - install [Utterances](https://github.com/apps/utterances) to your github repository to enable comment section
+    - change the `author`, `email`, and `social`
+    - for a comment section, set up `Giscus`
+        - Go to [https://giscus.app](https://giscus.app/)
+        - Enter your repository
+        - Select a category
+        - Under Enable giscus, copy the IDs from the website's script code into the `Giscus*` fields in the `hugo.yaml` file
 11. You can remove \# to enable certain features (the about section requires uses `content/about.md` and `content/about-subpage.md`)
 12. Read `content/hugo-guide.md` in your new repo to help you write, edit, and publish posts
 
