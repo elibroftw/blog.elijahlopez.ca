@@ -1,5 +1,5 @@
 ---
-title: "Why you Shouldn't Purchase a New York Times Subscription"
+title: "Why You Shouldn't Purchase a New York Times Subscription"
 date: 2024-10-13T16:08:38-04:00
 draft: false
 hidden: true
