@@ -2,7 +2,6 @@
 title: "Why You Shouldn't Purchase a New York Times Subscription"
 date: 2024-10-13T16:08:38-04:00
 draft: false
-hidden: true
 tags:
   - review
 ---
@@ -13,7 +12,7 @@ The reason I bought a NYT subscription is because they were offering a heavy dis
 
 ## The Good
 
-- Some wirecutter articles, which I've used and will use.
+- Some wirecutter articles, which I've used and will use more of
 
 ## The Bad
 

@@ -1,7 +1,7 @@
 ---
 title: "Male Grooming Tips"
 date: 2022-05-10T20:48:46-04:00
-draft: false
+draft: true
 hidden: true
 aliases: ['/posts/grooming-tips/']
 ---
@@ -14,6 +14,8 @@ Wash face with cleansing Gel two times a day, including once before sleep. After
 Do not wash or touch your face as your day goes unless it gets messy. Washing your face will irritate your skin.
 
 For a midday shower, I'm not sure what the call is on whether to wash your face, wash your face with soap, or wash your face with cleansing gel.
+
+Retinol
 
 ## Hair
 
