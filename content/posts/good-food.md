@@ -69,6 +69,10 @@ I was craving beef on rice instead of fries and this place delivered. I feel tha
 so will try eating these mixes with a rice base instead of a fries base. The food here was more expensive than Pita Halal
 but I liked it either way. The beef tasted slightly like mutton.
 
+### Dave's Hot Chicken
+
+The best fried chicken I've had so far.
+
 ## Dine-in or Take Out Restaurants
 
 ### Chawla's Cuisine
