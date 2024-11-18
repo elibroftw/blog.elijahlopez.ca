@@ -8,6 +8,13 @@ tags:
 
 Since my [yt-dlp propaganda on YouTube is getting many views](https://www.youtube.com/watch?v=Tq9qpA2QOTI), I thought I'd create this article and a future video on how to use yt-dlp to download audio from websites, primarily YouTube.
 
+<details><summary>Troubleshooting</summary>
+
+For most errors like 403: Forbidden, try upgrading yt-dlp.
+
+`pip install --upgrade yt-dlp`
+</details>
+
 <details><summary>Installing yt-dlp</summary>
 
 - [Windows download](https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp.exe)
