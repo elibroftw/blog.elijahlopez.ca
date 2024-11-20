@@ -9,19 +9,16 @@ tags:
 
 After thinking about abortion for a good couple hours, I was finally able to form an almost perfect opinion.
 
-<details>
-  <summary>Hint</summary>
-  Think about a trespasser in your home
-</details>
+Hint: Think about a trespasser in your home
 
-There will always be haters and this is not an echo chamber for any side, however some opinions are going to be confronted more than others.
+There will always be haters and this is not an echo chamber for any side. However some opinions are going to be confronted more than others.
 I have made made a short guide for people of different political leanings.
 
-- For right-leaning people who are religious and aren't open to changing their mind, read from [target reader](#target-reader).
-- For right-leaning people who aren't open to changing their mind, read from [obligations](#obligations).
-- For right-leaning people with an open mind, read from [obligations to an embryo/fetus](#obligations-to-an-embryofetus).
-- For moderates, read from [classical liberal](#classical-liberal).
-- For leftists, read [gripes](#gripes).
+- For right-leaning people who are religious and aren't open to changing their mind, start reading from _[Target Reader](#target-reader)_.
+- For right-leaning people who aren't open to changing their mind, you can start reading from _[Obligations](#obligations)_.
+- For right-leaning people with an open mind, start reading from _[Obligations to an Embryo/Fetus](#obligations-to-an-embryofetus)_.
+- For moderates, start reading from _[Classical Liberal](#classical-liberal)_.
+- For leftists, skip to _[Gripes](#gripes)_.
 
 {{< toc >}}
 
@@ -36,23 +33,23 @@ My arguments are based on property & privacy rights as my hint strongly implies,
 
 ## Obligations
 
-There is a homeless person outside of McDonalds. What do you do?
+There is a homeless person outside of McDonald's. What do you do?
 
-You bought them food but that only helps them for one meal. Humans in a secure position eat
-3 meals a day every day. What do you do?
+If you buy them food but that only helps them for one meal. Humans in a secure position eat 2-3 meals a day every day. What do you do?
 
-Did you have a moral obligation to help them past the one meal? Why?
+Do you have a moral obligation to help them more than paying for one meal? Why?
 
-If there is moral obligation to help homeless people past one meal, should that
-obligation be forced by the government?
+If there is moral obligation to help homeless people past one meal, should that obligation be forced by the government?
 
-If that obligation is to be forced by the government, then what other moral obligations should
-be forced by the government? Should the government force the donation of organs upon death?
+If that obligation is to be forced by the government, then what other moral obligations should be forced by the government? Should the government force the donation of organs upon death?
 
-Should the government force the obligation to perform free labour since you are a plumber when
-your neighbours sink bursts?
+Should the government force the obligation to perform free labour since you are a plumber when your neighbours sink bursts?
 
-I propose three questions. When does a human have a moral obligation, when should a government dictate an obligation, and should dictated obligations always be rooted in morality?
+I propose three questions.
+
+1. When does a human have a moral obligation (to act in some manner)?
+2. When should a government direct an obligation?
+3. Should directed obligations always be rooted in morality?
 
 ## Obligations to an Embryo/Fetus?
 
@@ -97,7 +94,7 @@ Wouldn't it be much better if you could just call someone to do it for you witho
   - Not sure if it needs to be said, but an embryo does not have organs vs. a fetus that might have organs
 - The only reason you shouldn't be able to abort a fetus is if you just learned its sex unless its life/death/financial situation
   - Root reasoning is that sex based abortions could cause an imbalance of sex ratios in a country, which would have drastic effects on the lives of both sexes (e.g. India)
-  - This bias issue should be dealt with in the education system as well as in immigration
+  - This bias issue should be corrected in the education system as well as in immigration
   - Abortion itself should never be banned, however sex reveals should be banned only if abortions due to sex reveal starts affecting the sex ratio in the country
   - If the sex-ratio is not changing much, the slight discrimination wouldn't be having severe consequences (e.g. race preferences in dating does not motivate people to behave differently, or it at least isn't a moral/legal issue)
 - Child support should not be mandatory. There is no reason to force another person to financially support their sexual partner because the child is biologically theirs
