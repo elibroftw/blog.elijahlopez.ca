@@ -12,3 +12,4 @@ A Chic-fil-a has opened in Burlington, Ontario in the plaza of Appleby and Dunda
 - Mighty Bird (more expensive than Chic-Fil-A, not as good as Dave's Hot Chicken)
 - Chic-Fil-A (5/10 would not recommend anymore)
 - KFC (do not recommend unless you want to get obese)
+- Church's Texas Chicken (TODO)
