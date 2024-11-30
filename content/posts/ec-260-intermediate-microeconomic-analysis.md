@@ -2,6 +2,9 @@
 title: "EC 260 Intermediate Microeconomic Analysis"
 date: 2020-05-16T18:49:12-04:00
 draft: false
+tags:
+  - university
+  - economics
 ---
 
 Dumping my notes here.
