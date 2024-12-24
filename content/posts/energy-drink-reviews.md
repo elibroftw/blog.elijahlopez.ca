@@ -23,10 +23,6 @@ This did not taste bad so I am putting it up here.
 
 This did not taste bad so I am putting it up here.
 
-### Reign Energy Rainbow Sorbet (8 / 10)
-
-It does have a sorbet taste, but not sure if it's better or worse than the Razzle Berry. It's definitely better than the Orange Dreamsickle.
-
 ### Reign Storm Grape (8 / 10)
 
 Had this once, it's good.
@@ -34,6 +30,10 @@ Had this once, it's good.
 ### Reign Storm Kiwi Blend (8 / 10)
 
 Had this once, it's good. Too many 8/10s though, so I'll have to retest them to figure out which ones are better.
+
+### Reign Energy Rainbow Sorbet (7.5 / 10)
+
+I prefer Monster White to this flavour. There's this sharpness I feel when I swallow the drink which is not present when drinking Monster White.
 
 ### Reign Energy Orange Dreamsicle (5 / 10)
 
