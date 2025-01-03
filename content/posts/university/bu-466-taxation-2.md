@@ -5,6 +5,7 @@ draft: false
 tags:
   - university
   - accounting
+  - taxes
 aliases:
   - /posts/bu-466-taxation-2
 ---
