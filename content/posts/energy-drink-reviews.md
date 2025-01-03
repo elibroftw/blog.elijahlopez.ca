@@ -31,14 +31,15 @@ Had this once, it's good.
 
 Had this once, it's good. Too many 8/10s though, so I'll have to retest them to figure out which ones are better.
 
-### Reign Energy Rainbow Sorbet (7.5 / 10)
+### Reign Energy Reignbow Sherbet (6 / 10)
 
-I prefer Monster White to this flavour. There's this sharpness I feel when I swallow the drink which is not present when drinking Monster White.
+This definitely is not on par with White Monster. It doesn't taste as good as I thought it did, so it's not worth a repurchase. However, if someone offered me to drink it, I would accept.
+I'll try to drink my last can chilled to figure out if the subpar taste was just because the drink was at room temperature.
 
 ### Reign Energy Orange Dreamsicle (5 / 10)
 
-I will admit that I am a prejudice person when it comes to goods and services, however I am open minded because without having an open-mind, you can never push your own definition of perfection. I was biased against the Reign Energy Orange Dreamsicle because why would I want to taste Orange when I have orange juice? I said
-why not because what if it would be better than Orange juice. I was wrong, it smells and tastes like medicine. Never buying again.
+I will admit that I am a prejudice person when it comes to goods and services, however I am open minded because without having an open-mind, you can never push your own definition of perfection. I was biased against the Reign Energy Orange Dreamsicle because why would I want to taste Orange when I have orange juice?
+I said why not because what if it would be better than Orange juice. I was wrong, it smells and tastes like medicine. Never buying again.
 
 ### Reign Energy Cherry Limeade (2 / 10)
 
