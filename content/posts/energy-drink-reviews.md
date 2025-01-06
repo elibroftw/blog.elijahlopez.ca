@@ -11,6 +11,10 @@ What ratings mean. Anything above 5 means I would rather drink it than drink not
 
 I believe this is better than the Razzle Berry flavour, but I will have to taste again. There isn't exactly any bad points I can think of. This does have a slight taste like a gummy bear and it's not overpowering.
 
+### Reign Storm Grape (8.5 / 10)
+
+I like the taste of this better than Monster White, so that's why it's getting an 8.5. I'll have the White Gummy Bear soon to compare exactly which drink gets first place. One great and underrated aspect about the Reign Storm brand is that the caffeine level is low enough to have two cans per day! The downside is that the can is actually smaller than the Reign Energy and Monster cans, however I have trouble finishing those cans anyways, sometimes taking up to 3 hours to finish a can. I recommend drinking this cold or with ice for better taste.
+
 ### Reign Energy Razzle Berry (8 / 10)
 
 The first energy drink that had a good taste that persuaded me to buy another one. This is great and it's only downfall is this slight after taste that lingers. I forget exactly what that "bad" taste is, but I'll update this article the next time I drink it. Rated 8 / 10 because I'm saving the perfect score until I've tasted and reviewed at least 10 energy drinks.
@@ -22,10 +26,6 @@ This did not taste bad so I am putting it up here.
 ### Monster White (8 / 10)
 
 This did not taste bad so I am putting it up here.
-
-### Reign Storm Grape (8 / 10)
-
-Had this once, it's good.
 
 ### Reign Storm Kiwi Blend (8 / 10)
 
