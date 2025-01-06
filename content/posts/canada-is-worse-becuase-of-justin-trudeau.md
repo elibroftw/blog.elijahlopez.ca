@@ -10,6 +10,8 @@ tags:
 
 These days, chronically online Canadians are absolutely wild. They complain about bills that they didn't even read.
 
+{{< toc >}}
+
 ### Why Trudeau was Elected
 
 Canadian governments were not squeaky clean. While researching, the information I've come across point that both Liberals and Conservatives were not clean. Obviously, it was time for Harper to go.
