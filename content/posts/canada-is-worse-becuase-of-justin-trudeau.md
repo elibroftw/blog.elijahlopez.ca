@@ -66,13 +66,11 @@ The prime minister said that only WE Charity could administer this program, but.
 - [WE lobbied government 43 times in months leading up to cancellation of $543 million volunteer grant program deal](https://nationalpost.com/news/politics/we-lobbied-government-43-times-in-months-leading-up-to-cancellation-of-543-million-volunteer-grant-program-deal)
 - [WE Charity revised proposal to administer student grant, MPs told](https://www.ipolitics.ca/news/we-charity-revised-proposal-to-administer-student-grant-mps-told)
 
-### ArriveCan
+### ArriveCAN
 
-$60M for a goddamn app that didn't let me into the country and enjoy my full rights anyways? And the system we have now is extremely simple. My family came back from the Dominican Republic and they have these pillar system that take pictures of you and the entire system is a physical slip of paper with just your name on it. The pillar took a picture of my dad twice and the agents just let us through.
+It was $60M for a an app that didn't let me into the country and enjoy my full rights anyways (2022). Today though, ArriveCAN is a great app now that COVID-19 is over. Advance Declaration can be used for express border entry. I guess $60M for express border entry is not the worst thing that has happened. This issue wasn't about the money though, it's about the ethics behind procurement.
 
-So $60 million dollars was spent on an app that reduced efficiency and isn't even used for entering the country today.
-
-Where is the accountability. The firm, [GC Strategies](https://www.cbc.ca/news/politics/gc-strategies-arrivecan-1.7120381) has gotten a quarter of a billion dollars since Liberals came into power. The company would keep 15-30% as a commission to subcontract the awards it would get. How is a system so bad that a contractor can take a higher commission than what Apple and Google take at the mobile stores.
+Where is the accountability? The firm, [GC Strategies](https://www.cbc.ca/news/politics/gc-strategies-arrivecan-1.7120381) got a quarter of a billion dollars since the Liberals came into power. The company would keep 15-30% as a commission to subcontract the awards it would get. How is a system so poor that a contractor can take a higher commission than what Apple and Google take from their respective mobile app stores?
 
 ### Housing (and Immigration)
 
