@@ -33,8 +33,11 @@ Had this once, it's good. Too many 8/10s though, so I'll have to retest them to 
 
 ### Reign Energy Reignbow Sherbet (6 / 10)
 
-This definitely is not on par with White Monster. It doesn't taste as good as I thought it did, so it's not worth a repurchase. However, if someone offered me to drink it, I would accept.
-I'll try to drink my last can chilled to figure out if the subpar taste was just because the drink was at room temperature.
+This definitely is not on par with Monster White. It doesn't taste as good as I thought it did, so it's not worth a repurchase. However, if someone offered me to drink it, I would accept. I'll try to drink my last can chilled to figure out if the subpar taste was just because the drink was at room temperature.
+
+### Monster Energy Reserve White Pineapple (5.5 / 10)
+
+This is also not on par with Monster White. Although I like the Monster White flavour, the pineapple flavour ruins the drink. Pineapple juice is good enough to be honest. I put this under the Reignbow Sherbet just because the Reignbow Sherbet is fruity.
 
 ### Reign Energy Orange Dreamsicle (5 / 10)
 
