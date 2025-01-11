@@ -31,6 +31,10 @@ This did not taste bad so I am putting it up here.
 
 Had this once, it's good. Too many 8/10s though, so I'll have to retest them to figure out which ones are better.
 
+### Reign Storm Peach Nectarine (6.5 / 10)
+
+Although it has a pleasant taste, it is missing a _kick_ found in drinks such as Monster White.
+
 ### Reign Energy Reignbow Sherbet (6 / 10)
 
 This definitely is not on par with Monster White. It doesn't taste as good as I thought it did, so it's not worth a repurchase. However, if someone offered me to drink it, I would accept. I'll try to drink my last can chilled to figure out if the subpar taste was just because the drink was at room temperature.
