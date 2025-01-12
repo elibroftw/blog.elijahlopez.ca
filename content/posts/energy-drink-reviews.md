@@ -31,6 +31,10 @@ This did not taste bad so I am putting it up here.
 
 Had this once, it's good. Too many 8/10s though, so I'll have to retest them to figure out which ones are better.
 
+### Celsius Orange (7 / 10)
+
+Orange
+
 ### Reign Storm Peach Nectarine (6.5 / 10)
 
 Although it has a pleasant taste, it is missing a _kick_ found in drinks such as Monster White.
