@@ -1,5 +1,5 @@
 ---
-title: "Please Cite Your Factual Opinions (Illusion of Truth!)"
+title: "Please Cite Your Factual Opinions - The Illusion of Truth"
 date: 2024-11-19T19:12:12-05:00
 draft: false
 tags:

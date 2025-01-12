@@ -2,7 +2,7 @@
 title: "Improving Safety and Efficiency of Payment System using AI and Quantum Computing"
 date: 2024-05-27T16:03:52-04:00
 draft: false
-author: Ajit Desai
+authors: ["Ajit Desai"]
 tags:
   - talks
   - finance
@@ -11,8 +11,8 @@ tags:
 ## Papers
 
 - Bank of Canada
-  - Needle in a haystack (may 15 2024)
-  - Using AI to improve the system (december 2023/2022)
+  - Needle in a haystack (May 15, 2024)
+  - Using AI to improve the system (December 2023/2022)
 
 ### Motivations
 
