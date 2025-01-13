@@ -43,15 +43,19 @@ Although it has a pleasant taste, it is missing a _kick_ found in drinks such as
 
 This definitely is not on par with Monster White. It doesn't taste as good as I thought it did, so it's not worth a repurchase. However, if someone offered me to drink it, I would accept. I'll try to drink my last can chilled to figure out if the subpar taste was just because the drink was at room temperature.
 
-### Monster Energy Reserve White Pineapple (5.5 / 10)
+### Monster Energy Ultra Strawberry Dreams (4 / 10)
+
+Monster White is better. The flavour is a hint of strawberry and then some concoction. It's not that enjoyable to drink and I'd even go further to say I'm having trouble drinking it! It doesn't taste as bad as White Pineapple.
+
+### Monster Energy Reserve White Pineapple (3 / 10)
 
 This is also not on par with Monster White. Although I like the Monster White flavour, the pineapple flavour ruins the drink. Pineapple juice is good enough to be honest. I put this under the Reignbow Sherbet just because the Reignbow Sherbet is fruity.
 
-### Reign Energy Orange Dreamsicle (5 / 10)
+### Reign Energy Orange Dreamsicle (2 / 10)
 
 I will admit that I am a prejudice person when it comes to goods and services, however I am open minded because without having an open-mind, you can never push your own definition of perfection. I was biased against the Reign Energy Orange Dreamsicle because why would I want to taste Orange when I have orange juice?
 I said why not because what if it would be better than Orange juice. I was wrong, it smells and tastes like medicine. Never buying again.
 
-### Reign Energy Cherry Limeade (2 / 10)
+### Reign Energy Cherry Limeade (1 / 10)
 
 Disgusting. And by disgusting I mean not my cup of tea.
