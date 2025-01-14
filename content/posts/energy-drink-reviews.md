@@ -31,9 +31,13 @@ This did not taste bad so I am putting it up here.
 
 Had this once, it's good. Too many 8/10s though, so I'll have to retest them to figure out which ones are better.
 
-### Celsius Orange (7 / 10)
+### Celsius Orange (7.5 / 10)
 
 Orange
+
+### Punch Monster Mango Loco (7 / 10)
+
+Tastes like Mango concentrate juice. I'll put this underneath the Celsius Orange just because if I was given a choice between the two, I would pick the Celsius Orange over Mango Loco.
 
 ### Reign Storm Peach Nectarine (6.5 / 10)
 
