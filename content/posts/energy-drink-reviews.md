@@ -35,6 +35,10 @@ Had this once, it's good. Too many 8/10s though, so I'll have to retest them to 
 
 Orange
 
+### Punch Monster Pacific Punch (7.25 / 10)
+
+Make sure to drink when chilled. Tastes like Kool-Aid. I prefer Celsius Orange over this. I don't mind the calories as the sugar content is only 18% of daily value. But then again, I'm sensitive to sugar, so maybe I do mind.
+
 ### Punch Monster Mango Loco (7 / 10)
 
 Tastes like Mango concentrate juice. I'll put this underneath the Celsius Orange just because if I was given a choice between the two, I would pick the Celsius Orange over Mango Loco.
