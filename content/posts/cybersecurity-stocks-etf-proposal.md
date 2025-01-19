@@ -15,36 +15,51 @@ One of the problems with Cybersecurity ETFs is that most (except for IHACK) are 
 
 My proposal is to categorize companies into two tiers. Tier 1 and Tier 2. Tier 1 is pure-play cybersecurity companies or companies where cybersecurity revenue is the majority of the revenue mix. Tier 2 companies consist of firms that offer security but are not known or do not depend on that revenue. The rationale for Tier 2 is that it's significantly more difficult to judge how important the cybersecurity segment is to these companies as well as being able to retrieve division financial stats on demand. In contrast, for pure-play firms, we can just go to Yahoo Finance. For Tier 2 companies, we'd have to read their 10K annual report. Sure an ETF provider can easily do this, but there's an assumption that the cybersecurity division is a reported segment to begin with!
 
-The tier 2 companies should have half the weight of the tier 1 companies. We could even argue that there should be a tier 3, however, that requires some more effort in differentiating and sorting.
+The tier 2 companies should have half the weight of the tier 1 companies. We could even argue that there should be a tier 3, however, that requires some more effort in differentiating and sorting. Note that this list is not periodically updated, so compare to [BUG Cybersecurity ETF from Global X](https://www.globalxetfs.com/funds/bug/). I'll add a changelog
+
+<details><summary>Changelog</summary>
+
+Jan 19th, 2025: Added A10 Networks Inc, AhnLab Inc, Onespan Inc, Digital Arts Inc, Rapid7 Inc, Telos Corporation, Hennge KK
+
+</details>
+
+To calculate weight, do the following. Calculate the denominator as follows: (T2 stocks + 2x T1 stocks). For T2 stocks, the weight is 1/D. For T1 stocks, the weight is 2/D.
 
 Ticker | Company | Tier | Weight
 --- | --- | --- | ---
-CRWD | CrowdStrike | I | 4.65%
-S | SentinelOne | I | 4.65%
-PANW | Palo Alto Networks | I | 4.65%
-ZS | ZScaler | I | 4.65%
-NET | CloudFlare | I | 4.65%
-FTNT | Fortinet | I | 4.65%
-CHKP | Check Point Software Technologies | I | 4.65%
-GEN | Gen Digital Inc. | I | 4.65%
-CYBR | CyberArk Software Ltd. | I | 4.65%
-THLLY / HO.PA | Thales S.A. | I | 4.65%
-VRNS | Varonis Systems | I | 4.65%
-RDWR | Radware | I | 4.65%
-QLYS | Qualys, Inc. | I | 4.65%
-TMICY / 4704.TYO | Trend Micro | I | 4.65%
-SCWX | SecureWorks | I | 4.65%
-TENB | Tenable Holdings, Inc. | I | 4.65%
-AVGO | Broadcom | II | 2.33%
-OKTA | Okta | II | 2.33%
-AKAM | Akamai Technologies, Inc | II | 2.33%
-INFY | Infosys | II | 2.33%
-LDOS | Leidos Holdings, Inc. | II | 2.33%
-CSCO | Cisco | II | 2.33%
-JNPR | Juniper Networks, Inc. | II | 2.33%
-CACI | CACI International Inc | II | 2.33%
-SAIC | Science Applications International Corporation | II | 2.33%
-NOC | Northrop Grumman Corporation | II | 2.33%
-BAH | Booz Allen Hamilton | II | 2.33%
+CRWD | CrowdStrike | I | 3.64%
+S | SentinelOne | I | 3.64%
+PANW | Palo Alto Networks | I | 3.64%
+ZS | ZScaler | I | 3.64%
+NET | CloudFlare | I | 3.64%
+ATEN | A10 Networks Inc | I | 3.64%
+FTNT | Fortinet | I | 3.64%
+CHKP | Check Point Software Technologies | I | 3.64%
+GEN | Gen Digital Inc. | I | 3.64%
+CYBR | CyberArk Software Ltd. | I | 3.64%
+THLLY / HO.PA | Thales S.A. | I | 3.64%
+VRNS | Varonis Systems Inc | I | 3.64%
+RDWR | Radware | I | 3.64%
+QLYS | Qualys, Inc. | I | 3.64%
+TMICY / 4704.TYO | Trend Micro | I | 3.64%
+SCWX | SecureWorks | I | 3.64%
+TENB | Tenable Holdings | I | 3.64%
+OSPN | Onespan Inc | I | 3.64%
+053800.KQ | Ahnlab Inc | I | 3.64%
+2326.TYO | Digital Arts Inc | I | 3.64%
+RPD | Rapid7 Inc | I | 3.64%
+AVGO | Broadcom | II | 1.82%
+OKTA | Okta | II | 1.82%
+AKAM | Akamai Technologies, Inc | II | 1.82%
+INFY | Infosys | II | 1.82%
+LDOS | Leidos Holdings, Inc. | II | 1.82%
+CSCO | Cisco | II | 1.82%
+JNPR | Juniper Networks, Inc. | II | 1.82%
+CACI | CACI International Inc | II | 1.82%
+SAIC | Science Applications International Corporation | II | 1.82%
+NOC | Northrop Grumman Corporation | II | 1.82%
+BAH | Booz Allen Hamilton | II | 1.82%
+TLS | Telos Corp | II | 1.82%
+4475.TYO | Hennge KK | II | 1.82%
 
-Disclaimer: I own shares in CloudFlare.
+Disclaimer: I used to own shares in CloudFlare. As of January 19th, 2025, I do not own shares in any company listed in this table.
