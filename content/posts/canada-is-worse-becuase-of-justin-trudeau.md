@@ -95,6 +95,20 @@ We wonder why real GDP per capita is rarely growing, and it's because the govern
 
 [PBO Commentary](https://distribution-a617274656661637473.pbo-dpb.ca/03ffbeef04658a0828c035bec9ef4b2e7a4de065014f64918bc50a6afca3b043)
 
+### Small Business Loan "Forgiveness"
+
+- During COVID, the Trudeau administration allowed businesses to take a $50,000 loan and if they repaid $30,000 "early," $20,000 will be forgiven
+
+There were 1,190,000 small businesses in Canada. So that's 23,800,000,000 in FREE MONEY WITHOUT AN INCREASE IN PRODUCTION.
+
+In other words, this devalues the currency, and as of 2024, it is clear the Trudeau administration messed up as the CAD is losing against the USD now that interest rates are being cut. If fiscal policy was managed better, then the FX rate would've been much stronger in 2022 during the interest rate hikes.
+
+Canada is in a recession in 2025. Our currency rate is worse than the crash in March 2020. This is horrible.
+
+### Inefficient Government
+
+It took the NRC 11 weeks to send a laptop to a software developer intern.
+
 ### 19 Reasons From my Google Keep
 
 1. Lied about ending first past the post. Even when exploring alternatives, his party and followers were apprehensive about ranked voting, which is not good for proportional representation at a national view. Ranked is good for mayoral elections.
