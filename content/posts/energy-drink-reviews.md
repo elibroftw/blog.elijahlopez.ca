@@ -31,9 +31,13 @@ This did not taste bad so I am putting it up here.
 
 Had this once, it's good. Too many 8/10s though, so I'll have to retest them to figure out which ones are better.
 
-### Celsius Orange (7.5 / 10)
+### Celsius Orange (7.75 / 10)
 
 Orange
+
+### Celsius Peach Vibe (7.5 / 10)
+
+It's okay on its own. As soon as you eat something even a tad sweet, the flavour isn't as good as it could be
 
 ### Punch Monster Pacific Punch (7.25 / 10)
 
