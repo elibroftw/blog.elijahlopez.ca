@@ -2,6 +2,8 @@
 title: "What Makes a Person Far Left"
 date: 2025-01-17T09:52:29-05:00
 draft: true
+tags:
+  - politics
 ---
 
 Recently Liberal Leader candidate Mark Carney called the NDP far-left. I disagree with this assertion because far-left can only really be known once you hear the kind of horse shit that is said by them. Here's a few things that makes a person far-left, which in my books is left to a communist. Yes you heard that right, being a commie isn't far left, it's the people who take it further than just believing in a set of core principles. There's a difference between having an opinion on what the best economic system is, versus actively defending foreign regimes that aren't ethical. Look no further than the first reason.
