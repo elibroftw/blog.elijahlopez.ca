@@ -113,13 +113,13 @@ that could've just been pure coincidence.
 For dinner, my first time there, I got the half rack of ribs and half pound of wings. It came with fries too. This
 dinner was delicious, I was surprised I was able to finish most of it. I think it was only two wings and some
 fries that I could'nt finish which is understandable since I wasn't hungry when I went there. I got the Caesar garlic
-parmesean for the wings seasoning/sauce which is rare.
+parmesan for the wings seasoning/sauce which is rare.
 
 ### Famoso Neapolitan Pizzeria
 
 Waterloo, Ontario
 
-I went here with a friend and their pasta with the meatballs did not dissapoint me. I had water for the drink.
+I went here with a friend and their pasta with the meatballs did not disappoint me. I had water for the drink.
 The seating was awkward thought, we were at a table in the middle of the restaurant a meter or two away from the entrance
 to their outdoor dining. This is just a me thing, as I don't like people sitting towards my back. This is a place I'd take
 a girl out for dinner or a come with a friend, not a place I'd go alone. It's more classic and simple than the Piper Arms Place,
@@ -132,3 +132,11 @@ although I'd want to try their pizza out next time. So I guess, it's not a first
   - If you leave the fat for last, don't eat it
 - Raspberry Sorbet
   - For $6 + tax, you get a dessert than you can savour and that won't leave you feeling sick the way ice cream does.
+
+### Easy on Fourth
+
+Love the variety, vibrance is top class, and food tastes amazing.
+
+### Touhenboku Ramen
+
+The duck ramen is amazing.
