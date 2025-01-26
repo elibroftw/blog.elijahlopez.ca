@@ -3,7 +3,7 @@ title: "TN Visa"
 date: 2024-11-03T18:12:33-05:00
 draft: true
 tags:
-  - working-in-usa
+  - usa
 ---
 
 This is just an info dump of everything I've learned regarding the TN Visa from my dad and two friends.
