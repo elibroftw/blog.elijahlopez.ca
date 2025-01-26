@@ -56,7 +56,7 @@ So while I do not have the right to _force_ someone to save the climate, I can d
 
 In short, there aren't many reasons to care about climate change if you live in an area with a predictable climate but I'd say that the coral reefs reason is good enough.
 
-## Ill-Accounted Reasons
+## Poorly-Accounted Reasons
 
 I'm not a climate change activist. I'm a neutral bystander who dislikes misleading information. Climate Change did not cause your forest fires. Reversing climate change is not going to stop hurricanes, floods, and tornados.
 If floods never existed before climate change, how would the bible which was written by humans, even know of floods? They are called natural disasters for a reason, stop using these fictitious reasons to promote policies that benefit
@@ -128,37 +128,37 @@ This isn't an all-convincing problem, but it convinced me a bit since although I
 https://www.unep.org/news-and-stories/story/why-are-coral-reefs-dying
 https://oceanservice.noaa.gov/facts/coral_bleach.html
 
-When water is too warm, corals will expel the algae (zooxanthellae) living in their tissues causing the coral to turn completely white. This is called coral bleaching.
+When water is too warm, corals will expel the algae (Zooxanthellae) living in their tissues causing the coral to turn completely white. This is called coral bleaching.
 When a coral bleaches, it is not dead.
 Corals can survive a bleaching event, but they are under more stress and are subject to mortality.
 
 New problem: Rising ocean temperatures
 
 Rising ocean temperatures can be explained by an increase in absorbing the sun's energy.
-This increase in absorbtion is because of an increase in green house gases which traps more energy from the sun.
+This increase in absorption is because of an increase in green house gases which traps more energy from the sun.
 
 New problem: green house gases
 
-The problem isn't just stabalizing green house gases, but rather reducing it in general. Either by converting it to a more manageable form of matter (solid or liquid) or via a chemical reaction to another molecule. Another solution is to release the green house gases into space itself rather than contain it. So here are three options.
+The problem isn't just stabilizing green house gases, but rather reducing it in general. Either by converting it to a more manageable form of matter (solid or liquid) or via a chemical reaction to another molecule. Another solution is to release the green house gases into space itself rather than contain it. So here are three options.
 
-Simply stopping the burning of fossil fuels is not enough and I am 100% against signifiicant quality of life reduction for that. We need to ensure the right infrastructure is in place so that fossil fuels are simply not needed. We need fossil fuels for planes for example and plastics. These goods need to be replaced with alternatives well before banning fossil fuel burning. And do not forget, I said burning not exporting. Countries should not lower their citizens' quality of life by banning exports in order to virtue signal (a single countries emission reduction is not going to have any impact, they would have to also reduce greenhouse gases in general). One of the F1 drivers was trying to throw shade at Canada's oil as if exporting oil is worse than consuming it. Demand always comes before supply, it's not the demand for the product but rather demand for what the product is capable of offering. This is true for sex, drugs, and food.
+Simply stopping the burning of fossil fuels is not enough and I am 100% against significant quality of life reduction for that. We need to ensure the right infrastructure is in place so that fossil fuels are simply not needed. We need fossil fuels for planes for example and plastics. These goods need to be replaced with alternatives well before banning fossil fuel burning. And do not forget, I said burning not exporting. Countries should not lower their citizens' quality of life by banning exports in order to virtue signal (a single countries emission reduction is not going to have any impact, they would have to also reduce greenhouse gases in general). One of the F1 drivers was trying to throw shade at Canada's oil as if exporting oil is worse than consuming it. Demand always comes before supply, it's not the demand for the product but rather demand for what the product is capable of offering. This is true for sex, drugs, and food.
 
 Problem/Solution A: Naturally removing CO2 from the air
 
 ```txt
-	SubProblem A.i: Forestry
-	- Replacing wood with bamboos
-	- https://www.guaduabamboo.com/blog/bamboo-is-a-highly-effective-carbon-sink
-	- https://www.nature.com/articles/nindia.2021.46
-	- maintaining wood reserves or replacing traditional trees with bamboos when they are cut down
-	- toilet paper should be made from bamboos
-	SubProblem A.ii: Roads
-	- We need roads that can absorb CO2 from the air but can also handle heavy cars going over them. I don't think
-	it is possible.
-	Problem A.iii: Brazil / The Amazon
-	- The amazon is being cut down for one reason and that is that Brazil's economy is not big enough for people to be well off; i.e. goods produced per person is not high enough. This can be solved by looking at how singapore and taiwan became rich.
-	- we need people to invest in Brazil
-	- we need people to produce portugese content, goods & services
+SubProblem A.i: Forestry
+    - Replacing wood with bamboos
+    - https://www.guaduabamboo.com/blog/bamboo-is-a-highly-effective-carbon-sink
+    - https://www.nature.com/articles/nindia.2021.46
+    - maintaining wood reserves or replacing traditional trees with bamboos when they are cut down
+    - toilet paper should be made from bamboos
+    SubProblem A.ii: Roads
+    - We need roads that can absorb CO2 from the air but can also handle heavy cars going over them. I don't think
+    it is possible.
+    Problem A.iii: Brazil / The Amazon
+    - The amazon is being cut down for one reason and that is that Brazil's economy is not big enough for people to be well off; i.e. goods produced per person is not high enough. This can be solved by looking at how singapore and taiwan became rich.
+    - we need people to invest in Brazil
+    - we need people to produce portuguese content, goods & services
 ```
 
 Problem/Solution B: Technologically removing CO2 from the air
@@ -168,11 +168,11 @@ Problem/Solution B: Technologically removing CO2 from the air
 - Problem A.iii: Nitrous Oxide N2O
 - Solution A.iv: Can water vapor be reduced?
 
-Problem/Solution C: reducing effectivness of greenhouse gases
+Problem/Solution C: reducing effectiveness of greenhouse gases
 
 ```txt
-	SubProblemC.i - chemical injection
-		injecting sulfates or other aerosols into the stratosphere to reflect sunlight
+SubProblemC.i - chemical injection
+    injecting sulfates or other aerosols into the stratosphere to reflect sunlight
 ```
 
 Problem/Solution D: Technologically shipping CO2 from the air into space

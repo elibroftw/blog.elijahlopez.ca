@@ -1,5 +1,5 @@
 ---
-title: "React Native Run App in Background"
+title: "React Native Run App in Background (Foreground Service)"
 date: 2023-08-27T02:44:17-04:00
 draft: true
 ---

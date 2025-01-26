@@ -2,6 +2,8 @@
 title: "On the Topic of Birth Rates and Developed Nations"
 date: 2024-08-25T18:57:18-04:00
 draft: true
+tags:
+    - possible-thesis
 ---
 
 I came across [this post](https://www.reddit.com/r/AskACanadian/comments/1eypxcp/if_canada_wants_to_increase_the_population_then/) on r/AskACanadian yesterday and I have to say, people in developed countries live in bubbles. I am not ashamed to say that even I lived in a bubble, but at least I am somewhat aware of it, even if not to the same extent as my parents. The bubble is very simple. High fertility is correlated with low real income per capita (PPP)[^1]. First of all, there is a case that the world is overpopulated. I say this only because world leaders like Canada, USA, and Germany are out of touch with the global south. See my [RANT: Climate Change as a Service](/posts/climate-change-as-a-service). Let's assume though that in the future, we have leaders who are global thinkers. Then we can finally have this argument that fertility rates are a problem. So let's first see what an average person would think the solution is to fertility rates by asking the "great" ChatGPT.

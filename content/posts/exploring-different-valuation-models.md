@@ -2,6 +2,8 @@
 title: "Exploring Different Valuation Models"
 date: 2024-07-10T16:57:26-04:00
 draft: true
+tags:
+    - possible-thesis
 ---
 
 In my advanced corporate finance class, we were introduced to the residual earnings.

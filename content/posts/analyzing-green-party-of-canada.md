@@ -3,7 +3,7 @@ title: "Analyzing Green Party of Canada"
 date: 2024-06-16T15:06:59-04:00
 draft: true
 tags:
-  - politics
+    - politics
 ---
 
 ## Sustainability

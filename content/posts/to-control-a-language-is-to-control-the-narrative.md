@@ -2,6 +2,8 @@
 title: "To Control a Language Is to Control the Narrative"
 date: 2024-06-14T13:41:56-04:00
 draft: true
+tags:
+    - possible-thesis
 ---
 
 ## Thesis

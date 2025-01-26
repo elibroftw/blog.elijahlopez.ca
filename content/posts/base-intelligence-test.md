@@ -21,8 +21,8 @@ Let's start with a classic.
 
 4. Which sentence is more correct?
 
-- Elijah was unable to fail the test.
-- Elijah passed the test.
+    1. Elijah was unable to fail the test.
+    2. Elijah passed the test.
 
     This is a grammar question, no one should get this wrong.
 

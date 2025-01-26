@@ -6,7 +6,7 @@ tags:
   - programming
   - javascript
   - webdev
-  - reactjs
+  - react
   - tauri
 ---
 

@@ -2,7 +2,7 @@
 title: "Energy Drink Reviews"
 date: 2023-09-15T17:06:33-04:00
 tags:
-  - review
+    - review
 ---
 
 What ratings mean. Anything above 5 means I would rather drink it than drink nothing. Anything under 6 means I'd rather drink water. Anything at 0 is a no go even if thirsty. I've sorted the drinks based on which I believe tastes the best. When this page is longer, I suggest using the find on page feature of your browser if you are looking for a specific review.
