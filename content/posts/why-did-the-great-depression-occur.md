@@ -14,6 +14,6 @@ The solution would've been for the central bank to step in and supply the banks 
 
 So why didn't the central bank supply the banks money? Well that's easy. The central bank isn't as independent as people say. It has to follow the laws related to the central bank. During the great depression, that would be the gold standard. It's no surprise then why countries that got off the gold standard recovered faster. Central banks literally didn't know what they were doing back then either because they thought the gold standard was a good thing.
 
-The gold standard simply couldn't be held while the fractional reserve lending system was in place. The only way it could be done is to issue dollars based on the given price but accept redemptions at the reserve ratio. Of course this too is equivalent to a devaluation, but at least it would be an honest statement of what the gold standard was.
+The gold standard simply couldn't be held while the fractional reserve lending system was in place. The only way it could be done is to issue dollars based on the given price but restrict redemptions to bills that the central bank printed. However, with digital printing, the central bank would have to be honest and only accept redemptions at the reserve ratio which is a devaluation, but it would represent the gold standard accurately.
 
 So when people talk about gold being better, the advice really only holds true before the gold standard was abandoned. We might not live in that lie anymore, but it's possible there are other lies we are living in right now.
