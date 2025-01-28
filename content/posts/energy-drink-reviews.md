@@ -31,6 +31,10 @@ This did not taste bad so I am putting it up here.
 
 Had this once, it's good. Too many 8/10s though, so I'll have to retest them to figure out which ones are better.
 
+### Nos (7.5 / 10)
+
+Rating only
+
 ### Celsius Kiwi (7.5 / 10)
 
 Definitely better than Orange, but a bit below Monster White
