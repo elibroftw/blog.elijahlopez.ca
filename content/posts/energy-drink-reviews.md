@@ -31,21 +31,21 @@ This did not taste bad so I am putting it up here.
 
 Had this once, it's good. Too many 8/10s though, so I'll have to retest them to figure out which ones are better.
 
-### Celsius Orange (7.75 / 10)
+### Celsius Kiwi (7.5 / 10)
+
+Definitely better than Orange, but a bit below Monster White
+
+### Celsius Orange (7.25 / 10)
 
 Orange
 
-### Celsius Peach Vibe (7.5 / 10)
+### Celsius Peach Vibe (7 / 10)
 
 It's okay on its own. As soon as you eat something even a tad sweet, the flavour isn't as good as it could be
 
-### Punch Monster Pacific Punch (7.25 / 10)
+### Punch Monster Pacific Punch (6.5 / 10)
 
 Make sure to drink when chilled. Tastes like Kool-Aid. I prefer Celsius Orange over this. I don't mind the calories as the sugar content is only 18% of daily value. But then again, I'm sensitive to sugar, so maybe I do mind.
-
-### Punch Monster Mango Loco (7 / 10)
-
-Tastes like Mango concentrate juice. I'll put this underneath the Celsius Orange just because if I was given a choice between the two, I would pick the Celsius Orange over Mango Loco.
 
 ### Reign Storm Peach Nectarine (6.5 / 10)
 
@@ -54,6 +54,10 @@ Although it has a pleasant taste, it is missing a _kick_ found in drinks such as
 ### Reign Energy Reignbow Sherbet (6 / 10)
 
 This definitely is not on par with Monster White. It doesn't taste as good as I thought it did, so it's not worth a repurchase. However, if someone offered me to drink it, I would accept. I'll try to drink my last can chilled to figure out if the subpar taste was just because the drink was at room temperature.
+
+### Punch Monster Mango Loco (4.5 / 10)
+
+Tastes like Mango concentrate juice.
 
 ### Monster Energy Ultra Strawberry Dreams (4 / 10)
 
