@@ -895,7 +895,7 @@ _Money_: assets that can be used to make payments, such as cash, and chequing ac
   - open-market sale: sell government bonds to reduce money supply
 - can also purchase bonds directly from the government (printing money)
   - developing countries with low tax base
-  - racked by war or natural disaster
+  - racked by war or natural disaster (government spending is necessary to prevent loss of life, not the same as not welfare)
   - BoC is treated as a private entity (independent) which is why national savings still decreases with government deficits
 
 ### Portfolio Allocation
