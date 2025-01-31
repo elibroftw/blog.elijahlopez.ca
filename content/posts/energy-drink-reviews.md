@@ -31,6 +31,16 @@ This did not taste bad so I am putting it up here.
 
 Had this once, it's good. Too many 8/10s though, so I'll have to retest them to figure out which ones are better.
 
+### Celsius Tropical Vibe (8 / 10)
+
+Tag line: _Sparkling Starfruit, Pineapple Flavour_
+
+A new entrant to the 8/10s. For drinks rated 8+, I suggest applying a round robin to enjoy the variety of flavours.
+
+A lot of people say that the bilingual label increases costs and hurts competition but I digress. Celsius went as far as to even localize the word flavour.
+Not to mention some energy drinks are cheaper in Canada after doing a simple USD to CAD conversion.
+Maybe that's just due to Canadians having lower purchasing power but oh well.
+
 ### Nos (7.5 / 10)
 
 Rating only
@@ -43,7 +53,7 @@ Definitely better than Orange, but a bit below Monster White
 
 Orange
 
-### Celsius Peach Vibe (7 / 10)
+c
 
 It's okay on its own. As soon as you eat something even a tad sweet, the flavour isn't as good as it could be
 
