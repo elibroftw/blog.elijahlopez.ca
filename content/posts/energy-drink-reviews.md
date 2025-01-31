@@ -76,6 +76,10 @@ This is also not on par with Monster White. Although I like the Monster White fl
 I will admit that I am a prejudice person when it comes to goods and services, however I am open minded because without having an open-mind, you can never push your own definition of perfection. I was biased against the Reign Energy Orange Dreamsicle because why would I want to taste Orange when I have orange juice?
 I said why not because what if it would be better than Orange juice. I was wrong, it smells and tastes like medicine. Never buying again.
 
+### Rockstar Energy Original (2 / 10)
+
+I don't know what I was smoking when I decided to even review this. Disgusting.
+
 ### Reign Energy Cherry Limeade (1 / 10)
 
 Disgusting. And by disgusting I mean not my cup of tea.
