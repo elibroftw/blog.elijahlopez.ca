@@ -53,21 +53,23 @@ Definitely better than Orange, but a bit below Monster White
 
 Orange
 
-c
-
 It's okay on its own. As soon as you eat something even a tad sweet, the flavour isn't as good as it could be
+
+### Reign Storm Peach Nectarine (7 / 10)
+
+Although it has a pleasant taste, it is missing a _kick_ found in drinks such as Monster White.
+
+### Reign Energy Reignbow Sherbet (7 / 10)
+
+This definitely is not on par with Monster White. It doesn't taste as good as I thought it did, so it's not worth a repurchase. However, if someone offered me to drink it, I would accept. I'll try to drink my last can chilled to figure out if the subpar taste was just because the drink was at room temperature.
+
+### Monster Energy Ultra Paradise (6.5 / 10)
+
+Dawg what even is this. Give me my Monster White.
 
 ### Punch Monster Pacific Punch (6.5 / 10)
 
 Make sure to drink when chilled. Tastes like Kool-Aid. I prefer Celsius Orange over this. I don't mind the calories as the sugar content is only 18% of daily value. But then again, I'm sensitive to sugar, so maybe I do mind.
-
-### Reign Storm Peach Nectarine (6.5 / 10)
-
-Although it has a pleasant taste, it is missing a _kick_ found in drinks such as Monster White.
-
-### Reign Energy Reignbow Sherbet (6 / 10)
-
-This definitely is not on par with Monster White. It doesn't taste as good as I thought it did, so it's not worth a repurchase. However, if someone offered me to drink it, I would accept. I'll try to drink my last can chilled to figure out if the subpar taste was just because the drink was at room temperature.
 
 ### Punch Monster Mango Loco (4.5 / 10)
 
