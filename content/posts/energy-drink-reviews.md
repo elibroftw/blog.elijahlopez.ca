@@ -9,7 +9,9 @@ What ratings mean. Anything above 5 means I would rather drink it than drink not
 
 ### Reign Energy White Gummy Bear (9 / 10)
 
-I believe this is better than the Razzle Berry flavour, but I will have to taste again. There isn't exactly any bad points I can think of. This does have a slight taste like a gummy bear and it's not overpowering.
+I believe this is better than the Razzle Berry flavour, but I will have to taste the razzle berry again. There isn't exactly any bad points I can think of. This does have a slight taste like a gummy bear and it's not overpowering.
+
+I like this a lot. It definitely deserves the #1 spot.
 
 ### Reign Storm Grape (8.5 / 10)
 
