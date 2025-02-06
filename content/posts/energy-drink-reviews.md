@@ -7,6 +7,10 @@ tags:
 
 What ratings mean. Anything above 5 means I would rather drink it than drink nothing. Anything under 6 means I'd rather drink water. Anything at 0 is a no go even if thirsty. I've sorted the drinks based on which I believe tastes the best. When this page is longer, I suggest using the find on page feature of your browser if you are looking for a specific review.
 
+### C4 Frozen Bombsicle (9.5 / 10)
+
+Number one at the moment. No wonder you can only get it from the gas station. The negative is that it doesn't really taste like an energy drink, more like juice.
+
 ### Reign Energy White Gummy Bear (9 / 10)
 
 I believe this is better than the Razzle Berry flavour, but I will have to taste the razzle berry again. There isn't exactly any bad points I can think of. This does have a slight taste like a gummy bear and it's not overpowering.
