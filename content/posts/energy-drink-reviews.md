@@ -69,6 +69,10 @@ Although it has a pleasant taste, it is missing a _kick_ found in drinks such as
 
 This definitely is not on par with Monster White. It doesn't taste as good as I thought it did, so it's not worth a repurchase. However, if someone offered me to drink it, I would accept. I'll try to drink my last can chilled to figure out if the subpar taste was just because the drink was at room temperature.
 
+### Celsius Cosmic Vibe
+
+Not disgusting, but only better than the unmemorable Ultra Paradise.
+
 ### Monster Energy Ultra Paradise (6.5 / 10)
 
 Dawg what even is this. Give me my Monster White.
