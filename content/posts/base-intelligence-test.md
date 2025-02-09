@@ -25,7 +25,3 @@ Let's start with a classic.
     2. Elijah passed the test.
 
     This is a grammar question, no one should get this wrong.
-
-5. Being good at math makes someone intelligent.
-
-    The answer is no. Freebie. This question is meant for people who are smart but might not be intelligent.

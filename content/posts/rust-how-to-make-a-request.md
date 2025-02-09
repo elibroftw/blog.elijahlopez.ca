@@ -1,5 +1,5 @@
 ---
-title: "Rust: How to Make a Network Request"
+title: "Rust How to Make a Network Request"
 date: 2022-12-06T16:56:25-05:00
 draft: false
 tags:
