@@ -8,6 +8,7 @@ tags:
   - python
   - computer-science
   - cybersecurity
+  - tutorial
 ---
 
 A few weeks ago, I was playing Call of Duty Black Ops 6 after a new update was released. Mid-game, my laptop encountered a Blue Screen of Death. When my laptop rebooted and I went to play music, I found that [Music Caster](https://github.com/elibroftw/music-caster/) - Music Player I developed and daily drive - had its settings reset. To fix this bug, I was planning on implementing a _backup before overwriting_ pattern, but then realized I should use this problem as an opportunity to benchmark the leading Large Language Models found on [LiveCodeBench](https://livecodebench.github.io/leaderboard.html). Among the models I tested, only _Deepseek R1_ enlightened me with the wisdom of the flushing the disk cache via a call to `os.fsync` (Python). Even then, it did not realize that os.fsync was not available on macOS, but that's a minor fault. I subsequently checked another code base (Rust) I was working on for the same bug, and lo and behold, it was missing a call to sync the disk cache! Thanks to my humble benchmark of DeepSeek R1, two applications are now safer from potential data corruption bugs.
