@@ -9,6 +9,8 @@ tags:
   - asp.net
 ---
 
+Note. Starting in .NET 9, ASP.NET ships OpenAPI and thus I suggest using [Scalar](https://guides.scalar.com/scalar/scalar-api-references/net-integration) instead which comes with a built-in dark theme. I will add a Scalar tutorial for WebAPI / Authentication.
+
 _For the SEO_: How to add dark theme to Swagger UI ASP.NET? Follow these instructions.
 
 If you have guidelines for other frameworks, feel free to email me your code so I can add it to the [README.md](https://github.com/elibroftw/SwaggerDark/tree/master)
