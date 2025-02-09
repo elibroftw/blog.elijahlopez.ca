@@ -11,7 +11,7 @@ tags:
 Tutorials nowadays just regurgitate the wrong information! Here's the right way to do mobile responsive design. The key is to use
 a scale of 0.86 instead of 1. This way zooming in and out actually works!
 
-From [https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag#viewport_width_and_screen_width](https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag#viewport_width_and_screen_width)
+From [mdn web docs - Viewport width and screen width](https://developer.mozilla.org/docs/Web/HTML/Viewport_meta_tag#viewport_width_and_screen_width)
 
 ```html
 <meta name="viewport" content="width=device-width, initial-scale=0.86, minimum-scale=0.86">

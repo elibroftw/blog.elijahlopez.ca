@@ -13,7 +13,7 @@ So let's be clear. Until the snapdragon x elite CPU laptops have dropped, there 
 
 This used to be a compelling reason, the ASUS Zephyrus G14 (2024) has a battery life of [10 hours and 52 minutes]((https://youtu.be/-i7ocqfFrOk?si=wKmEd8LSttdJW-gc&t=420)) when watching YouTube, which is only 1 hour and 40 minutes behind the Macbook Pro (2023).
 
-If you don't care about GPU tasks (Gaming, using pytorch, using LLMs, video editing\*, 3D applications, [creative applications](https://www.nvidia.com/en-us/studio/software/)), then I would suggest comparing the Macbook Airs versus laptops using [AMD "U" CPUs](https://www.amd.com/en/products/processors/laptop/ryzen.html#portfolio) (e.g. 8840U, 7840U). And when laptops start shipping with Snapdragon Elite X chips, they will most likely be all the rage (albeit you will be using Windows ARM and not Windows x86_64, so software support may be behind).
+If you don't care about GPU tasks (Gaming, using pytorch, using LLMs, video editing\*, 3D applications, [creative applications](https://www.nvidia.com/en-us/accelerated-applications/?filter=eyJ3b3JrbG9hZHMiOlsiQ29udGVudCBDcmVhdGlvbiAvIFJlbmRlcmluZyJdfQ==)), then I would suggest comparing the Macbook Airs versus laptops using [AMD "U" CPUs](https://www.amd.com/en/products/processors/laptop/ryzen.html#portfolio) (e.g. 8840U, 7840U). And when laptops start shipping with Snapdragon Elite X chips, they will most likely be all the rage (albeit you will be using Windows ARM and not Windows x86_64, so software support may be behind).
 
 ## Reason 1 - Gaming
 

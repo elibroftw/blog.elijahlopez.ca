@@ -26,6 +26,7 @@ except OSError as e:
     pass # omitted
 ```
 
+<br>
 <details><summary>Solution</summary>
 
 1. Write to a temporary file. `NamedTemporaryFile` is the way to go as it also has more secure default file permissions (owner-only permissions) than simply opening a file to write to it. Note that `SETTINGS_FILE` is an instance of `pathlib.Path`
@@ -81,6 +82,7 @@ use tempfile::{NamedTempFile, PersistError};
     file.persist(MY_DIR.join("config.json"))?;
 ```
 
+<br>
 <details><summary>Solution</summary>
 
 To ensure that the file is synced to the disk before we persist the temporary file, call [file.as_file_mut().sync_data()](https://doc.rust-lang.org/std/fs/struct.File.html#method.sync_data).

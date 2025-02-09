@@ -60,4 +60,4 @@ I know this article is not a 100% high quality article, but this article isn't a
 In conclusion, it's better to distribute 32-bit and 64-bit applications than just 32-bit applications.
 But don't be like VLC, and recommend 64-bit computers to install the 32-bit version!
 
-[^fn1]: https://docs.microsoft.com/en-us/windows/win32/winprog64/running-32-bit-applications
+[^fn1]: [Running 32-bit Applications](https://docs.microsoft.com/windows/win32/winprog64/running-32-bit-applications)

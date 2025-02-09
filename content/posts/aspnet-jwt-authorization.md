@@ -100,8 +100,8 @@ using SttApi.Models;
 using SttApi.Services;
 
 // Controller for handling user signup and login with code sent to email
-// https://learn.microsoft.com/en-ca/aspnet/core/tutorials/first-mongo-app?WT.mc_id=dotnet-35129-website&view=aspnetcore-7.0&tabs=visual-studio
-// https://learn.microsoft.com/en-ca/aspnet/core/tutorials/first-web-api?view=aspnetcore-7.0&tabs=visual-studio
+// https://learn.microsoft.com/aspnet/core/tutorials/first-mongo-app?WT.mc_id=dotnet-35129-website&view=aspnetcore-7.0&tabs=visual-studio
+// https://learn.microsoft.com/aspnet/core/tutorials/first-web-api?view=aspnetcore-7.0&tabs=visual-studio
 
 namespace SttApi.Controllers;
 

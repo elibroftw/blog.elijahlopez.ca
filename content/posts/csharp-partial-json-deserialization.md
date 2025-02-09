@@ -39,9 +39,9 @@ How do we only deserialize the `data` portion?
 
 Relevant methods:
 
-- [JsonNode.ParseAsync](https://learn.microsoft.com/en-us/dotnet/api/system.text.json.nodes.jsonnode.parseasync)
-- [JsonNode.AsArray](https://learn.microsoft.com/en-us/dotnet/api/system.text.json.nodes.jsonnode.asarray)
-- [JsonNode.AsObject](https://learn.microsoft.com/en-us/dotnet/api/system.text.json.nodes.jsonnode.asobject)
+- [JsonNode.ParseAsync](https://learn.microsoft.com/dotnet/api/system.text.json.nodes.jsonnode.parseasync)
+- [JsonNode.AsArray](https://learn.microsoft.com/dotnet/api/system.text.json.nodes.jsonnode.asarray)
+- [JsonNode.AsObject](https://learn.microsoft.com/dotnet/api/system.text.json.nodes.jsonnode.asobject)
 
 After using these methods to navigate the JSON, you can use deserialization methods or object instantiation to use types for the data you actually care about.
 

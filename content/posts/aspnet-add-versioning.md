@@ -345,7 +345,7 @@ app.UseDefaultOpenApi();
 
 </details>
 
-<details><summary>csproj Packages</summary>
+<details><summary>csproj Partial - Packages</summary>
 
 ```xml
 <ItemGroup>

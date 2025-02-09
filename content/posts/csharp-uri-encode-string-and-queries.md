@@ -8,7 +8,7 @@ tags:
   - asp.net
 ---
 
-Use [System.Uri.EscapeDateString](https://learn.microsoft.com/en-us/dotnet/api/system.uri.escapedatastring)
+Use [System.Uri.EscapeDateString](https://learn.microsoft.com/dotnet/api/system.uri.escapedatastring)
 
 ```cs
 // using System;

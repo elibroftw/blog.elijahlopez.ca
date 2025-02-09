@@ -62,18 +62,18 @@ internal class Api {
 <details>
 <summary>Fields</summary>
 
-Since System.Text.Json is only
+|           Field               | Description  |
+| --------------------------- | ---------------- |
+| Always                      | Property is always ignored |
+| Never                        | Property is always serialized and deserialized, regardless of IgnoreNullValues configuration |
+| WhenWritingDefault  | Property is ignored only if it equals the default value for its type |
+| WhenWritingNull       | Property is ignored if its value is null. This is applied only to reference-type properties and fields |
 
-|           Field             | Description  |
-| ------------------------- | ---------------- |
-Always                     | Property is always ignored.
-Never                       | Property is always serialized and deserialized, regardless of IgnoreNullValues configuration.
-WhenWritingDefault | Property is ignored only if it equals the default value for its type.
-WhenWritingNull      | Property is ignored if its value is null. This is applied only to reference-type properties and fields.
-
-For readers in a decade or so, see [JsonIgnoreCondition](https://learn.microsoft.com/en-us/dotnet/api/system.text.json.serialization.jsonignorecondition#fields)
+For readers in a decade or so, see [JsonIgnoreCondition](https://learn.microsoft.com/dotnet/api/system.text.json.serialization.jsonignorecondition#fields)
 
 </details>
+
+<br>
 
 ```c#
 using System.Text.Json.Serialization;
