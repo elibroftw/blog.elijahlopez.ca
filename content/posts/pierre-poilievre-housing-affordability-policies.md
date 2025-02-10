@@ -63,6 +63,8 @@ Here is the minister of immigration, Mark Miller, boasting on Twitter regarding 
 
 Improves: municipal housing reform (supply-side)
 
+[NDP-Liberals Have Made Housing Unaffordable For Canadians](https://www.conservative.ca/just-the-facts-ndp-liberals-have-made-housing-unaffordable-for-canadians/)
+
 Before 2023, the debate of housing on reddit was that the federal government was not responsible at all, and neither was the provincial government, and that immigration had nothing to do with rental affordability. Many people can agree with me that criticizing immigration was not taken seriously. Even in September 2022, Poilievre had a plan for ensuring that municipalities start taking housing seriously. Municipalities have ZERO incentive to build more. They do not even care about the Laffer Curve when it comes to raising tax revenue by lowering development charges.
 
 Timestamp [Pierre Poilievre C-31 Response @ 10:08](https://youtu.be/Z39VZGF2k0A?t=608).
