@@ -90,6 +90,12 @@ In the previous quote, Poilievre said he would release 5,550 federal buildings t
 
 You know we should go back in time and cancel the Bruce Nuclear Generating Station because nuclear energy "costs too much" as well.
 
+Poilievre has also mentioned selling federal land (probably just the land the buildings are on)
+
+[Proposing to sell federal buildings and land build housing](https://globalnews.ca/video/9915004/housing-crisis-poilievre-suggests-selling-federal-land-removing-bureaucracies-that-stop-home-building)
+
+> 6,000 buildings and thousands of acres of federal land
+
 ## Removing GST on Housing Prices Under One Million Dollars
 
 Improves: primary residence affordability and housing construction competition via demand-side / pricing policies
