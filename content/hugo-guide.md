@@ -33,7 +33,7 @@ cd blog
 
 Before writing, make sure you are modifying the latest version of the blog. Use `git pull --rebase`. The first reason to do so, is if we are working on multiple devices, we do not want to run into some sort of merge conflict when we want to push our updates. The second reason is because the auto-deploy script can also commit updates to the theme, so we want to ensure that we aren't going to mess the remote state up.
 
-1. In a terminal working in your repo directory, use the command `hugo new posts/POST.md`
+1. In a terminal working in your repo directory, use the command `hugo new posts/POST.md` or if you plan on using images `hugo new posts/POST/index.md` (see [Adding Images](#adding-images))
     - "POST" name is arbitrary
 2. Open `content/posts/POST.md` in a text editor (e.g. VS Code)
 3. Edit the metadata fields present and optionally add others found in this file (e.g. tags, hidden)
@@ -89,6 +89,41 @@ menu:
     title: About
     url: /about/
     weight: 0
+```
+
+## Adding Images
+
+[Hugo docs - Image resources ](https://gohugo.io/content-management/image-processing/#image-resources)
+
+Basically add the image to the same directory that `posts/POST/index.md` was created in.
+
+```md
+{{ $image := .Resources.Get "sunset.jpg" }}
+```
+
+Or if you add images to `assets/images`,
+
+```md
+{{ $image := resources.Get "images/sunset.jpg" }}
+```
+
+Then you need to render the variable image which can be done in [multiple ways](https://gohugo.io/content-management/image-processing/#image-rendering).
+
+## Link Preview Images
+
+### Default
+
+If your post directory has images, the ordering is: `*feature*`, `*cover*`, `*thumbnail*`.
+
+If your post directory has no images, Hugo will try to use the first image found in your `hugo.yaml` under `images`
+
+### Shared Feature
+
+If your post doesn't use any images and you have multiple posts that use the same feature image
+
+```yaml
+images:
+    - assets/images/feature.png
 ```
 
 ## Link Embeds & Shortcodes
