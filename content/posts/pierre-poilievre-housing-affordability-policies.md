@@ -147,6 +147,8 @@ When non-conservative voters heard about this policy, they completely ignored Po
 
 Two sections prior we talked about how the current federal government is not mandating developer charges to be reduced in exchange for funding infrastructure. Well Poilievre's entire shtick is that the federal government shouldn't even have a responsibility for infrastructure and thus should not collect the GST. If the housing GST revenue isn't even being used to fund public infrastructure in Ontario, why does it exist? It's a subsidy from home buyers to home owners.
 
+Poilievre said he'll balance the budget by cutting the Housing Accelerator Fund and Housing Infrastructure Fund.
+
 ## Building Homes Not Bureaucracy Act
 
 This was release on September 14, 2023, and no one posted it on reddit before. I suggest reading the entire thing.
