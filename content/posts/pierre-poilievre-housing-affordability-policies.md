@@ -11,7 +11,7 @@ tags:
 
 ## Introduction
 
-This blog post outlines four housing affordability policies that the Conservative Party of Canada leader Pierre Poilievre has announced or mentioned over the years. I shared an article a few days ago on r/canadahousing on Mark Carney's 2024 opinion piece while he was a member of Canada’s Task Force for Housing & Climate. Overall, his article had stances but lacked substance of communicating a federal policy. Even now that he is a contender to be the next Prime Minister of Canada, his opinion piece is the best material regarding housing. Unlike Carney's housing stances, all four of Poilievre's stances  regarding housing are policies that the federal government can pursue. If there is a policy missing or newly announced, please contact me so I can add it to the blog post.
+This blog post outlines some policies regarding housing that the Conservative Party of Canada leader Pierre Poilievre has announced or mentioned over the years. I shared an article a few days ago on r/canadahousing on Mark Carney's 2024 opinion piece while he was a member of Canada’s Task Force for Housing & Climate. Overall, his article had stances but lacked substance of communicating a federal policy. Even now that he is a contender to be the next Prime Minister of Canada, his opinion piece is the best material regarding housing. Unlike Carney's housing stances, all four of Poilievre's stances  regarding housing are policies that the federal government can pursue. If there is a policy missing or newly announced, please contact me so I can add it to the blog post.
 
 <details><summary>Summary of Mark Carney (March 2024) - Affordable Homes (Globe & Mail)</summary>
 
@@ -144,3 +144,13 @@ Moffat leaves us with a statement.
 When non-conservative voters heard about this policy, they completely ignored Poilievre's other policies, but that's what this article is for.
 
 Two sections prior we talked about how the current federal government is not mandating developer charges to be reduced in exchange for funding infrastructure. Well Poilievre's entire shtick is that the federal government shouldn't even have a responsibility for infrastructure and thus should not collect the GST. If the housing GST revenue isn't even being used to fund public infrastructure in Ontario, why does it exist? It's a subsidy from home buyers to home owners.
+
+## Building Homes Not Bureaucracy Act
+
+This was release on September 14, 2023, and no one posted it on reddit before. I suggest reading the entire thing.
+
+[Building Homes, Not Bureaucracy - September 14, 2023](https://www.conservative.ca/building-homes-not-bureaucracy/)
+
+### File Complaints Against NIMBYism
+
+> Impose a NIMBY penalty on big city gatekeepers for egregious cases of NIMBYism. We will empower Canadians to file complaints about NIMBYism with the federal infrastructure department. When complaints are legitimate, we will withhold infrastructure and transit dollars until cities allow homes to be built.
