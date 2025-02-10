@@ -84,6 +84,8 @@ The second point is very interesting because imagine if only your income taxes a
 
 The fourth point is relevant because the HAF is rightly increasing the Federal governments contribution to Ontario public infrastructure, however it does not come with the immediate relief of developer charges.
 
+Red Deer is a perfect example of a city that would try it's best to get a super bonus. They are doing everything wrong during a housing crisis. [The Canadian Pacific Railway bridge investment](https://www.canada.ca/en/housing-infrastructure-communities/news/2024/06/active-and-public-transportation-infrastructure-upgrades-underway-for-communities-throughout-alberta.html) is a perfect example where Poilievre's policy would've ensured indirectly that Red Deer slash their minimum parking requirements (2 per unit even if it's a studio).
+
 ## Transforming Federal Buildings into Housing
 
 Improves: land supply (supply-side)
