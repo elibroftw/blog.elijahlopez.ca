@@ -45,3 +45,17 @@ Bill C-395 was sponsored by Poilievre  in 2018 as a private member's bill. The g
 
 The idea is that politicians need to be forced to keep the budget balanced in order to reduce debt and prevent excess aggregate demand (&rarr; inflation).
 Poilievre used the bill under Clinton as an example.
+
+## Reversing Gun Bans
+
+Pierre Poilievre has promised to undo the gun bans passed under the NDP/LPC coalition.
+
+## Axing the Carbon Tax
+
+Pierre Poilievre has promised to axe the carbon tax without replacing it.
+
+### Axing GST on New Homes Under One Million Dollars
+
+[Axe The Sales Tax on Homes](https://www.conservative.ca/axe-the-sales-tax-on-homes/)
+
+See my other post
