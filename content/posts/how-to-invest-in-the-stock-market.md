@@ -21,11 +21,9 @@ My updated investing article. I wrote this with an emphasis on risk & safety rat
 
 To start investing, you will need to open an account it through a platform called a brokerage. A brokerage allows you to trade shares of companies, baskets of stocks (aka ETFs and exchange traded funds), and derivatives of stocks (aka options).
 
-### Where to Open an Account (CA)
+### Where to Open an Account (Canada)
 
-I recommend opening up a National Bank account or an InteractiveBrokers (IBKR) account. I recommend National Bank because there is no commissions and no annual fees (U30, > C$20,000 in account value). I recommend IBKR, as they offer very fair commissions and very affordable and quick currency exchange compared to all other platforms that require employing a different technique to reduce the FX fee. The other benefit of IBKR, is that you can invest easily in international markets. For example, you can own the real BMW not the American Depository Receipts BMW.
-
-When you open an account, you will be asked what type of account(s) you wish to open/apply for.
+I recommend opening a QuestTrade account now that they have $0 commissions. When you open an account, you will be asked what type of account(s) you wish to open.
 
 ### Types of Accounts
 
@@ -37,13 +35,16 @@ Before you open an account, it's best to learn about the different types of acco
   - The contribution room for this account will increase by thousands of dollars every year you are a resident of Canada regardless of income
   - The contribution room is cumulative
   - The contribution room will increase a year after withdrawals (not quite a year actually, but not within the same tax year)
-- Registered Retirement Savings Plan
+  - Contribution room available on CRA website
+- Registered Retirement Savings Plan (RRSP)
   - Tax deductible contributions
   - Withdrawals are taxed and do not increase the contribution room
   - Contribution room is cumulative
   - Contribution room increases based on salary
   - [Home Buyers' Plan](https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/rrsps-related-plans/what-home-buyers-plan.html) lets you withdraw up to a certain amount with the condition that you repay it. I suggest reading the link above for when you do plan on making a withdrawal as the rules are ever-changing
-- First Home Savings Account
+  - Contribution room available on CRA website
+- First Home Savings Account (FHSA)
+  - Make sure to open an account when you turn 18 even if you don't plan on contributing to it until your 22 or something, so that you can benefit from the 1 year accumulation and contribute double when you save a lot in one working year.
   - Tax-deductible contributions
   - Lifetime contribution limit of $40,000
   - Yearly contribution of $8,000 which accumulates for only a single year
@@ -78,7 +79,7 @@ Investing is something everyone can do. Trading is a different ball game and req
 
 ### Converting CAD to USD and Back: Norbert's Gambit
 
-With IBKR, I suggest just using the platform as the fees are very affordable. With other brokerages however, I suggest employing Norbert's Gambit to avoid percentage foreign exchange fees. This is incredibly simple for RBC. Buy DLR and sell (short) DLR.U. RBC will settle both balances automatically. On a brokerage like National Bank I don't believe the platform will auto-settle a long and a short of the same stock. You will need to contact support and ask them to journal shares to the stock traded on the US exchange or USD denomination. I usually value invest, so I buy a bank stock traded on the TSX and NYSE and then ask the brokerage support to journal the shares that I don't plan on holding. So I might buy 300 shares of TSX:BNS, and then journal 270 of them to NYSE and then sell them. Most of the time I've done this the stock has appreciated while holding it for a few days, and technically speaking if stocks are priced to return capital, stocks should be going up most of the time anyways.
+With IBKR, I suggest just using the platform as the fees are very affordable. With other brokerages however, I suggest employing Norbert's Gambit to avoid percentage foreign exchange fees. This is incredibly simple for RBC. Buy DLR and sell (short) DLR.U. RBC will settle both balances automatically. I usually value invest, so I buy a bank stock traded on the TSX and NYSE and then ask the brokerage support to journal the shares that I don't plan on holding. So I might buy 300 shares of TSX:BNS, and then journal 270 of them to NYSE and then sell them. Most of the time I've done this the stock has appreciated while holding it for a few days, and technically speaking if stocks are priced to return capital, stocks should be going up most of the time anyways.
 
 ### Passive ETF Investing
 
@@ -111,7 +112,17 @@ Since most of these index ETFs are market-cap weighted, a lot of them can easily
 
 ### Passive Value Investing
 
-Value investing is where you have the capability to value a stock. Valuing a stock is incredibly difficult, as it has been proven that most hedge funds and mutual funds cannot outperform the returns given by investing in the market. Still, with value investing, you need to rely on diversification. From studies, the risk of your portfolio can be reduced to systemic but the marginal improvement diminishes at around the 20 stock market. What does that mean? Invest in chunks of 1/20. So if you can only find 6 stocks that are under-valued, you invest 14/20 of your cash in a market ETF, and only 1/20 in each of the stocks you picked. This way, your portfolio's performance isn't impacted drastically by the business risk of a few handful of stocks. An example of a business risk is one of your stocks sells commodities but those commodities have tanked. Another example is META in 2022. It actually doesn't matter if the business is doing well, the market can perceive the company to be doing poorly. By diversifying, your portfolio will continue to perform at the market, and can outperform the market after you re-balance it. A re-balance would be selling some shares in stocks that you don't really expect to outperform anymore, and topping up losers as if you just invested 1/20 of your portfolio. Sometimes, you may want to double your position. Doubling your position is very risky because you don't to risk timing the stock's bottom. I highly suggest doing it whenever the stock drops 10%+. When a stock that you deem is under-valued (and isn't a fairly valued growth stock) drops by this much, you can view it as a discount. Capital markets theory even dictates that prices adjust down to improve the expected return. So if a stock goes down by 5%, the stock's value goes down ... because it's expected to return a set percentage. It's hard to explain this, but think about wanting a 10% return and the company is doing well. You find out today some information that makes you think the stock is worth less. You still want 10%, but you know the value of the company must be lower to achieve that return.
+Value investing is where you have the capability to value a stock. Valuing a stock is incredibly difficult, as it has been proven that most hedge funds and mutual funds cannot outperform the returns given by investing in the market. Still, with value investing, you need to rely on diversification. From studies, the risk of your portfolio can be reduced to systemic but the marginal improvement diminishes at around the 20 stock market. What does that mean? Invest in chunks of 1/20. So if you can only find 6 stocks that are under-valued, you invest 14/20 of your cash in a market ETF, and only 1/20 in each of the stocks you picked. This way, your portfolio's performance isn't impacted drastically by the business risk of a few handful of stocks.
+
+A real example of business risk that I've encountered is NEP, which has been renamed itself and its ticker to XIFR. This company turned out to be a [value trap](https://www.dividend.com/dividend-education/how-to-spot-a-dividend-value-trap/). I was betting partially on interest rates to be cut, and that the dividend (payout ratio > 1) would sustain any continued hemorrhaging. However, what I did not expect was for the company to rename itself to distance itself from its close-arm partner Nextera Energy, and announce that the dividend would be suspended and redirected to paying off the debt. I should start a RED FLAGS list because I could've saved myself money if I treated any smell as a red flag. With this company, I bought into it multiple times and didn't sell the excess weight when I did recoup my losses. Anyways, what was the end result after a year of investing? I had a profit of ~30%, and after the loss my profit is 21%. This makes sense if the Beta of the portfolio is high.
+
+<details><summary>Thesis idea</summary>
+
+Research the average percent of companies that had negative returns under 0% to under 20%. Also make sure to account for stocks that are acquired and delisted.
+
+</details>
+
+Another example is META in 2022. It actually doesn't matter if the business is doing well, the market can perceive the company to be doing poorly. By diversifying, your portfolio will continue to perform at the market, and can outperform the market after you re-balance it. A re-balance would be selling some shares in stocks that you don't really expect to outperform anymore, and topping up losers as if you just invested 1/20 of your portfolio. Sometimes, you may want to double your position. Doubling your position is very risky because you don't to risk timing the stock's bottom. I highly suggest doing it whenever the stock drops 10%+. When a stock that you deem is under-valued (and isn't a fairly valued growth stock) drops by this much, you can view it as a discount. Capital markets theory even dictates that prices adjust down to improve the expected return. So if a stock goes down by 5%, the stock's value goes down ... because it's expected to return a set percentage. It's hard to explain this, but think about wanting a 10% return and the company is doing well. You find out today some information that makes you think the stock is worth less. You still want 10%, but you know the value of the company must be lower to achieve that return.
 
 ### Active Investing
 
