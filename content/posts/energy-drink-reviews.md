@@ -79,6 +79,10 @@ This definitely is not on par with Monster White. It doesn't taste as good as I 
 
 Not disgusting, but only better than the unmemorable Ultra Paradise.
 
+### Celsius Sunset Vibe (6.6 / 10)
+
+I really believe this is the same as cosmic. My mouth is also quite dry from drinking it.
+
 ### Monster Energy Ultra Paradise (6.5 / 10)
 
 Dawg what even is this. Give me my Monster White.
