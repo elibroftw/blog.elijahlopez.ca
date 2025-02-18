@@ -83,6 +83,10 @@ Not disgusting, but only better than the unmemorable Ultra Paradise.
 
 I really believe this is the same as cosmic. My mouth is also quite dry from drinking it.
 
+### Monster Energy Ultra Fantasy Ruby Red (6.6 / 10)
+
+Only a bit better than Paradise, but not that good overall. After the next test (C4 hawaiian punch), I might buy some good drinks.
+
 ### Monster Energy Ultra Paradise (6.5 / 10)
 
 Dawg what even is this. Give me my Monster White.
