@@ -13,13 +13,13 @@ I believe this is better than the Razzle Berry flavour, but I will have to taste
 
 I like this a lot. It definitely deserves the #1 spot.
 
-### C4 Frozen Bombsicle (8.9 / 10)
-
-The negative is that it doesn't really taste like an energy drink, more like juice.
-
 ### Celsius Sparkling Arctic Vibe (8.9 / 10)
 
 It's pretty good too, but it gets over so quickly compared to the C4 and Monster White.
+
+### C4 Frozen Bombsicle (8.9 / 10)
+
+The negative is that it doesn't really taste like an energy drink, more like juice.
 
 ### Reign Storm Grape (8.5 / 10)
 
