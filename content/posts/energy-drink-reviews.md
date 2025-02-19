@@ -75,6 +75,10 @@ This definitely is not on par with Monster White. It doesn't taste as good as I 
 
 ### C4 Grape (6.7 / 10)
 
+### C4 Hawaiian Punch  (6.7 / 10)
+
+Tastes like a partial freezy that isn't frozen. So basically freezy juice lol.
+
 ### Celsius Cosmic Vibe (6.6 / 10)
 
 Not disgusting, but only better than the unmemorable Ultra Paradise.
