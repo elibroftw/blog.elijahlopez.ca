@@ -29,14 +29,6 @@ I like the taste of this better than Monster White, so that's why it's getting a
 
 The first energy drink that had a good taste that persuaded me to buy another one. This is great and it's only downfall is this slight after taste that lingers. I forget exactly what that "bad" taste is, but I'll update this article the next time I drink it. Rated 8 / 10 because I'm saving the perfect score until I've tasted and reviewed at least 10 energy drinks.
 
-### Monster Camo (8 / 10)
-
-This did not taste bad so I am putting it up here.
-
-### Monster White (8 / 10)
-
-This did not taste bad so I am putting it up here.
-
 ### Reign Storm Kiwi Blend (8 / 10)
 
 Had this once, it's good. Too many 8/10s though, so I'll have to retest them to figure out which ones are better.
@@ -50,6 +42,14 @@ A new entrant to the 8/10s. For drinks rated 8+, I suggest applying a round robi
 A lot of people say that the bilingual label increases costs and hurts competition but I digress. Celsius went as far as to even localize the word flavour.
 Not to mention some energy drinks are cheaper in Canada after doing a simple USD to CAD conversion.
 Maybe that's just due to Canadians having lower purchasing power but oh well.
+
+### Monster Camo (7.9 / 10)
+
+This did not taste bad so I am putting it up here.
+
+### Monster White (7.9 / 10)
+
+This did not taste bad so I am putting it up here. Update: I had it after a few months and it doesn't hit the same?
 
 ### Nos (7.5 / 10)
 
