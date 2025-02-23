@@ -3,8 +3,9 @@ title: "Fixed Seats Proportional Representation (FSP-R)"
 aliases:
   - /posts/fixed-seats-proportional-representation/
   - /posts/representative-proportional-voting/
-# date: 2021-11-19T11:58:17-04:00   # idea first conceptualized
 date: 2023-04-12T17:14:32-04:00
+# date: 2021-11-19T11:58:17-04:00   # idea first conceptualized
+# date: 2025-02-22                             # addition of 5% threshold for winning additional seats
 tags:
   - canada
   - politics
@@ -184,6 +185,13 @@ Like with every law and system, there will be people trying to bend it. One such
 
 ## Other Notes
 
-There was a good argument on whether or not proportional voting or democracy is even a good idea if the possibility of extreme actions can affect the majority of people. A good example that was brought up is that public transit doesn't run on Sabbath, but the minister of transportation is driven around in a car just fine.
+There was a good argument on whether or not proportional voting or democracy is even a good idea if the possibility of extreme actions can affect the majority of people. A good example that was brought up is that public transit doesn't run all hours on Sabbath in Israel, but the minister of transportation is driven around in a car just fine.
 
-To be honest, it was a good question and it made me think of at what point should a minority opinion be given credence. I use Firefox and I would like to switch to using Fedora KDE in the future. Therefore, minority opinions, are important and I think 1% of the population should be a threshold, not the 1 seat threshold I have used. The election results would still be the same as what I have provided, however it would ensure that people can't just take unpopular issues and be represented so easily. There's a big difference between the PPC leader being the MP for his riding and a fringe party being the MP of a riding where they only have the support of 1.5% constituents (1% average nation wide). So of course, 1% of the nation should also involve having 10% in any riding.
+Based on some failures of proportional voting, parties that get less than 5% of the vote, should not get freebie seats, as in they should only be distributed seats where they properly won.
+This ensures that any party with a minority of support nation-wide, is limited to representation where those views are the most popular. This is done to avoid scenarios where a _fringe_ party has leverage over the plurality led government which first past the post does effectively.
+
+### V2 Implementation Notes
+
+1. Seats should be distributed within a province not within the country
+2. Provinces & territories that only have one seat in the house of commons should be using ranked ballots. In this manner, voters of each province & territory get to choose best how their seats will be distributed.
+3. Parties should meet the 5% threshold before they get to win seats they didn't come first place in

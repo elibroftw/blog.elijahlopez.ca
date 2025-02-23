@@ -127,7 +127,7 @@ Can a person who says they support a two-state solution really be trusted when t
 
 > In April 2018, Lieberman said: "You have to understand, there are no innocent people in the Gaza Strip. Everyone has a connection to Hamas. Everyone receives a salary from Hamas.
 
-This is racism; generalizing a group of people. He's calling some  Canadian citizens guilty.
+This is racism; generalizing a group of people. He's calling some Canadian citizens guilty.
 
 ### United Arab List (Ra'am) (5/120)
 
