@@ -55,6 +55,10 @@ This did not taste bad so I am putting it up here. Update: I had it after a few 
 
 Rating only
 
+### Reign Storm Valencia Orange (7.5 / 10)
+
+Rating only
+
 ### Celsius Kiwi (7.5 / 10)
 
 Definitely better than Orange, but a bit below Monster White
