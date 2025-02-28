@@ -100,6 +100,10 @@ Canada is in a recession in 2025. Our currency rate is worse than the crash in M
 
 It took the NRC 11 weeks to send a laptop to a software developer intern.
 
+### Packing the Senate
+
+Trudeau has stacked the senate with so called independent senators who so happen to be the same block of senators who supported an amendment to Bill C-234 that would result in farming machinery not being exempt from the carbon fuel charges even though affordable alternatives are years away. This was during a period of high inflation. [I wrote a reddit post about it here](https://www.reddit.com/r/CanadianConservative/comments/1j0l355/a_reminder_that_liberals_and_their_independent/)
+
 ### Giving Criminals an Easier Time
 
 Bill C-5: Repealed mandatory minimum penalties for some offenses including firearm possession
