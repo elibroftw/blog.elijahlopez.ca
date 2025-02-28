@@ -17,10 +17,6 @@ I like this a lot. It definitely deserves the #1 spot.
 
 It's pretty good too, but it gets over so quickly compared to the C4 and Monster White.
 
-### C4 Frozen Bombsicle (8.9 / 10)
-
-The negative is that it doesn't really taste like an energy drink, more like juice.
-
 ### Reign Storm Grape (8.5 / 10)
 
 I like the taste of this better than Monster White, so that's why it's getting an 8.5. I'll have the White Gummy Bear soon to compare exactly which drink gets first place. One great and underrated aspect about the Reign Storm brand is that the caffeine level is low enough to have two cans per day! The downside is that the can is actually smaller than the Reign Energy and Monster cans, however I have trouble finishing those cans anyways, sometimes taking up to 3 hours to finish a can. I recommend drinking this cold or with ice for better taste.
@@ -32,6 +28,10 @@ The first energy drink that had a good taste that persuaded me to buy another on
 ### Reign Storm Kiwi Blend (8 / 10)
 
 Had this once, it's good. Too many 8/10s though, so I'll have to retest them to figure out which ones are better.
+
+### C4 Frozen Bombsicle (8 / 10)
+
+The negative is that it doesn't really taste like an energy drink, more like juice. I had this a second time and I didn't like it.
 
 ### Celsius Tropical Vibe (8 / 10)
 
