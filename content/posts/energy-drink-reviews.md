@@ -51,6 +51,12 @@ This did not taste bad so I am putting it up here.
 
 This did not taste bad so I am putting it up here. Update: I had it after a few months and it doesn't hit the same?
 
+### Bang Energy Purple Haze (7.9 / 10)
+
+### Bang Energy Razz (7.6 / 10)
+
+Watered down Reign Razzle Berry
+
 ### Nos (7.5 / 10)
 
 Rating only
