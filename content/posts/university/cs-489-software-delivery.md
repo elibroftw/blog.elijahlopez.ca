@@ -5,6 +5,8 @@ draft: false
 tags:
   - university
   - computer-science
+  - devops
+  - programming
 ---
 
 ## Summary

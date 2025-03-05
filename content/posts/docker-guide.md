@@ -6,6 +6,7 @@ tags:
   - computer-science
   - docker
   - programming
+  - devops
   - tutorial
 ---
 
