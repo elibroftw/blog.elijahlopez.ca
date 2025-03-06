@@ -1,5 +1,5 @@
 ---
-title: "On the Topic of Birth Rates and Developed Nations"
+title: "Birth Rates and Developed Nations"
 date: 2024-08-25T18:57:18-04:00
 draft: true
 tags:

@@ -11,6 +11,10 @@ I'll start with the tips so that this post is useful for everyone.
 
 {{< toc >}}
 
+## A Review From a Graduate
+
+I'm not going to lie, I think taking CS degree with a single Business course, one macro-economic course, two micro-economic courses, and a Finance minor is much better than a double degree. The business side is not as fledged out for becoming a business mogul. Two extra terms for a second degree is not worth it when I can name 9+ Business courses that were trash/useless and 1 meh CS course than was required due to DD (Info Systems Management which only taught me that once an organization has many aspects/resources, you should use an ERP). I could come up with a much more effective CS/business curriculum blend. It also makes no sense that a 4 year business program is less valuable than a 2 years MBA.
+
 ## University Life Tips
 
 ### Connecting to eduroam

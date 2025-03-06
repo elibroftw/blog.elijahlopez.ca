@@ -4,8 +4,6 @@ date: 2024-10-19T19:21:04-04:00
 draft: true
 ---
 
-In my quest to determine whether I can outperform a pre-construction condo at 101 Spadina, I have decided to properly compare investing $40,000 and $80,000 in a basket of undervalued stocks versus using this money for two deposits and earning APRs of 8% and 3% respectively.
-
 The first stock that I consider undervalued is DQ.
 
 Currently trading at $19.00, and $17.13 before China stimulus announcement, this is a stock that has a net tangible value greater than its equity market cap. That's right, if the company was liquidated today, shareholders (of which a big chunk is management), would receive more money than selling shares on the public market.

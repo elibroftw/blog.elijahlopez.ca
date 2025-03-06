@@ -1,11 +1,12 @@
 ---
-title: "India Controversies"
+title: "India"
 date: 2022-12-13T20:36:00-05:00
 draft: true
 ---
 
-No one is talking about the problem of Muslims and Hindus on the Indian subcontinent.
-The problem is scoped on Kashmir and the temple site.
+## AIR POLLUTION
+
+This needs to be fixed immediately.
 
 ## Kashmir
 
@@ -32,3 +33,9 @@ the source material?
 ## Ayodhya
 
 On Ayodhya, read the case summary. The Muslims could not prove that the land was theirs and the Hindus had been worshipping in there for over a century. If someone isn't enforcing their property rights, the land transfers to the squatter. Therefore, it makes sense that the land was given to build a temple. The court did see that the Muslims wanted a mosque so they were given 5 acres of land compared to the 2.77 that they "lost". The mosque was demolished illegally in 1992, so it's ridiculous to say that 2.77 acres holds more value than 5 acres when that area was previously occupied for a different purpose. It's more ridiculous when you realize Muslims aren't allowed to destroy temples of other religions. The fact that a case that has a verdict is still being argued is pathetic.
+
+## Socially Conservative HOAs
+
+[Apartment societies in Pune](https://www.reddit.com/r/india/comments/149dne3/comment/jo6ape6/)
+
+## Where to Live?

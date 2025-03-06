@@ -15,7 +15,7 @@ These are some of my oldest memories somewhere from 2005-2006. According to my d
 - I remember seeing a cockroach in the kitchen and I'm pretty sure my mom killed it
 - I remember playing Age of Empires on our Windows XP laptop that we kept for over a decade
   - It died in 2017 or something after I had installed Ubuntu and let my mom use it. RIP 512MB of RAM
-- Going tubing either at the school I went to or a trip with the school. My mom was with me I'm pretty sure
+- Indoor tubing where we went on a trip with the school. My mom was with me I'm pretty sure
 - Sitting window seat on the bus with my friend and looking into the sun and then at the sky and blinking and seeing those cyan artifacts and asking her if she also could see it. She could.
 - Floating face up at the pool at school
 - I think I was surprised when I spoke a language other than English (either Hindi or Marathi) with someone in my class. I don't speak Marathi or Hindi today, I can understand both 75%.

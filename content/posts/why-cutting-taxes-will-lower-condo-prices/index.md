@@ -4,4 +4,10 @@ date: 2025-02-10T17:11:10-05:00
 draft: true
 ---
 
-https://www.reddit.com/r/canadahousing/comments/1ilyii7/comment/mc30v9t/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button
+Why are pre-construction starts [down](https://www03.cmhc-schl.gc.ca/hmip-pimh/en/TableMapChart/Table?TableId=1.1.1.8&GeographyId=2270&GeographyTypeId=3&DisplayAs=Table&GeograghyName=Toronto)?
+
+It's because the market clearing price has fallen under the cost to build, and taxes make up 30% of the PURCHASE PRICE.
+
+![Annual Value](https://preview.redd.it/pierre-poilievres-housing-affordability-policies-v0-g0a2c4vrwdie1.png?width=926&format=png&auto=webp&s=52491c944909ee15f96fc347630d9d94c8cc7d1e)
+
+If LTT becomes the new DC and HST/GST threshold increases to $1M, then the price where a builder is willing to sell can be lowered by 6.8% + 9.1% = 15.9%. Do you not want 15.9% cheaper 2bd/3bd condos? 101 Spadina has sold 28% after almost a year. There is a nice 2bd 2ba unit at $850,000. 84% of it is 714,000, which is cheaper than 2bd condos at the Lincoln in Calgary.

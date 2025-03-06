@@ -1,9 +1,10 @@
 ---
-title: "Replacing Pe Ratio"
+title: "Replacing the Price-Earnings Ratio"
 date: 2024-02-26T18:12:34-05:00
 draft: true
 tags:
   - finance
+  - possible-thesis
 ---
 
 P/E is touted often when discussing stocks, however, P/E ignores the companies debt capital structure, and what happened to past income. We need to take a look at the retained value per common share. That is given a companies assets, what do we get if we take out debt and non-common shares equity? We should* get the real book value of common equity. Then we can get a per share intrinsic value. What do we do with this? We can do the following to get a metric comparable across time.

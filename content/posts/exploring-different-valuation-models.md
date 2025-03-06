@@ -3,6 +3,7 @@ title: "Exploring Different Valuation Models"
 date: 2024-07-10T16:57:26-04:00
 draft: true
 tags:
+    - finance
     - possible-thesis
 ---
 
