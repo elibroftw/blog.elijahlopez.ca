@@ -6,7 +6,6 @@ tags:
   - programming
   - react
   - javascript
-  - computer-science
   - tutorial
 ---
 
