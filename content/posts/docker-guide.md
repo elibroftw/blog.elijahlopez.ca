@@ -82,16 +82,22 @@ Dockerfile: a instruction sheet that docker will parse to build an `Image`; an i
 - Docker enables caching. Therefore, we want to include any system dependency `update` and an `install` in the same `RUN` (e.g. apt)
 - [dnf example in Music Caster](https://github.com/elibroftw/music-caster/blob/master/Dockerfile#L7)
 
-### Running an Image (Container)
+### Running an Image in a Container
+
+[docker container run | Docker Docs](https://docs.docker.com/reference/cli/docker/container/run/)
 
 - `docker run --rm -p 4000:4000 tagOrId`
   - '--rm': removes the container after it has stopped
     - A container stops once the CMD has finished running or if we decide to stop it manually and of course if an unexpected error occurs
-  - `p: open the localhost container port
+  - `p`: open the localhost container port
   - `-d`: run the container as a daemon (keep using the shell)
 - Use `docker tag source copy` to clone the image (e.g. prepping for new push to a remote registry)
 - Use `docker push tag` to push to a registry
   - Registry tags are usually of the form `{username}/{name}:{version}`
 - Use --volume src:dest to copy a directory on the host machine to a directory on the container. This way we can persist data without deleting the volume
 - We can also limit the system resources available to the container ([read more](https://docs.docker.com/config/containers/resource_constraints/#limit-a-containers-access-to-memory))
-- After the container is running, you can use `docker exec -it containerId sh` to use the shell inside a **running** container
+- If the container is running, you can use `docker exec -it containerId sh` to access the shell `sh` is symlinked to inside a **running** container (not necessarily bash, so be careful)
+- If the container immediately exits, we need to set an entrypoint
+  - `docker run --rm -it --entrypoint bash image`
+    - `i`: interactive
+    - `t`: Allocate a pseudo-TTY
