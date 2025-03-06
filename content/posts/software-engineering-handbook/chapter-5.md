@@ -21,6 +21,12 @@ Time should be used in the development of intuitive and documented software rath
 
 ### Documentation
 
+Documentation Builders
+
+1. [Docusaurus](https://docusaurus.io/)
+2. [mdBook](https://github.com/rust-lang/mdBook): create modern online books from Markdown files
+3. [mkdocs material](https://github.com/squidfunk/mkdocs-material): material docs
+
 With respect to software *libraries*, it's not your job to teach someone how to use a language. However, it is your job to teach users how to use your library with the language the library is meant for.
 
 Documentation is deemed perfect if the libraries' author(s) do not need to be reached out for clarification.
@@ -31,11 +37,9 @@ A library should have a good name; a name that conveys what it does. `localForag
 
 The next thing with documentation is consistency. All libraries should work towards making the reading experience as consistent as possible. When users are reading library documentation, they have three goals:
 
-1. seeing if the library can do what the user is looking for (Intro),
-2. seeking out the feature set of a library (API), and other (e.g. hobbyist).
+1. Seeing if the library can do what the user is looking for (Intro),
+2. Seeking out the feature set of a library (API), and other (e.g. hobbyist).
 3. Rust is doing a great job at making documentation easy for developers since developers may not be into technical writing or management
-
-There is also [Docusaurus](https://docusaurus.io/)
 
 ## Practicality (Intuition)
 
