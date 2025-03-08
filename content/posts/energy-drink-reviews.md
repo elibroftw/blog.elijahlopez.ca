@@ -30,10 +30,6 @@ I like the taste of this better than Monster White, so that's why it's getting a
 
 The first energy drink that had a good taste that persuaded me to buy another one. This is great and it's only downfall is this slight after taste that lingers. I forget exactly what that "bad" taste is, but I'll update this article the next time I drink it. Rated 8 / 10 because I'm saving the perfect score until I've tasted and reviewed at least 10 energy drinks.
 
-### Reign Storm Kiwi Blend (8 / 10)
-
-Had this once, it's good. Too many 8/10s though, so I'll have to retest them to figure out which ones are better.
-
 ### C4 Frozen Bombsicle (8 / 10)
 
 The negative is that it doesn't really taste like an energy drink, more like juice. I had this a second time and I didn't like it.
@@ -56,11 +52,17 @@ This did not taste bad so I am putting it up here.
 
 This did not taste bad so I am putting it up here. Update: I had it after a few months and it doesn't hit the same?
 
-### Bang Energy Purple Haze (7.9 / 10)
+### Bang Energy Purple Haze (7.8 / 10)
 
-### Bang Energy Razz (7.6 / 10)
+Rating only
+
+### Bang Energy Razz (7.7 / 10)
 
 Watered down Reign Razzle Berry
+
+### Reign Storm Kiwi Blend (7.6 / 10)
+
+When I had this a second time, with all the other reviews already done, I have to say, it's not as good as I thought it was. I'm putting it just above Nos.
 
 ### Nos (7.5 / 10)
 
