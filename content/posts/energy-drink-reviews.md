@@ -17,6 +17,11 @@ I like this a lot. It definitely deserves the #1 spot.
 
 It's pretty good too, but it gets over so quickly compared to the C4 and Monster White.
 
+### Celsius Orange (8.9 / 10)
+
+The first time was okay, but the second time, already chilled from the fridge, it was very refreshing.
+It is not recommended to eat anything sugary alongside this drink, otherwise the flavour might get ruined.
+
 ### Reign Storm Grape (8.5 / 10)
 
 I like the taste of this better than Monster White, so that's why it's getting an 8.5. I'll have the White Gummy Bear soon to compare exactly which drink gets first place. One great and underrated aspect about the Reign Storm brand is that the caffeine level is low enough to have two cans per day! The downside is that the can is actually smaller than the Reign Energy and Monster cans, however I have trouble finishing those cans anyways, sometimes taking up to 3 hours to finish a can. I recommend drinking this cold or with ice for better taste.
@@ -68,12 +73,6 @@ Rating only
 ### Celsius Kiwi (7.5 / 10)
 
 Definitely better than Orange, but a bit below Monster White
-
-### Celsius Orange (7.25 / 10)
-
-Orange
-
-It's okay on its own. As soon as you eat something even a tad sweet, the flavour isn't as good as it could be
 
 ### Reign Storm Peach Nectarine (7 / 10)
 
