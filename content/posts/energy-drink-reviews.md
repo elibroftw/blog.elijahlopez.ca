@@ -13,14 +13,14 @@ I believe this is better than the Razzle Berry flavour, but I will have to taste
 
 I like this a lot. It definitely deserves the #1 spot.
 
-### Celsius Sparkling Arctic Vibe (8.9 / 10)
-
-It's pretty good too, but it gets over so quickly compared to the C4 and Monster White.
-
 ### Celsius Orange (8.9 / 10)
 
 The first time was okay, but the second time, already chilled from the fridge, it was very refreshing.
 It is not recommended to eat anything sugary alongside this drink, otherwise the flavour might get ruined.
+
+### Celsius Sparkling Arctic Vibe (8.6 / 10)
+
+It's pretty good too, but it gets over so quickly compared to the C4 and Monster White. I really like how refreshing Celsius Orange is though (when chilled).
 
 ### Reign Storm Grape (8.5 / 10)
 
@@ -29,6 +29,8 @@ I like the taste of this better than Monster White, so that's why it's getting a
 ### Reign Energy Razzle Berry (8 / 10)
 
 The first energy drink that had a good taste that persuaded me to buy another one. This is great and it's only downfall is this slight after taste that lingers. I forget exactly what that "bad" taste is, but I'll update this article the next time I drink it. Rated 8 / 10 because I'm saving the perfect score until I've tasted and reviewed at least 10 energy drinks.
+
+It's unfortunate I can't get this in Canada anymore. Then I'd be able to re-rate it.
 
 ### C4 Frozen Bombsicle (8 / 10)
 
