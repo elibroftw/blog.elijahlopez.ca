@@ -120,6 +120,8 @@ for future projects. Any project that uses React Native becomes tech debt instan
 
 I'm going to document all my issues and solution for them
 
+I recently updated to react-native 78 and of course something breaks! This type, there is a bug when targeting Android 15. The [bug in question](https://github.com/facebook/react-native/issues/49759) is that the `KeyboardAvoidingView` component doesn't work anymore! No wonder react-native is in 0.X, it's literally unstable. This is probably why of the people I know said that native is preferable. You just wouldn't get blocked by React Native then. WIth native, the SDK comes out months before the OS is released.
+
 ### How to Change Android Status Bar and Gesture Navigation Color
 
 ```sh
