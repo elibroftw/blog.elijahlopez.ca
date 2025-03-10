@@ -5,13 +5,29 @@ tags:
     - review
 ---
 
-What ratings mean. Anything above 5 means I would rather drink it than drink nothing. Anything under 6 means I'd rather drink water. Anything at 0 is a no go even if thirsty. I've sorted the drinks based on which I believe tastes the best. When this page is longer, I suggest using the find on page feature of your browser if you are looking for a specific review.
+This is my review of energy drinks. The best way to enjoy an energy drink is to drink it chilled from the fridge. I've tried using ice, but it seems like the dilution makes drinks taste worse.
+
+A rating below 5 indicates that water is better to drink.
+
+## Energy Drink Cycle
+
+These are the energy drinks I drink on a cycle when I'm not drinking new ones.
+
+1. Reign Energy White Gummy Bear
+2. Reign Energy Reignbow Sherbet
+3. Celsius Orange
+
+Reign Energy Razzle Berry would be on here but it is unavailable in Canada.
 
 ### Reign Energy White Gummy Bear (9 / 10)
 
 I believe this is better than the Razzle Berry flavour, but I will have to taste the razzle berry again. There isn't exactly any bad points I can think of. This does have a slight taste like a gummy bear and it's not overpowering.
 
 I like this a lot. It definitely deserves the #1 spot.
+
+### Reign Energy Reignbow Sherbet (9 / 10)
+
+Drinking this chilled puts the Reignbow Sherbet on par with White Gummy Bear
 
 ### Celsius Orange (8.9 / 10)
 
@@ -81,10 +97,6 @@ Definitely better than Orange, but a bit below Monster White
 ### Reign Storm Peach Nectarine (7 / 10)
 
 Although it has a pleasant taste, it is missing a _kick_ found in drinks such as Monster White.
-
-### Reign Energy Reignbow Sherbet (7 / 10)
-
-This definitely is not on par with Monster White. It doesn't taste as good as I thought it did, so it's not worth a repurchase. However, if someone offered me to drink it, I would accept. I'll try to drink my last can chilled to figure out if the subpar taste was just because the drink was at room temperature.
 
 ### C4 Grape (6.7 / 10)
 
