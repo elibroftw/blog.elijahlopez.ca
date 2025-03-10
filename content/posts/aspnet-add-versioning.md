@@ -1,5 +1,5 @@
 ---
-title: "ASP.NET Core Add Versioning"
+title: "ASP.NET Core Add Versioning to Endpoints"
 date: 2024-03-07T02:05:53-05:00
 draft: false
 tags:
@@ -11,13 +11,14 @@ tags:
 
 ### Introduction
 
-Applicable .NET versions: .NET 9, .NET 8. Starting in .NET 9, there are two ways to add versioning. .NET 9 uses OpenAPI & Scaler and requires hardcoding the version in one file, whereas .NET 8 does not need to do this, but does use Swagger. For the .NET 9 tutorial, I will also provide a list of packages I have installed in my project in case your project is missing an unnecessary package.
+Applicable .NET versions: .NET 9, .NET 8.
 
-This tutorial will save you 5 hours. I don't know when I started adding API version support to my ASP.NET project, but I can tell you that the current documentation is atrocious if you strive for perfection like I do.
+- .NET 9 uses OpenAPI and Scaler (Swagger replacement) and requires hardcoding the versions in one file. I have provided a list of packages I installed in my project in case your project is missing a necessary package.
+- .NET 8 does not need to hardcode the applicable versions, but does use Swagger.
 
-As our mobile application is about to have an official MVP release, I wanted to fix the Stripe payment intent method "invoice." Currently, the invoice method would only return the client secret, but the official docs suggest to return the customer ID and a ephemeral key in addition to the payment intent client secret. I had two options. Either break current builds in use because you know its only beta testing anyways, or I can use this as an opportunity to add API versioning. There's two main ways to do API versioning in my eyes. The first way, which is what I thought I would've added in the future, is to be one of those companies with apis like `/v2/my-api` but then I found out about header APIs where the client can just add a header. This saves a lot of time because first of all, most of my apis were `/api` not `/v1/api` and the client was already calling without a version. I want an easy way to just switch the default version to `v2` so I went with reading the API version from the header.
+This tutorial will save you ~5 hours. I don't know when I started adding API version support to my ASP.NET project, but I can tell you that the current documentation is atrocious if you strive for perfection like I do.
 
-After hours of consulting Gemini, the official docs, and examples, and personal touches, I present the absolutely bare minimum way to add versioning to your ASP.NET application.
+There are two main ways to do API versioning in my eyes. The first way, which is what I thought I would've added in the future, is to be one of those companies with apis like `/v2/my-api` but then I found out about header APIs where the client can select the version by using a header. This saves a lot of developing time because all of my endpoints were `/name` not `/v1/name` and there were already released/production clients which were calling them without a version specified in the header.
 
 ### NuGet Packages
 
@@ -26,6 +27,7 @@ In .NET 9, I needed the following Asp.Versioning packages
 - Asp.Versioning.Http
 - Asp.Versioning.Http.Client
 - Asp.Versioning.Mvc.ApiExplorer
+- Scalar.AspNetCore
 
 You can either use VSCode's C# Dev Kit, Visual Studio's Nuget Packages UI, or the dotnet CLI to install these packages. For example, `dotnet add <PROJECT> package <PACKAGE_NAME>`
 
@@ -46,24 +48,26 @@ namespace SttApi;
 public static partial class Extensions {
     public static IApplicationBuilder UseDefaultOpenApi(this WebApplication app) {
         var configuration = app.Configuration;
-
+        var builder = app.MapOpenApi().CacheOutput();
+        var scalerBuilder = app.MapScalarApiReference(options => {
+            // Disable default fonts to avoid download unnecessary fonts
+            options.DefaultFonts = false;
+            options.Title = "Split The Tank API Reference";
+            options.EnabledClients = [ScalarClient.Fetch, ScalarClient.HttpClient, ScalarClient.Nsurlsession, ScalarClient.OkHttp];
+            // TODO: add default berar
+            // TODO: order actions by
+            //     options.OrderActionsBy(apiDesc => {
+            //         var priority = apiDesc.ActionDescriptor.RouteValues["controller"]!.Contains("Debug") ? "_" : "";
+            //         return $"{priority}{apiDesc.ActionDescriptor.RouteValues["controller"]}_{apiDesc.HttpMethod}";
+            //     });
+            // .WithHttpBearerAuthentication(bearer => bearer.Token = "");
+        });
         if (app.Environment.IsDevelopment()) {
-            app.MapOpenApi()
-                .CacheOutput();
-            app.MapScalarApiReference(options => {
-                // Disable default fonts to avoid download unnecessary fonts
-                options.DefaultFonts = false;
-                options.Title = "Split The Tank API Reference";
-                options.EnabledClients = [ScalarClient.Fetch, ScalarClient.HttpClient, ScalarClient.Nsurlsession, ScalarClient.OkHttp];
-                // TODO: add default berar
-                // TODO: order actions by
-                //     options.OrderActionsBy(apiDesc => {
-                //         var priority = apiDesc.ActionDescriptor.RouteValues["controller"]!.Contains("Debug") ? "_" : "";
-                //         return $"{priority}{apiDesc.ActionDescriptor.RouteValues["controller"]}_{apiDesc.HttpMethod}";
-                //     });
-                // .WithHttpBearerAuthentication(bearer => bearer.Token = "");
-            });
             app.MapGet("/", () => Results.Redirect("/scalar/v1")).ExcludeFromDescription();
+        } else {
+            // Return 404
+            builder.RequireAuthorization("ApiDeveloperPolicy");
+            scalerBuilder.RequireAuthorization  ("ApiDeveloperPolicy");
         }
         return app;
     }
@@ -307,19 +311,19 @@ internal static class OpenApiOptionsExtensions
         return options;
     }
 
-    private class SecuritySchemeDefinitionsTransformer(IConfiguration configuration) : IOpenApiDocumentTransformer
-    {
-        public Task TransformAsync(OpenApiDocument document, OpenApiDocumentTransformerContext context, CancellationToken cancellationToken)
-        {
+#pragma warning disable 9113
+    private class SecuritySchemeDefinitionsTransformer(IConfiguration configuration) : IOpenApiDocumentTransformer {
+#pragma warning restore 9113
+        public Task TransformAsync(OpenApiDocument document, OpenApiDocumentTransformerContext context, CancellationToken cancellationToken) {
             document.Components ??= new();
             document.Components.SecuritySchemes.Add("Bearer", new OpenApiSecurityScheme {
-                            In = ParameterLocation.Header,
-                            Description = "Please enter a valid token",
-                            Name = "Authorization",
-                            Type = SecuritySchemeType.Http,
-                            BearerFormat = "JWT",
-                            Scheme = "Bearer"
-                        });
+                In = ParameterLocation.Header,
+                Description = "Please enter a valid token",
+                Name = "Authorization",
+                Type = SecuritySchemeType.Http,
+                BearerFormat = "JWT",
+                Scheme = "Bearer"
+            });
             return Task.CompletedTask;
         }
     }
@@ -331,16 +335,45 @@ internal static class OpenApiOptionsExtensions
 <details><summary>Program.cs</summary>
 
 ```cs
-var apiVersioning = builder.Services.AddApiVersioning(options => {
-            options.DefaultApiVersion = new ApiVersion(1, 0);
-            options.AssumeDefaultVersionWhenUnspecified = true;
-            options.ApiVersionReader = new HeaderApiVersionReader("x-ms-version");
-            options.ReportApiVersions = true;
-            options.UnsupportedApiVersionStatusCode = 501;
-        });
-        builder.AddDefaultOpenApi(apiVersioning);
-// after MapControllers
-app.UseDefaultOpenApi();
+    var apiVersioning = builder.Services.AddApiVersioning(options => {
+                options.DefaultApiVersion = new ApiVersion(1, 0);
+                options.AssumeDefaultVersionWhenUnspecified = true;
+                options.ApiVersionReader = new HeaderApiVersionReader("x-ms-version");
+                options.ReportApiVersions = true;
+                options.UnsupportedApiVersionStatusCode = 501;
+            });
+    builder.AddDefaultOpenApi(apiVersioning);
+    builder.Services.AddSingleton<IAuthorizationMiddlewareResultHandler, Show404AuthorizationMiddlewareResultHandler>();
+    builder.Services.AddAuthorizationBuilder()
+                .AddPolicy("ApiDeveloperPolicy", policy => policy.RequireRole(["developer"])
+                .AddRequirements(new ProtectedEndpoint404()));
+    // after app.MapControllers().WithStaticAssets();
+    app.UseDefaultOpenApi();
+```
+
+</details>
+
+<details><summary> ProgramAuxiliary</summary>
+
+```cs
+public class Show404AuthorizationMiddlewareResultHandler : IAuthorizationMiddlewareResultHandler {
+    private readonly AuthorizationMiddlewareResultHandler defaultHandler = new();
+
+    public async Task HandleAsync(
+        RequestDelegate next,
+        HttpContext context,
+        AuthorizationPolicy policy,
+        PolicyAuthorizationResult authorizeResult) {
+        if (!authorizeResult.Succeeded && policy.Requirements.Any(p => p is ProtectedEndpoint404)) {
+            // Return a 404 to make it appear as if the resource doesn't exist.
+            context.Response.StatusCode = StatusCodes.Status404NotFound;
+            return;
+        }
+        await defaultHandler.HandleAsync(next, context, policy, authorizeResult);
+    }
+}
+
+public class ProtectedEndpoint404 : IAuthorizationRequirement { }
 ```
 
 </details>
