@@ -1,6 +1,7 @@
 ---
 title: "Ajit Desai"
 authorPage: true
+disableFeed: true
 ---
 
 I added authors support just for this guy. I attended his talk at WLU and wrote some notes and wanted to give credit sometime in the future. These author pages will also work well for my book notes like [Flash Boys](/posts/literary-analysis/flash-boys-a-wall-street-revolt-michael-lewis/) and [Thinking, Fast and Slow](/posts/literary-analysis/thinking-fast-and-slow-daniel-kahneman/). The future of course, took 8 months, but I've added (or figured out) how to show authors.

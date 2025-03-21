@@ -121,7 +121,7 @@ If your post directory has no images, Hugo will try to use the first image found
 
 If your post doesn't use any images and you have multiple posts that use the same feature image
 
-```yaml
+```yml
 images:
     - assets/images/feature.png
 ```

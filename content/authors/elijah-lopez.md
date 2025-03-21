@@ -1,6 +1,7 @@
 ---
 title: "Elijah Lopez"
 authorPage: true
+disableFeed: true
 ---
 
 Wow, so I _can_ add an authors page. Now I just need to figure out how to add all posts with the author automatically. I'm looking into layouts. For now, we will use archetypes to speed up the creation of these about pages.
