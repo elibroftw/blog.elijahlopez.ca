@@ -16,7 +16,7 @@ This is an excerpt of my [Software Delivery course notes](https://blog.elijahlop
 
 Before learning Docker, it is best to figure out why we want to use Docker. We don't want to force it down our throat unless it enables us to do more.
 
-Put simply, Docker enables precise reproducibility. Projects can be compiled or run with one or two commands.
+Put simply, Docker enables creating specified environments, and reusing them. Projects can be compiled or run with one or two commands.
 
 - Without Docker, a guide would need to be followed manually to setup a dev environment
 - With docker, developers can build/download an environment with the compiled project with one command and run the project with another command
@@ -66,7 +66,7 @@ Dockerfile: a instruction sheet that docker will parse to build an `Image`; an i
   - When a line is changed or a reference to the host on a line is modified, that layer and the layers below it are rebuilt
 - `ENV VAR=value`: a way to define environment variables (usage: `$VAR`)
   - We want to define environment variables just before where they are used to minimize rebuilds (an exception can be made if it's permanent)
-- `FROM`: an image to build off of. If we want to run an application, we would need an operating system. I recommend `alpine` or `fedora`
+- `FROM`: an image to build off of. If we want to run an application, we would need an operating system. I recommend `almalinux`, an RHEL-ABI equivalent which is downstream from CentOS Stream which is downstream from Fedora. Ideally the "server" distro is the same OS family as your preferred desktop distro, so that you learn one way to operate a system.
 - `COPY`: copy files from host into the image
   - This is a layer where changing files on the host can trigger a rebuild of the layer and subsequent layers
   - We want to COPY the absolute minimum into the image such as just the dependency list and lock file (package.json, yarn.lock, requirements.txt, custom whl files, Pipfile, Pipfile.lock)
