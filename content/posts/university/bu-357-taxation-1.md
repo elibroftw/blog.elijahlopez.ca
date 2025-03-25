@@ -751,9 +751,10 @@ John needs to know the interest income in 2022 related to his two short-term inv
     - tax credit of $13 (4.62% provincial)
     - net personal tax = 33
     - total taxes paid on corporate profits = $46
-- For public corporation or CCPC not taxed at a lower rate (eligible dividends)
+- For public corporation or CCPC not taxed at a lower rate (eligible dividends), [FEDERALLY](https://www.taxtips.ca/dtc/eligible-dividend-tax-credit.htm):
   - 38% gross-up
-  - 20.7% of dividend is credited
+  - 20.73% of dividend is credited
+  - latest
 - Dividends received from foreign companies do not get grossed up and have no tax credit
   - the total dividend gets included not the net of foreign withholding tax (that part will most likely get credited)
 
