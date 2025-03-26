@@ -100,7 +100,9 @@ Poilievre has also mentioned selling federal land (probably just the land the bu
 
 > 6,000 buildings and thousands of acres of federal land
 
-## Removing GST on Housing Prices Under One Million Dollars
+## Removing GST on Housing Prices Under 1.3M Dollars
+
+After Carney copied Poilievre's idea to axe the GST under $1M, for only first-time home buyers mind you (which is a worse policy as it disincentivcizes up sizing, and implies that housing can only be made more affordable for new houses and not existing housing stock), [Poilievre is running on a GST cut under $1.3M](https://www.conservative.ca/poilievre-to-axe-gst-on-new-homes-under-1-3-million/). The case for 1.3M seems to be for cities like Vancouver and Toronto, which does have higher than house prices over $1M. Combined with an HST cut, that's around ~$150,000 in savings for a condo that priced at 1,300,000 pre HST cut which can now be lowered to 1,150,000 given that we are in a period where pre construction condos are not being sold due to prices being too high! For a $830,000 2 bedroom condo, it could now be priced at $734,000. Expect to see price changes once Poilievre or Carney are elected.
 
 Improves: primary residence affordability and housing construction competition via demand-side / pricing policies
 

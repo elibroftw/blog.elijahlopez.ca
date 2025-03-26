@@ -54,8 +54,18 @@ Pierre Poilievre has promised to undo the gun bans passed under the NDP/LPC coal
 
 Pierre Poilievre has promised to axe the carbon tax without replacing it.
 
-### Axing GST on New Homes Under One Million Dollars
+### Axing GST on New Homes Under 1.3 Million Dollars
 
-[Axe The Sales Tax on Homes](https://www.conservative.ca/axe-the-sales-tax-on-homes/)
+[Read my other post](/posts/pierre-poilievre-housing-affordability-policies/)
 
-See my other post
+## Dropping the Lowest Income Bracket by 2.25%
+
+[Poilievre To Cut Income Tax By 15% For The Average Canadian ](https://www.conservative.ca/poilievre-to-cut-income-tax-by-15-for-the-average-canadian/)
+
+> dropping the tax rate on the lowest income tax bracket from 15% to 12.75%
+
+The phrasing means that the average Canadian will see their tax bill decrease by 15% due to how the nominal tax bill number actually changes compared to a small decrease in the actual rate.
+
+> the average Canadian worker earning $57,000 will save $900
+
+Another way to read this is that anyone earning 57,000 or more will save $900 over the year in taxes or $34.61 per pay cheque. This covers my gym membership so I welcome it, but it wouldn't be a deal-breaker to match Carney's lower income tax cut.
