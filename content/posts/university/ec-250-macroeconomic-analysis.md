@@ -2149,6 +2149,13 @@ Production: Y = At * F(Kt, Nt); yt = At f(kt)
   - taxing consumption and not income; too small of a response
   - require people to save (e.g. CPP)
   - government saving, but can deficit spending on infrastructure work?
+  - savings rate can automatically increase if disposable income increases due to a non-zero marginal propensity to save
+    - reducing income tax rate
+    - lowering cost of necessities like shelter, food, clothing, transportation
+      - shelter costs can be reduced by:
+        - cutting red tape on new housing construction
+        - cutting taxes on new housing construction
+        - expanding zoning to allow mixed-use constructions that allow small businesses owners to live above their small business which would increase the money reinvested into the business by allowing the owner to temporarily pay themselves a lower wage
 - democracy
   - relative to dictatorships: less wars, better relations, pro-investment
   - economic growth?
@@ -2172,8 +2179,9 @@ Production: Y = At * F(Kt, Nt); yt = At f(kt)
     - government should fund more masters, PhD's, and research rather than rely on tax credits
   - industrial policy
     - influence countries pattern of industrial development through taxes, subsidies, or regulation
+    - setting investment policies of crown corporations like CPP to invest more in industries or startups
     - promote high-tech industries
-    - borrowing constrains: startups can' financing projects
+    - borrowing constrains: startups can't finance projects
     - spillovers: one company bears cost of the breakthrough while others do the cheaper improvements
       - subsidy or patents
     - dangerous since not easy to pick the winning tech and could support political supporters not economic promise
