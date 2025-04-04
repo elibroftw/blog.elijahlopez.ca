@@ -21,7 +21,9 @@ Poilievre's last point is to sell ~5,500 federal buildings and transform them in
 
 In conclusion, I myself had not thought of this policy and it's great Poilievre came up with something new that can be summarized as bullying (my words not his) or incentivize cities into submission rather than trying to impede their municipal rights. This is a heck of a lot more practical than simply stating "we will increase construction permit approvals." The policies I had come up with to address housing affordability can be found [here](/posts/canada/#housing-affordability).
 
-## Repealing Bill C-69
+## Repealing Bill C-69, the Anti-Road Bill
+
+C-69, the Impact Assessment Act was ruled unconstitutional by the Supreme Court 4 years after it was passed! Only the Cedar LNG project has passed the IAA (in record time, and no doubt because of using BC as a substitute).
 
 [Constitutional challenge successful](https://calgaryherald.com/opinion/columnists/varcoe-stay-in-your-lane-after-victory-against-bill-c-69-alberta-emboldened-in-feud-with-feds)
 
@@ -30,6 +32,8 @@ The Impact Assessment ACt (IAA) stipulates that an impact assessment is necessar
 There isn't much information on this topic, but from https://atbcapitalmarkets.com/insights/the-bill-c-69-aftermath, it seems Bill-69 could potentially create infinite delays; incorporate 'traditional Indigenous knowledge' and 'the intersection of sex and gender with other identity factors' which is ridiculous if the topic at hand is natural gas, oil sands, or a Uranium mine; THE MINISTER OF THE ENVIRONMENT HAS VETO POWER WITH EVERY PROPOSAL!!!!
 
 Even without any funding by corporations, being against this bill has merit. Poilievre is arguing from a point of improving energy independence, however I feel that the benefits are much more broader and not just restricted to energy. The bill supposedly impeding pipelines does have some merit as presently any pipeline proposal could be declined simply because the Minister of Environment doesn't want it approved or stalled by the Governor in Council.
+
+The Impact Assessment Act protects the environment from projects like roads, which do exist by the way. If the Impact Assessment Act came before the major highways, it would take decades for the highways to even be built. Of course the "conservative" Doug Ford only passed a bill that allows only highways to skip the Impact Assessment Act.
 
 ## Disability Benefits Will Continue With Employment
 
@@ -58,9 +62,13 @@ Pierre Poilievre has promised to axe the carbon tax without replacing it.
 
 [Read my other post](/posts/pierre-poilievre-housing-affordability-policies/)
 
+GST cuts are needed because when the GST was first enacted, all new houses were covered under the $450,000 or so threshold. Of course, resale houses were selling for that much by the mid 2000s! In Ontario, after interest rates were hiked and temporary immigration turned off, investors have been spooked and are no longer willing to pay the same price for preconstruction condos. For years developer charges and housing prices went up faster than inflation, and now that prices are falling, developer charges are not! A GST and HST cut will ensure that these preconstruction houses can be sold at the market clearing price. As it stands now the price for the developer to profit at their hurdle rate is higher than the price that would clear the market.
+
+I am doubtful the country can create enough jobs in a short period of time to raise wages up and increase demand for housing, especially when these new builds are more expensive and less spacious than the existing housing supply that people who are willing to downsize live in.
+
 ## Dropping the Lowest Income Bracket by 2.25%
 
-[Poilievre To Cut Income Tax By 15% For The Average Canadian ](https://www.conservative.ca/poilievre-to-cut-income-tax-by-15-for-the-average-canadian/)
+[Poilievre To Cut Income Tax By 15% For The Average Canadian](https://www.conservative.ca/poilievre-to-cut-income-tax-by-15-for-the-average-canadian/)
 
 > dropping the tax rate on the lowest income tax bracket from 15% to 12.75%
 
@@ -69,3 +77,7 @@ The phrasing means that the average Canadian will see their tax bill decrease by
 > the average Canadian worker earning $57,000 will save $900
 
 Another way to read this is that anyone earning 57,000 or more will save $900 over the year in taxes or $34.61 per pay cheque. This covers my gym membership so I welcome it, but it wouldn't be a deal-breaker to match Carney's lower income tax cut.
+
+## Rolling back Catch & Release Laws
+
+## Removing Alcohol 8 Years of Alcohol Taxes
