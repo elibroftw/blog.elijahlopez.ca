@@ -21,6 +21,12 @@ Poilievre's last point is to sell ~5,500 federal buildings and transform them in
 
 In conclusion, I myself had not thought of this policy and it's great Poilievre came up with something new that can be summarized as bullying (my words not his) or incentivize cities into submission rather than trying to impede their municipal rights. This is a heck of a lot more practical than simply stating "we will increase construction permit approvals." The policies I had come up with to address housing affordability can be found [here](/posts/canada/#housing-affordability).
 
+## Axing the Carbon Tax
+
+Consumer carbon tax was axed on April 1st, 2025.
+
+Pierre Poilievre has promised to axe the carbon tax without replacing it.
+
 ## Repealing Bill C-69, the Anti-Road Bill
 
 C-69, the Impact Assessment Act was ruled unconstitutional by the Supreme Court 4 years after it was passed! Only the Cedar LNG project has passed the IAA (in record time, and no doubt because of using BC as a substitute).
@@ -33,17 +39,11 @@ There isn't much information on this topic, but from https://atbcapitalmarkets.c
 
 Even without any funding by corporations, being against this bill has merit. Poilievre is arguing from a point of improving energy independence, however I feel that the benefits are much more broader and not just restricted to energy. The bill supposedly impeding pipelines does have some merit as presently any pipeline proposal could be declined simply because the Minister of Environment doesn't want it approved or stalled by the Governor in Council.
 
-The Impact Assessment Act protects the environment from projects like roads, which do exist by the way. If the Impact Assessment Act came before the major highways, it would take decades for the highways to even be built. Of course the "conservative" Doug Ford only passed a bill that allows only highways to skip the Impact Assessment Act.
+The Impact Assessment Act protects the environment from projects like roads, which do exist by the way. If the Impact Assessment Act came before the major highways, it would take decades for the highways to even be built. Of course the "conservative" Doug Ford passed a bill that allows only highways to skip the Impact Assessment Act.
 
 ## Disability Benefits Will Continue With Employment
 
 Bill C-395 was sponsored by Poilievre  in 2018 as a private member's bill. The goal of this bill was to ensure that people with disability benefits could continuing receiving those benefits while working.
-
-## Sources
-
-- [Pierre Poilievre on C-31 Cost of Living Relief Act, No. 2 9/22/2022](https://www.youtube.com/watch?v=Z39VZGF2k0A)
-
-[^sideNote1]: This specific part is similar to Trumps speech pattern that will undoubtedly be used as a rebuttal against Poilievre although it has nothing to do with his policies. I am stating this in case someone tries to call me biased for not addressing/catching the speech similarity.
 
 ## Every Dollar Spent Should be Accompanied with a Dollar Received
 
@@ -54,10 +54,6 @@ Poilievre used the bill under Clinton as an example.
 
 Pierre Poilievre has promised to undo the gun bans passed under the NDP/LPC coalition.
 
-## Axing the Carbon Tax
-
-Pierre Poilievre has promised to axe the carbon tax without replacing it.
-
 ### Axing GST on New Homes Under 1.3 Million Dollars
 
 [Read my other post](/posts/pierre-poilievre-housing-affordability-policies/)
@@ -65,6 +61,18 @@ Pierre Poilievre has promised to axe the carbon tax without replacing it.
 GST cuts are needed because when the GST was first enacted, all new houses were covered under the $450,000 or so threshold. Of course, resale houses were selling for that much by the mid 2000s! In Ontario, after interest rates were hiked and temporary immigration turned off, investors have been spooked and are no longer willing to pay the same price for preconstruction condos. For years developer charges and housing prices went up faster than inflation, and now that prices are falling, developer charges are not! A GST and HST cut will ensure that these preconstruction houses can be sold at the market clearing price. As it stands now the price for the developer to profit at their hurdle rate is higher than the price that would clear the market.
 
 I am doubtful the country can create enough jobs in a short period of time to raise wages up and increase demand for housing, especially when these new builds are more expensive and less spacious than the existing housing supply that people who are willing to downsize live in.
+
+## Axing GST on Canadian-Made Cars
+
+[Poilievre To Axe GST on Canadian-Made Cars, Create ‘Keep Canadians Working Fund’](https://www.conservative.ca/poilievre-to-axe-gst-on-canadian-made-cars-create-keep-canadians-working-fund/?utm_content=national/news/page/2/)
+
+## Double Small Craft Harbours Program
+
+[Put Canada’s Fisheries First – For a Change](https://www.conservative.ca/put-canadas-fisheries-first-for-a-change/?utm_content=national/news/page/2/)
+
+## Approving the LNG Newfoundland and Labrador Project
+
+[Poilievre Will Unleash Newfoundland and Labrador’s Energy](https://www.conservative.ca/poilievre-will-unleash-newfoundland-and-labradors-energy/?utm_content=national/news/page/2/)
 
 ## Dropping the Lowest Income Bracket by 2.25%
 
@@ -81,3 +89,13 @@ Another way to read this is that anyone earning 57,000 or more will save $900 ov
 ## Rolling back Catch & Release Laws
 
 ## Removing Alcohol 8 Years of Alcohol Taxes
+
+## Blue Seal Standard
+
+A common standard among the provinces. [Poilievre calls for changes to allow doctors, nurses to work across Canada](https://www.cbc.ca/news/politics/poilievre-national-licensing-healthcare-1.6783976)
+
+## Sources
+
+- [Pierre Poilievre on C-31 Cost of Living Relief Act, No. 2 9/22/2022](https://www.youtube.com/watch?v=Z39VZGF2k0A)
+
+[^sideNote1]: This specific part is similar to Trumps speech pattern that will undoubtedly be used as a rebuttal against Poilievre although it has nothing to do with his policies. I am stating this in case someone tries to call me biased for not addressing/catching the speech similarity.
