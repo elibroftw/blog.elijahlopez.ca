@@ -14,12 +14,11 @@ A rating below 5 indicates that water is better to drink.
 These are the energy drinks I drink on a cycle when I'm not drinking new ones.
 
 1. Reign Energy White Gummy Bear
-2. Reign Energy Sour Gummy Worm
-3. Reign Energy Reignbow Sherbet
-4. Reign Storm Guava Strawberry
-5. Celsius Watermelon Lemonade
-6. Celsius Orange
-7. Celsius Arctic White
+2. Reign Energy Reignbow Sherbet
+3. Reign Storm Guava Strawberry
+4. Celsius Watermelon Lemonade
+5. Celsius Orange
+6. Celsius Arctic White
 
 Reign Energy Razzle Berry would be on here but it is unavailable in Canada.
 
@@ -37,10 +36,6 @@ I like this a lot as well. And you can have 2x a day. They knew what they were d
 
 Drinking this chilled puts the Reignbow Sherbet on par with White Gummy Bear
 
-### Reign Energy Sour Gummy Worm (9 / 10)
-
-Similar to White Gummy Bear, but I really wish it had a bit more flavour.
-
 ### Celsius Watermelon Lemonade (9 / 10)
 
 I only got to try this flavour in April 2025, and it was great.
@@ -53,6 +48,10 @@ It is not recommended to eat anything sugary alongside this drink, otherwise the
 ### Celsius Sparkling Arctic Vibe (8.6 / 10)
 
 It's pretty good too, but it gets over so quickly compared to the C4 and Monster White. I really like how refreshing Celsius Orange is though (when chilled).
+
+### Reign Energy Sour Gummy Worm (8.5 / 10)
+
+Similar to White Gummy Bear, but I really wish it had a bit more flavour.
 
 ### Reign Storm Grape (8.5 / 10)
 
