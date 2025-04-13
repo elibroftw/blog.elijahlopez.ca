@@ -106,6 +106,12 @@ After Carney copied Poilievre's idea to axe the GST under $1M, for only first-ti
 
 Improves: primary residence affordability and housing construction competition via demand-side / pricing policies
 
+[First Announcement Video](https://youtu.be/W4N9ovBRYRg?si=gLaNqWIuDDT8NnTm&t=275)
+
+> You used to have a rebate on the first $450,000 of a new home back when the GST was instituted three decades ago. That threshold was supposed to go up every year. But it didn't.... So everyone is basically paying GST on their new home. GST was not meant to apply to the basic necessities of food and housing. That's why the exemption existed in the first place. It's also why today, I am announcing that a Pierre Poilievre common sense government will axe the sales tax on new homes under a million dollars.
+
+It's pretty clear to me that Poilievre is talking about the same people eligible under the existing GST rebate and that his plan would not open up the doors to investors.
+
 Put simply, the last time the $450,000 GST rebate threshold was updated was when the GST was announced in November 1991. Using Statistics Canada's [New housing price index](https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1810020501&pickMembers%5B0%5D=1.1&cubeTimeFrame.startMonth=11&cubeTimeFrame.startYear=1991&cubeTimeFrame.endMonth=12&cubeTimeFrame.endYear=2024&referencePeriods=19911101%2C20241201), an index of 55.9 in November 1991 is 124.5 in December 2024. Doing some math `450,000 * 124.5 / 55.9` nets us $1,002,236. Poilievre is right in saying that $1,000,000 is the new $450,000 just as $100,000 is the new $60,000.
 
 [Mike Moffatt: One simple way the federal government could save Canadian homebuyers nearly $2 billion a year](https://thehub.ca/2024/10/16/mike-moffatt-title-federal-government-housing-gst/)
