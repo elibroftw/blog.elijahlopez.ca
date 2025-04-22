@@ -15,19 +15,13 @@ For this article, I'm going to skip over default language packs since they are a
 
 This is the primary theme I use nowadays. I used to use Material Theme for VSCode but I used Atom One Dark for IntelliJ and honestly, it is more popping.
 
-## Material Theme
-
-[Install](https://marketplace.visualstudio.com/items?itemName=Equinusocio.vsc-material-theme)
-
-The most important part of any IDE is its aesthetics.
-
 After installing, use the command "Preferences: Color Theme" to select a theme.
 
-The theme I use is "Material Theme Darker High Contrast" combined with this custom setting so that comments appear lighter.
+Add this custom setting so that comments appear lighter.
 
 ```json
 "editor.tokenColorCustomizations": {
-        "[Material Theme Darker High Contrast]": {
+        "[Atom One Dark Theme]": {
             "textMateRules": [
                 {
                     "scope": [
@@ -51,12 +45,31 @@ The theme I use is "Material Theme Darker High Contrast" combined with this cust
 
 Aesthetics can be improved further than a theme. We need nice icons in the file explorer!
 
-## Code Runner
+## EditorConfig Support
 
-[Install](https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner)
+[Install](https://marketplace.visualstudio.com/items/?itemName=EditorConfig.EditorConfig)
 
-This extension let's you run a file using Ctrl + Alt + N.
-I suggest changing the settings so that Code Runner runs in an integrated terminal rather than an output window so that you can enter input.
+## Even Better TOML
+
+## Just
+
+[Install Task Recipe Runner](https://marketplace.visualstudio.com/items?itemName=ElijahLopez.just-recipe-runner)
+
+[Install syntax highlighter](https://marketplace.visualstudio.com/items/?itemName=sclu1034.justfile)
+
+## Live Share
+
+By Microsoft
+
+## Markdown
+
+- Everything by Matt Bierner
+- Paste Image
+
+## Python
+
+- [autoDocstring - Python Docstring Generator](https://marketplace.visualstudio.com/items/?itemName=njpwerner.autodocstring)
+- Ruff
 
 ## Better C++ Syntax
 
@@ -138,3 +151,11 @@ If you need to ssh often to do some programming, I suggest using this extension 
 I'm not sure if this extension is buggy, but I used this extension extensively when doing programming assignments to avoid
 alt-tabbing. I usually split my editor into two panels and have pdfs open on the right panel. Even with two monitors, I'd still use this extension
 since the second monitor will be used for gaming or watching videos.
+
+## CodeSnap
+
+[Install](https://marketplace.visualstudio.com/items/?itemName=adpyke.codesnap)
+
+Take beautiful screenshots of your code (shouldn't need to though)
+
+## Select Line Status Bar

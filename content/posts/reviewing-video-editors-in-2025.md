@@ -8,7 +8,9 @@ tags:
 
 ## Shotcut
 
-The best open-source video editor I've used so far. Here's a quick tutorial on how to add a shape.
+The best open-source video editor I've used so far.
+
+### How to Add Shapes in Shotcut
 
 1. Select your non-V1 video track
 2. "Open Other" > "Animation (Glaxnimate)"

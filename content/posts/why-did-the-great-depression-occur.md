@@ -6,7 +6,19 @@ tags:
   - economics
 ---
 
-During the great depression, countries still followed the gold standard, which doesn't translate well when banks are allowed to conduct fractional reserve banking with a low reserve ratio.
+## What Happened
+
+During the great depression, countries still followed the gold standard, which does handle bank runs well under [fractional reserve banking](https://www.investopedia.com/terms/f/fractionalreservebanking.asp) with a low reserve ratio. Bank runs can't be handled well since the federal reserve wouldn't be able to legally pump money into the system. This vulnerability was exploited by a catalyst, which is any event that causes a loss in confidence in financial institutions. The Great Depression is a domino effect with the egregious one being the lack of separation of concern and adequate risk management at Caldwell and Company.
+
+When interest rates were hiked, the stock market crashed (as expected). However this stock market crash was exacerbated by traders on margin who got margin called. Buying on margin refers to the concept of borrowing money to buy shares. This combination of lenders being margin called and the stock market crash also resulted in institutions losing money. One such institution was Caldwell and Company. Without the Glass-Steagall Act passed in response to the events of the Great Depression, management at Caldwell and Company were legally allowed to use deposits as capital for investments.
+
+It would be common sense today to not do this, but with SVB going down, it's clear companies that can impact the entire country should always be regulated to operate competently. Competition and profits should be made from decisions that do not put the country or customers at risk. Caldwell and Company's investment banking division lost so much money that it resulted in their commercial banks closing down. When commercial banks close down suddenly, it follows that people would lose confidence in all financial institutions. This triggers a systemic bank run. There was no [Federal Deposit Insurance Corporation](https://www.fdic.gov/), meaning depositors could lose all of their money due to lenders defaulting.
+
+What followed is that the money supply shrank by 25%. If there is less money able to buy the same quantity of goods, prices across the board must fall. This is because some goods are necessities, so eventually deflation would hit all sectors. Since prices went down, so too would nominal profits. And if nominal profits go down, then the crushed valuations of the stock market is not under valued but fairly valued!
+
+Subsequently, US politicians decided that the reason for the devastation wasn't due to a lack of regulation, but an oversupply of agriculture, so they slapped tariffs, but on more than agriculture. Of course, foreign countries also slapped their own tariffs, and so the loss in global trade of -66%, further reduced economic output, profits, and thus wages and economic growth.
+
+## Prevention
 
 Under the gold standard, if a bank run were to occur, the bank does not have enough reserves to meet the demand and will go under. This is because the money it is supposed to have, was loaned out, and if people had purchased on margin, there might not be a way to recover that loan in time.
 
