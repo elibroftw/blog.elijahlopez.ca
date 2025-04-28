@@ -11,7 +11,7 @@ I originally came to this conclusion in September (12th), but it was sitting in 
 
 The compelling reason that existed to buy LULU is because I thought the Chinese will buy their apparel when their economy recovers (I was proven right as the stock skyrocketed recently on International sales). Even so, I still needed a sell price. And that's the problem. It's impossible for me to arrive at the short-term fair price, so heuristics will need to be used (for future stock considerations). Two heuristics I employ are industry P/E (many issues with P/E) or [historic cashflow yield standard deviations](https://app.koyfin.com/share/e31aae25cd) as seen below.
 
-![LULU Cash Flow Yield](/images/stocks/koyfin_lulu_20241208_040544132.png)
+![LULU Cash Flow Yield](/images/stocks/koyfin_lulu_20241208_040544132.webp)
 
 The reason I didn't purchase LULU in September is because **this is not a buy and hold stock**. Once you go on Instagram, you'll quickly realize that LULU does not actually have a moat and many relatively unknown and yet sizable brands, are also using influencer marketing such as:
 

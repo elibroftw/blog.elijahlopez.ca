@@ -452,7 +452,7 @@ The meaning of happiness is two-parts. The first part is of positive events and 
 
 For "How" types of questions, intensity matching is the process of converting the answer of a heuristic into an answer for the original question. If both things have a scale, then we can easily translate in our heads using System 1.
 
-![Three men in a corridor](/images/thinking-fast-and-slow/three-men.png)
+![Three men in a corridor](/images/thinking-fast-and-slow/three-men.webp)
 
 <details><summary>Is the figure on the right larger than the figure on the left?</summary>
 

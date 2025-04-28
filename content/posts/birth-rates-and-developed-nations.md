@@ -19,6 +19,19 @@ The other ideas are naive because people do not actually understand what it mean
 
 We should not conclude that income is the only determinant of birth rates since there are clear examples of countries that have achieved the target fertility rate of 2.1 per woman. Let me list the countries and a strong reason why we see this.
 
+## More Notes
+
+Since people have generally done more dying than procreating when in cities, big cities have always depended on rural immigrants to sustain their numbers (source: The Rational Optimist).
+
+I would be against paying people to give birth. I would rather see:
+
+- tax single family homes that don't have people under 31 living in them (pushes density)
+- improve workplace conditions so that it's illegal to fire someone for missing work
+- allow 2hrs remote work for office jobs if required
+  - Not sure what to do about physical labour jobs
+
+Make condos more appealing by prioritizing policing to denser areas, add more natural green spaces on casual daily walks.
+
 ###
 
 [^1]: [TFR vs PPP 2019 via Our World in Data](https://ourworldindata.org/grapher/children-per-woman-fertility-rate-vs-level-of-prosperity)

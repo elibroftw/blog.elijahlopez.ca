@@ -113,6 +113,8 @@ Then you need to render the variable image which can be done in [multiple ways](
 
 ### Default
 
+THIS DOES NOT WORK.
+
 If your post directory has images, the ordering is: `*feature*`, `*cover*`, `*thumbnail*`.
 
 If your post directory has no images, Hugo will try to use the first image found in your `hugo.yaml` under `images`
