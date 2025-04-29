@@ -1,7 +1,7 @@
 ---
-title: "That Time I Went to a Dog Food Convention"
+title: "That Time I Went to a Dog Food Eating Convention"
 date: 2025-04-28T18:18:44-04:00
-draft: true
+draft: false
 tags:
   - satire
 ---
