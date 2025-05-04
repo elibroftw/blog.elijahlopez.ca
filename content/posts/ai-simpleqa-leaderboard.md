@@ -44,7 +44,7 @@ ArenaHard leaderboard: An automated artificial/synthetic benchmark for Chatbot A
 | gemma-3-12B               | Google    | II |  6.30 |         |           |               |
 | gemma-3-4B                 | Google    | III |  4.00 |         |           |               |
 | gemma-2-9B                 | Google    | II |  5.30 |         |           |               |
-| Phi-4        | Microsoft | II | 3.00 | 78.00   | 79.00 |               |
+| Phi-4-Reasoning-Plus        | Microsoft | II | 3.00 | 78.00   | 79.00 |               |
 | gemma-2-2B                 | Google    | III |  2.80 |         |           |               |
 | gemma-3-1B                 | Google    | III |  2.20 |         |           |               |
 | Qwen3-4B                      | Qwen | III | 1.00 | 65.6 | 76.6 |               |

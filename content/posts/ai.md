@@ -144,6 +144,7 @@ Some of the following also have internet search capabilities
 - Generative
   - [Stable Diffusion](https://stability.ai/stable-image) by StabilityAI (also see their Applications)
   - [Midjourney](https://www.midjourney.com/home)
+    - [creating backgrounds with midjourney](https://kubadesign.lemonsqueezy.com/)
     - [Prompt to create app icons](https://x.com/adamlyttleapps/status/1671363003177123841)
   - [Dream](https://dream.ai/) by [WOMBO](https://dream.ai/blog)
 - [ComfyUI](https://comfyui-wiki.com/): GUI for diffusion models
@@ -155,14 +156,16 @@ Some of the following also have internet search capabilities
 
 - Generation
   - [Pika](https://pika.art/)
-  - [Sora](https://sora.com) by OpenAI
   - [Veo](https://gemini.google/overview/video-generation/) by Google DeepMind
+  - [Sora](https://sora.com) by OpenAI
   - [Stable Diffusion Video](https://stability.ai/stable-video) by Stability AI
   - [Gen] by Runway (also includes research papers)
   - [ChatGPT + Visla plugin](https://x.com/rezkhere/status/1674412982716215296): create a video commercial (voice over is trash though, use a TTS tool for that)
 
 ### Audio
 
+- [Lyria](https://deepmind.google/technologies/lyria/) by Google DeepMind
+- Music AI Sandbox is available through YouTube's [Music AI Incubator](https://blog.youtube/inside-youtube/partnering-with-the-music-industry-on-ai/)
 - [AudioCraft](https://ai.meta.com/resources/models-and-libraries/audiocraft/) by Meta
 - [Spleeter](https://github.com/deezer/spleeter) by Deezer: source separation
 - [Stable Audio](https://stability.ai/stable-audio) by Stability AI
