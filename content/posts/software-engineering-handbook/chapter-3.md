@@ -1,39 +1,55 @@
 ---
-title: "Chapter 3 - Version Control System (Git)"
+title: "SEH Chapter 3 - Version Control System (Git)"
 date: 2025-03-05T15:50:15-05:00
 draft: true
 aliases: ["/posts/software-engineering-handbook/chapter-3"]
 ---
 
-Now that you've learned how to program, you need to learn how to ensure your code is archived, backed up, and how you can collaborate with others.
+Now that you've learned how to program, you need to learn how to ensure your code is archived, backed up, and how to collaborate with others.
 
-> 3 months of code gone because of cursor
+> Cursor f*ck up my 4 months of works
 
-\- r/ChatGPTCoding post (I can't find the original post)
+\- [smartest vibecoder on r/cursor](https://www.reddit.com/r/cursor/comments/1inoryp/cursor_fck_up_my_4_months_of_works/)
 
 {{< toc >}}
+
+## Purpose of a Version Control System
 
 - **Archiving versions** of source code
 - Maintaining **historical information**
 - Enable **collaboration**
 - **Recovery**
-- **Conserve disk space** since only one central point and VCS uses compression
+- **Conserve disk space** since there is only one central point and VCS uses compression
 - [Git](https://git-scm.com/) is a distributed version control system
-- GitHub is a webapp to host git repositories and your software projects
-  - Alternatively, you can use GitLab, which is more advantageous for self-hosting, which is useful for medium-sized businesses
 
-### Installing Git
+[GitHub](https://github.com/) is a webapp to host git repositories and your software projects. GitHub is the defacto way to showcase software side projects you've worked on. Alternatives include GitLab and Bitbucket (by Atlassian), which are common in the industry and operate similarly to GitHub.
 
-Install git using your package installer (for Windows, first use winget search and then install `Git.Git`)
+<details><summary>Fun Fact</summary>
 
-### Git Operations
+I got my first job because of code I published on GitHub
+
+</details>
+
+## Installing Git
+
+Install git using your package installer (for Windows, first use winget search and then install `Git.Git`).
+
+## SSH Keys
+
+When you onboard for jobs in the industry, unless you are working as a developer for a company that is 100% open-source, you will most likely need to provide someone with a public SSH key.
+
+[GitHub: Generating a new SSH key](https://docs.github.com/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent#generating-a-new-ssh-key)
+
+To learn how to passwordless SSH, follow my blog post [How to SSH into VirtualBox](/posts/ssh-into-virtualbox). This demonstrates how one copies their public ssh key into the authorized keys file on the remote machine, when the usernames are different from the local and remote machines.
+
+## Git Operations
 
 - `git init new-project`
   - Create a new local repo in the folder new-project
 - `git init .`
   -Initialize the current directory as a git repo
 - `git clone`
-  - Online repo &rarr; Local repo
+  - Cloud repo &rarr; Local repo
 - Local
   - `git log`: view the log of the checked out revision
   - `git branch`: use to create a new branch
@@ -47,8 +63,6 @@ Install git using your package installer (for Windows, first use winget search a
 - git bare repository server
   - `git init --bare`
 
-### Workflow Overview
-
 ### Problems with Merging
 
 - if you merge a branch that points to an older commit:
@@ -56,7 +70,7 @@ Install git using your package installer (for Windows, first use winget search a
   - messes up the log because commits will have multiple parents (not that important)
 - solution: git rebase
   - want to move the head to the latest of a branch
-  - read my website's [advanced tips](#advanced-tips)
+  - read my website's [cheat codes](#cheat-codes)
 
 ### Git Database
 
@@ -94,12 +108,13 @@ Can then find the blob we are looking for.
 - `chmod u+x ./.git/hooks/commit-msg.sample`
 
 Even if the software project build system enforces enabling hooks (e.g. husky for nodejs projects), git server hooks should always be used for verification.
-Fortunately we are in an age, where platforms like GitHub and GitLab offer abstracted git server-side hooks, and offer features where you can run scripts, use plugins, use secrets, and interact with APIs (e.g. GitHub actions) in different git branches and commits when you push to the server.
 
 - Problems with client-side hooks
   - not everyone will enable it
   - bad actors can turn off client-side hooks
 - Solution: [server-side hooks](https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks#_server_side_hooks)
+
+Fortunately we are in an age where platforms like GitHub and GitLab offer abstracted git server-side hooks (e.g. github actions), and offer features where you can run scripts, use plugins, use secrets, and interact with APIs (e.g. GitHub actions) in different git branches and commits when you push to the server git repository.
 
 Hook name |  Description | Args
 --------------- | ---------------- | --------
@@ -107,11 +122,11 @@ pre-receive | First script to run after a push from a client. Args are a list of
 update        | Run once for each branch that was updated. | BRANCH_NAME BRANCH_SHA-1_OLD BRANCH_SHA-1_NEW. Rejects only per branch.
 post-receive | Runs after update completion, can be used to broadcast or create a new change | ???
 
-## Advanced Tips
+## Cheat Codes
 
 Even if you know git already, here are some [advanced git tips](https://elijahlopez.ca/resources/#git-advanced-tips) that I've had to use while collaborating with others or wanting to ensure that the git history is clean.
 
-## Tutorial Workflow
+## Lab Tutorial Workflow
 
 Create a git repository called `playground`, push to GitHub, create a branch, commit your programming notes thus far, like the tutorials you were asked to program. For the shell script, read my advanced git tips to ensure that it remains executable.
 

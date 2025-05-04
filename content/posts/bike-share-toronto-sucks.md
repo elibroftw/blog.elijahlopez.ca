@@ -10,7 +10,7 @@ tags:
 ---
 
 I was in Toronto on the date of publishing and needed to go to a bar on college st but way east of the subway station.
-The problem with the street cars in Toronto during winter is that they weren't running! So I decided to walk and halfway there, I decided I should be "smart" and rent a bike. Bad idea, I wasn't my time and my hands got cold!
+The problem with the street cars in Toronto during winter is that they were stalled (street parked cars were blocking them)! So I decided to walk and halfway there, I decided I should be "smart" and rent a bike. Bad idea, I wasn't my time and my hands got cold!
 
 The most egregious issue with bike share toronto is that the app did not accept my payment.
 

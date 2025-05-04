@@ -145,15 +145,12 @@ So Railgun is something I heard recently (2024)
 
 ### ETH + Aztec Protocol
 
-/4/9/2023: Well well well, zk.money has been [sunset](https://medium.com/aztec-protocol/sunsetting-aztec-connect-a786edce5cae) so we'll see what the Noir protocol the Aztec team is working on now.
+2023-04-09: Well well well, zk.money has been [sunset](https://medium.com/aztec-protocol/sunsetting-aztec-connect-a786edce5cae) so we'll one day see about this "Noir protocol" the Aztec team has started working on.
 
-9/29/2022: Well I was right, the lack of ETH fungibility is proof that layer two solutions
-have a serious flaw and can make you a criminal or sanctioned just for wanting privacy. Tornado Cash being sanctioned means its worse even legally than using Monero. So now I will discuss an alternative [for now, as censorship is already brewing](https://twitter.com/aztecnetwork/status/1560710567249096704?s=20&t=-EDlvVlsKLdgAxGjJSfHJA). It's only a matter of time before the next popular privacy protocol gets sanctioned, so again, the main argument is that layer 2 protocols simply lack fungibility because
-observers can tell that a privacy preserving protocol was used and can thus discriminate your coins.
-With Monero, people have to either accept it for what it is or not accept it at all. All or nothing
-works; just like https and encryption works. Encryption is an all or nothing thing.
+2022-09-29: Well I was right, the lack of ETH fungibility is proof that [layer 2](https://ethereum.org/en/layer-2/#layer-2-powered-by-ethereum) solutions
+have a serious flaw and can make you a criminal or sanctioned just for wanting privacy. Tornado Cash being sanctioned means its worse even legally than using Monero. So now I will discuss this Aztec Protocol alternative for now, [as censorship is already brewing](https://twitter.com/aztecnetwork/status/1560710567249096704?s=20&t=-EDlvVlsKLdgAxGjJSfHJA). It's only a matter of time before the next popular privacy protocol gets sanctioned, so again, the main argument is that layer 2 protocols simply lack fungibility because observers can tell that a privacy preserving protocol was used and can thus discriminate your coins. With Monero, people have to either accept it for what it is or not accept it at all. All or nothing works; just like https and encryption works. Encryption is an all or nothing thing.
 
-So how does [Aztec](https://aztec.network/) work? It uses rollups meaning that it leverages the
+How does [Aztec](https://aztec.network/) work? It uses [zero-knowledge rollups](https://ethereum.org/en/developers/docs/scaling/zk-rollups/) meaning that it leverages the
 base layer of Ethereum for security, and it guarantees privacy after shielding. You can send shielded amounts to other account aliases and even layer 1 accounts, however the details of receiving are a bit unknown. I'll have to do some actual practical research to see its limitations as protocol, but since it is a protocol and not actual currency, it's only a matter of time until
 it too is sanctioned. It was released in 2021 which is why it was not included in the first publishing of this article.
 

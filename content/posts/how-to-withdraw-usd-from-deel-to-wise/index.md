@@ -26,10 +26,10 @@ With Wise, fees are simply. US$5 per withdrawal due to SWIFT plus at most 28 bas
 ## Adding Wise UK as a Bank Transfer
 
 1. In Wise, simply open a GBP account, and click on the Global bank details. You'll need this for step 8.
-  ![Wise GBP Account Details](wise-gbp-account-details.webp)
+  ![Wise GBP Account Details](./wise-gbp-account-details.webp)
 2. In Deel, click Finance, Withdrawal methods, and then "Add method."
 3. Click Bank transfer. DO NOT CLICK ON "Wise", I have tried it before, and it does not work.
-  ![Deel Add Bank Transfer](deel-add-bank-transfer.webp)
+  ![Deel Add Bank Transfer](./deel-add-bank-transfer.webp)
 4. Set custom method name to "Wise UK - USD"
 5. Set Country of recipient's bank to "United Kingdom." Note I tried to do this using the Canadian account and it did not work.
 6. Set Currency to "USD - US Dollar"

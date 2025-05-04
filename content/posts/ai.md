@@ -18,19 +18,18 @@ There's two parts to this article. One focuses on the models and how to select t
 
 ## AI Models
 
+I'm starting with the topic of benchmarks because the best way to be ahead is by using the forefront leader in AI which is only possible by reading benchmark scores. One day it could be OpenAI, the next Google, the next some whale named DeepSeek, and then something called Qwen. Truly, it's better to make informed decisions based on a heuristic than it is to blindly follow the sheep and limit yourself a single platform.
+
 ### Benchmarks
 
-In my opinion, the best benchmark is your own. I suggest using these benchmarks as a heuristic in determining which models you should benchmark yourself.
+In my opinion, the current state of benchmarks is very messy. I'm making progress on fixing it myself with blog posts such as [SimpleQA Leaderboard](/posts/ai-simpleqa-leaderboard/) however, there are a few more I would like to maintain. I suggest using these benchmarks as a heuristic in finding a handful of models to test yourself before going with one of them.
 
 #### Populist Benchmarks
 
+I'm naming these populist benchmarks because it's basically a popularity contest (real and synthetic) rather than a merit-based benchmark.
+
 - [Chatbot Arena LLM](https://lmarena.ai/?leaderboard)
 - [ArenaHard](https://github.com/lmarena/arena-hard-auto?tab=readme-ov-file#leaderboard)
-
-#### Agentic Benchmarks
-
-- Scale MultiChallenge
-- BrowseComp
 
 #### Knowledge Benchmarks
 
@@ -48,30 +47,37 @@ In my opinion, the best benchmark is your own. I suggest using these benchmarks 
 
 Why I can't recommend LiveCodeBench anymore: There are different cut off dates depending on when a model is graded. When using the earliest cut off date, some models might've been "contaminated" and when using later cut off dates, some models do not show up at all! If we use the scores self-reported by the company, we still run the risk of when the model was graded, meaning the score will be overestimating the model's ability over the long-run
 
-#### Multimodal
+#### Multimodal Benchmarks
 
 This tests visual capabilities.
 
 - MMMU (College-level visual problem-solving)
 - [Humanity's Last Exam](https://lastexam.ai/)
 
-### Writing Benchmarks
+#### Writing Benchmarks
 
 - [eqbench](https://eqbench.com/)
+
+#### Agentic Benchmarks
+
+Agentic benchmarks are very new and personally I'm not too sure what these benchmarks do or even what is considered good. Personally the only agent I would ever value is one that has the same worth ethic and intelligence as I am during when I'm at my peak productivity.
+
+- Scale MultiChallenge
+- BrowseComp
 
 ### Proprietary Models
 
 Model Name | Company | Blog | Chat App
 ---------------------- | --------------- | ------------ | -------
-[Gemini](https://deepmind.google/technologies/gemini/) | Google | [Gemini Release Updates](https://gemini.google.com/updates/) | [Google AI Studio](https://aistudio.google.com/prompts/new_chat)
-[OpenAI Platform](https://platform.openai.com/docs/models) | OpenAI | [News](https://openai.com/news/) | [ChatGPT](https://chatgpt.com/)
+[Gemini](https://deepmind.google/technologies/gemini/) | Google | [updates](https://gemini.google.com/updates) | [Google AI Studio](https://aistudio.google.com/prompts/new_chat)
+[OpenAI Platform](https://platform.openai.com/docs/models) | OpenAI | [news](https://openai.com/news/) | [ChatGPT](https://chatgpt.com/)
 [Grok](https://docs.x.ai/docs/models) |xAI | [news](https://x.ai/news) | [Grok](https://x.com/i/grok)
 [Claude](https://www.anthropic.com/claude) | Anthropic | [news](https://www.anthropic.com/news) | [Chat](https://claude.ai/)
 [Cohere Platform](https://cohere.com/command) | Cohere | [blog](https://cohere.com/blog) | [Dashboard](https://dashboard.cohere.com/)
 
 Cohere is really slacking. I almost forgot about them.
 
-### Open-Source LLMs
+### Open-Source Models
 
 A table of companies that release open-source LLMs. I suggest adding these to your RSS reader or signing up for email updates. In the future, hopefully RSSHub adds support for these.
 
@@ -94,35 +100,37 @@ These are also the base models. If you go tho HuggingFace and LocalLLAMA, you ca
 
 These companies don't make the models, but offer inference, either by hosting models or via a gateway
 
-- OpenRouter
+- OpenRouter (one API provider to use many APIs)
 - HuggingFace (which links to Amazon, Azure, and Google)
 - Groq
 - Together.ai
 - [Replicate](https://replicate.com/explore/)
 
-TODO:
-
-## Applied AI
+## AI Applications
 
 AI but for specific tasks. A mix of apps and models (when applicable). Skip to [Local AI Models](#local-ai-models) to learn more about running open-source models using open-source apps
 
 ### Chat
 
-The default type of application when people say LLMs. See [Proprietary Models](#proprietary-models) and [Open-Source LLMs](#open-source-llms) for a list of models. Alternatively, if you don't mind paying, an easy way to interact with all models is through [OpenRouter](https://openrouter.ai/). Read [How to Run Open-Source Models](#how-to-run-open-source-models) if you want to run text generation models locally.
+The default type of application when people say LLMs.  and  for a list of models. Alternatively, if you don't mind paying, an easy way to interact with all models is through [OpenRouter](https://openrouter.ai/). Read [How to Run Open-Source Models](#how-to-run-open-source-models) if you want to run text generation models locally.
 
-Some of the following also have internet search capabilities
+- [Proprietary Models](#proprietary-models)
+- [Open-Source Models](#open-source-models)
 
-- Linkup
-- Gemini Deep Search
-- OpenAI Deep Research
-- Exa
-- Perplexity AI
 - Forefront AI
 - Bing Chat
 - Hugging Face
+- Poe
 - Merlin
 - WNR
-- Poe
+
+### AI Search
+
+Some of these can also be considered a subset of "Chat"
+
+- Linkup
+- Exa
+- Perplexity
 
 ### Interesting Media Research
 
@@ -197,6 +205,7 @@ Some of the following also have internet search capabilities
   - [Lovable](https://lovable.dev/): for developers to speedrun website development
   - [UIDESIGN.AI](https://uidesign.ai/): AI for Shopify Themes & Figma
   - [Bolt](https://bolt.new)
+  - [Same](https://same.new)
   - [Replit](https://replit.com/)
 - Other
   - [Post Cheetah](https://postcheetah.com/): Improve SEO with AI
@@ -205,7 +214,7 @@ Some of the following also have internet search capabilities
 
 - [Icon](https://icon.com/)
 
-### Code Assistants
+### Software Development
 
 Aside from prompting the Chat apps, there are a variety of ways to use AI. I personally use Cline with an OpenRouter API key, however this is because I never got RooCode to work and so didn't bother setting it up.
 
@@ -221,8 +230,16 @@ Aside from prompting the Chat apps, there are a variety of ways to use AI. I per
   - PearAI
 - Other
   - Claude Code
+  - Open Source DeepWiki: Wiki Generator for GitHub/Gitlab Repositories
+  - Devin
 - GitHub Integration
   - QoDo Merge
+
+### CyberSecurity
+
+-[peneterrer](https://peneterrer.com/): AI Security Tester (pairs well with vibe coded websites)
+
+> We're so confident in our security testing capabilities that if we don't find any vulnerabilities, you get your money back. No questions asked.
 
 ### Agents
 
@@ -231,17 +248,19 @@ Aside from prompting the Chat apps, there are a variety of ways to use AI. I per
 
 ### Writing
 
-I approve of using AI to speed up writing. I have two book ideas I want to pursue one day in the future. What I don't approve of using AI for, is to generate redundant slop, which is basically plagiarism. [Jetpack AI's](https://jetpack.com/ai/) own demo unfortunately shows itself generating slop. Using AI to write a blog post about being a better blogger? What??? I think these companies are going to get whatever boat they have eaten by base models or open-sourced fine-tuned models.
+I take great pride in stating that this blog post is ironically 100% free of AI generation. I'm not opposed to AI but knowing that AI is a FLUFF GENERATOR means that I can really only use AI to turn a bland writing post into a pleasant post (see [That Time I Went to a Dog Food Eating Convention](/posts/the-dog-food-eating-convention/)). If you rely on AI 100%, it can make your content over the top sweet, so I find the best way to use it on your own words is to incorporate some of its suggestions rather than all.
 
-Some thoughts on what you can do for pursuing fictional writing
+I have two book ideas I want to pursue one day in the future. What I don't approve of using AI for, is to generate redundant slop, which is basically plagiarism. [Jetpack AI's](https://jetpack.com/ai/) own demo shows itself generating slop. Using AI to write a blog post about being a better blogger? What? I think these companies are going to get whatever moat they think they have eaten by Chat apps or open-sourced fine-tuned models.
+
+Here are some thoughts I have on pursuing fictional writing
 
 - [models from David Belton aka DavidAU](https://huggingface.co/DavidAU)
   - Maybe try the recent Qwen3 models since that's the latest model?
-  - It seems like a PITA to deploy this myself, so if you want to use these models, I recommend [running them locally](#how-to-run-open-source-models)
+  - It seems like a PITA to deploy this myself, so if you want to use these models, I recommend trying to [run them locally](#how-to-run-open-source-models)
 - [localllama comment](https://www.reddit.com/r/LocalLLaMA/comments/1hwvyze/comment/m64q0di/)
 - [creative writing benchmark](https://eqbench.com/creative_writing.html)
 
-## OTHER
+### Other AI Apps
 
 - [Explore Hugging Face models](https://huggingface.co/models)
 - [Sample Multi-modal project using GPT4](https://github.com/dabit3/openai-functions-god-app)
@@ -270,6 +289,7 @@ An interface is something that interacts with the model, but not the model itsel
 - [LM Studio](https://lmstudio.ai/)
 - [Jan](https://jan.ai/)
 - [ComfyUI](https://comfyui-wiki.com/): diffusion model GUI
+- [Stable Diffusion web UI](https://github.com/AUTOMATIC1111/stable-diffusion-webui)
 - [openwebui](https://github.com/open-webui/open-webui)
 - [text-generation-webui](https://github.com/oobabooga/text-generation-webui)
 
@@ -277,9 +297,18 @@ Some of these require "backends" which all come from llama.cpp. However, [Ollama
 
 ### Learning
 
+Using AI
+
+[Prompt Engineering](https://www.kaggle.com/whitepaper-prompt-engineering)
+
+Building with AI
+
+1. [21 Lessons, Get Started Building with Generative AI](https://github.com/microsoft/generative-ai-for-beginners)
+
+Researcher-oriented
+
 1. [Neural Networks and Deep Learning](http://neuralnetworksanddeeplearning.com/index.html)
 2. [Language Models are Unsupervised Multitask Learners](https://cdn.openai.com/better-language-models/language_models_are_unsupervised_multitask_learners.pdf)
-3. [Prompt Engineering](https://www.kaggle.com/whitepaper-prompt-engineering)
 
 - pytorch
 - tensor
