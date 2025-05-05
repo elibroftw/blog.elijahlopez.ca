@@ -37,15 +37,21 @@ I'm naming these populist benchmarks because it's basically a popularity contest
 - [AIME (Math)](https://matharena.ai/)
 - [Humanity's Last Exam](https://lastexam.ai/)
 
+#### Intelligence
+
+- [ARC-AGI](https://arcprize.org/leaderboard)
+
 #### Coding Benchmarks
 
+- [SWE-Bench verified](/posts/ai-coding-leaderboard/): Software Engineering. ([leaderboard with all tools](https://www.swebench.com/#test))
+- [CodeForces](/posts/ai-coding-leaderboard/): Competitive programming (note that there is no time penalty for the models)
 - ~~[LiveCodeBench](https://livecodebench.github.io/leaderboard.html)~~
-- [CodeForces](/posts/ai-codeforces-leaderboard/) (coming soon)
-- [EvalPlus](https://evalplus.github.io/leaderboard.html)
-- SWE-Bench (Software Engineering)
+- ~~[EvalPlus](https://evalplus.github.io/leaderboard.html)~~
 - Aider Polyglot (Code Editing)
 
-Why I can't recommend LiveCodeBench anymore: There are different cut off dates depending on when a model is graded. When using the earliest cut off date, some models might've been "contaminated" and when using later cut off dates, some models do not show up at all! If we use the scores self-reported by the company, we still run the risk of when the model was graded, meaning the score will be overestimating the model's ability over the long-run
+The problem with LiveCodeBench is that there are different cut off dates depending on when a model is graded plus the benchmark is continuously updated. When using the earliest cut off date, some models might've been "contaminated" and when using later cut off dates, some models do not show up at all! If we use the scores self-reported by the company, we still run the risk of reporting non-comparable numbers. Based on how LCB works, model scores are expected to depreciate over the long run; If Grok 3 scored 100 on LCB today, it is almost certain to score less than 100 in a year.
+
+The problem with EvalPlus is that it doesn't include bleeding edge models, it's basically almost solved, and not many new models even report their scores anymore.
 
 #### Multimodal Benchmarks
 
@@ -76,6 +82,10 @@ Model Name | Company | Blog | Chat App
 [Cohere Platform](https://cohere.com/command) | Cohere | [blog](https://cohere.com/blog) | [Dashboard](https://dashboard.cohere.com/)
 
 Cohere is really slacking. I almost forgot about them.
+
+### Text to Image
+
+- [ArtificialAnalysis/Text-to-Image-Leaderboard](https://huggingface.co/spaces/ArtificialAnalysis/Text-to-Image-Leaderboard)
 
 ### Open-Source Models
 
@@ -124,6 +134,17 @@ The default type of application when people say LLMs.  and  for a list of models
 - Merlin
 - WNR
 
+### Recall (RAG)
+
+Using AI to boost productivity by letting AI do a domain search and recall on the content you provide. See section on [jargon](#jargon) to understand what RAG is.
+
+- [NotebookLM](https://notebooklm.google/): a tool to understand information
+  - TODO: somehow combine this with an RSS feed sync
+  - Can be used to combine a bunch of files together (pdfs, websites, youtube videos, audio, word files, etc)
+  - Can create a podcast out of it too
+- [Morphik AI](https://www.morphik.ai/)
+  - This is more for developers who want to build _enterprise applications_
+
 ### AI Search
 
 Some of these can also be considered a subset of "Chat"
@@ -149,7 +170,11 @@ Some of these can also be considered a subset of "Chat"
   - [Clipdrop](https://clipdrop.co/) by Jasper (many tools like uncrop)
   - [Autodesigner 2.0](https://uizard.io/autodesigner/): generate UI for apps/websites based on a prompt
   - [Galileo AI](https://www.usegalileo.ai/explore)
-- Generative
+  - [Image editing via prompting in Gemini](https://x.com/umesh_ai/status/1901507907008782673)
+  - AI can also be used to remove watermarks
+  - [Gemini vs Photoshop example](https://x.com/madpencil_/status/1901584829038444707)
+- Generative (Text-to-image)
+  - [leaderboard](https://huggingface.co/spaces/ArtificialAnalysis/Text-to-Image-Leaderboard)
   - [Stable Diffusion](https://stability.ai/stable-image) by StabilityAI (also see their Applications)
   - [Midjourney](https://www.midjourney.com/home)
     - [creating backgrounds with midjourney](https://kubadesign.lemonsqueezy.com/)
@@ -191,12 +216,9 @@ Some of these can also be considered a subset of "Chat"
 
 - [Stable 3D](https://stability.ai/stable-3d) by Stability AI
 
-### Productivity
+Creating 3D wireframes with Gemini
 
-- [NotebookLM](https://notebooklm.google/): a tool to understand information
-  - TODO: somehow combine this with an RSS feed sync
-  - Can be used to combine a bunch of files together (pdfs, websites, youtube videos, audio, word files, etc)
-  - Can create a podcast out of it too
+{{< tweet user="azed_ai" id="1901418266746355999">}}
 
 ### Websites
 
@@ -209,6 +231,11 @@ Some of these can also be considered a subset of "Chat"
   - [Replit](https://replit.com/)
 - Other
   - [Post Cheetah](https://postcheetah.com/): Improve SEO with AI
+
+### Creating Mobile Apps with AI
+
+- [Rork](https://rork.app/)
+- [Bolt](https://bolt.new)
 
 ### Marketing
 
@@ -262,11 +289,40 @@ Here are some thoughts I have on pursuing fictional writing
 
 ### Other AI Apps
 
+- [Glif](https://glif.app/glifs): A platform to build and use mini AI apps
 - [Explore Hugging Face models](https://huggingface.co/models)
 - [Sample Multi-modal project using GPT4](https://github.com/dabit3/openai-functions-god-app)
   - You could probably use this as a base project and combine with other tools and models to make something better.
 - [LLM voice assistant project](https://github.com/ILikeAI/AlwaysReddy)
   - This project allows you to vocally converse with an LLM. It also has some functional capabilities like reading/writing to clipboard.
+
+### What else can you accomplish with AI?
+
+Convert line art out of an uploaded sketch + colorize with Gemini
+
+{{< tweet user="dreamingtulpa" id="1901571311622918454" >}}
+
+Extracting a professional shot product from a picture
+
+{{< tweet user="nicdunz" id="1901387475555090500" >}}
+
+Combining a product with a picture of a human (which could also be AI generated) for marketing or e-commerce shots. You can also do virtual try ons.
+
+{{< tweet user="KurawaDono" id="1900074784127672614" >}}
+
+{{< tweet user="HalimAlrasihi" id="1900667639086673962" >}}
+
+Creating a pixel sprite using [Glif Sprite Generator](https://glif.app/@EgadZoundsGadzooks/glifs/clwpvrsfy000713x1hpl2rsg3), and then turning it into concept art using Gemini
+
+{{< tweet user="angrypenguinPNG" id="1900303337318498792" >}}
+
+Creating gif animations using Gemini
+
+{{< tweet user="ilumine_ai" id="1900041501624971601" >}}
+
+Interior decoration
+
+{{< tweet user="deedydas" id="1900750406084686181" >}}
 
 ## AI Research
 
@@ -322,6 +378,12 @@ One of the most eye opening things my friend told me is that there is practical 
 
 They will talk about new things they may have learned or how to break in, or tweet out an article, etc.
 
+- [Yann Lecunn](https://www.linkedin.com/in/yann-lecun/recent-activity/all/) - VP & Chief AI Scientist At Meta
+- [Andrew Ng](https://x.com/AndrewYNg) - previously head of Baidu AI and Google Brain
+- [Andrej Karpathy](https://x.com/karpathy) - founding team @ OpenAI
+- [Demis Hassabis](https://x.com/demishassabis) - Co-Founder & CEO @GoogleDeepMind
+- [François Chollet](https://x.com/fchollet) - creator of ARC-AGI benchmark
+
 ### Get Resources
 
 The easiest way to get resources is to get MONEY. To get MONEY, you need a JOB. It's probably easier to [GET A JOB](#ai-research-companies) than to already have the money necessarily to buy [hardware](#ai-hardware).
@@ -330,10 +392,21 @@ The easiest way to get resources is to get MONEY. To get MONEY, you need a JOB. 
 
 Company | Based | Notes
 ----------- | --------- | ----------
+[Cohere](https://jobs.ashbyhq.com/cohere) | Canada/USA | Command R model
 [Open AI](https://openai.com/careers/) | USA | The creator of ChatGPT, led by [Sam Altman](https://en.wikipedia.org/wiki/Sam_Altman) (disclosure, I'm biased against Altman)
+[Google DeepMind](https://deepmind.google/about/careers/) | USA | They came out with the original Transformer research that OpenAI used successfully and work on Gemini and Gemma
+[xAI](https://x.ai/careers/open-roles) | USA | Creator of grok, very integrated with X, owned by Elon Musk
+[Meta AI](https://www.metacareers.com/) | Anywhere | Creators of LLaMA
+[NVIDIA](https://www.nvidia.com/en-us/about-nvidia/careers/) | USA | Manufacturer of the best _commercially available_ GPUs for training AI
+[Anthropic](https://www.anthropic.com/jobs) | USA | Claude
 [Safe Superintelligence Inc.](https://ssi.inc/) | Palo Alto, Tel Aviv | [Ilya Sutskever](https://en.wikipedia.org/wiki/Ilya_Sutskever) former OpenAI Chief Scientist & Co-founder
 [Thinking Machines Lab](https://thinkingmachines.ai/) | USA? | [Mira Murati](https://en.wikipedia.org/wiki/Mira_Murati) former Open AI CTO
-[Google DeepMind](https://deepmind.google/about/careers/) | USA | They came out with the original Transformer research that OpenAI used successfully and work on Gemini and Gemma
+[Ndea](https://ndea.com/) | USA | intelligence science lab founded by X:@fchollet & X:@mikeknoop
+[Vector Institute](https://vectorinstitute.ai/about/opportunities/open-positions-at-vector/) | Toronto, CA | -
+[Mila](https://apply.workable.com/mila-2/?lng=en) | Quebec | -
+[Ai2](https://allenai.org/careers) | Seattle, WA | -
+
+### AI Product Companies
 
 ## AI Hardware
 
