@@ -3,8 +3,8 @@ title: "Split the Tank Technical Stack"
 date: 2024-05-12T20:29:11-04:00
 draft: false
 tags:
-  - split-the-tank
   - programming
+  - startups
 ---
 
 ## Hosting

@@ -93,7 +93,7 @@ A table of companies that release open-source LLMs. I suggest adding these to yo
 
 When it comes to downloading models, most vendors (that's what I'm calling the companies) will link you to Hugging Face. My biggest gripe is how Hugging Face isn't using P2P torrent technology to speed up downloads and reduce strain on their own servers! What a missed opportunity.
 
-Model Name | Company | Blog | Chat App
+Model Family | Company | Blog | Chat App
 ---------------------- | --------------- | ------------ | -------
 [DeepSeek](https://www.chatstream.org/) | Chat Stream | [Chat Stream Blog](https://www.chatstream.org/blog) | [ChatStream Chat](https://www.chatstream.org/en/chat)
 [Qwen](https://qwenlm.github.io/) | AliBaba | [Qwen Blog](https://qwenlm.github.io/blog/) | [Qwen Chat](https://chat.qwen.ai/)
@@ -101,6 +101,7 @@ Model Name | Company | Blog | Chat App
 [Mistral](https://mistral.ai/products/la-plateforme#models) | Mistral | [Mistral News](https://mistral.ai/news) | [Le Chat](https://mistral.ai/products/le-chat)
 [Gemma](https://ai.google.dev/gemma) | Google | [DeepMind Blog](https://deepmind.google/blog/) | [Google AI Studio](https://aistudio.google.com/prompts/new_chat)
 [Phi](https://azure.microsoft.com/en-us/products/phi/) | Microsoft | [Microsoft AI Platform Blog](https://techcommunity.microsoft.com/category/ai/blog/aiplatformblog) | OpenRouter or [Azure AI Foundry](https://ai.azure.com/explore/models?selectedCollection=phi&tid=72f988bf-86f1-41af-91ab-2d7cd011db47)
+[ChatGLM](https://huggingface.co/THUDM) | THUKEG & Z.ai | [Twitter](https://x.com/thukeg) | OpenRouter
 
 Note that sometimes proprietary models are open-sourced, but this usually happens long after a model from an open-source family has beaten the outdated proprietary model. Therefore, they are not included in this list for end-users.
 

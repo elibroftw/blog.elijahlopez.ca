@@ -29,6 +29,8 @@ tags:
 | Claude 3.5 Sonnet | Anthropic | I | 49% | - | 81.7 |
 | Qwen3-32B | Qwen | II | - | 1977 | - |
 | Qwen3-30B-A3B | Qwen | II | - | 1974 | - |
+| Qwen3-14B | Qwen | II | - | - | - |
+| Qwen3-8B | Qwen | II | - | - | - |
 | ~~DeepSeek-R1-Distill-70B~~ | DeepSeek | III | - | 1633 | - |
 | Phi 4 reasoning (14B) | Microsoft | II | - | 1736 | - |
 | Phi 4 reasoning plus | Microsoft |  II | - | 1723 | - |
@@ -77,8 +79,7 @@ Why can't I get paid to do this? If I was paid money, I would HAPPILY run benchm
 2. LCB scores are static and the depreciation mechanism makes it very difficult to compare a model that was just released to a model realeased a few months ago. For example, look at Grok 3. They exclusively use this benchmark, even though there's a 99.99% chance that Grok 3's future LCB score would be lower. This is exhibited well in Qwen's blog which showed Gemini 2.5 Pro absolutely crushing LCB. The biggest issues for LCB is that if you have a restraint like "I only want to run open-source models less than 20B in size", you will definitely not be able to benefit from LCB's own published leaderboards.
 3. xAI is releasing a suspicuiously low amount of benchmark scores. Not only that, but the xAI team has taken the approach that we all have patience. Their LCB score is useless to real world scenarios once you realize not only did it have to think to achieve them, gemini 2.5 pro beat it anyways. Not to mention that o4-mini and Gemini 2.5 Pro Preview were released on openrouter 7-8 days after grok 3 BETA was released on openrouter.
 4. Essentially, the short-list of companies putting in the work to drive innovation: OpenAI, Google Deepmind, Claude, Qwen, DeepSeek;
-5. Qwen3 30B is a great model and has deprecated DeepSeek R1 Distill 70B
-6. Phi-4 reasoning results are really nice for offering better performance than Qwen3 4B but under 30B. I've placed it under the DeepSeek R1 Distill 70B only because their own LCB benchmark placed DeepSeek R1 Distill 70B above their own.
+5. Qwen3 30B is a great model and has "deprecated" DeepSeek R1 Distill 70B
 
 ## References
 

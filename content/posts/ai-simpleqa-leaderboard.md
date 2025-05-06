@@ -28,6 +28,7 @@ ArenaHard leaderboard: An automated artificial/synthetic benchmark for Chatbot A
 | ChatGPT-4.5                  | OpenAI    | Flagship | 62.50 |         |         | 1398  |
 | Gemini-2.5-pro               | Google    | I |  52.90 | 86.70 |           | 1439 |
 | Claude-3.7-Sonnet        | Anthropic | I | 50.00 |         | 59.8 | 1292 |
+| o3                                  | OpenAI    | I | 49.4 |  88.9  | 85.9  | 1418 |
 | Grok 3                           | xAI       | I | 44.60 | 93.3 |           | 1402 |
 | o1                                  | OpenAI    | I | 42.60 | 79.20 | 61 | 1350  |
 | ChatGPT-4.1                 | OpenAI    | I | 41.60 |         | 50 | 1363 |
@@ -38,12 +39,13 @@ ArenaHard leaderboard: An automated artificial/synthetic benchmark for Chatbot A
 | DeepSeek-V3                | DeepSeek  | I | 24.9 |         |           | 1381 |
 | o4-mini                           | OpenAI    | I | 20.20 | 92.70 | 79.1 | 1351  |
 | o3-mini                           | OpenAI    | I | 13.80 |  86.5 | 66.1 | 1325 |
-| o3                                  | OpenAI    | I | 13.40 |  88.9  | 85.9  | 1418 |
 | Qwen3-235B-A22B        | Qwen  | I | 11.00 | 81.5    | 95.6 |               |
 | Gemma 3 27B               | Google    | II | 10.00 |         |           | 1342 |
 | Gemma 2 27B               | Google    | II |  9.20 |         |           | 1220 |
 | Qwen3-32B (Dense)      | Qwen  | II | 8.00 | 72.9    | 93.8 |               |
 | Qwen3-30B-A3B (MoE) | Qwen | II | 8.00 | 70.9    | 91        |               |
+| Qwen3-14B | Qwen | II | - | - | - | - |
+| Qwen3-8B | Qwen | II | - | - | - | - |
 | Gemma 3 12B               | Google    | II |  6.30 |         |           |               |
 | Gemma 3 4B                 | Google    | III |  4.00 |         |           |               |
 | Gemma 2 9B                 | Google    | II |  5.30 |         |           |               |
