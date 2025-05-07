@@ -16,9 +16,8 @@ These are the energy drinks I drink on a cycle when I'm not drinking new ones.
 1. Reign Energy White Gummy Bear
 2. Reign Energy Reignbow Sherbet
 3. Reign Storm Guava Strawberry
-4. Celsius Watermelon Lemonade
-5. Celsius Orange
-6. Celsius Arctic White
+4. Celsius Orange
+5. Celsius Arctic White
 
 Reign Energy Razzle Berry would be on here but it is unavailable in Canada.
 
@@ -36,9 +35,11 @@ I like this a lot as well. And you can have 2x a day. They knew what they were d
 
 Drinking this chilled puts the Reignbow Sherbet on par with White Gummy Bear
 
-### Celsius Watermelon Lemonade (9 / 10)
+### Reign Energy Razzle Berry (9 / 10)
 
-I only got to try this flavour in April 2025, and it was great.
+The first energy drink that had a good taste that persuaded me to buy another one. This is great and it's only downfall is this slight after taste that lingers. I forget exactly what that "bad" taste is, but I'll update this article the next time I drink it. Rated 9 / 10 because I'm saving the perfect score until I've tasted and reviewed at least 10 energy drinks.
+
+It's unfortunate I can't get this in Canada anymore. Then I'd be able to re-rate it.
 
 ### Celsius Orange (8.9 / 10)
 
@@ -49,19 +50,17 @@ It is not recommended to eat anything sugary alongside this drink, otherwise the
 
 It's pretty good too, but it gets over so quickly compared to the C4 and Monster White. I really like how refreshing Celsius Orange is though (when chilled).
 
-### Reign Energy Sour Gummy Worm (8.5 / 10)
+### Celsius Watermelon Lemonade (8.5 / 10)
+
+I only got to try this flavour in April 2025, and it was great.
+
+### Reign Energy Sour Gummy Worm (8.25 / 10)
 
 Similar to White Gummy Bear, but I really wish it had a bit more flavour.
 
-### Reign Storm Grape (8.5 / 10)
+### Reign Storm Grape (8.25 / 10)
 
 I like the taste of this better than Monster White, so that's why it's getting an 8.5. I'll have the White Gummy Bear soon to compare exactly which drink gets first place. One great and underrated aspect about the Reign Storm brand is that the caffeine level is low enough to have two cans per day! The downside is that the can is actually smaller than the Reign Energy and Monster cans, however I have trouble finishing those cans anyways, sometimes taking up to 3 hours to finish a can. I recommend drinking this cold or with ice for better taste.
-
-### Reign Energy Razzle Berry (8 / 10)
-
-The first energy drink that had a good taste that persuaded me to buy another one. This is great and it's only downfall is this slight after taste that lingers. I forget exactly what that "bad" taste is, but I'll update this article the next time I drink it. Rated 8 / 10 because I'm saving the perfect score until I've tasted and reviewed at least 10 energy drinks.
-
-It's unfortunate I can't get this in Canada anymore. Then I'd be able to re-rate it.
 
 ### C4 Frozen Bombsicle (8 / 10)
 

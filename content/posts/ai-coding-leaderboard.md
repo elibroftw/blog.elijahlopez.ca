@@ -23,8 +23,10 @@ tags:
 | Qwen3-235B-A22B | Qwen | I | - | 2056 | - |
 | Grok 3 | xAI | II | - | - | - |
 | o3-mini | OpenAI | I | 61.0% | 2036 | - |
-| ChatGPT 4.1 | OpenAI | I | 55% | - | - |
 | DeepSeek R1 | ChatStream | I | 49.2% | 2029 | - |
+| DeepSeek V3 (03/24) | ChatStream | I | - | - | - |
+| Mistral Medium 3 | Mistarl | I | - | - | - |
+| ChatGPT 4.1 | OpenAI | I | 55% | - | - |
 | o1 | OpenAI | I | 48.9% | 1891 | - |
 | Claude 3.5 Sonnet | Anthropic | I | 49% | - | 81.7 |
 | Qwen3-32B | Qwen | II | - | 1977 | - |
@@ -36,11 +38,16 @@ tags:
 | Phi 4 reasoning plus | Microsoft |  II | - | 1723 | - |
 | Qwen3-4B | Qwen | III | - | 1671 | - |
 | Gemma3-27B-IT | Google | II | - | 1063 | - |
-| DeepSeek V3 | ChatStream | I | 42.0% | 1150 | - |
+| DeepSeek V3 (12/24) | ChatStream | I | - | - | - |
 | ~~o1-preview~~ | OpenAI | I | 40% | 1258 | 89 |
 | ChatGPT 4.5 | OpenAI | I | 38.0% | - | - |
 | ChatGPT 4o | OpenAI | I | 33% | 900 | 87.2 |
 | o1-mini | OpenAI | I | 30% | 1650 | 89 |
+
+Explaining Synthetic Rankings of models with missing scores.
+
+- According to Mistral, Mistral Medium 3 performs just below Claude 3.7 and ranks DeepSeek V3 (03/24) above Claude 3.7 according to their LiveCodeBench benchmarking. However Until I see an updated SWE-bench verified on DeepSeek R1, and 03/24 DeepSeek V3, DeepSeek V3 will be placed underneath DeepSeek R1, and Mistral Medium 3 will be placed below DeepSeek V3
+- Qwen3-235B-A22B and Grok 3 are only placed so high due to outperforming o3-mini and DeepSeek R1 at the LiveCodeBench. Surprisingly, Gemini 2.5 Pro has the highest LiveCodeBench score according to Qwen's blog. Therefore, it makes sense to ignore the CodeForces when computing the synthetic ranking for Qwen3-235B-A22B and Grok 3. Reasoning models are also worse for productivity because they take longer to respond.
 
 ### Definition of Tier
 
@@ -53,7 +60,6 @@ tags:
 
 ### Notes
 
-- Qwen3-235B-A22B and Grok 3 are only placed so high due to outperforming o3-mini and DeepSeek R1 at the LiveCodeBench, which is only good for relative comparison. Surprisingly, Gemini 2.5 Pro has the highest LiveCodeBench score according to Qwen's blog. Therefore, it makes sense to ignore the CodeForces when computing the synthetic ranking for Qwen3-235B-A22B and Grok 3. Not to mention these are thinking scores (especially Grok 3), which lowers productivity in the real world
 - DeepSeek V3 was [updated](https://api-docs.deepseek.com/news/news250325) so its scores are probably outdated (i.e. imprecise) but not inaccurate in terms of the rankings.
 - [Augment SWE-bench Verified Agent](https://github.com/augmentcode/augment-swebench-agent) scored 68.1%. The problem is that they require you to install an extension which will upload code by default on the community tier. You can do a free trial but for my purposes, I'm restricted to open-router, where I have the option to not use models that will train on my inputs. I also like Cline because it doesn't auto-read my codebase
 - The codeforces scores change depending on when they are recorded. This is the case for DeepSeek R1, which got a bump of ~150. I did this to ensure that Qwen3 models that don't contain a SWE-bench verified score are not ranked above DeepSeek R1. I also removed Claude 3.5 Sonnet's Codeforces score because there was apparently a (new) model released for it which has clearly not been benchmarked by the new models. It's a bit weird that the new Qwen release does not benchmark claude 3.7.
@@ -112,3 +118,5 @@ DeepSeek V3 claims 51.6th percentile and most recently 58.7th percentile. Given 
 <https://qwenlm.github.io/blog/qwen3/>
 
 <https://x.ai/news/grok-3>
+
+<https://mistral.ai/news/mistral-medium-3>

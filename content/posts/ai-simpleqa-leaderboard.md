@@ -54,6 +54,11 @@ ArenaHard leaderboard: An automated artificial/synthetic benchmark for Chatbot A
 | Gemma 3 1B                 | Google    | III |  2.20 |         |           |               |
 | Qwen3 4B                      | Qwen | III | 1.00 | 65.6 | 76.6 |               |
 
+Missing Models
+
+- Mistral Medium 3
+- DeepSeek V3 03/24
+
 ### Definition of Tier
 
 | Tier | Name |
