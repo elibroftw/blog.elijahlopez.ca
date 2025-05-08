@@ -166,7 +166,7 @@ Some of these can also be considered a subset of "Chat"
 ### Image
 
 - Design & Editing
-  - [Playground AI](https://playground.com/): No need to edit in Photoshop anymore ([demo](https://x.com/Suhail/status/1674124521543192578)
+  - [Playground AI](https://playground.com/): Might not need to edit in Photoshop anymore ([demo](https://x.com/Suhail/status/1674124521543192578))
   - ChatGPT prompting
   - [Clipdrop](https://clipdrop.co/) by Jasper (many tools like uncrop)
   - [Autodesigner 2.0](https://uizard.io/autodesigner/): generate UI for apps/websites based on a prompt
@@ -174,14 +174,17 @@ Some of these can also be considered a subset of "Chat"
   - [Image editing via prompting in Gemini](https://x.com/umesh_ai/status/1901507907008782673)
   - AI can also be used to remove watermarks
   - [Gemini vs Photoshop example](https://x.com/madpencil_/status/1901584829038444707)
-- Generative (Text-to-image)
+- Generative (Text-to-image or Image to Image)
   - [leaderboard](https://huggingface.co/spaces/ArtificialAnalysis/Text-to-Image-Leaderboard)
-  - [Stable Diffusion](https://stability.ai/stable-image) by StabilityAI (also see their Applications)
+  - Open Source Models
+    - [Step1X-Edit](https://huggingface.co/stepfun-ai/Step1X-Edit): aims to open-source ChatGPT's image capabilities
+    - [Flux.2](https://flux2.io/)
+    - [Stable Diffusion](https://stability.ai/stable-image) by StabilityAI (also see their Applications)
   - [Midjourney](https://www.midjourney.com/home)
     - [creating backgrounds with midjourney](https://kubadesign.lemonsqueezy.com/)
     - [Prompt to create app icons](https://x.com/adamlyttleapps/status/1671363003177123841)
   - [Dream](https://dream.ai/) by [WOMBO](https://dream.ai/blog)
-- [ComfyUI](https://comfyui-wiki.com/): GUI for diffusion models
+- [ComfyUI](https://comfyui-wiki.com/): GUI for diffusion modelsz
 - Personal
   - [Headshot Pro](https://www.headshotpro.com/)
   - [PhotoAI](https://photoai.com/)
@@ -191,8 +194,11 @@ Some of these can also be considered a subset of "Chat"
 - Generation
   - [Pika](https://pika.art/)
   - [Veo](https://gemini.google/overview/video-generation/) by Google DeepMind
-  - [Sora](https://sora.com) by OpenAI
+  - [Lighttricks](https://www.lightricks.com/)
+    - The largest model is 13B, so it can be run locally [using ComfyUI](https://github.com/Lightricks/ComfyUI-LTXVideo/tree/master?tab=readme-ov-file#example-workflows)!
+    - 9 seconds, 30 FPS, 720p
   - [Stable Diffusion Video](https://stability.ai/stable-video) by Stability AI
+  - [Sora](https://sora.com) by OpenAI
   - [Gen] by Runway (also includes research papers)
   - [ChatGPT + Visla plugin](https://x.com/rezkhere/status/1674412982716215296): create a video commercial (voice over is trash though, use a TTS tool for that)
 
@@ -345,10 +351,10 @@ An interface is something that interacts with the model, but not the model itsel
 
 - [LM Studio](https://lmstudio.ai/)
 - [Jan](https://jan.ai/)
-- [ComfyUI](https://comfyui-wiki.com/): diffusion model GUI
-- [Stable Diffusion web UI](https://github.com/AUTOMATIC1111/stable-diffusion-webui)
+- [ComfyUI](https://comfyui-wiki.com/): diffusion (media) model GUI
 - [openwebui](https://github.com/open-webui/open-webui)
 - [text-generation-webui](https://github.com/oobabooga/text-generation-webui)
+- ~~[Stable Diffusion web UI](https://github.com/AUTOMATIC1111/stable-diffusion-webui)~~
 
 Some of these require "backends" which all come from llama.cpp. However, [Ollama](https://github.com/ollama/ollama) is super simple for running models.
 
