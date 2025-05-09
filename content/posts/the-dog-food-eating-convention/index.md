@@ -18,7 +18,7 @@ When I saw the sign for "Dog Food Eating Convention," curiosity drew me in. As a
 
 "I like the smell of dog food."
 
-![A cartoon depicting the Dog Food Eating Convention with banners with phrases stated above](./featured.webp)
+![A cartoon depicting the Dog Food Eating Convention with banners with phrases stated above](/posts/the-dog-food-eating-convention/featured.webp)
 
 ---
 

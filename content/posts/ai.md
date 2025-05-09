@@ -236,6 +236,8 @@ Creating 3D wireframes with Gemini
   - [Bolt](https://bolt.new)
   - [Same](https://same.new)
   - [Replit](https://replit.com/)
+  - [Figma Sites](https://www.figma.com/sites/)
+  - [Gamma](https://gamma.app/): turn ideas into something real
 - Other
   - [Post Cheetah](https://postcheetah.com/): Improve SEO with AI
 
@@ -252,22 +254,35 @@ Creating 3D wireframes with Gemini
 
 Aside from prompting the Chat apps, there are a variety of ways to use AI. I personally use Cline with an OpenRouter API key, however this is because I never got RooCode to work and so didn't bother setting it up.
 
-- VSCode Extensions
-  - RooCode
-  - Cline
-  - GitHub Co-Pilot
-  - Twinny (not user-friendly at all and useful only for local models)
-  - Qodo.ai (previously CodiumAI)
+- VSCode Integrations
+  - [Roo Code](https://roocode.com/) (Cline fork that is more community contribution friendly, previously Roo Cline)
+  - [Cline](https://cline.bot/) (as Debian is to Ubuntu, Cline is to RooCode)
+  - [GitHub Copilot](https://github.com/features/copilot)
+  - [Continue](https://www.continue.dev/)
+  - [Twinny](https://twinny.dev/) (not user-friendly at all and useful only for local models)
+  - [Qodo.ai](https://www.qodo.ai/) (previously CodiumAI)
+    - "Agentic AI for reviewing, testing , and generating code – continuous quality at every step"
+- Other IDE Integrations
+  - [Aider](https://aider.chat/)  (AI pair programming in your terminal)
+  - [QoDo Gen](https://www.qodo.ai/products/qodo-gen/) (VsCode and JetBrains)
+  - [Continue](https://www.continue.dev/) (VsCode and Jetbrains)
 - IDEs
-  - WindSurf
-  - Cusor
-  - PearAI
+  - [WindSurf](https://windsurf.com/) (previously Codium, acquired by OpenAI in 2025)
+  - [Cursor](https://www.cursor.com/)
+  - [PearAI](https://trypear.ai/)
 - Other
-  - Claude Code
-  - Open Source DeepWiki: Wiki Generator for GitHub/Gitlab Repositories
-  - Devin
+  - [Claude Code](https://docs.anthropic.com/en/docs/claude-code/overview)
+  - [Open Source DeepWiki](https://github.com/AsyncFuncAI/deepwiki-open): Wiki Generator for GitHub/Gitlab Repositories
+  - [Devin](https://devin.ai/)
 - GitHub Integration
   - QoDo Merge
+
+Figma to Code
+
+If you don't mind TailwindCSS (I hate it), you may find these tools useful. Speaking from experience, you can just send Claude screenshots of the design and tell it to implement the design using a library like Mantine and it will implement it with 80% accuracy.
+
+- [VeyraX](https://www.veyrax.com/mcp) ([Demo](https://x.com/veyraxai/status/1900444154540236964))
+- [Superflex](https://www.superflex.ai/) (demo on website)
 
 ### CyberSecurity
 
