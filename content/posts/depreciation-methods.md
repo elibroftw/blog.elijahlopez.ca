@@ -42,7 +42,7 @@ Although not a depreciation method, in Canada, CCA and depreciation are [interli
 
 As someone who has implemented software for CCA for T2 corporate tax returns, it's a bit more complicated than the formula I've linked below. For example, there's many different classes, and in the future, the acceleration (1.5x) might be phased out. There's also immediate expensing.
 
-For details of income taxes, you can read these two sections in my [Intermediate Accounting II notes](/posts/university/bu-397/intermediate-financial-accounting-II#capital-cost-of-allowance-recap).
+For details of income taxes, you can read these two sections in my [Intermediate Accounting II notes](/posts/university/bu-397).
 
 In my notes, the tax base is the amount that is yet to be deducted for tax purposes. So when the tax base and the carrying value defer, we need to recognize on the income statement that in the future, there will be
 

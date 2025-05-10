@@ -6,6 +6,8 @@ tags:
   - university
   - finance
   - investing
+alises:
+  - /posts/university/bu-423
 ---
 
 {{< toc >}}

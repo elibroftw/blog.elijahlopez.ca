@@ -9,7 +9,7 @@ tags:
 author: Michael Lewis
 ---
 
-This book was a reading  as part of the course [Financial Market and Securities Trading](/posts/university/bu-430-financial-markets-and-securities-trading). These notes are not just from the book but also contain the context behind the story, for example what the HFTs were doing between Chicago and New Jersey.
+This book was a reading  as part of the course [Financial Market and Securities Trading](/posts/university/bu-430). These notes are not just from the book but also contain the context behind the story, for example what the HFTs were doing between Chicago and New Jersey.
 
 The notes are not organized at the moment, but you should be able to go through them within an hour or so. If you stop at a chapter, bookmark the chapter's permalink (hover mouse over the chapter to see a link icon).
 

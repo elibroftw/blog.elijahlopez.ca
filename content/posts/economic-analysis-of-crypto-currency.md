@@ -7,6 +7,8 @@ tags:
   - economics
 ---
 
+{{< toc >}}
+
 ## Prologue
 
 As I'm all about seeking truth and questioning my beliefs, I decided to question my beliefs based on the reality of relative success that Ethereum and its many Layer 2 blockchains have had in terms of monetary return compared to my beloved Monero.
@@ -15,7 +17,7 @@ There are two points to crypto-currency. One is a decentralized global money sys
 
 In the real world, most people are willing to compromise on something. Monero's success should not depend on how ethical or moral human beings are, but that's exactly what I have come to realize. I can either stay stuck in the past or look at reality and this article that is what I'm doing.
 
-## What Value is Assignable to Layer 2's?
+## What Value is Assignable to Layer 2?
 
 I had never heard of Starknet till I got a sizable airdrop from them. Starknet poises itself to be a decentralized layer 2 zk-rollup on top of the Ethereum blockchain. When I first got the airdrop, I foolishly believed their "next-gen tech" instead of my short-term greed which was to swap to a USD stablecoin. Since it was free money after all, I did not value it as the money I already owned. Rule #1: treat every financial asset at the same risk-level.
 
@@ -53,10 +55,17 @@ Being able to transact decentralized with the same purchasing power and full own
 
 ### WIll it be Replaced by Alternatives?
 
-No. The network effect is incredible and when **constantly innovating**, the benefactor of the network effect is most likely to win out.
-So with that said, Ethereum is here to stay. That isn't to say that the alternatives will grow. As we talk about in the next chapter, if the crypto-currency is volatile and has a market cap in the billions, its blockchain can be seen as a bank and its token as a stock; they all can grow.
+The network effect is incredible and when **constantly innovating**, the benefactor of the network effect is most likely to win out. ~~So with that said, Ethereum is here to stay~~. Due to the downwards price pressue back-running is having, it's hard to say Ethereum will continue to gain popularity. Even if it fixes this one major problem, alternatives can still grow. As we talk about in the next chapter, [Fiat Banking System Versus Crypto Monetary System](#fiat-banking-system-versus-crypto-monetary-system), if a cryptocurrency is volatile and has a market cap in the billions, its blockchain can be seen as a bank and its token as a stock; **they can all grow**.
 
-#### Cardano
+### Ethereum's Back-Running Problem
+
+When I first wrote this article in 2024, I was unaware of how profound the problem of back-running was. Back-running is when users use a swap service and a  profit-seeking entity unrelated to the swap service, will detect the swap transaction in the mem pool, and buy the coin at the current ask price and then turn around and sells it to the original buyer at a higher price. Users are told to limit the _slippage_ (amount of market value willing to lose), but that still amounts to losing a few percentage points which can result in thousands of dollars for higher transactions.
+
+Why is this bad? Well you see unlike in the stock market, where high-frequency trading firms are rewarded in the same currency of their accounting books, for Ethereum back-running, revenue will be in cryptocurrency and will need to be sold to crystalize profits in order to reduce price volatility risk.  Think about it for a second. You have an algorithm that earns crypto-currency on 99% of decisions it makes. You, as a business, understand that not only Ethereum's price, but all crypto-currencies at the moment, have price cycles, meaning that it is undetermined whether the price will stay flat or go up in the short-run! Therefore, to lock in profits and reduce the risk of the price going down, you liquidate any cryptocurrency money earned from this algorithm as soon as possible. To improve logistics, you may even make use of ETH/USD stable coin pairs with tight bid-ask spreads. It actually doesn't even matter if you also get back-run when liquidating because you only lose a percentage of revenue rather than a percentage of equity. Since algorithmic profit-seeking entities have an incentive to sell all Ethereum-related crypto-currencies, this puts a downwards pressure on the price of Ethereum. In other words, for Ethereum to maintain its upward movement, there has to be more demand (on a per $ basis) for Ethereum than crypto-currencies without swap mechanisms or loopholes that allow back-running. Put another way, if Bitcoin and Ethereum had the same market cap, Ethereum requires more buyer demand than Bitcoin to sustain its market cap since there are inherently more sellers wanting to offload Ethereum. This problem isn't inherent to Ethereum, I've just focused on Ethereum because of its popularity.
+
+Electronic front-running or simply back-running, actually stems from the stock market due to the stock exchanges all adopting a technology superiority mindset where firms get an advantage for being able to execute trades as fast as possible even though there is no significant material change millisecond to millisecond! In the existing stock market, there are multiple exchanges with markets to trade. If institutions send their trades to the "best" priced exchange, because they might eat up the entire bid or ask, the high-frequency trading firms or market makers will adjust their quotes on the other exchanges! You can read more about this in my [Financial Market and Security Trading course notes](/posts/university/bu-430) which also references condense notes of Flash Boys by Michael Lewis which was the ground breaking book informing market participants what HFTs were even doing.
+
+### Alternative 1: Cardano
 
 The main alternative I can think of is Cardano. It's argument is a modular architecture, but there is little focus on what the present implications and wins are over ethereum. It's like saying FreeBSD kernel is better than the Linux kernel because it's modular without mentioning most frameworks support Windows, Linux, and MacOS. It doesn't matter that FreeBSD's architecture is superior to Linux because Linux satisfies a significantly higher share of users. As history has shown us, there does exist an opportunity cost of developing software for platforms with less users.
 
@@ -64,21 +73,23 @@ If we apply this strong argument of satisfaction, Cardano will not replace Ether
 
 It's similar to Monero and it's alternative. Monero satisfies the role of money. It's digital cash and anything new cannot beat the network effect unless there is high interoperability and low substitution costs.
 
-#### Solana
+### Alternative 2: Solana
 
 The only benefit Solana has over Ethereum is the significantly lower transaction fees and costs. This is due to Ethereum's popularity and so why did it do better than Cardano? Well clearly because if cost is the bottle neck, why settle for Cardano when the cheaper Solana will do? Solana is like an accelerated blockchain where the sustainable solution is to store just the state and not the history. Burning history is what most blockchains will have to end up doing and Solana's solution is just one way.
 
-I think the biggest lie with Solana was that FTX had control over the project other than a prelaunch investment.
+It is my belief that the biggest myth that was perpetuated regarding Solana was that FTX had control over the project other than simply being a prelaunch investor.
 
 ### Rebuttals to Arguments Against Ethereum
+
+Disclosure: I'm bullish on Monero, bearish on Etheruem in its current form due to back-running. I've found these rebuttals to credible criticism against Ethereum.
 
 - Visible Balances and Transaction History
   -I also do not like that Ethereum transactions and balances are visible but
   - (1) Most people do not care about privacy enough to change behaviour
   - (2) Ethereum isn't just about money, it's about decentralized finance (defi). Hopefully someday the Monero community either creates a wrapped Monero like Wrapped Bitcoin or fully polishes atomic swaps. Essentially, ethereum unlocks defi potential rather than being the money
-- Proof-of-stake is Permissioned
-  - The argument spouted by Proof-of-workers is that PoW coins require buying permission but the same can be said about the device we are using. Permissioned is not a good argument when mining itself was never a proper way to acquire a considerable amount of crypto to begin with
-  - Mining requires acquiring a device capable of mining meaning that you need money to begin with. Money you work for or are gifted which can be from a PoS or PoW blockchain
+- Proof-of-stake is _Permissioned_
+  - The argument spouted by Proof-of-workers is that PoS coins require buying permission but the same can be said about the device we are using. Permissioned is not a good argument when mining itself is not the best way for the average person to acquire a considerable amount of crypto to begin with (i.e either use capital, aka stored labour, work for the cryptocurrency, or inherit it)
+  - Mining requires acquiring a device capable of mining meaning that you need capital to begin with. Capital (money) you get from working or are transferred to which can be from a PoS or PoW blockchain
 - Proof-of-stake rewards the wealthiest
   - Most people use Ethereum and do not stake it so the wealthiest is not being concentrated
   - Stakers get a constant yield that competes directly with the world nominal interest rate or at least the USA interest rate
@@ -89,6 +100,7 @@ I think the biggest lie with Solana was that FTX had control over the project ot
   - Weak Subjectivity: How does a node know which node is the correct hash?
     - The attack is owning 51% of nodes, which is just as easy to do by a state actor as doubling the Monero hash rate
     - The attack will be thwarted because even Monero at one point had one pool responsible for 50%+ which was subsequently reduced
+      - Personally there is a big risk in PoS regarding weak subjectivity because with PoW 50% attack, the bad actor has to use a boatload of compute and resources, whereas for weak subjectivity, the bad actor can scale the attack over time with minimal resources. It is easier to setup a node than it is to mine.
 
 ## Fiat Banking System Versus Crypto Monetary System
 
@@ -118,4 +130,4 @@ In the future I will take it upon myself to conduct a 3-year volatility analysis
 
 ### Making Money
 
-So here's my take for people who want to make money. Tier 2 crypto-currencies are shit coins. Unlike the stock market, crypto-currencies are competing as banks and the smaller they are, the more likely they are to fail, more so when the securities regulator is lagging. Therefore, it's best to invest in the large-cap cryptocurrencies at the peak, and then rotate into mid-cap crypto-currencies once the bear market has made the currencies flat. Yes there is higher reward in investing in the mid-cap cryptocurrencies at the peak, but unlike the stock market, the crypto market has a much smaller boom-bust cycle.
+So here's my take for people who want to make money. Tier 2 crypto-currencies are shit coins. Unlike the stock market, crypto-currencies are competing as banks and the smaller they are, the more likely they are to fail, more so when **the securities regulator is lagging**. Therefore, it's best to invest in the large-cap cryptocurrencies at the peak, and then rotate into mid-cap crypto-currencies once the bear market has made the currencies flat. Yes, there is higher reward in investing in the mid-cap cryptocurrencies at the peak, but unlike the stock market, the crypto appears to have a much shorter boom-bust cycle (this is not set in stone, as some crypto currencies want to be a currency first and thus will flatten out at some point).

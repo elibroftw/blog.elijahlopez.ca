@@ -43,6 +43,7 @@ I'm naming these populist benchmarks because it's basically a popularity contest
 
 #### Coding Benchmarks
 
+- [WebDev Arena Leaderboard](https://web.lmarena.ai/leaderboard)
 - [SWE-Bench verified](/posts/ai-coding-leaderboard/): Software Engineering. ([leaderboard with all tools](https://www.swebench.com/#test))
 - [CodeForces](/posts/ai-coding-leaderboard/): Competitive programming (note that there is no time penalty for the models)
 - ~~[LiveCodeBench](https://livecodebench.github.io/leaderboard.html)~~
@@ -75,7 +76,7 @@ Agentic benchmarks are very new and personally I'm not too sure what these bench
 
 Model Name | Company | Blog | Chat App
 ---------------------- | --------------- | ------------ | -------
-[Gemini](https://deepmind.google/technologies/gemini/) | Google | [updates](https://gemini.google.com/updates) | [Google AI Studio](https://aistudio.google.com/prompts/new_chat)
+[Gemini](https://deepmind.google/technologies/gemini/) | Google | [Google DeepMind Blog](https://deepmind.google/discover/blog/) | [Google AI Studio](https://aistudio.google.com/prompts/new_chat)
 [OpenAI Platform](https://platform.openai.com/docs/models) | OpenAI | [news](https://openai.com/news/) | [ChatGPT](https://chatgpt.com/)
 [Grok](https://docs.x.ai/docs/models) |xAI | [news](https://x.ai/news) | [Grok](https://x.com/i/grok)
 [Claude](https://www.anthropic.com/claude) | Anthropic | [news](https://www.anthropic.com/news) | [Chat](https://claude.ai/)
@@ -371,7 +372,11 @@ An interface is something that interacts with the model, but not the model itsel
 - [text-generation-webui](https://github.com/oobabooga/text-generation-webui)
 - ~~[Stable Diffusion web UI](https://github.com/AUTOMATIC1111/stable-diffusion-webui)~~
 
-Some of these require "backends" which all come from llama.cpp. However, [Ollama](https://github.com/ollama/ollama) is super simple for running models.
+Some of these require "backends" which all come from llama.cpp or kobold.cpp. However, [Ollama](https://github.com/ollama/ollama) is super simple for running models.
+
+[Offload Tensors for Performance Improvements](https://www.reddit.com/r/LocalLLaMA/comments/1ki7tg7/dont_offload_gguf_layers_offload_tensors_200_gen/)
+
+This post is very new and talks about how even with less than the recommended hardware requirements, you can still improve throughput by being selective about what is offloaded to the GPU. It seems that some tensors like FPN tensors happen to be very large and use basic matrix multiplication which can be done efficiently on the CPU, whereas small tensors like attention tensors benefit from GPU parallelization! It's a breakthrough innovation in my opinion. Original credit goes to  [u/EmilPi](https://www.reddit.com/user/EmilPi/).
 
 ### Learning
 

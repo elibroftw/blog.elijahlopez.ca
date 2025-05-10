@@ -7,6 +7,7 @@ tags:
   - accounting
 aliases:
   - /posts/bu-397-intermediate-financial-accounting-II
+  - /posts/university/bu-397
 ---
 
 {{< toc >}}

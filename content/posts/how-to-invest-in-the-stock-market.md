@@ -160,7 +160,7 @@ Suppose you want to own shares in a company that you don't think will move up si
 
 ### Futures
 
-Futures are similar to options but most sides have an obligation to deliver or take delivery of the underlying assets. The underlying asset could be equities or even goods. Sometimes the delivery is cash-settled due to how these contracts are used by investors. If a contract is cash-settled, it's usually used for hedging rather than for budgeting purposes. Equity futures are most important for traders predicting the direction of the market (see E-Mini futures) or for institutions who want to hedge their portfolio and change its risk without having to buy many different options. For more information, I recommend reading my notes for [Options, Futures, Swaps](/posts/university/bu-423-futures-options-swaps).
+Futures are similar to options but most sides have an obligation to deliver or take delivery of the underlying assets. The underlying asset could be equities or even goods. Sometimes the delivery is cash-settled due to how these contracts are used by investors. If a contract is cash-settled, it's usually used for hedging rather than for budgeting purposes. Equity futures are most important for traders predicting the direction of the market (see E-Mini futures) or for institutions who want to hedge their portfolio and change its risk without having to buy many different options. For more information, I recommend reading my notes for [Options, Futures, Swaps](/posts/university/bu-423).
 
 ## Crypto-Currency
 

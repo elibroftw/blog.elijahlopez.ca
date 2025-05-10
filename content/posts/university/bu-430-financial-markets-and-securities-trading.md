@@ -5,6 +5,8 @@ draft: false
 tags:
   - finance
   - university
+aliases:
+  - /posts/university/bu-430
 ---
 
 {{< toc >}}
@@ -659,7 +661,7 @@ US dark rule: no price improvement needed.
 
 Broker sponsored dark pools. In the early 2010s, almost every one suffered regulatory fine for not informing clients enough. Either trading prop. In us discrimination is allowed for trading preferences. Credit Suisse cross finder dark pool fined the most.
 
-If a company just put their order on the exchange theres so much leakage that the spread moves. Best way to minimize that leakage is to hide it in dark pool. Need to spread on all avenues. Min quantity on all orders prevents against pinging. Conditional is that I'll accept this order if everything else is not filled. Buy side evolution against back running. HFTs are smartest people in the room who use all the rules to get the biggest benefit. The rules can be bent to hft benefits which is annoying and has happened on exchanges.
+If a company just put their order on the exchange theres so much leakage that the spread moves. Best way to minimize that leakage is to hide it in dark pool. Need to spread on all avenues. Min quantity on all orders prevents against pinging. Conditional is that I'll accept this order if everything else is not filled. Buy side evolution against back-running. HFTs are smartest people in the room who use all the rules to get the biggest benefit. The rules can be bent to hft benefits which is annoying and has happened on exchanges.
 
 Rules in canada: proprietary cannot trade against orders with less than 5000 shares. Firms like TD made routing protocols to ensure retail got best execution. The routing would know where the other orders are going. This would avoid the ATS.
 
