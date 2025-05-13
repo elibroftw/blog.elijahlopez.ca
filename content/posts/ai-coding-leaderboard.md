@@ -60,6 +60,7 @@ Explaining Synthetic Rankings of models with missing scores.
 
 ### Notes
 
+- Google Gemini 2.5 Pro May update is missing from the leaderboard
 - DeepSeek V3 was [updated](https://api-docs.deepseek.com/news/news250325) so its scores are probably outdated (i.e. imprecise) but not inaccurate in terms of the rankings.
 - [Augment SWE-bench Verified Agent](https://github.com/augmentcode/augment-swebench-agent) scored 68.1%. The problem is that they require you to install an extension which will upload code by default on the community tier. You can do a free trial but for my purposes, I'm restricted to open-router, where I have the option to not use models that will train on my inputs. I also like Cline because it doesn't auto-read my codebase
 - The codeforces scores change depending on when they are recorded. This is the case for DeepSeek R1, which got a bump of ~150. I did this to ensure that Qwen3 models that don't contain a SWE-bench verified score are not ranked above DeepSeek R1. I also removed Claude 3.5 Sonnet's Codeforces score because there was apparently a (new) model released for it which has clearly not been benchmarked by the new models. It's a bit weird that the new Qwen release does not benchmark claude 3.7.

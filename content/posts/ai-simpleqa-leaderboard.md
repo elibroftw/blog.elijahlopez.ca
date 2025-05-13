@@ -22,24 +22,28 @@ ArenaHard leaderboard: An automated artificial/synthetic benchmark for Chatbot A
 
 | Model / Product   | Company   | Tier    | SimpleQA | AIME'25 | ArenaHard | Chatbot Arena |
 |----------------------|-----------|----------|----------|---------|-----------|---------------|
-| Linkup Web Search        | Linkup | I | 90.10 | N/A | N/A | N/A |
-| Exa                                 | Exa | I | 90.04 | N/A | N/A | N/A |
-| Perplexity Sonar Pro      | Perplexity | I | 85.80 | N/A | N/A | N/A |
-| ChatGPT-4.5                  | OpenAI    | Flagship | 62.50 |         |         | 1398  |
-| Gemini-2.5-pro               | Google    | I |  52.90 | 86.70 |           | 1439 |
-| Claude-3.7-Sonnet        | Anthropic | I | 50.00 |         | 59.8 | 1292 |
-| o3                                  | OpenAI    | I | 49.4 |  88.9  | 85.9  | 1418 |
-| Grok 3                           | xAI       | I | 44.60 | 93.3 |           | 1402 |
-| o1                                  | OpenAI    | I | 42.60 | 79.20 | 61 | 1350  |
-| ChatGPT-4.1                 | OpenAI    | I | 41.60 |         | 50 | 1363 |
-| ChatGPT-4o                  | OpenAI    | I | 39.00 | 14.00 |          |  1408 |
-| DeepSeek-R1                | DeepSeek  | I | 32.84 |  74.00 |  48 | 1358 |
+| [Liner Pro Reasoning](https://getliner.com/) | [Liner](https://liner.com/) | I P | [95.30](https://liner.com/learn/deep-research-comparison) | N/A | N/A | N/A |
+| Liner Pro | [Liner](https://liner.com/) | I P | [93.70](https://liner.com/learn/liner-accurate-ai-search) | N/A | N/A | N/A |
+| Perplexity Deep Research | [Perplexity](https://www.perplexity.ai/) | I P | 93.90 | N/A | N/A | N/A |
+| Perplexity Pro      | [Perplexity](https://www.perplexity.ai/) | I P | 90.60 | N/A | N/A | N/A |
+| [Linkup Web Search](https://www.linkup.so/)        | Linkup | I P | 90.10 | N/A | N/A | N/A |
+| [Exa](https://exa.ai/)                                 | Exa | I P | 90.04 | N/A | N/A | N/A |
+| Perplexity Sonar Pro      | Perplexity | I P | 85.80 | N/A | N/A | N/A |
+| ChatGPT-4.5                  | OpenAI    | 1 M | 62.50 |         |         | 1398  |
+| Gemini-2.5-pro               | Google    | I M |  52.90 | 86.70 |           | 1439 |
+| Claude-3.7-Sonnet        | Anthropic | I M | 50.00 |         | 59.8 | 1292 |
+| o3                                  | OpenAI    | I M | 49.4 |  88.9  | 85.9  | 1418 |
+| Grok 3                           | xAI       | I M | 44.60 | 93.3 |           | 1402 |
+| o1                                  | OpenAI    | I M | 42.60 | 79.20 | 61 | 1350  |
+| ChatGPT-4.1                 | OpenAI    | I M | 41.60 |         | 50 | 1363 |
+| ChatGPT-4o                  | OpenAI    | I M | 39.00 | 14.00 |          |  1408 |
+| DeepSeek-R1                | DeepSeek  | I M | 32.84 |  74.00 |  48 | 1358 |
 | Gemini-2.5-flash            | Google    | IV |  29.70   | 78.00  |           | 1393 |
-| Claude-3.5-Sonnet        | Anthropic | I | 28.4 |         | 33 |               |
-| DeepSeek-V3                | DeepSeek  | I | 24.9 |         |           | 1381 |
-| o4-mini                           | OpenAI    | I | 20.20 | 92.70 | 79.1 | 1351  |
-| o3-mini                           | OpenAI    | I | 13.80 |  86.5 | 66.1 | 1325 |
-| Qwen3-235B-A22B        | Qwen  | I | 11.00 | 81.5    | 95.6 |               |
+| Claude-3.5-Sonnet        | Anthropic | I M | 28.4 |         | 33 |               |
+| DeepSeek-V3                | DeepSeek  | I M | 24.9 |         |           | 1381 |
+| o4-mini                           | OpenAI    | I M | 20.20 | 92.70 | 79.1 | 1351  |
+| o3-mini                           | OpenAI    | I M | 13.80 |  86.5 | 66.1 | 1325 |
+| Qwen3-235B-A22B        | Qwen  | I M | 11.00 | 81.5    | 95.6 |               |
 | Gemma 3 27B               | Google    | II | 10.00 |         |           | 1342 |
 | Gemma 2 27B               | Google    | II |  9.20 |         |           | 1220 |
 | Qwen3-32B (Dense)      | Qwen  | II | 8.00 | 72.9    | 93.8 |               |
@@ -54,16 +58,22 @@ ArenaHard leaderboard: An automated artificial/synthetic benchmark for Chatbot A
 | Gemma 3 1B                 | Google    | III |  2.20 |         |           |               |
 | Qwen3 4B                      | Qwen | III | 1.00 | 65.6 | 76.6 |               |
 
+### Notes
+
 Missing Models
 
 - Mistral Medium 3
 - DeepSeek V3 03/24
+- Google Gemini 2.5 Pro May update
+
+Awaiting Evidence. I was contacted to update the leaderboard, so will do so once I get a blog post to reference the following scores, as right now I only have an email.
 
 ### Definition of Tier
 
 | Tier | Name |
 | ------ | ------ |
-| I | Flagship |
+| I M | Flagship Model |
+| I P | Flagship Product |
 | II | Consumer hardware |
 | III | Edge hardware |
 | IV | Speed |

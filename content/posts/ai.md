@@ -151,9 +151,10 @@ Using AI to boost productivity by letting AI do a domain search and recall on th
 
 Some of these can also be considered a subset of "Chat"
 
-- Linkup
-- Exa
-- Perplexity
+- [Liner](https://liner.com/) (specialized in getting answers with reliable sources which means helps to avoid plagiarism)
+- [Linkup](https://www.linkup.so/)
+- [Exa](https://exa.ai/)
+- [Perplexity](https://www.perplexity.ai/)
 
 ### Interesting Media Research
 
