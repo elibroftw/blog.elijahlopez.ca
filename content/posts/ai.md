@@ -296,6 +296,7 @@ If you don't mind TailwindCSS (I hate it), you may find these tools useful. Spea
 
 - [Open Interpreter](openinterpreter.com/): A natural language interface for computers
 - [Computer Use by Anthropic guide](https://glama.ai/blog/2024-10-22-automate-computer-using-claude)
+- [DSpy](https://dspy.ai/) - modularizing AI by providing programmed functions that can be executed, thus lowering the risk of hallucinations for already solved problems
 
 ### Writing
 

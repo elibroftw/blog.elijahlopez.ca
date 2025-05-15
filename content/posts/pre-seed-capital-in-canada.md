@@ -14,13 +14,13 @@ aliases:
 
 ## Introduction
 
-It would be a lie to state that there is a lack of capital in Canada. There is plenty of capital in Canada. There are many rich people in Toronto, just look at the [One Bloor West](https://condonow.com/One-Bloor-West-Condos). The problem is the lack of guidance regarding **investment in early-stage startups**, where ideas have more merit than the ideas in the USA.
+It would be a lie to state that there is a lack of capital in Canada. There is plenty of capital in Canada. There are many rich people in Toronto, just look at the [One Bloor West](https://condonow.com/One-Bloor-West-Condos). The problem is the lack of guidance and a lack of _risk capital_ regarding **investment in early-stage startups**, where ideas here have more merit than the ideas found in the USA (e.g. PearAI).
 
-After going to a few Ripple Ventures events, I realized there are plenty of startups in Canada, in their own niches, and there's plenty of people trying to build the next billion dollar company. There is no shortage of companies and talent. There is a shortage of hiring at these startups. And hiring can increase through capital which can either be saved or raised. Therefore, "Build Canada" should really be focusing on how to inject more capital into worthwhile lean idea/MVP startups so that they grow and hire people, thus increasing real wages.
+After going to a few Ripple Ventures events, I realized there are plenty of startups in Canada, in their own niches, and there's plenty of people trying to build the next billion dollar company. There is no shortage of companies and talent. However, there is a shortage of hiring at these startups. These startups are usually one man or two man shows, or very bootstrap oriented, thus not having many paid employees, and definitely not highly paid skilled employees. Hiring can increase through capital which can either be saved or raised. Therefore, "Build Canada" should really be focusing on how to inject more capital into worthwhile lean idea/MVP startups so that they grow and hire people, thus increasing real wages.
 
-From the perspective of a founder, the benefit of raising pre-seed capital is very simple from my perspective. Raise money &rarr; pay employee(s) to work on idea or work fulltime yourself &rarr; retain enough equity to **significantly** increase wealth via equity-compensation rather than cash compensation.
+In my opinion, the benefit to founders for raising pre-seed capital is very simple. Raise money &rarr; pay employee(s) to work on idea or work fulltime yourself &rarr; retain enough equity to **significantly** increase wealth via equity-compensation rather than cash compensation.
 
-Another benefit of venture capital is you get an immediate network and people have a reason to heard you out, which can easily result to new customers due to the social network and butterfly effect.
+Another benefit of venture capital is that founders get an immediate network and people will have a reason to hear your startup out, which can easily result to new customers due to the social network and butterfly effect.
 
 ## Y Combinator Benchmark
 
