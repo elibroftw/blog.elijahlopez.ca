@@ -29,15 +29,16 @@ ArenaHard leaderboard: An automated artificial/synthetic benchmark for Chatbot A
 | [Linkup Web Search](https://www.linkup.so/)        | Linkup | I P | 90.10 | N/A | N/A | N/A |
 | [Exa](https://exa.ai/)                                 | Exa | I P | 90.04 | N/A | N/A | N/A |
 | Perplexity Sonar Pro      | Perplexity | I P | 85.80 | N/A | N/A | N/A |
+| Claude-4-Opus              | Anthropic | I M | - | 75.5% | - | - |
 | ChatGPT-4.5                  | OpenAI    | 1 M | 62.50 |         |         | 1398  |
-| Gemini-2.5-pro               | Google    | I M |  52.90 | 86.70 |           | 1439 |
+| Gemini-2.5-Pro               | Google    | I M |  52.90 | 86.70 |           | 1439 |
 | Claude-3.7-Sonnet        | Anthropic | I M | 50.00 |         | 59.8 | 1292 |
 | o3                                  | OpenAI    | I M | 49.4 |  88.9  | 85.9  | 1418 |
 | Grok 3                           | xAI       | I M | 44.60 | 93.3 |           | 1402 |
 | o1                                  | OpenAI    | I M | 42.60 | 79.20 | 61 | 1350  |
 | ChatGPT-4.1                 | OpenAI    | I M | 41.60 |         | 50 | 1363 |
 | ChatGPT-4o                  | OpenAI    | I M | 39.00 | 14.00 |          |  1408 |
-| DeepSeek-R1                | DeepSeek  | I M | 32.84 |  74.00 |  48 | 1358 |
+| DeepSeek-R1                | DeepSeek  | I M | 32.84 |  80.00 |  48 | 1358 |
 | Gemini-2.5-flash            | Google    | IV |  29.70   | 78.00  |           | 1393 |
 | Claude-3.5-Sonnet        | Anthropic | I M | 28.4 |         | 33 |               |
 | DeepSeek-V3                | DeepSeek  | I M | 24.9 |         |           | 1381 |
@@ -48,9 +49,14 @@ ArenaHard leaderboard: An automated artificial/synthetic benchmark for Chatbot A
 | Gemma 2 27B               | Google    | II |  9.20 |         |           | 1220 |
 | Qwen3-32B (Dense)      | Qwen  | II | 8.00 | 72.9    | 93.8 |               |
 | Qwen3-30B-A3B (MoE) | Qwen | II | 8.00 | 70.9    | 91        |               |
+| EXAONE-Deep-32B | LG | II | - | 80 | - | - |
 | Qwen3-14B | Qwen | II | - | - | - | - |
+| EXAONE-Deep-7.8B | LG | II | - | 76.7 | - | - |
 | Qwen3-8B | Qwen | II | - | - | - | - |
+| EXAONE-Deep-2.4B | LG | II | - | 73.3 | - | - |
+| Apriel-Nemotron-15B-Thinker | NVIDIA / SERVICE NOW | II | - | 60.0 | - | - |
 | Gemma 3 12B               | Google    | II |  6.30 |         |           |               |
+| Gemma 3n                    | Google    | II | - |         |           | 1283 |
 | Gemma 3 4B                 | Google    | III |  4.00 |         |           |               |
 | Gemma 2 9B                 | Google    | II |  5.30 |         |           |               |
 | Phi 4 Reasoning Plus   | Microsoft | II | 3.00 | 78.00 | 79.00 |          |
@@ -65,8 +71,9 @@ Missing Models
 - Mistral Medium 3
 - DeepSeek V3 03/24
 - Google Gemini 2.5 Pro May update
+- llama 4 models (e.g. Llama 4 Behemoth)
 
-Awaiting Evidence. I was contacted to update the leaderboard, so will do so once I get a blog post to reference the following scores, as right now I only have an email.
+For Claude 4, there was no score available for SimpleQA, however someone tested Opus on a subset and it scored the highest.
 
 ### Definition of Tier
 
@@ -85,6 +92,8 @@ Awaiting Evidence. I was contacted to update the leaderboard, so will do so once
 <https://lastexam.ai/>
 
 ## References
+
+<https://x.com/scaling01/status/1926017718286782643/photo/1>
 
 <https://openai.com/index/introducing-o3-and-o4-mini/>
 
@@ -114,4 +123,7 @@ Awaiting Evidence. I was contacted to update the leaderboard, so will do so once
 
 <https://x.ai/news/grok-3>
 
-<https://ai.google.dev/gemma>
+- [Gemma](https://ai.google.dev/gemma)
+- [Llama 4 Benchmark and Model Comparison Report](https://github.com/kgruiz/Llama-4-Comps?tab=readme-ov-file)
+- [Apriel-Nemotron-15b-Thinker ](https://huggingface.co/ServiceNow-AI/Apriel-Nemotron-15b-Thinker#evaluation)
+- [LG EXAONE Deep](https://arxiv.org/pdf/2503.12524)

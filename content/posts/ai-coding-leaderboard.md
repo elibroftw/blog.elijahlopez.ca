@@ -6,7 +6,7 @@ tags:
   - ai
 ---
 
-- [SWE-bench verified](https://openai.com/index/introducing-swe-bench-verified/). The defacto way to evaluate AI models as almost almost all models will report their scores for this benchmark. The unofficial [leaderboard](https://www.swebench.com/#verified) includes SWE copilot tool. The problem is that it doesn't include self-reported results unlike this leaderboard
+- [SWE-bench verified](https://openai.com/index/introducing-swe-bench-verified/). A subset of 500 tasks from the full 2000 which have been verified by humans as solvable. This is the defacto way to evaluate AI models as almost almost all models will report their scores for this benchmark. The unofficial [leaderboard](https://www.swebench.com/#verified) includes SWE copilot tool. The problem is that it doesn't include self-reported results unlike my leaderboard.
 - [Codeforces](https://codeforces.com/): the elo represents how good the AI model is at competitive programming tasks. There is no leaderboard since most AI models will self-report or benchmark other models
 - [Aider LLM](https://aider.chat/docs/leaderboards/): the benchmark says it benchmarks editing, however it ranks Claude-3.7 very highly which from personal experience reduces productivity by 2x due to it constantly going out of scope and editing other places in the file other than the feature I wanted to add.
 - The problem with EvalPlus is that it doesn't include bleeding edge models, it's basically almost solved, and not many new models even report their scores anymore.
@@ -17,6 +17,8 @@ tags:
 | Model / Product   | Company   | Tier | SWE-bench verified | Codeforces | EvalPlus |
 |----------------------|-----------|----------|----------|----------|-------------|
 | o3 | OpenAI | I | 69.0% | 2706 | - |
+| Claude 4 Sonnet | Anthropic | I | 72.7% | - | - |
+| Claude 4 Opus | Anthropic | I | 72.5% | - | - |
 | o4-mini | OpenAI | I | 68.1% | 2719 | - |
 | Gemini 2.5 Pro | Google | I | 63.8% | 2001 | - |
 | Claude 3.7 Sonnet | Anthropic | I | 62.3% | - | - |

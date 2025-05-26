@@ -15,21 +15,25 @@ These are the energy drinks I drink on a cycle when I'm not drinking new ones.
 
 1. Reign Energy White Gummy Bear
 2. Reign Energy Reignbow Sherbet
-3. Reign Storm Guava Strawberry
-4. Celsius Orange
+3. Celsius Orange
+4. Celsius Playa Vibe
 5. Celsius Arctic White
 
 Reign Energy Razzle Berry would be on here but it is unavailable in Canada.
+
+### Celsius Playa Vibe (9.5 / 10)
+
+HELL YEAH
+
+### Celsius Orange (9.25 / 10)
+
+Chill this in the fridge, go for a swim or exercise, come back home thirsty and this will be so refreshing you'll be thinking about the next time you get to drink it again. I bumped the rating since it's actually really nice after you drink it a few times.
 
 ### Reign Energy White Gummy Bear (9.1 / 10)
 
 I believe this is better than the Razzle Berry flavour, but I will have to taste the razzle berry again. There isn't exactly any bad points I can think of. This does have a slight taste like a gummy bear and it's not overpowering.
 
 I like this a lot. It definitely deserves the #1 spot.
-
-### Reign Storm Guava Strawberry (9.1 / 10)
-
-I like this a lot as well. And you can have 2x a day. They knew what they were doing.
 
 ### Reign Energy Reignbow Sherbet (9 / 10)
 
@@ -40,11 +44,6 @@ Drinking this chilled puts the Reignbow Sherbet on par with White Gummy Bear
 The first energy drink that had a good taste that persuaded me to buy another one. This is great and it's only downfall is this slight after taste that lingers. I forget exactly what that "bad" taste is, but I'll update this article the next time I drink it. Rated 9 / 10 because I'm saving the perfect score until I've tasted and reviewed at least 10 energy drinks.
 
 It's unfortunate I can't get this in Canada anymore. Then I'd be able to re-rate it.
-
-### Celsius Orange (8.9 / 10)
-
-The first time was okay, but the second time, already chilled from the fridge, it was very refreshing.
-It is not recommended to eat anything sugary alongside this drink, otherwise the flavour might get ruined.
 
 ### Celsius Sparkling Arctic Vibe (8.6 / 10)
 
@@ -83,6 +82,10 @@ This did not taste bad so I am putting it up here.
 ### Monster White (7.9 / 10)
 
 This did not taste bad so I am putting it up here. Update: I had it after a few months and it doesn't hit the same?
+
+### Reign Storm Guava Strawberry (7.9 / 10)
+
+I liked this initially and yeah you can drink 2 a day. However, after including it in my cycle, I don't really look forward to drinking it as much.
 
 ### Bang Energy Purple Haze (7.8 / 10)
 
@@ -162,3 +165,12 @@ I don't know what I was smoking when I decided to even review this. Disgusting.
 ### Reign Energy Cherry Limeade (1 / 10)
 
 Disgusting. And by disgusting I mean not my cup of tea.
+
+## Money Wasters
+
+- Dragonfruit
+- Fruit Burst
+
+## TODO
+
+- Oasis Vibe
