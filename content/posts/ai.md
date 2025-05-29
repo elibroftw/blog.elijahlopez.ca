@@ -214,6 +214,7 @@ Some of these can also be considered a subset of "Chat"
 - [Voice Cloning](https://app.myshell.ai/robot-workshop) by MyShell
   - [OpenVoice](https://github.com/myshell-ai/OpenVoice)
 - [WhisperX](https://github.com/m-bain/whisperX) the best long-form transcription tool based on benchmarks done by [Amgad Hasan](https://amgadhasan.substack.com/p/sota-asr-tooling-long-form-transcription)
+- [Vogent - Voice AI Agent](https://www.vogent.ai/)
 - [ElevenLabs](https://elevenlabs.io/): (TTS, STT, Conversational, Dubbing, Voice cloning, reader)
 - Text-to-Speech
   - [Dia](https://huggingface.co/nari-labs/Dia-1.6B) by Nari Labs (high quality for the patient)
