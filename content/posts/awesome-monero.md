@@ -5,39 +5,45 @@ draft: false
 tags:
   - monero
   - cryptocurrency
-summary: "A curated list of Monero resources, including recommended wallets and payment gateways, with insights on open-source options and integrations."
+summary: "A curated list of Monero resources, including recommended wallets, payment gateways, exchanges, funding opportunities, and libraries with insights on open-source options and integrations."
 ---
 
 {{< toc >}}
 
+If you want to know why I believe in Monero, feel free to read [Why monero is the best crypto CURRENCY](/posts/why-monero-is-the-best-crypto-currency).
+
 ## Wallets
 
-1. [Monero GUI](https://github.com/monero-project/monero-gui)
+1. [Feather Wallet](https://docs.featherwallet.org/)
+    - Desktop
+    - Small UI but at least the wallet works
+2. [Monerujo](https://www.monerujo.io/)
+    - Android
+    - Best mobile wallet
+3. [Monero GUI](https://github.com/monero-project/monero-gui)
     - Desktop
     - Annoyingly doesn't open monero URIs in existing
-2. [Stack Wallet](https://stackwallet.com/)
-    - Best mobile wallet
+4. [Stack Wallet](https://stackwallet.com/)
     - Annoyingly doesn't support monero URIs
-3. [Cake Wallet](https://cakewallet.com/)
+5. [Cake Wallet](https://cakewallet.com/)
     - Mobile and Desktop
     - Although the app is very polished, it was prone to crash for me
     - Annoyingly doesn't support monero URIs
-4. [Monerujo](https://www.monerujo.io/)
-    - Android
-    - Last time I checked, I didn't like how it looked
-5. [Trust Wallet](https://trustwallet.com/monero-wallet)
-    - Mobile and Cross Platform Desktop
-    - Proprietary
-    - Multi coin wallet
-6. [Exodus](https://www.exodus.com/monero-wallet-xmr)
-    - Mobile and Cross Platform Desktop
-    - Proprietary
-    - Multi coin wallet
-    - You need the seed for the app, not only the monero seed to restore the wallet on Exodus. That's 2 seeds you need to save to your KeePassXC database or write on paper and store somewhere safe
-7. [MyMonero](https://mymonero.com/)
-    - Mobile and Cross Platform Desktop
-    - Uses a different way to sync wallet, I can't recommend it
-    - Can corrupt the wallet save file, just not good for beginners
+
+<details><summary>Other wallets that I do not recommend</summary>
+
+- [Trust Wallet](https://trustwallet.com/monero-wallet)
+  - Mobile and Cross Platform Desktop
+  - **Proprietary**
+  - Multi coin wallet
+- [MyMonero](https://mymonero.com/)
+  - Mobile and Cross Platform Desktop
+  - Desktop app hasn't been updated since November 2022
+  - Android app hasn't been updated since September 2023
+  - Uses a different way to sync wallet, I can't recommend it
+  - Can corrupt the wallet save file, just not good for beginners
+
+</details>
 
 ## Monero Payment Gateways
 
@@ -62,7 +68,7 @@ Security notes: (a) a good monero gateway must handle timelocks. (b) As a bonus,
 
 Proof of Concepts
 
-- [Custom Python Implementation](https://blog.elijahlopez.ca/posts/monero-payment-processing/)
+- [Custom Python Implementation](/posts/monero-payment-processing/)
   - Concise code to adapt to any language
   - Untested support for mempool (if it doesn't work, it's the fault of  monero-wallet-rpc)
   - No timelock bug (my code always considered the possibility of rogue actors)
@@ -72,8 +78,6 @@ Proof of Concepts
   - Unsure if timelock issue is taken care of
   - Unsure if mempool is seen
 - [AcceptXMR](https://github.com/busyboredom/acceptxmr/)
-  - Unmaintained?
-  - Unsure if timelock issue is taken care of
   - Unsure if mempool is seen
 
 ### CMS Integration
@@ -87,3 +91,46 @@ that uses CMS or ecommerce plugins: WordPress, Shopify, WooCommerce, Clover.
 ### Point of Sale Integrations
 
 This section will be on how to integrate Monero processing in stores that already use a POS system such as Square and Clover. This section is empty because apparently only I care to think of closing this gap in terms of usability. The work for Clover would involve Android development.
+
+## Funding Monero Projects
+
+- [Monero Community Crowdfunding System (CCS)](https://ccs.getmonero.org/)
+- [Monero Bounties](https://bounties.monero.social/)
+- [Magic Grants](https://donate.magicgrants.org/monero)
+
+## Monero Libraries
+
+- [Original C++ Monero](https://github.com/monero-project/monero)
+- [serai monero transaction library](https://github.com/serai-dex/serai/tree/develop/networks/monero)
+- [serai monero wallet](https://github.com/serai-dex/serai/tree/develop/networks/monero/wallet)
+- [monero cuprate](https://github.com/Cuprate/cuprate)
+
+## Exchanges and Swap Services
+
+- Swaps
+  - [Trocador.app](https://trocador.app/)
+- Centralized
+  - Kraken
+    - [How to buy Monero in Canada](/posts/how-to-buy-monero-in-canada)
+- Decentralized
+  - [RetoSwap - Haveno](https://retoswap.com/)
+  - [Serai](https://serai.exchange/) (not yet launched)
+  - Bisq
+
+## Deploying Monero Node on VPS
+
+I recommend finding a server with 300GB+ SSD storage using [serverhunter](https://www.serverhunter.com/#query=storage_capacity:%3E=525+stock:(in_stock+OR+unknown)). Alternative, you can use OVHCloud or Vultr.
+
+- Ansible Playbooks
+  - I will make my own since these are unmaintained and require a lot of maintenance.
+  - Ideally you just need [docker-monero-node](https://github.com/lalanza808/docker-monero-node?tab=readme-ov-file#docker-monero-node) and every time you get notified that Monero has updated, you can just run the same ansible playbook with a password and without changing anything. A password will be required to inject ENV variables.
+  - [lalvarezguillen/monerod-node-vps](https://github.com/lalvarezguillen/monerod-node-vps)
+  - [Al13n0/monero-nodes-ansible](https://github.com/Al13n0/monero-nodes-ansible)
+
+## Blockchain Explorer
+
+- [Monero blocks](https://localmonero.co/blocks/)
+
+## What's Missing
+
+- Vouchers like [Azteco bitcoin vouchers](https://azte.co/learn/articles/what-are-azteco-bitcoin-vouchers#What-are-Azteco-bitcoin-vouchers)

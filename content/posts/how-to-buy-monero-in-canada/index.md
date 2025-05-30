@@ -8,6 +8,8 @@ tags:
 summary: The easiest way to buy Monero in Canada is to first buy USDC on Coinbase and then use Trocador.app to swap USDC Arbitrum One for Monero. For those who are savvy, there are a variety of  methods depending on how sensitive you are to fees
 ---
 
+If you want to know why I believe in Monero, feel free to read [Why monero is the best crypto CURRENCY](/posts/why-monero-is-the-best-crypto-currency).
+
 ## Optimal Methods
 
 All amounts are in CAD. Maker / Taker convention. When sending USDC, choose **Arbitrum network**.
