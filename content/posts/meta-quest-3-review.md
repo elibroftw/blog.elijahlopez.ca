@@ -4,6 +4,7 @@ date: 2025-05-11T20:45:28-04:00
 draft: false
 tags:
   - review
+summary: The good, the bad, and the ugly regarding the Meta Quest 3 from personal experience
 ---
 
 I bought the Meta Quest 3 in June of last year using some crypto currency I did not want to hold onto. Over the last few months I have not really used it. That's mostly because the best parts of the Meta Quest 3 are the games. However, I've been playing Black Ops 6 (desktop game) since October! I've played no other game and I'm not bored of it (yet?).

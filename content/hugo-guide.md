@@ -38,8 +38,9 @@ Before writing, make sure you are modifying the latest version of the blog. Use 
 2. Open `content/posts/POST.md` in a text editor (e.g. VS Code)
 3. Edit the metadata fields present and optionally add others found in this file (e.g. tags, hidden)
     - I use tags, but categories is also a thing
-    - `hidden` makes posts unlisted (similar to youtube's unlisted)
-    - `draft` makes posts viewable only if `hugo` server/build was told to build drafts
+    - `hidden: true` makes posts unlisted (similar to youtube's unlisted)
+    - `draft: true` makes posts viewable only if you use `-D` with the `hugo` CLI (build or serve)
+    - `summary`: set the description for posts that search engines list
 4. Here is a [Markdown Guide](https://www.markdownguide.org/basic-syntax/) for writing your posts
 5. To see your changes locally, run `hugo serve -D` and go to [http://localhost:1313/](http://localhost:1313/)
     - Run once, it will auto-serve any new changes

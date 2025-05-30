@@ -4,6 +4,7 @@ date: 2025-05-05T15:33:20-04:00
 draft: false
 tags:
   - ai
+summary: This leaderboard shows the rankings of different AI models using various benchmarks such as SWE-bench and Codeforces. I also discuss the challenges in the existing benchmarks and  their respective leaderboards
 ---
 
 - [SWE-bench verified](https://openai.com/index/introducing-swe-bench-verified/). A subset of 500 tasks from the full 2000 which have been verified by humans as solvable. This is the defacto way to evaluate AI models as almost almost all models will report their scores for this benchmark. The unofficial [leaderboard](https://www.swebench.com/#verified) includes SWE copilot tool. The problem is that it doesn't include self-reported results unlike my leaderboard.
