@@ -6,6 +6,7 @@ tags:
   - programming
   - devops
   - bash
+summary: "A concise Bash quickstart guide. It provides links to a Bash scripting cheatsheet and other Bash helpers. Key examples include the shebang (`#!/usr/bin/env bash`), iterating through a literal array using a `for` loop, and demonstrating C-like increment logic with `((counter++))`."
 ---
 
 Bookmark me!

@@ -5,6 +5,7 @@ draft: false
 tags:
   - vscode
   - programming
+summary: "Discover essential VS Code extensions for developers, covering themes, icons, language support, Git integration, and various utility extensions to enhance your coding workflow."
 ---
 
 For this article, I'm going to skip over default language packs since they are a goto install.

@@ -7,6 +7,7 @@ tags:
   - tutorial
   - c-sharp
   - asp.net
+summary: "Demonstrates returning HTTP error responses with strongly-typed responses in ASP.NET Core using ActionResult<T> for validation and authorization."
 ---
 
 How do you return a bad request or an unauthorized response in ASP.NET while also being

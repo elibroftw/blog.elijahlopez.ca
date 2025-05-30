@@ -1,6 +1,7 @@
 ---
 title: "About"
 description: "Elijah Lopez is a developer who is constantly pushing the limits of technology"
+summary: "Elijah Lopez is a developer who is constantly pushing the limits of technology"
 date: "2019-02-28"
 aliases:
   - 'about-us'

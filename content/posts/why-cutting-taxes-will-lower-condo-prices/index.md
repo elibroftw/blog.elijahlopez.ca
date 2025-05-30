@@ -2,6 +2,7 @@
 title: "Why Cutting Taxes will Lower Condo Prices"
 date: 2025-02-10T17:11:10-05:00
 draft: true
+summary: This article explains how high taxes contribute to the cost of new condos and argues that reducing taxes, such as the Land Transfer Tax and HST/GST, could lower prices by a significant percentage, making 2-bedroom and 3-bedroom condos more affordable.
 ---
 
 Why are pre-construction starts [down](https://www03.cmhc-schl.gc.ca/hmip-pimh/en/TableMapChart/Table?TableId=1.1.1.8&GeographyId=2270&GeographyTypeId=3&DisplayAs=Table&GeograghyName=Toronto)?

@@ -6,6 +6,7 @@ tags:
   - opinion
   - canada
   - climate-change
+summary: "Critiques 'Climate Change as a Service,' arguing EVs and carbon taxes are insufficient. Advocates for sustainable infrastructure and systemic change over blaming individuals."
 ---
 
 I'm tired of people who claim that climate change is a dire threat but drive in their electric vehicle which also contributed to climate change when it was manufactured. Even if the population stays flat, electric vehicles depreciate, and so producing billions of electric vehicles is not going to fix climate change, but maybe slow it down with regards to internal combustion engine vehicles. That's a big assumption that requires developing countries to skip ICE vehicle ownership. If slowing down climate change is all that matters, we should also be building Nuclear power plants against the wishes of citizens. For example, Germany was not helping the global effort.

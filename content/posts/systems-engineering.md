@@ -1,12 +1,11 @@
 ---
 title: "Systems Engineering"
 date: 2024-03-05T17:15:02-05:00
-draft: false
+hidden: true
+summary: "Notes on systems engineering covering Linux fundamentals, troubleshooting commands, memory management, networking (sockets, PTP), UNIX/Linux history, and system resources like containers."
 ---
 
 ## Goals
-
-Writing this as I study for my interview with {{< inline-spoiler >}}TBA?{{< /inline-spoiler >}}.
 
 1. We need to be able to troubleshoot a system using different Linux commands such as ping / ps aux | vmstat
 2. We need to know how Linux works; what types of memory there are, how processes work, relationship between the kernel and user applications, etc.

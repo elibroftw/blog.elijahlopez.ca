@@ -5,6 +5,7 @@ tags:
   - tutorial
   - python
   - devops
+summary: "Troubleshoot and fix the 'unable to get local issuer certificate' SSL error when making HTTPS requests in Python, often caused by missing intermediate certificates in the server's chain."
 ---
 
 So you were trying to use `requests` or `httpx` to access a website, in my case my own, and you got an SSL verify error:

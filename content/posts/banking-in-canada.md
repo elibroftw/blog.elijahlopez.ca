@@ -5,6 +5,7 @@ draft: false
 tags:
   - canada
   - finance
+summary: "Guide to banking in Canada: budgeting, choosing accounts (Wealthsimple, KOHO, credit unions), credit cards, and cash withdrawal options."
 ---
 
 {{< toc >}}

@@ -5,6 +5,7 @@ draft: false
 tags:
   - university
   - computer-science
+summary: "An overview of key concepts from an introductory database management course, covering relational models, SQL, schema refinement, transactions, indexing, data analytics, and NoSQL systems."
 ---
 
 {{< toc >}}

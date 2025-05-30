@@ -5,6 +5,7 @@ draft: false
 tags:
   - monero
   - cryptocurrency
+summary: "How do these various privacy coins stack up to the largest one of them all?"
 ---
 
 {{< toc >}}

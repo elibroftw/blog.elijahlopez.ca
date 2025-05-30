@@ -2,6 +2,7 @@
 title: "Monero Transaction Scalability"
 date: 2023-04-16T17:00:21-04:00
 draft: true
+summary: "This post analyzes the transaction scalability of Monero, prompted by PayPal's annual transaction volume. It calculates the potential transaction volume Monero could handle based on its current average transaction size and block time, and estimates the annual data storage required. The post concludes that sustaining a high transaction volume is possible with infrastructure investment or the development of layer-2 solutions like Monero-based banks. It also briefly touches on the cost of storage over time."
 ---
 
 I was reading a case on PayPal today for my exam tomorrow, and a number that was highlighted was that Paypal processed 15.4 billion transactions annually. As a Monero fanboy, I wanted to see how effective Monero could be in the future when inevitability the base layer of transferring funds will be Monero. Either in a PayMonero fashion with KYC or a direct processing fashion.

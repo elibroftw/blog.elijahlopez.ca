@@ -1,12 +1,15 @@
 ---
 title: "XMR-BTC Atomic Swap ASB Guide"
 date: 2022-05-10T17:07:56-04:00
-draft: false
+draft: true
 tags:
   - monero
   - bitcoin
   - cryptocurrency
+summary: How to use comit-network/xmr-btc-swap to atomically swap Bitcoin and Monero
 ---
+
+Archived because not sure how useful it is.
 
 A tutorial made for myself, not really others because
 the [docs](https://github.com/comit-network/xmr-btc-swap/blob/master/docs/asb/README.md)

@@ -8,6 +8,7 @@ tags:
   - mobile
   - programming
   - tutorial
+summary: "Learn how to implement logging and use tracepoints in your Uno Platform applications for effective debugging and monitoring."
 ---
 
 Note that you will need to run with debugging (F5) for some logging and breakpoints/tracepoints to work.

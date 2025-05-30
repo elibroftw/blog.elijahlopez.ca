@@ -4,11 +4,14 @@ date: 2022-07-19T12:34:25-04:00
 draft: false
 tags:
   - review
+summary: "8GB of memory is just not enough anymore. Combined with poor battery life, 720p webcam, no dedicated GPU, bare-minimum storage, the laptop is a beater. I upgraded the storage to 1TB in 2024."
 ---
 
 {{< toc >}}
 
 ## Introduction
+
+I upgraded the storage to 1TB in 2024 LOL.
 
 ### Video
 

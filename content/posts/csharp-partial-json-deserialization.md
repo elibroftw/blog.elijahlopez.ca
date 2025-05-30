@@ -6,6 +6,7 @@ tags:
   - tutorial
   - c-sharp
   - asp.net
+summary: "C# tutorial on partial JSON deserialization using System.Text.Json.Nodes.JsonNode to extract specific data without full deserialization."
 ---
 
 <!-- { {< youtube TODO >} } -->

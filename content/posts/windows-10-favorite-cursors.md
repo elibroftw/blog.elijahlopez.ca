@@ -1,7 +1,10 @@
 ---
-title: "Windows 10 Favorite Cursors"
+title: "Windows 10 Favourite Custom Cursors"
 date: 2020-07-18T23:07:33-05:00
 draft: false
+tags:
+  - windows
+summary: "Some of my favourite Windows 10 cursor packs to enhance your desktop's aesthetic. Themes like 'Breeze Hacked,' 'Evolution OS,' and 'Window Better Black.' Learn how to customize your cursor experience."
 ---
 
 If you don't know how to install cursors, you may watch the tutorial I made below:

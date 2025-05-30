@@ -17,7 +17,8 @@ aliases:
   - /posts/how-to-fix-linux-touchpad-not-working-after-suspend/
   - /posts/how-to-fix-linux-touchpad-not-working-after-sleep/
   - /posts/how-to-fix-linux-touchpad-not-working-after-waking-from-suspend/
-  - /posts/how-to-fix-linux-touchpad-not-working-after-waking-from-sleep/
+  - /posts/how-to-fix-linux-touchpad-not-working-after-waking-from-suspend/
+summary: "Solution for Linux touchpad not working after suspend, including troubleshooting steps and an automation script."
 ---
 
 So the touchpad can no longer be used after you wake from sleep? Well I am here with the solution after trying countless distros and still having this problem. The laptop I use is the 2016 Razer Blade Stealth and the distro I've settled on is Fedora KDE. The specs and my 5 years later review can be found [here](/posts/razer-blade-stealth-late-2016/#specs).

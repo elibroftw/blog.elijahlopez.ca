@@ -7,6 +7,7 @@ tags: [
     "tutorial",
     "rust",
 ]
+summary: "Get started with Rust programming by learning how to set up and manage projects using Cargo, including installation, project initialization, basic code, and compiling/running."
 ---
 
 ## Installation

@@ -1,10 +1,13 @@
 ---
-title: "Linux: Run Process in the Background and Detach"
+title: "[Linux] Run Process in the Background and Detach"
 date: 2024-02-24T15:23:23-05:00
 draft: false
 tags:
   - tutorial
   - linux
+alias:
+  - /posts/linux-desktop-detach-process-from-terminal/
+summary: "Learn multiple methods to run Linux processes in the background and detach them from the terminal using commands like `disown`, `nohup`, and `dex`, with code examples."
 ---
 
 ### Using disown

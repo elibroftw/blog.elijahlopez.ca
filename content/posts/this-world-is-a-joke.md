@@ -6,6 +6,7 @@ tags:
   - opinion
   - rant
   - morality
+summary: "A rant on the lack of critical thinking globally, critiquing the tolerance of male genital mutilation and discussing the rationale for abortion rights."
 ---
 
 It is without a doubt that human beings en-masse aren't actually capable of critical thinking. There are many cultures in the world, and many countries with differing levels of economic power, and standards of living. There are countries that have been a democracy[^1] longer than others.

@@ -3,7 +3,8 @@ title: "On Trade Wars and Lowering a Trade-Deficit"
 date: 2025-04-22T01:51:34-04:00
 draft: false
 tags:
-- economics
+  - economics
+summary: Trump has been going on about Tariffs, but how could any country utilized tariffs for good? This post attempts to explore how tariffs on some goods and services can increase domestic economic opportunities without harming the working class.
 ---
 
 ## Tariffs on High Profit-Margin Goods

@@ -1,11 +1,14 @@
 ---
-title: "New Investment Portfolio Strategies"
+title: "Novel Investment Portfolio Strategies"
 date: 2024-02-29T14:36:16-05:00
 draft: false
 tags:
   - finance
   - investing
+summary: experiments we can do regarding active management
 ---
+
+This article is about active management, although a more important question to answer is **how to find** stocks that have the opportunity to generate alpha. For Passive ETF Investing, read [How to invest in the stock market](/posts/how-to-invest-in-the-stock-market#passive-etf-Investing).
 
 When people talk about portfolio weighting, there's usually only three that people are taught: market capitalization, price, equal.
 

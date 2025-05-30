@@ -6,6 +6,7 @@ tags:
   - cryptocurrency
   - cybersecurity
   - opinion
+summary: "Explains SIM swapping risks for SMS 2FA and advises against it for financial/email security, recommending authenticator apps and secure local storage for backup codes."
 ---
 
 A lot of companies provide their users with SMS for 2FA in case their users reuse passwords across multiple services. However, users who are forced to use SMS 2FA or choose to use SMS 2FA can be left completely insecure, especially with financially related services which oddly use non-token based 2FA (many crypto exchanges).

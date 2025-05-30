@@ -4,6 +4,7 @@ date: 2024-06-16T15:06:59-04:00
 draft: true
 tags:
     - politics
+summary: "A critique of the Green Party of Canada's sustainability platform. The author questions the party's undefined notion of 'the rich' whose consumption they aim to limit, their focus on Canadian population growth rather than global, and the lack of clarity on 'environmentally sustainable technologies.'"
 ---
 
 ## Sustainability

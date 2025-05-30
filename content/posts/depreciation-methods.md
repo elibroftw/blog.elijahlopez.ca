@@ -1,10 +1,11 @@
 ---
-title: "Depreciation Methods"
+title: "Depreciation Methods in Accounting"
 date: 2024-04-20T12:10:14-04:00
 draft: false
 tags:
   - accounting
   - finance
+summary: "Explaining various depreciation methods (Straight Line, Double Declining Balance, Units Used, Sum of the Years' Digits) and touching on Canada's Capital Cost of Allowance and deferred taxes."
 ---
 
 ## Straight Line

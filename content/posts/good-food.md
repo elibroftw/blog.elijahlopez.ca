@@ -1,9 +1,11 @@
 ---
 title: "Good Food"
 date: 2022-08-23T21:36:50-04:00
+hidden: true
 tags:
   - opinion
   - review
+summary: "Dishes and restaurants I would eat again."
 ---
 
 This is a list of good food I would not mind eating again.
@@ -71,7 +73,7 @@ but I liked it either way. The beef tasted slightly like mutton.
 
 ### Dave's Hot Chicken
 
-The best fried chicken I've had so far.
+The best fried chicken I've had so far.u
 
 ## Dine-in or Take Out Restaurants
 

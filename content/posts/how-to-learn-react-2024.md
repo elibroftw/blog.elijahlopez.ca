@@ -6,6 +6,7 @@ tags:
   - programming
   - tutorial
   - webdev
+summary: "A guide for backend engineers on learning React in 2024, covering setup, fundamentals, web tech, deployment, and testing."
 ---
 
 I saw a [post on reddit](https://www.reddit.com/r/reactjs/comments/1c89755/im_a_diehard_backend_engineer_where_to_learn_react/) today about a backend engineer wanting to learn React and of course the first comment assumes a backend engineer knows what `package.json` is.

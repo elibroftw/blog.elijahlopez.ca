@@ -5,6 +5,7 @@ tags:
   - canada
   - taxes
   - usa
+summary: "A simple guide for Canadians on how to fill out the W-8 BEN form for U.S. tax purposes."
 ---
 
 [Download the form.](https://www.irs.gov/pub/irs-pdf/fw8ben.pdf)

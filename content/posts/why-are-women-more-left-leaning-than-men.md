@@ -5,6 +5,7 @@ draft: true
 tags:
   - politics
   - thesis
+summary: "Exploring potential reasons why women tend to be more left-leaning than men, examining self-interest related to issues like abortion, public service, and health."
 ---
 
 Voting is done out of self-interest, therefore, this article's purpose to objectively figure out why women are generally more left leaning than men. That isn't to say that women can't be conservative, the article is here to figure out what is keeping women from voting for conservative parties.

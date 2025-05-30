@@ -2,6 +2,7 @@
 title: "How to Move EFI (MSR) System Partition"
 date: 2021-08-30T22:48:20-05:00
 draft: false
+summary: "Learn how to effectively move your EFI system partition to the start of the disk using GPARTED or AOMEI Partition Assistant. This guide covers step-by-step instructions for Windows and Linux users."
 ---
 
 To the start of the disk.

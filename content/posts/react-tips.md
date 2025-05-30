@@ -9,6 +9,7 @@ tags:
   - react
 aliases:
   - /posts/reactjs-tips
+summary: "This post provides various tips for React development, covering topics such as optimizing state updates with objects, using React Fragments instead of redundant divs, defining props in component parameters using object destructuring, organizing Context Providers with a `Providers.jsx` component, checking variable types, using a `useCookie` hook for simple storage, understanding the purpose of `useLayoutEffect`, using `useRef` for persistence, and ignoring variables from array destructuring."
 ---
 
 I'm only in the mood for writing down my thoughts, so I apologize for the upcoming messiness.

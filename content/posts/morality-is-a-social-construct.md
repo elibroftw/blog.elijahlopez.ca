@@ -4,9 +4,10 @@ date: 2024-01-02T21:12:17-05:00
 draft: true
 tags:
   - opinion
+summary: "This post argues that morality is a social construct, criticizing the hypocrisy of developed countries that condemn certain practices in other cultures while tolerating similar or worse practices domestically. The author uses examples like the ethical recruitment of international students in Canada, the UK's Online Safety Act, and the normalization of male circumcision in many countries to support this claim. The post also briefly touches on the author's rationale for supporting abortion rights based on property rights."
 ---
 
-I'm currently watching a video called [How recruiters in India use false promises to lure students to Canada - The Fifth Estate](https://youtu.be/dNrXA5m7ROM?si=XbkX2g41OjPPCrmq)
+I'm currently watching a video called [How recruiters in India use false promises to lure students to Canada - The Fifth Estate](https://youtu.be/dNrXA5m7ROM?si=XbkXg41OjPPCrmq)
 
 I'm already losing my mind. I don't know how non-Indians feel while watching this, but I absolutely despise the people taking advantage of young Indians.
 

@@ -9,6 +9,7 @@ tags:
   - asp.net
   - html
   - webdev
+summary: "Learn how to integrate Razor Pages into your ASP.NET Core Web API project to serve dynamic HTML content. This tutorial covers necessary configurations in Program.cs and demonstrates creating a basic HTML page with Razor syntax."
 ---
 
 Suppose you wanted to add html to your asp.net web api project, how would you go about it?

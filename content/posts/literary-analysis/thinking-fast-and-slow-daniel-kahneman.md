@@ -7,6 +7,7 @@ tags:
   - university
   - literary-analysis
 author: Daniel Kahneman
+summary: "Detailed analysis of Daniel Kahneman's 'Thinking, Fast and Slow,' exploring System 1 & 2, cognitive biases, and heuristics."
 ---
 
 ## Vocabulary

@@ -7,6 +7,7 @@ tags:
   - tutorial
   - c-sharp
   - asp.net
+summary: "Learn how to serialize enums as strings in ASP.NET Core for consistent JSON handling on both the backend and client-side using `JsonStringEnumConverter`."
 ---
 
 ## ASP.NET Backend

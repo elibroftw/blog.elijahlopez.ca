@@ -4,6 +4,7 @@ date: 2025-03-31T15:17:37-04:00
 draft: false
 tags:
   - review
+summary: "Review of FOSS video editors in 2025: Shotcut, KdenLive, OpenShot, and Olive. Recommends Shotcut and highlights pros and cons of each."
 ---
 
 ## Shotcut

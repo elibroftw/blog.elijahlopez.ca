@@ -4,6 +4,7 @@ date: 2024-11-30T16:27:42-05:00
 draft: true
 tags:
   - economics
+summary: "This post critiques the disconnect between the Consumer Price Index (CPI), indexed benefits, and the reality of poor people in Canada. It blames Brian Mulroney's policies, particularly cutting social housing and tying the GST rebate income cutoff to CPI, which reflects the average household basket, not the needs of the poor. The post argues that using income cutoffs for welfare benefits allows wealthy individuals with low income to benefit and proposes a 'CPI-poor' basket and a definition of poverty for better-targeted benefits."
 ---
 
 I definitely do not like spending my time online reading literal garbage that is published on the internet. This article is about how policy makers are stupid.

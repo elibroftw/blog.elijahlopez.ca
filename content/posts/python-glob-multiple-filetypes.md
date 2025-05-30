@@ -6,6 +6,7 @@ tags:
   - tutorial
   - programming
   - python
+summary: "Provides a Python function using `glob` to recursively find files with multiple extensions, highlighting robustness with `glob.escape` and efficiency with generators, and critiquing common online solutions."
 ---
 
 I'm writing this because I cannot believe how stupid developers on Stack Overflow are. There are two pages of answers to this question and none of them actually care about reusability, abstraction, and correctness.

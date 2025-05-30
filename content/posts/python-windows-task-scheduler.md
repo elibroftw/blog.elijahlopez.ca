@@ -5,6 +5,7 @@ tags:
   - tutorial
   - programming
   - python
+summary: "Learn how to schedule Python scripts to run automatically using Windows Task Scheduler. This guide covers creating a .bat file and configuring task settings for seamless background execution of your Python programs."
 ---
 
 To run python in the background is easy, to do it in the background and as a scheduled task is harder.

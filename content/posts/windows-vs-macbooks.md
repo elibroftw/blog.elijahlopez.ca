@@ -5,6 +5,7 @@ draft: false
 tags:
   - opinion
   - tech
+summary: "An opinionated comparison of Windows laptops and MacBooks, evaluating them based on performance, battery life, gaming, software, local AI, external monitor support, and user experience. The post argues for Windows laptops in specific scenarios and critiques macOS."
 ---
 
 So let's be clear. Until the snapdragon x elite CPU laptops have dropped, there are only a few reasons to purchase a Windows laptop over a MacBook. I won't deny the performance benefits of the M series chips, but I will dispute the battery life as it is only a couple hours better than a gaming laptop when faced with the same workload.

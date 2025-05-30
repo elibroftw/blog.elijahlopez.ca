@@ -4,6 +4,7 @@ date: 2022-12-15T17:35:13-05:00
 draft: false
 tags:
   - wisdom
+summary: "An exploration of the concept of greed, defining it as excessive wanting that negatively impacts others, and examining its manifestations in various aspects of life including finance, relationships, and personal desires."
 ---
 
 Greed is wanting so much that fulfilling your want would actually take away from someone else and thus have a negative impact on other people.

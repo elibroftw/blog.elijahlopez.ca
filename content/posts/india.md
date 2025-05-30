@@ -2,6 +2,7 @@
 title: "India"
 date: 2022-12-13T20:36:00-05:00
 draft: true
+summary: "This post discusses various issues related to India, including air pollution, the Kashmir conflict (analyzing which country, India or Pakistan, would benefit Kashmiris more based on language preservation), the Ayodhya dispute (arguing the court's decision to give the land to build a temple was justified based on property rights and historical worship), and socially conservative HOAs. The author also briefly touches on where to live in India."
 ---
 
 ## AIR POLLUTION

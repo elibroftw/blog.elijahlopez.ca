@@ -7,6 +7,7 @@ draft: false
 aliases: ["/unlisted/first/"]
 tags:
   - first
+summary: "This post tests if Hugo with the anubis theme works."
 ---
 
 This post tests if Hugo with the anubis theme works.

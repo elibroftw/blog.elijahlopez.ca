@@ -4,6 +4,7 @@ date: 2024-10-13T16:08:38-04:00
 draft: false
 tags:
   - review
+summary: "Review of a New York Times subscription, citing issues with bias, poor technology, mobile app ads, and excessive focus on US politics."
 ---
 
 The NYT sucks. Not only did it fail at ensuring there were no biases concerning the reporting on the ongoing war in the Middle East, their technology is hot garbage.

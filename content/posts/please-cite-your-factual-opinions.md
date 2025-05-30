@@ -5,6 +5,7 @@ draft: false
 tags:
   - opinion
   - life
+summary: "Argues for citing factual opinions and critiques the 'illusion of truth' online, using declining birth rates as an example."
 ---
 
 I recently thought about why birth rates in all developed countries except for Israel are declining.

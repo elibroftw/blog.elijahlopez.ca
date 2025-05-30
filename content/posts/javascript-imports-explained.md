@@ -6,6 +6,7 @@ tags:
   - programming
   - javascript
   - webdev
+summary: "This post explains JavaScript ES6 imports, contrasting them with NodeJS `require`. It details importing default exports (without braces) and named exports (with braces), including renaming imports. It also covers mass importing and exporting using `index.js` files and the `import * as` syntax, providing code examples for each concept."
 ---
 
 If you work extensively with NodeJS, you probably already know of `require('express');`

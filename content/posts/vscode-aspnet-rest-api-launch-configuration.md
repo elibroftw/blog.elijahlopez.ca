@@ -8,6 +8,7 @@ tags:
   - c-sharp
   - asp.net
   - vscode
+summary: "Configure your ASP.NET Core Web API project for debugging in Visual Studio Code using a custom `launch.json` file, enabling a native development experience."
 ---
 
 Suppose you want to be able to work on your ASP.NET application in Visual Studio as well as Visual Studio Code. Sure you can use the run feature of the Solution Explorer extension in Visual Studio Code, but that's not a native feeling.

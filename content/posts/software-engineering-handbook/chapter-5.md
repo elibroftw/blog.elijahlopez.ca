@@ -3,6 +3,7 @@ title: "Chapter 5 - Principles of Software Engineering"
 date: 2025-03-05T15:50:15-05:00
 draft: true
 aliases: ["/posts/software-engineering-handbook/chapter-5"]
+summary: "This post, 'Chapter 5 - Principles of Software Engineering' of 'The Software Engineering Handbook,' discusses key principles for creating quality software, emphasizing respecting the end user through intuitive, well-documented, flexible, and integrable software. It highlights the importance of good documentation for software libraries, including documentation builders, and stresses practicality and providing working examples. The post also touches on the philosophy of designing software for the 'best' use cases and increasing the quality of learning materials."
 ---
 
 I wrote some of this chapter in 2022 because it was a year of broken software, where "mature" software had basic issues:

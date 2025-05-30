@@ -5,6 +5,7 @@ draft: true
 tags:
   - politics
   - economics
+summary: "This post defines 'far-left' as positions beyond communism, arguing they hinder leftist progress. It provides examples: defending the Venezuelan government despite questionable elections and sanctions, misunderstanding capital markets and opposing non-cooperative business structures, and advocating for price controls on agriculture without understanding market economics. The author critiques these stances as lacking economic understanding and being counterproductive."
 ---
 
 Here's a few things that makes a person far-left, which in my books is left to a communist. Yes you heard that right, being a commie isn't far left, it's the people who take it further than just believing in a set of core principles. There's a difference between having an opinion on what the best economic system is, versus actively defending unethical and immoral foreign regimes or promoting policies that back fire due to a lack of understanding of the economic system. Look no further than the first reason.

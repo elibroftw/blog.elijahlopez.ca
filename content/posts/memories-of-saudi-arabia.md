@@ -4,6 +4,7 @@ date: 2023-02-03T23:56:22-05:00
 draft: false
 tags:
   - memories
+summary: "Recollections of childhood memories from living in Riyadh, Saudi Arabia around 2005-2006, including everyday moments, significant events, and cultural experiences."
 ---
 
 These are some of my oldest memories somewhere from 2005-2006. According to my dad we were living in the city of Riyadh.

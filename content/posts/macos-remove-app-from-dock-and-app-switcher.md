@@ -6,6 +6,7 @@ tags:
   - macos
   - swift
   - tutorial
+summary: "This developer tutorial for SwiftUI on macOS explains how to hide an app from the Dock and App Switcher when its window is closed, which is useful for apps that run primarily as a status menu item. It covers using `LSUIElement` in `Info.plist` to hide the app by default, and `NSApp.setActivationPolicy(.regular)` and `NSApp.setActivationPolicy(.accessory)` to show and hide the app in the Dock programmatically. The post provides code examples for an `AppDelegate` and a simple SwiftUI app structure to achieve this behavior, including how to detect window closure and bring the app back to the front from the status bar."
 ---
 
 Another way to call this would be "hiding icon from dock"

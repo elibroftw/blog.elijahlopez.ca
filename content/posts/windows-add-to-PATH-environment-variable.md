@@ -5,6 +5,7 @@ draft: false
 tags:
   - windows
   - tutorial
+summary: "A concise step-by-step tutorial with screenshots on how to add a directory to the PATH environment variable on Windows using the graphical interface."
 ---
 
 In this concise guide, you will learn how to add a directory to the Path environment variable on Windows.

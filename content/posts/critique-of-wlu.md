@@ -6,6 +6,7 @@ tags:
   - opinion
   - university
   - review
+summary: "A detailed critique of Wilfrid Laurier University from a dual-degree student, covering issues with housing, culture, and various academic programs and practices."
 ---
 
 ## Introduction

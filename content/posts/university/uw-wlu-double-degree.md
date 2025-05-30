@@ -4,10 +4,10 @@ date: 2021-12-17T21:36:13-05:00
 draft: false
 tags:
   - university
+summary: "What you should know about the program and the University environment from someone who attended from 2019 - 2024."
 ---
-I started my double degree BCS and BBA journey in Fall 2019.
-Here are some things you should know about the program plus the University environment.
-I'll start with the tips so that this post is useful for everyone.
+
+I started my double degree BCS and BBA journey in Fall 2019. Here are some things you should know about the program plus the University environment. I'll start with the tips so that this post is useful for everyone.
 
 {{< toc >}}
 

@@ -5,6 +5,7 @@ tags:
   - canada
   - opinion
   - politics
+summary: "A critique arguing Canada has worsened under Justin Trudeau's leadership, detailing controversies like SNC-Lavalin, WE Charity, and ArriveCAN, and criticizing policies on housing, immigration, taxes, and criminal justice."
 ---
 
 These days, chronically online Canadians are absolutely wild. They complain about bills that they didn't even read.

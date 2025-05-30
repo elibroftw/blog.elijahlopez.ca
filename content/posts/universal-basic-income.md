@@ -4,6 +4,9 @@ date: 2022-09-28T01:07:41-04:00
 draft: false
 tags:
   - economics
+summary: "Theorizes the potential of Universal Basic Income (UBI) to boost innovation and wages by offering financial security for R&D, and discusses related concepts such as patent law reform and merit-based funding."
+aliases:
+  - /posts/how-a-universal-basic-income-could-improve-innovation-and-raise-wages.md/
 ---
 
 I often hear about profit and wage complainers. People who think companies are not entitled to any increase in profits and that workers are entitled to wage increases due to a non-casual productivity increase; By this I mean that productivity has outpaced real wages not because the workers got more skillful, but because workers required less skills and abilities due to an efficiency in the technology used by workers.

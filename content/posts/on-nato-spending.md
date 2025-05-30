@@ -5,6 +5,7 @@ draft: true
 tags:
   - politics
   - economics
+summary: "Critique of NATO spending based on GDP. Argues for metrics like tax revenue or spending per soldier, sustainable targets, and prioritizing domestic needs."
 ---
 
 1) it should be percentage of tax revenue, not percentage of GDP. What if a countries GDP was composed of non taxable activities like selling primary houses? Or how about spending per soldier instead? Any % GDP goal metric ends up having influence over tax policies. There won't be any tax relief if all international agreements end up being % GDP contributions. How about an interest expense limit? We already spend 6% of Rev on interest every year. That's nuts since the government doesn't even have a tax benefit of debt. It's a literal payout to banks. 24B.

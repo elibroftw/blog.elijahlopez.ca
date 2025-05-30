@@ -6,6 +6,7 @@ tags:
    - opinion
    - morality
    - ethics
+summary: "This post explores the difficulty of defining objective morality and ethics, arguing that while simple in core concepts (like not impeding rights or causing harm), they become subjective in application due to differing societal views and personal interpretations. It questions the definition of murder and the morality of actions like buying excessive resources during a shortage. The author aims to delve deeper into morality by questioning basics and addressing nuances."
 ---
 
 DISREGARD

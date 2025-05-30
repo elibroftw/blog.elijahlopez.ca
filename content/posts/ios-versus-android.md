@@ -3,6 +3,7 @@ title: "iOS Versus Android"
 date: 2023-04-18T16:55:02-04:00
 draft: false
 tags:
+summary: "Comparing iOS and Android, arguing that Android has matched or exceeded iOS in many areas, leaving few compelling reasons for an iPhone beyond specific use cases, and discussing the broader Mac vs. Windows debate."
 ---
 
 There's only a couple reasons to get an iPhone.

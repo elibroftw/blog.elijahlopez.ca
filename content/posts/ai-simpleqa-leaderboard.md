@@ -4,6 +4,7 @@ date: 2025-05-02T18:50:57-04:00
 draft: false
 tags:
   - ai
+summary: "Compare AI model factuality with the SimpleQA leaderboard. Includes scores for AIME'25 (Math), Chatbot Arena, and ArenaHard benchmarks."
 ---
 
 ### Benchmark Descriptions

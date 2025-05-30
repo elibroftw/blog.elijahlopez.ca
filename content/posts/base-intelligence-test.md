@@ -2,6 +2,7 @@
 title: "Base Intelligence Test"
 date: 2022-03-23T21:45:08-04:00
 draft: true
+summary: "This post presents a short 'base intelligence test' with four questions. The first three are math problems involving speed, distance, and time, designed to test basic calculation, mental math, and understanding of percentages. The fourth question is a grammar problem about sentence correctness."
 ---
 
 Let's start with a classic.

@@ -4,6 +4,7 @@ date: 2024-03-12T17:03:15-04:00
 hidden: true
 tags:
   - politics
+summary: "Argues that Israel's current government is anti-peace and anti-Palestine due to its support for illegal settlements and the composition of the Knesset, analyzing various political parties' stances."
 ---
 
 The parliamentary body of Israel is called the Knesset which has 120 seats. The current (37th) government is an alliance between Likud and other parties. This article is a reference for why peace in the middle east cannot be achieved even if all violence ceased to exist from the Palestinian side. The takeaway for readers of this article is not that Palestinian violence is justified but rather that the lack of violence would not result in Palestinian sovereignty.

@@ -7,6 +7,7 @@ tags:
   - jenkins
   - groovy
   - devops
+summary: "Groovy code snippets for Jenkins, for example how to safely abort outdated builds and retrieve build logs."
 ---
 
 ## Ignorable Preface

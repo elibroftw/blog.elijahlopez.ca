@@ -3,6 +3,7 @@ title: "Chapter 2 - Introduction to Programming"
 date: 2025-03-05T15:50:15-05:00
 draft: true
 aliases: ["/posts/software-engineering-handbook/chapter-2"]
+summary: "This post, 'Chapter 2 - Introduction to Programming' of 'The Software Engineering Handbook,' discusses learning a first programming language, recommending Python for its ease of use while acknowledging the importance of learning multiple languages and statically typed languages later. It covers Python basics, essential data structures, using an IDE, and scripting with Python, Bash, and Powershell, including shebangs and running scripts. The chapter concludes with a scripting tutorial idea involving image processing."
 ---
 
 The purpose of learning how to program is to eventually gain enough skills to program something, or in other words, learn enough to create a _software project_. This chapter will focus on learning your first programming language, which will either click for you or not.

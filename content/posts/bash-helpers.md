@@ -8,6 +8,7 @@ tags:
   - devops
   - bash
   - linux
+summary: "A collection of Bash and Linux helper scripts and concepts. It covers Bash argument parsing with flags (alternative to getopts), conditional logic, and loops. Includes snippets."
 ---
 
 It seems that many article tutorials on `bash` are ugly, are suboptimal, and are not straight forward.

@@ -5,6 +5,7 @@ draft: false
 tags:
   - tutorial
   - devops
+summary: "This tutorial provides a succinct guide on generating a Certificate Signing Request (CSR) using `openssl`. It covers generating a private key, creating a CSR configuration file, generating the CSR itself, and reading the CSR content."
 ---
 
 ```sh

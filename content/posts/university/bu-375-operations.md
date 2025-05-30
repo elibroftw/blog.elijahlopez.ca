@@ -4,12 +4,12 @@ date: 2022-06-04T10:23:48-04:00
 draft: false
 tags:
   - university
+summary: Notes and midterm review for the BU 375 Operations course taught at Wilfrid Laurier University.
 ---
 
 <!-- markdownlint-disable MD033 -->
 
-This document are my notes and midterm review for the BU 375 Operations course taught at Wilfrid Laurier University. While studying for the midterm, I discovered my own formulae shortcuts, undoubtedly due to "blind teaching syndrome" (I made that term up).
-So let's begin. I'll add a divider to let you know what is part of the midterm.
+While studying for the midterm, I discovered my own formulae shortcuts, undoubtedly due to "blind teaching syndrome" (I made that term up). So let's begin. I'll add a divider to let you know what is part of the midterm.
 
 {{< toc >}}
 

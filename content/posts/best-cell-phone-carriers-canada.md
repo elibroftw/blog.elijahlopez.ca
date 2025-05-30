@@ -6,6 +6,7 @@ tags:
   - canada
   - tech
   - opinion
+summary: "Review of Canadian cell phone carriers for individuals based on Boxing Day 2023 deals, ranking Public Mobile first for its website and plans, followed by Freedom Mobile, Virgin Plus, Koodo, and Fido."
 ---
 
 So I got a look at the boxing day deals and all the 4 carriers had $34 for 50GB of data per month. I thought I had a good deal at $39 for 25GB per month! I even fought on the phone with Koodo about it during the summer since they were offering 20GB for $39 at the time and I was paying $40 for 6GB. I had switched to Koodo from Fredumb Mobile either in 2022 or something.

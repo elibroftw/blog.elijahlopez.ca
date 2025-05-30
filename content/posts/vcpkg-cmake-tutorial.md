@@ -9,6 +9,7 @@ tags:
   - vcpkg
   - cmake
   - vscode
+summary: A straight-forward tutorial to help C++ projects organize as cross-platform ready
 ---
 
 ## Trouble Shooting

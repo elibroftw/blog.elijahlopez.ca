@@ -7,6 +7,7 @@ tags:
   - tutorial
   - rust
   - rocket.rs
+summary: "Learn how to make network requests in Rust using the `reqwest` crate, handle JSON responses with `serde_json`, and integrate requests within a Rocket web framework backend."
 ---
 
 Add this to your [`Cargo.toml`](/posts/rust-getting-started.md) file

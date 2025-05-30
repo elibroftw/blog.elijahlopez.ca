@@ -7,6 +7,7 @@ tags:
   - programming
   - python
   - windows
+summary: "Tutorial on making Windows apps start on login by adding a registry value, including the registry key and a Python code example for programmatic control."
 ---
 
 To start an app on login on Windows, you must add a REG_SZ value to the registry key `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Run`.

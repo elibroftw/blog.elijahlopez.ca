@@ -7,6 +7,7 @@ tags:
   - canada
   - taxes
   - usa
+summary: "Tutorial for Canadians: withdraw USD from Deel to Wise without US bank details, using Wise UK GBP account for transfers."
 ---
 
 So recently, my coworker and I who reside in Canada started getting paid in USD on Deel. One of the ways we could withdraw money is to open a US branch account with one of the big banks (RBC, TD, BMO, etc.), withdraw from Deel, transfer the money to a US dollar account in Canada, and if you don't want to do Norbert's Gambit in a direct investing account bi-weekly, you can pay 200+ basis points of FX fees to convert to CAD. That's assuming the direct investing account even supports DIY Norbert's Gambit (RBC does).

@@ -4,6 +4,7 @@ date: 2025-05-02T22:55:04-04:00
 draft: false
 tags:
   - ai
+summary: "Explore a bleeding-edge list of AI: models (open-source & proprietary), benchmarks, and applications (chat, image/video/audio, dev tools, and more)."
 ---
 
 Please drop a comment if you think something is missing or want something added.

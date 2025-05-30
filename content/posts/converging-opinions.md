@@ -3,6 +3,7 @@ title: "Figuring Out the Most Correct Opinion"
 date: 2022-03-18T21:33:17-04:00
 draft: false
 hidden: true
+summary: "How do we determine the 'most correct opinion' on complex topics? Simple surveys and comparisons are insufficient. As history as proven, Democracy does guarantee that the truth prevails."
 ---
 
 Given thousands of arguments where the most sound

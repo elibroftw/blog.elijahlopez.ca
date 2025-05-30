@@ -6,6 +6,7 @@ tags:
   - apple
   - ipad
   - macos
+summary: "Compilation of tasks a MacBook or computer can do that an iPad cannot, covering file management, software, development, and more."
 ---
 
 Here is a compilation of tasks that an iPad can't do that a Macbook / computer can do. For some tasks, I've added examples and implications.

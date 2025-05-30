@@ -6,6 +6,7 @@ tags:
   - university
   - cybersecurity
   - computer-science
+summary: "Detailed notes and summaries from a university course on Security, covering security goals, threats, defenses, program security, OS security, mobile security, ethics, laws, blockchain, vulnerabilities, and bug finding/defenses."
 ---
 
 ## Introduction

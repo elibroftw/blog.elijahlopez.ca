@@ -3,6 +3,7 @@ title: "Glossary - Software Engineering Handbook"
 date: 2025-03-05T15:50:15-05:00
 draft: true
 aliases: ["/posts/software-engineering-handbook/glossary"]
+summary: "This post, 'Glossary - Software Engineering Handbook,' provides definitions for key terms used throughout the handbook. It defines terms such as application, coupled, libraries, network request, server, tech stack, tech debt, and piping, offering concise explanations to help readers understand the terminology used in software engineering."
 ---
 
 _application_: an application can be anything that would exist digitally/virtually and does some sort of interactivity. For example, Jill is writing an application that tracks car price data from various sources on the internet

@@ -5,6 +5,7 @@ draft: false
 tags:
   - canada
   - politics
+summary: "Explore Pierre Poilievre's key housing affordability policies for Canada, including tying immigration to home building, linking infrastructure funding to municipal housing completion, converting federal buildings to housing, and removing GST on new homes under $1.3M. This post analyzes each policy and contrasts them with alternative approaches."
 ---
 
 {{< toc >}}

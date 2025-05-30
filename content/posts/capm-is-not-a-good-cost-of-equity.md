@@ -5,6 +5,7 @@ draft: false
 tags:
   - finance
   - opinion
+summary: "Critiques the CAPM for calculating cost of equity, arguing its assumptions are flawed and suggesting using an investor's required rate of return instead, emphasizing insight over IQ in investing."
 ---
 
 ### CAPM Assumptions are Not True

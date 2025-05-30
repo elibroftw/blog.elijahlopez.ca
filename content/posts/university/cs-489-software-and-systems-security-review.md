@@ -1,5 +1,5 @@
 ---
-title: "I Advise Against Taking CS 489 Software and Systems Security (University of Waterloo)"
+title: "CS 489 Software and Systems Security Review"
 date: 2024-04-03T14:49:36-04:00
 draft: false
 tags:
@@ -8,6 +8,7 @@ tags:
   - cybersecurity
   - computer-science
   - review
+summary: Why I advise against taking CS 489 Software and Systems Security at the University of Waterloo.
 ---
 
 I took CS 489/698 Software and Systems Security this past Winter term (2024) and I have to say, it's in the top 5 courses that have been a waste of time, money, and stress. I do not recommend it. 3/4 Assignments are related to the content but they expect you to learn from google and LLMs to figure out how to solve them, even though the starting directives are not enough.

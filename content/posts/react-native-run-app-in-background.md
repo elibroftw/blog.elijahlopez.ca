@@ -2,6 +2,7 @@
 title: "React Native Run App in Background (Foreground Service)"
 date: 2023-08-27T02:44:17-04:00
 draft: true
+summary: "This post provides a tutorial on implementing a foreground service in React Native for Android to keep an app running in the background, using the `notifee` library. It covers adding necessary permissions to `AndroidManifest.xml`, setting up `notifee` with notification channels and groups for different types of notifications, and registering a foreground service to perform tasks while the app is in the background."
 ---
 
 So first, let's get the terminology out of the way. You may have searched up background and I may have used

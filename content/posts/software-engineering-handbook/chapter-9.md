@@ -5,6 +5,7 @@ draft: true
 aliases:
 - /posts/software-engineering-handbook/chapter-9
 - /posts/software-deployment
+summary: "This post, 'Chapter 9 - Deployment' of 'The Software Engineering Handbook,' provides a guide to deploying full-stack applications, focusing on migrating from Heroku to DigitalOcean as a case study. It covers configuring application servers (like using gunicorn for Flask), containerizing applications with Docker (including examples for Flask and ASP.NET), and managing production environments using tools like Ansible for single VPS deployments or Kubernetes for distributed systems. The post emphasizes the benefits of containers for environment consistency and simplified deployment."
 ---
 
 It was Summer 2018. I just learned how to use Flask, HTML, CSS, and JavaScript. I wanted to deploy my website. I didn't own a domain at the time, so I found Heroku's free tier. It would be one more year till I got my visa debit card. All was well, and a few years later, I even bought a domain, [elijahlopez.ca](https://elijahlopez.ca). However, to use this domain with https enabled, I also needed to purchase an SSL certificate ($35) (Heroku doesn't you use Let's Encrypt easily). Then in 2022, Heroku (owned by SalesForce), announced the removal of free plans. What did that mean for me? It meant that I would be paying $1/month more just for hosting. I didn't have free time on my hands then, but I knew I would ideally deploy my website on a VPS like DigitalOcean.

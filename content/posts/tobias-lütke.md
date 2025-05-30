@@ -4,6 +4,7 @@ date: 2024-11-19T20:34:51-05:00
 draft: false
 tags:
   - opinion
+summary: "A response to Shopify CEO Tobias Lütke's anti-union statements, arguing against his position on the Canada Post strike and criticizing anti-union arguments."
 ---
 
 Should government employees be allowed to exercise their constitutionally protected right to collective bargaining?

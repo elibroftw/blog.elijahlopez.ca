@@ -5,6 +5,7 @@ draft: false
 tags:
   - monero
   - cryptocurrency
+summary: "A curated list of Monero resources, including recommended wallets and payment gateways, with insights on open-source options and integrations."
 ---
 
 {{< toc >}}

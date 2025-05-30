@@ -7,6 +7,7 @@ tags:
   - opinion
   - politics
 hidden: true
+summary: "A comprehensive look at Canada: tackling housing affordability with demand/supply policies; envisioning an ideal life (housing, income); redefining government's role in innovation, taxes, defense, and social programs; and outlining a personal political platform for reform."
 ---
 
 This article will be the one stop shop for my thoughts on Canada.

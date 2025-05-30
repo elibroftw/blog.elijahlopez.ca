@@ -4,6 +4,7 @@ date: 2023-05-09T12:26:05-04:00
 draft: false
 tags:
   - university
+summary: "Notes for CS 492 Social Implications of Computing, exploring technology's impact on society, privacy, security, communication, addiction, e-voting, and cryptocurrencies."
 ---
 
 [course website](https://student.cs.uwaterloo.ca/~cs492/23Spublic_html/)

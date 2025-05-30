@@ -6,6 +6,7 @@ tags:
   - programming
   - webdev
   - mobile
+summary: "Create mobile-responsive designs for websites using HTML and CSS (and React?). Meta tags, CSS media queries, and desktop-first CSS design."
 ---
 
 Tutorials nowadays just regurgitate the wrong information! Here's the right way to do mobile responsive design. The key is to use

@@ -4,6 +4,7 @@ date: 2024-04-25T13:24:22-04:00
 draft: false
 tags:
   - economics
+summary: "Explaining the causes of the Great Depression: gold standard, bank runs, lack of regulation, stock market crash, shrinking money supply, and trade policies."
 ---
 
 ## What Happened

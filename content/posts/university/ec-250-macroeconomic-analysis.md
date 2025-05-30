@@ -5,6 +5,7 @@ draft: false
 tags:
   - university
   - economics
+summary: "Detailed notes and summaries from an EC 250 Macroeconomic Analysis course, covering national income, GDP, saving, wealth, inflation, interest rates, productivity, labor, unemployment, consumption, investment, open economy, business cycles, IS-LM-FE model, Phillips curve, monetary policy, government finance, and economic growth."
 ---
 
 ## Course Takeaways

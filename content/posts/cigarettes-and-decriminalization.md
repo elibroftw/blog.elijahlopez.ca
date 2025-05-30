@@ -5,6 +5,7 @@ draft: true
 tags:
   - canada
   - politics
+summary: "This post argues that governments should take a stronger stance against harmful products like cigarettes, contrasting their legal status with psychedelics. It suggests either legalizing and taxing all drugs based on harm level or gradually increasing cigarette taxes and banning them after a decade. The author proposes a framework for allowing personal choices based on education, lack of direct harm to others, and deterrent taxes, while also noting the issue of black markets if taxes are too high."
 ---
 
 If the goal of the government is to protect its citizens, it should be taking a more harder stance against products and services that serve a substitutable purpose. Cigarettes are proof that there is a big conspiracy going on that the government bows down to companies that are raking billions of dollars. We know cigarettes cause cancer. We also know psychedelics do not cause cancer. However, the cancer causing product is legally taxed, and psychedelics are available in the grey (BC) or black market.

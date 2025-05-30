@@ -5,6 +5,7 @@ draft: false
 tags:
   - university
   - computer-science
+summary: "Notes from a university course on Computer Networks, covering the OSI model, network core, protocols (HTTP, DNS, TCP, IP), and network performance."
 ---
 
 ## Overview of the Internet

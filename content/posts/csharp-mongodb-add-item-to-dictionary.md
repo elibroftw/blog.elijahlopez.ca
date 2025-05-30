@@ -6,6 +6,7 @@ tags:
   - programming
   - tutorial
   - c-sharp
+summary: "C# tutorial on adding items to a MongoDB Dictionary field using the $push operator, demonstrating the array-of-documents approach."
 ---
 
 To add an item to a Dictionary field in a MongoDB collection - say `JoinRequests` of the `Ride` collection - treat the dictionary field an array and utilize the `$push` operator. I do not like the k, v extra outlining, but this is the only way I found that works with dots in the key. If you find an atomic way that can treat the dictionary as a Document and

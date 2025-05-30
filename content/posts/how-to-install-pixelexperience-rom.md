@@ -4,6 +4,7 @@ date: 2023-04-15T22:49:46-04:00
 tags:
   - mobile
   - android
+summary: "A detailed tutorial on installing and rooting PixelExperience ROM on OnePlus 6T, covering backup, tools, firmware upgrade, bootloader unlock, flashing (including dynamic partitions), Magisk rooting (SafetyNet), and troubleshooting common issues."
 ---
 
 Installing the PixelExperience ROM took me more than 4 hours of my time and took a week total from the time I first tried installing the ROM. Some feedback for Android Custom ROM developers and tutorial writers/youtubers are: link to instructions in the original XDA post, do not assume that the user knows how to "enter" a recovery image, write thorough instructions rather than one portion of it, and stop promoting incorrect and unhelpful instructions. I have put everything I've learned together here for you and me to extend our phone's life.

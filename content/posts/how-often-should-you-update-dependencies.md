@@ -5,6 +5,7 @@ draft: false
 tags:
   - programming
   - opinion
+summary: "Argues for weekly dependency updates and outlines an iterative process for updating crucial feature dependencies, including reading changelogs, fixing bugs, and testing."
 ---
 
 Every time you start working on a project, you should update your dependencies (weekly).

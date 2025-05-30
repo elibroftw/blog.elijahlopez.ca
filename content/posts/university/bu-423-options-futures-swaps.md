@@ -8,6 +8,7 @@ tags:
   - investing
 alises:
   - /posts/university/bu-423
+summary: "Detailed notes and summaries from a university course on Options, Futures & Swaps, covering derivative types, market mechanics, hedging, interest rates, pricing, swaps, securitization, financial crises, and volatility."
 ---
 
 {{< toc >}}

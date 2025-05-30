@@ -6,6 +6,7 @@ tags:
   - tutorial
   - programming
   - python
+summary: "Learn how to use Python 3's built-in `http.server` module to start a simple HTTP server."
 ---
 
 ## Code

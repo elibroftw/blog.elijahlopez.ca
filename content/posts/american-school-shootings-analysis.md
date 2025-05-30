@@ -4,6 +4,7 @@ date: 2022-08-23T14:22:33-04:00
 tags:
   - politics
 hidden: true
+summary: "Examines US school shootings, focusing on Columbine and Sandy Hook, and proposes solutions including stricter federal gun control, improved school safety, and addressing parental responsibility."
 ---
 
 For the last two decades, democrats and republicans have failed their country. Failed the children of their voters.

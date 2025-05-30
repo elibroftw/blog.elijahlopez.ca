@@ -7,6 +7,7 @@ tags:
   - ssh
   - vscode
 aliases: ['/posts/vs-code-remote-ssh/']
+summary: "Integrate SSH into VS Code for seamless remote development without constant password prompts. Learn how to generate and add SSH keys, troubleshoot connection issues, and configure proxy jump for enhanced workflow."
 ---
 
 In this tutorial we'll integrate SSH into VS Code in a way that won't require entering a password every time.

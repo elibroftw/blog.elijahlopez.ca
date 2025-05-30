@@ -4,6 +4,7 @@ date: 2023-06-01T20:43:19-04:00
 tags:
   - opinion
   - morality
+summary: "An opinion piece arguing that Mark Zuckerberg and the Metaverse project are moral failures, criticizing the investment of billions into a virtual world while real-world problems persist and discussing the ethics of directing vast wealth towards projects that don't benefit humanity."
 ---
 
 Imagine being the CEO of a corporation with billions of dollars of which you are also the majority shareholder. Not only do you control billions of dollars personally but you control a corporation with billions of dollars in cash in the bank.

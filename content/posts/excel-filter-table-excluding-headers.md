@@ -6,6 +6,7 @@ tags:
   - excel
   - finance
   - tutorial
+summary:  This Excel tutorial demonstrates how to use the FILTER formula to extract data from a table while excluding headers. This formulas also filters based on a condition (e.g., non-blank status).
 ---
 
 Enter a variant of the formula below where Table1 is the name of the table (Ctrl + T to create tables in Excel). Since we are using a formula in another sheet, it might be prudent to place this on row 3 to make room for custom headers on row 1 and custom data (or another filter) on row 2.

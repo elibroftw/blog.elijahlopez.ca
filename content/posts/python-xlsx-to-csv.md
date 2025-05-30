@@ -6,6 +6,7 @@ tags:
   - tutorial
   - programming
   - python
+summary: "A fast Python method to convert XLSX files to CSV on Windows using `win32com.client`, requiring Microsoft Excel. Includes a Python function and basic command-line usage."
 ---
 
 Try using https://github.com/dilshod/xlsx2csv first.

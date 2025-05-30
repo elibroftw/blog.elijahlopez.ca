@@ -6,6 +6,7 @@ tags:
   - tutorial
   - programming
   - python
+summary: "Learn how to automate the conversion of Word files to PDF using a Python script on Windows. This guide leverages the win32 API to efficiently export documents, ideal for handling multiple files and streamlining your workflow."
 ---
 
 NOTE: Windows tutorial.

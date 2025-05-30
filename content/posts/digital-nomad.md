@@ -4,6 +4,7 @@ date: 2024-11-03T17:24:10-05:00
 draft: true
 tags:
   - travel
+summary: "This post is a digital nomad guide summarizing research based on criteria like affordable rent (<$1500 USD), warm climate, daily swimming, preferred timezones (EST or CEST), avoiding the USA, and cheap flights to snowy places. The author's first planned tour is to Spain (Magaluf, Majorca) over Portugal or Southeast Asia due to language, proximity to Central Europe, and travel options. It also lists other potential locations and blacklisted countries with reasons."
 ---
 
 {{< toc >}}

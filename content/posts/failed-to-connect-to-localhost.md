@@ -5,6 +5,7 @@ draft: true
 tags:
   - mobile
   - android
+summary: "This post provides a solution for the 'Failed to connect to localhost/127.0.0.1' issue when trying to consume a locally running API from a mobile device. The fix involves using the local IPv4 address of the machine running the API instead of 'localhost' or '127.0.0.1'. It includes instructions for finding the IPv4 address on Windows and Linux and demonstrates how to update the base URL in a C# application."
 ---
 
 I wanted to consume a localhost API I had running on localhost/127.0.0.1:7065. So to fix this issue, instead

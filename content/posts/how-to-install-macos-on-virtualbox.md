@@ -8,6 +8,7 @@ tags:
   - tutorial
   - mobile
   - virtual-box
+summary: "Tutorial on installing macOS 12 Monterey on VirtualBox on Windows 11 (AMD CPUs), covering setup, configuration, installation steps, and troubleshooting."
 ---
 
 Update: I ended up purchasing a macbook air :(

@@ -5,6 +5,7 @@ draft: false
 tags:
   - opinion
   - philosophy
+summary: "Exploring the three pillars of integrity: Intelligence, Ethics, and Philosophy. Discusses how to gauge these qualities in individuals."
 ---
 
 When deciding whether to fully trust someone, it is synonymous with that person being of integrity. These are the three pillars I apply. Of course trust itself is very basic. We can trust people with the smallest of tasks even if they lack any of these three characteristics! For example, a hedge fund can trust a trader to work, regardless of if that trader is ethical and regardless if that trader has "those" opinions. Another example is a fast food chain that doesn't care whether the worker is intelligent, ethnical, nor philosophical.

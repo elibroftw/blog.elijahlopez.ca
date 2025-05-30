@@ -2,6 +2,7 @@
 title: "Data Sources to Watch Out For"
 date: 2023-09-08T14:18:12-04:00
 draft: false
+summary: "Lists market research and intelligence firms to be cautious about, based on a source suggesting they may not be reliable."
 ---
 
 [Source](https://ipvm.com/reports/scam-research)

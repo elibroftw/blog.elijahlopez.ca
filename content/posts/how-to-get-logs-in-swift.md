@@ -5,6 +5,7 @@ draft: false
 tags:
   - swift
   - macos
+summary: "Swift code for retrieving application and system logs on macOS using OSLogStore, with examples for accessing and filtering logs."
 ---
 
 Here is the following code if you need to get your app's logs as well as system logs through Applications code. The docs will tell you that the `.system` scope requires administration, but the reality is that by using the `local` log store, you can still get the system logs. [OSLogStore on Monterey by Michael Tsai](https://mjtsai.com/blog/2021/12/10/oslogstore-on-monterey/).

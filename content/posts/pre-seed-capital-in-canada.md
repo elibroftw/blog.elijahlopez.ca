@@ -8,7 +8,7 @@ tags:
   - finance
 aliases:
   - /posts/pre-seed-venture-capital-in-canada
-summary: A list of venture capital firms in Canada that do pre-seed funding. The list is sorted by funding amount in descending order
+summary: Discover Canadian pre-seed venture capital firms. This list is sorted by funding amount and highlights VCs investing in early-stage startups.
 ---
 
 {{< toc >}}

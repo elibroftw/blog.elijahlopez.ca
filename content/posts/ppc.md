@@ -1,11 +1,14 @@
 ---
-title: "The PPC Has a Terrible Housing Platform"
+title: Dismantling the PPC
 date: 2024-04-23T15:12:10-04:00
 draft: false
 tags:
   - canada
   - politics
   - opinion
+aliases:
+  - /posts/the-ppc-has-a-terrible-housing-platform/
+summary: "Policies like a 0% inflation target, respecting local zoning, and privatizing CMHC would worsen the housing affordability crisis rather than bringing balance to the market."
 ---
 
 The PPC platform on housing is terrible! The PPC's housing platform is so bad that even if immigration is reduced to 0, their other policies would result in less houses being built:

@@ -5,6 +5,7 @@ tags:
   - review
   - mobile
   - android
+summary: "A 5-year review of the OnePlus 6T, covering its durability, OxygenOS software features like Wi-Fi sharing via QR code, performance limitations with multitasking and camera, and the author's reasons for upgrading."
 ---
 
 I submitted this review to OnePlus for a chance to review their Oneplus 10T.

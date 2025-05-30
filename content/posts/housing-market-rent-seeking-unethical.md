@@ -7,7 +7,10 @@ tags:
   - politics
   - opinion
 hidden: true
+summary: "Land lording for excess profits is unethical, however its a distraction from NIMBYism, high immigration, and high taxes on housing developments which make it so that land lords become rent-seekers rather than productive investors"
 ---
+
+Note: I give up on the rent-seeking portion of the housing discussion and care more about supply-side policies like developer charges
 
 Buying houses (living spaces) for the purpose of financial gain is unethical, _at least when there is a housing shortage_, like in Ontario. In order to answer why is it unethical I'll lay out some steps.
 

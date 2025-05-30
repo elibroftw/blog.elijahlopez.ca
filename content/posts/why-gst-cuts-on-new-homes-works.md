@@ -5,6 +5,7 @@ draft: true
 tags:
   - politics
   - economics
+summary: "Learn how cutting GST on new homes can lower overall housing prices by increasing supply and making older homes more affordable for first-time buyers."
 ---
 
 The concept is very simple. Right now, condo projects are not being started anymore. Why? The prices are too high. They are higher than resale in fact. Only some units are priced better, but not enough for developers to sell enough units to get the bank loan to build the building. So why aren't developers lowering the price further? Because the cost to build is too high for them to lower prices and still make a profit. The result? Capital and time is tied up for both the initial investors as well for everyone involved.

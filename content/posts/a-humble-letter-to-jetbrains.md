@@ -5,6 +5,7 @@ draft: false
 tags:
   - opinion
   - programming
+summary: "A letter to JetBrains detailing the author's decision to stop using their products due to high memory/storage usage of the Toolbox app and unresolved issues like the persistent Python Console bug."
 ---
 
 Dear JetBrains,

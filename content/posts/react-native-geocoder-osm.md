@@ -10,6 +10,7 @@ tags:
   - webdev
   - mobile
   - react-native
+summary: "Implement geocoding in React Native using the free OpenStreetMaps (OSM) and Nominatim APIs. This tutorial provides JavaScript helper functions and demonstrates integration into a component with search and debouncing."
 ---
 
 I needed to add geocoding to a React Native app I am working on. I could've gone with Google Maps API or Mapbox, however Google Maps charges for search after a certain number of requests and Mapbox failed. Then I found out that OpenStreetMaps (OSM) and Nominatim have a big dataset and it's results were pretty good.

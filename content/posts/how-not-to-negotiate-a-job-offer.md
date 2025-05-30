@@ -4,6 +4,7 @@ date: 2024-10-31T19:24:13-04:00
 draft: false
 tags:
   - life
+summary: "Learn how not to negotiate a job offer through a story about mishandling a significant salary increase with unnecessary demands."
 ---
 
 For some people, a job offer is a massive ego boost. I'll be truthful - my ego is substantial, perhaps immeasurable, but I never let it cloud my judgment (not my ego speaking I swear). Once a person reaches mental maturity, they should be able to silence those nagging whispers from their ego. An unchecked ego unnecessarily muddies decision-making and can lead to devastating consequences.

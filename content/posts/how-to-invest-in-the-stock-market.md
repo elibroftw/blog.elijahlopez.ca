@@ -11,6 +11,7 @@ aliases:
   - /posts/investing-canada/
   - /posts/how-to-start-investing-in-the-stock-market/
   - /posts/how-to-start-investing-in-the-stock-market-canada/
+summary: "A guide for Canadians on investing in the stock market with an emphasis on risk and safety. Answers: What is a brokerage? What is are registered accounts like TFSA, RRSP, FHSA, RESP, and how to reduce taxes? What are stocks and how should you invest?"
 ---
 
 My updated investing article. I wrote this with an emphasis on risk & safety rather than beating the market and gaining absurd returns. We'll start with the basics. By this point, you should realize that a stock is a type of share of a publicly traded company and a share at its most basic definition is some form of right to the company's equity portion on their financial position. You could say a share is part ownership, but some stocks don't have voter rights, and even if some do, there's sometimes a controlling shareholder. Thus, from the perspective of most individuals, shares are simply rights to the equity of a company.
@@ -85,28 +86,16 @@ With IBKR, I suggest just using the platform as the fees are very affordable. Wi
 
 The first way to invest, is passive. Passive investment can be done by purchasing ETFs, which are baskets of shares in companies that particular ETF says they hold in. For passive investment, funds that encapsulate 100+ stocks based on market-cap or location are recommended. The [S&P 500](https://www.spglobal.com/spdji/en/indices/equity/sp-500/#overview) index is the defacto market index whenever people mention or talk about the stock market in the context of North America. It is so influential that the concept of risk-adjusted returns (Beta) of individual stocks and ETFs is compared to the market (S&P 500) return.
 
-For the Canadian portion of your portfolio, the market is small enough to simply purchase TSX:XIC and be done with it. If you are not that optimistic about the Canadian economy, then hold TSX:XEQT; the makeup of XEQT is a third in Canadian equities, a third in US equities, and a third in the international equities.
+For long-term passive investing, I recommend the following portfolio: $DISV (40%) + $DFAI (35%)+ $RSP/EQL.TO (25%)
 
-Below is what I would be purchasing with new deposits depending on the market situation. I would only re-balance the QQC.F position since it's CAD hedged and it's pretty easy to gauge when the USD is overvalued relative to CAD, but to be honest it may not be worth the commissions.
-
-Market Situation | ETF to Buy if CA Based | ETF to Buy if US Based | Rationale | Example Situation
----------------------- | --------------- | ------------ | ------------------------ | -------
-Market just crashed | TSX:QQC.F | NASDAQGM:QQQM | When the market crashed, growth/tech stocks usually crash harder and CAD also depreciates relative to USD. High concentration is best for both residents, and for CA combine with CAD hedged since the FX is more expensive than normal  | 2020 Lock Down Crash
-Bear market (market is slowly declining) | TSX:QQC | NASDAQGM:QQQM | When the market has significantly fallen already | 2022 bear market
-Bull market but not past at all time highs | TSX:QQC | NASDAQGM:QQQM | Market is recovering, blue-chip growth stocks can beat the market | February 2023 - May 2023
-Bull market at all time highs but 5yr CAGR is less than 15% | TSX:QQC or TSX:VUN | NASDAQGM:QQQM or ARCA:VTI | It could be argued that the market is overheated but a single person can't dictate the market | April 2023 - July 2024
-Bull market at all time highs but 5yr CAGR is greater than or equal to 15% | TSX:VUN or TSX:EQL | ARCA:VTI or RSP | Overheated market | May 2024 - ?
+RSP: equal-weighted SP500 ETF, where SP500 is the top 500 publicly traded US based companies. Since the US is less than 25% of the global economy, I will hold only 25% of it in my passive portfolio. DISV is small cap international stocks and DFAI is core equity international stocks. The reason we have 40% in small caps is to provide that small-cap long-term edge, however to avoid downturns from blowing up the portfolio, core equity stocks are needed.
 
 ETF Information
 
-- [XIC](https://www.blackrock.com/ca/investors/en/products/239837/ishares-sptsx-capped-composite-index-etf)
-- [XEQT](https://www.blackrock.com/ca/investors/en/products/309480/)
-- [QQC.F](https://www.invesco.com/ca-en/exchange-traded-funds/invesco-nasdaq-100-index-etf---cad-hedged)
-- [QQQM](https://www.invesco.com/us/financial-products/etfs/product-detail?audienceType=Investor&productId=ETF-QQQM)
-- [VUN](https://www.vanguard.ca/en/advisor/products/products-group/etfs/VUN)
-- [VTI](https://investor.vanguard.com/investment-products/etfs/profile/vti)
 - [TSX:EQL](https://www.invesco.com/ca-en/exchange-traded-funds/invesco-s-p-500-equal-weight-index-etf---cad)
 - [RSP](https://www.invesco.com/us-rest/contentdetail?contentId=e3fc7c23dbd92610VgnVCM1000006e36b50aRCRD&dnsName=us)
+- [DISV](https://www.dimensional.com/us-en/funds/disv/international-small-cap-value-etf)
+- [DFIA](https://www.dimensional.com/us-en/funds/dfai/international-core-equity-market-etf)
 
 Since most of these index ETFs are market-cap weighted, a lot of them can easily be concentrated among big tech which are companies that typically outperform during bull runs and outperform during bear runs. Typically a bull-ruin lasts longer than a bear, so the advice is to invest in these concentrated "market" ETFs during a bear run and keep investing in them until the bull run has surpassed the previous highs by an annualized 10% return. At that point, it may be more prudent to switch to investing in equal-weighed ETFs.
 

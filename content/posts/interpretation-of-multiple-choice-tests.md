@@ -4,6 +4,7 @@ date: 2024-06-12T21:35:19-04:00
 draft: false
 tags:
     - math
+summary: "Analyzing multiple-choice test scores: 25% means zero knowledge, 50% knowledge yields 62.5% score. Discusses implications for teaching and assessment."
 ---
 
 I'm taking multiple choice exams where I'm doing worse than I would like to be doing (6-7 out of 10). The question I'm trying to answer is if my score reflects an insufficient knowledge of the course or if the class average deems that the course was not taught or assessed correctly.

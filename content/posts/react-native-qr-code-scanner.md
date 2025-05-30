@@ -7,6 +7,7 @@ tags:
   - programming
   - react-native
   - mobile
+summary: "Tutorial on implementing a QR code scanner in React Native using `react-native-camera-kit`, covering installation, platform configuration, and basic usage."
 ---
 
 Shout out to Tesla motors. Although a recruiter that works there rejected me with the wrong name, they made a react native package that is simple to use.

@@ -7,6 +7,7 @@ tags:
   - tutorial
   - rust
   - rocket.rs
+summary: "This post provides a tutorial on manipulating JSON data in Rust, specifically within the context of the Rocket web framework using `rocket::serde::json` (which wraps `serde_json`). It demonstrates how to work with arbitrary JSON using `serde_json::Value` and how to define and manipulate JSON with Rust structs using `#[derive(Serialize, Deserialize)]` and `std::borrow::Cow` for flexible string handling. The post includes examples for both GET and POST requests."
 ---
 
 We'll be doing this in the context of `rocket`.

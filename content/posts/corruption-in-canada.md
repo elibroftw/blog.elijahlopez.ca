@@ -6,6 +6,7 @@ tags:
   - canada
   - opinion
   - politics
+summary: "Exploring examples of perceived corruption in Canada, including government expenses, conflicts of interest, inter-provincial trade issues, and critiques of government spending and contracts."
 ---
 
 Just a list of topics and links that show how corrupt Canada can be at times.

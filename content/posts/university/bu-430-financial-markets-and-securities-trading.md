@@ -7,6 +7,7 @@ tags:
   - university
 aliases:
   - /posts/university/bu-430
+summary: "Notes from a university course on Financial Markets and Securities Trading, covering market structure, HFT, PFOF, dark pools, and case studies."
 ---
 
 {{< toc >}}

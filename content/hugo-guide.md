@@ -1,5 +1,5 @@
 ---
-title: "Hugo Guide"
+title: "Hugo Guide for Writing Blog Posts"
 date: 2022-05-07T17:57:32-04:00
 draft: false
 tags:
@@ -9,9 +9,10 @@ tags:
   - github-pages
   - git
 hidden: true
+summary: "What you need to know when using Hugo for managing your written content."
 ---
 
-DISCLAIMER: If you aren't from my hugo tutorial, please read my [Hugo tutorial](/posts/hugo-tutorial/#prerequisites)
+DISCLAIMER: If you aren't from my hugo tutorial, please read my [Hugo setup tutorial](/posts/hugo-tutorial/#prerequisites)
 
 <!-- table of contents -->
 

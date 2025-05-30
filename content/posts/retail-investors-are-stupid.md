@@ -6,6 +6,7 @@ tags: [
   'finance',
   'opinion'
 ]
+summary: "Argues that retail investors are often misguided by market sentiment and lack knowledge, leading to poor investment decisions in 'herd' and temporary high-growth stocks. Uses case studies to illustrate pitfalls and advises against hype-based investing."
 ---
 
 Please repeat after me. Efficient Market Hypothesis does not mean stocks are valued fairly. It just means that stock prices reflect the latest news that is parsable by algorithms or is being parsed by many, and I mean many, decision making humans. So a news piece that is very obscure, like a journalist on Twitter is not going to have an impact on the markets unless it goes [viral (fake news example)](https://www.fiercepharma.com/marketing/eli-lilly-hit-new-twitter-blue-fake-account-forced-apologize-over-free-insulin-tweet).
@@ -62,7 +63,7 @@ Yes, make money off the S&P500 inclusion. No, don't actually think that Tesla is
 
 ### Case Study: Cathie Wood and ARK
 
-They called her the modern Peter Lynch; she was the complete opposite. ARKK is below pre-pandemic levels. The only reason this ETF went up in the first place was due to owning TSLA when it's price blew up.
+They called her the modern Peter Lynch; she was the complete opposite. ARKK is below pre-pandemic levels. The only reason this ETF went up in the first first place was due to owning TSLA when it's price blew up.
 
 ### Case Study: SPACS
 

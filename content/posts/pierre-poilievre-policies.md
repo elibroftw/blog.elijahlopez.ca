@@ -5,6 +5,7 @@ tags:
   - canada
   - opinion
   - politics
+summary: "An analysis of Pierre Poilievre's key policies, including housing affordability, carbon tax, Bill C-69, disability benefits, and more."
 ---
 I'm making this blog post and video to document (practical?) policies that I've heard/read Pierre Poilievre express.
 For each policy, I will include the excerpt as well as my analysis of it to connect the dots between stated policy and desired / expected results. This is evident in the first policy that incentivized me to create this blog post.

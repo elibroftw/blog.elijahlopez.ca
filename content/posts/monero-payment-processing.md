@@ -8,12 +8,12 @@ tags:
   - programming
   - tutorial
   - python
+summary: "Design document for creating a monero processor, based on the payment processor I implemented on lenerva.com. These days, I'd recommend spinning up monero-pay on a server, although support for mempool webhooks is a missing feature."
 ---
 
 ## Preface
 
-In January 2022, I created my very own
-[ecommerce store](https://lenerva.com/store/) with the following features:
+These days, I'd recommend spinning up monero-pay on a server, although support for mempool webhooks is a missing feature. In January 2022, I created my very own [ecommerce store](https://lenerva.com/store/) with the following features:
 
 - From scratch
 - JavaScript-free

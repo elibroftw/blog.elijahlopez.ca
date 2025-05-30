@@ -5,6 +5,7 @@ draft: false
 tags:
   - programming
   - startups
+summary: "Exploring the technical stack of the 'Split the Tank' project: Azure hosting, MongoDB, C# ASP.NET, React Native, and payment solutions."
 ---
 
 ## Hosting

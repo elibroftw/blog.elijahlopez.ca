@@ -2,6 +2,7 @@
 title: "Daqo New Energy Corp (DQ) Valuation"
 date: 2024-10-19T19:21:04-04:00
 draft: true
+summary: "This post values Daqo New Energy Corp (DQ), a polysilicon producer, arguing it's undervalued as its net tangible value exceeds its market cap. It notes the stock price correlates with polysilicon prices in China, which hit lows in 2024. The author is bullish due to DQ's market position and expected recovery in China's economy. Using conservative assumptions (price per ton, useful life, profit margin), a rough valuation suggests a fair price around $4.43-$4.90, making it a buy for risk-seekers."
 ---
 
 The first stock that I consider undervalued is DQ.

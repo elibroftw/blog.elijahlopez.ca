@@ -5,6 +5,7 @@ draft: false
 tags:
   - investing
   - cybersecurity
+summary: "Proposing a new cybersecurity ETF strategy: tiering companies (pure-play vs. others) and weighting based on focus, critiquing market-cap weighting."
 ---
 
 ### What's Wrong with Current ETFs?

@@ -3,6 +3,7 @@ title: "People (NIMBYS) in Canada Responsible for the Housing Crisis"
 date: 2024-09-04T21:05:38-04:00
 draft: false
 hidden: true
+summary: "Identifying individuals and groups (NIMBYs) responsible for Canada's housing crisis due to opposing new construction and deregulation."
 ---
 
 This is a list of Canadians who opposed the building of housing and the deregulation of single family exclusionary zones. Anyone on this list is not a good person, and you should refuse to help them out, especially if you are under 30 years old.

@@ -5,6 +5,7 @@ draft: false
 tags:
   - canada
   - opinion
+summary: "Argues for Canadian parliamentary reform, proposing Supreme Court rulings be appealable to a citizen group and the Senate be abolished, citing concerns about judicial bias and unaccountability."
 ---
 
 In 1927, the Supreme Court of Canada ruled, unanimously, in the Persons Case that women were not eligible to be senators. Since this was during the time that Canada was still under British rule, an appeal was allowed and the Judicial Committee of the Privy Council allowed women to become senators.

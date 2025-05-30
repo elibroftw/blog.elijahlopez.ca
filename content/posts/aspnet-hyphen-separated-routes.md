@@ -12,6 +12,7 @@ aliases:
     - /posts/aspnet-kebab-case-routes/
     - /posts/aspnet-hyphen-separated-case/
     - /posts/aspnet-dash-case/
+summary: "Implement hyphen-separated (kebab-case) routes in ASP.NET Core 7.0 by creating a custom parameter transformer and adding it to your MVC conventions."
 ---
 
 See [docs](https://learn.microsoft.com/aspnet/core/mvc/controllers/routing#use-a-parameter-transformer-to-customize-token-replacement) for the latest way to do it. Here is how you would do it for ASP.NET Core 7.0:

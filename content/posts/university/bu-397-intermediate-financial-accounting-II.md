@@ -8,6 +8,7 @@ tags:
 aliases:
   - /posts/bu-397-intermediate-financial-accounting-II
   - /posts/university/bu-397
+summary: "Detailed notes and summaries from a university course on Intermediate Financial Accounting II, covering liabilities, bonds, shareholders' equity, complex financial instruments, income taxes, EPS, leases, pensions, and accounting changes."
 ---
 
 {{< toc >}}

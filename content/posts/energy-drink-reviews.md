@@ -1,8 +1,9 @@
----
+ ---
 title: "Energy Drink Reviews"
 date: 2023-09-15T17:06:33-04:00
 tags:
     - review
+summary: "Reviews and rates various zero-sugar carbonated energy drinks, listing preferred drinks and providing commentary on numerous brands and flavors."
 ---
 
 This is my review of energy drinks. The best way to enjoy an energy drink is to drink it chilled from the fridge. I've tried using ice, but it seems like the dilution makes drinks taste worse.

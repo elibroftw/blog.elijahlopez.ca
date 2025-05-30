@@ -4,6 +4,7 @@ date: 2025-04-28T18:18:44-04:00
 draft: false
 tags:
   - satire
+summary: When I saw the sign for "Dog Food Eating Convention," curiosity drew me in...
 ---
 
 When I saw the sign for "Dog Food Eating Convention," curiosity drew me in. As a human who takes pleasure from human food, I was interested in why someone would enjoy eating dog food. The scene inside was immediately striking, punctuated by banners and booths proclaiming bizarre devotion:

@@ -10,6 +10,7 @@ tags:
   - vscode
   - c++
 aliases: ['/posts/monero-dev-windows/']
+summary: "A guide for Windows developers to set up their environment and contribute to Monero projects like `monero` or `monero-gui` without a Linux VM, covering prerequisites, VS Code setup, dependency installation, building, and contributing."
 ---
 
 This is a straightforward guide to start developing on the monero project (monero, monero-gui, etc.) on Windows without using a Linux \[virtual] machine.

@@ -5,14 +5,10 @@ tags:
   - opinion
 aliases:
   - /posts/macos-sucks/
+summary: "macOS is inferior to both Windows and Linux Desktop. it's difficult to show hidden files, requires sudo for file removal, Homebrew does not modify PATH, git breaks after macOS updates, the Notes app is unresponsive, status icons get turned into vapor, and more."
 ---
 
-Here are some reasons MacOS is not as superb as people say it is. Of course, Linux and Windows have their own problems too. The order for desktop OS's
-are MacOS < Linux Desktop < Windows. This article is not about why Windows > Linux, so please refrain
-from commenting about Linux. If you are a Mac user and are offended, Windows also sucks a) the Settings
-app does not include everything found in the control panel, and the control panel uses the same UI interface
-since Windows 7 and b) requires installing third party apps like TaskbarX, EarTrumpet, QuickLook, and ditto to improve the UX and
-c) there's no effort to bring Linux functionality to Windows (e.g. bash, posix kernel, preinstalled GNU coreutils, PATH limit and editable as a file).
+Here are some reasons MacOS is not as superb as people say it is. Of course, Linux and Windows have their own problems too. The order for desktop OS's are MacOS < Linux Desktop < Windows. This article is not about why Windows > Linux, so please refrain from commenting about Linux. If you are a Mac user and are offended, Windows also sucks a) the Settings app does not include everything found in the control panel, and the control panel uses the same UI interface since Windows 7 and b) requires installing third party apps like TaskbarX, EarTrumpet, QuickLook, and ditto to improve the UX and c) there's no effort to bring Linux functionality to Windows (e.g. bash, posix kernel, preinstalled GNU coreutils, PATH limit and editable as a file).
 
 ### Hidden Files
 

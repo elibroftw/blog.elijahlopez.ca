@@ -7,6 +7,7 @@ tags:
   - tutorial
   - c-sharp
   - asp.net
+summary: "In .NET 9, please use Scalar. Add a dark theme to your ASP.NET Core Swagger UI. This guide provides two methods: serving a CSS file from wwwroot or using an embedded resource."
 ---
 
 Note. Starting in .NET 9, ASP.NET ships OpenAPI and thus I suggest using [Scalar](https://guides.scalar.com/scalar/scalar-api-references/net-integration) instead which comes with a built-in dark theme. I will add a Scalar tutorial for WebAPI / Authentication.

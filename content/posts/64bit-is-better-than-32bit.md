@@ -4,6 +4,7 @@ date: 2021-12-25T10:30:44-06:00
 draft: false
 tags:
   - opinion
+summary: "From a developer's standpoint, 64-bit applications offer significant advantages over 32-bit ones."
 ---
 
 This article is from a developer point of view, not a user point of view.

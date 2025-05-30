@@ -6,6 +6,7 @@ tags:
   - linux
 aliases:
   - /posts/manjaro-kde-tips/
+summary: "Linux desktop tips and troubleshooting, recommending Fedora KDE and covering topics like package management, software installation, system configuration, and common error fixes."
 ---
 
 {{< toc >}}

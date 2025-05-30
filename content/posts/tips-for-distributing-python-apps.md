@@ -5,6 +5,7 @@ draft: false
 hidden: true
 tags:
   - python
+summary: "Learn five key tips for distributing Python applications effectively, covering installation without admin privileges, code distribution, creating shortcuts, common installation paths, and updating strategies."
 ---
 
 Here are some pillars for making Python app distribution better for end users. I was not able to follow some of these pillars when I distributed Music Caster, so I wrote them down for other methods I'd try if I were to go about doing it again.

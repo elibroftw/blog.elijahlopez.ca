@@ -8,6 +8,7 @@ tags:
   - webdev
   - react
   - tauri
+summary: "Implement a custom titlebar in your Tauri and ReactJS application, including handling window controls, translations, and ensuring rounded corners on Windows 11."
 ---
 
 This tutorial is based on Part 12 of my Tauri & ReactJS series.

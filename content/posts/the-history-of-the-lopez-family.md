@@ -2,6 +2,7 @@
 title: "The History of the Lopez Family"
 date: 2024-06-16T15:39:37-04:00
 hidden: true
+summary: "A personal recount of the author's family history, detailing generations of the Lopez family."
 ---
 
 This is a recount of my family's history. Let's start with my dad's paternal grandfather (PPGF).

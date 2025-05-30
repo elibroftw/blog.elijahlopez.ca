@@ -5,6 +5,7 @@ tags:
   - tutorial
   - programming
   - python
+summary: "Learn to create dynamic and high-functioning menus in Pygame, complete with settings pages and optimized workflow. This guide provides plug-and-play code for text objects, buttons, toggle buttons, and seamless integration into your game projects."
 ---
 
 This article is about creating high functioning menus with an optimized workflow along with even a settings page.

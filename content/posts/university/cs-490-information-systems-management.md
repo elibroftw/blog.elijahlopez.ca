@@ -5,6 +5,7 @@ draft: false
 tags:
   - university
   - computer-science
+summary: "Comprehensive notes for CS 490 Information Systems Management, covering IS fundamentals, architecture, planning, IT infrastructure, business processes, project management, and information security."
 ---
 
 {{< toc >}}

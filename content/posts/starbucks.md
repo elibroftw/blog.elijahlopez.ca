@@ -2,9 +2,14 @@
 title: "Starbucks Sucks"
 date: 2022-06-22T10:18:10-04:00
 hidden: true
+summary: In 2022, I said Starbucks Sux, and in 2024, Starbucks Gud. I still dislike their pure diabetes drinks.
 ---
 
-## Starbux Sux
+## 2024: Starbucks Gud
+
+Good variety of new drinks. I never drank their stupid whip cream drinks again though.
+
+## 2022: Starbux Sux
 
 After not going to a startbucks for more than two years, I went yesterday and today due to proximity in this
 30+ degrees celsius weather.

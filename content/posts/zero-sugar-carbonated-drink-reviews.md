@@ -4,6 +4,7 @@ date: 2023-11-11T17:50:33-05:00
 draft: false
 tags:
   - review
+summary: "Reviews zero sugar carbonated drinks including Diet Pepsi, Coke Zero, Diet Coke, Pepsi Zero Sugar, and Mountain Dew Zero Sugar, offering brief opinions and rankings."
 ---
 
 ### Diet Pepsi

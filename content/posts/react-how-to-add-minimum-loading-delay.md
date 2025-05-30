@@ -7,6 +7,7 @@ tags:
   - react
   - javascript
   - tutorial
+summary: "React tutorial on adding a minimum loading delay to prevent spinner flickering when fetching data, using a throttle hook."
 ---
 
 One of the tasks at work this past week was to show a spinner for a minimum duration when data fetching. Suppose you are data fetching and the promise resolves very quickly sometimes. We want to show a loading spinner to communicate to the user that the "recheck" button did do something, but we don't want the loading animation to flicker or disappear uncomfortably quick. That is what this tutorial solves.

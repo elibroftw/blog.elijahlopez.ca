@@ -3,6 +3,7 @@ title: "SEH Chapter 3 - Version Control System (Git)"
 date: 2025-03-05T15:50:15-05:00
 draft: true
 aliases: ["/posts/software-engineering-handbook/chapter-3"]
+summary: "This post, 'SEH Chapter 3 - Version Control System (Git)' of 'The Software Engineering Handbook,' introduces Git as a distributed version control system essential for archiving, backing up, collaborating on, and recovering source code. It covers installing Git, using SSH keys for authentication, basic Git operations like `init`, `clone`, `log`, `branch`, `tag`, `switch`, `checkout`, and `restore`. The post also explains Git's database structure (objects and refs), discusses problems with merging and the solution using `rebase`, and introduces Git hooks for automating tasks, recommending server-side hooks for reliability. It concludes with a mention of advanced Git tips."
 ---
 
 Now that you've learned how to program, you need to learn how to ensure your code is archived, backed up, and how to collaborate with others.

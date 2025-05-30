@@ -2,6 +2,7 @@
 title: "Climate Change"
 date: 2023-02-04T11:07:18-05:00
 draft: true
+summary: "This post examines climate change, arguing it's real and human-influenced, but questions common reasons for concern and proposed solutions. It highlights that natural disasters and pollution aren't solely climate change issues and critiques 'fictitious reasons' for caring. The solutions section, a work in progress, brainstorms ways to manage urban temperatures, replace concrete, innovate in steel production, improve transportation (high-speed rail, hydrogen fuel cells), and transition to nuclear energy."
 ---
 
 This article is a precise guide on why someone should care about climate change and then what to do about or how to fix it.

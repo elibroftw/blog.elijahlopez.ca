@@ -7,6 +7,7 @@ tags:
   - programming
   - python
   - c-sharp
+summary: "Automate your Unity building process with a step-by-step guide on creating build scripts and integrating them with Unity Hub. Learn to streamline builds for various platforms and prepare for CI/server integration."
 ---
 
 It took me hours to figure out how to create a simple build script in Unity, even after watching videos, I was really confused.

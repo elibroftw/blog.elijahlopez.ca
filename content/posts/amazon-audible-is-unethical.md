@@ -5,6 +5,7 @@ draft: false
 tags:
   - opinion
   - ethics
+summary: "Argues Amazon Audible's subscription practices are unethical due to a misleading cancellation process and lack of auto-cancellation for inactive users, advocating for simpler opt-outs and regulation."
 ---
 
 Today I realized I was being charged US$15/month for a whole year by Amazon Audible. The reason? A free trial cancellation that did not go through fully.

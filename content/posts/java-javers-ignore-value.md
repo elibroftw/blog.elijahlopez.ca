@@ -2,6 +2,7 @@
 title: "How to Ignore Value Properties in Javers"
 date: 2020-07-18T11:19:04-05:00
 draft: false
+summary: "Learn how to ignore specific object properties during comparison in Java Javers. Discover how to use custom entities and the registerValueObject method to efficiently exclude fields like 'lastUpdated' from diffs."
 ---
 
 If you just want the solutions, look at the first and last code blocks. Read the whole article if you want some storytelling. Please comment if you have any feedback.

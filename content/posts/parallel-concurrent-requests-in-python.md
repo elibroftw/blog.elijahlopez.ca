@@ -6,6 +6,7 @@ tags:
   - tutorial
   - programming
   - python
+summary: "Discover the most efficient way to handle parallel and concurrent network requests in Python. Learn why ThreadPoolExecutor outperforms asyncio for network-bound tasks and see a practical proof of concept."
 ---
 
 You’d think that the fastest way to make parallel network requests would be to use asyncio, but it’s actually `concurrent.futures.ThreadPoolExecutor`.

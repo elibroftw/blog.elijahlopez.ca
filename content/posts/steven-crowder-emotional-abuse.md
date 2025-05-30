@@ -4,6 +4,7 @@ date: 2023-04-29T00:56:25-04:00
 tags:
   - opinion
   - politics
+summary: "An opinion piece analyzing a video of Steven Crowder's interaction with his wife, arguing that his behavior constitutes emotional abuse based on a definition from the National Domestic Violence Hotline and discussing the understanding of abuse."
 ---
 
 With the latest revelation of Steven Crowder's improper behaviour towards his almost ex-wife shown in the article linked in the tweet below, it's very clear that a considerable portion of people (at least on the internet) are poor at comprehending what abuse is. I've transcribed the video into text using [openai-whisper](https://github.com/openai/whisper) and attached it at the bottom for your reference as the website linked is very bloated.

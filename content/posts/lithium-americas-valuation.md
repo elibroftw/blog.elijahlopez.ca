@@ -6,6 +6,7 @@ tags:
   - finance
   - investing
   - valuation
+summary: "Valuation of Lithium Americas (LAC) based on EMH and a dividend discount model, analyzing Thacker Pass project and providing investment recommendation."
 ---
 
 Lithium Americas is a mining corporation focused on extracting sedimentary lithium from [Thacker Pass](https://lithiumamericas.com/thacker-pass/overview/default.aspx), "The largest known **Measured** and Indicated Resource in North America."

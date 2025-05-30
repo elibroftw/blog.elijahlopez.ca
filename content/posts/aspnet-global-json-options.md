@@ -7,6 +7,7 @@ tags:
   - programming
   - c-sharp
   - asp.net
+summary: "Explains how to access global JSON serializer options in ASP.NET Core using dependency injection for consistent serialization/deserialization outside of controllers."
 ---
 
 When adding JSON options to an ASP.NET controller, these options do not apply to manual uses of the json serializer.

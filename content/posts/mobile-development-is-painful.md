@@ -5,6 +5,7 @@ draft: false
 tags:
   - opinion
   - mobile
+summary: "Sharing painful experiences with cross-platform mobile development frameworks (Uno, Flutter, React Native), highlighting issues and arguing for native development (Kotlin/Swift) as a more stable alternative despite writing code twice."
 ---
 
 I've been tasked at creating a mobile app for both iPhone and Android and I have zero experience. I tried to do something with Flutter in 2020, however back then I gave up when Flutter couldn't do background tasks.

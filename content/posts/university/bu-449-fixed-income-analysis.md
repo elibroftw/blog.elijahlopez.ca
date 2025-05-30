@@ -5,6 +5,7 @@ draft: false
 tags:
   - university
   - finance
+summary: "Notes from a university course on Fixed Income, covering market environment, instruments, valuation, and case studies like the SVB failure."
 ---
 
 {{< toc >}}

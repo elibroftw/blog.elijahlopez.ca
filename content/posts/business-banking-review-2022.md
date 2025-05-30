@@ -1,10 +1,13 @@
 ---
-title: "Incompetence"
+title: "Business Banking Review (2022)"
 date: 2022-06-20T22:00:42-04:00
 tags:
   - opinion
 hidden: true
+summary: "I was frustrated with BMO's online banking limitations for downloading transaction history and opening an account with CIBC was an absolute waste of time. I went with RBC despite them charging me a monthly fees because of perceived competence in service and a better UI."
 ---
+
+2025 me: LOL. Thank god BMO got better.
 
 This is a list of incompetence experienced in my life. It doesn't matter if you are in debt, have $0 in your name, are rich,
 are a billionaire, or are a corporation worth billions of dollars.

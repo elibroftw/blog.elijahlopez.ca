@@ -5,6 +5,7 @@ draft: true
 tags:
   - swift
   - macos
+summary: "This post discusses missing features and limitations of the `MenuBarExtra` SwiftUI component on macOS. It highlights issues with visibility prioritization (how macOS decides which icons to hide), dynamic sizing, variable width, smaller font sizes, and the difficulty of achieving menu-like styling without the dropdown button. The author points out that even Apple's own apps seem to have better control over status icon prioritization."
 ---
 
 ### Visibility Priority

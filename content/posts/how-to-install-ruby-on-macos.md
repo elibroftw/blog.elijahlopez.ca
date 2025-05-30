@@ -5,6 +5,7 @@ draft: false
 tags:
   - macos
   - tutorial
+summary: "A concise guide on installing Ruby on macOS using Homebrew, `ruby-install`, and `chruby` with `zsh` commands, addressing common issues with other tutorials."
 ---
 
 This is how you install Ruby on MacOS and you don't have to reopen the terminal.

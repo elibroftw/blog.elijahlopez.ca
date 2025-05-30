@@ -6,6 +6,7 @@ tags:
   - tutorial
   - c-sharp
   - asp.net
+summary: "Tutorial on serving embedded resources in ASP.NET Core for debugging/simple scenarios, covering .csproj configuration and C# examples for accessing resources."
 ---
 
 You really shouldn't be serving static files from the server but rather a reverse proxy like NGINX or something like an S3 bucket. However, what if you are just doing some debugging? In that case, here are three examples of reading an embedded resource in different contexts.

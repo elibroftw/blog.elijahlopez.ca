@@ -4,6 +4,7 @@ date: 2025-04-28T18:14:50-04:00
 draft: true
 tags:
   - politics
+summary: "This post outlines a strategic guide for ethical individuals aiming to enter and succeed in politics, particularly within a non-proportional electoral system. It emphasizes the importance of being an ethical person with a clear vision and highlights key steps: identifying problems with current leaders, making an impact beyond passing simple bills, joining the opposition party most likely to succeed, becoming a member, networking within the party, and leveraging accomplishments at the provincial/state level for federal aspirations. The author also touches on the importance of social skills and recruiting peers."
 ---
 
 On second thought, helping someone win is also important! It's a strategic game when the electoral system is not proportional and punishes competition and shared ideals! Two extremes is essentially what fptp rewards instead of parties that compete with one or two differences.

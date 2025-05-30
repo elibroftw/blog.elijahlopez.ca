@@ -2,6 +2,7 @@
 title: "Instruction Manual for Life"
 date: 2022-02-15T10:48:38-05:00
 draft: true
+summary: "This ongoing post serves as an instruction manual for life, focusing on raising children and personal growth towards maturity and self-awareness. It provides advice for different age groups (18-24, 17, 15, 14, before 13), emphasizing preventing setbacks, making informed decisions about education and careers (including alternative paths and the deflationary nature of digital content), saving money, and instilling discipline in physical health, intelligence (perfect principles of mathematics), and ethics from a young age. It also touches on the importance of self-control and distinguishing between personal rules and laws."
 ---
 
 This is an ongoing article on how to raise a child (not necessarily yours) and how to grow as a person. As a child grows, they generally become or should become more self-aware and conscious. Maturity means that they are able to think more than one-step ahead for 99% of actions. Being an adult does not imply you are mature. Maturity is also not about never having fun or never laughing.

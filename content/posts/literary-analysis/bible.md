@@ -1,14 +1,16 @@
 ---
 title: "Analysis of the New Testament (For Now)"
 date: 2023-12-24T16:56:12-04:00
-draft: false
+draft: true
+hidden: true
 tags:
     - literary-analysis
+summary: "A secular literary analysis of the New Testament (Matthew), examining Jesus' commands and teachings on topics like tithing, healthcare, inclusion, wealth distribution, and obeying/defying government law."
 ---
 
 ## Preface
 
-As I'm writing this, I would say I'm agnostic. I believe in God, however I left Catholicism because I did not feel like I or my mind was wanted or belonged in Church/prayer, just as how I don't feel like I belong in many places and groups.
+As I'm writing this, I would say I'm agnostic. I believe in God, however I have difficult identify as Catholicism because I do not feel like I or my mind was wanted or belonged in Church/prayer, just as how I don't feel like I belong in many places and groups.
 
 I'm writing this because of a rabbit hole. A rabbit hole that started because of a theory I developed some time ago (before this blog existed) known as [reactionary politics](/posts/politics-reactionary-theory). It is my belief that evil persists because of this theory of mine. It's an optional read and I don't believe it is very polished so no need to read it.
 

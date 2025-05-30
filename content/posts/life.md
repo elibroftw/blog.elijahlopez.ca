@@ -1,13 +1,22 @@
 ---
-title: "My Thoughts on Life"
+title: "How to live life"
 date: 2022-05-19T10:03:59-04:00
 hidden: true
 tags:
   - thoughts
-# https://blog.elijahlopez.ca/posts/life/
+summary: "An ever-changing collection of thoughts on how to live."
 ---
 
-A collection of my thoughts on life itself!
+## 2025 Update
+
+Three years later, this is way too long. Life in 2025 is still good and here's my refined thoughts.
+
+1. Care less about what's going on in the world that you can't control
+2. Care more about what you can do something about
+3. Seek truth without becoming obsessed
+4. Enjoy life without \[self-]harming. We are so lucky to be alive in the 21st century where flight is cheap. Keep a bucket list and feel free to focus on fulfilling it.
+
+The rules below are kept for archive purpose. I don't plan on reading it. I actually plan on deleting it, but maybe on a different date.
 
 ## Rules
 

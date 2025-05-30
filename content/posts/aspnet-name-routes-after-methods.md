@@ -7,6 +7,7 @@ tags:
   - tutorial
   - c-sharp
   - asp.net
+summary: "Configure ASP.NET Core routes to automatically follow method names using `[Route(\"[controller]/[action]\")]` on the controller, reducing the need for individual route decorators and streamlining API development."
 ---
 
 Suppose you want to avoid using decorators for every public method you write and you just want the route to following the same convention as your methods in your controller.

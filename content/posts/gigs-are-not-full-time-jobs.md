@@ -4,6 +4,7 @@ date: 2024-06-26T19:30:21-04:00
 draft: false
 tags:
   - opinion
+summary: "Argues that gig work is an income supplement, not a full-time job, critiquing guaranteed wages and proposing a cooperative model."
 ---
 
 Gigs are income supplements - not full time jobs. A lot of people think gig workers should be guaranteed an hourly wage but that's equivalent to saying that contractors should be paid higher if they spend too much on labour. Gig workers are not employees and are volunteering their time to earn income that they otherwise would not earn. There's nothing wrong with the gig workers declining to work. That is within their right. For gig workers to be guaranteed a minimum wage, then the entire business model falls apart because at first, the customers are priced out of the service since most people are earning low skill wages. In response to a lack of demand, service providers pull out of the cities. Lastly, the workers willing to work under the initial structure no longer get supplement income or in the worst case, they have lost their only income stream. The end result is less commerce in the city and in the worst case, higher unemployment.

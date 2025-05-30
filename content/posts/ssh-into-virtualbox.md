@@ -8,6 +8,7 @@ tags:
   - ssh
   - vscode
   - virtual-box
+summary: "Tutorial on how to SSH into a VirtualBox VM by configuring port forwarding, installing openssh-server, and setting up password-less SSH from Windows or Linux."
 ---
 
 For the Oracle VirtualBox VM, click the virtualbox network settings and add a new port forwarding rule under advanced settings and add a rule for SSH with the TCP protocol, 3022 Host port, and 22 guest port.

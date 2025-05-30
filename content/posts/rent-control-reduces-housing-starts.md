@@ -5,6 +5,7 @@ tags:
   - opinion
   - economics
   - canada
+summary: "Argues that rent control reduces new housing construction, disadvantages families and newcomers, and incentivizes renovations that displace tenants."
 ---
 
 Searching up arguments against Rent Control is a good way to get lost. When taking a look at Switzerland, where renting is the only possible situation, they have rent control. When asked why it's so unaffordable, you get cop-out answers like "not enough space" rather than real answers which is NIMBYISM (i.e. opposition to building denser housing). Here are the reasons and logic I've compiled that rent control is a policy that benefits only those without children. If you want to have children or care about children, or care about people entering the work force, or care about new comers, you should not be for rent control.

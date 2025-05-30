@@ -3,6 +3,7 @@ title: "Chapter 4 - Introduction to Software Projects"
 date: 2025-03-05T15:50:15-05:00
 draft: true
 aliases: ["/posts/software-engineering-handbook/chapter-4"]
+summary: "This post, 'Chapter 4 - Introduction to Software Projects' of 'The Software Engineering Handbook,' introduces the concept of a software project and the importance of choosing the right tech stack. It outlines different types of applications (full-stack, web frontend/backend, mobile, desktop, blockchain, engineering libraries) and emphasizes the value of building engineering libraries with good documentation, including upgrade guides, changelogs, searchability, clear sections, and practical examples."
 ---
 
 {{< toc >}}

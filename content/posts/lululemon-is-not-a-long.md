@@ -5,6 +5,7 @@ tags:
   - finance
   - investing
   - valuation
+summary: "Why Lululemon (LULU) is not a long-term buy for value investors: lacks competitive moat, market saturation, better suited for short-term trading."
 ---
 
 I originally came to this conclusion in September (12th), but it was sitting in my pinned Google Keep for months. The recent sky rocketing of LULU is just another piece of evidence that the market is irrational. The stock was bleeding for months when I decided it might be time to buy but my investing philosophy at the time was "is it possible to regret my purchase in 10 years." When I invest in stocks, I value peace of mind over maximizing profits. Of course, one way to do that is to invest for a specific time horizon. The other way, which I am going to start implementing is to do the work to arrive at a sell price. That was the strategy to use when it comes to LULU.

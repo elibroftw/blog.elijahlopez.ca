@@ -6,6 +6,7 @@ tags:
   - tutorial
   - programming
   - python
+summary: "Get your local area network (LAN) IPv4 address using Python. This post provides a function compatible with both Windows and Linux/macOS."
 ---
 
 The Windows version returns the LAN IPv4 address, even if connected to a VPN.

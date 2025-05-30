@@ -5,6 +5,7 @@ draft: true
 tags:
     - finance
     - possible-thesis
+summary: "This post explores different valuation models, starting with residual earnings. It proposes analyzing a company under various capital and payout structures (all equity/no debt with/without dividends, half debt/half equity with/without dividends, high debt with/without dividends) to understand their impact on valuation. The author also suggests a new equity account 'Reinvested Earnings' to differentiate equity used for operations versus liquid investment and briefly mentions other techniques like fair value and present value of cash flows."
 ---
 
 In my advanced corporate finance class, we were introduced to the residual earnings.

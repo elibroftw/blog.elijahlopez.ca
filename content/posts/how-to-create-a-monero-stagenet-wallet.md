@@ -6,6 +6,7 @@ tags:
   - tutorial
   - monero
   - cryptocurrency
+summary: "We can create a Monero stagenet wallet using the command-line interface (CLI) on Windows and Unix-like systems, which avoids a bug in the GUI that prevents stagenet wallet creation after using a mainnet wallet."
 ---
 
 {{< youtube MlYorZQTmV4 >}}

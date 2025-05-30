@@ -6,6 +6,7 @@ tags:
   - university
   - finance
   - investing
+summary: "Comprehensive notes for BU 473 Investment Management, covering asset classes, trading, risk and return, CAPM, APT, bonds, interest rates, financial analysis, options, and futures."
 ---
 
 Bruce Everitt

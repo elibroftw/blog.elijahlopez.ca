@@ -6,6 +6,7 @@ tags:
     - university
     - accounting
     - taxes
+summary: "Comprehensive notes for BU 357 Taxation I, covering the Income Tax Act structure, residency, employment income, business income, property income, capital gains, taxable income calculation, tax credits, and sales tax."
 ---
 
 {{< toc >}}

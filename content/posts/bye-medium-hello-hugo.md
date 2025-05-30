@@ -4,6 +4,7 @@ date: 2022-01-01T12:20:08-05:00
 draft: false
 tags:
   - opinion
+summary: "I've officially moved away from blogging on clunky slow Medium to my own site using Hugo and hosted on GitHub pages. So can you."
 ---
 
 I've officially moved from blogging on Medium to my own [GitHub page](https://blog.elijahlopez.ca).

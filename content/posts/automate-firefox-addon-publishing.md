@@ -6,6 +6,7 @@ tags:
   - tutorial
   - programming
   - python
+summary: "Automate your Firefox add-on publishing workflow using Python and the Firefox Add-ons API. Learn how to set up API keys, implement the automation script, and streamline your publishing process."
 ---
 
 If you're like me, you always want to speed up aspects of your life especially routine tasks. I'll be doing this in Python but you can easily convert the code to a language of your choice.

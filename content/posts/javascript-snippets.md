@@ -6,6 +6,7 @@ tags:
   - programming
   - javascript
   - webdev
+summary: "This post provides useful JavaScript code snippets for common tasks, aiming to save developers time. It includes functions for converting date and time formats (YYYYMMDDHHMM to Date and vice versa, YYYYMMDD to Date and vice versa), and a utility function for accurately determining the true type of a JavaScript object. The snippets are presented with code examples for easy implementation."
 ---
 
 Here are some snippets that would've saved me many minutes of my time.

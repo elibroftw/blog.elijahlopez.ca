@@ -4,6 +4,7 @@ date: 2024-11-03T18:12:33-05:00
 draft: true
 tags:
   - usa
+summary: "Tips and information for Canadians applying for a TN Visa to work in the US, based on personal experience and sample letters."
 ---
 
 This is just an info dump of everything I've learned regarding the TN Visa from my dad and two friends.

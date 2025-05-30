@@ -5,6 +5,7 @@ hidden: true
 tags:
   - politics
   - opinion
+summary: "Standing up for believing that winning an argument takes more than rebutting low-hanging fruit. If communists want to prove that their economic system is superior to capitalism, they should stop critiquing elements of capitalism the government has control over and focus on demonstrating where communism has resulted in higher quality of life."
 ---
 
 A post responding to this youtube video

@@ -6,6 +6,7 @@ tags:
   - tutorial
   - programming
   - python
+summary: "Learn how to register your Python program as a default file handler in Windows by modifying the Windows Registry. This guide covers implementing URI protocols, defining commands, and adding custom right-click options."
 ---
 
 Recently I needed to make my music player register as a file handler for audio files (mp3, flac, etc…) but how would I do this? Say hello to Windows Registry.

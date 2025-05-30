@@ -9,6 +9,7 @@ tags:
     - react
     - tutorial
     - webdev
+summary: "Tutorial on using Google Sheets to manage i18n translations for web projects (React Native focus), with a Node.js script to generate JSON files."
 ---
 
 This blog post is a tutorial on how to write translations in Google Sheet and use them in a a web project that uses i18n. The tutorial assumes a react-native project, however the tutorial can be applied to other frameworks.

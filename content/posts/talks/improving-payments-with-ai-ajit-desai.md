@@ -2,10 +2,12 @@
 title: "Improving Safety and Efficiency of Payment System using AI and Quantum Computing"
 date: 2024-05-27T16:03:52-04:00
 draft: false
-authors: ["Ajit Desai"]
+authors:
+  - Ajit Desai
 tags:
   - talks
   - finance
+summary: "Notes from a talk on improving payment systems using AI and Quantum Computing, covering anomaly detection, ML frameworks, and quantum transaction ordering."
 ---
 
 ## Papers

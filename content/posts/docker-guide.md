@@ -8,6 +8,7 @@ tags:
   - programming
   - devops
   - tutorial
+summary: "A guide to Docker fundamentals, covering core concepts, Dockerfile instructions, building images, and running containers."
 ---
 
 {{< toc >}}

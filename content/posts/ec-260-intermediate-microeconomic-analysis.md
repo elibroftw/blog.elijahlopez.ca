@@ -5,6 +5,7 @@ draft: false
 tags:
   - university
   - economics
+summary: "Explore summary notes on EC 260 Intermediate Microeconomic Analysis, covering key concepts like marginal revenue, elasticity, input maximization, economies of scope, profit maximization, Cournot solutions, and price discrimination strategies."
 ---
 
 Dumping my notes here.

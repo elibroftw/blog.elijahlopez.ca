@@ -5,6 +5,7 @@ draft: false
 tags:
   - university
   - computer-science
+summary: "Notes and concepts from a university-level operating systems course, covering topics like processes, threads, concurrency, scheduling, virtual memory, I/O, file systems, and more."
 ---
 
 <!-- <img class=equation-tall src="https://latex.codecogs.com/svg.image?QI="> -->

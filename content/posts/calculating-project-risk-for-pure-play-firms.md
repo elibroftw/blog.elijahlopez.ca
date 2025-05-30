@@ -5,6 +5,7 @@ draft: true
 tags:
   - finance
   - potential-thesis
+summary: "This post discusses the inadequacy of using a firm-wide WACC for evaluating diverse projects. It highlights that a firm's Beta reflects its overall operations, not individual project risks or capital structures. Relying solely on firm WACC can lead to misjudging project viability (IRR vs. WACC) due to inaccurate equity risk assessment for specific ventures."
 ---
 
 

@@ -7,6 +7,7 @@ tags:
   - opinion
   - rant
   - monero
+summary: "A rant on Bike Share Toronto's poor UX: payment issues, inaccessible QR codes, excessive data requests, and lack of modern payment options."
 ---
 
 I was in Toronto on the date of publishing and needed to go to a bar on college st but way east of the subway station.

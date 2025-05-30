@@ -5,6 +5,7 @@ draft: false
 tags:
   - linux
   - opinion
+summary: "The Linux desktop experience is subpar across various distributions. UX issues like Bluetooth, dual booting, drivers, scaling, package management, and software installation seem to prop up all the time."
 ---
 
 {{< toc >}}

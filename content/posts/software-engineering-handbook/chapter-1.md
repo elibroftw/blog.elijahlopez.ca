@@ -3,6 +3,7 @@ title: "Chapter 1 - The Computer Environment"
 date: 2025-03-05T15:50:15-05:00
 draft: true
 aliases: ["/posts/software-engineering-handbook/chapter-1"]
+summary: "This post, 'Chapter 1 - The Computer Environment' of 'The Software Engineering Handbook,' introduces fundamental computer and operating system concepts for aspiring software engineers. It defines a computer in a pragmatic sense, lists the major desktop operating systems (Linux, Windows, macOS), and explains the role of the terminal, shell, and package managers for installing software. The post also covers environment variables, the PATH variable, and the importance of line endings and text encodings for cross-platform development."
 ---
 
 It's crucial to understand the basics of a computer and an operating system before you start to learn how to code.

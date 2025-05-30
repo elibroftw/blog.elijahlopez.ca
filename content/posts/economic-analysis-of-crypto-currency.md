@@ -5,6 +5,7 @@ draft: false
 tags:
   - cryptocurrency
   - economics
+summary: "Economic analysis of cryptocurrency, comparing Ethereum to alternatives, discussing Layer 2 value, and debating if crypto is currency or security."
 ---
 
 {{< toc >}}

@@ -7,6 +7,7 @@ tags:
     - politics
     - tech
     - wisdom
+summary: "Inspired by open-source principles, we can design a platform that facilitates structured debates and seeks convergence of arguments on various topics. This ideal platform would allow users to ask questions, create and upvote arguments, and engage in discussions. Unlike Reddit, this would all be top-level and not have communities, thus allowing 100% internet participation"
 ---
 
 I wasn't able to put all the details from my mind into this document, but hopefully

@@ -6,6 +6,7 @@ hidden: true
 tags:
   - canada
   - opinion
+summary: "This post outlines a vision for a Canadian entertainment zone in an affordable, low-snow area, accessible to median-income households. Potential locations in New Brunswick and Saskatchewan are listed. The zone would offer diverse activities: vehicle experiences (helicopter, boats), sports (swimming, tennis), leisure (pool, jacuzzi, dining), community facilities, adult-only areas (bar, club, shooting range), and robust transportation (train, light rail, landing strip), focusing on automation and efficient logistics."
 ---
 
 One of my visions is to develop an entertainment zone in one of cheapest areas of Canada which isn't covered in snow for a lot of time.

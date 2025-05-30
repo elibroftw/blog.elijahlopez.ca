@@ -7,6 +7,7 @@ tags:
   - hugo
   - markdown
   - git
+summary: "Learn how to setup a blog using Hugo and host it for free on GitHub Pages."
 ---
 
 I created this blog using Hugo and host it on GitHub Pages. In this tutorial, I'll teach you to do the same.
@@ -60,6 +61,7 @@ If you are like me, you can follow the tutorial that [forks my site](#forking-my
 6. Read the theme instructions for basic configuration (i.e. `config.yaml` or `config.toml`)
 7. Edit `config.yaml` or `config.toml`
     - Also add your own `favicon.ico` to `static/images`
+    - Set `disableSummary` to false
 8. Use `hugo new content/posts/POST.md` to create a new post
     - Alternative: use the hugo helpers, "Hugo: create content" command
 9. Use `hugo serve -D` when drafting the post and see your changes at [http://localhost:1313/](http://localhost:1313/)

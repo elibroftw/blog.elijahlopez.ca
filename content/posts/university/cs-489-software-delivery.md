@@ -7,6 +7,7 @@ tags:
   - computer-science
   - devops
   - programming
+summary: "Detailed notes and summaries from a university course on Software Delivery, covering release pipelines, version control, build systems, CI/CD, virtualization, infrastructure as code, and deployment strategies."
 ---
 
 ## Summary

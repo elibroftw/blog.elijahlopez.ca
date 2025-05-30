@@ -4,6 +4,7 @@ date: 2023-05-09T15:55:38-04:00
 draft: false
 tags:
   - university
+summary: "Comprehensive notes on International Strategy (BU 491), covering multinational enterprises, global integration vs. national responsiveness, worldwide competitive advantage, transnational organizations, innovation, cross-border collaboration, strategy implementation, and case studies."
 ---
 
 {{< toc >}}

@@ -5,6 +5,7 @@ hidden: true
 tags:
   - opinion
   - morality
+summary: "Simplifying the abortion debate by framing it through property and privacy rights likening a fetus to an unwanted trespasser. Feeding the homeless is an arguably easier moral obligation than for women/doctors to carry a fetus to term, yet one is demonized not due to rationality, but due to upbringing. With abortion rights so to should we welcome the deprecation of mandatory child support."
 ---
 
 After thinking about abortion for a good couple hours, I was finally able to form an almost perfect opinion.

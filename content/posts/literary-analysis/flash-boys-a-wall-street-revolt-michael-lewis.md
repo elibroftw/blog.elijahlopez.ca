@@ -7,6 +7,7 @@ tags:
   - university
   - literary-analysis
 author: Michael Lewis
+summary: "Literary analysis and summary of Michael Lewis's 'Flash Boys,' exploring high-frequency trading (HFT), its impact on markets, and ethical implications."
 ---
 
 This book was a reading  as part of the course [Financial Market and Securities Trading](/posts/university/bu-430). These notes are not just from the book but also contain the context behind the story, for example what the HFTs were doing between Chicago and New Jersey.

@@ -7,6 +7,7 @@ tags:
   - tutorial
   - backend
   - opinion
+summary: "Argues that REST APIs should return 204 (No Content) or an empty response instead of 404 (Not Found) when a resource is null, citing reasons like cleaner error logs and simpler client-side handling."
 ---
 
 

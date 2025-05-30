@@ -5,6 +5,7 @@ draft: true
 tags:
   - finance
   - possible-thesis
+summary: "This post critiques the Price-Earnings (P/E) ratio as a stock valuation metric, arguing that it ignores a company's debt structure and past income allocation. The author proposes considering 'retained value per common share' and 'Price / Common Accumulated Earnings' as alternative metrics. The post also briefly discusses how payout ratios and share buybacks can distort P/E for companies with steady or growing earnings per share."
 ---
 
 P/E is touted often when discussing stocks, however, P/E ignores the companies debt capital structure, and what happened to past income. We need to take a look at the retained value per common share. That is given a companies assets, what do we get if we take out debt and non-common shares equity? We should* get the real book value of common equity. Then we can get a per share intrinsic value. What do we do with this? We can do the following to get a metric comparable across time.

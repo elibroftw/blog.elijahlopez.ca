@@ -7,6 +7,7 @@ tags:
   - finance
   - investing
   - psychology
+summary: "Notes from a university course on Behavioural Finance, covering Expected Utility Theory, Prospect Theory, cognitive and emotional biases, risk tolerance, and corporate governance."
 ---
 
 Textbook #1: Behavioural Finance, Psychology, Decision-Making, and Markets, Ackert & Deaves, South-Western Cengage Learning 2018 (available through the library’s DTA program)

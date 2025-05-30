@@ -2,6 +2,7 @@
 title: "How to Buffer Overflow on 64-Bit Little Endian Machines"
 date: 2024-02-06T12:18:51-05:00
 draft: true
+summary: "This post provides a straightforward guide on buffer overflows on 64-bit little endian machines, aiming to clarify concepts often poorly explained in tutorials. It discusses existing protections (non-executable stack), how to spot vulnerabilities using functions like `strcpy` and `strncpy`, and outlines steps for writing an exploit, including handling little endian byte order, using shell code, and finding the address for code injection with gdb."
 ---
 
 I'm taking a security course the lesson on buffer overflows referenced "Smashing the Stack" which was for 32-bit and made some broad assumption and spent a lot of time running in circles instead of actually giving details on how to exploit it. So here I am to give a straightforward, no bullshit lesson.
