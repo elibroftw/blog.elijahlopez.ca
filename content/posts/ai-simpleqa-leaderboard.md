@@ -17,53 +17,53 @@ summary: "Compare AI model factuality with the SimpleQA leaderboard. Includes sc
 
 AIME'25 leaderboard: Math
 
-Chatbot Arena leaderboard: A leaderboard based on the results of users blind testing two models and picking the best response
+I've removed Chatbot Arena and ArenaHard as DeepSeek R1 05/28 is really good at following instructions and sets the expectations fairly high. Instead I've added Humanity's Last Exam.
 
-ArenaHard leaderboard: An automated artificial/synthetic benchmark for Chatbot Arena
-
-| Model / Product   | Company   | Tier    | SimpleQA | AIME'25 | ArenaHard | Chatbot Arena |
-|----------------------|-----------|----------|----------|---------|-----------|---------------|
-| [Liner Pro Reasoning](https://getliner.com/) | [Liner](https://liner.com/) | I P | [95.30](https://liner.com/learn/deep-research-comparison) | N/A | N/A | N/A |
-| Liner Pro | [Liner](https://liner.com/) | I P | [93.70](https://liner.com/learn/liner-accurate-ai-search) | N/A | N/A | N/A |
-| Perplexity Deep Research | [Perplexity](https://www.perplexity.ai/) | I P | 93.90 | N/A | N/A | N/A |
-| Perplexity Pro      | [Perplexity](https://www.perplexity.ai/) | I P | 90.60 | N/A | N/A | N/A |
-| [Linkup Web Search](https://www.linkup.so/)        | Linkup | I P | 90.10 | N/A | N/A | N/A |
-| [Exa](https://exa.ai/)                                 | Exa | I P | 90.04 | N/A | N/A | N/A |
-| Perplexity Sonar Pro      | Perplexity | I P | 85.80 | N/A | N/A | N/A |
-| Claude-4-Opus              | Anthropic | I M | - | 75.5% | - | - |
-| ChatGPT-4.5                  | OpenAI    | 1 M | 62.50 |         |         | 1398  |
-| Gemini-2.5-Pro               | Google    | I M |  52.90 | 86.70 |           | 1439 |
-| Claude-3.7-Sonnet        | Anthropic | I M | 50.00 |         | 59.8 | 1292 |
-| o3                                  | OpenAI    | I M | 49.4 |  88.9  | 85.9  | 1418 |
-| Grok 3                           | xAI       | I M | 44.60 | 93.3 |           | 1402 |
-| o1                                  | OpenAI    | I M | 42.60 | 79.20 | 61 | 1350  |
-| ChatGPT-4.1                 | OpenAI    | I M | 41.60 |         | 50 | 1363 |
-| ChatGPT-4o                  | OpenAI    | I M | 39.00 | 14.00 |          |  1408 |
-| DeepSeek-R1                | DeepSeek  | I M | 32.84 |  80.00 |  48 | 1358 |
-| Gemini-2.5-flash            | Google    | IV |  29.70   | 78.00  |           | 1393 |
-| Claude-3.5-Sonnet        | Anthropic | I M | 28.4 |         | 33 |               |
-| DeepSeek-V3                | DeepSeek  | I M | 24.9 |         |           | 1381 |
-| o4-mini                           | OpenAI    | I M | 20.20 | 92.70 | 79.1 | 1351  |
-| o3-mini                           | OpenAI    | I M | 13.80 |  86.5 | 66.1 | 1325 |
-| Qwen3-235B-A22B        | Qwen  | I M | 11.00 | 81.5    | 95.6 |               |
-| Gemma 3 27B               | Google    | II | 10.00 |         |           | 1342 |
-| Gemma 2 27B               | Google    | II |  9.20 |         |           | 1220 |
-| Qwen3-32B (Dense)      | Qwen  | II | 8.00 | 72.9    | 93.8 |               |
-| Qwen3-30B-A3B (MoE) | Qwen | II | 8.00 | 70.9    | 91        |               |
-| EXAONE-Deep-32B | LG | II | - | 80 | - | - |
-| Qwen3-14B | Qwen | II | - | - | - | - |
-| EXAONE-Deep-7.8B | LG | II | - | 76.7 | - | - |
-| Qwen3-8B | Qwen | II | - | - | - | - |
-| EXAONE-Deep-2.4B | LG | II | - | 73.3 | - | - |
-| Apriel-Nemotron-15B-Thinker | NVIDIA / SERVICE NOW | II | - | 60.0 | - | - |
-| Gemma 3 12B               | Google    | II |  6.30 |         |           |               |
-| Gemma 3n                    | Google    | II | - |         |           | 1283 |
-| Gemma 3 4B                 | Google    | III |  4.00 |         |           |               |
-| Gemma 2 9B                 | Google    | II |  5.30 |         |           |               |
-| Phi 4 Reasoning Plus   | Microsoft | II | 3.00 | 78.00 | 79.00 |          |
-| Gemma 2 2B                 | Google    | III |  2.80 |         |           |               |
-| Gemma 3 1B                 | Google    | III |  2.20 |         |           |               |
-| Qwen3 4B                      | Qwen | III | 1.00 | 65.6 | 76.6 |               |
+| Model / Product   | Company   | Tier    | SimpleQA | AIME'25 | Humanity's Last Exam  |
+|----------------------|-----------|----------|----------|---------|--------|
+| [Liner Pro Reasoning](https://getliner.com/) | [Liner](https://liner.com/) | I P | [95.30](https://liner.com/learn/deep-research-comparison) | N/A | N/A |
+| Liner Pro | [Liner](https://liner.com/) | I P | [93.70](https://liner.com/learn/liner-accurate-ai-search) | N/A | N/A |
+| Perplexity Deep Research | [Perplexity](https://www.perplexity.ai/) | I P | 93.90 | N/A | N/A |
+| Perplexity Pro      | [Perplexity](https://www.perplexity.ai/) | I P | 90.60 | N/A | N/A |
+| [Linkup Web Search](https://www.linkup.so/)        | Linkup | I P | 90.10 | N/A | N/A |
+| [Exa](https://exa.ai/)                                 | Exa | I P | 90.04 | N/A | N/A |
+| Perplexity Sonar Pro      | Perplexity | I P | 85.80 | N/A | N/A |
+| Claude-4-Opus              | Anthropic | I M | - | 75.5% | - |
+| ChatGPT-4.5                 | OpenAI    | 1 M | 62.50 | - | - |
+| Gemini-2.5-Pro              | Google    | I M |  52.90 | 86.70 | - |
+| Claude-3.7-Sonnet        | Anthropic | I M | 50.00 | - | 59.8 |
+| o3                                  | OpenAI    | I M | 49.4 |  88.9  | 85.9  |
+| Grok 3                           | xAI       | I M | 44.60 | 93.3 | - |
+| o1                                  | OpenAI    | I M | 42.60 | 79.20 | 61 |
+| ChatGPT-4.1                 | OpenAI    | I M | 41.60 | - | 50 |
+| ChatGPT-4o                  | OpenAI    | I M | 39.00 | 14.00 | - |
+| DeepSeek-R1 (01/20)   | DeepSeek  | I M | 30.10 |  70.00 |  8.5 |
+| DeepSeek-R1 (05/28)    | DeepSeek  | I M | 27.80 |  87.50 | 17.7 |
+| DeepSeek-R1-0528-Qwen3-8B | DeepSeek  | I M | - |  76.3 | - |
+| Gemini-2.5-Flash            | Google    | IV |  29.70 | 78.00 | - |
+| Claude-3.5-Sonnet        | Anthropic | I M | 28.4 | - | 33 |
+| DeepSeek-V3                | DeepSeek  | I M | 24.9 | - | - |
+| o4-mini                           | OpenAI    | I M | 20.20 | 92.70 | 79.1 |
+| o3-mini                           | OpenAI    | I M | 13.80 |  86.5 | 66.1 |
+| Qwen3-235B-A22B        | Qwen  | I M | 11.00 | 81.5    | 95.6 |
+| Gemma 3 27B               | Google    | II | 10.00 | - | - |
+| Gemma 2 27B               | Google    | II |  9.20 | - | - |
+| Qwen3-32B (Dense)      | Qwen  | II | 8.00 | 72.9 | - |
+| Qwen3-30B-A3B (MoE) | Qwen | II | 8.00 | 70.9 | - |
+| EXAONE-Deep-32B | LG | II | - | 80 | - |
+| Qwen3-14B | Qwen | II | - | - | - |
+| EXAONE-Deep-7.8B | LG | II | - | 76.7 | - |
+| Qwen3-8B | Qwen | II | - | - | - |
+| EXAONE-Deep-2.4B | LG | II | - | 73.3 | - |
+| Apriel-Nemotron-15B-Thinker | NVIDIA / SERVICE NOW | II | - | 60.0 | - |
+| Gemma 3 12B               | Google    | II |  6.30 | - | - |
+| Gemma 3n                    | Google    | II | - | - | - |
+| Gemma 3 4B                 | Google    | III |  4.00 | - | - |
+| Gemma 2 9B                 | Google    | II |  5.30 | - | - |
+| Phi 4 Reasoning Plus   | Microsoft | II | 3.00 | 78.00 | - |
+| Gemma 2 2B                 | Google    | III |  2.80 | - | - |
+| Gemma 3 1B                 | Google    | III |  2.20 | - | - |
+| Qwen3 4B                      | Qwen | III | 1.00 | 65.6 | - |
 
 ### Notes
 

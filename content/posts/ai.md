@@ -32,15 +32,18 @@ I'm naming these populist benchmarks because it's basically a popularity contest
 - [Chatbot Arena LLM](https://lmarena.ai/?leaderboard)
 - [ArenaHard](https://github.com/lmarena/arena-hard-auto?tab=readme-ov-file#leaderboard)
 
+#### Intelligence
+
+- [ARC-AGI](https://arcprize.org/leaderboard)
+- [Prompt Judy](https://app.promptjudy.com/public-runs) - Named Entity Recognition Dataset 2, Complex OCR
+
+Intelligence benchmarks are good because you can also figure out which models are good at I/O tasks. Meaning you can give instructions to the model on what to do for each input, and the model returns output based on the input. This is applied intelligence which is a good thing to measure.
+
 #### Knowledge Benchmarks
 
 - [SimpleQA (Factuality)](/posts/ai-simpleqa-leaderboard/)
 - [AIME (Math)](https://matharena.ai/)
 - [Humanity's Last Exam](https://lastexam.ai/)
-
-#### Intelligence
-
-- [ARC-AGI](https://arcprize.org/leaderboard)
 
 #### Coding Benchmarks
 
