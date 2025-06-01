@@ -4,7 +4,7 @@ date: 2024-11-03T18:10:57-05:00
 draft: true
 tags:
   - travel
-summary: "This post outlines the author's plan for their first digital nomad tour in Magaluf, Majorca, Spain in 2025. It covers visa considerations (Youth Mobility Visa, 90-day visa-free), the process of booking flights and accommodation, and the need for medical insurance. The author also mentions their intention to learn Spanish during their stay."
+summary: TODO
 ---
 
 If you read my [digital nomad](/posts/digital-nomad) article, you'll know I went with Valencia for my first tour.

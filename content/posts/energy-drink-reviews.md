@@ -1,4 +1,4 @@
- ---
+---
 title: "Energy Drink Reviews"
 date: 2023-09-15T17:06:33-04:00
 tags:
@@ -14,11 +14,16 @@ A rating below 5 indicates that water is better to drink.
 
 These are the energy drinks I drink on a cycle when I'm not drinking new ones.
 
-1. Reign Energy White Gummy Bear
-2. Reign Energy Reignbow Sherbet
-3. Celsius Orange
-4. Celsius Playa Vibe
-5. Celsius Arctic White
+1. Celsius Orange
+2. Celsius Playa Vibe
+3. Celsius Arctic White
+
+Monthly
+
+- Reign Energy White Gummy Bear
+- Reign Energy Reignbow Sherbet
+- Red Bull Peach Edition
+- Red Bull Red Edition
 
 Reign Energy Razzle Berry would be on here but it is unavailable in Canada.
 
@@ -30,15 +35,13 @@ HELL YEAH
 
 Chill this in the fridge, go for a swim or exercise, come back home thirsty and this will be so refreshing you'll be thinking about the next time you get to drink it again. I bumped the rating since it's actually really nice after you drink it a few times.
 
-### Reign Energy White Gummy Bear (9.1 / 10)
+### Reign Energy White Gummy Bear (8 / 10)
 
-I believe this is better than the Razzle Berry flavour, but I will have to taste the razzle berry again. There isn't exactly any bad points I can think of. This does have a slight taste like a gummy bear and it's not overpowering.
+I had to nerf the ranking because the drinks don't hit the same when you get used to the taste.
 
-I like this a lot. It definitely deserves the #1 spot.
+### Reign Energy Reignbow Sherbet (8.1 / 10)
 
-### Reign Energy Reignbow Sherbet (9 / 10)
-
-Drinking this chilled puts the Reignbow Sherbet on par with White Gummy Bear
+I had to nerf the ranking because the drinks don't thi the same when you get used to the taste.
 
 ### Reign Energy Razzle Berry (9 / 10)
 

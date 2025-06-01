@@ -6,7 +6,7 @@ hidden: true
 tags:
   - opinion
   - morality
-summary: "This post explores the concept of objective morality, arguing that it is distinct from personal beliefs and cultural relativism. The author proposes a 'principality of morality' based on reducing harm without self-harm. The post delves into controversial topics like suicide, euthanasia (including for mental illness), and homosexuality, applying the author's moral framework. It also touches on the morality of government and democracy, murder, raising children, and retaliation."
+summary: TODO
 ---
 
 {{< toc >}}

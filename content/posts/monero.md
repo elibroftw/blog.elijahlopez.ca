@@ -5,7 +5,7 @@ draft: true
 tags:
   - monero
   - cryptocurrency
-summary: "This post discusses the inherent value of Monero's privacy features, arguing that this makes it an excellent store of value regardless of its transaction volume. The author suggests that Monero's privacy, which does not depend on transacting but simply on ownership and the ability to be bought, makes it more private than a Swiss bank account."
+summary: TODO
 ---
 
 I was just thinking about Monero and the value it offers. No matter

@@ -2,7 +2,7 @@
 title: "Noise Pollution in India"
 date: 2023-05-18T21:54:14-04:00
 draft: true
-summary: "This post discusses the issue of noise pollution in India, particularly the prevalent culture of honking in traffic. The author shares personal experiences and observations, contrasting it with driving in Canada. The post highlights the author's desire to find solutions to this problem rather than just pointing it out."
+summary: TODO
 ---
 
 I was watching a walking in South Korea point of view video and I loved how the city looked. I then wanted to see Mumbai and I'm met with blaring horns which is what prompted me to write this article.

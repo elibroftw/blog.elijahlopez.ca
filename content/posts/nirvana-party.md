@@ -6,7 +6,7 @@ tags:
   - canada
   - politics
   - economics
-summary: "This post outlines the principles and policies of a hypothetical 'Nirvana Party' in Canada, focusing on creating opportunities, ensuring peace from biased actions, and setting humane standards. Key policies include establishing a Canada Pension Fund as an RRSP alternative, strengthening the CRA's ability to audit zero-income individuals, replacing natural gas plants with nuclear energy, and nationalizing zoning with a focus on maximizing land use and density."
+summary:  TODO
 ---
 
 ## Principles

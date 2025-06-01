@@ -5,7 +5,7 @@ draft: true
 tags:
   - politics
   - possible-thesis
-summary: "This post presents a theory on reactionary politics, arguing that it's not limited to conservatives but also includes the silent majority and centrists who don't vote because they lack political representation. The author uses their own experience in the Ontario election and a critique of the NDP platform to illustrate how parties fail to address the diverse needs and priorities of voters, focusing instead on targeted messaging rather than a universally beneficial platform."
+summary: TODO
 ---
 
 This is a theory about Reactionary politics by me. Reactionary is something that is already known, however it is often painted as solely being conservative, right wing, and completely ignores the silent majority, the people who either don't vote or have centrist positions. These people simply don't vote because they don't see people in politics that reflect their ideals and since the people don't exist, it often seems like people are binary in their political view. The truth is that there are many people who hold centrist views and views are usually bundled based on common interests and backgrounds.

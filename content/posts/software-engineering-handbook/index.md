@@ -5,7 +5,7 @@ draft: true
 tags:
   - book
   - programming
-summary: "This post serves as an index and introduction to 'The Software Engineering Handbook,' a compilation of the author's notes and knowledge on software engineering topics. It lists the planned chapters covering areas from the computer environment and programming basics to version control, software projects, principles, backend and frontend development, continuous integration, and deployment. The post emphasizes concise, searchable, and informative content with examples, and includes brief notes on deployment and networking concepts."
+summary: TODO
 ---
 
 > This is stupid. Why would I need to learn how to code.

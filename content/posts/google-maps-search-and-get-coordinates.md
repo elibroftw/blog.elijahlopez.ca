@@ -4,7 +4,7 @@ date: 2023-10-02T18:10:33-04:00
 draft: true
 tags:
   - tutorial
-summary: "This post provides a JavaScript code example for searching locations and retrieving their coordinates using the Google Maps Place Search API (specifically Text Search), contrary to Google's documentation suggesting the Geocode service for this purpose. It includes a `placeSearch` function utilizing `fetch` with a timeout and demonstrates how to extract latitude and longitude from the results. The author notes Google's example on their documentation page uses the Autocomplete API instead of Text Search for this task."
+summary: TODO
 ---
 
 When reading the documentation for Google Maps Places autocomplete, under "optimizations", Google recommends using their geocode service instead of [Text Search](https://developers.google.com/maps/documentation/places/web-service/search-text) if you want to get the coordinates of the place.

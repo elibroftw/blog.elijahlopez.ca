@@ -5,7 +5,7 @@ draft: true
 hidden: true
 aliases:
     - '/posts/grooming-tips/'
-summary: "This post provides male grooming tips, covering face and acne care (washing with cleansing gel, moisturizing, using retinol), hair care (shampooing and conditioning every other day), and facial-hair shaving techniques (using warm showers, trimming long hair, shaving with and against the grain without pressing). The post notes that it is a work in progress with a section on eyebrows yet to be added."
+summary: TODO
 ---
 
 This is a work in progress.

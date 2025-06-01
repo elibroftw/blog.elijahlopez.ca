@@ -51,6 +51,8 @@ You can try using `yt-dlp` before resorting to `python -m yt_dlp` like I did. In
 
 ```sh
 python -m yt_dlp <URL> -xciw -f "bestaudio/best" --audio-quality 0 --audio-format mp3 --embed-thumbnail --embed-metadata -o "%(title)s.%(ext)s"
+
+
 ```
 
 If the video doesn't have the artist in the title, use the following output template instead: `-o "%(creator,uploader,channel)s - %(title)s.%(ext)s"`
@@ -62,6 +64,7 @@ If you are using yt-dlp on youtube videos, you can either supply the URL or just
 ```sh
 python -m yt_dlp UTwB8iJOux0 -xciw -f "bestaudio/best" --audio-quality 0 --audio-format mp3 --embed-thumbnail --embed-metadata -o "%(title)s.%(ext)s"
 # python -m yt_dlp "https://www.youtube.com/watch?v=UTwB8iJOux0&pp=ygUVc2V3ZXJzbHZ0IGFsbCB0aGUgam95" -xciw -f "bestaudio/best" --audio-format mp3 --embed-thumbnail --embed-metadata -o "%(title)s.%(ext)s"
+
 ```
 
 [command line flags](https://github.com/yt-dlp/yt-dlp#filesystem-options)

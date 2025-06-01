@@ -9,7 +9,7 @@ tags:
   - react
 aliases:
   - /posts/reactjs-tips
-summary: "This post provides various tips for React development, covering topics such as optimizing state updates with objects, using React Fragments instead of redundant divs, defining props in component parameters using object destructuring, organizing Context Providers with a `Providers.jsx` component, checking variable types, using a `useCookie` hook for simple storage, understanding the purpose of `useLayoutEffect`, using `useRef` for persistence, and ignoring variables from array destructuring."
+summary: "Explore practical React.js tips for optimizing performance, managing state, and improving code structure. Learn about efficient object updates, using React Fragments, structuring props, leveraging Providers for contexts, advanced type comparisons, and effective cookie usage with useCookie. Discover insights on useLayoutEffect, persisting state with useRef, and forcing component updates."
 ---
 
 I'm only in the mood for writing down my thoughts, so I apologize for the upcoming messiness.
@@ -181,3 +181,7 @@ When there is a data change, maybe you need to force the hooks to refetch.
 ```jsx
 const [, forceUpdate] = useReducer(x => x + 1, 0);
 ```
+
+## Adding a Minimum Loading Delay
+
+This isn't a straight forward task as it assumes use of an async management library. That's why I made an article for it: [React: How to Add Minimum Loading Delay](/posts/react-how-to-add-minimum-loading-delay)

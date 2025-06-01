@@ -2,7 +2,7 @@
 title: "Centrist Questionnaire"
 date: 2025-01-21T15:10:27-05:00
 draft: true
-summary: "This post proposes a 'Centrist Questionnaire' to identify genuinely centrist political stances. It includes questions on the Israel-Palestine conflict (requiring support for Palestinian self-determination), Venezuela (critiquing blind support for its elections), self-defense cases (Kyle Rittenhouse, Jordan Neely, George Floyd), and Canadian inter-provincial trade (opposing 'smuggling' laws), aiming to distinguish centrists from those leaning left or right."
+summary: "A  'Centrist Questionnaire' to identify genuinely centrist political stances."
 ---
 
 It's time to make a Centrist Questionnaire.

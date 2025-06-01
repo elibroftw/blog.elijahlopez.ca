@@ -2,7 +2,7 @@
 title: "Is There an Over Population of Humans?"
 date: 2023-12-24T01:56:03-04:00
 draft: true
-summary: "This post argues that there is an overpopulation of humans based on a definition of exceeding the ideal amount for maximizing the standard of living. The author attempts to define an acceptable standard of living based on housing, job skills utilization, and free time. The post also briefly touches on the role of dopamine in making life worth living and the author's frustration with completing the article."
+summary: TODO
 ---
 
 Answer: yes.

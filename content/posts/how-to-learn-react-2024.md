@@ -7,13 +7,17 @@ tags:
   - tutorial
   - webdev
 summary: "A guide for backend engineers on learning React in 2024, covering setup, fundamentals, web tech, deployment, and testing."
+aliases:
+  - /posts/how-to-learn-react-2024
+  - /posts/how-to-learn-react-2025
+  - /posts/how-to-learn-react
 ---
 
 I saw a [post on reddit](https://www.reddit.com/r/reactjs/comments/1c89755/im_a_diehard_backend_engineer_where_to_learn_react/) today about a backend engineer wanting to learn React and of course the first comment assumes a backend engineer knows what `package.json` is.
 
 So here's what I would tell someone if I needed them to work on a React project. If I ever need to hire someone to work on my project, I would need them to be able to fix React code and write tests for it, because that's pretty hard.
 
-1. Install the NodeJS LTS via `nvm` or `nvm-windows`
+1. Install the NodeJS LTS via `nvm` or `nvm-windows`. Also install `bun.sh`
   Install nodeJS via nvm or nvm-windows
     `nvm: curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash`
     nvm-windows: [nvm-setup.exe](https://github.com/coreybutler/nvm-windows/releases/latest/download/nvm-setup.exe)
@@ -26,3 +30,5 @@ So here's what I would tell someone if I needed them to work on a React project.
 7. Write like one or two tests using jest or cypress
 
 Sorry if this isn't completely finished, I got carried away with something else in the middle of writing this.
+
+You may also find my [React Tips](/posts/react-tips) useful.

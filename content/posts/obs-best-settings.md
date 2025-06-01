@@ -2,7 +2,7 @@
 title: "OBS Best Settings and Trouble Shooting"
 date: 2022-02-19T13:53:14-05:00
 draft: true
-summary: "This post provides recommended settings and troubleshooting tips for OBS (Open Broadcaster Software) on Windows, specifically addressing issues with washed-out colors. It suggests adjusting NVIDIA control panel settings and OBS advanced video settings for optimal color representation. The post also includes recommended output settings for streaming and recording."
+summary: TODO
 ---
 
 ## OBS Windows Washed Out Colors Fix
