@@ -237,6 +237,8 @@ Creating 3D wireframes with Gemini
 ### Websites
 
 - Creating one
+  - [Aura Chat](https://aurachat.io/)
+    - [samples](https://aurachat.io/meng)
   - v0: for developers to speedrun website development
   - [Lovable](https://lovable.dev/): for developers to speedrun website development
   - [UIDESIGN.AI](https://uidesign.ai/): AI for Shopify Themes & Figma
@@ -302,6 +304,7 @@ If you don't mind TailwindCSS (I hate it), you may find these tools useful. Spea
 - [Open Interpreter](openinterpreter.com/): A natural language interface for computers
 - [Computer Use by Anthropic guide](https://glama.ai/blog/2024-10-22-automate-computer-using-claude)
 - [DSpy](https://dspy.ai/) - modularizing AI by providing programmed functions that can be executed, thus lowering the risk of hallucinations for already solved problems
+  - [A simple introduction to DSPy](https://x.com/MaximeRivest/status/1929861781448536081?t=HmwYmLifYq1QJhSKavjL3g)
 
 ### Writing
 
@@ -403,6 +406,8 @@ Researcher-oriented
 - pytorch
 - tensor
 - llama.cpp
+
+[A simple introduction to DSPy](https://x.com/MaximeRivest/status/1929861781448536081?t=HmwYmLifYq1QJhSKavjL3g)
 
 ### Read Frontier Papers
 

@@ -53,6 +53,10 @@ WealthSimple | Not Supported | Google it
 
 If you know an exchange other than Kraken that has less than a 0.5% spread, let me know
 
+## Crypto ATMs
+
+- [fastbtcatm](https://coinatmradar.com/operator/500/fastbtcatmca-bitcoin-atm-operator/)
+
 ## Kraken
 
 ### Kraken USDC &rarr; XMR

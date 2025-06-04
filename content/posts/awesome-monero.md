@@ -12,6 +12,17 @@ summary: "A curated list of Monero resources, including recommended wallets, pay
 
 If you want to know why I believe in Monero, feel free to read [Why monero is the best crypto CURRENCY](/posts/why-monero-is-the-best-crypto-currency).
 
+## Staying Up to Date
+
+- [Official Monero blog](https://www.getmonero.org/blog/)
+- [The Monero Moon](https://www.themoneromoon.com/)
+- [Monero Observer](https://monero.observer/)
+  - Dedicates a post for everything important in Monero
+  - Blitz Reports are released at the end of every month
+  - [Non-Curated Resources directory](https://monero.observer/resources/)
+- [Revuo](https://www.revuo-xmr.com/)
+  - Supports weekly publications
+
 ## Wallets
 
 1. [Feather Wallet](https://docs.featherwallet.org/)
@@ -30,6 +41,8 @@ If you want to know why I believe in Monero, feel free to read [Why monero is th
     - Although the app is very polished, it was prone to crash for me
     - Annoyingly doesn't support monero URIs
 
+[monero.fail](https://monero.fail/): a list of remote nodes (be sure to vet the node)
+
 <details><summary>Other wallets that I do not recommend</summary>
 
 - [Trust Wallet](https://trustwallet.com/monero-wallet)
@@ -45,7 +58,45 @@ If you want to know why I believe in Monero, feel free to read [Why monero is th
 
 </details>
 
-## Monero Payment Gateways
+### Blockchain Explorer
+
+- [Monero blocks](https://localmonero.co/blocks/)
+
+## Exchanges and Swap Services
+
+- Swaps
+  - [Trocador.app](https://trocador.app/)
+  - [OrangeFren](https://orangefren.com/)
+- Centralized
+  - Kraken
+    - [How to buy Monero in Canada](/posts/how-to-buy-monero-in-canada)
+- Decentralized
+  - [RetoSwap - Haveno](https://retoswap.com/)
+  - [Serai](https://serai.exchange/) (not yet launched)
+  - Bisq
+  - Atomic swaps
+    - [Unstoppable Swaps](https://unstoppableswap.net/)
+- [ATMs](https://coinatmradar.com/)
+
+## Mining Monero
+
+- [Gupax: P2Pool and XMRig manager](https://github.com/hinto-janai/gupax?tab=readme-ov-file#what-is-monerop2poolxmriggupax)
+
+## Commerce
+
+- [xmr.directory/](https://xmr.directory/)
+- [xmrbazaar.com/](https://xmrbazaar.com/)
+- [Cryptwerk](https://cryptwerk.com/coinmap/xmr/)
+- [Monerica](https://monerica.com/)
+
+## Monero Events
+
+- [Monerotopia](https://monerotopia.com/)
+- [Monero Kon](https://www.monerokon.org/)
+
+## Accepting Monero
+
+### Monero Payment Gateways
 
 For this section, I will list both the ideal way and the easier ways to accept Monero. I will rank the items based on open-source (and thus self-hosted) and the ability to accept only monero. The ease of deployment will be used as a tie-breaker.
 
@@ -92,6 +143,10 @@ that uses CMS or ecommerce plugins: WordPress, Shopify, WooCommerce, Clover.
 
 This section will be on how to integrate Monero processing in stores that already use a POS system such as Square and Clover. This section is empty because apparently only I care to think of closing this gap in terms of usability. The work for Clover would involve Android development.
 
+### Accepting Monero as a Creator
+
+[XMRChat](https://xmrchat.com/)
+
 ## Funding Monero Projects
 
 - [Monero Community Crowdfunding System (CCS)](https://ccs.getmonero.org/)
@@ -105,18 +160,6 @@ This section will be on how to integrate Monero processing in stores that alread
 - [serai monero wallet](https://github.com/serai-dex/serai/tree/develop/networks/monero/wallet)
 - [monero cuprate](https://github.com/Cuprate/cuprate)
 
-## Exchanges and Swap Services
-
-- Swaps
-  - [Trocador.app](https://trocador.app/)
-- Centralized
-  - Kraken
-    - [How to buy Monero in Canada](/posts/how-to-buy-monero-in-canada)
-- Decentralized
-  - [RetoSwap - Haveno](https://retoswap.com/)
-  - [Serai](https://serai.exchange/) (not yet launched)
-  - Bisq
-
 ## Deploying Monero Node on VPS
 
 I recommend finding a server with 300GB+ SSD storage using [serverhunter](https://www.serverhunter.com/#query=storage_capacity:%3E=525+stock:(in_stock+OR+unknown)). Alternative, you can use OVHCloud or Vultr.
@@ -126,10 +169,6 @@ I recommend finding a server with 300GB+ SSD storage using [serverhunter](https:
   - Ideally you just need [docker-monero-node](https://github.com/lalanza808/docker-monero-node?tab=readme-ov-file#docker-monero-node) and every time you get notified that Monero has updated, you can just run the same ansible playbook with a password and without changing anything. A password will be required to inject ENV variables.
   - [lalvarezguillen/monerod-node-vps](https://github.com/lalvarezguillen/monerod-node-vps)
   - [Al13n0/monero-nodes-ansible](https://github.com/Al13n0/monero-nodes-ansible)
-
-## Blockchain Explorer
-
-- [Monero blocks](https://localmonero.co/blocks/)
 
 ## What's Missing
 
