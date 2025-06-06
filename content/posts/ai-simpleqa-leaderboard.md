@@ -30,7 +30,7 @@ I've removed Chatbot Arena and ArenaHard as DeepSeek R1 05/28 is really good at 
 | Perplexity Sonar Pro      | Perplexity | I P | 85.80 | N/A | N/A |
 | Claude-4-Opus              | Anthropic | I M | - | 75.5% | - |
 | ChatGPT-4.5                 | OpenAI    | 1 M | 62.50 | - | - |
-| Gemini-2.5-Pro              | Google    | I M |  52.90 | 86.70 | - |
+| Gemini-2.5-Pro              | Google    | I M |  54.00 | 86.70 | - |
 | Claude-3.7-Sonnet        | Anthropic | I M | 50.00 | - | 59.8 |
 | o3                                  | OpenAI    | I M | 49.4 |  88.9  | 85.9  |
 | Grok 3                           | xAI       | I M | 44.60 | 93.3 | - |

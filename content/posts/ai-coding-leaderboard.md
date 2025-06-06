@@ -18,10 +18,10 @@ summary: "Explore a leaderboard of AI models ranked by coding benchmarks like SW
 | Model / Product   | Company   | Tier | SWE-bench verified | Codeforces |
 |----------------------|-----------|----------|----------|----------|
 | o3 | OpenAI | I | 69.0% | 2706 |
-| Claude 4 Sonnet | Anthropic | I | 72.7% | - |
-| Claude 4 Opus | Anthropic | I | 72.5% | - |
+| Claude 4 Sonnet | Anthropic | I | 79.7% | - |
+| Claude 4 Opus | Anthropic | I | 79.5% | - |
 | o4-mini | OpenAI | I | 68.1% | 2719 |
-| Gemini 2.5 Pro | Google | I | 63.8% | 2001 |
+| Gemini 2.5 Pro | Google | I | 67.2% | 2001 |
 | Claude 3.7 Sonnet | Anthropic | I | 62.3% | - |
 | o3-mini | OpenAI | I | 61.0% | 2036 |
 | DeepSeek R1 (05/28) | ChatStream | I | 57.60% | 1930 |
