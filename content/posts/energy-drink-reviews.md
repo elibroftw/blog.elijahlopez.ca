@@ -17,11 +17,11 @@ These are the energy drinks I drink on a cycle when I'm not drinking new ones.
 1. Celsius Orange
 2. Celsius Playa Vibe
 3. Celsius Arctic White
+4. Reign Energy Reignbow Sherbet
+5. Reign Energy White Gummy Bear
 
 Monthly
 
-- Reign Energy White Gummy Bear
-- Reign Energy Reignbow Sherbet
 - Red Bull Peach Edition
 - Red Bull Red Edition
 
@@ -35,13 +35,11 @@ HELL YEAH
 
 Chill this in the fridge, go for a swim or exercise, come back home thirsty and this will be so refreshing you'll be thinking about the next time you get to drink it again. I bumped the rating since it's actually really nice after you drink it a few times.
 
-### Reign Energy White Gummy Bear (8 / 10)
+### Reign Energy Reignbow Sherbet (9.25 / 10)
+
+### Reign Energy White Gummy Bear (9 / 10)
 
 I had to nerf the ranking because the drinks don't hit the same when you get used to the taste.
-
-### Reign Energy Reignbow Sherbet (8.1 / 10)
-
-I had to nerf the ranking because the drinks don't thi the same when you get used to the taste.
 
 ### Reign Energy Razzle Berry (9 / 10)
 
