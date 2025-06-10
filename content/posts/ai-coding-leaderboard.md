@@ -7,21 +7,23 @@ tags:
 summary: "Explore a leaderboard of AI models ranked by coding benchmarks like SWE-bench and Codeforces. Discusses challenges and limitations of existing benchmarks."
 ---
 
-- [SWE-bench verified](https://openai.com/index/introducing-swe-bench-verified/). A subset of 500 tasks from the full 2000 which have been verified by humans as solvable. This is the defacto way to evaluate AI models as almost almost all models will report their scores for this benchmark. The unofficial [leaderboard](https://www.swebench.com/#verified) includes SWE copilot tool. The problem is that it doesn't include self-reported results unlike my leaderboard.
-- [Codeforces](https://codeforces.com/): the elo represents how good the AI model is at competitive programming tasks. There is no leaderboard since most AI models will self-report or benchmark other models
+DEPRECATED: [Aider Polyglot](https://aider.chat/docs/leaderboards/) is multi-lingual compared to SWE-bench verified and that does not require me to make use of my own aggregated leaderboard. I will still try my best to maintain this post, but just letting you know I suggest using Aider Polyglot going forward for which model to use for pair programming.
+
 - [Aider polyglot](https://aider.chat/2024/12/21/polyglot.html#the-polyglot-benchmark): Based on the 225 most difficult [Exercism](https://exercism.org/) coding problems in the following languages: C++, Go, Java, JavaScript, Python and Rust. See [Aider polyglot coding leaderboard](https://aider.chat/docs/leaderboards/). The problem I see is that models can just train on the solutions and game this leaderboard versus LiveCodeBench which is free of contaminations.
+- [SWE-bench verified](https://openai.com/index/introducing-swe-bench-verified/). A subset of 500 Python-exclusive tasks from the full 2000 which have been verified by humans as solvable. This is the defacto way to evaluate AI models as almost almost all models will report their scores for this benchmark. The unofficial [leaderboard](https://www.swebench.com/#verified) includes SWE copilot tool. The problem is that it doesn't include self-reported results unlike my leaderboard.
+- [Codeforces](https://codeforces.com/): the elo represents how good the AI model is at competitive programming tasks. There is no leaderboard since most AI models will self-report or benchmark other models
 - The problem with EvalPlus is that it doesn't include bleeding edge models, it's basically almost solved, and not many new models even report their scores anymore.
 - I don't like LiveCodeBench because it's not useful for comparing different models released at different times due to 1) every-updating problem set 2) not continuously testing all frontier models. If a benchmark score has an expiry date, then referencing it is really bad for a leaderboard. It's good for relative performance in papers however then you have to read the fine print to ensure the authors retested the models they compared their new model against. See how complicated that is? Then you'd have to compile your own leaderboard because can you really trust others to do it right? No you can't! I may include some sort of LiveCodeBench relative ranking in the future.
 
 ### Leaderboard
 
-| Model / Product   | Company   | Tier | SWE-bench verified | Codeforces |
-|----------------------|-----------|----------|----------|----------|
-| o3 | OpenAI | I | 69.0% | 2706 |
+| Model / Product   | Company   | Tier | Aider Polyglot | SWE-bench verified | Codeforces |
+|----------------------|-----------|----------|----------|----------|--------------|
+| Gemini 2.5 Pro | Google | I | 82.2% | 67.2% | 2001 |
+| o3 | OpenAI | I | 79.6% | 69.0% | 2706 |
+| o4-mini | OpenAI | I | 72.0% | 68.1% | 2719 |
 | Claude 4 Sonnet | Anthropic | I | 79.7% | - |
-| Claude 4 Opus | Anthropic | I | 79.5% | - |
-| o4-mini | OpenAI | I | 68.1% | 2719 |
-| Gemini 2.5 Pro | Google | I | 67.2% | 2001 |
+| Claude 4 Opus | Anthropic | I | 72.0% | 79.5% | - |
 | Claude 3.7 Sonnet | Anthropic | I | 62.3% | - |
 | o3-mini | OpenAI | I | 61.0% | 2036 |
 | DeepSeek R1 (05/28) | ChatStream | I | 57.60% | 1930 |
