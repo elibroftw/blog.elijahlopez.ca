@@ -60,3 +60,9 @@ h1, h2, h3 {
 ```
 
 Very useful for blog
+
+Convex Real Time Database
+
+## Grids
+
+You can use a combination of `Grid, justify=space-between, <Grid.Col span='content'>, and <Grid.Col span='auto'>, <Button fullWidth>` so that buttons take up a fixed size in desktop mode, but take up the entire width in narrow view. See Obscura's Location View for an example.
