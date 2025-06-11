@@ -122,6 +122,10 @@ These companies don't make the models, but offer inference, either by hosting mo
 - Together.ai
 - [Replicate](https://replicate.com/explore/)
 
+### Running in the Cloud
+
+- [RunPod](https://runpod.io)
+
 ## AI Applications
 
 AI but for specific tasks. A mix of apps and models (when applicable). Skip to [Local AI Models](#local-ai-models) to learn more about running open-source models using open-source apps
@@ -191,6 +195,7 @@ Some of these can also be considered a subset of "Chat"
     - [Prompt to create app icons](https://x.com/adamlyttleapps/status/1671363003177123841)
   - [Dream](https://dream.ai/) by [WOMBO](https://dream.ai/blog)
 - [ComfyUI](https://comfyui-wiki.com/): GUI for diffusion modelsz
+- [Story Book LM Pro](https://storybooklm.pro/): Create illustration books for $8/mo
 - Personal
   - [Headshot Pro](https://www.headshotpro.com/)
   - [PhotoAI](https://photoai.com/)
@@ -257,6 +262,7 @@ Creating 3D wireframes with Gemini
 
 ### Marketing
 
+- [Creatify](http://creatify.ai/)
 - [Icon](https://icon.com/)
 
 ### Software Development
@@ -465,6 +471,7 @@ Company | Based | Notes
 - Tokens
 - NGMI: not going to make it
 - SOTA: State of the art
+- LoRA: Low-Rank Adaptation
 
 ## Final Words
 
