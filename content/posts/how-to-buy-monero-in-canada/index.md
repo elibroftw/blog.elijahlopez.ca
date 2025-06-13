@@ -22,7 +22,7 @@ $3,001 - $8,999  | $45 | Coinbase USDC (0.5%) and send to Kraken | 0.82% / 1.53%
 $6,000+ | $30 | Kraken wire transfer | ~0.52% / ~1.23%
 $8,000+ | $40 | Kraken wire transfer | ~0.52% / ~1.23%
 $9,000+ | $45 | Kraken wire transfer | ~0.52% / ~1.23%
-$10,000 | N/A | Coinbase USDC (0.5%)  + [Trocador](#trocador-usdc--xmr) (FixedFloat) | 0.7075%
+$10,000 | N/A | Coinbase USDC (0.5%)  + [Trocador](#swap-services) (FixedFloat) | 0.7075%
 $13,818 | N/A | Coinbase USDC (0.5%)  + Trocador (FixedFloat) | 0.9704%
 $10,000+ | $50 | Kraken wire transfer | ~0.52% / ~1.23%
 $16,000+ | $80 | Kraken wire transfer | ~0.52% / ~1.23%
@@ -31,6 +31,7 @@ Referral Links
 
 - [Coinbase](https://coinbase.com/join/BMNW52M) ($10 in BTC after first trade)
 - [Kraken](https://invite.kraken.com/JDNW/kpdi6rez) ($100 when you trade $200) [Code: 3zh45fpb]
+- [Trocador](https://trocador.app/en/?ref=CGBHeJwqRb): CGBHeJwqRb
 
 ## Canadian Bank Outgoing Wire Transfer Fees
 
@@ -102,14 +103,9 @@ it's not practical as like I said before, you need to have USD beforehand withou
 
 ## Swap Services
 
-Use [Trocador](https://trocador.app/en/exchange/EdSLsoJ7Z6) which will show you the exchange with the lowest fees, sometimes less than 0.5% for the swap!
-
-- Send: _USD Coin (Arbitrum One)_ (not the e one)
-- Trade for: _Monero_
-
-![Trocador Screenshot](/posts/how-to-buy-monero-in-canada/trocador-screenshot.webp)
-
 ### Trocador USDC &rarr; XMR
+
+Use [Trocador](https://trocador.app/?ref=CGBHeJwqRb&ticker_from=USDC&network_from=ArbitrumOne&ticker_to=XMR&amount_from=10000) which will show you the exchange with the lowest fees, sometimes less than 0.5% for the swap!
 
 Assuming 0.5% to buy USDC on Coinbase, here are the fees are two USDC amounts. The lower the amount to trade, the cheaper the fees.
 
@@ -118,9 +114,24 @@ USDC | Swap Fee | Total Fees
 10,000 | 0.4704% | 0.9704%
 7,200 | 0.2075% | 0.7075%
 
+- Send: _USD Coin (Arbitrum One)_ (not the e one)
+- Trade for: _Monero_
+- Screenshot follows embedded iframe
+
+<div style="display: flex; justify-content: space-evenly">
+  <div style="width: 400px; text-align: center; border: solid 1px orange; border-radius: 10px">
+    <h2>Trocador.app iframe</h2>
+    <iframe src="https://trocador.app/widget/?ref=CGBHeJwqRb&ticker_from=USD-Coin&network_from=Arbitrum-One&ticker_to=XMR&amount_from=10000" width="400px" height="350px" scrolling="no" style="border: none"></iframe>
+  </div>
+</div>
+
+Screenshot
+
+![Trocador Screenshot](/posts/how-to-buy-monero-in-canada/trocador-screenshot.webp)
+
 ## TradeOgre (USDT:XMR)
 
-Not worth trying to do because USDT (Tether USD) cannot be purchased on Newton (or in Canada apparently?)
+Not worth trying to do because USDT (Tether USD) cannot be purchased in Canada.
 
 ## ~~Local Monero~~
 

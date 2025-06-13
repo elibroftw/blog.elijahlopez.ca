@@ -3,6 +3,7 @@ title: "Ranking Countries by Unemployment"
 date: 2025-06-03T19:53:37-04:00
 draft: true
 hidden: true
+summary: A ranking of countries by lowest unemployment rate
 ---
 
 This list's primary purpose is to aid English speaking Canadians obtain a job. To do this, we need to filter out countries that are just unrealistic for Canadians to move to.
