@@ -8,7 +8,7 @@ tags:
 summary: The easiest way to buy Monero in Canada is to first buy USDC on Coinbase and then use Trocador.app to swap USDC Arbitrum One for Monero. For those who are savvy, there are a variety of  methods depending on how sensitive you are to fees
 ---
 
-If you want to know why I believe in Monero, feel free to read [Why monero is the best crypto CURRENCY](/posts/why-monero-is-the-best-crypto-currency).
+If you want to know why I believe in Monero, feel free to read [Why Monero is the Best Crypto CURRENCY](/posts/why-monero-is-the-best-crypto-currency).
 
 ## Optimal Methods
 
@@ -103,11 +103,11 @@ it's not practical as like I said before, you need to have USD beforehand withou
 
 ## Swap Services
 
-### Trocador USDC &rarr; XMR
+### Coinbase USDC &rarr; Trocador USDC &rarr; XMR
 
-Use [Trocador](https://trocador.app/?ref=CGBHeJwqRb&ticker_from=USDC&network_from=ArbitrumOne&ticker_to=XMR&amount_from=10000) which will show you the exchange with the lowest fees, sometimes less than 0.5% for the swap!
+First buy USDC from [Coinbase](https://coinbase.com/join/BMNW52M) which is 0.5% in fees. Next go to [Trocador](https://trocador.app/?ref=CGBHeJwqRb&ticker_from=USDC&network_from=Arbitrum&amount_from=5000) and swap from USDC over **Arbitrum One** to Monero. Trocador is a swap aggregate service, meaning that it will always use the service with the lowest swap fees. Sometimes, the swap itself has less than 0.5% in fees, meaning your total fees can be less than 1%, which is competitive with simply buying with a high reward / cashback credit card.
 
-Assuming 0.5% to buy USDC on Coinbase, here are the fees are two USDC amounts. The lower the amount to trade, the cheaper the fees.
+Assuming a 0.5% to buy USDC on Coinbase, here are the fees for two USDC amounts. The lower the amount to trade, the lower the _slippage_.
 
 USDC | Swap Fee | Total Fees
 ---------- | ------------- | --------
@@ -116,18 +116,13 @@ USDC | Swap Fee | Total Fees
 
 - Send: _USD Coin (Arbitrum One)_ (not the e one)
 - Trade for: _Monero_
-- Screenshot follows embedded iframe
 
 <div style="display: flex; justify-content: space-evenly">
   <div style="width: 400px; text-align: center; border: solid 1px orange; border-radius: 10px">
-    <h2>Trocador.app iframe</h2>
-    <iframe src="https://trocador.app/widget/?ref=CGBHeJwqRb&ticker_from=USD-Coin&network_from=Arbitrum-One&ticker_to=XMR&amount_from=10000" width="400px" height="350px" scrolling="no" style="border: none"></iframe>
+    <h2>Trocador iframe (with referral)</h2>
+    <iframe src="https://trocador.app/widget/?ref=CGBHeJwqRb&ticker_from=USDC&network_from=Arbitrum&amount_from=5000" width="400px" height="350px" scrolling="no" style="border: none"></iframe>
   </div>
 </div>
-
-Screenshot
-
-![Trocador Screenshot](/posts/how-to-buy-monero-in-canada/trocador-screenshot.webp)
 
 ## TradeOgre (USDT:XMR)
 

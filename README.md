@@ -19,6 +19,12 @@ git config --global submodule.recurse true
 cd blog.elijahlopez.ca
 ```
 
+In case you clone the repo without recursing the submodules (HINT: you will see "Page not found"), you can run
+
+```bash
+git submodule update --init --recursive
+```
+
 ### What to do Before Writing
 
 Make sure you are modifying the latest version of the blog. Use `git pull --rebase`. The first reason to do so, is if we are working on multiple devices, we do not want to run into some sort of merge conflict when we want to push our updates. The second reason is because the auto-deploy script can also commit updates to the theme, so we want to ensure that we aren't going to mess the remote state up.
