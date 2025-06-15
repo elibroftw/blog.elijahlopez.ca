@@ -54,10 +54,6 @@ jobs:
               yq '.baseUrl' config.yaml | cut -c 9- | sed 's/\/$//' > public/CNAME
             fi
 
-      - name: Push submodules update
-        run: |
-          git push
-
       - name: Deploy public dir to gh-pages branch
         if: github.ref_name == github.event.repository.default_branch
         run: |
