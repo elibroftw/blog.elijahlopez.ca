@@ -306,12 +306,14 @@ If you don't mind TailwindCSS (I hate it), you may find these tools useful. Spea
 
 > We're so confident in our security testing capabilities that if we don't find any vulnerabilities, you get your money back. No questions asked.
 
-### Agents
+### Using AI in Applications
 
 - [Open Interpreter](openinterpreter.com/): A natural language interface for computers
 - [Computer Use by Anthropic guide](https://glama.ai/blog/2024-10-22-automate-computer-using-claude)
 - [DSpy](https://dspy.ai/) - modularizing AI by providing programmed functions that can be executed, thus lowering the risk of hallucinations for already solved problems
   - [A simple introduction to DSPy](https://x.com/MaximeRivest/status/1929861781448536081?t=HmwYmLifYq1QJhSKavjL3g)
+- [React MCP](https://blog.cloudflare.com/connect-any-react-application-to-an-mcp-server-in-three-lines-of-code/)
+- OpenRouter
 
 ### Writing
 
