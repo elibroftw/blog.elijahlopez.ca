@@ -15,8 +15,17 @@ Three years later, and this post was way too long. Life in 2025 is amazing and h
 2. Care more about what you can do something about
 3. Seek truth without becoming obsessed
 4. Enjoy life without \[self-]harming. We are so lucky to be alive in the 21st century where flight is cheap. Keep a bucket list and feel free to focus on fulfilling it.
+5. If you are extremely wealthy, when you retire at 65, you should be investing / giving back so much every year that you die with a wealth of $1B
 
 The rules below are kept for archival purpose. I don't plan on reading it. I actually plan on deleting it, but maybe on a different date.
+
+## Finance
+
+At 27, Carnegie  invested in Columbia Oil Company, which yielded so much money. Lesson? Natural resources get the job done. The equivalent would be investing in some oil stocks in 2020, however, I'm sure any TSX Venture stock would do at the same level of operating business level.
+
+Need to learn about management and cost control, by working at some of the largest businesses in the world.
+
+Carnegie invested the equivalent of $18,475 2025 dollars, by using a reverse mortgage or HELOC. **The entire investment was debt financed.**
 
 ## Rules
 

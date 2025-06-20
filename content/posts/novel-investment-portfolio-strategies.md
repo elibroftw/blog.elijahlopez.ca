@@ -44,3 +44,5 @@ Another way to maximize returns is to focus on Mature-Growth and Value stocks an
 
 - Strategy A: pick stocks based on positive-driven Beta for stocks that are recessionary proof
 - Strategy B: pick stocks based on Beta's with time horizons that are more in line with investment time horizons (include recency bias if doing en-masse). Then, you take advantage of stocks that report higher Beta's than what you calculated.
+
+## Bio
