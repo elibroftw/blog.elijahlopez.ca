@@ -43,3 +43,7 @@ One of the dumbest editors. If you want to add simple things like a rectangle, y
 ## Olive
 
 The download button itself doesn't work! Copyright 2023. Therefore unmaintained.
+
+## Proprietary Editors
+
+Fuck ClipChamp and fuck CapCut. CapCut is not free. It requires logging into TikTok as well as requires you to purchase pro after 3 free exports. I can't believe people were recommending me this shit. This is what Shotcut should strive towards in terms of ease of use, but still.

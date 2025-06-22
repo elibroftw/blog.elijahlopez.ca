@@ -5,7 +5,7 @@ tags:
   - monero
   - cryptocurrency
   - canada
-summary: The easiest way to buy Monero in Canada is to first buy USDC on Coinbase and then use Trocador.app to swap USDC Arbitrum One for Monero. For those who are savvy, there are a variety of  methods depending on how sensitive you are to fees
+summary: The easiest way to buy Monero in Canada is deposit up to 10,000 CAD via eTransfers into Kraken for free, buy USD, and then buy XMR. Alternatively, up to 13k CAD, you can buy USDC on Coinbase and then use Trocador.app to swap USDC Arbitrum One for Monero.
 ---
 
 If you want to know why I believe in Monero, feel free to read [Why Monero is the Best Crypto CURRENCY](/posts/why-monero-is-the-best-crypto-currency).
@@ -14,24 +14,23 @@ If you want to know why I believe in Monero, feel free to read [Why Monero is th
 
 All amounts are in CAD. Maker / Taker convention. When sending USDC, choose **Arbitrum network**.
 
+If you are buying 10,000 CAD or less, you can deposit into Kraken via eTransfer with zero fees. From there there are two methods Kraken allows for purchasing Monero.
+
+1. Use _Kraken Pro_ to buy USD/CAD (market is fine if you can't wait), and then place limit orders on Monero (0.5% to 0.8% in fees). Using only market orders (taker fees) will cost you 0.8% in fair value, which is still considerably lower than the alternative method.
+2. You can use the user-friendly convert tool which costs you 3% of fair value. There's a 1% trading fee plus a spread of ~2%.
+
 Amount | Wire Transfer Fee | Method | Fee Estimate
 ---------- | ------------------------- | ----------- | ------
-$0 - $3,000 | N/A  | Kraken e-Transfer | 1.3574%
-$3,001 - $7,999 | $40 | Coinbase USDC (0.5%) and send to Kraken | 0.82% / 1.53%
-$3,001 - $8,999  | $45 | Coinbase USDC (0.5%) and send to Kraken | 0.82% / 1.53%
-$6,000+ | $30 | Kraken wire transfer | ~0.52% / ~1.23%
-$8,000+ | $40 | Kraken wire transfer | ~0.52% / ~1.23%
-$9,000+ | $45 | Kraken wire transfer | ~0.52% / ~1.23%
-$10,000 | N/A | Coinbase USDC (0.5%)  + [Trocador](#swap-services) (FixedFloat) | 0.7075%
+$0 - $10,000 | N/A  | Kraken e-Transfer | 0.5% / 0.8%
 $13,818 | N/A | Coinbase USDC (0.5%)  + Trocador (FixedFloat) | 0.9704%
 $10,000+ | $50 | Kraken wire transfer | ~0.52% / ~1.23%
 $16,000+ | $80 | Kraken wire transfer | ~0.52% / ~1.23%
 
 Referral Links
 
-- [Coinbase](https://coinbase.com/join/BMNW52M) ($10 in BTC after first trade)
 - [Kraken](https://invite.kraken.com/JDNW/kpdi6rez) ($100 when you trade $200) [Code: 3zh45fpb]
 - [Trocador](https://trocador.app/en/?ref=CGBHeJwqRb): CGBHeJwqRb
+- [Coinbase](https://coinbase.com/join/BMNW52M) ($10 in BTC after first trade)
 
 ## Canadian Bank Outgoing Wire Transfer Fees
 
@@ -60,18 +59,23 @@ If you know an exchange other than Kraken that has less than a 0.5% spread, let 
 
 ## Kraken
 
-### Kraken USDC &rarr; XMR
-
-Buy USDC on Coinbase and send it to Kraken via the Arbitrum network. Knowing that it's 0.5% cheaper than the Newton XLM method, we get 0.82% for makers and 1.53% for takers. If you don't have patience to place a limit order at the market price, I recommend using FixedFloat which takes a 0.65% fees for swaps.
-
 ### CAD &rarr; USD &rarr; XMR
+
+As of 2025, this is the best method, however I've kept my 2021 experience for history.
+
+You can deposit up to 10k CAD via eTransfer into Kraken without any deposit fees. Then you can convert to USD which I believe is at most 0.4% in taker fees if you a market order on the USD/CAD (DO NOT USE THE CONVERT FEATURE, THE FX RATE IS A RIP OFF),
+
+After that, you can pay another 0.4% in taker fees to buy Monero on the XMR/USD.
+
+Here are my June 2025 results using 200 CAD.
+
+---
 
 Total fee percentage: 1.3574%
 
 This method is possibly the cheapest if you are a liquidity taker, however there is deposit limit of $3,000 per day compared to Coinbase which allows for $10,000 at once.
 
-A deposit fee of 0.1% for etransfers (3k limit), a USD conversion fee of 0.2%, and a 0.16% post limit order fee to buy XMR, and a flat network fee to withdraw (not counted). In total, that's 0.46% as a maker and a 0.56% fee as a taker. You can use Etana to forgo the deposit fee, but I'm unsure if Etana has its
-own fees and it does require KYC. A wire transfer requires being in-persona which might have its own fees; it does for my business account!
+A deposit fee of 0.1% for etransfers (3k limit), a USD conversion fee of 0.2%, and a 0.16% post limit order fee to buy XMR, and a flat network fee to withdraw (not counted). In total, that's 0.46% as a maker and a 0.56% fee as a taker. You can use Etana to forgo the deposit fee, but I'm unsure if Etana has its own fees and it does require KYC. A wire transfer requires being in-persona which might have its own fees; it does for my business account!
 
 My own results for the etransfer deposit method are:
 
@@ -83,6 +87,10 @@ My own results for the etransfer deposit method are:
 Make sure to set the limit order one cent less than market with **post** selected unless you are treating it as a security.
 
 The etransfer deposit fee took the largest chunk! I'll have to test the other methods to compare.
+
+### Kraken USDC &rarr; XMR
+
+Buy USDC on Coinbase and send it to Kraken via the Arbitrum network. Knowing that it's 0.5% cheaper than the Newton XLM method, we get 0.82% for makers and 1.53% for takers. If you don't have patience to place a limit order at the market price, I recommend using FixedFloat which takes a 0.65% fees for swaps.
 
 ### XLM &rarr; USD &rarr; XMR
 
