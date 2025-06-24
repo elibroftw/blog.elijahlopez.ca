@@ -10,7 +10,7 @@ summary: "Proposing a new cybersecurity ETF strategy: tiering companies (pure-pl
 
 ### What's Wrong with Current ETFs?
 
-One of the problems with Cybersecurity ETFs is that most (except for IHACK) are market-cap weighted. This is bad because it assumes that the probability of financial success is higher for large cap compared to small cap cybersecurity firms. This is wrong for two reasons. The first reason is that the cybersecurity market is rising year over year so all firms are poised to grow profits. This isn't just theory. We've seen similar percentage year-over-year revenue growth between small (e.g. SentinelOne) and large (e.g. CrowdStrike) cybersecurity firms! If growth is the same, why hold more of the larger firm in our portfolios/ETFs? The second reason is that these small firms do in fact have competitive advantages and aren't just new entrants trying to make a quick buck by taking advantage of the rise in demand of cybersecurity (in response to the rise in significant attacks). I don't doubt those companies exist, however it looks like the firms that pivot are more likely to fall into this category, and so we will label these as Tier 2 cybersecurity companies.
+One of the problems with Cybersecurity ETFs is that most (except for IHAK) are market-cap weighted. This is bad because it assumes that the probability of financial success is higher for large cap compared to small cap cybersecurity firms. This is wrong for two reasons. The first reason is that the cybersecurity market is rising year over year so all firms are poised to grow profits. This isn't just theory. We've seen similar percentage year-over-year revenue growth between small (e.g. SentinelOne) and large (e.g. CrowdStrike) cybersecurity firms! If growth is the same, why hold more of the larger firm in our portfolios/ETFs? The second reason is that these small firms do in fact have competitive advantages and aren't just new entrants trying to make a quick buck by taking advantage of the rise in demand of cybersecurity (in response to the rise in significant attacks). I don't doubt those companies exist, however it looks like the firms that pivot are more likely to fall into this category, and so we will label these as Tier 2 cybersecurity companies.
 
 ### ETF Proposal
 
@@ -21,6 +21,8 @@ The tier 2 companies should have half the weight of the tier 1 companies. We cou
 <details><summary>Changelog</summary>
 
 Jan 19th, 2025: Added A10 Networks Inc, AhnLab Inc, Onespan Inc, Digital Arts Inc, Rapid7 Inc, Telos Corporation, Hennge KK
+
+June 23rd, 2025: Removed SecureWorks (acquired by Sophos for a 28% premium)
 
 </details>
 
@@ -43,7 +45,6 @@ VRNS | Varonis Systems Inc | I | 3.64%
 RDWR | Radware | I | 3.64%
 QLYS | Qualys, Inc. | I | 3.64%
 TMICY / 4704.TYO | Trend Micro | I | 3.64%
-SCWX | SecureWorks | I | 3.64%
 TENB | Tenable Holdings | I | 3.64%
 OSPN | Onespan Inc | I | 3.64%
 053800.KQ | Ahnlab Inc | I | 3.64%
