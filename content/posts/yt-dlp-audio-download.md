@@ -57,6 +57,12 @@ python -m yt_dlp <URL> -xciw -f "bestaudio/best" --audio-quality 0 --audio-forma
 
 If the video doesn't have the artist in the title, use the following output template instead: `-o "%(creator,uploader,channel)s - %(title)s.%(ext)s"`
 
+## Downloading a CLip
+
+```sh
+yt-dlp --download-sections "*start_time-end_time" <video_url>
+```
+
 ### Example
 
 If you are using yt-dlp on youtube videos, you can either supply the URL or just the ID.

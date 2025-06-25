@@ -33,6 +33,20 @@ The "goto" VC based out of the USA whenever someone does tech startups (anywhere
 >
 > - We invest $375,000 on an uncapped safe with a Most Favored Nation (“MFN”) provision (the “MFN safe”)
 
+## Government Funding
+
+[CABHI - Centre for Aging and Brain Health Innovation](https://www.cabhi.com/programs/)
+
+[NRC IRAP - National Research Council of Canada Industrial Research Assistance Program](https://nrc.canada.ca/en/support-technology-innovation/financial-support-technology-innovation-through-nrc-irap)
+
+[NRC IRAP Clean Technology program](https://nrc.canada.ca/en/support-technology-innovation/nrc-irap-clean-technology-program)
+
+[Innovative Solutions Canada](https://www.linkedin.com/showcase/innovative-solutions-canada/)
+
+~$150,000+ in grants for proof of feasibility to challenges.
+
+[AI Compute Access Fund](https://ised-isde.canada.ca/site/ised/en/canadian-sovereign-ai-compute-strategy/ai-compute-access-fund)
+
 ## Pre-Seed Venture Capital Firms
 
 I've sorted the list of VCs by the amount of capital they are willing to inject. The higher the injection, the more competitive the VCs below them will be. If location unspecified, assume Toronto.
