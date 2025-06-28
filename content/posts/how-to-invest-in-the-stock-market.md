@@ -24,7 +24,7 @@ To start investing, you will need to open an account it through a platform calle
 
 ### Where to Open an Account (Canada)
 
-I recommend opening a QuestTrade account now that they have $0 commissions. When you open an account, you will be asked what type of account(s) you wish to open.
+I recommend opening a QuesTrade account now that they have $0 commissions. When you open an account, you will be asked what type of account(s) you wish to open.
 
 ### Types of Accounts
 
@@ -80,15 +80,26 @@ Investing is something everyone can do. Trading is a different ball game and req
 
 ### Converting CAD to USD and Back: Norbert's Gambit
 
-With IBKR, I suggest just using the platform as the fees are very affordable. With other brokerages however, I suggest employing Norbert's Gambit to avoid percentage foreign exchange fees. This is incredibly simple for RBC. Buy DLR and sell (short) DLR.U. RBC will settle both balances automatically. I usually value invest, so I buy a bank stock traded on the TSX and NYSE and then ask the brokerage support to journal the shares that I don't plan on holding. So I might buy 300 shares of TSX:BNS, and then journal 270 of them to NYSE and then sell them. Most of the time I've done this the stock has appreciated while holding it for a few days, and technically speaking if stocks are priced to return capital, stocks should be going up most of the time anyways.
+With IBKR, I suggest just using the platform as the fees are very affordable. With other brokerages however, I suggest employing Norbert's Gambit to avoid percentage foreign exchange fees. This is incredibly simple for RBC. Buy DLR and sell (short) DLR.U. RBC will settle both balances automatically.
+
+WIth a brokerage like Questrade, I usually value invest, so I buy a bank stock traded on the TSX and NYSE and then ask the brokerage support to journal the shares that I don't plan on holding. So I might buy 300 shares of TSX:BNS, and then journal 270 of them to NYSE and then sell them. Most of the time I've done this, the stock has appreciated while holding it for a few days, and technically speaking if stocks are priced to return capital, stocks should be going up most of the time anyways.
 
 ### Passive ETF Investing
 
 The first way to invest, is passive. Passive investment can be done by purchasing ETFs, which are baskets of shares in companies that particular ETF says they hold in. For passive investment, funds that encapsulate 100+ stocks based on market-cap or location are recommended. The [S&P 500](https://www.spglobal.com/spdji/en/indices/equity/sp-500/#overview) index is the defacto market index whenever people mention or talk about the stock market in the context of North America. It is so influential that the concept of risk-adjusted returns (Beta) of individual stocks and ETFs is compared to the market (S&P 500) return.
 
-For long-term passive investing, I recommend the following portfolio: $DISV (40%) + $DFAI (35%)+ $RSP/EQL.TO (25%)
+For long-term passive investing, I recommend the following portfolio:
 
-RSP: equal-weighted SP500 ETF, where SP500 is the top 500 publicly traded US based companies. Since the US is less than 25% of the global economy, I will hold only 25% of it in my passive portfolio. DISV is small cap international stocks and DFAI is core equity international stocks. The reason we have 40% in small caps is to provide that small-cap long-term edge, however to avoid downturns from blowing up the portfolio, core equity stocks are needed.
+- International ex-USA
+  - $DISV (35%): small-cap value
+  - $DFAI (30%): core equity
+- Domestic (Canada)
+  - $TTP.TO (10%): TD Canadian Equity Index ETF
+- USA (25% of the global economy)
+  - $AVUV (15%): US small-cap value
+  - $EQL.TO / $RSP (10%): US equal-weighted SP500
+
+You will need to use Norbert's gambit to avoid FX-fees when buying DISV, DFAI, and AVUV. If that's too complicated, just buy VEQT.TO!
 
 ETF Information
 
@@ -115,14 +126,15 @@ Another example is META in 2022. It actually doesn't matter if the business is d
 
 ### Active Investing
 
+Also read: [Moving Away From Stock Picking](/posts/moving-away-from-stock-picking/)
+
 Active investing is outlining a strategy, such as growth/momentum and having a very short-term horizon where you could be buying and selling a stock the next week. Day trading is not active investing, as day trading is never about trading based on opportunity, and the losses of day traders make that clear. Never day trade, never look at stock that are momentum, because there's a high chance you did not purchase the stock at the day's lowest. It's impossible to predict the future, yet day trading only works if you can do that.
 
 ### Types of Orders
 
 - Limit order: a bid to buy a stock at a max price OR an ask to sell your stock at min price
   - A limit order can either be non-marketable or marketable. When you place a limit order that is marketable, that means you will acquire/sell your shares but have set a price that you don't want to exceed.
-- Market order: buying whatever the sellers are offering and vice versa. Use with discretion for Canadian securities. For US securities, may even be more beneficial than a marketable limit order due to payment for order flow.
-
+- Market order: buying whatever the sellers are offering and vice versa. Use with discretion when the spread for buy and sell is small.
 
 ### Option Contracts
 
