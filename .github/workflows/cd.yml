@@ -56,12 +56,13 @@ jobs:
 
       - name: Deploy public dir to gh-pages branch
         if: github.ref_name == github.event.repository.default_branch
+        env:
+          COMMIT_MSG: ${{ steps.vars.outputs.commit_msg }}
         run: |
           cd public
           if [ "`git status -s`" ]; then
             git add --all
-            commit_msg="${{ steps.vars.outputs.commit_msg }}"
-            commit_msg="${commit_msg//\"/\\\"}"
+            commit_msg="${COMMIT_MSG//\"/\\\"}"
             git commit --amend -m "deployed: $commit_msg"
           fi
           git push --force
