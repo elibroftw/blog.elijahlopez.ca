@@ -150,6 +150,8 @@ An easy one is that in Saskatchewan, doctors are forced to use US-based software
 
 Invested in Cohere so there's that. This is probably the VC to target if you're in the AI space.
 
+[Yoran Beisher](https://www.linkedin.com/in/ACoAACC4DTQBtBiR9dbvC0wqh-GiZJbxd1E0OUo)
+
 **[Relay Ventures](https://relay.vc/)**
 
 > We invest in ideas that go beyond conventional wisdom and solve major pain points within large markets with potential for rapid growth.
@@ -157,6 +159,10 @@ Invested in Cohere so there's that. This is probably the VC to target if you're 
 **[Garage](https://garage.vc)**
 
 - Waterloo
+- Unknown capital injection
+
+**[The Xchange](https://www.xc.ventures/)
+
 - Unknown capital injection
 
 **[Antler Canada](https://www.antler.co/location/canada)**
@@ -176,3 +182,21 @@ Personal aside: There were some Waterloo graduates who created AlgoBio a new typ
 **[Cycle Capital](https://cyclecapital.com/en/investissement/)**
 
 Quebec based firm that also focuses on sustainability.
+
+## Alternative Methods
+
+**[Boardy.ai](https://www.boardy.ai/)**
+
+I tried boardy recently speaking on behalf of a friend.1
+
+It'll call you with a real phone number and an AI agent with an voice Australian accent.
+
+It asks you a lot of questions. It tries to mimic human interactions as if its customer service rep for a bank.
+
+"Just to confirm"
+
+Then it adds you to their internal network.
+
+The first recommendation was Yoran from Inovia Capital, which I agree is probably superior than just going to a VC's website.
+
+The second recommendation was Todd Finch. Apparently Boardy searched LinkedIn for him.
