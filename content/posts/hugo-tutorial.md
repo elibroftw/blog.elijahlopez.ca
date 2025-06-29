@@ -13,7 +13,7 @@ summary: "Learn how to setup a blog using Hugo and host it for free on GitHub Pa
 I created this blog using Hugo and host it on GitHub Pages. In this tutorial, I'll teach you to do the same.
 The resources I had used to create a working blog left out some important details that I will include in my tutorial.
 I've also done the brunt of the work to perfect the theme and workflow.
-If you are like me, you can follow the tutorial that [forks my site](#forking-my-blog) rather than making a blog site [from scratch](#from-scratch).
+If you are like me, you can follow the tutorial that [copies my site](#copying-my-blog) rather than making a blog site [from scratch](#from-scratch).
 
 ## Prerequisites
 
@@ -22,9 +22,9 @@ If you are like me, you can follow the tutorial that [forks my site](#forking-my
 3. If either test fails (i.e. not on PATH), learn from [how to add to PATH](https://duckduckgo.com/?t=ffab&q=how+to+add+to+path&ia=web)
 4. VS Code + Hugo Helper extension
 
-## Forking My Blog
+## Copying My Blog
 
-1. Web UI fork [blog.elijahlopez.ca](https://github.com/elibroftw/blog.elijahlopez.ca) with repository name `blog` and use your own description
+1. Create a repository like `$sub.$domain.$tld` or `$username.github.io` (empty)
 2. Go to https://github.com/USERNAME/blog/settings/pages
 3. Select the source as `gh-pages` (you may need to create this branch)
 4. For folder select `/`
@@ -33,9 +33,11 @@ If you are like me, you can follow the tutorial that [forks my site](#forking-my
 7. Edit the About section in https://github.com/USERNAME/blog/ and change the website to `https://USERNAME.github.io` or a domain
 8. Clone your repo using `git clone --recurse-submodules -j8 https://github.com/USERNAME/blog.git` or GitHub desktop
     - also set `git config --global submodule.recurse true`
-9. Delete `content/posts` and `static/images`
-    - Add your own `favicon.ico` to `static/images`
-10. Edit `hugo.yaml` and replace my information with yours
+9. Click "Code" and then "Download ZIP" from [github/elibroftw/blog.elijahlopez.ca](https://github.com/elibroftw/blog.elijahlopez.ca)
+10. Unzip my blog into your locally cloned repository.
+11. Delete dir `content/posts` and `content/authors`
+12. Recreate your default author using `hugo new authors/name-last.md`
+13. Edit `hugo.yaml` and replace my information with yours
     - set `baseUrl` to the one shown by GitHub
     - change the `author`, `email`, and `social`
     - for a comment section, set up `Giscus`
@@ -43,8 +45,9 @@ If you are like me, you can follow the tutorial that [forks my site](#forking-my
         - Enter your repository
         - Select a category
         - Under Enable giscus, copy the IDs from the website's script code into the `Giscus*` fields in the `hugo.yaml` file
-11. You can remove \# to enable certain features (the about section requires uses `content/about.md` and `content/about-subpage.md`)
-12. Read `content/hugo-guide.md` in your new repo to help you write, edit, and publish posts
+14. Add your own `favicon.ico` to `static/images`
+15. You can remove \# to enable certain features (the about section requires uses `content/about.md` and `content/about-subpage.md`)
+16. Read `content/hugo-guide.md` in your new repo to help you write, edit, and publish posts
 
 ## From Scratch
 
@@ -75,3 +78,11 @@ If you are like me, you can follow the tutorial that [forks my site](#forking-my
 - https://gohugo.io/getting-started/quick-start/
 - https://retrolog.io/blog/creating-a-hugo-theme-from-scratch/
 - https://levelup.gitconnected.com/build-a-personal-website-with-github-pages-and-hugo-6c68592204c7
+
+## Troubleshooting
+
+Note if you just installed git, you will need to set your username and email.
+
+Set your username: `git config --global user.name "FIRST_NAME LAST_NAME"`
+
+Set your email address: `git config --global user.email "MY_NAME@example.com"`
