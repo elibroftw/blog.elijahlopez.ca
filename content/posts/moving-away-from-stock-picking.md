@@ -6,13 +6,14 @@ tags:
   - canada
   - finance
   - investing
-summary: "The goal behind stock picking is generating alpha. Alpha is the excess return between a portfolio and its benchmark. Seeking alpha is a major time sink, and when correcting the biases that exist with status quo index investing, the additional benefits of stock picking are slim for those who are not extremely wealthy."
+summary: "Seeking alpha via stock picking is a major time sink, and
+after correcting for biases that exist with status quo index investing, the allocation for discretionary investments should be substantially smaller for those who aren't wealthy."
 ---
 
 
 I took a look at my portfolio's benchmark today, $[DISV](https://www.dimensional.com/us-en/funds/disv/international-small-cap-value-etf), and it confirmed a conclusion I had come to earlier in the day:
 
-if you don't have the capital to call yourself a hedge fund manager and hire some analysts, you're better off building an international portfolio that isn't concentrated around large-cap US companies. Seeking alpha in the stock market is for hobbyists, not investors with a preference for investing passively!
+if you don't have the capital to call yourself a hedge fund manager and hire some analysts, you're better off building an international portfolio that isn't concentrated around large-cap US companies. Seeking alpha in the stock market is for hobbyists, not investors with a preference for investing passively! Alpha is the excess return between a portfolio and its benchmark.
 
 ## Alternative to Stock Picking and SP500
 
