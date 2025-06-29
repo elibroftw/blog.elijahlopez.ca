@@ -55,6 +55,8 @@ Before writing, make sure you are modifying the latest version of the blog. Use 
     hugo -d docs
     ```
 
+You can use VSCode's git UI to commit and push. If you are editing your blog from multiple devices, I suggest you use branches and pull requests. For example, from my surface laptop, I edit my blog in a branch like `surface/YYYY-MM-DD` and then push commits, and then use the "Rebase and merge" feature once I'm back on my main computer. This is because I extensively rewrite my commits.
+
 ## Including a Table of Contents
 
 To include a Table of Contents, use `{{</* toc */>}}` (custom shortcode)
