@@ -6,7 +6,7 @@ tags:
   - programming
   - webdev
   - mobile
-summary: "Create mobile-responsive designs for websites using HTML and CSS (and React?). Meta tags, CSS media queries, and desktop-first CSS design."
+summary: "5+ tips for writing webdev code for mobile and desktop"
 ---
 
 From [mdn web docs - Viewport width and screen width](https://developer.mozilla.org/docs/Web/HTML/Viewport_meta_tag#viewport_width_and_screen_width)
@@ -22,6 +22,8 @@ If you want zooming in and out to work, you can also use a scale of 0.86 instead
 ```html
 <meta name="viewport" content="width=device-width, initial-scale=0.86, minimum-scale=0.86, viewport-fit=cover">
 ```
+
+## Setting Breakpoints Variables
 
 Tutorials will recommend to style mobile first, but I usually create websites for the desktop view first.
 
@@ -75,4 +77,23 @@ Based on real examples, suppose you want to ensure that break points don't split
 
 ```json
 "WGTrademark": "WireGuard® is a registered trademark of <0>Jason A. Donenfeld.</0>",
+```
+
+## Disabling Hover Styles on Mobile
+
+A great example of this can be found in the [Obscura VPN's Location tab](https://github.com/Sovereign-Engineering/obscuravpn-client/blob/main/obscura-ui/src/views/Location.module.css#L6). On this tab, we want to show some hover styles when the user is hovering over locations, however on mobile or any device that doesn't support the hover state, we don't want to change the style (e.g. when user is simply scrolling).
+
+I wanted to show a hover style on a location card but (1) not when a user is pressing it on their phone while scrolling. (2) not when the user is hovering over a button that is inside the card.
+
+```css
+@media (hover: hover) {
+    .locationCardNotConnected:hover:not(:has(.favoriteBtn:hover)) {
+        background-color: light-dark(#f5f5f5, var(--mantine-color-dark-4));
+
+        @mixin light {
+            border-color: var(--mantine-color-teal-5) !important;
+            border-width: 1px !important;
+        }
+    }
+}
 ```
