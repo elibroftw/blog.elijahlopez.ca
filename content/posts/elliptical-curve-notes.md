@@ -2,6 +2,8 @@
 title: "Elliptical Curve Notes"
 date: 2025-05-30T23:35:35-04:00
 draft: true
+tags:
+  - math
 ---
 
 7.1.1: A nonsingular cubic curve (7.2) with coefficients in a field F and with at least one point with coordinates in F (that are not all zero) is said to be an elliptic curve over F

@@ -3,7 +3,6 @@ title: "Moving Away From Stock Picking"
 date: 2025-06-27T22:48:35-04:00
 draft: false
 tags:
-  - canada
   - finance
   - investing
 summary: "Seeking alpha via stock picking is a major time sink, and
