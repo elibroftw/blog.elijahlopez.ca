@@ -8,7 +8,7 @@ tags:
   - finance
 aliases:
   - /posts/pre-seed-venture-capital-in-canada
-summary: Discover Canadian pre-seed venture capital firms. This list is sorted by funding amount and highlights VCs investing in early-stage startups.
+summary: Discover 25 Canadian avenues of pre-seed funding including government and venture capital firms. This list is sorted by funding amount and focused on VCs investing in early-stage startups.
 ---
 
 {{< toc >}}
@@ -165,6 +165,25 @@ Invested in Cohere so there's that. This is probably the VC to target if you're 
 
 - Unknown capital injection
 
+**[Good News Ventures](https://www.goodnewsventures.com/)
+
+- Unknown capital injection
+- Pre-seed explicitly mentioned
+- B2B, B2B2C high-growth potential technology startups
+- Investor of Kepler
+
+**[Renew Venture Capital](https://www.renewvc.com/)**
+
+- Unknown capital injection
+- [Application link](https://www.renewvc.com/apply)
+
+**[Northleaf Capital Partners](https://www.northleafcapital.com/venture-capital-growth-equity)**
+
+- Unknown capital injection
+- Flipp
+- Shopify
+- PayRange (not Canadian, but common for iot payments)
+
 **[Antler Canada](https://www.antler.co/location/canada)**
 
 Requires full-time dedication to launch a company, usually requires co-founders. It's there for some people, probably not what tech-founders want though.
@@ -182,6 +201,14 @@ Personal aside: There were some Waterloo graduates who created AlgoBio a new typ
 **[Cycle Capital](https://cyclecapital.com/en/investissement/)**
 
 Quebec based firm that also focuses on sustainability.
+
+## Series
+
+**[Richmond Capital Partners](https://www.richmondcp.com/)**
+
+> Our primary focus are companies with EBITDA in the $1.0-$3.0M range but we remain flexible for the RIGHT businesses that fall outside of this scale.
+
+**[Buttonwood Group Advisors](https://buttonwoodfunds.com/about-us/)**
 
 ## Alternative Methods
 
