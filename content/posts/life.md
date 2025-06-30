@@ -4,6 +4,7 @@ date: 2022-05-19T10:03:59-04:00
 hidden: true
 tags:
   - thoughts
+  - philosophy
 summary: "How I should pursue this life of mine."
 ---
 

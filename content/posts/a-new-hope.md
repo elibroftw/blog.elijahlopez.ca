@@ -4,6 +4,7 @@ date: 2022-07-21T20:15:43-04:00
 hidden: true
 tags:
   - mental-health
+  - philosophy
 summary: "I overcome my severe anxiety and achieve mental well-being through worst-case scenario planning (aka Stoicism) and embracing 'artificial stress' for self-improvement."
 ---
 

@@ -28,11 +28,15 @@ If you answered yes to this question, here's another one. What should we do abou
 
 ## Philosophy
 
-The last one is the ability, desire, and belief to seek truth. Philosophy is the love of wisdom. It's hard to gauge this, but if I was tasked with gauging if someone meets this criteria, I would ask someone in private what a strong opinion they hold about morality that someone may disagree with or that the law disagrees with. Some answers are cop-outs, so you may need to probe some more. An easy ones to confront is "every human is equal" because chances are they don't actually practice what they preach. For the more social just people, the go to one is questioning their belief on weather their wealthier parents should receive less benefits from the government.
+The last one is the ability, desire, and belief to seek truth. Philosophy is the love of wisdom. It's hard to gauge this, but if I was tasked with gauging if someone meets this criteria, I would ask someone in private what a strong opinion they hold about morality that someone may disagree with or that the law disagrees with. Some answers are cop-outs, so you may need to probe some more. An easy ones to confront is "every human is equal" because chances are they don't actually practice what they preach. For the more socially-just people, the go to one is questioning their belief on weather their wealthier parents should receive less benefits from the government.
 
 <details><summary>On the topic of the death penalty</summary>
 
 A cop out answer is "I \[don't] believe in the death penalty" because "killing is wrong."
 I myself don't believe in the death penalty because any possibility of an innocent person dying is too much just for the sake of "less baggage." It is not the state's duty to partake in retribution. That is of a personal matter between the victim and the wrongdoer.
+
+I recently (2025) had a conversation with someone about this. The death penalty would have to be more economical than keeping someone imprisoned plus the criminal must be a serial killer, which there's only a handful of.
+
+It's hard to justify advocating for the death penalty when it would only affect a handful of criminals whereas the cost of bureaucracy, including the debate over its reintroduction, would be excessive. In other words, advocating for the death penalty is [bike-shedding](https://en.wikipedia.org/wiki/Law_of_triviality).
 
 </details>
