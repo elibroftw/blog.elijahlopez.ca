@@ -50,7 +50,7 @@ Although I use GOOGL as my benchmark for _picking stocks_, my portfolio's benchm
 
 Once I'm done building up my portfolio and buying the discretionary stocks on my _Buy list_, future deposits will be invested in DISV and DFAI. I value my time and these ETFs can definitely save mine while meeting my investment preferences.
 
-For those new to investing, feel free to read [How to Invest in the Stock Market as a Canadian)](/posts/investing/) which I've been updating since 2022.
+For those new to investing, feel free to read [How to Invest in the Stock Market as a Canadian](/posts/investing/) which I've been updating since 2022.
 
 ### Dollar Cost Averaging
 
