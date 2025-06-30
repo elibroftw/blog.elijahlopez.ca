@@ -11,7 +11,13 @@ tags:
 summary: "Tutorial on installing macOS 12 Monterey on VirtualBox on Windows 11 (AMD CPUs), covering setup, configuration, installation steps, and troubleshooting."
 ---
 
+## Disclaimer
+
 Update: I ended up purchasing a macbook air :(
+
+Note that macOS 12 is no longer supported by Apple and thus this tutorial is probably a waste of time.
+
+## Introduction
 
 For reference: my laptop is the Razer Blade 14 2022 with [AMD Ryzen 9 6900HX](https://www.amd.com/en/product/11541). It supports AMD-V.
 
