@@ -50,6 +50,10 @@ Aesthetics can be improved further than a theme. We need nice icons in the file 
 
 [Install](https://marketplace.visualstudio.com/items/?itemName=EditorConfig.EditorConfig)
 
+## Cline
+
+[Install](https://marketplace.visualstudio.com/items?itemName=saoudrizwan.claude-dev)
+
 ## Even Better TOML
 
 ## Just

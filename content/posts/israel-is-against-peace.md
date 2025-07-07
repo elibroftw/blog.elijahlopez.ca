@@ -155,17 +155,19 @@ This is a party I would vote for and recommend voting for on the basis of moral 
 
 This party is Arab-secular
 
-### Israeli Labor Party (4/120)
+### The Democrats (4/120)
+
+Formerly the Israeli Labor Party
 
 - supports same-sex marriage, the legalization of cannabis, advancing surrogacy rights for gay couples and organized public transportation on Shabbat
 - claims to support a two-state solution but no statement on the withdrawal of settlements. I can't find this information anywhere so ask the party before considering to vote for them
 
 ## Conclusion
 
-In conclusion every party in Israel (90%+ of seats) is pro-settlements or non-secular except for the Hadash-Ta'al coalition and possibly the Israeli Labor Party. Since 106/120 members of the Knessat are pro-settlements/racist/victim-blaming, most Israelis are not pro-peace and are probably biased regarding the discussion on Palestine. 106/120 is a large percentage for a country that has a high proportional electoral system. There cannot be peace in Palestine till Israelis realize they are voting for their own self-interests over the lives of humans on the other side of the war.
+With the exception of the Hadash-Ta'al coalition and possibly The Democrats, every party with a seat in Israel's Knessat (90%+ of seats) is pro-settlement or non-secular. Since 106/120 members of the Knessat are pro-settlements/racist/victim-blaming, most Israelis are not pro-peace and are probably biased regarding the discussion on Palestine. 106/120 is a large percentage for a country that has a high proportional electoral system. There cannot be peace in Palestine till Israelis realize they are voting for their own self-interests over the lives of humans on the other side of the war.
 
 Countries around the world should sanction Israel since unlike Russia, Israel's population is also pro-settlement and land theft. The refusal of the US to sanction Israel says a lot about moral grandstanding in the 21st century.
 
 ## Other Information
 
-A lot of people claim Hamas is immoral, but they are literally a military without having a country. How can we expect people without sovereignty to act morally when Americans who already had sovereignty committed the [My Lai massacre](https://en.wikipedia.org/wiki/My_Lai_massacre) on the other side of the fucking planet. These are people who had the freedom to consciously decide to protest the constitute and go to jail instead . A lot of Americans like to bring up sexual violence used by Hamas but are they going to blame the entire US Army for this massacre as well?
+A lot of people claim Hamas is immoral, but they are literally a military without having a country. How can we expect people without sovereignty to act morally when Americans who already had sovereignty committed the [My Lai massacre](https://en.wikipedia.org/wiki/My_Lai_massacre) on the other side of the fucking planet. These are people who had the freedom to consciously decide to protest the constitute and go to jail instead. A lot of Americans like to bring up sexual violence used by Hamas but are they going to blame the entire US Army for this massacre as well?

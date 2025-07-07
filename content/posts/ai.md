@@ -329,6 +329,10 @@ Here are some thoughts I have on pursuing fictional writing
 - [localllama comment](https://www.reddit.com/r/LocalLLaMA/comments/1hwvyze/comment/m64q0di/)
 - [creative writing benchmark](https://eqbench.com/creative_writing.html)
 
+### White Collar Workers
+
+- [Shortcut - A better Excel co-pilot](https://www.tryshortcut.ai/)
+
 ### Other AI Apps
 
 - [Glif](https://glif.app/glifs): A platform to build and use mini AI apps
