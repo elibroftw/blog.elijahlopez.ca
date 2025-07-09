@@ -43,13 +43,17 @@ I had to nerf the ranking because the drinks don't hit the same when you get use
 
 ### Reign Energy Razzle Berry (9 / 10)
 
-The first energy drink that had a good taste that persuaded me to buy another one. This is great and it's only downfall is this slight after taste that lingers. I forget exactly what that "bad" taste is, but I'll update this article the next time I drink it. Rated 9 / 10 because I'm saving the perfect score until I've tasted and reviewed at least 10 energy drinks.
+The gateway energy drink that had a good taste that persuaded me to buy another one. This is great and it's only downfall is this slight after taste that lingers. I forget exactly what that "bad" taste is, but I'll update this article the next time I drink it. Rated 9 / 10 because I'm saving the perfect score until I've tasted and reviewed at least 10 energy drinks.
 
 It's unfortunate I can't get this in Canada anymore. Then I'd be able to re-rate it.
 
 ### Celsius Sparkling Arctic Vibe (8.6 / 10)
 
 It's pretty good too, but it gets over so quickly compared to the C4 and Monster White. I really like how refreshing Celsius Orange is though (when chilled).
+
+### Celsius Peach Vibe (8.6 / 10)
+
+More natural taste than arctic vibe however it does not taste as refreshing and definitely makes me miss drinking Celsius Orange.
 
 ### Celsius Watermelon Lemonade (8.5 / 10)
 
