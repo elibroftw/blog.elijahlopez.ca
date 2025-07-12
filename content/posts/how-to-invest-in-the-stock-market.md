@@ -92,21 +92,21 @@ For long-term passive investing, I recommend the following portfolio:
 
 - International ex-USA
   - $DISV (35%): small-cap value
-  - $DFAI (30%): core equity
-- Domestic (Canada)
-  - $TTP.TO (10%): TD Canadian Equity Index ETF
+  - $VSUX (30%)
+Index ETF
 - USA (25% of the global economy)
   - $AVUV (15%): US small-cap value
   - $EQL.TO / $RSP (10%): US equal-weighted SP500
+- Discretionary (10%)
+  - Either stock picking or one of the ETFs
 
-You will need to use Norbert's gambit to avoid FX-fees when buying DISV, DFAI, and AVUV. If that's too complicated, just buy VEQT.TO!
+You will need to use Norbert's gambit to avoid FX-fees when buying DISV, VXUS, and AVUV. If that's too complicated, just buy VEQT.TO!
 
 ETF Information
 
 - [TSX:EQL](https://www.invesco.com/ca-en/exchange-traded-funds/invesco-s-p-500-equal-weight-index-etf---cad)
 - [RSP](https://www.invesco.com/us-rest/contentdetail?contentId=e3fc7c23dbd92610VgnVCM1000006e36b50aRCRD&dnsName=us)
 - [DISV](https://www.dimensional.com/us-en/funds/disv/international-small-cap-value-etf)
-- [DFIA](https://www.dimensional.com/us-en/funds/dfai/international-core-equity-market-etf)
 
 Since most of these index ETFs are market-cap weighted, a lot of them can easily be concentrated among big tech which are companies that typically outperform during bull runs and outperform during bear runs. Typically a bull-ruin lasts longer than a bear, so the advice is to invest in these concentrated "market" ETFs during a bear run and keep investing in them until the bull run has surpassed the previous highs by an annualized 10% return. At that point, it may be more prudent to switch to investing in equal-weighed ETFs.
 
