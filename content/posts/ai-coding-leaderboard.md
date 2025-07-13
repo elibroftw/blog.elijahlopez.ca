@@ -15,40 +15,45 @@ DEPRECATED: [Aider Polyglot](https://aider.chat/docs/leaderboards/) is multi-lin
 - The problem with EvalPlus is that it doesn't include bleeding edge models, it's basically almost solved, and not many new models even report their scores anymore.
 - I don't like LiveCodeBench because it's not useful for comparing different models released at different times due to 1) every-updating problem set 2) not continuously testing all frontier models. If a benchmark score has an expiry date, then referencing it is really bad for a leaderboard. It's good for relative performance in papers however then you have to read the fine print to ensure the authors retested the models they compared their new model against. See how complicated that is? Then you'd have to compile your own leaderboard because can you really trust others to do it right? No you can't! I may include some sort of LiveCodeBench relative ranking in the future.
 
+Future: Replace AIder Polyglot with SWE-bench Multilingual
+
 ### Leaderboard
 
 | Model / Product   | Company   | Tier | Aider Polyglot | SWE-bench verified | Codeforces |
 |----------------------|-----------|----------|----------|----------|--------------|
-| Gemini 2.5 Pro | Google | I | 82.2% | 67.2% | 2001 |
+| Grok 4 Code TTC | xAI | II | - | 75% | - |
+| Claude 4 Sonnet | Anthropic | I | 72.7% | - | - |
+| Claude 4 Opus | Anthropic | I | 72.5% | 79.5% | - |
+| Grok 4 Code STD | xAI | II | - | 72% | - |
 | o3 | OpenAI | I | 79.6% | 69.0% | 2706 |
 | o4-mini | OpenAI | I | 72.0% | 68.1% | 2719 |
-| Claude 4 Sonnet | Anthropic | I | 79.7% | - |
-| Claude 4 Opus | Anthropic | I | 72.0% | 79.5% | - |
-| Claude 3.7 Sonnet | Anthropic | I | 62.3% | - |
-| o3-mini | OpenAI | I | 61.0% | 2036 |
-| DeepSeek R1 (05/28) | ChatStream | I | 57.60% | 1930 |
-| Qwen3-235B-A22B | Qwen | I | - | 2056 |
-| Grok 3 | xAI | II | - | - |
-| DeepSeek R1 (01/20) | ChatStream | I | 49.2% | 1530 |
-| DeepSeek V3 (03/24) | ChatStream | I | - | - |
-| Mistral Medium 3 | Mistarl | I | - | - |
-| ChatGPT 4.1 | OpenAI | I | 55% | - |
-| o1 | OpenAI | I | 48.9% | 1891 |
-| Claude 3.5 Sonnet | Anthropic | I | 49% | - |
-| Qwen3-32B | Qwen | II | - | 1977 |
-| Qwen3-30B-A3B | Qwen | II | - | 1974 |
-| Qwen3-14B | Qwen | II | - | - |
-| Qwen3-8B | Qwen | II | - | - |
-| ~~DeepSeek-R1-Distill-70B~~ | DeepSeek | III | - | 1633 |
-| Phi 4 reasoning (14B) | Microsoft | II | - | 1736 |
-| Phi 4 reasoning plus | Microsoft |  II | - | 1723 |
-| Qwen3-4B | Qwen | III | - | 1671 |
-| Gemma3-27B-IT | Google | II | - | 1063 |
-| DeepSeek V3 (12/24) | ChatStream | I | - | - |
-| ~~o1-preview~~ | OpenAI | I | 40% | 1258 |
-| ChatGPT 4.5 | OpenAI | I | 38.0% | - |
-| ChatGPT 4o | OpenAI | I | 33% | 900 |
-| o1-mini | OpenAI | I | 30% | 1650 |
+| Gemini 2.5 Pro | Google | I | 82.2% | 67.2% | 2001 |
+| [Kimi-K2-Instruct](https://github.com/MoonshotAI/Kimi-K2) | Moonshot AI | I | - | 65.8% | - |
+| Claude 3.7 Sonnet | Anthropic | I | - | 62.3% | - |
+| o3-mini | OpenAI | I | - | 61.0% | 2036 |
+| DeepSeek R1 (05/28) | ChatStream | I | - | 57.60% | 1930 |
+| Qwen3-235B-A22B | Qwen | I | - | - | 2056 |
+| Grok 3 | xAI | II | - | - | - |
+| DeepSeek R1 (01/20) | ChatStream | I | - | 49.2% | 1530 |
+| DeepSeek V3 (03/24) | ChatStream | I | - | - | - |
+| Mistral Medium 3 | Mistarl | I | - | - | - |
+| ChatGPT 4.1 | OpenAI | I | - | 55% | - |
+| o1 | OpenAI | I | - | 48.9% | 1891 |
+| Claude 3.5 Sonnet | Anthropic | I | - | 49% | - |
+| Qwen3-32B | Qwen | II | - | - | 1977 |
+| Qwen3-30B-A3B | Qwen | II | - | - | 1974 |
+| Qwen3-14B | Qwen | II | - | - | - |
+| Qwen3-8B | Qwen | II | - | - | - |
+| ~~DeepSeek-R1-Distill-70B~~ | DeepSeek | III | - | - | 1633 |
+| Phi 4 reasoning (14B) | Microsoft | II | - | - | 1736 |
+| Phi 4 reasoning plus | Microsoft |  II | - | - | 1723 |
+| Qwen3-4B | Qwen | III | - | - | 1671 |
+| Gemma3-27B-IT | Google | II | - | - | 1063 |
+| DeepSeek V3 (12/24) | ChatStream | I | - | - | - |
+| ~~o1-preview~~ | OpenAI | I | - | 40% | 1258 |
+| ChatGPT 4.5 | OpenAI | I | - | 38.0% | - |
+| ChatGPT 4o | OpenAI | I | - | 33% | 900 |
+| o1-mini | OpenAI | I | - | 30% | 1650 |
 
 Explaining Synthetic Rankings of models with missing scores.
 
@@ -127,3 +132,7 @@ DeepSeek V3 claims 51.6th percentile and most recently 58.7th percentile. Given 
 <https://x.ai/news/grok-3>
 
 <https://mistral.ai/news/mistral-medium-3>
+
+<https://deepnewz.com/ai-modeling/leaked-grok-4-benchmarks-show-45-reasoning-95-aime-2025-scores-on-hle-gpqa-swe-cc89cee8>
+
+<https://github.com/MoonshotAI/Kimi-K2>
