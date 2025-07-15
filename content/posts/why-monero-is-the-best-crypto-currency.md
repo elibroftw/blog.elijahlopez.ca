@@ -103,6 +103,7 @@ News from 2024 is that Samurai and Wasabi both disabled their custom "privacy"
 
 - Inbound liquidity. You need 5 BTC to receive ≤ 5 BTC. This is a rich get the richer scheme, and it's not mentioned often enough.
 Many people around the world live paycheck to paycheck, people simply cannot be paid in BTC-Lightning because of this incredible flaw. Remember we are dicussing cryptocurrency as money.
+  - The propose solution to this is to pay someone 1% of the liquidity you need every time you want to receive too much BTC. So imagine losing 1% every time you want to receive BTC and liquidate (spend).
 - Onboarding issues (L1 Transaction)
   - Fees: opening a channel requires you to tie up BTC into a channel and costs you a transaction fee.
   - Limited Transactions/day: There isn't enough time in the world to onboard billions of people who require money to transact
