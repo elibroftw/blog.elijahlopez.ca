@@ -102,12 +102,14 @@ and
 
 **[Ripple Ventures](https://www.rippleventures.com/)**
 
+From their thesis page,
+
 Type | USD | Timeline
 ------- | ------- | ----------
-A | 50,000 | 1.69 years
-B | 100,000 | 3.39 years
-C | 250,000 | 8.49 years
-D | 750,000 | 25.5 years
+Fellow A | 50,000 | 1.69 years
+Fellow B | 100,000 | 3.39 years
+Core C | 250,000 | 8.49 years
+Core D | 750,000 | 25.5 years
 
 This is from my notes. Essentially, if you were to work full time, given minimum salary of 40k post-tax, these are the timelines you should have before raising your next round of funding (assuming you live in Toronto and not the suburbs like I do with a massive car expensive LOL).
 
