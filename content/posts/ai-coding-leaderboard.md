@@ -22,15 +22,21 @@ Future: Replace AIder Polyglot with SWE-bench Multilingual
 | Model / Product   | Company   | Tier | Aider Polyglot | SWE-bench verified | Codeforces |
 |----------------------|-----------|----------|----------|----------|--------------|
 | Grok 4 Code TTC | xAI | II | - | 75% | - |
+| Claude 4.1 Opus | Anthropic | I | 72.5% | 74.5% | - |
 | Claude 4 Sonnet | Anthropic | I | 72.7% | - | - |
-| Claude 4 Opus | Anthropic | I | 72.5% | 79.5% | - |
+| Claude 4 Opus | Anthropic | I | 72.5% | 72.5% | - |
 | Grok 4 Code STD | xAI | II | - | 72% | - |
+| o3-pro | OpenAI | I | 84.9% | 69.0% | 2748 |
 | o3 | OpenAI | I | 79.6% | 69.0% | 2706 |
+| Qwen 3 Coder 480B | Qwen | I | 61.8% | 69.6% | - |
 | o4-mini | OpenAI | I | 72.0% | 68.1% | 2719 |
-| Gemini 2.5 Pro | Google | I | 82.2% | 67.2% | 2001 |
-| [Kimi-K2-Instruct](https://github.com/MoonshotAI/Kimi-K2) | Moonshot AI | I | - | 65.8% | - |
+| Gemini 2.5 Pro | Google | I | 83.1% | 67.2% | 2001 |
+| gpt-oss-120B | OpenAI | I | 44.4% | 62.4% | 2622 |
+| [Kimi-K2-Instruct](https://github.com/MoonshotAI/Kimi-K2) | Moonshot AI | I | 60% | 65.8% | - |
+| GLM-4.5 | Z AI | I | - | 64.2% | - |
 | Claude 3.7 Sonnet | Anthropic | I | - | 62.3% | - |
 | o3-mini | OpenAI | I | - | 61.0% | 2036 |
+| gpt-oss-20B | OpenAI | I | 34.2% | 60.7% | 2516 |
 | DeepSeek R1 (05/28) | ChatStream | I | - | 57.60% | 1930 |
 | Qwen3-235B-A22B | Qwen | I | - | - | 2056 |
 | Grok 3 | xAI | II | - | - | - |
@@ -136,3 +142,9 @@ DeepSeek V3 claims 51.6th percentile and most recently 58.7th percentile. Given 
 <https://deepnewz.com/ai-modeling/leaked-grok-4-benchmarks-show-45-reasoning-95-aime-2025-scores-on-hle-gpqa-swe-cc89cee8>
 
 <https://github.com/MoonshotAI/Kimi-K2>
+
+<https://www.anthropic.com/news/claude-opus-4-1>
+
+<https://lh3.googleusercontent.com/pw/AP1GczONxcyoIMZ3SHBIJGj8yki9ylGx-DKYLetcZGJ5sU-sOxbfF1V3RJLhbUABHE67cUxENCrVv9kzs4JKIvH1q9uuBVAbq6L8Qs07FWQ1vN8eGT3y0CWUCr4L9R3S8tDYJQnssStj6ARim_lpWydchty-vg=w1170-h780-s-no-gm?authuser=0>
+
+<https://cdn.openai.com/pdf/419b6906-9da6-406c-a19d-1bb078ac7637/oai_gpt-oss_model_card.pdf>
