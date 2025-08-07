@@ -37,6 +37,7 @@ I've removed Chatbot Arena and ArenaHard as DeepSeek R1 05/28 is really good at 
 | o1                                  | OpenAI    | I M | 42.60 | 79.20 | 61 |
 | ChatGPT-4.1                 | OpenAI    | I M | 41.60 | - | 50 |
 | ChatGPT-4o                  | OpenAI    | I M | 39.00 | 14.00 | - |
+| Kimi K2                          | Moonshot AI | II | 31.0 | - | - |
 | DeepSeek-R1 (01/20)   | DeepSeek  | I M | 30.10 |  70.00 |  8.5 |
 | DeepSeek-R1 (05/28)    | DeepSeek  | I M | 27.80 |  87.50 | 17.7 |
 | DeepSeek-R1-0528-Qwen3-8B | DeepSeek  | I M | - |  76.3 | - |
@@ -45,7 +46,7 @@ I've removed Chatbot Arena and ArenaHard as DeepSeek R1 05/28 is really good at 
 | DeepSeek-V3                | DeepSeek  | I M | 24.9 | - | - |
 | o4-mini                           | OpenAI    | I M | 20.20 | 92.70 | 79.1 |
 | o3-mini                           | OpenAI    | I M | 13.80 |  86.5 | 66.1 |
-| Qwen3-235B-A22B        | Qwen  | I M | 11.00 | 81.5    | 95.6 |
+| Qwen3-235B-A22B        | Qwen  | I M | 15.00 | 81.5    | 95.6 |
 | Gemma 3 27B               | Google    | II | 10.00 | - | - |
 | Gemma 2 27B               | Google    | II |  9.20 | - | - |
 | Qwen3-32B (Dense)      | Qwen  | II | 8.00 | 72.9 | - |
