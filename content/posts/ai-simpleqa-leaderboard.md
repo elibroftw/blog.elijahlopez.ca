@@ -22,11 +22,14 @@ I've removed Chatbot Arena and ArenaHard as DeepSeek R1 05/28 is really good at 
 | Model / Product   | Company   | Tier    | SimpleQA | AIME'25 | Humanity's Last Exam  |
 |----------------------|-----------|----------|----------|---------|--------|
 | [Liner Pro Reasoning](https://getliner.com/) | [Liner](https://liner.com/) | I P | [95.30](https://liner.com/learn/deep-research-comparison) | N/A | N/A |
+| [Brave Multiple Searches](https://brave.com/search/api/) | Brave | I P | [94.1](https://brave.com/blog/ai-grounding/) | N/A | N/A |
 | Liner Pro | [Liner](https://liner.com/) | I P | [93.70](https://liner.com/learn/liner-accurate-ai-search) | N/A | N/A |
 | Perplexity Deep Research | [Perplexity](https://www.perplexity.ai/) | I P | 93.90 | N/A | N/A |
+| [Brave Single Search + Reasoning](https://brave.com/search/api/) | Brave Search | I P | [94.1](https://brave.com/blog/ai-grounding/) | N/A | N/A |
 | Perplexity Pro      | [Perplexity](https://www.perplexity.ai/) | I P | 90.60 | N/A | N/A |
 | [Linkup Web Search](https://www.linkup.so/)        | Linkup | I P | 90.10 | N/A | N/A |
 | [Exa](https://exa.ai/)                                 | Exa | I P | 90.04 | N/A | N/A |
+| [Brave Single Search](https://brave.com/search/api/) | Brave Search | I P | [89.8](https://brave.com/blog/ai-grounding/) | N/A | N/A |
 | Perplexity Sonar Pro      | Perplexity | I P | 85.80 | N/A | N/A |
 | Claude-4-Opus              | Anthropic | I M | - | 75.5% | - |
 | ChatGPT-4.5                 | OpenAI    | 1 M | 62.50 | - | - |
@@ -129,3 +132,5 @@ For Claude 4, there was no score available for SimpleQA, however someone tested 
 - [Llama 4 Benchmark and Model Comparison Report](https://github.com/kgruiz/Llama-4-Comps?tab=readme-ov-file)
 - [Apriel-Nemotron-15b-Thinker ](https://huggingface.co/ServiceNow-AI/Apriel-Nemotron-15b-Thinker#evaluation)
 - [LG EXAONE Deep](https://arxiv.org/pdf/2503.12524)
+
+<https://brave.com/blog/ai-grounding/>
