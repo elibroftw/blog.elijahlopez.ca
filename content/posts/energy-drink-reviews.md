@@ -67,6 +67,16 @@ Similar to White Gummy Bear, but I really wish it had a bit more flavour.
 
 I like the taste of this better than Monster White, so that's why it's getting an 8.5. I'll have the White Gummy Bear soon to compare exactly which drink gets first place. One great and underrated aspect about the Reign Storm brand is that the caffeine level is low enough to have two cans per day! The downside is that the can is actually smaller than the Reign Energy and Monster cans, however I have trouble finishing those cans anyways, sometimes taking up to 3 hours to finish a can. I recommend drinking this cold or with ice for better taste.
 
+### Other Celsius (8.25 / 10)
+
+Jungle
+
+Cotton lime
+
+Sorbet limited edition
+
+Electric lemonade
+
 ### C4 Frozen Bombsicle (8 / 10)
 
 The negative is that it doesn't really taste like an energy drink, more like juice. I had this a second time and I didn't like it.
@@ -126,6 +136,10 @@ Although it has a pleasant taste, it is missing a _kick_ found in drinks such as
 ### C4 Hawaiian Punch  (6.7 / 10)
 
 Tastes like a partial freezy that isn't frozen. So basically freezy juice lol.
+
+### Celsius ASTRO VIBE
+
+Blue Razz but tastes similar to medicine???
 
 ### Celsius Cosmic Vibe (6.6 / 10)
 
