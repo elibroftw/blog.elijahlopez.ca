@@ -7,8 +7,9 @@ tags:
   - startups
   - finance
 aliases:
-  - /posts/pre-seed-venture-capital-in-canada
-summary: Discover 25 Canadian avenues of pre-seed funding including government and venture capital firms. This list is sorted by funding amount and focused on VCs investing in early-stage startups.
+  - /posts/pre-seed-venture-capital-in-canada/
+  - /posts/pre-seed-capital-in-canada/
+summary: Discover over 40 firms interested in investing in early-stage Canadian firms. This list is sorted by funding amount.
 ---
 
 {{< toc >}}
@@ -47,9 +48,21 @@ The "goto" VC based out of the USA whenever someone does tech startups (anywhere
 
 [AI Compute Access Fund](https://ised-isde.canada.ca/site/ised/en/canadian-sovereign-ai-compute-strategy/ai-compute-access-fund)
 
+## Non-Dilutive Funding
+
+- [FoundersBeta](https://www.foundersbeta.com/startup-funding/)
+
+Don't forget Pitch Competitions.
+
 ## Pre-Seed Venture Capital Firms
 
 I've sorted the list of VCs by the amount of capital they are willing to inject. The higher the injection, the more competitive the VCs below them will be. If location unspecified, assume Toronto.
+
+**[Rhino Ventures](https://www.rhinovc.com/)**
+
+- $500k - $5M
+- Sector agnostic
+- Vancouver
 
 **[BrandProject](https://brandproject.com/)**
 
@@ -71,6 +84,12 @@ and
 
 - size: $100k – $2M CAD ; $1.6M pre-seed deal noted
 - Enterprise SaaS, AI/ML, Marketplaces, FinTech, CyberSecurity, EdTech, etc.
+
+**[Forum Ventures](https://www.forumvc.com/pre-seed-fund)**
+
+- Up to $1M for funding
+- B2B SaaS
+- Met an associate from Forum Ventures
 
 **[Panache Ventures](https://www.panache.vc/approach)**
 
@@ -119,6 +138,19 @@ The alternative, which I will call the greedy founder approach, is to raise mone
 
 - $100k+ at incorporation; up to $500k first year
 
+**[Dragonfruit Ventures](https://dfruitventures.com/)**
+
+- All industries/verticals
+- Very new
+- Typically below [$500k](https://www.linkedin.com/feed/update/urn:li:activity:7336361191767715840?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7336361191767715840%2C7336371526012686336%29&replyUrn=urn%3Ali%3Acomment%3A%28activity%3A7336361191767715840%2C7336372483178016768%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287336371526012686336%2Curn%3Ali%3Aactivity%3A7336361191767715840%29&dashReplyUrn=urn%3Ali%3Afsd_comment%3A%287336372483178016768%2Curn%3Ali%3Aactivity%3A7336361191767715840%29)
+
+**[Archangel Waterloo](https://www.archangelnetwork.ca/)**
+
+- Four funds
+- Up to $300K (at least for the Axion fund)
+- AI/ML, Health Tech, IOT, Industry 4.0, Sustainability
+- I met a general partner at this VC who told me about them and some other VCs they have co-invested with.
+
 **[First Fund VC](https://www.thefirst.vc/)**
 
 - Vancouver
@@ -133,14 +165,33 @@ The alternative, which I will call the greedy founder approach, is to raise mone
 - Vancouver
 - Up to C$100k (SAFE)
 
+**[eFund](https://www.e-fund.ca/companies)**
+
+- British Columbia Based technology companies in IT, Cleantech, and Life Sciences
+- $100,000 CAD
+
 **[Badhouse Ventures](https://www.badhouse.ca/)**
 
 - Up to 100k CAD
+
+**[Spring Impact](https://spring.is/)**
+
+- 100K
 
 **[Front Row Ventures](https://frontrow.ventures/)**
 
 - $50,000 CAD (SAFE)
 - Montreal, QC
+
+---
+
+For the firms below, I could not find a $ amount of investment, so assume arbitrary ranking
+
+---
+
+**[RiSC Capital](https://www.risc.capital/)**
+
+- "Canada's Deep Tech Venture Fund"
 
 **[iGan Toronto](https://iganpartners.com/contact)**
 
@@ -186,6 +237,37 @@ Invested in Cohere so there's that. This is probably the VC to target if you're 
 - Shopify
 - PayRange (not Canadian, but common for iot payments)
 
+**[Graphite Ventures](https://www.graphitevc.com/philosophy)**
+
+- Capital efficient businesses
+- > Primarily B2B software, fintech, digital health, proptech, and hardware
+- > Early stage - typically we look for a product built and with early customer traction
+
+**[Staircase Ventures](https://staircaseventures.com/our-philosophy/)**
+
+**[Pender Ventures](https://www.penderventures.com/)**
+
+- Vancouver
+
+**[Whitecap Ventures](https://www.whitecapvp.com/)**
+
+**[Amplify Capital](https://amplifycapital.ca/)**
+
+> leveraging technology to solve urgent challenges in line with our impact goals
+
+**[Amplitude](https://amplitudevc.com/en)**
+
+- Montreal | Vancouver
+- Healthcare
+
+**[Yale town](https://www.yaletown.com/)**
+
+**[Genesys Capital](https://www.genesyscapital.com//)**
+
+- Medical Breakthroughs
+
+**[Green Sky Ventures](https://greensky.vc/)**
+
 **[Antler Canada](https://www.antler.co/location/canada)**
 
 Requires full-time dedication to launch a company, usually requires co-founders. It's there for some people, probably not what tech-founders want though.
@@ -229,3 +311,11 @@ Then it adds you to their internal network.
 The first recommendation was Yoran from Inovia Capital, which I agree is probably superior than just going to a VC's website.
 
 The second recommendation was Todd Finch. Apparently Boardy searched LinkedIn for him.
+
+## Other Resources
+
+This will be moved to a new post in the future called Startup Kit, but its just other networking resources to tap into.
+
+- https://www.marsdd.com/apply/
+- [Eric Rafat Notes](https://ericrafat.com/notes/)
+  - I'll go through each one in the future
