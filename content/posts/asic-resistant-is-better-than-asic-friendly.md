@@ -1,8 +1,8 @@
 ---
-title: Why an ASIC-Resistant Proof of Work Algorithm is More Secure
+title: Why an ASIC-Resistant Proof of Work Algorithm is More Secure Than an ASIC-friendly Blockchain
 date: 2025-08-15T23:57:51-04:00
 draft: false
-summary: An economics and corporate finance argument to why a blockchain that uses an ASIC-Resistant proof-of-work algorithm like Monero's RandomX is more secure (higher difficulty) than if it used an ASIC-friendly algorithm.
+summary: An economics and corporate finance theoretical argument as to why a blockchain that uses an ASIC-Resistant proof-of-work algorithm like Monero's RandomX is more secure (higher difficulty) than if it used an ASIC-friendly algorithm.
 tags:
   - cryptocurrency
   - monero
