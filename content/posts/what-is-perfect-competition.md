@@ -1,5 +1,5 @@
 ---
-title: "What Is Perfect Competition"
+title: "What is Perfect Competition"
 date: 2025-08-16T02:08:41-04:00
 draft: false
 summary: "A list of key assumptions and characteristics of the microeconomics concept of perfect competition; identical products, numerous firms, price-taking behavior, and free entry/exit."
