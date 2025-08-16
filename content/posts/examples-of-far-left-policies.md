@@ -38,31 +38,9 @@ Capital markets is why capital gains is encouraged. Capital markets are not guar
 
 Any person who thinks instituting a price control on food is a good idea is a far-leftist. Before the internet, sure it could be argued it is a leftist position, but with access to the internet, higher education regarding economics, and historical cases, price controls on food is a far-left policy.
 
-Let's explain why price controls on food are bad. Groceries are in two different markets. There's ingredients, like vegetables, milk, and meat (at different grades), and then there's packaged/processed foods like chips. Ingredients are a perfect competition. The same genetic apple can be produced by different farmers. That's not to say there is no substitution effect for different apple species. Why is it important to note that ingredients are [perfect competition](#perfect-competition)?
+Let's explain why price controls on food are bad. Groceries are in two different markets. There's ingredients, like vegetables, milk, and meat (at different grades), and then there's packaged/processed foods like chips. Ingredients are a perfect competition. The same genetic apple can be produced by different farmers. That's not to say there is no substitution effect for different apple species. Why is it important to note that ingredients are [perfect competition](/posts/what-is-perfect-competition)?
 
 1. If economic profits (accounting profit minus potential income from an alternative business) were positive currently, we'd see more firms enter the industry, which would lower price as time progressed. We know the economics profits are not positive because prices go up every year, which means that the economic profit is zero or negative.
 2. Price controls make economic profit negative. We determined that economic profit is already zero or negative, so a price control will guarantee negative economic profit, which will result in firms cutting down on farming and exploring the economic opportunities they had forgone. Expect shortages and in the worst case, the rich (tax base) will flee to countries without price controls. The common person will resort to importing market priced goods from other countries. Any tax on imported food would make the initial situation of "groceries are too expensive" even worse.
 3. Solution #1: Government production or subsidy. Given that firms are price takers, governments would need to produce all the food for the entire country. Even though Canada is self-sufficient, global food prices are actually lower than domestic regional prices, and thus groceries are imported rather than sold in the country. If the imported food itself is too expensive, then the government has to take the risk of producing food itself, even though we know that at the very least, the economic profit is negative. It's hard to know whether it'll pan out, so a government would rather subsidize buying food? Both a subsidy and accounting losses increase the government's deficit, and thus taxes would be raised either in the present or the future.
 4. Solution #2: Governments should focus on increasing the economic profits of the domestic agriculture industry. An example of a policy that increases the economic cost is a capital gains tax. This unjustly increases the cost of [intergenerational farmer transfers](https://ofa.on.ca/what-farmers-need-to-know-current-status-of-proposed-federal-tax-proposals/). It should not matter whether a firm is incorporated or not, government policy should reduce the economic costs of all all domestic firms in the agricultural industry. Another example is the carbon tax which [intentionally](https://ofa.on.ca/newsroom/ontario-farmers-profoundly-disappointed-at-senate-vote-on-carbon-tax-relief-bill/) does not exempt heating and cooling of livestock buildings and other agricultural production facilities.
-
-### Perfect Competition
-
-Let's revisit my notes on Perfect Competition. The assumptions are as follows.
-
-- Products in the industry are 100% identical
-- The industry is vast (true for farmers)
-- Each firm is very tiny in comparison to the size of the industry (true for farmers)
-- Hence,
-  - If a firm shuts down or enters the industry, market price won't go down (i.e. prices don't go down everywhere)
-  - Firms take the price set in the market by the industry
-  - Firms cannot charge more than the market price
-    - Double the quantity, double the price
-    - Raise the ask price, get no sales
-  - Firms will exit the industry if they make negative economic profit (accounting profit minus potential income from alternative business)
-    - economic profit example: a Canadian computer programmer works as a barista. His economic profit is probably negative.
-- No barrier to enter or exit the industry
-  - Definition of barrier is highly important here.
-  - All businesses have startup costs, but a barrier regarding costs, would be that the cost is _unreasonably high_
-  - All businesses have legal duties, but a barrier regarding legal duty, would be an unreasonable legal duty (i.e. the business has to have a compliance officer).
-- (All) producers and consumers are fully aware (open knowledge) of the market (prices, quality, availability)
-  - This is true for farming, because you can go to multiple grocery stores and farming markets, see prices of futures, and see news for shortages/gluts
