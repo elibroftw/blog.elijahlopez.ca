@@ -31,6 +31,7 @@ Future: Replace AIder Polyglot with SWE-bench Multilingual
 | Qwen 3 Coder 480B | Qwen | I | 61.8% | 69.6% | - |
 | o4-mini | OpenAI | I | 72.0% | 68.1% | 2719 |
 | Gemini 2.5 Pro | Google | I | 83.1% | 67.2% | 2001 |
+| DeepSeek V3.1 | ChatStream | I | - | 66.0% | - |
 | gpt-oss-120B | OpenAI | I | 44.4% | 62.4% | 2622 |
 | [Kimi-K2-Instruct](https://github.com/MoonshotAI/Kimi-K2) | Moonshot AI | I | 60% | 65.8% | - |
 | GLM-4.5 | Z AI | I | - | 64.2% | - |
