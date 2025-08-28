@@ -10,11 +10,25 @@ tags:
   - finance
 ---
 
+## TL;DR
+
+1. ASIC-Resistance PoW Algorithm allows mining on devices not exclusively allocated for mining, without being at as much of a disadvantage to a ASIC-friendly PoW Algorithm.
+2. It allows mining using existing hardware without paying liquidation fees or profit margins to increase hash rate.
+3. It does not have perverse incentives for ASIC manufactures; i.e. if an entity can improve ASICs internally,  they only sell it to the public once mining said blockchain becomes less profitable than selling to the public.
+4. Botnets = free hash rate security.
+5. DOES NOT REQUIRE MARKET CAP TO BE HIGHER FOR AN INCREASE IN DIFFICULTY (NETWORK SECURITY).
+6. And for society, it does not reallocate capital to technology used exclusively for the purpose of mining a single cryptocurrency.
+7. Forcing for profit miners to buy specialized hardware increases their risk of mining a non-defacto cryptocurrency whereas general compute can be reallocated as soon as operational profits drop. With Asics, companies would just stop mining and declare bankruptcy.
+
+## Preface
+
 Let's consider two coins, where the only difference between the two is that one uses an ASIC-resistant proof-of-work algorithm, (called powR), the other is ASIC-friendly (called powF) (definition: it is mined most efficiently by specialized hardware that specializes in said proof-of-work algorithm, and is less effective at other tasks due to the nature of the coin requiring new ASICs to be created). Both have an equal number of not-for-profit miners who invested the same amount of money. e.g. Ryzen CPUs vs ASICs. Without introducing the other miners, the difficulty (measured in total comparable hashrate, TCH) is the same at the moment. One point to note is that network hashrates are usually not comparable between blockchains that use different proof of work algorithms. It's a question of cryptography, which is why we're only interested in the concept of comparable difficulty.
+
+## Not For Profit Miners
 
 First let's introduce zero-capex (capital expenditure) not-for-profit miners. These are people who already own the computing hardware and repurpose it to mine the coin. Due to the explicit nature of the ASIC-friendly coin, the TCH of the ASIC-resistant coin is going to go up by a higher percentage. I will prove it to you.
 
-Assume for every dollar in investment and operational cost, A(ASIC)s are more efficient at mining powF than G(ENERIC) hardware is, and for powR, ASIC is less efficient (and thus does not exist for powR). This is a valid assumption because the definition of powF is to be more efficient using ASICS. Even if powF is unprofitable to mine with A, it would be even more unprofitable to mine with G. Got it? 
+Assume for every dollar in investment and operational cost, A(ASIC)s are more efficient at mining powF than G(ENERIC) hardware is, and for powR, ASIC is less efficient (and thus does not exist for powR). This is a valid assumption because the definition of powF is to be more efficient using ASICS. Even if powF is unprofitable to mine with A, it would be even more unprofitable to mine with G. Got it?
 
 Let me give you a demonstration. Say the efficiency is 2x. There is older generic hardware G', which is said to be half as efficient as G.
 
@@ -40,6 +54,8 @@ G' = $500 (market value)
 G' sold = $499 (G' is not a hot commodity by definition, and must be sold at a discount to market value to get money in hand)
 
 Even if we assume that G' can be sold for market value, there exists some person with hardware G' that wants to use only a % of their hardware for mining. This is true, and so even in the best case scenario, it will be more profitable to mine powR than powF with existing hardware. It actually gets even more insane if you design the most ASIC-friendly algorithm. The greater the efficiency of ASICs at mining powF compared to Generics, the greater the increase in difficulty required from powR before existing hardware users even consider mining powR (from a profitability standpoint). To recap, for not-for-profit users that don't want to dedicate their existing hardware to mine their preferred blockchain, the users of powR will be increasing the difficulty of the respective blockchain by a higher percentage than the users of powF (assuming equal users and equal existing hardware).
+
+## Botnets and Cost Advantaged Entities
 
 With botnets, powR is getting mined more than powF and it's still proportional to how ASIC-friendly powF is. If ASICs are 10x more economically efficient than generic hardware, then botnets are going to prefer powR for 10x more price-adjuated difficulty (i.e. share of TCH * price of powR has to be less than the same calcualtion of powF). Botnets mine powR, and have an incentive to not compromise the network as it is profitable without operational costs. With botnets selling the powR coin for profit, the powR market cap will be going down over time at a rate faster than the powF coin, but the multiplicative rate of defline will not be greater than the difficulty multiplier (otherwise botnets would mine powF).
 
