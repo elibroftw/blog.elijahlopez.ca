@@ -10,6 +10,13 @@ summary: The easiest way to buy Monero in Canada is deposit up to 10,000 CAD via
 
 If you want to know why I believe in Monero, feel free to read [Why Monero is the Best Crypto CURRENCY](/posts/why-monero-is-the-best-crypto-currency).
 
+September 2nd, 2024: Kraken Canada has delisted Monero. For US residents, Kraken is still the best way to buy Monero. The best methods to buy Monero in Canada are as follows:
+
+- KYC
+  - Buy USDC (0.5% spread) on Coinbase and then use [Trocador](#coinbase-usdc--trocador-usdc--xmr)
+- No-KYC
+  - Use [Haveno Retoswap](https://retoswap.com/), look for "no deposit" trades, buy the minimum amount of XMR, and then from then on buy from deposit trades
+
 ## Optimal Methods
 
 Using the [Kraken CAD &rarr; USD &rarr; XMR method](#kraken), you will pay at most 1% in fees. The more volume you do with Kraken, the lower the fees. Only if your wire transfer fees are very high and you want to buy $10k - 16k worth of Monero should you use the Coinbase USDC to Trocador method.

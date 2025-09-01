@@ -76,14 +76,20 @@ and
 
 > We target initial commitments of $500K - $2.5M for between 8%-15% ownership of a company. Our reserve model is fluid and adjusted regularly.
 
-**[Two Small Fish Ventures](https://twosmallfish.vc/)**
-
-- $250k - $2M CAD
-
 **[Mistral Venture Partners](https://mistral.vc)**
 
 - size: $100k – $2M CAD ; $1.6M pre-seed deal noted
 - Enterprise SaaS, AI/ML, Marketplaces, FinTech, CyberSecurity, EdTech, etc.
+
+**[Standup Ventures](https://www.standupvc.com/)**
+
+- Fund women led companies
+
+> We target an initial investment between $500K and $1.5M CAD.
+
+**[Two Small Fish Ventures](https://twosmallfish.vc/)**
+
+> We are based in Toronto and invest globally in deep tech. We are actively writing 5-7 cheques per year and our sweet spot being in the $500K to $1M USD range.
 
 **[Forum Ventures](https://www.forumvc.com/pre-seed-fund)**
 
@@ -133,6 +139,10 @@ Core D | 750,000 | 25.5 years
 This is from my notes. Essentially, if you were to work full time, given minimum salary of 40k post-tax, these are the timelines you should have before raising your next round of funding (assuming you live in Toronto and not the suburbs like I do with a massive car expensive LOL).
 
 The alternative, which I will call the greedy founder approach, is to raise money, keep your job (as in you have negative opportunity costs), and hire above market government subsidized interns you tech lead for. Based on my calculations, all 4 seed amounts allow for hiring 3 interns per year for 4 months each. Based on the one idea I have, I would pursue the least equity dilution possible. I am sure that within 4 months, an MVP will be made (plus working on the weekend), and so the next 2 interns would be marketing/business development interns who will help get the product in the hands of customers. Business development (sales), is not simple. You'd think people with business degrees would know how to do it, but nope. It's really just comes down to drive and inherent advantages some people have.
+
+**[MaRSIAF](https://marsiaf.com/)**
+
+> Average cheque size of C$500K, with earliest first cheques starting at C$50K
 
 **[Highline Beta](https://www.highlinebeta.com/)**
 
@@ -268,6 +278,10 @@ Invested in Cohere so there's that. This is probably the VC to target if you're 
 
 **[Green Sky Ventures](https://greensky.vc/)**
 
+**[Storytime Capital](https://www.storytime.capital/team)**
+
+- Unknown capital injection
+
 **[Antler Canada](https://www.antler.co/location/canada)**
 
 Requires full-time dedication to launch a company, usually requires co-founders. It's there for some people, probably not what tech-founders want though.
@@ -293,6 +307,8 @@ Quebec based firm that also focuses on sustainability.
 > Our primary focus are companies with EBITDA in the $1.0-$3.0M range but we remain flexible for the RIGHT businesses that fall outside of this scale.
 
 **[Buttonwood Group Advisors](https://buttonwoodfunds.com/about-us/)**
+
+**[Framework](https://www.framework.vc/)**
 
 ## Alternative Methods
 
