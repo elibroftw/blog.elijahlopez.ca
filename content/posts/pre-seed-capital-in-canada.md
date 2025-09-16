@@ -338,6 +338,7 @@ This will be moved to a new post in the future called Startup Kit, but its just 
 
 ## Incubators
 
+- [NEXT](https://www.nextcanada.com/)
 - [Velocity](https://www.velocityincubator.com/)
 - [DMZ](https://dmz.torontomu.ca/incubator)
 - [MaRS Discovery District](https://www.marsdd.com/startups/)

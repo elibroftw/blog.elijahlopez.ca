@@ -185,3 +185,8 @@ const [, forceUpdate] = useReducer(x => x + 1, 0);
 ## Adding a Minimum Loading Delay
 
 This isn't a straight forward task as it assumes use of an async management library. That's why I made an article for it: [React: How to Add Minimum Loading Delay](/posts/react-how-to-add-minimum-loading-delay)
+
+## Alternative to Spread Operator
+
+In React, you can use [Mutative](https://mutative.js.org/docs/getting-started/mutative-with-react#api) instead of Immer.
+For appending to Arrays, you can use .concat instead of the spread operator.
