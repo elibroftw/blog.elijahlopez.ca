@@ -10,7 +10,7 @@ tags:
 
 Canada doesn't have a productivity crisis. It has a lack of JOBS. And the lack of JOBS comes from the lack of LEADERSHIP. All our country's problems are ARTIFICIAL (MAN MADE). We can't even build a fucking road in this country!
 
-## Rent is too damn high
+## Rent is Too damn high
 
 Before we address home ownership, we must first dissect this statement. A lot of people who will never own a home are under the impression that rent itself is too high and that owning would be comparable or cheaper rather than more expensive. I agree with them that renting is too expensive but disagree that they think improving ownership is not important.
 
@@ -51,6 +51,12 @@ And then they pay themselves a salary. This is too much business stuff for someo
 ## Tariffs
 
 Trump is a blessing in disguise for two reasons. First the government can blame Trump for Canada's problems, even those that existed before. Secondly, it gives Canada a strong reason to address non-US trade issues.
+
+### Inter-Provincial Trade Barriers
+
+Let's not beat around the bush. Without Trump's insane tariffs, the Liberal party would not have even thought about eliminating inter-provincial trade barriers.
+
+I'm going to be attending a talk on this on September 25th, I will update this article after that.
 
 ## Jobs
 
