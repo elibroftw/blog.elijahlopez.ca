@@ -292,6 +292,13 @@ Aside from prompting the Chat apps, there are a variety of ways to use AI. I per
   - [Devin](https://devin.ai/)
 - GitHub Integration
   - QoDo Merge
+- AI Coding Agents (via Terminal)
+  - [stt/opencode](https://github.com/sst/opencode)
+  - [charmbracelet/crush](https://github.com/charmbracelet/crush)
+  - [openai/codex](https://github.com/openai/codex)
+  - [anthropics/claude-code](https://github.com/anthropics/claude-code)
+  - [gemini-cli](https://github.com/google-gemini/gemini-cli)
+  - [qwen-code](https://github.com/QwenLM/qwen-code) (fork of gemini-cli)
 
 Figma to Code
 
