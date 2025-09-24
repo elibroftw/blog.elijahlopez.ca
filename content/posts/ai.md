@@ -48,6 +48,7 @@ Intelligence benchmarks are good because you can also figure out which models ar
 #### Coding Benchmarks
 
 - [WebDev Arena Leaderboard](https://web.lmarena.ai/leaderboard)
+- [Design arena](https://www.designarena.ai/)
 - [SWE-Bench verified](/posts/ai-coding-leaderboard/): Software Engineering. ([leaderboard with all tools](https://www.swebench.com/#test))
 - [CodeForces](/posts/ai-coding-leaderboard/): Competitive programming (note that there is no time penalty for the models)
 - ~~[LiveCodeBench](https://livecodebench.github.io/leaderboard.html)~~
@@ -293,12 +294,21 @@ Aside from prompting the Chat apps, there are a variety of ways to use AI. I per
 - GitHub Integration
   - QoDo Merge
 - AI Coding Agents (via Terminal)
+  - [aider](https://aider.chat/)
   - [stt/opencode](https://github.com/sst/opencode)
+    - more agentic
+    - connected to language server to course-correct
+    - always has context while in use
   - [charmbracelet/crush](https://github.com/charmbracelet/crush)
   - [openai/codex](https://github.com/openai/codex)
   - [anthropics/claude-code](https://github.com/anthropics/claude-code)
   - [gemini-cli](https://github.com/google-gemini/gemini-cli)
   - [qwen-code](https://github.com/QwenLM/qwen-code) (fork of gemini-cli)
+  - [codebuff](https://github.com/CodebuffAI/codebuff)
+  - [plandex](https://docs.plandex.ai/hosting/self-hosting/local-mode-quickstart/)
+    - no commits for 2+ months, lacks MCP and has some blockers for power users
+    - painful setup to use at cost
+  - [uzi](https://github.com/devflowinc/uzi) - haven't really looked into it but it can run agents in parallel
 
 Figma to Code
 
