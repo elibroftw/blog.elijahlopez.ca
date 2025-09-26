@@ -282,6 +282,10 @@ Invested in Cohere so there's that. This is probably the VC to target if you're 
 
 - Unknown capital injection
 
+**[SimpleVentures](https://www.simpleventures.ca/about)**
+
+- Unknown capital injection
+
 **[Antler Canada](https://www.antler.co/location/canada)**
 
 Requires full-time dedication to launch a company, usually requires co-founders. It's there for some people, probably not what tech-founders want though.
@@ -342,3 +346,7 @@ This will be moved to a new post in the future called Startup Kit, but its just 
 - [Velocity](https://www.velocityincubator.com/)
 - [DMZ](https://dmz.torontomu.ca/incubator)
 - [MaRS Discovery District](https://www.marsdd.com/startups/)
+
+## Open Source
+
+[Open Source Collective](https://oscollective.org/)

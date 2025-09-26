@@ -45,9 +45,10 @@ NOTE: Google Gemini 2.5 Pro **May update** significantly improved its web app de
 | Gemini 2.5 Pro[^gemini2.5pro] | Google | PI | 83.1% | 67.2% | 2001 | Mar-2025 |
 | DeepSeek-V3.1-Terminus[^23] | ChatStream | OI | - | 68.4% | - | Sep-2025 |
 | DeepSeek-V3.1[^22] | ChatStream | OI | - | 66.0% | - | Aug-2025 |
-| gpt-oss-120B[^19] | OpenAI | OII | 44.4% | 62.4% | 2622 | Aug-2025 |
+| Code World Model[^cwm] | Meta | OIII | - | 65.8 % | - | Sep-2024 |
 | Kimi-K2-Instruct[^16] | Moonshot AI | OI | 60% | 65.8% | - | Jul-2025 |
 | GLM-4.5[^glm4.5] | Z AI | OI | - | 64.2% | - | Jul-2025 |
+| gpt-oss-120B[^19] | OpenAI | OII | 44.4% | 62.4% | 2622 | Aug-2025 |
 | GLM-4.5-Air [^glm4.5] | Z AI | OII | - | 57.6% | - | Jul-2025 |
 | Claude 3.7 Sonnet[^11] | Anthropic | OI | - | 62.3% | - | Feb-2025 |
 | o3-mini[^o3o4mini] | OpenAI | PI | - | 61.0% | 2036 | Apr-2025 |
@@ -86,8 +87,8 @@ NOTE: Google Gemini 2.5 Pro **May update** significantly improved its web app de
 | P | Proprietary |
 | O | Open Weights |
 | I | Flagship |
-| II | Dedicated Hardware (32GB - 144 GB) |
-| III | <24GB VRAM |
+| II | Dedicated Hardware (32GB < VRAM <= 144 GB) |
+| III | <= 32GB VRAM |
 | IV | Speed |
 
 When I say dedicated hardware, I'm talking about having to buy hardware dedicated for running AI models locally. The best bang for you buck available as far as I know is [tiny box](https://tinygrad.org/#tinybox) or [Truffle](https://itsalltruffles.com/) with the former costing over 10k and the latter costing under 20k. I mean at that price point, unless you're doing something sensitive, it's better to use API endpoints via openrouter.
@@ -122,42 +123,6 @@ Why can't I get paid to do this? If I was paid money, I would HAPPILY run benchm
 2. LCB scores are static and the depreciation mechanism makes it very difficult to compare a model that was just released to a model realeased a few months ago. For example, look at Grok 3. They exclusively use this benchmark, even though there's a 99.99% chance that Grok 3's future LCB score would be lower. This is exhibited well in Qwen's blog which showed Gemini 2.5 Pro absolutely crushing LCB. The biggest issues for LCB is that if you have a restraint like "I only want to run open-source models less than 20B in size", you will definitely not be able to benefit from LCB's own published leaderboards.
 3. xAI is releasing a suspicuiously low amount of benchmark scores. Not only that, but the xAI team has taken the approach that we all have patience. Their LCB score is useless to real world scenarios once you realize not only did it have to think to achieve them, gemini 2.5 pro beat it anyways. Not to mention that o4-mini and Gemini 2.5 Pro Preview were released on openrouter 7-8 days after grok 3 BETA was released on openrouter.
 4. Qwen3 30B is a great model and has "deprecated" DeepSeek R1 Distill 70B
-
-## References
-
-DeepSeek R1 claims 96.3th percentile which is [1989, 2095][^CodeForcesRatings2024] However OpenAI claims a score of 1891. Since DeepSeek reported that o1 has a higher codeforces percentile, we can assume that DeepSeek R1's score should be strictly less than o1's codeforces score, which is 1890 at best.
-
-DeepSeek V3 claims 51.6th percentile and most recently 58.7th percentile. Given that R1 is below that percentile, I've used the lowest 51th percentile (assuming that the median barely moved up).
-
-[^1]: [O1 Mini: Advancing Cost-Efficient Reasoning - OpenAI](https://openai.com/index/openai-o1-mini-advancing-cost-efficient-reasoning)
-[^LiveCodeBench202505]: [Grok-4 and Grok-4 Code on benchmarks - x/@legit_api leak](https://x.com/legit_api/status/1941165728708874514); Grok 4 has a higher LiveCodeBench score than all the other models for [Jan 2025 to May 2025](https://1drv.ms/b/c/7FD1036D7D077AF4/EXmAOOAkOFJPkoIE-4h9N1EBz4MJk1LCfI_SPejC7gfeGg?e=SYSsJB)
-[^CodeForcesRatings2024]: [2024 Codeforces Rating Distribution + rating percentiles](https://codeforces.com/blog/entry/126802)
-[^o3o4mini]: [Introducing O3 and O4 Mini - OpenAI](https://openai.com/index/introducing-o3-and-o4-mini)
-[^deepseek20250120]: [DeepSeek API News 2025-01-20 - DeepSeek](https://api-docs.deepseek.com/news/news250120)
-[^gemini2.5pro]: [Gemini Model Thinking Updates March 2025 - Google DeepMind](https://blog.google/technology/google-deepmind/gemini-model-thinking-updates-march-2025/#gemini-2-5-pro)
-[^gemini2.5proMay]: [Build rich, interactive web apps with an updated Gemini 2.5 Pro](https://blog.google/products/gemini/gemini-2-5-pro-updates/)
-[^gpt4.5]: [Introducing GPT-4.5 - OpenAI](https://openai.com/index/introducing-gpt-4-5)
-[^7]: [Introducing DeepSeek-V3](https://api-docs.deepseek.com/news/news1226)
-[^8]: [GPT-4.1 - OpenAI](https://openai.com/index/gpt-4-1)
-[^9]: [Raising the bar on SWE-bench Verified with Claude 3.5 Sonnet](https://www.anthropic.com/engineering/swe-bench-sonnet)
-[^10]: [Introducing Claude 4](https://www.anthropic.com/news/claude-4)
-[^11]: [Claude 3.7 Sonnet - Anthropic](https://www.anthropic.com/news/claude-3-7-sonnet)
-[^12]: [Qwen3: Think Deeper, Act Faster](https://qwen.ai/blog?id=1e3fa5c2d4662af2855586055ad037ed9e555125&from=research.research-list)
-[^13]: [Grok 3 Beta — The Age of Reasoning Agents](https://x.ai/news/grok-3)
-[^14]: [Mistral Medium 3 News - Mistral AI](https://mistral.ai/news/mistral-medium-3)
-[^16]: [Kimi-K2 - Moonshot AI](https://github.com/MoonshotAI/Kimi-K2)
-[^17]: [Claude Opus 4.1 - Anthropic](https://www.anthropic.com/news/claude-opus-4-1)
-[^18]: [Qwen3 Coder - Agentic Coding Adventure](https://qwen3lm.com/) (see picture beside "What Is Qwen3 Coder?")
-[^19]: [OpenAI GPT-OSS Model Card - OpenAI](https://cdn.openai.com/pdf/419b6906-9da6-406c-a19d-1bb078ac7637/oai_gpt-oss_model_card.pdf)
-[^20]: [Grok Code Fast 1 News - xAI](https://x.ai/news/grok-code-fast-1)
-[^codexUpdates]: [Introducing Upgrades to Codex - OpenAI](https://openai.com/index/introducing-upgrades-to-codex)
-[^22]: [DeepSeek-V3.1](https://api-docs.deepseek.com/news/news250821)
-[^23]: [DeepSeek-V3.1-Terminus](https://api-docs.deepseek.com/news/news250922)
-[^24]: [DeepSeek-R1-0528 Release](https://api-docs.deepseek.com/news/news250528)
-[^glm4.5]: [GLM-4.5: Reasoning, Coding, and Agentic Abililties](https://z.ai/blog/glm-4.5)
-[^grok4fast]: [Grok 4 Fast](https://x.ai/news/grok-4-fast) scores higher than Grok 4 on the same LiveCodeBench (Jan-May 2025)[^LiveCodeBench202505]
-[^qwen3max]: [Qwen3-Max: Just Scale it](https://qwen.ai/blog?id=241398b9cd6353de490b0f82806c7848c5d2777d&from=research.latest-advancements-list)
-[^new3.5]: [Introducing computer use, a new Claude 3.5 Sonnet, and Claude 3.5 Haiku](https://www.anthropic.com/news/3-5-models-and-computer-use)
 
 ## History of Releases
 
@@ -195,3 +160,40 @@ OpenAI: Codex and gpt 5 is significant, but..
 Grok: Grok Code Fast and Grok 4 shows that Grok team is changing direction and focusing on results and specialization rather than generalization. Their Code Fast models make them a company to take more seriously.
 
 Google: Google seems to take it laid back (deserving so). The 2.5 Pro May update is not benchmarked as much but it keeps their model relevant. Google seems to focus on releasing models to maintain relevancy rather than cater to benchmark scores.
+
+## References
+
+DeepSeek R1 claims 96.3th percentile which is [1989, 2095][^CodeForcesRatings2024] However OpenAI claims a score of 1891. Since DeepSeek reported that o1 has a higher codeforces percentile, we can assume that DeepSeek R1's score should be strictly less than o1's codeforces score, which is 1890 at best.
+
+DeepSeek V3 claims 51.6th percentile and most recently 58.7th percentile. Given that R1 is below that percentile, I've used the lowest 51th percentile (assuming that the median barely moved up).
+
+[^1]: [O1 Mini: Advancing Cost-Efficient Reasoning - OpenAI](https://openai.com/index/openai-o1-mini-advancing-cost-efficient-reasoning)
+[^LiveCodeBench202505]: [Grok-4 and Grok-4 Code on benchmarks - x/@legit_api leak](https://x.com/legit_api/status/1941165728708874514); Grok 4 has a higher LiveCodeBench score than all the other models for [Jan 2025 to May 2025](https://1drv.ms/b/c/7FD1036D7D077AF4/EXmAOOAkOFJPkoIE-4h9N1EBz4MJk1LCfI_SPejC7gfeGg?e=SYSsJB)
+[^CodeForcesRatings2024]: [2024 Codeforces Rating Distribution + rating percentiles](https://codeforces.com/blog/entry/126802)
+[^o3o4mini]: [Introducing O3 and O4 Mini - OpenAI](https://openai.com/index/introducing-o3-and-o4-mini)
+[^deepseek20250120]: [DeepSeek API News 2025-01-20 - DeepSeek](https://api-docs.deepseek.com/news/news250120)
+[^gemini2.5pro]: [Gemini Model Thinking Updates March 2025 - Google DeepMind](https://blog.google/technology/google-deepmind/gemini-model-thinking-updates-march-2025/#gemini-2-5-pro)
+[^gemini2.5proMay]: [Build rich, interactive web apps with an updated Gemini 2.5 Pro](https://blog.google/products/gemini/gemini-2-5-pro-updates/)
+[^gpt4.5]: [Introducing GPT-4.5 - OpenAI](https://openai.com/index/introducing-gpt-4-5)
+[^7]: [Introducing DeepSeek-V3](https://api-docs.deepseek.com/news/news1226)
+[^8]: [GPT-4.1 - OpenAI](https://openai.com/index/gpt-4-1)
+[^9]: [Raising the bar on SWE-bench Verified with Claude 3.5 Sonnet](https://www.anthropic.com/engineering/swe-bench-sonnet)
+[^10]: [Introducing Claude 4](https://www.anthropic.com/news/claude-4)
+[^11]: [Claude 3.7 Sonnet - Anthropic](https://www.anthropic.com/news/claude-3-7-sonnet)
+[^12]: [Qwen3: Think Deeper, Act Faster](https://qwen.ai/blog?id=1e3fa5c2d4662af2855586055ad037ed9e555125&from=research.research-list)
+[^13]: [Grok 3 Beta — The Age of Reasoning Agents](https://x.ai/news/grok-3)
+[^14]: [Mistral Medium 3 News - Mistral AI](https://mistral.ai/news/mistral-medium-3)
+[^16]: [Kimi-K2 - Moonshot AI](https://github.com/MoonshotAI/Kimi-K2)
+[^17]: [Claude Opus 4.1 - Anthropic](https://www.anthropic.com/news/claude-opus-4-1)
+[^18]: [Qwen3 Coder - Agentic Coding Adventure](https://qwen3lm.com/) (see picture beside "What Is Qwen3 Coder?")
+[^19]: [OpenAI GPT-OSS Model Card - OpenAI](https://cdn.openai.com/pdf/419b6906-9da6-406c-a19d-1bb078ac7637/oai_gpt-oss_model_card.pdf)
+[^20]: [Grok Code Fast 1 News - xAI](https://x.ai/news/grok-code-fast-1)
+[^codexUpdates]: [Introducing Upgrades to Codex - OpenAI](https://openai.com/index/introducing-upgrades-to-codex)
+[^22]: [DeepSeek-V3.1](https://api-docs.deepseek.com/news/news250821)
+[^23]: [DeepSeek-V3.1-Terminus](https://api-docs.deepseek.com/news/news250922)
+[^24]: [DeepSeek-R1-0528 Release](https://api-docs.deepseek.com/news/news250528)
+[^glm4.5]: [GLM-4.5: Reasoning, Coding, and Agentic Abililties](https://z.ai/blog/glm-4.5)
+[^grok4fast]: [Grok 4 Fast](https://x.ai/news/grok-4-fast) scores higher than Grok 4 on the same LiveCodeBench (Jan-May 2025)[^LiveCodeBench202505]
+[^qwen3max]: [Qwen3-Max: Just Scale it](https://qwen.ai/blog?id=241398b9cd6353de490b0f82806c7848c5d2777d&from=research.latest-advancements-list)
+[^new3.5]: [Introducing computer use, a new Claude 3.5 Sonnet, and Claude 3.5 Haiku](https://www.anthropic.com/news/3-5-models-and-computer-use)
+[^cwm]: [CWM: An Open-Weights LLM for Research on Code Generation with World Models](https://ai.meta.com/research/publications/cwm-an-open-weights-llm-for-research-on-code-generation-with-world-models/)

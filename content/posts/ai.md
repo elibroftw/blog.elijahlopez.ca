@@ -246,6 +246,7 @@ Creating 3D wireframes with Gemini
   - [Aura Chat](https://aurachat.io/)
     - [samples](https://aurachat.io/meng)
   - v0: for developers to speedrun website development
+  - [Orchids](https://www.orchids.app/): "The AI Fullstack Engineer. Build prototypes, apps, and websites"
   - [Lovable](https://lovable.dev/): for developers to speedrun website development
   - [UIDESIGN.AI](https://uidesign.ai/): AI for Shopify Themes & Figma
   - [combini](https://combini.dev/r/redditvc): Full stack app builder
