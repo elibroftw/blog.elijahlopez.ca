@@ -49,14 +49,15 @@ NOTE: Google Gemini 2.5 Pro **May update** significantly improved its web app de
 | Kimi-K2-Instruct[^16] | Moonshot AI | OI | 60% | 65.8% | - | Jul-2025 |
 | GLM-4.5[^glm4.5] | Z AI | OI | - | 64.2% | - | Jul-2025 |
 | gpt-oss-120B[^19] | OpenAI | OII | 44.4% | 62.4% | 2622 | Aug-2025 |
+| Gemini 2.5 Flash Thinking[^flash] | OpenAI | PI | 61.9% | 60.4% | - | Aug-2025 |
 | GLM-4.5-Air [^glm4.5] | Z AI | OII | - | 57.6% | - | Jul-2025 |
-| Claude 3.7 Sonnet[^11] | Anthropic | OI | - | 62.3% | - | Feb-2025 |
+| Claude 3.7 Sonnet[^11] | Anthropic | OI | 64.9% | 62.3% | - | Feb-2025 |
 | o3-mini[^o3o4mini] | OpenAI | PI | - | 61.0% | 2036 | Apr-2025 |
 | gpt-oss-20B[^19] | OpenAI | OII | 34.2% | 60.7% | 2516 | Aug-2025 |
 | DeepSeek-R1-0528 (2025)[^24] | ChatStream | OI | - | 57.60% | 1930 | May-2025 |
 | Qwen3-235B-A22B[^12] | Qwen | OI | - | 52.2[^qwen3max] | 2056 | Apr-2025 |
-| Grok 3[^13] | xAI | PI | - | - | - | Feb-2025 |
-| DeepSeek R1 (01/20)[^deepseek20250120] | ChatStream | OI | - | 49.2% | 1530 | Jan-2025 |
+| Grok 3[^13] | xAI | PI | 53.3% | - | - | Feb-2025 |
+| DeepSeek R1 (01/20)[^deepseek20250120] | ChatStream | OI | 56.9% | 49.2% | 1530 | Jan-2025 |
 | DeepSeek V3 (03/24)[^22] | ChatStream | OI | - | 45.4% | - | Mar-2025 |
 | Mistral Medium 3[^14] | Mistarl | PI | - | - | - | May-2025 |
 | ChatGPT 4.1[^8] | OpenAI | PI | - | 55% | - | Apr-2025 |
@@ -197,3 +198,4 @@ DeepSeek V3 claims 51.6th percentile and most recently 58.7th percentile. Given 
 [^qwen3max]: [Qwen3-Max: Just Scale it](https://qwen.ai/blog?id=241398b9cd6353de490b0f82806c7848c5d2777d&from=research.latest-advancements-list)
 [^new3.5]: [Introducing computer use, a new Claude 3.5 Sonnet, and Claude 3.5 Haiku](https://www.anthropic.com/news/3-5-models-and-computer-use)
 [^cwm]: [CWM: An Open-Weights LLM for Research on Code Generation with World Models](https://ai.meta.com/research/publications/cwm-an-open-weights-llm-for-research-on-code-generation-with-world-models/)
+[^flash]: [Gemini Flash (2025-09-27)](https://deepmind.google/models/gemini/flash/)

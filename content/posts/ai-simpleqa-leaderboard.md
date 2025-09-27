@@ -55,7 +55,7 @@ Before reading this table, please take note of OpenAI's comment regarding that t
 | DeepSeek-R1 (01/20)   | DeepSeek  | I M | 30.10 |  70.00 |  8.5 |
 | DeepSeek-R1 (05/28)    | DeepSeek  | I M | 27.80 |  87.50 | 17.7 |
 | DeepSeek-R1-0528-Qwen3-8B | DeepSeek  | I M | - |  76.3 | - |
-| Gemini-2.5-Flash            | Google    | IV |  29.70 | 78.00 | - |
+| Gemini-2.5-Flash            | Google    | IV |  29.90 | 78.00 | - |
 | Claude-3.5-Sonnet        | Anthropic | I M | 28.4 | - | 33 |
 | DeepSeek-V3                | DeepSeek  | I M | 24.9 | - | - |
 | o4-mini                           | OpenAI    | I M | 20.20 | 92.70 | 79.1 |

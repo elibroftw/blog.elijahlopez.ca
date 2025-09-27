@@ -41,6 +41,7 @@ Intelligence benchmarks are good because you can also figure out which models ar
 
 #### Knowledge Benchmarks
 
+- [GPQA : Graduate-Level Google-Proof Q&A Benchmark](https://artificialanalysis.ai/evaluations/gpqa-diamond)
 - [SimpleQA (Factuality)](/posts/ai-simpleqa-leaderboard/)
 - [AIME (Math)](https://matharena.ai/)
 - [Humanity's Last Exam](https://lastexam.ai/)
@@ -76,6 +77,11 @@ Agentic benchmarks are very new and personally I'm not too sure what these bench
 
 - Scale MultiChallenge
 - BrowseComp
+
+### Evaluation Platform
+
+- [OpenCompass](https://github.com/open-compass/opencompass)
+- [K2 Vendor Verifier](https://github.com/MoonshotAI/K2-Vendor-Verfier)
 
 ### Proprietary Models
 
