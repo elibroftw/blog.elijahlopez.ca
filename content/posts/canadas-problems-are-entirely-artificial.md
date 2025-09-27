@@ -2,7 +2,7 @@
 title: "Canada's Problems Are Entirely Artificial"
 date: 2025-09-15T22:10:37-07:00
 draft: false
-summary: "Canada's biggest challenges are artificial, and not naturally occurring. The productivity crisis is a hoax - a distraction - especially when considering that we can't even build a few simple roads that our indigenous communities want.
+summary: "Canada's biggest challenges are artificial, and not naturally occurring. The productivity crisis is a hoax - a distraction - especially when considering that we can't even build a few simple roads that our indigenous communities want."
 tags:
   - canada
   - politics

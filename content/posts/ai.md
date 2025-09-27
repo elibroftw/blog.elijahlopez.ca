@@ -41,6 +41,7 @@ Intelligence benchmarks are good because you can also figure out which models ar
 
 #### Knowledge Benchmarks
 
+- [GPQA : Graduate-Level Google-Proof Q&A Benchmark](https://artificialanalysis.ai/evaluations/gpqa-diamond)
 - [SimpleQA (Factuality)](/posts/ai-simpleqa-leaderboard/)
 - [AIME (Math)](https://matharena.ai/)
 - [Humanity's Last Exam](https://lastexam.ai/)
@@ -77,6 +78,11 @@ Agentic benchmarks are very new and personally I'm not too sure what these bench
 - Scale MultiChallenge
 - BrowseComp
 
+### Evaluation Platform
+
+- [OpenCompass](https://github.com/open-compass/opencompass)
+- [K2 Vendor Verifier](https://github.com/MoonshotAI/K2-Vendor-Verfier)
+
 ### Proprietary Models
 
 Model Name | Company | Blog | Chat App
@@ -101,7 +107,7 @@ When it comes to downloading models, most vendors (that's what I'm calling the c
 
 Model Family | Company | Blog | Chat App
 ---------------------- | --------------- | ------------ | -------
-[DeepSeek](https://www.chatstream.org/) | Chat Stream | [Chat Stream Blog](https://www.chatstream.org/blog) | [ChatStream Chat](https://www.chatstream.org/en/chat)
+[DeepSeek](https://www.DeepSeek.org/) | Chat Stream | [Chat Stream Blog](https://www.DeepSeek.org/blog) | [DeepSeek Chat](https://www.DeepSeek.org/en/chat)
 [Qwen](https://qwenlm.github.io/) | AliBaba | [Qwen Blog](https://qwenlm.github.io/blog/) | [Qwen Chat](https://chat.qwen.ai/)
 [Llama](https://www.llama.com/) | Meta | [AI at Meta Blog](https://ai.meta.com/blog/) and [Meta AI Research](https://ai.meta.com/research/) | OpenRouter
 [Mistral](https://mistral.ai/products/la-plateforme#models) | Mistral | [Mistral News](https://mistral.ai/news) | [Le Chat](https://mistral.ai/products/le-chat)

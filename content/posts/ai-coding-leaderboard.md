@@ -23,41 +23,43 @@ An Architecture <-> Programmer workflow where an agent is in charge of respondin
 
 ### Leaderboard
 
-NOTE: Google Gemini 2.5 Pro **May update** significantly improved its web app development capabilities. Scores are unknown.
-
 | Model / Product   | Company   | Tier | Aider Polyglot | SWE-bench verified | Codeforces | Date Available |
 |----------------------|-----------|----------|----------|----------|--------------|-----------------|
 | Grok 4 Fast[^grok4fast] | xAI | PI | - |- | - | Sep-2025 |
+| Claude Sonnet 4.5 [^sonnet4.5] | Anthropic | PI | - | 77.2% | - | Sep-2025 |
 | GPT-5-Codex[^codexUpdates] | OpenAI | PI | - | 74.5% | - | Sep-2025 |
 | GPT-5[^codexUpdates] | OpenAI | PI | 88% | 72.8% | - | Sep-2025 |
 | Codex-1[^codex] | OpenAI | PI | - | 72.1% | - | May-2025 |
-| Claude 4.1 Opus[^17] | Anthropic | PI | - | 74.5% | - | Aug-2025 |
-| Gemini 2.5 Pro[^gemini2.5proMay] | Google | PI | - | - | - | May-2025 |
-| Claude 4 Sonnet[^10] | Anthropic | PI | - | 72.7% | - | May-2025 |
-| Claude 4 Opus[^10] | Anthropic | PI | 72.5% | 72.5% | - | May-2025 |
+| Claude Opus 4.1[^17] | Anthropic | PI | - | 74.5% | - | Aug-2025 |
+| Claude Sonnet 4 [^10] | Anthropic | PI | - | 72.7% | - | May-2025 |
+| Claude Opus 4[^10] | Anthropic | PI | 72.5% | 72.5% | - | May-2025 |
 | Grok Code Fast 1[^20] | xAI | PI | - | 70.8% | - | Aug-2025 |
-| Claude 3.7 Sonnet (Custom Scaffold)[^11] | Anthropic | PI | - | 70.3% | - | Feb-2025 |
+| Claude Sonnet 3.7 (Custom Scaffold)[^11] | Anthropic | PI | - | 70.3% | - | Feb-2025 |
+| Gemini 2.5 Pro[^gemini2.5proMay] | Google | PI | - | 67.2% | - | May-2025 |
 | Qwen 3 Coder 480B[^18] | Qwen | OI | 61.8% | 69.6% | - | Jul-2025 |
 | o3-pro[^o3o4mini] | OpenAI | PI | 84.9% | 69.0% | 2748 | Apr-2025 |
 | o3[^o3o4mini] | OpenAI | PI | 79.6% | 69.1% | 2706 | Apr-2025 |
 | Qwen 3 Max[^qwen3max] | Qwen | PI | - | 69.6% | - | Sep-2025 |
+| DeepSeek-V3.1-Terminus[^23] | DeepSeek | OI | 76.1% | 68.4% | - | Sep-2025 |
 | o4-mini[^o3o4mini] | OpenAI | PI | 72.0% | 68.1% | 2719 | Apr-2025 |
-| Gemini 2.5 Pro[^gemini2.5pro] | Google | PI | 83.1% | 67.2% | 2001 | Mar-2025 |
-| DeepSeek-V3.1-Terminus[^23] | ChatStream | OI | - | 68.4% | - | Sep-2025 |
-| DeepSeek-V3.1[^22] | ChatStream | OI | - | 66.0% | - | Aug-2025 |
-| Code World Model[^cwm] | Meta | OIII | - | 65.8 % | - | Sep-2024 |
+| DeepSeek-V3.2-Exp[^25] | DeepSeek | OI | 74.5% | 67.8% | - | Sep-2025 |
+| GLM-4.6[^glm4.6] | Z AI | OI | - | 68% | - | Sep-2025 |
+| DeepSeek-V3.1[^22] | DeepSeek | OI | - | 66.0% | - | Aug-2025 |
+| Code World Model[^cwm] | Meta | OIII | - | 65.8 % | - | Sep-2025 |
 | Kimi-K2-Instruct[^16] | Moonshot AI | OI | 60% | 65.8% | - | Jul-2025 |
 | GLM-4.5[^glm4.5] | Z AI | OI | - | 64.2% | - | Jul-2025 |
 | gpt-oss-120B[^19] | OpenAI | OII | 44.4% | 62.4% | 2622 | Aug-2025 |
+| Gemini 2.5 Flash Thinking[^flash] | OpenAI | PI | 61.9% | 60.4% | - | Aug-2025 |
+| Gemini 2.5 Pro[^gemini2.5pro] | Google | PI | 82.2% | 59.6% | 2001 | May-2025 |
 | GLM-4.5-Air [^glm4.5] | Z AI | OII | - | 57.6% | - | Jul-2025 |
-| Claude 3.7 Sonnet[^11] | Anthropic | OI | - | 62.3% | - | Feb-2025 |
+| Claude 3.7 Sonnet[^11] | Anthropic | OI | 64.9% | 62.3% | - | Feb-2025 |
 | o3-mini[^o3o4mini] | OpenAI | PI | - | 61.0% | 2036 | Apr-2025 |
 | gpt-oss-20B[^19] | OpenAI | OII | 34.2% | 60.7% | 2516 | Aug-2025 |
-| DeepSeek-R1-0528 (2025)[^24] | ChatStream | OI | - | 57.60% | 1930 | May-2025 |
+| DeepSeek-R1-0528 (2025)[^24] | DeepSeek | OI | - | 57.60% (Multiple Attempts) | 1930 | May-2025 |
 | Qwen3-235B-A22B[^12] | Qwen | OI | - | 52.2[^qwen3max] | 2056 | Apr-2025 |
-| Grok 3[^13] | xAI | PI | - | - | - | Feb-2025 |
-| DeepSeek R1 (01/20)[^deepseek20250120] | ChatStream | OI | - | 49.2% | 1530 | Jan-2025 |
-| DeepSeek V3 (03/24)[^22] | ChatStream | OI | - | 45.4% | - | Mar-2025 |
+| Grok 3[^13] | xAI | PI | 53.3% | - | - | Feb-2025 |
+| DeepSeek R1 (01/20)[^deepseek20250120] | DeepSeek | OI | 56.9% | 49.2% | 1530 | Jan-2025 |
+| DeepSeek V3 (03/24)[^22] | DeepSeek | OI | - | 45.4% | - | Mar-2025 |
 | Mistral Medium 3[^14] | Mistarl | PI | - | - | - | May-2025 |
 | ChatGPT 4.1[^8] | OpenAI | PI | - | 55% | - | Apr-2025 |
 | Claude 3.5 Sonnet[^9] | Anthropic | PI | - | 49% | - | Oct-2024 |
@@ -71,7 +73,7 @@ NOTE: Google Gemini 2.5 Pro **May update** significantly improved its web app de
 | Phi 4 reasoning plus | Microsoft | OIII | - | - | 1723 | Dec-2025 |
 | Qwen3-4B[^12] | Qwen | OIII | - | - | 1671 | Apr-2025 |
 | Gemma3-27B-IT | Google | OII | - | - | 1063 | Mar-2025 |
-| DeepSeek V3 (12/24)[^7] | ChatStream | OI | - | 42% | - | Dec-2024 |
+| DeepSeek V3 (12/24)[^7] | DeepSeek | OI | - | 42% | - | Dec-2024 |
 | Claude 3.5 Haiku[^new3.5] | Anthropic | PI | - | 40.6%  | - | Oct-2024 |
 | ~~o1-preview~~ | OpenAI | PI | - | 40% | 1258 | Sep-2024 |
 | ChatGPT 4.5[^gpt4.5] | OpenAI | PI | - | 38.0% | - | Feb-2025 |
@@ -189,11 +191,16 @@ DeepSeek V3 claims 51.6th percentile and most recently 58.7th percentile. Given 
 [^19]: [OpenAI GPT-OSS Model Card - OpenAI](https://cdn.openai.com/pdf/419b6906-9da6-406c-a19d-1bb078ac7637/oai_gpt-oss_model_card.pdf)
 [^20]: [Grok Code Fast 1 News - xAI](https://x.ai/news/grok-code-fast-1)
 [^codexUpdates]: [Introducing Upgrades to Codex - OpenAI](https://openai.com/index/introducing-upgrades-to-codex)
+[^codex]: [Introducing Codex](https://openai.com/index/introducing-codex/)
 [^22]: [DeepSeek-V3.1](https://api-docs.deepseek.com/news/news250821)
 [^23]: [DeepSeek-V3.1-Terminus](https://api-docs.deepseek.com/news/news250922)
 [^24]: [DeepSeek-R1-0528 Release](https://api-docs.deepseek.com/news/news250528)
+[^25]: [Introducing DeepSeek-V3.2-Exp](https://api-docs.deepseek.com/news/news250929)
 [^glm4.5]: [GLM-4.5: Reasoning, Coding, and Agentic Abililties](https://z.ai/blog/glm-4.5)
 [^grok4fast]: [Grok 4 Fast](https://x.ai/news/grok-4-fast) scores higher than Grok 4 on the same LiveCodeBench (Jan-May 2025)[^LiveCodeBench202505]
 [^qwen3max]: [Qwen3-Max: Just Scale it](https://qwen.ai/blog?id=241398b9cd6353de490b0f82806c7848c5d2777d&from=research.latest-advancements-list)
 [^new3.5]: [Introducing computer use, a new Claude 3.5 Sonnet, and Claude 3.5 Haiku](https://www.anthropic.com/news/3-5-models-and-computer-use)
 [^cwm]: [CWM: An Open-Weights LLM for Research on Code Generation with World Models](https://ai.meta.com/research/publications/cwm-an-open-weights-llm-for-research-on-code-generation-with-world-models/)
+[^flash]: [Gemini Flash (2025-09-27)](https://deepmind.google/models/gemini/flash/)
+[^sonnet4.5]: [Introducing Claude Sonnet 4.5](https://www.anthropic.com/news/claude-sonnet-4-5)
+[^glm4.6]: [GLM-4.6: Advanced Agentic, Reasoning and Coding Capabilities](https://z.ai/blog/glm-4.6)

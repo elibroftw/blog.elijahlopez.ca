@@ -4,7 +4,7 @@ date: 2025-05-02T18:50:57-04:00
 draft: false
 tags:
   - ai
-summary: "Compare AI model factuality with the SimpleQA leaderboard. Includes scores for AIME'25 (Math), Chatbot Arena, and ArenaHard benchmarks."
+summary: "Compare AMIodel factuality with the SimpleQA leaderboard. Includes scores for AIME'25 (Math), Chatbot Arena, and ArenaHard benchmarks."
 ---
 
 ### Benchmark Descriptions
@@ -27,40 +27,42 @@ Before reading this table, please take note of OpenAI's comment regarding that t
 
 | Model / Product   | Company   | Tier    | SimpleQA | AIME'25 | Humanity's Last Exam  |
 |----------------------|-----------|----------|----------|---------|--------|
-| [Liner Pro Reasoning](https://getliner.com/) | [Liner](https://liner.com/) | I P | [95.30](https://liner.com/learn/deep-research-comparison) | N/A | N/A |
-| [Exa Research Pro](https://exa.ai/)                                 | Exa | I P | [94.9%](https://exa.ai/blog/introducing-exa-research) | N/A | N/A |
-| Perplexity Deep Research | [Perplexity](https://www.perplexity.ai/) | I P | 93.90 | N/A | N/A |
-| Liner Pro | [Liner](https://liner.com/) | I P | [93.70](https://liner.com/learn/liner-accurate-ai-search) | N/A | N/A |
-| [Brave Multiple Searches](https://brave.com/search/api/) | Brave | I P | [93.25](https://brave.com/blog/ai-grounding/) | N/A | N/A |
-| [Exa Research](https://exa.ai/)                                 | Exa | I P | [91.6%](https://exa.ai/blog/introducing-exa-research) | N/A | N/A |
-| [ChatGPT Agent System Card](https://openai.com/index/chatgpt-agent-system-card/) | 91.4% | OpenAI | I P | N/A | N/A |
-| [o3 with browsing](https://openai.com/index/chatgpt-agent-system-card/) | 95.4% (read note) | OpenAI | I P | N/A | N/A |
-| [Brave Single Search](https://brave.com/search/api/) | Brave Search | I P | [90.78](https://brave.com/blog/ai-grounding/) | N/A | N/A |
-| Perplexity Pro      | [Perplexity](https://www.perplexity.ai/) | I P | 90.60 | N/A | N/A |
-| [Brave Single Search + Reasoning](https://brave.com/search/api/) | Brave Search | I P | [90.5](https://brave.com/blog/ai-grounding/) | N/A | N/A |
-| [Linkup Web Search](https://www.linkup.so/)        | Linkup | I P | 90.10 | N/A | N/A |
-| [ODS-v2+DeepSeek-R1](https://arxiv.org/abs/2503.20201) | Open Deep Search | I M | 88.3% | N/A | N/A |
-| Perplexity Sonar Pro      | Perplexity | I P | 85.80 | N/A | N/A |
-| Claude-4-Opus              | Anthropic | I M | - | 75.5% | - |
-| ChatGPT-4.5                 | OpenAI    | I M | 62.50 | - | - |
-| [ChatGPT-5-thinking](https://openai.com/index/gpt-5-system-card/)      | OpenAI    | I M | 55% | - | 50 |
-| Gemini-2.5-Pro              | Google    | I M |  54.00 | 86.70 | - |
-| Claude-3.7-Sonnet        | Anthropic | I M | 50.00 | - | 59.8 |
-| o3                                  | OpenAI    | I M | 49.4 |  88.9  | 85.9  |
-| Grok 3                           | xAI       | I M | 44.60 | 93.3 | - |
-| o1                                  | OpenAI    | I M | 42.60 | 79.20 | 61 |
-| ChatGPT-4.1                 | OpenAI    | I M | 41.60 | - | 50 |
-| ChatGPT-4o                  | OpenAI    | I M | 39.00 | 14.00 | - |
-| Kimi K2                          | Moonshot AI | I M | 31.0 | - | - |
-| DeepSeek-R1 (01/20)   | DeepSeek  | I M | 30.10 |  70.00 |  8.5 |
-| DeepSeek-R1 (05/28)    | DeepSeek  | I M | 27.80 |  87.50 | 17.7 |
-| DeepSeek-R1-0528-Qwen3-8B | DeepSeek  | I M | - |  76.3 | - |
-| Gemini-2.5-Flash            | Google    | IV |  29.70 | 78.00 | - |
-| Claude-3.5-Sonnet        | Anthropic | I M | 28.4 | - | 33 |
-| DeepSeek-V3                | DeepSeek  | I M | 24.9 | - | - |
-| o4-mini                           | OpenAI    | I M | 20.20 | 92.70 | 79.1 |
-| o3-mini                           | OpenAI    | I M | 13.80 |  86.5 | 66.1 |
-| Qwen3-235B-A22B        | Qwen  | I M | 15.00 | 81.5    | 95.6 |
+| DeepSeek-V3.2-Exp w/tool [^1] | DeepSeek | OI | 97.1% | - | Sep-2025 |
+| DeepSeek-V3.1-Terminus w/tool[^1] | DeepSeek | OI | 96.8% | - | Sep-2025 |
+| [Liner Pro Reasoning](https://getliner.com/) | [Liner](https://liner.com/) | PI | [95.30](https://liner.com/learn/deep-research-comparison) | N/A | N/A |
+| [Exa Research Pro](https://exa.ai/)                                 | Exa | PI | [94.9%](https://exa.ai/blog/introducing-exa-research) | N/A | N/A |
+| Perplexity Deep Research | [Perplexity](https://www.perplexity.ai/) | PI | 93.90 | N/A | N/A |
+| Liner Pro | [Liner](https://liner.com/) | PI | [93.70](https://liner.com/learn/liner-accurate-ai-search) | N/A | N/A |
+| [Brave Multiple Searches](https://brave.com/search/api/) | Brave | PI | [93.25](https://brave.com/blog/ai-grounding/) | N/A | N/A |
+| [Exa Research](https://exa.ai/)                                 | Exa | PI | [91.6%](https://exa.ai/blog/introducing-exa-research) | N/A | N/A |
+| [ChatGPT Agent System Card](https://openai.com/index/chatgpt-agent-system-card/) | 91.4% | OpenAI | PI | N/A | N/A |
+| [o3 with browsing](https://openai.com/index/chatgpt-agent-system-card/) | 95.4% (read note) | OpenAI | PI | N/A | N/A |
+| [Brave Single Search](https://brave.com/search/api/) | Brave Search | PI | [90.78](https://brave.com/blog/ai-grounding/) | N/A | N/A |
+| Perplexity Pro      | [Perplexity](https://www.perplexity.ai/) | PI | 90.60 | N/A | N/A |
+| [Brave Single Search + Reasoning](https://brave.com/search/api/) | Brave Search | PI | [90.5](https://brave.com/blog/ai-grounding/) | N/A | N/A |
+| [Linkup Web Search](https://www.linkup.so/)        | Linkup | PI | 90.10 | N/A | N/A |
+| [ODS-v2+DeepSeek-R1](https://arxiv.org/abs/2503.20201) | Open Deep Search | MI | 88.3% | N/A | N/A |
+| Perplexity Sonar Pro      | Perplexity | PI | 85.80 | N/A | N/A |
+| Claude-4-Opus              | Anthropic | MI | - | 75.5% | - |
+| ChatGPT-4.5                 | OpenAI    | MI | 62.50 | - | - |
+| [ChatGPT-5-thinking](https://openai.com/index/gpt-5-system-card/)      | OpenAI    | MI | 55% | - | 50 |
+| Gemini-2.5-Pro              | Google    | MI |  54.00 | 86.70 | - |
+| Claude-3.7-Sonnet        | Anthropic | MI | 50.00 | - | 59.8 |
+| o3                                  | OpenAI    | MI | 49.4 |  88.9  | 85.9  |
+| Grok 3                           | xAI       | MI | 44.60 | 93.3 | - |
+| o1                                  | OpenAI    | MI | 42.60 | 79.20 | 61 |
+| ChatGPT-4.1                 | OpenAI    | MI | 41.60 | - | 50 |
+| ChatGPT-4o                  | OpenAI    | MI | 39.00 | 14.00 | - |
+| Kimi K2                          | Moonshot AI | MI | 31.0 | - | - |
+| DeepSeek-R1 (01/20)   | DeepSeek  | MI | 30.10 |  70.00 |  8.5 |
+| DeepSeek-R1 (05/28)    | DeepSeek  | MI | 27.80 |  87.50 | 17.7 |
+| DeepSeek-R1-0528-Qwen3-8B | DeepSeek  | MI | - |  76.3 | - |
+| Gemini-2.5-Flash            | Google    | IV |  29.90 | 78.00 | - |
+| Claude-3.5-Sonnet        | Anthropic | MI | 28.4 | - | 33 |
+| DeepSeek-V3                | DeepSeek  | MI | 24.9 | - | - |
+| o4-mini                           | OpenAI    | MI | 20.20 | 92.70 | 79.1 |
+| o3-mini                           | OpenAI    | MI | 13.80 |  86.5 | 66.1 |
+| Qwen3-235B-A22B        | Qwen  | MI | 15.00 | 81.5    | 95.6 |
 | Gemma 3 27B               | Google    | II | 10.00 | - | - |
 | Gemma 2 27B               | Google    | II |  9.20 | - | - |
 | Qwen3-32B (Dense)      | Qwen  | II | 8.00 | 72.9 | - |
@@ -95,8 +97,9 @@ For Claude 4, there was no score available for SimpleQA, however someone tested 
 
 | Tier | Name |
 | ------ | ------ |
-| I M | Flagship Model |
-| I P | Flagship Product |
+| MI | Flagship Model |
+| PI | Flagship Product |
+| OI | Open-Weights |
 | II | Consumer hardware |
 | III | Edge hardware |
 | IV | Speed |
@@ -145,3 +148,5 @@ For Claude 4, there was no score available for SimpleQA, however someone tested 
 - [LG EXAONE Deep](https://arxiv.org/pdf/2503.12524)
 
 <https://brave.com/blog/ai-grounding/>
+
+[^1]: [Introducing DeepSeek-V3.2-Exp](https://api-docs.deepseek.com/news/news250929)
