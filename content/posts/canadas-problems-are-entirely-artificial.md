@@ -8,9 +8,11 @@ tags:
   - politics
 ---
 
-Canada doesn't have a productivity crisis. It has a lack of JOBS. And the lack of JOBS comes from the lack of LEADERSHIP. All our country's problems are ARTIFICIAL (MAN MADE). We can't even build a fucking road in this country!
+Canada doesn't have a productivity crisis. It has a lack of JOBS. And the lack of JOBS comes from the lack of COMPETITION which comes from a lack of LEADERSHIP. All our country's problems are ARTIFICIAL (MAN MADE). We can't even build a fucking road in this country!
 
-## Rent is Too damn high
+{{< toc >}}
+
+## Rent is Too Damn High
 
 Before we address home ownership, we must first dissect this statement. A lot of people who will never own a home are under the impression that rent itself is too high and that owning would be comparable or cheaper rather than more expensive. I agree with them that renting is too expensive but disagree that they think improving ownership is not important.
 
@@ -68,6 +70,37 @@ There are two "fixes" regarding the jobs problem. We effectively want to lower t
 2. Reduce immigration. I made the argument 4 months ago in [May 2025](https://www.reddit.com/r/CanadaHousing2/comments/1kxxsrc/the_immigration_cuts_would_need_to_double_to/) that immigration should be reduced from 395,000 to 240,000. This is based on the fact that the job shortage went from increasing at 20k/mo in 2024 to 10k/mo in 2025 after a cut from 485,000 to 395,000. So if we extrapolate, we get to the 240,000 figure.
 3. Picking winners correctly; Investment in high profit margin businesses. The government must stop picking winners and losers and rather follow where the winners already are. We have basically missed the boat regarding GPUs. China has already started creating their own GPUs. GPUs during the AI rush are like the shovels during the gold rush! Instead of investing in the core technology that makes AI profitable, the government is helping our companies pay for importing expensive GPUs!
 4. Stop. picking. losers. The government is picking losers when it defends bills like C-69 (impact assessment act) and the emissions cap. This also follows through the recently passed Bill C-5, which lets the government decide which projects are worthy of cutting down the impact assessment act. Theoretically, if Canada was 10x the population with 10x more proposed projects, the government would be spending 10x more effort at achieving the same economic growth. That's how futile this sort of "office" is. But the worse part is that it ensures the sandbagging of economic growth by favouring some projects over the others. The best example of how the government is doing a bad job at picking losers is the [Marten Falls Access Road](https://www.martenfallsaccessroad.ca/), the [Webequie Supply Road](https://www.supplyroad.ca/), and the [Northern Road Link](https://northernroadlink.ca/). These are all INDIGENOUS LED PROJECTS. Also, another thing that destroys down economic activity are small taxes like the luxury tax which reduced our ship building industry's economic output.
+
+## Cost of Living Crisis
+
+Aside from rent, there are a lot of goods with high price tags. These prices are high because there is someone, out there, willing to purchase these goods at these high prices. The solution is to shine a light on substitutes and competitors as well as promoting competition in every industry even those where mergers would not result in prices going up. More competition isn't just a way to ensure prices are affordable (by diminishing excess profit margins over time), but also ensures that there are multiple companies competing for the same talent pool, ensuring that real wages won't fall like they would in a [monopsony](https://www.investopedia.com/terms/m/monopsony.asp) labour market.
+
+1) We were looking to get our windows replaced and guess what we were quoted for the best in the industry? $83,000 cash. $93,000 otherwise.
+
+2) I was looking for a book shelf. This is not a new invention. This is not a unique design. Here's what I found online.
+
+- Amazon, non-standard designs: < $100
+- Ikea, ideal design: $100
+- Ikea, ideal design with two bottom drawers: $129
+- Structube, cabinet design: $239
+- Structube, no backboard design: $200+ ([one is $569!](https://www.structube.com/en_ca/reno-acacia-wood-5tier-bookcase-96-65-69?pid=27406))
+- Uline Canada, ideal design (similar to Ikea ideal): $381
+- Leon's: Quirky is sub $200, [ideal designs](https://www.leons.ca/collections/furniture-living-room-home-office-bookcases) at [over $400](https://www.leons.ca/products/palomar-open-bookcase-tuscany-brown)
+- Furniture.ca, ideal design: [$99.95](https://www.furniture.ca/products/yurok-5-shelf-bookcase-summer-oak)!
+
+In conclusion, the solution the government need to promote more competition which comes from enacting pro-competition policies AND actually directing funding to promote competition rather than ... solely funding and focusing on speculative innovation (e.g. EV Batteries, Quantum, AI subsidies that end up going to Nvidia and foreign cloud computing companies). When the government focuses on picking winners, it is essentially trying to predict how the future would be like, which would effectively be like predicting which stocks will have the highest earnings growth in 3 years. We see the failures of picking winners already, with the multiple closings of these EV battery factories:
+
+- July 2024: [Umicore halts construction of $2.8-billion EV battery-materials plant in Ontario](https://www.theglobeandmail.com/business/article-umicore-halts-construction-of-28-billion-ev-battery-materials-plant-in/)
+- July 2025: [EV charger company Flo to close Quebec plant, lay off workers](https://windsorstar.com/news/local-news/7b-st-thomas-ev-plant-lands-key-supplier-adds-job-postings)
+- [NextStar Energy finalises construction of Canadian EV battery plant](https://www.msn.com/en-us/money/companies/nextstar-energy-finalises-construction-of-canadian-ev-battery-plant/ar-AA1NGItn)
+  - But what happens now?
+- [$7B St. Thomas EV plant lands key supplier, adds job postings](https://windsorstar.com/news/local-news/7b-st-thomas-ev-plant-lands-key-supplier-adds-job-postings)
+  - But what happens when it's actually completed? Why do we need more than one multi-billion dollar EV battery plant?
+
+[Corruption](https://globalnews.ca/news/10793613/house-of-commons-business-conservatives-corruption/)
+
+> In this case, the Liberal government abolished Sustainable Development Technology Canada after the auditor general released a scathing report about the organization’s management last spring.
+> Of the projects she looked at, one in every six that received funding were ineligible. The auditor’s report also found 90 cases where conflict-of-interest polices were violated.
 
 ## Boogeymen
 
