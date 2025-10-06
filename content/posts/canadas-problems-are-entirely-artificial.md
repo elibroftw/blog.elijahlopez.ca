@@ -52,7 +52,7 @@ And then they pay themselves a salary. This is too much business stuff for someo
 
 ## Tariffs
 
-Trump is a blessing in disguise for two reasons. First the government can blame Trump for Canada's problems, even those that existed before. Secondly, it gives Canada a strong reason to address non-US trade issues.
+Trump is a blessing in disguise for two reasons. First the government can blame Trump for Canada's problems, even those that existed before. Secondly, it gives Canada a strong reason to address non-US trade issues. In my blog post [On Trade Wars and Trade Balances](/posts/trade-wars-and-trade-balances), I talk about how tariffs can be used to "tax the rich" and incentivize domestic companies to capture surplus profits (and thus become competitive with foreign markets). I also mentioned that taxes can be used to capture extrinsic value of foreign goods where consumers are not importing for any intrinsic value the goods may have.
 
 ### Inter-Provincial Trade Barriers
 

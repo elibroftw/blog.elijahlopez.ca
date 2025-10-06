@@ -7,6 +7,10 @@ tags:
 summary: Trump has been going on about Tariffs, but how could any country utilized tariffs for good? This post attempts to explore how tariffs on some goods and services can increase domestic economic opportunities without harming the working class.
 ---
 
+## Universal Postal Union
+
+I think the biggest issue with trade is the unfairness of gigantic economies like China unfairly benefiting from subsidized shipping costs when shipping to developed countries. Life in China is not underdeveloped as if people are struggling to live. Rather life is China is good, freedom is bad. If China was English speaking and had more free speech protections, it would be very competitive in terms of standard of living to western countries.
+
 ## Tariffs on High Profit-Margin Goods
 
 The tariffs that would work would be tariffs slapped on high profit margin items such as luxury cars (e.g. McLaren's, Lamborghini's, Ferrari's), planes (private jets), clothes, vessels (electric boats), etc. which can easily be produced domestically since the labour cost would not eat into the profit margin. Of course, for some of these items, such as FASHION, yes the profit margin is low, but not because of labour. It's also not something I strongly believe in so I would never recommend tariffing them as a priority unless it was significant in terms of contributing to the trade-deficit. An opposite example is Canadian oil. We sell Canadian oil to the USA at a discount. It makes no sense for the USA to tariff Canadian oil since the USA benefits from the lower priced oil! It's an idiotic policy only an [imbecile](https://en.wikipedia.org/wiki/Peter_Navarro) would even suggest.
