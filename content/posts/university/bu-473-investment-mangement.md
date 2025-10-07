@@ -406,9 +406,16 @@ Rate of return = 22.13 / 20.83 - 1 = 6.24%
 - Coffee is $1 today, but given an [Average annual rate of inflation](https://www.bankofcanada.ca/rates/related/inflation-calculator/) of 3.5%, the coffee will be 1.035.
 - You could buy 1 coffee now and 1.077 next year
 - Change in purchasing power (PP) = 1.077 / 1 - 1 = 7.7%
-- Fisher equation: N approxEqal to real return + inflation
+- Fisher equation:
+  - _N_: nominal interest rate
+  - _r<sub>e</sub>_: expected real interest rate
+  - _&#960;<sub>e</sub>_: expected inflation rate
+  - _t_: tax rate on interest earnings
+    - Canada: 100% of earnings in non-registered investments is taxed at your marginal income tax rate (T5 slip)
 
-<img class=equation-tall src="https://latex.codecogs.com/svg.image?PPGrowth=\frac{1 + N}{1 + inf}-1">
+<img class=equation-tall src="https://latex.codecogs.com/svg.image?r_e=N(1-t)-\pi_e">
+
+<img class=equation-tall src="https://latex.codecogs.com/svg.image?PPGrowth=\frac{1 + N}{1 + \pi}-1">
 
 - Equilibrium rate of return
 
