@@ -17,8 +17,10 @@ These are the energy drinks I drink on a cycle when I'm not drinking new ones.
 1. Celsius Orange
 2. Celsius Playa Vibe
 3. Celsius Arctic White
-4. Reign Energy Reignbow Sherbet
-5. Reign Energy White Gummy Bear
+4. Celsius Mango Lemonade
+5. Celsius Watermelon Lemonade
+6. ~~Reign Energy Reignbow Sherbet~~
+7. ~~Reign Energy White Gummy Bear~~
 
 Monthly
 
@@ -28,6 +30,10 @@ Monthly
 Reign Energy Razzle Berry would be on here but it is unavailable in Canada.
 
 ### Celsius Playa Vibe (9.5 / 10)
+
+HELL YEAH
+
+### Celsius Mango Lemonade (9.25 / 10)
 
 HELL YEAH
 
