@@ -17,7 +17,7 @@ Gold crossed $4,000 per troy ounce on October 7th. Given this milestone, I wante
 
 End date: Sep-2025.
 
-![Gold Price to S&P 500 Total Return Price](./gold_vs_sp500_plot.png)
+![Gold Price to S&P 500 Total Return Price](/posts/gold-vs-sp500-returns/gold_vs_sp500_plot.png)
 
 Overall, since 1975, the S&P 500 manages to outperform gold on a y/y basis 70% of the time (note that this is based on investing at the start of the year). The cool thing about gold is that it has a Beta coefficient of around 0.5 (Yahoo, using GLD ETF as a proxy).
 
@@ -25,11 +25,11 @@ After creating the initial plots which show the performance for the two differen
 
 If we use a 10-year window, the results are bit more different, suggesting that over the long-term the S&P500 will outperform gold. The periods where the S&P500 outperforms are taller and the dot-com bursts are deeper compared to the all time annualized performance, however even on a 10 year period the pre-1995 bull market provided excess returns over gold as well as the post-GFC bull market. These make it very clear that gold is not a buy always hold forever instrument but rather an instrument to bring into play when investors speculate that the risk-free real interest rates is lower than what they desire.
 
-![Gold vs S&P 500 Total Return Price 10 year window](./gold_10yr_rolling.png)
+![Gold vs S&P 500 Total Return Price 10 year window](/posts/gold-vs-sp500-returns/gold_10yr_rolling.png)
 
 There was definitely a year (2012) where you should've sold gold for bonds or stocks. The year is 2012 and inflation starts dipping below 2%. The Feds start cutting rates, however its clear that holding USD will provide a provide a positive enough risk-free real rate of return. So what happens to gold? It falls to its "fair value" and stays there since inflation is being tamed, as made clear with interest rates rising from 2016 to 2019.
 
-![Gold vs S&P 500 Performance](./gold_sp500_ratio_plot_35_years.png)
+![Gold vs S&P 500 Performance](/posts/gold-vs-sp500-returns/gold_sp500_ratio_plot_35_years.png)
 
 The questions that arise after looking at the graphs are why is gold going up in 2024 and 2025, whether this is similar to 2012, how to avoid another dot-com bubble situation, and lastly, how do we know when the top is in regarding the business/debt cycle.
 
