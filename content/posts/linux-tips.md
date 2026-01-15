@@ -335,3 +335,47 @@ The scroll speed on Firefox is too sensitive. To reduce it,
 ## Fix Touchpad after Waking From Sleep
 
 [See my other post](/posts/linux-touchpad-not-working/)
+
+## Black Screens on Monitors
+
+When dual-booting Windows and Fedora, after a few weeks I started encountering a problem where after 5-15 minutes my displays would go Black, audio still worked, however my NVIDIA 5070 Ti would start spinning at 100%.
+
+I first thought this was a wayland problem, so tried KDE plasma x11 and still encountered the same problem. I then thought it was a KDE/Fedora problem so I booted into Windows. To my surprised, I encountered the same problem after 10-15minutes.
+
+After searching I found some advice to turn off GSYNC. So boot into Windows and turn off GSYNC.
+
+I speculate the problem stems from using one GSYNC supported monitor with a non-GSYNC supported monitor. There must be some sort of NVIDIA driver bug that didn't account for a setup so when the GPU tries to leverage GSYNC (variable refresh rate), it tries to do so on all monitors instead of just the supported monitor. And maybe the supported monitor doesn't support it properly either. So the failure comes from being unable to rectify when GSYNC support isn't working? I'm not too sure, I didn't bother testing using only one monitor.
+
+## App Images
+
+Install [AppImageLauncher](https://github.com/TheAssassin/AppImageLauncher/releases)
+
+To install on Fedora, we need to download an RPM file corresponding to our CPU architecture. Most PCs are x86_64, so you are look for x86_64*rpm or something.
+
+## How to Resize Partition?
+
+I don't recommend using GPARTED Live. Instead you can boot into the same Live ISO that you used to install Linux, and from there, you can install gparted through Discover (or whatever the software store is on your distro). From there, you can simply resize (expand). You'll see a warning but from experience, grub will work fine even if the free space you are allocating preceeds the partition you want to expand.
+
+## Adding Aliases
+
+Sometimes you need to use the command line for long ass commands.
+
+```sh
+nano ~/.bash_aliases
+alias x="command"
+nano ~/.bashrc
+. ~/.bash_aliases
+```
+
+## How to Connect XBox One Controller Over Bluetooth
+
+Install `xboxdr`
+
+## How to Play Epic Games or GOG Launcher Games
+
+Install [Heroic](https://heroicgameslauncher.com/), an Open Source Epic Games and GOG Launcher
+
+If some games don't work with Heroic, you can do the following
+
+1. `sudo -H nano /etc/environment`
+2. `USE_FAKE_EPIC_EXE=true`

@@ -102,6 +102,58 @@ In conclusion, the solution the government need to promote more competition whic
 > In this case, the Liberal government abolished Sustainable Development Technology Canada after the auditor general released a scathing report about the organization’s management last spring.
 > Of the projects she looked at, one in every six that received funding were ineligible. The auditor’s report also found 90 cases where conflict-of-interest polices were violated.
 
+## Increasing Business Investment in Canada
+
+{{< tweet user="elibroftw" id="2011865093651226635" >}}
+
+### End price controls for profit sectors
+
+When Canadians complain about the cost of daycare, the government decided to run a price control program where day cares would only be allowed to charge a certain price which was capped according to provincial governments and ultimately subsidized by the federal government. The problem is that this sort of situation caps the profits on day care operators, and worse, forces unilaterally a pay grid onto the workers. Day care is expensive, and the solution? Subsidies and wage caps. That's the opposite of prosperity. One side wins and the cost of the other! To make it worse, these price controls mean that some day cares have no competition when charging the excess demand of cheap day care. When not every parent is guaranteed a spot, the program is simply run improperly. When there are waitlists, and affordability is luck based, that's a horrible system.
+
+My proposal is to simply increase the [child care expenses](/posts/university/bu-357-taxation-1/#child-care-expenses-sec-63) limit for income deductions. In plain english, when two parents are working,
+the parent with the lower income can reduce their taxes by this expense up to a certain amount ($8,000 per child under 7).
+
+According to [CozyTime](https://cozytime.ca/how-much-does-daycare-cost-in-ontario-in-2021/)
+
+> Those fees are generally in line with pre-2022 prices (and may have risen with inflation since). For example, in 2021 the median infant fee in Toronto was around $1,758 per month (roughly $80 – $85/day), and for preschoolers about $1,381/month (about $63/day). Other regions had slightly lower rates (provincial average for preschool around $1,227/month).
+
+This works out to $21,096 per median infant per year which is way more than $8,000 per child per year. A subsidy does not benefit every working family fairly, whereas a tax cut would not only alleviate affordability concerns but also ensure that day cares and day care workers can compete in a free market such that effiiciancy is rewarded. Parents will get the best day care for the same price rather than limited quality for either a subsidized price or an exorbitant price. Without competition, there is no incentive to improve quality per dollar (good deflation).
+
+### Cut Costs that Governments Influence
+
+When the goal is to _increase_ competition and innovation across **all sectors** and not just hand picked innovation, that means coming to terms that small business in Canada do not make that much money.
+
+- Incorporation
+- Transaction fees (credit card processing, marketplace fees, advertising fees)
+- Licensing
+  - For prosperity/wage growth: (see [Poilievre's call for Blue Seal Standard](https://www.cbc.ca/news/politics/poilievre-national-licensing-healthcare-1.6783976))
+- Technology
+  - The problem here is that the government simply subsidizes digital work instead of providing cutting edge advice on how to pay $0 for hosting websites
+  - Small businesses should really only have to pay $400-$1000 to create a static website, however it should be sub $400 due to AI speeding up boilerplate work
+  - Funding companies that focus on alleviating and solving technological problems small businesses face
+- Reducing Paperwork (see youtube video) which increases efficiency and productivity of physicians
+  - 100,000/yr just to run a practice!
+  - Standardization of insurance forms (even in a single payer system somehow this isn't a thing already?)
+- Targeted taxes higher than profit margins that get passed onto the consumer
+  - This is specifically regarding housing and construction
+  - Why are we charging developer charges and sales taxes during market downturns
+  - No regulation on mandating developer charge reserves to be fully spent within 20 years (disincentive for municipalities to treat it as a cash grab)
+- Human Resources Innovation (lack of AI targeted funding for business that address this in Canada)
+- Crowding Out
+  - Canada has higher commercial lending rates than Sweden and Switzerland
+  - We need to spend less not more, we need to balance the budget so that we aren't letting banks charge a higher interest rate for businesses that want to grow
+
+{{< youtube doKUSC3LYIY >}}
+
+### Pursue policies that make RE where businesses can Operate Cheaper
+
+- Legalize and pursue Mixed-Use Zoning
+  - Small business owners should be able to live and work in the same location but on different floors
+  - The lack of mixed-use zoning makes it hard for small businesses to compete with franchises and big corporations that have economies of scale
+  - Economies of scale is good with regard to commoditized goods and services, however some markets are Monopolistic Competition.
+
+Not just commercial rents, but also infrastructure like electricity.
+
 ## Boogeymen
 
 1. Galen Weston. Groceries are too expensive at Walmart, it's actually his fault.
