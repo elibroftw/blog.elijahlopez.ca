@@ -6,8 +6,13 @@ tags:
   - finance
   - investing
   - valuation
+aliases:
+    - /posts/digitalocean-is-not-a-buy/
+    - /posts/docn/
 summary: "Why DigitalOcean (DOCN) is not a buy for value investors: lacks competitive advantages in a crowded market, better for diversification."
 ---
+
+2026: My dad still owned the mistake of a stock pick DOCN, and so sold at 2x LOL
 
 Is it time for me to sell [$DOCN](https://finance.yahoo.com/quote/DOCN/)? A perspective from a fan and hopefully soon to be ex-shareholder. This is not a bearish take, just a value-portfolio analysis perspective.
 
