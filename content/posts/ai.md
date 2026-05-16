@@ -245,7 +245,7 @@ Some of these can also be considered a subset of "Chat"
 
 Creating 3D wireframes with Gemini
 
-{{< tweet user="azed_ai" id="1901418266746355999">}}
+{{< x user="azed_ai" id="1901418266746355999">}}
 
 ### Websites
 
@@ -371,29 +371,29 @@ Here are some thoughts I have on pursuing fictional writing
 
 Convert line art out of an uploaded sketch + colorize with Gemini
 
-{{< tweet user="dreamingtulpa" id="1901571311622918454" >}}
+{{< x user="dreamingtulpa" id="1901571311622918454" >}}
 
 Extracting a professional shot product from a picture
 
-{{< tweet user="nicdunz" id="1901387475555090500" >}}
+{{< x user="nicdunz" id="1901387475555090500" >}}
 
 Combining a product with a picture of a human (which could also be AI generated) for marketing or e-commerce shots. You can also do virtual try ons.
 
-{{< tweet user="KurawaDono" id="1900074784127672614" >}}
+{{< x user="KurawaDono" id="1900074784127672614" >}}
 
-{{< tweet user="HalimAlrasihi" id="1900667639086673962" >}}
+{{< x user="HalimAlrasihi" id="1900667639086673962" >}}
 
 Creating a pixel sprite using [Glif Sprite Generator](https://glif.app/@EgadZoundsGadzooks/glifs/clwpvrsfy000713x1hpl2rsg3), and then turning it into concept art using Gemini
 
-{{< tweet user="angrypenguinPNG" id="1900303337318498792" >}}
+{{< x user="angrypenguinPNG" id="1900303337318498792" >}}
 
 Creating gif animations using Gemini
 
-{{< tweet user="ilumine_ai" id="1900041501624971601" >}}
+{{< x user="ilumine_ai" id="1900041501624971601" >}}
 
 Interior decoration
 
-{{< tweet user="deedydas" id="1900750406084686181" >}}
+{{< x user="deedydas" id="1900750406084686181" >}}
 
 ## AI Research
 

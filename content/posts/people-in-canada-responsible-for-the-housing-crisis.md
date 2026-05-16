@@ -12,7 +12,7 @@ This is a list of Canadians who opposed the building of housing and the deregula
 
 [Tweet](https://x.com/SueAnnLevy/status/1823570747224129765)
 
-{{< tweet user="SueAnnLevy" id="1823570747224129765" >}}
+{{< x user="SueAnnLevy" id="1823570747224129765" >}}
 
 > You’re running for office — do you know what the average “affordable” unit costs taxpayers?
 >

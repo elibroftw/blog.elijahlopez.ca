@@ -146,7 +146,7 @@ We need the username and the status id:
 {{</* tweet user="MPelletierCIO" id="1522704947556483073" */>}}
 ```
 
-{{< tweet user="MPelletierCIO" id="1522704947556483073" >}}
+{{< x user="MPelletierCIO" id="1522704947556483073" >}}
 
 ### YouTube
 

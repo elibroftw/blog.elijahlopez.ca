@@ -104,7 +104,7 @@ In conclusion, the solution the government need to promote more competition whic
 
 ## Increasing Business Investment in Canada
 
-{{< tweet user="elibroftw" id="2011865093651226635" >}}
+{{< x user="elibroftw" id="2011865093651226635" >}}
 
 ### End price controls for profit sectors
 

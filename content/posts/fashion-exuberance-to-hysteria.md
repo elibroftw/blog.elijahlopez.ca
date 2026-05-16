@@ -19,4 +19,4 @@ Another example of why per capita recession is a viable explanation is that Nike
 
 A lot of Canadian companies are not affected by this since they are necessities or are export-driven. However, tellecommunications is where you can start to see the effects of lower nominal savings.
 
-{{< tweet user="elibroftw" id="2055444725914616050" >}}
+{{< x user="elibroftw" id="2055444725914616050" >}}

@@ -8,7 +8,7 @@ tags:
 summary: "Discovering Japan helped me realize I wasn't an introvert; I was just in an environment stacked against my archetype. Here's how Japan unlocked my true, extroverted self."
 ---
 
-{{< tweet user="elibroftw" id="2043407591955415155" >}}
+{{< x user="elibroftw" id="2043407591955415155" >}}
 
 ## Life Before Japan
 

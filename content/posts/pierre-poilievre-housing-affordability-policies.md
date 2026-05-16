@@ -58,7 +58,7 @@ Yes, I'm referencing the [NDP's criticism](https://www.ndp.ca/news/ndp-critic-im
 
 Here is the minister of immigration, Mark Miller, boasting on Twitter regarding asking rents falling coinciding with a cut in non-permanent immigration. You cannot make this up. In one year, being against excessive immigration is harmful. The next year, it's mainstream.
 
-{{< tweet user="MarcMillerVM" id="1847612393452449997" >}}
+{{< x user="MarcMillerVM" id="1847612393452449997" >}}
 
 ## Tying Infrastructure Dollars to Housing Completion in Municipalities
 

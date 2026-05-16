@@ -138,7 +138,7 @@ Where's the Linux tax then to use Linux? Linus Torvald should be the richest man
 Lastly, ZEC does not use an ASIC resistant PoW algorithm and will become PoS in the future as indicated by its CEO!
 Yes, ZEC is a product of centralization, not decentralization. It's CEO had drunkenly admitted to being against privacy for all (criminals here).
 
-{{< tweet user="zooko" id="863202964416077824" >}}
+{{< x user="zooko" id="863202964416077824" >}}
 
 It's funny how ZCash pays Edward Snowden, a criminal to the USA, to support ZCash, which would turn around and oust him if he used it in the US.
 ZCash's philosophy is "if a state doesn't like you, we don't like you, unless you are an influencer." I had no idea that it's even possible to be a double hypocrite.
@@ -246,7 +246,7 @@ As for their community, they argue from a position of bad faith:
 
 [Reddit Example](https://www.reddit.com/r/CryptoCurrency/comments/8pnt1u/dero_creates_a_new_type_of_dag/e0cvb87/)
 
-{{< tweet user="Serena_Fox_CP" id="1010026987321098240" >}}
+{{< x user="Serena_Fox_CP" id="1010026987321098240" >}}
 
 This PR lady is just as dead as the project. Anyone that mentions DERO is either arrogant or has malicious intent.
 That can be said for many of these coins: DERO, Pirate Chain, Grin, SecretCoin, ZCash.
@@ -254,7 +254,7 @@ Disingenuous is the middle name of many projects in this article.
 
 It is also unusably inefficient.
 
-{{< tweet user="sethforprivacy" id="1517141767132393472" >}}
+{{< x user="sethforprivacy" id="1517141767132393472" >}}
 
 ## Pirate Chain
 
