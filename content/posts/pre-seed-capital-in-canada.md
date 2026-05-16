@@ -247,6 +247,13 @@ Invested in Cohere so there's that. This is probably the VC to target if you're 
 - Shopify
 - PayRange (not Canadian, but common for iot payments)
 
+**[Northside Ventures](https://www.northside.ventures/)**
+
+- Unknown capital injection
+- Boardy.ai
+
+> building software and AI infrastructure for the global stage
+
 **[Graphite Ventures](https://www.graphitevc.com/philosophy)**
 
 - Capital efficient businesses

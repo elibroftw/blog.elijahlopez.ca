@@ -131,7 +131,8 @@ These companies don't make the models, but offer inference, either by hosting mo
 
 ### Running in the Cloud
 
-- [RunPod](https://runpod.io)
+- [RunPod](https://runpod.io/)
+- [lium](https://lium.io/register?ref=LIUM-0B3LXV4L)
 
 ## AI Applications
 
