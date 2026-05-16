@@ -24,14 +24,12 @@ The coffee can mindset can be applied to small-mid cap stocks that you believe h
 
 A high dividend yield should always have an explanation
 
-RED FLAG: A high dividend yield is usually due to a unsustainable payout ratio
-
-At some point the cash flows will fail to materialize and a company will be unable to pay dividend without selling assets (SCM)
-RED FLAG: A high dividend yield could be due to a company carrying a lot of debt
-
-debt servicing is a risk towards maintaining the dividend (XIFR, BCE.TO)
-YELLOW FLAG: Political risk (BABA, PBR-A, EC)
-YELLOW FLAG: Taboo / trends (BTI)
+- RED FLAG: A high dividend yield is usually due to a unsustainable payout ratio
+  - At some point the cash flows will fail to materialize and a company will be unable to pay dividend without selling assets (SCM)
+- RED FLAG: A high dividend yield could be due to a company carrying a lot of debt
+  - debt servicing is a risk towards maintaining the dividend (XIFR, BCE.TO)
+- YELLOW FLAG: Political risk (BABA, PBR-A, EC)
+- YELLOW FLAG: Taboo / trends (BTI)
 
 ### Degree of Monopolistic Competition
 
