@@ -9,7 +9,7 @@ tags:
 summary: "Are fashion stocks suffering from shifting consumer trends or a macro slowdown? Explore why LULU is mispriced in a per capita recession"
 ---
 
-"Lululemon Athletica (LULU) is not a long-term BUY"[/posts/lululemon-is-not-a-long] - December 8, 2024
+"Lululemon Athletica (LULU) is not a long-term BUY" - [December 8, 2024](/posts/stocks/lulu)
 
 Consumer trends was the risk factor I provided, and then the P/E NTM plunged to levels never seen before (9.9). American Eagle (AEO) is at 8.7 and ANF is at 6.7. The Gap (GAP) should be a good base line comparison of a clothing company who's stock is not priced based on speculative consumer trends (9.1). Now that LULU is priced similar to the other fashion brands, I believe it's undervalued. A better explanation for slowing revenue growth is that consumers are in a per capita recession. This is true in Canada, where nominal savings has gone down for multiple years straight. Less savings means less money is spent on niceities. Even the stock is priced as if we are in a per capita recession!
 
