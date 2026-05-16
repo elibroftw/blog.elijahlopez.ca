@@ -4,8 +4,7 @@ date: 2023-01-21T14:49:20-05:00
 tags:
   - devops
   - tutorial
-aliases: ["/posts/starting-systemctl-services-without-root/"]
-summary: "Learn how to configure systemd services to be started, stopped, and restarted by a non-root user without requiring a password using sudoers."
+aliases: ["/posts/starting-systemctl-services-without-root"]
 ---
 
 Google and StackExchange do not give a straight forward and properly explained answer on how to do this, so I used [ChatGPT](https://chat.openai.com/chat)
