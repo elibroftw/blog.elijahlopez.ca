@@ -14,10 +14,10 @@ A rating below 5 indicates that water is better to drink.
 
 These are the energy drinks I drink on a cycle when I'm not drinking new ones.
 
-1. Celsius Orange
-2. Celsius Playa Vibe
+1. Celsius Playa Vibe
+2. Celsius Orange
 3. Celsius Arctic White
-4. Celsius Mango Lemonade
+4. Celsius Mango Lemonade (RARE)
 5. Celsius Watermelon Lemonade
 6. ~~Reign Energy Reignbow Sherbet~~
 7. ~~Reign Energy White Gummy Bear~~
