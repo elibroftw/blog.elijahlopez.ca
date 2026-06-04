@@ -199,6 +199,8 @@ For the firms below, I could not find a $ amount of investment, so assume arbitr
 
 ---
 
+**[Research Capital Venture Investment Banking](https://www.researchcapital.com/investment-banking/venture-investment-banking)**
+
 **[RiSC Capital](https://www.risc.capital/)**
 
 - "Canada's Deep Tech Venture Fund"
