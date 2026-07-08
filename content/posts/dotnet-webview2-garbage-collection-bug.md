@@ -1,7 +1,7 @@
 ---
 title: "WebView2's GetDevToolsProtocolEventReceiver Will Crash Your WinUI App if You Don't Store the Receiver"
 date: 2026-05-25T15:14:31-04:00
-summary: "A debugging story about WebView2, the .NET GC, and a one-line fix for random Memory Access Violations."
+summary: "A debugging story about WebView2, the .NET GC, and a one-line fix for the unexpected memory access violations."
 tags:
   - csharp
   - programming
