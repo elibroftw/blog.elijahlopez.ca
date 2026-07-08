@@ -5,7 +5,7 @@ draft: false
 tags:
   - programming
   - tutorial
-  - c-sharp
+  - csharp
 summary: "C# tutorial on adding items to a MongoDB Dictionary field using the $push operator, demonstrating the array-of-documents approach."
 ---
 

@@ -5,7 +5,7 @@ draft: false
 tags:
   - programming
   - tutorial
-  - c-sharp
+  - csharp
   - asp.net
 aliases:
     - /posts/aspnet-kebab-case/

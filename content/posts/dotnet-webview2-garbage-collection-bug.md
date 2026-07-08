@@ -1,13 +1,12 @@
 ---
-title: "WebView2's GetDevToolsProtocolEventReceiver Will Crash Your .NET App If You Don't Store the Receiver"
+title: "WebView2's GetDevToolsProtocolEventReceiver Will Crash Your WinUI App if You Don't Store the Receiver"
 date: 2026-05-25T15:14:31-04:00
-hidden: true
 summary: "A debugging story about WebView2, the .NET GC, and a one-line fix for random Memory Access Violations."
 tags:
-  - dotnet
-  - c-sharp
+  - csharp
   - programming
   - tutorial
+  - winui3
 ---
 
 I spent the last week investigating a crash in a WinUI 3 + WebView2 app on Windows ARM64. I was encountering seemingly random Memory Access Violation exceptions thrown from inside the WebView2 DLLs, with no useful stack trace. The cause turned out to be due to not storing a event receiver.

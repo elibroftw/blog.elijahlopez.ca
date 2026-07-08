@@ -6,7 +6,7 @@ tags:
   - tutorial
   - programming
   - python
-  - c-sharp
+  - csharp
 summary: "Automate your Unity building process with a step-by-step guide on creating build scripts and integrating them with Unity Hub. Learn to streamline builds for various platforms and prepare for CI/server integration."
 ---
 

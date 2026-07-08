@@ -4,7 +4,7 @@ date: 2024-03-29T15:01:59-04:00
 tags:
   - programming
   - tutorial
-  - c-sharp
+  - csharp
   - asp.net
 summary: "Learn how to URI encode strings and query parameters in C# using `System.Uri.EscapeDataString`. This tutorial provides code examples for basic encoding and within an ASP.NET integration test."
 ---

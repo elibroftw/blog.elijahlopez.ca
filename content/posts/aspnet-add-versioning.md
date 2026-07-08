@@ -5,7 +5,7 @@ draft: false
 tags:
   - programming
   - tutorial
-  - c-sharp
+  - csharp
   - asp.net
 summary: "A tutorial on adding API versioning to ASP.NET Core endpoints for .NET 8 and .NET 9, covering setup with OpenAPI/Scalar and Swagger, and providing code examples for implementation."
 ---

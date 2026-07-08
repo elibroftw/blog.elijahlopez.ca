@@ -4,7 +4,7 @@ date: 2023-06-02T14:09:28-04:00
 tags:
   - programming
   - tutorial
-  - c-sharp
+  - csharp
   - asp.net
 summary: "Tutorial on serving embedded resources in ASP.NET Core for debugging/simple scenarios, covering .csproj configuration and C# examples for accessing resources."
 ---

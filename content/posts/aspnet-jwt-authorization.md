@@ -5,7 +5,7 @@ draft: false
 tags:
   - programming
   - tutorial
-  - c-sharp
+  - csharp
   - asp.net
 summary: "A concise tutorial on implementing JWT authorization in ASP.NET Core, with code examples for configuration, setup, token generation, and securing API routes."
 ---

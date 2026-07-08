@@ -5,7 +5,7 @@ draft: false
 tags:
   - programming
   - tutorial
-  - c-sharp
+  - csharp
   - asp.net
 summary: "Demonstrates returning HTTP error responses with strongly-typed responses in ASP.NET Core using ActionResult<T> for validation and authorization."
 ---

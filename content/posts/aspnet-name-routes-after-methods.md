@@ -5,7 +5,7 @@ draft: false
 tags:
   - programming
   - tutorial
-  - c-sharp
+  - csharp
   - asp.net
 summary: "Configure ASP.NET Core routes to automatically follow method names using `[Route(\"[controller]/[action]\")]` on the controller, reducing the need for individual route decorators and streamlining API development."
 ---

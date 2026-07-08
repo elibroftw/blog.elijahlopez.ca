@@ -5,7 +5,7 @@ draft: false
 tags:
   - programming
   - tutorial
-  - c-sharp
+  - csharp
   - asp.net
 summary: "Handle optional JSON fields and serialize enums as strings in ASP.NET Core. Configure `JsonSerializerOptions` globally or use attributes for precise control over JSON output."
 ---

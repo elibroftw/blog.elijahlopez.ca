@@ -5,7 +5,7 @@ draft: false
 tags:
   - tutorial
   - programming
-  - c-sharp
+  - csharp
   - asp.net
 summary: "Explains how to access global JSON serializer options in ASP.NET Core using dependency injection for consistent serialization/deserialization outside of controllers."
 ---

@@ -5,7 +5,7 @@ draft: false
 tags:
   - programming
   - tutorial
-  - c-sharp
+  - csharp
   - asp.net
 summary: "In .NET 9, please use Scalar. Add a dark theme to your ASP.NET Core Swagger UI. This guide provides two methods: serving a CSS file from wwwroot or using an embedded resource."
 ---

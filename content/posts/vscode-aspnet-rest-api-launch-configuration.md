@@ -5,7 +5,7 @@ draft: false
 tags:
   - programming
   - tutorial
-  - c-sharp
+  - csharp
   - asp.net
   - vscode
 summary: "Configure your ASP.NET Core Web API project for debugging in Visual Studio Code using a custom `launch.json` file, enabling a native development experience."
