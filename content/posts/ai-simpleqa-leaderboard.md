@@ -11,9 +11,11 @@ I've added a succinct [SimpleQA Verified (September 2025)](https://arxiv.org/abs
 
 | Model | SimpleQA Verified | Labels |
 | ---------------------- | ----------- | ---------- |
+| Gemini 3.1 Pro | 75.6 | P |
 | OpenAI GPT 5.6 Sol | 71.6 | P |
 | Anthropic Claude Fable 5 | 68.3 | P |
 | Thinking Machines Inkling | 68.3 | O |
+| [DeepSeek V4 Pro Max](https://api-docs.deepseek.com/news/news260424/) | 57.9 | O |
 | Z GLM 5.2 | 38.1 | O |
 
 P = Proprietary, O = Open Weight
