@@ -4,7 +4,7 @@ date: 2025-05-02T22:55:04-04:00
 draft: false
 tags:
   - ai
-summary: "Explore a bleeding-edge list of AI: models (open-source & proprietary), benchmarks, and applications (chat, image/video/audio, dev tools, and more)."
+summary: "Explore a bleeding-edge list of AI: models (open weight & proprietary), benchmarks, and applications (chat, image/video/audio, dev tools, and more)."
 ---
 
 Please drop a comment if you think something is missing or want something added.
@@ -20,6 +20,27 @@ There's two parts to this article. One focuses on the models and how to select t
 ## AI Models
 
 I'm starting with the topic of benchmarks because the best way to be ahead is by using the forefront leader in AI which is only possible by reading benchmark scores. One day it could be OpenAI, the next Google, the next some whale named DeepSeek, and then something called Qwen. Truly, it's better to make informed decisions based on a heuristic than it is to blindly follow the sheep and limit yourself a single platform.
+
+### Open Weight Quick Start
+
+Knowledge
+
+- QAT stands for Quantization-Aware Training
+  - "allows preserving similar quality to bfloat16 while dramatically reducing the memory requirements to load the model"
+- [Quantization](/posts/how-to-pick-an-llm-quantization/)
+- Tool calling
+- MCP
+- Agents/Harness: Hermes, Textgen, pi coding agent, opencode
+
+Models to Keep an eye on
+
+- Google DeepMind Gemma 4
+- Prism ML Bonsai 27B
+- Thinking Machines Inkling
+- DeepSeek V4
+- Z.AI GLM 5.2
+
+
 
 ### Benchmarks
 
@@ -99,9 +120,9 @@ Cohere is really slacking. I almost forgot about them.
 
 - [ArtificialAnalysis/Text-to-Image-Leaderboard](https://huggingface.co/spaces/ArtificialAnalysis/Text-to-Image-Leaderboard)
 
-### Open-Source Models
+### Open Weight Models
 
-A table of companies that release open-source LLMs. I suggest adding these to your RSS reader or signing up for email updates. In the future, hopefully RSSHub adds support for these.
+A table of companies that release open weight LLMs. I suggest adding these to your RSS reader or signing up for email updates. In the future, hopefully RSSHub adds support for these.
 
 When it comes to downloading models, most vendors (that's what I'm calling the companies) will link you to Hugging Face. My biggest gripe is how Hugging Face isn't using P2P torrent technology to speed up downloads and reduce strain on their own servers! What a missed opportunity.
 
@@ -114,8 +135,6 @@ Model Family | Company | Blog | Chat App
 [Gemma](https://ai.google.dev/gemma) | Google | [DeepMind Blog](https://deepmind.google/blog/) | [Google AI Studio](https://aistudio.google.com/prompts/new_chat)
 [Phi](https://azure.microsoft.com/en-us/products/phi/) | Microsoft | [Microsoft AI Platform Blog](https://techcommunity.microsoft.com/category/ai/blog/aiplatformblog) | OpenRouter or [Azure AI Foundry](https://ai.azure.com/explore/models?selectedCollection=phi&tid=72f988bf-86f1-41af-91ab-2d7cd011db47)
 [ChatGLM](https://huggingface.co/THUDM) | THUKEG & Z.ai | [Twitter](https://x.com/thukeg) | OpenRouter
-
-Note that sometimes proprietary models are open-sourced, but this usually happens long after a model from an open-source family has beaten the outdated proprietary model. Therefore, they are not included in this list for end-users.
 
 These are also the base models. If you go tho HuggingFace and LocalLLAMA, you can find many remixes (fine-tunes) of the base models to yield specific results. There are so many people doing this.
 
@@ -136,14 +155,14 @@ These companies don't make the models, but offer inference, either by hosting mo
 
 ## AI Applications
 
-AI but for specific tasks. A mix of apps and models (when applicable). Skip to [Local AI Models](#local-ai-models) to learn more about running open-source models using open-source apps
+AI but for specific tasks. A mix of apps and models (when applicable). Skip to [Local AI Models](#local-ai-models) to learn more about running open weight models using open-source apps
 
 ### Chat
 
-The default type of application when people say LLMs.  and  for a list of models. Alternatively, if you don't mind paying, an easy way to interact with all models is through [OpenRouter](https://openrouter.ai/). Read [How to Run Open-Source Models](#how-to-run-open-source-models) if you want to run text generation models locally.
+The default type of application when people say LLMs.  and  for a list of models. Alternatively, if you don't mind paying, an easy way to interact with all models is through [OpenRouter](https://openrouter.ai/). Read [How to Run Open Weight Models](#how-to-run-open-weight-models) if you want to run text generation models locally.
 
 - [Proprietary Models](#proprietary-models)
-- [Open-Source Models](#open-source-models)
+- [Open Weight Models](#open-weight-models)
 
 - Forefront AI
 - Bing Chat
@@ -194,7 +213,7 @@ Some of these can also be considered a subset of "Chat"
   - [Gemini vs Photoshop example](https://x.com/madpencil_/status/1901584829038444707)
 - Generative (Text-to-image or Image to Image)
   - [leaderboard](https://huggingface.co/spaces/ArtificialAnalysis/Text-to-Image-Leaderboard)
-  - Open Source Models
+  - Open Weight Models
     - [Step1X-Edit](https://huggingface.co/stepfun-ai/Step1X-Edit): aims to open-source ChatGPT's image capabilities
     - [Flux.2](https://flux2.io/)
     - [Stable Diffusion](https://stability.ai/stable-image) by StabilityAI (also see their Applications)
@@ -344,13 +363,13 @@ If you don't mind TailwindCSS (I hate it), you may find these tools useful. Spea
 
 I take great pride in stating that this blog post is ironically 100% free of AI generation. I'm not opposed to AI but knowing that AI is a FLUFF GENERATOR means that I can really only use AI to turn a bland writing post into a pleasant post (see [That Time I Went to a Dog Food Eating Convention](/posts/the-dog-food-eating-convention/)). If you rely on AI 100%, it can make your content over the top sweet, so I find the best way to use it on your own words is to incorporate some of its suggestions rather than all.
 
-I have two book ideas I want to pursue one day in the future. What I don't approve of using AI for, is to generate redundant slop, which is basically plagiarism. [Jetpack AI's](https://jetpack.com/ai/) own demo shows itself generating slop. Using AI to write a blog post about being a better blogger? What? I think these companies are going to get whatever moat they think they have eaten by Chat apps or open-sourced fine-tuned models.
+I have two book ideas I want to pursue one day in the future. What I don't approve of using AI for, is to generate redundant slop, which is basically plagiarism. [Jetpack AI's](https://jetpack.com/ai/) own demo shows itself generating slop. Using AI to write a blog post about being a better blogger? What? I think these companies are going to get whatever moat they think they have eaten by Chat apps or open weight fine-tuned models.
 
 Here are some thoughts I have on pursuing fictional writing
 
 - [models from David Belton aka DavidAU](https://huggingface.co/DavidAU)
   - Maybe try the recent Qwen3 models since that's the latest model?
-  - It seems like a PITA to deploy this myself, so if you want to use these models, I recommend trying to [run them locally](#how-to-run-open-source-models)
+  - It seems like a PITA to deploy this myself, so if you want to use these models, I recommend trying to [run them locally](#how-to-run-open-weight-models)
 - [localllama comment](https://www.reddit.com/r/LocalLLaMA/comments/1hwvyze/comment/m64q0di/)
 - [creative writing benchmark](https://eqbench.com/creative_writing.html)
 
@@ -399,11 +418,11 @@ Interior decoration
 
 ## Local AI Models
 
-The best aggregate about open-source LLMs is [r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/). However, it should be noted there is a base knowledge expectations required. I'll go over it briefly.
+The best aggregate about open weight LLMs is [r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/). However, it should be noted there is a base knowledge expectations required. I'll go over it briefly.
 
-### How to Run Open-Source Models
+### How to Run Open Weight Models
 
-This section comes first because it's derived from the resources in the rest of this page. The models you will be able to download will be limited by your RAM. To run a model locally, you may need [hardware](#ai-hardware). Next, pick an open-source model based on the [benchmark](#benchmarks) closest to the task you want. In [LM Studio](https://lmstudio.ai/), search for the model, and [choose a quantization](/posts/how-to-pick-an-llm-quantization/) to download.
+This section comes first because it's derived from the resources in the rest of this page. The models you will be able to download will be limited by your RAM. To run a model locally, you may need [hardware](#ai-hardware). Next, pick an open weight model based on the [benchmark](#benchmarks) closest to the task you want. In [LM Studio](https://lmstudio.ai/), search for the model, and [choose a quantization](/posts/how-to-pick-an-llm-quantization/) to download.
 
 Once you've downloaded models, you can load them in LM Studio, select a system prompt, and continue. You can also start a server and integrate with local apps that are ollama compatible.
 

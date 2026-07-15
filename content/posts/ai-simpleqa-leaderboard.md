@@ -18,7 +18,7 @@ I've added a succinct [SimpleQA Verified (September 2025)](https://arxiv.org/abs
 | [DeepSeek V4 Pro Max](https://api-docs.deepseek.com/news/news260424/) | 57.9 | O |
 | Z GLM 5.2 | 38.1 | O |
 
-P = Proprietary, O = Open Weight
+P = Proprietary, O = Open Weight, OL = Open Weight and Local Friendly
 
 ## Benchmark Descriptions
 

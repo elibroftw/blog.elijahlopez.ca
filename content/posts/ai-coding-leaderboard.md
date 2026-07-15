@@ -20,6 +20,8 @@ I've decided that the leaderboards from now on should be succinct and exclude re
 | Google DeepMind Gemini 3.1 Pro | 46.1 | P |
 | Thinking Machines Inkling | 54.3 | O |
 
+P = Proprietary, O = Open Weight, OL = Open Weight and Local Friendly
+
 It seems that in 2026, the industry standard is now [September 2025 launched SWE-Bench Pro](https://labs.scale.com/papers/swe_bench_pro) (page 10 has a leaderboard), which goes "beyond" [SWE-Bench](https://arxiv.org/abs/2505.23419). Buzzwords include: "realistic, complex, enterprise-level problems."
 
 [Scale labs leaderboard](https://labs.scale.com/leaderboard/swe_bench_pro_public)
@@ -28,6 +30,7 @@ It seems that in 2026, the industry standard is now [September 2025 launched SWE
 
 - Meta has come back into the scene with [Muse Spark](https://ai.meta.com/blog/introducing-muse-spark-meta-model-api/)
 - Grok Build CLI caught [uploading entire git repos](https://gist.github.com/cereblab/dc9a40bc26120f4540e4e09b75ffb547) to Google Cloud Services, upload disabled server-side after being caught.
+- [Gemma 4](https://deepmind.google/models/gemma/gemma-4/)
 
 ## Other Benchmarks
 
