@@ -7,9 +7,20 @@ tags:
 summary: "Compare AMIodel factuality with the SimpleQA leaderboard. Includes scores for AIME'25 (Math), Chatbot Arena, and ArenaHard benchmarks."
 ---
 
-### Benchmark Descriptions
+I've added a succinct [SimpleQA Verified (September 2025)](https://arxiv.org/abs/2509.07968) leaderboard. Only models that clear the top two or three open weight models get a place in this leaderboard.
 
-[SimpleQA](https://openai.com/index/introducing-simpleqa/) is a benchmark to grade the factuality of an LLM. I wrote this post because while writing my ~~upcoming~~ [AI Awesome List](/posts/ai), I realized there was no readily available webpage indexed by Google showing a leaderboard for SimpleQA.
+| Model | SimpleQA Verified | Labels |
+| ---------------------- | ----------- | ---------- |
+| OpenAI GPT 5.6 Sol | 71.6 | P |
+| Anthropic Claude Fable 5 | 68.3 | P |
+| Thinking Machines Inkling | 68.3 | O |
+| Z GLM 5.2 | 38.1 | O |
+
+P = Proprietary, O = Open Weight
+
+## Benchmark Descriptions
+
+[SimpleQA](https://openai.com/index/introducing-simpleqa/) is a benchmark to grade the factuality of an LLM. I wrote this post because while writing my ~~upcoming~~ [AI Awesome List](/posts/ai), I realized there was no readily available webpage indexed by Google showing a leaderboard for SimpleQA. [SimpleQA Verified](https://arxiv.org/abs/2509.07968)
 
 It's now September, and I am demanding a better benchmark. Personally I think asking AI research based questions with shorter answers is a good start. For example, when asking AI about best housing policies, it likes to shotgun answer you instead of succinctly stating that the best housing policies are upzoning and speeding up permitting. Of course, I disagree and personally I believe restoring foreign capital and cutting taxes such as HST/GST for all primary home buyers, and cutting developer charges are the most effective policies to implement today.
 

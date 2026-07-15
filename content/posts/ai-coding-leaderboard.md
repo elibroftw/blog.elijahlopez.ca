@@ -7,7 +7,29 @@ tags:
 summary: "Explore a leaderboard of AI models ranked by coding benchmarks like SWE-bench and Codeforces. Discusses challenges and limitations of existing benchmarks."
 ---
 
-DEPRECATED: [Aider Polyglot](https://aider.chat/docs/leaderboards/) is multi-lingual compared to SWE-bench verified and that does not require me to make use of my own aggregated leaderboard. I will still try my best to maintain this post, but just letting you know I suggest using Aider Polyglot going forward for which model to use for pair programming.
+## SWE-Bench Pro (Public)
+
+I've decided that the leaderboards from now on should be succinct and exclude redundancy.
+
+| Model | SWE-Bench Pro | Labels |
+| ---------------------- | ----------- | ---------- |
+| Anthropic Claude Fable 5 | 80 | P |
+| OpenAI GPT 5.6 Sol | 64.6 | P |
+| Meta Muse Spark 1.1 | 61.5 | P |
+| Z GLM 5.2 | 62.1 | O |
+| Google DeepMind Gemini 3.1 Pro | 46.1 | P |
+| Thinking Machines Inkling | 54.3 | O |
+
+It seems that in 2026, the industry standard is now [September 2025 launched SWE-Bench Pro](https://labs.scale.com/papers/swe_bench_pro) (page 10 has a leaderboard), which goes "beyond" [SWE-Bench](https://arxiv.org/abs/2505.23419). Buzzwords include: "realistic, complex, enterprise-level problems."
+
+[Scale labs leaderboard](https://labs.scale.com/leaderboard/swe_bench_pro_public)
+
+### News
+
+- Meta has come back into the scene with [Muse Spark](https://ai.meta.com/blog/introducing-muse-spark-meta-model-api/)
+- Grok Build CLI caught [uploading entire git repos](https://gist.github.com/cereblab/dc9a40bc26120f4540e4e09b75ffb547) to Google Cloud Services, upload disabled server-side after being caught.
+
+## Other Benchmarks
 
 - [Aider polyglot](https://aider.chat/2024/12/21/polyglot.html#the-polyglot-benchmark): Based on the 225 most difficult [Exercism](https://exercism.org/) coding problems in the following languages: C++, Go, Java, JavaScript, Python and Rust. See [Aider polyglot coding leaderboard](https://aider.chat/docs/leaderboards/). The problem I see is that models can just train on the solutions and game this leaderboard versus LiveCodeBench which is free of contaminations.
 - [SWE-bench verified](https://openai.com/index/introducing-swe-bench-verified/) (August 13, 2024). A subset of 500 Python-exclusive tasks from the full 2000 which have been verified by humans as solvable. This is the defacto way to evaluate AI models as almost almost all models will report their scores for this benchmark. The unofficial [leaderboard](https://www.swebench.com/#verified) includes SWE copilot tool. The problem is that it doesn't include self-reported results unlike my leaderboard.
@@ -21,12 +43,14 @@ Ideally, the best programming tool would be implemented as follows, given the re
 
 An Architecture <-> Programmer workflow where an agent is in charge of responding to questions that the coder agent has. The thinker will be the one to plan out the project and break it into chunks for the programer to implement.
 
-### Leaderboard
+### Older Leaderboard
 
 | Model / Product   | Company   | Tier | Aider Polyglot | SWE-bench verified | Codeforces | Date Available |
 |----------------------|-----------|----------|----------|----------|--------------|-----------------|
-| Grok 4 Fast[^grok4fast] | xAI | PI | - |- | - | Sep-2025 |
+| Opus 4.6 | Anthropic | PI | - | 80.8% | - | Feb-2026 |
+| Gemini 3.1 Pro | Google | PI | - | 80.6% | - | Feb-2026 |
 | Claude Sonnet 4.5 [^sonnet4.5] | Anthropic | PI | - | 77.2% | - | Sep-2025 |
+| Grok 4 Fast[^grok4fast] | xAI | PI | - |- | - | Sep-2025 |
 | GPT-5-Codex[^codexUpdates] | OpenAI | PI | - | 74.5% | - | Sep-2025 |
 | GPT-5[^codexUpdates] | OpenAI | PI | 88% | 72.8% | - | Sep-2025 |
 | Codex-1[^codex] | OpenAI | PI | - | 72.1% | - | May-2025 |

@@ -1,5 +1,5 @@
 ---
-title: "WinUI3 Single Instance and URI Protocol"
+title: "WinUI3 Single Instance and URI Protocol Tutorial"
 date: 2026-07-07T23:22:09-04:00
 summary: "How to build a single-instance WinUI 3 app with URI protocol activation, fixing window focus issues and tray-mode activation crashes"
 tags:

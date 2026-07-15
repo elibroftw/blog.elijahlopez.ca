@@ -57,7 +57,7 @@ internal class Api {
 
 ### Generalized
 
-```c#
+```cs
 using System.Text.Json.Serialization;
 
 namespace MyApi.Models;

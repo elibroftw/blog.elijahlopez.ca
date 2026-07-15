@@ -76,7 +76,7 @@ For readers in a decade or so, see [JsonIgnoreCondition](https://learn.microsoft
 
 <br>
 
-```c#
+```cs
 using System.Text.Json.Serialization;
 
 namespace MyApi.Models;
