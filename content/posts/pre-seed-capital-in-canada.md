@@ -188,6 +188,10 @@ The alternative, which I will call the greedy founder approach, is to raise mone
 
 - 100K
 
+**[Futurpreneur](https://futurpreneur.ca/en/)**
+
+- Up to 75k
+
 **[Front Row Ventures](https://frontrow.ventures/)**
 
 - $50,000 CAD (SAFE)

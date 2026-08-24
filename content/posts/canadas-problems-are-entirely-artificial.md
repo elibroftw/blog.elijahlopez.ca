@@ -163,3 +163,11 @@ Not just commercial rents, but also infrastructure like electricity.
 5. Steven Harper. Housing affordability may have gotten worse during both Cretien/Martin (30%), and Trudeau (50%), but it's Harper's fault for letting it get 20% worse. Harper is to blame! He should've ran on housing!
 6. Corporations. What do you mean Carney is pro-TFWs? It's actually the corporations fault for hiring the cheapest labour class legally available to them. Carney is not at fault. He's a central banker. He is the most qualified person for the job. Poilievre would've done the same thing. He's totally lying when he says he wants to end the TFW program. What do you mean he said it in August 2024. What do you mean the NDP ran on completely reforming the TFW program?
 7. Danielle Smith. What do you mean she didn't want the handmaid tale's banned and that the author fell for the Edmonton school board propaganda. The author can never be wrong! She's an author! Author's are never wrong.
+
+## What Should be the Governments Goals
+
+1. Lower natural unemployment rate
+2. Higher real wages
+3. Cost of living/shelter should be relatively lower
+Canada needs to become a place where Canadians accept a 50% paycut and maintain QOL.
+4. Startup visa reform

@@ -11,14 +11,15 @@ summary: "Explore a leaderboard of AI models ranked by coding benchmarks like SW
 
 I've decided that the leaderboards from now on should be succinct and exclude redundancy.
 
-| Model | SWE-Bench Pro | Labels |
+| Model | SWE-Bench Pro (%) | Labels |
 | ---------------------- | ----------- | ---------- |
 | Anthropic Claude Fable 5 | 80 | P |
 | OpenAI GPT 5.6 Sol | 64.6 | P |
 | Meta Muse Spark 1.1 | 61.5 | P |
 | Z GLM 5.2 | 62.1 | O |
-| Google DeepMind Gemini 3.1 Pro | 46.1 | P |
 | Thinking Machines Inkling | 54.3 | O |
+| Nanbeige-4.2-3B | 46.9 | OL |
+| Google DeepMind Gemini 3.1 Pro | 46.1 | P |
 
 P = Proprietary, O = Open Weight, OL = Open Weight and Local Friendly
 

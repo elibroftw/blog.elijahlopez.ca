@@ -31,6 +31,7 @@ Knowledge
 - Tool calling
 - MCP
 - Agents/Harness: Hermes, Textgen, pi coding agent, opencode
+- You should prefer Unsloth's models when searching [Hugging Face](https://huggingface.co/)
 
 Models to Keep an eye on
 
@@ -40,9 +41,11 @@ Models to Keep an eye on
 - DeepSeek V4
 - Z.AI GLM 5.2
 
-
-
 ### Benchmarks
+
+- [As agents (Claw-Eval)](https://claw-eval.github.io/)
+  - As of 2026, MiMo V2.5 Pro and Muse Spark are the top open-source (guaranteed zero-data retention) contenders
+- [As swe's (SWE-bench pro)](/posts/ai-coding-leaderboard/)
 
 In my opinion, the current state of benchmarks is very messy. I'm making progress on fixing it myself with blog posts such as [SimpleQA Leaderboard](/posts/ai-simpleqa-leaderboard/) however, there are a few more I would like to maintain. I suggest using these benchmarks as a heuristic in finding a handful of models to test yourself before going with one of them.
 
@@ -71,7 +74,7 @@ Intelligence benchmarks are good because you can also figure out which models ar
 
 - [WebDev Arena Leaderboard](https://web.lmarena.ai/leaderboard)
 - [Design arena](https://www.designarena.ai/)
-- [SWE-Bench verified](/posts/ai-coding-leaderboard/): Software Engineering. ([leaderboard with all tools](https://www.swebench.com/#test))
+- [SWE-Bench pro ~~verified~~](/posts/ai-coding-leaderboard/): Software Engineering. ([leaderboard with all tools](https://www.swebench.com/#test))
 - [CodeForces](/posts/ai-coding-leaderboard/): Competitive programming (note that there is no time penalty for the models)
 - ~~[LiveCodeBench](https://livecodebench.github.io/leaderboard.html)~~
 - ~~[EvalPlus](https://evalplus.github.io/leaderboard.html)~~
@@ -203,6 +206,7 @@ Some of these can also be considered a subset of "Chat"
 ### Image
 
 - Design & Editing
+  - [Image to 3D Modelr Demo](https://www.reddit.com/r/LocalLLaMA/comments/1uuga40/local_image_to_3d_2gb_ram_20s_apple_silicon_iphone/)
   - [Playground AI](https://playground.com/): Might not need to edit in Photoshop anymore ([demo](https://x.com/Suhail/status/1674124521543192578))
   - ChatGPT prompting
   - [Clipdrop](https://clipdrop.co/) by Jasper (many tools like uncrop)
