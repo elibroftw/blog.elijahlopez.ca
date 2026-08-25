@@ -492,6 +492,7 @@ The easiest way to get resources is to get MONEY. To get MONEY, you need a JOB. 
 
 Company | Based | Notes
 ----------- | --------- | ----------
+[Ingenuity Labs at Queen's U](https://ingenuitylabs.queensu.ca/) | Canada | -
 [Cohere](https://jobs.ashbyhq.com/cohere) | Canada/USA | Command R model
 [Open AI](https://openai.com/careers/) | USA | The creator of ChatGPT, led by [Sam Altman](https://en.wikipedia.org/wiki/Sam_Altman) (disclosure, I'm biased against Altman)
 [Google DeepMind](https://deepmind.google/about/careers/) | USA | They came out with the original Transformer research that OpenAI used successfully and work on Gemini and Gemma
