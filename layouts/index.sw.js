@@ -16,6 +16,8 @@ self.addEventListener('install', event => {
       '/',
       '/posts/',
       '/tags/',
+      '/search/',
+      '{{ "searchindex.json" | absLangURL }}',
       {{- range $.Site.RegularPages }}
       '{{ .Permalink }}',
       {{- end }}

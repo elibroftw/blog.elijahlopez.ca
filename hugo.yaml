@@ -32,6 +32,11 @@ menu:
     title: Graph
     url: /graph/
     weight: 0
+  - identifier: search
+    name: Search
+    title: Search
+    url: /search/
+    weight: 0
   # - identifier: about
   #   name: About
   #   title: About
@@ -64,6 +69,7 @@ params:
   readMore: false
   disableSummary: false
   summaryLength: 50
+  search: true
   # giscus support (all mandatory)
   GiscusRepo: "elibroftw/blog.elijahlopez.ca"
   GiscusRepoId: "R_kgDOGiL7hg"
@@ -100,12 +106,18 @@ outputFormats:
     mediaType: text/javascript
     baseName: sw
     isPlainText: true
+  SearchIndex:
+    mediaType: application/json
+    baseName: searchindex
+    isPlainText: true
+    notAlternative: true
 
 outputs:
   home:
     - sw
     - html
     - rss
+    - SearchIndex
 
 markup:
   highlight:
