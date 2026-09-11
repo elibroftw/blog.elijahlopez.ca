@@ -12,7 +12,7 @@ summary: "The Linux desktop experience is subpar across various distributions. U
 
 ## Introduction
 
-I've used Raspian (~2014), Ubuntu GNOME (~2016), Manjaro KDE (2020 & 2022-2023), Fedora, Zorin (2021), Mint (2024), and Nobara (2024).
+I've used Raspian (~2014), Ubuntu GNOME (~2016), Manjaro KDE (2020 & 2022-2023), Fedora, Zorin (2021), Mint (2024 - 2026), and Nobara (2024), Fedora KDE (2026).
 
 There's a lot of UX issues with Linux and for some reasons the user base starts victim blaming instead of actually improving the experience. It's very political regard and reminds me of this one person who genuinely believed that Libertarianism was about legalizing underage marriage.
 
@@ -21,6 +21,10 @@ The issues listed under each distro may actually extend to other distros as the 
 ## Linux Mint
 
 I installed Linux Mint alongside Windows 11 on my laptop for work purposes. Running Linux Mint in a Virtual Machine is slow, ugly, and not as convenient as I thought it was. Why dual boot? Well I need a lot of services: OneDrive, Mega, GitHub Desktop, and video games. I also want an experience where the issues are minor. I think Windows 11 downgraded a lot of components to be more like macOS and Linux which is why I will be making some videos on why Windows 11 sucks, but this article is about my Linux experience.
+
+### Bricked my 8TB Hard Drive
+
+My almost 4 year old hard drive got corrupted in just a few months of using it with my Linux Mint laptop. It was an NTFS file system. I had to reformat it on Windows, and a scan showed zero bad sectors. There were still people who blamed the issue on Windows. It was clearly Mint's fault since the drive was fine, and it was probably file system corruption which was definitely Mint's fault since Mint was the default boot.
 
 ### Bluetooth (Headphones)
 
@@ -59,6 +63,16 @@ I have my laptop connected to two external monitors. The scale on all three disp
 ![ALT: all of my three displays are black but my left monitor shows the clipped UI](/images/linux/linux-mint-clipped-login-ui.webp)
 
 I can still login by simply typing my password and pressing enter but this is such a subpar experience. Windows 11 has its issues but it is never a simple issue. The worst Windows 11 does is run the anti-virus on a folder I did not exempt.
+
+### Slow Internet Speeds Requiring Two Restarts to Fix
+
+I once noticed the internet speed was randomly really bad. It should be 700mbps+, even on wifi. I restarted my laptop and nothing changed.
+
+### Horrible Gaming Performance
+
+One day, my friend was over and I put on Stray, a Platinum game on protondb. The performance was akin to thermal throttling. I already had a laptop cooler, albeit on the lowest fan speed. Turns out that was a waste of money since thermal throttling kicked in earlier on Linux Mint. But it doesn't end there. Even after I figured out it was Linux-specific thermal throttling, I ran the game with a higher laptop cooler fan and it would still stutter and have a slight but noticeable performance hit. This is a game that my laptop can run at 4k resolution max settings on my TV.
+
+This was the final nail in the coffin to nuke my Mint install. All I wanted was a gaming console via a gaming laptop. HTPC so to speak. Why is a distro embarrassing in front of others?
 
 ## Manjaro KDE Specific Issues
 
@@ -121,6 +135,21 @@ On Zorin OS, the home page is overwritten on every log in to <https://start.zori
 When the laptop wakes from sleep, the cursor cannot be moved by the touchpad anymore. Online search yielded to disable "suspend" or "modern standby" but I couldn't find those settings in the BIOS menu of a 2016 laptop (razer blade stealth).
 
 Had to disable secure boot so I see a tpm error on every boot and need to press enter.
+
+2026 EDIT: lol this isn't even a thing anymore. The trendiest OS these days are Bazzite and CatchyOS for gamers.
+
+## Fedora KDE (ACTIVE)
+
+I like this distro the most out of all the distro. Mainly because it uses KDE by default and doesn't require an insane commitment.
+
+- PITA to setup TPM disk auto-decryption (decided that home dir encryption is better than full disk decryption double password)
+- Clock needs to be manually installed lol.
+
+Application Issues:
+
+- LocalSend drag n drop does not work
+- Signal voice memo does not work
+- Steam: PATH TOO LONG ERROR when trying to play Forza Horizon 6 via the Flatpak version of Steam
 
 ## Other Issues
 

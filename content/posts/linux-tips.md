@@ -187,7 +187,13 @@ Next double click on the downloaded AppImage
 
 To append a line to a system file, do not use `>>`. Instead use `commandForOutputGoesHere | sudo tee -a /path/to/file`
 
-## Steam Scale UI on Linux or Manjaro
+## Steam
+
+### Native or Flatpak
+
+Native. Anyone who says Flatpak hasn't played enough games. For example when playing Forza Horizon 6, I got a "PATH TOO LONG" error.
+
+### Steam Scale UI on Linux or Manjaro
 
 Before we get started, reminder to prefer using `Steam (Runtime)` instead of `Steam (Native)`
 
@@ -379,3 +385,11 @@ If some games don't work with Heroic, you can do the following
 
 1. `sudo -H nano /etc/environment`
 2. `USE_FAKE_EPIC_EXE=true`
+
+## How to disabled 'Reboot Required' After Updating via KDE Discover
+
+To update without requiring to reboot:
+
+Click Settings > Three Dots Top Right > Configure Updates > Apply System Updates Immediately
+
+Very helpful for people who have encrypted disks since an update reboot requires entering our decryption password twice.
