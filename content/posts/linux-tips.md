@@ -25,15 +25,25 @@ The best distro is functionally the best, stable (for general and niches like ga
 
 So why Fedora instead of Debian? Well because it's more up to date and it's also not confusing to download unlike Debian.
 
+There's also CachyOS, but I need to test it out first before recommending it since it is built on top of Arch and I have experience of that being an unpleasant experience if you aren't updating constantly.
+
 ## Webcam Application
 
-### KDE
+KDE: kamoso (via Discover)
 
-Install kamoso (with Add/Remove Software).
+Gnome: Cheese
 
-### Gnome
+## How to Install Packages from AUR
 
-Cheese
+You can either do `pamac build $PKGNAME` or use `yay -s $PACKAGENAME` which requires installing yay as shown above.
+
+In the next section is an example on how to install visual studio code.
+
+The following is a one-liner way to install packages in yay to skip the prompts.
+
+```sh
+echo y | LANG=C yay --provides=false --answerdiff=None --answerclean=None --mflags "--noconfirm" -S $list_of_packages
+```
 
 ## How to Install yay
 
@@ -48,19 +58,7 @@ cd ..
 rm yay -rf
 ```
 
-## How to Install Packages from AUR
-
-You can either do `pamac build $PKGNAME` or use `yay -s $PACKAGENAME` which requires installing yay as shown above.
-
-In the next section is an example on how to install visual studio code.
-
-The following is a one-liner way to install packages in yay to skip the prompts.
-
-```sh
-echo y | LANG=C yay --provides=false --answerdiff=None --answerclean=None --mflags "--noconfirm" -S $list_of_packages
-```
-
-### gpg: keyserver recevie failed: No route to host
+### gpg: keyserver receive failed: No route to host
 
 ```sh
 gpg --server hkp://keys.gnupg.net --recv-key KEY_GOES_HERE
@@ -121,8 +119,8 @@ Set the terminal font-family to `firaCode Nerd Font, monospace`
 ## Setting Default Browser for Electron Apps
 
 ```sh
-xdg-mime default firefox.desktop x-scheme-handler/http
-xdg-mime default firefox.desktop x-scheme-handler/https
+xdg-mime default brave.desktop x-scheme-handler/http
+xdg-mime default brave.desktop x-scheme-handler/https
 ```
 
 ## How to fix Sudo Password Not Accepted
