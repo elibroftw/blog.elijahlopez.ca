@@ -1,5 +1,5 @@
 ---
-title: "What Can't an iPad do That a Macbook Can Do?"
+title: "When an iPad Isn't Enough"
 date: 2024-05-07T12:28:28-04:00
 draft: false
 tags:
@@ -7,6 +7,8 @@ tags:
   - ipad
   - macos
   - tech
+aliases:
+  - /posts/what-cant-an-ipad-do-that-a-macbook-can-do/
 summary: "Compilation of tasks a MacBook or computer can do that an iPad cannot, covering file management, software, development, and more."
 ---
 
