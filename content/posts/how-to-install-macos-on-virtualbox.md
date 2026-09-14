@@ -1,7 +1,7 @@
 ---
 title: "How to Install macOS 12 Monterey on VirtualBox Windows 11"
 date: 2023-08-15T21:15:51-04:00
-draft: false
+hidden: true
 tags:
   - windows
   - macos
@@ -13,9 +13,13 @@ summary: "Tutorial on installing macOS 12 Monterey on VirtualBox on Windows 11 (
 
 ## Disclaimer
 
-Update: I ended up purchasing a macbook air :(
+This article is hidden for the following reasons:
 
-Note that macOS 12 is no longer supported by Apple and thus this tutorial is probably a waste of time.
+1. I'm not aware how to get a supported macOS version running in a VM not on a macbook. macOS 12 is out of support.
+2. I ended up purchasing a macbook air (2023-08)
+3. MacBooks have a distinct performance competitive advantage with the release of the M5 lineup
+
+I got a surface laptop in 2025, so maybe that can enable us to run macOS in a virtual machine. How cool would that be.
 
 ## Introduction
 
