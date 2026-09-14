@@ -4,6 +4,7 @@ date: 2023-06-27T10:56:19-04:00
 draft: false
 tags:
   - linux
+  - tech
 aliases:
   - /posts/manjaro-kde-tips/
 summary: "Linux desktop tips and troubleshooting, recommending Fedora KDE and covering topics like package management, software installation, system configuration, and common error fixes."

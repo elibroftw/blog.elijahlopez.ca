@@ -3,6 +3,7 @@ title: "[Linux] Touchpad Not Working After Waking From Suspend"
 date: 2024-09-29T20:28:08-04:00
 tags:
   - linux
+  - tech
 aliases:
   - /posts/linux-touchpad-not-working-after-waking-from-suspend/
   - /posts/linux-touchpad-not-working-after-sleep/

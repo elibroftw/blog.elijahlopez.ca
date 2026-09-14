@@ -3,8 +3,9 @@ title: "Linux Desktop Sucks!"
 date: 2022-02-26T12:44:37-05:00
 draft: false
 tags:
-  - linux
   - opinion
+  - linux
+  - tech
 summary: "The Linux desktop experience is subpar across various distributions. UX issues like Bluetooth, dual booting, drivers, scaling, package management, and software installation seem to prop up all the time."
 ---
 
@@ -12,11 +13,15 @@ summary: "The Linux desktop experience is subpar across various distributions. U
 
 ## Introduction
 
-I've used Raspian (~2014), Ubuntu GNOME (~2016), Manjaro KDE (2020 & 2022-2023), Fedora, Zorin (2021), Mint (2024 - 2026), and Nobara (2024), Fedora KDE (2026).
+For over a decade, I've been distro hopping, moving through: Raspian (~2014) on an RPI, Ubuntu GNOME (~2016), Manjaro KDE (2020 & 2022-2023), Fedora GNOME, Zorin (2021), Mint (2024 - 2026), Nobara (2024), and Fedora KDE (2026 - PRESENT).
 
-There's a lot of UX issues with Linux and for some reasons the user base starts victim blaming instead of actually improving the experience. It's very political regard and reminds me of this one person who genuinely believed that Libertarianism was about legalizing underage marriage.
+Of these distro's, Fedora KDE was the best. Aside from the double password experience when using disk-encryption (TPM 2 setup was a PITA and did not work), issues I ran into were app-specific rather than defects of the distro.
 
-The issues listed under each distro may actually extend to other distros as the desktop (e.g. KDE, or GNOME) or the Windowing System (Wayland) may be the same on different distros.
+For users who require an OS that "just works", Fedora KDE isn't there yet. The choice remains between [windows and mac](/posts/windows-vs-mac/) depending on a users' workflow, although I lean towards Windows (x64), especially because Linux can be installed with a higher probability of driver support.
+
+So that's not to say that Linux is recommendable to people who want a stress-free "just works" life. Regarding that, I still believe Windows is the crown jewel. With the macOS Neo, it basically comes down to the OS and workflow usage. Meaning, what would a user need. Based on [What Can't an iPad do That a Macbook Can Do?](/posts/what-cant-an-ipad-do-that-a-macbook-can-do.md), we know there's a bunch of features that require having access to a computer.
+
+There's a lot of UX issues with Linux and for some reasons forums will victim blame instead of actually improving the experience.
 
 ## Linux Mint
 

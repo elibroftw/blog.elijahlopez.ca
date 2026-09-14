@@ -6,6 +6,7 @@ tags:
   - apple
   - ipad
   - macos
+  - tech
 summary: "Compilation of tasks a MacBook or computer can do that an iPad cannot, covering file management, software, development, and more."
 ---
 
@@ -36,7 +37,4 @@ Here is a compilation of tasks that an iPad can't do that a Macbook / computer c
 * [Serious PDF editing](https://www.reddit.com/r/ipad/comments/1106m1x/comment/j88gdg3/)
 * Using external displays when the primary device is closed ("clamshell" mode)
   * The workaround is to disable locking the iPad when the cover is closed (the iPad screen will remain on so it's not real "clamshell" mode)
-* Lacking desktop-feel video games
-  * Albeit you will be able to play AC: Mirage soon
-  * Steam games
-  * Can't play on Minecraft servers that require the Java edition
+* [macOS Games](/posts/desktop-games-on-app-store#macos-games)

@@ -5,6 +5,7 @@ draft: false
 tags:
   - linux
   - windows
+  - tech
 summary: "Addressing common USB formatting issues encountered on Windows after using Linux ISO burning tools like Balena Etcher and Rufus, which can leave USB drives in a 'soft-bricked' state."
 ---
 
