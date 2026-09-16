@@ -22,6 +22,9 @@ This is a curated list based on games I think are worth while and also a list of
 
 - Minecraft Java edition
 - Sims 4
+- Cyberpunk 2077
+
+You can also use CrossOver to play other games but it has a subscription.
 
 ## Games not on Apple
 
