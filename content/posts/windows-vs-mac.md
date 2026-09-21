@@ -68,6 +68,7 @@ Console Player
 
 x64 Notebook + eGPU
 
+- An eGPU doesn't get full performance as its run through a thunderbolt port. A PCIe port comes closest to desktop performance.
 - $1250 + $550 + $280 = $2,080; $780 premium
 - GPU: RX 9070 $550
 - eGPU: AOOSTAR AG03 $280
