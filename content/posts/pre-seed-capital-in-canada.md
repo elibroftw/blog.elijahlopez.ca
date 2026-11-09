@@ -192,9 +192,17 @@ The alternative, which I will call the greedy founder approach, is to raise mone
 
 - Up to 75k
 
+**[Barn VC](https://barnvc.com/)**
+
+- US$50K (SAFE)
+- Waterloo, ON
+- > embedded in Builders Club
+
+{{< x user="jrodgers" id="2119780553914294542" >}}
+
 **[Front Row Ventures](https://frontrow.ventures/)**
 
-- $50,000 CAD (SAFE)
+- C$50,000 (SAFE)
 - Montreal, QC
 
 ---

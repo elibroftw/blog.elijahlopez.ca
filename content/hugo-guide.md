@@ -143,7 +143,7 @@ From https://twitter.com/MPelletierCIO/status/1522704947556483073.
 We need the username and the status id:
 
 ```bash
-{{</* tweet user="MPelletierCIO" id="1522704947556483073" */>}}
+{{</* x user="MPelletierCIO" id="1522704947556483073" */>}}
 ```
 
 {{< x user="MPelletierCIO" id="1522704947556483073" >}}
